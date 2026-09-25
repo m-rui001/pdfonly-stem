@@ -1,0 +1,81 @@
+{
+  "sha1": "9869f24bac7af8a2562d3cea38bff85f5bd132e9",
+  "title": "Thermally Driven Structure and Performance Evolution of Atomically Dispersed FeN 4 Sites for Oxygen Reduction",
+  "doi": "https://doi.org/10.1002/anie.201909312",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9869f24bac7af8a2562d3cea38bff85f5bd132e9/index.html",
+  "source_chars": 47223,
+  "markdown_chars": 3303,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "pyrolysis 800oC) of metal, nitrogen, and carbon precursors of (above the document.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "句尾括号结构异常，'of (above the document'疑似跨页时页眉/页脚混入导致拼接错误，原文应表达'高于800°C热解是形成FeN4位点的关键前提'之意。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "The employed ZIF-NC carbon host processes a high BET surface area",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'processes'应为'possesses'，但属原文或提取笔误，不涉及数据问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "S. T. Thompson, D. Papageorgopoulos, Nature Catalysis 2019, 2, 558-561.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "文献编号[2]出现两次（正文中第一段与文末列表），不符合常规编号顺序，存疑但可能为原文编辑问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Mengjie Chen2,,",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者列表中'Mengjie Chen2,,'多余一个逗号，为明显的排版小错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Pt/C (60 ug/cm2), 0.1 M HClO4",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中提到Pt/C参照物在0.1 M HClO4中测试而其他催化剂在0.5 M H2SO4中测试，条件不一致但图注明确说明，存疑是否为原文设计。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：BET 403 m²/g、微孔体积0.130 cm³/g、Fe吸附浓度0.5 mg/ml、活化温度序列200-1100°C、400°C时Fe-N配位数~4、DFT能量5.38 eV和6.44 eV、E₁/₂=0.84 V（0.6 mg/cm²）、MEA数据（OCV 0.98 V、0.030 A/cm²@0.9V、空气下0.075/0.302 A/cm²@0.8/0.7V）、稳定性数据（3.4%/11.3%/3.8%每0.1C、AST 25/31 mV与21/40 mV、高电位循环~30 mV损失和84%电容增加）。公式仅涉及数值型能量和电位数据，已在正文中保留。不确定处：EXAFS中Fe-N与Fe-O区分困难（原文明确说明）；1100°C配位数减少的具体数值未在提取文本中给出（标注为Supporting Information Table S5）；Fe-N键长具体数值未在提取文本中出现。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3652,
+      "prompt_tokens": 13839,
+      "total_tokens": 17491,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 737
+      }
+    },
+    "content_chars": 5081
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

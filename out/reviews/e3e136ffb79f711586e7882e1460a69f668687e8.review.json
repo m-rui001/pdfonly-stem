@@ -1,0 +1,55 @@
+{
+  "sha1": "e3e136ffb79f711586e7882e1460a69f668687e8",
+  "title": "Effects of the geopolitical risks on Bitcoin returns and volatility",
+  "doi": "https://doi.org/10.1016/j.ribaf.2018.09.011",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e3e136ffb79f711586e7882e1460a69f668687e8/index.html",
+  "source_chars": 33750,
+  "markdown_chars": 2879,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "0.95 0.26*** 0.09 0.25 0.11 0.24",
+      "type": "疑似数据缺失/错行",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "表2中0.95行同样只列出5个值，而其他行有7个滞后列。可能原文表格如此，但需注意。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "0.95 0.32** 0.10* 0.03 0.19 0.94**",
+      "type": "疑似数据缺失/错行",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "表1中0.95行仅列出5个系数，而其他行有7个滞后列。后文正文提到所有滞后项，但表格可能缺失GPR(–2)和GPR(–4)的值，且该行未对齐。但提取文本本身可能因页面截断导致，无法确定是原文缺失还是提取问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：样本区间2010-07-18至2017-11-30，2693个日度观测；OLS中GPR对收益系数–0.01（5%显著），对波动率0.10（不显著）；QQ在0.85/0.90/0.95分位正向显著（收益与波动率均如此）；GPR(–1)在表1中0.95为0.10*，表2中0.90为0.02*。相关系数–0.011。BSGVAR选择MAR结构，最高互联期已记录。公式已按原文保留，四个回归方程及附录模型。不确定之处：表格中0.95行缺失滞后列数值，已列为问题；正文中提及GPR(–2)等部分结果但表格细节不全，未作推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2305,
+      "prompt_tokens": 10222,
+      "total_tokens": 12527,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 162
+      }
+    },
+    "content_chars": 3803
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

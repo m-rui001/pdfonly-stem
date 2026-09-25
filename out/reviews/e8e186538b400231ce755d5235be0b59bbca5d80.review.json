@@ -1,0 +1,54 @@
+{
+  "sha1": "e8e186538b400231ce755d5235be0b59bbca5d80",
+  "title": "Exascale computing and big data",
+  "doi": "https://doi.org/10.1145/2699414",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e8e186538b400231ce755d5235be0b59bbca5d80/index.html",
+  "source_chars": 50550,
+  "markdown_chars": 4109,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "It has also",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第1页末尾句子在“It has also”处中断，第2页开头以“been key to event identification”继续，中间可能缺失页眉或图注，需人工核验原文页间连续性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "memory\ncapacity\nand",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "列表项末尾出现孤立的“memory capacity and”，与前后项不连贯，疑似上一列表项“Primary and secondary memory capacity and access rates”的残留碎片，但缺少强文本内证据确认完整原样。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：exascale=10^18 ops/s，petaflops=10^15，成本>1B美元，年运营数千万美元，功率目标20-40MW，DRAM错误率>8% DIMM/年，天河二号16000节点/峰值55P→100P，日本1400亿日元/13.8亿美元，欧盟25M欧元。公式无。结论方向与摘要一致。不确定处：第1页引文顺序（Davy引言前后片段）因提取文本页内顺序可能受排版影响，未在正文中特定引用；已按原文主题意义转述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5311,
+      "prompt_tokens": 10476,
+      "total_tokens": 15787,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2554
+      }
+    },
+    "content_chars": 4979
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

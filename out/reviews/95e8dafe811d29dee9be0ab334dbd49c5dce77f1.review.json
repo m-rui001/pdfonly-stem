@@ -1,0 +1,45 @@
+{
+  "sha1": "95e8dafe811d29dee9be0ab334dbd49c5dce77f1",
+  "title": "Non-coding RNA regulatory networks",
+  "doi": "https://doi.org/10.1016/j.bbagrm.2019.194417",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/95e8dafe811d29dee9be0ab334dbd49c5dce77f1/index.html",
+  "source_chars": 76189,
+  "markdown_chars": 2473,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第2页正文末尾出现孤立数字“1”，可能是页脚页码混入正文内容，但未造成语义断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文关键数值：miRBase约1915个人类前体、至少725个高置信度；miR-17预测实例中的646、349、40个靶标及39个true positives中的13、12、3个命中；RAID超过300万RNA-RNA相互作用；IntAct超过42000个核酸相关相互作用；人类转录网络中2377个microRNA介导的FFL等，均与原文一致。未发现公式。唯一疑点为第2页末尾的孤立数字“1”，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9594,
+      "prompt_tokens": 21872,
+      "total_tokens": 31466,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8037
+      }
+    },
+    "content_chars": 2985
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

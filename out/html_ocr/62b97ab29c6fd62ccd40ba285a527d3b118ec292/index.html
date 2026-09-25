@@ -1,0 +1,557 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Fast Single Image Haze Removal Algorithm Using Color Attenuation Prior</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>A Fast Single Image Haze Removal Algorithm Using Color Attenuation Prior</h1><p class="meta">https://doi.org/10.1109/tip.2015.2446191 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><div>
+
+# A Fast Single Image Haze Removal Algorithm Using Color Attenuation Prior
+
+</div>
+<p>Qingsong Zhu, Member, IEEE, Jiaming Mai, and Ling Shao, Senior Member, IEEE</p>
+<p>Abstract—Single image haze removal has been a challenging problem due to its ill-posed nature. In this paper, we propose a simple but powerful color attenuation prior for haze removal from a single input hazy image. By creating a linear model for modeling the scene depth of the hazy image under this novel prior and learning the parameters of the model with a supervised learning method, the depth information can be well recovered. With the depth map of the hazy image, we can easily estimate the transmission and restore the scene radiance via the atmospheric scattering model, and thus effectively remove the haze from a single image. Experimental results show that the proposed approach outperforms state-of-the-art haze removal algorithms in terms of both efficiency and the dehazing effect.</p>
+<p>Index Terms—Dehazing, defog, image restoration, depth restoration.</p>
+<h2>I. INTRODUCTION</h2>
+<p>OUTDOOR images taken in bad weather (e.g., foggy or hazy) usually lose contrast and fidelity, resulting from the fact that light is absorbed and scattered by the turbid medium such as particles and water droplets in the atmosphere during the process of propagation. Moreover, most automatic systems, which strongly depend on the definition of the input images, fail to work normally caused by the degraded images. Therefore, improving the technique of image haze removal will benefit many image understanding and computer vision applications such as aerial imagery [1], image classification [2]----[5], image/video retrieval [6]----[8], remote sensing [9]----[11] and video analysis and recognition [12]----[14].</p>
+<p>Since concentration of the haze is different from place to place and it is hard to detect in a hazy image, image dehazing is thus a challenging task. Early researchers use</p>
+<p>the traditional techniques of image processing to remove the haze from a single image (for instance, histogram-based dehazing methods [15] -[17]). However, the dehazing effect is limited, because a single hazy image can hardly provide much information. Later, researchers try to improve the dehazing performance with multiple images. In [18] -[20], polarizationbased methods are used for dehazing with multiple images which are taken with different degrees of polarization. In [21] -[23], Narasimhan et al. propose haze removal approaches with multiple images of the same scene under different weather conditions. In [24] and [25], dehazing is conducted based on the given depth information.</p>
+<p>Recently, significant progress has been made in single image dehazing based on the physical model. Under the assumption that the local contrast of the haze-free image is much higher than that in the hazy image, Tan [26] proposes a novel haze removal method by maximizing the local contrast of the image based on Markov Random Field (MRF). Although Tan's approach is able to achieve impressive results, it tends to produce over-saturated images. Fattal [27] proposes to remove the haze from color images based on Independent Component Analysis (ICA), but the approach is time-consuming and cannot be used for grayscale image dehazing. Furthermore, it has some difficulties to deal with dense-haze images. Inspired by the widely used dark-object subtraction technique [28] and based on a large number of experiments on haze-free images, He et al. [29] discover the dark channel prior (DCP) that, in most of the non-sky patches, at least one color channel has some pixels whose intensities are very low and close to zero. With this prior, they estimate the thickness of haze, and restore the haze-free image by the atmospheric scattering model. The DCP approach is simple and effective in most cases. However, it cannot well handle the sky images and is computationally intensive. Some improved algorithms [30] - [36], [45] - [51] are proposed to overcome the weakness of the DCP approach. For efficiency, Gibson et al. [31], Yu et al. [32], He et al. [43], Tarel and Hautiere [45], and Tarel et al. [46] replace the time-consuming soft matting [44] with standard median filtering, "median of median filter", guided joint bilateral filtering [37] - [42] and guided image filtering, respectively. In terms of dehazing quality, Kratz and Nishino [48] and Nishino et al. [49] model the image with a factorial Markov random filed to estimate the scene radiance more accurately; Meng et al. [50] propose an effective regularization dehazing method to restore the haze-free image by exploring the inherent boundary constraint; Tang et al. [51] combine</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 1. An overview of the proposed dehazing method. Top-left: Input hazy image. Top-right: Restored depth map. Bottom-left: Restored transmission map. Bottom-right: Dehazed image.
+
+</div>
+<p>four types of haze-relevant features with Random Forest [52] to estimate the transmission. Despite the remarkable progress, the limitation of the state-of-the-art methods lies in the fact that the haze-relevant priors or heuristic cues used are not effective or efficient enough.</p>
+<p>In this paper, we propose a novel color attenuation prior for single image dehazing. This simple and powerful prior can help to create a linear model for the scene depth of the hazy image. By learning the parameters of the linear model with a supervised learning method, the bridge between the hazy image and its corresponding depth map is built effectively. With the recovered depth information, we can easily remove the haze from a single hazy image. An overview of the proposed dehazing method is shown in Figure 1. The efficiency of this dehazing method is dramatically high and the dehazing effectiveness is also superior to that of prevailing dehazing algorithms as we will show in Section VI. A conference version of our work has been presented in [53].</p>
+<p>The remainder of this paper is organized as follows: In Section II, we review the atmospheric scattering model which is widely used for image dehazing and give a concise analysis on the parameters of this model. In Section III, we present a novel color attenuation prior. In Section IV, we discuss the approach of recovering the scene depth with the proposed color attenuation prior. In Section V, the method of image dehazing with the depth information is described. In Section VI, we present and analyze the experimental results Finally, we summarize this paper in Section VII.</p>
+<h2>II. ATMOSPHERIC SCATTERING MODEL</h2>
+<p>To describe the formation of a hazy image, the atmospheric scattering model, which is proposed by</p>
+<p>McCartney in 1976 [54], is widely used in computer vision and image processing. Narasimhan and Nayar [22], [23], [55], [56] further derive the model later, and the model can be expressed as follows:</p>
+<div class="formula">$$
+\begin{array}{l} \mathbf {I} (x) = \mathbf {J} (x) t (x) + \mathbf {A} (1 - t (x)), \\ t (x) = e ^ {- \beta d (x)}, \\ \end{array}
+$$</div>
+<p>where x is the position of the pixel within the image, I is the hazy image, J is the scene radiance representing the haze-free image, A is the atmospheric light, t is the medium transmission, $ \beta $ is the scattering coefficient of the atmosphere and d is the depth of scene. I, J and A are all three-dimensional vectors in RGB space. Since I is known, the goal of dehazing is to estimate A and t , then restore J according to Equation (1).</p>
+<p>It is worth noting that the depth of the scene d is the most important information. Since the scattering coefficient $ \beta $ can be regarded as a constant in homogeneous atmosphere condition [55], the medium transmission t can be estimated easily according to Equation (2) if the depth of the scene is given. Moreover, in the ideal case, the range of $ d ( x ) $ is $ [ 0,+\infty) $ as the scenery objects that appear in the image can be very far from the observer, and we have:</p>
+<div class="formula">$$
+\mathbf {I} (x) = \mathbf {A}, \quad d (x) \rightarrow \infty .
+$$</div>
+<p>Equation (3) shows that the intensity of the pixel, which makes the depth tend to infinity, can stand for the value of the atmospheric light A. Note that, if $ d ( x ) $ is large enough, $ t ( x ) $ tends to be very small according to Equation (2), and $ \mathbf{I} ( x ) $ equals A approximately. Therefore, instead of calculating the atmospheric light A by Equation (3), we can estimate A by the following equation given a threshold $ d_{thresold} $:</p>
+<div class="formula">$$
+\mathbf {I} (x) = \mathbf {A}, \quad d (x) \geq d _ {t h r e s o l d}.
+$$</div>
+<p>We also notice the fact that it is not hard to satisfy this constraint: $ d ( x ) &gt; d_{thresold} $ . In most cases, a hazy image taken outdoor has a distant view that is kilometres away from the observer. In other words, the pixel belonging to the region with a distant view in the image should have a very large depth $ d_{threshold} $ . Assuming that every hazy image has a distant view, we have:</p>
+<div class="formula">$$
+d (x) \geq d _ {t h r e s o l d}, x \in \{x | \forall y: d (y) \leq d (x) \}
+$$</div>
+<p>Based on this assumption, the atmospheric light A is given by:</p>
+<div class="formula">$$
+\mathbf {A} = \mathbf {I} (x), x \in \{x | \forall y: d (y) \leq d (x) \}.
+$$</div>
+<p>On this condition, the task of dehazing can be further converted into depth information restoration. However, it is also a challenging task to obtain the depth map from a single hazy image.</p>
+<p>In the next section, we present a novel color attenuation prior which is useful for restoring the depth information from a single hazy image directly.</p>
+<h2>III. COLOR ATTENUATION PRIOR</h2>
+<p>To detect or remove the haze from a single image is a challenging task in computer vision, because little information about the scene structure is available. In spite of this,</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(c)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(d)
+
+</div>
+<div>
+
+Fig. 2. The concentration of the haze is positively correlated with the difference between the brightness and the saturation. (a) A hazy image. (b) The close-up patch of a dense-haze region and its histogram. (c) The close-up patch of a moderately hazy region and its histogram. (d) The close-up patch of a haze-free region and its histogram.
+
+</div>
+<p>the human brain can quickly identify the hazy area from the natural scenery without any additional information. This inspired us to conduct a large number of experiments on various hazy images to find the statistics and seek a new prior for single image dehazing. Interestingly, we find that the brightness and the saturation of pixels in a hazy image vary sharply along with the change of the haze concentration.</p>
+<p>Figure 2 gives an example with a natural scene to show how the brightness and the saturation of pixels vary within a hazy image. As illustrated in Figure 2(d), in a haze-free region, the saturation of the scene is pretty high, the brightness is moderate and the difference between the brightness and the saturation is close to zero. But it is observed from Figure 2(c) that the saturation of the patch decreases sharply while the color of the scene fades under the influence of the haze, and the brightness increases at the same time producing the high value of the difference. Furthermore, Figure 2(b) shows that in a dense-haze region, it is more difficult for us to recognize the inherent color of the scene, and the difference is even higher than that in Figure 2(c). It seems that the three properties (the brightness, the saturation and the difference) are prone to vary regularly in a single hazy image according to this observation. Is this coincidence, or is there a fundamental reason behind this? To answer this question, we first review the process of imaging.</p>
+<p>Figure 3 illustrates the imaging process. In the haze-free condition, the scene element reflects the energy that is from the illumination source (e.g., direct sunlight, diffuse skylight and light reflected by the ground), and little energy is lost when it reaches the imaging system. The imaging system collects the incoming energy reflected from the scene element and focuses it onto the image plane. Without the influence of the haze, outdoor images are usually with vivid color (see Figure 3(a)). In hazy weather, in contrast, the situation becomes more complex (see Figure 3(b)). There are two mechanisms (the direct attenuation and the airlight) in imaging under</p>
+<p>hazy weather [23]. On one hand, the direct attenuation caused by the reduction in reflected energy leads to low intensity of the brightness. To understand this, we review the atmospheric scattering model. The term $ \mathbf{J} ( x ) t ( x ) $ in Equation (1) is used for describing the direct attenuation. It reveals the fact that the intensity of the pixels within the image will decrease in a multiplicative manner. So it turns out that the brightness tends to decrease under the influence of the direct attenuation. On the other hand, the white or gray airlight, which is formed by the scattering of the environmental illumination, enhances the brightness and reduces the saturation. We can also explain this by the atmospheric scatter model. The rightmost term $ \mathbf{A} ( 1-t ( x ) ) $ in Equation (1) represents the effect of the airlight. It can be deduced from this term that the effect of the white or gray airlight on the observed values is additive. Thus, caused by the airlight, the brightness is increased while the saturation is decreased. Since the airlight plays a more important role in most cases, hazy regions in the image are characterized by high brightness and low saturation. What's more, the denser the haze is, the stronger the influence of the airlight would be. This allows us to utilize the difference between the brightness and the saturation to estimate the concentration of the haze. In Figure 4, we show that the difference increases along with the concentration of the haze in a hazy image, as we expected.</p>
+<p>Since the concentration of the haze increases along with the change of the scene depth in general, we can make an assumption that the depth of the scene is positively correlated with the concentration of the haze and we have:</p>
+<div class="formula">$$
+d (x) \propto c (x) \propto v (x) - s (x),
+$$</div>
+<p>where d is the scene depth, c is the concentration of the haze, v is the brightness of the scene and s is the saturation. We regard this statistics as color attenuation prior. Figure 5 gives the geometric description of the color attenuation prior through the HSV color model. Figure 5(a) is the HSV color model, and Figure 5(b-d) are the near, moderate-distance and far scene depths, respectively. Vector I indicates the hazy image, passing through the origin and performing the projection of the vector I onto a horizontal plane Setting the angle between vector I and its projection as $ \alpha $ , according to the HSV color model, when $ \alpha $ varies between 0 and 90 degrees, the higher the value of $ \alpha $ is, the higher the value of tangent $ \alpha $ is, which indicates the greater the difference between the component of I in the direction of V and the component of I in the direction of S. As the depth increases, the value $ \nu $ increases and the saturation s decreases, and therefore $ \alpha $ increases. In other words, the angle $ \alpha $ is positively correlated with the depth.</p>
+<p>It is worth to point out that Equation (7) is just an intuitional result of the observation and it cannot be an accurate expression about the links among d, v and s. We will find the way to create a more robust expression in the following sections.</p>
+<h2>IV. SCENE DEPTH RESTORATION</h2>
+<h2>A. The Linear Model Definition</h2>
+<p>As the difference between the brightness and the saturation can approximately represent the concentration of the haze,</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(b)
+
+</div>
+<div>
+
+Fig. 3. The process of imaging under different weather conditions. (a) The process of imaging in sunny weather. (b) The process of imaging in hazy weather.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(b)
+
+</div>
+<div>
+
+Fig. 4. Difference between brightness and saturation increases along with the concentration of the haze. (a) A hazy image. (b) Difference between brightness and saturation.
+
+</div>
+<p>we can create a linear model, i.e., a more accurate expression, as follows:</p>
+<div class="formula">$$
+d (x) = \theta_ {0} + \theta_ {1} v (x) + \theta_ {2} s (x) + \varepsilon (x),
+$$</div>
+<p>where x is the position within the image, d is the scene depth, v is the brightness component of the hazy image, s is the saturation component, $ \theta_{0}, \theta_{1}, \theta_{2} $ are the unknown linear coefficients, $ \varepsilon(x) $ is a random variable representing the random error of the model, and $ \varepsilon $ can be regarded as a random image. We use a Gaussian density for $ \varepsilon $ with zero mean and variable $ \sigma^{2} $ (i.e. $ \varepsilon(x)\sim N(0,\sigma^{2}) $ ). According to the property of the Gaussian distribution, we have:</p>
+<div class="formula">$$
+d (x) \sim p \left(d (x) \mid x, \theta_ {0}, \theta_ {1}, \theta_ {2}, \sigma^ {2}\right) = N \left(\theta_ {0} + \theta_ {1} v + \theta_ {2} s, \sigma^ {2}\right).
+$$</div>
+<p>One of the most important advantages of this model is that it has the edge-preserving property. To illustrate this, we calculate the gradient of d in Equation (8) and</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(c)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(d)
+
+</div>
+<div>
+
+Fig. 5. The geometric description of the color attenuation prior. (a) The HSV color model. (b) The near scene depth condition. (c) The moderate-distance condition. (d) The far scene depth condition.
+
+</div>
+<p>we have:</p>
+<div class="formula">$$
+\nabla d = \theta_ {1} \nabla v + \theta_ {2} \nabla s + \nabla \varepsilon .
+$$</div>
+<p>Due to that $ \sigma $ can never be too large in practice, the value of $ \varepsilon(x) $ tends to be very low and close to zero. In this case, the value of $ \nabla\varepsilon $ is low enough to be ignored. A $ 600\times 450 $ random image $ \varepsilon $ with $ \sigma=0.05 $ and its corresponding gradient image $ \nabla\varepsilon $ are shown in Figure 6(e) and Figure 6(d), respectively. As can be seen, both the gradient image $ \nabla\varepsilon $ and the random image $ \varepsilon $ are very dark. It turns out that the edge distribution of d is independent of $ \varepsilon $ given a small $ \sigma $ . In addition, since $ \nu $ and s are actually the two single-channel images (the value channel and the saturation channel of the HSV color space) into which the hazy image I splits, Equation (10) ensures that d has an edge only if I has an edge. We give an example to illustrate this in Figure 6. Figure 6(a) is the hazy image. Figure 6(b) shows the edge distribution of the hazy image. Figure 6(c) shows the Sobel image $ \nabla d=\theta_{1}\nabla v+\theta_{2}\nabla s+\nabla\varepsilon $ , where $ \theta_{1} $ is simply set to 1.0, $ \theta_{2} $ is set to -1.0, and $ \varepsilon $ is a random image as mentioned. As we can see, Figure 6(b) is similar</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(b)
+
+</div>
+<div>
+
+(c)
+
+</div>
+<div>
+
+(d)
+
+</div>
+<div>
+
+(e)
+
+</div>
+<div>
+
+Fig. 6. Illustration of the edge-preserving property of the linear model. (a) The hazy image. (b) The Sobel image of (a). (c) The Sobel image $ \nabla d=\nabla v-\nabla s+\nabla \varepsilon. $ (d) The Sobel image of (e). (e) The random image $ \varepsilon $ with $ \sigma=0.05. $
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+The haze-free images The generated random depth maps The generated hazy images
+
+</div>
+<div>
+
+Fig. 7. The process of generating the training samples with the haze-free images. Left sub-figure: The haze-free images. Center sub-figure: The generated random depth maps. Right sub-figure: The generated hazy images.
+
+</div>
+<p>to Figure 6(c) representing that I and d have similar edge distributions. This further ensures that the depth information can be well recovered even near the depth discontinuities in the scene. The linear model works well as we will show later.</p>
+<p>In the following sections, we use a simple and efficient supervised learning method to determine the coefficients $ \theta_{0},\theta_{1},\theta_{2} $ and the variable $ \sigma^{2} $</p>
+<h2>B. Training Data Collection</h2>
+<p>In order to learn the coefficients $ \theta_{0},\theta_{1} $ and $ \theta_{2} $ accurately, the training data are necessary. In our case, a training sample consists of a hazy image and its corresponding ground truth depth map. Unfortunately, the depth map is very difficult to obtain due to the fact that there is no reliable means to measure the depths in outdoor scenes. Current depth cameras such as Kinect are not able to acquire the accurate depth information.</p>
+<p>Inspired by Tang et al.'s method for preparing the training data [51], we collect the haze-free images from Google Images and Flickr and use them to produce the synthetic depth maps and the corresponding hazy images for obtaining enough training samples. The process of generating the training samples is illustrated in Figure 7. Firstly, for each haze-free image, we generate a random depth map with the same size. The values of the pixels within the synthetic depth map are drawn from the standard uniform distribution on the open interval (0,1). Secondly, we generate the random atmospheric light A $ (k,k,k) $ where the value of k is between 0.85 and 1.0. Finally, we generate the hazy image I with the random depth map d and the random atmospheric light A according to Equation (1) and Equation (2). In our case, 500 haze-free images are used for generating the training samples (500 random depth maps and 500 synthetic hazy images).</p>
+<h2>C. Learning Strategy</h2>
+<p>What we are interested in is the joint conditional concentration:</p>
+<div class="formula">$$
+L = p \left(d \left(x _ {1}\right), \dots , d \left(x _ {n}\right) \mid x _ {1}, \dots , x _ {n}, \theta_ {0}, \theta_ {1}, \theta_ {2}, \sigma^ {2}\right),
+$$</div>
+<p>where n is the total number of pixels within the training hazy images, $ d ( x_{\mathrm{n}}) $ is the depth of the nth scene point, and L is the likelihood. Assuming that the random error at each scene point is independent (i.e. $ p (\varepsilon_{1},\dots,\varepsilon_{\mathrm{n}})=\prod_{\mathrm{i=1},\dots,\mathrm{n}} p (\varepsilon_{i})) $ , we can rewrite Equation (11) as:</p>
+<div class="formula">$$
+L = \prod_ {i = 1} ^ {n} p \left(d \left(x _ {i}\right) \mid x _ {i}, \theta_ {0}, \theta_ {1}, \theta_ {2}, \sigma^ {2}\right).
+$$</div>
+<p>According to Equation (9) and Equation (12), we have:</p>
+<div class="formula">$$
+L = \prod_ {i = 1} ^ {n} \frac {1}{\sqrt {2 \pi \sigma^ {2}}} e ^ {- \frac {d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)}{2 \sigma^ {2}}},
+$$</div>
+<p>where $ d g_{i} $ represents the ground truth depth of the ith scene point. So the problem is to find the optimal values of $ \theta_{0},\theta_{1},\theta_{2} $ and $ \sigma $ to maximum L. For convenience, instead of maximizing the likelihood directly, we maximize the natural logarithm of the likelihood In L. Therefore, the problem can be expressed as follows:</p>
+<div class="formula">$$
+\operatorname* {a r g} _ {\theta_ {0}, \theta_ {1}, \theta_ {2}, \sigma} \ln L = \sum_ {i = 1} ^ {n} \ln \left(\frac {1}{\sqrt {2 \pi \sigma^ {2}}} e ^ {- \frac {d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)}{2 \sigma^ {2}}}\right).
+$$</div>
+<p>To solve the problem, we first calculate the partial derivative of ln L with respect to $ \sigma $ and make it equal to zero:</p>
+<div class="formula">$$
+\begin{array}{l} \frac {\partial \ln L}{\partial \sigma} = - \frac {n}{\sigma} + \frac {1}{\sigma^ {3}} \sum_ {i = 1} ^ {n} \left(d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)\right) \\ = 0. \tag {1} \\ \end{array}
+$$</div>
+<p>According to Equation (15), the maximum likelihood estimate for the variable $ \sigma^{2} $ is:</p>
+<div class="formula">$$
+\sigma^ {2} = \frac {1}{n} \sum_ {i = 1} ^ {n} \left(d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)\right) ^ {2}.
+$$</div>
+<p>As for the linear coefficients $ \theta_{0},\theta_{1} $ and $ \theta_{2} $ , we use the gradient descent algorithm to estimate their values. By taking the partial derivatives of $ \ln L $ with respect to $ \theta_{0},\theta_{1} $ and $ \theta_{2} $ respectively,</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>Algorithm 1 Parameters Estimation</p>
+<p>Input: the training brightness vector $v$, the training saturation vector $s$, the training depth vector $d$, and the number of iterations $t$</p>
+<p>Output: linear coefficients $\theta_{0}, \theta_{1}, \theta_{2}$, the variable $\sigma^{2}$</p>
+<p>Auxiliary functions:</p>
+<p>function for obtaining the size of the vector: $n = size(in)$</p>
+<p>function for calculating the square: $out = square(in)$</p>
+<p>Begin</p>
+<p>1: $n = size(v)$;</p>
+<p>2: $\theta_{0} = 0; \theta_{1} = 1; \theta_{2} = -1$;</p>
+<p>3: $sum = 0; wSum = 0; vSum = 0; sSum = 0$;</p>
+<p>4: <strong>for</strong> iteration from 1 to $t$ <strong>do</strong></p>
+<p>5: <strong>for</strong> index from 1 to $n$ <strong>do</strong></p>
+<p>6: $temp = d[i] - \theta_{0} - \theta_{1} * v[i] - \theta_{2} * s[i]$;</p>
+<p>7: $wSum = wSum + temp$;</p>
+<p>8: $vSum = vSum + v[i] * temp$;</p>
+<p>9: $sSum = sSum + s[i] * temp$;</p>
+<p>10: $sum = sum + square(temp)$;</p>
+<p>11: <strong>end for</strong></p>
+<p>12: $\sigma^{2} = sum / n$;</p>
+<p>13: $\theta_{0} = \theta_{0} + wSum; \theta_{1} = \theta_{1} + vSum; \theta_{2} = \theta_{2} + sSum$;</p>
+<p>14: <strong>end for</strong></p>
+<p>End</p>
+<p>we can obtain the following expressions:</p>
+<div class="formula">$$
+\frac {\partial \ln L}{\partial \theta_ {0}} = \frac {1}{\sigma^ {2}} \sum_ {i = 1} ^ {n} \left(d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)\right),
+$$</div>
+<div class="formula">$$
+\frac {\partial \ln L}{\partial \theta_ {1}} = \frac {1}{\sigma^ {2}} \sum_ {i = 1} ^ {n} v \left(x _ {i}\right) \left(d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)\right),
+$$</div>
+<div class="formula">$$
+\frac {\partial \ln L}{\partial \theta_ {2}} = \frac {1}{\sigma^ {2}} \sum_ {i = 1} ^ {n} s \left(x _ {i}\right) \left(d g _ {i} - \left(\theta_ {0} + \theta_ {1} v \left(x _ {i}\right) + \theta_ {2} s \left(x _ {i}\right)\right)\right).
+$$</div>
+<div class="formula">$$
+\theta_ {i} := \theta_ {i} + \frac {\partial \ln L}{\partial \theta_ {i}} s. t. i \in \{0, 1, 2 \}.
+$$</div>
+<p>The expression for updating the linear coefficients can be concisely expressed by:</p>
+<p>It is worth noting that the expression above is used for iterating dynamically, and the notation: = does not express the mathematical equality, but means that setting the value of $ \theta_{\mathrm{i}} $ in the left term to be the value of the right term. The procedure for learning the linear coefficients $ \theta_{0},\theta_{1},\theta_{2} $ and the variable $ \sigma^{2} $ is shown in Algorithm 1.</p>
+<p>We used 500 training samples containing 120 million scene points to train our linear model. There are 517 epochs in our case, and the best learning result is that $ \theta_{0}=0.121779 $ $ \theta_{1}=0.959710 $ $ \theta_{2}=-0.780245 $ $ \sigma=0.041337 $ . Once the values of the coefficients have been determined, they can be used for any single hazy image. These parameters will be used for restoring the scene depths of the hazy images in this paper.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<div>
+
+(c)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(d)
+
+</div>
+<div>
+
+Fig. 8. Refinement of the depth map. (a) The hazy image. (b) The raw depth map. (c) The depth map with scale $ r=15 $ . (d) The refined depth map.
+
+</div>
+<h2>D. Estimation of the Depth Information</h2>
+<p>As the relationship among the scene depth d, the brightness v and the saturation s has been established and the coefficients have been estimated, we can restore the depth map of a given input hazy image according to Equation (8). However, this model may fail to work in some particular situations. For instance, the white objects in an image are usually with high values of the brightness and low values of the saturation. Therefore, the proposed model tends to consider the scene objects with white color as being distant. Unfortunately, this misclassification will result in inaccurate estimation of the depth in some cases. As shown in Figure 8, the white geese in the first image are the regions for which the model can hardly handle, and these regions are wrongly estimated with high depth values in the depth map (see Figure 8(b)).</p>
+<p>To overcome this problem, we need to consider each pixel in the neighborhood. Based on the assumption that the scene depth is locally constant, we process the raw depth map by:</p>
+<div class="formula">$$
+d _ {r} (x) = \min _ {y \in \Omega_ {r} (x)} d (y),
+$$</div>
+<p>where $ \Omega_{r}(x) $ is an $ r\times r $ neighborhood centered at x, and $ d_{r} $ is the depth map with scale r. As shown in Figure 8(c), the new depth map $ d_{15} $ can well handle the geese regions. However, it is also obvious that the blocking artifacts appear in the image. To refine the depth map, we use the guided image filtering [43] to smooth the image. Figure 8(d) shows the final restored depth map of the hazy image. As can be seen, the blocking artifacts are suppressed effectively.</p>
+<p>In order to check the validity of the assumption, we collected a large database of outdoor hazy images from several well-known photo websites (e.g., Google Images, Photosig, Picasaweb and Flickr) and computed the scene depth map of each hazy image with its brightness and saturation components according to Equation (8) and Equation (21). Some of the results are shown in Figure 9. Figure 9(a) displays several outdoor hazy images, Figure 9(b) shows the corresponding estimated depth maps and Figure 9(c) gives</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 9. Example images and the calculated depth maps. (a) Outdoor hazy images. (b) The corresponding calculated depth maps. (c) Haze-free images and their calculated depth maps.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 10. Estimation of the atmospheric light. (a) Our recovered depth map and the brightest region. (b) Input hazy image. (c) The patch from which our method obtains the atmospheric light.
+
+</div>
+<p>the example haze-free images and their estimated depth maps. As can be seen, the restored depth maps have darker color in haze-free regions while having lighter color in dense-haze regions as expected. With the estimated depth map, the task of dehazing is no longer difficult.</p>
+<h2>V. SCENE RADIANCE RECOVERY</h2>
+<h2>A. Estimation of the Atmospheric Light</h2>
+<p>We have explained the main idea of estimating the atmospheric light in Section II. In this section, we describe the method in more detail. As the depth map of the input hazy image has been recovered, the distribution of the scene depth is known. Figure 10(a) shows the estimated depth map of a hazy image. Bright regions in the map stand for distant places. According to Equation (6), we pick the top 0.1 percent brightest pixels in the depth map, and select the pixel with highest intensity in the corresponding hazy image I among these brightest pixels as the atmospheric light A (see Figure 10(b) and Figure 10(c)).</p>
+<h2>B. Scene Radiance Recovery</h2>
+<p>Now that the depth of the scene d and the atmospheric light A are known, we can estimate the medium transmission t easily according to Equation (2) and recover the scene</p>
+<p>radiance J in Equation (1). For convenience, we rewrite Equation (1) as follows:</p>
+<div class="formula">$$
+\mathbf {J} (x) = \frac {\mathbf {I} (x) - \mathbf {A}}{t (x)} + \mathbf {A} = \frac {\mathbf {I} (x) - \mathbf {A}}{e ^ {- \beta d (x)}} + \mathbf {A}.
+$$</div>
+<p>For avoiding producing too much noise, we restrict the value of the transmission t(x) between 0.1 and 0.9. So the final function used for restoring the scene radiance J in the proposed method can be expressed by:</p>
+<div class="formula">$$
+\mathbf {J} (x) = \frac {\mathbf {I} (x) - \mathbf {A}}{\min \left\{\max \left\{e ^ {- \beta d (x)}, 0. 1 \right\}, 0. 9 \right\}} + \mathbf {A},
+$$</div>
+<p>where J is the haze-free image we want. Figures 12-13 show some final results of dehazing of the proposed method.</p>
+<p>Note that the scattering coefficient $ \beta $ , which can be regarded as a constant [55] in homogeneous regions, represents the ability of a unit volume of atmosphere to scatter light in all directions. In other words, $ \beta $ determines the intensity of dehazing indirectly. We illustrate this in Figure 11. Figure 11 (e-g) shows the restored transmission maps with different $ \beta $ , and Figure 11 (b-d) shows the corresponding dehazing results. As can be seen, on the one hand, a small $ \beta $ leads to small transmission, and the corresponding result remains still hazy in the distant regions (see Figure 11(b) and Figure 11(e)). On the other hand, a too large $ \beta $ may result in overestimation of the transmission (see Figure 11(d) and Figure 11(g)). Therefore, A moderate $ \beta $ is required when dealing with the images with dense-haze regions. In most cases, $ \beta = 1.0 $ is more than enough.</p>
+<h2>VI. EXPERIMENTS</h2>
+<p>In order to verify the effectiveness of the proposed dehazing method, we test it on various hazy images and compare with He et al.'s [29], Tarel et al.'s [46], Nishino et al.'s [49], and Meng et al.'s [50] methods. All the algorithms are implemented in the MatlabR2013a environment on a P4-3.3GHz PC with 6GB RAM. The parameters used in the proposed method are initialized as follows: $ r=1 5 $ $ \beta=1. 0 $ $ \theta_{0}=0. 1 2 1 7 7 9 $</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(c)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(d)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(e)
+
+</div>
+<div>
+
+(f)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(g)
+
+</div>
+<div>
+
+Fig. 11. Results with a different scattering coefficient $ \beta $ . (a) The hazy image. (b) The final result with $ \beta=0.5 $ . (c) The final result with $ \beta=0.8 $ (d) The final result with $ \beta=1.2 $ . (e) The restored transmission map with $ \beta=0.5 $ . (f) The restored transmission map with $ \beta=0.8 $ . (g) The restored transmission map with $ \beta=1.2 $
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(b)
+
+</div>
+<div>
+
+(c)
+
+</div>
+<div>
+
+(d)
+
+</div>
+<div>
+
+(e)
+
+</div>
+<div>
+
+Fig. 12. Qualitative comparison of different methods on real-world images. (a) The hazy images. (b) Tarel et al.'s results. (c) Nishino et al.'s results. (d) He et al.'s results. (e) Meng et al.'s results. (f) Our results.
+
+</div>
+<div>
+
+(f)
+
+</div>
+<p>$ \theta_{1}=0.959710 $ $ \theta_{2}=-0.780245 $ and $ \sigma=0.041337 $ . For fair comparison, the parameters used in the four popular dehazing methods are set to be optimal according to [29], [46], [49], and [50].</p>
+<h2>A. Qualitative Comparison on Real-World Images</h2>
+<p>As all the dehazing algorithms are able to get really good results by dehazing the general outdoor images, it is difficult to rank them visually. In order to compare them, we carry out the algorithms on some challenging images with large white or gray regions, since most existing dehazing algorithms are not sensitive to the white color.</p>
+<p>Figure 12 shows the qualitative comparison of results with the four state-of-the-art dehazing algorithms [29], [46], [49], [50] on challenging real-world images. Figure 12(a) depicts the hazy images to be dehazed. Figure 12(b-e) shows the results of Tarel et al. [46], Nishino et al. [49], He et al. [29], and Meng et al. [50], respectively. The results of the proposed algorithm are given in Figure 12(f). As shown in Figure 12(b), most of the haze is removed in Tarel's results, and the details of the scenes and objects are well restored. However, the results significantly suffer from</p>
+<p>over-enhancement (for instance, the sky region of the first image is much darker than it should be, and the faces of the women in the last image become brown). This is because Tarel's algorithm is based on He et al.'s algorithm which has an inherent problem of overestimating the transmission as discussed in [29]. Moreover, halo artifacts appear near the discontinuities in Figure 12(b) (see the mountain in the first image and the leaves of plant in the second image) due to that the "median of the median filter" used in [46] is not an edge-preserving filter. The results of Nishino et al. have a similar problem as Nishino et al.'s algorithm tends to over enhance the local contrast of the image. As we can observe in Figure 12(c), the restored images are oversaturated and distorted, especially in the third image (the color of the shirt is changed to dark).</p>
+<p>In contrast, the results of He et al. are much better visually (see Figure 12(d)). The dense haze in the distance can be well removed, and there are no halo artifacts. Nevertheless, color distortion still appears in the regions with white objects such as the shirt in the third image. The reason can be explained as follows: As the method of recovering the transmission used in [29] is based on the dark channel prior, the accuracy of the estimation strongly depends on the validity of the dark channel prior. Unfortunately, this prior is invalid when the</p></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 13. Results on stereo images where the ground truth solutions are known. (a) The hazy images. (b) Tarel et al.'s results. (c) Nishino et al.'s results. (d) He et al.'s results. (e) Meng et al.'s results. (f) Our results. (g) Ground truth.
+
+</div>
+<p>scene brightness is similar to the atmospheric light, and the estimated transmission is thus not reliable enough in some cases. In addition, the atmospheric light is also an important factor for calculating the transmission in [29]. Therefore, in order to obtain the correct transmission, an accurate estimation of the atmospheric light is required. However, the approach for estimating the atmospheric light proposed by He et al. has its limitation and the estimated result is an approximate value as discussed in [29]. For this reason, He et al.'s algorithm is prone to overestimating the transmission.</p>
+<p>Meng et al.'s results are close to those obtained by He et al. as displayed in Figure 12(e). This is due to the fact that, although Meng et al. improve the DCP approach [29] by adding a boundary constraint, it does not address the problem of ambiguity between the image color and haze.</p>
+<p>Compared with the results of the four algorithms, our results are free from oversaturation. As displayed in Figure 12(f), the sky and the cloud in the images are clear and the details of the mountains are enhanced moderately.</p>
+<h2>B. Qualitative Comparison on Synthetic Images</h2>
+<p>In Figure 13, the five algorithms including the proposed one are tested on the stereo images where the ground truth images are known. Figure 13(a) shows the hazy images which are synthesized from the haze-free images with known depth maps. The results of the five algorithms are shown in Figure 13(b-f). Figure 13(g) gives the ground truth images for comparison. These haze-free images and their corresponding ground truth depth maps are taken from the Middlebury stereo datasets [57] -[61]. It is obvious that Tarel et al.'s results are quite different from the ground truth images as the results are much darker (see the toy with red hair in the dolls image and the books in the books image in Figure 13(b)).</p>
+<p>By observing the images in Figure 13(c), we can find that Nishino et al.'s results have a similar problem. For example, the color of the toys in the dolls image is changed into yellow, and the color of background in the moebius image is darker. He et al.'s results are more similar to the ground truth images but still show some inaccuracies (see Figure 13(d)). Note that the background in the books image is darker than it should be. Similarly, Meng et al.'s results also suffer from over-enhancement as shown in Figure 13(e). It is obvious that the color of the mask in the cones image is far from that in Figure 13(g). In contrast, our results do not have the problem of oversaturation and maintain the original colors of the objects (see Figure 13(f)).</p>
+<h2>C. Quantitative Comparison</h2>
+<p>In order to quantitatively assess and rate the algorithms, we calculate the mean squares error (MSE) and the structural similarity (SSIM) [62] of the results in Figure 13 for comparison. The MSE of each result can be calculated by the following equation:</p>
+<div class="formula">$$
+e = \sqrt {\frac {1}{3 N}} \sum_ {c \in \{r , g , b \}} \| \mathbf {J} ^ {c} - \mathbf {G} ^ {c} \| ^ {2},
+$$</div>
+<p>where J is the dehazed image, G is the ground truth image, $ J^{c} $ represents a color channel of J, $ G^{c} $ represents a color channel of G, N is the number of pixels within the image G, and e is the MSE measuring the difference between the dehazed image J and the ground truth image G. Note that J and G have the same size since they are corresponding with the hazy image I. Given J and G, a low MSE represents that the dehazed result is satisfying while a high MSE means that the dehazing effect is not acceptable.</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><div>
+
+TABLE I
+
+</div>
+<div>
+
+TIME CONSUMPTION COMPARISON WITH HE et al. [29], TAREL et al. [46], NISHINO et al. [49], AND MENG et al. [50]
+
+</div>
+<table><tbody><tr><td>Image Resolution</td><td>He et al.’s method[29]</td><td>Tarel et al.’s method[46]</td><td>Nishino et al.’s method[49]</td><td>Meng et al.’s method[50]</td><td>Our method</td></tr><tr><td>441×450</td><td>9.866s</td><td>4.141s</td><td>91.661s</td><td>6.171s</td><td>1.420s</td></tr><tr><td>600×450</td><td>12.228s</td><td>8.229s</td><td>104.670s</td><td>4.468s</td><td>2.219s</td></tr><tr><td>1024×768</td><td>36.896s</td><td>69.294s</td><td>317.386s</td><td>10.231s</td><td>4.278s</td></tr><tr><td>1536×1024</td><td>73.571s</td><td>218.033s</td><td>649.722s</td><td>17.334s</td><td>9.636s</td></tr><tr><td>1803×1080</td><td>90.717s</td><td>351.139s</td><td>861.360s</td><td>21.567s</td><td>12.314s</td></tr></tbody></table>
+<div>
+
+Fig. 14. Mean squared error (MSE) of different algorithms.
+
+</div>
+<p>We further show the MSEs of the results produced by different algorithms in Figure 14. As can be seen, Nishino et al.'s results produce the highest MSEs overall. The high MSEs are mainly because of the over-enhancement as mentioned earlier. Tarel et al.'s results outperform Nishino et al.'s in the first three images while they perform worse in the books images. Meng et al.'s results rank third in terms of the total performance. The total MSE of He et al.'s results is 0.0167, which is more than twice smaller than the other three. In contrast, our method achieves the lowest MSEs in all cases.</p>
+<p>The structural similarity (SSIM) image quality assessment index [62] is introduced to evaluate the ability to preserve the structural information of the algorithms. A high SSIM represents high similarity between the dehazed image and the ground truth image, while a low SSIM conveys the opposite meaning. Figure 15 shows the SSIM of the results in Figure 13. The SSIMs of Nishona et al.'s results are all lower than 0.7 indicating that much structural information in the images has been lost. Tarel et al.'s SSIMs are similar to those of Meng et al., but neither of them can go to 0.8. It is obvious that the SSIMs of He et al. are much higher than the other three in the four images. Our results achieve the highest SSIMs outperforming the four algorithms.</p>
+<h2>D. Complexity</h2>
+<p>Given an image of size $ m\times n $ and radius $ r $ , the complexity of the proposed dehazing algorithm is only $ O(m\times n\times r) $ , when the linear coefficients $ \theta_{0},\theta_{1},\theta_{2} $ in Equation (8) are obtained. In Table I, we give the time consumption comparison with He et al. [29] (accelerated by the guided image filtering [43]), Tarel et al. [46], Nishino et al. [49], and Meng et al. [50].</p>
+<div>
+
+Fig. 15. Structural similarity (SSIM) of different algorithms.
+
+</div>
+<p>As we can see, our approach is much faster than others and achieves efficient processing even when the given hazy image is large. The high efficiency of the proposed approach mainly benefits from the fact that the linear model based on the color attenuation prior significantly simplifies the estimation of the scene depth and the transmission.</p>
+<h2>VII. DISCUSSIONS AND CONCLUSION</h2>
+<p>In this paper, we have proposed a novel linear color attenuation prior, based on the difference between the brightness and the saturation of the pixels within the hazy image. By creating a linear model for the scene depth of the hazy image with this simple but powerful prior and learning the parameters of the model using a supervised learning method, the depth information can be well recovered. By means of the depth map obtained by the proposed method, the scene radiance of the hazy image can be recovered easily. Experimental results show that the proposed approach achieves dramatically high efficiency and outstanding dehazing effects as well.</p>
+<p>Although we have found a way to model the scene depth with the brightness and the saturation of the hazy image, there is still a common problem to be solved. That is, the scattering coefficient $ \beta $ in the atmospheric scattering model cannot be regarded as a constant in inhomogeneous atmosphere conditions [55]. For example, a region which is kilometers away from the observer should have a very low value of $ \beta $ . Therefore, the dehazing algorithms which are based on the atmospheric scattering model are prone to underestimating the transmission in some cases. As almost all the existing single image dehazing algorithms are based on the constant- $ \beta $ assumption, a more flexible model is highly desired. To overcome this challenge, some more advanced physical models [63] can be taken into account. We leave this problem for our future research.</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><h2>REFERENCES</h2>
+<p>[1] G. A. Woodell, D. J. Jobson, Z.-U. Rahman, and G. Hines, "Advanced image processing of aerial imagery," Proc. SPIE, vol. 6246, p. 62460E, May 2006.</p>
+<p>[2] L. Shao, L. Liu, and X. Li, "Feature learning for image classification via multiobjective genetic programming," IEEE Trans. Neural Netw. Learn. Syst., vol. 25, no. 7, pp. 1359-1371, Jul. 2014.</p>
+<p>[3] F. Zhu and L. Shao, "Weakly-supervised cross-domain dictionary learning for visual recognition," Int. J. Comput. Vis., vol. 109, nos. 1-2, pp. 42-59, Aug. 2014.</p>
+<p>[4] Y. Luo, T. Liu, D. Tao, and C. Xu, "Decomposition-based transfer distance metric learning for image classification," IEEE Trans. Image Process., vol. 23, no. 9, pp. 3789-3801, Sep. 2014.</p>
+<p>[5] D. Tao, X. Li, X. Wu, and S. J. Maybank, "Geometric mean for subspace selection," IEEE Trans. Pattern Anal. Mach. Intell., vol. 31, no. 2, pp. 260-274, Feb. 2009.</p>
+<p>[6] J. Han et al., "Representing and retrieving video shots in human-centric brain imaging space," IEEE Trans. Image Process., vol. 22, no. 7, pp. 2723-2736, Jul. 2013.</p>
+<p>[7] J. Han, K. Ngan, M. Li, and H.-J. Zhang, "A memory learning framework for effective image retrieval," IEEE Trans. Image Process., vol. 14, no. 4, pp. 511-524, Apr. 2005.</p>
+<p>[8] D. Tao, X. Tang, X. Li, and X. Wu, "Asymmetric bagging and random subspace for support vector machines-based relevance feedback in image retrieval," IEEE Trans. Pattern Anal. Mach. Intell., vol. 28, no. 7, pp. 1088-1099, Jul. 2006.</p>
+<p>[9] J. Han, D. Zhang, G. Cheng, L. Guo, and J. Ren, "Object detection in optical remote sensing images based on weakly supervised learning and high-level feature learning," IEEE Trans. Geosci. Remote Sens., vol. 53, no. 6, pp. 3325-3337, Jun. 2015.</p>
+<p>[10] G. Cheng et al., "Object detection in remote sensing imagery using a discriminatively trained mixture model," ISPRS J. Photogramm. Remote Sens., vol. 85, pp. 32-43, Nov. 2013.</p>
+<p>[11] J. Han et al., "Efficient, simultaneous detection of multi-class geospatial targets based on visual saliency modeling and discriminative learning of sparse coding," ISPRS J. Photogramm. Remote Sens., vol. 89, pp. 37-48, Mar. 2014.</p>
+<p>[12] L. Liu and L. Shao, "Learning discriminative representations from RGB-D video data," in Proc. Int. Joint Conf. Artif. Intell., Beijing, China, 2013, pp. 1493-1500.</p>
+<p>[13] D. Tao, X. Li, X. Wu, and S. J. Maybank, "General tensor discriminant analysis and Gabor features for gait recognition," IEEE Trans. Pattern Anal. Mach. Intell., vol. 29, no. 10, pp. 1700-1715, Oct. 2007.</p>
+<p>[14] Z. Zhang and D. Tao, "Slow feature analysis for human action recognition," IEEE Trans. Pattern Anal. Mach. Intell., vol. 34, no. 3, pp. 436-450, Mar. 2012.</p>
+<p>[15] T. K. Kim, J. K. Paik, and B. S. Kang, "Contrast enhancement system using spatially adaptive histogram equalization with temporal filtering," IEEE Trans. Consum. Electron., vol. 44, no. 1, pp. 82-87, Feb. 1998.</p>
+<p>[16] J. A. Stark, "Adaptive image contrast enhancement using generalizations of histogram equalization," IEEE Trans. Image Process., vol. 9, no. 5, pp. 889-896, May 2000.</p>
+<p>[17] J.-Y. Kim, L.-S. Kim, and S.-H. Hwang, "An advanced contrast enhancement using partially overlapped sub-block histogram equalization," IEEE Trans. Circuits Syst. Video Technol., vol. 11, no. 4, pp. 475-484, Apr. 2001.</p>
+<p>[18] Y. Y. Schechner, S. G. Narasimhan, and S. K. Nayar, "Instant dehazing of images using polarization," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), 2001, pp. I-325-I-332.</p>
+<p>[19] S. Shwartz, E. Namer, and Y. Y. Schechner, "Blind haze separation," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), vol. 2. 2006, pp. 1984-1991.</p>
+<p>[20] Y. Y. Schechner, S. G. Narasimhan, and S. K. Nayar, "Polarization-based vision through haze," Appl. Opt., vol. 42, no. 3, pp. 511-525, 2003.</p>
+<p>[21] S. G. Narasimhan and S. K. Nayar, "Chromatic framework for vision in bad weather," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2000, pp. 598-605.</p>
+<p>[22] S. K. Nayar and S. G. Narasimhan, "Vision in bad weather," in Proc. IEEE Int. Conf. Comput. Vis. (ICCV), vol. 2. Sep. 1999, pp. 820-827.</p>
+<p>[23] S. G. Narasimhan and S. K. Nayar, "Contrast restoration of weather degraded images," IEEE Trans. Pattern Anal. Mach. Intell., vol. 25, no. 6, pp. 713-724, Jun. 2003.</p>
+<p>[24] S. G. Narasimhan and S. K. Nayar, "Interactive (de) weathering of an image using physical models," in Proc. IEEE Workshop Color Photometric Methods Comput. Vis., vol. 6. France, 2003, p. 1.</p>
+<p>[25] J. Kopf et al., "Deep photo: Model-based photograph enhancement and viewing," ACM Trans. Graph., vol. 27, no. 5, p. 116, Dec. 2008.</p>
+<p>[27] R. Fattal, "Single image dehazing," ACM Trans. Graph., vol. 27, no. 3, p. 72, Aug. 2008.</p>
+<p>[26] R. T. Tan, "Visibility in bad weather from a single image," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2008, pp. 1-8.</p>
+<p>[28] P. S. Chavez, Jr., "An improved dark-object subtraction technique for atmospheric scattering correction of multispectral data," Remote Sens. Environ., vol. 24, no. 3, pp. 459-479, Apr. 1988.</p>
+<p>[29] K. He, J. Sun, and X. Tang, "Single image haze removal using dark channel prior," IEEE Trans. Pattern Anal. Mach. Intell., vol. 33, no. 12, pp. 2341-2353, Dec. 2011.</p>
+<p>[30] S.-C. Pei and T.-Y. Lee, "Nighttime haze removal using color transfer pre-processing and dark channel prior," in Proc. 19th IEEE Conf. Image Process. (ICIP), Sep./Oct. 2012, pp. 957-960.</p>
+<p>[31] K. B. Gibson, D. T. Vo, and T. Q. Nguyen, "An investigation of dehazing effects on image and video coding," IEEE Trans. Image Process., vol. 12, no. 2, pp. 662-673, Feb. 2012.</p>
+<p>[32] J. Yu, C. Xiao, and D. Li, "Physics-based fast single image fog removal," in Proc. IEEE 10th Int. Conf. Signal Process. (ICSP), Oct. 2010, pp. 1048-1052.</p>
+<p>[33] B. Xie, F. Guo, and Z. Cai, "Improved single image dehazing using dark channel prior and multi-scale retinex," in Proc. Int. Conf. Intell. Syst. Design Eng. Appl., Oct. 2010, pp. 848-851.</p>
+<p>[34] Q. Zhu, S. Yang, P. A. Heng, and X. Li, "An adaptive and effective single image dehazing algorithm based on dark channel prior," in Proc. IEEE Conf. Robot. Biomimetics (ROBIO), Dec. 2013, pp. 1796-1800.</p>
+<p>[35] C. Xiao and J. Gan, "Fast image dehazing using guided joint bilateral filter," Vis. Comput., vol. 28, nos. 6-8, pp. 713-721, Jun. 2012.</p>
+<p>[36] Y. Xiang, R. R. Sahay, and M. S. Kankanhalli, "Hazy image enhancement based on the full-saturation assumption," in Proc. IEEE Conf. Multimedia Expo Workshops (ICMEW), Jul. 2013, pp. 1-4.</p>
+<p>[37] C. Tomasi and R. Manduchi, "Bilateral filtering for gray and color images," in Proc. 6th Int. Conf. Comput. Vis. (ICCV), Jan. 1998, pp. 839-846.</p>
+<p>[38] S. Paris and F. Durand, "A fast approximation of the bilateral filter using a signal processing approach," in Proc. Eur. Conf. Comput. Vis., 2006, pp. 568-580.</p>
+<p>[39] F. Porikli, "Constant time O(1) bilateral filtering," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2008, pp. 1-8.</p>
+<p>[40] Q. Yang, K.-H. Tan, and N. Ahuja, "Real-time O(1) bilateral filtering," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2009, pp. 557-564.</p>
+<p>[41] A. Adams, N. Gelfand, J. Dolson, and M. Levoy, "Gaussian KD-trees for fast high-dimensional filtering," in Proc. ACM SIGGRAPH, 2009, pp. 21:1-21:12.</p>
+<p>[42] A. Adams, J. Baek, and M. A. Davis, "Fast high-dimensional filtering using the permutohedral lattice," Comput. Graph. Forum, vol. 29, no. 2, pp. 753-762, May 2010.</p>
+<p>[43] K. He, J. Sun, and X. Tang, "Guided image filtering," IEEE Trans. Pattern Anal. Mach. Intell., vol. 35, no. 6, pp. 1397-1409, Jun. 2013.</p>
+<p>[44] A. Levin, D. Lischinski, and Y. Weiss, "A closed-form solution to natural image matting," IEEE Trans. Pattern Anal. Mach. Intell., vol. 30, no. 2, pp. 228-242, Feb. 2008.</p>
+<p>[45] J.-P. Tarel and N. Hautiere, "Fast visibility restoration from a single color or gray level image," in Proc. IEEE 12th Int. Conf. Comput. Vis. (ICCV), Sep./Oct. 2009, pp. 2201-2208.</p>
+<p>[46] J.-P. Tarel, N. Hautière, L. Caraffa, A. Cord, H. Halmaoui, and D. Gruyer, "Vision enhancement in homogeneous and heterogeneous fog," IEEE Intell. Transp. Syst. Mag., vol. 4, no. 2, pp. 6-20, Apr. 2012.</p>
+<p>[47] C. O. Ancuti, C. Ancuti, C. Hermans, and P. Bekaert, "A fast semiinverse approach to detect and remove the haze from a single image," in Proc. Asian Conf. Comput. Vis. (ACCV), 2010, pp. 501-514.</p>
+<p>[48] L. Kratz and K. Nishino, "Factorizing scene albedo and depth from a single foggy image," in Proc. IEEE 12th Int. Conf. Comput. Vis. (ICCV), Sep./Oct. 2009, pp. 1701-1708.</p>
+<p>[49] K. Nishino, L. Kratz, and S. Lombardi, "Bayesian defogging," Int. J. Comput. Vis., vol. 98, no. 3, pp. 263-278, Jul. 2012.</p>
+<p>[50] G. F. Meng, Y. Wang, J. Duan, S. Xiang, and C. Pan, "Efficient image dehazing with boundary constraint and contextual regularization," in Proc. IEEE Int. Conf. Comput. Vis. (ICCV), Dec. 2013, pp. 617-624.</p>
+<p>[51] K. Tang, J. Yang, and J. Wang, "Investigating haze-relevant features in a learning framework for image dehazing," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2014, pp. 2995-3002.</p>
+<p>[52] L. Breiman, "Random forests," Mach. Learn., vol. 45, no. 1, pp. 5-32, Oct. 2001.</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>[53] Q. Zhu, J. Mai, and L. Shao, "Single image dehazing using color attenuation prior," in Proc. Brit. Mach. Vis. Conf. (BMVC), Nottingham, U.K., 2014, pp. 1-10.</p>
+<p>[54] E. J. McCartney, Optics of the Atmosphere: Scattering by Molecules and Particles. New York, NY, USA: Wiley, 1976.</p>
+<p>[55] S. G. Narasimhan and S. K. Nayar, "Vision and the atmosphere," Int. J. Comput. Vis., vol. 48, no. 3, pp. 233-254, Jul. 2002.</p>
+<p>[56] S. G. Narasimhan and S. K. Nayar, "Removing weather effects from monochrome images," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), 2001, pp. II-186-II-193.</p>
+<p>[57] D. Scharstein and R. Szeliski, "A taxonomy and evaluation of dense two-frame stereo correspondence algorithms," Int. J. Comput. Vis., vol. 47, nos. 1-3, pp. 7-42, Apr. 2002.</p>
+<p>[58] D. Scharstein and R. Szeliski, "High-accuracy stereo depth maps using structured light," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2003, pp. I-195-I-202.</p>
+<p>[59] D. Scharstein and C. Pal, "Learning conditional random fields for stereo," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2007, pp. 1-8.</p>
+<p>[60] H. Hirschmüller and D. Scharstein, "Evaluation of cost functions for stereo matching," in Proc. IEEE Conf. Comput. Vis. Pattern Recognit. (CVPR), Jun. 2007, pp. 1-8.</p>
+<p>[61] D. Scharstein et al., "High-resolution stereo datasets with subpixel-accurate ground truth," in Proc. German Conf. Pattern Recognit. (GCPR), 2014, pp. 31-42.</p>
+<p>[62] Z. Wang, A. C. Bovik, H. R. Sheikh, and E. P. Simoncelli, "Image quality assessment: From error visibility to structural similarity," IEEE Trans. Image Process., vol. 13, no. 4, pp. 600-612, Apr. 2004.</p>
+<p>[63] A. J. Preetham, P. Shirley, and B. Smits, "A practical analytic model for daylight," in Proc. ACM Special Interest Group Comput. Graph. (SIGGRAPH), 1999, pp. 91-100.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Qingsong Zhu (M'12) received the B.Eng and M.Sc. degrees in computer science from the University of Science and Technology of China, Hefei, China. He is currently an Associate Professor and a Principal Investigator with the Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, Shenzhen, China. His research interests include computer vision, image/video signal processing, statistical pattern recognition, machine learning, brain and cognitive sciences, and image-guided minimally invasive</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>neurosurgery robotic systems. He has authored or co-authored over 100 academic papers in well-known journals and conference proceedings and over 50 invention patents. He was a recipient of the best paper award at the IEEE International Conference on Robotics and Biomimetics in 2013. He was the Area Chair of the International Conference on Intelligent Computing in 2012, and the Session Chair of the International Conference on Acoustics, Speech and Signal Processing in 2013 and International Conference on Robotics and Biomimetics in 2013.</p>
+<p>Jiaming Mai received the B.Eng. degree in software engineering from South China Agricultural University, where he is currently pursuing the M.Eng. degree. He is also a Visiting Student with the Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences. His research interests include computer vision, image processing, pattern recognition, and machine learning.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Ling Shao (M'09-SM'10) is currently a Full Professor with the Department of Computer Science and Digital Technologies, Northumbria University, Newcastle upon Tyne, U.K., and an Advanced Visiting Fellow with The University of Sheffield, U.K. He has authored or co-authored over 160 academic papers in well-known journals/ conferences. His current research interests include computer vision, image/video processing, pattern recognition, and machine learning. He is an Associate Editor of the IEEE TRANSACTIONS ON</p>
+<p>IMAGE PROCESSING, the IEEE TRANSACTIONS ON CYBERNETICS, and several other journals. He is also a fellow of the British Computer Society and the Institution of Engineering and Technology.</p></section></main></body></html>

@@ -1,0 +1,695 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/jyx/72/727839b068cf1ade38774864476266432a7aafc6.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Surrogate-Assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-Objective Optimization</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>A Surrogate-Assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-Objective Optimization</h1><p class="source">2016 · <a href="https://doi.org/10.1109/tevc.2016.2622301">https://doi.org/10.1109/tevc.2016.2622301</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/jyx/72/727839b068cf1ade38774864476266432a7aafc6.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>This is a self-archived version of an original article. This version may differ from the original in pagination and typographic details. Author(s): Chugh, Tinkle; Jin, Yaochu; Miettinen, Kaisa; Hakanen, Jussi; Sindhya, Karthik</p>
+<p>Title: A Surrogate-assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-objective Optimization</p>
+<p>Year: 2018 Version: Accepted version (Final draft)</p>
+<p>Copyright: © 2016 IEEE. Personal use of this material is permitted. Permission from IEEE must be obtained for a Rights: Rights url: Please cite the original version: Chugh, T., Jin, Y., Miettinen, K., Hakanen, J., &amp; Sindhya, K. (2018). A Surrogate-assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-objective Optimization. IEEE Transactions on Evolutionary Computation, 22(1), 129-142. https://doi.org/10.1109/TEVC.2016.2622301</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>A Surrogate-assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-objective Optimization Tinkle Chugh1 , Yaochu Jin 1,2 , Kaisa Miettinen1 , Karthik Sindhya1 , and Jussi Hakanen1 1</p>
+<p>University of Jyvaskyla, Faculty of Information Technology, P.O. Box 35 (Agora), FI-40014 University of Jyvaskyla, Finland 2 Department of Computer Science, University of Surrey, Guildford, United Kingdom</p>
+<p>Abstract We propose a surrogate-assisted reference vector guided evolutionary algorithm for computationally expensive optimization problems with more than three objectives. The proposed algorithm is based on a recently developed evolutionary algorithm for many-objective optimization that relies on a set of adaptive reference vectors for selection. The proposed surrogateassisted evolutionary algorithm uses Kriging to approximate each objective function to reduce the computational cost. In managing the Kriging models, the algorithm focuses on the balance of diversity and convergence by making use of the uncertainty information in the approximated objective values given by the Kriging models, the distribution of the reference vectors as well as the location of the individuals. In addition, we design a strategy for choosing data for training the Kriging model to limit the computation time without impairing the approximation accuracy. Empirical results on comparing the new algorithm with the state-of-the-art surrogate-assisted evolutionary algorithms on a number of benchmark problems demonstrate the competitiveness of the proposed algorithm.</p>
+<p>Keywords: multiobjective optimization, reference vectors, surrogate-assisted evolutionary algorithms, model management, Kriging, computational cost</p>
+<p>1</p>
+<p>Introduction</p>
+<p>Many industrial optimization problems have multiple objectives to be optimized and these objectives are typically conflicting in nature, i.e. improvement in one objective will lead to deterioration of at least one of the other objectives. Such problems are known as multiobjective optimization problems (MOPs). In this paper, we consider MOPs in the following form : minimize {f1 (x), . . . , fk (x)} subject to x ∈ S</p>
+<p>(1)</p>
+<p>with k(≥ 2) objective functions fi (x): S → &lt;. The vector of objective function values is denoted by f (x) = (f1 (x), . . . , fk (x))T . The (nonempty) feasible space S is a subset of the decision space 1</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>&lt;n and consists of decision vectors x = (x1 , . . . , xn )T that satisfy all the constraints. The image of the feasible region S in the objective space &lt;k is called the feasible objective set denoted by Z. The elements of Z are called feasible objective vectors denoted by f (x) or z = (z1 , . . . , zk )T , where zi = fi (x), i = 1, . . . , k, are the objective function values. As the objectives are conflicting, there typically does not exist a single optimal solution, but multiple so-called Pareto optimal solutions. The set of all optimal solutions in the objective space is called the Pareto front and in the decision space the Pareto set. A large number of optimization methods have been reported in the literature. These methods can be classified into two main different fields, namely, multiple criteria decision making (MCDM) [33] and evolutionary multiobjective optimization (EMO) [10, 13]. Methods either find a representative set of Pareto optimal solutions or the most preferred solution for a decision maker and they differ in the way the solutions are obtained. For instance, in the MCDM community, an MOP is often scalarized into a single objective optimization problem. Moreover, a decision maker is usually involved in the solution process to identify preferred solutions. On the other hand, EMO algorithms work with a population of candidate solutions and often aim to find a set of solutions representing the whole Pareto front. The decision maker is involved usually after a set of Pareto optimal solution is found [42]. Evolutionary algorithms (EAs) have become popular in past decades due to several advantages. For example, they have the ability to handle different kinds of decision variables e.g. binary, integer, real or mixed and they do not assume any convexity or differentiability of objective functions and/or constraints involved. Despite of these advantages, EAs are often criticized because of slow convergence and a large number of function evaluations needed before an acceptable solution can be found. For instance, in aerodynamic optimization, one function evaluation involving computational fluid dynamics simulations may take substantial amount of time and it will become computationally prohibitive to use an EA to solve aerodynamic optimization problems. One of the popular approaches to reduce computation time in evolutionary optimization is to introduce approximations, especially function approximation. Computational models for functional approximation are often known as surrogates and EAs using objective values estimated by surrogates are often referred to as surrogate-assisted evolutionary algorithm (SAEAs). A surrogate is also known as a metamodel in the literature, which can in part replace the computationally expensive objective functions. For more details about SAEAs, see [9, 24, 43]. Although numerous algorithms have been proposed in using surrogates in an EA, many challenges remain. One is the choice of the surrogate, as different types of surrogate techniques exist in the literature, e.g. Kriging, neural networks, support vector regression and polynomial approximation. Nevertheless, there is no simple rule for choosing the right type of surrogates for approximating the given computationally expensive objective or constraint functions. A second challenge is how to use a surrogate, i.e. what to approximate using the surrogate. The most conventional way is to approximate the objective or constraint functions. In addition, a surrogate can be used to estimate the rank of individuals [31], or some other quality measure, e.g. distance to the nondominated solutions [38, 39, 40], or hypervolume [2]. The third challenge is the computational cost for constructing the surrogate, which is often neglected in SAEAs. In practical, training a surrogate may take a substantial amount of time, and the main aim of reducing computation time will be jeopardized. The fourth challenge is how to update the surrogate i.e. how to choose individuals in the current population to be re-evaluated using the original functions. Different ways exist in the literature for selecting the individuals, e.g. selecting a set of best solutions [25] or nondominated solutions [17] according to the surrogate and selecting a set of representative solutions [27]. If the Kriging model is used, one can select solutions that maximize the expected improvement [47], the probability of improvement [12] and hypervolume improvement [18]. Selection of individuals to be re-evaluated 2</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>is also called updating criterion or infilling criterion. The fifth challenge is to determine when the surrogate needs to be updated. For instance, it may be possible that a surrogate is accurate enough and does not need to be updated even if new training samples are available. In SAEAs, which individuals are to be re-evaluated using the original objective functions, how to update the surrogate and when to update the surrogate are referred to as model management, which is also known as evolution control [26]. In [26], two methods were mentioned for managing the surrogate, i.e., fixed evolution control and adaptive evolution control. In fixed evolution control, updating the surrogate is based on a prefixed criterion, while in adaptive evolution control, a surrogate is updated based on its performance. As pointed out in [9], little work has been reported on using SAEAs for solving computationally expensive problems having more than three objectives. During the years 2008-2015, only three algorithms [6, 38, 41] have been tested on multi-objective benchmark problems with more than three objectives. While many industrial problems, e.g., optimization of the controller of a hybrid car [36], involve more than three computationally expensive objectives, surrogate-assisted evolutionary optimization of many-objective problems has not attracted much attention in the evolutionary computation community and SAEAs developed so far cannot be directly extended to many-objective optimization. Therefore, our work is an effort to fill this gap. Apart from the challenges resulting from the large number of objectives, it is notoriously difficult to achieve high-quality surrogates for large scale optimization problems due to the curse of dimensionality. For this reason, the number of decision variables SAEAs have handled is by far up to 50. According to a recent survey [9], only seven SAEAs have been tested on optimization problems with more than 20 decision variables and six of them were benchmarks. Note that SAEAs using neural networks as the surrogate were tested on more than 20 variables, while SAEAs using Kriging models as the surrogate have been used to solve problems with up to eight decision variables. This can be attributed to the fact that the computational time for training the Kriging model will become too long when the number of training samples increases [35]. This paper focuses on developing an efficient SAEA for solving computationally expensive manyobjective optimization problems. One of the major reasons limiting the applicability of existing algorithms to many-objective optimization is the lack of an efficient surrogate management method suited for the evolutionary algorithm used. In SAEAs when managing the surrogates, individuals should be selected by taking into account of both convergence and diversity. To select such individuals, surrogates need to be seamlessly embedded into the evolutionary algorithm. Most existing SAEAs are dominance based and thus are not well suited for handling many objectives. Therefore, the major contribution of the paper is to propose an efficient algorithm to manage the surrogates for handling a large number of objectives. To this end, we adopt the reference vector guided evolutionary algorithm (RVEA) [8] for many-objective optimization to be used as an evolutionary algorithm. Two sets of reference vectors adaptive and fixed, together with uncertainty information from the Kriging models as well as the location of the individuals are exploited for surrogate management. To limit the computation time for training the Kriging models, a strategy for choosing training samples is proposed so that the maximum number of training data is fixed. The rest of the paper is organized as follows. In Section 2, we provide a relatively detailed description of RVEA as well as Kriging models so that the paper is self-contained. The Kriging assisted RVEA, called K-RVEA is introduced in Section 3. Section 4 presents the numerical results of K-RVEA on benchmark problems and compared them with a few state-of-the-art SAEAs. Finally, conclusions are drawn and future work briefly discussed in Section 5.</p>
+<p>3</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>2</p>
+<p>Background</p>
+<p>In this section, we first summarize main components of RVEA, which we use as the underlying evolutionary algorithm. Next, we present a brief description of Kriging, including a discussion about its advantages and disadvantages over other surrogate models.</p>
+<p>2.1</p>
+<p>Reference vector guided evolutionary algorithm</p>
+<p>Two major difficulties in solving problems with high number of objectives are convergence to the Pareto front and maintaining a good diversity between solutions. Several evolutionary algorithms have been proposed for solving many-objective optimization problems, by, for instance, using a revised dominance relationship, decomposing the multi-objective optimization into several single objective optimization problems, an indicator-based objective function, or using reference points. For more details about these algorithms and challenges in solving problems with more than three objectives, see [23, 29, 45]. RVEA is an EMO algorithm most recently developed for many-objective optimization [8]. While MOEA/D [50] and NSGA-III [14] use a set of weights and reference points, respectively, RVEA adopts a set of reference vectors. The main difference between RVEA and the MOEA/D and NSGAIII lies in its selection strategy. In RVEA, selection is based on a criterion known as angle penalized distance (APD), which is used to manage both convergence and diversity. It has been shown [8] that APD is better scalable to the increase in the number of objectives in maintaining a balance between convergence and diversity. APD relies on a set of reference vectors, which partitions the objective space into a number of subspaces, where selection of individuals is performed independently. The main components of RVEA are presented in Algorithm 1. Algorithm 1 RVEA Input: t max = maximum number of generations; N = number of reference vectors; V0 = {v01 , v02 , . . . v0N } a set of unit reference vectors; Output: nondominated solutions from population Ptmax 1: Create an initial population P0 of size N randomly and set generation counter t = 0 2: while t &lt; tmax do 3: Generate offspring Qt 4: Combine parent and offspring populations, Lt = Pt ∪ Qt 5: Select parents (Pt+1 ) for the next generation 6: Update reference vectors (Vt+1 ) 7: end while RVEA uses elitism and offspring generation strategies similar to other state-of-the-art EMO algorithms such as NSGA-II [15] and NSGA-III [14]. RVEA distinguishes itself with NSGA-III in its selection strategy and the adaptation of reference vectors, which are Steps 5 and 6 in Algorithm 1. In the following, we present the four main components of RVEA, i.e., generation of reference vectors, assignment of individuals to reference vectors, selection and adaptation of reference vectors. 2.1.1</p>
+<p>Generation of reference vectors</p>
+<p>RVEA uses a set of reference vectors in the objective space to guide the search process. To generate a uniformly distributed set of reference vectors, first a set of uniformly distributed reference points</p>
+<p>4</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>1</p>
+<p>0.8</p>
+<p>f2</p>
+<p>0.6</p>
+<p>0.4</p>
+<p>0.2</p>
+<p>0 0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>1</p>
+<p>f1</p>
+<p>Figure 1: An illustrative example of reference vectors for a biobjective optimization problem. (p) is generated on a unit hyperplane using the canonical simplex-lattice design method [11, 7]. ( pi = (p1i , p2i , . . . , pki ), 0 1 (2) Pk j pji = H , H,... H j=1 pi = 1 H ,</p>
+<p>where i = 1, 2, . . . , N with N being the number of uniformly distributed points, k is the number of objectives and H is a positive integer used in simplex-lattice design. An example is shown in Figure 1 for a biobjective optimization problem, where the dots represent the reference points generated on a unit hyperplane. The corresponding reference vector is then obtained by projecting the reference points from the hyperplane to a hypersphere vi =</p>
+<p>pi . ||pi ||</p>
+<p>(3)</p>
+<p>where ||pi || represents the L2 -norm of pi . As a result, these reference vectors partition the objective space into a number of subspaces. In the next subsection, we describe how the individuals in a population are assigned to these reference vectors and how the population is partitioned into different subpopulations. 2.1.2</p>
+<p>Assignment of individuals to reference vectors</p>
+<p>After the generation of the reference vectors, individuals are assigned to them as follows. First, ¯ objective values of all individuals at the current generation are are translated, i.e. fij = fij −fi∗ , where fij represents the objective value of fi for the j th individual and fi∗ the minimum objective values of fi at the current generation. We denote the translated objective vector by f¯ = (f¯1 , f¯2 , . . . , f¯k ). Translation of objective functions ensures that the initial point of reference vectors is always the origin and all the translated objective values are inside the positive orthant. After the translation, the acute angle is measured between an individual and all the reference vectors. For instance, let us consider the situation shown in Figure 2, with two reference vectors vi and vi+1 , and three individual f¯1 , f¯2 and f¯3 . As the angle θi1 between the individual f¯1 and the reference vector vi is less than 1 the angle θi+1 between the individual and the other reference vector vi+1 , this individual is assigned to the first reference vector vi . Similarly, f¯2 and f¯3 will be assigned to reference vector vi and vi+1 , respectively. Therefore, an individual is assigned to a reference vectors if and only if the angle between it and the reference vector is minimum among all reference vectors. In this way, assignment of individuals to the reference vectors partitions the population into subpopulations. Other notations in Figure 2 are used in the next subsection. 5</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>𝒗𝒊</p>
+<p>̅̅̅ 𝒇𝟐</p>
+<p>̅̅̅𝟏 𝒇</p>
+<p>𝒗𝒊+𝟏</p>
+<p>𝜽𝟏𝒊 𝜽𝟐𝒊</p>
+<p>̅̅̅ 𝒇𝟑</p>
+<p>𝜽𝟐𝒊+𝟏</p>
+<p>𝜽𝟑𝒊+𝟏</p>
+<p>𝜽𝟏𝒊+𝟏 𝜸𝒗</p>
+<p>𝜽𝟑𝒊</p>
+<p>Figure 2: An illustration for assignment of individuals to a reference vector assignment and calculation of the selection criteria. 2.1.3</p>
+<p>Selection mechanism in each subpopulation</p>
+<p>After the generation of reference vectors and the assignment of individuals them, one individual is selected from each subpopulation (Step 5 in Algorithm 1). The selection criterion consists of two subcriteria that are meant for managing convergence and diversity, respectively. Convergence is taken care by the distance between the translated objective vector and the origin. As selection is performed in each subpopulation independently, let us take the subpopulation corresponding to reference vector vi . In the illustrative example shown in Figure 2, two individuals f¯1 and f¯2 are assigned to the reference vector vi and the distance between them and the origin is denoted by ||f¯1 || and ||f¯2 ||, respectively. As the aim is to find solutions closer to the origin, individual f¯1 is preferred over individual f¯2 and will therefore be selected for this subpopulation. In RVEA, diversity is accounted by the angle between the translated objective vector and the reference vector the individual is assigned to. The individual with the smallest angle is preferred over other individuals. For instance, for reference vector vi in Figure 2, individual f¯1 with the angle θi1 is preferred over individual f¯2 as θi1 &lt; θi2 . To combine the two subcriteria for convergence and diversity, the following angle penalized distance (APD) is defined: dj = (1 + P (θj )) · ||f¯j ||,</p>
+<p>(4)</p>
+<p>θj , γv</p>
+<p>(5)</p>
+<p>where ||f¯j || is the distance from the translated objective vector corresponding to the j th individual to the origin, and θj is the angle between the j th individual and the reference vector it is assigned to. In APD, P (θj ) is the penalty function defined as follows: P (θi ) = k · (</p>
+<p>t tmax</p>
+<p>)α ·</p>
+<p>where γv is defined as the smallest angle between the reference vectors vi and its closest neighboring reference vector vj i.e. γv = mini∈{1,...,N },i6=j hvi , vj i. The angle γv is used to normalize the angles and is important when the distribution of the reference vectors is either too dense or too sparse. As highly dense or sparse reference vectors may generate a very small or a very large angle between the individual and the reference vector, normalization of the angle can be helpful to alleviate this problem. Parameter α is used to change the rate of the penalty function P (θ). The rate of the 6</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>penalty function is used to emphasize convergence at the early stage and diversity at the later stage of the evolutionary search process. For instance, at the early stage of solution process, convergence is preferred to push the individuals closer to the Pareto front. Once individuals have converged to the Pareto front, diversity is then preferred by distributing individuals along the Pareto front. Therefore, the rate of the penalty function depends on the current generation number t, the maximum number of generations tmax and parameter α used in (5). As careful empirical studies for setting the parameter α have been performed in [8], we use the same parameter setting in this work. After calculating APD for all individuals in each subpopulation, one individual with the minimum APD value is selected from each subpopulation for the next generation. 2.1.4</p>
+<p>Adaptation of reference vectors</p>
+<p>In order to find a set of uniformly distributed nondominated individuals as close to the Pareto front as possible. For some optimization problems, e.g. those in the WFG test suite [22] where objective functions are scaled to different ranges, a uniformly distributed set of reference vectors is not best suited for getting uniformly distributed individuals. To tackle this issue, one possible solution is to adapt the reference vectors. In RVEA, reference vectors are adaptive. In other words, they change their position according to the location of individuals in the objective space. The adaptation of reference vectors for the next generation (vt+1 ) is applied in the following way: vt+1,i =</p>
+<p>v0,i ◦ (ztmax − ztmin ) , ||v0,i ◦ (ztmax − ztmin )||</p>
+<p>(6)</p>
+<p>where ◦ represents the Hadamard product [1] that multiplies two matrices of the same size elementwise, v0,i is the uniformly generated reference vector in the initialization phase in RVEA and ztmax and ztmin are the maximum and minimum values of each objective function in the tth generation, respectively. The adaptation of reference vectors ensures that a set of uniformly distributed nondominated individuals will be obtained even for optimization problems whose objective functions have different ranges.</p>
+<p>2.2</p>
+<p>Kriging</p>
+<p>We use Kriging, also known as Gaussian process to approximate each objective function. As per the survey on computationally expensive multiobjective optimization problems [9], Kriging has been frequently used for surrogate techniques, mainly because it is able to deliver uncertainty information of the approximated values, which is very useful in managing surrogates [24]. In this work, we use uncertainty information from Kriging models to update the surrogates, which will be further discussed in the next section. Kriging approximates the objective function value of an individual x as y(x) = µ(x) + (x),</p>
+<p>(7)</p>
+<p>where µ is the prediction of a regression model F (β, x) i.e. µ = F β and (x) is a Gaussian distribution of zero mean and the standard deviation σ (x) = N (0, σ 2 ).</p>
+<p>(8)</p>
+<p>The regression model F (β, x) = β1 g1 (x) + . . . + βl gl (x) is a linear combination of l chosen functions with coefficients β.</p>
+<p>7</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>To get an approximated value from (7) for any new input, Kriging model needs to be trained using  T training samples, which are the pre-evaluated individuals in SAEAs. Let matrix X = x1 , . . . , xNI represent the training data in the decision space with their corresponding objective vector y =  1 T y , . . . , y NI , where i = 1, 2, . . . , NI represents the number of samples or the size of the training data. One should note that the size of X is NI × n, where n is the number of decision variables, i.e., xi = [x1 , . . . , xn ] for i = 1, . . . , NI . For any two arbitrary inputs xi and xj , the covariance between two random processes (xi ) and j (x ) is defined by cov[(xi ), (xj )] = σ 2 R([R(xi , xj )]), (9) where R is the correlation matrix of size NI × NI  R(x1 , x2 ) · · ·  .. .. R= . . NI</p>
+<p>R(x</p>
+<p>1</p>
+<p>,x ) ···</p>
+<p> R(x1 , xNI )  ..  .</p>
+<p>R(x</p>
+<p>NI</p>
+<p>NI</p>
+<p>,x</p>
+<p>(10)</p>
+<p>)</p>
+<p>and R(xi , xj ) is the correlation function between (xi ) and (xj ). The commonly used correlation function is n X R(xi , xj ) = exp(− θk |xik − xjk |2 ), (11) k=1</p>
+<p>where θi , i = 1, . . . , NI denote the hyperparameters. For a new input x̄, an approximated value from (7) can be written as ȳ = β + rT (x̄)R−1 (y − F β),</p>
+<p>(12)</p>
+<p>where y contains the values of given NI individuals,r(x̄) is the correlation vector of size NI between the new input x̄ and the training data x1 , . . . , xNI i.e.   rT (x̄) = R(x̄, x1 ), . . . , R(x̄, xNI )T .</p>
+<p>(13)</p>
+<p>To obtain a new approximated value ȳ, we need to specify coefficients β and hyperparameters θ. Equation (12) has the generalized least square solution, β = (F T R−1 F )−1 F T R−1 y</p>
+<p>(14)</p>
+<p>and the estimated variance σ 2 is given by σ2 =</p>
+<p>1 (y − F β)T R−1 (y − F β). NI</p>
+<p>(15)</p>
+<p>Values of θ are obtained by maximizing the likelihood function 1 ψ(θ) = − (NI ln σ 2 + ln det(R)) 2</p>
+<p>(16)</p>
+<p>where det(R) is the determinant of the correlation matrix R. After getting hyperparameters θ, coefficients β and the variance σ 2 are calculated from (14) and (15), respectively, which are further used to approximate the objective function value from (12). While Kriging is a very attractive surrogate model due to its ability to deliver uncertainty information, it also suffers from potentially serious weaknesses resulting from the computational 8</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>complexity for training surrogates. As indicated in [20], the computational complexity of training Kriging is O(n3 ), where n is the number of training samples. The issue of high computational complexity will become worse if the hyperparameters θ are determined by maximize the likelihood function using an optimization algorithm, which has often been done in Kriging assisted SAEAs. For instance, MOEA/D-EGO uses differential evolution [44] and SMS-EGO employs covariance matrix adaptation (CMA-ES) [19] to optimize the hyperparameters, while in ParEGO, the Nelder and Mead algorithm [37] is used. In this work, we use a modification of Hookes and Jeeves algorithm [21], which is implemented in DACE toolbox [30]. The main reason is that it is not practical to use population based techniques to optimize the hyperparameters due to the prohibitively high computation time thus incurred, since in SAEAs, Kriging models need to be frequently re-trained. We will provide a brief empirical comparison in Section IV.</p>
+<p>3</p>
+<p>Surrogate-assisted reference vector guided evolutionary algorithm</p>
+<p>Model management is crucial to the success of surrogate-assisted evolutionary algorithms [24]. It is mainly concerned with how to use and update surrogates, including choosing individuals to be re-evaluated using the original objective functions. These re-evaluated individuals can then be used as training data for updating (retraining) the surrogate. Both convergence and diversity have to be taken into account in selecting individuals to be re-evaluated, which becomes more difficult for problems with a large number of objectives. In this paper, we focus on selection of training data in such a way that both convergence and diversity are managed given a large number of objectives, which is one major contribution of this paper. The computation time for training the surrogate depends on the size of the training data set and the type of the surrogate used. The Kriging model is widely used due to its unique property of being able to predict with an error bound. Unfortunately, the computation time for training Kriging models will become prohibitive when the number of training data is large. Therefore, the second contribution of this paper is the proposal of a strategy to choose training samples so that the size of the training data can be kept sufficiently small. To this end, we use an archive to store the training data for updating the Kriging model. The proposed Kriging-assisted reference vector guided evolutionary algorithm, called K-RVEA, is presented in Algorithm 2. This algorithm consists of three main phases, the initialization phase followed by the phase where a surrogate is used and finally updated in the last phase. Algorithm 2 is composed of two other algorithms, Algorithm 3 and Algorithm 4. Algorithm 3 selects the individuals for re-evaluation, and therefore also for updating the surrogate, while Algorithm 4 manages the training data in archive A1 . In addition to the training archive A1 , a second archive A2 is used to store non-nondominated solutions as the final solution set.</p>
+<p>3.1</p>
+<p>Initialization</p>
+<p>In the initialization phase, an initial population is generated e.g. using the Latin hypercube sampling [32]. These individuals are evaluated with the original expensive functions and added to two archives A1 and A2 . Individuals stored in A1 are used to build a Kriging model for each objective function.</p>
+<p>9</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>Algorithm 2 K-RVEA Input: FE max , maximum number of expensive function evaluations; u = number of individuals to be re-evaluated and to be used for updating Kriging models; wmax = prefixed number of generations before updating Kriging models; Output: nondominated solutions of all evaluated ones from A2 /*Initialization*/ 1: Create an initial population of size NI using e.g. the Latin hypercube sampling, initialize the number of function evaluations- FE = 0, the generation counter for using Kriging models w = 1 and a counter for the number of updates, tu = 0. Initialize two empty archives A1 and A2 , i.e. |A1 | = |A2 | = φ 2: Evaluate the initial population with the original functions and add them to A1 and A2 , update FE = FE +NI , update |A1 | = |A1 | + NI and |A2 | = |A2 | + NI 3: Train a Kriging model for each objective function by using individuals in A1 4: while FE ≤ FE max /*Using the surrogate*/ 5: while w ≤ wmax 6: Run Steps 3-6 of Algorithm 1 with Kriging models instead of the original functions and update w=w +1 7: end while /*Updating the surrogate*/ 8: Select u individuals using Algorithm 3 and re-evaluate them with the original functions and update FE = FE + u 9: Add individuals from step 8 to A1 and A2 and update |A1 | = |A1 | + u and |A2 | = |A2 | + u 10: Remove |A1 | − NI individuals from A1 using Algorithm 4, update w = 1 and tu = tu + 1 and go to step 3 end while</p>
+<p>10</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>3.2</p>
+<p>Using the surrogate</p>
+<p>In the phase of using the surrogate, we use Kriging models instead of the original functions to calculate objective function values. Kriging models are used for fitness evaluations for a prefixed number of generations without updating them. Empirically, the prefixed number of generations should be set in such a way that it allows the evolutionary algorithm to perform adequate search on the fitness landscape defined by the surrogate, while the search should be terminated if no further improvement in either convergence or diversity can be made. Ideally, the frequency of updating the surrogates can be made adaptive based on their performance, e.g., as done in [26]. However, a rigorous guideline for adapting the frequency still lacks. For simplicity, in this work we adopt a prefixed frequency based on a sensitivity analysis of the performance on the prefixed number of generations. Once the function evaluations are done, simulated binary crossover and polynomial mutations are applied to generate offspring, similar to [15]. The parent and offspring populations are combined and then the selection criteria in RVEA detailed in Section 2 are used to select parents for the next generation.</p>
+<p>3.3</p>
+<p>Updating the surrogate</p>
+<p>After an evolutionary search using the Kriging models for a fixed number of generations, the Kriging models will be updated. As previously mentioned, selection of individuals to be re-evaluated using the original functions, which will also be used for updating the surrogates, is essential for the performance of SAEAs. In this paper, we use information from the underlying evolutionary algorithm, RVEA, and uncertainty information from the Kriging models for selecting individuals to be re-evaluated and then for re-training the surrogate. As mentioned in Section 1, selection of uncertain individuals not only helps in finding the unexplored regions but can also improve the quality of the surrogate. Therefore, we select individuals with the maximum uncertainty whenever diversity is needed. If a satisfactory degree of diversity is already achieved, we select individuals with the minimum angle penalized distance, which is one of the selection criteria in RVEA that contributes to convergence. Full details of the strategy for selecting individuals for re-evaluation is given in the next subsection, also summarized in Algorithm 3. The selected individuals are then re-evaluated with the original functions and these data samples are added to both archives A1 and A2 . To keep a fixed number of individuals in the archive A1 , we will eliminate extra individuals from from A1 using a strategy to be introduced in the following. A maximum number of function evaluations is used as the termination criterion of the evolutionary optimization process. After the evolutionary search is complete, nondominated individuals in A2 are taken as the final solutions. 3.3.1</p>
+<p>Strategy for selecting individuals for re-evaluation</p>
+<p>In RVEA, the reference vectors are adaptive. In this work, we introduce an additional set of fixed reference vectors that are evenly distributed in the objective space. The number of fixed reference vectors is the same as the number of adaptive vectors. For convenience, we denote the fixed reference vectors by Vf and the adaptive ones by Va . The fixed reference set is mainly for determining whether diversity or convergence should be prioritized in selecting individuals for re-evaluation. This is done by comparing the number of empty vectors in the fixed reference set during the previous surrogate update, denoted by |Vfia |tu −1 and that in the current update denoted by |Vfia |tu . A vector is called empty or non-active if no individual is assigned to this vector. In case |Vfia |tu - |Vfia |tu −1 &gt; δ, where δ &gt; 0 is a small integer, which 11</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>Cluster 1 Cluster 2</p>
+<p>Cluster u</p>
+<p>Figure 3: Clustering of active adaptive reference vectors Va into a predefined number of clusters u. means the increase in the number of empty fixed reference vectors has exceeded a given threshold, diversity should be prioritized. In this case, individuals for re-evaluation should be selected based on the uncertainty information offered by the Kriging models. By contrast, if |Vfia |tu - |Vfia |tu −1 &lt; δ, which means that the diversity of the population is not the major concern, priority will be given to the convergence criterion. In other words, individuals should be selected using the APD according to the adaptive reference vectors. The next step is to determine which individuals should be selected according to either the amount of uncertainty or the value of APD. To this end, we divide the active adaptive reference vectors into a given number of clusters (Step 1 in Algorithm 3), from each of which one individual that has either the maximum amount of uncertainty (in case diversity is prioritized) or the minimum APD (in case convergence is to be taken care of) in the corresponding cluster. Thus, the number of clusters is always equal to the number of individuals, denoted by u, to be selected for re-evaluation and for updating the surrogate. The process for selecting solutions to be re-evaluation described above is summarized in Algorithm 3. To elaborate the above selection process, let us consider a few different situations shown in Figure 4 for a biobjective optimization problem, where the fixed reference vectors as well as the individuals (denoted by dots) associated to each vector are shown in updating Kriging models. Figure 4(a) illustrate the fixed reference vectors and the individuals assigned to them during the previous update, i.e., at the counter for updating the surrogate tu − 1. Two different cases at the current update, i.e., at tu , are shown in Figure 4(b) and Figure 4(c), respectively. In the situation shown in 4(b), the number of inactive fixed reference vectors, denoted by |Vfia |tu , has decreased, which indicates that diversity is not a concern and convergence should be emphasized. By contrast, Figure 4(c) shows a situation in which the number of inactive fixed reference vectors has increased, which indicates that diversity needs to be prioritized in updating the Kriging models. In the former case shown in Figure 4(b), individuals for re-evaluation are selected based on APD calculated using the reference vector set, while in the latter case, the amount o uncertainty, where uncertainty is calculated using the average of the standard deviations obtained from Kriging models. Selected individuals are re-evaluated with the original functions and the obtained data added to both archives A1 and A2 . Note that if the number of active adaptive reference vectors is smaller than u, i.e., |Vaa | &lt; u, we group them into |Vaa | clusters. In the first update of the Kriging models, APD is 12</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>Algorithm 3 Selection of individuals for updating the surrogate Input: Sets of adaptive Va and fixed Vf reference vectors, I = individuals obtained from the latest generation, |Vfia |tu −1 = number of inactive fixed reference vectors from the previous update, δ = parameter to decide whether to use APD or uncertainty from Kriging models for updating Kriging models, u = number of individuals to update Kriging models Output: u = Individuals for updating Kriging models 1: Cluster active adaptive reference vectors into min {u, |Vaa |} clusters 2: Identify individuals closest to active adaptive reference vectors within each cluster 3: Assign I to fixed reference vectors and identify the number of inactive fixed reference vectors, i.e. |Vfia | 4: Calculate the change in the number of inactive fixed reference vectors from the previous update i.e. ∆Vf = |Vfia |tu − |Vfia |tu −1 5: If ∆Vf ≤ δ 6: Select one individual from each cluster with minimum APD 7: else 8: Select one individual from each cluster with maximum uncertainty 9: end if</p>
+<p>1</p>
+<p>1</p>
+<p>0.8</p>
+<p>0.8</p>
+<p>0.8</p>
+<p>0.6</p>
+<p>0.6</p>
+<p>0.6</p>
+<p>f2</p>
+<p>f2</p>
+<p>f2</p>
+<p>1</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>0.2</p>
+<p>0.2</p>
+<p>0.2</p>
+<p>0 0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>1</p>
+<p>0 0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6 f1</p>
+<p>f1</p>
+<p>0.8</p>
+<p>1</p>
+<p>0 0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>f1</p>
+<p>Figure 4: Different cases for fixed reference vectors while updating Kriging models. (a): An example of the fixed reference vectors, (b): An example showing the fixed reference vectors at the current update, where the number of inactive reference vectors has decreased compared to the previous update in (a), (c): An example showing the fixed reference vectors at the current update, where the number of inactive reference vectors has increased compared to the previous update in (a).</p>
+<p>13</p>
+<p>1</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>always used for selecting individuals for re-evaluation. In the following, we describe the strategy for managing the training data in A1 , when the number of available training data is large than the predefined maximum number defined by the size of A1 . 3.3.2</p>
+<p>Managing the training data</p>
+<p>In order to limit the computation time for re-training the Kriging models, the number of training data in archive A1 is fixed. To this end, some data need to be discarded if the number of available training data is larger than the archive size. Which data samples should be kept in A1 becomes critical for the quality of the Kriging model and thus the overall performance of K-RVEA. In this work, the maximum size of the training data, i.e., the size of archive A1 , is set to NI . The main steps for managing training data archive A1 are presented in Algorithm 4. Algorithm 4 Managing individuals in the archive Input: Archive A1 , adaptive reference vectors Va , u= individuals selected to update Kriging models, NI =maximum number of individuals in the archive A1 Output: Updated individuals in A1 1: Remove duplicate individuals from the training archive A1 and update |A1 | 2: If |A1 | &gt; NI 3: Assign u individuals to Va and identify inactive adaptive reference vectors, denote these reference vectors by Vaia 4: Assign A1 \ u individuals i.e. individuals other than recently evaluated ones in the archive to Vaia 5: Identify active reference vectors from inactive adaptive reference vectors Vaia 6: Cluster active set of inactive adaptive reference vectors Vaia into NI − u clusters 7: Select one individual from each cluster randomly and remove other individuals 11: end if We first add recently evaluated individuals (u) obtained with Algorithm 3 to archive A1 and remove duplicate data points from it (step 1 in Algorithm 4). If the number of training data is still larger than the archive size, we eliminate some training samples other than the recently evaluated one (step 2 in Algorithm 4). For this purpose, data points other than the recently evaluated individuals are assigned to the adaptive reference vectors. For instance, consider the situation in Figure 5 for a biobjective optimization problem. In Figure 5(a), individuals (training data) obtained with Algorithm 3 are assigned to the adaptive reference vectors Va and inactive reference vectors are identified, denoted by Vaia . Then, we assign A1 \ u data points to these vectors Vaia and identify active reference vectors from them, as shown in Figure 5(b) (steps 4 and 5 in Algorithms 4). The active adaptive reference vectors are then grouped into NI − u clusters and data points assigned to these reference vectors in each cluster are identified (step 6 Algorithm 4). We randomly select one data point from each cluster and eliminate the rest of the data. In this way, a fixed number of diverse set of training data is maintained in A1 , thereby to improve the quality of Kriging as much as possible while keeping computation time limited.</p>
+<p>4</p>
+<p>Numerical experiments</p>
+<p>In this section, numerical experiments are conducted to examine the performance of K-RVEA on the DTLZ benchmark problems [16] for 3, 4, 6, 8 and 10 objectives are presented. The number</p>
+<p>14</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>Cluster 1</p>
+<p>Vaia</p>
+<p>Cluster 2</p>
+<p>Cluster NI -u</p>
+<p>Figure 5: Managing training data in the archive A1 , (a):Assignment of the recently evaluated individuals u to the active adaptive reference vectors Va , (b):Assignment of A1 \ u individuals to inactive adaptive reference vectors Vaia . of decision variables was set to 10. We also compared K-RVEA with representative Kriging based SAEAs, e.g. MOEA/D-EGO [51], SMS-EGO [41, 46], ParEGO [28], and with the original RVEA without using the surrogates. We also included RVEA for comparison to give the reader a sense of how differently an algorithm with and without surrogates performs on computationally expensive problems.</p>
+<p>4.1</p>
+<p>Parameter settings</p>
+<p>1. Number of individuals to be evaluated using the original objective functions in the initialization phase (from the literature [28, 51]) = maximum number of individuals in the training archive, NI = 11n − 1 2. Number of independent runs = 10 3. Maximum number of function evaluations, F Emax = 300 4. Number of individuals to update Kriging models, |u| = 5 5. Number of reference vectors (N ): number of reference vectors is determined by the design factors for simplex-lattice design [11] and the number of objectives and listed in the supplementary material 6. Parameter while updating the Kriging models δ = 0.05N 7. Number of generations before updating the Kriging models wmax = 20. For RVEA, a population size of 50 was used and for other algorithms, the same parameters were used as recommended by the authors in the respective articles. Inverted generational distance (IGD) [3] used as the performance measure to compare different algorithms. A Wilcoxon rank sum test was used to compare the results obtained by K-RVEA and the other four algorithms at a significance level of 0.05. Results are collected in Tables 1, 2 and 3, where symbol ↑ indicates that K-RVEA performed statistically better than a compared algorithm, and ↓ means that other algorithms performed better than K-RVEA, while ≈ means that there is no significant difference between the results obtained by K-RVEA and the other algorithm. One should note that for a given number of decision variables,</p>
+<p>15</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>the landscape of the problems is getting easier as the number of objectives increases. This is due to the fact that the number of decision variables for driving convergence decreases with the increase in the number of objectives [22]. Therefore, we have added the WFG suite [22] in our experiments and present the results in the supplementary material.</p>
+<p>4.2</p>
+<p>Performance on DTLZ problems</p>
+<p>Table 1: Statistical results for IGD values obtained by K-RVEA, RVEA and ParEGO. The best results are highlighted Problem</p>
+<p>DTLZ1</p>
+<p>DTLZ2</p>
+<p>DTLZ3</p>
+<p>DTLZ4</p>
+<p>DTLZ5</p>
+<p>DTLZ6</p>
+<p>DTLZ7</p>
+<p>k 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10</p>
+<p>K-RVEA min 82.03 48.23 8.031 0.699 0.198 0.092 0.191 0.316 0.360 0.419 181.5 85.56 61.61 12.36 0.781 0.190 0.268 0.422 0.547 0.553 0.050 0.046 0.032 0.023 0.009 2.121 1.306 1.133 0.377 0.054 0.088 0.188 0.391 0.745 0.917</p>
+<p>mean 106.9 73.21 28.83 6.991 0.347 0.155 0.276 0.342 0.395 0.446 280.1 210.9 105.0 26.49 1.299 0.448 0.458 0.585 0.635 0.608 0.112 0.123 0.102 0.048 0.017 2.727 2.446 1.597 0.660 0.153 0.111 0.243 0.500 0.886 1.030</p>
+<p>RVEA max 125.2 101.4 35.22 13.29 0.655 0.262 0.376 0.362 0.522 0.470 353.1 314.5 156.4 43.51 2.303 0.737 0.648 0.754 0.728 0.672 0.211 0.242 0.153 0.107 0.022 3.343 3.060 2.174 1.049 0.373 0.150 0.298 0.627 1.030 1.134</p>
+<p>≈ ≈ ≈ ≈ ≈ ↑ ↑ ↑ ↑ ↑ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑</p>
+<p>min 42.65 39.65 12.24 1.250 0.193 0.227 0.280 0.375 0.466 0.539 133.7 89.95 43.54 8.569 0.761 0.205 0.320 0.503 0.554 0.599 0.201 0.149 0.159 0.104 0.224 3.651 3.027 1.025 0.247 0.140 0.400 0.532 0.889 1.162 1.343</p>
+<p>mean 82.87 59.18 22.94 7.406 0.339 0.288 0.332 0.404 0.541 0.608 256.1 198.6 95.97 25.27 1.228 0.399 0.514 0.615 0.628 0.667 0.247 0.294 0.280 0.260 0.488 4.960 4.044 2.524 1.004 0.297 0.515 0.691 1.088 1.359 1.900</p>
+<p>ParEGO max 115.1 97.71 36.85 15.66 1.105 0.335 0.383 0.440 0.704 0.733 347.9 306.3 157.7 42.17 1.836 0.959 0.737 0.800 0.731 0.761 0.316 0.393 0.431 0.748 0.746 5.613 5.208 3.600 1.870 0.751 0.637 0.926 1.808 1.634 3.327</p>
+<p>↓ ↓</p>
+<p>↑ ↑</p>
+<p>↓ ↓</p>
+<p>↑ ↑</p>
+<p>↓ ↑</p>
+<p>↑ ↑</p>
+<p>↑ ↑</p>
+<p>min 13.42 18.63 NA NA NA 0.151 0.289 NA NA NA 81.15 66.93 NA NA NA 0.387 0.505 NA NA NA 0.039 0.090 NA NA NA 5.030 5.652 NA NA NA 0.621 0.719 NA NA NA</p>
+<p>mean 52.47 45.45 NA NA NA 0.191 0.337 NA NA NA 145.5 138.1 NA NA NA 0.646 0.725 NA NA NA 0.055 0.288 NA NA NA 6.378 5.916 NA NA NA 0.829 0.892 NA NA NA</p>
+<p>max 112.7 87.76 NA NA NA 0.243 0.408 NA NA NA 261.6 209.4 NA NA NA 0.947 0.960 NA NA NA 0.072 0.428 NA NA NA 6.867 6.034 NA NA NA 1.201 1.149 NA NA NA</p>
+<p>The results obtained with the four compared algorithms over 25 independent runs are collected in Table 1. No results are given for ParEGO for more than four objectives as the current implementation given by the authors of ParEGO was limited to four objectives, which is denoted by ’NA’ in the tables. The presented results include the minimum, mean and maximum values of IGD. The best values are highlighted. Before we discuss the results, we want to mention an important issue in measuring the performance of many-objective evolutionary algorithms. IGD and hypervolume are two widely used performance indicators. However, the evaluation result may heavily depends on their parameters, particularly when the number of objectives is large. For instance, the IGD value is very sensitive to the size of the reference set, which has not been explicitly discussed. In [4, 48], 100000 reference points were used irrespective of the number of objectives, while in [52], only 500 reference points 16</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>400</p>
+<p>400</p>
+<p>K−RVEA</p>
+<p>400</p>
+<p>RVEA</p>
+<p>300</p>
+<p>300</p>
+<p>300</p>
+<p>200</p>
+<p>200</p>
+<p>200</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>400 0 0</p>
+<p>200</p>
+<p>200 400</p>
+<p>600 0</p>
+<p>ParEGO</p>
+<p>400 0 0</p>
+<p>200</p>
+<p>200 400</p>
+<p>600 0</p>
+<p>400 0 0</p>
+<p>200</p>
+<p>200 400</p>
+<p>600 0</p>
+<p>Figure 6: Nondominated solutions obtained with K-RVEA, RVEA and ParEGO of the run with the best IGD value for three-objective DTLZ1, which are all very far away from the true Pareto front. were used. In [5], different sizes for the reference set were used for different numbers of objectives. Here, we also use different sizes of the reference set for different numbers of objectives, as we believe more reference points are needed as the number of objectives increases, referring to the Supplementary material for details. Similarly, different criteria for setting the reference point in calculating the hypervolume have been adopted in different papers. It has been found in [49] that choosing a reference point slightly better than the nadir point is able to strike a balance between convergence and diversity of the solution set. Therefore, in this work, we use the worst objective function values of the non-dominated solutions found by all compared algorithms plus a small threshold. The detailed comparative results in terms of hypervolume are provided in the Supplementary material due to the page limit. We must emphasize that how to fairly compare the performance of EAs for many-objective optimization has received little attention in the literature and deserves more research. As can be seen in Table 1, overall, K-RVEA performed the best among all algorithms compared in this study, except on DTLZ1 and DTLZ3. We surmise that DTLZ1 and DTLZ3 have many local Pareto optimal solutions. Both RVEA and K-RVEA try to keep a well-distributed set of solutions because of the distribution in the reference vectors and, therefore, the convergence rate is relatively slow on these problems. Nondominated solutions of the run producing the best IGD values for K-RVEA, RVEA and ParEGO for DTLZ1 are shown in Figure 6. As can be seen, solutions of K-RVEA and RVEA are better distributed than those of ParEGO. However, the IGD values of all three algorithms are high, in other words, the solutions obtained by these algorithms are all far from the true Pareto front. These results indicate that solving such problems requires more function evaluations to reach the Pareto front. To compare the results with SMS-EGO, we selected a different stopping criterion. As SMS-EGO tries to maximize the expected hypervolume improvement and was implemented in MATLAB, it took about seven hours to complete one run on a computer with the i5 processor and 4GB RAM. The needed large amount of computation time of SMS-EGO was also mentioned in [51], for which reason the authors compared their algorithm with SMS-EGO only on two test problems. In this paper, we allowed SMS-EGO to run for 24 hours with 10 parallel runs and stored all the solutions. The number of function evaluations reached during this time was used as the stopping criterion for comparison with the other algorithms. The results for three and four objectives are obtained with 120 and 115 function evaluations, respectively, which are presented in Table 2. These results obtained with a small number of function evaluations show that K-RVEA performed better than the compared algorithms. We did not compare K-RVEA with SMS-EGO for problems within more than four objectives, as SMS-EGO requires even more time for such problems. The comparison of K-RVEA and MOEA/D-EGO for three objective functions after 300 original 17</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Table 2: Statistical results for IGD values obtained by K-RVEA, RVEA, ParEGO, SMS-EGO and MOEA/D-EGO for three and four objectives with 120 and 115 function evaluations, respectively. The best results are highlighted Problem k DTLZ1 3 4 DTLZ2 3 4 DTLZ3 3 4 DTLZ4 3 4 DTLZ5 3 4 DTLZ6 3 4 DTLZ7 3 4</p>
+<p>K-RVEA</p>
+<p>RVEA</p>
+<p>min mean max 82.03 130.2 170.8 ≈ 61.92 90.29 115.7 ≈ 0.305 0.360 0.408 ↑ 0.376 0.427 0.464 ↑ 217.3 324.3 383.7 ≈ 173.8 302.1 370.5 ≈ 0.452 0.711 0.979 ≈ 0.587 0.750 0.914 ≈ 0.173 0.282 0.360 ≈ 0.226 0.254 0.301 ↑ 3.104 3.974 4.629 ↑ 2.962 3.910 4.585 ↑ 0.119 0.167 0.216 ↑ 0.297 0.401 0.647 ↑</p>
+<p>min mean max 66.19 129.6 171.4 81.52 102.2 133.3 0.401 0.436 0.494 0.421 0.463 0.499 236.3 366.6 495.6 177.6 283.1 359.1 0.537 0.678 0.967 0.669 0.803 0.928 0.272 0.326 0.397 0.248 0.283 0.316 5.737 6.110 6.462 4.406 5.036 5.629 0.632 0.760 1.264 0.778 1.018 1.219</p>
+<p>ParEGO ≈ ≈ ≈ ≈ ≈ ≈ ≈ ≈ ↑ ↑ ↑ ↑ ↑ ↑</p>
+<p>min mean max 100.7 124.2 148.8 ↑ 75.23 99.81 128.5 ↑ 0.271 0.356 0.396 ↑ 0.384 0.422 0.474 ↑ 232.4 368.3 460.7 ≈ 172.5 291.9 357.2 ≈ 0.586 0.769 0.911 ≈ 0.716 0.819 0.993 ≈ 0.597 0.615 0.638 ↑ 0.432 0.454 0.484 ↑ 6.504 6.707 6.825 ↓ 5.720 5.868 6.024 ↑ 3.138 5.573 7.417 ↓ 5.304 7.376 8.921 ↓</p>
+<p>SMS-EGO min mean max 85.47 114.2 148.8 ↑ 93.33 130.2 173.7 0.365 0.444 0.522 ↑ 0.447 0.487 0.532 220.8 325.3 459.2 ≈ 209.1 314.1 403.8 0.649 0.690 0.722 ↓ 0.680 0.746 0.815 0.447 0.498 0.546 ↓ 0.360 0.413 0.465 1.603 1.756 2.007 ↑ 5.842 5.883 6.010 0.241 0.260 0.277 ↑ 0.578 0.644 0.706 ↑</p>
+<p>MOEA/D-EGO min mean max 173.1 267.5 388.2 NA NA NA 0.325 0.384 0.456 NA NA NA 189.7 339.9 523.41 NA NA NA 0.393 0.434 0.479 NA NA NA 0.170 0.215 0.308 NA NA NA 4.072 5.078 6.624 NA NA NA 0.618 1.743 3.830 NA NA NA</p>
+<p>function evaluations is shown in Table 3. An implementation of MOEA/D-EGO from the authors was available for only two and three objectives. As can be seen in Table 3, K-RVEA performed either better or comparably to MOEA/D-EGO for all problems except on DTLZ5. As the Pareto front of DTLZ5 is a curve that covers a small subspace in the objective space, most of the reference vectors in K-RVEA and RVEA are empty, i.e., no solutions are assigned to them. We observed that for both K-RVEA and RVEA, almost 70% of the reference vectors are empty, which makes the solution process to converge slowly to the Pareto front. For such problems, a large number of reference vectors could be helpful while using K-RVEA. Table 3: Statistical results for IGD values obtained by K-RVEA and MOEA/D-EGO for three objectives after 300 function evaluations. The best results are highlighted Problem DTLZ1 DTLZ2 DTLZ3 DTLZ4 DTLZ5 DTLZ6 DTLZ7</p>
+<p>K-RVEA</p>
+<p>MOEA/D-EGO</p>
+<p>min mean max 82.03 106.9 125.2 ↑ 0.092 0.155 0.262 ≈ 181.5 280.1 353.1 ≈ 0.190 0.448 0.737 ≈ 0.050 0.112 0.211 ↓ 2.121 2.727 3.343 ≈ 0.088 0.111 0.150 ↑</p>
+<p>min mean max 145.9 177.9 224.5 0.081 0.103 0.212 161.5 205.9 281.8 0.357 0.436 0.574 0.035 0.046 0.071 0.491 2.551 4.126 0.154 0.646 1.254</p>
+<p>Nondominated solutions from the run with the best IGD values obtained by the compared algorithms on the three-objective DTLZ7 are shown in Figure 7. As can be seen from the figure, nondominated solutions obtained of K-RVEA and RVEA are much closer to the Pareto front than those of ParEGO and MOEA/D-EGO. For DTLZ7 which has a disconnected Pareto front, RVEA and K-RVEA have a good potential to get solutions close to the Pareto front because of the adaptation in the reference vectors. Remind that we did not run SMS-EGO for optimization problems with more than four objectives as the runtime is prohibitive. In addition, a parallel coordinates plot for DTLZ2 with 10 objectives is presented in Figure 8, which we can see that the ranges of solutions obtained by K-RVEA are bigger than those obtained by RVEA. In other words, the solutions obtained by K-RVEA have a better distribution. The reason for a lower density of the solutions obtained by RVEA is due to the small population size. As the maximum number of function evalu18</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>20</p>
+<p>15</p>
+<p>20</p>
+<p>20 ParEGO</p>
+<p>RVEA</p>
+<p>K−RVEA</p>
+<p>MOEA/D−EGO</p>
+<p>15</p>
+<p>15</p>
+<p>15</p>
+<p>10</p>
+<p>10</p>
+<p>10</p>
+<p>10</p>
+<p>5</p>
+<p>5</p>
+<p>5</p>
+<p>5</p>
+<p>0 0</p>
+<p>0 0</p>
+<p>0 0</p>
+<p>1 0.5</p>
+<p>1 0.5</p>
+<p>0.5 1 0</p>
+<p>1 0.5</p>
+<p>0.5</p>
+<p>0 0</p>
+<p>1 0.5</p>
+<p>0.5</p>
+<p>1 0</p>
+<p>0.5</p>
+<p>1 0</p>
+<p>1 0</p>
+<p>Figure 7: Nondominated solutions obtained by K-RVEA, RVEA, ParEGO and MOEA/D-EGO, denoted by circles, in the run with the best IGD value for three-objective DTLZ7, where the dots represent the Pareto front.</p>
+<p>K−RVEA</p>
+<p>RVEA</p>
+<p>1 Objective Value</p>
+<p>Objective value</p>
+<p>1 0.8 0.6 0.4 0.2 0 1</p>
+<p>0.8 0.6 0.4 0.2</p>
+<p>2</p>
+<p>3</p>
+<p>4 5 6 7 Objective number</p>
+<p>8</p>
+<p>9</p>
+<p>0 1</p>
+<p>10</p>
+<p>2</p>
+<p>3</p>
+<p>4 5 6 7 Objective number</p>
+<p>8</p>
+<p>9</p>
+<p>10</p>
+<p>Figure 8: Parallel coordinate plot of the nondominated solutions obtained by K-RVEA and RVEA in the run with the best IGD value on the 10-objective DTLZ2.</p>
+<p>19</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>Figure 9: Training time over the number of function evaluations in K-RVEA, ParEGO, SMS-EGO and MOEA/D-EGO on the 3-objective DTLZ2. ations for termination is quite low and the performance of RVEA depends on the maximum number of generations, we reduced the population of RVEA to 50. To more convincingly demonstrate the performance of K-RVEA, we tested and compared the algorithm on the WFG problems [22]. Results in terms of both IGD and hypervolume are provided in the Supplementary material, which show that K-RVEA was able to perform better than the compared algorithms. As mentioned in Section II.B, the computation time for training Kriging models varies a lot depending on the specific implementation and the number of training, which may become prohibitive large. One contribution of K-RVEA is the development of a strategy to select training samples reference vectors, the number of samples for training Kriging models is kept constant, the computation time for training K-RVEA is remains constant as the number of expensive fitness evaluations increases. To empirically verify this, the run time of the different implementations in the compared SAEAs for training the Kriging model has been investigated. The results over the number of training samples obtained on the 3-objective DTLZ2 are shown in Figure 9. We can observe that the training time of K-RVEA remains constant, as the maximum number of training samples is kept constant, the training time for ParEGO increases slightly. In contrast, the training time of MOEA/D-EGO increases quickly over the number of training samples as a piecewise continues function. As already mentioned, the computation time of SMS-EGO increases dramatically over the number of training samples. Note however that SMS-EGO and K-RVEA are implemented in MATLAB, ParEGO is implemented in C and MOEA/D in Java. Therefore, the absolute times used by the different algorithms may not be directly comparable, although the different behaviours of the change in training time over the number allowed true function evaluations are of more interest. In what follows, we consider the effect of different parameters in K-RVEA. The parameter δ in Algorithm 2 is used to select individuals for updating surrogates to balance between convergence and diversity. We did a sensitivity analysis to see the effect of δ on the diversity and the performance of the algorithm. As diversity in both RVEA and K-RVEA can easily be measured using reference vectors, we studied the effect of δ by measuring the change in the number of empty reference vectors. We also measured the hypervolume to see the effect on the performance of the algorithm and provide the results in the supplementary material. As expected, increase in the value of δ deteriorates the diversity and thus the hypervolume. This is due to fact that frequency of using uncertainty information from Kriging models decreases with the increase in value of δ. In other words, if the change in the number of the empty reference vectors is smaller than δ, individuals are selected based on convergence, otherwise based on uncertainty of Kriging models. Increase in the value of δ will force the algorithm to select the individuals based on convergence and thus deteriorates the diversity. In this article we fixed the value of δ to be 0.05 × N, where N is the number of reference vectors 20</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>used and adaptation of δ will be our future work. Apart from δ, two other parameters can also influence the performance of K-RVEA, which are the number of individuals to be selected to update the surrogates and the number of generations (wmax ) used before updating the surrogates. The first parameter depends on the characteristics of the problem, e.g., multi-modality, and the evolutionary algorithm used. We study the effect of the parameter in the Supplementary material. Our results show that the value of the parameter is problem-specific and an adaptive way of using the parameter is needed. For the second parameter i.e. the frequency of updating the surrogates or when to update the surrogate is very important in surrogate management, although, unfortunately, there is no solid theory for guiding when to update the surrogates. We have performed a sensitivity analysis on the performance of K-RVEA given different prefixed numbers of generations before the Kriging models are re-trained. The results are also included in the Supplementary material. We also tested K-RVEA, RVEA, ParEGO and MOEA/D-EGO on a three objective real-world polymerization problem [34]. Even though K-RVEA and RVEA have been proposed for more than three objectives, they still performed better in solution quality and computation time than the compared algorithms. Details and results for this problem are given in the supplementary material.</p>
+<p>5</p>
+<p>Conclusions and future research</p>
+<p>In this paper, a Kriging-assisted reference vector guided evolutionary algorithm, called K-RVEA, has been proposed for solving computationally expensive optimization problems with more than three objectives, where a Kriging model is used to approximate each objective function. We take care of both convergence and diversity in choosing individuals for re-evaluation with the original expensive objective functions. For this purpose, we introduced a set of fixed, uniformly distributed reference vectors in addition to the adaptive reference vectors in RVEA. In updating the Kriging models, attention is paid to limiting the computation time for training the surrogate by means of selecting training samples according to their relationships to the reference vectors, thereby limiting the number of training data. We have examined the performance of K-RVEA on benchmark problems with 3, 4, 6, 8 and 10 objectives. We also compared K-RVEA with three state-of-the art SAEAs. Empirical results show that overall the K-RVEA obtained much better performance than the compared algorithms given the same number of function evaluations using the original expensive objective function. In this paper, the number of decision variables was set to 10, as done in other papers in the literature that use Kriging as the surrogate model. This can be attributed to the factor that for solving optimization problems with a higher number of decision variables, much more training data will be needed, which will not only require more computational resource but also poses more serious challenges to Kriging based surrogate techniques. Nevertheless, it is highly desired that SAEAs can be applicable to optimization problems having a larger number of decision variables, which will be our future work. Another topic for future study is to investigate the performance of the proposed K-RVEA for constrained computationally expensive optimization problems. Finally, in the present work, we fixed the number of generations for updating the surrogates. Although our empirical results indicate that the performance of K-RVEA is relatively insensitive to the frequency of updating the surrogates for the benchmark problems studied in this work, our previous work [26] indicated that it is likely to adapt the frequency of updating the surrogates to further enhance the performance of SAEAs. Consequently, developing an adaptive method for updating the surrogates will also be our future research work.</p>
+<p>21</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>6</p>
+<p>Acknowledgment</p>
+<p>The authors would like to thank R. Cheng, J. Knowles, T. Wagner, Q. Zhang and A. Zhou for providing the codes of the algorithms compared in this work.</p>
+<p>References [1] T. Ando. Majorization relations for hadamard products. Linear Algebra and its Applications, 223-224:57–64, 1995. [2] N. Azzouz, S. Bechikh, and L. Said. Steady state IBEA assisted by MLP neural networks for expensive multi-objective optimization problems. In C. Igel, editor, Proceedings of the Genetic and Evolutionary Computation Conference, pages 581–588. ACM, 2014. [3] P. Bosman and D. Thierens. The balance between proximity and diversity in multiobjective evolutionary algorithms. IEEE Transactions on Evolutionary Computation, 7:174–188, 2003. [4] P. Chandan, M. Islam, K. Murase, and X. Yao. Evolutionary path control strategy for solving many-objective optimization problems. IEEE Transactions on Cybernetics, 45:702–715, 2015. [5] J. Cheng, G. Yen, and G. Zhang. A many-objective evolutionary algorithm with enhanced mating and environmental selections. IEEE Transactions on Evolutionary Computation, 19:592– 605, 2015. [6] L. Cheng, K. Shimoyama, and S. Obayashi. Kriging model based many-objective optimization with efficient calculation of hypervolume improvement. In In proceedings of IEEE Congress on Evolutionary Computation, pages 1187–1194. IEEE, 2014. [7] R. Cheng, Y. Jin, K. Narukawa, and B. Sendhoff. A multiobjective evolutionary algorithm using gaussian process-based inverse modeling. IEEE Transactions on Evolutionary Computation, 19:838–856, 2015. [8] R. Cheng, Y. Jin, M. Olhofer, and B. Sendhoff. A reference vector guided evolutionary algorithm for many objective optimization. IEEE Transactions on Evolutionary Computation, 2016 (accepted). [9] T. Chugh, K. Sindhya, J. Hakanen, and K. Miettinen. Handling computationally expensive multiobjective optimization problems with evolutionary algorithms-A survey. Technical Report Series B, Scientific Computing No. B 4/2015, Department of Mathematical Information Technology, University of Jyvaskyla, 2015. [10] C. Coello, G. Lamont, and D. Veldhuizen. Evolutionary Algorithms for Solving Multi-objective Problems. Springer, New York, 2nd edition, 2007. [11] J. Cornell. Experiments with Mixtures: Designs, Models, and the Analysis of Mixture Data. John Wiley &amp; Sons, 2011. [12] I. Couckuyt, D. Deschrijver, and T. Dhaene. Fast calculation of multiobjective probability of improvement and expected improvement criteria for Pareto optimization. Journal of Global Optimization, 60:575–594, 2014. [13] K. Deb. Multi-Objective Optimization using Evolutionary Algorithms. Wiley, Chichester, 2001. 22</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>[14] K. Deb and H. Jain. An evolutionary many-objective optimization algorithm using referencepoint-based nondominated sorting approach, part I: solving problems with box constraints. IEEE Transactions on Evolutionary Computation, 18:577–601, 2014. [15] K. Deb, A. Prarap, S. Agarwal, and T. Meyarivan. A fast and elitist multiobjective genetic algorithm: NSGA-II. IEEE Transactions on Evolutionary Computation, 6:182–197, 2002. [16] K. Deb, L. Thiele, M. Laumanns, and E. Zitzler. Scalable multi-objective optimization test problems. In Proceedings of the IEEE Congress on Evolutionary Computation, pages 825–830. IEEE, 2002. [17] A. G. Di Nuovo, G. Ascia, and V. Catania. A study on evolutionary multi-objective optimization with fuzzy approximation for computational expensive problems. In Parallel Problem Solving from Nature, volume LNCS 7492, pages 102–111. Springer, 2012. [18] M. Emmerich, K. Giannakoglou, and B. Naujoks. Single- and multiobjective evolutionary optimization assisted by Gaussian random field metamodels. IEEE Transactions on Evolutionary Computation, 10:421–439, 2006. [19] N. Hansen. The CMA evolution strategy: A comparing review , pp. 17691776. In J. Lozano, P. Larranaga, I. Inza, and E. Bengoetxea, editors, Towards a New Evolutionary Computation, pages 75–102. Springer Berlin Heidelberg, 2006. [20] J. Hensman, N. Fusi, and N. Lawrence. Gaussian processes for big data. In Conference on Uncertainty in Artificial Intelligence, 2013. [21] R. Hooke and T. Jeeves. Direct search solution of numerical and statistical problems. Journal of the Association for Computing Machinery (ACM), 8:212–229, 1961. [22] S. Huband, L. Barone, L. While, and P. Hingston. A scalable multi-objective test problem toolkit. In C. Coello, A. H. Aguirre, and E. Zitzler, editors, Evolutionary Multi-Criterion Optimization, pages 280–295. Springer, 2005. [23] H. Ishibuchi, N. Tsukamoto, and Y. Nojima. Evolutionary many-objective optimization: A short review. In Proceedings of IEEE Congress on Evolutionary Computation, pages 2419– 2426. IEEE, 2008. [24] Y. Jin. Surrogate-assisted evolutionary computation: Recent advances and future challenges. Swarm and Evolutionary Computation, 1(2):61–70, 2011. [25] Y. Jin, M. Olhofer, and B. Sendhoff. On evolutionary optimization with approximate fitness functions. In Proceedings of the Genetic and Evolutionary Computation Conference, pages 786–793. Morgan Kaufmann, 2000. [26] Y. Jin, M. Olhofer, and B. Sendhoff. A framework for evolutionary optimization with approximate fitness functions. IEEE Transactions on Evolutionary Computation, 6:481–494, 2002. [27] Y. Jin and B. Sendhoff. Reducing fitness evaluations using clustering techniques and neural network ensembles. In K. Deb, editor, Proceedings of the Genetic and Evolutionary Computation Conference, pages 688–699. Springer, Berlin, Heidelberg, 2004. [28] J. Knowles. ParEGO: a hybrid algorithm with on-line landscape approximation for expensive multiobjective optimization problems. IEEE Transactions on Evolutionary Computation, 10:50– 66, 2006. 23</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>[29] B. Li, J. Li, K. Tang, and X. Yao. Many-objective evolutionary algorithms: A survey. ACM Computing Surveys, 48:13–35, 2015. [30] S. Lophaven, H. Nielsen, and J. Sondergaard. DACE: a MATLAB Kriging toolbox. Technical report, Technical University of Denmark, 2002. [31] I. Loshchilov, M. Schoenauer, and M. Sebag. Dominance-based Pareto-surrogate for multiobjective optimization. In K. Deb, A. Bhattacharya, N. Chakroborty, S. Das, J. Dutta, S. Gupta, A. Jain, V. Aggarwal, J. Branke, S. Louis, and K. Tan, editors, Proceedings of the Simulated Evolution and Learning, pages 230–239. Springer, Berlin, Heidelberg, 2010. [32] M. Mckay, R. Beckman, and W. Conover. A comparison of three methods for selecting values of input variables in the analysis of output from a computer code. Technometrics, 42:55–61, 2000. [33] K. Miettinen. Nonlinear Multiobjective Optimization. Kluwer, Boston, 1999. [34] A. Mogilicharla, T. Chugh, S. Majumder, and K. Mitra. Multi-objective optimization of bulk vinyl acetate polymerization with branching. Materials and Manufacturing Processes, 29:210– 217, 2014. [35] H. Nakayama, K. Inoue, and Y. Yoshimori. Approximate optimization using computational intelligence and its application to reinforcement of cable-stayed bridges. In Proceedings of the Integrated Intelligent Systems for Engineering Design, pages 289–304. IOS Press, 2006. [36] K. Narukawa and T. Rodemann. Examining the performance of evolutionary many-objective optimization algorithms on a real-world application. In Proceedings of Genetic and Evolutionary Computing, pages 316–319. IEEE, 2012. [37] J. Nelder and R. Mead. A simplex method for function minimization. Computer Journal, 7:308–313, 1965. [38] M. Pilát and R. Neruda. ASM-MOMA: Multiobjective memetic algorithm with aggregate surrogate model. In Proceedings of the IEEE Congress on Evolutionary Computation, pages 1202–1208. IEEE, 2011. [39] M. Pilát and R. Neruda. Improving many-objective optimizers with aggregate meta-models. In Proceedings of the 11th International Conference on Hybrid Intelligent Systems, pages 555–560. IEEE, 2011. [40] M. Pilat and R. Neruda. Aggregate meta-models for evolutionary multiobjective and manyobjective optimization. Neurocomputing, 116:392–402, 2013. [41] W. Ponweiser, T. Wagner, D. Biermann, and M. Vincze. Multiobjective optimization on a limited budget of evaluations using model-assisted S-metric selection. In G. Rudolph, T. Jansen, S. Lucas, C. Poloni, and N. Beume, editors, Proceedings of the Parallel Problem Solving from Nature-PPSN X, pages 784–794. Springer, Berlin, Heidelberg, 2008. [42] R. Purshouse, K. Deb, M. Mansor, S. Mostaghim, and R. Wang. A review of hybrid evolutionary multiple criteria decision making methods. In Proceedings of IEEE Congress on Evolutionary Computation, pages 1147–1154. IEEE, 2014.</p>
+<p>24</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>[43] L. Santana-Quintero, A. Montano, and C. Coello. A review of techniques for handling expensive functions in evolutionary multi-objective optimization. In Y. Tenne and C.-K. Goh, editors, Computational Intelligence in Expensive Optimization Problems, pages 29–59. Springer, Berlin, Heidelberg, 2010. [44] R. Storn and K. Price. Differential evolution - a simple and efficient heuristic for global optimization over continuous spaces. Journal of Global Optimization, 11:341–359, 1997. [45] C. von Lücken, B. Barán, and C. Brizuela. A survey on multi-objective evolutionary algorithms for many-objective problems. Computational Optimization and Applications, 58:707–756, 2014. [46] T. Wagner. Planning and Multi-Objective Optimization of Manufacturing Processes by Means of Empirical Surrogate Models. PhD thesis, Schriftenreihe des ISF, Vulkan Verlag, Essen, 2013. [47] T. Wagner, M. Emmerich, A. Deutz, and W. Ponweiser. On expected-improvement criteria for model-based multi-objective optimization. In R. Schaefer, C. Cotta, J. Kolodziej, and G. Rudolph, editors, Proceedings of the Parallel Problem Solving from Nature-PPSN XI, pages 718–727. Springer, Berlin, Heidelberg, 2010. [48] Y. Yazawa, H. Aguirre, A. Oyama, and K. Tanaka. Evolutionary many-objective optimization optimization using -Hoods and chebyshev function. In In the proceedings of IEEE Congress on Evolutionary Computation, pages 1861–1868. IEEE, 2015. [49] Y. Yuan, H. Xu, B. Wang, and B. Zhang. Balancing convergence and diversity in decompositionbased many-objective optimizers. IEEE Transactions on Evolutionary Computation, 2016 (accepted). [50] Q. Zhang and H. Li. MOEA/D: A multiobjective evolutionary algorithm based on decomposition. IEEE Transactions on Evolutionary Computation, 11:712–731, 2007. [51] Q. Zhang, W. Liu, E. Tsang, and B. Virginas. Expensive multiobjective optimization by MOEA/D with Gaussian process model. IEEE Transactions on Evolutionary Computation, 14:456–474, 2010. [52] X. Zhang, Y. Tian, and Y. Jin. A knee point-driven evolutionary algorithm for many-objective optimization. IEEE Transactions on Evolutionary Computation, 19:761–776, 2015.</p>
+<p>25</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>Supplementary material - A Surrogate-assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-objective Optimization</p>
+<p>In the supplementary material, we provide the parameter values for the number of reference vectors, size of the reference set to calculate IGD, results on DTLZ problems using hypervolume and on WFG problems with both IGD and hypervolume as quality metrics. In addition, results of K-RVEA, RVEA, ParEGO and MOEA/D-EGO on a free radical polymerization system are also presented. Moreover, a sensitivity analysis of three important parameters used in K-RVEA is also provided.</p>
+<p>1</p>
+<p>Number of reference vectors</p>
+<p>The number of reference vectors (N ) in K-RVEA is determined by the design factors (H1 , H2 ) for a simplex-lattice design [2] and the number of objectives (k ). The parameter values used (from [1]) are listed in Table 1 for the different numbers of objectives. Table 1: Numbers (N ) of reference vectors k 3 4 6 8 10</p>
+<p>2</p>
+<p>(H1, H2) (13,0) (7,0) (4,1) (3,2) (3,2)</p>
+<p>N 105 120 132 156 275</p>
+<p>Size of reference set to calculate IGD</p>
+<p>In this paper, we use a different size of a reference set for different numbers of objectives to calculate IGD values and the sizes are presented in Table 2. Test problems DTLZ7 and WFG2 have disconnected Pareto fronts and, therefore the size of the reference set is different from the other problems. In addition, specific number like 10000 for four objectives cannot be generated with the method used [4] for reference set generation and for this reason the number closest to 5000, 10000, 30000, 50000 and 90000 is used for different numbers of objectives.</p>
+<p>1</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>Table 2: Size of reference set to calculate IGD k 3 4 6 8 10</p>
+<p>3</p>
+<p>number of reference points DTLZ7 WFG2 Other problems 6084 4101 5050 10648 10708 10660 59049 32191 33649 78125 66342 50388 262144 115610 92378</p>
+<p>Performance on the DTLZ suite</p>
+<p>Here, we summarize the performances of the different algorithms compared with hypervolume as a performance metric. We used the worst objective function values from nondominated solutions of all algorithms plus a small threshold as a reference point (fi∗ ). For less than eight objectives, a recently proposed method from [7] was used to calculate the hypervolume. For eight and 10 objectives, the Monte Carlo method with 1000000 sample points was used to approximate the hypervolume. The Qk hypervolume values obtained were normalized by dividing with i=1 fi∗ and are shown in Table 3. As can be seen, the performances of different algorithms when measured with the hypervolume are very similar to those with IGD values and overall, K-RVEA performed better than the other algorithms. Note that due to the degenerated Pareto front of DTLZ5, most of the reference vectors in both RVEA and K-RVEA are empty and, therefore, the performance of K-RVEA is worse than that of ParEGO. Results with K-RVEA and MOEA/D-EGO for problems with three objectives are given in Table 4. As can be seen, K-RVEA performed either better or equivalently to MOEA/D-EGO except on DTLZ5. Note that we did not test SMS-EGO here due to its computational overhead, which is also mentioned in the main paper.</p>
+<p>4</p>
+<p>Performance on the WFG suite</p>
+<p>To be able to show the potential of K-RVEA with different problems, we extended the test set up by also considering the WFG test suite [3]. Besides as in, some of the DTLZ problems the number of decision variables for driving the convergence decreases with the increase in the number of objectives, it is important to test with other types of problems as well. Values of two different types of parameters i.e. position (d ) and distance (l ) used in WFG problems with the number of objectives are shown in Table 5. Results with K-RVEA, RVEA and ParEGO using IGD and hypervolume are provided in Tables 6 and 7, respectively. We used the same settings for the size of the reference set to calculate IGD and for the reference point to calculate hypervolume as mentioned in the previous sections. The problem WFG2 has a disconnected Pareto front and it is interesting to note that K-RVEA handled problems with disconnected Pareto front well and outperformed others with both hypervolume and IGD performance metrics. However in WFG3, the degenerated Pareto front caused the most of the reference vectors to be empty, thereby leading to a bad performance. Problems WFG4-WFG9 possess several challenges to the optimization algorithm in the decision space such as multimodality for WFG4, landscape deception for WFG5 and non-separability for WFG6, WFG8 and WFG9 and as can be seen from the results, K-RVEA performed better than the other algorithms. Results with K-RVEA and MOEA/D-EGO for three objectives are provided in Tables 8 and 9, respectively. For these problems as well, K-RVEA performed similarly or better than MOEA/D-EGO. 2</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>Table 3: Statistical results for hypervolume on the DTLZ suite obtained by K-RVEA, RVEA and ParEGO. The best results are highlighted Problem</p>
+<p>DTLZ1</p>
+<p>DTLZ2</p>
+<p>DTLZ3</p>
+<p>DTLZ4</p>
+<p>DTLZ5</p>
+<p>DTLZ6</p>
+<p>DTLZ7</p>
+<p>k 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10</p>
+<p>K-RVEA min 0.319 0.588 0.828 0.781 0.374 0.881 0.924 0.327 0.225 0.134 0.200 0.810 0.970 0.975 0.959 0.811 0.905 0.356 0.245 0.134 0.728 0.795 0.191 0.087 0.031 0.814 0.891 0.534 0.252 0.069 0.455 0.455 0.465 0.343 0.317</p>
+<p>mean 0.539 0.795 0.927 0.879 0.389 0.905 0.958 0.328 0.225 0.134 0.443 0.883 0.992 0.989 0.961 0.887 0.972 0.361 0.245 0.134 0.752 0.819 0.195 0.088 0.031 0.850 0.907 0.550 0.272 0.077 0.467 0.483 0.543 0.416 0.370</p>
+<p>RVEA max 0.719 0.911 0.973 0.929 0.393 0.918 0.970 0.328 0.226 0.134 0.695 0.964 0.996 0.992 0.961 0.947 0.990 0.364 0.246 0.134 0.769 0.829 0.197 0.090 0.031 0.874 0.932 0.564 0.288 0.079 0.476 0.508 0.572 0.480 0.440</p>
+<p>≈ ↑ ≈ ≈ ≈ ↑ ↑ ↑ ↑ ↑ ≈ ≈ ↑ ≈ ≈ ≈ ↓ ≈ ≈ ≈ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑</p>
+<p>min 0.416 0.641 0.845 0.642 0.366 0.782 0.894 0.306 0.208 0.127 0.279 0.731 0.958 0.972 0.959 0.620 0.948 0.356 0.245 0.134 0.629 0.748 0.172 0.072 0.025 0.477 0.668 0.414 0.202 0.045 0.260 0.250 0.148 0.085 0.036</p>
+<p>mean 0.595 0.738 0.930 0.870 0.389 0.824 0.920 0.318 0.219 0.130 0.479 0.851 0.983 0.988 0.960 0.889 0.982 0.363 0.246 0.134 0.678 0.772 0.185 0.084 0.027 0.549 0.733 0.441 0.230 0.066 0.316 0.318 0.294 0.198 0.085</p>
+<p>ParEGO max 0.749 0.891 0.964 0.929 0.393 0.858 0.939 0.325 0.223 0.132 0.651 0.932 0.991 0.992 0.961 0.938 0.990 0.364 0.246 0.134 0.717 0.805 0.193 0.087 0.030 0.660 0.779 0.478 0.259 0.076 0.347 0.377 0.410 0.344 0.151</p>
+<p>↓ ≈</p>
+<p>↑ ↑</p>
+<p>↓ ↓</p>
+<p>↑ ↑</p>
+<p>↓ ↓</p>
+<p>↑ ≈</p>
+<p>↑ ↑</p>
+<p>min 0.490 0.595 NA NA NA 0.870 0.890 NA NA NA 0.561 0.883 NA NA NA 0.630 0.824 NA NA NA 0.749 0.807 NA NA NA 0.399 0.572 NA NA NA 0.186 0.109 NA NA NA</p>
+<p>mean 0.805 0.797 NA NA NA 0.889 0.907 NA NA NA 0.804 0.947 NA NA NA 0.830 0.931 NA NA NA 0.801 0.924 NA NA NA 0.423 0.978 NA NA NA 0.218 0.162 NA NA NA</p>
+<p>max 0.941 0.934 NA NA NA 0.902 0.926 NA NA NA 0.935 0.981 NA NA NA 0.929 0.979 NA NA NA 0.829 0.974 NA NA NA 0.500 0.991 NA NA NA 0.244 0.228 NA NA NA</p>
+<p>Table 4: Statistical results for hypervolume on the DTLZ suite obtained by K-RVEA and MOEA/DEGO for three objectives. The best results are highlighted Problem DTLZ1 DTLZ2 DTLZ3 DTLZ4 DTLZ5 DTLZ6 DTLZ7</p>
+<p>K-RVEA min 0.319 0.881 0.200 0.811 0.728 0.814 0.455</p>
+<p>mean 0.539 0.905 0.443 0.887 0.752 0.850 0.467</p>
+<p>MOEA/D-EGO max 0.719 0.918 0.695 0.947 0.769 0.874 0.476</p>
+<p>3</p>
+<p>↑ ≈ ↑ ≈ ↓ ≈ ↑</p>
+<p>min 0.034 0.887 0.056 0.807 0.752 0.579 0.152</p>
+<p>mean 0.151 0.905 0.117 0.872 0.766 0.737 0.280</p>
+<p>max 0.330 0.916 0.234 0.905 0.774 0.932 0.473</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>Table 5: Numbers of parameters in WFG problems k 3 4 6 8 10</p>
+<p>5</p>
+<p>d 8 4 4 2 2</p>
+<p>l 2 6 5 7 9</p>
+<p>Performance on free-radical polymerization of Vinyl acetate</p>
+<p>In the free radical polymerization of Vinyl acetate, the main aim is to find the optimal process conditions to obtain a polymer with specific properties. A high molecular weight is usually linked with a high melt strength and a low melt flow index [6]. In addition, a homogeneous distribution of molecular mass polymer is required in short processing time. Polyvinyl acetate has a high molecular weight and often known as wood glue and processed in a batch reactor. This problem is computationally expensive and an average computation time for one function evaluation is around 45 minutes. The reason for the high computation time is the slow reaction rate after a certain point of time which is termed as gelation. For more details about kinetics and a study of multiobjective optimization for this polymerization, see [5]. In this study, we optimize: 1. maximize average molecular weight Mw , 2. minimize polydispersity index PDI and 3. minimize polymerization time tpoly . Decision variables or the process conditions are monomer concentration, initiator concentration, polymerization time and temperature. Bounds for these decision variables are given in Table 10. We ran this process for 250 function evaluations with K-RVEA, RVEA, ParEGO and MOEA/DEGO. Nondominated solutions from all four algorithms are shown in Figure 1. As can be seen, solutions from K-RVEA are better distributed than those of RVEA and ParEGO. Solutions from MOEA/DEGO are also well distributed but some of them are dominated by those from K-RVEA. To compare the results statistically, we combined nondominated solutions from all four algorithms and clustered them into a prefixed number. One individual from each cluster closest to the centroid was selected and all selected individuals were used as the reference set to calculate IGD values. The IGD values thus obtained are given in Table 11. As can be seen, K-RVEA was able to obtain of a better quality solutions than the other algorithms in the given number of function evaluations.</p>
+<p>6</p>
+<p>Sensitivity analysis of parameters in K-RVEA</p>
+<p>We provide sensitivity analysis of three important parameters used in K-RVEA. The first analysis is for parameter δ used to select individuals based on the needs of convergence and diversity. The second is for the number of individuals (Nu) to be selected for updating the surrogates. The third is for the number of generations (wmax ) used before updating the surrogates.</p>
+<p>4</p></section>
+<section class="pdf-page" id="pdf-page-31"><h2 class="page-number">Page 31</h2><p>Table 6: Statistical results for IGD values on the WFG suite obtained by K-RVEA, RVEA and ParEGO. The best results are highlighted Problem</p>
+<p>WFG1</p>
+<p>WFG2</p>
+<p>WFG3</p>
+<p>WFG4</p>
+<p>WFG5</p>
+<p>WFG6</p>
+<p>WFG7</p>
+<p>WFG8</p>
+<p>WFG9</p>
+<p>k 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10</p>
+<p>K-RVEA min 1.543 0.940 2.394 2.699 2.990 0.473 0.483 0.497 0.658 1.178 0.442 0.226 0.350 0.454 0.581 0.363 0.622 1.527 2.749 4.257 0.349 0.729 1.630 2.695 4.363 0.688 0.814 1.740 3.005 4.953 0.624 0.846 1.644 3.071 5.709 0.647 1.211 2.073 3.275 5.315 0.453 0.693 1.686 2.918 4.469</p>
+<p>mean 1.842 2.113 2.645 2.941 3.255 0.634 0.651 0.667 0.947 1.616 0.497 0.509 0.668 0.641 0.883 0.566 1.064 1.632 3.080 6.790 0.514 0.973 1.763 2.955 5.606 0.809 1.101 1.921 3.327 5.535 0.669 1.291 1.790 3.352 7.240 0.822 1.437 2.156 3.491 5.912 0.651 1.086 1.949 3.532 5.893</p>
+<p>RVEA max 2.012 2.504 2.958 3.403 3.781 0.808 0.903 1.501 1.798 2.133 0.560 0.757 0.881 0.836 1.108 0.687 1.812 1.852 3.861 9.212 0.630 1.180 1.901 3.374 6.743 0.891 1.393 2.141 3.693 6.381 0.740 1.814 1.958 3.989 9.140 0.934 1.614 2.274 3.672 6.525 0.885 1.434 2.849 4.353 7.690</p>
+<p>↑ ≈ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ≈ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ≈ ↑ ↑ ↑ ↑ ≈ ↑ ↑ ↑ ≈ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑</p>
+<p>min 1.775 1.934 2.683 2.896 3.275 0.595 0.601 0.919 1.040 1.595 0.557 0.440 1.094 1.218 1.665 0.533 1.066 2.289 4.348 6.487 0.589 1.016 2.211 4.145 5.895 0.758 1.110 2.318 4.107 5.920 0.598 1.222 2.381 4.519 6.649 0.802 1.561 2.584 4.708 6.269 0.701 1.210 2.321 4.259 6.164</p>
+<p>5</p>
+<p>mean 2.108 2.018 2.822 3.074 3.529 0.771 0.831 1.191 1.727 2.393 0.681 0.621 1.486 1.793 3.465 0.582 1.243 2.632 5.275 7.741 0.699 1.171 2.357 4.496 6.459 0.841 1.253 2.460 4.576 6.414 0.667 1.429 2.644 5.045 7.433 0.893 1.684 2.818 5.149 7.056 0.822 1.349 2.568 4.853 7.209</p>
+<p>ParEGO max 2.394 2.225 3.298 3.755 4.162 0.903 1.031 1.897 2.940 3.892 1.065 0.828 2.572 2.793 6.425 0.657 1.527 3.302 8.286 9.607 0.794 1.351 2.655 5.106 7.401 0.892 1.410 2.802 5.488 7.163 0.729 1.910 3.432 5.916 9.046 0.991 1.876 3.167 6.108 7.998 0.953 1.506 3.352 5.672 9.154</p>
+<p>≈ ≈</p>
+<p>↑ ↑</p>
+<p>≈ ↓</p>
+<p>≈ ↑</p>
+<p>↑ ↑</p>
+<p>≈ ↑</p>
+<p>≈ ↑</p>
+<p>≈ ↑</p>
+<p>≈ ↑</p>
+<p>min 1.697 1.982 NA NA NA 0.652 0.914 NA NA NA 0.426 0.368 NA NA NA 0.509 1.175 NA NA NA 0.586 1.120 NA NA NA 0.631 1.236 NA NA NA 0.563 1.377 NA NA NA 0.745 1.619 NA NA NA 0.490 0.985 NA NA NA</p>
+<p>mean 1.798 2.137 NA NA NA 0.777 1.098 NA NA NA 0.477 0.447 NA NA NA 0.569 1.494 NA NA NA 0.684 1.301 NA NA NA 0.790 1.330 NA NA NA 0.645 1.558 NA NA NA 0.843 1.786 NA NA NA 0.640 1.232 NA NA NA</p>
+<p>max 2.318 2.517 NA NA NA 0.872 1.407 NA NA NA 0.568 0.512 NA NA NA 0.658 2.039 NA NA NA 0.729 1.493 NA NA NA 0.942 1.418 NA NA NA 0.716 1.792 NA NA NA 0.899 1.954 NA NA NA 0.869 1.448 NA NA NA</p></section>
+<section class="pdf-page" id="pdf-page-32"><h2 class="page-number">Page 32</h2><p>Table 7: Statistical results for hypervolume on the WFG suite obtained by K-RVEA, RVEA and ParEGO. The best results are highlighted Problem</p>
+<p>WFG1</p>
+<p>WFG2</p>
+<p>WFG3</p>
+<p>WFG4</p>
+<p>WFG5</p>
+<p>WFG6</p>
+<p>WFG7</p>
+<p>WFG8</p>
+<p>WFG9</p>
+<p>k 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10 3 4 6 8 10</p>
+<p>K-RVEA min 0.366 0.390 0.337 0.292 0.276 0.732 0.650 0.683 0.765 0.661 0.524 0.527 0.565 0.632 0.578 0.561 0.621 0.660 0.657 0.546 0.530 0.560 0.573 0.548 0.542 0.451 0.536 0.543 0.647 0.667 0.500 0.436 0.603 0.573 0.473 0.491 0.456 0.501 0.488 0.444 0.423 0.437 0.418 0.544 0.462</p>
+<p>mean 0.429 0.437 0.378 0.327 0.302 0.782 0.738 0.845 0.900 0.835 0.564 0.569 0.598 0.671 0.612 0.603 0.689 0.757 0.767 0.699 0.604 0.621 0.675 0.721 0.671 0.490 0.665 0.676 0.793 0.749 0.535 0.559 0.726 0.703 0.614 0.525 0.490 0.540 0.591 0.561 0.523 0.512 0.650 0.692 0.633</p>
+<p>RVEA max 0.478 0.469 0.404 0.352 0.334 0.852 0.896 0.913 0.941 0.920 0.608 0.635 0.667 0.697 0.650 0.662 0.725 0.832 0.857 0.815 0.656 0.685 0.746 0.782 0.777 0.555 0.710 0.774 0.837 0.836 0.582 0.661 0.792 0.810 0.704 0.558 0.554 0.606 0.684 0.665 0.634 0.664 0.751 0.792 0.745</p>
+<p>min ↑ 0.352 ≈ 0.437 ↑ 0.293 ≈ 0.257 ↑ 0.219 ↑ 0.648 ↑ 0.553 ↑ 0.568 ↑ 0.383 ↑ 0.334 ↑ 0.452 ↑ 0.457 ↑ 0.448 ↑ 0.449 ↑ 0.259 ↑ 0.527 ↑ 0.432 ↑ 0.434 ↑ 0.265 ↑ 0.362 ↑ 0.438 ↑ 0.413 ↑ 0.413 ↑ 0.317 ↑ 0.281 ↑ 0.403 ↑ 0.390 ↑ 0.400 ↑ 0.334 ↑ 0.288 ↑ 0.487 ↑ 0.379 ↑ 0.392 ↑ 0.378 ↑ 0.318 ↑ 0.379 ↑ 0.332 ↑ 0.314 ↑ 0.271 ↑ 0.262 ↑ 0.386 ↑ 0.400 ↑ 0.394 ↑ 0.299 ↑ 60.336</p>
+<p>mean 0.411 0.452 0.345 0.307 0.261 0.694 0.673 0.707 0.697 0.666 0.500 0.506 0.495 0.528 0.406 0.558 0.500 0.555 0.465 0.436 0.479 0.459 0.485 0.431 0.402 0.436 0.440 0.471 0.442 0.411 0.519 0.446 0.484 0.455 0.430 0.426 0.371 0.398 0.329 0.326 0.436 0.451 0.501 0.456 0.416</p>
+<p>ParEGO max 0.468 0.466 0.375 0.438 0.293 0.762 0.806 0.817 0.897 0.927 0.541 0.543 0.565 0.586 0.481 0.607 0.564 0.659 0.586 0.533 0.521 0.511 0.552 0.520 0.498 0.478 0.509 0.545 0.564 0.542 0.562 0.527 0.573 0.564 0.511 0.471 0.404 0.478 0.444 0.403 0.507 0.507 0.638 0.531 0.534</p>
+<p>↑ ↑</p>
+<p>↑ ↑</p>
+<p>≈ ≈</p>
+<p>↑ ↑</p>
+<p>↑ ↑</p>
+<p>↓ ↑</p>
+<p>↓ ↑</p>
+<p>↑ ↑</p>
+<p>↓ ≈</p>
+<p>min 0.346 0.260 NA NA NA 0.712 0.565 NA NA NA 0.568 0.539 NA NA NA 0.533 0.382 NA NA NA 0.465 0.407 NA NA NA 0.520 0.428 NA NA NA 0.540 0.400 NA NA NA 0.429 0.345 NA NA NA 0.463 0.420 NA NA NA</p>
+<p>mean 0.393 0.321 NA NA NA 0.761 0.637 NA NA NA 0.577 0.561 NA NA NA 0.577 0.468 NA NA NA 0.488 0.448 NA NA NA 0.560 0.461 NA NA NA 0.578 0.434 NA NA NA 0.469 0.388 NA NA NA 0.553 0.486 NA NA NA</p>
+<p>max 0.415 0.377 NA NA NA 0.806 0.695 NA NA NA 0.587 0.573 NA NA NA 0.620 0.545 NA NA NA 0.538 0.522 NA NA NA 0.608 0.514 NA NA NA 0.646 0.480 NA NA NA 0.531 0.438 NA NA NA 0.617 0.569 NA NA NA</p></section>
+<section class="pdf-page" id="pdf-page-33"><h2 class="page-number">Page 33</h2><p>Table 8: Statistical results for IGD values on the WFG suite obtained by K-RVEA and MOEA/DEGO for three objectives. The best results are highlighted Problem WFG1 WFG2 WFG3 WFG4 WFG5 WFG6 WFG7 WFG8 WFG9</p>
+<p>K-RVEA min 1.543 0.473 0.442 0.363 0.349 0.688 0.624 0.647 0.453</p>
+<p>mean 1.842 0.634 0.497 0.566 0.514 0.809 0.669 0.822 0.651</p>
+<p>MOEA/D-EGO max 2.012 0.808 0.560 0.687 0.630 0.891 0.740 0.934 0.885</p>
+<p>≈ ≈ ↑ ↑ ↑ ↑ ≈ ≈ ↑</p>
+<p>min 1.572 0.504 0.518 0.512 0.607 0.794 0.617 0.787 0.698</p>
+<p>mean 1.975 0.705 0.589 0.555 0.646 0.832 0.653 0.844 0.796</p>
+<p>max 2.237 0.837 0.659 0.643 0.686 0.872 0.715 0.868 0.851</p>
+<p>Table 9: Statistical results for hypervolume on the WFG suite obtained by K-RVEA and MOEA/DEGO for three objectives. The best results are highlighted Problem WFG1 WFG2 WFG3 WFG4 WFG5 WFG6 WFG7 WFG8 WFG9</p>
+<p>K-RVEA min 0.366 0.732 0.524 0.561 0.530 0.451 0.500 0.491 0.423</p>
+<p>mean 0.429 0.782 0.564 0.603 0.604 0.490 0.535 0.525 0.523</p>
+<p>MOEA/D-EGO max 0.478 0.852 0.608 0.662 0.656 0.555 0.582 0.558 0.634</p>
+<p>≈ ↑ ≈ ↑ ↑ ≈ ≈ ↑ ↑</p>
+<p>min 0.373 0.718 0.517 0.517 0.478 0.455 0.522 0.443 0.428</p>
+<p>mean 0.421 0.751 0.550 0.559 0.525 0.463 0.536 0.451 0.456</p>
+<p>max 0.498 0.795 0.571 0.591 0.572 0.467 0.558 0.459 0.496</p>
+<p>Table 10: Bounds for decision variables</p>
+<p>Monomer concentration (mole/lt) Initiator concentration (mole/lt) Polymerization time (sec) Temperature (C)</p>
+<p>7</p>
+<p>Lower bound</p>
+<p>Upper bound</p>
+<p>10 3.00e-05 10 60</p>
+<p>14 1.50e-04 10000 80</p></section>
+<section class="pdf-page" id="pdf-page-34"><h2 class="page-number">Page 34</h2><p>7</p>
+<p>K−RVEA RVEA ParEGO MOEA/D−EGO</p>
+<p>6</p>
+<p>PDI</p>
+<p>5</p>
+<p>4</p>
+<p>3</p>
+<p>2 10000</p>
+<p>0 2</p>
+<p>5000</p>
+<p>4 0</p>
+<p>6</p>
+<p>6</p>
+<p>x 10 Mw</p>
+<p>tpoly</p>
+<p>Figure 1: Nondominated solutions from K-RVEA, RVEA, ParEGO and MOEA/D-EGO Table 11: IGD values obtained with K-RVEA, RVEA and ParEGO IGD</p>
+<p>6.1</p>
+<p>K-RVEA 2.338e+04</p>
+<p>RVEA 3.395e+05</p>
+<p>ParEGO 7.4873e+05</p>
+<p>MOEA/D-EGO 4.0836e+04</p>
+<p>Effect of parameter δ</p>
+<p>The parameter δ is effective whenever surrogates are updated. The main motivation for using δ is to reduce the number of empty reference vectors by exploiting the uncertainty information from Kriging models. In K-RVEA, when updating surrogates, the change in the number of empty reference vectors is measured from the previous update and if this change is more than δ, uncertainty is used. In other words, whenever surrogates are updated based on the uncertainty, the number of empty reference vectors is reduced. An increase in the value of δ will decrease the frequency of using uncertainty or decreasing the use of uncertainty from Kriging models will increase the number of empty reference vectors. To elaborate, we used different values of δ i.e. (0.05, 0.3, 0.5, 0.7, 1) × N, where N is the number of reference vectors used and measured the number of times uncertainty from Kriging models was used. Results on WFG1 with different numbers of objectives are provided in the first row of Figure 2, where NK denotes the frequency of using uncertainty. As can be seen, the increase in the value of δ decreases the frequency of using uncertainty from the Kriging models. To see the effect on the reference vectors, we measured the change in the number of empty reference vectors (denoted by NR) whenever uncertainty was used. The Results are given in the second row of Figure 2 which shows the average change in the number of empty reference vectors (denoted by NR in the figure). For instance, if surrogates were updated with uncertainty five times in the solution process and the change in the number of empty reference vectors was (5, 10, 3, 1, 1), the average i.e. four is shown. Moreover, no change was observed at δ = 1 because surrogates were never updated using uncertainty information. In addition, the change was always a positive integer whenever uncertainty information was used, which indicates that the number of empty reference vectors decreased. To see the effect of δ on the performance of the algorithm, we also measured the hypervolume for different numbers of objectives and present the results in Figure 3. As can be seen, hypervolume decreases with the increase in the value of δ. This is due to the fact that the frequency of using 8</p></section>
+<section class="pdf-page" id="pdf-page-35"><h2 class="page-number">Page 35</h2><p>4 6</p>
+<p>6</p>
+<p>k=3</p>
+<p>k=4</p>
+<p>2</p>
+<p>3</p>
+<p>k=6</p>
+<p>3</p>
+<p>k=8</p>
+<p>k=10</p>
+<p>1.5</p>
+<p>NK</p>
+<p>2</p>
+<p>4</p>
+<p>4</p>
+<p>2</p>
+<p>2</p>
+<p>0</p>
+<p>2 1</p>
+<p>1</p>
+<p>0 0</p>
+<p>0.5</p>
+<p>1</p>
+<p>0.5</p>
+<p>0 0</p>
+<p>15</p>
+<p>1</p>
+<p>0.5</p>
+<p>1</p>
+<p>10</p>
+<p>0</p>
+<p>0</p>
+<p>0</p>
+<p>0.5</p>
+<p>0</p>
+<p>1</p>
+<p>8</p>
+<p>0.5</p>
+<p>1</p>
+<p>6</p>
+<p>0</p>
+<p>0.5</p>
+<p>1</p>
+<p>0</p>
+<p>0.5</p>
+<p>1</p>
+<p>8</p>
+<p>6</p>
+<p>6 4</p>
+<p>NR</p>
+<p>10 5</p>
+<p>4</p>
+<p>2 2 0 0 0.5 0 0 0.5 / 0 0 0.5 / 0 0 0.5 /</p>
+<p>/</p>
+<p>/</p>
+<p>Hyvervolume</p>
+<p>Figure 2: Effect of parameter δ used in K-RVEA on the frequency of using uncertainty information and changes in the number of empty reference vectors</p>
+<p>0.44</p>
+<p>0.44</p>
+<p>0.42</p>
+<p>0.42</p>
+<p>0.4</p>
+<p>0.35</p>
+<p>0.35</p>
+<p>0.34</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>0.38</p>
+<p>0.38</p>
+<p>0.36</p>
+<p>0.36</p>
+<p>0.33 0.3 0.32</p>
+<p>0.35 0.34</p>
+<p>0.34</p>
+<p>k=4</p>
+<p>k=3</p>
+<p>0.32 0.3</p>
+<p>0.3 0</p>
+<p>0.5 /</p>
+<p>1</p>
+<p>k=6</p>
+<p>0.32 0.3</p>
+<p>0</p>
+<p>0.5 /</p>
+<p>1</p>
+<p>0</p>
+<p>0.5 /</p>
+<p>1</p>
+<p>0.25</p>
+<p>0.3 0</p>
+<p>0.5 /</p>
+<p>Figure 3: Effect of parameter δ used in K-RVEA on the hypervolume on WFG1</p>
+<p>9</p>
+<p>k=10</p>
+<p>k=8</p>
+<p>0.31</p>
+<p>1</p>
+<p>0</p>
+<p>0.5 /</p>
+<p>1</p></section>
+<section class="pdf-page" id="pdf-page-36"><h2 class="page-number">Page 36</h2><p>1.2</p>
+<p>1.2</p>
+<p>IGD</p>
+<p>1.1</p>
+<p>1.1</p>
+<p>k=3</p>
+<p>1</p>
+<p>1</p>
+<p>0.9</p>
+<p>0.9</p>
+<p>0.8</p>
+<p>0.8</p>
+<p>0.7</p>
+<p>0.7 0</p>
+<p>10</p>
+<p>20</p>
+<p>Nu</p>
+<p>30</p>
+<p>4.5</p>
+<p>2.5</p>
+<p>k=4</p>
+<p>k=6</p>
+<p>2.3</p>
+<p>10</p>
+<p>20</p>
+<p>30</p>
+<p>k=8</p>
+<p>4.2 3.9</p>
+<p>6</p>
+<p>1.9</p>
+<p>3.6</p>
+<p>5.8</p>
+<p>1.7</p>
+<p>3.3</p>
+<p>5.6 5.4</p>
+<p>3 0</p>
+<p>10</p>
+<p>Nu</p>
+<p>20</p>
+<p>Nu</p>
+<p>30</p>
+<p>k=10</p>
+<p>6.2</p>
+<p>2.1</p>
+<p>1.5 0</p>
+<p>6.4</p>
+<p>0</p>
+<p>Nu</p>
+<p>Nu</p>
+<p>Figure 4: Performance of K-RVEA on WFG9 with the different numbers of individuals to be used for updating the surrogates uncertainty information from Kriging models decreases with the increase in the value of δ. We also observed the similar behavior for other problems. In addition, the effect of the parameter δ depends on the number of reference vectors and the problem solved. Using δ in an adaptive way is a future research topic, however, in the current study, we kept it fixed as 0.05 ×N .</p>
+<p>6.2</p>
+<p>Effect of the number of individuals to be selected to update surrogates</p>
+<p>In K-RVEA, surrogates need to be updated by selecting some individuals for re-evaluation using the original functions. These individuals should be selected in such a way that both convergence and diversity are taken into account. The number of individuals to be selected can be important and mainly depends on the problem solved. We performed a sensitivity analysis with numbers 2, 5, 10, 20 and 30 on the problem WFG9 for different numbers of objectives and the results are given in Figure 4. As can be seen, for up to eight objectives, an increase in the number of individuals (denoted by Nu) decreased the performance of the algorithm. In contrast, with 10 objectives, the performance was improved with an increase in the number. As the total number of function evaluations is set as a constant, increasing the number of individuals for updating the surrogate will decrease the frequency of updating the surrogates. For instance, if the total number of function evaluations is 300 and the numbers of individuals for updating the surrogates are 2 and 10, then surrogates are updated 150 and 30 times, respectively. In other words, the number of times surrogates are used with an evolutionary algorithm is bigger in case of a low number of individuals. Using a low number of individuals thus may be helpful to achieve a good approximation of the Pareto front. On the other hand, a low number may not be enough and individuals selected do not necessarily contribute to the performance of the surrogates. In contrast, using a high number will reduce the frequency of using surrogates with an evolutionary algorithm and may be helpful to improve the performance of the surrogates. Therefore, this parameter depends on the type of problem solved and should be adaptive. However, in this paper we kept it fixed as five.</p>
+<p>6.3</p>
+<p>Effect of the number of generations before updating the surrogate</p>
+<p>The frequency of updating the surrogate or when to update the surrogate is very important in surrogate management, although, unfortunately, there is no solid theory for when to update the surrogates. We, therefore, present here empirical studies on the performance of K-RVEA given</p>
+<p>10</p>
+<p>30</p></section>
+<section class="pdf-page" id="pdf-page-37"><h2 class="page-number">Page 37</h2><p>0.7</p>
+<p>FE=150</p>
+<p>0.7</p>
+<p>0.7</p>
+<p>0.7</p>
+<p>0.7</p>
+<p>0.6</p>
+<p>0.6</p>
+<p>0.6</p>
+<p>0.6</p>
+<p>0.5</p>
+<p>0.5</p>
+<p>0.5</p>
+<p>0.5</p>
+<p>FE=200 FE=250</p>
+<p>IGD</p>
+<p>0.6</p>
+<p>FE=300</p>
+<p>0.5</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>0.4</p>
+<p>k=8</p>
+<p>0.4</p>
+<p>k=10</p>
+<p>k=3</p>
+<p>k=4</p>
+<p>k=6</p>
+<p>10 25 40 55 70 85 100</p>
+<p>10 25 40 55 70 85 100</p>
+<p>10 25 40 55 70 85 100</p>
+<p>10 25 40 55 70 85 100</p>
+<p>10 25 40 55 70 85 100</p>
+<p>No of generations</p>
+<p>No of generations</p>
+<p>No of generations</p>
+<p>No of generations</p>
+<p>No of generations</p>
+<p>Figure 5: Performance of K-RVEA on DTLZ4 with the prefixed number of generations taken before updating the surrogate for different numbers of function evaluations. different prefixed numbers of generations (wmax ) before the Kriging models are re-trained. We set wmax = {10, 20, . . . , 100}. The IGD values of the solution sets obtained by K-RVEA with these different settings for solving DTLZ4 for 3, 4, 6, 8 and 10 objectives are shown in Figure 5. Note that the maximum number of function evaluations is set to 300. However, we examine the performance of K-RVEA for various numbers of function evaluations, which are chosen to be 150, 200, 250, and 300. As can be seen, the performance changes more dramatically with three or four objectives. Nevertheless, there is no clear trend in the change of performance with the change of the number of generations before updating the surrogate. However, consistently good performance is observed for different numners of objectives when this number is set to 20. Although a better performance might be obtained when the number of generations before updating the surrogate is adapted, we set it to 20 in this work.</p>
+<p>References [1] R. Cheng, Y. Jin, M. Olhofer, and B. Sendhoff. A reference vector guided evolutionary algorithm for many objective optimization. IEEE Transactions on Evolutionary Computation, 2016 (accepted). [2] J. Cornell. Experiments with Mixtures: Designs, Models, and the Analysis of Mixture Data. John Wiley &amp; Sons, 2011. [3] S. Huband, L. Barone, L. While, and P. Hingston. A scalable multi-objective test problem toolkit. In C. Coello, A. H. Aguirre, and E. Zitzler, editors, Evolutionary Multi-Criterion Optimization, pages 280–295. Springer, 2005. [4] K. Li, K. Deb, Q. Zhang, and S. Kwong. An evolutionary many-objective optimization algorithm based on dominance and decomposition. IEEE Transactions on Evolutionary Computation, 19:694–716, 2015. [5] A. Mogilicharla, T. Chugh, S. Majumder, and K. Mitra. Multi-objective optimization of bulk vinyl acetate polymerization with branching. Materials and Manufacturing Processes, 29:210– 217, 2014. [6] S. Thomas. Measurement and modelling of long chain branching. PhD thesis, McMaster University, 1998. 11</p></section>
+<section class="pdf-page" id="pdf-page-38"><h2 class="page-number">Page 38</h2><p>[7] L. While, L. Bradstreet, and L. Barone. A fast way of calculating exact hypervolumes. IEEE Transactions on Evolutionary Computation, 16:86–95, 2012.</p>
+<p>12</p></section></article></body></html>

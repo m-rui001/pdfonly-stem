@@ -1,0 +1,63 @@
+{
+  "sha1": "d68279c8285c164fd4cd6384c34caba29c055525",
+  "title": "Highly selective electrocatalytic CO2 reduction to ethanol by metallic clusters dynamically formed from atomically dispersed copper",
+  "doi": "https://doi.org/10.1038/s41560-020-0666-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d68279c8285c164fd4cd6384c34caba29c055525/index.html",
+  "source_chars": 62884,
+  "markdown_chars": 2433,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "equivalent to ×1016 Cu atoms",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文中“×1016”应为“×10^16”，上标丢失，其他位置（如补充表11）使用“*10^16”表示，存在强文本内证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "amplitude reduction factor (S20)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "标准EXAFS参数应写作S0^2，原文多次出现“S20”而非上标形式，疑为排版缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "k-point mash were used",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "应为“k-point mesh”，原文拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：乙醇FE 91.8%（Cu/C-0.1在-0.6V及Cu/C-0.4在-0.7V）、EXAFS配位数3.22、Cu-Cu配位数2/3、计算U_L(乙醇)=-0.41V等，均与提取文本一致。公式ΔG_ele = μ[Product] − μ[Reactant] − 0.5μ[H2(g)] + eU按原文保留。不确定处：原文中“×1016”和“S20”疑为上标缺失，已在issues中标注；计算部分中的“mash”疑为笔误，已标注。其余数值未发现矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8400,
+      "prompt_tokens": 19792,
+      "total_tokens": 28192,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6402
+      }
+    },
+    "content_chars": 3398
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

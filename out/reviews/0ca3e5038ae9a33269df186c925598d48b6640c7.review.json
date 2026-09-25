@@ -1,0 +1,73 @@
+{
+  "sha1": "0ca3e5038ae9a33269df186c925598d48b6640c7",
+  "title": "Natural History, Quality of Life, and Outcome in Cardiac Transthyretin Amyloidosis",
+  "doi": "https://doi.org/10.1161/circulationaha.118.038169",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0ca3e5038ae9a33269df186c925598d48b6640c7/index.html",
+  "source_chars": 48694,
+  "markdown_chars": 3558,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "of whom about 4 per cent possess the disease-associated TTR V1221 variant",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "上下文多次提及V122I，此处出现 'V1221'（数字1），疑为OCR/排版错误，但原文如此，予以保留并标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Median patient survival from diagnosis by Kaplan-Meier analysis was 31 months in patients with V122I-hATTR-CM compared to 69 months among patients with ATTRwt-CM (p<0.0001) and 57 months in non-V122I hATTR-CM.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.5,
+      "reason": "在 [PDF extracted page 11] 结尾处该句语义不完整，句子停在了 'non-V122I hATTR-CM'，未提及该组与ATTRwt-CM的比较P值或生存期比较的对象。下一段 [PDF extracted page 12] 直接开始讨论NAC分期。可能原文在页尾被截断，或有部分信息（如比较的p值）在提取中缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 24,
+      "quote": "实际上 提取文本中第24页的图例为 'Non-V122I hATTR'，表格内亦有 'Non-V122I-hATTR' 两种写法并存",
+      "type": "疑似不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同一图表图例中，基因型命名存在连字符连接不一致的情况，疑为制图时的文本格式差异，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "Median (IQR) LVEF (mm)\n58 (45-71)\n49 (39-62)\n53 (45-60)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格中LVEF（左心室射血分数）的数值显然是百分比（%），但单位标注为 'mm'，疑为制表时的单位错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值和结论：1. 队列构成（N=1034，三组比例）与基线特征（年龄、LVEF、NT-proBNP、eGFR等）均与表1内容一致。2. 多因素分析中的HR值（年龄1.037，LVEF 0.978，基因型HR 2.071/2.727，6MWT 0.881）与表2数据严格对照。3. 生存时间（31/69/57个月）及各分期生存期与正文描述相符。4. NT-proBNP上升速率和12个月绝对上升值的差异与图3结论一致。5. 诊断延误时间（中位17次就诊、39个月延迟）在摘要和正文中重复验证一致。6. 表3关于KCCQ变化中，提取文本提供的区间值存在位数不一致（如'-9 (-2 to -6)'），无法完全核对，笔记中仅保留方向性描述。7. 点2和点3中关于分期、生存改善的结论基于文本内容，逻辑自洽。主要不确定点为V122I-hATTR-CM组与非V122I-hATTR-CM组的生存期直接比较是否有统计学差异（原文未明确给出p值）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3537,
+      "prompt_tokens": 14100,
+      "total_tokens": 17637,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 601
+      }
+    },
+    "content_chars": 5434
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

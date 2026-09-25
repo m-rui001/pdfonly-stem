@@ -1,0 +1,211 @@
+{
+  "sha1": "fa9815c6d05ebf3c3fdd243f68abf3caa334ef3f",
+  "title": "Efficient and stable emission of warm-white light from lead-free halide double perovskites",
+  "doi": "https://doi.org/10.1038/s41586-018-0691-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/fa9815c6d05ebf3c3fdd243f68abf3caa334ef3f/index.html",
+  "source_chars": 66559,
+  "markdown_chars": 12499,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The PLQY is defined as the ratio of the radiative",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第1页末尾句子在'radiative'处中断，后续内容出现在第2页开头，属于跨页断句，但此处未完整衔接，可能影响PLQY定义的完整理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "recombination rate $ ( k_{\\mathrm{rad}}) $ to the sum of the radiative and non-radiative $ ( k_{\\mathrm{non}}) $ recombination rates.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第2页开头文字与第1页末尾'ratio of the radiative'衔接，但中间插入了Fig.1图注，导致阅读顺序混乱，PLQY定义被图注隔断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ 2 \\theta \\left(^{\\circ}\\right) $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该行孤立出现，疑似Fig.2坐标轴标签被错误提取为正文，可能影响图表理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Fig. 3 | Mechanistic investigations of PLQY in $ \\mathrm{C s_{2} A g_{1}-x N a_{x} I n C l_{6}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学式下标'1−x'被提取为'1}-x'，丢失了下标格式，但化学计量含义仍可推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "anhydrous bismuth chloride (BiCl $ {3} $ 99.999%)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "BiCl₃的化学式下标格式丢失，且缺少逗号，但化学式本身可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "zinc acetate dehydrate $ \\mathrm{(Z n(CH{3} C O O){2}\\cdot 2 H{2} O>98\\%)} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "化学式下标格式丢失（如CH₃COO的3、2等），但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "anhydrous indium chloride (InCl $ {3} $ , 99.999%)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "InCl₃下标格式丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "anhydrous antimony chloride (SbCl $ {3} $ , 99.99%)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "SbCl₃下标格式丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Molybdenum oxide $ (\\mathrm{M o O}_{3}, $ 99%)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "MoO₃下标格式部分丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Patterned indium tin oxide (ITO) glass substrates (sheet resistance, $ 15\\Omega \\mathrm{s q}^{-1} $ )",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "方阻单位'Ω sq⁻¹'格式部分丢失，但数值和单位可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "1 mmol anhydrous $ \\mathrm{I n C l}{3}, $ 0.005 mmol anhydrous $ \\mathrm{B i C l}{3} $ and 2 mmol CsCl",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "InCl₃和BiCl₃下标格式丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Na-doped $ \\mathrm{C s_{2} A g S b C l_{6}} $ was synthesized by substituting the $ \\mathrm{I n C l}{3} $ with $ \\mathrm{S b C l}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "InCl₃和SbCl₃下标格式丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The $ \\mathrm{C s_{2} A g_{0. 6} N a_{0. 4 0} I n C l_{6}} $ film was deposited by thermal evaporation of CsCl, AgCl, NaCl, $ \\mathrm{I n C l_{3}} $ and $ \\mathrm{B i C l_{3}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "化学式下标格式部分丢失，但化学式可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "CsCl, $ 0. 1 0-0. 2 0 \\mathrm{\\AA} \\mathrm{s}^{-1} $ ; NaCl, $ 0. 0 1-0. 0 3 \\mathrm{\\AA} \\mathrm{s}^{-1} $ ; AgCl, $ 0. 0 5-0. 1 0 \\mathrm{\\AA} \\mathrm{s}^{-1} $ ; $ \\mathrm{I n C l_{3}} $ $ 0. 1 0-0. 2 0 \\mathrm{\\AA} \\mathrm{s}^{-1} $ ; $ \\mathrm{B i C l_{3}} $ $ 0. 0 1 \\mathrm{\\AA} \\mathrm{s}^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "蒸发速率单位'Å s⁻¹'格式部分丢失，但数值和单位可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The evaporation sequence was CsCl, $ \\mathrm{I n C l_{3}} $ $ \\mathrm{B i C l_{3}} $ $ \\mathrm{N a C l} $ and AgCl.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "蒸发顺序中缺少逗号分隔，但顺序可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "40-nm-thick TAPC layers were deposited at a speed of $ 0. 1 0-0. 2 0 \\mathrm{\\AA} \\mathrm{s}^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "沉积速率单位'Å s⁻¹'格式部分丢失，但数值和单位可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "device area, $ 4 \\mathrm{mm}^{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "面积单位'mm²'格式部分丢失，但数值和单位可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "A crystal with a size of about $ 0.2 \\times1.0 \\times1.0 \\mathrm{mm}^{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "体积单位'mm³'格式部分丢失，但数值和单位可识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "The $ \\mathrm{B i}^{3+} $ incorporation is believed to improve crystal perfection and promote exciton localization $ ^{3 0} $ , further enhancing the PLQY (Extended Data Fig. 6).",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句出现在第2页Fig.1图注之后、第2页正文之前，与上下文（第2页正文讨论Na合金化）不连贯，疑似图注与正文顺序错乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Efficient and stable emission of warm-white light from lead-free halide double perovskites",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 19346,
+      "total_tokens": 29346,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18614,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

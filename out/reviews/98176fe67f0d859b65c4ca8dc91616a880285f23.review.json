@@ -1,0 +1,73 @@
+{
+  "sha1": "98176fe67f0d859b65c4ca8dc91616a880285f23",
+  "title": "CuInP 2 S 6 Room Temperature Layered Ferroelectric",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b00491",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/98176fe67f0d859b65c4ca8dc91616a880285f23/index.html",
+  "source_chars": 29388,
+  "markdown_chars": 3349,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": " g  1 1      Lcr  2 arctan  *  2  2 1       .",
+      "type": "formula_extraction_corruption",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式中希腊字母和括号结构出现乱码（如、等），无法准确复原数学表达式，但保持了可见字符原样。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Using experimentally observed temperature dependence of dielectric permittivity and the value of spontaneous polarization at room temperature (2.55 C/cm2)11, we obtain that T0 =292 K, CCW =7.2×103 K, =-2.3×1012 m5/(F×C2), =3.5×1015 m9/(F×C4)",
+      "type": "units_and_symbols",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "μC/cm² 中的 μ 显示为乱码字符（），指数数字如上标形式（103、1012等）与原意应读作10³、10¹²等，但文本中未呈现为清晰上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Rd   2  1 P3 , where  2  2 z Rd 0b33  z",
+      "type": "formula_extraction_corruption",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "德拜半径的表达式中微分算符和等号顺序混乱，无法完整复原原始公式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "   T T  TC  , TC is Curie temperature, which is lower that the phase transition temperature TFE  TC  2 .",
+      "type": "formula_extraction_corruption",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "乱码字符（、等）替换了希腊字母，且公式中的分母（4γα_T）在提取文本中缺失，导致TFE表达式不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：室温自发极化2.55 μC/cm²（原文中μ显示乱码）、Tc=315 K、厚度阈值100 nm和50 nm、畴尺寸1–3 μm、偏压±2/±4/±5 V、UHV基础压力1×10⁻¹⁰ mbar、离子活化能0.73 eV、LGD参数T₀=292 K、C_CW=7.2×10³ K、β=−2.3×10¹² m⁵/(F·C²)、γ=3.5×10¹⁵ m⁹/(F·C⁴)。公式（1）（2）（3）因提取乱码仅能部分复原，已按原文可见字符保留。正文提到的高载流子密度10²⁵ m⁻³与临界厚度~200 nm的对应关系在提取文本中表述为'10-25 m-3'（疑为10²⁵ m⁻³），在笔记中已注明。结论中关于50 nm以下极化消失与多畴态可能存活的表述与摘要一致。未发现不一致之处；公式的精确数学形式存在不确定性。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3281,
+      "prompt_tokens": 9103,
+      "total_tokens": 12384,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 34
+      }
+    },
+    "content_chars": 5189
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

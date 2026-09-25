@@ -1,0 +1,73 @@
+{
+  "sha1": "d55541514f77a3e143ffa8cae6e55adbb2b26622",
+  "title": "Stabilized hole-selective layer for high-performance inverted p-i-n perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.ade9637",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d55541514f77a3e143ffa8cae6e55adbb2b26622/index.html",
+  "source_chars": 35935,
+  "markdown_chars": 2863,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "amenable surface 2",
+      "type": "cross-page artifact",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "页尾出现孤立数字'2'，应为页码标记混入正文，跨页后接'for favorable contact'，原句应为'amenable surface for favorable contact'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "structural 3",
+      "type": "cross-page artifact",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页尾'structural'后出现数字'3'，应为页码标记，跨页后续为'characterizations'，应连读为'structural characterizations'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "diploe moment",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文均为'dipole moment'，此处'diploe'应为'dipole'的笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "Kevin probe force microscopy",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标准术语为'Kelvin probe force microscopy'，原文可能误拼为'Kevin'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：认证PCE 25.6%（1.53 eV，VOC 1.19 V，JSC 25.4 mA cm⁻²，FF 84.6%），1.68 eV PCE 22.7%，1.80 eV PCE 20.1%；热稳定性数据（65 ℃/1200 h 保持90%，85 ℃/1200 h 保持74%）；激活能0.389 vs 0.150 eV；DFT结合能（-22.4 vs -16.7 eV）等均与原文一致。公式未出现。提取文本中无化学式错误，但存在跨页页码混入和两个明显拼写错误（diploe、Kevin），已在问题中标注。未发现数值矛盾或缺失关键数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3808,
+      "prompt_tokens": 11574,
+      "total_tokens": 15382,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1396
+      }
+    },
+    "content_chars": 4206
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

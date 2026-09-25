@@ -1,0 +1,75 @@
+{
+  "sha1": "c05f984019353bdd90dc078fca46d03525ff20b5",
+  "title": "Buckled two-dimensional Xene sheets",
+  "doi": "https://doi.org/10.1038/nmat4802",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c05f984019353bdd90dc078fca46d03525ff20b5/index.html",
+  "source_chars": 48737,
+  "markdown_chars": 7374,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "where $ \\nu_{\\mathrm{F}} $ is the Fermi velocity",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "公式中变量为 v_F，但紧随其后的文字说明将其写作 \\nu_F（希腊字母 nu），与公式符号不一致，属符号抽取/转写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "state is located below the bonding $ p_{xy} $ state at the 1 point",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "结合上下文讨论的是 Γ 点附近的能带反转，此处“1 point”应为“Γ point”的 OCR 误识，影响对能带反转位置的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Al(111) 2×2/$\\sqrt{3}\\times3$ 8.50 2.58 1.23 24",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第29页同一表格对应项写作“2×2/×3”，两处相标记不一致且均疑似缺失根号或数字，表格中该相标记存在抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "Al(111) 2$\\times$2/$\\times$3 8.50 2.58 1.23 24",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "与第22页表格同一项相比，此处相标记“2×2/×3”缺少根号及被开方数，两页表格抽取不一致，属表格结构损坏。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Buckled Two-Dimensional Xene Sheets",
+  "self_check": "已核对：摘要与正文对Xene/Xane定义、褶皱参数δ（石墨烯0 Å、FS锡烯0.85 Å）、键角120°→110°、硅烯键长约2.28 Å与石墨烯约1.42 Å、费米速度约6×10⁵ m/s、SOC能隙（硅烯1.5–2 meV、锗烯23.9–30 meV、锡烯约0.1 eV、QSH最高约0.3 eV）、带隙1.54→1.67、临界场约0.05 V/nm与1 V/nm、应变临界值约-7%与约2%、哈密顿量式(1)各项及变量定义均与提取文本一致。不确定处：第22页与第29页Table 1中Al(111)相标记两处不一致且疑似缺根号，已在extraction_issues中标出；第12页“1 point”疑为Γ点误识，已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5366,
+      "prompt_tokens": 14274,
+      "total_tokens": 19640,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8996,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

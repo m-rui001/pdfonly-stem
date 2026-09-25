@@ -1,0 +1,54 @@
+{
+  "sha1": "d3454039a774519dd322479815980566aa20e2ed",
+  "title": "Occurrence of carbapenemase-producing Klebsiella pneumoniae and Escherichia coli in the European survey of carbapenemase-producing Enterobacteriaceae (EuSCAPE): a prospective, multinational study",
+  "doi": "https://doi.org/10.1016/s1473-3099(16)30257-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d3454039a774519dd322479815980566aa20e2ed/index.html",
+  "source_chars": 47766,
+  "markdown_chars": 3054,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Greece (56 isolates, 65·1 %) 8",
+      "type": "疑似错误（页码混入）",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "数字“8”疑为PDF页码被混入正文，原文该位置应为句号或逗号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "collected (Table 1). . Most",
+      "type": "疑似错误（重复标点）",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "两个连续句点，可能为提取时产生的多余字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：455家医院、36国、2703株、927株确认、Kp:Ec=11:1、每万入院1.3例、每十万住院日2.5例、KPC/NDM/OXA-48-like/VIM占比（42.4%/12.2%/38.1%/7.3%）、粘菌素/磷霉素/替加环素耐药率（28.3%/54.0%/5.2%）、四个OR值及置信区间，均与提取文本一致。未能获取表格2a/2b和表3的具体内容，但正文描述已涵盖其主要结论；部分国家名称和数字（如希腊NDM上升）来自讨论段落，未发现方向矛盾。不确定之处在于表格原始数据及个别国家缺失分母信息，但已在文中以局限说明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10788,
+      "prompt_tokens": 12746,
+      "total_tokens": 23534,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8604
+      }
+    },
+    "content_chars": 3843
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

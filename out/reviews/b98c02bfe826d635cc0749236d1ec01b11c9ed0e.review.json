@@ -1,0 +1,64 @@
+{
+  "sha1": "b98c02bfe826d635cc0749236d1ec01b11c9ed0e",
+  "title": "Anharmonicity and Disorder in the Black Phases of Cesium Lead Iodide Used for Stable Inorganic Perovskite Solar Cells",
+  "doi": "https://doi.org/10.1021/acsnano.8b00267",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b98c02bfe826d635cc0749236d1ec01b11c9ed0e/index.html",
+  "source_chars": 66628,
+  "markdown_chars": 2381,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "A 0.38Å 3N dimensional displacement",
+      "type": "符号缺失/歧义",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "“3N”含义不清，可能为“√(3N)”或缺失运算符，无法确认真实含义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "U (η) = U0 + η4 η2 h̄ωνΓ (qΓ ) + Φ4,νΓ + O(η 6 )",
+      "type": "公式疑似损坏",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式中η4和η2顺序异常，可能应为η^2/4和η^4/24等，但无法确认正确形式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "E τ = τ 0 e kB T",
+      "type": "公式格式异常",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“e”后缺少指数括号，可能为exp(E/(kB T))，提取格式可能丢失上标。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对晶格常数、带隙、能量等关键数值，均与提取文本一致。公式(1)存在格式异常，已在issues中标注；其他公式如τ表达式也标注。未引入文本外信息，所有结论均有据可查。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7329,
+      "prompt_tokens": 21489,
+      "total_tokens": 28818,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5361
+      }
+    },
+    "content_chars": 3225
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

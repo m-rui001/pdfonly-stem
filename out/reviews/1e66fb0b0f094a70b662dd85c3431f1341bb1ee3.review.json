@@ -1,0 +1,99 @@
+{
+  "sha1": "1e66fb0b0f094a70b662dd85c3431f1341bb1ee3",
+  "title": "Ultrafast control of vortex microlasers",
+  "doi": "https://doi.org/10.1126/science.aba4597",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/1e66fb0b0f094a70b662dd85c3431f1341bb1ee3/index.html",
+  "source_chars": 50799,
+  "markdown_chars": 5598,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "bounded states in the continuum (BICs)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 \"bound states in the continuum\"，OCR 将 bound 误识为 bounded，影响术语准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the topology that protects the BICs manifests itself as the rotation of polarization along the beam axis in the far field (28, 29). Acting alone, it impacts an OAM in the cross-polarized transmission of circularly polarized beams (29).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "\"impacts an OAM\" 应为 \"imparts an OAM\"，OCR 将 imparts 误识为 impacts，改变动词含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the trade-off between high-Q values （ $ Q\\propto\\omega t $ , relates to a low threshold) and high-speed operation （ $ \\propto1/t $ ）can be broken",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中文全角括号“（”和“）”混入英文公式文本，属于 OCR 标点识别错误，不影响公式含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "The limacon shape $ (\\varepsilon>0) $ only has one mirror reflection symmetry in one direction",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "\"limacon\" 应为 \"limaçon\"，OCR 丢失了变音符号，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "clear inverted folks can be seen",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "\"inverted folks\" 应为 \"inverted forks\"，OCR 将 forks 误识为 folks，影响对干涉图案的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "the transition $ \\Delta T / T $ decreases exponentially with the delay",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "此处 $\\Delta T / T$ 可能应为 $\\Delta T/T$ 或类似瞬态吸收信号表达式，但 OCR 提取的符号形式可能不完整，需对照原文确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Ultrafast control of vortex microlasers",
+  "self_check": "已核对关键数值：空气孔半径R=105 nm、晶格间距p=280 nm、钙钛矿薄膜厚度220 nm、激光阈值约4.2 μJ/cm²（正文）与3.7 μJ/cm²（补充材料）、切换时间1–1.5 ps、瞬态吸收寿命约85 ps、峰值功率122 W。公式已按提取文本原样保留，包括M矩阵、q积分和E_out表达式。结论方向一致：BIC涡旋微激光器可实现超快全光切换，打破低能耗与高速的权衡。仍不确定之处：补充材料中激光阈值3.7 μJ/cm²与正文4.2 μJ/cm²存在差异，可能因测量条件不同；部分OCR错误（如bounded、impacts、folks）已标出，但不影响核心论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4262,
+      "prompt_tokens": 13514,
+      "total_tokens": 17776,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8082,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Ultrafast control of vortex microlasers",
+    "translated_title": "涡旋微激光器的超快控制",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

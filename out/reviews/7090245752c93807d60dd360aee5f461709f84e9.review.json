@@ -1,0 +1,45 @@
+{
+  "sha1": "7090245752c93807d60dd360aee5f461709f84e9",
+  "title": "Teacher enthusiasm and students’ social-behavioral learning engagement: The mediating role of student enjoyment and boredom in Chinese EFL classes",
+  "doi": "https://doi.org/10.1177/13621688211014538",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7090245752c93807d60dd360aee5f461709f84e9/index.html",
+  "source_chars": 76328,
+  "markdown_chars": 2794,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "students’ enjoyment and anxiety predicted their engagement in a positive and negative way respectively",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "上下文及表4均显示预测变量为enjoyment和boredom，而非anxiety。原文此处应为boredom，提取文本中误写为anxiety。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：样本量2002，剔除267人（11.77%），回归系数β值（教师热情→投入.548，→愉悦.613，→无聊-.247，直接投入.224，愉悦→投入.489，无聊→投入-.097），中介效应总间接0.324（占59.12%），愉悦路径0.300，无聊路径0.024，C1差0.491。信度系数α：.763、.873、.783、.775。结果方向与摘要一致。不确定处：表3中的具体相关系数未在提取文本中完整呈现，笔记仅描述方向与相对大小，未引用未见的数值。另有一处原文将boredom误写为anxiety，已在issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6872,
+      "prompt_tokens": 17951,
+      "total_tokens": 24823,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4960
+      }
+    },
+    "content_chars": 3494
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

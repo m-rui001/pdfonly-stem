@@ -1,0 +1,64 @@
+{
+  "sha1": "2c7a782d2f98b06541c7a32ae5c74941877dec7c",
+  "title": "Predicting the formation and stability of single phase high-entropy alloys",
+  "doi": "https://doi.org/10.1016/j.actamat.2015.11.040",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2c7a782d2f98b06541c7a32ae5c74941877dec7c/index.html",
+  "source_chars": 44048,
+  "markdown_chars": 3267,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "G  H  T  S",
+      "type": "字符编码损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "希腊字母和运算符被提取为Unicode私有区字符，无法直接辨识，需对照原图确认公式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "S conf  k B ln   nR xi ln( xi )",
+      "type": "字符编码损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中希腊字母、求和符号等出现乱码，影响可读性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "＝ G ss  Gmax",
+      "type": "疑似缺少运算符",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "根据文中示例（Φ=1.16，由ΔGss=-23.43和ΔGmax=-20.16计算）可知Φ应为比值，但此处缺少除号（/），可能为提取缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：筛选总体系数186,299,362、预测SPHEA数1970、185个实验体系正确177个、16个例外、三个示例体系的ΔGss/ΔGmax/Φ值、Co-Cr-Fe-Ni最稳定组成Φ=8.93、析出温度1156 K、AlCoFeNi部分有序焓差等，均与提取文本一致。公式(1)-(6)中的乱码字符无法确认，已在extraction_issues中标出；其他未发现明显数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6989,
+      "prompt_tokens": 12303,
+      "total_tokens": 19292,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4468
+      }
+    },
+    "content_chars": 4224
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

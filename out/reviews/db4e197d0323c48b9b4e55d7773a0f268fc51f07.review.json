@@ -1,0 +1,54 @@
+{
+  "sha1": "db4e197d0323c48b9b4e55d7773a0f268fc51f07",
+  "title": "Gaia Data Release 1",
+  "doi": "https://doi.org/10.17863/cam.42266",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/db4e197d0323c48b9b4e55d7773a0f268fc51f07/index.html",
+  "source_chars": 119352,
+  "markdown_chars": 3044,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "although at the bright end (G < 12.5, Recio-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，'Recio-' 与下一页开头 'Blanco et al. 2016' 连成 'Recio-Blanco'，属于跨页断句。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "30e¡0:5($¡7:45 0:5 )2",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "PDF提取将高斯函数表达式中的数学符号错乱（'¡'、'0:5'等），应为 '30 exp(-0.5((ϖ-7.45)/0.5)^2)' 之类的形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：总源数1,142,679,769；主要天测2,057,050（Hipparcos 93,635，Tycho-2 1,963,415）；次要1,140,622,719；变星3194（Cepheid 599，RR Lyrae 2595）；位置/视差0.3 mas，自行1 mas/yr，Hipparcos自行0.06 mas/yr，系统视差0.3 mas，次要位置10 mas；G星等不确定度mmag至0.03 mag；昴星团视差7.45±0.3 mas，距离134±6 pc；过滤条件以及公式(1)(2)(3)均按提取文本保留。不确定之处：公式(3)中的'h'和'i1/2'疑似方括号提取失真，但未修改；图9公式乱码已标出；其他数值与摘要和正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11131,
+      "prompt_tokens": 33553,
+      "total_tokens": 44684,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8751
+      }
+    },
+    "content_chars": 3976
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

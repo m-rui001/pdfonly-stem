@@ -1,0 +1,66 @@
+{
+  "sha1": "082737648c0fd35f4da180f1ca055075361cf2f8",
+  "title": "Multiple elements of soil biodiversity drive ecosystem functions across biomes",
+  "doi": "https://doi.org/10.1038/s41559-019-1084-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/082737648c0fd35f4da180f1ca055075361cf2f8/index.html",
+  "source_chars": 75178,
+  "markdown_chars": 17300,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "David J. Eldridge $ ^{5} $ Sebastián Abades $ ^{6} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "作者列表中缺少逗号分隔符，属于OCR抽取格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the richness (that is, number of phylotypes or zero-radius operational taxonomic units (zOTUs)) within each of the 12 organismal types examined independently; a measure of their joint richness (using multidiversity indexes $ ^{8,14,25,26} $ ); a measure of the richness of organismal types included within globally distributed ecological assemblages; and the richness of highly connected soil phylotypes within ecological networks.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文此处列举四种丰富度指标，但OCR文本中缺少列举标点或编号，导致阅读时可能误读为连续描述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Q9 Q10 Fig.1 | The relationship between multifunctionality and biodiversity of organisms.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注前出现'Q9 Q10'等非正文标记，可能为OCR抽取的排版标记或页码残留，影响阅读顺序。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Multiple elements of soil biodiversity drive ecosystem functions across biomes",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 17219,
+      "total_tokens": 27219,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18933,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

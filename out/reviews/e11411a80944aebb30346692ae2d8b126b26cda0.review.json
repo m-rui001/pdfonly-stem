@@ -1,0 +1,54 @@
+{
+  "sha1": "e11411a80944aebb30346692ae2d8b126b26cda0",
+  "title": "The genome of Aiptasia , a sea anemone model for coral symbiosis",
+  "doi": "https://doi.org/10.1073/pnas.1513318112",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e11411a80944aebb30346692ae2d8b126b26cda0/index.html",
+  "source_chars": 47329,
+  "markdown_chars": 2632,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "an additional 548 “cnidarian-specific” cases",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "正文中刺胞动物特异HGT候选数为548，但同页图5A图注写“275 and 823, respectively”，两者矛盾，可能为原文或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Because of the smaller sample sizes of the first two categories (275 and 823, respectively)",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "与正文中的548矛盾。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：基因组大小260 Mb（流式）与组装258 Mb、scaffold/contig N50、基因模型29,269、重复含量26%、TRG数量3,107、CniFL蛋白116个、HGT候选275/548等。注意原文正文与图5A图注中“cnidarian-specific” HGT候选数量不一致（548 vs 823），已在提取问题中标注。公式无。代谢与免疫部分的关键基因名称（如NPC2D、CniFL）与原文一致。结论方向与摘要相符。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5945,
+      "prompt_tokens": 12383,
+      "total_tokens": 18328,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4090
+      }
+    },
+    "content_chars": 3457
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

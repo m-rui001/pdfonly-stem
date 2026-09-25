@@ -1,0 +1,126 @@
+{
+  "sha1": "7bcba069297b43c2f2e4db34d8b391339dddd911",
+  "title": "Applications of machine learning to machine fault diagnosis: A review and roadmap",
+  "doi": "https://doi.org/10.1016/j.ymssp.2019.106587",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/7bcba069297b43c2f2e4db34d8b391339dddd911/index.html",
+  "source_chars": 219589,
+  "markdown_chars": 17201,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 34,
+      "quote": "Given the dataset $ \\left{x_{i},y_{i}\\right}{i=1}^{m} $ with m samples, the represented features $ h{i} $ are defined as",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式前的数据集花括号转义丢失，导致 LaTeX 语法不完整，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "where $ \\sigma_{f} $ is the activation function of the encoder network, and $ \\theta={\\omega,b} $ is the training parameters of the encoder network.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "参数集合的花括号转义丢失，导致公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "where $ \\sigma_{g} $ is the activation function of the decoder network, and $ \\theta^{\\prime}={\\omega^{\\prime},b^{\\prime}} $ represents the training parameters of the decoder network.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "参数集合的花括号转义丢失，导致公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 38,
+      "quote": "where $ \\theta={\\omega,a,b} $ represents the parameters of RBM.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "参数集合的花括号转义丢失，导致公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 38,
+      "quote": "where $ {x_{i}}_{i=1}^{k} $ represents the input dataset with k samples.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "数据集花括号转义丢失，导致公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "where $ P ( y_{i}=q | \\boldsymbol{h}{i}^{L},\\boldsymbol{\\theta}^{C} )=\\exp \\left( \\boldsymbol{\\omega}{q}^{C} \\cdot \\boldsymbol{h}{i}^{L}+\\boldsymbol{b}{q}^{C} \\right) / \\sum_{q=1}^{k} \\exp \\left( \\boldsymbol{\\omega}{q}^{C} \\cdot \\boldsymbol{h}{i}^{L}+\\boldsymbol{b}{q}^{C} \\right), \\boldsymbol{h}{i}^{L} $ is the represented features in the Lth layer from the ith sample, $ \\widehat{\\boldsymbol{y}}_{i} $ represents the predicted one-hot class, and $ \\boldsymbol{\\theta}^{C}=\\left{ \\boldsymbol{\\omega}^{C},\\boldsymbol{b}^{C} \\right} $ is the training parameters of the classification layer.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中多处花括号转义丢失，导致 LaTeX 语法不完整，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 48,
+      "quote": "The domain is denoted as a pair of $ \\mathcal{D}={X,P(X)} $ including the dataset $ X={x_{i}}{i=1}^{n} $ and its marginal probability distribution $ P(X). $ The diagnosis task $ \\mathcal{T}={Y,f(\\cdot)} $ consists of the label space $ Y={y{i}}{i=1}^{n} $ and the diagnosis model $ f(\\cdot). $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中多处花括号转义丢失，导致 LaTeX 语法不完整，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 48,
+      "quote": "The dataset $ X^{s} $ contains $ n_{s} $ labeled samples $ {x_{i}^{s},y_{i}^{s}}{i=1}^{n{s}} $ following the distribution $ P_{s}(X). $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中花括号转义丢失，导致 LaTeX 语法不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 49,
+      "quote": "the target-domain datasets $ X^{\\mathrm{t}} $ consist of $ n_{\\mathrm{t}} $ samples $ \\left{x_{i}^{\\mathrm{t}}\\right}{i=1}^{n{\\mathrm{t}}} $ but only a few of them are labeled.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中花括号转义丢失，导致 LaTeX 语法不完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Applications of machine learning to machine fault diagnosis: A review and roadmap",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 56990,
+      "total_tokens": 66990,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21560,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Applications of machine learning to machine fault diagnosis: A review and roadmap",
+    "translated_title": "机器学习在机器故障诊断中的应用：综述与路线图",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

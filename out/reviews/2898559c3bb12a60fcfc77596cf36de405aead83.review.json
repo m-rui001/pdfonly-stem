@@ -1,0 +1,64 @@
+{
+  "sha1": "2898559c3bb12a60fcfc77596cf36de405aead83",
+  "title": "Spectral and Dynamical Properties of Single Excitons, Biexcitons, and Trions in Cesium–Lead-Halide Perovskite Quantum Dots",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b05077",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2898559c3bb12a60fcfc77596cf36de405aead83/index.html",
+  "source_chars": 94750,
+  "markdown_chars": 5712,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 40,
+      "quote": "QD volume, nm2",
+      "type": "疑似轴标签单位错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图 3c 横轴应表示量子点体积，正文均以 nm³ 描述体积；此处 nm² 疑为 nm³ 之笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "QD volume, nm",
+      "type": "疑似漏写上标 3",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图 5 横轴同为量子点体积，单位应含立方（nm³）；提取文本缺少上标“3”，可能为图注中本就缺失或提取损失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 29,
+      "quote": "sizes of CsPbI1.5Br1.5",
+      "type": "样品名标注不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "方法部分将混合组分写作 CsPbI1.5Br1.5，而正文及图 6 多处用 CsPbBr1.5I1.5 或 Br1.5I1.5-QDs；二者化学计量等价，但名称顺序不统一，可能造成阅读混淆。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值的一致性：辐射寿命（Br 7.8 ns、I 43.4 ns、混合 36.6 ns）与三指数分解及 Q = 0.41 推导出的 43.4 ns（I-QD）一致；3.1 eV 截面（1.3–1.5×10⁻¹⁴ cm²）及与 CdSe 的对比数值一致；双激子寿命（PL 93 ps、TA/uPL 92 ps、平均 92±1 ps）、体积标度指数约 0.5、C_A 范围 3×10⁻²⁸–4×10⁻²⁷ cm⁶/s 均与正文一致；激子–激子相互作用能（I 12 meV、混合 11 meV）与带内冷却时间（570 fs、360 fs）一致；CM 无效结果（高达 2.65E_g，预期阈值约 3E_g）一致。公式处理：辐射速率表达式 rr,X ∝ γ|f|² E_g E_p、泊松统计以及 A 的简并度依赖式均按原义保留。不确定之处：正文中 σ 与体吸收系数的关系式在提取文本中呈现为“σ = ( nm ns ) f αVQD”，存在下标/系数渲染不完整迹象，我按上下文将其解读为 σ = (n_s/n_m)² |f|² α V_QD，并在笔记中以此呈现；此外，图注中的 Stokes 位移数值（23/30/33 meV）虽来自图表而非正文，但正文“约 20–30 meV”的表述与之相容，故未特别标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18652,
+      "prompt_tokens": 29960,
+      "total_tokens": 48612,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 14108
+      }
+    },
+    "content_chars": 7077
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

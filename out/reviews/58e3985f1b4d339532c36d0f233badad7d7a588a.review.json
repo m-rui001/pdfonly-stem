@@ -1,0 +1,45 @@
+{
+  "sha1": "58e3985f1b4d339532c36d0f233badad7d7a588a",
+  "title": "Higher Order Dynamic Mode Decomposition",
+  "doi": "https://doi.org/10.1137/15m1054924",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/58e3985f1b4d339532c36d0f233badad7d7a588a/index.html",
+  "source_chars": 131286,
+  "markdown_chars": 3803,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "V̂ 2 − R̂V̂ 1 V̂ 2 1.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2.21)的表达式明显残缺，缺少范数符号和比例关系，可能是||V̂_2 - R̂ V̂_1|| / ||V̂_2|| << 1之类的形式，但原文仅给出这些字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言、方法、示例和应用中的关键数值：玩具模型参数（M,N,d,误差），Lorenz系统（σ,r,b,谐波数，误差），CGLE参数（α,β,μ,频率数，RRMSE），热对流参数（R,E,σ,η，频率值）。公式(1.3)、(1.5)、(2.1)、(2.29)等已保留原文形式。注意(2.21)式存在文本残缺，已在issues中标出。其余数值均与提取文本一致，未引入外部推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4835,
+      "prompt_tokens": 35536,
+      "total_tokens": 40371,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2096
+      }
+    },
+    "content_chars": 4360
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

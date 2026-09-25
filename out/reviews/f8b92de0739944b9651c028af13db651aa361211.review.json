@@ -1,0 +1,63 @@
+{
+  "sha1": "f8b92de0739944b9651c028af13db651aa361211",
+  "title": "Observed Arctic sea-ice loss directly follows anthropogenic CO 2 emission",
+  "doi": "https://doi.org/10.1126/science.aag2345",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f8b92de0739944b9651c028af13db651aa361211/index.html",
+  "source_chars": 22855,
+  "markdown_chars": 2055,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "loss of Arctic 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页2末尾出现孤立数字“2”，可能为页码标记，打断句子“loss of Arctic [2] sea ice”的完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "It is hence a 2 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页3末尾出现“2 3”，打断“a ... plausible”的句子，疑似跨页时插入了页码或无关数字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the loss of 2 4",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页4末尾出现“2 4”，打断“loss of ... Arctic sea ice”的句子，疑似跨页时插入了页码或无关数字。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：观测敏感性在摘要为3±0.3 m2/吨，正文中观测期为3.0±0.1 m2/吨，后文总结为3.0±0.3 m2/吨，笔记中保留原样；模型平均敏感性1.75±0.67，最大1.95±0.70；额外1000 Gt CO2排放，年排放35 Gt，内部变率20年不确定性。公式(1)-(4)的变量关系已按标准数学形式整理，但原文排版可能有缺字符（如公式3和4的分式形式在提取文本中不清晰），已基于上下文重构为除法形式，未添加新内容。所有结论均依据提取文本，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11818,
+      "prompt_tokens": 6271,
+      "total_tokens": 18089,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10091
+      }
+    },
+    "content_chars": 3057
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

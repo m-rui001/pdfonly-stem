@@ -1,0 +1,45 @@
+{
+  "sha1": "7065df3317a782bcdba78dffec0cfc72d679570d",
+  "title": "Terminal Pleistocene Alaskan genome reveals first founding population of Native Americans",
+  "doi": "https://doi.org/10.1038/nature25173",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7065df3317a782bcdba78dffec0cfc72d679570d/index.html",
+  "source_chars": 28487,
+  "markdown_chars": 3374,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "By then, however, a separate branch of Native Americans had already established",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第5页末尾句子在第6页页首以'itself in unglaciated North America...'接续，但中间可能插入页眉或图注，导致句子在页尾被截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：USR1平均覆盖度约17X、污染率核0.14%/mtDNA 0.15%、错误率0.09%；分化时间：与东亚人~36±1.5 kya、基因流至~25±1.1 kya、古北亚基因流25-20 kya、AB分支~22-18.1 kya、NNA-SNA分化~17.5-14.6 kya、USR1与NA分化~20.9 kya、Karitiana-Athabascan分裂~15.7 kya、与Koryaks分裂~23.3 kya。混合图最大Z=3.27。公式如f3(Yoruba; X, USR1)、D(Native American, USR1; Siberian1/Han, Siberian2/Han)均按原文保留。未添加无文本证据的数值或结论。不确定点：文本中某些统计量括号内写法（如'f3(San; X, USR1)'与正文'f3(Yoruba; X, USR1)'）略有出入，但均按原样记录；跨页句子中断已标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2734,
+      "prompt_tokens": 8513,
+      "total_tokens": 11247,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 230
+      }
+    },
+    "content_chars": 4218
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "6426f84fb7ed80720ec6c6a7882e6b2985c5cb8b",
+  "title": "Engineering Stress in Perovskite Solar Cells to Improve Stability",
+  "doi": "https://doi.org/10.1002/aenm.201802139",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6426f84fb7ed80720ec6c6a7882e6b2985c5cb8b/index.html",
+  "source_chars": 37501,
+  "markdown_chars": 3407,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "CTE ~ 5010–6 K–1",
+      "type": "疑似字符乱码",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中'50'疑似为'50×'的Unicode符号丢失，导致公式显示异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "𝜎𝐴 , (±65 or 130 MPa)",
+      "type": "疑似标点多余",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "逗号位置可能为提取噪声，但不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "𝜎∆𝑇 = 𝐸𝑝 (𝛼𝑠 −𝛼𝑝 )∆𝑇 / 1 − 𝜈𝑝",
+      "type": "疑似公式格式缺失",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "分母'1 − 𝜈𝑝'前缺少括号，可能为提取时丢失，但数学表达式仍可辨认。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：摘要中残余应力>50 MPa与正文57.6 MPa一致；退火温度相关应力值（57.6±4.9, 20.7±6.6, −10.8±15.2）和浴转换法低应力值（3.0±14.5, −3.2±19.0, −2.6±14.5）均照录。Gc值（0.67/0.49/0.31 J m⁻²）与结论方向一致。公式(1)-(4)按提取文本保留，未作修复。不确定处：CTE数值中'50×'的'×'字符可能因提取丢失；'10-15 GPa'可能为范围，但源文如此。跨页处句子连续，未发现断句疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4397,
+      "prompt_tokens": 10522,
+      "total_tokens": 14919,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1706
+      }
+    },
+    "content_chars": 4385
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

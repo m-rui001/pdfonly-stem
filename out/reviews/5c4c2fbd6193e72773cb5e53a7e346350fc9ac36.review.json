@@ -1,0 +1,85 @@
+{
+  "sha1": "5c4c2fbd6193e72773cb5e53a7e346350fc9ac36",
+  "title": "Progress in the biological and chemical treatment technologies for emerging contaminant removal from wastewater: A critical review",
+  "doi": "https://doi.org/10.1016/j.jhazmat.2016.04.045",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5c4c2fbd6193e72773cb5e53a7e346350fc9ac36/index.html",
+  "source_chars": 124318,
+  "markdown_chars": 7311,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 24,
+      "quote": "ozonation in the presence of $ \\mathrm{H}{2} \\mathrm{O}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "下标格式错误，应为 H₂O₂，但影响较小。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "UV photolysis/ $ {2} $ O $ {2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为 UV photolysis/H₂O₂，符号丢失导致含义不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "$ \\mathrm{F e(OH)}{2}^{4+} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式格式错误，可能为 Fe(OH)₂⁴⁺，但原文如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "OH$^{+}$",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "羟基自由基应为 OH·，此处误为 OH⁺，可能影响反应式理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 32,
+      "quote": "UV photolysis $ \\mathrm{H}{2}\\mathrm{O}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "缺少斜杠，应为 UV photolysis/H₂O₂。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Progress in the biological and chemical treatment technologies for emerging contaminant removal from wastewater: a critical review",
+  "self_check": "已核对关键数值：活性污泥对表面活性剂去除率 95–98%，EDCs 75–100%，PCPs 78–90%；MBR 对 EDCs 92–99%；臭氧氧化对 EDCs 100%（E1 90%）；Fenton 反应式、电-Fenton 反应式、光-Fenton 反应式均按原文保留。公式符号如 OH· 在原文中多处误为 OH⁺，已按原文照录并在 extraction_issues 中标出。结论方向与摘要一致。仍不确定之处：部分化学式下标格式在 OCR 中损坏，但未影响主要结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5642,
+      "prompt_tokens": 31671,
+      "total_tokens": 37313,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8957,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

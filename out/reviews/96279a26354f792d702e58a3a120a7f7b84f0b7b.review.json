@@ -1,0 +1,112 @@
+{
+  "sha1": "96279a26354f792d702e58a3a120a7f7b84f0b7b",
+  "title": "Additively manufactured hierarchical stainless steels with high strength and ductility",
+  "doi": "https://doi.org/10.1038/nmat5021",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/96279a26354f792d702e58a3a120a7f7b84f0b7b/index.html",
+  "source_chars": 74824,
+  "markdown_chars": 6001,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "A 3D-printed hierarchically heterogeneous steel with unprecedented strength and ductility",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "首页（第1页）OCR题名与登记题名及第3页正文题名不同，但作者列表和期刊信息一致，属于同一论文的预印本/报告封面标题差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "LAGBs, $ 2-1 0^{\\circ} $ $ \\sim 4 1 \\% $ of the total GBs",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "角度范围“2-10°”在OCR中呈现为“2-1 0°”，存在空格插入导致的符号断裂，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\sigma_{y}=183.31+253.66/\\sqrt{L_{c}} $ (MPa)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中L_c的下标在OCR中显示为L_{c}，但正文其他处出现L_c，存在轻微符号表示不一致，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "The oxygen content was maintained below $ \\sim0.1 $ 0.2% during L-PBF processing",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“below ~0.1 0.2%”明显是OCR将“~0.1–0.2%”或类似范围错误拆分，导致数值范围表述不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "The dimensionless beam speed is obtained hereafter:\n\n$$\nv ^ {*} = \\frac {v r _ {b}}{D} \\tag {4}\n$$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式编号(4)出现在公式后，但前文公式(1)-(3)编号缺失或错位，可能为OCR提取时编号丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "The simulated stress-stress curve from this model is shown in Fig. S15c as the blue curve",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“stress-stress curve”应为“stress-strain curve”，OCR将“strain”误识为“stress”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 19,
+      "quote": "The X-ray beam energy was 86.70 keV $ \\lambda=0.1430 $ $ \\mathrm{\\AA} $ ), and the beam size was $ 0.5\\times0.5\\mathrm{mm}^{2} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号不匹配：缺少左括号，且“$ \\lambda=0.1430 $ $ \\mathrm{\\AA} $ )”中右括号多余，但数值可读。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "$$s _ {0} (\\mathrm {M P a}) = 7 3. 3 2 + 1 0 1. 4 6 \\cdot d ^ {- 1 / 2}, h _ {0} (\\mathrm {M P a}) = 1 0 5 2. 1 - 1 2 6. 9 4 \\cdot d ^ {- 1 / 2},$$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中变量与单位之间的空格和括号在OCR中呈现为“\\mathrm {M P a}”，存在格式损坏，但数值和关系可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Additively-manufactured hierarchical stainless steels with high strength and ductility",
+  "self_check": "已核对关键数值：Concept样品屈服强度590±5 MPa、Fraunhofer样品450±10 MPa；凝固胞尺寸0.58±0.07 μm和0.93±0.04 μm；Hall-Petch公式σ_y=183.31+253.66/√L_c (MPa)；有效亚晶长度L≈205 nm；晶粒尺寸d=45±7.9 μm（Concept）和20±4.0 μm（Fraunhofer）；LAGBs占比约41%；均匀延伸率与强度组合超出传统区域。公式符号如ε^hkl、σ_y、L_c、E₀等已按原文保留。不确定处：第18页氧含量“below ~0.1 0.2%”的准确范围因OCR错误无法确定；第20页公式编号(4)前后编号缺失，但公式内容可辨。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4865,
+      "prompt_tokens": 20158,
+      "total_tokens": 25023,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9022,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "sha1": "2d2a45cf4eadb75d0a31307d27ab837735a29698",
+  "title": "Global warming and recurrent mass bleaching of corals",
+  "doi": "https://doi.org/10.1038/nature21707",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2d2a45cf4eadb75d0a31307d27ab837735a29698/index.html",
+  "source_chars": 42265,
+  "markdown_chars": 6889,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "David R.\n\nDiaz-Pulido $ ^{12} $ , C. Mark Eakin $ ^{13} $ , Will F. Figueira $ ^{15} $ , James P. Gilmour $ ^{16} $ , Hugo B. Harrison $ ^{1} $\n\nBellwood $ ^{1,2} $ , Ray Berkelmans $ ^{5} $ , Tom C. Bridge $ ^{1,6} $ , Ian Butler $ ^{7} $ , Maria Byrne $ ^{8} $ , Neal E. Cantin $ ^{9} $\n\nMalcolm T. McCulloch $ ^{10} $ , Hamish A. Malcolm $ ^{11} $ , Michael J. McWilliam $ ^{1} $ , John M. Pandolfi $ ^{7} $\n\nScott F. Heron $ ^{13,14,17} $ , Andrew S. Hoey $ ^{1} $ , Jean-Paul A. Hobbs $ ^{18} $ , Mia O. Hoogenboom $ ^{1,2} $\n\nSteve Comeau $ ^{10} $ , Sean R. Connolly $ ^{1,2} $ , Graeme S. Cumming $ ^{1} $ , Steven J. Dalton $ ^{11} $ , Guillermo\n\nRachel J. Pears $ ^{19} $ , Morgan S. Pratchett $ ^{1} $ , Verena Schoepf $ ^{10} $ , Tristan Simpson $ ^{20} $ , William J.\n\nEmma V. Kennedy $ ^{12} $ , Chao-yang Kuo $ ^{1} $ , Janice M. Lough $ ^{1,9} $ , Ryan J. Lowe $ ^{10} $ , Gang Liu $ ^{13,14} $\n\nSkirving $ ^{13,14} $ , Brigitte Sommer $ ^{7} $ , Gergely Torda $ ^{1,9} $ , David R. Wachenfeld $ ^{19} $ , Bette L. Willis $ ^{1,2} $",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "作者列表被机构地址和页码分隔符打断，姓名顺序错乱，部分姓名与机构编号分离，影响作者身份识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Symbiodinium) spp.)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号不匹配，原文应为 (Symbiodinium spp.)，OCR 多了一个右括号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Extended Data Table 1). In each year, 61-63% of reefs experienced four or more Degree Heating Weeks (DHW, $ ^{\\circ} $ C-weeks).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "DHW 单位 °C-weeks 的度数符号与 C 之间被 LaTeX 标记分隔，可能影响公式符号的完整读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Low levels of bleaching was observed",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "语法不一致，原文可能为 Low levels of bleaching were observed，但 OCR 提取为 was。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The recovery time for coral species that are good colonizers and fast growers is 10-15 years $ ^{22-} $ $ ^{24} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号 22-24 被拆分为两个上标，可能影响引用范围的完整读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "conducted on ten days between $ 2 2 ^{\\mathrm{n d}} $ March 2016 and $ 1 7^{\\mathrm{t h}} $ April 2016",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "日期上标格式异常，22nd 和 17th 被提取为 2 2 nd 和 1 7 th，但语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "DHW values are presented in Fig. 2b as heat-maps",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文 Fig. 1b 展示 DHW 空间格局，此处写 Fig. 2b 可能为 OCR 或原文笔误，但影响图表对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "For Fig. 2g, March temperatures were compiled",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文 Fig. 1g 展示 2016 年 3 月至 4 月初白化严重程度及海温柱状图，此处写 Fig. 2g 可能为 OCR 或原文笔误，影响图表对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "long-term (1997- 2016) average chlorophyll- a concentration was very highly correlated with all other metrics (absolute value of Spearman's rank correlation coefficient averaged r=0.81, and was never lower than 0.7).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Spearman's rank correlation coefficient averaged r=0.81 表述略有歧义，可能为平均 r=0.81，但语义可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "unprecidented",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为 unprecedented。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Global warming and recurrent mass bleaching of corals",
+  "self_check": "已核对摘要、正文数据和结论：2016 年白化比例（8.9% 未白化 vs 2002 年 42.4%、1998 年 44.7%）、DHW 分布（61-63% 珊瑚礁 ≥4 DHW；2016 年 31% 经历 8-16 DHW）、171 个反复调查珊瑚礁的白化次数（43%、56%、85%）、水下白化与 DHW 关系（4 °C-weeks 时 30-40% 白化，≥8 °C-weeks 时 70-90% 白化）、Fig. 3 拟合线 y=48.6ln(x)-21.6, R²=0.545、叶绿素-a 和保护状态无显著保护效应（P>0.1）、既往白化无保护效应（P>0.9）等关键数值与结论均与原文一致。公式符号如 DHW、°C-weeks、叶绿素-a 阈值 0.45 μg/L 等已保留。仍不确定之处：Fig. 2b 和 Fig. 2g 的图表编号在方法部分与图例部分存在不一致，可能为 OCR 或原文笔误，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5916,
+      "prompt_tokens": 11621,
+      "total_tokens": 17537,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11381,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

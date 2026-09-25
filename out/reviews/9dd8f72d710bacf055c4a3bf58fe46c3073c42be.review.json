@@ -1,0 +1,64 @@
+{
+  "sha1": "9dd8f72d710bacf055c4a3bf58fe46c3073c42be",
+  "title": "Profiling risk and sustainability in coastal deltas of the world",
+  "doi": "https://doi.org/10.1126/science.aab3574",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9dd8f72d710bacf055c4a3bf58fe46c3073c42be/index.html",
+  "source_chars": 34719,
+  "markdown_chars": 2762,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "largest absolute correlations with the label. However, he or she verifies the correlations (with the label) on the holdout set",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该段文字明显属于另一篇关于可重用隔离集（reusable holdout）的论文，与Tessler等人的三角洲研究无关，被错误混入本论文的提取文本中。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "An",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "在'An'之后直接插入图2图注，然后才出现'index representing the absence of this capacity'，导致'An index'被图注分隔。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Most manifestations of risk are the immediate",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在第3页末尾中断，随后插入图1说明，下一句'consequences of extreme events'出现在第4页开头，中间缺失了'consequences of extreme events (3), such as'等文字，导致正文顺序被图注打断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：48个三角洲、3.4亿人口、1.4亿邻岸人口、35亿上游人口、风险公式R=HEV、风险趋势R'=HE'V、四象限分类及代表性三角洲、未来风险增加倍数（密西西比/莱茵4-8倍，湄公河/长江1.5-4倍）、荷兰三角洲工程成本10-20亿欧元/年、部分三角洲低于海平面6米。公式和符号（HEI、ACI、IDI、RSLR）均按原文保留。由于提取文本存在跨页混杂和插入图注问题，部分语句顺序需按上下文重建，但未引入外部信息。不确定之处：图2和图3说明的具体数值（如IDIF与IDI的差值）未在正文中明确给出，仅保留了说明性描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9915,
+      "prompt_tokens": 9503,
+      "total_tokens": 19418,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7752
+      }
+    },
+    "content_chars": 4040
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

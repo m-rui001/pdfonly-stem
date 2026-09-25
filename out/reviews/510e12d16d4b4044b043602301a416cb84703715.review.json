@@ -1,0 +1,64 @@
+{
+  "sha1": "510e12d16d4b4044b043602301a416cb84703715",
+  "title": "Single‐Crystalline Ultrathin Co 3 O 4 Nanosheets with Massive Vacancy Defects for Enhanced Electrocatalysis",
+  "doi": "https://doi.org/10.1002/aenm.201701694",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/510e12d16d4b4044b043602301a416cb84703715/index.html",
+  "source_chars": 48536,
+  "markdown_chars": 3605,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "The Nyquist plots of the O-Co3O4 and P-Co3O4 electrodes under the same potential were shown in Figure 4e.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文明确描述图4e为Nyquist图，但第23页的图4标题中4e标注为'chronoamperometric measurement'，且正文后续讨论稳定性时也指向图4e，疑为图编号标注错误（可能是4d与4e顺序颠倒）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "agreeing with the O 1s and Co 2p XPS results in Figure 2d and 2e.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "XPS O 1s和Co 2p谱图应为图2e和2f，而非2d和2e（2d为XRD图），疑为图号笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "lowered the OER activation energy of 2.26 eV",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "摘要中写2.26 eV，而正文第12页的计算结果写2.24 eV，两处数值不一致，需核对原文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：过电位220 mV、Tafel斜率49.1 mV/dec、TOF 0.39 s⁻¹（η=200 mV）、Cdl值5982/4716 μF/cm²、电荷转移电阻1.9/2.5 Ω、溶液电阻1.1/1.4 Ω、BET 29.15/21.37 m²/g、带隙1.93/1.74 eV，均与原文一致。发现摘要（2.26 eV）与正文（2.24 eV）中DFT计算活化能数值不一致，已在extraction_issues中标出。另外图编号引用（图4e的Nyquist图、图2d和2e的XPS）存在疑似错误，也已在extraction_issues中说明。PDF/EXAFS数据转换的k范围（3.0-12.5 Å⁻¹）、PDF的Qmax（23.5 Å）等实验参数已按原文保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3856,
+      "prompt_tokens": 14041,
+      "total_tokens": 17897,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 936
+      }
+    },
+    "content_chars": 4918
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

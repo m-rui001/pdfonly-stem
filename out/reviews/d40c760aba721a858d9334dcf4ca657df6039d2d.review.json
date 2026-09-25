@@ -1,0 +1,54 @@
+{
+  "sha1": "d40c760aba721a858d9334dcf4ca657df6039d2d",
+  "title": "Carbon and phosphorus exchange may enable cooperation between an arbuscular mycorrhizal fungus and a phosphate‐solubilizing bacterium",
+  "doi": "https://doi.org/10.1111/nph.13838",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d40c760aba721a858d9334dcf4ca657df6039d2d/index.html",
+  "source_chars": 67950,
+  "markdown_chars": 3635,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "we conducted a Petri plate experiment (see the materials and methods section of the supporting information for details on experiment 3) that demonstrated how RA stimulated the growth of RIr under sterile conditions (hyphal fresh weight in the RIr-alone treatment was 20 mg dish-1, but was 26 mg dish-1 in the RIr/RA treatment; Fig. 3b).",
+      "type": "疑似编号不一致",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "正文方法只定义了实验1-4，其中实验3为收集菌丝分泌物的培养皿实验；此处说实验3是验证RA刺激RIr生长的培养皿实验，且图3b图注也标注为“Petri plate experiment 3”，与正文实验编号可能混淆，或存在重编/错引。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "In the MR+/RIr− medium, the bacterial ODs increased from 5 to 13 h and then stabilized from 15 to 47 h.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "文本在页码边界处句子完整，无断句缺失，此处仅为检查项，未发现实质问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、方法、结果与讨论中的关键数值：菌丝长度增加、MBP变化、植酸磷相关R²和P值、细菌数量10⁷/10⁸ CFU、释放碳约30 mM C g⁻¹ DW、分泌物糖和羧酸盐种类、GiPT表达无差异。公式（总C计算）已按原样保留。不确定之处：正文与图题中的“experiment 3”编号存在歧义，已在issues中标出；图2的回归方程y=–4.3x+10.4单位未完全明确，照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4161,
+      "prompt_tokens": 19680,
+      "total_tokens": 23841,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1324
+      }
+    },
+    "content_chars": 4820
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "sha1": "49a50427ff7f2dec9709d1453f4345debc162cd3",
+  "title": "A mobile robotic chemist",
+  "doi": "https://doi.org/10.1038/s41586-020-2442-2",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/49a50427ff7f2dec9709d1453f4345debc162cd3/index.html",
+  "source_chars": 45242,
+  "markdown_chars": 8482,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Likewise, experimental complexity scales exponentially with the number of variables, restricting most searches to narrow areas of materials space. Robots can assist in experimental searches $ ^{6-14} $ but their widespread adoption",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上标引用编号后缺少句号或标点，导致句子边界不清晰，但整体语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "L-cysteine $ ( 1 2 0 1 \\pm 8 8 \\ \\mu \\mathrm{m o l} \\ g^{-1} \\ h^{-1} ) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "数字 1201 被 OCR 拆分为 '1 2 0 1'，单位 μmol 被拆分为 '\\mu \\mathrm{m o l}'，影响数值可读性，但数值本身可复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "2985 $ \\pm $ 103 $ \\mu $ mol $ g^{-1} h^{-1} $ at 50 g $ L^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "单位 μmol 被拆分为 '$ \\mu $ mol'，格式不统一，但数值和单位可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "A A number of scientific conclusions can be drawn from these data.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "段首出现重复的 'A A'，疑为 OCR 误识别或排版残留，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the addition of Acid Red 87 was increased the $ HER^{31} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "语法不通（'was increased' 应为 'increased'），疑为 OCR 或原文笔误，但语义可推断为 Acid Red 87 提高了 HER。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "It is unlikely that a human researcher would have persevered with this multivariate experiment using manual approaches since it might have taken 50 experiments / days to locate even a modest enhancement in the HER (Fig. 3a).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'50 experiments / days' 单位表达异常，疑为 '50 experiments / day' 或 '50 days'，但原文如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the code for the robot at and the Bayesian optimizer is available at",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "句子结构不完整（'at and' 之间缺失 URL），疑为 OCR 遗漏或原文排版问题，不影响主要论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Figure the following information about a photolysis station.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图注开头 'Figure' 后缺失编号（应为 Figure 1），句子不完整，影响图注识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The baseline hydrogen evolution was $ 3. 3 6 \\pm0. 3 0 \\mu \\mathrm{m o l} $ (black squares).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "数字 3.36 和 0.30 被 OCR 拆分，但数值可复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "sodium disilicate $ \\mathrm{(N a_{2} S i_{2} O_{5})} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "化学式 Na₂Si₂O₅ 在正文中多处出现，但 OCR 将其拆分为带空格的 'N a_{2} S i_{2} O_{5}'，且正文第 3 页曾写作 'sodium disilicate' 而未给出化学式，Figure 3b 和 Figure 4 中给出 Na₂Si₂O₅，需注意化学式与名称的对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$$ (1) \\phi_ {\\mathrm {p o s t e r i o r}} (\\theta | \\mathcal {D}) = \\frac {\\phi_ {\\mathrm {l i k e l i h o o d}} (\\mathcal {D} | \\theta) \\phi_ {\\mathrm {p r i o r}} (\\theta)}{\\phi (\\mathcal {D})} $$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "公式中下标文字被 OCR 拆分为带空格的字母序列（如 'p o s t e r i o r'），但公式结构和变量关系完整可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$$ (2) \\alpha_ {\\mathrm {U C B}} (\\mathrm {x}; \\mathcal {D}) := \\mu (\\mathrm {x}) + \\beta \\sigma (\\mathrm {x}) $$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "下标 'U C B' 被 OCR 拆分为带空格的字母，但公式结构完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "The maximum rate attained after 688 experiments was $ 2 1. 0 5 \\mu \\mathrm{m o l} \\, \\mathrm{h}^{-1} $.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "数字 21.05 被 OCR 拆分为 '2 1. 0 5'，但数值可复原。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A Mobile Robotic Chemist",
+  "self_check": "已核对关键数值：基线 HER 3.36 ± 0.30 μmol h⁻¹、最优 HER 21.05 μmol h⁻¹、688 次实验、8 天、43 批、319 次移动、2.17 km、L-半胱氨酸 1201 ± 88 μmol g⁻¹ h⁻¹、L-抗坏血酸 256 ± 24 μmol g⁻¹ h⁻¹、TEOA 2985 ± 103 μmol g⁻¹ h⁻¹、搜索空间 98,423,325 点、虚拟实验约 160 次达 95% 全局最大、定位精度 ±0.12 mm 和 ±0.005 度、导航精度 ±10 mm 和 ±2.5 度、机器人质量约 430 kg、载荷 14 kg、臂展 820 mm、速度 0.5 m s⁻¹、每批准备光解 183 分钟、GC 分析 232 分钟、充电空闲 32%、电池阈值 25%、最优配方 P10 5 mg + NaOH 6 mg + L-半胱氨酸 200 mg + Na₂Si₂O₅ 7.5 mg 于 5 mL 水。公式 (1) 和 (2) 已原样保留。不确定处：OCR 中 sodium disilicate 的化学式在正文与图注中写法不完全一致（正文仅写名称，图注写 Na₂Si₂O₅），已照录；部分数字被 OCR 拆分但可复原，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6412,
+      "prompt_tokens": 11589,
+      "total_tokens": 18001,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13430,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

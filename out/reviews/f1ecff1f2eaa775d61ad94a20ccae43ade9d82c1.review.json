@@ -1,0 +1,109 @@
+{
+  "sha1": "f1ecff1f2eaa775d61ad94a20ccae43ade9d82c1",
+  "title": "Selective laser sintering (SLS) 3D printing of medicines",
+  "doi": "https://doi.org/10.1016/j.ijpharm.2017.06.082",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f1ecff1f2eaa775d61ad94a20ccae43ade9d82c1/index.html",
+  "source_chars": 43516,
+  "markdown_chars": 2989,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "which will is then be recovered from underneath the powder bed.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'will is'语法不通，可能为'will be'或'is'的残留。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "To date there are no reports on the use of SLS to fabricate oral drug loaded products, hence, However, the extreme printing conditions (temperatures >1000°C and high-energy lasers >250W) used in these fields have precluded its use in the pharmaceutical sector.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文本中'hence, However'和'tThe'明显存在编辑重叠或重复，应为'However'或'Hence'的单一表达，且后文'tThe'首字母重复。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "To aid the sintering process, To improve the sintering process, 3% Candurin® gold sheen colourant was added",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一句中两个'To ... process'重复出现，应为编辑残留。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "thuserefore widening the armamentarium number of 3D printing technologies available for the to manufacture of modern medicines.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "'thuserefore'和'the to manufacture'明显是编辑错误，正确应为'therefore'和'to manufacture'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "Candurin® Gold Sheen was purchased kindly donated from Azelis, UK.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "'purchased kindly donated from'重复且不通，可能原意为'kindly donated by'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "At this point, the reservoir platform moved up, the building platform moved down and the sled distributed a thin layer of powder on top of the previous layer.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "前文描述'printing process started with the activation of a'后突然接'When the heating process was completed'，句子结构被切断，可能是PDF跨页或编辑残留导致顺序混乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "X-ray powder diffraction (XRPD) Discs of 23mm diameter x 1mm height made from the mixtures of drug and excipients were 3D printed and analysed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第7页后部'2.5. Printlets characterisation'小节标题下出现'Printlets Ccharacterisation of the printlets'，明显是重复编辑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "The paddle speed of the USP-II was fixed at 50 rpm and the tests were conducted at 37 +/-0.5 °C (n=3).",
+      "type": "正常文本",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该句无误，但页码标记前后未发现断开，不需列入问题。实际提取无断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、方法、结果和结论中的关键数值：聚合物组成（Kollicoat IR 75%PVA/25%PEG，Eudragit L100-55 1:1），药物负载（5/20/35%），3% Candurin，打印参数（腔温90°C、表面110°C、2.3W激光445nm、90mm/sec），破碎强度（Kollicoat>485N，Eudragit 284-414N），脆碎度<1%，溶出结果（Kollicoat K5约30min>80%，K20约2h，K35约5h；完全释放K5约2h，K20/K35约10h；Eudragit胃相释放约18%/14%/6%后12h完全释放），DSC熔融峰168°C，XRPD结论。公式部分未涉及复杂公式，仅保留数值。不确定处：原文中Kollicoat破碎强度“>485N”来自表格，正文描述为“exceeded the highest value”，一致；Eudragit三种载药量释放“very similar”在正文有明确说明。提取文本中部分词句有重复编辑痕迹，已在issues中标注。未引入外部知识，所有数字均来自提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3052,
+      "prompt_tokens": 12521,
+      "total_tokens": 15573,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 40
+      }
+    },
+    "content_chars": 6331
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "sha1": "1b2a3e6958e595fc7597298b33ac6b4e4bfd5a27",
+  "title": "Bridging analytical approaches for low-carbon transitions",
+  "doi": "https://doi.org/10.1038/nclimate2980",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1b2a3e6958e595fc7597298b33ac6b4e4bfd5a27/index.html",
+  "source_chars": 59767,
+  "markdown_chars": 4593,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "Commented [FG1]: DETLEF, CAN YOU ADD THIS REFERENCE HERE? ... Wilson, C., Grubler, A., Bauer, N., Krey, V. & Riahi, K. Future capacity growth of energy technologies: Are scenarios consistent with historical evidence? Climatic Change 118, 381-395 (2013).",
+      "type": "编辑批注混入正文",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "提取文本中出现作者批注（Commented [FG1]），不属于正文内容，应删除或标注，否则干扰阅读。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "Commented [FG2]: DETLEF, THIS SHOULD REFER TO 36. CAN YOU IMPLEMENT THAT CHANGE?",
+      "type": "编辑批注混入正文",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "同上，编辑批注误入正文。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "Commented [FG3]: DETLEF, CAN YOU REMOVE REFERENCE 80 FROM THE ENDNOTE LIST?",
+      "type": "编辑批注混入正文",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "同上。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "This response also \n\nCommented [FG1]: DETLEF, CAN YOU ADD THIS REFERENCE HERE? \n\nintroduces more realism, but may face difficulties in addressing specificities that make low-\n\n...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页10末尾句子在批注处断裂，正文顺序被批注打断，实际阅读时应跳过批注，但拼接顺序存在疑问。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键内容：低碳转型定义、IAMs四大局限（尺度、简化概念、经济假设、治理假设）、五种回应（利益相关者、历史数据、新模型、第一/第二优世界、整合社会科学）、三种科学哲学（实证、后实证/批判实在、建构、相对/后现代）与四种本体论（理性选择、诠释、结构、冲突）、三种路径的优势劣势（表3内容概述）、桥接步骤（IAMs先运行、社会技术分析反馈、行动研究反馈、修正再运行）、政策层级对应、三种政策理论（设计规划、网络联盟、渐进主义）。未发现公式。文本中提取的表格内容（表1、表2、表3）仅保留文字描述，未包含完整表格结构，但关键信息均已概括。数值如1.5°C、2014年澳大利亚碳税、2015年英国政策等细节已保留。批注问题已列入extraction_issues。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6074,
+      "prompt_tokens": 13575,
+      "total_tokens": 19649,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 84
+      }
+    },
+    "content_chars": 10986
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

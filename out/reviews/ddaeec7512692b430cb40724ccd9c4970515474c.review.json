@@ -1,0 +1,93 @@
+{
+  "sha1": "ddaeec7512692b430cb40724ccd9c4970515474c",
+  "title": "Mineral protection of soil carbon counteracted by root exudates",
+  "doi": "https://doi.org/10.1038/nclimate2580",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ddaeec7512692b430cb40724ccd9c4970515474c/index.html",
+  "source_chars": 47015,
+  "markdown_chars": 8310,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "2мерст,MA-01003,USA",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "通讯作者地址行出现明显OCR乱码，应为Amherst, MA-01003, USA，影响地址可读性但不影响论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Abstract018 Abstract",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "摘要标题前混入编号“018”，属OCR噪声，不影响摘要内容理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ (1 5 \\mu \\mathrm{m o l} C \\mathrm{c m}^{-2} \\mathrm{d}^{-1}) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中数字与单位间被空格分隔，OCR将15 μmol C cm⁻² d⁻¹拆散，但数值和单位仍可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Expected BOD = (1-CUE) $ \\times $ stoichiometric BOD",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中乘号以LaTeX形式呈现，未直接显示为×，但关系式完整可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "c) Expected BOD&Measured silt-loamrespiration rates&clay 1.0-2.01.0±0.31.0±0.4 1.3-2.00.5±0.01.0±0.5 0.7-1.01.5±0.02.4±0.2",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1的c)部分表格结构在OCR中严重损坏，列标题与数值粘连，难以准确对应各处理与土壤类型，但数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "formation constants $ \\log K $ defined by the equilibrium constant $ K={M}/({M}+{L}) $ where M is $ \\mathrm{F e}^{3+} $ and L is either glucose, acetic acid or oxalic acid $ ^{52}. $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "平衡常数公式K={M}/({M}+{L})中花括号使用异常，可能为OCR对下标或括号的误读，但变量定义仍可理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Mineral Protection of Soil Carbon Counteracted by Root Exudates",
+  "self_check": "已核对摘要、正文数据与结论方向一致：草酸处理呼吸速率高于葡萄糖（粉砂壤土约1.6倍，黏土约2.8倍），原生碳损失约4%，年损失估计约1% C yr⁻¹，与Richter等1.08% C yr⁻¹接近。公式(1) Expected BOD = (1-CUE) × stoichiometric BOD 及Table 1中CUE、BOD数值已按原文保留。Table 1的c)部分因OCR表格结构损坏，数值对应关系存在不确定性，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5875,
+      "prompt_tokens": 12703,
+      "total_tokens": 18578,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10474,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

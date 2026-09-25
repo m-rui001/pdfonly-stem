@@ -1,0 +1,64 @@
+{
+  "sha1": "200605a24ef73267a88565021beae5bf8ab09883",
+  "title": "Structural evolution of atomically dispersed Pt catalysts dictates reactivity",
+  "doi": "https://doi.org/10.1038/s41563-019-0349-9",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/200605a24ef73267a88565021beae5bf8ab09883/index.html",
+  "source_chars": 93984,
+  "markdown_chars": 3994,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "FWHMs of 28 cm-1 and 36 cm1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第二个单位应为cm^-1，提取文本中写为cm1，缺少上标负号",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "oxidation resulted in an 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页尾处'an 3'可能被截断，后接下一页内容，实际应为'an...'或'a...'，但无法判断原文",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "demonstrated by the loss of visible lattice fringes in Figure 2c and S9.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文中通常引用为Fig. 2c，且补充材料为Fig. S9，此处写'Figure 2c'与上下文格式不一致，但非关键错误",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：CO频率（2135、2112、2077/2050 cm-1）、FWHM（13.5、10.5、28/36 cm-1）、CO吸附能（84、115-145 kJ/mol）、CO氧化Ea（70-80、48 kJ/mol）、EXAFS配位数（氧化CN=6.0±0.7，键长2.0±0.1 Å；温和还原双Pt-O壳层CN=1.2±0.6和1.7±0.7），以及DFT计算值（(PtO2)ads CO频率2121 vs 2112 cm-1，吸附能103 vs 84 kJ/mol等）。微动力学速率表达式已按原文简化形式保留。仍不确定：页3-4交界的截断句（'an 3'）无法复原，其余数值均直接取自提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3416,
+      "prompt_tokens": 25103,
+      "total_tokens": 28519,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 495
+      }
+    },
+    "content_chars": 5101
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

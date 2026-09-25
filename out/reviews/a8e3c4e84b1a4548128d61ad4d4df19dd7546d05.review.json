@@ -1,0 +1,99 @@
+{
+  "sha1": "a8e3c4e84b1a4548128d61ad4d4df19dd7546d05",
+  "title": "Image processing and analysis methods for the Adolescent Brain Cognitive Development Study",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2019.116091",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a8e3c4e84b1a4548128d61ad4d4df19dd7546d05/index.html",
+  "source_chars": 117747,
+  "markdown_chars": 16000,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 26,
+      "quote": "Siemens Matrix Slice FOV %FOV phase Resolution (nm) TR (ms) TE (ms) TI (ms) Flip angle (deg) Parallel imaging MultiBand Acceleration Phase Factor Diffusion Direction b-values Acquisition Time",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "附录中的影像采集参数表在OCR中结构严重损坏，列标题与数据行混杂，难以准确对应各扫描仪参数，影响对采集参数的完整复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "205,250 174 205,250 100% 1.9×1.0×1.0 2000 2.88 1000 8 2x OR OR OR NA 0.13",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格数据行中大量数值与列标题无法对应，且出现“OR”等占位符，无法可靠提取具体采集参数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "T1 205,250 181 205,250 100% 1.9×1.0×1.0 2000 2.88 1000 8 2x OR OR OR NA 0.13",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格中T1、T2等行标签与数据混杂，无法区分各序列的具体参数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "IMR 6 GB GB NA",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格中“IMR”行数据不完整且含义不明，无法对应到具体采集参数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "Philips Matrix Slice FOV %FOV phase Resolution (nm) TR (ms) TE (ms) TI (ms) Flip angle (deg) Parallel imaging MultiBand Acceleration Phase Factor Diffusion Direction b-values Acquisition Time",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Philips表格同样结构损坏，列标题与数据行无法准确对应。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "GE Matrix Slice FOV %FOV phase Resolution (nm) TR (ms) TE (ms) TI (ms) Flip angle (deg) Parallel imaging MultiBand Acceleration Phase Factor Diffusion Direction b-values Acquisition Time",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "GE表格结构损坏，无法可靠提取各序列采集参数。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Image processing and analysis methods for the Adolescent Brain Cognitive Development Study",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 29431,
+      "total_tokens": 39431,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18318,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Image processing and analysis methods for the Adolescent Brain Cognitive Development Study",
+    "translated_title": "青少年脑认知发展研究的图像处理与分析方法",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

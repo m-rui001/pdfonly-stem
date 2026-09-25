@@ -1,0 +1,54 @@
+{
+  "sha1": "fac3cea6e81d935ef89081fabb39cd820ebefd4b",
+  "title": "Perovskite ink with wide processing window for scalable high-efficiency solar cells",
+  "doi": "https://doi.org/10.1038/nenergy.2017.38",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fac3cea6e81d935ef89081fabb39cd820ebefd4b/index.html",
+  "source_chars": 51353,
+  "markdown_chars": 2562,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "Materials. Methylammonium Methylammonium chloride (MACl, methylamine hydrochloride, 98%), N,N-Dimethylformamide",
+      "type": "疑似缺失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "此处缺少 'iodide (MAI) was purchased from Dyesol.' 等词，导致句子不通，疑为抽取时遗漏了中间部分。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "as well as the full 4 [PDF extracted page 5] ultraviolet-visible absorption spectra",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第4页末尾 'full' 与第5页开头 'ultraviolet' 之间被页码标记打断，原文应为连续词组 'full ultraviolet-visible absorption spectra'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：0.12 cm²平均18.55%（表1）、1.2 cm²平均17.33%（表1）、模组稳定13.3%有效面积效率、几何填充因子88%、有效面积11.09 cm²、退火窗口1–10分钟、加工窗口约8分钟、Pb映射标准差3%、XRD峰位14.1°和28.4°等。摘要中提到的'champion cells stabilized efficiencies >19%和17.5%'与正文图6的19.05%和17.5%一致。公式未出现；未补写任何未提取内容。不确定点：Materials段缺失部分文字，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4382,
+      "prompt_tokens": 12888,
+      "total_tokens": 17270,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2340
+      }
+    },
+    "content_chars": 3599
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

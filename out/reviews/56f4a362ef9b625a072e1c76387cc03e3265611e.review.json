@@ -1,0 +1,129 @@
+{
+  "sha1": "56f4a362ef9b625a072e1c76387cc03e3265611e",
+  "title": "Niobium tungsten oxides for high-rate lithium-ion energy storage",
+  "doi": "https://doi.org/10.1038/s41586-018-0347-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/56f4a362ef9b625a072e1c76387cc03e3265611e/index.html",
+  "source_chars": 46455,
+  "markdown_chars": 13811,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "$ \\mathrm{N b}{1 6} \\mathrm{W}{5} \\mathrm{O}{5 5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR 将化学式下标/上标拆散为独立字符，导致公式排版损坏，但化学计量比仍可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{L i_{4} T i_{5} O_{1 2}} $ , with an average voltage of 1.55 V (Fig. S1), enables high-rate (de)intercalation without the risk of Li dendrites or substantial solid- electrolyte interphase (SEI) formation albeit with an undesirable but necessary decrease in full-cell voltage and thus energy density.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句缺少主语前的连接或标点，读起来像从上一句直接拼接，可能丢失了“Li4Ti5O12”前的过渡词或句号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{Nb}{1 6} \\mathrm{W}{5} \\mathrm{O}{5 5} $ is a metastable member within the $ \\mathrm{Nb}{2} \\mathrm{O}{5}-\\mathrm{W O}{3} $ phase diagram $ ^{2 2} $ with a monoclinic structure comprised of subunits of corner-shared octahedra arranged into $ \\mathrm{ReO}{3} $ -like blocks, four octahedra wide by five octahedra long, and infinite in the third dimension (Fig. 1a). $ ^{2 3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式下标在 OCR 中丢失，如 Nb16W5O55 被拆为 Nb、16、W、5、O、55 等独立字符，影响公式可读性但不影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "When the kinetics were examined over a range of current densities from C/5 (34.3 mA $ \\cdot $ g $ ^{-1} $ ) up to 60C (10.3 A $ \\cdot $ g $ ^{-1} $ ), Nb $ {16} $ W $ {5} $ O $ {55} $ showed unprecedented bulk rate performance",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Nb16W5O55 的化学式下标在 OCR 中丢失，被拆为 Nb、16、W、5、O、55 等独立字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure 2 | Electrochemistry of $ \\mathrm{N b_{1 6} W_{5} O_{5 5}} $ and $ \\mathrm{N b_{1 8} W_{1 6} O_{9 3}} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "图注中化学式下标被 OCR 拆散，影响公式排版但不影响识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Table 1. Lithium diffusion coefficients from PFG NMR.  Component DLi(m2·s-1)@298K DLi(m2·s-1)@413K Ea(eV)   Li6.3Nb16W5O55-a(15%) 2.1×10-12 2.7×10-11 0.23±0.04   Li6.3Nb16W5O55-b(85%) 1.7×10-13 5.2×10-13 0.10±0.04   Li8.4Nb16W5O55 1.6×10-13 6.5×10-13(403K) 0.13±0.01   Li3.4Nb18W16O93 1.1×10-13 2.0×10-12 0.27±0.03   Li6.8Nb18W16O93 1.1×10-13 1.8×10-12 0.30±0.01   Li10.2Nb18W16O93 1.1×10-13 2.7×10-12 0.29±0.01",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格在 OCR 中失去行列结构，表头与数据行混排，但数值仍可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "b  Figure 3 | X-ray absorption spectroscopy of $ \\mathrm{N b}_{1 6} \\mathrm{W}_{5} \\mathrm{O}_{5 5} $ and $ \\mathrm{N b}_{1 8} \\mathrm{W}_{1 6} \\mathrm{O}_{9 3}. $",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注前出现孤立的“b”，可能是图内标签被 OCR 误提为正文，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "These is phenomenologically related to negative thermal expansion (NTE) $ ^{3 5,3 6} $ or negative linear compressibility (NLC) $ ^{3 7} $ and may have shared origins related to tilting of the polyhedral units (vide infra).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“These is”应为“This is”或“These are”，属 OCR 或原文语法错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The bronze comparisons stress the complementary benefits of the open room-and-pillar host structure found in $ \\mathrm{T-Nb_{2}O_{5}} $ $ ^{11} $ and $ \\mathrm{Nb}{18} \\mathrm{W}{16} \\mathrm{O}{93} $ and the additional perpendicular lithium diffusion channels in $ \\mathrm{Nb}{18} \\mathrm{W}{16} \\mathrm{O}{93} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式下标在 OCR 中丢失，如 Nb18W16O93 被拆为 Nb、18、W、16、O、93 等独立字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Figure 5 | Energy and Powder Densities of Micron-sized $ \\mathrm{N b}_{1 6} \\mathrm{W}_{5} \\mathrm{O}_{5 5} $ and $ \\mathrm{N b}_{1 8} \\mathrm{W}_{1 6} \\mathrm{O}_{9 3} $ compared to state-of-the-art high rate nanoscale materials and formulations.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "图注中化学式下标被 OCR 拆散，影响公式排版但不影响识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Niobium tungsten oxides for high-rate lithium-ion energy storage",
+  "self_check": "已核对摘要、正文数据与结论：容量值（C/5 约 225 mA·h·g⁻¹、5C 171 mA·h·g⁻¹、20C 148 mA·h·g⁻¹；Nb18W16O93 在 20C 约 150 mA·h·g⁻¹、60C 105 mA·h·g⁻¹、100C 70 mA·h·g⁻¹）、循环保持率（10C 250 圈 95%，20C 750 圈 95%）、扩散系数（室温 >1×10⁻¹³ m²·s⁻¹，333 K >10⁻¹³，373 K 10⁻¹²）、活化能（0.10–0.30 eV）、体积膨胀（Nb16W5O55 至 1.0 Li⁺/TM 为 5.5%；Nb18W16O93 至 1.0 Li⁺/TM 为 2.8%）、体积容量（1C >500 A·h·L⁻¹，20C 达 400 A·h·L⁻¹）均与原文一致。公式符号按 OCR 可见文本保留，未补写或修正。仍不确定处：Table 1 中 Li6.3Nb16W5O55-a 的 298 K 值 OCR 为 2.1×10⁻¹²，但正文称室温扩散系数 >1×10⁻¹³，两者不矛盾（a 组分较快）；Li8.4Nb16W5O55 的 413 K 值标注为 403 K，已按原文保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9656,
+      "prompt_tokens": 13998,
+      "total_tokens": 23654,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19428,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "sha1": "6ed3166d342731ef66c05ff10baf416adac6d215",
+  "title": "Exploiting Generative AI to Scale up Intelligent Tutoring Systems",
+  "doi": "https://doi.org/10.4230/lipics.itp.2023.19",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/6ed3166d342731ef66c05ff10baf416adac6d215/index.html",
+  "source_chars": 78641,
+  "markdown_chars": 15985,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "MizAR 60 for Mizar 50",
+      "type": "metadata_identity_mismatch",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "OCR正文首页题名为“MizAR 60 for Mizar 50”，与登记题名“Exploiting Generative AI to Scale up Intelligent Tutoring Systems”明显冲突，且正文内容为 Mizar/ATP/ENIGMA，与登记题名主题不符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "all variables are replaced by a special name $ \\odot $ and all Skolem symbols by $ \\odot $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "变量和 Skolem 符号被替换为同一个特殊符号 $ \\odot $，但原文很可能应区分二者；此处抽取导致符号信息丢失，影响对 Symbol Anonymization 特征的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "38k 65.65 Jun 2020 B ENIGMA, reported on July 2nd at IJCAR208",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“IJCAR208”疑似应为“IJCAR2020”或类似会议标识，数字抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$\\mathcal{E}_{N,K}_{.5,.5,&avg}$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "集成方法下标中出现“&avg”“&geo”“&har”“&min”等符号，可能是 LaTeX 或 OCR 抽取损坏，影响公式原样复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$\\mathcal{E}_{N,G,L,G}_{.5,.2,2,.1}$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "集成方法下标中重复出现 G，且权重“.2,2,.1”疑似缺少小数点或分隔符，公式抽取可能损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "2 bls0f17 GNN $\\mathcal{E}_{N,K,L,G}$.5.,2.,2.,1",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 5 中集成方法权重“.5.,2.,2.,1”格式异常，疑似小数点或分隔符抽取损坏。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "https://doi.org/10.4230/lipics.itp.2023.19 ·",
+      "type": "metadata_identity_mismatch",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "OCR正文首页出现的 DOI 与登记 DOI 相同，但正文题名和内容与登记题名冲突，因此不能把该 DOI 归属为登记题名论文的 DOI。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "$\\mathcal{E}_{5221}=\\mathcal{E}_{.5,.2,.2,.1}^{\\mathcal{N},\\mathcal{K},\\mathcal{L},\\mathcal{G}}$ and $\\mathcal{E}_{55}=\\mathcal{E}_{.5,.5,\\mathrm{avg}}^{\\mathcal{N},\\mathcal{K}}$ and $\\mathcal{E}_{533}=\\mathcal{E}_{.5,.25,.25}^{\\mathcal{N},\\mathcal{G},\\mathcal{K}}.$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "集成方法定义中的下标和上标格式可能因 OCR 抽取而损坏，例如 $\\mathcal{E}_{5221}$ 与 $\\mathcal{E}_{.5,.2,.2,.1}$ 的对应关系需要谨慎对待。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "mismatch",
+  "ocr_title": "MizAR 60 for Mizar 50",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 21353,
+      "total_tokens": 31353,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19518,
+    "json_repaired": true
+  },
+  "title_translation": {
+    "source_ocr_title": "MizAR 60 for Mizar 50",
+    "translated_title": "MizAR 60 献给 Mizar 50",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

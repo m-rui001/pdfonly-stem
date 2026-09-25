@@ -1,0 +1,64 @@
+{
+  "sha1": "39c5007d0d8b0327712ebaff38b4135c7c0ff48a",
+  "title": "3D printing trends in building and construction industry: a review",
+  "doi": "https://doi.org/10.1080/17452759.2017.1326724",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/39c5007d0d8b0327712ebaff38b4135c7c0ff48a/index.html",
+  "source_chars": 61824,
+  "markdown_chars": 8582,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "Freefrom",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表3上下文为关键词频率统计，术语应为 'Freeform'（自由形式），文本中提取为 'Freefrom'，存在字母顺序颠倒，疑为提取或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Although, the two databases selected may not contain all related publications in 3D printing for B&C works, the papers identified in the reflect the general trend",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "句子在“the papers identified in the reflect”处中断，语法不完整，且“[PDF extracted page 12]”处无页标断点标记，疑为跨页断句导致缺失“study”或类似词。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 23,
+      "quote": "The bond strength between layers are higher when the time interval is short.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "\"Our preliminary results shows that the loading in Y direction have the highest compressive strength and the bond strength between layers are higher when the time interval is short.\" 该句包含基本的语法不一致（'results shows'、'strength...are'），可能是提取错误或为源文本身问题，无法从文本内证据确定，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文及各节关键数值和结论。主要关键数据包括：1997-2016年出版物数量（前16年42篇，后4年73篇）、数据库检索结果（Web of Science 4117篇，ScienceDirect 7173篇、筛查3211篇，总计7328篇）、最终入选115篇文献，美英占49%、三所大学占28%以上，表2和表3每两年分组的统计数、各类研究兴趣的类别定义与代表文献作者（如Buswell 2005、Perrot 2015等），均已与提取文本逐项比对。公式方面：本文为定性综述，无复杂数学公式，仅涉及检索词组合的逻辑关系，已按要求处理。不确定之处：表3中“Freefrom”疑为“Freeform”的提取错误已在issue中标注；“the papers identified in the reflect”处文本明显缺失未盲补；部分文献作者姓名拼写异常（如“Habert & Agusti-Juan (2016)”）因无法核实已按提取文本原样保留，未做推测性修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6468,
+      "prompt_tokens": 15100,
+      "total_tokens": 21568,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 936
+      }
+    },
+    "content_chars": 10345
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

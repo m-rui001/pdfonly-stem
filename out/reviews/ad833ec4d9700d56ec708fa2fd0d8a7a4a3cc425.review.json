@@ -1,0 +1,157 @@
+{
+  "sha1": "ad833ec4d9700d56ec708fa2fd0d8a7a4a3cc425",
+  "title": "Aqueous Li-ion battery enabled by halogen conversion–intercalation chemistry in graphite",
+  "doi": "https://doi.org/10.1038/s41586-019-1175-6",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ad833ec4d9700d56ec708fa2fd0d8a7a4a3cc425/index.html",
+  "source_chars": 75506,
+  "markdown_chars": 8548,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "\\omega_{0}=242\\mathrm{cm}^{-1}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "拉曼峰位公式中括号与下标排版不完整，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "\\mathrm{C}{7 \\mathrm{m}}[\\mathrm{B r B r}]",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "下标 7m 与括号排版断裂，可能影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "\\mathrm{C_{8 m}[B r B r]}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "下标 8m 与括号排版断裂，可能影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "D = \\frac {4}{\\pi} \\left(\\frac {I V _ {m}}{F S}\\right) ^ {2} \\left(\\frac {d E / d x}{d E / d t ^ {1 / 2}}\\right) ^ {2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "公式中变量间空格与括号排版不标准，但公式结构完整可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "k=\\sqrt{2 m \\left(E-E_{0}\\right)} / \\Box",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "分母处出现 \\Box 占位符，原文应为物理常数（如 ħ），OCR 丢失该符号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "\\sigma = \\lim _ {t \\rightarrow \\infty} \\frac {e ^ {2}}{6 t V k _ {B} T} \\int_ {i, j} ^ {N} z _ {i} z _ {j} < \\left(\\left[ R _ {i} (t) - R _ {i} (0) \\right]\\right)\\left(\\left[ R _ {j} (t) - R _ {j} (0) \\right]\\right) >",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "积分号与尖括号排版不标准，但公式结构可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "\\mathrm {E} _ {\\mathrm {i n t}} = \\frac {\\mathrm {E} (\\mathrm {G r X}) - \\mathrm {E} (\\mathrm {G r}) + \\mathrm {n} _ {\\mathrm {X}} \\mathrm {E} _ {\\mathrm {d e s o l v}} (\\mathrm {L i X}) - \\mathrm {n} _ {\\mathrm {X}} \\mathrm {E} _ {\\mathrm {g a s}} (\\mathrm {L i X}) + \\mathrm {n} _ {\\mathrm {X}} \\mathrm {E} _ {\\mathrm {b}} (\\mathrm {L i})}{\\mathrm {n} _ {\\mathrm {X}}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "公式中变量间空格与括号排版不标准，但公式结构完整可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "stage I $ \\mathrm{C}{3.5} $ $ [\\mathrm{B r}{0.9375}\\mathrm{C l}{0.0625}]$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "化学式下标排版断裂，但化学计量可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "c, Schematic drawing of the corresponding GICs with different stage number m.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中 c 项出现在 d 项之后，且与上下文编号顺序不符，可能为 OCR 阅读顺序错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "The absence of the second nearest Br-Br $ (R\\sim2.6\\mathrm{\\AA}) $ or BrCl $ (R\\sim2.6\\mathrm{\\AA}) $ scattering paths for $ \\mathrm{C_{4}[X]} $ stoichiometry suggested that it would be the dominant one in the real materials.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文逻辑应为 C₄[X] 化学计量缺乏第二近邻路径，故 C₇/C₃.₅ 才是主导；此处 'it would be the dominant one' 指代不清，疑似 OCR 或原文表述错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "C_{3.5}[B r_{0.5}C l_{0.5}]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "下标/括号内空格导致化学式排版断裂，但化学计量可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "(\\mathrm{L i B r})_{0. 5} (\\mathrm{L i C l})_{0. 5}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR 在元素符号与下标间插入空格，影响公式可读性但不影响化学计量识别。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "\\mathrm{C}_{\\mathrm{n}} [\\mathrm{B r C l}]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "化学式内空格导致排版断裂，但含义明确。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Aqueous Li-ion Battery Enabled by Halogen Conversion-Intercalation Chemistry in Graphite",
+  "self_check": "已核对摘要、正文数据与结论：容量 243 mAh g⁻¹、230 圈保持 82%、CE 100%、平均电压 4.2 V、能量密度 970 Wh kg⁻¹、全电池 127 mAh/g、150 圈保持 74%、CE 99.8%、460 Wh kg⁻¹（计入电解质 304 Wh kg⁻¹）均与原文一致。公式已按提取文本原样保留，未补写或修复。不确定处：第 14 页 EXAFS 公式分母 \\Box 占位符原文应为物理常数，但无法从文本确定；第 24 页 Extended Data Figure 9 图注中 'it would be the dominant one' 指代不清，可能为 OCR 或原文表述问题。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7100,
+      "prompt_tokens": 21718,
+      "total_tokens": 28818,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13055,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

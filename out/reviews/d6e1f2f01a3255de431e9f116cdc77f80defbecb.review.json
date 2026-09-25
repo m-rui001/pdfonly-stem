@@ -1,0 +1,75 @@
+{
+  "sha1": "d6e1f2f01a3255de431e9f116cdc77f80defbecb",
+  "title": "Visual Place Recognition: A Survey",
+  "doi": "https://doi.org/10.1109/tro.2015.2496823",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d6e1f2f01a3255de431e9f116cdc77f80defbecb/index.html",
+  "source_chars": 122633,
+  "markdown_chars": 16759,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Stephanie Lowry, Niko underhauf, Paul NewmaFellow, IEEE, JohnJ. Leonard Fellow, IEEE David Cox, Peter Corke Fellow, IEEE and Michael J. Milford Member, IEEE",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者姓名与 IEEE 会员标识在 OCR 中粘连、缺字（如 Niko underhauf、Paul NewmaFellow、JohnJ. Leonard），影响作者信息识别，但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the role of pta recognition in the animal kingdom",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“pta recognition”应为 place recognition 的 OCR 误识，属摘要中的明显文字错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the42 Nobel Prize in Physiology or Medicine award to Edvard Mos May-Britt Moser and John O'Keefe",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "“the42”与“Edvard Mos”存在 OCR 缺字/粘连，原文应为 2014 年诺贝尔奖及 Edvard Moser，但此处照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the same cells can be used to represent multiple different enviro ns",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“enviro ns”为 environments 的 OCR 断字/缺字，影响局部可读性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Visual Place Recognition: A Survey",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 30570,
+      "total_tokens": 40570,
+      "prompt_tokens_details": {
+        "cached_tokens": 30464
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18348,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

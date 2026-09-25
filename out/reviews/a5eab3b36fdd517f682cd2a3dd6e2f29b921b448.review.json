@@ -1,0 +1,45 @@
+{
+  "sha1": "a5eab3b36fdd517f682cd2a3dd6e2f29b921b448",
+  "title": "Projected land ice contributions to twenty-first-century sea level rise",
+  "doi": "https://doi.org/10.1038/s41586-021-03302-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a5eab3b36fdd517f682cd2a3dd6e2f29b921b448/index.html",
+  "source_chars": 118669,
+  "markdown_chars": 2873,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "median decreases from 25 cm to 14 cm SLE",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要中写 '25 to 13 cm'，表1中SSP1-19的陆地冰中位数也是13 cm；正文此处写成14 cm，与摘要和表1不一致，疑为笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表1中的关键数值：NDCs下陆地冰中位数25 cm、SSP1-19下13 cm，与摘要一致；正文中出现了14 cm的表述，疑似笔误，已在issues中标注。参数κ、γ的数值和单位已按方法部分保留，公式（高斯过程均值、协方差）已原样记录。风险厌恶情景的中位数21 cm（南极）和42 cm（陆地冰）与原文一致。表1中的5-95%范围已根据上下文解读，但表格提取顺序可能影响百分位对应，已尽量按常见格式处理。不确定性部分（CMIP6导致95%增7 cm等）与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11223,
+      "prompt_tokens": 32916,
+      "total_tokens": 44139,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9178
+      }
+    },
+    "content_chars": 3472
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

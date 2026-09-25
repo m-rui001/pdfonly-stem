@@ -1,0 +1,73 @@
+{
+  "sha1": "cd10327929e272f272dcb8bdadf1df2b284fa774",
+  "title": "Multisource and Multitemporal Data Fusion in Remote Sensing: A Comprehensive Review of the State of the Art",
+  "doi": "https://doi.org/10.1109/mgrs.2018.2890023",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cd10327929e272f272dcb8bdadf1df2b284fa774/index.html",
+  "source_chars": 153515,
+  "markdown_chars": 3676,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "articial neural network",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文如此，应为 artificial neural network 的拼写错误，但文本证据明确为错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Grass Synthetis",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "表格中类别名，疑似 Grass Synthetic 之拼写错误，但无更强上下文，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "PSNR — Ideal inf CS",
+      "type": "格式/截取问题",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表头跨页或排版导致信息不连贯，具体含义不明，但数值已保留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "F − AVT F",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式中缺失范数符号（应为 ||F - AV^T||_F^2），但原文如此，可能PDF抽取丢失，照录原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要中的主要方法分类、五大泛锐化方法的定量比较（表I数值）、休斯顿数据集上各融合方法的OA（表II关键值：RF_HSI 77.47%、OTVCA 92.68%等）、点云融合中的精度提升数值（如92.61%、94.7%、98.5%）、以及表III中SMP辅助标注的OA对比。公式(1)-(4)已尽量原样保留，但公式(2)中缺失范数下标，已标注。未发现与结论方向不一致的数据。不确定之处：表格中个别单元格数值因排版可能顺序错位，但均依赖文本提取，未作修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3879,
+      "prompt_tokens": 38358,
+      "total_tokens": 42237,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1090
+      }
+    },
+    "content_chars": 4829,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

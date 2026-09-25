@@ -1,0 +1,90 @@
+{
+  "sha1": "c2aa7d4e72bafe7e582d4f9c67333372b7cb8da9",
+  "title": "Review of two-dimensional materials for photocatalytic water splitting from a theoretical perspective",
+  "doi": "https://doi.org/10.1039/c6cy02178f",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c2aa7d4e72bafe7e582d4f9c67333372b7cb8da9/index.html",
+  "source_chars": 71620,
+  "markdown_chars": 3522,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the expansion coefficient of the cluter α",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "前后文均用cluster，此处“cluter”明显为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the valence band maximum (VBM) and conduction band maximum (CBM)",
+      "type": "疑似术语错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "CBM标准定义为导带最小值（conduction band minimum），且后文多次出现CBM均指minimum。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "h̄ is the Plank constant",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "物理常数标准拼写为Planck。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Hatree-Fock",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标准术语为Hartree-Fock。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The anionic S donors MS2− 4 selec-",
+      "type": "疑似格式错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "化学式表示不清晰，可能为四硫代金属酸根（如MoS4^2−），但原文下标/上标信息不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "ln[(N + ND )!/(ND !N!]",
+      "type": "疑似公式缺括号",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "括号不匹配，缺少一个右括号。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：单层MoS2 GGA带隙1.58–1.78 eV（实验~1.8 eV）、磷烯低估0.5 eV、HSE06磷烯1.49 eV（实验1.45 eV）、GW MoS2 2.75–2.8 eV、磷烯2.0–2.3 eV、GGA CBM/VBM偏差0.36/0.46 eV、HSE06偏差0.14/0.16 eV，均与提取文本一致。公式(1)-(11)已按可见文本保留，但公式(5)和(9)中积分符号可能因提取缺失，已照录dr'等可见部分，未自行补全。表格数据未全部展开，但关键数值已引用。不确定处：公式(9)中Σ(r,r';ε)的准确形式可能有简化，但基于原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 17291,
+      "prompt_tokens": 20372,
+      "total_tokens": 37663,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 14340
+      }
+    },
+    "content_chars": 5147
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

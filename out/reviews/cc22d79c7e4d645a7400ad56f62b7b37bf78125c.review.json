@@ -1,0 +1,55 @@
+{
+  "sha1": "cc22d79c7e4d645a7400ad56f62b7b37bf78125c",
+  "title": "The challenges of anaerobic digestion and the role of biochar in optimizing anaerobic digestion",
+  "doi": "https://doi.org/10.1016/j.wasman.2016.11.028",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cc22d79c7e4d645a7400ad56f62b7b37bf78125c/index.html",
+  "source_chars": 103452,
+  "markdown_chars": 3872,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "added and the accumulation of volatile fatty acids when the OLR was above 1.6 gVS l -1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "此句出现在页尾，与上文“co-digestion of orange peel and sewage sludge (70:30) resulted in a methane yield of 0.165 l gVS-1 d-1”在逻辑上断裂，缺少主语和连接词，疑似前一页内容被截断后拼接。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "the adsorption behaviour of asorbent is a function of the pH of the medium",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“asorbent”应为“adsorbent”或“a sorbent”之误，提取文本中缺少空格或拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：柠檬烯抑制浓度65-88 g/L，OLR 3.67-5.10 gVS/(L·d)，橙皮/污泥70:30甲烷产率0.165 L/(gVS·d)，5-HMF和糠醛甲烷产率533/583 mL/g，C/N=32时NH3降低30%和额外能量50-73%，LCFA抑制0.3-1 mM，固液分离N/P损失43%/25%，NH4+挥发85%，广州市污泥重金属浓度与PAS110对比，生物炭550°C热解10 g/L去除Cu/Pb 0.015 g/L，Luo等甲烷增产86.6%，Sawayama等6 g/L铵临界值，细胞间距离<1 µm。公式仅出现在表格中，因提取文本不完整未单独列出，但已在文中保留相关化学式。仍不确定之处：第7页断句导致“1.6 gVS/L”无法确认归属；第17页“asorbent”拼写错误已标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3860,
+      "prompt_tokens": 29341,
+      "total_tokens": 33201,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 915
+      }
+    },
+    "content_chars": 4989
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

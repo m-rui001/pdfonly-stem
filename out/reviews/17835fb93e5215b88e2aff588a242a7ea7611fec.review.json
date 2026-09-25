@@ -1,0 +1,72 @@
+{
+  "sha1": "17835fb93e5215b88e2aff588a242a7ea7611fec",
+  "title": "Augmented reality in support of Industry 4.0—Implementation challenges and success factors",
+  "doi": "https://doi.org/10.1016/j.rcim.2019.02.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/17835fb93e5215b88e2aff588a242a7ea7611fec/index.html",
+  "source_chars": 98421,
+  "markdown_chars": 2297,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "Fig 4 Results of the PLS-SEM: Path coefficients, significance level, and R² measure The results show that the latent variables explain 35.6% of the variance in the dependent variable. Hence, the model is successful in explaining AR implementation success. Similar studies show similar results for R² [84]. Other models were tested as well to explore if a different configuration could explain the dependent variable to a higher extent. The main focus lied on combining the constructs of first-order constructs [66]. However, the results did not improve. All three latent variables rooted in the technology context, namely system configuration (!\"#$ = 0.456, ! < 0.01), technology hardware readiness (!\"./0 = 0.276, ! < 0.1), and technology compatibility (!\".$ = 0.306, ! < 0.05), significantly influence the AR implementation success.",
+      "type": "乱码/符号提取错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "路径系数符号显示为乱码（如!\"#$），应为希腊字母β，原文数学符号在PDF提取中被破坏，但数字和p值仍可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Fig 2 Research model and hypothesis based on the TOE framework The implementation success (IS) is to some extent quantifiable in terms of efficiency improvement.",
+      "type": "乱码/符号提取错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图2中的路径系数符号显示为乱码（如!\"# !$# !%# !&# !'# !( )），无法辨认具体希腊字母，但结合上下文可知是β系数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Table sums up the results of the hypotheses testing.",
+      "type": "疑似表格编号缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文此处未出现“Table 7”编号，只有“Table”，可能是PDF提取时丢失了编号，但下文有表7。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Barttlet’s shericity measure",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文拼写“Barttlet’s”和“shericity”疑似应为“Bartlett’s”和“sphericity”，但无强证据，可能为原文笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：KMO=0.503，Bartlett显著性p<0.001，样本量84，响应率23%，R²=0.356，路径系数（SC=0.456, THR=0.276, TC=0.306, OF=0.263, ES=0.052, UB=-0.018）及p值与表7一致；AVE中ES=0.427但复合信度0.644，与正文描述一致。假设接受/拒绝结论与摘要一致。公式方面无复杂公式，仅路径系数符号在提取中乱码，但数值清晰，已在提取问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6547,
+      "prompt_tokens": 22869,
+      "total_tokens": 29416,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4427
+      }
+    },
+    "content_chars": 4517
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

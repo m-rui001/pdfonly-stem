@@ -1,0 +1,76 @@
+{
+  "sha1": "d2537879abe5986df4d97c582c4fa77a084aa8cb",
+  "title": "Hydrophobic deep eutectic solvents as water-immiscible extractants",
+  "doi": "https://doi.org/10.1039/c5gc01451d",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d2537879abe5986df4d97c582c4fa77a084aa8cb/index.html",
+  "source_chars": 21172,
+  "markdown_chars": 3990,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Hydrophobic Deep Eutectic Solvents: A New Generation of Water- Immiscible Extractants",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第2页正文标题与第1页及登记题名不同，但DOI和作者一致，属于同一论文的稿件版本标题差异，不影响内容理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "N $ _{4444} $ -Cl",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式下标在OCR中部分丢失或格式异常，如N₄₄₄₄-Cl被拆分为N $ _{4444} $ -Cl，但可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "DecA:N$_{4444}$-Cl(2:1) 916.8 265.26 -11.95 194.64 8140 69380 155.21 0.3475",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表1在OCR中列对齐可能不完整，但数值与正文描述一致，可复原。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "DecA:N$ _{4 4 4 4} $ -CI was not further investigated due to the high leaching of the salt.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "脚注中“CI”应为“Cl”（氯），OCR将小写l误识为大写I。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Hydrophobic deep eutectic solvents as water-immiscible extractants",
+  "self_check": "已核对关键数值：DecA水中溶解度0.15 mg·g⁻¹、N₄₄₄₄-Cl浸出34.8%、N₈₈₈₁-Cl浸出3.0%、水含量8140→69380 ppm、密度889-942 kg·m⁻³、粘度173-783 mPa·s、萃取效率表2数值与正文一致。公式E[%]已保留。不确定处：表1中部分列标题（如w_before,H2O）在OCR中可能因格式丢失，但数值可读；第2页标题与登记题名略有差异，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3186,
+      "prompt_tokens": 6929,
+      "total_tokens": 10115,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 5482,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

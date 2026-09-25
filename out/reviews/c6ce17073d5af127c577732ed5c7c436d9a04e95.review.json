@@ -1,0 +1,54 @@
+{
+  "sha1": "c6ce17073d5af127c577732ed5c7c436d9a04e95",
+  "title": "Facet-dependent active sites of a single Cu2O particle photocatalyst for CO2 reduction to methanol",
+  "doi": "https://doi.org/10.1038/s41560-019-0490-3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c6ce17073d5af127c577732ed5c7c436d9a04e95/index.html",
+  "source_chars": 82149,
+  "markdown_chars": 2577,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "majority of phtogenerated molecular oxygen",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "phtogenerated 显然应为 photogenerated，拼写错误的概率极高。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "increase spin density (Cu(II)) isotopically",
+      "type": "疑似用词错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "同位素含义在此处不清晰；结合EPR语境，更可能是 isotropically（各向同性地）之误，但缺乏强证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：内部量子产率72.8%（原文公式(5)计算），太阳能-燃料效率10.1%，DFT吸附能(110) -2.8 eV、(100) -1.87 eV，弯曲CO2 ΔE -6.3 eV，Cu-O键长1.92-1.95 Å，EPR g//=2.3420、A//=137 G，Cu簇4.98e-12 mol，O2 1.45 mmol、H2O2 5.8 mmol。公式和符号均照录原文。不确定项：第5页phtogenerated拼写错误已标出；第11页isotopically是否应为isotropically存疑，已在issues中说明。其余数值与原文一致，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6566,
+      "prompt_tokens": 21798,
+      "total_tokens": 28364,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4551
+      }
+    },
+    "content_chars": 3435
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "45cd4baa45e3abc458a37030992c1e183ce54cc2",
+  "title": "Laser cavity-soliton microcombs",
+  "doi": "",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/45cd4baa45e3abc458a37030992c1e183ce54cc2/index.html",
+  "source_chars": 34754,
+  "markdown_chars": 3217,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Lugiato-Lefever solitons feature a minimum power excitation threshold",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "该句在第4页页末中断，没有句号，下一页直接是Figure 1, 可能缺失后续内容或句子未完整提取。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 1,
+      "quote": "we demonstrate 50 nm wide bright soliton combs induced at average powers more than one order of magnitude lower than the Lugiato-Lefever soliton power threshold [22], measuring a mode efficiency of 75% versus the theoretical limit of 5% for bright Lugiato-Lefever solitons [23].",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "摘要中说'平均功率低一个多数量级'，正文第4页说'低于6%阈值'（约低1.5个数量级），二者方向一致但具体数值不同，非明显错误，仅记录差异。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：带宽50 nm、平均功率<6%阈值、模式效率75% vs 理论极限5%、理论最大96%、重复率变化1.9 MHz和3.2 MHz、FSR 48.97 GHz与77 MHz、Q因子1.3e6、增益带宽650 GHz、公式(1)(2)(3)(4)均已按提取文本保留。未发现数据矛盾。不确定点：第4页末尾句子截断，缺失内容未知；摘要中‘一个多数量级’与正文‘低于6%’在数值上不完全一致，但可能语义上‘一个数量级’约指10倍，6%即16倍，不矛盾。公式中上下标和希腊符号在提取中可能变形，已照录可见文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3438,
+      "prompt_tokens": 9884,
+      "total_tokens": 13322,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 986
+      }
+    },
+    "content_chars": 4368
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

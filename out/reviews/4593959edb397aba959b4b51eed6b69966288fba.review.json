@@ -1,0 +1,73 @@
+{
+  "sha1": "4593959edb397aba959b4b51eed6b69966288fba",
+  "title": "The Effect of Fluoroethylene Carbonate as an Additive on the Solid Electrolyte Interphase on Silicon Lithium-Ion Electrodes",
+  "doi": "https://doi.org/10.1021/acs.chemmater.5b01627",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4593959edb397aba959b4b51eed6b69966288fba/index.html",
+  "source_chars": 77598,
+  "markdown_chars": 2780,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Introduction electrodes with extremely high surface areas. Such high surface area electrodes exacerbate capacity Silicon-lithium alloys have been the subject of inlosses (and diminish electrode cycle life) through partense research as a negative electrode active material 14 asitic surface reactions.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "引言部分文字乱序，多个句子片段相互拼接，无法直接阅读，可能因版面提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "with a 2 current density of 21 µA/cm",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“a 2”疑似将面积单位的上标2错误前置，应为“with a current density of 21 µA/cm²”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "The increased LiO in TOF-SIMS depth profiles of the electrodes cycled in EC/DEC/FEC after initial lithiation (Figures 4b) and after 100 cycles (Figure 4d), further supports the hypothesis that etching Reaction 3 takes place.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "100 cycles对应的应是为图4f（100 cycles深度剖面），此处写为Figure 4d，与图题不符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "SLi2O = 3 K SP = 3 4 [O]([Li]Li2O + [Li]LiF )2 4",
+      "type": "疑似错误/公式提取异常",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式中数字、括号和变量排列异常，可能因排版或识别错误，无法确认其数学形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：首次循环CE（EC/DEC 86.95%，EC/DEC/FEC 80.96%）、100次容量（>3000 vs 1252 mAh/g）、SEI厚度（首次35.1 vs 23.1 nm，100次72.3 vs 20.6 nm）、LiF层厚度（13.2 vs 11.5 nm）以及EIS的Rf和Rct数值。公式1因提取异常无法确认数学形式，已照录原样；图4d/4f指代存在疑点；引言文本有拼接，但核心数值和结论未受影响。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11295,
+      "prompt_tokens": 21344,
+      "total_tokens": 32639,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8983
+      }
+    },
+    "content_chars": 4480
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

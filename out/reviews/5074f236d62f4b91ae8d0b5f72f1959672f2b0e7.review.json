@@ -1,0 +1,83 @@
+{
+  "sha1": "5074f236d62f4b91ae8d0b5f72f1959672f2b0e7",
+  "title": "Mechanical fault diagnosis using Convolutional Neural Networks and Extreme Learning Machine",
+  "doi": "https://doi.org/10.1016/j.ymssp.2019.106272",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5074f236d62f4b91ae8d0b5f72f1959672f2b0e7/index.html",
+  "source_chars": 76821,
+  "markdown_chars": 4399,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "min Lc βR 1 2 C 2 β  Hβ  Y 2 2",
+      "type": "公式字符损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中下标、范数符号等显示为乱码，无法准确还原 ELM 目标函数，仅能根据上下文判断为 min_β (1/2)‖β‖² + (C/2)‖Hβ−Y‖² 形式，但原文可见文本不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the accuracy is low if L is selected in the range of 200 to 2000",
+      "type": "疑似数值矛盾",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "前文参数优化中 L 的搜索范围是 {2, 5, 10, 20, 30, 40, 50, 60}，此处却提到 '200 to 2000' 和 'Above 2000'，与之前列出的 L 范围不一致，可能存在抽取或原文表述问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Each sample contains 512 data points of one rotation in length, and each health condition has 209 samples under one load. There are in total 8360 samples (i.e. 10 health conditions ×4 operating loads × 209 samples).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "与齿轮箱数据集类似，此处对比实验的样本长度和数量与 4.2.1 节描述（2000 点/样本，每类每负载 60 样本）不同，可能是为对比方法单独预处理，但未明确说明，存在衔接疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "For an input x ＝ [x1 , x2 ,  , xm ]    d  m ",
+      "type": "公式字符损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中的特殊符号（如 ∈、ℝ、×）被替换为乱码或缺失，原文应为 x ∈ ℝ^(d×m) 等，但无法确认准确形式，照录可见字符并注明。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "Each sample contains 2048 data points (one rotation per sample). Then each health condition contains 585 samples under one operating speed, and thus, there are in total 12,285 samples (i.e. 7 health conditions ×3 operating speeds × 585 samples).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此段位于 4.1.6 节开头，但前文 4.1.1 节已说明数据集使用 12000 点样本，此处突然改变样本长度和数量，可能为对比实验单独设置，但上下文衔接不自然，需注意是否为页边截断导致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：齿轮箱实验最终准确率 99.83±0.24%（训练 100%），电机轴承实验 99.92±0.14%；ELM 训练时间 4s（齿轮箱）和 6s（轴承），CNN 和 CNN2 训练时间分别 818s/882s（齿轮箱）和 314s/377s（轴承）。参数选择 (C=0.1, L=5000, s=7, m=8) 与表 2 一致。公式部分因提取文本出现乱码（如 ℝ、β、‖·‖符号损坏），无法完全准确还原，已按可见文本保留并标注问题。注意参数优化部分 L 的搜索范围与后文描述存在矛盾（见 extraction_issues），结论中未引用该冲突数值。CWT 尺度 1024、图像尺寸 32×32、采样率 24kHz/12kHz 等均来自原文。与已发表方法对比表（表12）中的数值与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3783,
+      "prompt_tokens": 18986,
+      "total_tokens": 22769,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 31
+      }
+    },
+    "content_chars": 6660,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

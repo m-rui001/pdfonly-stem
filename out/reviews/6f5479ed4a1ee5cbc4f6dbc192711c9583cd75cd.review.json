@@ -1,0 +1,184 @@
+{
+  "sha1": "6f5479ed4a1ee5cbc4f6dbc192711c9583cd75cd",
+  "title": "Rebuilding marine life",
+  "doi": "https://doi.org/10.1038/s41586-020-2146-7",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/6f5479ed4a1ee5cbc4f6dbc192711c9583cd75cd/index.html",
+  "source_chars": 93963,
+  "markdown_chars": 11671,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "4.8 to 12.7 million Mton per year",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文单位应为Mton（百万吨），但此处写作\"Mton\"，而通常塑料输入量以百万吨计，数值4.8-12.7 million Mton意味着4.8-12.7万亿吨，与常识不符。疑为\"million tonnes\"或\"Mton\"的OCR误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "n=1743",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该数值紧接在\"sd=1.7%\"之后，格式上可能为\"n=1743\"，但需确认是否为评估物种数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "2.95% (95% C.I. 2.42-3.41%)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "置信区间格式可能应为2.42-3.41%，但需确认是否为2.42-3.41%还是2.42-3.48%等。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "the aspiration if that recovery targets",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "\"if\"应为\"is\"，语法错误，疑为OCR误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "$ 53 billion $ ^{126} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "参考文献编号126可能应为其他编号，但无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "Rcovery targets by 2050",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"Rcovery\"应为\"Recovery\"，OCR漏字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "Substantiial",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"Substantiial\"应为\"Substantial\"，OCR多字母。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "biodiversit",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"biodiversit\"应为\"biodiversity\"，OCR截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "Rcovery targets by 2050",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "表头\"Rcovery\"应为\"Recovery\"。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "Rcovery targets by 2050",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "表头\"Rcovery\"应为\"Recovery\"。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "biodiversit",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"biodiversit\"应为\"biodiversity\"。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "B_{MSY} values to be 40% of B{0}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文中B{0}缺少下标格式，应为B_0，OCR丢失了下划线。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "B_{MSY}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "多处B_MSY、F_MSY等下标格式在OCR中不一致，部分丢失下划线。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "4 1 9 7 ha",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "数字间有空格，应为4197 ha。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "225,000 km 2",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标2与km之间有空格，应为km²。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 41,
+      "quote": "Substantiial",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"Substantiial\"应为\"Substantial\"。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Rebuilding Marine Life",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：恢复速率2.95%（95% C.I. 2.42-3.41%）、恢复时间约21年（95% C.I. 18-25年）、MPA覆盖率从0.003%增至7.6%、塑料输入4.8-12.7 million Mton（疑为百万吨）、鱼类恢复时间3-30年、B_MSY为B_0的37-50%等。公式符号如B_MSY、F_MSY、B_0、r_max等已按原文保留，部分下标格式在OCR中丢失已标注。结论方向与数据一致：到2050年实质性恢复（50-90%）是可行目标，但需缓解气候变化等压力。仍不确定之处：塑料输入单位Mton是否应为百万吨；部分参考文献编号可能不准确；表1中部分文字有OCR错误但不影响整体理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8101,
+      "prompt_tokens": 22051,
+      "total_tokens": 30152,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15586,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "sha1": "f4d454d077f8a6e5c0341d013ebbd2ea4cf5d526",
+  "title": "Reversible Mn2+/Mn4+ double redox in lithium-excess cathode materials",
+  "doi": "https://doi.org/10.1038/s41586-018-0015-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f4d454d077f8a6e5c0341d013ebbd2ea4cf5d526/index.html",
+  "source_chars": 45264,
+  "markdown_chars": 2303,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "A critical 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句尾的‘2’为页码，实际应接页3开头的‘step is...’形成完整句子。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "show a discharge 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句尾的‘3’为页码，实际应接页4开头的‘capacity of 238 mAh/g’形成完整句子。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "and 8",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句尾的‘8’为页码，实际应接页9开头的‘carefully tailored electrolytes’等，但页9开头有‘233’疑似额外页码噪声。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "233 carefully tailored electrolytes27,28",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "‘233’可能是异常字符/页码，原文应为‘carefully tailored...’。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "up to 140 mA/g (410 Wh/kg)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文‘delivers as high as 226 mAh/g’表明此处应为容量单位mAh/g，但文本为mA/g。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文关键数据：容量（238/277/304/317 mAh/g）、能量密度（708/849/945/995 Wh/kg）、晶格参数（4.262/4.130/4.25 Å）、电压窗口及倍率值均与原文一致。DFT计算参数、XAS特征峰位（529/530-531 eV）及理论容量（270/230 mAh/g）亦按原文保留。不确定之处：页4‘140 mA/g’单位疑似应为mAh/g，已在issues中标出；多处跨页页码拼接疑点已列出；原文标题在页1实际为‘Reversible Mn2+/Mn4+ double redox in high capacity Li-excess cathode materials’，与元数据略有差异，以提取文本为准。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11780,
+      "prompt_tokens": 13664,
+      "total_tokens": 25444,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9710
+      }
+    },
+    "content_chars": 3835
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "sha1": "ecc5524c0dcc37f9bdf86a46c821bd89513fe987",
+  "title": "Photovoltaic Switching Mechanism in Lateral Structure Hybrid Perovskite Solar Cells",
+  "doi": "https://doi.org/10.1002/aenm.201500615",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ecc5524c0dcc37f9bdf86a46c821bd89513fe987/index.html",
+  "source_chars": 34923,
+  "markdown_chars": 2572,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "either either Poly(3,4-ethylenedioxythiophene) polystyrene sulfonate",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文出现重复的either，可能为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "µ is defined as the ratio between the ion drifting velocity (v) and electrical field (µ=E/v)",
+      "type": "疑似公式方向错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "按定义µ=v/E，但原文写µ=E/v，可能笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "VOC increases gradually from zero to ≈ 20 % to ≈ 40 % (sample dependent)",
+      "type": "疑似多余介词",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "from zero to ... to ... 可能多了第二个to。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "The error bars The error bars represent a single standard deviation",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "重复了The error bars。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文关键数值：0.3 V/μm、360±19 meV、1.5×10⁻⁹ cm²/Vs、120±20 s、35±3 meV等。公式µ=E/v原文如此，但按定义应为v/E，已照录并标注。另外提取文本中有重复词语，已在issues中列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10837,
+      "prompt_tokens": 10202,
+      "total_tokens": 21039,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8814
+      }
+    },
+    "content_chars": 3754
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

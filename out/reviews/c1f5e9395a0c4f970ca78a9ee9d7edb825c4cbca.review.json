@@ -1,0 +1,100 @@
+{
+  "sha1": "c1f5e9395a0c4f970ca78a9ee9d7edb825c4cbca",
+  "title": "Widespread deoxygenation of temperate lakes",
+  "doi": "https://doi.org/10.1038/s41586-021-03550-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c1f5e9395a0c4f970ca78a9ee9d7edb825c4cbca/index.html",
+  "source_chars": 74782,
+  "markdown_chars": 2435,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "1. Department of Biological Sciences, Rensselaer Polytechnic Institute, Troy, NY, USA",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "该段为作者单位列表的一部分，无明显断裂，仅为正常页码分页。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "We used a subset of lakes where mean deep-water DO concentration exceeded 0.5 mg/L",
+      "type": "单位不一致",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "原文中其他处使用'mg L-1'，此处为'mg/L'，但可能为一致，无实质问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "While deep-water temperatures have been virtually stable since observations began (Fig. 1a; –0.01°C decade-1), both deep-water DO concentration and percent saturation declined through time (–0.12 mg L-1 decade-1 and –1.2% decade-1; respectively, Fig. 1b, c). Declines were unrelated to solubility as predicted changes based on solubility (slight increase of 0.01 mg L-1) were negligible compared with observed losses (median -0.23 mg L-1 based on last five years relative to first five years of each time series, Fig. 2b)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "文中提到深层DO下降与溶解度无关，但给出'predicted changes based on solubility (slight increase of 0.01 mg L-1)'，而后面'median -0.23 mg L-1'应为深层DO浓度的中位变化（观测值），但此处表述可能混淆。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "For example, although surface-water temperatures generally increased from 1980 onwards, there was a period of accelerated increase during 1990-2000, with slower warming thereafter (Fig. 2c), consistent with the “warming hiatus” observed during 1998-201223.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "引用编号23处出现'1998-2012'，但原文为'1998-201223'，可能为数字合并，但无法确认。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "Deep-water DO changes are described in more detail below.",
+      "type": "正常文本",
+      "severity": "low",
+      "confidence": 0.0,
+      "reason": "仅为文章内部指引，无问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "In some larger lakes (n = 6 lakes), we used profiles from two separate locations if the lake had more than one distinct basin and treated these as separate waterbodies.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "原文说'n = 6 lakes'，但后文可能指6个湖有多个盆地，但表述可能不清。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 37,
+      "quote": "For deep-water trends, lakes that were essentially anoxic (average hypolimnetic DO < 0.5 mg L-1) had trend magnitudes that clustered near 0 relative to other lakes. This was not unexpected as lakes with essentially no hypolimnetic DO have little potential to lose additional DO. When calculating median trends and for graphical depiction of trends (Fig. 1), we removed these lakes (n = 69; difference = 191).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "此处'difference = 191'含义不明，可能指移除后剩余湖泊数（260-69=191），但未明确说明。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：表层DO下降0.45 mg L⁻¹（5.1%），深层0.42 mg L⁻¹（20.2%）；表层降温速率0.11 mg L⁻¹ decade⁻¹，深层0.12 mg L⁻¹ decade⁻¹；TDO3上升0.17°C decade⁻¹，68%湖泊正趋势。溶解度预测表层损失0.12 vs 观测0.19 mg L⁻¹。密度差增加速率0.10 kg m⁻³ decade⁻¹。部分文本如'difference = 191'存疑，已在extraction_issues中标出。公式未涉及。结论方向与摘要一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2533,
+      "prompt_tokens": 19999,
+      "total_tokens": 22532,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6
+      }
+    },
+    "content_chars": 5736
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

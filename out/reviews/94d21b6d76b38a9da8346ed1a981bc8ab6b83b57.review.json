@@ -1,0 +1,55 @@
+{
+  "sha1": "94d21b6d76b38a9da8346ed1a981bc8ab6b83b57",
+  "title": "Total Mercury Released to the Environment by Human Activities",
+  "doi": "https://doi.org/10.1021/acs.est.7b00451",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/94d21b6d76b38a9da8346ed1a981bc8ab6b83b57/index.html",
+  "source_chars": 47130,
+  "markdown_chars": 3848,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "followed by silver mining 2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要中第2页末尾出现'followed by silver mining 2'，第3页开头为'(24%) and chemicals manufacturing (12%).'，拼接后应为'silver mining (24%)'，但提取文本多了一个'2'，疑似OCR或页界混淆。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "y r , p ,t = (ar , p − br , p )e (−t / 2 s ) 2 2 r,p + br , p",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式上下标/指数部分提取混乱，'e'后指数'−t / 2 s 2 2' 疑似为e的指数‘-t^2/(2s^2)’但格式损坏，无法确定准确数学形式，照录可见文本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的总释放量1.5 Tg（1.0–2.8 Tg）、空气释放470 Gg、陆/水释放1.1 Tg、大气储量4570 Mg及3.2倍富集等关键数值；正文中1890年峰值8.5 Gg yr⁻¹、1970年峰值10.4 Gg yr⁻¹、1880年以来8±2 Gg yr⁻¹、空气/陆水比42%至31%、煤炭燃烧3.2至1.2、不确定性范围-32%至+82%等均与摘要一致。公式部分因提取文本损坏，仅照录可见符号，未作修复。表1中总释放1,540,000 Mg与摘要1.54 Tg一致，但表1的个别数值（如铜冶炼、锌冶炼等）未在正文中逐一核对，因提取文本中表格完整且与正文数字逻辑无冲突。与GMA对比的2010年排放2270 Mg（GMA 1960 Mg）及汞生产例外均正确。模型部分40%隔离比例、4570 Mg储量等已核对。不确定之处在于公式原始格式和表1中个别项目与正文叙述的对应关系（如银矿开采空气释放146 Gg与表1中146,000 Mg一致）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8231,
+      "prompt_tokens": 13575,
+      "total_tokens": 21806,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5288
+      }
+    },
+    "content_chars": 4985
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

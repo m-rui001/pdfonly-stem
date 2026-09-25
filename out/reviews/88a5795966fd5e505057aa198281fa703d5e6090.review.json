@@ -1,0 +1,67 @@
+{
+  "sha1": "88a5795966fd5e505057aa198281fa703d5e6090",
+  "title": "Recent Progress in Electrode Materials for Sodium‐Ion Batteries",
+  "doi": "https://doi.org/10.1002/aenm.201600943",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/88a5795966fd5e505057aa198281fa703d5e6090/index.html",
+  "source_chars": 218233,
+  "markdown_chars": 10543,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 27,
+      "quote": "Table 1. Summary of properties of typical metal or metalloid materials for Na-ion batteries.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格1在OCR中结构受损，列标题和行数据对应关系不清晰，但关键数值已提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "O3-, P2-, and P3-types depending on the stacking sequence of oxygen layers (O3: ABCABC stacking; P2: ABBA stacking; P3: ABBCCA stacking).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "P3堆叠序列在原文中可能为ABBCCA或ABBCA，OCR提取为ABBCCA，但标准P3堆叠为ABBCCA，此处可能为OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "Na₃V₂(PO₄)₃ were signifi-",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第10页末尾句子被截断，下一行重复了该句开头，可能为OCR分页导致的文本重复或截断。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Recent Progress in Electrode Materials for Sodium-Ion Batteries",
+  "self_check": "已核对关键数值：Na₀.₄₄MnO₂放电容量110 mA h g⁻¹、Na₃V₂(PO₄)₃可逆容量117 mA h g⁻¹、Na₂FeP₂O₇可逆容量82 mA h g⁻¹、硬碳比容量约300 mA h g⁻¹、Sn理论容量847 mA h g⁻¹、P理论容量2596 mA h g⁻¹等。公式符号如NaₓCoO₂、Na₃V₂(PO₄)₃等已按OCR文本保留。不确定之处：部分化学式下标在OCR中可能丢失，但已根据上下文恢复；表格1结构受损，但关键数据已提取。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7994,
+      "prompt_tokens": 70577,
+      "total_tokens": 78571,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11880,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

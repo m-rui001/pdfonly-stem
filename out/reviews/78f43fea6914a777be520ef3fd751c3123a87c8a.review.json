@@ -1,0 +1,102 @@
+{
+  "sha1": "78f43fea6914a777be520ef3fd751c3123a87c8a",
+  "title": "A sustainable wood biorefinery for low–carbon footprint chemicals production",
+  "doi": "https://doi.org/10.1126/science.aau1567",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/78f43fea6914a777be520ef3fd751c3123a87c8a/index.html",
+  "source_chars": 32442,
+  "markdown_chars": 5825,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "A sustainable wood biorefinery for low-carbon footprint chemicals production",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR 正文标题使用连字符 'low-carbon'，而登记题名使用短横线 'low–carbon'，仅为标点差异，不影响身份判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Yuhe Liao $ ^{1} $ , Steven-Friso Koelewijn $ ^{1} $ , Gil Van den Bossche $ ^{1} $ , Joost Van Aelst $ ^{1} $ , Sander Van den Bosch $ ^{1} $ Tom Renders $ ^{1} $ , Kranti Navare $ ^{2} $ , Thomas Nicolai $ ^{3} $ , Korneel Van Aelst $ ^{1} $ , Maarten Maesen $ ^{4} $ Hironori Matsushima $ ^{4} $ , Johan M. Thevelein $ ^{3} $ , Karel Van Acker $ ^{2,5} $ , Bert Lagrain $ ^{1} $ Danny Verboekend $ ^{1} $ $ ^{\\dagger} $ , Bert F. Sels $ ^{1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者列表中部分逗号缺失（如 'Sander Van den Bosch $ ^{1} $ Tom Renders' 和 'Maarten Maesen $ ^{4} $ Hironori Matsushima'），但姓名和单位上标可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "The high yield of structurally similar phenolic monomers from the conversion of wood lignin prompted us to design a process for their transformation toward phenol and propylene by catalytic funneling (fig. S4 and supplementary text ST2). A typical composition of phenolic monomers (50.5 wt % on lignin weight basis; Fig. 2A and details in table S1) after RCF of birch wood in methanol over commercial Ru/C includes 4-n-propylguaiacol (PG; 19 wt %) and 4-n-propylsyringol (PS; 67 wt %) as major components, and others including 4-ethylguaiacol (EG) and 4-ethylsyringol.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该段落在原文中应位于 RCF 方法描述之后，但 OCR 将其置于 'The first step of our approach rests on...' 段落之前，造成阅读顺序颠倒。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Fig.1. Proposed integrated biorefinery process for xylochemicals production from wood. Flow diagram of the chemical process to produce carbohydrate pulp, phenol, propylene, and phenolic oligomers from wood.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图 1 说明文字出现在第 2 页末尾，但图 1 内容应在第 1 页或第 2 页正文中引用，OCR 将图注与正文分离，可能影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Fig. 2. RCF of wood and catalytic funneling of lignin monomers to phenol and propylene. (A) RCF of birch and pine wood to lignin monomer, oligomers, and carbohydrate pulp (details in supplementary materials). (B) Activity of selected supported Ni catalysts for hydroprocessing of PG ( $ 2 8 5^{\\circ} \\mathrm{C} $ with low conversion $ < 2 0 \\% $ , the data are taken at time-on-stream of 3 hours). (C) Selectivity to PPs versus PG conversion $ [ 2 8 5^{\\circ} \\mathrm{C} $ at different weigh hourly space velocities (WHSVs]). (D) Evolution of conversion and products selectivity with time-on-stream over 64 wt % $ \\mathrm{N i / S i O_{2}} $ for hydroprocessing of PG $ (2 8 5^{\\circ} \\mathrm{C} $ and $ 6. 0 \\mathrm{h o u r}^{-1} $ WHSV). (E) Hydroprocessing of different lignin-derived phenolics (over 64 wt % $ \\mathrm{N i / S i O_{2}} $: EG, PG, isoeugenol, and pine-derived monomers at $ 2 8 5^{\\circ} \\mathrm{C} $ and 8.2, 6.0, 4.4, and 6. 0 hour $ ^{-1} $ WHSV, respectively; PS(I), PS(II), and birch-derived monomers at $ 3 0 5^{\\circ} \\mathrm{C} $ and 7.1, 5.3, and 5.3 hour $ ^{-1} $ WHSV, respectively). The data in (C) and (E) are taken at time-on-stream of 5 hours. Hydroprocessing constant reaction conditions: 1 bar of total pressure (0.4 bar of $ H_{2} $ partial pressure). Dealkylation of the hydroprocessing products from extracted (unseparated) mixture of monomers of (F) pine and (G) birch wood lignin oils at $ 4 1 0^{\\circ} \\mathrm{C} $ over Z140-H with time-on-stream at WHSV of 3.7 hour $ ^{-1} $ and 2.8 hour $ ^{-1} $ , respectively. C-mol yield in (F) and (G) represents the carbon molar yield in the product stream. The theoretical yield (84.7%) in (G) is the maximum combined yield of phenol and olefins on the basis of the substrate composition (table S4).",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图 2 说明中多处温度和 WHSV 数值的 OCR 提取存在空格和格式问题（如 '$ 2 8 5^{\\circ} \\mathrm{C} $'、'$ 6. 0 \\mathrm{h o u r}^{-1} $'），但数值本身可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Fig. 3. Valorization of RCF birch wood carbohydrate pulp and phenolic oligomers. (A) Semisimultaneous saccharification-fermentation of carbohydrate pulp (containing Ru/C catalyst) obtained after RCF of birch wood. (B) Stepwise synthesis of ink from RCF birch wood lignin oligomers (details in supplementary materials).",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图 3 说明文字出现在第 4 页开头，但图 3 内容应在第 3 页或第 4 页正文中引用，OCR 将图注与正文分离，可能影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Fig. 4. LCA and carbon flow for the proposed integrated biorefinery based on birch wood. (A and B) GWPs [in kilograms of $ \\mathrm{C O_{2}} $ -equivalent per kilogram of product $ \\mathrm{k g C O_{2} e} $ per kg product)] of phenol, propylene, phenolic oligomers, and carbohydrate pulp in this birch wood biorefinery with different scenarios (i.e. several hydrogen sources and/or forest management strategies). The GWPs are 11.89, 8.20, and 0.97 kg of $ \\mathrm{C O_{2}} $ -equivalent per kilogram of $ \\mathrm{H_{2}} $ for nonrenewable $ \\mathrm{H_{2}} $ I, nonrenewable $ \\mathrm{H_{2}} $ II, and renewable $ \\mathrm{H_{2}} $ III, respectively (see supplementary materials). The GWP of phenolic oligomers from oil refining is the GWP of fossil-based nonylphenol (>1.58 kg of $ \\mathrm{C O_{2}} $ -equivalent per kilogram of nonylphenol). (C) Carbon flow of this birch wood biorefinery.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图 4 说明中 GWP 单位表达存在 OCR 格式问题（如 '$ \\mathrm{k g C O_{2} e} $ per kg product'），但数值和含义可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "A sustainable wood biorefinery for low-carbon footprint chemicals production",
+  "self_check": "已核对关键数值：桦木 RCF 单体收率 50.5 wt %（PG 19 wt %，PS 67 wt %），松木 14.1 wt %；Ni/SiO₂ 催化剂 64 wt % 在 285°C、4.5 kg kg⁻¹ hour⁻¹ 下 PPs+EPs 收率 84%；脱烷基化在 410°C、Z140-H 上苯酚+烯烃组合收率 82%；生物苯酚和生物丙烯收率分别为 20 和 9 wt %（桦木木质素基），松木为 6 和 3 wt %；碳水化合物浆组成 65 wt %（<10 wt % 木质素，60 wt % 纤维素，19 wt % 半纤维素）；乙醇滴度 40.2 g liter⁻¹；低聚物官能团 3.46 mmol 酚羟基 g⁻¹ 和 2.48 mmol 脂肪族羟基 g⁻¹；1000 kg 桦木产 653 kg 浆、64 kg 低聚物、42 kg 苯酚、20 kg 丙烯，78 wt % 转化；TEA 内部收益率 23%，回收期约 4 年；LCA 苯酚 GWP 0.736 kg CO₂ 当量/千克，丙烯 0.469，低聚物 −0.949，浆 −0.217。公式符号已按原文保留。不确定处：图 2 说明中部分 WHSV 数值的 OCR 空格可能影响精确读数，但数值本身可辨；阅读顺序问题已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6105,
+      "prompt_tokens": 9093,
+      "total_tokens": 15198,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12637,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

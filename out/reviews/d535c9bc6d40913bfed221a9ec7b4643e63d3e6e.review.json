@@ -1,0 +1,64 @@
+{
+  "sha1": "d535c9bc6d40913bfed221a9ec7b4643e63d3e6e",
+  "title": "Hierarchically structured bioinspired nanocomposites",
+  "doi": "https://doi.org/10.1038/s41563-022-01384-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d535c9bc6d40913bfed221a9ec7b4643e63d3e6e/index.html",
+  "source_chars": 97305,
+  "markdown_chars": 1895,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "extreme toughness, up to 100 MPa/m3",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "韧性单位通常为MJ/m^3（每立方米兆焦耳），此处“MPa/m3”（兆帕除以立方米）不合常理，疑为原文单位上标/下标提取误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "mechansim",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为“mechanism”，属于明显的原文或提取笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "3.4 MPa.m-1/2 with 38 wt% clay in PVA composites (comparable to nacre at 4-8 MPa.m1/2)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "单位写法不一致，前文为“m-1/2”后为“m1/2”，应为断裂韧性单位MPa·m^1/2的上标在提取时丢失或错位。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值和公式：珍珠母约5%蛋白、PVA-黏土体系3.4 MPa·m^1/2（原文单位有疑）、碳纤维400 GPa/8 GPa、PMMA-CNT倍数提升、DNA致动80%、INTERFACE力场玻璃化转变±5 K、Griffith/Irwin公式等。不确定之处：断裂韧性单位“m-1/2”和“m1/2”不一致，以及“100 MPa/m3”的韧性单位，已在extraction_issues中标注；其余数据与结论保持原文口径。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5810,
+      "prompt_tokens": 24918,
+      "total_tokens": 30728,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4194
+      }
+    },
+    "content_chars": 2926
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

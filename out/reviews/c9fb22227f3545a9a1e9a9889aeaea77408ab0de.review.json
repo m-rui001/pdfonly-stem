@@ -1,0 +1,82 @@
+{
+  "sha1": "c9fb22227f3545a9a1e9a9889aeaea77408ab0de",
+  "title": "Progress in the Development of Fe‐Based PGM‐Free Electrocatalysts for the Oxygen Reduction Reaction",
+  "doi": "https://doi.org/10.1002/adma.201806545",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c9fb22227f3545a9a1e9a9889aeaea77408ab0de/index.html",
+  "source_chars": 102834,
+  "markdown_chars": 5337,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "Additionally, PGM-free ORR electrocatalysts have shown tolerance to anions ( , , ), aromatic compounds",
+      "type": "文本缺失",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "源PDF第20页中anions后的化学式未被提取出来（连续三个空括号），缺少具体阴离子种类。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 55,
+      "quote": "c) 57 e ss auer spectra of cata sts after st eat-treatment in Ar (left column) and after 2nd heat-treatment in NH3 (right column).",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "本句为图12c的图注，明显为OCR失败：应为“57Fe Mössbauer spectra of catalysts after 1st heat-treatment in Ar…”。关键词被截断为“e ss auer”“cata sts”“st eat-treatment”“1st”等，多处字符缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 57,
+      "quote": "Figure 14. Fe oxidation states and Fe loss in aqueous electrolyte (0.5 M H2SO4) as a function of decreasing (b) and increasing (c) potential vs SHE.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "图注中标注(b)和(c)但缺少(a)，可能是引述原文图注时的编号偏差，证据不足。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "at higher temperatures than this critical temperature, typically between 700900 C, ORR activity significantly decreased",
+      "type": "疑似错误/格式问题",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文“700900  C”疑似应为\"700-900 °C\"，但源文本中没有连字符，可能为排版或OCR问题，照录并标注。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 35,
+      "quote": "In their study, the authors describe systematic research of micropore flooding, before and after stability testing, concluding that in spite of a slight increase in catalyst layer wetting due to the accelerated stress test applied, the observed increase in wetting cannot be solely responsible for the dramatic loss in performance observed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该段在提取文本中跨页33-34，语义尚完整，仅作检查记录，无明显缺损。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对正文中各关键数值的一致性和方向：最大功率密度0.9 W/cm²（H₂–O₂，Proietti 2011 与 Liu 2015 两处）；H₂–空气MEA为0.38–0.42 W/cm²；SA-Fe/NG半波电位0.80 V且在5000圈后损失约8 mV、峰值功率密度823 mW/cm²；Fe:N=1:4（20.5 at% Fe, 79.5 at% N）；DFT中O–OH解离势垒0.20/0.54/0.72 eV对应三种碳结构；Choi的电位窗口0.7–0.9 V；Banham临界电导率100 S；Lefèvre的H₂O₂暴露导致50–100 mV活性下降；KODTE相关结论照录。Mössbauer双峰D1/D3归属已核对（源自Kramm 2014和2016，正文p.19与p.55图注描述一致）。表1数据（TOF 1.4–1.6 e/site/s、位密度0.07–0.91×10²⁰ sites/g、利用率4.54–23.10%）直接从提取文本中的表格读取，未作推算。不确定之处：第6页“700900°C”疑似缺连字符；第20页anions后具体阴离子缺失；第55页图12c为OCR损坏文本；表1中最后一列“Comments”栏的“2 heat treatment with 1 acid leaching”对应的Fe–N–C催化剂行与前一行(Fe,Mn)–N–C–3HT–2AL的TOF同为1.6，无文本证据判定正误，照录原值。跨页处未发现语义断裂影响论证的情况。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5124,
+      "prompt_tokens": 26493,
+      "total_tokens": 31617,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 791
+      }
+    },
+    "content_chars": 7996
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

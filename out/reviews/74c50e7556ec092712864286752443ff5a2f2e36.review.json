@@ -1,0 +1,73 @@
+{
+  "sha1": "74c50e7556ec092712864286752443ff5a2f2e36",
+  "title": "Separation and Analysis of Microplastics and Nanoplastics in Complex Environmental Samples",
+  "doi": "https://doi.org/10.1021/acs.accounts.8b00602",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/74c50e7556ec092712864286752443ff5a2f2e36/index.html",
+  "source_chars": 48037,
+  "markdown_chars": 3588,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "repectively",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文为“repectively”，明显应为“respectively”，但可能是原稿笔误，不改变内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "39 S 39 S 39 S 39 S 39 S 39 S 39 S 38 S 38 S 36 S 36 S 36 S 36 S 41 D H 34 S D 34 D O 35 S D filtrate 35 H retentate...",
+      "type": "表格提取严重错乱",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "Table 1 的内容在提取文本中呈现为无意义的重复代码和乱序，无法还原实际表格结构，属跨页/表格布局解析缺陷。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "In electrical heated filament pyrolysis",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“electrical heated”在语法上应为“electrically heated”或“electrical heating”，但原文提取如此，无法确认是否为原稿笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Titre: Separation and analysis of microplastics and nanoplastics in Title: complex environmental samples Auteurs: Brian Nguyen, Dominique Claveau-Mallet, Laura M. Hernandez, Elvis Authors: Genbo Xu, Jeffrey M. Farner, & Nathalie Tufenkji",
+      "type": "元数据重复/拼接",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "PDF库页面包含法英双语元数据，且字段被截断拼接（如“in Title:”和“Elvis Authors:”），但不影响正文理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：微塑料尺寸>100 nm且<5 mm、纳米塑料<100 nm；塑料产量80%；生物研究统计45篇中的90%水生、35%鱼类、19%贻贝、13%浮游生物；消化方法百分比（硝酸18%、KOH 16%、H2O2 12%、解剖13%、物理18%）；废水去除率95–99%、日排放10⁵–10⁸颗粒；FTIR分辨率5 µm、最小厚度150 nm、>20 µm适用；Raman分辨率1 µm；TDS-GC-MS最高1000°C、100 mg；py-GC-MS低至约50 µg；空白加标回收70–95%、加标尺寸100–500 µm。未发现数值矛盾。公式未涉及。部分原文（如表1）提取严重错乱，已在extraction_issues中标出，且markdown中仅保留可读结论，未臆测表格内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3632,
+      "prompt_tokens": 12526,
+      "total_tokens": 16158,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 784
+      }
+    },
+    "content_chars": 5286
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

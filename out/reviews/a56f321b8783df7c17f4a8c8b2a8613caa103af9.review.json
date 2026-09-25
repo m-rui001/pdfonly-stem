@@ -1,0 +1,63 @@
+{
+  "sha1": "a56f321b8783df7c17f4a8c8b2a8613caa103af9",
+  "title": "Identification of Possible Pathways for C–C Bond Formation during Electrochemical Reduction of CO 2 : New Theoretical Insights from an Improved Electrochemical Model",
+  "doi": "https://doi.org/10.1021/acs.jpclett.6b00358",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a56f321b8783df7c17f4a8c8b2a8613caa103af9/index.html",
+  "source_chars": 34752,
+  "markdown_chars": 3421,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "T  he reduction of CO2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "首字母T与he之间出现多余空格，疑似OCR或分页导致，应为“The reduction”",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "our RBPE-based model",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "前文多次使用RPBE泛函（如ϕ_SHE=4.43 eV for the RPBE functional），此处RBPE无定义，疑为RPBE之误",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "Figure 4c shows the surface coverages of Hads and COads as functions of potential.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "文中图4描述中表面覆盖图对应为(d,e)而非(c)，c为循环伏安图，此句可能将4c误写为4d/e",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：PZC平均误差0.09 V；CO二聚体及加氢势垒随电位升高；CHO+CO与CO二聚体自由能相近但电位依赖性更小；CHO+CHO比CHO+CO高0.15 eV；COH势垒1.03 eV；OCCHO加氢活化能0.45–0.55 eV；微动力学模型峰移0.30 V对实验0.2 V；pH位移0.355 V。公式（1）–（6）和符号定义均按原文保留。不确定处：RBPE疑为RPBE，图4c表面覆盖的描述疑为图4d/e；另公式中“cba3”表达不清晰，但未擅自修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7864,
+      "prompt_tokens": 9407,
+      "total_tokens": 17271,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5382
+      }
+    },
+    "content_chars": 4540
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

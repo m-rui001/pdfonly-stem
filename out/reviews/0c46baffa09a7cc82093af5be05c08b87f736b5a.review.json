@@ -1,0 +1,63 @@
+{
+  "sha1": "0c46baffa09a7cc82093af5be05c08b87f736b5a",
+  "title": "Potential carbon emissions dominated by carbon dioxide from thawed permafrost soils",
+  "doi": "https://doi.org/10.1038/nclimate3054",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0c46baffa09a7cc82093af5be05c08b87f736b5a/index.html",
+  "source_chars": 32068,
+  "markdown_chars": 1668,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Equation (1) is used to calculate the ratio of C release with a 10 °C increase in temperature: ( = ) (1)",
+      "type": "公式符号丢失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "方程(1)的数学表达式在提取文本中仅显示为 '( = )'，实际公式字符（如lnR、E_T+10等）未正确提取，疑似为图像或特殊字符丢失。其他方程(2)-(5)亦有类似情况。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": ")LJXUH 14 ● total C (CO2−C + CH4−C)",
+      "type": "图注乱码",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图1图注的'Figure 1'被OCR识别为')LJXUH'，且正文中已给出图内数值，不影响关键数据，但属于文本抽取缺陷。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "On the 2  other hand, permafrost thaw...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第2页末尾的'On the'与第3页开头的'other hand'之间被页码分隔，句子完整但跨页，需注意拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：温度效应因子2.1（95% CI 1.9–2.2）、有氧/无氧比3.4（95% CI 2.6–4.4）、CO2当量比2.3（1.9–3.0）、CH4-C占比5.5%与21%，以及GWP=34，均与提取文本一致。公式(1)-(5)的符号在提取中缺失或不完整，已照录可见文本并标记问题。其他结论与数值（如8.3°C升温、样本数26等）均已核对。未能确认图1、图2中除正文提及外的具体亚组数值，因未在正文中详述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6123,
+      "prompt_tokens": 9067,
+      "total_tokens": 15190,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4509
+      }
+    },
+    "content_chars": 2785
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

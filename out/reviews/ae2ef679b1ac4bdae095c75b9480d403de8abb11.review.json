@@ -1,0 +1,64 @@
+{
+  "sha1": "ae2ef679b1ac4bdae095c75b9480d403de8abb11",
+  "title": "Electric-field control of tri-state phase transformation with a selective dual-ion switch",
+  "doi": "https://doi.org/10.1038/nature22389",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ae2ef679b1ac4bdae095c75b9480d403de8abb11/index.html",
+  "source_chars": 29350,
+  "markdown_chars": 2233,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Nevertheless, the strong suppression of the sXAS hybridization featuressimilar phenomenon was indeed observed in thea LixFePO4 system upon lithiation (Li-ion intercalation)26.",
+      "type": "extraction artifact (单词拼接及语法缺失)",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "“featuressimilar”和“thea”疑似缺少空格或单词合并，原文可能有断句问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "we identify the electrolysis of water as the most promising origin for O2- and H- ions",
+      "type": "疑似化学符号不一致",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "前文均写 H+ 离子，此处写 H-，可能为原文笔误或抽取错误，但保守照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "with the reference CoO spectrum confirms that the Co cations in phase A are dominated by the 25 +2 oxidation state .",
+      "type": "extraction artifact (页码/引用编号混入正文)",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字“25”疑似参考文献编号或页码被混入句子，破坏语法。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：门电压 +3.5 V、-2.3 V、-2.7 V、+1.8 V；衍射角约 45.7°、44.0°、47.7°；Sr-Sr 距离 4.3→4.7 Å；H 浓度 y~1.14±0.25；带隙 2.12/2.84 eV；饱和磁化 2.4/0.6 μ_B/Co，Tc 240/125 K，TN 537 K。公式 (αℏω)²=A(ℏω−E_g) 照录。不确定处：部分文本有抽取拼接问题已在 issues 中标注；未添加任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2866,
+      "prompt_tokens": 7933,
+      "total_tokens": 10799,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 795
+      }
+    },
+    "content_chars": 3516
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

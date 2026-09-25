@@ -1,0 +1,99 @@
+{
+  "sha1": "627454d5be0b521d031a5935b5ec635c0808cd10",
+  "title": "Weighted Mobility",
+  "doi": "https://doi.org/10.1002/adma.202001537",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/627454d5be0b521d031a5935b5ec635c0808cd10/index.html",
+  "source_chars": 29271,
+  "markdown_chars": 7630,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "meausrements",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 measurements，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "which are are routinely performed",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "重复词 are，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "where $ m^{} $ is the density of states effective mass",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "有效质量符号上标星号丢失，应为 $m^*$，影响公式符号识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "such as $ \\mathrm{P b T e}^{1 0} $ and $ \\mathrm{M g}{3} \\mathrm{S b}{2}^{1 1} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失，应为 PbTe 和 Mg$_3$Sb$_2$，影响材料名称识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$ \\mathrm{L a}{3-x}\\mathrm{T e}{4} $ $ ^{27} $ and $ \\mathrm{Y b}{14}\\mathrm{M n S b}{11} $ $ ^{28} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失，应为 La$_{3-x}$Te$_4$ 和 Yb$_{14}$MnSb$_{11}$，影响材料名称识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the Hall mobility has been a better descriptor for mobility of simple crystalline materials for low temperature physics rather than the weighted mobility.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "句子结构略显冗余，但语义可理解，可能为原文表述而非 OCR 错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Weighted Mobility",
+  "self_check": "已核对摘要、式 1、式 2、式 3、品质因子 B 公式及关键数值（331、$10^{-3}\\,\\mathrm{cm^2/Vs}$、$1\\,\\mathrm{cm^2/Vs}$、$k_{\\mathrm{B}}/e=86.3\\,\\mu\\mathrm{V/K}$、3%、18%、20%、153 个样品、约 4000 个样品、$T^{-3/2}$、$T^{-1}$、$n^{-1/3}$）与结论方向一致。公式符号中 $m^*$ 上标星号在部分位置丢失，化学式下标在部分位置丢失，已在 extraction_issues 中标出。未发现登记题名/DOI 与 OCR 正文身份冲突。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5013,
+      "prompt_tokens": 8602,
+      "total_tokens": 13615,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9962,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Weighted Mobility",
+    "translated_title": "加权迁移率",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

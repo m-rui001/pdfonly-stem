@@ -1,0 +1,211 @@
+{
+  "sha1": "8e870758b6d336282170c4c4422148abaa8d2535",
+  "title": "Monolithic all-perovskite tandem solar cells with 24.8% efficiency exploiting comproportionation to suppress Sn(ii) oxidation in precursor ink",
+  "doi": "https://doi.org/10.1038/s41560-019-0466-3",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/8e870758b6d336282170c4c4422148abaa8d2535/index.html",
+  "source_chars": 57525,
+  "markdown_chars": 10920,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Here we report a metallic tin reduced precursor solution strategy that reduces the $ \\mathrm{S n}^{4+} $ (an oxidization product of $ \\mathrm{S n}^{2+} $ ) back to $ \\mathrm{S n}^{2+} $ via a comproportionation reaction, and it increases the carrier diffusion length in mixed Pb-Sn narrow-bandgap perovskites from ~ sub-micrometer for reference materials; to 3 micrometers for the new materials.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "分号使用异常，'from ~ sub-micrometer for reference materials; to 3 micrometers' 中分号应为逗号或破折号，属标点抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "To overcome this limitation, antioxidant additives such as $ \\mathrm{SnF}{2} $ $ \\mathrm{SnF}{2} $ -pyrazine complex, or hydroxybenzene sulfonic acid have commonly been used",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "SnF₂ 重复出现两次，原文应为 'SnF₂, SnF₂-pyrazine complex, or hydroxybenzene sulfonic acid'，重复为 OCR 抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "achieved PCEs of 17-19%. During preparation of this manuscript, Tong et al. reported very recently that guanidinium thiocyanate promoted grain-boundary passivation increases the carrier lifetime of mixed Pb-Sn perovskites and achieved an (uncertified) PCE of 20.2% in narrow-bandgap solar cells, with a moderate $ J{\\mathrm{sc}} $ value of $ \\sim 30 \\mathrm{mA} \\mathrm{cm}^{-2} $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "J_sc 的 LaTeX 标记中缺少下划线，'$ J{\\mathrm{sc}} $' 应为 '$ J_{\\mathrm{sc}} $'，属公式符号抽取损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "We further developed a recombination junction that avoids using sputtered indium-tin-oxide by taking the advantage of a robust and compact $ \\mathrm{S n O}_{2} $ layer processed with atomic layer deposition. These enabled us to fabricate monolithic all-perovskite tandem solar cells with PCEs of 24.5% for small-area device (0.073 $ \\mathrm{c m}^{2} $ ）and 22.3% (certified 21.5%) for large-area device (1.05 $ \\mathrm{c m}^{2} $ ).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "右括号使用了全角 '）' 而非半角 ')'，属标点抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Reducing the lattice defects, i.e. the Sn vacancies, in the Pb-Sn perovskites also allows one to improve the operational stability of solar cells [].",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "方括号内引用编号缺失，原文应有文献编号，属引用信息抽取丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the standard redox potential of this reaction is $ \\mathrm{E}^{0}=0.29\\mathrm{V} $ , exhibiting negative Gibbs energy $ \\Delta G^{0}=-n F E^{0}<0 $ (35).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中 'n F E⁰' 的 n 和 F 之间缺少空格或乘号，但公式含义可辨，属格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "We found that even highest-purity (99.999%) $ \\mathrm{S n I}{2} $ beads from Alfa Aesar and Sigma-Aldrich exhibited a substantial amount of $ \\mathrm{S n}^{4+} $ (Supplementary Fig. 3d).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "SnI₂ 的 LaTeX 标记中缺少下标括号，'$ \\mathrm{S n I}{2} $' 应为 '$ \\mathrm{S n I}_{2} $'，属公式符号抽取损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "We calculated recombination rate constants and chargecarrier mobilities of 72 and $ 7 9 \\mathrm{c m}^{2} \\mathrm{V}^{-1} \\mathrm{s}^{-1} $ for control and TRP samples, respectively.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'chargecarrier' 缺少连字符或空格，应为 'charge-carrier'，属 OCR 连字符丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "The TRP mixed Pb-Sn perovskites show a diffusion length comparable to the high-quality Pb-based 1.53-eV perovskite $ \\left(L_{D}=3.45\\mu\\mathrm{m}\\right) $ with a",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子在 'with a' 处截断，下一页继续，属正常页间断句，非抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Table 1. Material characteristics of mixed Pb-Sn perovskites and full Pb-based perovskite. $ N_{\\mathrm{trap,electron}} $ : density of electron traps; $ N_{\\mathrm{trap,hole}} $ : density of hole traps; $ N_{\\mathrm{hole}} $ : hole density; $ L_{D} $ : chargecarrier diffusion length.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 以纯文本形式呈现，列对齐丢失，'N trap, electron(1016cm-3)' 等应为 'N_trap,electron (10¹⁶ cm⁻³)'，上标和下标格式丢失，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": " material composition N trap, electron(1016cm-3) N trap,hole(1016cm-3) N hole(1016cm-3) Mobility(cm2V-1s-1) Lifetime(ns) LD(μm) ",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表头中上标/下标格式丢失，'1016cm-3' 应为 '10¹⁶ cm⁻³'，'cm2V-1s-1' 应为 'cm²V⁻¹s⁻¹'，属表格结构损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "The best performance for control devices is achieved at a thickness of 650 nm, with an average PCE of 17.8% and a best PCE of 18.3% $ \\mathrm{V_{oc}=0.811\\mathrm{V}} $ FF=77.7% $ \\mathrm{J_{sc}=29.1\\mathrm{mA}\\mathrm{cm}^{-2}} $ which is comparable to previously reported performance (14, 28, 30).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "V_oc 和 J_sc 的 LaTeX 标记中缺少下划线，'$ \\mathrm{V_{oc}=0.811\\mathrm{V}} $' 应为 '$ V_{\\mathrm{oc}}=0.811\\mathrm{V} $'，属公式符号抽取损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "The devices with thick absorbers reached highest $ \\mathrm{J_{sc}} $ values above 32 mA $ \\mathrm{cm}^{-2} $ , which are higher than previous studies ( $ \\sim 30\\mathrm{mA}\\mathrm{cm}^{-2} $ ].",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "右括号使用了 ']' 而非 ')'，属标点抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The integrated $ J_{\\mathrm{s c}} $ value from EQE curve is $ 3 1. 6 \\mathrm{m A c m}^{-2} $ , in good agreement with the value obtained from J-V measurements (Fig. 3f).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'m A c m⁻²' 中单位间距异常，应为 'mA cm⁻²'，属 OCR 空格插入错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "This compact and robust ALD-SnO $ {2} $ layer ( $ \\sim 2 0 $ nm thick) allows us to fabricate tandems free of ITO layer, as the $ \\mathrm{S n O{2}} $ layer can prevent damage to the deposited- underlying front subcells during the solution processing of back subcells.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'deposited- underlying' 中连字符位置错误，应为 'deposited underlying' 或 'underlying deposited'，属 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The average PCE from J-V sweeps is consistent with the stabilized maximum power output of 24.3% in tandem devices (Supplementary Fig. 17).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "摘要中提及 24.3% 稳定 PCE，正文此处也为 24.3%，但 Table 2 中最佳叠层电池反向扫描 PCE 为 24.5%，两者为不同测量（稳定输出 vs J-V 扫描），非错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The large-area cells exhibit a high PCE of 22.3% （ $ V_{\\mathrm{oc}}=1.945\\mathrm{V}, $ $ J_{\\mathrm{sc}}=14.0\\mathrm{mA}\\mathrm{cm}^{-2}, $ and FF=82.0%） without delicate optimization for current matching between subcells (Fig. 4e).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号使用了全角 '（）' 而非半角 '()'，属标点抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "The tandem solar cells exhibited very promising stability for Sn-containing PSCs and still retained 90% of their initial performance after operation for 463 hours under one-sun illumination, as directly derived from the MPP tracking (Fig. 4f).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "摘要中提及 463 小时，正文此处也为 463 小时，一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "The precursor solution (with various concentrations of 0.8 M, 1.2 M, 1.6 M. 1.8 M, and 2.0 M) was prepared in mixed solvents of DMF and DMSO with a volume ratio of 3:1.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'1.6 M. 1.8 M' 中句号应为逗号，属标点抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Monolithic all-perovskite tandem solar cells with 24.8% efficiency exploiting comproportionation to suppress Sn(ii) oxidation in precursor ink",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 15933,
+      "total_tokens": 25933,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19895,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

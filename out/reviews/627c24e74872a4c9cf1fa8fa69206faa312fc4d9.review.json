@@ -1,0 +1,94 @@
+{
+  "sha1": "627c24e74872a4c9cf1fa8fa69206faa312fc4d9",
+  "title": "A Multi-Modal Distributed Real-Time IoT System for Urban Traffic Control (Invited Paper)",
+  "doi": "https://doi.org/10.4230/oasics.ng-res.2024.2",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/627c24e74872a4c9cf1fa8fa69206faa312fc4d9/index.html",
+  "source_chars": 26336,
+  "markdown_chars": 6671,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The first observation is major structural changes to road are rare. This observation is exploited by proposing a novel two stage vehicle detector that is able to achieve 77% vehicle detection accuracy on UA-DETRAC dataset.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "摘要称两阶段检测器在 UA-DETRAC 上达到 77% 车辆检测准确率，但正文第 8 页与结论均称 mAP 为 79.5%，两处数值不一致，可能为 OCR 抽取或原文笔误，影响关键结论数值的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "c. Train the YOLO v3 network with Efficient net as a backbone on cloud to detect the road.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "该步骤描述为训练 YOLO v3 检测道路，但同页 d 步骤称将训练权重传输到 Faster RCNN 进行测试，且 2.2.2 节称用 YOLO v3 做道路检测、2.2.3 节称用 Faster R-CNN 做车辆检测，此处“detect the road”与后续“Faster RCNN”之间的对应关系存在文本内部矛盾，可能为 OCR 或原文表述错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "a. Estimate the traffic density of each road lane by detecting vehicles using road mask and YOLOv3 vehcile detector.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“vehcile”为“vehicle”的拼写错误，属 OCR 抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "The mutli-modal nature of our framework",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“mutli-modal”为“multi-modal”的拼写错误，属 OCR 抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the edge divice $ S_{1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“divice”为“device”的拼写错误，属 OCR 抽取错误，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "the proposed distrubuted IoT framework",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“distrubuted”为“distributed”的拼写错误，属 OCR 抽取错误，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A Multi-Modal Distributed Real-Time IoT System for Urban Traffic Control",
+  "self_check": "已核对摘要、正文与结论中的关键数值：应急车辆检测准确率在摘要、表 1 与结论中均为 99.4%（表 1 中 5s 窗口最大值为 99.5%），一致；车辆检测准确率摘要为 77%，正文第 8 页与结论为 mAP 79.5%，存在不一致，已在 extraction_issues 中标出。公式 Area = Frequency × sound level、D_t = T_d - T_p、Accuracy = (P_s + P_u)/N 均按原文保留。表 1 与表 2 的关键数字已按正文描述保留。仍不确定之处：摘要 77% 与正文 79.5% 的差异是原文笔误还是 OCR 错误，无法仅凭文本判定；云层步骤中 YOLO v3 与 Faster RCNN 的对应关系存在文本内部矛盾，已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4766,
+      "prompt_tokens": 7080,
+      "total_tokens": 11846,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9174,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

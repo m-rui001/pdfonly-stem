@@ -1,0 +1,76 @@
+{
+  "sha1": "9a57a58fddf15fad24d091db27121c78020fe121",
+  "title": "Mechanism of CO2 Reduction at Copper Surfaces: Pathways to C2 Products",
+  "doi": "https://doi.org/10.1021/acscatal.7b03477",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/9a57a58fddf15fad24d091db27121c78020fe121/index.html",
+  "source_chars": 67533,
+  "markdown_chars": 14488,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 22,
+      "quote": "the CHE predicts ethanol formation to become favorable at $ U<-!0.46\\mathrm{V} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "不等式符号后出现多余感叹号“!”，应为“U < −0.46 V”，属OCR噪声，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "we conclude that $ ^{} \\mathrm{C H}{2} \\mathrm{C H}{2} \\mathrm{O H} $ is is the direct precursor to ethanol.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "出现重复词“is is”，属OCR重复，不影响结论理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "or $ 2^{} \\mathrm{C H}{2} \\longrightarrow \\mathrm{C}{2} \\mathrm{H}_{4} ). $ $ ^{1 6} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "化学式下标/上标格式在OCR中丢失（如CH2、C2H4的上下标错位），但化学物种可由上下文辨认，不影响论证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "the preferred adsorption site of $ \\mathrm{CO}^{66} $ ） $ ^{} $ COH",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "上标引用66后出现全角右括号“）”，疑为OCR误插标点，不影响语义。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "On the Mechanism of $ \\mathrm{C O_{2}} $ Reduction at Copper Surfaces: Pathways to $ \\mathrm{C_{2}} $ Products",
+  "self_check": "已核对：摘要与结论中七种C2产物一致（乙烯、乙醇、乙醛、乙二醇、乙醇醛、乙二醛、乙酸酯）；关键数值如CO吸附能−0.59 eV（实验−0.57 eV）、−1 V下−0.75 eV、3比3'稳定0.43/0.75 eV、CO二聚化ΔG在−1 V为0.86 eV、*CO→*CHO的ΔG=0.65 eV、CEP在−1 V为−0.29 eV、乙烯/乙醇比CHE约5000 vs CEP约30、有效ΔG‡=0.51 eV及比值≈15、乙二醛吸附−0.28/−0.51 eV、C–C键长1.55→1.38 Å、乙二醇Cu–O约3.0 Å、9b→10b'能垒1.04 eV、8b'比8b不稳定0.42 eV、9a→乙烯ΔG=−0.75 eV等均与原文一致。公式（CHE、CEP、μ±等）按提取文本原样保留。仍不确定处：部分化学式上下标在OCR中错位（已在extraction_issues中标注），但未影响定量结论方向；Fig. 1–3及Scheme 1–5的具体图形内容未在文本中完整提取，仅依据正文文字描述保留其结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9555,
+      "prompt_tokens": 19333,
+      "total_tokens": 28888,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16504,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

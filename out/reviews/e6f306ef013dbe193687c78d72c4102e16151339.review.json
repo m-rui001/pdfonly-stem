@@ -1,0 +1,84 @@
+{
+  "sha1": "e6f306ef013dbe193687c78d72c4102e16151339",
+  "title": "The relevance of inertia in power systems",
+  "doi": "https://doi.org/10.1016/j.rser.2015.11.016",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e6f306ef013dbe193687c78d72c4102e16151339/index.html",
+  "source_chars": 64458,
+  "markdown_chars": 11065,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "\\frac {\\mathrm {d} \\frac {J _ {\\mathrm {S G}} \\cdot \\omega_ {\\mathrm {e}} ^ {2}}{2}}{\\mathrm {d} t} = P _ {\\mathrm {m}} - P _ {\\mathrm {e}} \\\\ 2 \\\\",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Eq. 2 的 LaTeX 抽取中分母 2 被单独置于下一行，公式结构疑似损坏，可能影响对动能导数表达式的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the inertia constant of the whole power system (assuming only synchronous connected generation and neglecting the inertia coming from the load and embedded generation), $ \\bar{P}{\\mathrm{g}} $ the total generated power and $ \\bar{P}{\\mathrm{l}} $ the total load power.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "符号 $\\bar{P}_{\\mathrm{g}}$ 与 $\\bar{P}_{\\mathrm{l}}$ 的下标在抽取中丢失，显示为 $\\bar{P}{\\mathrm{g}}$、$\\bar{P}{\\mathrm{l}}$，影响符号识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the system frequency decreases and will reach $ \\left[ \\omega_{\\mathrm{e},1}\\right]{\\mathrm{A}} $ at time $ t{1} $ as shown in Figure 2(b).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "下标 A 与 1 在抽取中丢失，显示为 $[\\omega_{\\mathrm{e},1}]{\\mathrm{A}}$ 与 $t{1}$，影响对系统 A 与时刻 t1 的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the decrease in system inertia will result in a lower frequency $ \\left[ \\omega_{\\mathrm{e,1}} \\right]{\\mathrm{B}} $ at $ t=t{1} $ and a higher rate of change of frequency (ROCOF)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "下标 B 与 1 在抽取中丢失，显示为 $[\\omega_{\\mathrm{e,1}}]{\\mathrm{B}}$ 与 $t=t{1}$，影响对系统 B 与时刻 t1 的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "which results in a higher frequency $ \\left[ \\omega_{e,1} \\right]{C} $ at $ t=t{1} $ compared to a future system without virtual inertial support.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "下标 C 与 1 在抽取中丢失，显示为 $[\\omega_{e,1}]{C}$ 与 $t=t{1}$，影响对系统 C 与时刻 t1 的准确识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "The Relevance of Inertia in Power Systems",
+  "self_check": "已核对摘要、正文与结论中的关键数值与公式：惯性常数范围 2-9 s、风电惯性常数 $H_{\\mathrm{WT}} \\approx 3$ - 6 s、2 MW 机组动能 12 MJ、最小转子转速时储存能量下降 60 %、约 50 % 时间可用动能不足最大动能一半、动能释放增益 5.25、负荷惯性常数多数时间小于 1 秒、英国系统 8-25 % 惯性来自嵌入式发电与负荷、ROCOF 继电器 0.1-1 Hz/s、爱尔兰 75 % 变流器并网对应 1 Hz/s 与当前 0.5 Hz/s、弃风 7-14 %、功率不平衡 10 % 总发电容量、$H_{\\mathrm{SG}}$ 在 2-8 s 与 6 s 等，均与原文一致。公式 Eq. 1-8 及 $H_{\\mathrm{sys}}$ 表达式已按抽取文本保留，其中 Eq. 2 与若干下标存在抽取损坏，已在 extraction_issues 中标出，未作静默修复。仍不确定之处：Figure 9 正文描述惯性常数变化范围为 2 至 8 s，而图注写为 2 至 10 s，二者不一致，已按正文与图注分别保留，未作统一。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7231,
+      "prompt_tokens": 15031,
+      "total_tokens": 22262,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14045,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "sha1": "7c596355b7c17f101bb67d6864e0cecc03d891ad",
+  "title": "Reducing Interfacial Resistance between Garnet‐Structured Solid‐State Electrolyte and Li‐Metal Anode by a Germanium Layer",
+  "doi": "https://doi.org/10.1002/adma.201606042",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7c596355b7c17f101bb67d6864e0cecc03d891ad/index.html",
+  "source_chars": 37180,
+  "markdown_chars": 3017,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "The reaction process was recorded by a camera (Video S1 in supporting information).",
+      "type": "支撑材料缺失",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "正文明确引用了支持信息中的 Video S1 来记录合金化反应过程，但提取文本中的支持信息部分仅包含图 S1–S7 及其图注，未包含该视频文件名称或相关内容，导致读者无法从提取文本中复原该动态过程。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "In Li metal/bare garnet/Li metal cell, an obvious semi-circle at high frequency was observed, which presents a large overall resistance of 2064 Ω cm2. The bulk resistance for bare garnet pellet, measured by the Au/bare garnet/Au cell, is 215 Ω cm2. Thus, the Li metal/bare garnet interfacial resistance was determined to be 925 Ω cm2.",
+      "type": "数值关系疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "文中给出的总电阻 2064 Ω·cm² 减去体相电阻 215 Ω·cm² 为 1849 Ω·cm²，并不等于所确定的界面电阻 925 Ω·cm²。该差异可能源于测量配置不同或界面电阻另有定义，但文本未给出明确解释。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值与公式：Li/裸LLZO界面电阻（摘要约900 vs 正文925，均保留并注明差异）、Ge改性后115 Ω·cm²、接触面积增加>8倍、电压滞后~25 mV、电流密度序列（0.05、0.1、0.025、0.05 mA/cm²）、循环时长（150 h）、全电池首圈容量164/138 mAh/g、CE 84%、电压滞差0.32 V（液态为0.15 V）、1 C定义（170 mA/g、~0.1 mA/cm²）、循环100圈容量约140 mAh/g、计算反应能−115.7 kJ/mol（−0.05 eV per LLZO atom）及稳定相（Zr₅Ge₃、La₂O₃、Li₂O）。LLZO组成Li₆.₈₅La₂.₉Ca₀.₁Zr₁.₇₅Nb₀.₂₅O₁₂及合成条件已保留。已注意体相电阻215与总电阻2064的算术关系与925不一致（已在issues中标出）。未添加任何外部知识或推断，公式与化学式均照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7587,
+      "prompt_tokens": 11204,
+      "total_tokens": 18791,
+      "prompt_tokens_details": {
+        "cached_tokens": 10240
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5115
+      }
+    },
+    "content_chars": 4452,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

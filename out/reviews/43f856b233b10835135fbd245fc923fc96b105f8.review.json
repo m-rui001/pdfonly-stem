@@ -1,0 +1,63 @@
+{
+  "sha1": "43f856b233b10835135fbd245fc923fc96b105f8",
+  "title": "Effect of electrolyte on the nanostructure of the solid electrolyte interphase (SEI) and performance of lithium metal anodes",
+  "doi": "https://doi.org/10.1039/c8ee00364e",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/43f856b233b10835135fbd245fc923fc96b105f8/index.html",
+  "source_chars": 39708,
+  "markdown_chars": 2514,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "poor platting and stripping performance",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "多次出现“platting”，应为“plating”，上下文明确指向镀锂/剥离过程。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "dried under vaccum",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“vaccum”应为“vacuum”，拼写错误不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "lithium oxelate",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“oxelate”应为“oxalate”，上下文为草酸锂，其他段落均使用“oxalate”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中关键数值：理论容量3860 mAh g⁻¹、电位−3.04 V、密度0.534 g cm⁻³、LiDFOB效率>95%（50圈）、LiPF₆首圈效率25.1%、LiF颗粒尺寸5–10 nm vs 200–400 nm、Li/Li电池2000小时/250圈等。公式无。结论方向与原文一致。不确定点：文中“Fig. 1”等图表编号未在笔记中展开其具体视觉信息，仅保留文字描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5575,
+      "prompt_tokens": 11088,
+      "total_tokens": 16663,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3646
+      }
+    },
+    "content_chars": 3432
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

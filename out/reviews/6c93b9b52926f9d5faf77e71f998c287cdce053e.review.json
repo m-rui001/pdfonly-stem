@@ -1,0 +1,73 @@
+{
+  "sha1": "6c93b9b52926f9d5faf77e71f998c287cdce053e",
+  "title": "Catalyst synthesis under CO2 electroreduction favours faceting and promotes renewable fuels electrosynthesis",
+  "doi": "https://doi.org/10.1038/s41929-019-0397-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6c93b9b52926f9d5faf77e71f998c287cdce053e/index.html",
+  "source_chars": 61082,
+  "markdown_chars": 2375,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "𝐚𝐚𝐂𝐂𝐂𝐂 = 𝟑𝟑. 𝟔𝟔𝟔𝟔𝟔𝟔 Å",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "乱码字符应为a_Cu = 3.64 Å，提取文本中数字和字母被错误编码。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "2𝐴𝐴\n\n(1)\n\n295\n\nwhere 𝑬𝑬𝒕𝒕𝒕𝒕𝒕𝒕𝒕𝒕𝒕𝒕",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式编号(1)之后单独出现数字295，可能是残留页码或乱码，位置异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 33,
+      "quote": "a Energy profiles of CO dimerisation on Cu(111), Cu(100), and Cu(111).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图例中Cu(111)重复，根据正文比较的三种晶面（Cu(111)、Cu(100)、Cu(211)），最后一个应为Cu(211)。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "1.25 J cm-2 for Cu(111), 1.43 J cm-2 for Cu(100), and 1.55 J cm-2 for Cu(211)",
+      "type": "疑似单位错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表面能通常以J m⁻²为单位，原文写J cm⁻²，数值也偏大，但无直接证据，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：C₂+ FE 90%对应部分电流密度520 mA cm⁻²（结论中另提及超过580 mA cm⁻²），PCE 37%，65小时稳定性，Ag的CO FE 92%等，方向一致。公式（表面能、法拉第效率、PCE）按原文保留，变量定义完整。不确定之处包括表面能单位、图例中晶面重复、晶格常数乱码，已在issues中标注，未擅自修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7318,
+      "prompt_tokens": 17608,
+      "total_tokens": 24926,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5292
+      }
+    },
+    "content_chars": 3631
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

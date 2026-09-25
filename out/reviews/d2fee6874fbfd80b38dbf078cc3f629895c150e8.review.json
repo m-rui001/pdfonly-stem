@@ -1,0 +1,73 @@
+{
+  "sha1": "d2fee6874fbfd80b38dbf078cc3f629895c150e8",
+  "title": "Third-generation biorefineries as the means to produce fuels and chemicals from CO2",
+  "doi": "https://doi.org/10.1038/s41929-019-0421-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d2fee6874fbfd80b38dbf078cc3f629895c150e8/index.html",
+  "source_chars": 105630,
+  "markdown_chars": 4780,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "T 25 here is an urgent need",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'T 25' 很可能是 'There' 的误识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "oxidizing electron donors ",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第15页末句为 'oxidizing electron donors '，第16页开头为 'the environment, such as waste streams...'，中间缺少介词 'from'，导致句子不完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "We than give an overview",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "'than' 应为 'then'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "it might be worthwhile to valuate this pathway again",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'valuate' 可能是 'evaluate' 的笔误或罕见用法。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：CO2浓度（空气平衡0.012 mM、碳酸氢盐0.26 mM）、ATP当量范围（<1至9）、kcat/KM值（丙酮酸羧化酶4.12±0.3×10⁶、PEP羧化酶1.04±0.33×10⁶、巴豆酰-CoA羧化酶/还原酶1.31±0.3×10⁶、RuBisCO约1.5×10⁵）、能量效率（光养1-3%、化能7%、电合成9-10%）、光子需求（藻类17.7±5.4、绿硫菌10±2）、生产率（螺旋藻38.3 g/m²/d、乙酸18.72 g/L/d等）、经济性（200美元/加仑 vs 2.6美元/加仑、15 g/m²/d、4美分/kWh、60%、0.5 g/g干重/h）等均与原文一致。不确定之处：个别单词疑似错误（如‘valuate’）已标出；跨页缺失的介词‘from’已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13392,
+      "prompt_tokens": 28908,
+      "total_tokens": 42300,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9846
+      }
+    },
+    "content_chars": 6135
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

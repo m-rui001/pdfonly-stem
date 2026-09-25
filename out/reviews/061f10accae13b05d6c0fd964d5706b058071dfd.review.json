@@ -1,0 +1,45 @@
+{
+  "sha1": "061f10accae13b05d6c0fd964d5706b058071dfd",
+  "title": "Digital twin driven human–robot collaborative assembly",
+  "doi": "https://doi.org/10.1016/j.cirp.2019.04.011",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/061f10accae13b05d6c0fd964d5706b058071dfd/index.html",
+  "source_chars": 24461,
+  "markdown_chars": 2223,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "As the design and operation are traditionally disconnected life-cycle phases from data-usage point of view, these simulation models gradually get useless along the system's life cycle as the system evolves from design to operation.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "第3页页尾句子在第4页之前被截断，但后续文本逻辑连贯，未发现缺失词句，仅标注页码衔接位置。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对任务分配结果（1–4给机器人，5–8人工）、硬件配置（i7/16GB与2.7GHz/12GB）、所用软件（Tecnomatix Process Simulate）和机器人型号（UR-10）；公式仅有自动化评分概念，无具体数学表达式可核对。图中未提取内容未做任何推测，实例中的传感器具体型号（SafetyEye）已按原文保留。不确定处：图2中任务评分表与图4碰撞体积的具体数值原文未含数字，文末'Results show that...'未给出量化指标，结论部分侧重定性描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 1931,
+      "prompt_tokens": 5804,
+      "total_tokens": 7735,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 365
+      }
+    },
+    "content_chars": 2982
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

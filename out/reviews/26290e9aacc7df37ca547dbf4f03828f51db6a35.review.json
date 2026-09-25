@@ -1,0 +1,121 @@
+{
+  "sha1": "26290e9aacc7df37ca547dbf4f03828f51db6a35",
+  "title": "Opportunities and challenges for tandem solar cells using metal halide perovskite semiconductors",
+  "doi": "https://doi.org/10.1038/s41560-018-0190-4",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/26290e9aacc7df37ca547dbf4f03828f51db6a35/index.html",
+  "source_chars": 77591,
+  "markdown_chars": 13518,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "FA0.75MA0.15Cs0.10Rb(I0.66Br0.33)3+5%RbI(1.63eV)MAPbI3",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格中底电池与顶电池材料之间缺少分隔，FA0.75MA0.15Cs0.10Rb(I0.66Br0.33)3+5%RbI(1.63eV)与MAPbI3之间无空格或分隔符，可能为两列内容粘连。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "2T MAPbI3(1.55eV) Fa0.85Cs0.15Pb(I0.30Br0.70)3(2eV) 18.1 9.8 2.29 0.80 Forgacs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式'Fa0.85Cs0.15Pb'中'Fa'应为'FA'（甲脒），大小写不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "2T SHJ c-Si (1.58eV)MAPbI3 22.0 16.8 1.75 77.5 Sahli et al",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "FF值'77.5'缺少小数点，应为'0.775'或'77.5%'，与其他行FF格式（0.xx）不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "uses $ \\mathrm{F A}{0.6} \\mathrm{M A}{0.4} \\mathrm{S n}{0.6} \\mathrm{P b}{0.4} \\mathrm{I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式FA0.6MA0.4Sn0.6Pb0.4I3中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "$ \\mathrm{M A S n}{0.8} \\mathrm{P b}{0.2} \\mathrm{I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式MASn0.8Pb0.2I3中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "$ \\mathrm{F A P b I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式FAPbI3中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "$ \\mathrm{P b I}{2} / \\mathrm{P b B r}_{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式PbI2/PbBr2中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "$ \\mathrm{P b I}_{2} / \\mathrm{C s I} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式PbI2/CsI中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 22,
+      "quote": "$ \\mathrm{P b I}{2} $ and CsI",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式PbI2中下标数字与元素符号之间缺少下划线标记，OCR提取时下标格式丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Opportunities and challenges for tandem solar cells using metal halide perovskite semiconductors",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 20123,
+      "total_tokens": 30123,
+      "prompt_tokens_details": {
+        "cached_tokens": 20096
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16733,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "sha1": "b9b81d79f4861345cb6be6d8373bdd08be7f1bb6",
+  "title": "diaPASEF: parallel accumulation–serial fragmentation combined with data-independent acquisition",
+  "doi": "https://doi.org/10.1038/s41592-020-00998-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b9b81d79f4861345cb6be6d8373bdd08be7f1bb6/index.html",
+  "source_chars": 47784,
+  "markdown_chars": 5951,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Parallel accumulation - serial fragmentation combined with data independent acquisition (diaPASEF): Bottom-up proteomics with near optimal ion usage",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文首页标题与登记题名措辞不同（正文含副标题且用连字符/无连字符差异），但作者、期刊、年份、DOI一致，属于同一论文的预印/投稿版本标题差异，不影响身份归属。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "a\n\nb\n\nC\n\nFigure 1 | The diaPASEF acquisition method.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注前出现孤立的图版字母 a、b、C，且 C 为大写，疑似图版标签与图注的阅读顺序或大小写抽取异常，但不影响图注正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "a\n\nb\n\nd\n\nFigure 3 | Ion mobility-aware targeted data extraction.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注前孤立图版字母 a、b、d，缺少 c，疑似图版标签抽取不完整或顺序异常，但不影响图注正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "a\n\nC\n\nd\n\ne\n\nf\n\nFigure 4 | HeLa proteome analysis with diaPASEF.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注前孤立图版字母 a、C、d、e、f，缺少 b，且 C 为大写，疑似图版标签抽取不完整或大小写异常，但不影响图注正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "stored at $ - 8 0^{\\circ} \\mathrm{C} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "温度符号与数字间出现空格且负号与数字分离，疑似 OCR 对 −80 °C 的抽取格式异常，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "trifluoroacetic acids (TFA)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文应为 trifluoroacetic acid，OCR 多出复数 s，属轻微拼写抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "styrendivinylbenzene",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "疑似 styrenedivinylbenzene 的 OCR 拼写错误，不影响对吸附剂类型的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "sonificated",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "疑似 sonicated 的 OCR 拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "1 / K_{0}=1. 6",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中 1.6 被抽取为 1. 6，小数点后出现空格，疑似公式符号抽取格式异常，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "1 / K_{0}=0. 6",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中 0.6 被抽取为 0. 6，小数点后出现空格，疑似公式符号抽取格式异常，但数值可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "diaPASEF: parallel accumulation–serial fragmentation combined with data-independent acquisition",
+  "self_check": "已核对摘要、正文与结论中的关键数值：DDA/DIA 采样效率 1–3%、diaPASEF 采集时间效率 96%、四窗口比 DIA 提高约五倍、离子迁移率窗口 0.06 Vs cm⁻² 使信噪比提高 4 倍、鉴定数增加 >25%、谱图库 135,671 前体/9,140 蛋白、三次重复 80,545 前体/平均 67,282、r > 0.99、迁移率偏差 0.6%、质量偏差 6.6 ppm、保留时间偏差 17 s（0.2%）、66,975 唯一肽段、7,600/7,799 蛋白、85% 库覆盖、CV 10.4%、双蛋白组 87,555/7,603 前体、6,883/1,300 蛋白、σ(log₂)=0.29/0.67、10 ng 下 3,537/3,785/4,250 蛋白、89% 完整性、碰撞能量 59→20 eV。公式与单位按 OCR 原文保留，未做推测性修复。仍不确定处：正文首页标题与登记题名措辞差异（已标为低严重度身份差异）；部分图版字母缺失或大小写异常；个别拼写与公式空格异常，均不影响论证骨架。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4839,
+      "prompt_tokens": 12521,
+      "total_tokens": 17360,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9195,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

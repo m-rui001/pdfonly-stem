@@ -1,0 +1,63 @@
+{
+  "sha1": "5ceba5f3cc1593dc46356598d6f1fba6b2c90cf3",
+  "title": "Microglial activation and tau propagate jointly across Braak stages",
+  "doi": "https://doi.org/10.1038/s41591-021-01456-w",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5ceba5f3cc1593dc46356598d6f1fba6b2c90cf3/index.html",
+  "source_chars": 42358,
+  "markdown_chars": 2482,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Finally, [18F]PBR28 images were acquired at 60-90 min",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "方法部分明确为[11C]PBR28，此处[18F]PBR28应为[11C]PBR28之误",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Microglial activation measured with [18F]PBR28 SUVR",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "同上，应为[11C]PBR28",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "6 (538)",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "表1中AD痴呆组男性百分比数字不合理，疑为6 (38)的识别错误",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：样本130（22 CU年轻、64 CU老年、28 MCI、16 AD）；网络相关r=0.8574；三交互P=0.0003；A/T/MA共存比例0/0/27/67%；MMSE数据等均与提取文本一致。不确定处：表1中的'6 (538)'和文中两处'[18F]PBR28'已标记为疑似错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6248,
+      "prompt_tokens": 10985,
+      "total_tokens": 17233,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4367
+      }
+    },
+    "content_chars": 3352
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

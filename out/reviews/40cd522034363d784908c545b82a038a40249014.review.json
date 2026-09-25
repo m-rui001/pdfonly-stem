@@ -1,0 +1,82 @@
+{
+  "sha1": "40cd522034363d784908c545b82a038a40249014",
+  "title": "Nature of Activated Manganese Oxide for Oxygen Evolution",
+  "doi": "https://doi.org/10.1021/jacs.5b06382",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/40cd522034363d784908c545b82a038a40249014/index.html",
+  "source_chars": 112987,
+  "markdown_chars": 2723,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "/ =1+ × (1)",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Stern-Volmer关系的公式文本明显缺失变量和运算符号，无法确认具体形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Δ =− 2 (2)",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Sauerbrey方程缺少分子分母等关键符号，公式不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "= 2 − 1 sin (3)",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "PDF定义公式缺少G(r)、Q等符号，无法解读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "= 1 −1 − − (4)",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Pearson相关系数公式缺少数值变量和运算，无法复现计算。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "grey, –––",
+      "type": "字符乱码",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图注中部分线条符号显示为乱码，虽不影响科学内容，但属于文本提取缺陷。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的Tafel斜率（pH 7：~120→~70，pH 2.5：~650→~90）、电流密度（pH 2.5、η=600 mV时高两个数量级）、过电位（0.1 mA/cm2时活化膜约540 mV，未活化约990 mV，IrOx高237 mV）、晶粒尺寸（TEM约8-10 nm与2-4 nm，PDF约30-50 Å）、XPS价态、XRD相归属等关键数据，与提取文本一致。公式(1)-(4)提取不完整，已列入issues，笔记中未补写。另注意摘要中“~120”与正文“123”略有差异，属正常近似。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8668,
+      "prompt_tokens": 32054,
+      "total_tokens": 40722,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6427
+      }
+    },
+    "content_chars": 4019
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

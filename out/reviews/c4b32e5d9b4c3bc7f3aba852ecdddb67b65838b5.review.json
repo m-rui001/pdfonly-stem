@@ -1,0 +1,54 @@
+{
+  "sha1": "c4b32e5d9b4c3bc7f3aba852ecdddb67b65838b5",
+  "title": "Probing the Active Surface Sites for CO Reduction on Oxide-Derived Copper Electrocatalysts",
+  "doi": "https://doi.org/10.1021/jacs.5b06227",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c4b32e5d9b4c3bc7f3aba852ecdddb67b65838b5/index.html",
+  "source_chars": 29482,
+  "markdown_chars": 1750,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Grain boundary density has also been correlated to CO2 and CO reduction catalytic activity on vapor-deposited nanocrystalline Au and Cu supported on carbon nanotubes. [cite XF]",
+      "type": "占位符未解析",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "原文中出现了未处理的引用占位符[cite XF]，可能因排版或抽取过程丢失了具体文献编号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "When plotted against electrochemical activity, a linear correlation is obtained between specific CO reduction rate and the percentage of strong binding sites at the electrode surface (Fig 3f)",
+      "type": "疑似引用图号错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "图3的图注中f为TPD谱图叠加，g为CO还原活性对强结合位点比例的线性拟合；正文此处应引用Fig 3g而非Fig 3f。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：OD-Cu-500在-0.4 V时CO还原FE 48%；退火后比电流密度衰减6倍（200°C）和44倍（350°C）；粗糙因子51、24、14、6；晶界密度14±2 μm⁻¹和2.1±0.4 μm⁻¹；强结合位点比例11%、5%、1.5%；吸附能67 kJ/mol；线性相关关系。已确认图号引用错误及[cite XF]占位符。TPD模拟中强结合位点比例存在误差，原文也说明误差较大。未发现其他数值或结论不一致之处。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4877,
+      "prompt_tokens": 8247,
+      "total_tokens": 13124,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3403
+      }
+    },
+    "content_chars": 2806
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

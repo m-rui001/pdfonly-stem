@@ -1,0 +1,410 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/03/03302d1ee5faf2cc152cd64ccd88eb9162fa0c26.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spatio-temporal fusion for daily Sentinel-2 images</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>Spatio-temporal fusion for daily Sentinel-2 images</h1><p class="source">2017 · <a href="https://doi.org/10.1016/j.rse.2017.10.046">https://doi.org/10.1016/j.rse.2017.10.046</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/epr/03/03302d1ee5faf2cc152cd64ccd88eb9162fa0c26.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Spatio-temporal fusion for daily Sentinel-2 images</p>
+<p>1 2</p>
+<p>Qunming Wang a, Peter M. Atkinson a,b,c,*</p>
+<p>3 a</p>
+<p>4 b</p>
+<p>5 6 7</p>
+<p>c</p>
+<p>Lancaster Environment Centre, Lancaster University, Lancaster LA1 4YQ, UK</p>
+<p>Geography and Environment, University of Southampton, Highfield, Southampton SO17 1BJ, UK</p>
+<p>School of Geography, Archaeology and Palaeoecology, Queen&#x27;s University Belfast, BT7 1NN, Northern Ireland, UK *Corresponding author. E-mail: pma@lancaster.ac.uk</p>
+<p>8 9</p>
+<p>Abstract: Sentinel-2 and Sentinel-3 are two newly launched satellites for global monitoring. The Sentinel-2</p>
+<p>Multispectral Imager (MSI) and Sentinel-3 Ocean and Land Colour Instrument (OLCI) sensors have very different spatial and temporal resolutions (Sentinel-2 MSI sensor 10 m, 20 m and 60 m, 10 days, albeit 5 days with 2 sensors, conditional upon clear skies; Sentinel-3 OLCI sensor 300 m, &lt;1.4 days with 2 sensors). For local monitoring (e.g., the growing cycle of plants) one either has the desired spatial or temporal resolution, but not both. In this paper, spatio-temporal fusion is considered to fuse Sentinel-2 with Sentinel-3 images to create nearly daily Sentinel-2 images. A challenging issue in spatio-temporal fusion is that there can be very few cloud-free fine spatial resolution images temporally close to the prediction time, or even available, strong temporal (i.e., seasonal) changes may exist. To this end, a three-step method consisting of regression model fitting (RM fitting), spatial filtering (SF) and residual compensation (RC) is proposed, which is abbreviated as Fit-FC. The Fit-FC method can be performed using only one Sentinel-3–Sentinel-2 pair and is advantageous for cases involving strong temporal changes (i.e., mathematically, the correlation between the two Sentinel-3 images is small). The effectiveness of the method was validated using two datasets. The created nearly daily Sentinel-2 time-series images have great potential for timely monitoring of highly dynamic environmental, agricultural or ecological phenomena.</p>
+<p>24 25</p>
+<p>Keywords: Sentinel-2, Sentinel-3, Image fusion, Downscaling.</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>1. Introduction</p>
+<p>27 28</p>
+<p>Sentinel-2 is a new programme of the European Space Agency (ESA) for fine spatial resolution global</p>
+<p>monitoring (Drusch et al., 2012; Hagolle et al., 2015; Segl et al., 2015). The Sentinel-2A and -2B satellites were launched on 23 June 2015 and 7 March 2017, respectively. The twin satellites are in the same orbit and 180°apart from each other and they are now releasing data routinely. The Sentinel-2 Multispectral Imager (MSI) provides 13 spectral bands in the visible, near infrared (NIR) and short wave infrared (SWIR) wavelengths, with four bands at 10 m (centered at 490 nm, 560 nm, 665 nm and 842 nm), six bands at 20 m (centered at 705 nm, 740 nm, 783 nm 865 nm, 1610 nm, and 2190 nm) and three bands at 60 m spatial resolution (centered at 443 nm, 940 nm and 1375 nm) (Drusch et al., 2012; Du et al., 2016; Hagolle et al., 2015; Wang et al., 2016). The Sentinel-2 data can be used to support global land services including monitoring vegetation, soil and water cover, etc.. Such data are receiving increasing attention in remote sensing studies and applications (Fernández-Manso et al., 2016; Immitzer et al., 2016; Novelli et al., 2016; Storey et al., 2016; Van der Werff and Van der Meer, 2016). The Sentinel-2A or -2B satellite can revisit the same area every 10 days (5 days with the twin satellites together). Due to cloud and shadow contamination, however, it generally requires more than 5 days (e.g., probably several months) to acquire a cloud-free Sentinel-2 image for specific areas. The temporally sparse Sentinel-2 observations, especially for areas that can be easily covered by clouds, are not sufficient for monitoring rapid changes such as growing cycle of plants. Sentinel-3, another very new programme of the ESA, is a satellite imaging mission designed for global monitoring for environment and security (GMES) to ensure frequent and near real-time measurements to ocean, land, and atmospheric services (Berger and Aschbacher, 2012; Donlon et al., 2012; Verhoef and Bach, 2012). The Sentinel-3A satellite was launched on 16 February 2016. The instrument of the satellite includes a Sea and Land Surface Temperature Radiometer (SLSTR), a Synthetic Aperture Radar Altimeter (SRAL) and an Ocean and Land Colour Imager (OLCI). The OLCI sensor delivers 21-band wide-swath optical images at a temporal resolution of less than 2.8 days (will be increased to less than 1.4 days after the launch of the twin</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>satellite Sentinel-3B). Compared to Sentinel-2 MSI, Sentinel-3 OLCI can provide data more frequently for</p>
+<p>timely monitoring. However, the Sentinel-3 OLC images are at a much coarser spatial resolution of 300 m. Such a spatial resolution is too coarse to provide sufficient detail for local areas of interest. There is a great need for data that have simultaneously the spatial resolution of Sentinel-2 (10 m) and temporal resolution of Sentinel-3 (i.e., nearly daily Sentinel-2 time-series) to provide more informative data and support a wider range of monitoring applications, particularly for areas where the amount of available effective Sentinel-2 observations is limited due to cloud contamination. The daily Sentinel-2 images have great value for dynamic monitoring of rapid changes on the Earth’s surface at a required fine spatial resolution, such as timely crop monitoring (Gao et al., 2017). Both Sentinel-2 MSI and Sentinel-3 OLCI data are freely available to users and have global coverage. Furthermore, the two sensors have the similar wavelengths for four bands (i.e., blue, green, red and NIR bands), as shown in Table 1. In our previous study Wang et al. (2016), an accurate method based on area-to-point regression kriging (ATPRK) (Wang et al, 2015) was used to fuse the 20 m Sentinel-2 8a band with 10 m bands 2, 3, 4 and 8 to produce 10 m Sentinel-2 8a. This provides an excellent opportunity for spatio-temporal fusion of 10 m Sentinel-2 MSI and 300 m Sentinel-3 OLCI data to create 10 m, daily Sentinel-2 images. With this process, the number of cloud-free Sentinel-2 images, as well as the temporal resolution, can be maximized.</p>
+<p>67 68</p>
+<p>Table 1 The corresponding bands for Sentinel-2 MSI and Sentinel-3 OLCI images</p>
+<p>Band number 2 (Blue) 3 (Green) 4 (Red) 8a (NIR)</p>
+<p>Sentinel-2 Wavelength (nm) 458-523 543-578 650-680 855-875</p>
+<p>Spatial resolution (m) 10 10 10 20</p>
+<p>Band number Oa4 (Blue) Oa6 (Green) Oa8 (Red) Oa17 (NIR)</p>
+<p>Sentinel-3 Wavelength (nm) 437-447 555-565 660-670 855-875</p>
+<p>Spatial resolution (m) 300 300 300 300</p>
+<p>69 70</p>
+<p>Spatio-temporal fusion approaches have been developed for blending fine spatial resolution, but coarse</p>
+<p>71</p>
+<p>temporal resolution Landsat and fine temporal resolution, but coarse spatial resolution Moderate Resolution</p>
+<p>72</p>
+<p>Imaging Spectroradiometer (MODIS) or MEdium Resolution Imaging Spectrometer (MERIS) images to</p>
+<p>73</p>
+<p>create fine spatio-temporal resolution images (Gao et al., 2015; Zhang et al., 2015; Chen et al., 2015). The</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>implementation requires at least one coarse-fine spatial resolution image pair (e.g., MODIS-Landsat image</p>
+<p>pair acquired on the same day) or one fine spatial resolution image (hereafter called fine image) that is temporally close to the prediction day. In recent years, several spatio-temporal fusion approaches have been developed. The spatial and temporal adaptive reflectance fusion model (STARFM) is one of the earliest and most widely used spatio-temporal fusion approaches (Gao et al., 2006). Appreciating its simple implementation, it has been used to support various applications, such as forest monitoring, crop monitoring (Gao et al., 2015; Gao et al., 2017), leaf area index (LAI) monitoring (Dong et al., 2016; Houborg et al., 2016), land surface temperature (LST) monitoring (Shen et al., 2016) and gross primary productivity (GPP) monitoring (Singh, 2011). STARFM is performed based on the availability of at least one image-pair. It assumes that the temporal changes of all classes within a coarse pixel are uniform, which is more suitable for homogeneous landscape dominated by pure coarse pixels. To enhance the performance of STARFM for heterogeneous landscapes dominated by mixed pixels, an enhanced STARFM (ESTARFM) method was developed (Zhu et al., 2010). Based on the availability of two coarse-fine image pairs, ESTARFM estimates the temporal change rate of each class separately and assumes the change rates to be stable during a period (Emelyanova et al., 2013). STARFM was also extended for timely monitoring of forest disturbance based on a version termed spatial temporal adaptive algorithm for mapping reﬂectance change (STAARCH) (Hilker et al., 2009). Based on the mechanism of machine learning, some learning-based methods were proposed, including sparse representation (Huang and Song, 2012; Song and Huang, 2013), extreme learning machine (Liu et al., 2016), artiﬁcial neural network and support vector regression (Moosavi et al., 2015), and deep learning (Das and Ghosh, 2016). This type of method learns the relationship between the available coarse-fine image pairs, which is used to guide the prediction of fine images from coarse images on other days. Alternatively, spatial unmixing is a type of spatio-temporal fusion approach that can be performed using one fine image. More precisely, it requires a fine spatial resolution thematic map that can be derived by interpretation of the available fine spatial resolution data (Amorós-López et al., 2011,2013; Gevaert et al.,</p>
+<p>2015; Zurita-Milla et al., 2008) or from other sources including an aerial image (Mustafa et al., 2014), or</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>land-use database (Zurita-Milla et al., 2009). Different from spectral unmixing which estimates for which the</p>
+<p>class proportions within coarse pixels and where the class endmembers (spectra) are known, spatial unmixing estimates the class endmembers within coarse pixels and the class proportions are known (calculated by upscaling the fine spatial resolution thematic map) (Busetto et al., 2008; Maselli, 2001; Zhukov et al., 1999). Spatial unmixing assumes that no land-cover/land-use changes occur during the period of interest and the class proportions are constant for coarse images at different times. This approach was used to create 30 m Landsat-like time-series from 300 m MERIS images using a 30 m thematic map obtained by classification of an available Landsat image (Zurita-Milla et al., 2008) or a fine spatial resolution land-use database LGN5 (Zurita-Milla et al., 2009). Wu et al. (2012) extended spatial unmixing to cases with one coarse-fine image pair available and proposed a surface reflectance calculation model (SRCM). SRCM performs unmixing separately for two coarse images and estimates the temporal changes of each endmember spectra and finally adds the changes to the known fine image. Similarly to the idea of SRCM, Gevaert et al. (2015) performed unmixing directly for the residual image (defined as the difference between two coarse images) to estimate the changes of endmember spectra. Huang and Zhang (2014) developed an unmixing-based spatio-temporal reflectance fusion model (U-STFM) using two coarse-fine image pairs. The spatial unmixing approach can also be combined with STARFM and some hybrid methods were developed (Xu et al., 2015; Xie et al., 2016; Zhu et al., 2016). For spatio-temporal fusion in practice, one challenging problem is that sometimes very few fine images (Sentinel-2 image in this paper) that are temporally close to the prediction time are available for use, due to cloud and shadow contamination. Another problem is that even where one fine image is available, strong temporal changes may have occurred from the time of the fine image to prediction. This means that the observations at two times may be very different and do not have a strong correlation. This is exacerbated for the fusion of 10 m Sentinel-2 MSI and 300 m Sentinel-3 OLCI images, which involves a large zoom factor of 30 (double of that from 500 m MODIS to 30 m Landsat spatial resolution) and a number of mixed pixels. In this case, the available fine image on one day may be very different to the ideal prediction on another day.</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>Thus, how to make full use of the available fine image is a critical issue. The U-STFM (Huang and Zhang,</p>
+<p>2014) and flexible spatiotemporal data fusion (FSDAF) (Zhu et al., 2016) methods were developed to deal with strong temporal changes. However, U-STFM requires at least two coarse-fine image pairs. Although FSDAF requires only one image pair, its performance may sometimes be compromised by the unmixing process where a global, linear unmixing model is considered. In this paper, to cope with the abovementioned problems, we propose a new method for fusion of Sentinel-2 MSI and Sentinel-3 OLCI images. The new method consists of three stages, including regression model fitting (RM fitting, hereafter called RM), spatial filtering (SF) and residual compensation (RC). RM aims to increase the correlation between the observations acquired at two times. The SF step removes the blocky artifacts in the RM prediction. The residuals from RM are finally compensated by the RC step to make full use of the coarse spectral information. For simplicity, we abbreviate the new method as the Fit-FC method. This method can be performed with the availability of only one coarse-fine spatial resolution image (i.e., Sentinel-3–Sentinel-2) pair, and it is a promising choice for cases where strong temporal changes occurred from the time of the available image pair to prediction.</p>
+<p>138 139 140</p>
+<p>2. Methods</p>
+<p>141 142</p>
+<p>For spatio-temporal fusion of Sentinel-2 MSI and Sentinel-3 OLCI images, only the blue, green, red and</p>
+<p>143</p>
+<p>NIR bands for Sentinel-2 (bands 2, 3, 4 and 8a) and Sentinel-3 (Oa4, Oa6, Oa8 and Oa17) were considered, as</p>
+<p>144</p>
+<p>shown in Table 1. The 20 m Sentinel-2 8a band needs to be downscaled to 10 m in advance. This is achieved</p>
+<p>145</p>
+<p>by fusion of this band with four 10 m Sentinel-2 bands (bands 2, 3, 4 and 8) acquired at the same time.</p>
+<p>146</p>
+<p>According to our previous work (Wang et al., 2016), the ATPRK method (Wang et al., 2015) can produce</p>
+<p>147</p>
+<p>more accurate results than eight benchmark methods and, thus, ATPRK was employed.</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>For simplicity of the problem description, suppose there are two 300 m Sentinel-3 images at time t1 and t2,</p>
+<p>and the 10 m Sentinel-2 image at t1 is available. The ultimate task of spatio-temporal fusion is to predict the 10 m Sentinel-2 image at t2 based on the three available images. Let C1 ( Xi , lb ) and C2 ( Xi , lb ) be the reflectance of the Sentinel-3 pixel centered at location X i in band lb (b=1, 2, 3, and 4 represents the blue, green, red and NIR bands, respectively) of the Sentinel-3 OLCI image at t1 and t2, and F1 (x j , lb ) be the reflectance of the Sentinel-2 pixel centered at location x j in band lb of the Sentinel-2 MSI image at t1. The objective is to predict target variables F2 (x j , lb ) for all Sentinel-2 pixels in all four bands. The Fit-FC method consisting of</p>
+<p>RM, SF and RC is detailed as follows.</p>
+<p>156 157</p>
+<p>2.1. Regression model fitting (RM)</p>
+<p>158 159</p>
+<p>In the first stage, RM is used to relate the observations acquired at two times and minimize their differences.</p>
+<p>Based on the local spatial variation of land cover, a local linear regression model is considered. Specifically, for the two Sentinel-3 images, a moving window is used to fit the regression model for each center Sentinel-3 pixel in each band. C2 (X, lb )  a(X, lb )C1 ( X, lb )  b( X, lb )  R( X, lb ) where a( X, lb ) and b( X, lb ) are two coefficients for the pixel centered at X in band lb , and R( X, lb ) is the 300 m coarse residual. Since C1 ( X, lb ) and C2 ( X, lb ) for all Sentinel-3 pixels in the local window are known, the two coefficients can be estimated using the least square method. (1) The models constructed at 300 m coarse resolution are applied to 10 m fine spatial resolution Sentinel-2 images. For any fine pixel in band lb , say a fine pixel centered at x 0 , the RM prediction at t2, denoted as FˆRM (x0 , lb ) , is calculated as</p>
+<p>FˆRM (x0 , lb )  a( X0 , lb ) F1 (x0 , lb )  b( X0 , lb )</p>
+<p>(2)</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>where X 0 is the center of the coarse pixel in which the fine pixel centered at x 0 falls. The two regression</p>
+<p>coefficients a( X, lb ) and b( X, lb ) estimated from (1) vary spatially at 300 m (i.e., at a spatial resolution of 300 m) and the 10 m RM prediction in (2) is a linear transformation of each block of 30 by 30 Sentinel-2 pixels at t1. The inconsistency between the spatial resolutions of the regression coefficients and the Sentinel-2 image at t1 means that the RM prediction is dominated by blocky artifacts with a spatial size of 30 by 30 pixels, which corresponds with a Sentinel-3 pixel. The blocky artifacts are more obvious when the spatial and temporal variation in the two 300 m Sentinel-3 images is large (i.e., spatially and temporally non-stationary), where the two regression coefficients can vary greatly at different locations.</p>
+<p>179 180</p>
+<p>2.2. Spatial filtering (SF)</p>
+<p>181 182</p>
+<p>To deal with the blocky artifacts problem in the RM prediction, SF is considered in the second step. A</p>
+<p>natural solution is to use the neighboring 10 m pixels in a local window for filtering and to remove the blocky artifacts. However, we cannot use all neighboring pixels in the local window for SF. This is because the neighboring pixels are mostly not for the same class as the center pixel and may have very different reflectances. Using all of them will decrease the difference in spectra between classes, thereby leading to over-smooth predictions. Actually, the blocky artifacts in the RM prediction are produced due to the inconsistency in reflectance for pixels that belong to the same class and should have similar spectra. Thus, for SF, it is a more reasonable choice to select out these neighboring pixels and use them to reduce the difference in spectra for the same class. Since there already exist blocky artifacts in the RM prediction, it is inappropriate to use the contaminated image to search for spectrally similar neighboring pixels. Alternatively, the four bands of the Sentinel-2 image at t1 are used, based on the assumption of stable land cover boundaries (or very few changes in boundaries) occurring from t1 to t2. This assumption allows changes to the class of an entire object, as long as the boundary of the object is retained (i.e., no abrupt changes). This is a strategy used in STARFM</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>(Gao et al., 2006). The spectral difference between a neighboring pixel at x i and the center pixel at x 0 is</p>
+<p>calculated as D  F (x , l )  F (x , l ) b1 i b b</p>
+<p>4.</p>
+<p>(3)</p>
+<p>In the local window with w by w fine pixels, the first n pixels with smallest D (including the center pixel itself) are identified as spectrally similar neighbors and are selected for SF. For each 10 m pixel at t2, the SF prediction is determined as the linear combination of the RM prediction of spectrally similar neighboring pixels n FˆSF (x 0 , lb )  Wi FˆRM (xi , lb ) (4) i 1 where Wi is a weight determined according to the spatial distance between the neighboring and center pixels. Based on spatial dependence, spatially closer pixels are more likely to have similar reflectance to the center pixel and, thus, receive larger weights n</p>
+<p>Wi  (1 di )  (1 d i )</p>
+<p>(5)</p>
+<p>di  1 </p>
+<p>(6)</p>
+<p>i 1</p>
+<p>207</p>
+<p>xi  x 0</p>
+<p>2</p>
+<p>( w 2) .</p>
+<p>208</p>
+<p>The distance d i needs to be constrained to an appropriate range to exert reasonable influence on the weight Wi .</p>
+<p>209</p>
+<p>Thus, 1 and w/2 are used in (6) and d i ranges from 1 to 1+ 2 correspondingly. With the filtering scheme in</p>
+<p>210</p>
+<p>(4), the spectral difference for the same class in the RM prediction can be reduced, which can alleviate the</p>
+<p>211</p>
+<p>blocky artifacts.</p>
+<p>212 213 214</p>
+<p>2.3. Residual compensation (RC)</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>In the first RM step, there exist residuals in the regression models. Without incorporation of the residuals,</p>
+<p>the uncertainty is propagated to the SF process and leads to spectral distortion. To further enhance the SF prediction, we take full advantage of the spectral information in the 300 m Sentinel-3 image at t2 in the third step, RC. The 300 m coarse residual R( X, lb ) needs to be downscaled to 10 m to match the target spatial resolution first. This can be achieved using the simple bicubic interpolation. The produced 10 m residual, denoted as r(x, lb ) , can be added straightforwardly to the 10 m SF predictions. This scheme, however, will produce over-smooth results due to the smoothing effect in bicubic interpolation. The SF process enables the pixels with similar spectra at t1 in the local window to have similar spectra in the intermediate SF prediction for t2. Based on the assumption of stable land cover boundaries from t1 to t2, in the final prediction for t2, these pixels are expected to have similar spectra. Thus, it is reasonable to assume that these pixels should have similar residuals. The 10 m residuals are used mainly to preserve the 300 m spectral information at t2, and they cannot provide much useful spatial detail at 10 m. To avoid the smoothing effect from bicubic interpolation in the final prediction, a possible solution is to average the 10 m residuals for the same class in the local window or within an object. For this process, a 10 m thematic map at t2 that contains class/object information is required, which can be approximately estimated as a segmentation prediction of the Sentinel-2 image at t1. Each class always covers a number of objects. For this solution, however, the number of classes is often related closely to the size of objects and needs to be set appropriately according to the study scene. On the one hand, the number of classes needs to be as large as possible (i.e., the size of objects needs to be as small as possible) to retain more spatial variation. On the other hand, the number of classes needs to be as small as possible (i.e., the size of objects needs to be as large as possible) to ensure the removal of the smoothing effect in the 10 m bicubic interpolation-derived residuals. Moreover, this solution is more suitable for areas where the intra-class variation of spectra is small.</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>Alternatively, a more generic solution is adopted in this paper, which allows a signiﬁcant simpliﬁcation of</p>
+<p>the RC process. Specifically, similarly to the SF process, the spectrally similar neighboring pixels are used to update the bicubic interpolation-derived residuals, r(x, lb ) . For a fine pixel centered at x 0 , the 10 m bicubic interpolation-derived residuals of spectrally similar neighboring pixels are weighted and combined linearly, thus, producing the new 10 m residual n FˆRC (x 0 , lb )  Wi r ( xi , lb ) . (7) i 1 In (7), the weight Wi is calculated in the same way as that in (5) and (6). This process enables pixels with similar spectra at t1 in the local window to have similar residuals. 247 248 Finally, the updated 10 m residual is added back to the SF prediction to preserve the spectral information, and the Fit-FC prediction is produced as follows Fˆ2 (x0 , lb )  FˆSF (x0 , lb )  FˆRC (x0 , lb ) . A flowchart describing the Fit-FC method is given in Fig. 1, where the processes of the three steps are marked in different colors. It is seen that the 10 m valuable information in the Sentinel-2 image at t1 is used throughout all three steps, but in different ways. In RM, according to the linear regression model built between the Sentinel-3 images at different times, the Sentinel-2 image at t1 is linearly transformed to produce the RM prediction for the Sentinel-2 image at t2. In SF and RC, by assuming stable land cover boundaries (i.e., non-shape changes), the Sentinel-2 image at t1 is used to search for spectrally similar pixels in every local window (or provide object information for RC, if required).</p>
+<p>(8)</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>12 Sentinel-3 band lb at t2 C2 ( X, lb )</p>
+<p>Sentinel-2 band lb at t1 F1 ( x, lb )</p>
+<p>RM a ( X , lb ) b( X , lb )</p>
+<p>FˆRM ( x 0 , lb )  a ( X 0 , lb ) F1 ( x 0 , lb )  b( X 0 , lb )</p>
+<p>RM prediction at t2 FˆRM ( x, lb )</p>
+<p>Coarse residual of RM at t2 Interpolation R ( X , lb )</p>
+<p>Input</p>
+<p>Similar pixel search</p>
+<p>Sentinel-3 band lb at t1 C1 ( X , lb )</p>
+<p>Initial fine residual at t2 r ( x, lb )</p>
+<p>Fit-FC SF SF prediction at t2 FˆSF ( x, lb )</p>
+<p>Updated fine residual at t2 FˆRC ( x, lb )</p>
+<p>RC</p>
+<p>Fit-FC prediction at t2 Fˆ2 (x, lb )  FˆSF (x, lb )  FˆRC (x, lb )</p>
+<p>Output</p>
+<p>258 259</p>
+<p>Fig. 1 Flowchart of the Fit-FC method. The lines in magenta, red and blue represent the processes of RM, SF and RC, respectively.</p>
+<p>260 261 262</p>
+<p>3. Experiments</p>
+<p>263 264</p>
+<p>3.1. Data and experimental setup</p>
+<p>265 266</p>
+<p>For the Sentinel-2 images, the original Level-1C products were provided in top of atmosphere reflectance</p>
+<p>267</p>
+<p>(TOA) units. The TOA was transformed to the bottom of atmosphere reflectance (BOA) using the Sen2Cor</p>
+<p>268</p>
+<p>algorithm released by ESA (Muller-Wilm, 2016; Vuolo et al., 2016). The 20 m band 8a was fused with 10 m</p>
+<p>269</p>
+<p>bands 2, 3, 4 and 8 to produce 10 m Sentinel-2 8a using the ATPRK method (Wang et al., 2016). For the</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>Sentinel-3 images, the atmospheric correction is currently under methodological development. To concentrate</p>
+<p>solely on the performance of the spatio-temporal fusion methods and avoid uncertainties introduced by radiometric correction and geometric registration, for the present experimental purpose we simulated 300 m Sentinel-3 images by degrading the four-band 10 m Sentinel-2 (in BOA) images with a zoom factor of 30. Such a setup is used widely in studies on spatio-temporal fusion (Gevaert et al., 2015; Zhang et al., 2015; Zhu et al., 2016). Two sets of images were used to validate the Fit-FC method. The images are located in Coleambally and Currawarna, Australia. Both have a spatial size of 15 km by 15 km, corresponding to 1500 by 1500 Sentinel-2 pixels and 50 by 50 Sentinel-3 pixels. For both sites, the images were acquired on 25 December 2015 (t1) and 21 August 2016 (t2). Fig. 1(a) and Fig. 1(b) show the Sentinel-2 images (in BOA) acquired on the two days for Coleambally, while Fig. 2(a) and Fig. 2(b) show the Sentinel-2 images (in BOA) for Currawarna. The corresponding Sentinel-3 images for the two sites are shown in Figs. 2(c) and 2(d) and Figs. 3(c) and 3(d). Many spatial details are lost in the 300 m Sentinel-3 images and the 10 m Sentinel-2 images can provide much more abundant spatial information at the local scale. As observed from the images at the two times, the study sites experienced strong temporal changes from 25 December 2015 to 21 August 2016. This necessitates the use of spatio-temporal fusion methods to create temporally more frequent Sentinel-2 images at a spatial resolution of 10 m. The task of spatio-temporal fusion for both sites in the experiments is to predict the 10 m Sentinel-2 image on 21 August 2016, using the 300 m Sentinel-3 images on 25 December 2015 to 21 August 2016 and the 10 m Sentinel-2 images on 25 December 2015 as inputs. The available real Sentinel-2 image on 21 August 2016 was used to evaluate the predictions objectively. Three spatio-temporal fusion methods, STARFM (Gao et al., 2006), spatial unmixing (Zurita-Milla et al., 2008), and FSDAF (Zhu et al., 2016), can be implemented using the available input images (i.e., one coarse-fine image pair and one coarse image at the prediction time). Thus, they were considered as benchmark methods and compared with the Fit-FC method. Through trial-and-error tests, 30 spectrally similar pixels were found in the moving window with 30 by 30 fine pixels (at 10 m resolution) for STARFM and Fit-FC. The</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>number of classes was set to six for SU and FSDAF. For quantitative assessment, three indices were used: the</p>
+<p>296</p>
+<p>root mean square error (RMSE), correlation coefficient (CC), and universal image quality index (UIQI) (Wang</p>
+<p>297</p>
+<p>and Bovik, 2002). The ideal values of RMSE, CC and UIQI are 0, 1 and 1, respectively. The predictions are</p>
+<p>298</p>
+<p>more accurate when the RMSE value is smaller and the CC and UIQI values are larger.</p>
+<p>299 300</p>
+<p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>301 302</p>
+<p>303 304</p>
+<p>Fig. 2 Images for Coleambally (15 km by 15 km). (a) and (b) are Sentinel-2 images (NIR, red, and green bands as RGB) acquired on</p>
+<p>305</p>
+<p>25 December 2015 (t1) and 21 August 2016 (t2), respectively. (c) and (d) are the corresponding Sentinel-3 images.</p>
+<p>306</p>
+<p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>307 308</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>309 310</p>
+<p>Fig. 3 Images for Currawarna (15 km by 15 km). (a) and (b) are Sentinel-2 images (NIR, red, and green bands as RGB) acquired on</p>
+<p>311</p>
+<p>25 December 2015 (t1) and 21 August 2016 (t2), respectively. (c) and (d) are the corresponding Sentinel-3 images.</p>
+<p>312 313</p>
+<p>3.2. Implementation</p>
+<p>314 315</p>
+<p>Fig. 4 shows the interim Sentinel-3 images produced in the RM process for both sites (i.e., a local, linear</p>
+<p>transformation of the Sentinel-3 image at t1, according to the regression model constructed in (1)). It is seen that the Sentinel-3 images at t1 and t2 are very different. By RM, however, the produced interim Sentinel-3 images are visually highly similar to the image at t2. Table 2 is the quantitative evaluation of the original Sentinel-3 (or Sentinel-2) images at t1 and the interim Sentinel-3 (or Sentinel-2, i.e., the RM predictions) images, with the Sentinel-3 (or Sentinel-2) images at t2 as reference. The Sentinel-3 or Sentinel-2 images at t1 and t2 have only a very small correlation with each other. The mean CCs or UIQIs between the Sentinel-3 images for both sites are below 0.10. The linearly transformed Sentinel-3 images have a much larger correlation with the Sentinel-3 image at t2, and the mean CCs or UIQIs for two sites are around 0.90. For Sentinel-2 images, the mean CCs increase from below 0.15 to around 0.70 after RM, and the corresponding mean RMSEs decrease from around 0.12 to below 0.04. This means that the regression model built at fine spatial resolution (i.e., Equation (2)) based on the model at coarse spatial resolution (i.e., Equation (1)) is satisfactory and the RM process can much better relate the observation at t1 to that at t2. Starting with the interim Sentinel-3 images and the corresponding 10 m RM predictions (i.e., the interim coarse-fine image pair) in the RM process, it is expected to have more reliable predictions of Sentinel-2 images at t2.</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>331</p>
+<p>332 333</p>
+<p>Fig. 4 The interim Sentinel-3 images produced from the RM process (NIR, red, and green bands as RGB). (a) and (b) are Sentinel-3</p>
+<p>334</p>
+<p>images at t1 and t2. (c) is the interim Sentinel-3 image. Lines 1 and 2 are for Coleambally and Currawarna, respectively.</p>
+<p>335 336</p>
+<p>Table 2 Relation between the original image at t1 or RM prediction with the image at t2 (t2 as reference), where the bold values mean</p>
+<p>337</p>
+<p>the most accurate result in each term</p>
+<p>Ideal</p>
+<p>RMSE</p>
+<p>CC</p>
+<p>UIQI</p>
+<p>338</p>
+<p>Blue Green Red NIR Mean Blue Green Red NIR Mean Blue Green Red NIR Mean</p>
+<p>0 0 0 0 0 1 1 1 1 1 1 1 1 1 1</p>
+<p>Coleambally Sentinel-3 Sentinel-2 t1 RM t1 RM 0.0581 0.0055 0.0639 0.0124 0.0683 0.0059 0.0750 0.0136 0.1259 0.0115 0.1352 0.0242 0.1410 0.0511 0.1740 0.1057 0.0983 0.0185 0.1120 0.0390 -0.0031 0.8970 0.0380 0.6840 0.1747 0.8895 0.1644 0.6571 -0.0508 0.8959 -0.0060 0.6980 0.0608 0.8976 0.0596 0.6905 0.0454 0.8950 0.0640 0.6824 -0.0014 0.8847 0.0181 0.6597 0.0824 0.8754 0.0850 0.6206 -0.0205 0.8815 -0.0025 0.6727 0.0554 0.8826 0.0540 0.6724 0.0290 0.8811 0.0387 0.6563</p>
+<p>Currawarna Sentinel-3 Sentinel-2 t1 RM t1 RM 0.0692 0.0033 0.0736 0.0089 0.0843 0.0056 0.0898 0.0141 0.1594 0.0070 0.1656 0.0179 0.1125 0.0368 0.1413 0.0952 0.1063 0.0132 0.1176 0.0340 0.1278 0.9192 0.1477 0.6430 0.1786 0.9328 0.2208 0.7193 0.1264 0.9304 0.1377 0.6948 -0.0684 0.9133 0.0453 0.6459 0.0911 0.9239 0.1379 0.6758 0.0293 0.9102 0.0350 0.6213 0.0863 0.9247 0.1072 0.7058 0.0303 0.9232 0.0332 0.6803 -0.0566 0.9038 0.0374 0.6336 0.0223 0.9154 0.0532 0.6602</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>Figs. 5 and 6 show the 10 m predictions of the three different stages of Fit-FC for the two sites, where the</p>
+<p>results of two sub-areas are zoomed to facilitate visual comparison. Noticeably, the RM predictions contain a number of blocky artifacts. The further SF process can eliminate the blocky artifacts and produce visually continuous results. Without the consideration of the residuals in the RM process, however, the SF predictions suffer from spectral distortion when compared to the reference. With the residuals compensated for the SF predictions in the third RC step, more spectral information is preserved and the results are closer to the reference. The benefits of RC can be observed obviously by checking the restoration of the magenta pixels in Fig. 5(h) and the green pixels in Fig. 6(h). Table 3 gives the accuracy for the predictions at each step and the accuracy gains from RM to SF and SF to Fit-FC. For all four bands, the RMSEs decrease gradually and the CCs and UIQIs increase gradually from the first to the third steps, suggesting more accurate results are produced by considering all three steps. For Coleambally, from RM to SF, the mean RMSE decreases by 0.0018 and the mean CC and UIQI increase by 0.0272 and 0.0162, respectively. From SF to Fit-FC, the mean CC and UIQI increase by 0.0769 and 0.0947, respectively. For Currawarna, the mean CC and UIQI increase by 0.0272 and 0.0183 from RM to SF and by 0.0576 and 0.0686 from SF to Fit-FC. As for the RMSE, it decreases by 0.0045 from RM to Fit-FC. The results reveal that all three steps are indispensable in the Fit-FC method.</p>
+<p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>356 357</p>
+<p>358</p>
+<p>(e)</p>
+<p>(f)</p>
+<p>(g)</p>
+<p>(h)</p>
+<p>(i)</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>Fig. 5 Results of the three different stages of Fit-FC for Coleambally (NIR, red, and green bands as RGB) at t2 (21 August 2016). (a)</p>
+<p>360</p>
+<p>RM. (b) SF. (c) Fit-FC. (d) Reference at t2 (21 August 2016). (e) The sub-area (marked in yellow in (d)) for the Sentinel-2 image at</p>
+<p>361</p>
+<p>t1 (25 December 2015). (f)-(i) are the corresponding results at t2 (21 August 2016) for the sub-area in (a)-(d).</p>
+<p>362</p>
+<p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>363 364</p>
+<p>(e)</p>
+<p>(f)</p>
+<p>(g)</p>
+<p>(h)</p>
+<p>(i)</p>
+<p>365 366</p>
+<p>Fig. 6 Results of the three different stages of Fit-FC for Currawarna (NIR, red, and green bands as RGB) at t2 (21 August 2016). (a)</p>
+<p>367</p>
+<p>RM. (b) SF. (c) Fit-FC. (d) Reference at t2 (21 August 2016). (e) The sub-area (marked in yellow in (d)) for the Sentinel-2 image at</p>
+<p>368</p>
+<p>t1 (25 December 2015). (f)-(i) are the corresponding results at t2 (21 August 2016) for the sub-area in (a)-(d).</p>
+<p>369 370</p>
+<p>Table 3 Accuracy for three different stages of Fit-FC (the bold values mean the most accurate result in each term)</p>
+<p>Ideal</p>
+<p>RMSE</p>
+<p>CC</p>
+<p>UIQI</p>
+<p>371</p>
+<p>Blue Green Red NIR Mean Blue Green Red NIR Mean Blue Green Red NIR Mean</p>
+<p>0 0 0 0 0 1 1 1 1 1 1 1 1 1 1</p>
+<p>RM 0.0124 0.0136 0.0242 0.1057 0.0390 0.6840 0.6571 0.6980 0.6905 0.6824 0.6597 0.6206 0.6727 0.6724 0.6563</p>
+<p>Coleambally SF Fit-FC (gain over RM) (gain over SF) 0.0119 (0.0005) 0.0105 (0.0014) 0.0132 (0.0005) 0.0119 (0.0013) 0.0232 (0.0010) 0.0202 (0.0030) 0.1005 (0.0052) 0.0857 (0.0148) 0.0372 (0.0018) 0.0321 (0.0051) 0.7137 (0.0297) 0.7852 (0.0715) 0.6800 (0.0229) 0.7533 (0.0733) 0.7243 (0.0263) 0.8007 (0.0764) 0.7205 (0.0300) 0.8068 (0.0863) 0.7096 (0.0272) 0.7865 (0.0769) 0.6774 (0.0177) 0.7656 (0.0882) 0.6312 (0.0106) 0.7235 (0.0923) 0.6888 (0.0161) 0.7839 (0.0951) 0.6927 (0.0203) 0.7959 (0.1032) 0.6725 (0.0162) 0.7672 (0.0947)</p>
+<p>RM 0.0089 0.0141 0.0179 0.0952 0.0340 0.6430 0.7193 0.6948 0.6459 0.6758 0.6213 0.7058 0.6803 0.6336 0.6602</p>
+<p>Currawarna SF Fit-FC (gain over RM) (gain over SF) 0.0085 (0.0004) 0.0079 (0.0006) 0.0134 (0.0007) 0.0122 (0.0012) 0.0171 (0.0008) 0.0156 (0.0015) 0.0902 (0.0050) 0.0822 (0.0080) 0.0323 (0.0017) 0.0295 (0.0028) 0.6718 (0.0288) 0.7310 (0.0592) 0.7443 (0.0250) 0.7952 (0.0509) 0.7182 (0.0234) 0.7734 (0.0552) 0.6776 (0.0317) 0.7427 (0.0651) 0.7030 (0.0272) 0.7606 (0.0576) 0.6379 (0.0166) 0.7101 (0.0722) 0.7229 (0.0171) 0.7848 (0.0619) 0.6966 (0.0163) 0.7619 (0.0653) 0.6567 (0.0231) 0.7316 (0.0749) 0.6785 (0.0183) 0.7471 (0.0686)</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>3.3. Comparison with other methods</p>
+<p>373 374</p>
+<p>The results of the STARFM, SU and FSDAF methods for the two sites are shown in Fig. 7(a)-(c) and Fig.</p>
+<p>8(a)-(c). The results of two sub-areas are zoomed for convenience of visual comparison. Due to the strong temporal changes and existence of a large number of mixed pixels in the 300 m Sentinel-3 images (see Figs. 2(c) and 2(d) and Figs. 3(c) and 3(d)), there is spectral distortion in the STARFM predictions where the color appears noticeably different from the reference. For example, for the rectangular object in the top right of the area in Fig. 7(f), they should be in cyan but are inaccurately predicted as mixed red and green. With respect to the SU predictions, they contain blocky artifacts as the unmixing process is implemented in units of 300 m coarse pixels. This method cannot reproduce spatial variation within each object, especially for large-sized objects. FSDAF can reproduce more spatial variation for objects than SU and the spectral information can be more accurately preserved. However, the spatial variation is over-estimated in some cases (see the prediction for the red and green objects in Fig. 7(h)) and the spectral distortion is still obvious for some pixels (see the prediction for the green object in Fig. 8(h)). Compared to the three benchmark methods, the Fit-FC method performs satisfactorily in preserving both spatial and spectral information and the predictions are closer to the reference. This can be demonstrated by the restoration of the cyan and red objects in Fig. 7(i) and green objects in Fig. 8(i). Quantitative assessment for the four methods is listed in Table 4. As the relation between the observations at two times is weak (see Table 2), for both sites, the STARFM and SU methods produce mean CCs of around 0.55 and 0.45, respectively. FSDAF increases the accuracy obviously and the CCs of the predictions are close to 0.70. For Fit-FC, the mean RMSEs for Coleambally is 0.0321, with a decrease of 0.0116, 0.0254 and 0.0031 when compared to STARFM, SU and FSDAF. For Currawarna, the mean RMSE of Fit-FC is 0.0112, 0.0218 and 0.0015 smaller than that of STARFM, SU and FSDAF, respectively. The mean CC and UIQI of Fit-FC for Coleambally is 0.7865 and 0.7672, with gains of 0.0951 and 0.0822 over that of FSDAF. For Currawarna, the mean CC and UIQI of Fit-FC are 0.0866 and 0.0826 larger than that of FSDAF.</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>(e)</p>
+<p>(f)</p>
+<p>(g)</p>
+<p>(h)</p>
+<p>(i)</p>
+<p>(j)</p>
+<p>399 400</p>
+<p>401 402</p>
+<p>Fig. 7 Results of different spatio-temporal fusion methods for Coleambally (NIR, red, and green bands as RGB). (a) STARFM. (b)</p>
+<p>403</p>
+<p>Spatial unmixing. (c) FSDAF. (d) The Fit-FC method. (e) Reference. (f)-(j) are the corresponding results for the sub-area (marked in</p>
+<p>404</p>
+<p>yellow in (e)) in (a)-(e).</p>
+<p>405 406</p>
+<p>(a)</p>
+<p>(b)</p>
+<p>(c)</p>
+<p>(d)</p>
+<p>(e)</p>
+<p>(f)</p>
+<p>(g)</p>
+<p>(h)</p>
+<p>(i)</p>
+<p>(j)</p>
+<p>407 408</p>
+<p>409 410</p>
+<p>Fig. 8 Results of different spatio-temporal fusion methods for Currawarna (NIR, red, and green bands as RGB). (a) STARFM. (b)</p>
+<p>411</p>
+<p>Spatial unmixing. (c) FSDAF. (d) The Fit-FC method. (e) Reference. (f)-(j) are the corresponding results for the sub-area (marked in</p>
+<p>412</p>
+<p>yellow in (e)) in (a)-(e).</p>
+<p>413</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>Table 4 Accuracy for different spatio-temporal fusion methods (the bold values mean the most accurate result in each term) Ideal</p>
+<p>RMSE</p>
+<p>CC</p>
+<p>UIQI</p>
+<p>Blue Green Red NIR Mean Blue Green Red NIR Mean Blue Green Red NIR Mean</p>
+<p>0 0 0 0 0 1 1 1 1 1 1 1 1 1 1</p>
+<p>STARFM 0.0217 0.0249 0.0388 0.0893 0.0437 0.4532 0.4418 0.4925 0.7869 0.5436 0.4315 0.4087 0.4806 0.7660 0.5217</p>
+<p>Coleambally SU FSDAF 0.0196 0.0134 0.0212 0.0161 0.0393 0.0249 0.1500 0.0864 0.0575 0.0352 0.4356 0.6635 0.4059 0.6035 0.4313 0.6964 0.5171 0.8023 0.4475 0.6914 0.4309 0.6609 0.4023 0.6035 0.4261 0.6893 0.5146 0.7865 0.4435 0.6850</p>
+<p>Fit-FC 0.0105 0.0119 0.0202 0.0857 0.0321 0.7852 0.7533 0.8007 0.8068 0.7865 0.7656 0.7235 0.7839 0.7959 0.7672</p>
+<p>STARFM 0.0214 0.0258 0.0378 0.0779 0.0407 0.3834 0.5566 0.4429 0.7678 0.5377 0.3068 0.5084 0.3875 0.7373 0.4850</p>
+<p>Currawarna SU FSDAF 0.0149 0.0118 0.0229 0.0163 0.0344 0.0209 0.1328 0.0747 0.0513 0.0310 0.3972 0.5617 0.4949 0.6914 0.3937 0.6543 0.4775 0.7887 0.4408 0.6740 0.3823 0.5537 0.4842 0.6899 0.3676 0.6528 0.4741 0.7617 0.4270 0.6645</p>
+<p>Fit-FC 0.0079 0.0122 0.0156 0.0822 0.0295 0.7310 0.7952 0.7734 0.7427 0.7606 0.7101 0.7848 0.7619 0.7316 0.7471</p>
+<p>415 416 417</p>
+<p>4. Discussion</p>
+<p>418 419</p>
+<p>In the experiments, each of the used dataset covers a local area of 15 km by 15 km. However, the Fit-FC</p>
+<p>method can be applied readily to larger areas for larger scale monitoring, as local models are essentially considered in the new method (i.e., a local window is used in all three steps). As an example, the nearly daily Sentinel-2 images have great potential for monitoring phenology. For example, for smallholder croplands, the temporally frequent remote sensing data available to monitor crop growth dynamics and estimate phenology (such as Sentinel-3 or MODIS data) are too coarse to capture the heterogeneity and local variability of production (Duncan et al., 2015). Thus, there are large uncertainties in yield estimation and the identification of yield gaps based on phenological approaches. With a much finer spatial resolution of 10 m, the nearly daily Sentinel-2 images have great potential to enhance yield gap assessments, for example, in smallholder landscapes. Spatio-temporal fusion often requires fine images that are temporally close to the coarse images to be downscaled. Due to data quality issues (e.g., cloud contamination), sometimes very few effective Sentinel-2 images are available for fusion. There may exist strong temporal changes from the time of the only effective</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>Sentinel-2 image to prediction, and the only available Sentinel-2 image may have only a small correlation with</p>
+<p>the ideal prediction of Sentinel-2 image at the prediction time. Fit-FC is proposed to deal with such strong temporal changes in this paper, which can be performed using only one coarse-fine image pair. Different from the classical STARFM method, Fit-FC uses a local regression model to create an interim coarse-fine image pair, which has much greater relation with the observations at the prediction time. This is not the case for STARFM, which starts directly from the time of available Sentinel-2 image and exacerbates this underperformance when the temporal changes are strong. In the two study areas, the relation between the Sentinel-2 images at two times is small (CCs are below 0.15). As a result, the STARFM predictions are not as accurate as those in other literature where the temporal changes are not strong and the relation between the t1 and t2 images is not weak. In this paper, one fine image is considered for the Fit-FC method. However, multiple fine images can be readily used in Fit-FC, as long as they are available for the study area. Specifically, in the RM step, the multiple fine images can be incorporated by multiple regression. In SF and RC, the multiple fine images can be stacked together for searching spectrally similar pixel (or segmentation, if required in RC). Generally, uncertainties in spatio-temporal fusion tend to decrease when the number of available fine images increases, especially where there exist fine images both before and after the coarse image to be downscaled. On the one hand, the multiple fine images are more realistic for areas that are not easily contaminated by cloud. On the other hand, the multiple Sentinel-2 images can be created from other temporally close data, such as 30 m Landsat images. The Sentinel-2 data and Landsat data have similar wavelengths and the same geographic coordinate system. In our previous work (Wang et al., 2017), 30 m Landsat 8 OLI images were fused with the temporally close 10 m Sentinel-2 MSI images to create 10 m Landsat 8 OLI images. This seems a plausible solution to provide more temporally close Sentinel-2 images for Sentinel-3 images, but more importantly, provide another complementary solution to increase the temporal resolution of the Sentinel-2 images. Although Fit-FC is proposed initially for spatio-temporal fusion of Sentinel-2 and Sentinel-3 images in this paper, it is a generic method suitable for spatio-temporal fusion of other satellite sensor images, such as</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>MODIS/MERIS and Landsat images. For example, for spatio-temporal fusion of the MODIS and Landsat</p>
+<p>images for Coleambally, the CCs of the STARFM, SU and Fit-FC predictions are 0.4366, 0.4106 and 0.7332, respectively. For Currawarna, the corresponding CCs are 0.4986, 0.3771 and 0.7491, respectively. The advantages of the new method would be more obvious when the temporal changes in the study areas are strong. We also investigated the performance for downscaling the Sentinel-3 image on 14 March 2016, using the Sentinel-3–Sentinel-2 image pair on 25 December 2015. The CC between the Sentinel-2 images on 25 December 2015 and 14 March 2016 is 0.2711, obviously larger than the CC between 25 December 2015 and 21 August 2016 (see Section 3.2 and Table 2). As a result, the CCs of the STARFM, SU, FSDAF and Fit-FC predictions are 0.8256, 0.6578, 0.8366 and 0.8811, respectively. The accuracy gains of Fit-FC are not as obvious as those for the predictions on 21 August 2016. Apart from reflectance data, Fit-FC is applicable for spatio-temporal fusion issues of other variables, such as Normalized Difference Vegetation Index (NDVI) (Gao et al., 2015; Rao et al., 2015), Normalized Difference Water Index (NDWI) (Jarihani et al., 2014), LST (Weng et al., 2014; Shen et al., 2016), evapotranspiration (Bhattarai et al., 2014; Ke et al., 2017), LAI (Dong et al., 2016; Houborg et al., 2016), and GPP (Singh, 2011). For example, when performing on the NDVI images for the Coleambally dataset, the CC and UIQI of the Fit-FC-based NDVI prediction are 0.8400 and 0.8307, which are 0.0664 and 0.0656 larger than that of the STARFM method. This provides a set of promising avenues for future research. A limitation of Fit-FC is the restoration of abrupt changes (such as the magenta objects in Fig. 5(i)). Actually, abrupt changes have been a long-standing problem in spatio-temporal fusion. The information on abrupt changes is not represented in the available fine image. The problem is greatest where there is a change of land cover boundaries. For example, in the available Sentinel-2 image, a region may be dominated by a large pure patch (e.g., bare soil), but may be broken down into several smaller patches of very different classes (e.g., vegetation, water, and impervious surface) at the prediction time. In this case, the available Sentinel-2 image cannot provide much helpful information on the new boundaries. In Fit-FC, it is assumed that there are very few abrupt changes (i.e., stable land cover or object boundaries), an assumption used in existing</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>spatio-temporal fusion methods, including the classical STARFM and SU methods. As mentioned by Wu et al.</p>
+<p>(2016), the performance of spatio-temporal fusion can be greatly influenced by the changes of land cover boundaries. A straightforward solution to the issue of abrupt changes is to seek as much auxiliary data as possible to provide related information for the new boundaries at the prediction time. For fusion of Sentinel-2 and Sentinel-3 images, such data can be intermediate spatial resolution data such as 30 m Landsat images that are temporally close to the prediction time. It is also worthwhile to develop more alternative schemes for the RM, SF and RC steps in the framework of Fit-FC. The Fit-FC method is substantially different from the regression-based spatio-temporal fusion method developed in Hazaymeh and Hassan (2015), which classifies the entire ratio image between two coarse images into three clusters (i.e., negligible, negative and positive changes) and build a regression model for each cluster. Fit-FC, however, performs RM for each local window (note that the global regression model cannot change the correlation between coarse images), and need not identify the change type. The residuals in the regression models, however, are ignored in Hazaymeh and Hassan (2015). There are also relevant studies for considering residuals, such as those from the unmixing process (Zhu et al., 2016). It would also be interesting to consider sparse representation for RC (Huang and Song, 2012; Song and Huang, 2013). All these topics are worthy of investigation for the framework of Fit-FC in future research. In the experiments, we tested the performance of spatio-temporal fusion by creating a Sentinel-2 image for a single day. This paper can be treated as a crucial step towards creating a Sentinel-2 time-series. In future research, the Fit-FC method will be employed to create a daily Sentinel-2 time-series to support practical applications. In applications where Sentinel-2 time-series data are required (e.g., for long-time monitoring of dynamic environmental, agricultural or ecological phenomena), an issue worthy of consideration would be the selection of the fine Sentinel-2 images. A natural solution is to consider the Sentinel-2 image that is temporally close to the Sentinel-3 image to be downscaled or if applicable, Sentinel-2 images that are available both before and after the Sentinel-3 image. It would also be worthy to consider alternative schemes based on a cascade approach (Demir et al., 2013). For example, in a forecasting sense, the already-created Sentinel-2</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>images (from earlier Sentinel-3 images in the time-series) along with the available Sentinel-2 images can be</p>
+<p>accumulated to provide the fine image set for downscaling future Sentinel-3 images. This would also work in the same way for hind-casting where accumulated Sentinel-2 images can be used to downscale older Sentinel-3 images. The approach would be particularly suitable for land cover experiencing unidirectional (in time) changes, such as the expansion of urban areas in urbanization and reduction of forest coverage in deforestation. However, it should be stressed that there are uncertainties in the created Sentinel-2 images, which will be propagated and enlarged along the accumulation directions (e.g., past to future in forecasting). It is not clear how much the accumulated uncertainties will affect the final predictions. Moreover, in creating a Sentinel-2 time-series (especially for a very long time), some challenges will be encountered in handling “big data”, such as computational costs and memory issues. All these issues motivate future research.</p>
+<p>517 518 519</p>
+<p>5. Conclusion</p>
+<p>520 521</p>
+<p>The newly launched Sentinel-2 and Sentinel-3 satellites provide excellent new opportunities for global</p>
+<p>monitoring. This paper presents a new method, called Fit-FC, for spatio-temporal fusion of Sentinel-2 and Sentinel-3 images to create nearly daily Sentinel-2 images. It includes regression model fitting (RM fitting), spatial filtering (SF) and residual compensation (RC), and all three steps are indispensable. The RM fitting step is used to relate the observations acquired at two times and minimize their differences. SF aims to remove the blocky artifacts in the RM fitting prediction, while RC compensates the residuals from RM fitting to preserve the spectral information. The Fit-FC method can be performed with a minimum number of input images. It was tested using two datasets and compared to the existing STARFM, SU and FSDAF methods. The results show that Fit-FC can produce more accurate results. Fit-FC is particularly relevant for cases involving strong temporal changes, where the correlation between the coarse images is small.</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>References</p>
+<p>533 534</p>
+<p>Amorós-López, J., Gómez-Chova, L., Alonso, L., Guanter, L., Moreno, J., Camps-Valls, G., 2011. Regularized multiresolution</p>
+<p>535</p>
+<p>spatial unmixing for ENVISAT/MERIS and Landsat/TM image fusion. IEEE Geoscience and Remote Sensing Letters 8(5),</p>
+<p>536</p>
+<p>844–848.</p>
+<p>537</p>
+<p>Amorós-López, J., Gómez-Chova, L., Alonso, L., Guanter, L., Zurita-Milla, R., Moreno, J., Camps-Valls, G, 2013. Multitemporal</p>
+<p>538</p>
+<p>fusion of Landsat/TM and ENVISAT/MERIS for crop monitoring. International Journal of Applied Earth Observation and</p>
+<p>539</p>
+<p>Geoinformation 23, 132–141.</p>
+<p>540 541 542 543 544 545 546 547 548 549</p>
+<p>Berger, M., Aschbacher, J., 2012. Preface: The Sentinel missions—new opportunities for science. Remote Sensing of Environment 120, 1–2. Bhattarai, N., Quackenbush, L. J., Dougherty, M., Marzen, L. J., 2014. A simple Landsat–MODIS fusion approach for monitoring seasonal evapotranspiration at 30 m spatial resolution. International Journal of Remote Sensing 36(1), 115–143. Busetto, L., Meroni, M., Colombo, R., 2008. Combining medium and coarse spatial resolution satellite data to improve the estimation of sub-pixel NDVI time series. Remote Sensing of Environment 112, 118–131. Das, M., Ghosh, S. K., 2016. Deep-STEP: A deep learning approach for spatiotemporal prediction of remote sensing data. IEEE Geoscience and Remote Sensing Letters 13, 1984–1988. Demir, B., Bovolo, F., Bruzzone, L., 2013. Classification of time series of multispectral images with limited training data. IEEE Transactions on Image Processing 22(8), 219–3233.</p>
+<p>550</p>
+<p>Dong, T., Liu, J., Qian, B., Zhao, T., Jing, Q., Geng, X., Wang, J., Huffman, T., Shang, J., 2016. Estimating winter wheat biomass by</p>
+<p>551</p>
+<p>assimilating leaf area index derived from fusion of Landsat-8 and MODIS data. International Journal of Applied Earth</p>
+<p>552</p>
+<p>Observation and Geoinformation 49, 63–74.</p>
+<p>553 554 555 556</p>
+<p>Donlon, C. et al., 2012. The global monitoring for environment and security (GMES) Sentinel-3 mission. Remote Sensing of Environment 120, 37–57. Drusch, M. et al., 2012. Sentinel-2: ESA’s optical high-resolution mission for GMES operational services. Remote Sensing of Environment 120, 25–36.</p>
+<p>557</p>
+<p>Du, Y., Zhang, Y., Ling, F., Wang, Q., Li, W., Li, X., 2016. Water bodies’ mapping from Sentinel-2 imagery with modified</p>
+<p>558</p>
+<p>normalized difference water index at 10-m spatial resolution produced by sharpening the SWIR Band. Remote Sensing 8, 354.</p>
+<p>559</p>
+<p>Duncan J. M. A., Dash J., Atkinson P. M., 2015. The potential of satellite-observed crop phenology to enhance yield gap</p>
+<p>560</p>
+<p>assessments in smallholder landscapes. Frontiers in Environmental Science 3, 56.</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>Emelyanova, I. V., McVicar, T. R., Van Niel, T. G., Li, L. T., van Dijk, A. I. J. M., 2013. Assessing the accuracy of blending</p>
+<p>562</p>
+<p>Landsat–MODIS surface reﬂectances in two landscapes with contrasting spatial and temporal dynamics: A framework for</p>
+<p>563</p>
+<p>algorithm selection. Remote Sensing of Environment 133,193–209.</p>
+<p>564 565 566 567 568 569</p>
+<p>Fernández-Manso, A., Fernández-Manso, O., Quintano, C., 2016. SENTINEL-2A red-edge spectral indices suitability for discriminating burn severity. International Journal of Applied Earth Observation and Geoinformation 50, 170–175. Gao, F., Masek, J., Schwaller, M., Hall, F., 2006. On the blending of the Landsat and MODIS surface reflectance: Predicting daily Landsat surface reﬂectance. IEEE Transactions on Geoscience and Remote Sensing 44(8), 2207–2218. Gao, F., Hilker, T., Zhu, X., Anderson, M., Masek, J. G., Wang, P., Yang, Y., 2015. Fusing Landsat and MODIS data for vegetation monitoring. IEEE Geoscience and Remote Sensing Magazine 3, 47–60.</p>
+<p>570</p>
+<p>Gao, F., Anderson, M. C., Zhang, X., Yang, Z., Alﬁeri, J. G., Kustas, W. P., Mueller, R., Johnson, D. M., Prueger, J. H., 2017.</p>
+<p>571</p>
+<p>Toward mapping crop progress at field scales through fusion of Landsat and MODIS imagery. Remote Sensing of Environment</p>
+<p>572</p>
+<p>188, 9–25.</p>
+<p>573 574</p>
+<p>Gevaert, C. M., Garcí a-Haro, F. J., 2015. A comparison of STARFM and an unmixing-based algorithm for Landsat and MODIS data fusion. Remote Sensing of Environment 156, 34–44.</p>
+<p>575</p>
+<p>Chen, B., Huang, B., Xu, B., 2015. Comparison of spatiotemporal fusion models: A review. Remote Sensing, 1798–1835.</p>
+<p>Hagolle, O. et al., 2015. SPOT-4 (Take 5): Simulation of Sentinel-2 time series on 45 large sites. Remote Sensing 7, 12242–12264. Hazaymeh, K., Hassan, Q. K., 2015. Spatiotemporal image-fusion model for enhancing the temporal resolution of Landsat-8 surface reflectance images using MODIS images. Journal of Applied Remote Sensing 9, 096095-1–096095-14. Hilker, T., Wulder, M. A., Coops, N. C., Linke, J., McDermid, J., Masek, J. G., Gao, F., White. J. C., 2009. A new data fusion model for high spatial- and temporal-resolution mapping of forest based on Landsat and MODIS. Remote Sensing of Environment 113,</p>
+<p>1613–1627.</p>
+<p>582 583 584 585 586 587 588 589</p>
+<p>Houborg, R., McCabe, M. F., Gao, F., 2016. A spatio-temporal enhancement method for medium resolution LAI (STEM-LAI). International Journal of Applied Earth Observation and Geoinformation 47, 15–29. Huang, B., Song, H., 2012. Spatiotemporal reﬂectance fusion via sparse representation. IEEE Transactions on Geoscience and Remote Sensing 50, 3707–3716. Huang, B, Zhang, H., 2014. Spatio-temporal reflectance fusion via unmixing: Accounting for both phenological and land cover changes. International Journal of Remote Sensing 35, 6213–6233. Immitzer, M., Vuolo, F., Atzberger, C., 2016. First experience with Sentinel-2 data for crop and tree species classifications in central Europe. Remote Sensing 8, 166.</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>Jarihani, A. A., McVicar, T. R., Van Niel, T. G., Emelyanova, I. V., Callow, J. N., Johansen, K., 2014. Blending Landsat and</p>
+<p>591</p>
+<p>MODIS data to generate multispectral indices: A comparison of “Index-then-Blend” and “Blend-then-Index” approaches.</p>
+<p>592</p>
+<p>Remote Sensing 6, 9213–9238.</p>
+<p>593 594 595 596 597 598 599 600 601 602 603 604</p>
+<p>Ke, Y., Im, J., Park, S., Gong, H., 2017. Spatiotemporal downscaling approaches for monitoring 8-day 30 m actual evapotranspiration. ISPRS Journal of Photogrammetry and Remote Sensing 126, 79–93. Liu, X., Deng, C., Wang, S., Huang, G., Zhao, B., Lauren, P., 2016. Fast and accurate spatiotemporal fusion based upon extreme learning machine. IEEE Geoscience and Remote Sensing Letters 13, 2039–2043. Maselli, F., 2001. Definition of spatially variable spectral endmembers by locally calibrated multivariate regression analyses. Remote Sensing of Environment 75, 29–38 Moosavi, V., Talebi, A., Mokhtari, M. H., Shamsi, S. R. F., Niazi, Y., 2015. A wavelet-artiﬁcial intelligence fusion approach (WAIFA) for blending Landsat and MODIS surface temperature. Remote Sensing of Environment 169, 243–254. Muller-Wilm, U., 2016. Sentinel-2 MSI—Level-2A Prototype Processor Installation and User Manual. Available online at http://step.esa.int/thirdparties/sen2cor/2.2.1/S2PAD-VEGA-SUM-0001-2.2.pdf. Mustafa, Y. T., Tolpekin, V. A., Stein, A., 2014. Improvement of spatio-temporal growth estimates in heterogeneous forests using Gaussian bayesian networks. IEEE Transactions on Geoscience and Remote Sensing 52(8), 4980–4991.</p>
+<p>605</p>
+<p>Novelli, A., Aguilar, M. A., Nemmaoui, A., Aguilar, F. J., Tarantino, E., 2016. Performance evaluation of object based greenhouse</p>
+<p>606</p>
+<p>detection from Sentinel-2 MSI and Landsat 8 OLI data: A case study from Almerí a (Spain). International Journal of Applied</p>
+<p>607</p>
+<p>Earth Observation and Geoinformation 52, 403–411.</p>
+<p>608 609 610 611</p>
+<p>Rao, Y., Zhu, X., Chen, J., Wang, J., 2015. An improved method for producing high spatial-resolution NDVI time series datasets with multi-temporal MODIS NDVI data and Landsat TM/ETM+ images. Remote Sensing 7, 7865–7891. Segl, K., Guanter, L., Gascon, F., Kuester, T., Rogass, C., Mielke, C., 2015. S2eteS: An end-to-end modeling tool for the simulation of Sentinel-2 image products. IEEE Transactions on Geoscience and Remote Sensing 53, 5560–5571.</p>
+<p>612</p>
+<p>Shen, H., Huang, L., Zhang, L., Wu, P., Zeng, C., 2016. Long-term and fine-scale satellite monitoring of the urban heat island effect</p>
+<p>613</p>
+<p>by the fusion of multi-temporal and multi-sensor remote sensed data: A 26-year case study of the city of Wuhan in China.</p>
+<p>614</p>
+<p>Remote Sensing of Environment 172, 109–125.</p>
+<p>615 616 617 618</p>
+<p>Singh, D., 2011. Generation and evaluation of gross primary productivity using Landsat data through blending with MODIS data. International Journal of Applied Earth Observation and Geoinformation 13, 59–69. Song, H., Huang, B., 2013. Spatiotemporal satellite image fusion through one-pair image learning. IEEE Transactions on Geoscience and Remote Sensing 51, 1883–1896.</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>Storey, J., Roy, D. P., Masek, J., Gascon, F., Dwyer, J., Choate, M., 2016. A note on the temporary misregistration of Landsat-8</p>
+<p>620</p>
+<p>Operational Land Imager (OLI) and Sentinel-2 Multi Spectral Instrument (MSI) imagery. Remote Sensing of Environment 186,</p>
+<p>621</p>
+<p>121–122.</p>
+<p>622 623 624 625</p>
+<p>Van der Werff, H., Van der Meer, F., 2016. Sentinel-2A MSI and Landsat 8 OLI provide data continuity for geological remote sensing. Remote Sensing 8, 883. Verhoef, W., Bach, H., 2012. Simulation of Sentinel-3 images by four-stream surface–atmosphere radiative transfer modeling in the optical and thermal domains. Remote Sensing of Environment 120, 197–207.</p>
+<p>626</p>
+<p>Vuolo, F., Zółtak, M., Pipitone, C., Zappa, L., Wenng, H., Immitzer, M., Weiss, M., Baret, F., Atzberger, C., 2016. Data service</p>
+<p>627</p>
+<p>platform for Sentinel-2 surface reflectance and value-added products: system use and examples. Remote Sensing 8, 938.</p>
+<p>628</p>
+<p>Wang, Q., Shi, W., Atkinson, P. M., Zhao, Y., 2015. Downscaling MODIS images with area-to-point regression kriging. Remote</p>
+<p>629</p>
+<p>Sensing of Environment 166, 191–204.</p>
+<p>630</p>
+<p>Wang, Q., Shi, W., Li, Z., Atkinson. P. M., 2016. Fusion of Sentinel-2 images. Remote Sensing of Environment 187, 241–252.</p>
+<p>631</p>
+<p>Wang, Q., Blackburn, A., Onojeghu, A., Dash, J., Zhou, L., Zhang, Y., Atkinson, P. M., 2017. Fusion of Landsat 8 OLI and</p>
+<p>632 633 634</p>
+<p>Sentinel-2 MSI data. IEEE Transactions on Geoscience and Remote Sensing 55, 3885–3899. Weng, Q., Fu, P., Gao, F., 2014. Generating daily land surface temperature at Landsat resolution by fusing Landsat and MODIS data. Remote Sensing of Environment 145, 55–67.</p>
+<p>Wu, M., Niu, Z., Wang, C., Wu, C., Wang, L., 2012. Use of MODIS and Landsat time series data to generate high-resolution temporal synthetic Landsat data using a spatial and temporal reflectance fusion model. Journal of Applied Remote Sensing 6, 063507-1–063507-13. 638 639 Wu, M., Wu, C., Huang, W., Niu, Z., Wang, C., Li, W., Hao, P., 2016. An improved high spatial and temporal data fusion approach for combining Landsat and MODIS data to generate daily synthetic Landsat imagery. Information Fusion 31, 14-25. Xie, D., Zhang, J., Zhu, X., Pan, Y., Liu, H., Yuan, Z., Yun, Y., 2016. An improved STARFM with help of an unmixing-based method to generate high spatial and temporal resolution remote sensing data in complex heterogeneous regions. Sensors 16.</p>
+<p>Xu, Y., Huang, B., Xu, Y., Cao, K., Guo, C., Meng, D., 2015. Spatial and temporal image fusion via regularized spatial unmixing.</p>
+<p>643 644 645 646 647</p>
+<p>IEEE Geoscience and Remote Sensing Letters 12(6), 1362–1366. Zhang, H. K., Huang, B., Zhang, M., Cao, K., Yu, L., 2015. A generalization of spatial and temporal fusion methods for remotely sensed surface parameters. International Journal of Remote Sensing 36(17), 4411–4445. Zhu, X., Chen, J., Gao, F., Chen, X., Masek, J. G., 2010. An enhanced spatial and temporal adaptive reflectance fusion model for complex heterogeneous regions. Remote Sensing of Environment 114, 2610–2623.</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>Zhu, X., Helmer, E. H., Gao, F., Liu, D., Chen, J., Lefsky, M. A., 2016. A flexible spatiotemporal method for fusing satellite images with different resolutions. Remote Sensing of Environment 172, 165–177. Zhukov, B., Oertel, D., Lanzl, F., Reinhackel, G., 1999. Unmixing-based multisensor multiresolution image fusion. IEEE Transactions on Geoscience and Remote Sensing 37, 1212–1226. Zurita-Milla, R., Clevers, J. G. P. W., Schaepman, M. E., 2008. Unmixing-based Landsat TM and MERIS FR data fusion. IEEE Geoscience and Remote Sensing Letters 5(3), 453–457. Zurita-Milla, R., Kaiser, G., Clevers, J. G. P. W., Schneider, W., Schaepman, M. E., 2009. Downscaling time series of MERIS full resolution data to monitor vegetation seasonal dynamics. Remote Sensing of Environment 113, 1874–1885.</p>
+<p>656 657</p>
+<p>LIST OF FIGURE CAPTIONS</p>
+<p>Fig. 1 Flowchart of the Fit-FC method. The lines in magenta, red and blue represent the processes of RM, SF and RC, respectively. Fig. 2 Images for Coleambally (15 km by 15 km). (a) and (b) are Sentinel-2 images (NIR, red, and green bands as RGB) acquired on 25 December 2015 (t1) and 21 August 2016 (t2), respectively. (c) and (d) are the corresponding Sentinel-3 images. Fig. 3 Images for Currawarna (15 km by 15 km). (a) and (b) are Sentinel-2 images (NIR, red, and green bands as RGB) acquired on 25 December 2015 (t1) and 21 August 2016 (t2), respectively. (c) and (d) are the corresponding Sentinel-3 images. Fig. 4 The interim Sentinel-3 images produced from the RM process (NIR, red, and green bands as RGB). (a) and (b) are Sentinel-3 images at t1 and t2. (c) is the interim Sentinel-3 image. Lines 1 and 2 are for Coleambally and Currawarna, respectively. Fig. 5 Results of the three different stages of Fit-FC for Coleambally (NIR, red, and green bands as RGB) at t2 (21 August 2016). (a) RM. (b) SF. (c) Fit-FC. (d) Reference at t2 (21 August 2016). (e) The sub-area (marked in yellow in (d)) for the Sentinel-2 image at t1 (25 December 2015). (f)-(i) are the corresponding results at t2 (21 August 2016) for the sub-area in (a)-(d). Fig. 6 Results of the three different stages of Fit-FC for Currawarna (NIR, red, and green bands as RGB) at t2 (21 August 2016). (a) RM. (b) SF. (c) Fit-FC. (d) Reference at t2 (21 August 2016). (e) The sub-area (marked in yellow in (d)) for the Sentinel-2 image at t1 (25 December 2015). (f)-(i) are the corresponding results at t2 (21 August 2016) for the sub-area in (a)-(d). Fig. 7 Results of different spatio-temporal fusion methods for Coleambally (NIR, red, and green bands as RGB). (a) STARFM. (b) Spatial unmixing. (c) FSDAF. (d) The Fit-FC method. (e) Reference. (f)-(j) are the corresponding results for the sub-area (marked in yellow in (e)) in (a)-(e). Fig. 8 Results of different spatio-temporal fusion methods for Currawarna (NIR, red, and green bands as RGB). (a) STARFM. (b) Spatial unmixing. (c) FSDAF. (d) The Fit-FC method. (e) Reference. (f)-(j) are the corresponding results for the sub-area (marked in yellow in (e)) in (a)-(e).</p></section></article></body></html>

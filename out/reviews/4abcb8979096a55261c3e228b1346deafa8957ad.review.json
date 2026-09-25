@@ -1,0 +1,82 @@
+{
+  "sha1": "4abcb8979096a55261c3e228b1346deafa8957ad",
+  "title": "The Chemistry behind Catechol‐Based Adhesion",
+  "doi": "https://doi.org/10.1002/anie.201801063",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/4abcb8979096a55261c3e228b1346deafa8957ad/index.html",
+  "source_chars": 97225,
+  "markdown_chars": 15323,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "tuned by the functionalization of the catechol ring, the stability of the coordination bond is not considerably affected.",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句在页首重复出现且缺少前文，疑似 OCR 跨页重复或截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "approximately 30-33 mol%,)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "标点符号异常，逗号后多出右括号。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "2.1.1. Hydrogen bonding\n\n2.1. Non-covalent interactions",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "小节编号顺序在 OCR 中倒置，2.1.1 出现在 2.1 之前，可能影响阅读顺序。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "poly[（3,4-dihydroxystyrene)-co-styrene]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "括号字符混用全角与半角，影响化学式可读性。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "The Chemistry behind Catechol-Based Adhesion",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 27239,
+      "total_tokens": 37239,
+      "prompt_tokens_details": {
+        "cached_tokens": 27136
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16674,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "The Chemistry behind Catechol-Based Adhesion",
+    "translated_title": "儿茶酚基粘附背后的化学",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

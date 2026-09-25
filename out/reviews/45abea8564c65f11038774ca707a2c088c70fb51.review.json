@@ -1,0 +1,103 @@
+{
+  "sha1": "45abea8564c65f11038774ca707a2c088c70fb51",
+  "title": "A mixed-cation lead mixed-halide perovskite absorber for tandem solar cells",
+  "doi": "https://doi.org/10.1126/science.aad5845",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/45abea8564c65f11038774ca707a2c088c70fb51/index.html",
+  "source_chars": 34449,
+  "markdown_chars": 9549,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "A mixed-cation lead mixed-halide perovskite absorber for tandem solar cells",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "OCR 正文首页题名与登记题名一致，未发现冲突；此条仅为记录已核对，不构成实际抽取问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "which has an optical a band gap of 1.74eV",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“optical a band gap”中多出冠词 a，属明显 OCR 字符插入，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "We find that $ \\mathrm{F A}{0. 8 3} \\mathrm{C s}{0. 1 7} \\mathrm{P b} \\left( \\mathrm{I}{0. 6} \\mathrm{B r}{0. 4} \\right){3} $ exhibits an excellent charge-carrier mobility of $ 2 1 \\mathrm{c m}^{2} \\mathrm{V}^{-1} \\mathrm{s}^{-1} $ For comparison, the corresponding neat-FA perovskite $ \\mathrm{F A P b} \\left( \\mathrm{I}{0. 6} \\mathrm{B r}{0. 4} \\right){3} $ only sustains charge-carrier mobilities $ < 1 \\mathrm{c m}^{2} \\mathrm{V}^{-1} \\mathrm{s}^{-1} $ that are related to the amorphous and energetically disordered nature of these materials (17). Conversely, $ \\mathrm{F A}{0. 8 3} \\mathrm{C s}{0. 1 7} \\mathrm{P b} \\left( \\mathrm{I}{0. 6} \\mathrm{B r}{0. 4} \\right){3} $ displays a mobility value intermediate to those we have previously determined (17) for $ \\mathrm{F A P b I}{3} $ $ (2 7 \\mathrm{c m}^{2} \\mathrm{V}^{-1} \\mathrm{s}^{-1}) $ and $ \\mathrm{F A P b B r}_{3} $ $ (1 4 \\mathrm{c m}^{2} \\mathrm{V}^{-1} \\mathrm{s}^{-1}) $ suggesting that it is no longer limited by structural disorder.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "同一段关于迁移率 21 cm²V⁻¹s⁻¹ 的论述在 page 4 中连续重复出现两次，属抽取重复，不影响数值理解但影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "In order to further asses the electronic quantity of",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“asses”应为“assess”，“quantity”在此语境下可能为“quality”的 OCR 误识，但原文可见文本如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the solutions to the rate equation:",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "速率方程前的“transient of the solutions”表述不完整，可能为 OCR 漏词，但公式本身完整保留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "This performance is very competitive with the best reported single junction perovskite solar cell reported so far, (30, 34)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“reported ... reported”重复，可能为 OCR 重复或原文笔误，不影响数值与结论。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "caped with an Ag electrode",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“caped”应为“capped”，属 OCR 漏字母，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A mixed-cation lead mixed-halide perovskite absorber for tandem solar cells",
+  "self_check": "已核对摘要、正文与结论中的关键数值：目标带隙约 1.75 eV、材料光学带隙 1.74 eV、$V_{\\mathrm{OC}}$ 1.2 V、小面积 PCE >17%（最高 JV 17.9%）、0.715 cm² 电池 SPO >14%、半透明电池效率 15.1%/SPO 12.5%、SHJ 过滤后 7.3%/未覆盖 19.2%、组合叠层 19.8%–25.2%、迁移率 21 cm²V⁻¹s⁻¹、扩散长度约 2.9 μm、Urbach 能量 16.5 meV、最大 $V_{\\mathrm{OC}}$ 估计 1.42 V，均与原文一致。公式 $\\frac{dn(t)}{dt}=-k_3 n^3-k_2 n^2-k_1 n$ 及扩散长度公式 $L=(\\mu k_{\\mathrm{B}}T/(eR))^{0.5}$、$R=k_1+n k_2+n^2 k_3$ 已原样保留。仍不确定处：page 4 迁移率段落重复出现，已按一次论述处理；部分化学式下标在 OCR 中格式不统一，但未改变组成含义。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6837,
+      "prompt_tokens": 10868,
+      "total_tokens": 17705,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13309,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

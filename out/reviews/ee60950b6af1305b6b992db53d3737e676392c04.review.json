@@ -1,0 +1,93 @@
+{
+  "sha1": "ee60950b6af1305b6b992db53d3737e676392c04",
+  "title": "Question Answering For Toxicological Information Extraction",
+  "doi": "https://doi.org/10.4230/oasics.slate.2022.3",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ee60950b6af1305b6b992db53d3737e676392c04/index.html",
+  "source_chars": 27735,
+  "markdown_chars": 8566,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "NOAEL4value",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表 1 中 “NOAEL4value” 疑似上标脚注编号与正文粘连，影响对 NOAEL 值这一抽取项的阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "OECD5Guideline",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表 1 中 “OECD5Guideline” 疑似上标脚注编号与正文粘连，影响对 OECD 指南这一抽取项的阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "BERT-base-cased-squad $ ^{2} $ $ ^{7} $ ,RoBERTa-base-squad $ ^{2} $ $ ^{8} $ and BioBERT-v1.1-pubmed-squad-v2 $ ^{9} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "模型名中的 squad2 被拆成 “squad” 与上标 “2”，且脚注编号与模型名混排，可能影响对模型标识的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "25 $ \\mu\\mathrm{L} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表 3 中 “25 μL” 的微升符号以 LaTeX 形式出现，正文其他处又写作 “25μL”，单位呈现不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "20 $ \\mu\\mathrm{C i} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表 3 中 “20 μCi” 的微居里符号被拆为 “\\mu\\mathrm{C i}”，单位呈现可能影响准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "3H-TdR",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表 3 中 “3H-TdR” 的氢同位素上标未保留，可能影响对放射性标记物的准确复原。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Question Answering For Toxicological Information Extraction",
+  "self_check": "已核对：摘要与结论均指向将 IE 建模为 QA、使用 SQuAD 微调 Transformer、在 SCCS 文档上实验；表 4 与表 5 的 F1/P/R 数值、micro average（单模型 BERT 0.76/0.68/0.85、BioBERT 0.64/0.48/1.00、RoBERTa 0.76/0.65/0.94；组合 0.87/0.82/0.93）与正文描述一致；60 篇文档、随机选 10 篇测试、平均章节 899 tokens、最小 27、最大 4860 tokens 均按原文保留；表 1、表 2 的性质与问题集按原文列出。仍不确定处：表 3 中 BERT/BioBERT/RoBERTa/Combo 各单元格与三列问题的对应关系在 OCR 中呈多行错位，已按可见文本尽量保留，但个别答案归属可能不精确；模型名中的 squad2 上标、NOAEL/OECD 脚注编号粘连等已作为抽取问题标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5007,
+      "prompt_tokens": 7341,
+      "total_tokens": 12348,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10639,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

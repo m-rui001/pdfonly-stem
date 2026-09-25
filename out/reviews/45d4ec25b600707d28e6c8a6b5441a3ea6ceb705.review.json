@@ -1,0 +1,63 @@
+{
+  "sha1": "45d4ec25b600707d28e6c8a6b5441a3ea6ceb705",
+  "title": "Binary Black Hole Population Properties Inferred from the First and Second Observing Runs of Advanced LIGO and Advanced Virgo",
+  "doi": "",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/45d4ec25b600707d28e6c8a6b5441a3ea6ceb705/index.html",
+  "source_chars": 167931,
+  "markdown_chars": 3328,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "power +1.4 law index of α = 1.3−1.7 (90% credibility)",
+      "type": "疑似公式/上下标提取错乱",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "原文应为幂律指数α=1.3^{+1.4}_{-1.7}，提取文本中'+1.4'与'−1.7'脱离了α位置，且'law'被拆开。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "R = 53.2+55.8 yr−1 (90% credibility). As the BBH catalog grows −28.2 Gpc in future observing runs",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "数值'−28.2 Gpc'被分号隔开至下一句，实际应为R=53.2^{+55.8}_{-28.2} Gpc^{-3} yr^{-1}，排版导致上下标断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "measurements of each event’s parameters (Mandel 2010; 1. INTRODUCTION Hogg et al. 2010).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "章节标题'1. INTRODUCTION'插入在引文中间，导致句子断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：α=1.3^{+1.4}_{-1.7}、m_max≈40-45 M_sun、R=53.2^{+55.8}_{-28.2} Gpc^{-3}yr^{-1}、λ≥0置信度0.93、90%自旋小于0.55。公式按原文保留χ_eff、质量分布、Beta分布、混合模型和R(z)。注意提取文本中存在上下标错乱，已在问题中标注。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3763,
+      "prompt_tokens": 49878,
+      "total_tokens": 53641,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1132
+      }
+    },
+    "content_chars": 4472
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "86cf0f2bf2d052469cb8a3192d6edaf7f5ad54fb",
+  "title": "Past and future global transformation of terrestrial ecosystems under climate change",
+  "doi": "https://doi.org/10.1126/science.aan5360",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/86cf0f2bf2d052469cb8a3192d6edaf7f5ad54fb/index.html",
+  "source_chars": 87907,
+  "markdown_chars": 1386,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "using both paleoclimate estimates (26, 32) (table S2)",
+      "type": "疑似引用编号不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文此处引用table S2，但补充材料中对应统计检验为table S3（Wilcoxon检验结果），且方法部分明确提及Table S3，疑为笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 30,
+      "quote": "Estimated LGM-to-preindustrial temperature change based solely on the models is 3.15.9°C",
+      "type": "疑似文本损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字'3.15.9°C'中间缺失分隔符，可能是'3.1-5.9°C'或类似形式，但原文如此，照录并标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：596个站点、组成变化72%大/26%中等、结构变化67%大/28%中等、低变化站点温度中位数2.4°C、RCP2.6下大组成变化概率<45%且结构<30%、RCP8.5下两者>60%、增温速率65倍。公式与模型：有序逻辑样条回归GAM，p<0.001。温度重建使用Annan和Hargreaves 2013及TraCE-21ka。不确定处：原文'3.15.9°C'疑似损坏，未修复；正文table S2引用可能与补充材料table S3不一致。其他数字与结论均依据提取文本核实。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6343,
+      "prompt_tokens": 20886,
+      "total_tokens": 27229,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5164
+      }
+    },
+    "content_chars": 2283
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

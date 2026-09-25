@@ -1,0 +1,55 @@
+{
+  "sha1": "c08f52aaf38ebf9c38663279ba88d7050d829a35",
+  "title": "22.5% efficient silicon heterojunction solar cell with molybdenum oxide hole collector",
+  "doi": "https://doi.org/10.1063/1.4928747",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c08f52aaf38ebf9c38663279ba88d7050d829a35/index.html",
+  "source_chars": 27647,
+  "markdown_chars": 2782,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "This difference is actually smaller than expected form the data in Fig. 1",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "根据上下文 'expected form' 很可能是 'expected from' 的笔误，但原文提取如此，照录并标注疑似。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "a~65-nmthick hydrogenated indium oxide / indium tin oxide (IO:H/ITO) bi-layer",
+      "type": "断行/空格缺失",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'a~65-nmthick' 应为 'a ~65-nm-thick'，是PDF断行导致的空格缺失，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：效率22.5%、FF 80.36%、J_SC增益0.3 mA/cm²、EQE增益0.88 mA/cm²（310-610nm）和损失0.58 mA/cm²（>610nm）、串联电阻1.62→0.83 Ω·cm²、退火温度130°C临界值、MoOx/TCO互混层厚度（1-2nm到5-7nm）等，均与提取文本一致。公式无。结论方向与摘要及正文一致。不确定处：'expected form' 疑似拼写错误；'1.7 thinner' 原文即如此，未作修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4881,
+      "prompt_tokens": 8421,
+      "total_tokens": 13302,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2762
+      }
+    },
+    "content_chars": 3674
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

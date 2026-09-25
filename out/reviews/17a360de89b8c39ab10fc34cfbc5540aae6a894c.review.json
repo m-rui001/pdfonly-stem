@@ -1,0 +1,63 @@
+{
+  "sha1": "17a360de89b8c39ab10fc34cfbc5540aae6a894c",
+  "title": "Deep Neural Network for Structural Prediction and Lane Detection in Traffic Scene",
+  "doi": "https://doi.org/10.1109/tnnls.2016.2522428",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/17a360de89b8c39ab10fc34cfbc5540aae6a894c/index.html",
+  "source_chars": 72541,
+  "markdown_chars": 2624,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "Caltect dataset",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一段后文出现'Caltech'，且该数据集通常拼写为Caltech；此处'Caltect'应为笔误或OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "α = P atchRadius = 10",
+      "type": "疑似排版/截断问题",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "原文中'P atchRadius'中间有空格，可能为'PatchRadius/2'或'PatchRadius'，但可见文本如此，无法确定正确形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The original experimental configuration of the dataset for temporal tracking of lanes, and differs from our testing objective",
+      "type": "句子不完整/语法断裂",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句缺少谓语或连接词，可能是PDF提取时丢失部分文本，但上下文大致可理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、方法、实验中的关键数值：RNN在作者数据集AUC=0.99，Caltech上0.93–0.99；CNN为0.83–0.97；SVM为0.64–0.90；合成数据AUC 1.00 vs 0.80。公式（1）–（10）按原文保留，仅清理了明显空格。部分公式的下标和括号在提取中可能不规范（如'a^{t+1}_i'），但已按原文意图重排。未发现与摘要矛盾之处。对于提取问题，仅列出有文本依据的疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3409,
+      "prompt_tokens": 17263,
+      "total_tokens": 20672,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1354
+      }
+    },
+    "content_chars": 3711
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "eb78f40704212fafe07abdce84243f2275632f98",
+  "title": "Pegcetacoplan versus Eculizumab in Paroxysmal Nocturnal Hemoglobinuria",
+  "doi": "https://doi.org/10.1056/nejmoa2029073",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/eb78f40704212fafe07abdce84243f2275632f98/index.html",
+  "source_chars": 42942,
+  "markdown_chars": 2708,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The authors' affiliations are listed in the Paroxysmal nocturnal hemoglobinuria (PNH) is a rare, acquired disease characterAppendix.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "该句显然因版面或抽取生成了错误拼接：应将‘in the Appendix’后的句点与‘Paroxysmal...’断开，且‘characterAppendix’疑似‘characterized by ... Appendix’的混合。原文应为‘... in the Appendix. Paroxysmal nocturnal hemoglobinuria (PNH) is a rare, acquired disease characterized by ...’",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数据：主要终点调整均差3.84 (95%CI 2.33-5.34, P<0.001)；敏感性分析2.69 (1.99-3.38)；免输血率85% vs 15%；网织红细胞变化-136±7 vs +28±12；LDH变化-15±43 vs -10±71；FACIT-F差异11.9 (5.49-18.25)；血红蛋白正常化34% vs 0%等。确认与摘要和正文一致。未发现其他文本提取疑点；注意摘要中‘characterAppendix’疑点已在issues中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5554,
+      "prompt_tokens": 12009,
+      "total_tokens": 17563,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3427
+      }
+    },
+    "content_chars": 3564
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

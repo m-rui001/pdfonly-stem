@@ -1,0 +1,121 @@
+{
+  "sha1": "c089e2ef9e52ae497c705c5e39c4ec9384e1d3ef",
+  "title": "Horizontal transfer of antibiotic resistance genes in clinical environments",
+  "doi": "https://doi.org/10.1139/cjm-2018-0275",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c089e2ef9e52ae497c705c5e39c4ec9384e1d3ef/index.html",
+  "source_chars": 63381,
+  "markdown_chars": 12892,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "$ \\beta l a_{\\mathrm{O X A-4 8}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "基因名 bla_OXA-48 在 OCR 中被拆分为带空格的符号，可能影响公式可读性，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\beta $ $ \\mathrm{bla}_{\\mathrm{CTX-M-14}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla_CTX-M-14 被拆分为 β 和 bla 两部分，符号提取不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "$ \\beta l a_{\\mathrm{K P C}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla_KPC 在 OCR 中字母间有空格，符号格式受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "$ \\beta l a_{\\mathrm{K P C}-3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla_KPC-3 在 OCR 中字母间有空格，符号格式受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "$ \\beta l a_{\\mathrm{K P C}-3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla_KPC-3 在 OCR 中字母间有空格，符号格式受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "bla $ ^{CTX-M-10} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla^CTX-M-10 的格式在 OCR 中不标准，上标位置可能影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "bla $ ^{NDM-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla^NDM-1 的格式在 OCR 中不标准，上标位置可能影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "Table 1. 2017 WHO list of priority pathogens and their natural competence ability",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格在 OCR 中呈现为纯文本，列对齐和分隔可能丢失，但内容可读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "bla $ ^{ \\mathrm{CTX-M-14}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "bla^CTX-M-14 的格式在 OCR 中不标准，上标位置可能影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Horizontal transfer of antibiotic resistance genes in clinical environments",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：全球每年至少70万人死亡、30年内预计每年1000万人死亡、长期急性护理机构超过25%医疗相关感染由AR细菌引起、超过70%医院粪便样本检测出含ARG噬菌体、噬菌体可运输大于100 kb DNA、5,667 bp质粒、5,620 bp质粒、27 kbp质粒、100碱基对缺失等。公式符号如 bla_OXA-48、bla_CTX-M-14、bla_KPC、bla_KPC-3、bla_CTX-M-10、bla_NDM-1 等已按 OCR 原文保留，未做推测性修复。Table 1 内容已按 OCR 文本转录。仍不确定之处：部分基因名在 OCR 中字母间有空格，可能影响精确性，但已照录。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7794,
+      "prompt_tokens": 16814,
+      "total_tokens": 24608,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15576,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

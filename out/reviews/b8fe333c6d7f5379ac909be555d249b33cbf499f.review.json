@@ -1,0 +1,111 @@
+{
+  "sha1": "b8fe333c6d7f5379ac909be555d249b33cbf499f",
+  "title": "The vehicle routing problem: State of the art classification and review",
+  "doi": "https://doi.org/10.1016/j.cie.2015.12.007",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b8fe333c6d7f5379ac909be555d249b33cbf499f/index.html",
+  "source_chars": 78156,
+  "markdown_chars": 8959,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Nathalie De Jaegere, Mieke Defraeye $ ^{a} $ and Inneke Van Nieuwenhuyse $ ^{a} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上标标记 $ ^{a} $ 在作者名后出现，但正文未给出对应单位/机构脚注，疑似 OCR 丢失或错位；不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "JEL code: M1,M2",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "JEL 代码通常为字母加数字（如 M1、M2 可能不完整），此处抽取可能截断或格式异常；不影响主体论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Expert systems with applications 2.203 28",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表 1 以纯文本行呈现，列间无分隔符，期刊名、影响因子与文章数之间的对应关系依赖阅读顺序推断；数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The obtained results given an indication of the importance",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“given”疑为“give”的 OCR 误识，属语法性小错，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Exact methods and classical heuristics are occur less often",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“are occur”疑为“occur”或“are used”的 OCR 误识，不影响结论方向。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Table 5 shows the nine classified articles (6,25%)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "百分号写法“6,25%”疑为“6.25%”的 OCR 误识；与表 3 中 OVRP 6.25% 一致，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Intelligent Transformation Systems (ITS)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“Transformation”疑为“Transportation”的 OCR 误识（ITS 通常指智能交通系统）；该缩写展开影响术语准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The time-dependent travel are modelled following the example of Ichoua et al. (2003)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“travel are”疑缺“times”或为 OCR 漏词，属语法性小错，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "The vehicle routing problem: state of the art classification and review",
+  "self_check": "已核对：摘要中 144 篇、2009—2013 年、Eksioglu 等（2009）分类体系；表 3 各变体篇数与百分比（CVRP 128/88.89%、VRPTW 57/39.58%、HVRP 27/18.75%、MDVRP 18/12.50%、VRPPB 17/11.81%、SDVRP 16/11.11%、DVRP 15/10.42%、PVRP 14/9.72%、VRPSD 13/9.03%、VRRSPD 12/8.33%、OVRP 9/6.25%、TDVRP 7/4.86%、MCVRP 5/3.47%、CCVRP 3/2.08%）；表 4 方法篇数与百分比（元启发式 104/72.22%、经典启发式 26/18.06%、精确方法 20/13.89%、仿真 7/4.86%、实时 6/4.17%）；表 5 OVRP 九篇文章及约束/方法；表 6 DVRP 不确定性分类计数；表 7 TDVRP 七篇文章的目标与方法；结论中仅 Cordeau 和 Maischberger（2012）与 Vidal 等（2013）提出通用算法。公式/符号方面，原文未出现显式数学公式，仅保留 FIFO 性质与阶梯速度函数的文字描述。仍不确定处：表 1 的列对应关系依赖阅读顺序；ITS 展开疑为 OCR 误识；作者上标 a 的机构脚注缺失。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6390,
+      "prompt_tokens": 22630,
+      "total_tokens": 29020,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11827,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

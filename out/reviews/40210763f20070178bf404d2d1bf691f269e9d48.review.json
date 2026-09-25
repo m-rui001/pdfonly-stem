@@ -1,0 +1,82 @@
+{
+  "sha1": "40210763f20070178bf404d2d1bf691f269e9d48",
+  "title": "Electrochemical CO2 Reduction with Atomic Iron‐Dispersed on Nitrogen‐Doped Graphene",
+  "doi": "https://doi.org/10.1002/aenm.201703487",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/40210763f20070178bf404d2d1bf691f269e9d48/index.html",
+  "source_chars": 44369,
+  "markdown_chars": 2545,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "200 mg of GO, prepared using the improved Hummer’s method, was dispersed in 100 mL of deionized water.",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "结果部分写100 mL，而实验部分（第9页）写400 mL，两处明确矛盾，可能为原文笔误或抽取误差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "With higher overpotentials applied to the Fe/NG-750 catalyst, both FEs and partial current densities of CO production gradually drop since the competitive HER becomes dominant as H2 evolution is detected on the surface of electrode (Figure 2b)",
+      "type": "交叉引用错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Figure 2b是HRTEM图，不可能显示H2演化；结合上下文应指图3的LSV或FE数据，引用编号疑似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "The EXAFS spectrum of Fe/NG-800 shows stronger Fe–Fe coordination peak intensity at 2.09 Å compared to that of Fe/NG-750, which is consistent with the HRTEM results that more Fe nanocrystals are formed in the sample (Figure S9, Supporting Information).",
+      "type": "交叉引用错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文第7页已引用Figure S8为Fe/NG-800的HRTEM/SAED，此处再引用S9作为HRTEM结果来源，疑似应为S8。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "The energy-dispersive X-ray spectroscopy (EDS) and EELS elemental mapping analyses further confirms a homogeneous Fe and N doping distribution over the graphene sheets without detecting Fe nanoparticles (Figure 1e; Figure S2, Supporting Information).",
+      "type": "交叉引用错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Figure 1是合成示意图，EDS映射应在Figure 2中；图中实际标注为Figure 2e，推测应为Figure 2e。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "S vib = kBT ∑ i ... εi ... 3N ...",
+      "type": "文本抽取损坏",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "振动熵公式在提取时出现乱码和断行，无法完整重建数学表达式，只能辨认出求和与指数项的大致结构。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：FE 80% at −0.60 V，0.5Fe/NG-750 74% at −0.57 V，Fe/NG-800 12% at −0.57 V；能垒0.63→0.29 eV，CO吸附能0.5→0.3 eV；EXAFS峰位1.56、2.09、1.41、2.21 Å；XPS组分百分比；ECSA 275 cm²、BET 152.7 m² g⁻¹。不确定之处：GO分散体积前后不一致（100 vs 400 mL）；多处图编号引用可疑；振动熵公式因抽取乱码无法完整核对。所有数值均来自提取文本，未做外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6299,
+      "prompt_tokens": 12881,
+      "total_tokens": 19180,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3861
+      }
+    },
+    "content_chars": 4791
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

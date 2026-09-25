@@ -1,0 +1,45 @@
+{
+  "sha1": "f7f18a894128c9229664fa73adeb9439ed35c51a",
+  "title": "Compositional texture engineering for highly stable wide-bandgap perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.adf0194",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f7f18a894128c9229664fa73adeb9439ed35c51a/index.html",
+  "source_chars": 49509,
+  "markdown_chars": 2224,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "The corresponding external quantum efficiency (EQE) spectrum (Fig. 1C) yielded an integrated current density of 18.2 mA/cm2",
+      "type": "疑似错误：图1子图编号与图说明不一致",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "图1说明中C定义为长期稳定性测试，但正文将C作为EQE；另外正文出现Fig.1E但图说明中无E。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：电池PCE 20.3%/20.0%/20.1%，Voc ~1.33 V，FF 85%，EQE积分电流18.2 mA/cm²；稳定性数据（25°C 2560h 99%，55°C 890h 96%，65°C 1100h >95%，T90>2200h）；串联PCE 27.1%/27.2%，Voc 2.20 V，Jsc 15.3/15.1 mA/cm²，FF 80.8%/81.6%，1825h 81%等，均与摘要及正文一致。不确定之处：图1子图编号与图说明存在矛盾，已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13697,
+      "prompt_tokens": 14613,
+      "total_tokens": 28310,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11978
+      }
+    },
+    "content_chars": 2889
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "6ff5074b617b318c653b5af3b2147e6314e809e3",
+  "title": "Tailoring Copper Nanocrystals towards C2 Products in Electrochemical CO2 Reduction",
+  "doi": "https://doi.org/10.1002/anie.201601582",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6ff5074b617b318c653b5af3b2147e6314e809e3/index.html",
+  "source_chars": 22450,
+  "markdown_chars": 2198,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "while the linear",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页2末尾的'while the linear'与页3开头的图2标签之间明显缺失了句子（如'linear sweep voltammograms are reported in Figure S3'），跨页时文本被页眉/图注截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the smaller cubes show equal activity for HER and CO2RR (FECO2RR=50%)",
+      "type": "疑似错误/不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文称小立方体（24 nm）的FECO2RR为50%，但表1中24 nm立方体的FECO2RR为43%，两者矛盾。可能是正文笔误或计算口径不同。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：44 nm立方体FECO2RR=80%，FEC2H4=41%，C2H4/CH4=2.03；24 nm对应43%、9%、0.63；63 nm对应63%、25%、2.33；Cu foil对应56%、20%、1。边缘位点比例N_edge/N100=0.025（d=44 nm）。公式FECO2RR定义与表1一致。不确定点：正文中50%与表1的43%矛盾，已标为疑似问题；图2轴标签中'-1 1 C ubes'等乱码未影响数值读取；实验条件（-1.1 V vs RHE、0.1 M KHCO3）已确认。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4190,
+      "prompt_tokens": 6995,
+      "total_tokens": 11185,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2493
+      }
+    },
+    "content_chars": 3119
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

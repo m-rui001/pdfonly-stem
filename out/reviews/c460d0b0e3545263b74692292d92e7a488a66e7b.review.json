@@ -1,0 +1,139 @@
+{
+  "sha1": "c460d0b0e3545263b74692292d92e7a488a66e7b",
+  "title": "RUN beyond the metaphor: An efficient optimization algorithm based on Runge Kutta method",
+  "doi": "https://doi.org/10.1016/j.eswa.2021.115079",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c460d0b0e3545263b74692292d92e7a488a66e7b/index.html",
+  "source_chars": 160136,
+  "markdown_chars": 11800,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "# Hunger Games Search: Visions, Conception, Implementation, Deep Analysis, Perspectives, and Towards Performance Shifts",
+      "type": "metadata_identity_mismatch",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "OCR 正文首页题名为 Hunger Games Search: Visions, Conception, Implementation, Deep Analysis, Perspectives, and Towards Performance Shifts，与登记题名 RUN beyond the metaphor: An efficient optimization algorithm based on Runge Kutta method 明显冲突。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "$$\\overrightarrow {X (t + 1)} = \\left\\{ \\begin{array}{l l} G a m e _ {1}: \\overrightarrow {X (t)} \\cdot \\left(1 + r a n d n (1)\\right), & r _ {1} < l \\\\ G a m e _ {2}: \\overrightarrow {W _ {1}} \\cdot \\overrightarrow {X _ {b}} + \\vec {R} \\cdot \\overrightarrow {W _ {2}} \\cdot \\left| \\overrightarrow {X _ {b}} - \\overrightarrow {X (t)} \\right|, & r _ {1} > l, r _ {2} > E \\\\ G a m e _ {3}: \\overrightarrow {W _ {1}} \\cdot \\overrightarrow {X _ {b}} - \\vec {R} \\cdot \\overrightarrow {W _ {2}} \\cdot \\left| \\overrightarrow {X _ {b}} - \\overrightarrow {X (t)} \\right|, & r _ {1} > l, r _ {2} < E \\end{array} \\right.$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中 Game_1、Game_2、Game_3 等符号被 OCR 拆分为带空格的字母序列，可能影响公式的准确复现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "$$\\overrightarrow {W _ {1} (i)} = \\left\\{ \\begin{array}{c c} h u n g r y (i) \\cdot \\frac {N}{S H u n g r y} \\times r _ {4}, r _ {3} < l \\\\ 1 r _ {3} > l \\end{array} \\right.$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中第二行条件 '1 r_3 > l' 缺少逗号或换行，可能为 OCR 抽取错误，影响公式可读性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "$$\\begin{array}{l} T H = \\frac {F (i) - B F}{W F - B F} \\times r _ {6} \\times 2 \\times (U B - L B) \\\\ H = \\left\\{ \\begin{array}{c c} L H \\times (1 + r), & T H < L H \\\\ T H, & T H \\geq L H \\end{array} \\right. \\\\ \\end{array}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中 'r' 未在上下文中定义，可能为 OCR 丢失或符号错误，影响公式理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "$ W F - D F $ yields the total foraging capacity of an individual in the current process; $ \\frac{F(i)-DF}{W F-D F} $ represents the hunger ratio;",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 'WF-DF' 和 'F(i)-DF' 的 'DF' 可能为 'BF' 的 OCR 错误，因为前文定义 BF 为最佳适应度，且上下文讨论饥饿比率。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 44,
+      "quote": "$$P = 6 0 0 0 1 b, L = 1 4 \\in .. \\delta_ {m a x} = 0. 2 5 \\in ..$$",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 '6000 1 b' 和 '14 \\in ..' 可能为 OCR 错误，应为 '6000 lb' 和 '14 in.'，影响单位识别。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 44,
+      "quote": "$$E = 3 0 \\times 1 ^ {6} p s i, G = 1 2 \\times 1 0 ^ {6} p s i$$",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 '1 ^ {6}' 可能为 '10^6' 的 OCR 错误，影响数值准确性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "$$M _ {h} = \\frac {2}{3} \\mu F Z \\frac {r _ {0} ^ {3} - r _ {i} ^ {2}}{r _ {0} ^ {2} - r _ {i} ^ {3}} P _ {r z} = \\frac {F}{\\Pi \\left(r _ {0} ^ {2} - r _ {i} ^ {2}\\right)} v _ {r z} = \\frac {2 \\Pi n \\left(r _ {0} ^ {3} - r _ {i} ^ {3}\\right)}{9 0 \\left(r _ {0} ^ {2} - r _ {i} ^ {2}\\right)} T = \\frac {I _ {z} \\Pi n}{3 0 \\left(M _ {h} + M _ {f}\\right)}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中多个表达式挤在一行，缺少分隔，可能影响公式的准确解析。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "$$\\Delta r = 2 0 m m I _ {z} = 5 5 k g m m ^ {2} P _ {m a x} = 1 M P a F _ {m a x} = 1 0 0 0 N T _ {m a x} = 1 5 s \\mu = 0. 5 s = 1. 5 M _ {s} =$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中多个参数赋值挤在一行，缺少分隔，且 'M_s =' 后无值，可能为 OCR 截断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "$$4 0 N m M _ {f} = 3 N m \\mathrm {n} = 2 5 0 r p m v _ {s r _ {m a x}} = 1 0 m / s l _ {m a x} = 3 0 m m r _ {i _ {m i n}} = 6 0 r _ {i _ {m a x}} = 8 0$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中多个参数赋值挤在一行，缺少分隔，可能影响参数值的准确识别。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "$$r _ {0 _ {m i n}} = 9 0 r _ {0 _ {m a x}} = 1 1 0 t _ {m i n} = 1. 5 t _ {m a x} = 3 F _ {m i n} = 6 0 0 F _ {m a x} = 1 0 0 0 Z _ {m i n} = 2 Z _ {m a x} = 9$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中多个参数赋值挤在一行，缺少分隔，可能影响参数值的准确识别。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "mismatch",
+  "ocr_title": "Hunger Games Search: Visions, Conception, Implementation, Deep Analysis, Perspectives, and Towards Performance Shifts",
+  "self_check": "已核对摘要、正文数据和结论：HGS 在 23 个基准函数上平均排名 2.17，在 CEC2014 上平均排名 3.73，与 DE 变体比较平均排名 2.33；参数 l=0.08 最佳，LH=10000 最佳；工程问题中焊接梁最优成本 1.703355，I 型梁最优成本 0.007855，多盘离合器制动器最优成本 0.309417。公式已按提取文本原样保留，未补写或修复。仍不确定的地方包括：部分公式中符号被 OCR 拆分或丢失，如 Game_1、WF-DF 等；工程问题中部分参数单位可能因 OCR 错误而失真。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8755,
+      "prompt_tokens": 64389,
+      "total_tokens": 73144,
+      "prompt_tokens_details": {
+        "cached_tokens": 64384
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17529,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

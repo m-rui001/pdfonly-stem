@@ -1,0 +1,54 @@
+{
+  "sha1": "c93e030138bec174521b8c826ef353ad21917fcb",
+  "title": "On-device lead sequestration for perovskite solar cells",
+  "doi": "https://doi.org/10.1038/s41586-020-2001-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c93e030138bec174521b8c826ef353ad21917fcb/index.html",
+  "source_chars": 51990,
+  "markdown_chars": 2363,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "the Pb-binding energies are higher for the deprotonated species )100% . Cons- that compared with the neutral ones",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "文本中“Cons-”与“equently”应连成“Consequently”，且“)100% .”疑似乱码插入，造成句意断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "denoted as EDTPM–PEO film",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "全文其他位置均为“EDTMP–PEO”，此处“EDTPM”可能是笔误或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：SQE（纯水RT 97.7%、50°C 97.8%，酸性水96.1%/97.7%，流水96.6–98.1%）、DMDP结合能295.6 kJ/mol、EDTMP结合能252.6 kJ/mol、DMDP膜厚2.36 μm、浸泡体积40 ml、Pb浓度0.75 g/m²等。公式（SQE定义、扩散方程）照录原文。图2c中铅分布的具体百分比因文本中标签与数字对应关系不明确，未在笔记中引用具体数字，仅保留文字结论。计算方法（B3LYP、基组、色散校正、PCM）已保留。不确定之处：跨页处“Cons-”拼接问题已标记，EDTPM笔误已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4637,
+      "prompt_tokens": 13916,
+      "total_tokens": 18553,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2649
+      }
+    },
+    "content_chars": 3266
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

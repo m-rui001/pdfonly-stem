@@ -1,0 +1,54 @@
+{
+  "sha1": "82a5568e20cc1350fee6004633de5119919ae9c3",
+  "title": "Industrial automation based on cyber-physical systems technologies: Prototype implementations and challenges",
+  "doi": "https://doi.org/10.1016/j.compind.2015.08.004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/82a5568e20cc1350fee6004633de5119919ae9c3/index.html",
+  "source_chars": 85838,
+  "markdown_chars": 3290,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "IMC-AESOP covered this also by integrating devices, systems, and especially SCADA/DCS systems via on-device and on-cloud services[1_TD$IF] [5_TD$IF] 53].",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "引用标记中混入无关标识符（[1_TD$IF] [5_TD$IF] 53]），疑似从PDF表格或批注中混入非原文内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "The designed agent-based solution was implemented using the JADE framework [29] and installed in the factory plant by distributing the plethora of agents by 8 computers disposed along the production line, inter-connected by TCP/IP over an Ethernet network.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "此句位于页尾，下一页以图注[(Fig._8)TD$IG]开始，检查确认句子完整，但页码边界处图与注释顺序可能影响阅读，建议核对原版图位置。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对我提取并撰写的笔记中的数据：四个项目的TRL评估（SOCRADES分项TRL 6-8，GRACE TRL 6，IMC-AESOP TRL 4/5/6，ARUM TRL 5）；关键数值（GRACE使用8台计算机，ARUM使用ILOG CPLEX等）；公式未涉及；结论部分与摘要一致（挑战、时间线、TRL目标）。不确定之处：部分引用标记（如[1_TD$IF]）疑似提取噪声；表2中各个挑战的难度/优先级/时间线已按原文引用但表格具体排布无法完全确认（表格未被文本化），仅依赖正文叙述，且原文声明为“rule of thumb”初步估计。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2385,
+      "prompt_tokens": 19395,
+      "total_tokens": 21780,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 34
+      }
+    },
+    "content_chars": 4493
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

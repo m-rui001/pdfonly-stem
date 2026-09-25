@@ -1,0 +1,54 @@
+{
+  "sha1": "0f5168cf2ed80741110a935789bed56427c1aaf8",
+  "title": "Mapping the human DC lineage through the integration of high-dimensional techniques",
+  "doi": "https://doi.org/10.1126/science.aag3009",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0f5168cf2ed80741110a935789bed56427c1aaf8/index.html",
+  "source_chars": 97122,
+  "markdown_chars": 3698,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "together, these characteristics led us to consider whether CD123+CD33+ cells might represent circulating human pre-DC.",
+      "type": "跨页重复/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页末尾已有相同句子（以Taken together开头），第5页开头重复出现小写together版本，疑似提取时重复或跨页错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "These data suggest",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾句子不完整，以“These data suggest”结束，第6页为图注，第7页开头以“that the human pre-DC population contains cells exhibiting transcriptomic priming...”接续，中间隔了图注页，属于典型跨页截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：710个单细胞、38个CyTOF标记、92个pre-DC、1249个DEG、62个共有基因、分化比例等与原文一致。公式无。结论方向与摘要相符。不确定之处：第5页重复句子和第5-7页断句已标记，其余数据未见矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9279,
+      "prompt_tokens": 26495,
+      "total_tokens": 35774,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6698
+      }
+    },
+    "content_chars": 4555
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

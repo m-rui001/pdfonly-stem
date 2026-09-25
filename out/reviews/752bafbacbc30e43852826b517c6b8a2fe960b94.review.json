@@ -1,0 +1,64 @@
+{
+  "sha1": "752bafbacbc30e43852826b517c6b8a2fe960b94",
+  "title": "Advances in two-dimensional organic–inorganic hybrid perovskites",
+  "doi": "https://doi.org/10.1039/c9ee03757h",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/752bafbacbc30e43852826b517c6b8a2fe960b94/index.html",
+  "source_chars": 174312,
+  "markdown_chars": 6324,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "A34",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "正文中出现的氟代试剂为 A43（3-(nonafluoro-tert-butyloxy)propylamine hydroiodide），而 Table 6 中此处写作 A34，疑为 OCR 或排版抽取差异，但无强文本内证据，仅标记存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "PQLY",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表格中 'PQLY' 应为 'PLQY'（光致发光量子产率），正文及同表其他位置均使用 PLQY，存在强文本内证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "charge",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第2页末尾句子在 'charge' 处中断，第3页开头以 'transport.' 接续，属于正常页间断句，但为保持可读性标出。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：单结PCE 25.2%、2014年首例2D PSC效率4.73%、热浇铸>10%、SPA 17.26%、真空极化18.04%、ACI 18.48%、3D/2D 20.6%、F5PEAI >22%、HTAB 23.3%、C6Br 23.4%等均与正文一致。公式 t=(r_A+r_X)/(√2(r_B+r_X)) 根据提取文本恢复，但提取文本中根号符号有乱码，已按标准形式书写。Rashba 能量劈裂(40±5) meV、自旋极化86%、光电探测器响应度139.6 A/W等数据均源自正文。不确定处：Table 6中'A34'是否为'A43'、Table 9中'PQLY'是否为'PLQY'，已在issue中标注存疑，未修改markdown正文。提取文本中第16页表格行尾年份[Ref.]等格式未在markdown中逐项保留，仅概括关键结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6119,
+      "prompt_tokens": 56769,
+      "total_tokens": 62888,
+      "prompt_tokens_details": {
+        "cached_tokens": 55296
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 953
+      }
+    },
+    "content_chars": 7528,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

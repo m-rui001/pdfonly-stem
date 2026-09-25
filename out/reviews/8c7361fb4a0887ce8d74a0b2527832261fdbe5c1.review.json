@@ -1,0 +1,82 @@
+{
+  "sha1": "8c7361fb4a0887ce8d74a0b2527832261fdbe5c1",
+  "title": "Climate and southern Africa's water–energy–food nexus",
+  "doi": "https://doi.org/10.1038/nclimate2735",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8c7361fb4a0887ce8d74a0b2527832261fdbe5c1/index.html",
+  "source_chars": 79967,
+  "markdown_chars": 3345,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Le Ma sotho dag asc ar",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第8页开头为图6的标签碎片，与正文段落过渡不自然，但可能是图注正常排列。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "while regional and global water and food models suggest",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第6页末尾句子在‘suggest’处中断，第7页开头插入图5的图注和图形数据，后续未出现原句可能的后半部分（如‘lower runoff raises risks...’），导致信息缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "The economic dimensions of the nexus in southern Africa can be studied",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第7页在“Figure 5”图注后直接开始经济维度段落，但前文“suggest”后的内容未衔接，可能因图注插入打乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "Declan , EAfrica's mma Awater-‐energy-‐food rcher van Garderen ,",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "补充材料标题出现乱序和乱码，应为‘Declan Conway, Emma Archer van Garderen’等作者名，但提取文本中文本顺序明显损坏。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Total hydroelectricity output (MW) 325 0 514 72 24 2425 0 460 616 760",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表S4中马拉维和南非的‘Total hydroelectricity output’列数值缺失或为空，提取文本中仅有部分国家数值，但没有明显错误标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的关键数值：如降水减少20%（2080年代）、水电依赖率（近100%）、南非GDP下降7%（1983）、玉米产量变化15.7±16.3%（雨养）、虚拟水流量（3.2 km³内部，27.9 km³总流量）等，均与原文一致。公式VWC更新公式已保留。不确定性：跨页缺失句和表S4的电力输出值存疑，已在issues中标出。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6235,
+      "prompt_tokens": 20874,
+      "total_tokens": 27109,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3554
+      }
+    },
+    "content_chars": 4973
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

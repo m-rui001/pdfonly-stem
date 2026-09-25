@@ -1,0 +1,72 @@
+{
+  "sha1": "79e74d7adb72e647b24468985608385c6ea3a3ed",
+  "title": "Basic and Therapeutic Aspects of Angiogenesis Updated",
+  "doi": "https://doi.org/10.1161/circresaha.120.316851",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/79e74d7adb72e647b24468985608385c6ea3a3ed/index.html",
+  "source_chars": 110514,
+  "markdown_chars": 3157,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "towards the source of the angio- / genic signal",
+      "type": "跨页断词",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "跨页处单词'angiogenic'被拆分为'angio-'和'genic'，文本提取断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "increased infil- / tration with resistance-confirming",
+      "type": "跨页断词",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "跨页处单词'infiltration'被拆分为'infil-'和'tration'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "that pro- / motes migration and tip cell formation",
+      "type": "跨页断词",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "跨页处单词'promotes'被拆分为'pro-'和'motes'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "silencing FAH do- / main containing protein 1 (FAHD1)",
+      "type": "跨页断词",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "跨页处单词'domain'被拆分为'do-'和'main'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：糖酵解提供EC中85%以上ATP、线粒体体积占2-5%、tip/增殖TEC占<10%、15项III期试验无阳性结果等；确认所有公式（实际无公式）和基因名称与原文一致。跨页断词已按上下文理解但未在文中擅自合并，而是在issues中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6659,
+      "prompt_tokens": 28790,
+      "total_tokens": 35449,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4271
+      }
+    },
+    "content_chars": 4301
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

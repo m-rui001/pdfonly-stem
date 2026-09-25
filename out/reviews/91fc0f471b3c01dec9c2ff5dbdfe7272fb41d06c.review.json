@@ -1,0 +1,517 @@
+{
+  "sha1": "91fc0f471b3c01dec9c2ff5dbdfe7272fb41d06c",
+  "title": "Shifting the limits in wheat research and breeding using a fully annotated reference genome",
+  "doi": "https://doi.org/10.1126/science.aar7191",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/91fc0f471b3c01dec9c2ff5dbdfe7272fb41d06c/index.html",
+  "source_chars": 126742,
+  "markdown_chars": 8925,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Nesterov Michail, Rakitin Andrev Sergeeva Ekaterina Handa Hirokazu",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者列表中姓名之间缺少逗号分隔，'Andrev'疑为'Andrey'，'Sergeeva Ekaterina'与'Handa Hirokazu'之间无分隔，属OCR抽取的标点/分隔符丢失，不影响正文论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "resources..",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句末出现双句点，属OCR标点冗余，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "3,968,974 copies of transposable elements (TEs) belonging to 505 families were annotated",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该数字与Table 2中TE相关序列总量（11.913 Gb）及85%占比在量级上一致，但具体拷贝数无法从表格交叉验证，保留原文数字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "35,345,35,643 and 34,212",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "数字之间缺少空格，属OCR格式问题，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "25,419 (8%) of 303,818 candidates matched LC gene models",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句在原文中位于'Within the pseudogene category'之后，但25,419/303,818≈8.4%，与8%一致；无法从表格交叉验证，保留原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "GBSS, on chromosome 4A (1:0:0, a gene that is a key determinant of udon noodle quality)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'udon'在原文中拼写为'udon'，但通常为'udon'（乌冬）或'Udon'，此处保留原文拼写，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "((25))",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "双括号属OCR标点冗余，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "31.0 % of genes are expressed in over 90% of tissues (average 16.9 tpm, $ \\geq $ 30 tissues), and 21.5% of genes are expressed in 10% or fewer tissues (average 0.22 tpm; $ \\leq $ 3 tissues; Fig. S31).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "百分号前有空格，属OCR格式问题，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Pearson correlation coefficient R= -0.76, P < 2.2E-16",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "负号与数字间有空格，属OCR格式问题，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Padj<E-108",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "'E-108'疑为'1E-108'或类似科学计数法格式的OCR丢失，原文中'Padj<E-108'和'Padj<E-101'缺少尾数，影响精确数值理解，但结论方向（极显著）不受影响。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "（salt stress' cold stress')",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号和引号不匹配，属OCR标点问题，不影响术语理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "IWGSC RefSeqv1.0",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'RefSeqv1.0'缺少空格，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "IWGSC RefSeqv1.0",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，'RefSeqv1.0'缺少空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "DenovoMAGIC2 $ ^{\\mathrm{T M}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "商标符号TM被提取为LaTeX上标，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "78http://www.fao.org/faostat/en/#data/FBS",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献编号78与URL之间无空格，属OCR格式问题，不影响正文论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "15 18. X. Guo et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号15和18之间出现异常空格和编号错位，属OCR阅读顺序或编号提取问题，不影响正文论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "5 28. P. S. Soltis",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和28之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "15 33. L. Xia et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号15和33之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "15 74. M. E. Sorrells et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号15和74之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "5 84. J. Daron et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和84之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "5 112. H. B. Cagirici",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和112之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "15 116. L. Cooper et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号15和116之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "5 127. A. D. Zimmer et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和127之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "5 140. M. N. Price",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和140之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "10 142. N. M. Glover",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号10和142之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "5 154. M. J. Sanderson",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和154之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 35,
+      "quote": "20:20 Wheat $ \\textcircled{1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "带圈数字①被提取为LaTeX命令，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 36,
+      "quote": "Corresponding authors ( ），major contributors ( $ ^{\\dagger} $ ）and working group leader(s) or co-leaders ( $ ^{\\ddagger} $ ）are indicated.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号和符号不匹配，属OCR标点问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "gagnere@ecodev.vic.gov.au), Martin Mascher $ ^{4,67 \\dagger} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "邮箱地址跨页断开，属正常页间断句，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 38,
+      "quote": "A.Juhasz@murdoch.edu.au), and Gabriel Keeble-Gagnere $ ^{1} $ (gabriel.keeblegagnere@ecodev.vic.gov.au).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "邮箱地址中'keeblegagnere'缺少连字符，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "（korol@research.haifa.ac.il），Zeev Frenkel $ ^{26 \\dagger} $ （zvfrenkel@gmail.com），Tzion Fahima $ ^{26 \\dagger} $ （fahima@research.haifa.ac.il），Vladimir Glikson $ ^{29} $ （lvglikson@gmail.com），Dina Raats $ ^{50} $ （dina.raats@earlham.ac.uk），and Jane Rogers $ ^{6} $ （janerogersh@gmail.com).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中文全角括号混入英文文本，属OCR标点问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "10 Genome Size Analysis:",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "行首出现孤立数字'10'，属OCR阅读顺序或格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "10 2AL Physical Mapping:",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "行首出现孤立数字'10'，属OCR阅读顺序或格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "15 2AS Physical Mapping:",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "行首出现孤立数字'15'，属OCR阅读顺序或格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "ours2011@163.com)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "邮箱地址前缺少左括号，属OCR标点丢失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "odd arne.olsen@nmbu.no",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "邮箱地址中'odd arne'含空格，应为'odd-arne'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 43,
+      "quote": "Stein $ ^{4,5} $ （stein@ipk-gatersleben.de）Cristobal Uauy $ ^{10} $ （cristobal.uauy@jic.ac.uk），and Luca Venturini $ ^{50} $ （Luca.Venturini@earlham.ac.uk).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中文全角括号混入英文文本，属OCR标点问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "$ ^{1 2} $NRGene Ltd.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'12'被拆分为'1 2'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "$ ^{1 3} $URGI, INRA",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'13'被拆分为'1 3'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 46,
+      "quote": "47The Federal Research Center Institute of Cytology and Genetics",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'47'与文本之间无空格，属OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 46,
+      "quote": "Palacky University, Centre of the Region Haná",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该条缺少上标编号'49'，属OCR编号丢失，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "N50s of 52 kb and 7 Mb",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文此处写contig和scaffold的N50分别为52 kb和7 Mb，而Table 1中N50 contig length为51.8 Kb、N50 scaffold length为7.0 Mb，属正文与表格的数值精度差异，可能为原文四舍五入或OCR精度问题，不影响结论方向。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "（'seed maturation'，'dormancy' and 'germination'）",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中文全角括号和逗号混入英文文本，属OCR标点问题，不影响术语理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 24,
+      "quote": "20 76. Y. Wu",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号20和76之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 24,
+      "quote": "25 78. A. A. Myburg et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号25和78之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 25,
+      "quote": "5 84. J. Daron et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和84之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 28,
+      "quote": "10 142. N. M. Glover",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号10和142之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 33,
+      "quote": "10 142. N. M. Glover",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号10和142之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "5 154. M. J. Sanderson",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号5和154之间出现异常空格，属OCR格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 45,
+      "quote": "$ ^{4 6} $ Kyoto University",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'46'被拆分为'4 6'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ ^{6 0} $BGI-Shenzhen",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'60'被拆分为'6 0'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ ^{6 1} $CEA - Institut de Biologie François-Jacob",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'61'被拆分为'6 1'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ ^{6 2} $Monsanto SAS",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标数字'62'被拆分为'6 2'，属OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Shifting the limits in wheat research and breeding using a fully annotated reference genome",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 37386,
+      "total_tokens": 47386,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21508,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

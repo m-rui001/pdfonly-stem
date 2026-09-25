@@ -1,0 +1,74 @@
+{
+  "sha1": "e1f7827cc448ff73c2d7670cb3d231312a73db3d",
+  "title": "Anisotropic Electron-Photon and Electron-Phonon Interactions in Black Phosphorus",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b04540",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e1f7827cc448ff73c2d7670cb3d231312a73db3d/index.html",
+  "source_chars": 44166,
+  "markdown_chars": 3597,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "The EL-dependent Raman intensity for a 𝜈 phonon mode can be written as",
+      "type": "字符缺失",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文中“a 𝜈 phonon mode”中ν可能是希腊字母nu或符号，但提取显示为“𝜈”，疑似字体问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "𝐼! (𝐸! ) = ! ! ! ! ! ! !!\" !′ !′ !!\" !\" ! (!! !Δ!!\" )(!! !ℏ!! !Δ!!′! ) !",
+      "type": "公式排版乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)的求和号、分母等符号在提取中完全丢失，无法辨识具体结构，仅能看出变量名。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "𝐼!∥! = sin 𝜃, 0, cos 𝜃 𝑅 sin 𝜃, 0, cos 𝜃 ! ! ! ! = 𝑎 ! (𝑠𝑖𝑛! 𝜃 + ! 𝑐𝑜𝑠Φ!\" 𝑐𝑜𝑠 ! 𝜃)! + ! 𝑠𝑖𝑛! Φ!\" 𝑐𝑜𝑠 ! 𝜃",
+      "type": "公式排版乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(4)中括号、指数和求和项显示为乱码，无法恢复完整表达式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "𝛽ex = 2𝜋𝑥𝑛1 /𝜆𝑒𝑥 𝑖 和 𝛽ex = 2𝜋𝑑𝑖 𝑛𝑖 /𝜆𝑒𝑥",
+      "type": "符号下标混乱",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中β_ex和β_sc的下标（x与i）混淆，且出现重复定义，可能源自原始排版。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对主要数值：晶格参数a1=4.45 Å, a2=10.67 Å, a3=3.35 Å；拉曼模式频率361/438/466 cm⁻¹；薄片厚度5/20/40/200 nm；激光能量1.96/2.33/1.58 eV。公式(1)-(4)因提取乱码无法完整核对，但文字描述中的物理关系（如|c/a|与主轴方向、Φ_ca与次极大）与原文一致。结论中关于吸收沿armchair较大、干涉效应无法完全解释厚度依赖等表述均基于提取文本。不确定处：公式(1)和(4)的精确形式需对照原PDF确认。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4596,
+      "prompt_tokens": 12470,
+      "total_tokens": 17066,
+      "prompt_tokens_details": {
+        "cached_tokens": 12288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1723
+      }
+    },
+    "content_chars": 4999,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

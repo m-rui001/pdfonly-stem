@@ -1,0 +1,45 @@
+{
+  "sha1": "14c2aea0093b23848a76256cbe87d0bbdb004101",
+  "title": "Grassland productivity limited by multiple nutrients",
+  "doi": "https://doi.org/10.1038/nplants.2015.80",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/14c2aea0093b23848a76256cbe87d0bbdb004101/index.html",
+  "source_chars": 33716,
+  "markdown_chars": 2872,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "harvesting current year standing crop biomass for 3 to 5 years. and computing",
+      "type": "标点/断句疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "句号后接小写 \"and\"，原文可能为分号或逗号，存在PDF文本提取时标点转换的可能，但亦可能是原文编辑风格，证据不足。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：31/42站点受限、24/42站点成对共限制、NP平均+40%（LRR=0.34）、N单独+18%（LRR=0.16）、P单独+9%（LRR=0.09；p=0.03）、NP共限制67%（LRR=0.51）且发生于60%站点（13协同/12亚加性）、K+µ单独3站与NK+µ共限制18站（均48%，LRR=0.39）、PK+µ共限制9站（52%，LRR=0.42）、15个站点无多营养限制（其中12个亦无单营养限制）、R²范围0.07–0.21、19个长期站点的MAT/纬度回归R²及p值、37站点时间趋势p<0.005，均与提取文本一致。计算公式（线性混合模型、两种LRR、阈值LRR）照录原文。不确定处：摘要中MAP范围260–1900 mm与方法部分252–1898 mm略有出入，应属原文不同位置的表述差异，非提取错误；24个站点（摘要的pairwise共限制数）与25个站点（正文的NP共限制站点数）含义不同，不构成数据冲突。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8362,
+      "prompt_tokens": 10016,
+      "total_tokens": 18378,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6232
+      }
+    },
+    "content_chars": 3693
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

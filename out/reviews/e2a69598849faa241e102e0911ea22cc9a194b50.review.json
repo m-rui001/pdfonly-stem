@@ -1,0 +1,45 @@
+{
+  "sha1": "e2a69598849faa241e102e0911ea22cc9a194b50",
+  "title": "Creating Hierarchical Pores by Controlled Linker Thermolysis in Multivariate Metal–Organic Frameworks",
+  "doi": "https://doi.org/10.1021/jacs.7b12916",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e2a69598849faa241e102e0911ea22cc9a194b50/index.html",
+  "source_chars": 51444,
+  "markdown_chars": 2919,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "all sets of the UiO-66 series have been trans-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句子在页尾断开于“trans-”，第8页页眉后才接续“formed from microporosity”，提取文本中单词被分隔，但原文应是“transformed”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与表1中的关键数值：热解温度/时间对介孔尺寸影响（5.5、13 nm），COO-/Zr比从41%降至25%，BET比表面积与介孔直径（如HP-UiO-66-AD 1022 cm²/g、9.8 nm；HP-UiO-67-GH 2185 cm²/g、14.8 nm），孔径调控范围0.8–15 nm，均与提取文本一致。未发现数值矛盾。不确定处：表1中SBET单位原文为cm³/g，存疑但照录；MIL-53的大孔直径60 nm来自表注，已保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5918,
+      "prompt_tokens": 15337,
+      "total_tokens": 21255,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3837
+      }
+    },
+    "content_chars": 3518
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

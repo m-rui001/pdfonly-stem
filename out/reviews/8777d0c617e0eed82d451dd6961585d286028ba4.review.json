@@ -1,0 +1,265 @@
+{
+  "sha1": "8777d0c617e0eed82d451dd6961585d286028ba4",
+  "title": "A Survey on Hybrid Beamforming Techniques in 5G: Architecture and System Model Perspectives",
+  "doi": "https://doi.org/10.1109/comst.2018.2843719",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/8777d0c617e0eed82d451dd6961585d286028ba4/index.html",
+  "source_chars": 221971,
+  "markdown_chars": 10171,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "F^{AB}$ Analog precoder",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "表格中符号定义缺少开头的反斜杠或美元符号，应为 $F^{AB}$，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "N_{RF}$ Number of RF chains",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，符号定义缺少开头的美元符号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Kutty et al.[23]Zheng et al.[57]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table III 中不同行的作者和引用被合并到同一行，表格结构在 OCR 中损坏，影响对各行对应关系的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Gupta et al.[60]Panwar et al.[61]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同上，Table III 中不同行被合并。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Agiwal et al.[63]Pirinen et al.[64]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同上，Table III 中不同行被合并。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Elijah et al.[66]Alsharif et al.[67]Muirhead et al.[68]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同上，Table III 中多行被合并。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Bogale et al.[47]Han et al.[69]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同上，Table III 中不同行被合并。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Performance gap w.r.t digital beamforming which contains RF chains, equal to the number of antennas.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table VI 脚注文字与正文混排，阅读顺序受损，但关键信息仍可提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Soharabi et al. [84]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者名拼写错误，正文其他处为 Sohrabi，Table X 中误为 Soharabi。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Venugopa et al. [143]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者名截断，应为 Venugopal。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Girim et al. [115]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "作者名可能拼写错误，参考文献 [115] 中为 Kim Girim 等，此处缩写不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "Soharabi et al. [84]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Table XI 中作者名再次拼写错误，应为 Sohrabi。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "Alkhateeb et al. [51]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table XIV 中引用 [51] 对应 Alkhateeb 等，但正文中 [51] 为 Alkhateeb 等关于 massive MIMO combining with switches 的工作，此处引用正确但作者名在表格中可能与其他行混淆。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "this article has been accepted for publication in a future issue of this journal, but has not been fully edited. Content may change prior to final publication. Citation information: DOI 10.1109/COMST.2018.2843719, IEE Communications Surveys & Tutorials",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页眉文字中 'IEE' 应为 'IEEE'，属于 OCR 识别错误，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "In case of $ 1 \\mathrm{BS} N_{t} $ and 1UE1 system",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 '1UE1' 可能应为 '1UE1' 或 '1UE1'，但原文如此，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "In point-to-point downlink $ (1 \\mathrm{BS} N_{t} $ and $ 1 \\mathrm{U E} N_{r} $)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'U E' 之间有空格，可能为 OCR 识别问题，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "In point-to-multipoint massive MIMO system (1BS $ N_{t} $ and KUE1)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'KUE1' 可能应为 'KUE1'，但原文如此，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "For a downlink of a single cell multiuser massive MIMO system $ ( 1 \\mathrm{BS} N_{t} $ and $ K U E N_{r} $ )",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'K U E N_{r}' 之间有空格，可能为 OCR 识别问题，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "As a future work in a multi-cell multiuser MIMO system $ ( L B S N_{t} $ and KLUE1)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'L B S N_{t}' 之间有空格，可能为 OCR 识别问题，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "In a multiuser massive MIMO uplink $ ( K U E N_{t} $ and $ 1 \\mathrm{BS} N_{r} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'K U E N_{t}' 之间有空格，且缺少右括号，可能为 OCR 识别问题，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Lesson 1: In summary, the hybrid beamforming spans hardware architecture, signal processing, resource management, and application areas.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "结论部分 'Lesson 1' 等标题在原文中可能为斜体或特殊格式，OCR 提取为普通文本，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Lesson 2: The mmWave massive MIMO system is only feasible with hybrid beamforming having low-dimension digital beamformer and low-dimension analog beamformer.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Lesson 3: Although resource management is not directly related to the hybrid beamforming, particularly at the architectural level, there are many resource management aspects that can have a significant impact on the performance of the hybrid beamforming.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Lesson 4: It is expected that the ultra-dense HetNet will be an integral part of the 5G wireless networks.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，格式问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 27,
+      "quote": "Alkhateeb et al. [51]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table XIV 中引用 [51] 对应 Alkhateeb 等，但正文中 [51] 为 Alkhateeb 等关于 massive MIMO combining with switches 的工作，此处引用正确但作者名在表格中可能与其他行混淆。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A Survey on Hybrid Beamforming Techniques in 5G: Architecture and System Model Perspectives",
+  "self_check": "已核对摘要、引言、系统模型公式、各表格关键数值（如全连接与子连接 SE 差距 $N_{RF}\\log_2 N_{RF}$ b/s/Hz、功耗比 $N_{RF}$ 倍、RF 链数 1-7 时 PS 与开关架构 SE 差距 >2 b/s/Hz、开关架构功耗降低 45-70%、渐近 SINR 降低 $\\pi/4$ 可通过 27% 天线增加补偿、波束空间 SVD 复杂度降低 99.4%、$64\\times16$ 系统 2 比特 PS 性能、20 GHz 频段 256 单元约 12 $cm^2$ 等）与结论方向一致。公式 $\\mathbf{Y} = \\mathbf{W}^{DB^*}\\mathbf{W}^{AB^*}\\mathbf{H}\\mathbf{F}^{AB}\\mathbf{F}^{DB}\\mathbf{s} + \\mathbf{W}^{DB^*}\\mathbf{W}^{AB^*}\\mathbf{n}$ 及干扰模型公式已原样保留。不确定之处：Table III 中部分行合并导致对应关系不明确；Table VI 脚注与正文混排；部分作者名拼写不一致（如 Soharabi/Sohrabi、Venugopa/Venugopal）已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8935,
+      "prompt_tokens": 53905,
+      "total_tokens": 62840,
+      "prompt_tokens_details": {
+        "cached_tokens": 53888
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18667,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

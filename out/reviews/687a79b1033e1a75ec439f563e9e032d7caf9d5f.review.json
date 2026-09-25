@@ -1,0 +1,64 @@
+{
+  "sha1": "687a79b1033e1a75ec439f563e9e032d7caf9d5f",
+  "title": "High‐Entropy Metal Sulfide Nanoparticles Promise High‐Performance Oxygen Evolution Reaction",
+  "doi": "https://doi.org/10.1002/aenm.202002887",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/687a79b1033e1a75ec439f563e9e032d7caf9d5f/index.html",
+  "source_chars": 33804,
+  "markdown_chars": 3015,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "Mn has a much higher vapor pressure compared to Cr, Fe, Co, and Ni, and evaporates more than Cr, Fe, Co, and Ni. (Figure S7).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句以'(Figure S7).'结尾，但前面缺少主语连接或因果关系表述，疑似页间截断导致句子不完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "（Eo）",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "文本中多次出现'Eo'乱码，应为一变量符号（可能为ΔE_O*），但无法从文本确认正确书写，保留原样。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "where OER initiated from H2O adsorption and followed by multiple deprotonation steps and O-O coupling to form *OH, *O, *OOH, and O2 sequentially",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子位于第11页末尾，第12页开头无直接接续，但逻辑可连贯，可能存在页间断行。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：过电位295 mV@100 mA cm⁻²、Tafel 66 mV dec⁻¹、粒径11.9±2.1 nm、元素比例11.5:7.3:12.0:10.4:12.9、DFT极限电位1.55 V及一元硫化物值、Bader电荷转移（Fe 0.19 e⁻、Mn 0.34 e⁻、Co 0.31 e⁻）、形成自由能0.91 eV、稳定性10 h (<35 mV)及碳纸100 h (7 mV)。公式和符号按原文保留，乱码已标记。未提取图表内容均未推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3338,
+      "prompt_tokens": 10823,
+      "total_tokens": 14161,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 952
+      }
+    },
+    "content_chars": 4199
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

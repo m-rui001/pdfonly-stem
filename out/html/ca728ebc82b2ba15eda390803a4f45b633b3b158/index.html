@@ -1,0 +1,427 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/rei/ca/ca728ebc82b2ba15eda390803a4f45b633b3b158.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A class of predefined-time stable dynamical systems</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>A class of predefined-time stable dynamical systems</h1><p class="source">2017 · <a href="https://doi.org/10.1093/imamci/dnx004">https://doi.org/10.1093/imamci/dnx004</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/rei/ca/ca728ebc82b2ba15eda390803a4f45b633b3b158.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>A Class of Predefined-Time Stable Dynamical Systems Juan Diego Sánchez-Torres†♦ , David Gómez-Gutiérrez , Esteban López‡ and Alexander G. Loukianov† † CINVESTAV-IPN, Unidad Guadalajara, Av. del Bosque 1145, Col. El Bajı́o, P.C. 45019, Zapopan, México. ♦ Department of Mathematics and Physics, ITESO Guadalajara, Periférico Sur 8585 P.C. 45604, Tlaquepaque, México.  Tecnológico de Monterrey, Campus Guadalajara, Av. Ramón Corona 2514, P.C. 45201, Zapopan, México. ‡ Universidad Nacional de Colombia - Sede Medellı́n, Facultad de Minas, Grupo de Investigación en Procesos Dinámicos - Kalman, Cra. 80 No. 65 - 223, Medellı́n, Colombia. December 31, 2016 Abstract This paper introduces predefined-time stable dynamical systems which are a class of fixed-time stable dynamical systems with settling time as an explicit parameter that can be defined in advance. This concept allows for the design of observers and controllers for problems that require to fulfill hard time constraints. An example is encountered in the fault detection and isolation problem, where mode detection in a timely manner needs to be guaranteed in order to apply a recovery action. Furthermore, through the notion of strong predefined-time stability, the approach hereinafter presented permits to overcome the problem of overestimation of the convergence time bound encountered in previous methods for the analysis of finite-time stable systems, where the stabilization time is often an unbounded function of the initial conditions of the system. A Lyapunov analysis is provided together with a detailed discussion of the applications to consensus and first order sliding mode controller design. Finite-time stability, Sliding-mode control, Lyapunov stability, Robust control, Consensus.</p>
+<p>1</p>
+<p>Introduction</p>
+<p>Nowadays, there exist several applications of dynamical systems that are characterized by requiring to meet hard response-time constraints while being robust to uncertainties such as external disturbances or parameter variation. A basic case is encountered in the fault detection and isolation problem, where it is of paramount importance to guarantee the mode detection in a timely manner in order to apply a recovery action (Lee and Park, 2012), because in some situations a late response may lead to a no recovery scenario. When, additionally, robustness to external disturbances and/or parameter uncertainty is required, sliding mode algorithms have been one of the most promising methods (Utkin, 1992, Drakunov and Utkin, 1992). Nonetheless, even if various developments in finite-time stability, fixed-time stability and deadbeat control have been carried out to deal with these time requirements (see e.g. Roxin (1966), Weiss and Infante (1967), Michel and Porter (1972), Ryan (1991), Bhat and Bernstein (2000), Hong (2002), Orlov (2005), Moulay and Perruquetti (2006) for finite-time stability, Andrieu et al. (2008), Cruz-Zavala et al. (2010), Polyakov (2012) for fixed-time stability, and Smith (1957), Tallman and Smith (1958) for deadbeat control), the design of robust controllers and observers guaranteeing that time constrains are met is still challenging. One of the main reasons is because, in current methods, there is no explicit relationship between the system parameters and the convergence time bound. As a consequence, current settling-time estimation methods are usually conservative and inaccurate. Such is the case in several control approaches with the finite-time feature, like Bhat and Bernstein (2000), Orlov (2005), Moulay and Perruquetti (2006), where the stabilization time is often an unbounded function of the initial conditions of the system. To make the settling time bounded for any initial 1</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>condition a stronger form of stability, called fixed-time stability, was introduced by Andrieu et al. (2008) for homogeneous systems and by Cruz-Zavala et al. (2010), Polyakov (2012), Polyakov and Fridman (2014) for systems with sliding modes. The settling time of fixed-time stable systems presents a class of uniformity with respect to their initial conditions. Unfortunately, when current fixed-time algorithms are applied to control or observation problems, there are still hard issues related to the convergence-time estimation. The main drawback is that the relationship between the parameters of the system and the bound of the convergence time is not explicit; thus, finding the system parameters to achieve a desired maximum stabilization time is challenging, leading to very conservative estimations of the settling-time bound and to a transient response of lower quality than necessary as consequences. Consider for example the work by Cruz-Zavala et al. (2011), where the settling-time bound estimate is approximately 100 times larger than the actual true fixed stabilization time. To overcome this parameter selection problem, a simulation-based approach has been proposed under the concept of prescribed-time stability (Fraguela et al., 2012); nonetheless, since the method is simulation-based, it lacks rigorous analysis and explicit formulas for the settling-time computation are not provided. A rigorous approximation of the settling time in planar systems controlled with uniform finitetime controllers is given by Oza et al. (2015); however, this approach implies cumbersome calculations and the resulting estimate is not directly related to the system parameters. In order to cope with the problems presented above, a class of systems where an upper bound of the fixed stabilization time is a tunable parameter is proposed. Such systems are defined as predefined-time stable systems. Moreover, two categories are identified within this definition: weakly predefined-time stable systems only possesses the aforementioned property, while strongly predefined-time stable systems present the additional advantage that this tunable parameter is not only an upper bound for the settling time but precisely the least upper bound, thus avoiding any unnecessary overestimation of the convergence time. Predefined-time stability is strongly related to the continuous deadbeat control; for example, a classic case of predefined-time stable controllers are those based on the posicast method (Smith, 1957, Tallman and Smith, 1958), where part of the input command is delayed to achieve deadbeat control. However, predefined-time algorithms based on deadbeat control are not robust to external disturbances or parameter uncertainty and time requirements are not guaranteed to be met when they are present. Having defined the concept of predefined-time stability, this paper presents the analysis of a class of first-order predefined-time stable dynamical systems (Sánchez-Torres et al., 2014, 2015). In contrast to most of the fixed-time stable systems, the bound on the convergence time associated with this class of systems is not a conservative estimate but truly the minimum value that is greater than all the possible exact settling times. Moreover, this bound is not based on simulations due to the fact that all the mentioned properties are characterized by a suitable Lyapunov theorem. Furthermore, the system structure contains no delay terms, making its analysis and design easier when compared to the mentioned deadbeat methods. Contrary to previously proposed methods, under mild assumptions, the approach hereinafter presented guarantees that time constraints are met even in the presence of uncertainty. In addition to the predefined settling time, the devised systems depend on other parameters whose values determine whether the right-hand sides of the differential equations are continuous or discontinuous and, from both cases, predefined-time controllers are derived. Besides, taking advantage of the discussed features, more general first order sliding mode controllers with predefined-time reaching phase are introduced. Finally, a predefined-time consensus algorithm is designed for complete networks. The rest of this paper is structured in the following manner: Section 2 exposes the main results of this paper, including necessary the mathematical preliminaries, a class of predefined-time stable systems and the characterization of the Lyapunov conditions they satisfy. In Section 3, the influence of the tuning parameters on the proposed class of systems is analyzed and a suggestion for their selection is provided. In addition, a brief numerical study on the relationship between the parameter selection and the effect of noisy measurements is presented. Section 4 shows the design of first order sliding mode controllers where the reaching phase stage ends after a predefined time. Taking advantage of the strong stability features of the proposed family of systems, a consensus algorithm for complete networks is presented in Section 5. Finally, Section 6 presents the conclusions of this paper.</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>2</p>
+<p>Predefined-Time Characterization</p>
+<p>Stability:</p>
+<p>Definitions</p>
+<p>2.1</p>
+<p>Basic definitions for unperturbed systems</p>
+<p>and</p>
+<p>Lyapunov</p>
+<p>Consider the system ẋ = f (t, x; ρ),</p>
+<p>(1)</p>
+<p>where x ∈ Rn is the system state, ρ ∈ Rb with ρ̇ = 0 represents the parameters of the system, and f : R+ × Rn → Rn is a nonlinear function. The time variable t is defined on the interval [t0 , ∞), where t0 ∈ R+ ∪ {0}. For this system, the initial conditions are x0 = x(t0 ). Definition 2.1 (Globally fixed-time attraction (Polyakov, 2012)). A non-empty set M ⊂ Rn is said to be globally fixed-time attractive for system (1) if any solution x(t, x0 ) of (1) reaches M in some finite time t = t0 + T (x0 ), where the settling-time function T : Rn → R+ ∪ {0} is bounded by some positive number Tm , i.e., T (x0 ) ≤ Tm for all x0 ∈ Rn . Note that there are several possible choices for Tm ; for example, if T (x0 ) ≤ Tm for a positive number Tm , also T (x0 ) ≤ λTm with λ ≥ 1. This motivates the definition of a set which contains all the bounds of the settling-time function. Definition 2.2 (Settling-time set). Let the set of all the bounds of the settling-time function for system (1) be defined as follows: T = {Tmax ∈ R+ : T (x0 ) ≤ Tm ∀ x0 ∈ Rn } . (2) In addition, the minimum bound for the settling-time function of (1) is defined in the following manner: Definition 2.3 (Least upper bound for the settling time). Consider the set T defined in (2). The least upper bound of the settling-time function, denoted by Tf , is defined as Tf = min T = sup T (x0 ).</p>
+<p>(3)</p>
+<p>x0 ∈Rn</p>
+<p>Remark 2.1. For several applications it could be desirable for system (1) to stabilize within a time Tc ∈ T which can be defined in advance as function of the system parameters, that is Tc = Tc (ρ). The cases where this property is present motivate the definition of predefined-time stability. A strong notion of this class of stability is given when Tc = Tf , i.e., Tc is the true fixed-time in which the system stabilizes. A weak notion of predefined-time stability is presented when Tc ≥ Tf , that is, if well it is possible to define an upper bound of the settling-time function in terms of the system parameters, this overestimates the true fixed-time in which the system stabilizes. Definition 2.4. For the system parameters ρ and a constant Tc (ρ) &gt; 0, a non-empty set M ⊂ Rn is said to be (i) Globally weakly predefined-time attractive for system (1) if any solution x(t, x0 ) of (1) reaches M in some finite time t = t0 + T (x0 ), where the settling-time function T : Rn → R is such that T (x0 ) ≤ Tc</p>
+<p>∀ x 0 ∈ Rn .</p>
+<p>In this case, Tc is called the weak predefined time. (ii) Globally strongly predefined-time attractive for system (1) if any solution x(t, x0 ) of (1) reaches M in some finite time t = t0 + T (x0 ), where the settling-time function T : Rn → R is such that sup T (x0 ) = Tc . x0 ∈Rn</p>
+<p>In this case, Tc is called the strong predefined time.</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>2.2</p>
+<p>Generalization to perturbed systems</p>
+<p>Consider the system ẋ = f (t, x, d; ρ), n</p>
+<p>(4)</p>
+<p>m</p>
+<p>b</p>
+<p>where x ∈ R is the system state, d ∈ Ω ⊂ R , with Ω bounded, is a perturbation term, ρ ∈ R with ρ̇ = 0 represents the parameters of the system, and f : R+ × Rn × Rm → Rn is a nonlinear function. The time variable t is defined on the interval [t0 , ∞), where t0 ∈ R+ ∪ {0}. For this system, the initial conditions are x0 = x(t0 ). Note that the settling time of system (4) to a given set depends not only on x0 but also on the the trajectory ω ∈ Ω[t0 ,∞) = {d : [t0 , ∞) → Ω | d is a function} followed by the perturbation d(t). Definition 2.5. For the system parameters ρ and a constant Tc (ρ) &gt; 0, a non-empty set M ⊂ Rn is said to be (i) Globally weakly predefined-time attractive for system (4), if any solution x(t, x0 , ω) of (4) reaches M in some finite time t = t0 + T (x0 , ω), where the settling-time function T : Rn × Ω[t0 ,∞) → R is such that T (x0 , ω) ≤ Tc ∀ x0 ∈ Rn , ω ∈ Ω[t0 ,∞) . In this case, Tc is called the weak predefined time. (ii) Globally strongly predefined-time attractive for system (4), if any solution x(t, x0 , ω) of (4) reaches M in some finite time t = t0 + T (x0 , ω), where the settling-time function T : Rn × Ω[t0 ,∞) → R is such that sup T (x0 ) = Tc . x0 ∈Rn ,ω∈Ω[t0 ,∞)</p>
+<p>In this case, Tc is called the strong predefined time.</p>
+<p>2.3</p>
+<p>Lyapunov stability</p>
+<p>First, the following theorem provides a useful Lyapunov condition for weakly predefined-time attractive sets: Theorem 2.1 (Lyapunov characterization of weak predefined-time stability (Sánchez-Torres et al., 2014, 2015)). If there exists a continuous radially unbounded function V : Rn → R+ ∪ {0} such that x ∈ M if and only if V (x) = 0 and any solution x(t) of (1) or (4) satisfies V̇ ≤ −</p>
+<p>1 exp(V p )V 1−p pTc</p>
+<p>(5)</p>
+<p>for constants Tc = Tc (ρ) &gt; 0 and 0 &lt; p ≤ 1, then the set M is globally weakly predefined-time attractive for system (1) or (4), respectively, and the weak predefined time is Tc . Proof. The solution to (5) is &quot; V (t) ≤ ln</p>
+<p>1 p t−t0 Tc + exp(−V0 )</p>
+<p>!# p1</p>
+<p>where V0 = V (x0 ). p 0 Note that V (t) = 0 if t−t Tc + exp(−V0 ) = 1, hence the settling-time function for the system (1) is such that T (x0 ) ≤ Tc [1 − exp(−V0p )] ∀ x0 ∈ Rn , and for the system (4) is such that T (x0 , ω) ≤ Tc [1 − exp(−V0p )]</p>
+<p>∀ x0 ∈ Rn , ω ∈ Ω[t0 ,∞) .</p>
+<p>Then, since 0 &lt; exp(−V0p ) ≤ 1, Tc is an upper bound for the settling-time function and, therefore, the weak predefined time.</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>Theorem 2.1 characterizes weak predefined-time stability in a very practical way since the Lyapunov condition (5) directly involves a bound on the convergence time. Nevertheless, this condition is not enough to imply strong predefined-time stability. The following theorems provide Lyapunov characterizations for strongly predefined-time attractive sets for both perturbed and unperturbed systems: Theorem 2.2 (Lyapunov characterization of strong predefined-time stability). If there exists a continuous radially unbounded function V : Rn → R+ ∪ {0} such that x ∈ M if and only if V (x) = 0 and any solution x(t) of (1) satisfies V̇ = −</p>
+<p>1 exp(V p )V 1−p pTc</p>
+<p>(6)</p>
+<p>for constants Tc = Tc (ρ) &gt; 0 and 0 &lt; p ≤ 1, then the set M is globally strongly predefined-time attractive for system (1) and the strong predefined time is Tc . Proof. Since the equality version of (5) holds, the settling-time function is known to be exactly T (x0 ) = Tc [1 − exp(−V0p )] , where V0 = V (x0 ). Besides, given that V is radially unbounded, supx0 ∈Rn [1 − exp(−V0p )] = 1 and it follows that sup T (x0 ) = Tc . x0 ∈Rn</p>
+<p>The following theorem extends the Lyapunov result given in Theorem 2.2 to the strong predefined-time stability of perturbed systems: Theorem 2.3. If there exists a continuous radially unbounded function V : Rn → R+ ∪ {0} such that x ∈ M if and only if V (x) = 0 and any solution x(t) of (4) satisfies sup V̇ = − d∈Ω</p>
+<p>1 exp(V p )V 1−p pTc</p>
+<p>(7)</p>
+<p>for constants Tc = Tc (ρ) &gt; 0 and 0 &lt; p ≤ 1, then the set M is globally strongly predefined-time attractive for system (4) with Tc as the strong predefined time. Proof. If (7) is satisfied, it holds that sup ω∈Ω[t0 ,∞)</p>
+<p>T (x0 , ω) = Tc [1 − exp(−V0p )]</p>
+<p>∀ x 0 ∈ Rn</p>
+<p>with V0 = V (x0 ). Then, since V is radially unbounded, it follows that sup</p>
+<p>T (x0 , ω) = Tc .</p>
+<p>x0 ∈Rn ,ω∈Ω[t0 ,∞)</p>
+<p>2.4</p>
+<p>A Class of predefined stable systems</p>
+<p>Finally, a class of strongly predefined-time stable systems is presented. These systems depend on the least upper bound for the settling time, i.e., the strong predefined time, as an explicit parameter. Definition 2.6 (Predefined-time stabilizing function). For x ∈ Rn , the predefined-time stabilizing function is defined as 1 x mq Φm,q (x) = exp (kxk ) (8) mq , mq kxk 1 where m ≥ 1 and 0 &lt; q ≤ m .</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>Some important properties of the function (8) are: 1. The Maclaurin representation of (8) is given by &quot; # ∞ i X 1 x kxk +x+x Φm,q (x) = , mq kxkmq i! i=2</p>
+<p>(9)</p>
+<p>1 where it is observed that Φm,q (x) is continuous and non-Lipschitz for 0 &lt; q &lt; m and, discontinuous 1 for q = m .</p>
+<p>2. For x ∈ R, the predefined-time stabilizing function can be written as Φm,q (x) 1 1 1 mq ) |x|1−mq sign(x) for 0 &lt; q &lt; m and, Φm,q (x) = exp (|x|) sign(x) for q = m . mq exp (|x|</p>
+<p>=</p>
+<p>With the definition of this stabilizing function, the following lemma presents a dynamical system with the strong predefined-time stability property. Lemma 2.1 (A predefined-time stable dynamical system). For every initial condition x0 , the system ẋ = −</p>
+<p>1 Φm,q (x) Tc</p>
+<p>(10)</p>
+<p>1 is globally strongly predefined-time stable with strong predefined time with Tc &gt; 0, m ≥ 1 and 0 &lt; q ≤ m Tc . That is, x(t) = 0 for all t ≥ t0 + Tc in spite of the value of x0 . m</p>
+<p>Proof. Consider the Lyapunov function V = kxk , defined for x ∈ Rn . The derivative of V along the trajectories of (10) is xT m−2 T ẋ = m kxk x ẋ kxk 1 x m−2 mq =− kxk exp (kxk ) xT mq qTc kxk 1 mq m(1−q) =− exp (kxk ) kxk qTc 1 =− exp (V q ) V 1−q , qTc</p>
+<p>V̇ = m kxk</p>
+<p>m−1</p>
+<p>which is negative definite. Therefore, system (10) is asymptotically stable. In addition, considering that V is a continuous radially unbounded function, from Theorem 2.2, the desired result follows. Example 2.1 (A multivariable case). Consider the system ẋ = −</p>
+<p>1 Φm,q (x − xss ) Tc</p>
+<p>with x ∈ R3 , xss = [3, 0, −1]T , Tc = 0.1 time units, m = 1 and q = 1/2. 5</p>
+<p>4</p>
+<p>3</p>
+<p>2</p>
+<p>1</p>
+<p>0</p>
+<p>−1</p>
+<p>−2</p>
+<p>−3</p>
+<p>−4</p>
+<p>−5</p>
+<p>0</p>
+<p>0.02</p>
+<p>0.04</p>
+<p>0.06</p>
+<p>0.08</p>
+<p>0.1</p>
+<p>0.12</p>
+<p>0.14</p>
+<p>0.16</p>
+<p>0.18</p>
+<p>0.2</p>
+<p>Figure 1: Time response of the system state variables.</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>Figure 1 shows the trajectories of the system for several initial conditions. It can be observed that all these trajectories converge to the equilibrium point xss at least in the strong predefined time Tc = 0.1.</p>
+<p>3</p>
+<p>Influence of the Tuning Parameters</p>
+<p>In this section, the influence of the product mq, on the dynamics of the predefined-time stable system (10), as well as the effect of both mq and Tc in the performance of this system in the case of noisy measurements, are analyzed.</p>
+<p>3.1</p>
+<p>Influence of mq on the dynamics of the system</p>
+<p>With the purpose of evaluating how the parameters m and q, or more precisely the product mq, affect the behavior of the strongly predefined-time stable system given by (10), the following function is introduced: W (t) = kx(t)k . The first aspect to be considered is the smoothness of the convergence of system (10) to the manifold x = 0. In order to do this, the time derivative of W (t) is required; since kxk is a valid Lyapunov function that satisfies the equality version of (5) with p = mq, this derivative is given by Ẇ (t) = −</p>
+<p>1 exp (W (t)mq ) W (t)1−mq . mqTc</p>
+<p>(11)</p>
+<p>Let T (x0 ) be the exact settling time of system (10); that is, T (x0 ) = Tc [1 − exp (−W0mq )]. Then, Ẇ (T (x0 ) + t0 ) is the first time derivative of kxk at the exact moment of convergence and, since W (T (x0 ) + t0 ) = 0, it follows that Ẇ (T (x0 ) + t0 ) = −</p>
+<p>01−mq . mqTc</p>
+<p>Thus, kxk converges to zero with a time derivative that is equal to zero for 0 &lt; mq &lt; 1 and undefined for mq = 1. However, if mq = 1, it can be proved that lim</p>
+<p>t→T (x0 )+t0 −</p>
+<p>Ẇ (t) = −</p>
+<p>1 . Tc</p>
+<p>In spite of this, values of mq higher than 21 produce a visually abrupt convergence. In order to understand this phenomenon, an analysis of the second derivative of W (t) at the moment of converge is performed as well. Differentiating (11) produces Ẅ (t) = =</p>
+<p>(mq − 1 − mqW (t)mq )W (t)−mq Ẇ (t) mqTc exp (−W (t)mq ) (1 − mq + mqW (t)mq )W (t)1−2(mq) 2</p>
+<p>(mqTc ) exp (−2W (t)mq )</p>
+<p>.</p>
+<p>Then, the second time derivative of kxk at the exact moment of convergence is given by Ẅ (T (x0 ) + t0 ) =</p>
+<p>(1 − mq)01−2(mq) 2</p>
+<p>(mqTc )</p>
+<p>.</p>
+<p>Thus, kxk converges to zero with a second time derivative that is equal to zero for 0 &lt; mq &lt; 21 , undefined for mq = 12 , and infinite for mq &gt; 21 . However, if mq = 12 , it can be proved that lim t→T (x0 )+t0</p>
+<p>−</p>
+<p>Ẅ (t) =</p>
+<p>2 . Tc 2</p>
+<p>The fact that Ẅ (T (x0 ) + t0 ) is infinite for mq &gt; 21 explains why the convergence of kxk to zero is appreciably less smooth in this case than when mq ≤ 21 . 7</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>The second aspect that should be studied is the steepness of the initial response of kxk, which is characterized by Ẇ (t0 ). Letting x0 = x(t0 ), it follows from (11) that Ẇ (t0 ) = −</p>
+<p>1 mq 1−mq exp (kx0 k ) kx0 k . mqTc</p>
+<p>Figure 2 portrays Tc Ẇ (t0 ) as a function of mq for several values of kx0 k of both low and high orders of magnitude. It can be observed that, for every kx0 k, there exists a value of mq that maximizes Tc Ẇ (t0 ); that is, that produces the least steep initial response of kxk. If mq is significantly far from this optimum value, the initial response might be so drastic to the extent of causing major errors in numerical simulations and digital implementations. 0.000 -0.001</p>
+<p>||x 0|| = 10-7 ||x 0|| = 10-6.5 ||x 0|| = 10-6 ||x 0|| = 10-5.5 ||x 0|| = 10-5 ||x 0|| = 10-4.5 ||x 0|| = 10-4</p>
+<p> Tc W (t0)</p>
+<p>-0.002 -0.003 -0.004 -0.005 -0.006</p>
+<p>0.0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>1.0</p>
+<p>mq 0 -2.0 × 109</p>
+<p> Tc W (t0)</p>
+<p>-4.0 × 10</p>
+<p>||x 0|| = 105 ||x 0|| = 105.5 ||x 0|| = 106 ||x 0|| = 106.5 ||x 0|| = 107 ||x 0|| = 107.5 ||x 0|| = 108</p>
+<p>9</p>
+<p>-6.0 × 109 -8.0 × 109 -1.0 × 1010 -1.2 × 1010 -1.4 × 1010 0.00</p>
+<p>0.05</p>
+<p>0.10</p>
+<p>0.15</p>
+<p>0.20</p>
+<p>0.25</p>
+<p>0.30</p>
+<p>0.35</p>
+<p>mq</p>
+<p>Figure 2: Steepness of kxk at t = t0 for several values of kx0 k.</p>
+<p>A suggestion for the value of mq as a function of the normof x0 is provided in Figure 3. For a given kx0 k, this suggestion corresponds to the value of mq in 0, 21 that maximizes Tc Ẇ (t0 ). The resulting suggested value is valid for any constant Tc &gt; 0 since, naturally, it would also maximize Ẇ (t0 ). The restriction for mq to be less than or equal to 21 is placed in order to maintain an acceptable smoothness at the time of convergence given that, as has been discussed, a larger value would cause kxk to reach zero with an infinite second time derivative. Remark 3.1. Adjusting the parameters of a predefined-time stable system in accordance with detailed knowledge of its initial conditions would certainly defeat the purpose of predefined-time stability itself. However, it should be noted that using the suggestion given by Figure 3 based on the expected order of magnitude of kx0 k should suffice to avoid extremely steep initial responses and their related complications.</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>0.5</p>
+<p>0.4</p>
+<p>mq</p>
+<p>0.3</p>
+<p>0.2</p>
+<p>0.1</p>
+<p>0.0 10-8</p>
+<p>10-6</p>
+<p>10-4</p>
+<p>10-2</p>
+<p>1</p>
+<p>102</p>
+<p>104</p>
+<p>106</p>
+<p>108</p>
+<p>||x 0||</p>
+<p>Figure 3: Suggested value for mq as a function of the initial condition.</p>
+<p>3.2</p>
+<p>Noisy measurements</p>
+<p>In the non-ideal case where the measurement of x presents noise, system (10) becomes ẋ = −</p>
+<p>1 Φm,q (x + v), Tc</p>
+<p>(12)</p>
+<p>where v is a random variable that represents the noise. In this scenario the trajectories of the system cannot be perfectly confined to the manifold x = 0 and some error is unavoidable. Certainly, the magnitude of this error would depend on the values of the parameters Tc and mq and this dependence is to be assessed. In order to do so, the scalar version of system (12) was simulated for several values of Tc and mq and with a Gaussian-distributed noise v. This noise was zero-mean and with a standard deviation of 0.1. The simulations were carried out through Euler’s method with a sampling period of 0.01 time units and from the initial condition x(0) = 0. In each case, the average absolute error from t = 0 to t = 400, given by Z 400 1 |x(t)| dt, 400 0 was calculated. The results for this average absolute error as a function of the tuning parameters are depicted in Figure 4.</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>Figure 4: Average absolute error as a function of the tuning parameters for a predefined-stable system with noisy measurements.</p>
+<p>As it was expected, the effect of the noise grows in magnitude as Tc decreases, since smaller values of Tc impose a faster and steeper convergence. The effect of mq, however, was not so clear since the several occurrences of this expression in the differential equation of the system have different influences. mq 1 1 In particular, as mq increases, the factors mq and kx+vk increases. The mq decrease but exp kx + vk evidence in Figure 4 suggests that this opposing effects come to the best balance when mq is near the middle of the interval (0, 1].</p>
+<p>4</p>
+<p>Predefined-Time Sliding Mode Controllers</p>
+<p>A basic problem in the design of feedback control systems is the stabilization and tracking in the presence of uncertainty caused by plant parameters variation and external perturbations. In order to deal with this problem, several approaches have been proposed. Most of them are based on Lyapunov stability theory and variable structure systems with sliding modes (SM). The SM techniques are based on the idea of the sliding manifold, that is, an integral manifold with finite reaching time (Drakunov and Utkin, 1992), and have been widely used for the problems of control and observation of dynamical systems due to their characteristics of finite time convergence as well as robustness and insensitivity to uncertainties due to external bounded disturbances and parameters variation (Utkin, 1992, Utkin et al., 2009). With this idea, the aim of this section is to present a class of first order sliding mode controllers with the novel property of a predefined-time reaching phase.</p>
+<p>4.1</p>
+<p>Motivation</p>
+<p>In order to apply the previous results to sliding mode controller design, consider the dynamical system ẋ = u + ∆(t, x)</p>
+<p>(13)</p>
+<p>with x, u ∈ Rn , ∆ : R+ × Rn → Rn and t0 = 0. The main objective is to stabilize system (13) at the point x = 0 in a predefined time Tc , starting from an arbitrary state x0 = x(0) and in spite of the unknown disturbance ∆(t, x). Firstly, weakly and strongly predefined-time stable continuous controllers are presented. Also, a stability and robustness analysis in the presence of a class of vanishing perturbation is performed. Lemma 4.1 (A weak predefined-time controller). Let the function ∆(t, x) be considered as a vanishing perturbation term such that k∆(t, x)k ≤ δ kxk, with 0 &lt; δ &lt; ∞ a known constant. Then, by selecting the</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>control input </p>
+<p> 1 + kmq Φm,q (x) Tc</p>
+<p>u=−</p>
+<p>(14)</p>
+<p>1 with Tc &gt; 0, m ≥ 1, 0 &lt; q &lt; m , and k ≥ δ, the system (13) closed by (14) is globally weakly predefinedtime stable with Tc as the weak predefined time. m</p>
+<p>Proof. Consider the Lyapunov function V = kxk defined for x ∈ Rn ; its derivative along the trajectories m−2 T of (13)-(14) is given by V̇ = m kxk x ẋ. Therefore,     1 m−2 T V̇ = m kxk x ∆(t, x) − + kmq Φm,q (x) Tc h i 1 m−2 T mq m(1−q) mq m(1−q) = m kxk x ∆(t, x) − k exp(kxk ) kxk − exp(kxk ) kxk . qTc From expression (9), it follows that V̇ ≤ −</p>
+<p>h i 1 mq m(1−q) m−2 m exp(kxk ) kxk + m kxk |xT ∆(t, x)| − k kxk . qTc</p>
+<p>Applying the Cauchy–Schwarz inequality, h i 1 mq m(1−q) m−2 m exp(kxk ) kxk + m kxk kxk k∆(t, x)k − k kxk qTc 1 mq m(1−q) m ≤− exp(kxk ) kxk − (k − δ)m kxk . qTc</p>
+<p>V̇ ≤ −</p>
+<p>It is observed that the system is globally asymptotically stable. Moreover, V̇ ≤ −</p>
+<p>1 exp(V q )V 1−q . qTc</p>
+<p>Then, by direct application of Theorem 2.1, the proof is finished. Lemma 4.2 (A strong predefined-time controller). Let the function ∆(t, x) be considered as a vanishing perturbation term such that k∆(t, x)k ≤ δ kxk, with 0 &lt; δ &lt; ∞ a known constant. Then, by selecting the control input 1 u = − Φm,q (x) − δx (15) Tc 1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q &lt; m , the system (13) closed by (15) is globally strongly predefined-time stable with Tc as the strong predefined time. m</p>
+<p>Proof. Consider the Lyapunov function V = kxk defined for x ∈ Rn ; its derivative along the trajectories of (13)-(15) is given by   1 m−2 T V̇ = m kxk x ∆(t, x) − Φm,q (x) − δx Tc h i 1 mq m(1−q) m−2 2 =− exp(kxk ) kxk + m kxk xT ∆(t, x) − δ kxk . qTc h i 2 m−2 2 Since xT ∆(t, x) ≤ kxk k∆(t, x)k ≤ δ kxk , the expression m kxk xT ∆(t, x) − δ kxk is non-positive. Furthermore, for any x ∈ Rn , this expression can equal zero in the particular scenario where xT ∆(t, x) = 2 δ kxk ; that is, h i m−2</p>
+<p>m kxk</p>
+<p>sup</p>
+<p>xT ∆(t, x) − δ kxk</p>
+<p>2</p>
+<p>= 0 ∀ x ∈ Rn .</p>
+<p>k∆(t,x)k≤δkxk</p>
+<p>From this it can be concluded that sup k∆(t,x)k≤δkxk</p>
+<p>V̇ = −</p>
+<p>1 1 mq m(1−q) exp(kxk ) kxk =− exp(V q )V 1−q qTc qTc</p>
+<p>Then, by direct application of Theorem 2.3, the proof is finished. 11</p>
+<p>∀ x ∈ Rn .</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>Secondly, a continuous controller is analyzed for the case of non-vanishing perturbations. Lemma 4.3 (Continuous controller in presence of of non-vanishing perturbations). Let the function ∆(t, x) be considered as a non-vanishing bounded disturbance such that k∆(t, x)k ≤ δ, with 0 &lt; δ &lt; ∞ a known constant. Then, by selecting the control input u=−</p>
+<p>1 Φm,q (x) Tc</p>
+<p>(16)</p>
+<p>1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q &lt; m , the system (13) closed by (16) is uniformly ultimately-bounded 1 i mq h  mq 1−mq mq 1−mq of the form kxk ≤ with Tc as an upper bound for the convergence mq W 1−mq (mqTc δ)</p>
+<p>time to this region. Here, W(·) stands for the Lambert function (Lambert, 1758), the inverse function of f (ξ) = ξ exp(ξ) for ξ ∈ R, i.e. ξ = W(ξ exp(ξ)) (see Corless et al. (1996)). m</p>
+<p>Proof. Consider the Lyapunov function V = kxk defined for x ∈ Rn ; its derivative along the trajectories m−2 T of (13)-(16) is given by V̇ = m kxk x ẋ. Therefore,   1 m−2 T V̇ = m kxk x ∆(t, x) − Φm,q (x) Tc   1 m−2 mq 2−mq = m kxk xT ∆(t, x) − exp (kxk ) kxk . mqTc From expression (9), it follows that V̇ ≤ −m kxk</p>
+<p>m−2</p>
+<p></p>
+<p> 1 mq 2−mq exp (kxk ) kxk − |xT ∆(t, x)| . mqTc</p>
+<p>Applying the Cauchy–Schwarz inequality,   1 m−2 mq 2−mq V̇ ≤ −m kxk exp (kxk ) kxk − kxk k∆(t, x)k mqTc   1 m−1 mq 1−mq ≤ −m kxk exp (kxk ) kxk −δ . mqTc mq</p>
+<p>1 exp (kxk It is observed that, in order to obtain V̇ &lt; 0, it is necessary that mqT c this expression for kxk yields</p>
+<p></p>
+<p>1 − mq kxk &gt; W mq</p>
+<p></p>
+<p>mq mq (mqTc δ) 1−mq 1 − mq</p>
+<p>) kxk</p>
+<p>1−mq</p>
+<p>&gt; δ. Solving</p>
+<p>1  mq</p>
+<p>and, therefore, the system is uniformly ultimately-bounded. 1 h  i mq mq mq 1−mq Moreover, for kxk &gt; 1−mq W (mqT δ) , it holds that c mq 1−mq V̇ ≤ −</p>
+<p>1 exp(V q )V 1−q . qTc</p>
+<p>Then, from arguments similar to those used to prove Theorem 2.1, it is clear that the region kxk ≤ 1 h  i mq mq 1−mq mq 1−mq W (mqT δ) is reached before t = Tc . c mq 1−mq Finally, in order to improve the robustness of the continuous controller, weak predefined-time and strong predefined-time stable discontinuous controllers, including integral sliding mode extensions, are introduced for the case of non-vanishing perturbations. In order to obtain discontinuous controllers, the parameters m and q may be set such that mq = 1. In this case, the function Φm,q (x) is written as Φ1 (x).</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>4.2</p>
+<p>Robust predefined-time discontinuous controllers</p>
+<p>Lemma 4.4 (A robust weak predefined-time controller). Let the function ∆(t, x) be considered as a non-vanishing bounded disturbance such that k∆(t, x)k ≤ δ, with 0 &lt; δ &lt; ∞ a known constant. Then, by selecting the control input   1 u=− + k Φ1 (x) (17) Tc with Tc &gt; 0 and k ≥ δ, the system (13) closed by (17) is globally weakly fixed-time stable with Tc as the weak predefined time. m</p>
+<p>Proof. Consider the Lyapunov function V = kxk defined for x ∈ Rn ; its derivative along the trajectories m−2 T of (13)-(17) is given by V̇ = m kxk x ẋ. Therefore,     1 m−2 T V̇ = m kxk x ∆(t, x) − + k Φ1 (x) Tc h i m m−2 T m−1 m−1 = m kxk x ∆(t, x) − k exp(kxk) kxk − exp(kxk) kxk . Tc From expression (9), it follows that V̇ ≤ −</p>
+<p>h i m m−1 m−2 m−1 exp(kxk) kxk + m kxk |xT ∆(t, x)| − k kxk . Tc</p>
+<p>Applying the Cauchy–Schwarz inequality, h i m m−1 m−2 m−1 exp(kxk) kxk + m kxk kxk k∆(t, x)k − k kxk Tc m m−1 m−1 ≤ − exp(kxk) kxk − (k − δ)m kxk . Tc</p>
+<p>V̇ ≤ −</p>
+<p>It is observed that the system is globally asymptotically stable. Moreover, V̇ ≤ −</p>
+<p>1 exp(V q )V 1−q . qTc</p>
+<p>Then, by direct application of Theorem 2.1, the proof is finished. Lemma 4.5 (A robust strong predefined-time controller). Under the same conditions of Lemma 4.4, the selection of the control input x 1 u = −δ − Φm,q (x) (18) kxk Tc 1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q ≤ m , leads to the closed-loop system (13)-(18) that is globally strongly predefined-time stable with Tc as the strong predefined time. m</p>
+<p>Proof. Consider the Lyapunov function V = kxk defined for x ∈ Rn ; its derivative along the trajectories of (13)-(18) is given by   x 1 m−2 T V̇ = m kxk x ∆(t, x) − δ − Φm,q (x) kxk Tc  1 mq m(1−q) m−2  T exp(kxk ) kxk x ∆(t, x) − δ kxk . =− + m kxk qTc  m−2  T Since xT ∆(t, x) ≤ kxk k∆(t, x)k ≤ δ kxk, the expression m kxk x ∆(t, x) − δ kxk is non-positive. Moreover, for any x ∈ Rn , this expression can equal zero in the particular scenario where xT ∆(t, x) = δ kxk; that is,  m−2  T sup m kxk x ∆(t, x) − δ kxk = 0 ∀ x ∈ Rn . k∆(t,x)k≤δkxk</p>
+<p>From this it can be concluded that sup k∆(t,x)k≤δkxk</p>
+<p>V̇ = −</p>
+<p>1 1 mq m(1−q) exp(kxk ) kxk =− exp(V q )V 1−q qTc qTc</p>
+<p>Then, by direct application of Theorem 2.3, the proof is finished. 13</p>
+<p>∀ x ∈ Rn .</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>Based on the integral sliding mode approach proposed by Matthews and DeCarlo (1988), Utkin and Shi (1996), the following result presents an integral controller with predefined-time stability. Lemma 4.6 (An integral weak predefined-time controller). Under the same conditions of Lemma 4.4, let the selection of the control input be u=−</p>
+<p>1 σ 1 Φmn ,qn (x) − Φmi ,qi (σ) − δ Tcn − Tci Tci kσk</p>
+<p>(19)</p>
+<p>1 Φmn ,qn (x), with Tcn &gt; Tci &gt; 0, mn , mi ≥ 1, 0 &lt; qn ≤ m1n , and where σ = x + z and ż = Tc −T c n</p>
+<p>i</p>
+<p>0 &lt; qi ≤ m1i . Then, the closed-loop system (13)-(19) is globally weakly predefined-time stable with Tcn as the weak predefined time. Proof. The closed-loop system (13)-(19) is given by 1 1 σ Φmn ,qn (x) − Φmi ,qi (σ) − δ + ∆(t, x) Tcn − Tci Tci kσk σ 1 Φmi ,qi (σ) − δ + ∆(t, x) σ̇ = − Tci kσk ẋ = −</p>
+<p>(20) (21)</p>
+<p>From Lemma 4.5, it follows that the sub-system (21) is confined to the manifold σ = 0 within a strong predefined time Tci . Consequently, after t = Tci , system (20)-(21) reduces to ẋ = −</p>
+<p>1 Φmn ,qn (x). Tcn − Tci</p>
+<p>(22)</p>
+<p>Taking t0 = Tci as the initial time, then, from Lemma 2.1, the system (22) is globally strongly predefinedtime stable with Tcn − Tci as the strong predefined time time. Therefore, the system reaches and stays at x = 0 by t = Tci + Tcn − Tci = Tcn ; nevertheless, since the convergence of (21) to σ = 0 does not occur exactly at t = Tci , it cannot be assured that Tcn is the least upper bound of the settling time. Thus, system (13)-(19) as a whole is weakly predefined-time stable with Tcn as the weak predefined time. When disturbances are present, it is observed that the information available about their bounds influences the stability properties of the system. For example, the ultimate bound for the continuous controller depends on δ and the strength or weakness of the discontinuous controllers depend on the use of δ in the control law. With the aim of overcoming this dependence, the following result presents an integral controller such that strong predefined-time stability holds for any choice of k ≥ δ as the gain of the discontinuous term. Lemma 4.7 (An integral strong predefined-time controller). Under the same conditions of Lemma 4.4, let the selection of the control input be u=−</p>
+<p>h(t − Tci ) 1 σ Φmn ,qn (x) − Φmi ,qi (σ) − k Tcn − Tci Tci kσk</p>
+<p>(23)</p>
+<p>h(t−T )</p>
+<p>where h(ξ) is the Heaviside step function, σ = x+z and ż = Tc −Tcci Φmn ,qn (x), with k ≥ δ, Tcn &gt; Tci &gt; 0, n</p>
+<p>i</p>
+<p>mn , mi ≥ 1, 0 &lt; qn ≤ m1n , and 0 &lt; qi ≤ m1i . Then, the closed-loop system (13)-(23) is globally strongly predefined-time stable with Tcn as the strong predefined time. Proof. The closed-loop system (13)-(23) is given by h(t − Tci ) 1 σ Φmn ,qn (x) − Φmi ,qi (σ) − k + ∆(t, x) Tcn − Tci Tci kσk 1 σ σ̇ = − Φmi ,qi (σ) − k + ∆(t, x). Tci kσk ẋ = −</p>
+<p>(24) (25)</p>
+<p>From the hypothesis k ≥ δ, it follows that the sub-system (25) stabilizes in a time Tc−i such that − Tci ≤ Tci . If Tc−i = Tci , the strong predefined-time stability follows from Lemma 4.6. Otherwise, system (24)-(25) reduces to (</p>
+<p>ẋ = 0 for Tc−i ≤ t &lt; Tci 1 Φmn ,qn (x) for t ≥ Tci . ẋ = − Tc −T c n</p>
+<p>i</p>
+<p>Therefore, from Lemma 2.1, system (24)-(25) is strongly predefined-time stable with t = Tci + Tcn − Tci = Tcn as the strong predefined time. 14</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>The following example illustrates the controller proposed in Lemma 4.5 and how the exact settling time of the corresponding closed-loop system approaches the strong predefined time as the trajectory of the disturbance and the magnitude of the initial condition worsen. Example 4.1. Consider the following family of scalar dynamical systems indexed by parameter α ∈ R+ :   t 1 ẋ = cos − sign(x) − Φm,q (x), x(0) = α, (26) α Tc where x ∈ R and the initial time is t0 = 0. Each system of this family is of the form (13) closed by (18), with ∆(t, x) = cos(t/α) as the disturbance term and with δ = 1. Given that k∆(t, x)k ≤ δ = 1, it follows from Lemma 4.5 that all systems of family (26) converge to x = 0 within a strong predefined time Tc . However, since both the disturbance trajectory and the initial condition are completely determined by α, the exact settling time will depend solely on this parameter and can be seen as a function of the form T (α). Figure 5 portrays trajectories of (26) for several values of the parameter α, while Figure 6 depicts the exact settling time as a function of α. In both cases, the strong predefined time was set to Tc = 1 and is marked by a gray, dashed line. The other parameters were chosen so that mq = 0.4. 2.0</p>
+<p>1.0</p>
+<p>0.8</p>
+<p>α1 α4 α  10 α  100</p>
+<p>1.0</p>
+<p>T(α )</p>
+<p>x</p>
+<p>1.5</p>
+<p>0.6</p>
+<p>0.4 0.5</p>
+<p>0.2 0.0</p>
+<p>0.0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>1.0</p>
+<p>1.2</p>
+<p>100</p>
+<p>10-1</p>
+<p>t</p>
+<p>101</p>
+<p>102</p>
+<p>α</p>
+<p>Figure 5: Trajectories of (26) for several values of α.</p>
+<p>Figure 6: Exact settling time of (26) as a function of α.</p>
+<p>As it was expected, Figure 6 shows that the supremum of the settling-time function is Tc . This strong predefined time is approached by the exact settling time for large values of α because, as α increases, the initial condition grows in magnitude and the disturbance term approaches the constant function ∆(t, x) = 1, which is the worst-case scenario considered by the restriction k∆(t, x)k ≤ 1 for a positive initial condition.</p>
+<p>4.3</p>
+<p>First order predefined-time sliding mode controllers</p>
+<p>Consider the system ẋ = f (t, x) + B(t, x)u + ∆(t, x) n</p>
+<p>(27) r</p>
+<p>where x ∈ X ⊂ R is the system state and X is a non-empty set, u ∈ R with r ≤ n is the control input of the system, f : R+ × Rn → Rn , B : R+ × Rn → Rn×r , and ∆ : R+ × Rn → Rn . The time variable t is defined on the interval [t0 , ∞), where t0 ∈ R+ ∪ {0}. For this system, the initial conditions are x0 = x(t0 ). In addition, let the function σ : Rn → Rr . The main objective of the controller is to drive the trajectories of system (27) to the manifold σ(x) = 0. The function σ is selected so that the motion on the sliding manifold σ(x) = 0 has a desired behavior. Letting G(x) = ∂σ(x) ∂x , define D(x) as D(x) = G(x)B(t, x) It is assumed that the matrix D(x) has an inverse for all x ∈ X . The following lemmas provide controllers which induce a sliding mode in σ(x) = 0 in a strong predefined time Tc . Three scenarios are presented depending on the perturbation nature. The first case is for the non-perturbed system, the second one for vanishing perturbations, and the third one for non-vanishing perturbations. For the last two cases, the perturbation is considered to be matched (Drazenovich, 1969). 15</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>Lemma 4.8 (Controller for an unperturbed system). For system (27) with ∆(t, x) = 0, the selection of the control input   1 −1 u = −D (x) G(x)f (t, x) + Φm,q (σ) (28) Tc 1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q ≤ m , induces a strong predefined-time sliding mode in σ(x) = 0 with Tc as the least upper bound for the settling time.</p>
+<p>Proof. The dynamics of σ(x) are given by the first order system σ̇ = G(x)f (t, x) + D(x)u.</p>
+<p>(29)</p>
+<p>Equation (29) with the controller presented in (28) reduces to σ̇ = −</p>
+<p>1 Φm,q (σ). Tc</p>
+<p>Therefore, from Lemma 2.1, the manifold σ(x) = 0 is reached in strong a predefined time Tc . Lemma 4.9 (Systems with vanishing perturbation). Let the function ∆(t, x) be considered as a matched ¯ x) such that ∆(t, x) = B(t, x)∆(t, ¯ x) and vanishing perturbation term. Hence, there exists a function ∆(t, ¯ and D(x)∆(t, x) ≤ δ kxk, where 0 &lt; δ &lt; ∞ is a known constant. Then, the control input   1 u = −D−1 (x) G(x)f (t, x) + Φm,q (σ) − δσ (30) Tc 1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q ≤ m , induces a sliding mode in σ(x) = 0 with strong predefined time Tc .</p>
+<p>Proof. The dynamics of σ(x) are given by  ¯ x) . σ̇ = G(x)f (t, x) + D(x) u + ∆(t,</p>
+<p>(31)</p>
+<p>Equation (31) with the controller presented in (30) reduces to σ̇ = −</p>
+<p>1 ¯ x). Φm,q (x) − δσ + D(x)∆(t, Tc</p>
+<p>In this way, by direct application of Lemma 4.2, the manifold σ(x) = 0 is reached in a strong predefined time Tc . Lemma 4.10 (Systems with non-vanishing perturbation). For this case, let the function ∆(t, x) be ¯ x) considered as a matched and non-vanishing perturbation term. Hence, there exists a function ∆(t, ¯ ¯ such that ∆(t, x) = B(t, x)∆(t, x) and D(x)∆(t, x) ≤ δ, with 0 &lt; δ &lt; ∞ a known constant. Then, the control input   1 x + Φm,q (x) (32) u = −D−1 (x) G(x)f (t, x) + δ kxk Tc 1 with Tc &gt; 0, m ≥ 1, and 0 &lt; q ≤ m , induces a strong predefined-time sliding mode in σ(x) = 0 with Tc as the least upper bound for the settling time.</p>
+<p>Proof. The dynamics of σ(x) are given by  ¯ x) . σ̇ = G(x)f (t, x) + D(x) u + ∆(t,</p>
+<p>(33)</p>
+<p>Equation (33) with the controller presented in (32) reduces to σ̇ = −δ</p>
+<p>1 x ¯ x). − Φm,q (x) + D(x)∆(t, kxk Tc</p>
+<p>Thus, by direct application of Lemma 4.5, the manifold σ(x) = 0 is reached in a strong predefined time Tc .</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>Example 4.2 (Control of the double integrator). Consider the system ẋ1 = x2</p>
+<p>(34)</p>
+<p>ẋ2 = u + ∆</p>
+<p>where ∆ is a bounded disturbance such that |∆| ≤ δ with δ &gt; 0. For this case, the main objective is to design a controller that drives the state x1 to a constant trajectory x1r . Defining the variables e1 = (x1 − x1r ) /k and e2 = e1 + x2 /k 2 with k &gt; 0, from (34) it follows that ė1 = k(e2 − e1 )</p>
+<p>(35)</p>
+<p>ė2 = k(e2 − e1 ) + u/k 2 + ∆/k 2 . Based on (18), the following control law is proposed:   1 3 2 u = −k (e2 − e1 ) − k kc sign(e2 ) + Φm,q (e2 ) . Tc</p>
+<p>(36)</p>
+<p>Hence, system (35) closed by (36) is ė1 = k(e2 − e1 ) ė2 = −kc sign(e2 ) −</p>
+<p>(37)</p>
+<p>1 Φm,q (e2 ) + ∆/k 2 . Tc</p>
+<p>Therefore, with kc = δ/k 2 and by Lemma 4.5, this control law guarantees that sliding motion on the manifold e2 = 0 occurs in a strong predefined time Tc . The motion on this manifold is given by ė1 = −ke1 and, consequently, system (37) is exponentially stable. For this case, let Tc = 0.5 time units, k = 10, kc = 0.01, m = 1, q = 1/2, x1r = 5, ∆ = sin(3t), and δ = 1. Figure 7 shows the trajectories of the variable e2 for several initial conditions. It can be observed that all these trajectories converge to zero at least in the predefined time Tc = 0.5. Figure 8 shows the trajectories of the system variables x1 and x2 for several initial conditions. It can be observed that, once e2 = 0, the trajectories of x1 converge exponentially to five and the trajectories of x2 converge exponentially to zero. 5</p>
+<p>10</p>
+<p>4</p>
+<p>8</p>
+<p>3</p>
+<p>6</p>
+<p>2</p>
+<p>4</p>
+<p>1</p>
+<p>2</p>
+<p>0</p>
+<p>0</p>
+<p>−1</p>
+<p>−2</p>
+<p>−2</p>
+<p>−4</p>
+<p>−3</p>
+<p>−6</p>
+<p>−4</p>
+<p>−8</p>
+<p>−5</p>
+<p>−10</p>
+<p>0</p>
+<p>0.1</p>
+<p>0.2</p>
+<p>0.3</p>
+<p>0.4</p>
+<p>0.5</p>
+<p>0.6</p>
+<p>0.7</p>
+<p>0.8</p>
+<p>0.9</p>
+<p>1</p>
+<p>Figure 7: Time response of the sliding variable e2 .</p>
+<p>x1 x2 0</p>
+<p>0.1</p>
+<p>0.2</p>
+<p>0.3</p>
+<p>0.4</p>
+<p>0.5</p>
+<p>0.6</p>
+<p>0.7</p>
+<p>0.8</p>
+<p>0.9</p>
+<p>1</p>
+<p>Figure 8: Time response of the system state variables.</p>
+<p>Remark 4.1. Similar results to those presented in Example 4.2 using Lemma 4.5 can be obtained with the application of the integral controllers given in Lemmas 4.6-4.7.</p>
+<p>5</p>
+<p>A Predefined-Time Consensus Algorithm for Complete Networks</p>
+<p>In the last decade there has been a great deal of attention placed on algorithms that achieve a goal in a self-organizing and distributed fashion. One of such algorithms is the consensus algorithm (see 17</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>for example Olfati-Saber and Murray (2004), Cai (2012), Wang and Xiao (2010), Zuo and Tie (2014), and the references therein), in which a network agrees on a common value in a distributed fashion by communicating with its nearest neighbors. Such an algorithm has applications, for instance, in wireless sensor networks. In this regard, contributions have been presented in asymptotic consensus (Olfati-Saber and Murray, 2004, Cai, 2012), finite-time consensus (Cortés, 2006, Wang and Xiao, 2010), and fixed-time consensus (Zuo and Tie, 2014, Tian et al., 2016). However, a drawback of such approaches is that the convergence time, which is known to depend on the graph topology, is hard to estimate and the existing estimation methods are too conservative (Zuo and Tie, 2014). For this reason, methods for the design of consensus algorithms with predefined convergence time are of great interest. In this section it is shown that, using the predefined-time stability framework presented herein, new consensus algorithms with predefined-time convergence can be proposed. For the sake of brevity, only complete graphs are considered. The results for general classes of graphs will be reported elsewhere.</p>
+<p>5.1</p>
+<p>Basic concepts on graph theory</p>
+<p>Before presenting the proposed consensus algorithm and its convergence proof, some basic concepts on graph theory, which are mainly taken from Godsil and Royle (2001), are briefly introduced. A graph X consists of a vertex (also called node) set V(X ) and an edge set E(X ) where an edge is an unordered pair of distinct vertices of X . The notation ij is used to refer to an edge and it is said that j is a neighbor of i. The set of all neighbors of node i is denoted by Ni which has cardinality di . A graph is connected if for any two nodes i and j there is a sequence of distinct nodes starting at i and ending at j such that consecutive nodes are neighbors. The Laplacian of X is L = Q − A where Q = diag(d1 , · · · , dn ) and A = [aij ] such that aij = 1 if the node i is a neighbor of node j and aij = 0 otherwise. The Laplacian matrix L is a positive semidefinite and symmetric matrix, thus its eigenvalues are all real and non-negative. If the graph X is connected, then the eigenvalue λ1 (L) = 0 has one with eigenvector 1 = [1 · · · 1]T . For every P algebraic multiplicity T 2 graph X , it holds that x Lx = ij∈E(X ) (xj − xi ) (Godsil and Royle, 2001). A graph with n nodes is complete if each node has n − 1 neighbors. In a complete graph of n nodes, n is an eigenvalue of the Laplacian L with multiplicity n − 1.</p>
+<p>5.2</p>
+<p>The proposed consensus algorithm</p>
+<p>Let X be the underlying communication network and let X Zi (x) = (di + 1) (xj − xi )2 . j∈Ni</p>
+<p>Then the proposed consensus algorithm is ẋi = ui , ui =</p>
+<p>1 exp (Zi (x)q ) X (xj − xi ) , 2nTc q Zi (x)q</p>
+<p>(38)</p>
+<p>j∈Ni</p>
+<p>1 and k ≥ 0. 2 In the following, it is shown that, for complete networks, (38) is a consensus algorithm with strong predefined-time convergence and Tc is the least upper bound for the settling time. where 0 &lt; q &lt;</p>
+<p>Lemma 5.1. Let e = −Lx, then Le = ne. Proof. Since L is symmetric, then there exist an orthonormal matrix U = [v1 · · · vn ] formed by the eigenvectors of L such that L = U DU T , where D = diag(λ1 , λ2 , ..., λn ) with λ1 = 0 and λ2 = λ3 = . . . = λn = n because the graph is complete. Let x be expressed using the eigenvectors as a basis; then, x = α1 v1 + α2 v2 + · · · + αn vn and e = −Lx = −(α2 λ2 v2 + · · · + αn λn vn ). Following this procedure, Le = −(α2 λ22 v2 + · · · + αn λ2n vn ) = α2 n2 v2 + · · · + αn n2 vn = ne is obtained. Theorem 5.1. Let X be the underlying communication network topology. Then, if X is a complete graph, algorithm (38) achieves consensus in the network within a strong predefined time Tc . That is, x1 (t) = · · · = xn (t) ∀ t ≥ t0 + Tc .</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Proof. Let ei =</p>
+<p>T j∈Ni (xj − xi ) and e = [e1 , . . . , en ]</p>
+<p>P</p>
+<p>F (e) =</p>
+<p></p>
+<p>u1</p>
+<p>(notice that e = −Lx), and let ···</p>
+<p>un</p>
+<p>T</p>
+<p>where ui is given by (38). Then, the dynamics of the network under the communication topology X are given by ẋ = F (e).</p>
+<p>(39)</p>
+<p>Let e = −Lx be called the consensus error and notice that whenever e = 0, x1 = · · · = xn , i.e., consensus is achieved. Then the consensus error dynamics are given by ė = −LF (e).</p>
+<p>(40)</p>
+<p>Notice that F (e) ∈ span(1) if and only if e ∈ span(1). However, since e = −Lx, then e ⊥ 1; thus, e ∈ span(1) if and only if e = 0. Therefore, e = 0 is the only possible equilibrium point during the evolution of (40). Furthermore, since the graph is complete, 2</p>
+<p>Zi (x) = nxT Lx = xT (ne) = xT Le = eT e = kek . Thus, ui =</p>
+<p>1 2nTc q</p>
+<p>  2q exp kek kek</p>
+<p>2q</p>
+<p>ei</p>
+<p>and, by Lemma 5.1, (40) becomes ė = −</p>
+<p>  e 1 1 2q exp kek 2q = − T Φm,q (e) 2Tc q c kek</p>
+<p>(41)</p>
+<p>1 with m = 2 and 0 &lt; q ≤ m . Therefore, according to Lemma 2.1, (41) is strongly predefined-time stable with Tc as the least upper bound for the settling time. Since the graph is complete, then e = −Lx = 0 implies that x ∈ span(1). Thus, for all t ≥ t0 + Tc , it holds that</p>
+<p>x1 (t) = x2 (t) = · · · = xn (t) and consensus is achieved. Example 5.1 (Predefined-time consensus). Consider a complete network of ten nodes under the strong predefined-time consensus algorithm (38). Fig. 9 shows the dynamics of such a network with parameters Tc = 1 and q = 0.5 and initial conditions x(0) = x0 = [0.2 0.3 0.5 0.1 0.4 0.6 0.9 0.7 0.8 1]T . It can be observed that the network reaches consensus before the strong predefined time t = Tc = 1. Remark 5.1. Although the results presented in this paper are interesting and promising, in its present form they are not straightforwardly applicable for the design of high-order sliding mode algorithms or to the consensus for dynamic networks (Wang and Xiao, 2010). Additionally, the discretization for the application in digital systems presents some difficulties (Levant, 2013). Extensions of the presented analysis to overcome these limitations are under investigation and will be reported elsewhere.</p>
+<p>6</p>
+<p>Conclusions</p>
+<p>In this paper, a novel class of dynamical systems with predefined-time stability was introduced. The systems in this family converge within a finite time period and present the practical advantage that the least upper bound for this settling time is known through an explicit and straightforward relationship with the system gain. The Lyapunov analysis that allows for the characterization of this class of stability was also presented. The predefined-time stability analysis was applied in two directions. First, the proposed approach was applied for the design of first order weak and strong predefined-time sliding mode controllers. Future work in this direction is concerned with design of high order sliding mode controllers with predefined-time stability. Second, a new consensus algorithm was proposed. It was shown that if the underlying topology is a complete graph, the consensus error is strongly predefined-time stable under this algorithm. Future work in this direction is concerned with the analysis and design of predefined-time consensus algorithms under general classes of communication topologies, for which the predefined-time stability feature brings advantages over existing algorithms. 19</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>0.8 0.75 0.7 0.65 0.6 0.55 0.5 0.45 0.4 0.35 0.3 0</p>
+<p>0.2</p>
+<p>0.4</p>
+<p>0.6</p>
+<p>0.8</p>
+<p>1</p>
+<p>1.2</p>
+<p>Figure 9: Predefined-time consensus for a complete network of 10 nodes with Tc = 1 and q = 0.5.</p>
+<p>Acknowledgments The authors would like to thank the anonymous reviewers for their valuable comments and suggestions. The authors also gratefully acknowledge fruitful discussions, suggestions and support from Esteban Jiménez, Rodrigo Aldana, Edgar Sanchez and Héctor Botero. This work was supported by CONACyT, México, under grant 252405. Juan Diego Sánchez acknowledges to CONACyT, México for the PhD scholarship number 240280. Esteban López would like to thank the support of COLCIENCIAS, Colombia through the 727 doctoral scholarship.</p>
+<p>References Vincent Andrieu, Laurent Praly, and Alessandro Astolfi. Homogeneous approximation, recursive observer design, and output feedback. SIAM Journal on Control and Optimization, 47(4):1814–1850, 2008. S. Bhat and D. Bernstein. Finite-time stability of continuous autonomous systems. SIAM Journal on Control and Optimization, 38(3):751–766, 2000. Kai Cai. Averaging over general random networks. IEEE Transactions on Automatic Control, 57(12): 3186–3191, Dec 2012. R. M. Corless, G. H. Gonnet, D. E. G. Hare, D. J. Jeffrey, and D. E. Knuth. On the LambertW function. Advances in Computational Mathematics, 5(1):329–359, 1996. Jorge Cortés. Finite-time convergent gradient flows with applications to network consensus. Automatica, 42(11):1993 – 2000, 2006. Emmanuel Cruz-Zavala, Jaime A. Moreno, and Leonid Fridman. Uniform second-order sliding mode observer for mechanical systems. In Variable Structure Systems (VSS), 2010 11th International Workshop on, pages 14 –19, june 2010. Emmanuel Cruz-Zavala, Jaime A. Moreno, and Leonid Fridman. Uniform robust exact differentiator. IEEE Transactions on Automatic Control, 56(11):2727–2733, Nov 2011. Sergey V. Drakunov and V. I. Utkin. Sliding mode control in dynamic systems. International Journal of Control, 55:1029–1037, 1992. B Drazenovich. The invariance conditions in variable structure systems. Automatica, 5:287–295, 1969. L. Fraguela, M.T. Angulo, J.A Moreno, and L. Fridman. Design of a prescribed convergence time uniform robust exact observer in the presence of measurement noise. In IEEE 51st Annual Conference on Decision and Control (CDC), 2012, pages 6615–6620, Dec 2012. 20</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>Chris Godsil and Gordon Royle. Algebraic Graph Theory, volume 8 of Graduate Texts in Mathemathics. Springer-Verlag New York, 2001. Yiguang Hong. Finite-time stabilization and stabilizability of a class of controllable systems. Systems &amp; Control Letters, 46(4):231 – 236, 2002. J. H. Lambert. Observations variae in mathesin puram. Acta Helvitica, physico-mathematico-anatomicobotanico-medica, 3:128–168, 1758. K. S. Lee and T. G. Park. New results on fault reconstruction using a finite-time converging unknown input observer. IET Control Theory Applications, 6(9):1258–1265, 2012. A. Levant. On fixed and finite time stability in sliding mode control. In 52nd IEEE Conference on Decision and Control, pages 4260–4265, Dec 2013. Gregory P. Matthews and Raymond A. DeCarlo. Decentralized tracking for a class of interconnected nonlinear systems using variable structure control. Automatica, 24(2):187 – 193, 1988. A. Michel and D. Porter. Practical stability and finite-time stability of discontinuous systems. IEEE Transactions on Circuit Theory, 19(2):123–129, Mar 1972. Emmanuel Moulay and Wilfrid Perruquetti. Finite-time stability and stabilization: State of the art. In Christopher Edwards, Enric Fossas Colet, and Leonid Fridman, editors, Advances in Variable Structure and Sliding Mode Control, volume 334 of Lecture Notes in Control and Information Science, pages 23– 41. Springer Berlin Heidelberg, 2006. Reza Olfati-Saber and Richard M Murray. Consensus problems in networks of agents with switching topology and time-delays. IEEE Transactions on Automatic Control, 49(9):1520–1533, 2004. Y. Orlov. Finite time stability and robust control synthesis of uncertain switched systems. SIAM Journal on Control and Optimization, 43(4), 2005. Harshal B. Oza, Yury V. Orlov, and Sarah K. Spurgeon. Continuous uniform finite time stabilization of planar controllable systems. SIAM Journal on Control and Optimization, 53(3):1154–1181, 2015. A. Polyakov. Nonlinear feedback design for fixed-time stabilization of linear control systems. IEEE Transactions on Automatic Control, 57(8):2106–2110, 2012. Andrey Polyakov and Leonid Fridman. Stability notions and Lyapunov functions for sliding mode control systems. Journal of the Franklin Institute, 351(4):1831 – 1865, 2014. Special Issue on 2010-2012 Advances in Variable Structure Systems and Sliding Mode Algorithms. Emilio Roxin. On finite stability in control systems. Rendiconti del Circolo Matematico di Palermo, 15 (3):273–282, 1966. E. P. Ryan. Finite-time stabilization of uncertain nonlinear planar systems. Dynamics and Control, 1 (1):83–94, 1991. J. D. Sánchez-Torres, E. N. Sanchez, and A. G. Loukianov. A discontinuous recurrent neural network with predefined time convergence for solution of linear programming. In 2014 IEEE Symposium on Swarm Intelligence (SIS), pages 1–5, Dec 2014. J. D. Sánchez-Torres, E. N. Sanchez, and A. G. Loukianov. Predefined-time stability of dynamical systems with sliding modes. In American Control Conference (ACC), 2015, pages 5842–5846, July 2015. O. J. M. Smith. Posicast control of damped oscillatory systems. Proceedings of the IRE, 45(9):1249–1255, Sept 1957. G. Tallman and O. J. M. Smith. Analog study of dead-beat posicast control. IRE Transactions on Automatic Control, 4(1):14–21, Mar 1958. Bailing Tian, Zongyu Zuo, and Hong Wang. Leader–follower fixed-time consensus of multi-agent systems with high-order integrator dynamics. International Journal of Control, pages 1–8, 2016. In publishing, accepted: 27 Jul 2016.</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>V. I. Utkin. Sliding Modes in Control and Optimization. Springer Verlag, 1992. V. I. Utkin and Jingxin Shi. Integral sliding mode in systems operating under uncertainty conditions. In Decision and Control, 1996., Proceedings of the 35th IEEE Conference on, volume 4, pages 4591–4596, 1996. V. I. Utkin, J. Guldner, and J. Shi. Sliding Mode Control in Electro-Mechanical Systems, Second Edition (Automation and Control Engineering). CRC Press, 2 edition, 5 2009. Long Wang and Feng Xiao. Finite-time consensus problems for networks of dynamic agents. Automatic Control, IEEE Transactions on, 55(4):950–955, April 2010. L. Weiss and E. Infante. Finite time stability under perturbing forces and on product spaces. IEEE Transactions on Automatic Control, 12(1):54–59, February 1967. Zongyu Zuo and Lin Tie. A new class of finite-time nonlinear consensus protocols for multi-agent systems. International Journal of Control, 87(2):363–370, 2014.</p></section></article></body></html>

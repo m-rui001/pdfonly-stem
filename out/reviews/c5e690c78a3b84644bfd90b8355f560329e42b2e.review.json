@@ -1,0 +1,163 @@
+{
+  "sha1": "c5e690c78a3b84644bfd90b8355f560329e42b2e",
+  "title": "On the Road to 6G: Visions, Requirements, Key Technologies, and Testbeds",
+  "doi": "https://doi.org/10.1109/comst.2023.3249835",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c5e690c78a3b84644bfd90b8355f560329e42b2e/index.html",
+  "source_chars": 446172,
+  "markdown_chars": 7320,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "Achieve outdoor meterlevel,indoor centimeterlevel positioning",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table I 中该行文字与正文其他处“outdoor centimeter level and an indoor sub-centimeter level”不一致，疑似 OCR 抽取错误或表格内容本身有误，但影响较小。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the maximum rate GB/userthat can be guaranteed",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“GB/userthat”缺少空格，应为“GB/user that”，属 OCR 抽取格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "In 2019, FCC announced a 10-year open test for 95 GHz 3 THz.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“95 GHz 3 THz”疑似应为“95 GHz–3 THz”，缺少连接符，影响频率范围理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "New generation of lighting devices are entering the market which are based on blue laser that excite phosphor.In [352], a dual wavelength",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“phosphor.In”缺少空格，应为“phosphor. In”，属 OCR 格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Tx:128 elementsULA;Rx:8omnidirectional antennas",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“elementsULA”与“8omnidirectional”缺少空格，属 OCR 格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Tx:32 elementsUPA;Rx:64 elements cylindrical array",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“elementsUPA”缺少空格，属 OCR 格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Tx:a planar array with32 uniformly spaced antenna elements;Rx:a cylindrical array with64 antenna elements",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“with32”与“with64”缺少空格，属 OCR 格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "134 $ \\mu s $ In addition",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“$ \\mu s $ In addition”中“In”首字母大写，疑似句号后缺少空格或 OCR 误判，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 50,
+      "quote": "widele different propagation properties",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“widele”疑似为“widely”或“wide”的 OCR 错误，影响句子理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 50,
+      "quote": "ultimate security ans well as anonymity",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“ans”应为“as”，属 OCR 错误，影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 50,
+      "quote": "communicating partie",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“partie”应为“parties”，属 OCR 错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "1 0^{7} bit/J",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中“1 0^{7}”应为“10^{7}”，OCR 在数字间插入了空格，属公式符号抽取问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "6G requirements of KPIs in different application scenarios.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该句为 Table VII 的标题，但 OCR 将其置于表格内容之后，属阅读顺序问题，不影响表格内容理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "On the Road to 6G: Visions, Requirements, Key Technologies, and Testbeds",
+  "self_check": "已核对摘要、正文与结论中的关键数值：峰值速率 1 Tbps、用户体验速率 10 Gbps、时延 0.1 ms、时延抖动 1 μs、区域流量容量 10 Gbps/m²、连接密度 10⁸ devices/km²、覆盖 99%、频谱效率 ≥90 bps/Hz、网络能效 10⁹ bit/J、成本效率 500 Gb/$、移动性 1000 km/h、电池寿命 20 年、可靠性 ≥99.9999%、定位室内 10 cm/室外 1 m、感知/成像分辨率 1 mm，均与 Table VI 及正文一致。公式方面，反向散射总路径增益按 β² 缩放已保留。仍不确定之处：Table I 中定位精度行与正文其他处表述不一致，已标为 OCR 问题；Table V 中部分引用编号顺序可能因表格结构受损而错乱，但数值本身可辨。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6142,
+      "prompt_tokens": 110298,
+      "total_tokens": 116440,
+      "prompt_tokens_details": {
+        "cached_tokens": 110208
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12042,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "On the Road to 6G: Visions, Requirements, Key Technologies, and Testbeds",
+    "translated_title": "通往6G之路：愿景、需求、关键技术及测试平台",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

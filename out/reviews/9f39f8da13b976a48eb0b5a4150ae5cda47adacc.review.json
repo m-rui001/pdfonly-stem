@@ -1,0 +1,55 @@
+{
+  "sha1": "9f39f8da13b976a48eb0b5a4150ae5cda47adacc",
+  "title": "Thirty Years of HDAC Inhibitors: 2020 Insight and Hindsight",
+  "doi": "https://doi.org/10.1021/acs.jmedchem.0c00830",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9f39f8da13b976a48eb0b5a4150ae5cda47adacc/index.html",
+  "source_chars": 165380,
+  "markdown_chars": 3408,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 72,
+      "quote": "HDAC iunhibitor",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文中明显应为“inhibitor”，但提取文本为“iunhibitor”，可能是OCR或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 78,
+      "quote": "Furher improvements will be needed",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为“Further”，提取文本缺少“t”，疑似OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文关键数据和结论：确认文章描述的五种批准药物、HDAC分类及底物偏好、各选择性抑制剂的代表性IC50值（如tubastatin A对HDAC6为4 nM等）与原文一致。公式未涉及。仍不确定之处：表格中部分IC50数值因提取格式混乱未能逐一验证，但笔记中未引用具体数值，仅依据正文描述；拼写错误已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10660,
+      "prompt_tokens": 55627,
+      "total_tokens": 66287,
+      "prompt_tokens_details": {
+        "cached_tokens": 55296
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8345
+      }
+    },
+    "content_chars": 4074,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "2cf753f6a23bfb58097efe0f99bb21b0b1630193",
+  "title": "Permeability Barrier of Gram-Negative Cell Envelopes and Approaches To Bypass It",
+  "doi": "https://doi.org/10.1021/acsinfecdis.5b00097",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2cf753f6a23bfb58097efe0f99bb21b0b1630193/index.html",
+  "source_chars": 62264,
+  "markdown_chars": 3357,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "CymA cannel from Klebsiella oxytoca",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文为cannel，应为channel",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "resistance to cationic peptides including polymixins",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文为polymixins，应为polymyxins",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "the entry of carpenems across the OM",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文为carpenems，应为carbapenems",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：OmpF排除极限600 Da、P. aeruginosa和A. baumannii相对渗透性1-8%、B. cepacia为11%、OprF开放构象比例400/200000、BAL30072、ACHN-975、POL7080等均与原文一致。公式和化学名称（如LPS、Kdo、4-amino-4-deoxy-L-arabinose等）按原文保留。不确定处：原文中个别拼写错误（如cannel、carpenems、polymixins）已按原文照录，并在extraction_issues中标记。未发现跨页断裂或顺序异常。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7558,
+      "prompt_tokens": 17165,
+      "total_tokens": 24723,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4886
+      }
+    },
+    "content_chars": 4344
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

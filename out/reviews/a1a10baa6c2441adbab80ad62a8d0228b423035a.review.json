@@ -1,0 +1,55 @@
+{
+  "sha1": "a1a10baa6c2441adbab80ad62a8d0228b423035a",
+  "title": "Drought impacts on terrestrial primary production underestimated by satellite monitoring",
+  "doi": "https://doi.org/10.1038/s41561-019-0318-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a1a10baa6c2441adbab80ad62a8d0228b423035a/index.html",
+  "source_chars": 40097,
+  "markdown_chars": 2762,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "Note that θ0 and θ* differ slightly between approaches, and that α′ relates to α in the Priestley–Taylor equation65 as α′ = α ⁄ 1.26.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中α′与α的关系可能应为α′ = α / 1.26或类似，但原文显示为'α ⁄ 1.26'，疑似为'α / 1.26'的排版问题，但无强证据，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Here, xjt is the difference in the detrended annual GPP of grid cell j and year t that is caused by the effects of soil moisture, calculated as the difference in detrended annual GPP in simulations s1b and s0.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句后紧接公式，但提取文本未显式给出公式内容（可能因公式为图片而缺失），页码为13。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要中关键数值（全球GPP降低约15%、IAV翻倍面积25%、极端事件概率增加16-66%）与正文一致；偏差校正数值（1.65→0.031和1.65→0.25，RMSE 2.52→0.94和1.32）在正文中重复出现两次，均一致；β函数公式和参数关系按原文保留。不确定点：第12页α′关系式中的符号和公式原样照录，未作推测；第13页贡献指数公式主体未出现在提取文本中，仅保留文字描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2112,
+      "prompt_tokens": 10368,
+      "total_tokens": 12480,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 21
+      }
+    },
+    "content_chars": 3812,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

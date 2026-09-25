@@ -1,0 +1,84 @@
+{
+  "sha1": "8602a2b50f41a45f138c518c96eabcc8a3c28ae9",
+  "title": "Flexible Electronics: Stretchable Electrodes and Their Future",
+  "doi": "https://doi.org/10.1002/adfm.201805924",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/8602a2b50f41a45f138c518c96eabcc8a3c28ae9/index.html",
+  "source_chars": 74662,
+  "markdown_chars": 8848,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Please cite this article as doi: 10.1002/adfm.201305924.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "正文首页引用提示中的 DOI 为 10.1002/adfm.201305924，与登记 DOI 10.1002/adfm.201805924 不一致，疑似 OCR 将 8 误识为 3，影响文献身份识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "PEDOT:PSS films show a sheet resistance of $ 4 6 \\, \\Omega \\, \\mathrm{s q}^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 46 被拆分为带空格的 4 6，公式排版受损，但数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "a 1-nm-thick Ag film has a sheet resistance of $ 1 6. 5 \\, \\Omega \\, \\mathrm{s q}^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 16.5 被拆分为 1 6. 5，公式排版受损，但数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "contolled motion of liquid metals",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "controlled 被误识为 contolled，属拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "networks-enhancing adhesion will lead to improved stretchability",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "networks-enhancing 之间疑似缺失标点或连接词，原文可能为 networks—enhancing，影响句子结构理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Flexible Electronics: Stretchable Electrodes and Their Future",
+  "self_check": "已核对关键数值与结论：石墨烯方阻 100–1000 Ω sq⁻¹、透明度 >90%、拉伸 30%/6%；PEDOT:PSS 方阻 46 Ω sq⁻¹、透射率约 82%；1 nm Ag 方阻 16.5 Ω sq⁻¹；AgNW 约 9 Ω sq⁻¹、89% 透明度；20 nm AgNW 方阻 130 Ω sq⁻¹、99% 透明度；Au 纳米网一次性拉伸 160%、方阻 21→65 Ω sq⁻¹、1000 次循环；300% 可拉伸、方阻 28 Ω sq⁻¹、透射率 >90%；粘附实验 65% 失效 vs >200% 可拉伸；液态金属方阻 2.95 Ω sq⁻¹、应变 >100%；软执行器 900% 应变。公式 R_sh=ρ/t 已保留。仍不确定处：首页引用 DOI 与登记 DOI 不一致，已标为 OCR 错误；部分数值空格拆分已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6102,
+      "prompt_tokens": 21998,
+      "total_tokens": 28100,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10856,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

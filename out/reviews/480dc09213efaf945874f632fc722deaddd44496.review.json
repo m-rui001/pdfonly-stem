@@ -1,0 +1,64 @@
+{
+  "sha1": "480dc09213efaf945874f632fc722deaddd44496",
+  "title": "Copper nanocavities confine intermediates for efficient electrosynthesis of C3 alcohol fuels from carbon monoxide",
+  "doi": "https://doi.org/10.1038/s41929-018-0168-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/480dc09213efaf945874f632fc722deaddd44496/index.html",
+  "source_chars": 37745,
+  "markdown_chars": 3157,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "eletroreduction",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一文本其他位置均为“electroreduction”，此处缺字母，疑为源文笔误或提取丢失字母，但仅凭该处无法完全确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "naonocavity",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "结论段落出现“naonocavity”，标题及其他位置均为“nanocavity”，疑为源文笔误或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "were circulated through both anode and cathode chamber in.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第14页末句以“in.”结尾，语法上不完整；下一页以“The electrolyte flow was kept at 10 mL min-1.”起始，“in”后疑有缺失内容或断词，无法从可见文本确定原句完整形态。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：丙醇法拉第效率 21 ± 1%（摘要与结果部分一致）、部分电流密度 7.8 ± 0.5 mA cm⁻²（−0.56 V vs RHE）、最优开口角约 60°、C3/C2 增强约 2.8 倍、开口角范围 45°–90°、Cu₂O 粒径 110 ± 20 nm、模拟空腔尺寸 100/60 nm、长时间运行后 FE 从 21% 降至 14%、丙醇体积能量密度 27 MJ/L。电位换算公式与 FE 计算公式均已照录。不确定处：第 43 行摘要中的“conversion rate”与第 178 行结果部分的“partial current density”虽数值相同，但原文用词本就不同，非提取错误；时间演化导致 FE 变化的确切反应时间未在正文给出，故笔记中未写具体时长。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14596,
+      "prompt_tokens": 10713,
+      "total_tokens": 25309,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12125
+      }
+    },
+    "content_chars": 4349
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

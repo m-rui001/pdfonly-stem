@@ -1,0 +1,63 @@
+{
+  "sha1": "208e0446f89363a911dc3411f3f9c797d17246ab",
+  "title": "All-temperature zinc batteries with high-entropy aqueous electrolyte",
+  "doi": "https://doi.org/10.1038/s41893-022-01028-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/208e0446f89363a911dc3411f3f9c797d17246ab/index.html",
+  "source_chars": 68312,
+  "markdown_chars": 6329,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "The perfector CΛ is 5/3 for Li2ZnCl4⋅9H2O",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“perfector”在上下文中不成立，推测应为“perfection exponent”一类的量，但无足够文本证据确认，照录原样。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "Inset: Corresponding coulombic efficiencies of Zn//Ti asymmetrical cell vs. cycle number. (c) The pH values (top) and Coulombic efficiencies (CEs) of Zn plating/strapping (button)",
+      "type": "疑似文字错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“strapping”应为“stripping”之误；“button”应为“bottom”之误（与顶部(top)相对）。两处均为明显的拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "High-energy X-ray scattering spectra of Li2ZnCl4⋅9H2O, measured by synchrotron and predicated by MD simulation.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“predicated”应为“predicted”之误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数据：电导率值（200/1.36/0.66 mS⋅cm⁻¹）、Tg（−109 °C）、tZn（0.41–0.25 / R=9和6）、tLi（~0.3）、Zn-Cl配位数（~4）、Zn第一溶剂化壳水≤0.2、γLi倍数（5×10⁵）、蒸汽压（2.33→0.088 kPa）、水活度系数（0.92→0.09）、焓变（36 J/mol H₂O）、Zn||Zn过电位（52 mV@20 °C→201 mV@−70 °C）、CE（97.50%初始→~99.99%，−70 °C约100%，80 °C>99.95%）、Zn-air放电/充电电位（1.07/1.76 V@20 °C，0.84 V@−40 °C，0.67 V@−60 °C）、700小时运行、蒸汽压350 Pa、ZnO₂产物、反应自由能（−0.14/−0.13 eV）、VOPO₄容量保持率（90.0%/−70 °C，81.1%/−80 °C）。公式（tZn计算式）已按原样保留。不确定处：VTF方程的具体参数（如T₀值）原文未给出，未补充；“ionicity ~0.5”原文表述为“~0.5”，照录。无外部知识引入。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6156,
+      "prompt_tokens": 19465,
+      "total_tokens": 25621,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1188
+      }
+    },
+    "content_chars": 7867
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

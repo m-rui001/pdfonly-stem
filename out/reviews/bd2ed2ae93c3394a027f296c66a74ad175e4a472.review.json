@@ -1,0 +1,63 @@
+{
+  "sha1": "bd2ed2ae93c3394a027f296c66a74ad175e4a472",
+  "title": "Electric Field Effects in Electrochemical CO 2 Reduction",
+  "doi": "https://doi.org/10.1021/acscatal.6b02299",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bd2ed2ae93c3394a027f296c66a74ad175e4a472/index.html",
+  "source_chars": 33007,
+  "markdown_chars": 3383,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "We show that by evaluating the CO2 adsorption energy on a Pt(111) surface with different co-adsorbates leading to a substantial variation in the work",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该句在第4页页尾中断，下一页（第5页）开头为“function, shown in Figure 1.§”，中间缺失连接词和标点，句意不完整，疑为PDF抽取跨页拼接问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "function, shown in Figure 1.§",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "接续上一页中断句子，但缺少完整动词和句号，且出现§符号，可能为脚注标记误入正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Figure 4: Electric field distribution taken at a z-slice near the center of *CO2 in a (6×6) unit cell with a K+ coverage of 1/36. One cell including metal atoms (parallelogram and solid circles in light gray) is outlined to illustrate the ion coverage. Solvent atoms are represented in dashed light gray circles. K+ (large circles) and *CO2 in its vicinity are outlined in black for emphasis.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "图注中提及(6×6)晶胞和K+覆盖度1/36，但正文第8页最后一段提到“at a coverage of 1/36”，未明确晶胞尺寸，图注与正文一致。此处疑点仅因图注与正文重复，无强证据判错，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：平衡电势U0_pH0=-0.11V，pH7为-0.52V，pH14为-0.94V；吸附能公式拟合μ=0.96 e·Å，α=0.76 e·Å²·V⁻¹；速率决定步骤本征势垒0.7eV，溶剂重组0.35eV，β=0.64；离子覆盖度1.4%；pzc=-0.46V，Helmholtz电容50μF/cm²。公式(5)(6)-(10)(11)(12)(13)(14)(15)均已按原文保留。图1、2、3、4、5、6的结论和数字均基于正文文字描述，未臆测未提取内容。不确定处：图4中晶胞尺寸与覆盖度的对应关系在图注中明确但正文未重复，已确认一致；跨页问题已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2906,
+      "prompt_tokens": 10000,
+      "total_tokens": 12906,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 24
+      }
+    },
+    "content_chars": 5016
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

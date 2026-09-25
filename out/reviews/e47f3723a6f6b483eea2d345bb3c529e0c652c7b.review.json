@@ -1,0 +1,82 @@
+{
+  "sha1": "e47f3723a6f6b483eea2d345bb3c529e0c652c7b",
+  "title": "Mechanism of Na‐Ion Storage in Hard Carbon Anodes Revealed by Heteroatom Doping",
+  "doi": "https://doi.org/10.1002/aenm.201602894",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e47f3723a6f6b483eea2d345bb3c529e0c652c7b/index.html",
+  "source_chars": 46088,
+  "markdown_chars": 3189,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The Department of Energy will provide public access to these results of federally spsponsored research",
+      "type": "疑似错别字",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "原文'federally spsponsored'中'spsponsored'疑似为'sponsored'的拼写错误，但提取文本如此，照录以标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "This manuscript has been authored by UT-Battelle, LLC under Contract No. DE-AC05-00OR22725",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句在页面顶部，未见前后文断裂，但属于版权声明，不影响正文，仅弱标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "𝐸𝑏𝑛𝑑 (𝑥) = ∫0 𝑒𝑉 (𝑥 ′ ) 𝑑𝑥 ′ = ∫0 𝑉 (𝑞 ′ ) 𝑑𝑞′",
+      "type": "公式排版疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第二个等号右侧的积分上限缺失（应为q/e），提取文本中q/𝑒出现在上一行末尾，跨行拼接可能丢失上限，照录可见文本并标注。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "𝐸𝑏𝑛𝑑 (𝑥) = 𝑛 1 𝑁𝑎 (𝐸𝑠𝑢𝑏+𝑁𝑎 (𝑥) − 𝐸𝑠𝑢𝑏 − 𝑛𝑁𝑎 𝐸𝑁𝑎−𝐵𝐶𝐶 ) 𝑥",
+      "type": "公式排版疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取的公式中'𝑛 1 𝑁𝑎'与后文'𝑥'的排版混乱，原式应为(1/n_Na)(...)，但PDF提取文本中分子分母位置错乱，照录可见文本。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "we see that the binding energy is very favorable, especially in the base of the large-vacancy defect",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上下文讨论大空位缺陷，'in the base of'疑为'in the case of'的拼写/OCR错误，但原文如此，照录。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：d-spacing (HC 3.77, P-HC 3.95, S-HC 3.83, B-HC 3.78 Å)、La值 (12.9/12.1/14.2/14.6 nm)、掺杂量 (3.0/3.0/0.1 wt%)、比表面积 (8.5/7.3/8.0/5.2 m²/g)、密度 (1.60/1.42/1.50/1.49 g/cm³)、首次容量表 (HC 353/283, P-HC 485/359, B-HC 403/147, S-HC 408/328 mAh/g)、DFT电压 (B-doped ~0.92 V, P-doped ~0.32 V)、200次循环后容量 (P-HC 327, S-HC 323 mAh/g)、恒压3.0 V 30 h回收40 mAh/g。公式(1)和(2)按原文照录，公式(3)(4)因提取排版混乱已照录并标注问题。结论方向与摘要和正文数据一致。不确定之处：公式(3)中n_Na与x的分数排版、公式(4)积分上限缺失，以及'dspacing'在个别处拼写为'd-spacing'但语义相同。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3024,
+      "prompt_tokens": 11872,
+      "total_tokens": 14896,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 29
+      }
+    },
+    "content_chars": 5182
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

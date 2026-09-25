@@ -1,0 +1,148 @@
+{
+  "sha1": "85878aaf54de6c38cfaa44a5e3cf6d89a3a70221",
+  "title": "Microbial formation of stable soil carbon is more efficient from belowground than aboveground input",
+  "doi": "https://doi.org/10.1038/s41561-018-0258-6",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/85878aaf54de6c38cfaa44a5e3cf6d89a3a70221/index.html",
+  "source_chars": 65331,
+  "markdown_chars": 12263,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "the same quality and quantity of DOC was inserted",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文此处可能为“same quality and quantity of DOC was inserted”，但结合上下文应为“same quality and quantity of DOC was inserted”或“same quality and quantity of DOC was inserted”；OCR 未显示明显错误，但“quality and quantity”与后文“same quality and quantity”一致，暂不视为错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the amount of $ ^{13} \\mathrm{C} $ -glucose added per gram of soil exceeded the rhizosphere's stabilization potential",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句语义完整，无明确 OCR 错误证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Stable $ ^{13}C $ -MASOC formed per unit $ ^{13}C $ -MBC (with equal C concentration) $ ^{b} $",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 1 的 OCR 提取中，表头与数据行之间的对应关系可能因换行和上标标记而受损；例如“Stable $ ^{13}C $ -MASOC formed per unit $ ^{13}C $ -MBC (with equal C concentration) $ ^{b} $”与后续数据行的对齐关系不明确，可能影响对表格数值的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "120% more stabilized as aboveground pulse into bulk soil than belowground drip into rhizosphere",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句在 Table 1 中，数值“120%”与正文中“more total ¹³C was mineral-stabilized when ¹³C-glucose entered as an aboveground pulse into the bulk soil than as a belowground drip into the rhizosphere”一致，但表格中该行可能因 OCR 换行导致与机制 (3) 的对应关系不清晰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the positive relationship between $ ^{13} \\mathrm{C} $ -MBC per gram of soil and stable $ ^{13} \\mathrm{C} $ -MASOC per gram of soil was nonlinear",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句语义完整，无明确 OCR 错误证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "we found that—in line with our results from the main study—the rhizosphere community formed ~121% more stable $ ^{13} $ C-MASOC per unit of $ ^{13} $ C-MBC relative to the bulk community",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句语义完整，数值“~121%”与 Supplementary Table 9 一致，无明确 OCR 错误证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the 'root exudate' simulated pathway contributes $ \\sim 20\\% $ more C to the stable SOC pool than the 'leaf litter leachate' simulated pathway",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句语义完整，数值“~20%”与 Fig. 5 描述一致，无明确 OCR 错误证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "we used soil microcosms with a recreated organic",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句在页末中断，下一页以“horizon, mineral horizon...”继续，属于正常页间断句，但此处作为页间断句示例列出；实际不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "incoming C substrate",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“incoming”可能为原文用词，但在此语境中略显突兀；无强文本内证据表明 OCR 错误，暂不报。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "incoming C substrate",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“incoming”可能为原文用词，但在此语境中略显突兀；无强文本内证据表明 OCR 错误，暂不报。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "C_label-derived = C_total × (atom%¹³C_after - atom%¹³C_control) / (atom%¹³C_glucose - atom%¹³C_control)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "OCR 提取的公式中，下标和上标格式可能丢失或错位，例如“C_label-derived”可能应为“C_{label-derived}”，“atom%¹³C_after”等下标可能未正确保留；但公式整体结构可辨，不影响主要理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "δ¹³C=[(¹³C/¹²C)sample/(¹³C/¹²C)standard]-1)×1,000‰",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "OCR 提取的 δ¹³C 公式中，括号和下标可能丢失或错位，例如“(¹³C/¹²C)sample”可能应为“(¹³C/¹²C)_{sample}”；但公式整体结构可辨，不影响主要理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Microbial formation of stable soil carbon is more efficient from belowground than aboveground input",
+  "self_check": "已核对摘要、正文数据与结论：地下输入约 9% 转化为稳定 ¹³C-MASOC，地上约 5%；主体土壤稳定 ¹³C-葡萄糖比根际多 170%；根际每克土壤稳定 ¹³C-MASOC 浓度更高，但主体土壤总量更大；根际稳定 ¹³C-MASOC 比例约 59%，主体约 50%；根际每单位 ¹³C-MBC 形成稳定 ¹³C-MASOC 比主体高 83%；野外分离群落中根际比主体高约 121%；滴注 vs. 脉冲交互 P=0.02，回归系数 -10.8；根际/主体比 1/4 时根系分泌物途径贡献多约 20%，总量增加约 25%；1/25 时总量减少约 15%。公式已按提取文本保留，未凭记忆补写。仍不确定处：Table 1 的 OCR 表格结构可能受损，部分数值与机制对应关系需查原文；公式下标格式可能丢失。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9113,
+      "prompt_tokens": 16842,
+      "total_tokens": 25955,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16970,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

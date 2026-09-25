@@ -1,0 +1,100 @@
+{
+  "sha1": "293b4ca70b1ef98a2e80ad5ef46db853712054d6",
+  "title": "CO 2 Hydrogenation to Methanol over ZrO 2 -Containing Catalysts: Insights into ZrO 2 Induced Synergy",
+  "doi": "https://doi.org/10.1021/acscatal.9b01943",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/293b4ca70b1ef98a2e80ad5ef46db853712054d6/index.html",
+  "source_chars": 105269,
+  "markdown_chars": 9083,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "(i) to adsorb and activate CO2 and stabilize the active intermediates for hydrogenation to methanol instead of RWGS;",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.2,
+      "reason": "该段落在PDF第6页，第7页继续列出(ii)(iii)，页码之间有排版顺序连接，并非截断，不确认错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Methanol is the main product over Cu and Ag catalysts, while Ni, Ru and Rh tend to catalyze methane formation.",
+      "type": "逻辑疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "第7页提到Ag/ZrO2对RWGS更活泼，第9页却说Ag上甲醇是主要产物，可能为不同条件下的比较，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "sub-nanoclusters (< 2 mn) of Au40",
+      "type": "同上",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "同上。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "sub-nanoclusters (< 2 mn) of Au",
+      "type": "疑似单位错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "PDF抽取mn疑为nm（纳米），正文第14页上下文为Au亚纳米簇尺寸。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Cu/ZrO2131 drying in vacuum at 130 ℃ for 15 h and Cu/CrOx/ZrO2131 calcined in air at min-1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.2,
+      "reason": "PDF抽取页面20-21表格跨页，数据列与催化剂名称错位，需要对照原文排版。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "0.6 100 1.2 85.5 2.2 83.0 3.0 10 86 4.0 10 91 3.0 4.2 53.9",
+      "type": "数值堆叠/对应错位",
+      "severity": "high",
+      "confidence": 0.4,
+      "reason": "表格数据连续堆叠，行/列对应关系无法从纯文本重建，需对照原图。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "modify the reaction pathways75, 103 and bind the key reaction intermediates for further conversion",
+      "type": "正常文本",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "提取包含数字上角标与文字之间的逗号，应保留文本中出现的格式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言与结论中的基本主张：CO2+3H2→CH3OH+H2O，ZrO2弱亲水性，表面四性质，非晶ZrO2与晶相争议。关键数值均直接取自提取文本：CuO(40wt%)/ZrO2在220℃/5MPa下81%选择性、4%转化率；Cu/a-ZrO2的TOF 16-18→29-39 h⁻¹（负载12-19→6-8wt%）；m-ZrO2比t-ZrO2高4.5倍活性；In2O3/ZrO2在200-300℃范围内100%甲醇选择性及1000h稳定；ZnO-ZrO2固溶体最高91%选择性、>10%转化率、320-315℃、5MPa、24000mL g⁻¹h⁻¹；Ni/ZrO2甲烷选择性99%，NiSn/In-ZrO2甲醇选择性可达99%；Cu/ZrO2界面位使TOF增一个数量级；氢溢流临界Cu表面积2.5 m²·g⁻¹；Cu/ZnO/ZrO2/LDH复合BET与Cu分散度分别提高4.3和2.9倍。部分数值如表格中的详细列（表1、表2）因PDF抽取格式损坏、列对齐信息丢失，采用概括表述并保留能找到的代表性数值，未做推断性补充。个别括号内数字或上角标一致性（如sub-nanoclusters <2 mn）按原文抽取照录并对可疑点列入审核疑问。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7798,
+      "prompt_tokens": 32386,
+      "total_tokens": 40184,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1038
+      }
+    },
+    "content_chars": 11565
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "sha1": "9373a2daed5af0d00e242f717479e877bfc1ec32",
+  "title": "Porous Two‐Dimensional Transition Metal Carbide (MXene) Flakes for High‐Performance Li‐Ion Storage",
+  "doi": "https://doi.org/10.1002/celc.201600059",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9373a2daed5af0d00e242f717479e877bfc1ec32/index.html",
+  "source_chars": 37429,
+  "markdown_chars": 2714,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "0.2 m CuSO4 solution",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "支持信息中写作 0.2 mol L-1，正文中 'm' 小写，可能应为 'M'（摩尔每升）的误提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "5 mm-thick p-Ti3C2Tx films",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "薄膜厚度单位 'mm' 明显偏大，可能为 'μm' 的误提取；但无直接证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "from 27.1 \u0003 for pristine Ti3C2Tx to 33.4 \u0003",
+      "type": "边界截取",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "数值后的单位（通常为 Å）在提取中缺失，仅以空格或乱码代替。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "in the presence of 1 m H2SO4 aqueous solutions",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "浓度单位 'm' 可能应为 'M'（摩尔每升）。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Li0:4 \u0003Ti3 C2 O0:3（OH）0:05（OH\u0003H2 O）0:6 F0:9",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中冒号 ':' 通常应为小数点 '.'，可能为字体或提取问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：0.1 C 下约 1250 mAh g⁻¹、10 C 下约 330 mAh g⁻¹、60 C 下约 110 mAh g⁻¹、0.5 C 下原始与多孔 Ti₃C₂Tₓ 容量（35 与 110 mAh g⁻¹）、p-Ti₃C₂Tₓ/CNT 循环 100 圈后约 500 mAh g⁻¹、非多孔复合膜约 220 mAh g⁻¹、比表面积 19.6→93.6 m² g⁻¹、孔体积 0.023→0.25 cm³ g⁻¹、晶格参数变化（27.1→33.4，单位缺失）等，均与提取文本一致。公式 (1)-(4) 按原样保留，未做推断性修正。不确定之处包括浓度单位 'm' 与 'M'、厚度单位 'mm' 与 'μm' 的可能误提取，以及晶格参数单位缺失，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8836,
+      "prompt_tokens": 12199,
+      "total_tokens": 21035,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6252
+      }
+    },
+    "content_chars": 4242,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

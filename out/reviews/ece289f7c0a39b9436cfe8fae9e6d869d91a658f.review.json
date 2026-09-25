@@ -1,0 +1,139 @@
+{
+  "sha1": "ece289f7c0a39b9436cfe8fae9e6d869d91a658f",
+  "title": "Lithium-ion batteries – Current state of the art and anticipated developments",
+  "doi": "https://doi.org/10.1016/j.jpowsour.2020.228708",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ece289f7c0a39b9436cfe8fae9e6d869d91a658f/index.html",
+  "source_chars": 229551,
+  "markdown_chars": 12256,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "$ ^{8} $ ALISTORE-European Research Institute CNRS FR 3104",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上标应为g（与作者Kristina Edström的机构对应），OCR识别为8。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "$ ^{1} $ Université Grenoble Alpes, CEA-Liten",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上标应为l（与作者Willy Porcher的机构对应），OCR识别为1。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Fig.1. Schematic illustration of the state-of-the-art lithium-ion battery chemistry with a composite of graphite and $ \\mathrm{S i O}_{x} $ as active material for the negative electrode (note that $ \\mathrm{S i O}_{x} $ is not present in all commercial cells), a (layered) lithium transition metal oxide (LiTMO $ _{2} $ ; TM Ni, Mn, Co, and potentially other metals) as active material for the positive electrode, and a liquid electrolyte based on organic carbonates as solvents and $ \\mathrm{L i P F}_{6} $ as conducting salt; the electrolyte commonly comprises moreover a set of additives and potentially also additional solvents and lithium salts.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图1说明文字被插入到正文段落中间，打断了'we will focus herein on the critical discussion...'与'those which are already used in commercial cells...'之间的连续论述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The co-utilization of graphite and Si (or $ \\mathrm{S i O}{x} $ ) in blends and composites provides the best volumetric performance while retaining good cyclability. $ \\mathrm{S i O}{x} $ materials consist of Si and $ \\mathrm{S i O}{2} $ nano-domains and silicon sub-oxides at their interfaces [127].",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "SiOx中的下标x在多个位置丢失或格式异常（如$ \\mathrm{S i O}{x} $应为$ \\mathrm{S i O}_{x} $），影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The presence of oxygen allows a trade-off between volume expansion and initial CE (ICE) [128]. The good cyclability is attributed to silicate which prevents the Si domains from sintering [129]. Moreover, $ \\mathrm{S i O}{x} $ does not undergo a phase transition to a $ \\mathrm{c-L i}{1 5} \\mathrm{S i}{4} $ -like structure [129,130].",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "c-Li₁₅Si₄中的下标格式异常，且SiOx下标x丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$$ Q _ {v, t o t} = Q _ {s p e} \\times \\omega_ {A M} \\times \\rho_ {a n} \\times \\Delta L \\times I C E $$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中变量名以空格分隔（如Q _ {v, t o t}），可能为OCR格式问题，但公式内容完整可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Practically, for typical graphite in commercial cells, we have calculated a total volumetric capacity of $ 550\\mathrm{AhL}^{-1} $ $ (360\\times 0.98\\times 1.65\\times 1.095\\times 0.94) $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "计算式中1.65可能为1.65 g cm⁻³（石墨密度），但单位未在括号内显示，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Fig. 2. (a) Total volumetric capacity as a function of the specific capacity of the anode active material (AM) and the resulting improvement at the anode and cell level (in vol%). (b) Hypothetical calculation of the total volumetric capacity: For the specific capacity, a composite of graphite and silicon is assumed, considering a specific capacity of 372 and $ 3 5 7 9 \\mathrm{m A h} \\mathrm{g}^{-1} $ , respectively. The AM swelling is then calculated assuming a linear variation (following the approximation for graphite [430]) and a maximum swelling of 10.1% and 280.1% for graphite and silicon, respectively. Note that for a lower effective specific capacity of silicon and/or graphite, the swelling will not follow a proportional factor. Then, at the anode level, a commercially relevant AM content of $ > 9 0 $ wt % and an ICE of 90% have been used for the calculation. The thickness of the anode is considered constant upon lithiation and the porosity at 100% SOC is always the same as the one calculated for the pure graphite anode to maintain an efficient lithium transport. However, the initial porosity is adjusted to buffer the swelling. Note that the porosity takes into account the whole anode including the AM itself. The initial anode density considers an inactive materials density of $ 1. 7 \\mathrm{~ g} \\mathrm{c m}^{-3} $ . The improvement at the cell level (in Wh $ L^{-1} $ ) is calculated considering $ 7 0 0 \\mathrm{A h} \\mathrm{L}^{-1} $ for the reversible volumetric capacity of the cathode and a total of 67% active material in the cell. This means, for instance for a 21700 cell, an areal capacity of more than $ 3 \\mathrm{m A h} \\mathrm{c m}^{-2} $ for both the anode and the cathode and thicknesses of $ 1 6 \\mu \\mathrm{m} $ for the separator, and $ 1 0 \\mu \\mathrm{m} $ and 15 $ \\mu \\mathrm{m} $ for the copper and aluminium current collector, respectively. (For interpretation of the references to colour in this figure legend, the reader is referred to the Web version of this article.)",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图2说明文字被插入到正文段落中间，打断了'For instance, the recently published...'与'Other promising research directions...'之间的连续论述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Table 1 Overview for several very recent studies on LFP-based positive electrodes with varying synthesis methods, carbon coating procedures, and electrode compositions and the reported discharge capacity at 0.2C （*0.1C）and 2C; **reference [174] employed a carbon-coated aluminium current collector instead of blank aluminium foil.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表1的列标题和数据结构在OCR中部分丢失，如'Electrode(wt%)Active:Binder:Carbon'缺少分隔，'Discharge capacity(mAh g-1) 2C:0.2CRatio(%) Reference'格式混乱，但关键数值仍可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Fig. 3. Average cell voltage, specific capacity, and specific energy for different cathode active material/graphite combinations, calculated for a cathode/anode balancing of 1.0 and a specific capacity of 360 mAh $ \\mathrm{g}^{-1} $ for graphite (considering solely the mass of the two active materials) in accordance with Table 2.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图3说明文字被插入到正文段落中间，打断了'Another approach to enhance the performance of phosphate-type cathodes has been the'与'combination of different transition metals...'之间的连续论述。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "The reduction of the solvents forms also gases (ethylene, propylene, hydrogen, $ \\mathrm{C O}_{2} $ , etc.).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文可能为'ethylene'（乙烯），但此处照录；若原文为'ethylene carbonate'则OCR丢失了'carbonate'，但无强文本内证据，仅标记可能。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Lithium-ion batteries - Current state of the art and anticipated developments",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 65295,
+      "total_tokens": 75295,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19716,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

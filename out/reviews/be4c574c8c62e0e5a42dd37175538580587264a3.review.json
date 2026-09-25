@@ -1,0 +1,54 @@
+{
+  "sha1": "be4c574c8c62e0e5a42dd37175538580587264a3",
+  "title": "Challenges in Lithium Metal Anodes for Solid-State Batteries",
+  "doi": "https://doi.org/10.1021/acsenergylett.9b02668",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/be4c574c8c62e0e5a42dd37175538580587264a3/index.html",
+  "source_chars": 69431,
+  "markdown_chars": 3901,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "Transmission electron microscopy experiments re(veal structural transformation",
+      "type": "疑似提取错误（字符插入）",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "文本中“re(veal”应为“reveal”，括号疑似提取噪声，但原PDF可能如此。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Non-equilibrium meso-strucutral transformation",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“meso-strucutral”应为“meso-structural”，属明显拼写颠倒，疑为提取或原文笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：理论容量3860 mAh/g、电位-3.06 V vs NHE、目标指标（>10 mAh/cm²、>3 mA/cm²、>3 mAh/cm²、>80%）、剪切模量6 GPa、压力400/35 MPa、K/G>1.75。公式i_crit表达式照录，未推测缺失项。结论方向与摘要一致：固态电解质并非不可渗透，需理解界面相和锂丝机制，强调全电池和标准化。不确定处：图1/图2/图4的编号在正文中交替出现，未修正；公式中γ_eff等符号按原文保留，未补写；第17页“re(veal”和第22页“meso-strucutral”已列为疑似错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5570,
+      "prompt_tokens": 17079,
+      "total_tokens": 22649,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2860
+      }
+    },
+    "content_chars": 4815
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

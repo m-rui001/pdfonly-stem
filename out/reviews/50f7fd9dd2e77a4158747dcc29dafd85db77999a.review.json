@@ -1,0 +1,103 @@
+{
+  "sha1": "50f7fd9dd2e77a4158747dcc29dafd85db77999a",
+  "title": "Magnetism in two-dimensional van der Waals materials",
+  "doi": "https://doi.org/10.1038/s41586-018-0631-z",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/50f7fd9dd2e77a4158747dcc29dafd85db77999a/index.html",
+  "source_chars": 39912,
+  "markdown_chars": 8140,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "such as $ \\alpha $ -RuCl $ ^{3 2,3 3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 α-RuCl 缺少下标 3，应为 α-RuCl3，影响材料识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{C r_{2}(S i, G e){2} T e{6}}^{2 8,2 9} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 Cr2(Si,Ge)2Te6 的下标格式在 OCR 中丢失，显示为 Cr2(Si,Ge)2Te6 但括号和下标混乱，影响可读性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "the thoerem is often misunderstood",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误：thoerem 应为 theorem。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "heterosctructures",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误：heterosctructures 应为 heterostructures。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "spin-down $ \\sigma $ electrons",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "在 Fig. 2a 描述中，自旋向下电子的符号应为 σ−，但 OCR 仅显示 σ，丢失了上标负号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "graphene(ite)/$ \\mathrm{C r I_{3}} $/graphene/hBN",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "graphene(ite) 可能是 graphene/graphite 的 OCR 错误，但原文如此，影响较小。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{C r P S}_{4} $ $ ^{5 8} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式 CrPS4 的下标格式在 OCR 中显示为 CrPS4，但引用编号 58 与后文 Kitaev 引用编号 58 重复，可能为 OCR 错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Magnetism in two-dimensional van der Waals materials",
+  "self_check": "已核对关键数值：单层 CrI3 的 Kerr 旋转显示 FM 磁滞，双层显示变磁转变；FePS3 的 Raman 特征在 Néel 温度以下分裂为四个模式；Fe3GeTe2 的 Tc 可通过离子液体门控调至室温以上；隧穿磁阻中 FM 构型下 50% 费米面电子可隧穿。公式符号如 $\\hat{x} /\\hat{y}=\\hat{\\sigma}^{+}\\pm i\\hat{\\sigma}^{-}$ 已保留。不确定处：部分化学式下标在 OCR 中丢失或混乱，已在 extraction_issues 中标出；Table 1 内容完整提取，但表格结构在 OCR 中为文本列表，已按原文顺序保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5670,
+      "prompt_tokens": 10798,
+      "total_tokens": 16468,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10429,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

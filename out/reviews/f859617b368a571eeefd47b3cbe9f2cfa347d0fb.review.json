@@ -1,0 +1,100 @@
+{
+  "sha1": "f859617b368a571eeefd47b3cbe9f2cfa347d0fb",
+  "title": "An ultrafast symmetry switch in a Weyl semimetal",
+  "doi": "https://doi.org/10.1038/s41586-018-0809-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f859617b368a571eeefd47b3cbe9f2cfa347d0fb/index.html",
+  "source_chars": 65410,
+  "markdown_chars": 2688,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The lack of inversion symmetry in this material leads to a topological semimetal that was predicted [16] and experimentally verified [17-19] with type-II Weyl points (WPs),",
+      "type": "疑似标点缺失",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "‘with type-II Weyl points’ 前应有逗号或句号，原文可能漏标点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Since the two WPs are separated mainly along 'L , we can expect large changes",
+      "type": "可疑符号转写",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "“'L” 应为 k_y，提取文本中数学变量统一被转写为带撇的字母。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure 4d shows the SHG polarization scans of WTe2 in the absence of pump pulse (blue), which shows two lobes oriented horizontally. After the pump pulse arrives (!% = 2 ps), the SHG vanishes almost completely",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第5页末尾“Figure 4d shows...”后直接接第6页开头“Page 6”再继续“After the pump pulse...”，此处页间分隔可能中断了完整句子，且“!%”应为“t_d”等时间符号的转写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure 4e shows the measured SHG time-trace from WTe2 at various pump field strengths.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "图注描述中“Figure 4e”与正文中提到的“Figure 4d”编号顺序一致，但图4e在正文中是否实际对应SHG时间迹线存疑，不过文本证据不足。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The mean squared error is: G 1 ∆\" ∆\" G G G G l(!+, 〈op 〉, 〈or 〉) = 0 s (ℎ'(, !+, 〈op 〉, 〈or 〉)sim − (ℎ'()exp u m \"$ \"$",
+      "type": "公式转写损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式中平方符号、分数、求和等被转成乱码（如“G”、“s”、“u”），无法准确重现原始数学表达式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "The values for each parameter !+, 〈opG 〉, and 〈orG 〉 at every !% are optimized by minimizing l.",
+      "type": "可疑转写",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“!+”、“!%”等应为数学符号（dᵧ, t_d），提取文本中统一转写为感叹号加字母。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "there are a total of eight Weyl points (WP) in the equilibrium Td phase of WTe2 in the 'J = 0 plane.",
+      "type": "可疑符号转写",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "“'J” 应为 k_z 等波矢符号，文中多处类似转写（如 'K, 'L）可能来自PDF提取时数学符号损坏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：剪切位移振幅（低场-1.7~+3.6 pm，高场+8.0 pm对应1.3%应变）、Weyl点湮灭位移+2.2 pm、SHG高场接近100%减少、能量成本对比（a轴压缩32-39 meV vs 剪切0.33-3.6 meV）、声速约2000-2600 m/s、0.24 THz剪切模频率。公式部分因提取转写损坏未能完全复原，但结构因子表达式已按文中符号尽量保留。不确定之处：部分数学符号（如k_x, k_y, t_d）在提取文本中被转写为“'K'”、“'L'”、“!%”等，已在审核问题中注明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2857,
+      "prompt_tokens": 17764,
+      "total_tokens": 20621,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 32
+      }
+    },
+    "content_chars": 5316
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

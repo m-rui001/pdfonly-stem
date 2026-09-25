@@ -1,0 +1,694 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/www/a6/a6b5bc7383ae62533759b07d430970f52f35c85e.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Elastic and failure response of imperfect three-dimensional metallic lattices: the role of geometric defects induced by Selective Laser Melting</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>Elastic and failure response of imperfect three-dimensional metallic lattices: the role of geometric defects induced by Selective Laser Melting</h1><p class="source">2017 · <a href="https://doi.org/10.1016/j.jmps.2017.07.003">https://doi.org/10.1016/j.jmps.2017.07.003</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/www/a6/a6b5bc7383ae62533759b07d430970f52f35c85e.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Liu et al., Journal of the Mechanics and Physics of Solids 107 (2017) 160–184</p>
+<p>Elastic and failure response of imperfect threedimensional metallic lattices: the role of geometric defects induced by Selective Laser Melting Lu Liu a, Paul Kamm c, Francisco García-Moreno b,c, John Banhart b,c, Damiano Pasini a,∗ a</p>
+<p>Department of Mechanical Engineering, McGill University, Montreal, Quebec, Canada Institute of Materials Science and Technology, Technische Universität Berlin, Berlin, Germany c Institute of Applied Materials, Helmholtz-Zentrum Berlin für Materialien und Energie, Hahn-Meitner-Platz 1, 14109 Berlin, Germany b</p>
+<p>Abstract</p>
+<p>This paper examines three-dimensional metallic lattices with regular octet and rhombicuboctahedron units fabricated with geometric imperfections via Selective Laser Sintering. We use X-ray computed tomography to capture morphology, location, and distribution of process-induced defects with the aim of studying their role in the elastic response, damage initiation, and failure evolution under quasi-static compression. Testing results from in-situ compression tomography show that each lattice exhibits a distinct failure mechanism that is governed not only by cell topology but also by geometric defects induced by additive manufacturing. Extracted from X-ray tomography images, the statistical distributions of three sets of defects, namely strut waviness, strut thickness variation, and strut oversizing, are used to develop numerical models of statistically representative lattices with imperfect geometry. Elastic and failure responses are predicted within 10% agreement from the experimental data. In addition, a computational study is presented to shed light into the relationship between the amplitude of selected defects and the reduction of elastic properties compared to their nominal values. The evolution of failure mechanisms is also explained with respect to strut oversizing, a parameter that can critically cause failure mode transitions that are not visible in defect-free lattices.</p>
+<p>1. Introduction</p>
+<p>Metallic cellular materials can be designed to offer unique combinations of mechanical and physical properties, of-</p>
+<p>ten unachievable with fully</p>
+<p>dense metals (Wadley, 2006; Evans et al., 1998; Cabras and Brun, 2016). They are exploited in a wide range of multifunctional applications, such as energy absorbers (McKown et al., 2008; Tancogne-Dejean et al., 2016; Schaedler et al., 2011; Evans et al., 2010), vibration and sound control devices (Delpero et al., 2016; Wu et al., 2015; Nolde et al., 2011), lowthermal-expansion structures (Steeves et al., 2007; Wei et al., 2016; Xu and</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>Pasini, 2016), heat ex-</p>
+<p>changers (Maloney et al., 2012), lightweight</p>
+<p>structural panels (Queheillalt et al., 2008; Wang et al., 2003; Wallach and Gib- son, 2001), and several others (Arabnejad et al., 2016; Vigliotti and Pasini, 2015; Khanoki and Pasini, 2012; Hedayati et al., 2016; Lefebvre et al., 2008; Arabnejad Khanoki and Pasini, 2013). Standard fabrication processes exist to manufacture cellular metals (Banhart, 2001; Wadley, 2002; Dong et al., 2015; Wadley et al., 2003). Whereas some retain inherent limitations</p>
+<p>in creating cells with complex topologies, others,</p>
+<p>especially those enabled by additive processes, e.g. Electron Beam Melting (EBM) and Selective Laser Melting (SLM), are capable of reproducing pore geometries with complex shapes and at multiple length scales (Chu et al., 2008; Vayre et al., 2012). These processes, however, generally fabricate lattices with geometries that depart from their as-designed counterparts; as a result, their geometry is far from being defect-free (Vayre et al., 2012; Zaeh and Branner, 2009; Mercelis and Kruth, 2006; Bagheri et al., 2016). Rather than resembling ideal geometry, as-built lattices typically contain material and geometric imperfections that may strongly inﬂuence their elastic response and failure mechanism. Several experimental studies have been undertaken response</p>
+<p>and</p>
+<p>failure</p>
+<p>mechanism</p>
+<p>of</p>
+<p>a</p>
+<p>broad</p>
+<p>to</p>
+<p>investigate elastic</p>
+<p>range of cellular metals</p>
+<p>fabricated additively (Tancogne-Dejean et al., 2016; Xiao et al., 2015; Cheng et al., 2012; Ushijima et al., 2010; Gümrük and Mines, 2013; Ahmadi et al., 2014; Gümrük et al., 2013; Messner, 2016). Some focus on Ti-6Al-4 V lattices manufactured with EBM (Xiao et al., 2015; Cheng et al., 2012), whereas others on stainless steel lattices built with SLM (Ushijima et al., 2010; Gümrük and Mines, 2013; Gümrük et al., 2013). These works concur in emphasizing the mechanical</p>
+<p>strict</p>
+<p>response</p>
+<p>relationship under</p>
+<p>a</p>
+<p>existing</p>
+<p>given</p>
+<p>load.</p>
+<p>between</p>
+<p>cell</p>
+<p>Other</p>
+<p>works</p>
+<p>topology</p>
+<p>and</p>
+<p>on the failure</p>
+<p>mechanisms of metallic lattices attribute the formation of certain failure modes to a series of factors including the application of non-uniform load distribution, residual stresses, and the presence of manufacturing imperfections (Kadkhodapour et al., 2015; Santorinaios et al., 2006). Geometric defects and material heterogeneities inevitably form dur- ing material layer deposition, and</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>they are especially sizable in cellular parts having features that are built close to the manufacturing limits (Yan et al., 2012). For example, struts horizontal to the building plane, which suffer from poor heat transfer during the additive manufacturing process, are prone to overmelting and display oversized thickness (Bagheri et al., 2016). Surface beads arising from partially melted metal particles are also an undesirable outcome (Santorinaios et al., 2006; Yan et al., 2012). Such imperfections can severely compromise not only the functional use of a porous material for a given application, but also its elastic and failure response (Arabnejad et al., 2016; Bagheri et al., 2016; Campoli et al., 2013), which can be also quite far from that of defect-free lattices. For cellular solids built with conventional and chemical-based processes, the relation between geometric imperfections and mechanical response has been extensively investigated (Onck et al., 2005; Symons and Fleck, 2008; Grenestedt, 1998, 2005). It has been shown that geometric mismatches between manufacturing and nominal values can be an important cause of disagreement</p>
+<p>with</p>
+<p>the</p>
+<p>predictions</p>
+<p>obtained</p>
+<p>from</p>
+<p>defect-free</p>
+<p>models</p>
+<p>(Grenestedt, 2005). For example, for 2D isotropic lattices, the imperfection sensitivity of triangular, Kagome, and hexagonal lattices, has been studied in the elastic regime through theory and simulations (Symons and Fleck, 2008; Grenestedt, 1998). Imperfections in the form of missing bars, misplaced nodes, and bar waviness have been recognized as one of the main sources responsible for the degradation of mechanical properties to an extent that is strongly dependent on cell topology. The elastic properties of a triangulated lattice have been found to be less sensitive to imperfections than a Kagome lattice, whose elastic response deviates more severely from that of its as-designed geometry (Symons and Fleck, 2008). Another work has investigated the impact of truss waviness in 3D textile lattices, built by stacking woven textile meshes (Queheillalt et al., 2007). Closed-form expressions and</p>
+<p>ﬁnite element (FE) calculations have revealed that</p>
+<p>waviness brings about a 20% reduction in the stiffness and strength of their as-designed collinear lattices. Other studies on metallic foams have also focused on the relation between mechanical properties and defects, such as wall thickness variation, curved cell walls and cell shape irregularity</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>(Fahlbusch et al., 2016; Simone and Gibson, 1998). Obtained through a homogenization scheme, the results also corroborate previous ﬁndings showing a signiﬁcant knockdown in elastic properties (Fahlbusch et al., 2016). While predictive models of defect-free lattices with nominal geometry can evaluate linear and non-linear responses un- der an applied stress (Vigliotti et al., 2014; Vigliotti and Pasini, 2012; Deshpande et al., 2001; Arabnejad and Pasini, 2013; Elsayed and Pasini, 2010a,b), they generally fall short in capturing</p>
+<p>experimental</p>
+<p>response</p>
+<p>of</p>
+<p>imperfect</p>
+<p>lattices.</p>
+<p>For</p>
+<p>additive</p>
+<p>processes, the relation between geometric imperfections and mechanical response has been scarcely investigated in the literature. The studies that do exist focus mainly on one type of defects only (Tancogne-Dejean et al., 2016; Campoli et al., 2013). For example, one work on 3D metallic lattices built additively has focused exclusively on the sensitivity of strut crosssection variation and has shown that deviations of strut radii strongly correlate with changes in elastic properties and yield strength (Campoli et al., 2013). However, the combined inﬂuence of other imperfections, such as strut</p>
+<p>waviness</p>
+<p>and</p>
+<p>strut</p>
+<p>oversizing,</p>
+<p>has</p>
+<p>not</p>
+<p>been</p>
+<p>systematically</p>
+<p>investigated, neither has their impact on the failure mechanisms of 3D printed metallic lattices. The goal of this work is to investigate the combined role of geometric defects induced by SLM in the elastic response, damage initiation, and failure evolution of 3D lattices with regular octet and rhombicuboctahedron cells under static compression. Our approach combines X-ray Computed Tomography (CT), in-situ mechanical testing, imperfect model generation of statistically distributed imperfections, and numerical assessment of their mechanical response up to failure. After the description of the lattice samples and their morphological characterization, Section 3.1 explains the process used to extract and statistically quantify three sets of geometric defects.</p>
+<p>Section</p>
+<p>compression</p>
+<p>3.2</p>
+<p>presents</p>
+<p>the</p>
+<p>experimental</p>
+<p>results</p>
+<p>from</p>
+<p>in-situ</p>
+<p>tomography. In Section 4.1, computational predictions of</p>
+<p>elastic properties obtained via homogenization are given for CT rebuilt unit cells, and Section 4.2 elucidates the outcome from non-linear FE analysis of</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>fully-detailed</p>
+<p>imperfect</p>
+<p>models.</p>
+<p>In</p>
+<p>the</p>
+<p>ﬁnal</p>
+<p>section,</p>
+<p>a</p>
+<p>parametric</p>
+<p>investigation on the mechanics of 3D metallic lattices built with SLM unveils their response sensitivity to changes in defect amplitude.</p>
+<p>Fig. 1. Ideal regular octet cell (A) and respective prismatic sample manufactured with SLM (B); ideal rhombicuboctahedron cell (C) and its relative SLM- manufactured sample (D). (For interpretation of the references to color in the text, the reader is referred to the web version of this article.)</p>
+<p>2. Manufacturing and microstructure</p>
+<p>Fig. 1 shows the unit cell topology and prismatic geometry (20 × 20 × 30 mm3) of the 3D lattices under investigation. Both cell topologies (Fig. 1(A) and (C)) have cubic symmetry with cylindrical struts. The ﬁrst is a regular octet cell consisting of a regular octahedron as its core surrounded by eight regular tetrahedra, one tetrahedron on each of its eight faces. The second is a rhombicuboctahedron, a classical Archimedean polyhedron, where the cross-section area of the shared struts (blue) are twice that of the unshared ones (red). Whereas the regular octet, a stretch-dominated cell, has been extensively studied in the literature (Xu and Pasini, 2016; Dong et al., 2015; Deshpande et al., 2001; Elsayed and Pasini, 2010b),</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>the rhombicuboctahedron, a bend-dominated topology, has received far less attention (Hedayati et al., 2016). They are both selected here to offer a mean of comparison on the dissimilar deformation modes that each of them displays under quasi static compression. For each cell topology, ﬁve identical samples were manufactured from aluminium alloy powder (AlSi10Mg) via Selective Laser Melting (SLM) by Renishaw AM250 (Renishaw Limited, Mississauga, ON, Canada) with an input power of 200 W and energy density of 60 J/mm3. The building direction is shown in Fig. 1(B) and (D). The laser spot diameter was 70 μm and the powder layer was 25 μm thick. Stress relief was performed at 300°C ± 10°C for 2hr, followed by part removal from the building plate through Electrical Discharge Machining wire-cut. Relative density (ρ̃ ) is deﬁned as the total volume of the sample divided by the volume of the solid, i.e. the density of the lattice divided by the density of the constituent material. The apparent relative density of the fabricated samples was estimated from their mass and apparent volume with statistical values of 10.4% (±0.2%) for the regular octet lattice, and 14.7 % (±0.2%) for the rhombicuboctahedron lattice.</p>
+<p>3. Experimental investigation</p>
+<p>3.1. Defect morphology investigation</p>
+<p>3.1.1. Classiﬁcation of geometric imperfections</p>
+<p>Scanning electron microscopy (Hitachi UHR Cold-Emission FE-SEM SU8000) was used to characterize morphology and microstructural features of each lattice sample. Fig. 2 illustrates pictures of selected elements pointing out a series of geometric imperfections, all generated during SLM. Geometric defects, such as parasitic mass at the joints, strut thickness heterogeneity, and overmelting of horizontal struts can be described as morphological mismatches between the as-designed (defect-free) and asmanufactured (imperfect) samples. In this work, we focus on three types of geometric imperfections which are deemed to have a signiﬁcant impact</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>on the mechanical properties and failure mechanisms of fabricated lattices: (i) Strut</p>
+<p>waviness characterized by the center axis misalignment of an as-</p>
+<p>built strut from that of the collinear as-designed strut. As shown in Fig. 2(A) and (B), the center axes of the highlighted struts are wavy and have deviated from the axis of a collinear strut. (ii) Strut thickness variation described as cross-section irregularity from the</p>
+<p>nominal circular shape and evolving along the strut length. As shown in Fig. 2(A) and (B), the thicknesses of the two highlighted struts change along their respective axes. Strut oversizing or undersizing caused by dissimilar orientations of each lattice member with respect to the building orientation. This is emphasized by directly comparing strut orientations with building direction. SEM images in Fig. 2(C)–(E) qualitatively show that struts normal to the building direction are overmelted and thicker than their nominal value. For struts that are parallel to the building direction, on the other hand, strut thinning is observed when compared to nominal thickness values. For additive processes, such as SLM, the dependence of strut thickness on the building angle is a phenomenon well documented (Bagheri et al., 2016).</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>Fig.</p>
+<p>2.</p>
+<p>SEM</p>
+<p>images</p>
+<p>of</p>
+<p>representative</p>
+<p>portions</p>
+<p>of</p>
+<p>rhombicuboctahedron (A) and regular octet (B) lattices with overlaid center axis on a representative strut. Magniﬁed images for vertical (C), diagonal (D), and horizontal struts (E) showing strut center axis misalignment and strut thickness variation.</p>
+<p>Fig. 3. Schematic of the CT image extraction process highlighting for a single strut, the radius deviation (strut thickness deviation) and the center-axis</p>
+<p>offset (strut waviness) from their nominal (as-designed)</p>
+<p>values. (For interpretation of the references to color in the text, the reader is referred to the web version of this article.)</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>In this work, we focus on the above defects and aim at studying the combined role they play in the failure mechanisms and elastic properties of regular octet and rhombicuboctahedron lattices. In the following section, we ﬁrst use quantitative X-ray computed tomography (CT) on undeformed lattice samples to accurately capture structural morphology, and extract three sets of geometric imperfections.</p>
+<p>3.1.2. Extraction of geometric imperfections</p>
+<p>For a representative lattice sample, Fig. 3 illustrates a schematic of the process used to extract morphological defects. The undeformed geometry of an as-manufactured sample is ﬁrst rebuilt from CT images by using ITKSNAP (Yushkevich et al., 2006); then the geometry of each strut (see a representative diagonal strut in Fig. 3) is extracted and discretized with a surface mesh. The assessment of geometric mismatches is obtained with the following procedure. A series of parallel planes are created to intersect each strut at equidistant points along each strut axis. On each plane, one of which is shown in blue in Fig. 3, the shape boundary of the crosssection is ﬁtted via the least squares method with a circle, which can be described by a center position and a radius. The difference between the radius of each ﬁtted circle and the as-designed counterpart is determined and it assesses the radius deviation (Fig. 3) from that of the ﬁtted circle. A spatial line passing</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>Fig. 4a. Probability distributions of SLM geometric imperfections for the regular octet lattice: (A) normalized deviation of strut radius for diagonal struts, (B) normalized deviation of strut radius for horizontal struts, (C) normalized</p>
+<p>strut</p>
+<p>center-axis</p>
+<p>normalized strut center-axis</p>
+<p>offset</p>
+<p>for</p>
+<p>diagonal struts, and</p>
+<p>(D)</p>
+<p>offset for horizontal struts. Normalized</p>
+<p>values are obtained from the as-designed radius of a given set of struts.</p>
+<p>through the centers of all ﬁtted circles is then generated and assumed to be the equivalent center axis of a reconstructed strut. The strut centeraxis offset, deﬁned as the normal distance of each ﬁtted center to the ideal center axis, is used to assess the misalignment of the reconstructed strut from the collinear axis of an as-designed strut, as demonstrated in Fig. 3. An in-house procedure is developed to automatically extract and record</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>all the deviations of the strut radius and the strut center-axis offset from each reconstructed strut of all the lattice samples.</p>
+<p>3.1.3. Statistical analysis of geometric imperfections</p>
+<p>Since the geometric imperfections here examined are strongly dependent on the building direction (Fig. 2) (Bagheri et al., 2016), we proceed by classifying the geometry of the reconstructed struts with respect to their orientation</p>
+<p>to</p>
+<p>the</p>
+<p>building plane. The results are then categorized into</p>
+<p>speciﬁc sets of struts. For the regular octet lattice, we obtain two statistical sets: one (h) with struts horizontal to the building plane, and another (d) with</p>
+<p>diagonally</p>
+<p>oriented</p>
+<p>struts</p>
+<p>(about</p>
+<p>45°</p>
+<p>with</p>
+<p>respect to the building</p>
+<p>plane). Similarly, for the rhombicuboctahedron lattices, the struts are classiﬁed into</p>
+<p>three</p>
+<p>groups:</p>
+<p>d (diagonal), h (horizontal), and v (vertical). For a</p>
+<p>representative regular octet sample, the horizontal set contains 2736 struts, whereas the diagonal set has 5616 struts. In total, at least 150 struts for each</p>
+<p>set</p>
+<p>(5%</p>
+<p>horizontal</p>
+<p>selected and later</p>
+<p>used</p>
+<p>to</p>
+<p>struts</p>
+<p>and</p>
+<p>generate</p>
+<p>3%</p>
+<p>diagonal struts) are randomly</p>
+<p>probability</p>
+<p>density</p>
+<p>distributions</p>
+<p>of</p>
+<p>geometric defects. A convergence analysis is conducted to ensure that the selected sample size is appropriate and representative in capturing</p>
+<p>defect</p>
+<p>distribution. Fig. 4a displays the probability distributions of the manufacturing defects normalized by the nominal values of the as- designed radius for the octet lattice samples. More speciﬁcally, Fig. 4a (A) and (B) show the deviation distributions of the strut radius of each set of struts, while Fig. 4a (C) and (D) show the distributions of the strut center-axis offset for the diagonal and horizontal sets, respectively. We observe that the probability distributions</p>
+<p>from</p>
+<p>the</p>
+<p>two statistical sets</p>
+<p>have</p>
+<p>similar</p>
+<p>shapes.</p>
+<p>To</p>
+<p>statistically quantify these distributions, we calculate the mean value μ and standard deviation σ as reported in each plot of Fig. 4a. We recall that the superscript represents a given set of struts (d for diagonal, h for horizontal, and v for vertical) and the subscript refers to the statistical measure (r for deviation of the strut radius and o for offset of the strut center-axis).</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>The distribution parameters highlighted in Fig. 4 correspond to the imperfections designated in Section 3.1.1: (i) σ r is the standard deviation of the strut radius deviation and describes the severity of strut thickness variation (Fig. 3); (ii) μo,</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>Fig. 4b. Planar portions of an octet cell (as-designed and as-built) along with illustrative ranges of statistical parameters; imperfections are applied to diagonal struts only and sketches are qualitative. In the last three drawings, each set of statistical parameters is depicted separately to illustrate either strut</p>
+<p>undersizing, or strut thickness</p>
+<p>variation or strut waviness.</p>
+<p>the mean value of strut center-axis offset, indicates the severity of strut waviness (Fig. 3); (iii) μr, the mean value of strut radius deviation, speciﬁes the oversizingr (positive value) or undersizing (negative value) of a given set of struts. The values in Fig. 4a are all normalized with respect to ther o</p>
+<p>nominal radius of a given set of as-designed struts. To further clarify the r</p>
+<p>physical meaning of these distribution parameters, one example is given for the horizontal strut set of the regular octet lattice. The positive μh in Fig. 4a(B) illustrates that, on average, the horizontal struts are fabricated 24.5% thicker than the</p>
+<p>as-designed value. This</p>
+<p>conﬁrms</p>
+<p>that</p>
+<p>struts</p>
+<p>built</p>
+<p>horizontally overmelt during the layer-by-layer process. The outcome of this analysis is consistent with the observations obtained from the SEM micrographs in Fig. 2. The standard deviation σ h in Fig. 4a(B) represents the degree of thickness variation along horizontal struts. Furthermore, μh in</p>
+<p>Fig.</p>
+<p>4a(D)</p>
+<p>indicates that for horizontal struts the average center axis</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>misalignment with respect to their ideal axis is 17.2% of their nominal radius. For the diagonal strut set, reveals</p>
+<p>that</p>
+<p>the</p>
+<p>diagonal</p>
+<p>on</p>
+<p>struts</p>
+<p>the are</p>
+<p>other</p>
+<p>hand,</p>
+<p>undersized</p>
+<p>as</p>
+<p>the</p>
+<p>negative</p>
+<p>μd</p>
+<p>a result of the</p>
+<p>manufacturing process. In addition, comparative analysis of σ d</p>
+<p>and σ h</p>
+<p>indicates that the cross-section shape of r</p>
+<p>r</p>
+<p>diagonal struts is more uniform along the strut axiso than that for horizontal struts. μh is 2.2 times higher than for diagonal struts o (μd ), implying that the initial waviness of horizontal struts is larger than that of diagonal struts. We can conclude that for the manufacturing technology (SLM) and process parameters used in this work, horizontal struts in the regular octet feature more severe geometric imperfections than those appearing in diagonal struts. To visualize the meaning of the statistical defect parameters here examined, Fig. 4b provides qualitative schematics of a planar portion of an octet cell. Here the nominal and asbuilt diagonal struts are visualized with the latter, decomposed in three sketches, each visualizing the individual role of one defect along with its own statistical parameter. For the rhombicuboctahedron lattice, similar observations can be drawn from the statistical results shown in Fig. 5, where, this time, strut orientations are categorized into three groups: vertical set with 1512 struts, diagonal set with 5184 struts, and horizontal set with 5544 struts.</p>
+<p>3.2. CT tomography under in-situ compression</p>
+<p>CT tomography was used to capture damage initiation and monitor failure evolution of 3D lattice samples tested in-situ</p>
+<p>under compression. A</p>
+<p>custom-made miniature loading stage was built to allow for in-situ testing within a CT tomography</p>
+<p>apparatus. Illustrated in Fig. 6, the system</p>
+<p>consisted of a microfocus X-ray sourced from Hamamatsu, Japan, equipped</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>with a tungsten target and was operated at 100 kV and 100 μA. The samples were placed in the cone beam in an X-ray transparent miniature loading stage, where the load was manually applied with screws. A piezoelectric load cell was positioned directly below the base of the test rig to measure the axial load during compression. The entire loading rig was mounted on a rotation stage from Huber, Germany. The transmitted image 2</p>
+<p>was recorded by a 2240 × 2368 pixel</p>
+<p>ﬂat panel detector with a pixel size</p>
+<p>of 50 μm, also from Hamamatsu, Japan. The distances between the three components</p>
+<p>were</p>
+<p>set</p>
+<p>to</p>
+<p>achieve</p>
+<p>a</p>
+<p>threefold</p>
+<p>magniﬁcation.</p>
+<p>Correspondingly, the effective pixel size was reduced to 17 μm. Two sets of lattice samples were tested under compression that increased in steps. At each load step, a full tomographic image was acquired to capture the deformation of each sample at the prescribed load level. For each tomography, a set of 720 projection images were taken over a rotation angle range of 360°. An image acquisition time of 500 ms with 4 integrated images per projection was applied to obtain optimal contrast. Four samples in each set were tested under in-situ compression, and a complementary set of tests was conducted on the ﬁfth sample of each set in a 50 kN MTS servo-electric testing machine so as to obtain fully continuous stress-strain −1</p>
+<p>curves. A constant nominal strain rate of 0.005 s</p>
+<p>was applied during the</p>
+<p>latter tests to comply with the ISO 14242 standard, and the extensometer was mounted to the conical side of the crosshead for strain measurement.</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>Fig. 5.</p>
+<p>Probability distribution of SLM geometric imperfections for</p>
+<p>rhombicuboctahedron lattice: (A) normalized deviation of strut radius for vertical struts, (B) normalized deviation of strut radius for diagonal struts, (C) normalized deviation of strut radius for horizontal struts, (D) normalized strut centeraxis offset for vertical struts, (E) normalized strut center-axis offset for diagonal struts, and (F) normalized strut center-axis offset for horizontal struts. Normalized values are obtained from the as-designed radius of a given set of struts.</p>
+<p>Fig. 6. Sketch of the in-situ compression tomography setup composed of a microfocus X-ray source (left), a miniature loading rig mounted on a rotation</p>
+<p>stage (middle) containing the lattice sample and a ﬂat</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>panel detector (right).</p>
+<p>3.2.1. Elastic and failure response tested under in-situ compression Figs. 7(A) and 8(A) show the engineering stress-strain curves for one octet and one rhombicuboctahedron lattice under compression. For each cell topology, four samples were tested under in-situ compression; given their failure modes and failure evolutions are comparable, we can reasonably assume that the failure response in Figs. 7(C) and 8(C) are representative of the behavior of all the lattices tested in this work. Selected CT images are shown at relevant points corresponding to a given strain rate. Both ﬁgures reveal the typical traits of the stress-strain curve for a cellular material: a region of elastic</p>
+<p>deformation followed by a</p>
+<p>plateau characterized by stress ﬂuctuations. No densiﬁcation appears on the curves because the tests are terminated within the plateau region. The Young’s modulus of the regular octet and rhombicuboctahedron samples are respectively 690 MPa and 1250 MPa. As per the ISO 14242 standard, the maximum compressive strength is determined from the ﬁrst peak in the stress-strain curve. The maximum compressive strength of the regular octet sample is 4.7 MPa, while the strength of the rhombicuboctahedron sample reaches 9.1 MPa. As shown in the response curves of Figs. 7 and 8, the rhombicuboctahedron lattice has a higher relative density (1.4:1) and has several struts aligned along the load direction, factors that explain the higher elastic modulus and maximum compressive strength (about 2:1) recorded during the experiments. In Figs. 7(A) and 8(A), labelled points correlate tomography images with given stages of deformation for the two sets of lattices. Samples within each set exhibit a consistent mechanism of failure, which is typically distinct to cell topology. Damage evolution on slices is captured by CT tomography and displayed in Figs. 7(C) and 8(C). Slice locations are identiﬁed by planes in</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>Fig. 7. CT in-situ compression images for a representative regular</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>octet sample: (A) Stress-strain curve with labelled points correlating with tomography images, (B) slice location, and (C) failure behavior at successive strain rates for each slice, each corresponding to the points on the stress-strain curve (A).</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>Fig.</p>
+<p>8.</p>
+<p>CT</p>
+<p>in-situ</p>
+<p>compression</p>
+<p>images</p>
+<p>for</p>
+<p>a</p>
+<p>representative</p>
+<p>rhombicuboctahedron sample: (A) Stress-strain curve with selected points correlating with tomography images, (B) slice location, and (C) failure</p>
+<p>behavior</p>
+<p>at</p>
+<p>successive</p>
+<p>strain</p>
+<p>rates</p>
+<p>for</p>
+<p>each</p>
+<p>slice,</p>
+<p>each</p>
+<p>corresponding to the points on the stress-strain curve (A).</p>
+<p>Figs. 7(B) and 8(B). For the regular octet lattice, localized instability initiates at the interior layers of the sample, thus generating an apparent inclined shear plane. As a result of load redistribution within neighboring layers, a second peak appears on the stress-strain curve. Next, layers that are close to the shear band start to fail sequentially, with subsequent drops in</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>stress level. As observed in Fig. 7(C) at a later stage of deformation, failure evolves with the propagation of an</p>
+<p>inclined shear plane that</p>
+<p>generates a shear fracture. The sample then splits into three portions (Fig. 9(A)), forming a 54.7° angle between the normal direction of the shear plane and the loading direction. For the rhombicuboctahedron lattice, on the other hand, we observe another failure mechanism. Plastic deformation, caused by diagonal strut bending, appears ﬁrst at the top of the sample (Fig. 8(C) - b), a phenomenon that sets the start of the non-linear post elastic regime. Immediately after the ﬁrst peak, the stress suddenly drops due to local instability occurring in the vertical struts of the cells close to the top plate (Fig. 8(C) - c). Subsequently, damage propagates into neighboring layers through local buckling of struts aligned with the load direction, thereby resulting in a layer-by-layer mechanism of crushing as shown in Fig. 8(C) d, e, and f. This sequence of events visualized by subsequent peaks in the stress-strain curve repeats for each adjacent layer and continues until all layers have collapsed.</p>
+<p>4. Structural analysis of lattices via computational mechanics</p>
+<p>Closed-form expressions that can predict the mechanical properties of lattice materials are available in literature (Vigliotti et al., 2014; Vigliotti and Pasini, 2012; Deshpande et al., 2001; Hedayati et al., 2016). Truss theory or beam theory can be readily used to predict the mechanical properties of as-designed samples with uniform strut thickness. They fall</p>
+<p>short,</p>
+<p>however, once they are applied to as-manufactured samples deviating from their nominal geometry. Geometric imperfections have an impact not</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>Fig. 9. Failed samples: (A) regular octet, and (B) rhombicuboctahedron.</p>
+<p>captured by theoretical predictions of defect-free models, i.e. as-designed. In this section, we use both a homogenized scheme and statistics-based simulations of full-size 3D lattice samples to investigate the role that SLMinduced</p>
+<p>defects</p>
+<p>play</p>
+<p>on</p>
+<p>their</p>
+<p>elastic</p>
+<p>and</p>
+<p>failure</p>
+<p>response.</p>
+<p>A</p>
+<p>homogenization scheme is applied to the as-reconstructed RVEs to predict the mechanical properties in the linear elastic regime; these RVEs are reconstructed from CT images and contains all the geometric defects of the samples. For the non-linear behavior, on the other hand, statisticsbased simulations of full-size lattices are presented to predict failure initiation and failure modes; these full-size lattices contain only the three sets of defects described in Section 3.1.</p>
+<p>4.1. Linear elasticity of as-designed and as-reconstructed lattices</p>
+<p>4.1.1. Unit cell approach via asymptotic homogenization</p>
+<p>We examine fabricated samples, and resort to asymptotic homogenization (AH), implemented through ABAQUS-Python</p>
+<p>scripts, to calculate their</p>
+<p>effective stiffness matrices. The mathematical theory of AH has been</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>shown to provide in the elastic regime results that are consistent with those obtained from experiments (Hassani and Hinton, 1998; Hassani and Hinton, 1998). Furthermore, AH theory combined with numerical analysis, has been extensively used as an effective tool to calculate the elastic properties of cellular materials (Arabnejad Khanoki and Pasini, 2013; Arabnejad and Pasini, 2013; El Moumen et al., 2015; Cheng et al., 2013). Appendix A details AH theory and the computational scheme developed in this work. To study the degradation of mechanical properties in as-built lattices, two sets of representative volume elements (RVE) are developed. One set is the as-designed geometry (Fig. 10(A) and (B)) with relative density equal to its respective re- constructed counterpart. The other set (Fig. 10(C) and (D))</p>
+<p>is</p>
+<p>generated</p>
+<p>from</p>
+<p>the</p>
+<p>reconstructed</p>
+<p>geometry,</p>
+<p>which</p>
+<p>includes</p>
+<p>fabrication imperfections and is obtained from the CT scans of the undeformed lattices through ITK-SNAP, from which the binary CT images are in turn segmented with triangular facet elements. The resulting triangular mesh models are volume meshed with tetrahedral elements. The RVEs are then utilized to extract the homogenized stiffness matrix in the coordinate system shown in Fig. 10. The Young’s modulus in any arbitrary directions can then be obtained by the rotation of the coordinate system, as described in Appendix B.</p>
+<p>4.1.2. Elastic moduli of as-designed and as-manufactured lattices</p>
+<p>Fig. 11 plots the homogenized Young’s modulus in polar coordinates and shows the elastic anisotropy of each set of metallic lattices for both as-designed and as-manufactured RVEs. The results are normalized with respect to the maximum as-designed values within the visualized plane. The Young’s modulus along the Z direction obtained from the compression test (Section 3.2.1), is also visualized in Fig. 11(B) and (D). The homogenized value obtained from the reconstructed RVE is in good agreement (5.8%) with its experimental counterpart, which in contrast is much lower (51.6%) than that given by the</p>
+<p>as-designed RVE. Fig. 15</p>
+<p>reports the absolute values predicted from the as-designed and as-</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>manufactured RVEs. As shown in Fig. 11(A) and (B), the regular octet is nearly-isotropic with maximum value of the Young’s modulus at 45° along the principal axes (Deshpande et al., 2001). The rhombicuboctahedron, on the other hand, is orthotropic (Fig. 11(C) and (D)) with higher values of the Young’s modulus along the three principal axes. Comparing the polar plots of the asmanufactured model and the as-designed model allows assessing the sensitivity of the Young’s modulus to geometric defects. Fig. 11(A) and (B) show an omnidirectional deterioration for the regular octet lattice, while for the rhombicuboctahedron the decrease is mainly along the principal directions (Fig. 11(C) and (D)). More importantly, for both cell topologies, the results along the polar directions show a non-uniform knockdown of mechanical properties. This is caused by the dependence of strut thickness on the angle a strut forms with the building plane, as shown in Fig. 2, where horizontal struts located within the building plane (XY) get overmelted. As a result, the Young’s modulus is most penalized along the z direction, which in turn leads to a more pronounced heterogeneity in the Z direction, as shown in Fig. 11(B) and (D). For the regular octet, the Young’s modulus for the as-manufactured RVE in the X and Y directions are 84% and 87% of the nominal values, respectively, whereas in the Z direction (building direction) that value is 70% of the nominal value. On the other hand, the Young’s modulus of the as-manufactured rhombicuboctahedron in the X and Y directions are 83% and 82% of the nominal values, respectively, whereas in the Z direction (building direction) that value is 71% of the nominal value.</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>Fig. 10. Representative volume elements (RVE): (A) as-designed RVE for the regular octet; (B) as-designed RVE for the rhombicuboctahedron; (C) recon- structed RVE for the as-manufactured regular octet, and (D) reconstructed RVE for the as-manufactured rhombicuboctahedron.</p>
+<p>4.2. Failure response of lattice models with statistically distributed defects</p>
+<p>4.2.1. Description of Finite Element model and material properties</p>
+<p>Finite element (FE) models (ABAQUS) of two sets of lattices are created with as-designed geometry (Fig. 12(A) and (C)).</p>
+<p>Timoshenko beam</p>
+<p>elements are used to model the struts (B31 in ABAQUS). The slenderness ratio for the regular octet is approximately 15:1, and is roughly 8:1 for the diagonal struts of the rhombicuboctahedron, and 6:1 for its vertical and horizontal</p>
+<p>struts.</p>
+<p>The</p>
+<p>crosshead</p>
+<p>of</p>
+<p>the</p>
+<p>compression</p>
+<p>simulated with a discrete rigid shell and discretized by</p>
+<p>apparatus</p>
+<p>is</p>
+<p>rigid bilinear</p>
+<p>quadrilateral elements (R3D4 in ABAQUS). Rigid and frictionless properties are deﬁned for the edge-to-surface contact between the lattice model and</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>the crosshead as well as for the edge-to-edge contact between the struts themselves. A displacement load, deﬁned by a smooth step amplitude, is applied to the reference point of the rigid crosshead. Rigid</p>
+<p>body</p>
+<p>movements are removed by constraining the symmetry axis on the top and bottom planes of the FE models. To track damage evolution in the postpeak regime, an explicit solution strategy is adopted in the simulations. The simulations are performed on the Guillimin supercomputer owned by McGill University in partnership with Calcul Québec and Compute Canada. To attain the relevant material properties for the numerical models, we ﬁrst conducted electron backscatter diffraction (EBSD) on a 50 × 50 μm area of selected lattice samples fabricated via SLM. EBSD results revealed that the grain size is at least one order of magnitude smaller than the diameter of one strut and no preferred crystallographic orientations are found. For this reason, material heterogeneity is not taken into account in the numerical analysis. In addition, a parametric study undertaken to identify the appropriate hardening law to adopt in the numerical models has shown that for the octet and rhombicuboctahedron lattices here examined the role of strain hardening on the shape of their stress-strain curve as well as on their failure mechanism is not signiﬁcant. The main difference between a linear elastic perfectly-plastic model and one with moderate strain hardening is on the amplitude of the peak and plateau stresses; and this difference is below 10%.</p>
+<p>This result indicates that the failure</p>
+<p>mechanism and collapse pattern do not change for different strain hardening exponents. Hence in this work, to provide a consistent mean of comparison among all the numerical models, we assume AlSi10Mg to be linear elastic, perfectly-plastic with constitutive relationship described by (von Mises) J2 ﬂow theory. The bulk properties of AlSi10Mg are then obtained from a set of tests of dog-bone samples fabricated with laser processing and heat treatment parameters identical to those used to build</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>Fig. 11.</p>
+<p>Polar plots illustrating the variation of the normalized Young’s</p>
+<p>modulus for the as-designed, and CT reconstructed representative volume elements: (A) XY plane of regular octet, (B) XZ plane of regular octet, (C) XY plane of rhombicuboctahedron, and (D) XZ plane of rhombicuboctahedron. Experimental</p>
+<p>measures visualized along the Z direction for regular</p>
+<p>octet and rhombicuboctahedron are respectively 51.6% and 42.0% lower than those predicted with their as-designed RVEs. If the as-built RVE is used, the predictions are respectively 5.1% and 5.8% higher than the experimental values.</p>
+<p>the lattices. Hence, the Hall-Petch strengthening that can result from ﬁne</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>scale sub grains visible from EBSD images are incorporated in the measured values of the mechanical properties, which are:</p>
+<p>Young’s 3</p>
+<p>modulus E = 67 GPa, Poisson’s ratio μ = 0.33, density ρ = 2680 Kg/m , and yield strength σy = 230 MPa, which is approximately the average of the yield strength measured along the building direction (215 MPa) and that measured perpendicular to the build direction (236 MPa).</p>
+<p>4.2.2. Scheme for incorporating geometric imperfections into the computational models</p>
+<p>The distributions of geometric imperfections shown in Figs. 4 and 5 do not resemble the shape of a standard statistical distribution. For this reason, they are ﬁtted into continuous probability density functions (PDF) by a Kernel density estimation, which is a generalized method that can estimate the probability density directly from the data without assuming a particular</p>
+<p>form</p>
+<p>for</p>
+<p>the</p>
+<p>underlying</p>
+<p>distribution.</p>
+<p>These</p>
+<p>probability</p>
+<p>distributions are used as input to build multiple geometric models, each with statistical values of defects sampled at random. A Python-ABAQUS script is used to introduce the distributed sets of geometric defects into the numerical models. Each strut is divided into four beam elements. The strut radius of each element is assigned individually at its respective position of the sample. The value of the strut radius is generated by the corresponding Kernel density function of the deviation for the strut radius. Nodes in each beam element are offset by vectors perpendicular to the longitudinal axis of the beam. The norm of each vector, which describes the amplitude of the center axis misalignment, is determined by the corresponding Kernel density function of the strut center-axis offset. Fig. 12(B) and (D) visualize the process for two cells of the FE models with distributed geometric imperfections. Non- uniform radius and strut center axis misalignment are visualized with beam elements of dissimilar color and orientation. For each</p>
+<p>topology,</p>
+<p>at</p>
+<p>least15</p>
+<p>imperfect-geometry</p>
+<p>numerical</p>
+<p>models</p>
+<p>are</p>
+<p>generated with relative density identical to that of the tested samples and the resulting stress-strain curve of each iteration is recorded to obtain a probability distribution of possible responses.</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>Fig. 12. Finite element models: (A) and (C) numerical models with asdesigned geometry, (B) and (D) numerical models with distributed geometric imperfections, showing magniﬁed radius variations for each strut, where horizontal struts appear thicker than vertical and diagonal struts, and center axis</p>
+<p>misalignment The imperfect models feature</p>
+<p>statistical parameters sampled from the input probability distributions of the built samples, hence their defect</p>
+<p>distributions are statistically</p>
+<p>similar. (For interpretation of the references to color in the text, the reader is referred to the web version of this article.)</p>
+<p>4.2.3. Comparison between predicted and experimentally obtained response</p>
+<p>Figs. 13(A) and 14(A) show a comparison between three stress-strain curves, for each of the lattices here studied. The ﬁrst two curves represent responses from (i) predictions of as-designed models (dashed line – top), and (ii) measurements from experiments (black – bottom). Between them</p></section>
+<section class="pdf-page" id="pdf-page-31"><h2 class="page-number">Page 31</h2><p>lies the red curve, which represents the response of one representative lattice model with imperfection distributions statistically similar to the built samples (Fig 12(B) and (D)). A shaded domain is also included within which fall the results of all 15 imperfect-geometry numerical analyses. This region</p>
+<p>describes</p>
+<p>the</p>
+<p>probability</p>
+<p>distribution</p>
+<p>of</p>
+<p>possible</p>
+<p>mechanical</p>
+<p>responses. All the curves of the envelope region overlap in the linear elastic</p>
+<p>zone,</p>
+<p>because</p>
+<p>their</p>
+<p>geometric</p>
+<p>imperfections</p>
+<p>have</p>
+<p>identical</p>
+<p>probability density distribution. In the plateau region, on the other hand, damage localizes at speciﬁc zones of the lattices; hence the onset of failure and its evolution become strongly dependent on the explicit set of imperfections that are introduced in each simulation. By comparing the characteristic stress-strain curve in red with the others, we generally observe a good agreement in both the elastic and plateau regime. There are differences to emphasize between the regular octet and the rhombicuboctahedron.</p>
+<p>For the regular octet, the curve of the as-</p>
+<p>designed model follows a shear failure mechanism that is also observed experimentally; hence their general trends agree qualitatively. While there is good qualitative agreement between the as-designed and experimental curves, quantitatively there is a signiﬁcant difference between stress values. This difference can be attributed to the magnitude and distribution of defects. For the rhombicuboctahedron lattice, on the other hand, the asdesigned model cannot precisely capture the failure mechanism observed in the experiments (Fig. 14(C)). As shown in Fig. 14(D), damage in the asdesigned lattice localizes in the diagonal struts of the square cupolae, i.e. the upper and lower part of each cell. The damage then evolves sequentially to the neighboring layers. Each peak in the stress-strain curve of an as-designed FE model represents the failure of the square cupolae containing diagonal struts in rhombicuboctahedron cells. At low levels of strain (lower than 16%), the vertical struts do not experience instability because they are free of imperfections. The failure modes from the simulations of imperfect-geometry models parallel those found through in-situ compression (Figs. 7 and 8). To compare the failure stages, the insets B and C in Figs. 13 and 14 are given</p></section>
+<section class="pdf-page" id="pdf-page-32"><h2 class="page-number">Page 32</h2><p>to illustrate the overall lattice failure for one representative simulation (red curves in Fig. 13(A) and 14(A)) complemented with the damage evolution in the ﬁrst slice of the FE model. For the regular octet, localized buckling of struts occurs near the peak load and leads to a shear fracture band. For the rhombicuboctahedron lattice, the sample fails with a layer-by-layer sequence, starting with the bending of diagonal struts and followed by local instability of imperfect vertical struts. Manufacturing imperfections in vertical struts trigger buckling, which in turn crushes the next layer. This mechanism is responsible for a stress drop in the stress-strain curve; it starts from layers close to the top and bottom plate, and sequentially permeates to all the others.</p></section>
+<section class="pdf-page" id="pdf-page-33"><h2 class="page-number">Page 33</h2><p>Fig. 13. Numerical results for the regular octet lattice: (A) stress-strain curve from FE models compared to that obtained via experiments (black line), (B)</p>
+<p>Failure mode from FE model with distributed geometric</p>
+<p>imperfections, and (C) damage evolution at given strains observed in the ﬁrst slice of the FE model shown in (B).</p>
+<p>To provide a quantitative assessment of the impact of manufacturing defects, Fig. 15 summarizes the values of the Young’s modulus and compressive strength predicted by the numerical models along with the relative errors normalized with respect to the experimental measures, here</p></section>
+<section class="pdf-page" id="pdf-page-34"><h2 class="page-number">Page 34</h2><p>taken as baseline. As can be seen in Fig. 15, the average results predicted by the imperfect-geometry models are much closer to the experimental data than those obtained from defect-free models. The Young’s modulus and compressive strength predicted for the imperfect-geometry octet are 4.0% and 12.7% higher than</p>
+<p>the experimental data. These values</p>
+<p>predicted by the as-designed models are 42.0% and 47.2% higher than the experimental data. For the rhombicuboctahedron lattice, the predicted errors are 8.3% and 5.5% for the imperfect-geometry model, and 23.6% and 19.8% for the as-designed model. Comparisons are also made between the predicted values obtained from asymptotic homogenization (elastic properties only) and those from full-size FE models. The Young’s modulus predicted by</p>
+<p>the imperfect models is close to that of the</p>
+<p>reconstructed RVE. This indicates that the geometric characteristics extracted from the CT reconstructed models are appropriately introduced into the numerical analysis. We emphasize that the focus of this work is on three main sources of defects only, although other geometric mismatches contribute to alter the mechanical response of fabricated lattices. This might explain why the results from our simulations are slightly higher than the experimental ones. SEM micrographs in Fig. 2 reveal the presence of numerous parasitic particles bonded to most of the strut surfaces. Agglomeration of surface beads in SLM parts is often attributed to the balling</p>
+<p>phenomenon or partial</p>
+<p>melting of raw particles at the boundary of solid struts (Yan et al., 2012). Since surface beads do con- tribute to mass, but barely carry any load, the assessment of their inﬂuence on the mechanical properties is left to future work. In addition, parasitic masses at the joints also contribute to alter the mechanical behavior (Gümrük and Mines, 2013). In fact, parasitic mass is typically observed to agglomerate at the joints of metallic lattices during additive manufacturing (Bagheri et al., 2016), thereby leading to changes in strut geometry from an ideal cylinder to an hourglass shape. Deviations in joint morphology play a critical role in the initiation of local instability and thus require future investigation.</p></section>
+<section class="pdf-page" id="pdf-page-35"><h2 class="page-number">Page 35</h2><p>Fig. 14. Numerical results for the rhombicuboctahedron lattice: (A) stress-strain curve from FE models compared to that obtained via experiments</p>
+<p>(black</p>
+<p>line);</p>
+<p>(B)</p>
+<p>failure</p>
+<p>mode</p>
+<p>from</p>
+<p>FE</p>
+<p>model</p>
+<p>with</p>
+<p>distributed geometric imperfections; (C) damage evolution observed in the ﬁrst slice of the imperfect FE model shown in (B); and (D) damage evolution at given strains obtained from the ﬁrst slice of the defect-free</p></section>
+<section class="pdf-page" id="pdf-page-36"><h2 class="page-number">Page 36</h2><p>model.</p>
+<p>5. Parameter</p>
+<p>study about the role of imperfections on mechanical properties</p>
+<p>and failure mechanisms</p>
+<p>Section</p>
+<p>4.2</p>
+<p>has</p>
+<p>shown</p>
+<p>that</p>
+<p>full-size</p>
+<p>simulations</p>
+<p>with</p>
+<p>statistically</p>
+<p>distributed geometric imperfections can parallel the failure mechanisms observed during experiments with results within 10% accuracy. In this section, we investigate the sensitivity of mechanical properties (elastic stiffness and compressive strength) and failure mechanisms to the severity of the three defects examined in Section 3. We ﬁrst recall the statistical distribution parameters for these three defects (Figs. 3 and 4B): (1) σ r, the standard deviation of the strut radius deviation, represents the severity of strut thickness variation; (2) μo, the mean value of the strut center-axis offset, refers to the degree of strut waviness; (3) μr, the mean value of the strut radius deviation, describes the overall strut oversizing or undersizing in a given set of struts. Their individual role is examined</p>
+<p>through two</p>
+<p>parametric studies, where the relative density is kept constant and equal to the values of the as-built lattices. In the ﬁrst study (Section 5.1), μr is assumed equal to that of the as-built lattices, and the goal is to examine the impact of varying both σ r and μo. In the second one (Section 5.2), σ r and μo are prescribed identical to those of the as-built lattices, and we vary μr to investigate the effect of oversized and undersized struts.</p></section>
+<section class="pdf-page" id="pdf-page-37"><h2 class="page-number">Page 37</h2><p>Fig. 15. Comparison of Young’s modulus (A) and compressive strength (B) obtained via experiments and computations. % errors are given with respect to the baseline experimental data (grey).</p>
+<p>5.1. Cross-section variation and strut waviness</p>
+<p>Figs. 16 and 17 show the sensitivity of Young’s modulus and compressive strength to both σ r, strut thickness variation, and μo, strut waviness. On the axes are the properties of the octet and rhombicuboctahedron lattice normalized with respect to the values, Ez0 and σz0 , of the defect-free models. The relative density of all numerical models is identical to that of their as-built</p>
+<p>samples,</p>
+<p>namely</p>
+<p>10.6%</p>
+<p>for</p>
+<p>the</p>
+<p>octet</p>
+<p>and</p>
+<p>14.9%</p>
+<p>for</p>
+<p>the</p>
+<p>rhombicuboctahedron. The values σ r and μo are normalized with respect to those that correspond to the real imperfections of the fabricated which</p>
+<p>are μoR</p>
+<p>and</p>
+<p>σrR ,</p>
+<p>samples,</p>
+<p>and visualized as the coordinates of point R.</p>
+<p>Values of σ r and μo lower (or higher) than 100% would infer a better (or worse) manufacturing accuracy offered by another set of manufacturing parameters and/or another additive process. At relevant points in Figs. 16 and 17, four imperfect units (a to d) are shown. (a) represents the nominal unit cell (as-designed) with no thickness variation and no strut waviness; (b) visualizes the effect of ampliﬁed</p></section>
+<section class="pdf-page" id="pdf-page-38"><h2 class="page-number">Page 38</h2><p>thickness variation only, and (c) that of strut waviness exclusively; (d) shows both ampliﬁed</p>
+<p>imperfections.</p>
+<p>The</p>
+<p>color</p>
+<p>legend</p>
+<p>reveals</p>
+<p>the</p>
+<p>relation</p>
+<p>between the knockdown factor in mechanical properties from the nominal values of the defect-free models, Ez0 and σz0 , and the amplitude of the imperfections in a lattice. For the octet lattice, if both imperfections are overampliﬁed by 250%, the Young’s modulus is predicted to drop to 50% of the nominal value, and the predicted compressive strength to 40% of the nominal value. In addition for the elastic modulus, the contours show that strut waviness has a larger impact than strut thickness variation, and the opposite holds for compressive strength. For the rhombicuboctahedron lattice, on the other hand, Fig. 17(A) and (B) show similar knockdown trends with amplitudes smaller than those observed for the octet. This can be attributed to two factors. First, in the octet, the magnitude of imperfections in the fabricated samples (see statistical data in Fig. 4) is larger than that of the fabricated rhombicuboctahedron samples (Fig. 5). Second, in the rhombicuboctahedron lattice, the slenderness ratio (about 6:1) of vertical struts provides better buckling resistance compared to the octet sample, whose struts are more slender (15:1). For the elastic modulus of</p>
+<p>the</p>
+<p>sample</p>
+<p>geometries</p>
+<p>here</p>
+<p>examined,</p>
+<p>we</p>
+<p>can</p>
+<p>infer</p>
+<p>that</p>
+<p>the</p>
+<p>rhombicuboctahedron is not as sensitive to defects as the octet. For compressive strength, strut thickness variation occurring</p>
+<p>in both cell</p>
+<p>topologies has a larger impact than waviness.</p>
+<p>5.2. Strut oversizing and undersizing</p>
+<p>It is well recognized that building direction affects strut thickness. While struts in the building plane are generally over- sized as opposed to those oriented in other directions, design strategies that can compensate for this phenomenon have been proposed (Bagheri et al., 2016). However, the sensitivity of failure mechanisms and mechanical properties to oversized and undersized struts has not been elucidated yet. Here we examine the speciﬁc role of μr (mean value of strut radius deviation) with the goal of</p></section>
+<section class="pdf-page" id="pdf-page-39"><h2 class="page-number">Page 39</h2><p>assessing strut oversizing or undersizing between different sets of struts in a lattice (Fig. 4B). The process to create the numerical models ensures that strut oversizing compensates strut undersizing and no change in relative density between models is imposed. For example in an octet, an increase of the average radius of the horizontal struts is compensated by a reduction of the average radius of the diagonal struts. In addition besides relative density, also strut waviness and thickness variation are kept</p>
+<p>constant</p>
+<p>and</p>
+<p>equal</p>
+<p>to</p>
+<p>those</p>
+<p>of</p>
+<p>the</p>
+<p>as-built</p>
+<p>lattices.</p>
+<p>These</p>
+<p>assumptions allow this section to focus on strut oversizing or undersizing only.</p></section>
+<section class="pdf-page" id="pdf-page-40"><h2 class="page-number">Page 40</h2><p>Fig. 16.</p>
+<p>Contour plots for normalized Young’s modulus (A) and</p>
+<p>normalized compressive strength (B) for the regular octet lattice at relative density of 10.6%, which is that of a representative as-built</p></section>
+<section class="pdf-page" id="pdf-page-41"><h2 class="page-number">Page 41</h2><p>sample. The x-axis and y-axis represent the severity of strut waviness and the severity of strut thickness variation. Point a is the nominal (defect-free) model with properties Ez0 and σz0 used to determine the knockdown contours of the legend. Point R represents the</p>
+<p>as-built</p>
+<p>sample with its defect parameters, μoR and σrR , used as baseline for the normalization of the defect parameters. Note that the values of μoR and</p>
+<p>σrR , are speciﬁc to each set of built struts (Fig. 4A); for the</p>
+<p>diagonal set, μoR and σrR , are respectively 7.5% and 7.6%, and for the horizontal set, they are 17.2% and 15.8%.</p></section>
+<section class="pdf-page" id="pdf-page-42"><h2 class="page-number">Page 42</h2><p>Fig.</p>
+<p>17.</p>
+<p>Contour plots for normalized Young’s modulus (A) and</p>
+<p>normalized compressive strength (B) for the rhombicuboctahedron lattice at relative density of 14.9%, which is that of a representative as-built sample. The x-axis and y-axis represent the severity of strut waviness and</p></section>
+<section class="pdf-page" id="pdf-page-43"><h2 class="page-number">Page 43</h2><p>the severity of strut thickness variation. Point a is the nominal (defectfree) model with properties Ez0</p>
+<p>and σz0</p>
+<p>used to determine the</p>
+<p>knockdown contours of the legend. Point R represents the as-built sample with its defect parameters, μoR</p>
+<p>and σrR , used as baseline for the</p>
+<p>normalization of the defect parameters. Note that the values of μoR σrR</p>
+<p>and</p>
+<p>are speciﬁc to each set of built struts (Fig. 5); for the vertical set, μoR</p>
+<p>and σrR , are respectively 1.8% and 2.8%, and for the horizontal set, μoR and σrR , are 4.8% and 6.2%, and for the diagonal set, they are 2.1 % and 3.9%.</p>
+<p>Fig. 18. Normalized Young’s modulus and compressive strength versus</p></section>
+<section class="pdf-page" id="pdf-page-44"><h2 class="page-number">Page 44</h2><p>the ratio between the average radius of horizontal struts and the average 0</p>
+<p>h</p>
+<p>d</p>
+<p>radius of diagonal struts in the regular octet lattice (r˜ /r˜ ). Ez and σz0 are h</p>
+<p>the nominal values predicted by the model with as-designed ratio r˜ d</p>
+<p>/r˜ = 1 and strut waviness and thickness variation equal to those of the as-built lattices. Sketches of failure surfaces included at the top of the ﬁgure are derived from detailed computations of full-size lattices.</p>
+<p>Fig. 18 shows the normalized Young’s modulus and compressive strength h</p>
+<p>d</p>
+<p>for the regular octet lattice plotted against r˜ /r˜ , the ratio of the average radius of the horizontal struts to the average radius of the diagonal struts. h</p>
+<p>d</p>
+<p>We recall that in an ideal lattice, r˜ /r˜ = 1 because all struts have equal thickness.</p>
+<p>In</p>
+<p>built</p>
+<p>samples,</p>
+<p>however,</p>
+<p>the</p>
+<p>material</p>
+<p>deposition</p>
+<p>is</p>
+<p>heterogeneously distributed with thicker struts appearing in the building plane, and thinner struts appearing parallel to the building direction. Fig. 18 h</p>
+<p>d</p>
+<p>shows that if r˜ /r˜ is larger than 1, the horizontal struts in the model are on average overmelted and thicker than the as-designed struts, while the h</p>
+<p>d</p>
+<p>diagonal struts are undersized. r˜ /r˜ below 1, on the other hand, means oversized diagonals struts and undersized horizontal struts in the model. Likewise</p>
+<p>for</p>
+<p>the</p>
+<p>rhombicuboctahedron</p>
+<p>lattice,</p>
+<p>Fig.</p>
+<p>19</p>
+<p>shows</p>
+<p>the</p>
+<p>normalized Young’s modulus and compressive strength, where this time the ratio is between the mean radius of the vertical and diagonal struts. For V</p>
+<p>d</p>
+<p>the rhombicuboctahedron the as-designed r˜ /r˜ is 1.4. The value is greater than</p>
+<p>that</p>
+<p>of</p>
+<p>the</p>
+<p>octet</p>
+<p>because</p>
+<p>the</p>
+<p>vertical</p>
+<p>struts</p>
+<p>in</p>
+<p>the</p>
+<p>rhombicuboctahedron here studied are shared between two cells (Fig. 1c) and have twice the cross-section area of the diagonal struts. We emphasize that in both Figs. 18 and 19, the properties are normalized with respect to the values predicted by the as-designed models which h</p>
+<p>d</p>
+<p>V</p>
+<p>d</p>
+<p>have r˜ /r˜ = 1 for the octet and r˜ /r˜ = 1.4 for the rhombicuboctahedron, and strut waviness and thickness variation are identical to those of the asbuilt lattices.</p></section>
+<section class="pdf-page" id="pdf-page-45"><h2 class="page-number">Page 45</h2><p>Fig. 19. Normalized Young’s modulus and compressive strength versus 0</p>
+<p>the ratio between the average radius of vertical struts and the average v</p>
+<p>d</p>
+<p>radius of diagonal struts in the rhombicuboctahedron lattice (r˜ /r˜ ). Ez0 and σz0 are the nominal values predicted by the model with asv</p>
+<p>d</p>
+<p>designed ratio r˜ /r˜ = 1.4 and strut waviness and thickness variation equal v</p>
+<p>d</p>
+<p>to those of the as-built lattices r˜ /r˜ = 1.4 for the rhombicuboctahedron, and strut waviness and thickness variation are identical to those of the as-built lattices. Sketches of failure surfaces included at the top of the figure are derived from detailed computations of full-size lattices. Red failure surfaces</p></section>
+<section class="pdf-page" id="pdf-page-46"><h2 class="page-number">Page 46</h2><p>represent failure mode initiated in buckled vertical struts, while blue failure planes indicate failure mode triggered by diagonal struts in the distal parts of the rhombicuboctahedron. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)</p></section>
+<section class="pdf-page" id="pdf-page-47"><h2 class="page-number">Page 47</h2><p>Fig. 18 shows that for the octet lattice under uniaxial compression the normalized Young’s modulus and compressive strength increase to reach a maximum before declining. As shown by the six sketches with failure h</p>
+<p>d</p>
+<p>surfaces, the failure mode for the regular octet evolves with r˜ /r˜ . When the ratio is lower than about 1.4, failure starts to gradually appear as a h</p>
+<p>d</p>
+<p>diagonal shear band. As r˜ /r˜ increases, the failure mode gradually evolves from a diagonal shear to horizontal crushing, which occurs in the layers normal to the applied compression. These observations parallel the h</p>
+<p>d</p>
+<p>experimental results, where the fabricated regular octet sample with r˜ /r˜ = h</p>
+<p>d</p>
+<p>1.38 fails by shear. On the other hand, when r˜ /r˜ is above 1.8, horizontal collapse increasingly dominates until the ratio reaches 2.5, at which the lattice fails by pure crushing. A similar plot is shown in Fig. 19 for the rhombicuboctahedron lattice. Here the normalized Young’s modulus and compressive strength ﬁrst v</p>
+<p>d</p>
+<p>increase and then decrease with respect to r˜ /r˜ . A transition in failure v</p>
+<p>d</p>
+<p>mode is observed also in this case. For r˜ /r˜ below 1.2, failure is mainly v</p>
+<p>d</p>
+<p>controlled by localized buckling of vertical struts. As r˜ /r˜ increases, vertical struts thicken (as shown in the sketches below the x-axis), thereby leading the square cupolae, i.e. the distal polyhedra of the cells, to collapse ﬁrst. This phenomenon is triggered by the failure of the diagonal struts in the distal parts of the cells, a behavior consistent with that observed in the experiments and simulations described in Section 4.2. The fabricated rhomv</p>
+<p>d</p>
+<p>bicuboctahedron sample with r˜ /r˜ localized</p>
+<p>buckling</p>
+<p>of</p>
+<p>vertical v</p>
+<p>d</p>
+<p>rhombicuboctahedron with r˜ /r˜</p>
+<p>= 1.1 crushes layer-by-layer due to</p>
+<p>struts,</p>
+<p>whereas</p>
+<p>for</p>
+<p>the</p>
+<p>as-designed</p>
+<p>= 1.4, collapse starts ﬁrst at the square</p>
+<p>cupolae containing diagonal struts. The results presented in this section emphasize the individual role of overall strut oversizing and undersizing on the fail- ure mechanism of metallic lattices built additively. Further work is required to study the</p></section>
+<section class="pdf-page" id="pdf-page-48"><h2 class="page-number">Page 48</h2><p>combined effect of simultaneously changing all the three parameters here examined. One relevant observation gathered from the study of this section pertains</p>
+<p>to the transition mode that certain values of strut thickness</p>
+<p>variation</p>
+<p>can</p>
+<p>trigger.</p>
+<p>Whereas</p>
+<p>for</p>
+<p>as-designed</p>
+<p>lattices,</p>
+<p>the</p>
+<p>failure</p>
+<p>mechanisms are well-documented, namely diagonal shear failure for the regular octet lattice and horizontal collapse for the rhombicuboctahedron, the results of this section indicate that other failure modes are possible, and the magnitude and distribution of defects are the controlling factors. h</p>
+<p>d</p>
+<p>For the regular octet, for example, values of r˜ /r˜</p>
+<p>above 1.8, which</p>
+<p>indicates horizontal struts on average 1.8 times thicker than diagonal ones, can represent manufacturing conditions that lead</p>
+<p>to exclusive</p>
+<p>crushing or a hybrid failure mode combining shear and crushing. For the v</p>
+<p>d</p>
+<p>rhombicuboctahedron, on the other hand, for values of r˜ /r˜</p>
+<p>above 1.2</p>
+<p>describing vertical struts 1.2 times thicker than diagonal ones, the failure mechanism evolves from local buckling of vertical struts to crushing of distal polyhedra. While this investigation has focused on the role of three types of defects for given relative density, further work is required to evaluate how sensitive is the stress strain curve to variations in relative density and to other sources of defects, such as the appearance of parasitic masses at the joints.</p>
+<p>6. Conclusions</p>
+<p>Geometric defects of metallic lattices fabricated with additive processes might have a signiﬁcant impact on their mechanical properties, damage initiation, and failure mechanisms. Through a combined approach of experiments</p>
+<p>and</p>
+<p>numerical</p>
+<p>simulations,</p>
+<p>we</p>
+<p>have</p>
+<p>examined</p>
+<p>the</p>
+<p>compression response of two sets of SLM metallic lattices, the regular octet and the rhombicuboctahedron. CT tomography under in-situ compression has been ﬁrst used to extract and statistically quantify the</p>
+<p>location,</p></section>
+<section class="pdf-page" id="pdf-page-49"><h2 class="page-number">Page 49</h2><p>morphology and distribution of three types of defects (strut thickness variation, strut waviness, and strut oversizing/undersizing). Statistical data are then used in numerical models to elucidate the lattice sensitivity of elastic and failure response to defect amplitudes. The insights gained from the imperfect lattice models here developed can be summarized as follows.</p>
+<p>(1) In</p>
+<p>the linear elastic regime, the homogenized elastic properties of the as-</p>
+<p>manufactured</p>
+<p>lattices</p>
+<p>show</p>
+<p>a</p>
+<p>visible</p>
+<p>deterioration which is spatially</p>
+<p>uneven. The Young’s modulus is typically most penalized along the building direction due to the</p>
+<p>overmelting of the horizontal struts. In</p>
+<p>particular, for the regular octet, the Young’s modulus for the reconstructed RVE in the X and Y direction is respectively 84% and 87% of the nominal values,</p>
+<p>whereas</p>
+<p>in</p>
+<p>the</p>
+<p>Z</p>
+<p>direction</p>
+<p>that</p>
+<p>value</p>
+<p>is</p>
+<p>70%.</p>
+<p>For</p>
+<p>the</p>
+<p>rhombicuboctahedron, the Young’s modulus for the reconstructed RVE in the X and Y direction is respectively 83% and 82% of the nominal values, whereas in the Z direction that value is 71%. (2) In</p>
+<p>the non-linear regime, full-size numerical models with imperfect</p>
+<p>geometry</p>
+<p>accounting</p>
+<p>experimentally</p>
+<p>for</p>
+<p>obtained</p>
+<p>distributed</p>
+<p>stress-strain</p>
+<p>imperfections</p>
+<p>responses</p>
+<p>can</p>
+<p>within</p>
+<p>render</p>
+<p>about</p>
+<p>10%</p>
+<p>accuracy, as opposed to models with as-designed geometry. The predicted Young’s modulus and compressive strength for the imperfect regular octet lattice are 4.0% and 12.7% higher than their respective experimental</p>
+<p>values,</p>
+<p>while</p>
+<p>8.3%</p>
+<p>and</p>
+<p>5.5%</p>
+<p>for</p>
+<p>the</p>
+<p>imperfect</p>
+<p>rhombicuboctahedron lattice. (3) The</p>
+<p>parametric study on the sensitivity of imperfect 3D lattice models to</p>
+<p>geometric defects has shown that strut waviness and strut thickness variation can largely deteriorate the elastic modulus and compressive strength</p>
+<p>of</p>
+<p>the</p>
+<p>regular</p>
+<p>octet</p>
+<p>lattice.</p>
+<p>For</p>
+<p>example,</p>
+<p>when</p>
+<p>both</p>
+<p>imperfections are over-ampliﬁed by 250%, the Young’s modulus is predicted to drop to 50% of the nominal value, and the predicted compressive strength to 40% of the nominal value. Furthermore, the magnitude of strut oversizing/undersizing in 3D lattices can control the</p></section>
+<section class="pdf-page" id="pdf-page-50"><h2 class="page-number">Page 50</h2><p>type of failure mechanism and the gradual transition from one mode to another. In particular for the regular octet, a diagonal shear plane of failure evolves into horizontal crushing when horizontal struts are 1.8 times thicker than diagonal struts. On the other hand for the rhomv</p>
+<p>d</p>
+<p>bicuboctahedron, for values of r˜ /r˜ lower than 1.2, the failure mechanism is controlled by local buckling of the vertical struts and, for higher values, by crushing of the distal polyhedra of the cells.</p>
+<p>Acknowledgments D. Pasini gratefully acknowledges the ﬁnancial support provided by the Alexander von Humboldt Foundation for the experimental work he carried out at the Technical University of Berlin. L. Liu acknowledges the ﬁnancial support provided by the China Scholarship Council (201406020116).</p>
+<p>References</p>
+<p>Ahmadi, S.M., Campoli, G., Amin Yavari, S., Sajadi, B., Wauthle, R., Schrooten, J., Weinans, H., Zadpoor, A.A., 2014. Mechanical behavior of regular open-cell porous biomaterials made of diamond lattice unit cells. J. Mech. Behav. Biomed. Mater. 34, 106–115. Arabnejad Khanoki, S., Pasini, D., 2013. Fatigue design of a mechanically biocompatible lattice for a proof-of-concept femoral stem. J. Mech. Behav. Biomed. Mater. 22, 65–83. Arabnejad, S., Burnett Johnston, R., Pura, J.A., Singh, B., Tanzer, M., Pasini, D., 2016. High-strength porous biomaterials for bone replacement: a strategy to assess the interplay between cell morphology, mechanical properties, bone ingrowth and manufacturing</p></section>
+<section class="pdf-page" id="pdf-page-51"><h2 class="page-number">Page 51</h2><p>constraints. Acta Biomater. 30, 345–356. Arabnejad, S., Pasini, D., 2013. Mechanical properties of lattice materials via asymptotic homogenization and comparison with alternative homogenization methods. Int. J. Mech. Sci. 77, 249–262. Bagheri, Z.S., Melancon, D., Liu, L., Johnston, R.B., Pasini, D., 2016. Compensation strategy to reduce geometry and mechanics mismatches in porous bioma- terials built with Selective Laser Melting. J. Mech. Behav. Biomed. Mater. Banhart, J., 2001. Manufacture, characterisation and application of cellular metals and metal foams. Prog. Mater. Sci. 46 (6), 559– 632. Cabras, L., Brun, M., 2016. A class of auxetic threedimensional lattices. J. Mech. Phys. Solids 91, 56–72. Campoli, G., Borleffs, M.S., Amin Yavari, S., Wauthle, R., Weinans, H., Zadpoor, A.A., 2013. Mechanical properties of open-cell metallic biomaterials manufac- tured using additive manufacturing. Mater. Des. 49, 957–965. Cheng, G.-D., Cai, Y.W., Xu, L., 2013. Novel implementation of homogenization method to predict effective properties of periodic materials. Acta Mech. Sin. 29 (4), 550–556. Cheng, X.Y., Li, S.J., Murr, L.E., Zhang, Z.B., Hao, Y.L., Yang, R., Medina, F., Wicker, R.B., 2012. Compression deformation behavior of Ti-6Al-4V alloy with cellular structures fabricated by electron beam melting. J. Mech. Behav. Biomed. Mater. 16, 153–162. Chu, C., Graf, G., Rosen, D.W., 2008. Design for additive manufacturing of cellular structures. Comput. Aided Des. Applic. 5 (5), 686–696. Delpero, T., Schoenwald, S., Zemp, A., Bergamini, A., 2016. Structural engineering of three-dimensional phononic crystals. J. Sound Vib. 363, 156–165. Deshpande, V.S., Fleck, N.A., Ashby, M.F., 2001. Effective properties of the octet-truss lattice material. J. Mech. Phys. Solids 49 (8), 1747–1769. Dong, L., Deshpande, V., Wadley, H., 2015. Mechanical response of Ti– 6Al–4V octet-truss lattice structures. Int. J. Solids Struct. 60-61, 107–124.</p></section>
+<section class="pdf-page" id="pdf-page-52"><h2 class="page-number">Page 52</h2><p>196</p>
+<p>El Moumen, A., Kanit, T., Imad, A., El Minor, H., 2015. Computational thermal conductivity in porous materials using homogenization techniques: numerical and statistical approaches. Comput. Mater. Sci. 97, 148–158. Elsayed, M.S.A., Pasini, D., 2010a. Analysis of the elastostatic speciﬁc stiffness of 2D stretching-dominated lattice materials. Mech. Mater. 42 (7), 709–725.</p></section>
+<section class="pdf-page" id="pdf-page-53"><h2 class="page-number">Page 53</h2><p>Elsayed, M.S.A., Pasini, D., 2010b. Multiscale structural design of columns made of regular octet-truss lattice material. Int. J. Solids Struct. 47 (14-15), 1764–1774. Evans, A.G., He, M.Y., Deshpande, V.S., Hutchinson, J.W., Jacobsen, A.J., Carter, W.B., 2010. Concepts for enhanced energy absorption using hollow micro-lat- tices. Int. J. Impact Eng. 37 (9), 947–959. Evans, A.G., Hutchinson, J.W., Ashby, M.F., 1998. Multifunctionality of cellular metal systems. Prog. Mater Sci. 43 (3), 171–221. Fahlbusch, N.C., Grenestedt, J.L., Becker, W., 2016. Effective failure behavior of an analytical and a numerical model for closed-cell foams. Int. J. Solids Struct. 97-98, 417–430. Grenestedt, J.L., 1998. Inﬂuence of wavy imperfections in cell walls on elastic stiffness of cellular solids. J. Mech. Phys. Solids 46 (1), 29–50. Grenestedt, J.L., 2005. On interactions between imperfections in cellular solids. J. Mater. Sci. 40 (22), 5853–5857. Gümrük, R., Mines, R.A.W., 2013. Compressive behaviour of stainless steel micro-lattice structures. Int. J. Mech. Sci. 68, 125–139. Gümrük, R., Mines, R.A.W., Karadeniz, S., 2013. Static mechanical behaviours of stainless steel micro-lattice structures under different loading conditions. Mater. Sci. Eng. 586, 392–406. Hassani, B., Hinton, E., 1998. A review of homogenization and topology optimization I—homogenization theory for media with periodic structure. Comput. Struct. 69 (6), 707–717. Hassani, B., Hinton, E., 1998. A review of homogenization and topology opimization II—analytical and numerical solution of homogenization equations. Comput. Struct. 69 (6), 719–738. Hedayati, R., Hosseini-Toudeshky, H., Sadighi, M., Mohammadi-Aghdam,</p></section>
+<section class="pdf-page" id="pdf-page-54"><h2 class="page-number">Page 54</h2><p>198</p>
+<p>M., Zadpoor, A.A., 2016. Computational prediction of the fatigue behavior of addi- tively manufactured porous metallic biomaterials. Int. J. Fatigue 84, 67–79. Hedayati, R., Sadighi, M., Mohammadi-Aghdam, M., Zadpoor, A.A., 2016. Mechanics of additively manufactured porous biomaterials based on the rhom- bicuboctahedron unit cell. J. Mech. Behav. Biomed. Mater. 53, 272–294. Kadkhodapour, J., Montazerian, H., Darabi, A., Anaraki, A.P., Ahmadi, S.M., Zadpoor, A.A., Schmauder, S., 2015. Failure mechanisms of additively manufactured porous biomaterials: effects of porosity and type of unit cell. J. Mech. Behav. Biomed. Mater. 50, 180–191. Khanoki, S.A., Pasini, D., 2012. Multiscale design and multiobjective optimization of orthopedic hip implants with functionally graded cellular material. J. Biomech. Eng. 134, 031004. Lefebvre, L.P., Banhart, J., Dunand, D.C., 2008. Porous metals and metallic foams: current status and recent developments. Adv. Eng. Mater. 10 (9), 775–787. Maloney, K.J., Fink, K.D., Schaedler, T.A., Kolodziejska, J.A., Jacobsen, A.J., Roper, C.S., 2012. Multifunctional heat exchangers derived from three-dimensional micro-lattice structures. Int. J. Heat Mass Transfer 55 (9-10), 2486–2493. McKown, S., Shen, Y., Brookes, W.K., Sutcliffe, C.J., Cantwell, W.J., Langdon, G.S., Nurick, G.N., Theobald, M.D., 2008. The quasi-static and blast loading response of lattice structures. Int. J. Impact Eng. 35 (8), 795–810. Mercelis, P., Kruth, J.P., 2006. Residual stresses in selective laser sintering and selective laser melting. Rapid Prototyp. J. 12 (5), 254–265. Messner, M.C., 2016. Optimal lattice-structured materials. J. Mech. Phys. Solids 96, 162–183. Nolde, E., Craster, R.V., Kaplunov, J., 2011. High frequency homogenization for structural mechanics. J. Mech. Phys. Solids 59 (3), 651–671. Onck, P.R., van Merkerk, R., Raaijmakers, A., De Hosson, J.T.M., 2005. Fracture of open- and closed-cell metal foams. J. Mater. Sci. 40 (22),</p></section>
+<section class="pdf-page" id="pdf-page-55"><h2 class="page-number">Page 55</h2><p>5821–5828. Queheillalt, D., Deshpande, V., Wadley, H., 2007. Truss waviness effects in cellular lattice structures. J. Mech. Mater. Struct. 2 (9), 1657–1675. Queheillalt, D.T., Murty, Y., Wadley, H.N.G., 2008. Mechanical properties of an extruded pyramidal lattice truss sandwich structure. Scr. Mater. 58 (1), 76–79. Santorinaios, M., Brooks, W., Sutcliffe, C.J., Mines, R.A.W., 2006. Crush behaviour of open cellular lattice structures manufactured using selective laser melting. High Perform. Struct. Mater. III 1, 481–490. Schaedler, T.A., Jacobsen, A.J., Torrents, A., Sorensen, A.E., Lian, J., Greer, J.R., Valdevit, L., Carter, W.B., 2011. Ultralight metallic microlattices. Science 334 (6058), 962–965. Simone, A.E., Gibson, L.J., 1998. Effects of solid distribution on the stiffness and strength of metallic foams. Acta Mater. 46 (6), 2139–2150. Steeves, C.A., dos Santos e Lucato, S.L., He, M., Antinucci, E., Hutchinson, J.W., Evans, A.G., 2007. Concepts for structurally robust materials that combine low thermal expansion with high stiffness. J. Mech. Phys. Solids 55 (9), 1803–1822. Symons, D.D., Fleck, N.A., 2008. The imperfection sensitivity of isotropic two-dimensional elastic lattices. J. Appl. Mech. 75 (5), 051011. Tancogne-Dejean, T., Spierings, A.B., Mohr, D., 2016. Additivelymanufactured metallic micro-lattice materials for high speciﬁc energy absorption under static and dynamic loading. Acta Mater. 116, 14–28. Ushijima, K., Cantwell, W., Mines, R., Tsopanos, S., Smith, M., 2010. An investigation into the compressive properties of stainless steel microlattice structures. J. Sandwich Struct. Mater. 13 (3), 303–329. Vayre, B., Vignat, F., Villeneuve, F., 2012. Metallic additive manufacturing: state-of-the-art review and prospects. Mech. Indus. 13 (2), 89–96.</p>
+<p>Vigliotti, A., Deshpande, V.S., Pasini, D., 2014. Non</p>
+<p>linear constitutive models for lattice materials. J. Mech. Phys. Solids 64, 44–60. Vigliotti, A., Pasini, D., 2012. Stiffness and strength of tridimensional</p></section>
+<section class="pdf-page" id="pdf-page-56"><h2 class="page-number">Page 56</h2><p>200</p>
+<p>periodic lattices. Comput. Meth. Appl. Mech. Eng. 229-232, 27–43. Vigliotti, A., Pasini, D., 2015. Analysis and design of lattice materials for large cord and curvature variations in skin panels of morphing wings. Smart Mater. Struct. 24 (3), 037006. Wadley, H.N., 2002. Cellular metals manufacturing. Adv. Eng. Mater. 4 (10), 726–733. Wadley, H.N., 2006. Multifunctional periodic cellular metals. Philos. Trans. A Math. Phys. Eng. Sci. 364 (1838), 31–68. Wadley, H.N., Fleck, N.A., Evans, A.G., 2003. Fabrication and structural performance of periodic cellular metal sandwich structures. Compos. Sci. Technol. 63 (16), 2331–2343. Wallach, J.C., Gibson, L.J., 2001. Mechanical behavior of a threedimensional truss material. Int. J. Solids Struct. 38 (40), 7181–7196. Wang, J., Evans, A.G., Dharmasena, K., Wadley, H.N.G., 2003. On the performance of truss panels with Kagome cores. Int. J. Solids Struct. 40 (25), 6981–6988. Wei, K., Chen, H., Pei, Y., Fang, D., 2016. Planar lattices with tailorable coeﬃcient of thermal expansion and high stiffness based on dualmaterial triangle unit. J. Mech. Phys. Solids 86, 173–191. Wu, Z.-J., Li, F.-M., Zhang, C., 2015. Vibration band-gap properties of three-dimensional Kagome lattices using the spectral element method. J. Sound Vib. 341, 162–173. Xiao, L., Song, W., Wang, C., Liu, H., Tang, H., Wang, J., 2015. Mechanical behavior of open-cell rhombic dodecahedron Ti–6Al–4V lattice structure. Mater. Sci. Eng. 640, 375–384. Xu, H., Pasini, D., 2016. Structurally eﬃcient three-dimensional metamaterials with controllable thermal expansion. Sci. Rep. 6, 34924. Yan, C., Hao, L., Hussein, A., Raymont, D., 2012. Evaluations of cellular lattice structures manufactured using selective laser melting. Int. J.</p></section>
+<section class="pdf-page" id="pdf-page-57"><h2 class="page-number">Page 57</h2><p>Mach. Tools Manuf 62, 32–38. Yushkevich, P.A., Piven, J., Hazlett, H.C., Smith, R.G., Ho, S., Gee, J.C., Gerig, G., 2006. User-guided 3D active contour segmentation of anatomical structures: signiﬁcantly improved eﬃciency and reliability. Neuroimage 31 (3), 1116–1128. Zaeh, M.F., Branner, G., 2009. Investigations on residual stresses and deformations in selective laser melting. Prod. Eng. 4 (1), 35–45.</p></section></article></body></html>

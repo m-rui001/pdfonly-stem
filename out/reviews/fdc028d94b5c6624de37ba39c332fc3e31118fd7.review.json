@@ -1,0 +1,82 @@
+{
+  "sha1": "fdc028d94b5c6624de37ba39c332fc3e31118fd7",
+  "title": "Thin-Film Deposition and Characterization of a Sn-Deficient Perovskite Derivative Cs 2 SnI 6",
+  "doi": "https://doi.org/10.1021/acs.chemmater.6b00433",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fdc028d94b5c6624de37ba39c332fc3e31118fd7/index.html",
+  "source_chars": 48041,
+  "markdown_chars": 3470,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "compared to methylammonium 1",
+      "type": "页码数字混入正文",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句末的“1”为页码数字，与下一页开头“lead (II) iodide”接续，正确内容应为“methylammonium lead (II) iodide”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the case of the 2",
+      "type": "页码数字混入正文",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句末的“2”为页码数字，与下一页开头“hypothetical CH3NH3BiSeI2.”接续，正确内容应为“the case of the hypothetical CH3NH3BiSeI2.”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Fermi level is located ~1.5 eV 3",
+      "type": "页码数字混入正文",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句末的“3”为页码数字，与下一页开头“above the valence band maximum”接续，正确内容应为“~1.5 eV above the valence band maximum”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "mh*/m0 = ħ2(d2E/dk2)‒1/m0",
+      "type": "疑似符号错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "上下文描述的是电子有效质量的计算，但公式用了mh*（空穴），可能为原文笔误或提取错误，无法确定。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "/ ∗ ∗ / = = / ∗ /",
+      "type": "公式提取损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该符号序列无数学意义，与上下文描述的“fractions of holes”不符，原公式应表示重/轻空穴分数关系，但提取严重失真。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的带隙（1.62 eV Tauc直接拟合、PL 1.56 eV、UPS/IPES 1.6 eV）、载流子密度（6(1)×10^16 cm^-3）、迁移率（2.9(3) cm^2/(V·s)）、IP/EA（6.4/4.8 eV）、晶格常数（11.6425 Å）等数值一致。有效质量公式和空穴分数公式提取存在乱码，已照录可见文本并标注。页码数字混入问题已列出。其余如TGA、稳定性对比等数值均与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10217,
+      "prompt_tokens": 13606,
+      "total_tokens": 23823,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7308
+      }
+    },
+    "content_chars": 5024
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

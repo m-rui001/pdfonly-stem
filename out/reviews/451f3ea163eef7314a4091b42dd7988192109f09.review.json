@@ -1,0 +1,73 @@
+{
+  "sha1": "451f3ea163eef7314a4091b42dd7988192109f09",
+  "title": "Advanced Materials through Assembly of Nanocelluloses",
+  "doi": "https://doi.org/10.1002/adma.201703779",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/451f3ea163eef7314a4091b42dd7988192109f09/index.html",
+  "source_chars": 197835,
+  "markdown_chars": 7323,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "anionic nanoclay particles (thickness ~1 nm width and length ~15019",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在页尾“~15019”处中断，下一页第20页以“200 nm”接续。这是页间拆分导致的数字截断，原文应为“150-200 nm”或类似范围，但当前文本无法判断是连字符还是空格，标注为跨页疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "Figure 3. a) Periodate oxidation and reductive amination of cellulose, and (b) TEM-image of n-butylamino-functionalized CNCs. Reproduced with permission.[21] Copyright 2014, American Chemical Society. c) Facilitated assembly of CNF at air/water interface",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图3的图注在第11页页尾被截断，第12页顶部先显示图注续文再显示正文“Block copolymer-like fusion protein...”，原文图注较长，跨页排版造成拼接。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "Figure 16. Optical functionalities based on nanocelluloses. a) CNF can be decorated with fluorescent carbon dots. Reproduced with permission.[344] Copyright 2014, American Chemical Society. b) They can be used for biological imaging due to the fluorescence. Reproduced with permission.[312] Copyright 2017, American Chemical Society. c) CNF aerogels upon atomic layer deposition (ALD) coating with TiO2 layers show photo-triggered reversible water repulsion/absorption. Reproduced with permission.[219] Copyright 2011, Wiley-VCH. d) Au-nanoparticles can be electrostatically bound on CNCs undergoing righthanded twist for chiral plasmonics. Reproduced with permission.[139] Copyright 2016, WileyVCH. e) CNF aerogels coated with TiO2 layers through ALD for photocatalysis, demonstrated by light-driven decomposition of methylene blue dye. Reproduced with permission.[219] Copyright 2011, Wiley-VCH.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第48页图注中c、d、e的编号顺序与正文描述（先是TiO2的c/e，再是AuNPs的d）不一致，正文第47页和第48页的排版顺序可能在页间被调换。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 57,
+      "quote": "Drastically improved wet strength was indeed achieved by glutaraldehyde crosslinking, still allowing hASC attachment on CNF in the undifferentiated state and preserved bioactivity, after glutaraldehyde was carefully removed (Figure 19b).[64]",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "第56页正文描述hASC载药CNF缝线，图19标题中提到“human adipose cells”（第57页），而正文中第一次出现“human adipose mesenchymal stem cells (hASC)”，缩写对应一致，但英文拼写从mesenchymal变成adipose细胞略有差异，可能为原文不同描述，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要提出的主张与正文各功能章节的对应关系，确认关键数据——CNC HCl蒸气制备产率97%以上、水接触角43°、CNF凝胶浓度0.5–1.0 wt%、CNF/壳聚糖膜干态200 MPa/湿态100 MPa、蜘蛛丝/CNF纤维强度>1 GPa、CNC压电系数d25=2.10 Å/V、CNF膜灵敏度4.7–6.4 pC/N、TiO2涂层接触角约140°、气凝胶浮力载荷1658 mg、超疏水接触角160°/153°、CNC价格约7000美元/吨、CNF价格约1500–2000美元/吨等——均与原文文本一致。公式和常数（如KIC=3.4 MPa m^1/2、饱和磁化强度20 emu/g等）均按原文保留。对提取文本中不确定之处（如跨页截断的数字、图注与正文顺序）已列入extraction_issues，未做推测性修复。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7188,
+      "prompt_tokens": 55266,
+      "total_tokens": 62454,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1490
+      }
+    },
+    "content_chars": 10266
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

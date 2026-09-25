@@ -1,0 +1,91 @@
+{
+  "sha1": "90139e8d9a8a76e96a460752c03a95f8840cecb7",
+  "title": "Determination of hydroxyl groups in biorefinery resources via quantitative 31P NMR spectroscopy",
+  "doi": "https://doi.org/10.1038/s41596-019-0191-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/90139e8d9a8a76e96a460752c03a95f8840cecb7/index.html",
+  "source_chars": 84227,
+  "markdown_chars": 4249,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "R = IOH/INHND =",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "步骤21公式后半部分缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Amount of proanthocyanidins = × catechols",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Box 1中公式缺少乘数或分母，无法解读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "mmol of NHND in IS solution = ( ) . × 97% × 1000",
+      "type": "公式提取不完整",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "步骤19的公式分子分母缺失，无法从文本中判断正确形式，照录可见文本。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "mmol of NHND in NMR sample = ( ( ) ) × mass of 0.1 mL IS solution (g)",
+      "type": "公式提取不完整",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "步骤20公式中括号内缺少分子项，无法理解计算逻辑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "mmol of different types of OH per g of lignin/tannin = × ( / ) ( )",
+      "type": "公式提取不完整",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "步骤22公式分子分母全部缺失，仅剩符号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "Average phenols in ring B (b) = ×",
+      "type": "公式提取不完整",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Box 1公式缺少分子分母。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和预期结果中的关键数值：样品量约30 mg，时间30–120 min，TMDP用量约0.1 mL，溶剂A配比1:1.6 v/v，内标浓度（NHND 18 mg/mL，胆固醇38.67 mg/mL），化学位移内标132.2 ppm，积分区间（木质素脂肪族145.4–150.0，羧酸133.6–136.0等；单宁Ring A/B/C）均与原文一致。步骤19–22及Box 1中的公式因提取文本缺失无法核对，已照录并在issues中标记。结论方向（软木富gualacyl、草本富p-hydroxyphenyl、硬木富C5取代，COV 1.1–9.8%）与原文相符。未发现其他数值矛盾或跨页中断问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6588,
+      "prompt_tokens": 23066,
+      "total_tokens": 29654,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3275
+      }
+    },
+    "content_chars": 5925
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

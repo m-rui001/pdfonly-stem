@@ -1,0 +1,76 @@
+{
+  "sha1": "f394cb70ff4b73b4e4883cf37ba59a3933fd6c99",
+  "title": "5G-Enabled Tactile Internet",
+  "doi": "https://doi.org/10.1109/jsac.2016.2525398",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f394cb70ff4b73b4e4883cf37ba59a3933fd6c99/index.html",
+  "source_chars": 89992,
+  "markdown_chars": 12964,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Meryem Simsek, Adnan Aijaz $ ^{*} $ , Member, IEEE, Mischa Dohler, Fellow, IEEE, Joachim Sachs, and Gerhard Fettweis Fellow, IEEE",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者行中 Gerhard Fettweis 后缺少逗号，且 Adnan Aijaz 后出现 LaTeX 上标标记，属于抽取格式噪声，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Core Network CN)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号不匹配，应为 Core Network (CN)，属于抽取标点错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "The Tactile Internet will also have a repercussion on the telecommunications ecosystem.Notably",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句号后缺少空格，属于抽取格式问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "security operations (encryption, encryption, authentication, hashes, etc)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同一词 encryption 重复出现，疑似应为 encryption, decryption 或其他安全操作，属于可能影响理解的抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "5G-Enabled Tactile Internet",
+  "self_check": "已核对摘要、各节关键数值与结论：1 ms端到端时延、100 μs单向PHY传输、100 μs机器人通信链路目标、1 ms往返反应时间、低于 $10^{-7}$ 失败率对应每年3.17秒中断、3%链路中断组合关系、100 km光速距离限制、HAEC盒 $10^{4}$ 倍计算性能、3-DoF触觉流6字节有效载荷、20万亿美元市场约全球GDP 20%等均与原文一致。公式与符号按 OCR 可见文本保留，未补写或替换。仍不确定处包括：部分 LaTeX 上标/单位格式异常、个别标点与列表结构损坏、以及“industrial revolution”是否对应原文 Industry 4.0 术语。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8657,
+      "prompt_tokens": 20500,
+      "total_tokens": 29157,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16226,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

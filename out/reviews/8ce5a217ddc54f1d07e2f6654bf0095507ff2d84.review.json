@@ -1,0 +1,73 @@
+{
+  "sha1": "8ce5a217ddc54f1d07e2f6654bf0095507ff2d84",
+  "title": "Review on Control of DC Microgrids",
+  "doi": "https://doi.org/10.1109/jestpe.2017.2690219",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8ce5a217ddc54f1d07e2f6654bf0095507ff2d84/index.html",
+  "source_chars": 133960,
+  "markdown_chars": 1851,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "* * vdci  vdc  ri  ioi (1)",
+      "type": "公式提取乱码",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中的星号与等号字符在PDF提取中显示为乱码，但结合上下文可还原为 vdci^* = vdc^* - ri·ioi，不影响原意",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Vref j  V j0  k j (i j )ij",
+      "type": "公式提取乱码",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "α上标符号缺失，导致公式无法直接阅读，但结合上下文可知为非线性下垂通用形式",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "* * vdci  vdc  m0 SoCin  poi (charing)  (7) m0  vdci  vdc  SoC n  poi (discharging)  i",
+      "type": "公式提取乱码",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "SoC均衡公式的上下标和分式结构在提取中严重损坏，但通过文字说明可知其含义",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "vo Po   Po  (8)   (Vo , Io )   2 (Vo , I o )  io io  io  Io",
+      "type": "公式提取乱码",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "CPL负增量阻抗公式的偏导符号和括号结构提取错误，但可根据上下文识别",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：孤岛检测时间小于0.2秒，SoC均衡公式(7)中的充电/放电表达式，公式(1)和(8)的变量关系。公式提取存在乱码，但基于上下文已恢复为标准数学符号，不改变原意。其他未提取图内数值未纳入。结论方向与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11515,
+      "prompt_tokens": 33255,
+      "total_tokens": 44770,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9792
+      }
+    },
+    "content_chars": 3056
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

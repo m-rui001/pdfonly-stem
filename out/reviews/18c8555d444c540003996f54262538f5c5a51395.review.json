@@ -1,0 +1,64 @@
+{
+  "sha1": "18c8555d444c540003996f54262538f5c5a51395",
+  "title": "Valence Band Modification and High Thermoelectric Performance in SnTe Heavily Alloyed with MnTe",
+  "doi": "https://doi.org/10.1021/jacs.5b07284",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/18c8555d444c540003996f54262538f5c5a51395/index.html",
+  "source_chars": 52023,
+  "markdown_chars": 4459,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "ZT exceeding 2.1−5 Despite their",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "摘要后正文首句被截断，'ZT exceeding 2.1−5' 后直接跳至 'Despite their'，中间缺少完整的句子结构或过渡内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "in comparison with a similar N p of ∼1.8 × 1020 cm−3 at 300 K",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原文写 'with a similar N p of ∼1.8 × 1020 cm−3'，但前文提到 x=0 和 x=0.01 样品有明显双极传导，而 'in comparison with a similar N p' 的表述与句义有微妙出入，可能是 'with a similar Np' 或 'with similar Np' 的排版差异，此处存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "which be modeled using an alloy model",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "结论段原文 'results in lower than expected lattice thermal conductivities which be modeled using an alloy model' 语法不通，疑为 'which can be modeled' 或 'which were modeled' 的缺漏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数值与结论：Mn 固溶度 >9 mol%（Cd/Hg 约 3 mol%）；Seebeck 系数室温约 78 μV/K、900 K 约 230 μV/K；晶格热导率 800 K 时 0.9 W m⁻¹ K⁻¹；ZT 约 1.3@900 K（Sn₀.₈₈Mn₀.₁₂Te）；纯 SnTe ΔEv 0.35 eV、Eg 0.02 eV，Mn 掺杂后 ΔEv 0.14 eV、Eg 0.16 eV；Tpeak 从 SnTe 约 750 K 降至 Sn₀.₈₈Mn₀.₁₂Te 约 400 K；Klemens 模型公式及相关参数（ΘD约140 K、ν约1800 m/s、γ=2.1、r=0.244、ε≈163）均按原文记录。计算值与实验值在 x≤0.09 吻合、x>0.09 偏离的判断与原文一致。提取文本中公式上标下标在正文中未能完整保留（如 κlat,disorder、κlat,pure 的上下标仅以文本形式呈现），已尽量保留公式结构和变量定义，未做推测性补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4095,
+      "prompt_tokens": 15850,
+      "total_tokens": 19945,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 557
+      }
+    },
+    "content_chars": 5982
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

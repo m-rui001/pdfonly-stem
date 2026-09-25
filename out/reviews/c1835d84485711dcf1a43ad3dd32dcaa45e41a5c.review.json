@@ -1,0 +1,64 @@
+{
+  "sha1": "c1835d84485711dcf1a43ad3dd32dcaa45e41a5c",
+  "title": "Industry 4.0 adoption as a moderator of the impact of lean production practices on operational performance improvement",
+  "doi": "https://doi.org/10.1108/ijopm-01-2019-0005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c1835d84485711dcf1a43ad3dd32dcaa45e41a5c/index.html",
+  "source_chars": 90440,
+  "markdown_chars": 2888,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "All items loaded satisfactorily on their constructs (W0.45, po0.01)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "符号“W”疑为“≥”或“>”的误读，原文应为因子载荷阈值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Large (⩾500 employees) Small and medium (o500 employees)",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“o500”应理解为“<500”，与上下文对照明显。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "smaller sample sizes (o 250 observations)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "符号“o”疑为“<”的误读，表示样本量小于250。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文结果：过程相关技术负向调节低换模（b̂=-0.296, p<0.05），产品/服务技术正向调节流动（b̂=0.366, p<0.05），支持H2b、拒绝H3a。回归模型3调整R²=0.331，F=5.812。样本量147，绩效PCA特征值3.259，解释65.1%。控制变量中仅层级显著。数据与文本陈述一致。不确定之处：表III和表IV中部分因子载荷和AVE数值未完整提取，但文本中提到的关键值（0.588,0.539,0.616）已保留；表V相关矩阵的具体系数未逐一核对，但结论方向与回归一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8428,
+      "prompt_tokens": 22034,
+      "total_tokens": 30462,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6255
+      }
+    },
+    "content_chars": 3938
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

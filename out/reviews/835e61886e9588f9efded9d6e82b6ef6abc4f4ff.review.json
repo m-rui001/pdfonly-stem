@@ -1,0 +1,112 @@
+{
+  "sha1": "835e61886e9588f9efded9d6e82b6ef6abc4f4ff",
+  "title": "WM-DOVA maps for accurate polyp highlighting in colonoscopy: Validation vs. saliency maps from physicians",
+  "doi": "https://doi.org/10.1016/j.compmedimag.2015.02.007",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/835e61886e9588f9efded9d6e82b6ef6abc4f4ff/index.html",
+  "source_chars": 69113,
+  "markdown_chars": 11351,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "Regarding CVC_ClinicDB, we can see in Table 1 how WM-DOVA offers the best performance with an accuracy of 70.26% -430 images-, outperforming the rest of approaches.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数据库名称 CVC-ClinicDB 被抽取为 CVC_ClinicDB，下划线替代连字符，不影响理解但属 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "WM-DOVA is more successful -72.54% against 61.29%-when locating adenomatous polyps",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "破折号与文字间缺少空格，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Current implementation of WM-DOVA energy maps takes 10.54 seconds to fully process an image.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数值 10.54 秒可能为 OCR 识别结果，但无其他证据表明错误，暂不报为高置信问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "$$D V = V \\left(\\sigma_ {d}, \\sigma_ {i}\\right) M G = V \\left(\\sigma_ {d}, \\sigma_ {i}\\right) \\left(I \\oplus C _ {\\sigma_ {\\mathrm {i}}} - I \\oplus C _ {\\sigma_ {\\mathrm {i}}}\\right)$$",
+      "type": "formula_symbol_loss",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "形态学梯度公式中膨胀与腐蚀操作符均被抽取为 ⊕，但原文定义中腐蚀应为 ⊖；该错误影响公式复现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "$$\\gamma_ {i} = \\frac {1} {1 + \\frac {\\left| d _ {i} - \\tilde {d} _ {i} \\right|}{\\tilde {d} _ {i}}}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中 d̃_i 的波浪号在 OCR 中显示为 \\tilde{d}_i，但正文中同一符号有时被抽取为 \\tilde{d}{l} 或 \\tilde{d}{i}，存在符号不一致，可能影响变量对应。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "$$\\hat {S} _ {i} ^ {m a x} = \\gamma_ {\\mathrm {i}} S _ {i} ^ {m a x}$$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中 Ŝ_i^max 的帽子符号在 OCR 中显示为 \\hat{S}，但正文中同一符号有时被抽取为 \\widehat{S}，存在轻微不一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "Diminutive ( $ \\leq5 $ mm); b) Small (6 size $ \\leq9 $ mm); c) Large ( $ >10 $ mm).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "小息肉大小范围抽取为“6 size ≤9 mm”，缺少小于号，应为“6 < size ≤ 9 mm”，影响分类边界理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "All tests have been done at a confidence level 1 $ - \\alpha=0.95 $.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "置信水平表达式抽取为“1 - α = 0.95”，但通常应写作 1−α=0.95，此处连字符可能为减号，影响公式理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "WM-DOVA Maps for Accurate Polyp Highlighting in Colonoscopy: Validation vs. Saliency Maps from Physicians",
+  "self_check": "已核对摘要、方法、实验数据与结论：WM-DOVA 在 CVC-ClinicDB 准确率 70.26%（430/612），CVC-ColonDB 72.33%（265/300）；平均 CR 89.28%；RT、DT、MCR 统计结果与原文一致。公式 DV 中膨胀/腐蚀符号疑似 OCR 错误，已标出。参数 radmin=10、radmax=120、ws=18、ns=180 与原文一致。临床元数据分类与表 2、表 3 数值已核对。仍不确定处：部分公式符号（如 d̃_i、Ŝ_i^max）在 OCR 中表示不一致，但未影响主要结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7954,
+      "prompt_tokens": 17364,
+      "total_tokens": 25318,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14557,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "8e86dc359b8fd349641782b6e586b2b344cdc1bb",
+  "title": "Freestanding 1T MoS 2 /graphene heterostructures as a highly efficient electrocatalyst for lithium polysulfides in Li–S batteries",
+  "doi": "https://doi.org/10.1039/c8ee03252a",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8e86dc359b8fd349641782b6e586b2b344cdc1bb/index.html",
+  "source_chars": 36312,
+  "markdown_chars": 2803,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The graphene/MoS2 hydrogel of was formed by a hydrothermal reaction",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“hydrogel of”后多出“of”，推测为提取或原文笔误，应删除“of”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "XPS results in Fig. 5e and 3f",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图5包含e和f子图，且下文引用“Fig. 5f”描述3DG的XPS，此处“3f”应为“5f”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "linear sweep voltammograms (LSV) at different scan rates were employed (Fig. 3b, Fig. S8, and Fig. S9,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子在第3页末尾中断，第4页以“ESI†).”接续，中间插入页眉，但文本内容连续，未发现缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：初始容量1181 mAh g⁻¹、200圈容量保持96.3%、1C循环500圈衰减0.08%/圈、2C容量613 mAh g⁻¹、Tafel斜率76/81/87 mV dec⁻¹、Epa/Epc位移、XRD峰位8.7°和17.4°、XPS结合能、1T MoS₂含量25.2 wt%、DFT增强能0.13/0.16/0.08 eV。正文与摘要数值一致。公式Randles–Sevcik和Eb定义已按原文保留，未补写或修复。对“3f”和“hydrogel of”已标记为疑似错误，跨页拼接处内容连续但按规则标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6013,
+      "prompt_tokens": 11688,
+      "total_tokens": 17701,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3681
+      }
+    },
+    "content_chars": 3930
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

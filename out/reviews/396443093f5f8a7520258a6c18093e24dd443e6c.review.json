@@ -1,0 +1,63 @@
+{
+  "sha1": "396443093f5f8a7520258a6c18093e24dd443e6c",
+  "title": "Catalytic upcycling of high-density polyethylene via a processive mechanism",
+  "doi": "https://doi.org/10.1038/s41929-020-00519-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/396443093f5f8a7520258a6c18093e24dd443e6c/index.html",
+  "source_chars": 54889,
+  "markdown_chars": 5148,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Third, cross-polarization (CP) and J-mediated Incredible Natural Abundance DoublE QUAntum Transfer Experiment (INADEQUATE) experiments revealed separate domains composed of anti and mobile methylene units, and the former domain was rigid and extended (see Supplementary)46,47.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文大写 \"DoublE QUAntum\" 疑似应为 \"Double QUantum\"，但无损科学内容，仅字符大小写异常。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "the observed temperatures take into account sample heating due to MAS. The number of scans and t1 increments varied between 64 to 192 and 64 to 88, respectively.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "page 8 靠近页尾（实际页标为 14）的句子 \"The number of scans and t1 increments varied between 64 to 192 and 64 to 88\" 在 [PDF extracted page 15] 页首出现，前文 \"Greater numbers of scans and t1 increments were used for the higher temperature experiments.\" 位于 [PDF extracted page 14] 末尾，两处可能因页眉插入而断开，但语义连贯，不确定是否真实截断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "Pore diameter may also affect rates of adsorption, desorption, and diffusion without affecting hydrogenolysis rates.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句位于 [PDF extracted page 12] 开头，紧接在 [PDF extracted page 11] 末尾 \"in reactions in which rates of polymer adsorption and desorption, polymer transport within the pores, carboncarbon bond hydrogenolysis, and product desorption have increased.\" 之后，语义连贯但存在页间断行，不确定是否有文字遗漏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值：*PE Mn=130 kDa、短链 PE Mn=7 kDa、mSiO₂孔径 1.5 nm、孔长 200 nm、EXSY 温度 72/93/114 °C、约 70% 孔内聚合物不逸出、扩散活化能 80±24 kJ/mol、催化剂 Pt 粒径 3.2±0.5 nm、SiO₂核直径约 127±7 nm、壳厚 110±8 nm、孔径 2.4±0.2 nm、标准条件 250 °C/200 psi H₂/0.0013 Pt wt %、24 h 转化率 mSiO₂/Pt/SiO₂ 7.2% 可溶物且残余 Mn=6.8 kDa/Đ=4.7 对比原料 Mn=6.6 kDa/Đ=4.6、Pt/SiO₂ 24 h 转化率 20.3% 且残余 Mn=3.7 kDa/Đ=11.7、48 h mSiO₂/Pt/SiO₂ 转化率 25%、C12–C16 约占 40%、Pt/SiO₂ C18–C26 各约 5.8±0.2%、300 °C 全转化 C16 中心分布、孔径 1.7/2.4/3.5 nm 对应产物中心变化、iPP 液体产率 79% 对比 52.8%、方法中 HDPE Mn=5,900、初始 H₂ 120 psi 加热后 200 psi。公式 L = rI = √(D_eff·t_mix) 已按原文保留；γ-gauche 化学位移（反式 32 ppm、偏转 27 ppm、可动约 29 ppm）按原文文本记录。未发现摘要与正文结论方向不一致之处。不确定点：图 2 中反式/可动比例为 1:4 仅来自正文文字描述，未见图内数值；图 3 的 Deff 具体数值未在正文给出，故未记录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4202,
+      "prompt_tokens": 15016,
+      "total_tokens": 19218,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 21
+      }
+    },
+    "content_chars": 7571
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

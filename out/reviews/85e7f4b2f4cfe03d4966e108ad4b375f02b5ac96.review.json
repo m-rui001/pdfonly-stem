@@ -1,0 +1,73 @@
+{
+  "sha1": "85e7f4b2f4cfe03d4966e108ad4b375f02b5ac96",
+  "title": "High-efficiency two-dimensional Ruddlesden–Popper perovskite solar cells",
+  "doi": "https://doi.org/10.1038/nature18306",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/85e7f4b2f4cfe03d4966e108ad4b375f02b5ac96/index.html",
+  "source_chars": 45420,
+  "markdown_chars": 2473,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "C −2 = 2(Vbi − V ) A2 qε0εN",
+      "type": "疑似抽取错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Mott–Schottky方程的标准形式分子分母之间应有分数线，提取文本中分母与分子连写，缺除法标识，可能为抽取丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "We record a peak power conversion efficiency (PCE) of 12.51%",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要与后文模拟中均写12.52%，此处正文写12.51%，同一效率数值不统一。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "12.52 per cent ... We report a photovoltaic efficiency of 12.52 per cent",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要明确为12.52%，与正文12.51%矛盾，需原文澄清。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "a, The crystal structure of the Ruddlesden–Popper (BA)2(MA)2Pb3I10 and (BA)2(MA)3Pb4I13 layered perovskites ...  (BA)2(MA)3Pb3I10 Pb I C H N",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "图注中正文写n=3为(BA)2(MA)2Pb3I10，但图内标注写(BA)2(MA)3Pb3I10，化学式不一致，疑为图注排版错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：摘要PCE 12.52%，正文一处12.51%，模拟中12.52%，已在问题中标注；JSC=16.76 mA cm⁻²、VOC=1.01 V、FF=74.13%、EQE积分JSC=16.31 mA cm⁻²、带隙1.655/1.66 eV、FWHM 0.63→0.29/0.27°、电荷密度10¹⁶ cm⁻³、2250 h稳定性等均与正文一致。Mott–Schottky公式提取缺分数线，未擅自补全，仅按可见文本记录并标记。其余结论方向与摘要、正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5684,
+      "prompt_tokens": 12926,
+      "total_tokens": 18610,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3514
+      }
+    },
+    "content_chars": 3875
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "sha1": "3ffa33e0b37866c355f586f11c1c9f9a4ba2d747",
+  "title": "Comprehensive investigation on hydrogen and fuel cell technology in the aviation and aerospace sectors",
+  "doi": "https://doi.org/10.1016/j.rser.2019.02.022",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3ffa33e0b37866c355f586f11c1c9f9a4ba2d747/index.html",
+  "source_chars": 70313,
+  "markdown_chars": 3373,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Kerosene is made up of 35% alkenes, 60% cyclic alkanes, 15% aromatics",
+      "type": "数据矛盾",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "三种组分百分比之和为110%，明显超出100%，疑似原文或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Both PEMFC and SOFC can be used for AUP systems",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上下文中多次出现APU（辅助动力装置），这里AUP应为APU的笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "average cursing speed of 145 km/h",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'cursing'应为'cruising'（巡航）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "limiting the boil-off loses",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "'loses'应为'losses'（损失），原文多处出现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "Figure 5: Summary of PEM and SOFC fel cells",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'fel'应为'fuel'（原文为图注，可能为OCR或排版错误）。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "the Apolo fuel cell was expanded to include all Apollo missions",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文中'Apollo'正确拼写为'Apollo'，此处'Apolo'可能被遗漏一个字母。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数据：氢能量密度约为煤油2.5倍、体积需求为4倍、机身增重6%、成本增加25%、长程效率提升12%、短程能耗增加6-19%；波音SOFC-APU减排40%和75%、CRYOPLANE减少地面NOx 80%；GSE功率范围450kW和200kW；UAV续航超过48小时；液氢温度-253°C、密度70.8kg/m³；金属氢化物7.6wt%、硼氢化物18.4wt%。所有化学方程式（1-14）按原文本保留。提取文本中摘要的2.5%-5%与结论的2-3%指不同口径（总能耗 vs 全球CO2排放），未视为矛盾。已发现的百分比之和疑问和拼写错误已在extraction_issues中列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9740,
+      "prompt_tokens": 18015,
+      "total_tokens": 27755,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6992
+      }
+    },
+    "content_chars": 5125
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

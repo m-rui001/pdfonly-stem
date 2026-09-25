@@ -1,0 +1,64 @@
+{
+  "sha1": "55ba39d8f6d06c2f8b7e47a77e5c92471ea765d6",
+  "title": "Carbon-negative production of acetone and isopropanol by gas fermentation at industrial pilot scale",
+  "doi": "https://doi.org/10.1038/s41587-021-01195-w",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/55ba39d8f6d06c2f8b7e47a77e5c92471ea765d6/index.html",
+  "source_chars": 69175,
+  "markdown_chars": 4159,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "assessing the effect of enriching a r protein on acetone biosynthesis",
+      "type": "疑似文本错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "“a r protein”很可能为“a protein”或类似，但无法从上下文唯一确定，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "0.6 g/L/h PA",
+      "type": "疑漏字符",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "原文写“0.6 g/L/h PA”，可能应为“0.6 g/L/h for IPA”，但缺乏强证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "+C. autoethanogenum reference proteome",
+      "type": "疑似文本错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "行首出现“+”，可能为提取噪声或原文本中的标记，但无其他证据。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "关键数值核对：丙酮生产率~3 g/L/h，IPA~3 g/L/h，选择性~90%，LCA值（-1.78, -1.17, 2.55, 1.85）均与正文一致。气体利用率和计算式保留。菌株名称和基因敲除顺序已核对。不确定处：3-HB相关细节和个别数字的上下文单位已在文本中按原文保留，未做推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4511,
+      "prompt_tokens": 17382,
+      "total_tokens": 21893,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1624
+      }
+    },
+    "content_chars": 5072
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

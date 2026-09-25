@@ -1,0 +1,54 @@
+{
+  "sha1": "7836af1fbfe235565a0d88186aee48d998b09540",
+  "title": "SDDNet: Real-Time Crack Segmentation",
+  "doi": "https://doi.org/10.1109/tie.2019.2945265",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7836af1fbfe235565a0d88186aee48d998b09540/index.html",
+  "source_chars": 173097,
+  "markdown_chars": 2339,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 101,
+      "quote": "55 images were taken by smartphones; 104 and 41 images were downloaded from Datacenterhub (Sim et al., 2017) and Google Images, respectively; 55 images were manually taken by smartphones.",
+      "type": "疑似错误（计数矛盾）",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "总图像数200，而55+104+41=200，但末尾又出现55张手动拍摄，可能重复或漏写，总数变为255。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 115,
+      "quote": "the significant deterioration of precision scores from ‘0.874a’ to ‘0.231b’",
+      "type": "疑似错误（数值矛盾）",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表4.6中对应值为0.213b，而正文写0.231b，二者不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：mIoU 0.846、F1 0.819、参数0.16M/0.5M、FPS 75.816/36、时间27.50ms等均与表格一致。公式（4.1-4.3）、（4.9-4.13）按原文照录。提取文本中的0.231b与表4.6的0.213b不符，已在issues中标注。数据集计数矛盾已标注。其余无明显跨页断裂问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5821,
+      "prompt_tokens": 45074,
+      "total_tokens": 50895,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4038
+      }
+    },
+    "content_chars": 3257
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

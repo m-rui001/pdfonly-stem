@@ -1,0 +1,91 @@
+{
+  "sha1": "61ce8878ee88f5d8a1553fa37e13dc479c2b9efe",
+  "title": "Energy storage deployment and innovation for the clean energy transition",
+  "doi": "https://doi.org/10.1038/nenergy.2017.125",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/61ce8878ee88f5d8a1553fa37e13dc479c2b9efe/index.html",
+  "source_chars": 44588,
+  "markdown_chars": 9026,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "dispatchable US$1W $ ^{-1} $ solar with US$100 kWh $ ^{-1} $ battery storage",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "公式中 US$1W⁻¹ 的排版在OCR中呈现为 'US$1W $ ^{-1} $'，指数符号与单位之间的空格可能影响阅读，但数值和单位可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Table 1 | Forecasted prices by using two-factor learning curve model.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 的列标题和数值在OCR中呈现为连续文本，表格结构可能已损坏，但关键数值（2016-2020年预测价格及敏感性范围）可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Qui and Anadon",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文中作者名 'Qiu' 在Methods部分被OCR提取为 'Qui'，与正文其他处 'Qiu' 不一致，属于拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The final model and be found in equations (4) and (5).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文应为 'The final model can be found'，OCR将 'can' 误识为 'and'，影响句子语法但不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "P _ {t} = \\delta_ {0} + \\delta_ {1} \\mathrm {Q} _ {\\mathrm {t}} + \\epsilon_ {\\mathrm {t}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中下标和希腊字母的OCR提取存在多余空格和LaTeX标记残留，但变量关系可辨识。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Energy storage deployment and innovation for the clean energy transition",
+  "self_check": "已核对关键数值：单因子学习率17.31%和15.47%，双因子学习率16.9%和每100项PCT专利价格下降2.0%，adj. R²=0.9465，P<0.001；Table 1中2016-2020年预测价格及敏感性范围；四因子模型学习率14.82%，P<0.16；额外307 GWh部署需求；机会成本超过1400亿美元；LCOE约US$0.11 kWh⁻¹；电池价格2016-2020年下降39%。公式已按提取文本原样保留，未做修复。仍不确定之处：Table 1的表格结构在OCR中可能已损坏，但关键数值可辨识；部分公式的LaTeX标记残留可能影响精确复现，但变量关系明确。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5684,
+      "prompt_tokens": 11244,
+      "total_tokens": 16928,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10989,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Energy storage deployment and innovation for the clean energy transition",
+    "translated_title": "面向清洁能源转型的储能部署与创新",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

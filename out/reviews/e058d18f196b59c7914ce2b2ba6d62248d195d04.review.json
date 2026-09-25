@@ -1,0 +1,82 @@
+{
+  "sha1": "e058d18f196b59c7914ce2b2ba6d62248d195d04",
+  "title": "The 2022 Update of IUIS Phenotypical Classification for Human Inborn Errors of Immunity",
+  "doi": "https://doi.org/10.1007/s10875-022-01352-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e058d18f196b59c7914ce2b2ba6d62248d195d04/index.html",
+  "source_chars": 83845,
+  "markdown_chars": 1523,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "BM :bone mucocutaneouscandidiasis; marrow;",
+      "type": "text order error",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "图例缩写解释中 'marrow' 被误插到 'mucocutaneous candidiasis' 内，原文应为 'BM: bone marrow; CMC: chronic mucocutaneous candidiasis' 之类的顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "0pportunistic infections",
+      "type": "OCR typo",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字0应为字母O，属于OCR识别错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Increased risk fo T-ALL",
+      "type": "OCR typo",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "fo 应为 of。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Clericuzio syndrome neutropenia).",
+      "type": "punctuation",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号不匹配，可能抽取时丢失开头或多余结尾。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "dsDNA: double-stranded Desoxyribonucleixacid; FA:",
+      "type": "cross-page split",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图例中 FA: 在页尾中断，下一页以 'frequency' 继续，表明跨页拼接需核对原文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：485种IEI、55个新单基因缺陷、1个表观拷贝、22幅图、10个主要组、SCID定义CD3+T<300/μL，以及单/双星号规则。所有数值均与摘要和正文一致。不确定之处：图例缩写顺序因抽取混乱无法完全复原，但整体内容与原文描述相符。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8149,
+      "prompt_tokens": 23131,
+      "total_tokens": 31280,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6744
+      }
+    },
+    "content_chars": 2871
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

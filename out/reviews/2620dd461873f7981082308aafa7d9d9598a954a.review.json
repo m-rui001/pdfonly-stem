@@ -1,0 +1,66 @@
+{
+  "sha1": "2620dd461873f7981082308aafa7d9d9598a954a",
+  "title": "A soft robot that navigates its environment through growth",
+  "doi": "https://doi.org/10.1126/scirobotics.aan3028",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2620dd461873f7981082308aafa7d9d9598a954a/index.html",
+  "source_chars": 33650,
+  "markdown_chars": 4425,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "To queue an upward turn, the lower control chamber is inflated.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“queue”在此语境下应为“cue”（触发/提示），属明显同音词误识，影响对转向触发机制的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "we measured the rate as we varied the internal pressure (Fig. 3C)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文称速率-压力数据见 Fig. 3C，但 Fig. 3 图注描述的是不对称伸长转向原理，速率-压力关系实际对应 Fig. 2C；图号引用存在错位，可能影响读者定位关键证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Our system has an extensibility that is seven orders of magnitude higher than in plants and only one order of magnitude higher than in invertebrates that use the same mechanism of lengthening (Fig. 3, C and D).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "延展性比较数据应引自 Fig. 2D（速率-压力对比图），此处标为 Fig. 3, C and D，与图注内容不符，属图号引用错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "A soft robot that navigates its environment through growth",
+  "self_check": "已核对：摘要与结论均强调两个原理（压力驱动外翻、不对称伸长）、尖端伸长数千百分比、峰值速率与动物运动相当、初始 28 cm 伸长至 72 m、直径 1.8 mm 至 36 cm、延展性比植物高七个数量级、最大速率比植物细胞高约五个数量级、短距离最大速度 10 m/s、转向角公式 θ=l/d、锁扣约 2 cm、身体直径 3.8 cm、基部 28 cm×18 cm、相机 640×480@30 帧/s、100 像素死区与 50 像素阈值。公式与数值方向一致。仍不确定处：Fig. 3C/3D 与 Fig. 2C/2D 的图号引用在 OCR 文本中前后不一致，已作为抽取问题列出，未擅自改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3203,
+      "prompt_tokens": 8981,
+      "total_tokens": 12184,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 5938,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

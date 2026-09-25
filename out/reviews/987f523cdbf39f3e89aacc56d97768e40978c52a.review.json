@@ -1,0 +1,73 @@
+{
+  "sha1": "987f523cdbf39f3e89aacc56d97768e40978c52a",
+  "title": "Cooperative CO2-to-ethanol conversion via enriched intermediates at molecule–metal catalyst interfaces",
+  "doi": "https://doi.org/10.1038/s41929-019-0383-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/987f523cdbf39f3e89aacc56d97768e40978c52a/index.html",
+  "source_chars": 51825,
+  "markdown_chars": 2679,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "1-proponal",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学名词常见拼写为1-propanol，但原文提取如此，可能为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "hetegenisation",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为heterogenisation（异相化），原文图注中拼写有误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "difference *CO coverage",
+      "type": "疑似语法错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "根据上下文应为different，原图注中写为difference。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "difference applied potentials",
+      "type": "疑似语法错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "应为different applied potentials，原图注中写为difference。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：乙醇FE 41%（-0.82 V_RHE），分电流密度124 mA cm-2，半电池CEE 23%，全电池EE 13%，MEA电流0.6 A、12小时。公式(1)-(4)已保留。不确定：原文中1-proponal、hetegenisation、difference等拼写问题已列出。另外，图内文字未纳入笔记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12985,
+      "prompt_tokens": 15235,
+      "total_tokens": 28220,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10929
+      }
+    },
+    "content_chars": 3728
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

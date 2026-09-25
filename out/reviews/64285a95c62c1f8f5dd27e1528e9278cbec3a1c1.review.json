@@ -1,0 +1,82 @@
+{
+  "sha1": "64285a95c62c1f8f5dd27e1528e9278cbec3a1c1",
+  "title": "Green hydrogen characterisation initiatives: Definitions, standards, guarantees of origin, and challenges",
+  "doi": "https://doi.org/10.1016/j.enpol.2020.111300",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/64285a95c62c1f8f5dd27e1528e9278cbec3a1c1/index.html",
+  "source_chars": 80956,
+  "markdown_chars": 7364,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 41,
+      "quote": "they would be more profitable than the income obtained from the GOs market. Reduce the supply of green hydrogen.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.75,
+      "reason": "“Reduce the supply of green hydrogen.”在pdf提取41页开头，是孤立片段，无主语，与上文逻辑不连贯，疑似跨页断句拼接错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Any renewable energy sources with NREL (1995) an explicit mention to air pollution, energy security and global climate problems",
+      "type": "疑似表格列错位",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1提取中，NREL (1995)被嵌入Definition列文字中间，按表格结构看应属于Sources列，疑似PDF表格提取列错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Any renewable energy sources with Bleischwitz and Bader (2008); CertifHy (2016); an explicit mention to low emission Galich and Marz (2012); Gazey et al. (2012); GHG intensity factors",
+      "type": "疑似表格列错位",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 1中多个文献引用被嵌入Definition列，与Sources列混排，疑似表格提取列错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "In contrast, CertifHy assumes 99% purity and 3 MPa delivery",
+      "type": "疑似原文矛盾",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第26页CertifHy方案描述为“hydrogen purity of 99.9% vol at 3 MPa”，此处第32页写“CertifHy assumes 99% purity”，两处纯度数值不一致，可能为原文内部矛盾或提取差异，无法判定正误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "CEN/CENELEC / International Standard (in preparation) / Terminology, GO, interfaces, operational / management, safety, training and education / Adopted from CertifHy / Adopted from CertifHy / Adopted from CertifHy",
+      "type": "表格提取不完整",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "Table 2中CEN/CENELEC行的“System boundary”列数据缺失或未被提取，仅见Body、Type、Main Policy Objective、Baseline GHG threshold、Qualification level、Qualifying processes等列的内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：CertifHy阈值36.4 gCO₂e/MJ H₂（初始）与24.5 gCO₂e/MJ H₂（修订）、SMR基准91 gCO₂e/MJ H₂、加州LCFS可再生原料压缩氢碳强度76.1 gCO₂e/MJ、TÜV SÜD各工艺减排要求（电解75%、生物甲烷/甘油重整60%，基准83.8/89.7 gCO₂e/MJ）、RE GO费率0.15–0.30 €/MWh vs 批发电价£41.35/MWh、EEX最小合约1000 GO=1 GWh、可再生能源氢补贴$4.82/$3.71/$1.33 per kg H₂（2019/2030/2050）、生物甲烷SMR效率74%→碳强度高35%、法国2023年10%与2028年40%目标、RED 2修订阈值2021年70%与2026年80%。不确定处：CertifHy纯度在原文两处分别写99.9%vol和99%，笔记中已并置标注；CEN/CENELEC行系统边界在Table 2提取中缺失；Table 1中部分文献引用列位置错位已在issues中标出。图表未在图面层面做任何臆测，仅保留正文文字描述的内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18149,
+      "prompt_tokens": 19130,
+      "total_tokens": 37279,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12964
+      }
+    },
+    "content_chars": 9865
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

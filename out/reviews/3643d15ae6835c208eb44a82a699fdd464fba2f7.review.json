@@ -1,0 +1,54 @@
+{
+  "sha1": "3643d15ae6835c208eb44a82a699fdd464fba2f7",
+  "title": "Air-stable and freestanding lithium alloy/graphene foil as an alternative to lithium metal anodes",
+  "doi": "https://doi.org/10.1038/nnano.2017.129",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3643d15ae6835c208eb44a82a699fdd464fba2f7/index.html",
+  "source_chars": 38891,
+  "markdown_chars": 3491,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "within a potential window of 2.5-3.8 eV",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文中对应描述为“between 2.5 and 3.8 V”，图注写为“eV”，疑为电压单位笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "relative infinity volume change during Li plating and stripping",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "通常应为“infinite volume change”，原文这可能为拼写错误，按原样照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：石墨容量370、Si 4200、Sn 990、SiO 2670、Li 3860、V2O5 441、S 1672；体积容量约2000 mAh/cm3（Li22Si5 2240、Li 2061）；首圈面积容量3.8和8.3 mAh/cm2；400圈容量保持98%、CE 98.7%与99.92%；LiFePO4全电池132.2 vs 130.6 mAh/g，10C/20C为91.7/84.0；V2O5全电池约365 mAh/g、能量密度510 Wh/kg；硫全电池1086 mAh/g、110圈后858 mAh/g、CE 99.5%、能量密度490 Wh/kg；空气稳定性3天81%、干房2周94.3%。公式无复杂内容。不确定点：图注电压窗口单位eV与正文V不一致，已列为疑点；其他数据均来自提取文本，未发现矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7739,
+      "prompt_tokens": 10845,
+      "total_tokens": 18584,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5087
+      }
+    },
+    "content_chars": 4440
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

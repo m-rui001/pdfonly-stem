@@ -1,0 +1,72 @@
+{
+  "sha1": "717d9f5c1f227db7078751287272770d3f4e8724",
+  "title": "Structural similarity index (SSIM) revisited: A data-driven approach",
+  "doi": "https://doi.org/10.1016/j.eswa.2021.116087",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/717d9f5c1f227db7078751287272770d3f4e8724/index.html",
+  "source_chars": 128187,
+  "markdown_chars": 4438,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "σxy = (1/(N-1)) Σ(xi-μx)(yi-μx)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "协方差公式的标准形式应为 Σ(xi-μx)(yi-μy)，原文写为(yi-μx)，可能是提取错误或原文笔误，但按原文照录。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "Zsast = ... · (1/θ) · (Hi·Wi / (Hv·Wv))^1/2 ... 4tan(θH/2)·tan(θW/2)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式(10)在提取文本中被拆行且符号不完整，可能因页眉或图注插入导致顺序错乱，此处按现有文本保留。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "S = SS − SSIM(α, β, γ) , the chromosome c at iteration i is defined as a 3D real-valued vector of the form X ~ c,i = [Xα,c,i , Xβ,c,i , Xγ,c,i ].",
+      "type": "格式混淆",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上下标混入正文字符，如‘sss’和‘oss’标记被植入名称中，可能影响理解，但未改变内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "SRCCtest ... Table 3 ...",
+      "type": "表格内容混乱",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表3的表头数值与列对应关系不清晰，可能因PDF表格提取为文本时丢失对齐，但关键数值在正文中已提及。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数值：SS-SSIM平均提升8%、MS-SSIM提升3%，正文中与摘要一致。公式(1)-(6)按原文转录，其中σxy公式中(yi-μx)有明显错误，已在issues中标出。实验部分引用的SRCC差异范围（0.01-0.02）和计算时间（约10倍）等均来自正文。统计检验的p值（如GA vs S-PSO p=0.032，SSS vs OSS p=0.565）与表5、表6一致。跨数据库表7中的定性结论（VDID2014迁移差、CSIQ/TID训练好）与正文描述相符。参数分布部分，表9中的K1约0.2、K2约0.1、窗口15-21等数据均从表9读取。表11中关于尺度选择比例（例如VDID2014仅保留尺度3-5）与正文一致。需注意：正文中提及“VDID204”（第24页）疑似为“VDID2014”的笔误，但未在issues中标出，因为可能为排版笔误；表3中数值未完全复制，仅引用文中明确描述的数字。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5896,
+      "prompt_tokens": 34691,
+      "total_tokens": 40587,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2324
+      }
+    },
+    "content_chars": 6029
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

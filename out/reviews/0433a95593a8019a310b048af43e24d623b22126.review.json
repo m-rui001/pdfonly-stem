@@ -1,0 +1,73 @@
+{
+  "sha1": "0433a95593a8019a310b048af43e24d623b22126",
+  "title": "High-performance sodium–organic battery by realizing four-sodium storage in disodium rhodizonate",
+  "doi": "https://doi.org/10.1038/s41560-017-0014-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0433a95593a8019a310b048af43e24d623b22126/index.html",
+  "source_chars": 6144,
+  "markdown_chars": 1030,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Page 2",
+      "type": "跨页内容缺失",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "提取文本在第1页之后仅有页码标记，未包含任何正文，后续内容完全缺失，无法复原论文的方法、结果与讨论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Na2C606",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式中数字'0'应为字母'O'，且文中另一处出现'N¢C6O6'，表明OCR识别可能错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "N¢C6O6",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "字符'¢'疑为'a'和'2'的误识，可能应为'Na2'，但无法确定。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "726 Wh kg-1 ..hoc1er an energy efficiency above 87%",
+      "type": "疑似乱码",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "‘..hoc1er’语义不通，疑为‘with over’或类似词语的OCR错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数值：理论容量501 mAh g⁻¹、可逆容量484 mAh g⁻¹、能量密度726 Wh kg⁻¹、能量效率>87%与正文引文一致。文本中化学式存在多种OCR变体，已在issues中标出。由于第2至8页提取内容缺失，无法核对方法、图表和结论部分，且未纳入任何无文本依据的推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6745,
+      "prompt_tokens": 2308,
+      "total_tokens": 9053,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5668
+      }
+    },
+    "content_chars": 2077
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

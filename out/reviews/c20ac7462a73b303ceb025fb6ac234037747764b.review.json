@@ -1,0 +1,111 @@
+{
+  "sha1": "c20ac7462a73b303ceb025fb6ac234037747764b",
+  "title": "Global Estimates of Fine Particulate Matter using a Combined Geophysical-Statistical Method with Information from Satellites, Models, and Monitors",
+  "doi": "https://doi.org/10.1021/acs.est.5b05833",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c20ac7462a73b303ceb025fb6ac234037747764b/index.html",
+  "source_chars": 55396,
+  "markdown_chars": 11004,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "We estimated global fine particulate matter $ \\mathrm{P M}{2. 5} $ concentrations",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "PM2.5 的下标在 OCR 中丢失为 P M{2.5}，多处出现，影响公式/符号可读性但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The MISR instrument swath width of $ \\sim 3 8 0 $ km",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字被空格分隔为 3 8 0，应为 380，属 OCR 数字抽取格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "based on the Global Aerosol Data Set (GADS) and aircraft measurements. $ ^{39-41} $ We reduced by half the AOD to $ \\mathrm{P M}_{2. 5} $ relationship for mineral dust",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "PM2.5 下标在 OCR 中丢失，影响符号一致性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure 1. Mean aerosol optical depth (AOD) over land for 2001-2010, by data source.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注文字被提取，但图内多面板结构无法从文本复原，属图像区域提示，不构成实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Table 1. Population-Weighted Mean $ \\mathrm{P M}_{2.5} $ $ \\left( \\mu\\mathrm{g} / \\mathrm{m}^{3} \\right) $ by Global Burden of Disease (GBD) Region",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1 的列标题和行数据在 OCR 中严重错位，区域名称与数值对应关系混乱，影响表格数值的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Sub-SaharanAfrica,Central 99 21.9 21.5 15.6 9 0 0",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格中 Sub-SaharanAfrica,Central 出现两次且数值列缺失，行结构明显损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Figure 6. Distribution of GWR-adjusted satellite-derived $ \\mathrm{P M}_{2. 5} $ concentration for 2010 according to population and population density",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注文字被提取，但图内分布曲线无法从文本复原，属图像区域提示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "The authors declare no competing financial interest.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句出现在 ASSOCIATED CONTENT 与 ACKNOWLEDGMENTS 之间，位置可能因 OCR 阅读顺序错乱，但不影响核心论证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Global Estimates of Fine Particulate Matter using a Combined Geophysical-Statistical Method with Information from Satellites, Models, and Monitors",
+  "self_check": "已核对摘要、正文关键数值与结论：R²=0.81（交叉验证）、全球人口加权年均 PM2.5 32.6 μg/m³、WHO 指导值 10 μg/m³、南亚 50.6 μg/m³、东亚 46.6 μg/m³、西撒哈拉以南非洲 39.5 μg/m³、GWR 调整后 R²=0.74（全部原位）和 R²=0.85（直接 PM2.5）、交叉验证 R²=0.73 和 R²=0.81。公式已按 OCR 文本原样保留，未做修复。Table 1 结构损坏严重，仅保留正文明确引用的关键数值（32.6、25.1、7.0、12.8 μg/m³ 等），未逐行复原表格。仍不确定处：Table 1 中部分区域数值对应关系因 OCR 错位无法确认；Figure 1–6 的图内信息未提取，仅依据正文描述。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7397,
+      "prompt_tokens": 17202,
+      "total_tokens": 24599,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14195,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "878205d01f29200538f602e6ee62f656524d822f",
+  "title": "Three years to safeguard our climate",
+  "doi": "https://doi.org/10.1038/546593a",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/878205d01f29200538f602e6ee62f656524d822f/index.html",
+  "source_chars": 23405,
+  "markdown_chars": 3516,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "indEurope. (2017). Wind in power. 2016 European statistics.",
+      "type": "疑似拼写/排印错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "前一处出现'WindEurope'，此处'indEurope'应为'WindEurope'，且缺少完整词首，疑似OCR或录入断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "glavanized",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "标准拼写为'galvanized'，但原文如此，照录并标出。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "with a view to full",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页5末尾'with a view to full'未完成，页6开头直接接'decarbonisation of operations...'，中间缺少完整句子，若原始PDF为分页断句则可理解，但提取文本中无标点连接，需核对原排版。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对正文中的核心数值：当前排放速率41 GtCO2/年、碳预算150–1050 GtCO2、中点600 GtCO2、触及下限4年/中点15年；美国2016年排放下降3%、GDP增1.6%；中国排放降1%、GDP增6.7%；可再生能源占比目标30%（2015年23.7%）；电动汽车目标15%（当前1%）；绿债2016年800亿美元、目标十倍；各项里程碑数字均与原文一致。图1情景相关数字（600/800 Gt、20/30年）仅依据页9图注文字，未额外推测。公式未涉及。不确定点：文中'Climate Tracker'疑似与'Climate Action Tracker'重复，但无强证据未改；图1实际图形数据未提取，仅保留文字结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3794,
+      "prompt_tokens": 6160,
+      "total_tokens": 9954,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1346
+      }
+    },
+    "content_chars": 4670
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

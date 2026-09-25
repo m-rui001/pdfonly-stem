@@ -1,0 +1,63 @@
+{
+  "sha1": "cb5f3259aeed4bd3c843f9ec374576e89653294e",
+  "title": "Global hotspots and correlates of alien species richness across taxonomic groups",
+  "doi": "https://doi.org/10.1038/s41559-017-0186",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cb5f3259aeed4bd3c843f9ec374576e89653294e/index.html",
+  "source_chars": 47699,
+  "markdown_chars": 3072,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "T\n\nbe transport of species across biogeographic barriers by humans is a key component of global environmental cbange'-3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页首文字'be transport'应为'The transport'，且'cbange'疑为'change'，系OCR或提取噪声。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Table 11 Estimates of models explaining cross-taxon EAS richness for all regions, and for mainland or island regions only.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表标题中'Table 11'应为'Table 1'（与正文引用一致），可能为OCR将'1'识别为'11'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "(t ~\n\nA\n\n---\n\n(195)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图3标题前出现乱码符号'(t ~ A'，与图无关，可能为页眉或图注截断残留。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：热点前三位（夏威夷、新西兰北岛、小巽他群岛）、冷点（南极洲、珊瑚海群岛、拉克代夫）、χ²=16.34、d.f.=8、P=0.04；岛屿均值0.17±0.11 vs 大陆0.11±0.07；沿海0.13±0.09 vs 内陆0.10±0.04；相关rS值（0.62、0.55、0.55）；R²值（边际0.45/0.49/0.58，条件0.71/0.69/0.79）；交互项0.102±0.030，F=11.548，P<0.001；覆盖率数据。公式和变量定义均按原文保留，未做推测。不确定处：表1中'Area:sampling effort'对岛屿的估计值未在提取文本中给出（缺失），已照录缺失；图3中某些数值（如195、246等区域数）已保留但含义依赖图内说明。所有疑点已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2444,
+      "prompt_tokens": 12151,
+      "total_tokens": 14595,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 44
+      }
+    },
+    "content_chars": 4390
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

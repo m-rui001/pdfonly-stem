@@ -1,0 +1,64 @@
+{
+  "sha1": "1c4a6fd1bfb9d7adca22b6f17360cac249a7a4e9",
+  "title": "Synthesis of Carbon Dots with Multiple Color Emission by Controlled Graphitization and Surface Functionalization",
+  "doi": "https://doi.org/10.1002/adma.201704740",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1c4a6fd1bfb9d7adca22b6f17360cac249a7a4e9/index.html",
+  "source_chars": 42080,
+  "markdown_chars": 3920,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "..\" • ce sp -iropnotorneter\n\nA\n\nr, used witHita essory isorr:r rphotometer. The sr purposef.; is and shpI8 no,:. used for nat sam s are not\n\n. -7e\n\nthat mai have been infected with ba i.P.Oo this accessory\n\niccelaory la int ded for use by persons having a basic ledgit of chemical analysis procedures. instruments, in mild that improper use of analytical ticalsor se7.,ples would result not only in wrong safety. 'heal data but atso in consequences adverse to basic th it is allowed only for persons having a this tled4a of chemical analysis procedures to use ssory. se read taint you\n\nmanual caref\n\n,ure to read fluoreseemiXt mai also to ensure\n\n•ef\n\ninstruction ent.\n\n•",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第13页开头出现一段关于荧光光度计附件安全使用的非论文正文文本，明显是从仪器手册等来源误插入的页眉/杂散文本，其后才接续图4相关内容。该段与论文主题无关，疑似PDF提取时混入了相邻文档内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Figure 3D-3F show the results of UV-vis spectra, PL emission, and PL excitation spectra taken along the horizontal and vertical dash line in the corresponding 2D plots in Figure 3A 3C.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文\"Figure 3A 3C\"缺少连字符或逗号，应为\"Figure 3A-3C\"。此为轻微排版问题，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "The corresponding spectra of light emission are shown in Figure 4D. The emission bands locate at — 440 mu, — 540 nm, and — 620 nm, respectively, for the blue, green and red LED.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文中\"— 440 mu\"应为\"440 nm\"，'mu'很可能是'nm'的OCR误识别。但为忠实原文，笔记中按上下文含义写为440 nm，并在此标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：发射峰范围430-630 nm，量子产率52.6%、35.1%、12.9%（溶液）和38.6%、29.8%、7.4%（复合物），粒径3.96/4.12/4.34 nm，ID/IG比值1.16/0.97/0.89，N/C比0.436/0.369/0.330，O/C比0.165/0.291/0.378，白光LED CIE(0.33,0.34)、CCT 5606K、CRI 92，重量比1:3:2。合成条件（CA/尿素比、温度）均与原文一致。公式无。对第13页杂散文本和\"mu\"疑点已在issues中标记，未引入额外推测。结论方向与摘要一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3200,
+      "prompt_tokens": 13008,
+      "total_tokens": 16208,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 28
+      }
+    },
+    "content_chars": 6026
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

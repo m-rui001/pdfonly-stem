@@ -1,0 +1,64 @@
+{
+  "sha1": "5474232b90ec512d77b8f9a28e8565fa6f566489",
+  "title": "What is consciousness, and could machines have it?",
+  "doi": "https://doi.org/10.1126/science.aan8871",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5474232b90ec512d77b8f9a28e8565fa6f566489/index.html",
+  "source_chars": 62341,
+  "markdown_chars": 2522,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "However, much like artificial neural networks took their inspiration",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "此句后应接“from neurobiology, artificial consciousness may progress”，但提取文本中“from neurobiology”被置于另一段，导致句子断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Conscious robots and computers has long been a popular science fiction theme.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "主谓不一致（复数主语+has），但可能为原文笔误，无强证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "and cannot re- liably report its identity",
+      "type": "跨页断词",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“re-”与“liably”被换行分开，实际应为“reliably”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中C0、C1、C2的定义和所有关键数值（如50 ms、33 ms、66 ms、1岁婴儿等），均按原文保留。文中无具体数学公式，仅提及贝叶斯推断和证据积累，未作数值化处理。结论部分与原文一致。不确定之处在于少量跨页断句可能导致个别句子不完整，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7082,
+      "prompt_tokens": 13728,
+      "total_tokens": 20810,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5162
+      }
+    },
+    "content_chars": 3564
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

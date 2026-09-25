@@ -1,0 +1,163 @@
+{
+  "sha1": "f0a8fd1b1a534e5378acd5f0542797f49379c081",
+  "title": "Self-Powered and Self-Functional Cotton Sock Using Piezoelectric and Triboelectric Hybrid Mechanism for Healthcare and Sports Monitoring",
+  "doi": "https://doi.org/10.1021/acsnano.8b08329",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f0a8fd1b1a534e5378acd5f0542797f49379c081/index.html",
+  "source_chars": 204735,
+  "markdown_chars": 6054,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "el valor d33 del PZT (~117 pC/N) es superior al ZnO (~12 pC/Ny esto sugiere",
+      "type": "疑似OCR错误/符号丢失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“pC/Ny”疑为“pC/N) y”的OCR误读，缺少闭合括号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "This could be due to the formation of a conducting network that favors charge transfer within the compound.",
+      "type": "跨页重复/拼接错位",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第10页与第12页的摘要内容高度相似（西/英版本分别完整），但两处分别出现不完整句，疑为提取顺序或分页标记错位所致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 91,
+      "quote": "La entalpía de fusión (∆𝐻𝑚 ) del PVDF es de 26.7 J/g, mientras que los compuestos ZnO(B)/PVDF y ZnO(H)/PVDF evidencias valores de 28.4 J/g y 27.3 J/g",
+      "type": "数值方向与结论不符",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "前文结论为“la entalpía de fusión (∆𝐻𝑚) se reduce con la inclusión de ZnO”（加入ZnO使熔融焓降低），但此处给出PVDF=26.7 J/g、复合物=28.4和27.3 J/g，数值反而升高；且后文解释“El aumento de la entalpía...”。数值或结论之一存在转录错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 100,
+      "quote": "ZnO(B)/PVD F Lamina de aluminio 4 5 Maquina Textil universal conductor",
+      "type": "表格排版错乱",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表4-7最后一行（本工作数据行）中“ZnO(B)/PVD F”有空格分隔，“Lamina de aluminio”与“Textil universal conductor”两列内容错位，疑为多栏表格在PDF提取时行列错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "Self-Powered and Self-Functional Cotton Sock Using Piezoelectric and Triboelectric Hybrid Mechanism for Healthcare and Sports Monitoring 2019 · https://doi.org/10.1021/acsnano.8b08329 · Open original PDF for figures and page layout",
+      "type": "元数据与正文内容不符",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "用户提供的标题/DOI/年份指向ACS Nano 2019论文，但实际提取文本为2022年西班牙语硕士论文（Desarrollo de un nanogenerador piezoeléctrico...），内容完全不同，读者无法依据指定元数据定位真实来源。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 73,
+      "quote": "Figura 4-26. Devolución del PVDF y compuestos de ZnO/PVDF",
+      "type": "疑似错误（术语）",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "“Devolución”（归还/回收）在图注语境下不通，结合上下文及图4-30中“Deconvolución”的用法，此处应为“Deconvolución”（反卷积）之误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 53,
+      "quote": "Figura 4-10. Análisis termogravimétrico del textil de algodón, tinta conductora y textil conductor bajo atmósfera inerte.",
+      "type": "图编号错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "目录及正文中该图为第4章结果部分（应为Figura 4-10），但图中编号显示为“Figura 20”，系编号跳号/脱漏，不影响内容理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 25,
+      "quote": "los cuales pueden ser utilizados como sensores. Los dispositivos PENG han sido implementados en diferentes elementos como muñequeras, anteojos, vendajes, ropa inteligente, guantes, entre otros",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第23页段落末尾“diversos trabajos”后直接接第24页“usan sistemas mecánicos”，两句之间缺少标点或连接词，疑因页眉/图注插入导致句子截断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 56,
+      "quote": "Figura 4-16. Mapa de distribución de elementos de las cenizas TGA bajo atmósfera de aire.",
+      "type": "图题重复",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图4-12、4-13、4-16题名几乎相同（“Mapa de distribución de elementos de las cenizas del TGA...”），且三图位置接近，疑为提取重复或原始图片编号有误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 66,
+      "quote": "Figura 4-24. Micrografías de SEM del PVDF y de los compuestos ZnO/PVDF. a,y d) corresponde al PVDF, b y e) se atribuyen al compuesto ZnO(H)/PVDF, c y f) hacen referencia al compuesto ZnO(H)/PVDF",
+      "type": "疑似错误（图注重复）",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "图注中b/e标注为ZnO(H)/PVDF（片状），c/f也标注为ZnO(H)/PVDF；结合4.4节开头定义（B=棒状，H=片状），b/e应为ZnO(B)/PVDF，否则片状复合物出现两次而棒状缺失，与后续TGA/DSC讨论中两个复合物均有数据矛盾。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 55,
+      "quote": "La figura 4-14b corresponde a la curva DTG de cada material analizado. La figura 4-14c es la deconvolución del análisis TGA del textil conductor.",
+      "type": "图表存在性疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "文本引用了4-14b和4-14c子图，但提取文本中仅见图4-14整体标题，未单独提取到b、c子图的数据或图注，无法核对子图是否完整呈现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 52,
+      "quote": "Figura 4-12. Mapa de distribución de elementos de las cenizas del TGA bajo atmósfera inerte. Figura 4-13. Mapa de distribución de elementos de las cenizas del TGA bajo atmósfera inerte.",
+      "type": "跨页图序疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图4-12与4-13题名完全相同且分处两页，正文说明“se realizaron dos mapas, uno en una zona donde no había presencia de fibras y otro donde sí se evidenciaban”，表明确有两张图，但相同题名可能是原始论文笔误或提取拼接问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 53,
+      "quote": "una máquina universal de ensayos (Shimadzu AGX100) fue acondicionada para realizar el proceso de dip-coating... El software Trapezium X control fue empleado",
+      "type": "术语拼写疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“Trapezium X control”为岛津（Shimadzu）试验机控制软件，通常写作“Trapezium X”，此处多出“control”一词，但原文如此，不作更改。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 90,
+      "quote": "El aumento de la entalpía de fusión debido a la presencia de ZnO ha sido reportado en diversos estudios (Sorayani Bafqi et al., 2021; W. Wang & Sun, 2020)",
+      "type": "引用与内容方向一致但前文有矛盾",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此句与第91页引用的数值一致（熔融焓增加），但与第90页正文“la entalpía de fusión se reduce con la inclusión de ZnO”直接矛盾；同一段落内两个方向相反的陈述并存，必有一处转录有误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：ZnO d33~12 pC/N与PZT~117、BaTiO3~31 pC/N相符；棒状/片状ZnO尺寸（3.35±0.50 µm与154.10±46.70 nm）在摘要、结果、结论三处一致；导电织物电阻<0.4 Ω/sq在结果与结论处一致；TGA灰分4.40%/4.38%与差异0.02%在摘要、结果、结论中一致；β相分数（22.48/22.58/23.35）与CI（25.5/26.1/26.7）在正文与表格中一致；实际测试载荷138.2±5.6 N在方法、结果、结论一致；ZnO(B)/PVDF输出最高的结论在结果与结论中一致；电压归一化值0.14 mV/kPa（表4-7末行）仅出现一次。不确定之处：DSC熔融焓数值与结论方向矛盾（26.7→28.4/27.3 J/g，正文先说“se reduce”后又说“aumento”，见extraction_issues第9条）；表4-7因排版错乱仅能读取部分行数据，未在笔记中将错乱数据复原；用户提供的ACS Nano 2019元数据与提取文本实际内容（2022年西班牙语硕士论文）完全不匹配，笔记内容严格依据提取文本撰写，未采用原英文题目。公式F(β)与CI原样保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7212,
+      "prompt_tokens": 59310,
+      "total_tokens": 66522,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1172
+      }
+    },
+    "content_chars": 12123
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

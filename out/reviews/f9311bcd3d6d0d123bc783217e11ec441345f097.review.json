@@ -1,0 +1,112 @@
+{
+  "sha1": "f9311bcd3d6d0d123bc783217e11ec441345f097",
+  "title": "Ablation-cooled material removal with ultrafast bursts of pulses",
+  "doi": "https://doi.org/10.1038/nature18619",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f9311bcd3d6d0d123bc783217e11ec441345f097/index.html",
+  "source_chars": 33237,
+  "markdown_chars": 6862,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Seydi Yavaş $ ^{4} $ Mehmet D. Aşık $ ^{5} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "作者列表中Seydi Yavaş与Mehmet D. Aşık之间缺少逗号或连接符，可能为OCR遗漏标点，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "E _ {\\mathrm {h e a t}} = \\alpha \\left(T _ {\\mathrm {c}} - T _ {0}\\right) \\left(1 - \\frac {1}{\\sqrt {1 + \\tau_ {\\mathrm {R}} / \\tau_ {0}}}\\right) (N - m) E _ {\\mathrm {p}} + \\alpha \\left(\\Delta T - \\delta T\\right) m E _ {\\mathrm {p}}. \\text {F o r}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式末尾的“For”被OCR拆分为“F o r”并混入公式文本，导致公式与后续正文边界不清，可能影响公式完整性判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "\\lim_{\\tau_{\\mathrm{p}}\\rightarrow\\infty}E_{\\mathrm{heat}}=\\alpha\\left(T_{\\mathrm{c}}-T_{0}\\right)NE_{\\mathrm{p}}.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "极限符号下标为 $\\tau_{\\mathrm{p}}$，但前文定义的是 $\\tau_{\\mathrm{R}}$（重复率倒数），此处可能为OCR将R误识为p，导致符号不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the ceramic surface of the thermoelectric module and $ 3 \\mu\\mathrm{J} $ 800 fs pulses at a 10 MHz uniform repetition rate",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句语法不完整，可能OCR遗漏了“we used”等词，但不影响核心参数理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "energy that is 25 times lower (d; Supplementary Video 5). The insets in a-d show laser scanning microscope characterizations of the ablated holes. e, f, Histological images corresponding to about $1 \\mathrm{~mm}^{3}$ sections, which were removed from a rat brain with the laser operating at an average power of 600 mW in the traditional regime (e), showing presence of thermal damage, and in the ablation-cooled regime (f), showing no major thermal damage. g, Ablation-cooled laser removal of brain tissue at an average power of 2.7 W, achieving an ablation speed of $2 \\mathrm{~mm}^{3} \\mathrm{~min}^{-1}$ and showing no major thermal damage. h, Bright-field optical image of a bovine cornea from which a flap was removed following ablation-cooled laser processing of a section 0.4 mm below the surface. Inset, optical coherence tomography image of the section indicated by the rectangle.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Fig. 3的图注文字与正文段落交错，导致阅读顺序混乱：图注中e-h的描述被插入到正文“reveals that we obtain around 2,000 times more ablation...”之前，造成正文断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "smaller by a factor of 800 (2,400). Comparison with another reference $^{18}$ indicates that the efficiency of ablation in our experiments is 100 times higher despite using a pulse energy that is 260 times lower, when matching the fluence of the entire burst to that of the single-pulse fluence. We achieve a level of ablation that is five times higher than results obtained with a burst-mode laser $^{23}$ that does not exploit ablation cooling, despite using a pulse fluence that is 165 times smaller for the",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该段文字被Fig. 3图注分割，导致正文从“reveals that we obtain around 2,000 times more ablation...”到“smaller by a factor of 800 (2,400)”之间不连续，阅读顺序受损。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "with which a $0.55\\mathrm{mm}^{3}$ section of brain tissue was removed in 360 s (ref.11). With ablation cooling, at a much higher power of 2.7 W (432 MHz intraburst repetition rate, 27 kHz burst repetition rate, $16\\mu\\mathrm{J}$ per pulse), virtually thermal-damage-free results are obtained (Fig. 3g) at an ablation rate of $2\\mathrm{mm}^{3}\\mathrm{min}^{-1}$",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句末缺少句号，可能为OCR遗漏，但不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "24 pulses with $0.8\\mu J$ of energy per burst were used",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“per burst”可能应为“per pulse”，但原文如此，无法确认是否为OCR错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Ablation-cooled material removal with ultrafast bursts of pulses",
+  "self_check": "已核对关键数值：烧蚀速率（脑组织2 mm³/min、牙本质3 mm³/min）、脉冲能量（3 μJ、4 μJ、16 μJ、0.8 μJ）、重复率（1.7 GHz、3,456 MHz、108 MHz等）、效率提升倍数（约2,000倍、12倍、100倍、5倍）与原文一致。公式部分保留了提取文本中的符号和关系，未做修改。不确定之处：公式中 $\\tau_{\\mathrm{p}}$ 与 $\\tau_{\\mathrm{R}}$ 的符号不一致可能为OCR错误；Fig. 3图注与正文交错导致阅读顺序问题；部分标点缺失不影响理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5318,
+      "prompt_tokens": 8910,
+      "total_tokens": 14228,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11655,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

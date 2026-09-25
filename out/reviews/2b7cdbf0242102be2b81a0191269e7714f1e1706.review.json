@@ -1,0 +1,45 @@
+{
+  "sha1": "2b7cdbf0242102be2b81a0191269e7714f1e1706",
+  "title": "Disentangling the numbers behind agriculture-driven tropical deforestation",
+  "doi": "https://doi.org/10.1126/science.abm9267",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2b7cdbf0242102be2b81a0191269e7714f1e1706/index.html",
+  "source_chars": 212733,
+  "markdown_chars": 2805,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "based on annual, remote-sensing based measures of tree-cover loss (TCL) (1)., and the Food and Agriculture Organization",
+      "type": "punctuation/extra period",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "提取文本中在“(1)”后出现句号再加逗号，疑似PDF提取时的标点错误，原文应为“(1),”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：总毁林6.5–9.5 Mha/y，农业驱动毁林6.4–8.8 Mha/y，生产性农业毁林约4.3–4.5 Mha/y，占比90–99%和45–65%，牧场约占一半，油棕大豆合计至少1/5，贸易份额20–25%和约35%，以及国内需求约四分之三。这些数值在摘要、正文和结论中一致。注意原文中Curtis等更新版本的数值（9.6 vs 9.47）有细微差异，但已按原文表述保留。表格和补充材料中的国家级数值未在笔记中逐一复述，因为正文仅总结了关键趋势。另有一处标点疑点已列为提取问题，其余未发现明显文本缺陷。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5727,
+      "prompt_tokens": 54289,
+      "total_tokens": 60016,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3705
+      }
+    },
+    "content_chars": 3497
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

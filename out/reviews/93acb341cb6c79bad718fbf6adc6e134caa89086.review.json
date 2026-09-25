@@ -1,0 +1,64 @@
+{
+  "sha1": "93acb341cb6c79bad718fbf6adc6e134caa89086",
+  "title": "Electroreduction of nitrogen with almost 100% current-to-ammonia efficiency",
+  "doi": "https://doi.org/10.1038/s41586-022-05108-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/93acb341cb6c79bad718fbf6adc6e134caa89086/index.html",
+  "source_chars": 31540,
+  "markdown_chars": 3317,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "3 Li + 1 2 N2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中“1 2 N2”应为“1/2 N2”的排版缺失，斜杠未提取，原文公式可能为1/2 N2。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Calculation of the FE for the 612 h experiments",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "根据上下文“3 h、6、9、12 h”，应为“6-12 h”或“6, 9, 12 h”，提取时缺少连字符或逗号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "as a preliminary demonstration of the scalability of the process (Figure 4d",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在第6页末尾以“Figure 4d”中断，第7页开头为“f)”，明显是跨页截断，原意应为“Figure 4d-f”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：1.5和2 M LiNTf₂产率240±20和230±20 nmol s⁻¹ cm⁻²，FE≥2 M时接近90%；-0.55 V下3 h FE 65±8%，6、9、12 h为85±9%、89±9%、91±7%；隔离电极24 h FE 98±2%，96 h FE 99±2%，产率530±20和150±20 nmol s⁻¹ cm⁻²，稳态电流36±12 mA cm⁻²；96 h产氨3.9±0.1 mmol；1.2 cm²电极产率170-190 nmol s⁻¹ cm⁻²、FE~90%。反应式(1)的提取文本疑似丢失斜杠，已标注。其他数值均与摘要及正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5371,
+      "prompt_tokens": 8741,
+      "total_tokens": 14112,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2702
+      }
+    },
+    "content_chars": 4449,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

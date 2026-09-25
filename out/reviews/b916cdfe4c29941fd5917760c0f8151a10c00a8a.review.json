@@ -1,0 +1,55 @@
+{
+  "sha1": "b916cdfe4c29941fd5917760c0f8151a10c00a8a",
+  "title": "Enhanced Surface Interactions Enable Fast Li + Conduction in Oxide/Polymer Composite Electrolyte",
+  "doi": "https://doi.org/10.1002/anie.201914478",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b916cdfe4c29941fd5917760c0f8151a10c00a8a/index.html",
+  "source_chars": 34539,
+  "markdown_chars": 3521,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "O2−− interaction",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中多次出现“O2−−”双负号，而摘要及上下文均为单一负号“O2−”，疑似提取时字符重复或原文排版符号重叠。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "tracer−excahnge",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "英文单词“exchange”两次出现为“excahnge”，可能是原文拼写错误，也可能是提取时的字符错位，照录可见文本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数据：CPE-5GDC电导率1.9×10⁻⁴ S cm⁻¹、CPE-25LSGM 1.3×10⁻⁴ S cm⁻¹及活化能0.26/0.28 eV；A2位点Li占比增加量（Al₂O₃ 9.7%、LSGM 11.1%、GDC 14.5%）；7Li T₁值（0.48/0.35/0.25 s）；[EO]/[Li]=10时A2占比54.9%/51.8%；迁移数0.26/0.18/0.13；对称电池电阻163→185 Ω cm²；全电池容量数据均与原文一致。DFT结合能（Al₂O₃ 4.15 eV，游离TFSI⁻ 4.18 eV）已保留。不确定处：FTIR中“745 cm⁻¹扰动”具体归属未详细展开；跨页处文本无明显断裂，但“O2−−”双负号和“excahnge”拼写为可疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8002,
+      "prompt_tokens": 10545,
+      "total_tokens": 18547,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5272
+      }
+    },
+    "content_chars": 4392
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

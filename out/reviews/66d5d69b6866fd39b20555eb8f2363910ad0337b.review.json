@@ -1,0 +1,63 @@
+{
+  "sha1": "66d5d69b6866fd39b20555eb8f2363910ad0337b",
+  "title": "Reduced carbon emission estimates from fossil fuel combustion and cement production in China",
+  "doi": "https://doi.org/10.1038/nature14677",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/66d5d69b6866fd39b20555eb8f2363910ad0337b/index.html",
+  "source_chars": 47789,
+  "markdown_chars": 2780,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "which 4,243 mines represent 36% of Chinese coal production in 201123; Fig. 1",
+      "type": "疑似文本拼接错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "年份和引用编号可能粘连：原文应为“2011”和上标引用23，但提取合并为“201123”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "under a 2C warming target",
+      "type": "疑似缺失度符号",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "上下文中“2C”应为“2°C”，但抽取文本缺少度符号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "under a 2C warming target",
+      "type": "疑似乱码/缺失度符号",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "“2C”可能为“2°C”的显示乱码，度符号异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：2013年排放2.49 GtC（2σ=±7.3%）；煤排放因子比IPCC低40%；水泥排放0.17 GtC vs CDIAC 0.30/EDGAR 0.24；累计下调2.9 GtC；氧化率92%等。公式和单位基本保留。不确定之处：原文中“201123”和“2C/2C”可能有文本抽取缺陷，已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10435,
+      "prompt_tokens": 13014,
+      "total_tokens": 23449,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8374
+      }
+    },
+    "content_chars": 3725
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

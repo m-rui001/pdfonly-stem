@@ -1,0 +1,55 @@
+{
+  "sha1": "0c23ad5cbdfa10c4365386cb5727601b47818819",
+  "title": "A Small-Sized Object Detection Oriented Multi-Scale Feature Fusion Approach With Application to Defect Detection",
+  "doi": "https://doi.org/10.1109/tim.2022.3153997",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0c23ad5cbdfa10c4365386cb5727601b47818819/index.html",
+  "source_chars": 80351,
+  "markdown_chars": 4413,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "  if i = 1  C5 ⊕ Si (C5 ) , outi = outi−1 ⊕ Si (outi−1 ) , if i = 2, 3, 4   Si (outi−1 ) , if i = 5",
+      "type": "乱码/公式损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)的cases环境在提取中成为乱码，无法直接复用；根据上下文文字说明可推断其含义，但原文本身以损坏形式呈现，应标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "P [pool (P2 , 4) , pool (P3 , 2) , intp (P5 , 2)] x= (3) 3",
+      "type": "疑似排版错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式(3)提取中分子缺少括号和加号，原意应为三个操作的平均，但提取文本呈现为“P [ ... ] x= (3) 3”的断裂形式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、各数据集消融数值（COCO、VOC、VisDrone）及PCB对比表格中的AP/AP@50/APs等关键指标，与提取文本一致。公式推导中，式(1)因原始提取损坏而无法准确呈现，已标注；式(3)提取不完整，已按上下文描述但未补全符号。其余公式如式(2)、(4)-(7)、(8)-(13)均按原文保留。结论方向与数据一致，无外部知识补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4514,
+      "prompt_tokens": 20186,
+      "total_tokens": 24700,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1462
+      }
+    },
+    "content_chars": 5274,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

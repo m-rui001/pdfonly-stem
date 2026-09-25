@@ -1,0 +1,55 @@
+{
+  "sha1": "a3d88f3d8ea85a571beac535512ac320cb7a99c5",
+  "title": "A Facile Method to Fabricate Anisotropic Hydrogels with Perfectly Aligned Hierarchical Fibrous Structures",
+  "doi": "https://doi.org/10.1002/adma.201704937",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a3d88f3d8ea85a571beac535512ac320cb7a99c5/index.html",
+  "source_chars": 51472,
+  "markdown_chars": 2449,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65",
+      "type": "formatting_noise",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "各页顶部重复出现的连续数字是投稿模板的行号，非正文内容，应在阅读中忽略。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Young’s modulus (E), fracture stress (f), and fracture strain (f)",
+      "type": "possible_character_corruption",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "字符“f”和“f”疑似为希腊字母σ和ε的渲染乱码，依据上下文判断，但原文可见字符为乱码。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文及表1中的关键数值：海藻酸和纤维素体系的模量、应力、应变、功、水含量，以及收缩力10.55 N、收缩应力17.6 MPa、滞后面积0.5和1 MJ/m³、75%恢复等，均与提取文本一致。不确定之处：希腊字母σ和ε在提取文本中显示为乱码，已在问题中标注；各页行号噪声已排除。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7816,
+      "prompt_tokens": 15752,
+      "total_tokens": 23568,
+      "prompt_tokens_details": {
+        "cached_tokens": 14336
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5877
+      }
+    },
+    "content_chars": 3354,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

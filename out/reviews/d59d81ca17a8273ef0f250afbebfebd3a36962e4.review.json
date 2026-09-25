@@ -1,0 +1,54 @@
+{
+  "sha1": "d59d81ca17a8273ef0f250afbebfebd3a36962e4",
+  "title": "Uppaal SMC tutorial",
+  "doi": "https://doi.org/10.1007/s10009-014-0361-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d59d81ca17a8273ef0f250afbebfebd3a36962e4/index.html",
+  "source_chars": 78018,
+  "markdown_chars": 5320,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Subsequently the combination ( 16 to 56 ) of these as illustrated in distribution of the overall delay is obtained by a weighted Fig. 2b.",
+      "type": "疑似错误/句子顺序混乱",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中'16 to 56'疑似应为'1/6 to 5/6'（概率分数），且句子语序异常，可能缺失'as shown in Fig. 2b'等部分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "T[0]’==-T[0]/10 K’==0 && +sum(j:int[0,1]) T[0]’==K - T[0]/10 A[0][j]*(T[j]+-T[0])/s",
+      "type": "疑似公式拼接错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "两条ODE公式被合并在一行，且缺少分隔符，可能因提取排版导致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对主要数值：A1/A2 到达时间区间 [6,12]/[4,12]，列车概率估计区间 [0.502421,0.602316] 和 [0.902606,1]，假设检验运行次数 66/62/65/67/49，期望值 3.64775±0.0126354，两房间概率区间 [0.45,0.55] 和 [0.65,0.75]，比较查询运行次数 902/258/738 等。公式方面，化学动力学 ODE 与原文一致，但抽取文本中第9页 ODE 表达式有乱序，已在 issues 中标出。论文中所有未在提取文本明确出现的图（如 Fig.11 等）未做描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4685,
+      "prompt_tokens": 19701,
+      "total_tokens": 24386,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1086
+      }
+    },
+    "content_chars": 6344
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "sha1": "7812214950ec1937efcd3d432156899d03a62156",
+  "title": "Efficient tandem solar cells with solution-processed perovskite on textured crystalline silicon",
+  "doi": "https://doi.org/10.1126/science.aaz3691",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/7812214950ec1937efcd3d432156899d03a62156/index.html",
+  "source_chars": 38128,
+  "markdown_chars": 7415,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{P b l}_{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式PbI₂被OCR误识别为Pb l₂（字母l代替大写I），影响对前驱体材料的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "$ \\mathrm{N i O{x}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "化学式NiOₓ中下标x被OCR识别为普通字符{x}，虽不影响理解但格式不准确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "$ \\left( V_{\\mathrm{O C}} \\right. $ to $ \\mathrm{J}{\\mathrm{S C}} $ and $ \\mathrm{J}{\\mathrm{S C}} $ to $ \\mathrm{V}{\\mathrm{O C}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "J_SC和V_OC的下标格式在OCR中部分丢失（如J{SC}而非J_SC），但数值和含义仍可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "J-V characteristics (E) of certified SLP-treated textured tandems. MPP tracking (F) of certified SLP-treated textured tandems and PCE distributions of 88 devices.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Fig. 4图注中(E)和(F)的描述与正文中Fig. 4E和4F的引用顺序存在轻微不一致，但整体信息可理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Efficient tandem solar cells with solution-processed perovskite on textured crystalline silicon",
+  "self_check": "已核对关键数值：认证PCE 25.7%、J_SC ~19.3 mA/cm²（顶电池）、FF从72%提升至77%、载流子寿命从570 ns增至900 ns、耗尽区宽度在金字塔谷~380 nm vs 顶部~100 nm、EQE平台92-93%（650-730 nm）、稳定性测试400小时@85°C和400小时@40°C MPP。公式符号如Cs₀.₀₅MA₀.₁₅FA₀.₈PbI₂.₂₅Br₀.₇₅和1.68 eV带隙已保留。不确定处：Fig. 4图注中(E)和(F)的编号与正文引用可能存在轻微错位，但核心数据一致。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5356,
+      "prompt_tokens": 9959,
+      "total_tokens": 15315,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9098,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

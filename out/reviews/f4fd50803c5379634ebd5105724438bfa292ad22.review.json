@@ -1,0 +1,66 @@
+{
+  "sha1": "f4fd50803c5379634ebd5105724438bfa292ad22",
+  "title": "Highly Oriented Low-Dimensional Tin Halide Perovskites with Enhanced Stability and Photovoltaic Performance",
+  "doi": "https://doi.org/10.1021/jacs.7b01815",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f4fd50803c5379634ebd5105724438bfa292ad22/index.html",
+  "source_chars": 43082,
+  "markdown_chars": 7616,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "FASnl $ _{3} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式 FASnI₃ 被误抽为 FASnl₃（小写 L 代替大写 I），属明显字符识别错误，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "P E A _ {2} F A _ {n - 1} S n _ {i} I _ {3 n + 1}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "分解路径 (2) 的化学式中 Sn 的下标被抽为 i 而非 n，与路径 (1) 及上下文结构式 (PEA)₂(FA)ₙ₋₁SnₙI₃ₙ₊₁ 不一致，属公式符号抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "8%)，PCBM (Nano-C, 99%) .",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "材料清单中氯苯条目以“8%)”结尾，缺少浓度或纯度信息，疑为 OCR 截断，但不影响论证理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Highly Oriented Low-Dimensional Tin Halide Perovskites with Enhanced Stability and Photovoltaic Performance",
+  "self_check": "已核对：摘要与结论中的 PCE 5.94%、未封装器件 100 小时稳定性、V_oc 0.59 V、J_sc 14.44 mA/cm²、FF 69%、EQE 积分 J_sc 14.57 mA/cm²、30 器件统计值、载流子浓度 2.27×10¹⁷ cm⁻³、载流子寿命 6.3/4.97/3.12 ns、3D 器件 48 小时衰减至 23% 与 20% PEA 器件 100 小时保持 96% 等关键数值均与正文一致。公式 (1)(2) 按提取文本原样保留，其中路径 (2) 的 Sn 下标 i 疑为 n 的 OCR 错误，已在 extraction_issues 中标出，未静默改正。仍不确定处：实验部分氯苯条目信息不完整；GIWAXS 波长数值 1.2398 未标注单位，按原文照录。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5601,
+      "prompt_tokens": 13171,
+      "total_tokens": 18772,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8987,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

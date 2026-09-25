@@ -1,0 +1,522 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Opportunities and challenges for tandem solar cells using metal halide perovskite semiconductors</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Opportunities and challenges for tandem solar cells using metal halide perovskite semiconductors</h1><p class="meta">https://doi.org/10.1038/s41560-018-0190-4 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><div>
+
+# Opportunities and challenges for tandem solar cells using metal halide perovskite semiconductors
+
+</div>
+<p>Tomas Leijtens, Kevin A. Bush, Rohit Prasanna, Michael D. McGehee Materials Science and Engineering, Stanford University, CA, USA</p>
+<p>Abstract Metal halide perovskite semiconductors possess excellent optoelectronic properties allowing them to reach high solar cell performances, have tunable bandgaps, and can be rapidly and cheaply deposited from low cost precursors. This makes them ideal candidate materials for making tandem solar cells, either by using perovskites as the wide bandgap top cell along with low band gap silicon or copper indium diselenide or by using both wide and small bandgap perovskite semiconductors to make all-perovskite tandem solar cells. This review highlights the unique potential of perovskite tandem solar cells to reach solar to electricity conversion efficiencies far above those of single-junction solar cells at low costs. We discuss the recent developments in perovskite-based tandem fabrication, and detail directions for future research to take this technology beyond the proof-of-concept stage.</p>
+<p>Rapid cost reductions in photovoltaic module manufacturing have made balance-of system costs and installation costs the major contributors to the price of installed solar in both residential and utility settings. These costs scale with the solar panel area required, making the efficiency of photovoltaic panels one of the most important and promising directions for technical developments. The efficiencies of c-Si and thin-film, such as CdTe and CIGS, technologies have started to saturate at $ \sim 2 6 $ and $ 2 3 \%^{1} $ respectively, and are limited to the fundamental Shockley-Queisser (SQ) limit of 31-33 % for single junction (SJ) solar cells. Multi-junction solar cells, comprising multiple absorber layers with complementary bandgaps, offer a proven approach to reach significantly higher performances. III-V compound semiconductors have been employed, sometimes in conjunction with Ge, to make efficient (39 % under 1 sun) multi-junction solar cells with up to 5 different absorber layers $ ^{1,2} $ . Unfortunately, these require epitaxial growth and lattice matching across multiple single crystal semiconductor layers, which is generally achieved by slow and cost-prohibitive processes such as metal organic chemical vapor deposition (MOCVD) and molecular beam epitaxy (MBE) that require the use of expensive single crystal substrates. Other than III-V compounds, established semiconductor</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><p>systems do not offer a wide range of bandgaps capable of high performances $ ^{3,4} $ , leaving no cost effective solution for high efficiency tandem solar cells.</p>
+<p>Solar cells comprising polycrystalline films of metal halide perovskite semiconductors have recently attracted attention for their potential to be processed at low cost from commonly available precursors $ ^{5-7} $ via both solution $ ^{8} $ and vapor deposition routes $ ^{9} $ . Crucially for tandem applications, their bandgaps can be tuned by simple substitution of chemical elements on the A, B, and X sites of the $ \mathrm{A B X_{3}} $ crystal structure yielding functioning solar cells with a range of bandgaps between 1.18 and 2.3 $ \mathrm{e V}^{1 0-1 2} $ . As a result, perovskite solar cells are attractive candidates for use in tandem solar cells, both in hybrid configurations where they are paired with more established bottom cells such as c-Si and CIGS or in all-perovskite tandem solar cells.</p>
+<p>This review will explore the potential for perovskite-based tandem cells. We will discuss the unique promise of metal halide perovskites for multijunction solar cell applications, highlight current developments of perovskite tandems, and discuss the work that remains to be done to bridge the gap to commercial readiness. As laboratory scale devices continue to high efficiencies, proving the potential of perovskite tandem solar cells, it will become increasingly important to consider the design of the tandem devices holistically to ensure that they are translatable to commercial manufacturing and operation in real world conditions.</p>
+<h2>I. Tandem solar cells and the promise of perovskites</h2>
+<p>Multijunction (tandem) solar cells mitigate losses that come from carrier thermalization by using several semiconductor layers with different bandgaps. In a double junction tandem, a "top cell" with a large bandgap absorbs high energy photons but permits lower energy photons to pass through to be absorbed in the "bottom cell," which has a small bandgap. In this way, the higher energy photons generate a high voltage in the top cell while the low energy photons are absorbed in the bottom cell, raising the obtainable efficiency of the combined tandem cell over that of either a single high or low bandgap solar cell.</p>
+<p>Plots of theoretical double junction tandem solar cell performances versus bottom and top cell bandgaps in both monolithic two-terminal (2T) and mechanically stacked four-terminal (4T) configurations are provided in Figure 1a and b along with the current state of the art perovskite based tandems as reported in the literature. It is critical to select absorbers with appropriate bandgaps for both subcells, especially when developing 2T tandems. In Figure 1a, we compute</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>theoretical maximum efficiency in a slightly different way from that typically used when describing the 2T tandem limit; we allow for the thickness of the top cells to vary so that current matching can be easily achieved at half the bottom cell SJ photocurrent. This widens the bandgap window in which the highest efficiency tandems can be achieved. Details are provided in the SI.</p>
+<p>Theoretical performances around 42 % can be reached for bottom cells with 0.6-1.3 eV bandgaps and top cells with 1.4-1.9 eV bandgaps. As demonstrated in Figure 1c and the bandgap tuning text box, metal halide perovskite semiconductors can be designed to meet these requirements; solar cells have already been made with bandgaps from 1.18-2.3 eV, while &gt;17% solar cells have been developed within the slightly narrower window of bandgaps of 1.25-1.8 eV. Currently, perovskite-perovskite tandems have obtained $ 18.5 \%^{13} $ and $ 21.0 \%^{14} $ in 2T and 4T configurations with matched bandgaps.</p>
+<p>The black dotted line in Figures 1a and b represents the $ \sim1.1 $ eV bandgap of c-Si and the best performing CIGS solar cells. These could be ideally paired with perovskites in the 1.6-1.75 eV range. This type of "hybrid" tandem approach where perovskites provide a boost in efficiency for little additional cost presents an exciting path to delivering higher efficiency panels without significant additional costs or changes to existing c-Si manufacturing lines and supply chains. This may be the most direct pathway to commercializing perovskite based photovoltaics, and also one of the fastest routes to realizing a step improvement in commercially available c-Si module efficiencies. As a result, the perovskite-Si tandem has been the focus of a great deal of research and has recently reached efficiencies of $ 23.6 \%^{15} $ and $ 26.4 \%^{16} $ in 2T and 4T configurations, respectively. In both cases, the tandem solar cell has $ &gt; 25 \% $ greater efficiency (relative) than the SJ silicon solar cell used as the bottom cell.</p>
+<p>Figure 1c also depicts the SJ SQ limit as a function of bandgap and demonstrates that almost the entire range of available perovskite bandgaps can attain over 50 % (but less than 80 %) of the SQ limit, putting them in a comparable position to materials such as c-Si, CdTe, and $ \mathrm{G a l n P}^{1,1 7} $ , again making perovskites highly attractive for use in tandem solar cells.</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><div>
+
+a)
+
+</div>
+<div>
+
+b)
+
+</div>
+<div>
+
+C)
+
+</div>
+<div>
+
+d)
+
+</div>
+<div>
+
+Figure 1. Metal halide perovskite solar cells. (a) Theoretical efficiency limit for 2T tandems, calculated with different subcell thicknesses, each picked to optimize the performance for each bandgap combination. The dotted white lines mark the lowest bandgap currently accessible to metal halide perovskite semiconductors. The solid symbols indicate bandgap combinations thus far used in making all-perovskite tandems. The black line marks the 1.1 eV bandgap of Silicon while the open symbols represent the bandgap combinations for the best achieved 2T perovskite-Silicon tandems. (b) The same plot is provided for 4T tandems. Grey shading signifies anything below the SQ limit of 32 % for a SJ with a 1.1eV band gap indicating where there is no efficiency gain in building a tandem device. (c) SJ record power conversion efficiencies are plotted as a function of perovskite bandgap and compared to the SQ limit. Different fractions of the detailed balance limit are denoted by the different color shadings on the plot. (d) The open circuit voltage of SJ perovskite solar cells of varying bandgaps is displayed and compared to the "ideal" open circuit voltage as determined from detailed balance. Detailed information and references for these points are provided in Supporting Table 1.
+
+</div></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><table><tbody><tr><td></td><td>Bottom Cell</td><td>Top Cell</td><td>PCE(%)</td><td>Jsc(mAcm-2)</td><td>Voc(V)</td><td>FF</td><td>Ref</td></tr><tr><td>4T</td><td>IBC c-Si</td><td>FA0.75MA0.15Cs0.10Rb(I0.66Br0.33)3+5%RbI(1.63eV)MAPbI3</td><td>26.4</td><td>19.4,18.8</td><td>1.12,0.73</td><td>0.73,0.80</td><td>Duong et al</td></tr><tr><td>4T</td><td>SHJ c-Si</td><td>(1.55eV)FA0.83Cs0.17Pb(I0.6Br0.4)3</td><td>25.2</td><td>20.1,16.0</td><td>1.07,0.69</td><td>0.76,0.80</td><td>Werner et al</td></tr><tr><td>4T</td><td>SHJ c-Si</td><td>(1.74eV)MAPbI3</td><td>19.8</td><td>19.9,13.9</td><td>1.10,0.69</td><td>0.71,0.76</td><td>McMeekin et al</td></tr><tr><td>4T</td><td>TI mc-Si</td><td>(1.55eV)FA0.83Cs0.17Pb(I0.83Br0.17)3</td><td>17.0</td><td>17.5,11.1</td><td>1.03,0.55</td><td>0.71,0.70</td><td>Bailie et al</td></tr><tr><td>2T</td><td>SHJ c-Si</td><td>(1.63eV)Cs0.07Rb0.03FA0.765MA0.135Pb(I0.85Br0.15)3</td><td>23.6</td><td>18.1</td><td>1.65</td><td>0.79</td><td>Bush et al</td></tr><tr><td>2T</td><td>n-type HJ c-Si</td><td>(1.62eV)Cs0.19MA0.81PbI3</td><td>22.5</td><td>17.6</td><td>1.75</td><td>0.73</td><td>Wu et al</td></tr><tr><td>2T</td><td>SHJ c-Si</td><td>(1.58eV)MAPbI3</td><td>22.0</td><td>16.8</td><td>1.75</td><td>77.5</td><td>Sahli et al</td></tr><tr><td>2T</td><td>SHJ c-Si</td><td>(1.55eV)MAPbI3</td><td>21.2</td><td>15.9</td><td>1.69</td><td>0.80</td><td>Werner et al</td></tr><tr><td>2T</td><td>SHJ c-Si</td><td>(1.55eV)MAPbI3</td><td>18.1</td><td>14.0</td><td>1.76</td><td>0.77</td><td>Albrecht et al</td></tr><tr><td>2T</td><td>n-type,HJ</td><td>(1.55eV)</td><td>13.7</td><td>11.5</td><td>1.58</td><td>0.75</td><td>Mailoa et al</td></tr><tr><td></td><td>Bottom Cell</td><td>Top Cell</td><td>PCE(%)</td><td>Jsc(mAcm-2)</td><td>Voc(V)</td><td>FF</td><td>Source</td></tr><tr><td>4T</td><td>FA0.60MA0.40Sn0.60Pb0.40I3(1.25eV)</td><td>MAPbI3(1.55eV)</td><td>21.0</td><td>20.1,4.8</td><td>1.14,0.81</td><td>0.80,0.74</td><td>Zhao et al</td></tr><tr><td>4T</td><td>FA0.75Cs0.25Sn0.50Pb0.50I3(1.27eV)</td><td>FA0.83Cs0.17Pb(I0.83Br0.17)3(1.63eV)</td><td>20.3</td><td>20.3,7.9</td><td>0.97,0.74</td><td>0.79,0.73</td><td>Eperon,Leijtens</td></tr><tr><td>2T</td><td>MASn0.50Pb0.50I3(1.22eV)</td><td>MA0.9Cs0.1Pb(I0.6Br0.4)3(1.82)</td><td>18.5</td><td>12.3</td><td>1.98</td><td>0.73</td><td>Rajagopal et al</td></tr><tr><td>2T</td><td>FA0.75Cs0.25Sn0.50Pb0.50I3(1.27eV)</td><td>FA0.83Cs0.17Pb(I0.50Br0.50)3(1.85eV)</td><td>17.0</td><td>14.5</td><td>1.66</td><td>0.70</td><td>Eperon,Leijtens</td></tr><tr><td>2T</td><td>MAPbI3(1.55eV)</td><td>Fa0.85Cs0.15Pb(I0.30Br0.70)3(2eV)</td><td>18.1</td><td>9.8</td><td>2.29</td><td>0.80</td><td>Forgacs</td></tr><tr><td>2T</td><td>MAPbI3(1.55eV)</td><td>MAPbI3(1.55eV)</td><td>7.0</td><td>6.6</td><td>1.89</td><td>0.56</td><td>Jiang</td></tr></tbody></table>
+<div>
+
+Table 1. Perovskite-silicon and perovskite-perovskite tandem efficiencies. IBC stands for interdigitated back contact solar cells, SHJ stands for silicon heterojunction solar cells, HJ stands for homo junction solar cells, and TI stands for low grade multicrystaline silicon solar cells. The PCEs are extracted from the steady state measurements where provided, while the $ \mathrm{J_{SC}} $ $ \mathrm{V_{OC}} $ , and FF are from the scanned current-voltage characteristics. The references for each entry are provided here in order of appearance: Perovskite - Silicon $ ^{15,16,18-25} $ , and perovskite - perovskite $ ^{10,13,14,26,27} $ .
+
+</div>
+<h2>Energy Yield</h2>
+<p>While tandems undoubtedly offer the highest performances under AM1.5 irradiation, real world conditions are often different, and there has been a question over whether varying temperature and irradiation spectra will negatively impact the overall energy yield of tandem solar cells. A recent study $ ^{28} $ combined optical modeling with device modeling, using</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>experimentally derived parameters, to determine that both perovskite-Si and perovskite-perovskite 2T tandems present real promise to exceed 30% and approach 34% under AM1.5 conditions. Importantly, both Duck et al and Horantner et al $ ^{28,29} $ also demonstrated that the energy yield for 2T and 4T tandems can both be expected to achieve the efficiency enhancement of the devices designed for standard testing conditions in the real world as well, and that neither thermal or optical mismatch presents any considerable additional losses in a series connected tandem. This suggests that there is no clear advantage in voltage vs current matching in 4T architectures. Additionally, the higher practical efficiency, fewer processing steps, and simpler module design lets us argue that monolithically integrated 2T tandems offer greater promise than the mechanically stacked 4T tandem designs. These results would bode very well for perovskite tandems lowering the levelized cost of electricity of PV systems. On the other hand, Futscher et al $ ^{30} $ found that tandems (2T and 4T) offer little benefit over SJs in terms of energy yield, but made different assumptions in their modeling. Both studies extracted the device parameters by fitting published current-voltage characteristics of perovskite solar cells, but Futscher chose a device with a high ideality factor and relatively low shunt resistance for the perovskite top cell, whereas Horantner et al chose a device with low ideality factor and high shunt resistance. While there is little difference at 1 sun with AM1.5 spectrum, there is a big difference in behavior at low light intensities, where the top cell chosen by Futsher suffers much more in $ V_{oc} $ and FF and hence limits tandem performance under low light conditions. Hence, differences in total energy yield were primarily dictated by the predicted efficiencies at low light intensities rather than in the mismatched photocurrent generation in the different subcells due to variations in irradiation spectrum throughout the course of a year. As a result, the energy yield of perovskite tandems will depend heavily on the quality of the perovskite sub cells in question - high shunt resistances and ideality factors approaching 1 will be critical to enable high performances at low light intensities and resultant high energy yields.</p>
+<h2>Costs</h2>
+<p>Metal halide perovskites are unique from an industrial standpoint because they possess optoelectronic properties reminiscent of high quality single crystal semiconductors, but can be manufactured using low cost raw materials and simple thin film deposition processes. There exist several published technoeconomic analyses $ ^{31-33} $ using different assumptions in manufacturing processes and materials selection leading to ranges in expected perovskite SJ module costs of</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><p>~30-120 $ m^{-2} $ . Differences in manufacturing process such as the use of a thermal evaporator vs a sputter tool for depositing metal electrodes affects not only capital costs but also throughput. Despite these differences and differences in materials selection and assumptions of the facility depreciation rate, all three studies agree that the materials costs generally dominate the module cost (&gt;90% of total costs). The difference in estimated module costs of $ 30^{31} $ and $ 120^{32} $ $ m^{-2} $ between the studies lies predominantly in the choice of materials used: using custom designed organic materials such as P3HT and using expensive metal electrodes such as gold will of course yield expensive modules. While the costs of custom designed and expensive organic materials such as P3HT, fullerenes, and spiro-OMeTAD will inevitably reduce as production volumes increase, it is prudent to minimize their use to enable low cost perovskite modules. Replacing impractical materials from the perovskite solar cell stack with lower cost materials such as $ \mathrm{S n O_{2}} $ $ \mathrm{N i O_{x}} $ , and commonly used electrode materials like ITO, IZO, and Al yields a module cost structure that is only weakly dependent on the perovskite and contact layer costs (Figure 2) $ ^{31,33} $ . While the device layers used in these studies may not have been identical to those in the best tandem architectures, some broad conclusions can be drawn (Figure 2). The substrate (glass) is the limiting factor in cost of any perovskite solar cell, contributing $ \sim $ 8/m $ ^{2} $ , followed by the junction box and TCO deposition (including the materials cost of Indium) at a similar $ /m^{2} $ , and module lamination and packaging. These numbers agree with cost predictions by Woodhouse et al for CIGS modules $ ^{34,35} $ . The perovskite active layer is generally expected to contribute very little, at $ \sim $ 1/m $ ^{2} $ , while the estimated costs for depositing the selective contacts has varied from $ \sim $ 1/m $ ^{2,31} $ to $ \sim $ 70/m $ ^{2,32} $ depending on the choice in materials as discussed above. The total costs discussed above vary only slightly (20 % reduction with an almost 3 fold increase in throughput from 0.5 to $ 1.4 \mathrm{m}^{2} \mathrm{min}^{-1} $ ) with throughput time and deposition method, since they are predominantly dependent on the materials costs.</p>
+<p>Since 2T tandems do not require additional substrates, packaging, or junction boxes, the additional costs relative to SJ perovskite or silicon solar cells are associated with the perovskite top cell in a tandem and should be dictated by the perovskite active layer, the selective contacts, and the TCOs costs. These are estimated to be on the order of $10-20/m^{2}$, compared to the already present costs of $70-80/m^{2}$ for a commercial c-Si module as the bottom cell. This implies that the tandems should provide a $ \sim 25\% $ relative boost in efficiency to make sure they do not raise the $ /W_{P} $ of the modules. This could be complicated by the need for protective layers</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>(such as $ \mathrm{S n O_{2}} $ ) in a tandem stack to enable sputter coating of transparent electrodes (see Section IV); it is imperative that these additional layers do not add considerable cost to the modules. Fortunately, such layers are currently deposited as nanoparticles from solution or as conformal dense layers through atomic layer deposition and CVD type depositions, which have been demonstrated to be cost effective at scale depending on precursors used $ ^{36} $ . There is added value to a higher efficiency module as a 4% absolute increase in module efficiency can reduce the area related balance of systems costs by $ \sim0.03 $ and 0.06 $ / W_{P} $ for utility scale and rooftop solar installations, respectively, as recently quantified by Werner et al $ ^{37} $ . Werner et al also performed a more rough cost analysis of perovskite-Silicon tandems. They assumed a constant cost for each additional step that was based on existing manufacturing processes used in c-Si manufacturing lines (similar in cost to ITO deposition) and found that the BOS related savings outweighed the additional manufacturing costs for rooftop installations for 4 or less additional steps. We must point out that that study assumed each step to cost the same as an ITO deposition, which is expected to be the most expensive step in the perovskite solar cell manufacturing process flow, so that the added costs per layer were most likely an upper bound. Taking these preliminary costing studies together with the realistically obtainable cell level efficiencies near 30% using existing device structures and materials and high annual energy yield $ ^{28} $ , the perovskite-Si tandem seems poised to be a success provided that the perovskite top cell does not limit the tandem stability.</p>
+<p>All-perovskite tandems offer the promise of even lower manufacturing costs associated with roll to roll thin film manufacturing, as well as the allure of efficient but lightweight and flexible photovoltaic modules, but require substantially more materials development particularly in terms of flexible encapsulation. Assuming a similar cost structure to those published for SJ perovskite solar cells, but incorporating additional contact layers, a small bandgap perovskite, and an extra TCO (for the recombination layer) costs below $40/m^{2}$ should be achievable for a device architecture capable of nearing 30% power conversion efficiency at the cell level and &gt;25% at module level, translating ultimately to &lt; $0.16/W_{P}$ . If TCO-free (or more specifically, indium-free) recombination layers are developed, this cost would drop further. Unfortunately, cost effective flexible encapsulation is still under development, raising costs of flexible all-perovskite tandems over those of rigid, glass packaged modules.</p></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><div>
+
+Figure 2. Cost analysis of perovskite solar cells. Cost breakdown of perovskite single junction modules from Song et al $ ^{31} $ . This serves as a reference point to estimate cost contributions in tandem architectures.
+
+</div>
+<h2>II. Wide bandgap perovskite absorbers for top cells</h2></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><div>
+
+Figure 3. Spectral Efficiency of various potential perovskite top cell candidates, calculated using a published model $ ^{38} $ (solid lines). The theoretical (colored dashed lines) spectral efficiency according to detailed balance is provided for several relevant bandgaps for reference. The spectral efficiencies of the current best low bandgap perovskite (dark grey) and c-Si (light grey) cells are also provided in faded lines. Spectral efficiency $ = V_{OC}\times FF\times EQE $ at a given wavelength divided by the incident power at that wavelength.
+
+</div>
+<p>Figure 1 demonstrates that the exact bandgaps of the bottom and top cells must be carefully selected to achieve the highest efficiency monolithically integrated tandems, as the current in the tandem will be limited by the lowest performer. Yu, Leilaeioun, and Holman argue that top and bottom cell partners should be chosen based on each cell's spectral efficiency $ ^{38} $ . This valuable metric highlights that a top cell will only improve the efficiency of a bottom cell if it has a higher efficiency resolved at a given wavelength, which should be a natural result of a higher open circuit voltage. Spectral efficiency is a convolution of the material's fill factor (FF), open circuit voltage, and external quantum efficiency (EQE) at a given wavelength. With long carrier diffusion lengths and strong light absorption, perovskites readily attain high EQEs,</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>making it critical to minimize voltage loss and increase FF to maximize efficiency at a given wavelength. Figure 3 shows the spectral efficiencies of the most promising perovskite top cell candidates and the best perovskite and c-Si bottom cells.</p>
+<p>Perovskite solar cells have already achieved losses in potential comparable to the best semiconductors such as GaAs and silicon:0.33 V for a X eV bandgap $ ^{39} $ , 0.36V for a 1.57 eV bandgap $ ^{40} $ , and 0.39 V with a 1.63 eV bandgap $ ^{41} $ rival the record voltage loss of 0.37 V for a silicon solar cell with a 1.12 eV bandgap $ ^{42} $ . Ideally, these low voltage losses would be universal to halide perovskites of any composition and bandgap. However, voltage has thus far not tracked linearly with increasing bandgap in bromide rich perovskite compounds (Figure 1d). Particularly striking is that 1.75eV cells developed with FA and Cs on the A site by Wang et al. $ ^{43} $ still do not surpass the spectral efficiency achieved by the 1.63 eV cells developed by Saliba et al. $ ^{41} $ or 1.55eV cells by Yang et al $ ^{44} $</p>
+<p>There may be several reasons for the fact that the $ V_{\mathrm{O C}} $ and spectral efficiency do not follow bandgap in perovskite-based solar cells, but the most well studied is that upon illumination, most mixed halide perovskites suffer from halide segregation into I-rich and Br-rich regions (a process termed the Hoke effect) $ ^{45} $ . This means that they may reach initial high efficiencies but degrade rapidly under illumination. In addition, carrier lifetimes for bromide containing high bandgap materials have remained lower than those of the more heavily studied iodide materials even when the Hoke effect does not occur. It is unclear whether the fast nonradiative recombination is due to unique bromide related defects, wider bandgaps exposing trap levels previously hidden within the bands for smaller bandgap materials, or simply the result of the bromide containing wide bandgap materials and associated selective contacts being less studied and optimized.</p>
+<p>Significant progress has been made in understanding the nature of light-induced phase segregation (Hoke effect) $ ^{45} $ . We refer the reader to two thorough reviews on the subject, which highlight current understanding (Slotcavage et al) $ ^{46} $ and demonstrate (Unger et al $ ^{47} $ ) that while compositional tuning of the A and X site in 3D perovskite structures offers some promise, no definite solution has been found for obtaining photo-stable 3D perovskite compositions approaching the 1.8 eV bandgaps that are most desirable for all-perovskite tandems. Strategies include stabilizing Br-free CsPbI $ _{3} $ ( $ \sim1.7 $ eV) in its black phase by making nanocrystals $ ^{48} $ , slowing</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>migration of the halide ions by incorporating sheets of large organic cations to make quasi 2D/3D structures $ ^{43,49} $ , and by compositional engineering $ ^{19} $ .</p>
+<p>Any top cell with a bandgap lower than $ \sim 1. 7-1. 75 $ eV can result in a tandem with a matched current density when paired with Si (1.1 eV) or perovskite (1.25 eV) bottom cells. At present, the compounds with $ \sim 1. 63 $ eV deliver some of the highest voltages (1.24 V) and spectral efficiencies better than those obtained for the less stable, higher bandgap materials, in addition to showing the best stability due to a low (17-18%) Br content $ ^{15,41} $ . This makes them promising top cell candidates. Figure 1a shows that for a 1.1eV bottom cell, a top cell bandgap of 1.63eV can still achieve a limiting efficiency of 43%, vs 44% with a 1.7eV bandgap. For all-perovskite tandems, with a bottom cell bandgap $ \sim 1. 25 $ eV, a 1.63eV bandgap top cell can still reach a theoretical maximum efficiency of $ \sim 39\% $ . Horantner et al $ ^{28} $ show, using a realistic, coupled optical and device model to determine ideal bandgap combinations for all-perovskite tandems, that reducing the top cell bandgap for the sake of improved stability does not necessarily introduce large losses in the practically obtainable efficiency. Indeed, the present generation of 1.63 eV top cells in a perovskite-silicon tandem can still yield a practical tandem performance over $ 31\% ^{50} $ and 29.5 % in an all-perovskite tandem.</p>
+<h2>III. Narrow bandgap perovskites for all-perovskite tandems</h2>
+<p>All-perovskite tandems offer a route to high efficiency while maintaining the benefits of low-cost and low-temperature fabrication as well as the possibility of lightweight, flexible form factors for both sub-cells in the stack. So far, all low band gap perovskites $ ^{12,14,51-55} $ useful for tandem applications use tin and lead on the B-site. This introduces advantages and challenges unique to all-perovskite tandem solar cells. The best performing single junction cell with a narrow gap perovskite reported so far uses $ \mathrm{F A}<em>{0.6} \mathrm{M A}</em>{0.4} \mathrm{S n}<em>{0.6} \mathrm{P b}</em>{0.4} \mathrm{I}<em>{3} $ achieving 17.8% PCE with a band gap of 1.25 eV $ ^{14,55} $ . This perovskite has been used to fabricate a (21%) mechanically stacked all-perovskite tandem $ ^{14} $ . While perovskites with still smaller band gaps have been reported, such as $ \mathrm{M A S n}</em>{0.8} \mathrm{P b}<em>{0.2} \mathrm{I}</em>{3} $ with a band gap of 1.19 eV $ ^{56} $ , these have not yet been demonstrated to yield solar cells with &gt;10 % PCE. Using perovskites with smaller band gaps is desirable to get closer to the ideal bottom cell band gap for a 2T tandem (Figure 1a) and because it allows the use of smaller band gap perovskites for a current-matched top cell, which are less susceptible to photo-instability due to light induced trap formation, as described above. Properties and challenges facing Sn-Pb perovskite bottom cells</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><p>Tin-lead perovskites have lower absorption cross-sections than pure lead perovskites (Figure 4a). Monolithic perovskite tandems and single junction low bandgap perovskite solar cells based on Sn-Pb perovskites so far have been limited by low short circuit currents due to low external quantum efficiency in the near infrared (Figure 4b, c). To obtain an EQE of higher than 80% across the spectrum, which will be essential for optimal current matching in a tandem, it has been necessary to use tin-lead perovskite layers that are over 1-um thick for the bottom cell $ ^{14} $ This in turn requires carrier diffusion lengths to be at least 3 um to allow efficient extraction of photogenerated charge. Early reports of tin perovskites showed extremely short carrier lifetimes of well below a nanosecond $ ^{10,57} $ ,but lifetimes of hundreds of nanoseconds have been achieved by compositional tuning on the A-site using methylammonium (MA) and formamidinium (FA) and optimizing processing conditions with antisolvent techniques to produce large grains $ ^{14,54} $ . Still, EQEs of all-perovskite tandems have been limited to below 80% (Figure 4b,c).</p>
+<p>On the other hand, many Sn-Pb perovskites display high open circuit voltages relative to their band gap $ ^{56} $ . The loss-in-potential $ (E_{\mathrm{g}}-qV_{\mathrm{oc}}) $ reported for these perovskites is as low as 0.33 $ \mathrm{eV}^{39} $ (Figure 1d), which is the smallest reported for any perovskite solar cell $ ^{41} $ and is even better than the loss-in-potential of the best crystalline silicon solar cells $ ^{58} $ . Horantner et al recently demonstrated through optical and device modeling that all-perovskite tandems based on the best reported small and wide bandgap perovskite solar cells can exceed 30% in performance with EQEs over 90% and high $ V_{\mathrm{OCS}} $ when thick (700-1000 nm) absorber layers are used $ ^{50} $ .</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><div>
+
+c)
+
+</div>
+<div>
+
+Figure 4. (a) Absorption (arbitrary units) for Pb and Sn-Pb based perovskite films of equal thickness, shifted along the x scale (arbitrary units of energy) for ease of comparison. (b,c) External quantum efficiency plots of a 17.0% and an 18.5% 2T perovskite-perovskite tandem from Eperon, Leijtens et al $ ^{10} $ and Rajagopal et al $ ^{13} $ .
+
+</div>
+<h2>IV. Tandem design</h2>
+<p>Fabrication challenges in perovskite tandem solar cells</p>
+<p>The device architectures and layers used within them that are described in the sections below are depicted in Figure 5, where Fig 5a-f are perovskite-silicon tandems and 5g-i are all-perovskite tandems.</p>
+<h2>1. TCO</h2>
+<p>Unlike in a single junction perovskite solar cell, the top TCO in many tandem architectures (both 2T and 4T) must be deposited on top of the perovskite cell to allow light to enter into the device. To prevent sputter damage to the soft layers comprising perovskite solar cells, research groups have had to develop protective "sputter buffer" layers $ ^{10,15,23,24} $ . These are typically thin (5- 30 nm) so as not to negatively impact electronic transport properties, and this has spurred a shift from solution processed layers $ ^{59} $ to conformally deposited vapor phase layers to enable deposition on even rough perovskite surfaces $ ^{10,15,23,24} $ . These deposition processes must be at a low enough temperature ( $ &lt; 1 0 0 \mathrm{~}^\circ \mathrm{C} $ ) and use mild enough precursors (perovskites are sensitive to oxidation and reactions with bases) that they do not damage the underlying layers. Additionally, they should be transparent and have appropriate energy levels. Ballif et al $ ^{23} $ used evaporated MoOx as a buffer on top of commonly used HTMs such as Spiro-OMeTAD, and Duong et al $ ^{16} $ used this approach in developing a 26.4 % 4T perovskite-Si tandem. Other suitable protective</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><p>materials could be $ \mathrm{N i O_{x}} $ and $ \mathrm{V O_{x}} $ . Tandem architectures with p-i-n polarity (such as those made on commercial p-type c-Si wafers) require protective electron conducting layers. Our group first used spin coated AZO nanoparticles $ ^{59} $ with success and then developed an atomic layer deposited $ \mathrm{S n O_{2}} $ layer to yield 23.6 % 2T tandems with promising stability $ ^{15} $ . Alternative materials could be ZnO (though this is prone to reacting with perovskite semiconductors), and $ \mathrm{T i O_{2}} $ (which is UV sensitive). The recent record all-perovskite tandems developed by Jen et al $ ^{54} $ do not use any special sputter buffer layer; position of the sample in relation to the plasma, gas flow, accelerating voltage, and temperature in the sputter tool may all be important parameters that enabled this result.</p>
+<p>$ \mathrm{A L D} \, \mathrm{S n O}_{2} $ and sputtered TCOs also improve the stability of perovskite solar cells by preventing the release of organic cations and the diffusion and subsequent reaction of metal and iodide $ ^{1 5, 5 9-6 1} $ . Given the volatile nature of the organic cations used on the A site in perovskite semiconductors, the low activation energy for halide vacancy formation and migration, and the propensity for metals to react with perovskite layers, it is essential to continue developing sputter buffer layers and TCOs with improved barrier properties $ ^{6 2-6 4} $ .</p></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><div>
+
+a
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Mailoa et al 13.7%
+
+</div>
+<div>
+
+b
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+C
+
+</div>
+<p>Albrecht et al 18%</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+e
+
+</div>
+<div>
+
+Werner et al 21.2%
+
+</div>
+<div>
+
+d
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Wu et al 22.5%
+
+</div>
+<div>
+
+f
+
+</div>
+<div>
+
+Bush et al 23.6%
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Sahli et al 22.0%
+
+</div></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><div>
+
+h
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 5. Tandem architectures. Monolithic tandem architectures. (a-f) depict perovskite-silicon tandems, while g-i depict perovskite-perovskite tandems. PCEs are provided.
+
+</div>
+<h2>2. Perovskite Layer</h2>
+<p>Tandem processing requires perovskites that are thermally and chemically robust. ALD and CVD processes often involve temperatures around 100 $ ^{\circ} \mathrm{C} $ for the precursors to react. The precursors themselves also tend to contain ligands and counter-reagents, like water, ozone, or hydrogen peroxide, that can degrade the perovskite $ ^{65} $ . In addition, common manufacturing processes used in silicon PV lines such as gridline printing and module lamination between glass sheets with adhesive polymers, such as EVA, often require annealing temperatures of up to 150 $ ^{\circ} \mathrm{C} $ . For these reasons, the volatile MA cation $ ^{62,66} $ may be somewhat less suitable than FA and Cs on the A site, though further work needs to be done to understand the stability of mixed A-site cation materials $ ^{41,67} $ . If solution processing is desired in 2T perovskite-perovskite tandems, then the morphology of the first deposited cell can strongly influence the coating and crystallization</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><p>of the second layer. As a result, smooth, homogenous perovskite films are critical to enable solution processed perovskite-perovskite tandems.</p>
+<h2>3. Recombination Layer</h2>
+<p>A 2T tandem requires a recombination layer in order to allow current to flow across the two subcells by allowing opposite carriers from the subcells to recombine in a highly doped layer. In traditional III-V multijunction solar cells, tunnel junctions must be lattice matched to the subcells $ ^{68,69} $ , limiting the available options. This restriction does not apply to perovskite tandems, since polycrystalline films of metal halide perovskites with good optoelectronic properties can be successfully grown without lattice matching on a wide variety substrates. Traditional recombination layers used in III-V tandems use a tunnel junction made of two semiconductors with high n- and p-type doping; these require extremely steep band bending across the junction so that the depletion regions are narrow enough to enable tunneling. A similar approach resulted in the first 2T perovskite-Si tandem, where a narrow n++/p++ junction on top of an n-type Si cell was used to allow tunneling of electrons from the p++ to the n++ layer on top of which the perovskite solar cell was built starting with the electron transporting $ \mathrm{T i O_{2}} $ layer $ ^{25} $ . A similar approach has yet to be demonstrated for the more commercially relevant p-type c-Si solar cells.</p>
+<p>Solution processed tandems made from organic molecules employ thin layers of highly doped organic (such as PEDOT:PSS) or inorganic layers (such as ZnO) as recombination layers, and this approach was adapted for perovskite-perovskite tandems with some success $ ^{27,70} $ . Bolink et al $ ^{26} $ also demonstrated the use of thermally evaporated layers of doped n and p type organic molecules as an effective recombination layer in an evaporated 2T tandem. We recently demonstrated the use of a sputtered ITO layer (deposited as described above) as a conductive recombination layer $ ^{10,13} $ . We and others also employ a thin ITO recombination layer in 2T perovskite-Si architectures $ ^{10,15,21} $ . The disadvantage of the highly conductive recombination contact is that carriers will be more prone to being funneled to any existent shunt pathways along the recombination layer $ ^{22} $ , a problem that could limit scaling to larger areas. Sahli et al $ ^{22} $ developed a nanocrystalline hydrogenated Si (nc-Si:H) recombination layer using n+ and p+ doped layers deposited via low temperature plasma-enhanced chemical vapor deposition compatible with SHJ solar cells and used it to make 22 % efficient small area $ (0.25\mathrm{cm}^{2}) $ and 18% efficient large $ (12.96\mathrm{cm}^{2}). $</p></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><h2>4. Compatible Processing</h2>
+<p>Since the first cell must remain intact during processing of the second cell, it dictates the processing window for the second subcell to be deposited. In the case of perovskite-Si tandems, the Si is always the substrate for the perovskite top cell. Most Si cells can withstand any temperature (up to 500 $ ^{\circ} \mathrm{C} $ ) and solvent that a perovskite deposition would require. The doped a-Si layer used to passivate the most efficient Si solar cells (SHJ), however, requires that the cell temperature remain below 200 $ ^{\circ} \mathrm{C} $ , and makes it impossible to use the record $ (22.1\%)^{71} $ perovskite solar cell architecture comprising mesoporous $ \mathrm{T i O_{2}} $ layers (which require 500 $ ^{\circ} \mathrm{C} $ sintering). As a result, the record 2T tandems on HIT cells have been made by using only low temperature processes for the perovskite cell deposition $ ^{15,23,24} $ . Wu et al $ ^{21} $ recently developed an effective n-type homo junction Si solar cell using SiN passivation layers and an ITO recombination layer, allowing the most efficient top cells based on mesoporous $ \mathrm{T i O_{2}} $ to be used in efficient tandem solar cells.</p>
+<p>Processing a perovskite solar cell on top of another perovskite solar cell is more difficult because the layers are more sensitive to temperature and solvents. To enable solution-processed perovskite layers, it is essential to use a protective layer between the two cells and use only low temperature processes. The protective layer should be conductive and serve as the recombination contact. We and others have used a sputtered ITO layer, which enabled the proof of principle demonstration of a 17% 2T perovskite tandem and more recently an 18.5% 2T perovskite tandem $ ^{10,13} $ . A completely solution processed 2T tandem $ ^{27} $ (including solution processed recombination layer) would likely have to make use of cross linked and doped organic layers, or uniform and impermeable metal oxide layers deposited by sol-gel processes. To date, such approaches have proven difficult. Making a fully dry, vapor deposited tandem would provide a simpler path to a structure in which none of the layers damage one another. Bolink et al $ ^{9,26} $ have recently proven thermal evaporation to be an effective route to depositing perovskites and recombination layers, but were not able to evaporate perovskite layers with the ideal bandgap combination, limiting their tandem performance. The ability to co-evaporate the most promising bottom and top cell perovskites highlighted in Sections II and III is complicated by the recent trend to use increasingly complex compositions using multiple A, B, and X site species $ ^{10,71,72} $ This makes developing vapor deposition routes for perovskites with ideal bandgaps a challenging though exciting and scalable route to enable high yield and efficient tandems.</p></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><h2>5. Maximizing Light Harvesting</h2>
+<p>Effective light management is a key challenge in making efficient tandem solar cells. It is important to mitigate parasitic absorption by avoiding thick, absorbing contact layers such as doped Spiro-OMeTAD (hole transporter) and TCOs with much free-carrier absorption in the $ \mathrm{N I R}^{2 3,7 3-7 5} $ . While ITO is commonly used in perovskite tandems, higher mobility materials, such as IZO and $ \mathrm{H-I n O_{x}}^{7 4,7 6,7 7} $ , require lower doping concentrations and display lower parasitic absorption in a tandem. There is also significant parasitic absorption at interfaces with the reflective back contacts that can be recovered by ensuring they consist of materials with large differences in refractive index. For instance, it is possible to obtain an extra 1.5 mA $ \mathrm{c m}^{-2} $ from the Si bottom cell by placing doped silicon nanoparticles between the a-Si and silver reflector layers $ ^{1 5} $ . Effective light management helped enable the development of 23.6% 2T and 26.4% 4T perovskite-Si tandems $ ^{1 5,1 6} $ .</p>
+<p>Since perovskite solar cells comprise thin films, optical interference effects are very commonly observed in EQEs of perovskite tandem solar cells. This is especially true for the perovskite-perovskite tandems; several mA $ \mathrm{cm}^{-2} $ are lost just due to optical interference effects $ ^{10,13} $ . Optical modeling $ ^{78,79} $ should enable rational design to minimize reflection peaks in the spectral response and even direct the IR part of the spectrum into the bottom cell and the visible into the top cell by selectively reflecting the visible light at the interlayer between the top and bottom cells. Complex refractive indexes for most commonly used perovskite materials are available $ ^{28,50,78-80} $ and should guide such work. Materials with very low refractive indexes should be avoided in the middle of the tandem stack since these will result in large reflections at interfaces with the high refractive index perovskite and Si subcells. The ITO recombination layer used in perovskite-Si tandems also induces reflectance losses to the Si subcell; the nc-Si:H recombination layer developed by Sahli $ ^{22} $ has significantly lower parasitic reflectance than an ITO recombination layer.</p>
+<p>To fully remove reflection losses by improving light incoupling and enhance the NIR response at the band edge, an ideal tandem solar cell would also benefit from surface texturing. This is commonly realized in the form of several um sized pyramids etched into c-Si wafers. Such texture improves light incoupling by minimizing reflections off the front surface while also scattering the light within the solar cell to enhance light trapping (enhancing path length and preventing escape through the front surface) and reduce optical interference to improve overall</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><p>light harvesting. This can be easily done to the back surface of a c-Si bottom cell, but there exist no published examples of perovskite-Si tandems using c-Si bottom cells with both sides textured, despite the fact that commercial c-Si wafers are textured on top and bottom for maximum light trapping. Solution processing of perovskites does not enable conformal deposition over sharp features with several um size. This limits the obtainable photocurrent in perovskite-silicon tandems by $ 1-2 \mathrm{~mA} \mathrm{~cm}^{-2} $ $ ^{81} $ The most logical solution is to deposit the perovskite solar cell layers via a vapor deposition process that will conform to the sharp features of the texture. Alternatively, it is also possible to position an electrically inert, but optically textured layer with appropriate refractive index directly on top of the top contact of the tandem solar cell to improve light harvesting $ ^{82} $</p>
+<p>Vapor processing would also enable perovskite-perovskite tandems to be deposited on pre-textured substrates. Such texturing may be the key to allowing perovskite-perovskite tandems to reach their full potential, both because of the low band edge absorption in tin-lead perovskite absorber layers and because of the interference effects described above that will limit their light harvesting ability.</p>
+<h2>Scaling of perovskite tandem solar cells</h2>
+<p>Most of the tandem solar cells reported in the literature have been made at only $ 1 \mathrm{~cm}^{2}. $ This is in line with most of the perovskite solar cell research in general, and allows for the translation of spin coating recipes optimized for single junctions to the tandem solar cells. Work at IMEC has demonstrated $ 4-\mathrm{cm}^{2} $ 4-terminal tandem solar modules approaching $ 24 \%^{8 3}, $ but still used spin coating for the perovskite subcell layers. There has been some progress on scaling single junction perovskite modules by using various solution coating techniques, with a record of close to 16% measured through a $ 10 \mathrm{~cm}^{2} $ aperture made through scalable blade coating $ ^{8 4}. $ With improved scribing, $ &gt; 1 7 \% $ printed modules could be readily realized. This has been enabled by careful solvent engineering to widen the processing window, the approach lends itself to low cost manufacturing of the perovskite subcell. All-perovskite tandem solar cells could be printed in this way. However, the recombination layer would have to be impermeable and the module would be sensitive to any pinholes within the recombination layer: any hole will lead to dissolution of the underlying cell area, potentially causing a short. For this reason, obtaining high yields for solution processed tandems may be a challenge. In addition, for reasons discussed</p></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><p>above, commercial c-Si wafers are textured, which would prevent the use of blade coated top cells unless they were planarized by a an additional step. Currently, lab scale tandem devices have planarized top surfaces for ease of perovskite deposition, but it is unclear whether this can easily be translated to a manufacturing context, and the planarization will result in less light trapping and lower photocurrents than could be achieved with texturing.</p>
+<p>One of the most stable and scalable perovskite architectures uses porous printed carbon electrodes and a dip coated perovskite layer. While this approach yields very stable devices $ ^{85,86} $ it is not suitable for either perovskite-Si or all-perovskite tandems due to the high deposition temperatures of the porous $ \mathrm{T i O_{2}} $ and $ \mathrm{Z r O_{2}} $ layers as well as the simple fact that the electrode is black (it needs to be transparent for perovskite-Si tandems and highly reflective for all-perovskite tandems).</p>
+<p>Another approach for making uniform large area metal halide perovskites is by vapor deposition $ ^{8 7} $ . While work has been done to make efficient solar cells using MA based perovskites, it has proven difficult to make efficient materials with mixed A and B site compositions via direct co-evaporation. Sahli et al $ ^{2 2} $ sidestep this issue by first thermally evaporating the inorganic precursors $ (\mathrm{P b I}<em>{2} $ and CsI ) and then converting them to perovskite by exposure to FAI/FABr precursors in methanol to achieve the desired composition. They used this technique to demonstrate the first large area (12.96 $ \mathrm{c m}^{2} $ ) monolithic perovskite-silicon tandem solar cells. Efficient (15 %) $ 12 \mathrm{c m}^{2} $ single junction modules were recently reported $ ^{8 8} $ by vapor conversion of $ \mathrm{P b I}</em>{2} $ to $ \mathrm{F A P b I}<em>{3} $ and subsequent A site cation exchange (Cs replacing FA). Combining such a vapor conversion process with a thermally evaporated $ \mathrm{P b I}</em>{2} / \mathrm{P b B r}_{2} $ layer could allow for a fully conformal and dry deposition technique. Such an approach would also be beneficial for all-perovskite tandems as none of the steps would damage underlying layers. Unfortunately, thermal evaporation at ultrahigh vacuum could be cost prohibitive, though a full cost analysis remains to be done. We suggest that research into rapid throughput vapor deposition of perovskite precursors should be a high priority for those attempting to scale tandem solar cells.</p>
+<p>Sahli et al $ ^{2 2} $ also found that to make efficient large area tandems, it is critical to use a recombination layer (in their case nanocrystalline hydrogenated Si (nc-Si:H) n+ and p+ doped layers) with high sheet resistance to prevent leakage current funneling through small shunt</p></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><p>pathways. For the same reason, less conductive recombination layers should be chosen for scaled all perovskite tandems.</p>
+<h2>V. Reliability of Tandem solar cells</h2>
+<h2>Perovskite - Silicon Tandems</h2>
+<p>For perovskites to be commercially viable and offer low LCOE in tandems on silicon for rooftop and utility scale installations, they must match silicon's 25-year lifetime. If the perovskite sub cell declines in performance due to a reduction in photocurrent, the full tandem performance will drop proportionally. It is thus critical to examine whether tandem solar cells will require additional encapsulation over that used in conventional c-Si modules; if so, then this will have to be included in updated cost models to evaluate whether the added power output still validates the additional costs of making the tandem module.</p>
+<p>While the X-site poses concerns of photo-instability $ ^{45} $ as discussed above, the A-site cation is often the focus of concerns regarding thermal, moisture, and oxygen instability. The methylammonium cation is volatile but improved encapsulation has been shown to prevent its escape, enabling operation at elevated temperatures for hundreds of hours $ ^{59,61} $ . Formamidinium substitution shows improved thermal stability over methylammonium $ ^{11} $ and has also led to the highest efficiency devices $ ^{41,44} $ . Further thermal stability improvement has been observed through either partial or full Cs substitution $ ^{19,89-93} $ .</p>
+<p>We have previously demonstrated that when such a stable perovskite composition is chosen, the organic A site cation encapsulated by a conformal and dense TCO layer, and the full cell protected using industry standard processes using glass/glass packaged held together with butyl rubber edge seals and polymer encapsulants, perovskite cells can pass the IEC "damp heat" test (1000 hrs at 85 %RH at 85 C) $ ^{15} $ and temperature cycling （-40 C-85 C,200 cycles） $ ^{94} $ However, most commercial PV modules are subjected to 3-5 times these tests, so passing them once may not guarantee a 25 year lifetime for the full tandem. In addition, many c-Si modules currently use a Tedlar backsheet rather than glass on both the front and back; it remains to be seen whether the full tandem modules will require the use of two glass sheets, which could raise costs of the tandem module.</p></section>
+<section class="page" id="page-24"><div class="page-label">第 24 页</div><p>The ions in the perovskite top cell have been shown to be extremely mobile $ ^{95-97} $ ; while silicon surfaces are known to be very sensitive to contamination by impurities. It remains to be seen whether $ \mathrm{I}^{-} $ can diffuse into the silicon subcell through the TCO recombination layer. This should be subject for future studies.</p>
+<h2>All-perovskite tandems</h2>
+<p>A unique challenge is that all-perovskite tandems require some $ \mathrm{S n}^{2+} $ on the B-site of the small bandgap bottom cell, but that $ \mathrm{S n}^{2+} $ , unlike $ \mathrm{P b}^{2+} $ , is susceptible to oxidation from the 2+ to the 4+ state upon exposure to oxygen or moisture. Formation of $ \mathrm{S n}^{4+} $ and accompanying defects such as $ \mathrm{S n}^{2+} $ vacancies has been an often cited reason for poor performance of pure tin perovskites and resulted in extremely fast (~minutes) degradation of device performance in solar cells based on pure tin perovsites $ ^{57,98,99} $ . The mixed tin-lead perovskites relevant to bottom cells in tandems, however, show significantly improved stability compared to pure tin perovskites, where substitution of 50% or more of the B-site with an element other than tin (typically Pb) that is not susceptible to oxidation appears to be a promising strategy to stabilize tin-containing perovskites. Pb enhances the lifetime by a factor of 10-100 because it changes the oxidation mechanism of Sn to one less energetically favorable $ ^{100} $ . There have been no published studies of full device stability under heat or light in either ambient or inert conditions, so it is difficult to know whether the standard encapsulation used for Sn-free perovskites used in top cells and in perovskite-silicon tandems will suffice for the all perovskite tandem, or whether more sophisticated packaging will be required. Certainly, if flexible form factors are desirable for all-perovskite tandems, flexible packaging will be a critical subject of research; currently available flexible packaging such as the 3M ultrabarrier may be cost prohibitive.</p>
+<p>All-perovskite tandems may also suffer from a unique instability: exchange of ions between the two perovskite layers. The A and X site cations especially have been shown to be mobile, so if the recombination layer does not provide a good ion diffusion barrier, it is possible that the Br ions will diffuse from the top cell to the bottom cell and that the composition of the sub cells will homogenize over time, defeating the purpose of the tandem solar cell. This adds an extra constraint on the choice in recombination layer. The TCO recombination layers currently used is very likely to provide protection, but it must be investigated whether this is enough for many years of operational stability or whether perfectly crack-free, dense, amorphous recombination layers must be developed.</p></section>
+<section class="page" id="page-25"><div class="page-label">第 25 页</div><p>An additional stability concern for tandem solar cells arises from the fact that they are composed of many layers, each of which could delaminate from the other. Rolston et al have demonstrated that the adhesion between metal halide perovskites and the contact layers is extremely weak and that the contact layers themselves (fullerenes in particular) suffer from weak internal adhesion $ ^{101} $ . This is especially worrying since the thermal expansion coefficients of the layers differs considerably $ ^{94} $ . Careful encapsulation with rigid glass/glass packages appears to mitigate this problem for single junction devices and allows them to pass temperature cycling tests $ ^{94} $ , but tandems contain even more layers. Tests will need to be performed on full tandem solar cells. Flexible all-perovskite tandem solar cells especially may be prone to delamination upon bending and may require use of layers with stronger adhesion, perhaps through crosslinking strategies $ ^{102} $ .</p>
+<h2>VI. Outlook</h2>
+<p>Many of the pieces to enable efficient perovskite tandem solar cells at laboratory scale are in place. The present record open-circuit voltage of 1.24V (for a perovskite with 1.63 eV bandgap), coupled with existing contacts and recombination layers should theoretically enable tandems in current architectures to attain PCEs of approximately 31% and 29.5% for perovskite-Si and perovskite-perovskite tandems, respectively.</p>
+<p>As proof of concept laboratory scale device records exceed those for perovskite single junction solar cells, it will be important to consider the strategies used to reach those records holistically: can these same device structures and deposition processes be implemented on commercially relevant, stable tandems with high yield and low cost? This is an area of research where a simple translation of processes developed for single junction modules may not deliver the desired results in tandem devices; coating on top of textured c-Si wafers remains an unsolved problem, while all-perovskite tandems may suffer from low yield when solution coating is used for the perovskite layers.</p>
+<p>Perhaps, tandem specific new deposition routes should be explored; ideal routes would be high throughput, dry and conformally deposited, performed at ambient pressure or only mild vacuum, and easily adaptable to a wide range of perovskite compositions. The ease with which high quality metal halide perovskite compounds are formed suggests that it should be possible to use alternative, high throughput routes such as vapor transport deposition or closed space sublimation used by the CdTe industry $ ^{103} $ . The organic A site cations could be deposited through</p></section>
+<section class="page" id="page-26"><div class="page-label">第 26 页</div><p>a spraying process, a blade coating process, or a vapor conversion process in which the $ \mathrm{P b I}_{2} / \mathrm{C s I} $ film is exposed to FAI/FABr vapor. This type of deposition has not yet been attempted but may be an important area of research for those aiming to scale tandem solar cells. In addition, tandem architectures currently require the use of thin buffer layers to prevent sputter damage during deposition of the TCOs, complicating device designs; the most efficient perovskite-silicon tandems currently employ 7 steps, and more may be necessary if diffusion barriers prove to be essential to prevent metal ingress over long time scales. Again, the device designs need to be considered holistically to minimize the complexity, use scalable and cost effective deposition and materials, and ensure lifetimes compatible with 25 year operation.</p>
+<p>Tandem module design has also gone largely unexplored by the academic community, despite the fact that tandem modules offer unique challenges. 2T architectures may be the simplest to implement from a module perspective, as they require fewer exterior electronics and will only require one cell size and form factor for the entire module. A 2T perovskite-Si module will look mostly exactly like that of a normal c-Si module, though attention may have to be given to how the cell interconnects are made: perovskite top cells may not be compatible with the soldering connections traditionally used in c-Si modules. A 2T perovskite-perovskite module could look identical to a single junction perovskite module, consisting of monolithically interconnected cells in the form of long strips, but the exact design of the interconnects may have to be different. A highly conductive recombination layer may not allow the use of the traditional scribing patterns since the interconnect could short the entire top cell through the recombination layer. The 4T module designs are more complicated and allow for a greater range in designs. To enable either current or voltage matching between top and bottom modules, and reduce the reliance on exterior electronics, the size and number of series connected cells can be varied. Minimizing "dead" area from shading by the top cell gridlines will also be an interesting engineering challenge.</p>
+<p>The materials and device designs to make efficient laboratory scale tandem solar cells are largely in place. Future work must focus on translating these proof of concept designs to scalable deposition processes and ensuring that industry standard packaging and encapsulation will suffice for tandem solar cells. Encapsulation of all-perovskite tandem solar cells especially requires significant research. Research on these topics should see large leaps over the next few years and will determine the eventual success of this exciting new technology.</p></section>
+<section class="page" id="page-27"><div class="page-label">第 27 页</div><h2>Acknowledgments</h2>
+<p>We thank DOE SunShot and ONR for funding. TL is supported by a Marie Curie fellowship under Horizon 2020, and KB is supported by an NSF fellowship.</p>
+<h2>References</h2>
+<ol>
+<li>Green, M. A. et al. Solar cell efficiency tables (version 50). Prog. Photovoltaics Res. Appl. 25, 668-676 (2017).</li>
+</ol>
+<ol>
+<li>Miller, O. D., Yablonovitch, E. &amp; Kurtz, S. R. Strong Internal and External Luminescence as Solar Cells Approach the Shockley&amp;Queisser Limit. Photovoltaics, IEEE J. 2, 303-311 (2012).</li>
+</ol>
+<ol>
+<li>Contreras, M. A. et al. Wide bandgap Cu(In,Ga)Se2 solar cells with improved energy conversion efficiency. Prog. Photovoltaics Res. Appl. 20, 843-850 (2012).</li>
+</ol>
+<ol>
+<li>Meillaud, F., Shah, a., Droz, C., Vallat-Sauvain, E. &amp; Miazza, C. Efficiency limits for single-junction and tandem solar cells. Sol. Energy Mater. Sol. Cells 90, 2952-2959 (2006).</li>
+</ol>
+<ol>
+<li>Miyasaka, T., Kojima, A. &amp; Teshima, K. Lead halide perovskites as quantum dot sensitizers for mesoscopic TiO2 photvoltaic cells. in Lead halide perovskites as quantum dot sensitizers mesoscopic TiO2 Photovolt. cells 3376 (2007).</li>
+</ol>
+<ol>
+<li>Lee, M. M., Teuscher, J., Miyasaka, T., Murakami, T. N. &amp; Snaith, H. J. Efficient Hybrid Solar Cells Based on Meso-Superstructured Organometal Halide Perovskites. Science (80-. ). 338, 643-647 (2012).</li>
+</ol>
+<ol>
+<li>Kim, H.-S. et al. Lead Iodide Perovskite Sensitized All-Solid-State Submicron Thin Film Mesoscopic Solar Cell with Efficiency Exceeding 9%. Sci. Rep. 2, (2012).</li>
+</ol>
+<ol>
+<li>Yang, M. et al. Perovskite ink with wide processing window for scalable high-efficiency solar cells. Nat. Energy 2, 17038 (2017).</li>
+</ol>
+<ol>
+<li>Momblona, C. et al. Efficient vacuum deposited pin and nip perovskite solar cells employing doped charge transport layers. Energy Environ. Sci. 9, 3456-3463 (2016).</li>
+</ol>
+<ol>
+<li>Eperon, G. E. et al. Perovskite-perovskite tandem photovoltaics with optimized bandgaps. Science (80-). 354, 861-865 (2016).</li>
+</ol></section>
+<section class="page" id="page-28"><div class="page-label">第 28 页</div><ol>
+<li>Eperon, G. E. et al. Formamidinium Lead Trihalide: A Broadly Tunable Perovskite for Efficient Planar Heterojunction Solar Cells. Energy Environ. Sci. 7, 982-988 (2014).</li>
+</ol>
+<ol>
+<li>Hao, F., Stoumpos, C. C., Chang, R. P. H. &amp; Kanatzidis, M. G. Anomalous band gap behavior in mixed Sn and Pb perovskites enables broadening of absorption spectrum in solar cells. J. Am. Chem. Soc. 136, 8094-8099 (2014).</li>
+</ol>
+<ol>
+<li>Rajagopal, A. et al. Highly Efficient Perovskite-Perovskite Tandem Solar Cells Reaching 80% of the Theoretical Limit in Photovoltage. Adv. Mater. 1521-4095 (2017). doi:10.1002/adma.201702140</li>
+</ol>
+<ol>
+<li>Zhao, D. et al. Low-bandgap mixed tin-lead iodide perovskite absorbers with long carrier lifetimes for all-perovskite tandem solar cells. Nat. Energy 2, 17018 (2017).</li>
+</ol>
+<ol>
+<li>Bush, K. A. et al. 23.6%-Efficient Monolithic Perovskite/Silicon Tandem Solar Cells with Improved Stability. Nat. Energy 2, 17009 (2017).</li>
+</ol>
+<ol>
+<li>Duong, T. et al. Rubidium Multication Perovskite with Optimized Bandgap for Perovskite-Silicon Tandem with over 26% Efficiency. Adv. Energy Mater. 1700228-n/a (2017). doi:10.1002/aenm.201700228</li>
+</ol>
+<ol>
+<li>NREL. Best Research-Cell Efficiencies. at <a href="http://www.nrel.gov/ncpv/images/efficiency_chart.jpg">http://www.nrel.gov/ncpv/images/efficiency_chart.jpg</a></li>
+</ol>
+<ol>
+<li>Werner, J. et al. Efficient Near-Infrared-Transparent Perovskite Solar Cells Enabling Direct Comparison of 4-Terminal and Monolithic Perovskite/Silicon Tandem Cells. ACS Energy Lett. 1, 474-480 (2016).</li>
+</ol>
+<ol>
+<li>McMeekin, D. P. et al. A mixed-cation lead mixed-halide perovskite absorber for tandem solar cells. Science (80-. ). 351, 151-155 (2016).</li>
+</ol>
+<ol>
+<li>Bailie, C. D. et al. Semi-transparent perovskite solar cells for tandems with silicon and CIGS. Energy Environ. Sci. 8, 956-963 (2015).</li>
+</ol>
+<ol>
+<li>Wu, Y. et al. Monolithic perovskite/silicon-homojunction tandem solar cell with over 22% efficiency. Energy Environ. Sci. (2017). doi:10.1039/C7EE02288C</li>
+</ol>
+<ol>
+<li>Sahli, F. et al. Improved Optics in Monolithic Perovskite/Silicon Tandem Solar Cells with a Nanocrystalline Silicon Recombination Junction. Adv. Energy Mater. 1701609-n/a doi:10.1002/aenm.201701609</li>
+</ol>
+<ol>
+<li>Werner, J. et al. Efficient Monolithic Perovskite/Silicon Tandem Solar Cell with Cell Area &gt;1 cm2. J. Phys. Chem. Lett. 7, 161-166 (2016).</li>
+</ol>
+<ol>
+<li>Albrecht, S. et al. Monolithic perovskite/silicon-heterojunction tandem solar cells processed at low temperature. Energy Environ. Sci. 9, 81-88 (2016).</li>
+</ol></section>
+<section class="page" id="page-29"><div class="page-label">第 29 页</div><ol>
+<li>Mailoa, J. P. et al. junction A 2-terminal perovskite / silicon multijunction solar cell enabled by a silicon tunnel junction. 121105, 0-4 (2015).</li>
+</ol>
+<ol>
+<li>Forgacs, D. et al. Efficient Monolithic Perovskite/Perovskite Tandem Solar Cells. Adv. Energy Mater. 7, 1602121 (2017).</li>
+</ol>
+<ol>
+<li>Jiang, F. et al. A two-terminal perovskite/perovskite tandem solar cell. J. Mater. Chem. A 4, 1208-1213 (2016).</li>
+</ol>
+<ol>
+<li>Maximilian Hoerantner, H. J. S. The potential of perovskite-silicon tandem photovoltaics. Energy Environ. Sci. (2017).</li>
+</ol>
+<ol>
+<li>Duck, B. C. et al. Energy yield potential of perovskite-silicon tandem devices. in Photovolt. Spec. Conf. (PVSC), 2016 IEEE 43rd 1624-1629 (IEEE, 2016).</li>
+</ol>
+<ol>
+<li>Futscher, M. H. &amp; Ehrler, B. Modeling the Performance Limitations and Prospects of Perovskite/Si Tandem Solar Cells under Realistic Operating Conditions. ACS Energy Lett. 2, 2089-2095 (2017).</li>
+</ol>
+<ol>
+<li>Song, Z. et al. A technoeconomic analysis of perovskite solar module manufacturing with low-cost materials and techniques. Energy Environ. Sci. 10, 1297-1305 (2017).</li>
+</ol>
+<ol>
+<li>Chang, N. L. et al. A manufacturing cost estimation method with uncertainty analysis and its application to perovskite on glass photovoltaic modules. Prog. Photovoltaics Res. Appl. 25, 390-405 (2017).</li>
+</ol>
+<ol>
+<li>Cai, M. et al. Cost-Performance Analysis of Perovskite Solar Modules. Adv. Sci. 4, 1600269-n/a (2017).</li>
+</ol>
+<ol>
+<li>Horowitz, K. A. W., Fu, R. &amp; Woodhouse, M. An analysis of glass-glass CIGS manufacturing costs. Sol. Energy Mater. Sol. Cells 154, 1-10 (2016).</li>
+</ol>
+<ol>
+<li>Horowitz, K. A. W. &amp; Woodhouse, M. Cost and potential of monolithic CIGS photovoltaic modules. in Photovolt. Spec. Conf. (PVSC), 2015 IEEE 42nd 1-6 (IEEE, 2015).</li>
+</ol>
+<ol>
+<li>Woodhouse, M. et al. Perspectives on the pathways for cadmium telluride photovoltaic module manufacturers to address expected increases in the price for tellurium. Sol. Energy Mater. Sol. Cells 115, 199-212 (2013).</li>
+</ol>
+<ol>
+<li>Werner, J., Niesen, B. &amp; Ballif, C. Perovskite/Silicon Tandem Solar Cells: Marriage of Convenience or True Love Story? - An Overview. Adv. Mater. Interfaces 1700731-n/a doi:10.1002/admi.201700731</li>
+</ol>
+<ol>
+<li>Yu, Z. (Jason), Leilaeioun, M. &amp; Holman, Z. Selecting tandem partners for silicon solar cells. Nat. Energy 1, 16137 (2016).</li>
+</ol></section>
+<section class="page" id="page-30"><div class="page-label">第 30 页</div><ol>
+<li>Rajagopal, A., Liang, P.-W., Chueh, C.-C., Yang, Z. &amp; Jen, A. K.-Y. Defect Passivation via Graded Fullerene Heterojunction in Low Bandgap Pb-Sn Binary Perovskite Photovoltaics. ACS Energy Lett. acsenergylett.7b00847 (2017). doi:10.1021/acsenergylett.7b00847</li>
+</ol>
+<ol>
+<li>Noel, N. K. et al. Unveiling the Influence of pH on the Crystallization of Hybrid Perovskites, Delivering Low Voltage Loss Photovoltaics. Joule 1, 328-343 (2017).</li>
+</ol>
+<ol>
+<li>Saliba, M. et al. Incorporation of rubidium cations into perovskite solar cells improves photovoltaic performance. Science (80-). 354, 206-209 (2016).</li>
+</ol>
+<ol>
+<li>Taguchi, M. et al. 24.7% Record Efficiency HIT Solar Cell on Thin Silicon Wafer. IEEE J. Photovoltaics 4, 96-99 (2014).</li>
+</ol>
+<ol>
+<li>Wang, Z. et al. Efficient and ambient-air-stable solar cells with 2D-3D hetero-structured butylammonium-caesium-formamidinium lead halide perovskites. Nat. Energy 17135, 1- 10 (2017).</li>
+</ol>
+<ol>
+<li>Yang, W. S., Park, B., Jung, E. H. &amp; Jeon, N. J. Iodide management in formamidinium-lead-halide - based perovskite layers for efficient solar cells. 1379, 1376-1379 (2017).</li>
+</ol>
+<ol>
+<li>Hoke, E. T. et al. Reversible photo-induced trap formation in mixed-halide hybrid perovskites for photovoltaics. Chem. Sci. 6, 613-617 (2015).</li>
+</ol>
+<ol>
+<li>Slotcavage, D. J., Karunadasa, H. I. &amp; McGehee, M. D. Light-Induced Phase Segregation in Halide-Perovskite Absorbers. ACS Energy Lett. 1, 1199-1205 (2016).</li>
+</ol>
+<ol>
+<li>Unger, E. L. et al. Roadmap and roadblocks for the band gap tunability of metal halide perovskites. J. Mater. Chem. A 5, 11401-11409 (2017).</li>
+</ol>
+<ol>
+<li>Swarnkar, A. et al. Quantum dot - induced phase stabilization of a -CsPbI 3 perovskite for high-efficiency photovoltaics. 31-34 (2016). doi:10.1016/j.solener.2014.11.016</li>
+</ol>
+<ol>
+<li>Zhou, Y. et al. Benzylamine-Treated Wide-Bandgap Perovskite with High Thermal- Photostability and Photovoltaic Performance. Adv. Energy Mater. 1701048 (2017). doi:10.1002/aenm.201701048</li>
+</ol>
+<ol>
+<li>Hörantner, M. T. et al. The Potential of Multijunction Perovskite Solar Cells. ACS Energy Lett. 2506-2513 (2017). doi:10.1021/acsenergylett.7b00647</li>
+</ol>
+<ol>
+<li>Yang, Z. et al. Stable Low-Bandgap Pb???Sn Binary Perovskites for Tandem Solar Cells. Adv. Mater. 28, 8990-8997 (2016).</li>
+</ol>
+<ol>
+<li>Liao, W. et al. Fabrication of Efficient Low-Bandgap Perovskite Solar Cells by Combining Formamidinium Tin Iodide with Methylammonium Lead Iodide. J. Am. Chem. Soc. 138, 12360-12363 (2016).</li>
+</ol></section>
+<section class="page" id="page-31"><div class="page-label">第 31 页</div><ol>
+<li>Ogomi, Y. et al. CH3NH3SnxPb(1-x)I3 Perovskite Solar Cells Covering up to 1060 nm. J. Phys. Chem. Lett. 5, 1004-1011 (2014).</li>
+</ol>
+<ol>
+<li>Rajagopal, A. et al. Highly Efficient Perovskite-Perovskite Tandem Solar Cells Reaching 80% of the Theoretical Limit in Photovoltage. Adv. Mater. 1702140, 1702140 (2017).</li>
+</ol>
+<ol>
+<li>Prasanna, R. et al. Band Gap Tuning via Lattice Contraction and Octahedral Tilting in Perovskite Materials for Photovoltaics. J. Am. Chem. Soc. (2017). doi:10.1021/jacs.7b04981</li>
+</ol>
+<ol>
+<li>Zhao, B. et al. High Open-Circuit Voltages in Tin-Rich Low-Bandgap Perovskite-Based Planar Heterojunction Photovoltaics. Adv. Mater. 29, 1604744 (2016).</li>
+</ol>
+<ol>
+<li>Noel, N. K. et al. Lead-free organic-inorganic tin halide perovskites for photovoltaic applications. Energy Environ. Sci. 7, 3061-3068 (2014).</li>
+</ol>
+<ol>
+<li>Yoshikawa, K. et al. Silicon heterojunction solar cell with interdigitated back contacts for a photoconversion efficiency over 26%. Nat. Energy 2, 17032 (2017).</li>
+</ol>
+<ol>
+<li>Bush, K. A. et al. Thermal and Environmental Stability of Semi-Transparent Perovskite Solar Cells for Tandems Enabled by a Solution-Processed Nanoparticle Buffer Layer and Sputtered ITO Electrode. Adv. Mater. 28, 3937-3943 (2016).</li>
+</ol>
+<ol>
+<li>Leijtens, T. et al. Stability of Metal Halide Perovskite Solar Cells. Adv. Energy Mater. 10.1002/aenm.201500963 (2015). doi:10.1002/aenm.201500963</li>
+</ol>
+<ol>
+<li>Brinkmann, K. O. et al. Suppressed decomposition of organometal halide perovskites by impermeable electron-extraction layers in inverted solar cells. 1-9 (2017). doi:10.1038/ncomms13938</li>
+</ol>
+<ol>
+<li>Leijtens, T. et al. Towards enabling stable lead halide perovskite solar cells; interplay between structural, environmental, and thermal stability. J. Mater. Chem. A 5, 1148311500 (2017).</li>
+</ol>
+<ol>
+<li>Azpiroz, J. M., Mosconi, E., Bisquert, J. &amp; De Angelis, F. Defect migration in methylammonium lead iodide and its role in perovskite solar cell operation. Energy Environ. Sci. (2015). doi:10.1039/C5EE01265A</li>
+</ol>
+<ol>
+<li>Domanski, K. et al. Not All That Glitters Is Gold: Metal-Migration-Induced Degradation in Perovskite Solar Cells. ACS Nano 10, 6306-6314 (2016).</li>
+</ol>
+<ol>
+<li>Kim, I. S. &amp; Martinson, A. B. F. Stabilizing hybrid perovskites against moisture and temperature via non-hydrolytic atomic layer deposited overlayers. J. Mater. Chem. A 3, 20092-20096 (2015).</li>
+</ol></section>
+<section class="page" id="page-32"><div class="page-label">第 32 页</div><ol>
+<li>Conings, B. et al. Intrinsic Thermal Instability of Methylammonium Lead Trihalide Perovskite. Adv. Energy Mater. n/a-n/a (2015). doi:10.1002/aenm.201500477</li>
+</ol>
+<ol>
+<li>Bella, F. et al. Improving efficiency and stability of perovskite solar cells with photocurable fluoropolymers. Science (80-. ). aah4046 (2016).</li>
+</ol>
+<ol>
+<li>Cotal, H. et al. III-V multijunction solar cells for concentrating photovoltaics. Energy Environ. Sci. 2, 174-192 (2009).</li>
+</ol>
+<ol>
+<li>Takamoto, T., Ikeda, E., Kurita, H. &amp; Ohmori, M. Over 30% efficient InGaP/GaAs tandem solar cells. Appl. Phys. Lett. 70, 381-383 (1997).</li>
+</ol>
+<ol>
+<li>Chang, C. Y. et al. Highly efficient polymer tandem cells and semitransparent cells for solar energy. Adv. Energy Mater. 4, 1-6 (2014).</li>
+</ol>
+<ol>
+<li>Yang, W. S. et al. Iodide management in formamidinium-lead-halide-based perovskite layers for efficient solar cells. Science (80-. ). 356, 1376 LP - 1379 (2017).</li>
+</ol>
+<ol>
+<li>Saliba, M. et al. Cesium-containing triple cation perovskite solar cells: improved stability, reproducibility and high efficiency. Energy Environ. Sci. 9, 1989-1997 (2016).</li>
+</ol>
+<ol>
+<li>Margulis, G. Y., Hardin, B. E., Ding, I. K., Hoke, E. T. &amp; McGehee, M. D. Parasitic Absorption and Internal Quantum Efficiency Measurements of Solid-State Dye Sensitized Solar Cells. Adv. Energy Mater. 3, 959-966 (2013).</li>
+</ol>
+<ol>
+<li>Phillips, J. M. et al. Zinc-indium-oxide: a high conductivity transparent conducting oxide Appl. Phys. Lett. 67, 2246-2248 (1995).</li>
+</ol>
+<ol>
+<li>Rech, S. A. and M. S. and J.-P. C.-B. and K. J. and L. K. and A. H. and M. G. and B. Towards optical optimization of planar monolithic perovskite/silicon-heterojunction tandem solar cells. J. Opt. 18, 64012 (2016).</li>
+</ol>
+<ol>
+<li>Gordon, R. G. Criteria for choosing transparent conductors. MRS Bull. 25, 52-57 (2000).</li>
+</ol>
+<ol>
+<li>Leenheer, A. J. et al. General mobility and carrier concentration relationship in transparent amorphous indium zinc oxide films. Phys. Rev. B 77, 115215 (2008).</li>
+</ol>
+<ol>
+<li>Löper, P. et al. Complex Refractive Index Spectra of CH3NH3PbI3 Perovskite Thin Films Determined by Spectroscopic Ellipsometry and Spectrophotometry. J. Phys. Chem. Lett. 6, 66-71 (2015).</li>
+</ol>
+<ol>
+<li>Lin, Q., Armin, A., Nagiri, R. C. R., Burn, P. L. &amp; Meredith, P. Electro-optics of perovskite solar cells. Nat Phot. 9, 106-112 (2015).</li>
+</ol>
+<ol>
+<li>Ball, J. M. et al. Optical Properties and Limiting Photocurrent of Thin-Film Perovskite Solar Cells. Energy Environ. Sci. 8, 602-609 (2015).</li>
+</ol></section>
+<section class="page" id="page-33"><div class="page-label">第 33 页</div><ol>
+<li>Santbergen, R. et al. Minimizing optical losses in monolithic perovskite/c-Si tandem solar cells with a flat top cell. Opt. Express 24, A1288-A1299 (2016).</li>
+</ol>
+<ol>
+<li>Manzoor, S. et al. Solar Energy Materials and Solar Cells Improved light management in planar silicon and perovskite solar cells using PDMS scattering layer. Sol. Energy Mater. Sol. Cells 1-7 (2017). doi:10.1016/j.solmat.2017.06.020</li>
+</ol>
+<ol>
+<li>Imec. Imec Reports Record Conversion Efficiency of 23.9 Percent on a 4cm2 Perovskite/Silicon Solar Module. at <a href="https://www.imec-int.com/en/articles/imec-reports-record-conversion-efficiency-of-23-9-percent-on-a-4cm2-perovskite-silicon-solar-module">https://www.imec-int.com/en/articles/imec-reports-record-conversion-efficiency-of-23-9-percent-on-a-4cm2-perovskite-silicon-solar-module</a></li>
+</ol>
+<ol>
+<li>Yang, M. et al. Highly Efficient Perovskite Solar Modules by Scalable Fabrication and Interconnection Optimization. ACS Energy Lett. (2018). doi:10.1021/acsenergylett.7b01221</li>
+</ol>
+<ol>
+<li>Priyadarshi, A. et al. A large area (70 cm2) monolithic perovskite solar module with a high efficiency and stability. Energy Environ. Sci. 9, 3687-3692 (2016).</li>
+</ol>
+<ol>
+<li>Mei, A. et al. A hole-conductor-free, fully printable mesoscopic perovskite solar cell with high stability. Sci. 345, 295-298 (2014).</li>
+</ol>
+<ol>
+<li>Borchert, J. et al. Large-Area, Highly Uniform Evaporated Formamidinium Lead Triiodide Thin Films for Solar Cells. ACS Energy Lett. 2, 2799-2804 (2017).</li>
+</ol>
+<ol>
+<li>Jiang, Y. et al. Combination of Hybrid CVD and Cation Exchange for Upscaling Cs- Substituted Mixed Cation Perovskite Solar Cells with High Efficiency and Stability. Adv. Funct. Mater. 28, 1703835-n/a (2018).</li>
+</ol>
+<ol>
+<li>Li, Z. et al. Stabilizing Perovskite Structures by Tuning Tolerance Factor: Formation of Formamidinium and Cesium Lead Iodide Solid-State Alloys. Chem. Mater. 28, 284-292 (2016).</li>
+</ol>
+<ol>
+<li>Lee, J.-W. W. et al. Formamidinium and Cesium Hybridization for Photo- and Moisture Stable Perovskite Solar Cell. Adv. Energy Mater. 5, 1501310-n/a (2015).</li>
+</ol>
+<ol>
+<li>Sutton, R. J. et al. Bandgap-Tunable Cesium Lead Halide Perovskites with High Thermal Stability for Efficient Solar Cells. Adv. Energy Mater. (2016).</li>
+</ol>
+<ol>
+<li>Choi, H. et al. Cesium-Doped Methylammonium lead Iodide Perovskite Light Absorber for Hybrid Solar Cells. Nano Energy 7, 80-85 (2014).</li>
+</ol>
+<ol>
+<li>Beal, R. E. et al. Cesium Lead Halide Perovskites with Improved Stability for Tandem Solar Cells. J. Phys. Chem. Lett. 7, 746-751 (2016).</li>
+</ol></section>
+<section class="page" id="page-34"><div class="page-label">第 34 页</div><ol>
+<li>Cheacharoen, R. et al. Design and understanding of encapsulated perovskite solar cells to withstand temperature cycling. Energy Environ. Sci. (2018). doi:10.1039/C7EE02564E</li>
+</ol>
+<ol>
+<li>deQuilettes, D. W. et al. Photo-induced halide redistribution in organic-inorganic perovskite films. Nat. Commun. 7, 11683 (2016).</li>
+</ol>
+<ol>
+<li>Leijtens, T. et al. Mapping Electric Field - Induced Switchable Poling and Structural Degradation in Hybrid Lead Halide Perovskite Thin Films. Adv. Energy Mater. 10.1002/aenm.201500962 (2015). doi:10.1002/aenm.201500962</li>
+</ol>
+<ol>
+<li>Yun, J. S. et al. Critical Role of Grain Boundaries for Ion Migration in Formamidinium and Methylammonium Lead Halide Perovskite Solar Cells. Adv. Energy Mater. 6, 1600330 (2016).</li>
+</ol>
+<ol>
+<li>Takahashi, Y. et al. Charge-transport in tin-iodide perovskite CH3NH3SnI3: origin of high conductivity. Dalton Trans. 40, 5563-5568 (2011).</li>
+</ol>
+<ol>
+<li>Hao, F., Stoumpos, C. C., Cao, D. H., Chang, R. P. H. &amp; Kanatzidis, M. G. Lead-free solid-state organic-inorganic halide perovskite solar cells. Nat Phot. 8, 489-494 (2014).</li>
+</ol>
+<ol>
+<li>Leijtens, T., Prasanna, R., Gold-Parker, A., Toney, M. F. &amp; McGehee, M. D. Mechanism of Tin Oxidation and Stabilization by Lead Substitution in Tin Halide Perovskites. ACS Energy Lett. acsenergylett.7b00636 (2017). doi:10.1021/acsenergylett.7b00636</li>
+</ol>
+<ol>
+<li>Rolston, N. et al. Mechanical integrity of solution-processed perovskite solar cells. Extrem. Mech. Lett. 9, Part 3, 353-358 (2016).</li>
+</ol>
+<ol>
+<li>Watson, B. L. et al. Cross-Linkable, Solvent-Resistant Fullerene Contacts for Robust and Efficient Perovskite Solar Cells with Increased JSC and VOC. ACS Appl. Mater. Interfaces 8, 25896-25904 (2016).</li>
+</ol>
+<ol>
+<li>Anthony, T. C., Fahrenbruch, A. L. &amp; Bube, R. H. Growth of CdTe films by close-spaced vapor transport. J. Vac. Sci. Technol. A Vacuum, Surfaces, Film. 2, 1296-1302 (1984).</li>
+</ol></section></main></body></html>

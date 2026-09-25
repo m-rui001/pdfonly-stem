@@ -1,0 +1,54 @@
+{
+  "sha1": "fdacf6d6fa123b7bf148ac6f546f22a8d89e1c84",
+  "title": "Metabolite concentrations, fluxes and free energies imply efficient enzyme usage",
+  "doi": "https://doi.org/10.1038/nchembio.2077",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fdacf6d6fa123b7bf148ac6f546f22a8d89e1c84/index.html",
+  "source_chars": 67471,
+  "markdown_chars": 2448,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "at standard biochemical conditions: (1)",
+      "type": "missing_formula",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)的数学表达式未出现在提取文本中，仅保留了文字描述和编号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "where J+ and J− are forward and backward fluxes18–20: (2)",
+      "type": "missing_formula",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2)的数学表达式未出现在提取文本中，仅保留了文字描述和编号。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：PFK ΔG范围−13至−25 kJ/mol、PGI到PYK累积ΔG −46 kJ/mol、iBMK中PYK ΔG −3.8 kJ/mol、下酵解六步自由能降11.4–24.2 kJ/mol、代谢物总浓度约200 mM、底物超过Km的位点比例约三分之二、跨物种浓度相关性r2 40%–70%。公式(1)和(2)的具体表达式未在提取文本中显示，因此仅在笔记中保留文字描述，未补写公式。通量差异、浓度保守性等数值均与正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9504,
+      "prompt_tokens": 15888,
+      "total_tokens": 25392,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7591
+      }
+    },
+    "content_chars": 3218
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

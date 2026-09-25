@@ -1,0 +1,82 @@
+{
+  "sha1": "0adad25663f276aa6e7809f7a9281714abb86751",
+  "title": "Gold-supported cerium-doped NiOx catalysts for water oxidation",
+  "doi": "https://doi.org/10.1038/nenergy.2016.53",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0adad25663f276aa6e7809f7a9281714abb86751/index.html",
+  "source_chars": 49652,
+  "markdown_chars": 2738,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "1𝐶/𝑠 0.196 𝑐𝑚 1000𝑚𝐴 𝑚𝐴 = 3.06×10HI 𝑂/ /𝑠 𝑝𝑒𝑟 𝑐𝑚 / / 1𝑚𝑜𝑙 𝑒 @ 96485𝐶 1𝑚𝑜𝑙 𝑂/ 4𝑚𝑜𝑙 𝑒 @ 6.02×10/F 𝑚𝑜𝑙𝑒𝑐𝑢𝑙𝑒𝑠 𝑂/ 1𝑚𝑜𝑙 𝑂/",
+      "type": "公式错乱/上标丢失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式中单位和指数被错误分隔，例如“10HI”应为“10^15”或类似，“10/F”应为“10^23”，但无法确定具体数字，只有“3.06×10”和“6.02×10”可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Ceedge ( )",
+      "type": "符号缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号内应有表示活性位点类型的符号（如下标字母）未提取，但上下文可推测是位点标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Niedge ( )",
+      "type": "符号缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号内符号缺失，类似上一条。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Niedge ( )",
+      "type": "符号缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "重复出现，同样缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "𝑇𝑂𝐹 = 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑂/ 𝑡𝑢𝑟𝑛𝑜𝑣𝑒𝑟𝑠 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑚𝑒𝑡𝑎𝑙 𝑖𝑜𝑛𝑠",
+      "type": "疑似字符替换或缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文应显示分数形式的公式，提取文本中斜杠和空白错乱，但含义可推断为“O₂ turnover数目 / 金属离子数目”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：271 mV（10 mA/cm²）、13.3 mA/cm²（280 mV过电位）、TOF值0.080 /s（NiCeOx−Au）、0.046 /s（NiFeOx−Au）、0.0052 /s（NiCeOx−GC）；理论过电位0.37 V（Niedge）和0.44 V（Ceedge）；电解槽1.5 V、50 mA、24小时。公式部分因提取乱码，仅按可见内容重建了O₂ turnover计算式，不确定指数数字。理论计算参数（Ueff、截断能等）来自文本。没有引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3054,
+      "prompt_tokens": 13665,
+      "total_tokens": 16719,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 687
+      }
+    },
+    "content_chars": 4213
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

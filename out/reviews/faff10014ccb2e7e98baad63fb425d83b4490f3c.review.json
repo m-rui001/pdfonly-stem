@@ -1,0 +1,54 @@
+{
+  "sha1": "faff10014ccb2e7e98baad63fb425d83b4490f3c",
+  "title": "Ammonia oxidation at high pressure and intermediate temperatures",
+  "doi": "https://doi.org/10.1016/j.fuel.2016.04.100",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/faff10014ccb2e7e98baad63fb425d83b4490f3c/index.html",
+  "source_chars": 41917,
+  "markdown_chars": 3826,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "2.3 x 102 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末尾公式断裂，'2.3 x 102 1'与第3页开头'T2.994 exp(-9510 K/T)'应合并为完整的速率常数表达式，但'102 1'中缺少指数符号和T的上标，疑似OCR将'10^2 T^2.994'错拼。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "T2.994 exp(-9510 K/T) cm3 mol−1 s−1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "续接前页公式，但缺少数值前的内容，整体公式不连续。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要和正文中的关键数值：氧化条件下30 bar起始温度850-875 K、100 bar约800 K且875 K完全消耗；化学计量条件下30 bar和100 bar起始约800 K但消耗缓慢（925 K残留730 ppm / 675 ppm）；N₂O浓度30 bar下50-100 ppm、100 bar约200 ppm（选择性约50%）；速率常数表达式与表1参数一致（A=2.3E02, β=2.994, E=18900 cal/mol → exp(-9510 K/T)）。公式中指数项已按原文和表1参数换算为以K/T表示，但提取文本中跨页断裂，已在issue中标注。其他如H₂NO弯曲能级（142, 508, 1030 cm⁻¹）、势垒17 cm⁻¹等均已核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5344,
+      "prompt_tokens": 12976,
+      "total_tokens": 18320,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2589
+      }
+    },
+    "content_chars": 4750
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

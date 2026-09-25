@@ -1,0 +1,94 @@
+{
+  "sha1": "188f7ae610ebbb4563021edf32cdcbc3681a0196",
+  "title": "Silk fibroin as biomaterial for bone tissue engineering",
+  "doi": "https://doi.org/10.1016/j.actbio.2015.09.005",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/188f7ae610ebbb4563021edf32cdcbc3681a0196/index.html",
+  "source_chars": 109512,
+  "markdown_chars": 14338,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "non-repetetive",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为 non-repetitive，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Gly- Ala/Ser/Tyr",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空格异常，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "chitsosan",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为 chitosan，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 50,
+      "quote": "Electrogelation An electric fields induces",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "语法错误，应为 An electric field induces，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 22,
+      "quote": "64.89 ± 7.46 mm² vs. 27.28% ± 9.2% mm²",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "单位混用 mm² 与 %，可能为 OCR 错误，影响数值理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "6 21",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数字与文字分离，可能为页边距或换行导致，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Silk fibroin as biomaterial for bone tissue engineering",
+  "self_check": "已核对关键数值：SF纤维杨氏模量12.4–17.9 GPa、拉伸强度360–530 MPa、脱胶后450–700 MPa；冷冻凝胶压缩模量50 MPa；SF微粒支架压缩模量2.82±0.40 MPa；纤维增强支架约10 MPa；体内骨体积64.89±7.46 mm² vs. 27.28%±9.2% mm²（单位混用已标出）；BMP-2释放75%第一周。公式符号如β-sheet、α-helix、RGD、BMP-2、VEGF等保留原文。结论方向与摘要一致。仍不确定处：第22页单位混用可能为OCR错误，已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9484,
+      "prompt_tokens": 28977,
+      "total_tokens": 38461,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16042,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

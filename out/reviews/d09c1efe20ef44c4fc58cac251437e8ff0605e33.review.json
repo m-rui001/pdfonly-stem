@@ -1,0 +1,91 @@
+{
+  "sha1": "d09c1efe20ef44c4fc58cac251437e8ff0605e33",
+  "title": "Chapter 7. Secondary Ice Production - current state of the science and recommendations for the future",
+  "doi": "https://doi.org/10.1175/amsmonographs-d-16-0014.1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d09c1efe20ef44c4fc58cac251437e8ff0605e33/index.html",
+  "source_chars": 86386,
+  "markdown_chars": 3636,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "temperature ;.2108C",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "负号、度符号和约等于被误识别，原文应为约−10°C或类似表示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "approximately 238 to 2 88C",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "负号丢失和数字重叠，疑似−3°C至−8°C的误识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "cloud droplets smaller than ;13 mm and liquid drops larger than ;25 mm",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "13 mm和25 mm在云物理中量级不合理，疑似μm被识别为mm。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "exhibits a 0.28 km21 signal",
+      "type": "疑似上标丢失",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "km21应为km^-1，上标被误识别为21。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "ribbons of high LDR (;218 dB)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "218 dB疑似−18 dB，负号被识别为2。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "base temperatures averaging 1228C",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "1228C疑似负号被识别为1，可能为−2°C或−12°C，原文不明确。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要和正文中关键数值，如温度范围238至288C、限尺寸13 mm和25 mm、产率参数1/250滴和350/mg、速度0.2/2-4/6 m s21、LWC 0.10和0.03 g m23、冰浓度100 L21、KDP 0.28 km21、辐射强迫10 W m22等，均照录原文可见文本。由于提取文本存在系统性负号/上标/单位误识别，所有数值均未做‘修复’，仅原样呈现。部分跨页句子拼接正常，未发现断点缺失。仍不确定的包括‘1228C’的准确温度和‘13 mm/25 mm’的单位是否应为μm。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 15067,
+      "prompt_tokens": 23265,
+      "total_tokens": 38332,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12164
+      }
+    },
+    "content_chars": 5230
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

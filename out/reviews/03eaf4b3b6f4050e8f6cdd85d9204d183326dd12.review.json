@@ -1,0 +1,73 @@
+{
+  "sha1": "03eaf4b3b6f4050e8f6cdd85d9204d183326dd12",
+  "title": "Mutually beneficial pollinator diversity and crop yield outcomes in small and large farms",
+  "doi": "https://doi.org/10.1126/science.aac7287",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/03eaf4b3b6f4050e8f6cdd85d9204d183326dd12/index.html",
+  "source_chars": 32092,
+  "markdown_chars": 2283,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "To date, it is uncertain to",
+      "type": "跨页断句",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第1页末尾句子中断，第2页开头接续为 'what degree local populations of pollinators need to be enhanced'，原文连续，但提取时被分页符截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Lower benefits from flower-visitor density in larger fields may reflect the fact that they are only",
+      "type": "跨页断句/顺序疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第3页末尾句子中断，第4页正文后续内容 'pollinated by flower visitors with large foraging ranges...' 被参考文献、致谢等大段文本隔开，提取顺序明显错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "pollinated by flower visitors with large foraging ranges, which are usually generalist species, such as honey bees (12).",
+      "type": "跨页断句/顺序疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该句本应紧接第3页末尾，但在提取文本中出现在参考文献和致谢之后，且被后续文章内容隔开，确认为页内内容与参考文献栏顺序混排。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "what degree local populations of pollinators need to be enhanced (“flower-visitor density gap”)",
+      "type": "跨页断句",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "承接第1页中断的句子，但页首未显示完整，存在拼接疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：样本量344块田、33个系统；小农田产量差关闭中位数24%、均值31%；低产/高产产量比47%；访花者密度10%分位2.5/100花，90%分位5.5/100花，比值44%；田块大小范围0.1-327.2 ha，丰富度0-11种；单一物种时2ha与20ha增产差106%，4种时16%；最佳模型R2=0.97。所有结论均与摘要、正文及图表说明一致。不确定点：图1、图2、图3的视觉细节未提取，仅依赖文字说明；第4页提取顺序混乱，已标记；第1页与第2页断句已标记。未引入外部知识或推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4298,
+      "prompt_tokens": 8783,
+      "total_tokens": 13081,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2256
+      }
+    },
+    "content_chars": 3847
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

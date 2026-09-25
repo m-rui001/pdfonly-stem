@@ -1,0 +1,592 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/str/29/29cb0cddef897ef6de00408e7c5b161347069a8d.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>On-chip generation of high-dimensional entangled quantum states and their coherent control</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>On-chip generation of high-dimensional entangled quantum states and their coherent control</h1><p class="source">2017 · <a href="https://doi.org/10.1038/nature22986">https://doi.org/10.1038/nature22986</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/str/29/29cb0cddef897ef6de00408e7c5b161347069a8d.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>On-chip generation of high-dimensional entangled quantum states and their coherent control Michael Kues,1,2,+,* Christian Reimer,1,* Piotr Roztocki,1 Luis Romero Cortés,1 Stefania Sciara,1,3 Benjamin Wetzel,1,4 Yanbing Zhang,1 Alfonso Cino,3 Sai T. Chu,5 Brent E. Little,6 David J. Moss,7 Lucia Caspani,8 José Azaña,1 and Roberto Morandotti1,9,10+ 1</p>
+<p>School of Engineering, University of Glasgow, Rankine Building, Oakfield Avenue, Glasgow G12 8LT, UK. 3 University of Palermo, Department of Energy, Information Engineering and Mathematical Models, Palermo, Italy. 4 School of Mathematical and Physical Sciences, University of Sussex, Falmer, Brighton BN1 9RH, UK. 5 Department of Physics and Material Science, City University of Hong Kong, Tat Chee Avenue, Hong Kong, China. 6 State Key Laboratory of Transient Optics and Photonics, Xi&#x27;an Institute of Optics and Precision Mechanics, Chinese Academy of Science, Xi&#x27;an, China. 7 Centre for Micro Photonics, Swinburne University of Technology, Hawthorn, VIC, 3122 Australia. 8 Institute of Photonics, Department of Physics, University of Strathclyde, Glasgow G4 0NW, UK. 9 Institute of Fundamental and Frontier Sciences, University of Electronic Science and Technology of China, Chengdu 610054, China. 10 National Research University of Information Technologies, Mechanics and Optics, St. Petersburg, Russia. *These authors contributed equally + + michael.kues@emt.inrs.ca, morandotti@emt.inrs.ca 2</p>
+<p>Optical quantum states based on entangled photons are essential towards solving questions in fundamental physics and are at the heart of quantum information science1. Specifically, the realization of high-dimensional states (D-level quantum systems, i.e. quDits, with D &gt; 2) and their control are central for fundamental investigations of quantum mechanics2, for increasing the sensitivity of quantum imaging schemes3, for improving the robustness and key-rate of quantum communication protocols4, for enabling a richer variety of quantum simulations5 and for more efficient and error-tolerant quantum computation6. Integrated photonics has recently become a leading platform for the compact, cost-efficient, and stable generation and processing of non-classical optical states7. However, to date, integrated entangled quantum sources have been limited to qubits (D = 2)8–11. Here, we demonstrate on-chip generation of entangled quDit states, where the photons are created in a coherent</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>superposition of multiple pure frequency modes. In particular, we confirm the realization of a quantum system with at least one hundred dimensions, formed by two entangled quDits</p>
+<p>with</p>
+<p>D</p>
+<p>=</p>
+<p>10.</p>
+<p>Furthermore,</p>
+<p>using</p>
+<p>state-of-the-art,</p>
+<p>yet</p>
+<p>off-the-shelf</p>
+<p>telecommunications components, we introduce a coherent manipulation platform to control frequency entangled states, capable of performing deterministic high-dimensional gate operations. We validate this platform by measuring Bell inequality violations and performing quantum state tomography. Our work enables the generation and processing of high-dimensional quantum states in a single spatial mode.</p>
+<p>Integrated photonics makes use of the well-developed semiconductor industry to fabricate optical waveguides and functional devices on compact and mass-producible chips12, which are increasingly being used to realize stable, low-cost, and practical components for optical quantum systems7. Among the large variety of on-chip optical quantum sources that have been demonstrated are devices emitting single photons13, as well as entangled two-photon states making use of the polarization8,9, spatial10,14, or temporal11,15 degree of freedom. Large scale quantum states, necessary for, e.g., meaningful quantum information processing, can be achieved by increasing the amount of entangled photons and/or their dimensionality16. Recently the onchip generation of two-dimensional four-photon entangled states was demonstrated17. However, this approach is limited in that the detection rate of multi-photon states fundamentally diminishes with an increasing number of photons, in turn reducing the information processing performance16. Remarkably, the use of higher-dimensional states enables increasing the amount of quantum information without reducing the detection rate16. Making use of spatial modes in free-space experiments, high-dimensional Bell inequality violations18 and Einstein-PodolskyRosen experiments19 have, e.g. , been achieved. In contrast, no integrated source has managed to 2</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>produce such desired high-dimensional quDit states of D &gt; 2. This is because current approaches for on-chip entanglement require, for the generation and processing of high-dimensional states, a drastic increase in quantum circuit complexity, ultimately being ill-suited for this task. In particular, path-entanglement quDit schemes necessitate D coherently-excited identical sources and a complex concatenation of beam splitters20, while high-dimensional temporal entanglement demands complicated stabilized multi-arm interferometers21. Here we show that the frequency domain22–24 offers a unique framework to generate highdimensional states on a photonic chip and to manipulate them in a single spatial mode. Our method exploits spontaneous four-wave mixing (SFWM) in an integrated nonlinear microring resonator17 as schematized in Fig. 1. In particular, we used a spectrally-filtered mode-locked laser to excite a single resonance of the microring at ~1550 nm wavelength, in turn producing pairs of correlated signal and idler photons spectrally-symmetric to the excitation field and which cover multiple resonances, see Fig. 1. Considering the quantum nature of this process, the individual photons were intrinsically generated in a superposition of multiple frequency modes. Due to the energy conservation of SFWM, this approach leads to the realization of a two-photon high-dimensional frequency-entangled state. We performed two experiments to characterize the dimensionality of the generated state. The large free spectral range (FSR) of the ring cavity (~200 GHz), i.e. the spectral separation between adjacent resonance modes, enabled us to use a commercially available telecommunications programmable filter (see Methods) for individually selecting and manipulating the states in these modes (g</p>
+<p>h f</p>
+<p>’ operational bandwidth of 1527.4 to</p>
+<p>1567.5 nm, we were able to access 10 signal and 10 idler resonances). We measured the joint spectral intensity, describing the two-photon</p>
+<p>’</p>
+<p>f q</p>
+<p>y</p>
+<p>, see Methods.</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>Specifically, we routed different frequency modes of the signal and idler photons to two single photon detectors and counted photon coincidences for all sets of mode combinations. As shown in Fig. 2a, photon coincidences were measured only for mode combinations spectrallysymmetric to the excitation, a characteristic of frequency-entangled states. In addition, we evaluate the Schmidt number of our source. This parameter describes the lowest number of significant orthogonal modes in a bipartite system, and therefore describes its effective dimension. Through a Schmidt mode decomposition of the correlation matrix (see Methods), we extracted the lower bound for the Schmidt number to be 9.4, see Fig. 2b. Due to the narrow spectral linewidth of the photons (~800 MHz) and the related long coherence time (~0.6 ns), the effective time resolution of our full detection system (~100 ps) was sufficient to perform time-domain measurements and extract the maximal dimensionality of the state, see Methods. Specifically, we measured the second-order coherence of the signal and idler fields using a Hanbury Brown and Twiss setup comprised of a 50:50 beam splitter and a photon coincidence detection system. The maximum of the second-order coherence function is directly related to the number of effective modes Neff, i.e.</p>
+<p>, see Methods. By</p>
+<p>individually selecting 10 signal and 10 idler resonances, we confirmed that the photons from each single resonance are in a pure quantum state (one effective mode per resonance, measured within the detection uncertainty), see Fig. 2b (inset). In turn, the two-photon state defined over a pair of single resonances (one signal and one idler) symmetric to the excitation frequency is separable and has a Schmidt number of one, i.e. it does not contain any frequency entanglement. Consequently, a two-photon entangled quantum state comprised of multiple such pure frequency mode pairs has a Schmidt number with an upper bound given by the sum of the individual Schmidt numbers, which was measured to be 10.45±0.53 for the 10 considered resonance pairs,</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>see Fig 2b. As the lower and upper bound practically coincide, we conclude that the number of significant orthogonal modes is indeed 10. These measurements confirmed that one photon pair simultaneously spans multiple frequency modes, forming a high-dimensional entangled state of the form | ⟩</p>
+<p>∑</p>
+<p>| ⟩| ⟩</p>
+<p>∑| |</p>
+<p>(Eq. 1).</p>
+<p>Here | ⟩ and | ⟩ are pure, single-frequency quantum states of the signal (s) and idler (i) photons, and k=1,2,…,D is the mode number, as indicated in Fig. 3 i). Such a state (Eq. 1) is of particular importance for quantum information processing25. In particular, only pure states show efficient Hong-Ou-Mandel interference for gate implementation, which is at the basis of linear optical quantum computation (LOQC)1 . Furthermore, this entangled state can be turned under a single-photon unitary transformation into a linear cluster state26, required for the measurementbased quantum computation concept27. In general, the exploitation of quDit states for quantum information processing motivates the need for high-dimensional operations that enable access to multiple modes with a minimum number of components. While the individual elements (phase shifters and beam splitters) employed in the framework of spatial-mode quantum information processing usually operate on only one or two modes at a time1, the frequency domain is ideally suited for global operations, i.e. acting on all system modes simultaneously. Through the merging of the fields of quantum state manipulation and ultrafast optical signal processing, state-of-the-art, yet established radiofrequency (RF) and telecommunications technologies28 can be used to simultaneously address multiple frequency modes and enact high-dimensional coherent control and fundamental optical gate operations, achieving a scalable and practical quantum platform29. In particular, optical phase gates for manipulating high-dimensional quDits can be directly implemented using</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>programmable phase filters. The coherent mixing of multiple modes (a high-dimensional ‘</p>
+<p>m</p>
+<p>splitting’ in the frequency domain) can be achieved through deterministic frequency conversion in electro-optic modulators. More importantly, as these two components are electronicallytunable, versatile operations can be performed in real-time without modifying the experimental setup (or the device), by simply adjusting the filter control and electrical modulation signal. By combining these elements, basic high-dimensional photon operations can be implemented in a single and robust spatial mode. To implement this concept, we realized a setup to perform basic gate operations for coherent state control using a configuration composed of two programmable filters and one electro-optic phase modulator, as schematized in Fig. 1 and explained in more detail in Fig. 3. The first programmable filter was used to impose an arbitrary spectral amplitude and phase mask on the high-dimensional state, see Fig. 3 ii). This manipulated state was then sent to an electro-optic phase modulator, which was driven by an RF frequency synthesizer (see Methods). The imposed phase modulation generated coherent sidebands from the input frequency modes, see inset in Fig. 1. When the sideband frequency shift was chosen to match the spectral mode separation of the quantum state, i.e. the FSR, these input frequency modes were coherently mixed, see Methods and Fig. 3 iii). Then, a second programmable filter (Fig. 3 iv) was used to select different, individual frequency components of the manipulated state through the application of a second amplitude mask. Finally, each of the two photons was routed to a separate single photon detector for coincidence counting (Fig. 3 v). We used this manipulation scheme to design well-defined quantum operations, which we exploited for Bell-test measurements and quantum state tomography. In particular, we prepared the RF driving signal in such a way to enable the mixing of two, three, or four adjacent</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>frequency modes, see Methods. In combination with single photon detection, this allowed us to perform projection measurements of the form |</p>
+<p>⟩</p>
+<p>| ̅⟩, for a given frequency</p>
+<p>∑</p>
+<p>mode ̅ , where the projection amplitudes k, as well as the phases k, can be arbitrarily chosen for each photon. Since the state amplitudes ck in Eq. 1 were measured to be very similar, see Fig. 2a, we assumed the</p>
+<p>generation</p>
+<p>| ⟩</p>
+<p>∑</p>
+<p>of</p>
+<p>| ⟩| ⟩</p>
+<p>maximally-entangled √</p>
+<p>∑</p>
+<p>states</p>
+<p>with</p>
+<p>equal</p>
+<p>amplitudes,</p>
+<p>i.e.</p>
+<p>| ⟩ | ⟩ . By considering any two, three, and four adjacent</p>
+<p>frequency modes, we characterized the entangled quantum states and compared our measurements to these ideal cases. Using the projections for both photons | √</p>
+<p>∑</p>
+<p>⟩</p>
+<p>| ̅⟩, quantum interference was measured in the coincidence counts as a function of</p>
+<p>the phase , see Methods. The quantum interference for D = 2, 3 and 4 is shown in Fig. 4 a-c) with raw visibilities of 83.6%, 86.6%, and 86.4% (without background subtraction). These values violate the respective Bell inequalities2, as they exceed the thresholds of 71%, 77%, and 81.7%, respectively, thus confirming entanglement, see Methods. Furthermore, a larger set of projection measurements was used to perform quantum state tomography, a method that allows the full experimental characterization of an unknown quantum state by reconstructing its density matrix, see Methods. We present in Fig. 4 d-f) these matrices for D = 2, 3, and 4, showing very good agreement between the maximally-entangled and measured quantum states with fidelities of 88.5%, 80.9%, and 76.6%, respectively.</p>
+<p>In conclusion, by exploiting a frequency-domain approach, our scheme allows the direct generation of high-dimensional entangled two-photon states (composed of a quantum superposition of pure states) in an integrated platform. We achieved flexible coherent control of 7</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>these states through the manipulation of their frequency components using state-of-the-art, yet commercially available programmable telecommunications filters and off-the-shelf RF photonics components. This makes possible the simple execution of D-dimensional manipulations and mode-mixing operations in a single, robust spatial mode, furthermore enabling their combination with other entanglement concepts. Our scheme finds immediate applications, e.g., for fundamental investigations of quantum nonlocality and high-dimensional quantum state characteristics, as well as for large-alphabet fibre-based quantum communications. By sending the entangled states through a 24.2 km long fibre telecommunications system (standard single mode and dispersion-compensating fibre elements), and then repeating the Bell inequality test, we confirmed that the entanglement was preserved over significant propagation distances, see Methods and Extended Data, Fig. 1. Furthermore, the concatenation30 of the basic manipulation units shown here, as well as the implementation of arbitrary RF modulation waveforms and phase masks, will enable the realization of more complex and efficient gates, thus allowing access to high-dimensional quantum computing logic in optical circuits of manageable experimental complexity. For this, the quality and detection efficiency of the states can be significantly enhanced by reducing insertion losses of the coherent control elements (here 14.5 dB). Using on-chip wavelength and phase filters together with integrated phase modulators will significantly reduce the losses and enable the implementation of several components in a compact platform12. Remarkably, our approach can also easily support the generation and control of even higher dimensional states. This can be achieved, e.g., by decreasing the FSR of the resonator and using a programmable filter with a higher frequency resolution to access the full dimensionality of the generated state. For example, the maximum modulation bandwidth of 600 GHz used here</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>together with an FSR of ~6.25 GHz would readily lead to a 96 x 96 dimensional system, corresponding to as many as 13 qubits. Our results indicate that microcavity-based high-dimensional frequency-entangled states and their spectral-domain manipulation open up new venues for reaching the processing capabilities required for meaningful quantum information science in a powerful and practical platform.</p>
+<p>References: 1.</p>
+<p>Knill, E., Laflamme, R. &amp; Milburn, G. J. A scheme for efficient quantum computation with linear optics. Nature 409, 46–52 (2001).</p>
+<p>2.</p>
+<p>Collins, D., Gisin, N., Linden, N., Massar, S. &amp; Popescu, S. Bell inequalities for arbitrarily high-dimensional systems. Phys. Rev. Lett. 88, 40404 (2002).</p>
+<p>3.</p>
+<p>Lloyd, S. Enhanced sensitivity of photodetection via quantum illumination. Science 321, 1463–1465 (2008).</p>
+<p>4.</p>
+<p>Ali-Khan, I., Broadbent, C. J. &amp; Howell, J. C. Large-alphabet quantum key distribution using energy-time entangled bipartite states. Phys. Rev. Lett. 98, 60503 (2007).</p>
+<p>5.</p>
+<p>Neeley, M. et al. Emulation of a quantum spin with a superconducting phase qudit. Science 325, 722 (2009).</p>
+<p>6.</p>
+<p>Lanyon, B. P. et al. Simplifying quantum logic using higher-dimensional Hilbert spaces. Nat. Phys. 5, 134–140 (2009).</p>
+<p>7.</p>
+<p>Tanzilli, S. et al. On the genesis and evolution of integrated quantum optics. Laser Photonics Rev. 6, 115–143 (2012).</p>
+<p>8.</p>
+<p>Matsuda, N. et al. A monolithically integrated polarization entangled photon pair source on a silicon chip. Sci. Rep. 2, 817 (2012). 9</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>9.</p>
+<p>Horn, R. T. et al. Inherent polarization entanglement generated from a monolithic semiconductor chip. Sci. Rep. 3, 2314 (2013).</p>
+<p>10.</p>
+<p>Silverstone, J. W. et al. Qubit entanglement between ring-resonator photon-pair sources on a silicon chip. Nat. Commun. 6, 7948 (2015).</p>
+<p>11.</p>
+<p>Xiong, C. et al. Compact and reconfigurable silicon nitride time-bin entanglement circuit. Optica 2, 724 (2015).</p>
+<p>12.</p>
+<p>Editorial. Simply silicon. Nature Photon. 4, 491 (2010).</p>
+<p>13.</p>
+<p>Babinec, T. M. et al. A diamond nanowire single-photon source. Nat. Nanotechnol. 5, 195–199 (2010).</p>
+<p>14.</p>
+<p>Solntsev, A. S. &amp; Sukhorukov, A. A. Path-entangled photon sources on nonlinear chips. Rev. Phys. doi: 10.1016/j.revip.2016.11.003 (2016).</p>
+<p>15.</p>
+<p>Grassani, D. et al. Micrometer-scale integrated silicon source of time-energy entangled photons. Optica 2, 88–94 (2015).</p>
+<p>16.</p>
+<p>Zhang, Y. et al. Engineering two-photon high-dimensional states through quantum interference. Sci. Adv. 2, e1501165 (2016).</p>
+<p>17.</p>
+<p>Reimer, C. et al. Generation of multiphoton entangled quantum states by means of integrated frequency combs. Science 351, 1176–1180 (2016).</p>
+<p>18.</p>
+<p>Dada, A. C., Leach, J., Buller, G. S., Padgett, M. J. &amp; Andersson, E. Experimental highdimensional two-photon entanglement and violations of generalized Bell inequalities. Nat. Phys. 7, 677–680 (2011).</p>
+<p>19.</p>
+<p>Howell, J. C., Bennink, R. S., Bentley, S. J. &amp; Boyd, R. W. Realization of the EinsteinPodolsky-Rosen paradox using momentum and position-entangled photons from spontaneous parametric down conversion. Phys. Rev. Lett. 92, 210403 (2004).</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>20.</p>
+<p>Schaeff, C. et al. Scalable fiber integrated source for higher-dimensional path-entangled photonic quNits. Opt. Express 20, 16145 (2012).</p>
+<p>21.</p>
+<p>Thew, R., Acin, A., Zbinden, H., Gisin, N. Experimental realization of entangled qutrits for quantum communication. Quantum Inf. Comput. 4, 93 (2004).</p>
+<p>22.</p>
+<p>Olislager, L. et al. Frequency-bin entangled photons. Phys. Rev. A 82, 13804 (2010).</p>
+<p>23.</p>
+<p>P ’</p>
+<p>A D y</p>
+<p>F</p>
+<p>m A A &amp;</p>
+<p>g Y</p>
+<p>mp</p>
+<p>shaping of entangled</p>
+<p>photons. Phys. Rev. Lett. 94, 73601 (2005). 24.</p>
+<p>Bernhard, C., Bessire, B., Feurer, T. &amp; Stefanov, A. Shaping frequency-entangled qudits. Phys. Rev. A 88, 32322 (2013).</p>
+<p>25.</p>
+<p>Walmsley, I. A. &amp; Raymer, M. G. Toward quantum-information processing with photons. Science 307, 1733–1734 (2005).</p>
+<p>26.</p>
+<p>Zhou, D., Zeng, B., Xu, Z. &amp; Sun, C. Quantum computation based on d-level cluster state. Phys. Rev. A 68, 62303 (2003).</p>
+<p>27.</p>
+<p>Raussendorf, R. &amp; Briegel, H. J. A one-way quantum computer. Phys. Rev. Lett. 86, 5188–5191 (2001).</p>
+<p>28.</p>
+<p>Finot, C. Photonic waveform generator by linear shaping of four spectral sidebands. Opt. Lett. 40, 1422–1425 (2015).</p>
+<p>29.</p>
+<p>Barreiro, J. T., Meschede, D., Polzik, E., Arimondo, E. &amp; Lugiato, L. Atoms, photons and entanglement for quantum information technologies. in Procedia Computer Science 7, 52– 55 (2011).</p>
+<p>30.</p>
+<p>Lukens, J. M. &amp; Lougovski, P. Optical quantum computing with spectral qubits. in Frontiers in Optics FTh5F.5 (2016).</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>Acknowledgements: This work was supported by the Natural Sciences and Engineering Research Council of Canada (NSERC) through the Steacie, Strategic, Discovery and Acceleration Grants Schemes, by the MESI PSR-SIIRI Initiative in Quebec, by the Canada Research Chair Program and by the Australian Research Council Discovery Projects scheme. C.R. and P.R. acknowledge the support of NSERC Vanier Canada Graduate Scholarships. M.K. k</p>
+<p>w</p>
+<p>g</p>
+<p>f</p>
+<p>g f m h</p>
+<p>p</p>
+<p>U</p>
+<p>’ H</p>
+<p>z</p>
+<p>h</p>
+<p>program under the Marie Sklodowska-Curie grant agreement no. 656607. S.T.C. acknowledges the support from the CityU SRG-Fd program #7004189. B.E.L acknowledges support from the Strategic Priority Research Program of the Chinese Academy of Sciences, Grant No. XDB24030300. B.W. acknowledges the support from the People Programme (Marie Curie A</p>
+<p>) f h</p>
+<p>p</p>
+<p>U</p>
+<p>’ FP7 P g mm</p>
+<p>Ag</p>
+<p>g</p>
+<p>m</p>
+<p>P</p>
+<p>(P OF-</p>
+<p>GA-2013-625466). L.C. acknowledges the support from the People Programme (Marie Curie Actions) of th</p>
+<p>p</p>
+<p>U</p>
+<p>’ FP7 P g mm</p>
+<p>AG</p>
+<p>Ag</p>
+<p>m</p>
+<p>7478</p>
+<p>(THREEPLE). R.M. acknowledges additional support by the Government of the Russian Federation through the ITMO Fellowship and Professorship Program (Grant 074-U 01) and from the 1000 Talents Sichuan Program. We thank R. Helsten and M. Islam for technical insights; A. Tavares, T. Hansson, A. Bruhacs for discussions; T. A. Denidni and S. O. Tatu for lending us some of the required experimental equipment; P. Kung from QPS Photronics for the help and processing equipment; as well as QuantumOpus and N. Bertone of OptoElectronics Components for their support and for providing us with state-of-the-art photon detection equipment.</p>
+<p>Author contributions: C.R. and M.K. developed the idea and contributed equally. C.R., M.K., P.R., L.R.C., B.W., and Y.Z. designed the experiment, performed the measurements and analysed the experimental results. S.S. and L.C. led the theoretical analysis. B.E.L. and S.T.C. 12</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>designed and fabricated the integrated device. A.C. and D.J.M. participated to scientific discussions. R.M. and J.A. supervised and managed the project. All authors contributed to the writing of the manuscript.</p>
+<p>Author information: Correspondence and requests for materials should be addressed to M.K. (michael.kues@emt.inrs.ca) or R.M. (morandotti@emt.inrs.ca). Reprints and permissions information is available at www.nature.com/reprints. The authors declare no competing financial interest.</p>
+<p>Figures: Figure 1 | Experimental setup for high-dimensional quantum state generation and control. A passively mode-locked laser was coupled into the integrated microring resonator after being spectrally filtered to precisely excite a single resonance. Spontaneous four-wave mixing (SFWM) led to the generation of photon pairs (signal and idler) spectrally symmetric to the excitation and in a quantum superposition of the frequency modes defined by the resonances. Programmable filters and a modulator were used for manipulating the state, before the signal and idler photons were detected by two single photon counters.</p>
+<p>Figure 2 | Characterization of the quantum state dimensionality. (a) Measured joint spectral intensity of the high-dimensional quantum state, showing photon coincidences only at symmetric mode pairs (i.e. on the diagonal of the matrix) and revealing a frequency correlation. (b) Twophoton state dimensionality (Schmidt number) as a function of the considered resonance pairs, symmetric to the excitation frequency, with the upper bound (blue crosses), obtained from the second-order coherence, and lower bound (red circles), calculated from the correlation matrix.</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>Inset: Measured second-order coherence of a single photon emitted at one specific resonance with a maximum of 1.92±0.03, corresponding to 1.086±0.03 effective modes. The experiment was repeated for each signal and idler resonance, returning comparable values. The error bars represent the 95% confidence bounds of the coefficient retrieved from a fit to the secondorder coherence curve.</p>
+<p>Figure 3 | Experimental implementation of the coherent control of frequency-entangled high-dimensional quantum states. Individual steps to control, manipulate and characterize the high-dimensional quantum states are displayed, showing for each one the equipment used and a schematic of the modification imposed on the quantum state in the spectral domain. i) The initial states were generated using the operational principle illustrated in Fig. 1. ii) Using a programmable filter (PF1) any arbitrary spectral phase and amplitude mask can be imposed on the quantum states for manipulation. iii) An electro-optic modulator (Mod), driven by a radiofrequency synthesizer was used to coherently mix different frequency components of the highdimensional states. In particular, such an operation can be precisely controlled by using appropriate electronic radio-frequency signals for, e.g., the mixing of 2, 3, 4 or (in principle) more adjacent frequency modes. iv) A second programmable filter (PF2) can impose an amplitude and phase mask and route the signal and idler to two different paths. v) The photons were then detected using single photon counters and timing electronics. This step, together with the previous adjustable coherent control, allows the implementation of adaptable projections, which can then be used, e.g., for Bell measurements, or quantum state tomography – shown in Fig. 4. The complete mathematical description of all operations (indicated by APF and AMod) can be found in the Methods section.</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>Figure 4 | Bell inequality violation and quantum state tomography of frequency-entangled states. To demonstrate the viability of the coherent control scheme described in Fig. 3, we performed a set of projection measurements. For the quantum interference characterization of quDit with D=2 a), D=3 b), and D=4 c), such states were projected on a superposition of D frequency modes with different phases. By changing these phases, a variation in the coincidence counts was measured (the flat black curve being the recorded background). Raw visibilities of 83.6%, 86.6%, and 86.4% for the quantum interference were obtained (without background subtraction), exceeding the visibilities of 71%, 77%, and 81.7%, respectively required to violate a Bell inequality for the D=2, D=3, and D=4 states. By exploiting the ability to carry out arbitrary projection measurements on the signal and idler photon independently, we performed full quantum state tomography to experimentally reconstruct the density matrix of the entangled quDit states. We achieved fidelities of 88.5%, 80.9%, and 76.6% for D=2 d) D=3 e), and D=4 f), respectively, demonstrating very good agreement between the measured and the expected maximally-entangled states.</p>
+<p>Methods: Experimental quantum state generation and control. We use an on-chip microring resonator fabricated from a high refractive index glass17, with a free spectral range of 200 GHz and a Qfactor of 235,000. The input and output waveguides are featured with mode converters and are connected to polarization-maintaining fibres, resulting in coupling losses of &lt;1.6 dB per facet17. In addition to the photonic chip, we used the following standard components, where all optical parts were connected using polarization-maintaining single-mode optical fibres: Mode-locked</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>laser (PriTel), electro-optic phase modulator (EO-Space), radio-frequency (RF) signal generator (Agilent Technologies), programmable filter (Finisar Waveshaper), single photon detectors (Quantum Opus), timing electronics (PicoQuant). During our measurements, we ensured that the microring excitation was stable, i.e. showing less than 3% power fluctuations. Furthermore, the electro-optical modulation (frequency shift and intensity distribution) and programmable optical filtering (applied spectral phase and attenuation) presented no measurable fluctuations. The optimization of our experimental implementation can be pursued through the following: First, the losses can be reduced, which will increase the measured coincidence-to-accidental ratio and thus the visibility of the quantum interference and the fidelity of the tomography measurements. Second, the quantum states themselves can be purified, i.e. through quantum state distillation. The total transmission loss of the coherent control setup amounted to 14.5 dB (1 dB for the notch filter, 4.5 dB for the first programmable filter, 3.5 dB for the modulator, and 5.5 dB for the second programmable filter). These losses can be reduced through the use of integrated devices12 (optical modulators, filters and phase controllers) and/or specially-designed programmable filters, e.g. based on combinations of fibre Bragg gratings and fibre-based phase shifters. Due to the nature of the SFWM process, the generated states do not have equal amplitudes over all frequency modes. This slight imbalance reduces the measured quantum interference visibility and state fidelity, as their determination is based on the assumption of maximally-entangled states. By performing quantum state distillation31, these amplitudes can be made equal to maximize the entanglement.</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>Frequency mixing using electro-optic phase modulation. The frequency mixing of the singlephoton modes was performed by means of electro-optic phase modulation, driven by a single radio-frequency tone32,33. For the case of a single optical frequency mode input, phase modulation creates side-bands, the amplitudes and spectral spacing of which can be controlled via the modulation voltage and RF frequency, respectively. If an integer multiple of this sideband spacing matches the FSR of the ring resonator, the mixing of optical signals in neighbouring resonances takes place. This process is governed by a linear, unitary, and time-dependent operator, which has the following form in the time domain:</p>
+<p>Here, i is the imaginary unit, t represents time, Vm is the voltage amplitude of the RF tone, is the electro-optical coefficient of the phase modulator, m is the RF frequency, and m is the initial phase. Due to its intrinsic time-periodicity, this operator can be expressed in the form of an infinite trigonometric series, ∑</p>
+<p>The side-band coefficient</p>
+<p>where</p>
+<p>is determined by the Jacobi-Anger expansion:</p>
+<p>is the Bessel function of the first kind and of order n, evaluated at Vm. The</p>
+<p>Bessel coefficients determine the side-band amplitudes, and thus for a given input optical signal, the phase-modulated output is described by a series of harmonic functions weighted by these coefficients. Each frequency mode is split into a series of modulation products (frequency modes), spectrally spaced by multiples of the driving frequency m.</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>The advantage of this method is that the achievable modulation bandwidth is not only dependent on the driving frequency (as is the case for amplitude modulation), but also on the voltage</p>
+<p>.</p>
+<p>This means that a low-frequency RF tone (low m) can generate modulation products at high frequencies, provided that a sufficiently high value of Vm is supplied. In our experiments, FSR = 200 GHz and</p>
+<p>33.3 GHz. Using a sine-wave RF signal, we</p>
+<p>achieved, for the D=2 and D=3 case, 11% power transfer to each of the ±200 GHz modes, while 8% of the power remained (unmodulated) in the fundamental frequency, leading to the mixing of a resonance mode with its two first-neighbours. For D=4, we achieved a 4% power transfer to the ±100 GHz as well as ±300 GHz modulation sidebands, leading to a mixing of four resonance modes in a vacuum mode, see Extended Fig. 2. The rest of the power was lost to other modulation sidebands, not required for the targeted mixing process. This loss and slight unbalance in the power distribution can be mitigated by using more complex modulation functions, e.g. those produced by arbitrary waveform generators. Furthermore, by using higher bandwidth electro-optic modulation schemes34 or/and decreasing the microring FSR35, it is possible to mix a larger number of frequency modes, which can also enable the direct interference of signal and idler photons. Quantum mechanically, an operator that describes this process and which transforms the input into the output state is defined as36,37: ∑̅</p>
+<p>∑̅</p>
+<p>̅</p>
+<p>̅ ̅ |,</p>
+<p>̅ | ⟩⟨</p>
+<p>for the signal (s) and idler (i) photons. The mixing coefficients are related to the side-band modulation terms by</p>
+<p>where p is a natural number such that pm matches the FSR of</p>
+<p>the ring resonator.</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Schmidt mode decomposition. A frequency-entangled two-photon state can be described using its joint spectral amplitude38 (JSA)</p>
+<p>. The dimensionality of such an entangled state can</p>
+<p>be estimated by performing a Schmidt mode decomposition. In particular, the Schmidt number K represents the lowest amount of significant orthogonal modes in the system39 (defined as (∑</p>
+<p>) , where</p>
+<p>are the Schmidt eigenvalues with ∑</p>
+<p>). However, it is</p>
+<p>experimentally challenging to extract the JSA as the measurement requires the reconstruction of the</p>
+<p>’ full phase information. Instead, a lower bound for the Schmidt number can be</p>
+<p>experimentally determined by measuring the joint spectral intensity (JSI) |</p>
+<p>| of the</p>
+<p>two-photon state. The JSI can be for example measured by performing spectrally-resolved coincidence measurements, as shown in Fig. 2a. Even without the full phase information, the JSI can be used to approximate the JSA as</p>
+<p>√|</p>
+<p>| . This assumption can in turn</p>
+<p>be used to determine the lower bound for the Schmidt number, by extracting the Schmidt eigenvalues (∑</p>
+<p>using a singular value decomposition of √|</p>
+<p>| , and calculating</p>
+<p>) .</p>
+<p>Time-domain mode measurements. The time-domain second-order coherence function of a state is directly correlated to the number of effective modes (Neff) in the system40. Assuming that the amplitudes of these modes are equal, the maximum of the second-order coherence function is given by40</p>
+<p>. If a state is measured to only have a single mode (</p>
+<p>= 2),</p>
+<p>the state is pure41. If both signal and idler are measured to be single mode, the joint two-photon state is fully separable and no entanglement is present41. The generation of pure states is intimately linked to the pump configuration used to excite the photon pairs42. In particular, if the</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>excitation bandwidth is equal to the bandwidth of the signal and idler photons, such a desirable pure frequency state can be generated42. This condition can be achieved if the microring resonator is pumped by means of a broadband pulsed laser, which is spectrally filtered to excite only a single resonance. Such a resonance acts as an additional spectral filter, ensuring that the input pulse matches the full resonance bandwidth, so that only one frequency mode per signal/idler resonance is expected.</p>
+<p>Quantum interference measurement. We performed Bell tests, i.e. measurements that show the violation of classical inequalities. In the experiments presented here, we considered states with D = 2, D = 3 and D = 4. For a D-dimensional bipartite system, a Bell parameter</p>
+<p>can be</p>
+<p>defined, where ID &gt; 2 denotes entanglement2. The value of ID can be extracted from the visibility associated to the quantum interference measurements, which can be obtained by projecting the states onto the vectors: |</p>
+<p>⟩</p>
+<p>(∑</p>
+<p>| ̅ ⟩ ) (∑</p>
+<p>| ̅⟩ )</p>
+<p>for D=2, D=3 and D=4. We implemented these projections by adjusting the first programmable filter and choosing the modulation frequency in such a way that the modes | ⟩ | ⟩|</p>
+<p>⟩</p>
+<p>|</p>
+<p>⟩ were mixed. This allowed us to measure: |⟨ |⟨</p>
+<p>| |</p>
+<p>|⟨</p>
+<p>⟩| , ⟩| , and</p>
+<p>|</p>
+<p>⟩| .</p>
+<p>The expected quantum interference signal takes the form:</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>where D (D = 2, 3 or 4) emerges from a symmetric noise model2, and describes the deviation from a pure, maximally-entangled quantum state. This coefficient is related to the visibility through the expressions: , , and . To achieve a violation of the Bell inequality, here expressed in terms of visibilities, the following relations must be fulfilled2: ,</p>
+<p>√ √</p>
+<p>, and</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>.</p>
+<p>√</p>
+<p>Density matrix reconstruction. A very detailed and instructive summary of how to perform quantum state tomography on qubits has been presented by D.F.V. James et al.43, which was then extended to quDits by R.T Thew et al.44. In short, quantum state tomography is an experimental method that allows to extract the density matrix of a quantum state. For a given | ⟩ the density matrix is defined as</p>
+<p>| ⟩⟨ |.</p>
+<p>It is possible to reconstruct wave vectors |</p>
+<p>by performing a series of measurements described via projection</p>
+<p>⟩. The coincidence counts collected for each projection are given by: ⟨</p>
+<p>| |</p>
+<p>⟩</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>where C is a constant depending on the integration time. The measured density matrix can then be reconstructed using the relations: ∑</p>
+<p>,</p>
+<p>∑</p>
+<p>,</p>
+<p>⟨</p>
+<p>|</p>
+<p>|</p>
+<p>⟩, and</p>
+<p>∑ In order to deduce matrices</p>
+<p>from the measured values, a set of linearly independent and normalized</p>
+<p>is required. Any set of such matrices can be used as long as they fulfill the</p>
+<p>requirement43</p>
+<p>{</p>
+<p>}</p>
+<p>. The density matrix can then be extracted from any set of</p>
+<p>projection measurements that results in an invertible matrix B. For the reconstruction of qubits (D = 2), we chose the following projections for each photon: | ̅ ⟩, | ̅</p>
+<p>⟩,</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩), and</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩), resulting in 16 different two-photon</p>
+<p>projection measurements. For the D = 3 case, each photon has to be projected onto 9 different vectors, and all 81 combinations have to be measured. We chose the following single photon projections:</p>
+<p>√</p>
+<p>√</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>(</p>
+<p>| ̅⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>(</p>
+<p>| ̅⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>( |̅</p>
+<p>√</p>
+<p>√</p>
+<p>(</p>
+<p>(| ̅</p>
+<p>⟩</p>
+<p>| ̅⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>⟩),</p>
+<p>√</p>
+<p>Finally, for the D=4 case, we chose the following:</p>
+<p>√</p>
+<p>(| ̅ ⟩)</p>
+<p>√</p>
+<p>⟩ (</p>
+<p>|̅</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>√</p>
+<p>√</p>
+<p>(| ̅</p>
+<p>⟩</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>√</p>
+<p>(</p>
+<p>|̅</p>
+<p>(| ̅</p>
+<p>⟩</p>
+<p>√</p>
+<p>√</p>
+<p>| ̅⟩</p>
+<p>(</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>⟩ |̅</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩),</p>
+<p>|̅</p>
+<p>⟩).</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>|̅</p>
+<p>√</p>
+<p>(| ̅ ⟩</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>|̅ |̅</p>
+<p>⟩) |̅</p>
+<p>√</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>⟩</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>|̅ |̅</p>
+<p>⟩</p>
+<p>√</p>
+<p>|̅</p>
+<p>√</p>
+<p>|̅</p>
+<p>(| ̅ ⟩ ⟩) (| ̅ ⟩ ⟩)</p>
+<p>|̅</p>
+<p>√</p>
+<p>|̅</p>
+<p>√</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>⟩</p>
+<p>|̅</p>
+<p>⟩)</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>⟩</p>
+<p>⟩)</p>
+<p>√</p>
+<p>(| ̅ ⟩</p>
+<p>|̅</p>
+<p>√</p>
+<p>(| ̅ ⟩ |̅</p>
+<p>⟩) |̅</p>
+<p>|̅</p>
+<p>√</p>
+<p>(| ̅ ⟩ |̅</p>
+<p>⟩ ⟩)</p>
+<p>√</p>
+<p>⟩</p>
+<p>(</p>
+<p>⟩) | ̅⟩</p>
+<p>⟩)</p>
+<p>A density matrix associated to a physical system has to be Hermitian and positive-definite, however the matrix extracted from measurements usually does not comply with these requirements. To retrieve a meaningful , we performed a maximum-likelihood estimation, which is a method used to find the physically-realistic density matrix closest to the measured one43. The fidelity is a useful metric that can be extracted from the reconstructed density matrix, defined as the overlap between the ideal theoretical and measured , and given by √</p>
+<p>√</p>
+<p>. A fidelity of one describes a perfect overlap with the ideal entangled</p>
+<p>state.</p>
+<p>Frequency-entangled quantum state transmission over long fibre distances. To demonstrate that our approach is suitable for quantum communication, we sent the frequency-entangled states through 20 km of standard single mode fibre (approximately 4.5 dB loss) before being analyzed by our coherent control setup. The chromatic fibre dispersion caused a temporal walk-off of the frequency components (349 ps/nm over the 20 km propagation), as well as a constant phase shift among them. This shift does not degrade the quantum state, and can be compensated through</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>phase modification by the first programmable filter. To achieve efficient frequency mixing, the temporal walk-off was corrected by adding 4.2 km of dispersion compensating fibre (3.6 dB loss, -350 ps/nm at 1550 nm).</p>
+<p>Methods References: 31.</p>
+<p>Kwiat, P. G., Barraza-Lopez, S., Stefanov, A. &amp; Gisin, N. Experimental entanglement ‘h</p>
+<p>32.</p>
+<p>’</p>
+<p>-locality. Nature 409, 1014 (2001).</p>
+<p>Oppenheim, A. V. &amp; Willsky, A. S. Signals and Systems (Prentice-Hall Signal Processing Series). (Prentice Hall, 1997).</p>
+<p>33.</p>
+<p>Karpinski, M., Jachura, M., Wright, L. J. &amp; Smith, B. J. Bandwidth manipulation of quantum light by an electro-optic time lens. Nature Photon. 11, 53–57 (2017).</p>
+<p>34.</p>
+<p>Ishizawa, A. et al. Phase-noise characteristics of a 25-GHz-spaced optical frequency comb based on a phase- and intensity-modulated laser. Opt. Express 21, 29186 (2013).</p>
+<p>35.</p>
+<p>Xuan, Y. et al. High-Q silicon nitride microresonators exhibiting low-power frequency comb initiation. Optica 3, 1171 (2016).</p>
+<p>36.</p>
+<p>Kumar, P. &amp; Prabhakar, A. Evolution of quantum states in an electro-optic phase modulator. IEEE J. Quantum Electron. 45, 149–156 (2009).</p>
+<p>37.</p>
+<p>Capmany, J. &amp; Fernández-pousa, C. R. Quantum model for electro-optical phase modulation. J. Opt. Soc. Am. B 27, 119–129 (2010).</p>
+<p>38.</p>
+<p>Law, C. K., Walmsley, I. a. &amp; Eberly, J. H. Continuous frequency entanglement: effective finite Hilbert space and entropy control. Phys. Rev. Lett. 84, 5304–5307 (2000).</p>
+<p>39.</p>
+<p>Fedorov, M. V &amp; Miklin, N. I. Schmidt modes and entanglement. Contemp. Phys. 55, 94–</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>109 (2014). 40.</p>
+<p>Christ, A., Laiho, K., Eckstein, A., Cassemiro, K. N. &amp; Silberhorn, C. Probing multimode squeezing with correlation functions. New J. Phys. 13, 33027 (2011).</p>
+<p>41.</p>
+<p>Förtsch, M. et al. A versatile source of single photons for quantum information processing. Nat. Commun. 4, 1818 (2013).</p>
+<p>42.</p>
+<p>Helt, L. G., Yang, Z., Liscidini, M. &amp; Sipe, J. E. Spontaneous four-wave mixing in microring resonators. Opt. Lett. 35, 3006 (2010).</p>
+<p>43.</p>
+<p>James, D. F. V., Kwiat, P. G., Munro, W. J. &amp; White, A. G. Measurement of qubits. Phys. Rev. A 64, 52312 (2001).</p>
+<p>44.</p>
+<p>Thew, R. T., Nemoto, K., White, A. G. &amp; Munro, W. J. Qudit quantum-state tomography. Phys. Rev. A 66, 12303 (2002).</p>
+<p>Data availability statement The raw data that support the findings of this study are available from the corresponding authors upon reasonable request.</p>
+<p>Extended Data: Extended Data Figure 1 | Bell inequality violation for frequency entangled states after 24.2 km fibre propagation. To show that frequency-entangled states can be used towards quantum communication schemes, we sent the signal and idler photon each through 20 km of standard telecommunications followed by 4.2 km long dispersion-compensating fibre. For D=2, we measured quantum interference with a visibility of 79.8% (violating a Bell inequality for D=2), thus demonstrating that entanglement was maintained over this distance.</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>Extended Data Figure 2 | Coherent mixing of multiple frequency modes. D modes (here, D=2, 3 or 4) are spectrally selected (solid black line) and mixed (red arrows) by means of an electro-optic phase modulator. The frequency mode where all components overlap (red dashed line) is then selected via a narrow spectral filter (blue dashed window). For D=2 and 3, a frequency shift of 200 GHz (equal to the FSR) is implemented, whereas for D=4 two different frequency shifts of 100 GHz (equal to 1/2 FSR) and 300 GHz (equal to 3/2 FSR) are enforced. In all cases, this is achieved through sideband generation. Note that for D=4, and in contrast to D=2 and 3, the final frequency mode does not overlap with any microcavity resonance.</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>High-dimensional state generation</p>
+<p>Pulsed laser</p>
+<p>Filter Microring</p>
+<p>Entangled photon pair</p>
+<p>SFWM idler photon</p>
+<p>signal photon </p>
+<p>Programmable filter</p>
+<p>Programmable filter</p>
+<p>Phase modulator</p>
+<p>Detection</p>
+<p>Single photon counting</p>
+<p>Sideband modulation Input Output</p>
+<p>Efficiency</p>
+<p>Filter</p>
+<p>Manipulation/processing</p>
+<p></p>
+<p>Coincidence detection</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>a</p>
+<p>b</p>
+<p>Correlation matrix</p>
+<p>Dimensionality scaling 2 g2</p>
+<p>10</p>
+<p>Measured Schmidt number</p>
+<p>Counts/s</p>
+<p>100 80 60 40 20 0 1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>Idler channel</p>
+<p>7</p>
+<p>8</p>
+<p>9 10</p>
+<p>1 2</p>
+<p>3 4</p>
+<p>5 6</p>
+<p>7 8</p>
+<p>9 10</p>
+<p>Signal channel</p>
+<p>8</p>
+<p>1 0</p>
+<p>6</p>
+<p>-3 -2 -1 0 1 2 3 Temporal separation (in number of pulses)</p>
+<p>4</p>
+<p>2</p>
+<p>temporal mode measurements correlation measurements</p>
+<p>0</p>
+<p>0</p>
+<p>2</p>
+<p>4</p>
+<p>6</p>
+<p>8</p>
+<p>10</p>
+<p>Number of considered resonance pairs</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>Quantum state generation</p>
+<p>i)</p>
+<p>idler photon</p>
+<p>signal photon</p>
+<p>L MRR</p>
+<p>ii)</p>
+<p>Amplitude and phase control PF1</p>
+<p>iii)</p>
+<p>1</p>
+<p>0</p>
+<p>amplitude phase</p>
+<p>Frequency mixing Mod</p>
+<p>iv)</p>
+<p>Amplitude and phase control</p>
+<p>1</p>
+<p>0</p>
+<p>PF2</p>
+<p>v)</p>
+<p>Coincidence detection</p>
+<p>amplitude phase</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>QuDit two-photon interference</p>
+<p>Normalized counts</p>
+<p>a 1</p>
+<p>D=2</p>
+<p>Normalized counts</p>
+<p>Re(ρ)</p>
+<p>V2=83.6%</p>
+<p>0.5 0</p>
+<p>0.25</p>
+<p>0.5</p>
+<p>0</p>
+<p>Im(ρ)</p>
+<p>0.5</p>
+<p>0</p>
+<p>0.5</p>
+<p>1</p>
+<p>1.5</p>
+<p>0 11〉 12〉 21〉 22〉</p>
+<p>2</p>
+<p>Phase (π)</p>
+<p>b</p>
+<p>e</p>
+<p>〈12</p>
+<p>〈21</p>
+<p>Re(ρ)</p>
+<p>D=3</p>
+<p>D=3</p>
+<p>〈11</p>
+<p>-0.5 11〉 12〉 〈22 〈21 21〉 〈22 22〉〈11〈12</p>
+<p>Im(ρ)</p>
+<p>1</p>
+<p>V3=86.6%</p>
+<p>0.2 0 -0.2</p>
+<p>0.3 0.2</p>
+<p>0.5</p>
+<p>0.1</p>
+<p>11〉</p>
+<p>0 0</p>
+<p>0</p>
+<p>0.5</p>
+<p>1</p>
+<p>1.5</p>
+<p>22〉</p>
+<p>11〉</p>
+<p>2</p>
+<p>Phase (π)</p>
+<p>22〉</p>
+<p>c</p>
+<p>Normalized counts</p>
+<p>Reconstructed density matrix</p>
+<p>d</p>
+<p>D=2</p>
+<p>33〉 〈11</p>
+<p>f D=4</p>
+<p>D=4</p>
+<p>〈22</p>
+<p>Re(ρ)</p>
+<p>〈33</p>
+<p>33〉 〈11</p>
+<p>〈33</p>
+<p>Im(ρ)</p>
+<p>1</p>
+<p>0.2</p>
+<p>V4=86.4%</p>
+<p>0</p>
+<p>0.5</p>
+<p>-0.2 11〉 22〉</p>
+<p>0</p>
+<p>〈22</p>
+<p>0</p>
+<p>0.5</p>
+<p>1</p>
+<p>Phase (π)</p>
+<p>1.5</p>
+<p>2</p>
+<p>11〉 22〉 33〉 44〉 〈11</p>
+<p>〈22</p>
+<p>〈33</p>
+<p>〈44</p>
+<p>〈44 〈33 33〉 〈22 44〉 〈11</p></section></article></body></html>

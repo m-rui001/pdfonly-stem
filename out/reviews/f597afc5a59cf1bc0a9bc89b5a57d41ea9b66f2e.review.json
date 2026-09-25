@@ -1,0 +1,81 @@
+{
+  "sha1": "f597afc5a59cf1bc0a9bc89b5a57d41ea9b66f2e",
+  "title": "Revisiting the Role of Polysulfides in Lithium–Sulfur Batteries",
+  "doi": "https://doi.org/10.1002/adma.201705590",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f597afc5a59cf1bc0a9bc89b5a57d41ea9b66f2e/index.html",
+  "source_chars": 98075,
+  "markdown_chars": 4087,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "while higher order S625",
+      "type": "疑似文本损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文此处应为S62-和S82-，但提取为'S625'，结合上下文及第6页开头'and S82-'，疑为S62-丢失连字符和数字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "high performance liquid chromatography (HLCP)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "标准缩写为HPLC，但原文两次出现HLCP（第8页和第49页缩写表），且缩写表展开为High performance liquid chromatography却写HLCP，疑为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "equivalent series resistance (ESR)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "ESR通常指等效串联电阻，但缩写表中ESR展开为Electron spin resonance spectroscopy（电子自旋共振），两者不一致。此处可能应为电化学阻抗谱或ESR的另一种含义，但无文本证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "DEM/DOL",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "图2描述中写'DEM/DOL'，但全文其他处均使用DME/DOL，且DME为二甲氧基乙烷，DEM无对应定义，疑为DME的笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 46,
+      "quote": "the DOL goal line",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "上文及后文均指DOE目标（250 Wh/kg和400 Wh/L），此处'DOL'疑为'DOE'的拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：S–S键能265 kJ/mol，PS溶解度~10 M，固态电解质电导率10^-2~10^-3 S cm^-1，循环750次，PS浓度0.5 M阈值，E/S=3 mL/g对应硫浓度10.5 M，能量密度计算408.2 Wh/kg和402.2 Wh/L。公式按原文保留（S2n2-↔2Sn·-，2Sn2-↔Sn+m2-+Sn-m2-，Sn+m2-↔Sn·-+Sm·-，S8+S42-→S62-，Li2S+S62-→S42-，S8+Li+16e-↔8Li2S）。结论方向与摘要和正文一致。不确定处已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6138,
+      "prompt_tokens": 25998,
+      "total_tokens": 32136,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2706
+      }
+    },
+    "content_chars": 5704
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "7f8bcc851323aa1a74829fd05a567773a3494603",
+  "title": "Electrical Tuning of Exciton Binding Energies in Monolayer WS2",
+  "doi": "https://doi.org/10.1103/physrevlett.115.126802",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7f8bcc851323aa1a74829fd05a567773a3494603/index.html",
+  "source_chars": 29078,
+  "markdown_chars": 2090,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "In Fig. 2, we plot the second derivatives of the reflectance contrast for the undoped case (a,b) and",
+      "type": "cross-page ordering",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "句子在第2页末尾被截断，第3页先插入图注“FIG. 2. Second derivatives...”后才续接“at the highest gate voltage (c,d) in the spectral range...”，导致顺序错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Data from four individual measurements (light colored squares) at each gate voltage fare presented together",
+      "type": "suspected typo",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“fare”在上下文中应为“are”，系明显笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：电荷中性点Vg=-45 V，电子密度8(±1)×10^12 cm⁻²，斜率ΔE_n1=0.172±0.0026 meV/V，ΔE_n2=0.054±0.013 meV/V，ΔE_n3=-0.067±0.007 meV/V，带隙2.4 eV，束缚能320 meV，带隙移动约100±60 meV，电离密度估算值。不确定处：带隙移动的边界假设及外推结果较粗略，受文本中未提供补充材料细节影响；跨页处句子虽被打断但内容可完整重构。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5820,
+      "prompt_tokens": 8984,
+      "total_tokens": 14804,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4033
+      }
+    },
+    "content_chars": 3065
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

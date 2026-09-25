@@ -1,0 +1,65 @@
+{
+  "sha1": "e473e88537137a8f40ea2c712d853ed11327f9ff",
+  "title": "Blockchains in operations and supply chains: A model and reference implementation",
+  "doi": "https://doi.org/10.1016/j.cie.2019.07.023",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e473e88537137a8f40ea2c712d853ed11327f9ff/index.html",
+  "source_chars": 61901,
+  "markdown_chars": 2965,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "Hyperledge",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "开源区块链平台通常写作Hyperledger，提取文本为Hyperledge，疑似拼写截断或拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Zohar, A. (2015). Bitcoin: Uunder the hood.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单词'Uunder'应为'Under'，存在重复字母，可能是提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "Wst, K., & Gervais, A. (2018). Do you need a blockchain? 2018 crypto valley conference on blockchain technology, Zug, Switzerland.iu.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "句子结尾出现无意义的'iu.'，可能为下一页页眉或残留字符导致的拼接错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论中的关键数值与主张，包括：区块链特征（分布式、可验证、不可篡改）、四层架构、五个处理阶段、以太坊选择理由、性能对比（ms级与30-500秒、500-4000MB存储）、Gartner 20亿IoT预测、金伯利进程81个国家与99%钻石交易量、沃尔玛2016年与IBM合作等。公式部分原文未出现专门公式。仍不确定之处：表2中混合方案的性能描述存在部分提取不清（'Adjustable, but compromise of centralized and pure blockchain'），但未影响核心结论；跨页拼接问题已在issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2169,
+      "prompt_tokens": 13491,
+      "total_tokens": 15660,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 46
+      }
+    },
+    "content_chars": 4112,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

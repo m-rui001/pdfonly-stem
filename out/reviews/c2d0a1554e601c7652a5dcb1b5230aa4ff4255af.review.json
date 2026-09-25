@@ -1,0 +1,54 @@
+{
+  "sha1": "c2d0a1554e601c7652a5dcb1b5230aa4ff4255af",
+  "title": "An Ontology for Strongly Sustainable Business Models",
+  "doi": "https://doi.org/10.1177/1086026615592933",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c2d0a1554e601c7652a5dcb1b5230aa4ff4255af/index.html",
+  "source_chars": 103194,
+  "markdown_chars": 3250,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "towards sociallyUpward & Jones (2015) 4 of 31",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第5页末尾以“socially”结束，第6页开头为“relevant sustainability values.”，原文应为“socially-relevant”，单词被页脚和页码分割，提取文本中缺少连字符且被页脚插入。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Figure 1. Strongly sustainable business model ontology (summary of entityrelationship diagram visualization) See Supplementary Materials to Upward 2013 for complete view",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图1只有标题，正文图内容未提取，但后续文字描述了实体数量，此页无实际图形文本可查，可能为图片内容缺失，非文字问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：12个差距（G1-G12），4个形成性命题（FP1-4），5个工具性原理（IP1-5），27个实体框，22个包含关系实体，190页详细描述，BMO引用2,783次，BMC销量超100万本、下载500万次。摘要与正文一致。公式无。注意：第5页跨页断词已列入问题。另外，关于22与27的实体数量不一致，原文未解释，保留原文表述，未作推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3741,
+      "prompt_tokens": 23266,
+      "total_tokens": 27007,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1519
+      }
+    },
+    "content_chars": 4213
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

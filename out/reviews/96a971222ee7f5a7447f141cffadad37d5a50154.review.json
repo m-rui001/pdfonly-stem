@@ -1,0 +1,64 @@
+{
+  "sha1": "96a971222ee7f5a7447f141cffadad37d5a50154",
+  "title": "Synthesis of freestanding single-crystal perovskite films and heterostructures by etching of sacrificial water-soluble layers",
+  "doi": "https://doi.org/10.1038/nmat4749",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/96a971222ee7f5a7447f141cffadad37d5a50154/index.html",
+  "source_chars": 27996,
+  "markdown_chars": 3124,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "References: 1. Novoselov, K. S. et al. Electric field effect in atomically thin carbon films. Science 306, 666-669 (2004).",
+      "type": "正常页界",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "参考文献开始处无缺损，仅页界。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "as shown in Fig. 1a, Sr3Al2O6 forms a cubic unit cell (space group Pa 3 ) with lattice constant a = 15.844 Å",
+      "type": "疑似错误/格式缺字符",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文写 'Pa 3 '，空间群应含反位符号（Pa-3），提取时可能丢字符。未擅自补全，仅标注。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Optical microscope images of various millimetre-scale freestanding membranes as released on the polydimethylsiloxane (PDMS) support layers25 are shown in Fig. 3b.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "该句在页5末尾开始，但完整句子跨页，后续页6的图3b内容衔接，无实质缺损。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "核对关键数值：Sr₃Al₂O₆ 晶格常数 15.844 Å、SrTiO₃ 3.905 Å；RHEED 振荡对应 1/4 单胞；AFM 厚度误差 2%；粗糙度 0.17→0.29 nm，FWHM 0.07°→0.20°；电阻峰位移约 40 K；饱和磁化翻倍。公式/符号：Sr₃Al₂O₆、La₀.₇Sr₀.₃MnO₃ 等化学式已按原文保留。方法条件：PLD 温度、气压、激光参数均按原文。未发现数值矛盾。不确定处：空间群符号 'Pa 3 ' 可能缺反位符号，但未补写；图4中Sr₃Al₂O₆在a和c中晶格常数差异的具体数值未给出，未推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2711,
+      "prompt_tokens": 8095,
+      "total_tokens": 10806,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 32
+      }
+    },
+    "content_chars": 4421
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

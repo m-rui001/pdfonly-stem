@@ -1,0 +1,45 @@
+{
+  "sha1": "72be16d570936f3d0e4a96dca05c1618ad5d1941",
+  "title": "Identification of Highly Active Fe Sites in (Ni,Fe)OOH for Electrocatalytic Water Splitting",
+  "doi": "https://doi.org/10.1021/ja511559d",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/72be16d570936f3d0e4a96dca05c1618ad5d1941/index.html",
+  "source_chars": 52477,
+  "markdown_chars": 3554,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "This G\n\nmuch weaker than what is required",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第7页末尾句子在“This”后断开，第8页开头以“much weaker than...”接续，中间缺失内容（可能是“results in adsorption”等），且“G”疑似为孤立字符，原文语义不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：500倍活性增强、Fe–O键长1.90/2.01 Å、Ni–O 1.89/2.06 Å、Fe溶解度~25%、Ni掺杂<3%、过电位0.43/0.56 V、ΔEOOH关系式等均与摘要和正文一致。公式(1)-(5)已按原文保留。对Fe³⁺而非Fe⁴⁺的论证依据（XANES位移、LMCT、白线）完整。不确定之处：第7页跨页断句缺失部分无法复原，已标记；其余数值与图表描述无矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3749,
+      "prompt_tokens": 15641,
+      "total_tokens": 19390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1141
+      }
+    },
+    "content_chars": 4181
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "6660accc87fb3729a3411cf0d9417383999149f8",
+  "title": "Geochemical and mineralogical aspects of sulfide mine tailings",
+  "doi": "https://doi.org/10.1016/j.apgeochem.2015.01.009",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6660accc87fb3729a3411cf0d9417383999149f8/index.html",
+  "source_chars": 141862,
+  "markdown_chars": 4113,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "𝐹𝑒𝑆2(𝑠) + 72𝑂2 + 𝐻2 𝑂 → 𝐹𝑒 2+ + 2𝑆𝑂42− + 2𝐻 +",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学计量系数“72”和“14”等应为分数形式（如7/2、1/4），提取文本将分数上下标丢失，需结合上下文或原始PDF确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Tetrahedrite and pentlandite observed at the Greens Creek and Nickle Rim tailings, respectively",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文其他位置均为“Nickel Rim”，此处写作“Nickle Rim”，疑似笔误或OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 35,
+      "quote": "Gyspsum was an important component of both the Fe(III) and Fe(II) hardpan layers in the Camp tailings deposit at the Sherridon Mine",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“Gyspsum”应为“Gypsum”，原文拼写错误或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：Greens Creek孔隙水pH 6.6–8.8、SO4 200–18000 mg/L；Nickel Rim pH 2–8、Fe最高9800 mg/L、SO4 24000 mg/L；Sherridon pH 0.6–5.8、Fe 129000 mg/L、SO4 280000 mg/L、Zn 55000 mg/L；磁黄铁矿氧化速率比黄铁矿快20–100倍；SAI指数0–10；石膏在Greens Creek 4年后含量2.3±0.8 g/kg；施威特曼石形成pH 2.8–3.5；臭葱石最低溶解度0.25 mg/L（pH3–4）。公式已按提取文本保留，但分数符号疑似被错误识别（如7/2被显示为72），已在问题中标出。文中关于微生物速率（10^5倍）、抗性序列、硬磐层矿物组合等均来自原文描述。未发现跨页中断导致缺失，未引用图表中未提取的信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6424,
+      "prompt_tokens": 40534,
+      "total_tokens": 46958,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3146
+      }
+    },
+    "content_chars": 5480
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

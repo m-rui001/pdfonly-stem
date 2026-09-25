@@ -1,0 +1,55 @@
+{
+  "sha1": "aad48ccc708b3d145a8210a8a0e5350f69b249b6",
+  "title": "Ionic Liquids as Lubricant Additives: A Review",
+  "doi": "https://doi.org/10.1021/acsami.6b12489",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/aad48ccc708b3d145a8210a8a0e5350f69b249b6/index.html",
+  "source_chars": 66777,
+  "markdown_chars": 6348,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "the solubility of [P6,6,6,14][i-C7H15COO], [P6,6,6,14][i-C9H19COO], and [P6,6,6,14][n-C17H35COO] were >10%, 25%, and >10%, respectively",
+      "type": "疑似错误（数值顺序）",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "原文同时列出三个>10%和一个25%，但后续分别给出支链和直链的具体溶解度，此处顺序可能混淆，但证据不强，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "density of ILs is in a relatively narrow range, 1.0–1.6 g/mm3",
+      "type": "疑似错误（单位）",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "密度的常用单位应为g/cm³或g/mL，g/mm³明显不合理，但源文如此，保留原文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：油溶性ILs报道于2012年（[P6,6,6,14][DEHP]和[P6,6,6,14][BTMPP]）；溶解度数据（如<1%、>50%、>10%、25%等）与原文一致；浓度效应（如P含量200-800 ppm、0.5-3%等）保持原数值；摩擦膜厚度120–180 nm、XANES a/c比数值（0.23→0.49、0.2→0.45）均对应。公式（1）已原样保留，但未补写任何缺失符号。存在两处存疑：密度单位g/mm³可能为g/cm³笔误；溶解度数值顺序可能有混淆，但无强文本证据，均以低严重度列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5193,
+      "prompt_tokens": 20848,
+      "total_tokens": 26041,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 353
+      }
+    },
+    "content_chars": 7298
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "495036473cdeca074d9ce5a320054eeb8666bf5e",
+  "title": "Transcriptome-wide distribution and function of RNA hydroxymethylcytosine",
+  "doi": "https://doi.org/10.1126/science.aac5253",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/495036473cdeca074d9ce5a320054eeb8666bf5e/index.html",
+  "source_chars": 23484,
+  "markdown_chars": 1594,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "n DNA, vertebrate Tet methyldioxygenases",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文应为“In DNA”，但提取文本中缺失首字母I，可能为OCR截取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "how mrC distributes across polysome fractions",
+      "type": "疑似术语错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文中“mrC”可能为“mC”的笔误或变异写法，无法确证，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：dTet敲低后mRNA下降54%、hmrC下降44%；hMeRIP-seq峰3058个、基因1597个；dTet敲低后79.4%位点降低，其中85.5%降低>4倍；CDS占48%；基序出现率64%；RNA-seq差异基因574个，重叠26%（P<10^-43）；脑髓质宽度P=2.4×10^-9。摘要、正文、结果一致。不确定处：mrC的准确含义，n DNA缺失字母已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8921,
+      "prompt_tokens": 7318,
+      "total_tokens": 16239,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7621
+      }
+    },
+    "content_chars": 2317
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "sha1": "d0affd090366a30af1faf78733da5b61bd10b266",
+  "title": "Opportunities and Challenges for Catalysis in Carbon Dioxide Utilization",
+  "doi": "https://doi.org/10.1021/acscatal.9b02113",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d0affd090366a30af1faf78733da5b61bd10b266/index.html",
+  "source_chars": 123249,
+  "markdown_chars": 5882,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "carbon dioxidfe",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为 carbon dioxide，文本中明显拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Salicyclic acid",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为 Salicylic acid。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "yittria-stabilized zirconia",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为 yttria-stabilized zirconia。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "over 154,000 million tons were produced in 2017",
+      "type": "可能是数值错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "154,000 million tons 即1540亿吨，远超乙烯年产量，疑为 154 million tons 之误，但原文如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "520 wt% aqueous solution",
+      "type": "疑似格式错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "应为 5-20 wt%，数字间连字符缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "at rate of up to 2.5/mL/hr/OD730",
+      "type": "疑似格式错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "单位表述混乱，疑为 2.5 mL/h/OD730 或 2.5 mL/hr/OD730，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "apinene oxide",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为 α-pinene oxide，希腊字母缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 30,
+      "quote": "III.A.2.i Biofuels and precursors – alcohols and hydrocarbons",
+      "type": "序号错乱",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "此小节编号为 III.A.2.i 但前文为 III.A.2（Cyanobacteria），内部应为 III.A.2.i 和 ii，但原文在页面30处出现了重复？此处标记疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与各章节数据：CO法拉第效率98%、银电流密度2-10 mA/cm²、流动电解池150-450 mA/cm²、CO2浓度85-90%等；甲酸锡80-95%效率、钯<200mV、三隔室94%/200mA；甲醇需>300bar、电化学~15%选择性、Mo-Bi>70%；甲烷镍催化剂400°C、电化学95%效率；乙烯铁基50%选择性、铜银合金60-70%、乙醇10-30%；FDCA温度200-350°C、1摩尔规模；草酸铅电极70-98%效率、Bouwman铜配合物-0.03V过电位12圈；聚合物Covestro 5000吨/年；生物转化各产量如乙醇5.5g/L、2,3-丁二醇12.6g/L、LanzaTech 46kt/年等。公式Eq 1-8按原文描述保留，未补写未明确的方程式。不确定处：乙烯产量数值明显异常但照录；“520 wt%”和“2.5/mL/hr/OD730”疑为格式问题；原文中部分小节编号可能有误，已在issues中标注。未发现结论与数据矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5838,
+      "prompt_tokens": 30923,
+      "total_tokens": 36761,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1185
+      }
+    },
+    "content_chars": 8177
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "sha1": "ba20931196db9449f9f286aa086a5b1e81931e35",
+  "title": "Black-carbon absorption enhancement in the atmosphere determined by particle mixing state",
+  "doi": "https://doi.org/10.1038/ngeo2901",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ba20931196db9449f9f286aa086a5b1e81931e35/index.html",
+  "source_chars": 44678,
+  "markdown_chars": 4265,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 21,
+      "quote": "Supplementary Fig. 10B shows the absorption coefficient (Babs) at 532nm measured through the direct and heated lines when ambient was influenced by different sources for the entire experiment. The Eabs is",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第21页末尾句子'The Eabs is'在页尾中断，下一页以'obtained by orthogonal distance regression (ODR)'开始，句子被页眉/分页打断，需确认拼接位置无缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The ambient experiment was conducted in the Manchester urban environment from 29/1010/11 in 2014",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "日期格式'29/1010/11'疑似文本抽取损坏，可能原意为29/10–10/11或类似跨日期格式，但无法从文本内证据确定正确版本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 20,
+      "quote": "where Eabs,c-s is the Eabs calculated by Mie core-shell model. There is no absorption enhancement in the model when the components are assumed to be externally mixed so Eabs=1 in this case.",
+      "type": "符号一致性疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文第6页使用Smeasure/Sc-s，图1标题记为Smeasure/Ss-c，同一符号在正文与图题中拼写不同，可能为原作者写法不一致而非抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键定量关系包括：MR阈值（1.5和3）与过渡区间Fin公式（Fin=0.57×MR−0.74）；公式(1)–(6)均按要求保留；折射率取值（1064 nm：2.26+1.26i，涂层1.5+0i；532 nm未涂层MAC计算取1.85+0.71i）；密度（rBC 1.8 g cm⁻³，非BC范围1.0–1.2/0.9–1.1 g cm⁻³）；781 nm Eabs观测值（TR 1.05±0.02，SF 1.14±0.02，BN 1.20±0.06）；环境MR峰值（0.3）与实验室NR峰值（1）；SP2散射拟合不确定度<12%、MrBC不确定度<3%。不确定之处：(1) 第14页日期格式疑点已在extraction_issues中标注；(2) 532 nm处Eabs具体数值在提取文本中未出现，仅说明在补充图10B中展示，未做推测；(3) 不同颗粒质量（1、5、10 fg）过渡阈值的确切数值未在正文给出，仅描述了相对关系（小颗粒更低、大颗粒也降低），照录未补充；(4) 图1和图2中Smeasure/Sc-s与Smeasure/Ss-c的符号拼写不一致已在extraction_issues中标出，未静默修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7424,
+      "prompt_tokens": 11203,
+      "total_tokens": 18627,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4109
+      }
+    },
+    "content_chars": 6070,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "sha1": "af39a3592992141755ab1dc715a992c1b0f20e2a",
+  "title": "Achieving Highly Efficient Nonfullerene Organic Solar Cells with Improved Intermolecular Interaction and Open‐Circuit Voltage",
+  "doi": "https://doi.org/10.1002/adma.201700254",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/af39a3592992141755ab1dc715a992c1b0f20e2a/index.html",
+  "source_chars": 38946,
+  "markdown_chars": 3411,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Figure s 3d",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文中均为'Figure 3d'，此处的'Figure s 3d'疑似排字或提取错误，应为'Figure 3d'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "As the ACV is proportional to theR root square of the integrated scattering intensity",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'theR root square'疑似'the square root'或'the root square'的提取错误，根据上下文应为'proportional to the square root'，但无强证据，故标注存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Compared to the PBDBT:ITIC film",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文中其他位置均写作'PBDB-T:ITIC'，此处'PBDBT'缺少连字符，疑似排版或提取遗漏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Compared to ITIC (E g = 1.59 eV)",
+      "type": "疑似排版",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'E g'之间多余的空白可能是排版产生的间距，不影响内容理解，但或许应写为'Eg'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "photovoltaic per-formance",
+      "type": "跨页断词/拼接",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾以'photovoltaic per-'截断，下一页开头接续'formance'，属于正常分页断词，虽未丢失内容，但提取时需注意拼接位置。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：ITCC的PCE为11.4%（平均11.0%），VOC=1.01V，JSC=15.9 mA/cm²（EQE积分15.2），FF=0.71；ITIC对应10.6%/0.93V/17.0(16.3)/0.67。能级：ITCC HOMO−5.47 eV、LUMO−3.76 eV；ITIC HOMO−5.50、LUMO−3.90。理论计算上移34/110 meV与实验上移30/140 meV趋势一致但幅度有差异，笔记中如实分别列出。π–π堆积距离：纯膜ITCC 3.7 Å、ITIC 3.8 Å；共混膜3.83/3.93 Å。迁移率：纯膜ITCC 9.26×10⁻⁴ vs ITIC 1.76×10⁻⁴；共混6.74×10⁻⁴ vs 1.28×10⁻⁴ cm²/Vs。结合能−24.06/−26.65 kcal/mol。光学带隙1.67/1.59 eV。复合指数1.00/0.96，ACV 1.00/0.86。均与原文提取一致。不确定之处：部分数值如'−24.06'在原文为'−24.06 Kcal mol−1'，单位用摩尔，但具体kcal/mol无碍；提取中'ITCC elevated by about 110 meV'与实验的140 meV不同，分别标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5358,
+      "prompt_tokens": 11756,
+      "total_tokens": 17114,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2372
+      }
+    },
+    "content_chars": 5266,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

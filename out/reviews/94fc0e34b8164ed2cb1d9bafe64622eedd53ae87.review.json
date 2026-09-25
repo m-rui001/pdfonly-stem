@@ -1,0 +1,45 @@
+{
+  "sha1": "94fc0e34b8164ed2cb1d9bafe64622eedd53ae87",
+  "title": "Plasmon-Enhanced Photocatalytic CO2 Conversion within Metal–Organic Frameworks under Visible Light",
+  "doi": "https://doi.org/10.1021/jacs.6b11027",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/94fc0e34b8164ed2cb1d9bafe64622eedd53ae87/index.html",
+  "source_chars": 32930,
+  "markdown_chars": 2108,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "IR spectra of Re3-MOF before and after",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句在[PDF extracted page 5]末尾中断，下一页开头接续为“the reaction (Figure S15 in SI) shows that...”，但中间可能插入了页眉或图注，导致跨页顺序可能不连续，且缺失位置明确在页码分隔处。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：Re3-MOF晶胞参数a=26.7213(8) Å、IR峰位2022/1920/1910 cm-1、MLCT吸收400 nm、Ag纳米立方直径98 nm、MOF厚度33 nm和16 nm、增强倍数（33 nm为5倍、16 nm为7倍）、稳定性48小时及TON比较等，均与摘要和正文一致。注意原文中“7 times further enhancement”可能引起歧义，但结合上下文及摘要确认最终增强为7倍。未发现其他文本证据冲突。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6852,
+      "prompt_tokens": 10030,
+      "total_tokens": 16882,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5272
+      }
+    },
+    "content_chars": 2735
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

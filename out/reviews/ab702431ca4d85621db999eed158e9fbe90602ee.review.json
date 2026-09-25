@@ -1,0 +1,63 @@
+{
+  "sha1": "ab702431ca4d85621db999eed158e9fbe90602ee",
+  "title": "A survey of safety and trustworthiness of deep neural networks: Verification, testing, adversarial attack and defence, and interpretability",
+  "doi": "https://doi.org/10.1016/j.cosrev.2020.100270",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ab702431ca4d85621db999eed158e9fbe90602ee/index.html",
+  "source_chars": 230446,
+  "markdown_chars": 4109,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 55,
+      "quote": "CIIma-",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表3中多次出现'CIIma'，疑似'CIFAR'的OCR/提取错误，但无足够证据确定正确拼写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 55,
+      "quote": "CIGT-",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "表3中'CIGT-'疑似'CIFAR'或'GTSRB'等数据集的错误拼接，但无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 55,
+      "quote": "MNIST, FAR10, geNet",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "表3中'FAR10'和'geNet'疑似为'CIFAR10'和'ImageNet'的拼写错误，但可能原文如此，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对正文中所有公式（如ReLU、线性组合、局部鲁棒性定义、C&W目标函数、信息瓶颈表达式等）与提取文本一致；关键数值如MNIST上5.8%错误率、属性关系式（18）等均已保留。不确定处已用'存疑'标注，未引入外部知识。验证技术分类和测试覆盖定义均遵循原文顺序。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4670,
+      "prompt_tokens": 60192,
+      "total_tokens": 64862,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1896
+      }
+    },
+    "content_chars": 4947
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

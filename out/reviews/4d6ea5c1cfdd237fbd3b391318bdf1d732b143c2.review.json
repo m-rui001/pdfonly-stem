@@ -1,0 +1,54 @@
+{
+  "sha1": "4d6ea5c1cfdd237fbd3b391318bdf1d732b143c2",
+  "title": "A Wearable Electrochemical Platform for Noninvasive Simultaneous Monitoring of Ca2+ and pH",
+  "doi": "https://doi.org/10.1021/acsnano.6b04005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4d6ea5c1cfdd237fbd3b391318bdf1d732b143c2/index.html",
+  "source_chars": 37321,
+  "markdown_chars": 4277,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "The senor shows fast response to changes in Ca2+ level",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "根据上下文应为'sensor'，原文'senor'明显拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Excessive alternation of ionized calcium levels",
+      "type": "疑似用词错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "此处'alternation'可能应为'alteration'（变化），但原文如此，且医学语境下'alteration'更常见，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值：Ca2+传感器平均灵敏度32.7 mV/decade（循环）和32.2 mV/decade（六个传感器），pH传感器平均62.5和63.3 mV/decade，温度传感器0.18%/°C，长期漂移1.1 mV/h（Ca2+）和0.7 mV/h（pH），体表对比偏差（汗液7.0%，尿液10%，pH<2.2%和3.6%）。公式仅提及Nernst方程和理想值29.6 mV/decade，未发现冲突。提取文本中页码连接处句子均连续，无跨页断句问题。疑似错误仅两处拼写/用词，已列入。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4942,
+      "prompt_tokens": 10383,
+      "total_tokens": 15325,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2020
+      }
+    },
+    "content_chars": 5132
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

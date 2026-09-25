@@ -1,0 +1,66 @@
+{
+  "sha1": "2eab7825f8b13399e6c4e9ba823806c5a90f22e2",
+  "title": "Evaluating scenarios toward zero plastic pollution",
+  "doi": "https://doi.org/10.1126/science.aba9475",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2eab7825f8b13399e6c4e9ba823806c5a90f22e2/index.html",
+  "source_chars": 76319,
+  "markdown_chars": 5975,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 19,
+      "quote": "16 My/y [12, 20] in 2025",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单位应为 Mt/y，OCR 将 M 误识为 My，影响数值单位理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 51,
+      "quote": "Reduction 00,0 00,0 130110,150 00,0 00,0 3128,33 - -",
+      "type": "table_structure_damage",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "Table 1 数值与置信区间粘连、缺少分隔，如 130110,150 应为 130[110,150]，导致表格数据难以准确解析。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 51,
+      "quote": "Mismanaged 9184,100 240220,260 4440,49 4241,47 5653,59 109.4,12 -51-48,-54 -81-76,-87",
+      "type": "table_structure_damage",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "Table 1 中数值与置信区间、百分比变化粘连，如 109.4,12 应为 10[9.4,12]，-51-48,-54 应为 -51[-48,-54]，结构损坏影响数据复现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Evaluating Scenarios Toward Zero Plastic Pollution",
+  "self_check": "已核对摘要、正文与 Table 1 的关键数值：BAU 下水生/陆地污染分别增 2.6 倍和 2.8 倍；现有承诺仅降 6.6% 和 7.7%；System Change 较 BAU 降 78%、较 2016 降 40%；累积水生 250 Mt、陆地 460 Mt；延迟 5 年额外 300 Mt；露天焚烧 1200 Mt；轮胎颗粒占微塑料 93%；回收中刚性 62%、柔性 33%、多材料 5.0%。公式符号 P₂O 保留原样。Table 1 因 OCR 粘连，部分数值（如 Reduction 行 130[110,150]）依据上下文推断，存在不确定性。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4018,
+      "prompt_tokens": 20815,
+      "total_tokens": 24833,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7285,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

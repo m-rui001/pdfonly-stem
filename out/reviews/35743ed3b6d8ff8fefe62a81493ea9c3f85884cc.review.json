@@ -1,0 +1,54 @@
+{
+  "sha1": "35743ed3b6d8ff8fefe62a81493ea9c3f85884cc",
+  "title": "Interpreting insect declines: seven challenges and a way forward",
+  "doi": "https://doi.org/10.1111/icad.12408",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/35743ed3b6d8ff8fefe62a81493ea9c3f85884cc/index.html",
+  "source_chars": 80178,
+  "markdown_chars": 3941,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 19,
+      "quote": "Baseline estimation – Studies should explicitly state the limits to inference on their\nTrend estimation – Under most circumstances, time series ‘snapshot’ comparisons\nPopulation inference – Studies using sampling methods in which the probability of\ncapture of each individual is not uniform through time",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第18页出现(i)(ii)内容，但对应的小标题‘Baseline estimation –’、‘Trend estimation –’被放置在第19页开头，而第18页的“(i)”后直接是“selected ‘historical reference state’”，缺少标题；第19页又出现三个标题，顺序明显错乱，应为跨页排版导致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "7\n\n8NB, UK\n\n9\n\n9YA, UK",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "作者单位地址中出现了孤立的数字‘7’和‘8NB, UK’等碎片，可能系页码或页眉混入，但具体正确内容无法从文本内证据确定，仅标出疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：LeBuhn等人提出的200-300个样点、5年间隔、检测1-2%年变化；White建议至少15个时间点；Fournier指出少于10个时间点时虚假基线影响最大；Thomson研究从11个时间点（17年）的显著下降到20个时间点（26年）的无下降；Seibold 2008-2017十年序列；Altermatt & Ebert 30%趋光行为降低；Powney 353种蜂类及食蚜蝇1980-2013。文中公式较少，仅保留数值关系。结论方向与摘要和正文一致。不确定处：第2页作者地址碎片信息无文本证据补充，已标记；跨页顺序问题已在笔记中按逻辑重组，未擅自补字。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6192,
+      "prompt_tokens": 21454,
+      "total_tokens": 27646,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3380
+      }
+    },
+    "content_chars": 5200
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

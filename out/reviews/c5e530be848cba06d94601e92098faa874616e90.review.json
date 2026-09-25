@@ -1,0 +1,81 @@
+{
+  "sha1": "c5e530be848cba06d94601e92098faa874616e90",
+  "title": "Pushing the limit of layered transition metal oxide cathodes for high-energy density rechargeable Li ion batteries",
+  "doi": "https://doi.org/10.1039/c8ee00227d",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c5e530be848cba06d94601e92098faa874616e90/index.html",
+  "source_chars": 51849,
+  "markdown_chars": 3240,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "Li1xNi1+xO2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "原文应为Li1-xNi1+xO2，提取文本缺少减号，但上下文明确是阳离子无序相，存在强文本内证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "for for",
+      "type": "重复文本",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "提取文本中\"for for\"连续重复，明显为转录错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "𝑂 ,",
+      "type": "疑似缺失符号",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "过氧物种符号不完整，可能应为O2^2-或类似，但原文仅显示此形式，照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "y Li1 y NiO2 (s)  (2  y) Li1 y Ni 1 O(s)  O2 (g)",
+      "type": "公式渲染混乱",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式中下标和符号（如减号、箭头、系数）在提取时丢失或乱码，无法准确复现原文化学计量关系，但可见文本仍保留基本结构。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "Peak Tmep.",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "应为Peak Temp.，提取文本中\"Tmep\"为明显拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：LNO理论容量275 mAh/g，首圈放电容量255（纯）和245（W掺杂），效率97%和96%，100圈保持率74%和约90%，能量密度865 vs 540 vs 704 Wh/kg，阻抗6→79.5 Ω，DSC峰值温度数值。公式M1按提取文本原样保留，但存在渲染问题。结论方向与摘要一致。未加入任何外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4019,
+      "prompt_tokens": 14784,
+      "total_tokens": 18803,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1291
+      }
+    },
+    "content_chars": 4500
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

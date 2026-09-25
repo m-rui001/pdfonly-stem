@@ -1,0 +1,54 @@
+{
+  "sha1": "65589c235ce169a6ca89ab83851cccc3a80da1b1",
+  "title": "Li‐Ion Synaptic Transistor for Low Power Analog Computing",
+  "doi": "https://doi.org/10.1002/adma.201604310",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/65589c235ce169a6ca89ab83851cccc3a80da1b1/index.html",
+  "source_chars": 64358,
+  "markdown_chars": 1875,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "new computing paragdigms",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文中'paragdigms'疑为'paradigms'的拼写错误，但提取忠实于原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "5.7 × 1023 S m2",
+      "type": "疑似上标丢失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "'1023'疑为'10^23'的上标表示，'m2'疑为'm^2'，PDF提取可能丢失上标格式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：GSD范围4.5–270 μS，σS=55±11 nS（增强）和65±25 nS（抑制），信噪比80，线性斜率2.5e-3（电流）和3.5e-3（电压），分类准确率（小数字和文件类型~90%，大数字偏差0.4%），PCM 82.2%，能量公式E_write=QV_c及公式(1)均源自文本。不确定处：公式中'𝐿3'和'𝛽 −2'的上标表示可能不完整，但按原文照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7491,
+      "prompt_tokens": 16547,
+      "total_tokens": 24038,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5982
+      }
+    },
+    "content_chars": 2572
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

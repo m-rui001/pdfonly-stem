@@ -1,0 +1,337 @@
+{
+  "sha1": "b0b44b15660224af9b96b83cba4ac963ac8eb79b",
+  "title": "Band Gap Tuning via Lattice Contraction and Octahedral Tilting in Perovskite Materials for Photovoltaics",
+  "doi": "https://doi.org/10.1021/jacs.7b04981",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b0b44b15660224af9b96b83cba4ac963ac8eb79b/index.html",
+  "source_chars": 43215,
+  "markdown_chars": 9769,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Rohit Prasanna $ ^{1} $ , Aryeh Gold-Parker $ ^{2,3} $ , Tomas Leijtens $ ^{1^{}} $ , Bert Conings $ ^{4} $ , Aslihan Babayigit $ ^{4} $ Hans-Gerd Boyen $ ^{4} $ , Michael F. Toney $ ^{3} $ , and Michael D. McGehee $ ^{1^{}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者列表中 Babayigit 与 Hans-Gerd Boyen 之间缺少逗号，属标点遗漏，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "of the composition $ \\mathrm{A M X}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标 3 丢失，应为 $\\mathrm{AMX_3}$，影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "by tilting the $ \\mathrm{M X}{6} $ octahedra",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "下标 6 丢失，应为 $\\mathrm{MX_6}$，影响八面体化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "from 1.6 to $ 2. 3 \\mathrm{e V}^{9} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 2.3 中数字间有空格，属 OCR 格式噪声，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "from 1.48 to $ 2. 2 3 \\mathrm{e V}^{1 0} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 2.23 中数字间有空格，属 OCR 格式噪声，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the Hoke effect",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为 Hoke effect（Hoke 效应），此处拼写正确，但需注意与 Hoke 效应相关术语的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "efficiency above 14%",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文称效率超过 14%，但补充信息 Table S1 中最高稳定效率为 17.8%，此处 14% 可能指部分器件，非 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "between 1.24 eV and 1.58 $ \\mathrm{eV}^{25} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 25 为参考文献编号，与数值 1.58 之间无空格，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The Goldschmidt tolerance factor across most of the compositional range studied here (Figure S1) is close to 1",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文提及 Figure S1，但该图在补充信息中，属正常引用，非 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "First principles electronic structure calculations have shown that the valence band maximum of $ \\mathrm{A B X}_{3} $ -type metal halide perovskites is an antibonding hybrid state of the metal s and halide p orbitals",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文为 A B X_3 型，但正文其他地方用 AMX_3，属符号不一致，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the XRD pattern of $ \\mathrm{F A P b I}{3} $ (Figure 3a) reflects a cubic perovskite",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式 $\\mathrm{FAPbI_3}$ 中下标 3 丢失，影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "tilting of the $ \\mathrm{P b I}{6} $ octahedra",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "下标 6 丢失，应为 $\\mathrm{PbI_6}$，影响八面体化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "We index the structures of $ \\mathrm{F A}{0.85} \\mathrm{C s}{0.15} \\mathrm{P b I}{3} $ and $ \\mathrm{F A}{0.75} \\mathrm{C s}{0.25} \\mathrm{P b I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标丢失，应为 $\\mathrm{FA}_{0.85}\\mathrm{Cs}_{0.15}\\mathrm{PbI}_3$ 和 $\\mathrm{FA}_{0.75}\\mathrm{Cs}_{0.25}\\mathrm{PbI}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the cubic lattice parameter of $ \\mathrm{F A}{1-\\mathrm{x}} \\mathrm{C s}{\\mathrm{x}} \\mathrm{S n I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标丢失，应为 $\\mathrm{FA}_{1-x}\\mathrm{Cs}_x\\mathrm{SnI}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the octahedral tilting we observe in thin films of $ \\mathrm{F A}{1-\\mathrm{x}} \\mathrm{C s}{\\mathrm{x}} \\mathrm{P b I}{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标丢失，应为 $\\mathrm{FA}_{1-x}\\mathrm{Cs}_x\\mathrm{PbI}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "The indexing of $ \\mathrm{F A_{1-x} C s_{x} P b I_{3}} $ in space group P4/mbm",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标格式不一致，应为 $\\mathrm{FA}_{1-x}\\mathrm{Cs}_x\\mathrm{PbI}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{F A P b I_{3}} $ , without any Cs substitution, has been shown to transition from the cubic perovskite to the tetragonal P4/mbm perovskite structure at 285 K",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标格式不一致，应为 $\\mathrm{FAPbI_3}$，影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "XRD patterns are plotted with respect to q, which is equivalent to $ 2^{*} \\pi / \\mathrm{d} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $2^{*}\\pi/d$ 的星号可能为乘号，应为 $2\\pi/d$，影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "The small peaks in the tin perovskite pattern with Cs substitution at $ q=1.82 \\mathrm{\\AA}^{-1} $ and $ 2.15 \\mathrm{\\AA}^{-1} $ correspond to a non-",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在 'non-' 处截断，下一页继续为 'perovskite impurity phase'，属页间断句，非 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the ideal band gap for the bottom cell is around 1.1 to $ 1. 2 \\mathrm{e V}^{3 7}. $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 1.2 中数字间有空格，属 OCR 格式噪声，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "solar cells made with perovskites using 20% cesium and 75% Sn harvest light out to 1040 nm, 40 nm further into the near infrared than for the low gap material that we have previously used in monolithic all-perovskite tandems $ ^{3} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 3 为参考文献编号，与句末之间无空格，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "they suffer from short PL lifetimes of under 1 ns $ ^{3} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 3 为参考文献编号，与句末之间无空格，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "to have long carrier lifetimes of around $ 2 5 0 \\mathrm{n s}^{1 5} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值 250 中数字间有空格，属 OCR 格式噪声，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The high $ \\mathrm{V{o c}} $ relative to band gap also demonstrates that these compositions all show small losses from the band gap to the open circuit voltage $ \\left( \\mathrm{E_{g}}-q \\mathrm{V_{o c}} \\right. $ around 0.47 V for the FA-Cs compositions, and merely 0.41 V for the MA-containing composition)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $\\mathrm{V_{oc}}$ 和 $\\mathrm{E_g}$ 的下标格式不一致，且括号不匹配，影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Figure 5 (a) JV curves of solar cells with a few high-performing compositions $ \\mathrm{F A}_{1-\\mathrm{x}} \\mathrm{C s}_{\\mathrm{x}} \\mathrm{S n}_{\\mathrm{y}} \\mathrm{P b}_{1-} $ $ \\mathrm{y I}_{3} $)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失且括号不匹配，应为 $\\mathrm{FA}_{1-x}\\mathrm{Cs}_x\\mathrm{Sn}_y\\mathrm{Pb}_{1-y}\\mathrm{I}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "the perovskite composition $ \\mathrm{M A}{0. 4} \\mathrm{F A}{0. 6} \\mathrm{S n}{0. 6} \\mathrm{P b}{0. 4} \\mathrm{I}_{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标丢失，应为 $\\mathrm{MA}_{0.4}\\mathrm{FA}_{0.6}\\mathrm{Sn}_{0.6}\\mathrm{Pb}_{0.4}\\mathrm{I}_3$，影响组分理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Precursor solutions used for spin coating were prepared by dissolving appropriate ratios of Formamidinium Iodide (Dyesol), Cesium Iodide (Sigma Aldrich), Tin (II) Iodide (Sigma Aldrich, 99.999% beads), Lead (II) Iodide (TCI), in a mixed solvent comprising 75% N,N-dimethylformamide (DMF, Sigma Aldrich) and 25% Dimethylsulfoxide (DMSO, Sigma Aldrich) by volume.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学名称大小写不一致（Formamidinium Iodide, Cesium Iodide 等），属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Spincoating sequence used for the formamidinium cesium perovskites was as follows: 11000 RPM for 1 second, followed by a constant ramp down of 500 RPM/second for 21 seconds",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Spincoating 应为 spin-coating，属拼写格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Tauc plots of $ (\\alpha h v)^{2} $ vs hv, where $ \\alpha $ is absorption coefficient, h is Planck's constant, and v is frequency.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $v$ 应为频率符号 $\\nu$，OCR 误为 $v$，影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "poly (3,4-ethylenedioxythiophene):polystyrenesulfonate (PEDOT:PSS, Clevios P VP AI4083)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "PEDOT:PSS 全称中 polystyrenesulfonate 应为 poly(styrenesulfonate)，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "40 nm of $ C_{60} $ (MER Corporation, 99.9% sublimed grade) and 8 nm of Bathocuproine (Sigma)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Bathocuproine 应为 bathocuproine，属大小写格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "X-Ray Diffraction data was collected at beam line 11-3 of the Stanford Synchrotron Radiation Lightsource.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "X-Ray 应为 X-ray，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "the tin-based perovskites $ \\mathrm{F A}{1-\\mathrm{x}} \\mathrm{C s}{\\mathrm{x}} \\mathrm{S n I}{3} $ retain cubic symmetry",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标丢失，应为 $\\mathrm{FA}_{1-x}\\mathrm{Cs}_x\\mathrm{SnI}_3$，影响组分理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Band Gap Tuning via Lattice Contraction and Octahedral Tilting in Perovskite Materials for Photovoltaics",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 12738,
+      "total_tokens": 22738,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21313,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

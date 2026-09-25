@@ -1,0 +1,73 @@
+{
+  "sha1": "4559f0f3ee2f4ef52ea2df3d96ccd57463704f38",
+  "title": "How to decarbonise international shipping: Options for fuels, technologies and policies",
+  "doi": "https://doi.org/10.1016/j.enconman.2018.12.080",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4559f0f3ee2f4ef52ea2df3d96ccd57463704f38/index.html",
+  "source_chars": 123795,
+  "markdown_chars": 6106,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 27,
+      "quote": "Each fuel was considered with combinations of the five efficiency measures categorised in Figure 11",
+      "type": "疑似内部引用错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "正文上下文所指的是图12（效率措施分类见图12右面板），此处写Figure 11，疑为原文内部引用笔误，但缺少足够证据确认，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Section 5 evaluates the impact of various energy efficiency measures, before the policy mechanisms to achieve emissions reductions are assessed in terms of current status and future potential.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "此句在5-6页交界处，页5结尾句子完整但缺少句号（'before the policy mechanisms to achieve emissions reductions are assessed in terms of current status and future potential.'以句号结束），结合上下文应为此节引言的一部分，跨页拼接处未见缺失内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "The most applicable advanced biofuels to international shipping applications are Fischer-Tropsch diesel (FTDiesel), pyrolysis oil, ligno-cellulosic ethanol (LC Ethanol), bio-methanol, dimethyl-ether (made of bio-methanol) and bio-LNG.",
+      "type": "疑似拼接/连字符缺失",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "FTDiesel疑为FT-diesel的格式问题，属排版拼接而非实质错误，但为忠实原文照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 24,
+      "quote": "0 1990 1995 2000 2005 2010 0 2015",
+      "type": "疑似排版/坐标轴数字错位",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "此段出现在图3上下两幅面板的坐标轴刻度提取中，'0 2015'疑似为底部面板x轴终点2015与y轴起点0的排版重叠，因输入文本无法判断，暂不进一步确认。存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数据：航运排放1,130 Mt CO₂占全球3.1%（2014）；LNG减排8–20%、甲烷滑移2–5%及5.5%等值阈值；甲醇GHG较HFO高约10%及Stena Germanica减排数据；氢燃料排放范围113–997 gCO₂eq./kWh（对应电解/重整+CCS/重整）及表2储氢容积数据；图13的蒙特卡洛结论（LNG需全部5类效率措施才有50%概率实现50%减排）；图14 IEA情景各措施贡献百分比；慢航10%减速约19%减排、4–16%废热回收等。公式未出现在提取文本中（无数学公式保留）。不确定之处：RITM-200核反应堆成本19亿美元/船系原文数据照录；图13中仅叙述了50%目标的概率结果，80%目标的LNG情况文中未具体描述数值，笔记中未补充。所有数值均以提取文本为准，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5080,
+      "prompt_tokens": 29490,
+      "total_tokens": 34570,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 577
+      }
+    },
+    "content_chars": 8150
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

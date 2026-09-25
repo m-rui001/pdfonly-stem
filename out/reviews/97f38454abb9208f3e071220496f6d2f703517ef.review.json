@@ -1,0 +1,57 @@
+{
+  "sha1": "97f38454abb9208f3e071220496f6d2f703517ef",
+  "title": "A Deep Learning Approach to Network Intrusion Detection",
+  "doi": "https://doi.org/10.1109/tetci.2017.2772792",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/97f38454abb9208f3e071220496f6d2f703517ef/index.html",
+  "source_chars": 56047,
+  "markdown_chars": 5676,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "U2L",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "讨论 KDD Cup '99 异常类别时写作 \"R2L\" 和 \"U2L\"，而全文其余处均为 \"U2R\"，疑为 OCR 或原文笔误，影响类别指代一致性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the results show that our accuracy is better than or comparable with the work in [18], in 3 out of 5 classes",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句与 Table 2 中 U2R、R2L 明显劣于 DBN 的数据一致，但同段又称 \"improved precision, recall and F-score\"，表述与表格存在张力，属原文自身表述问题而非抽取错误，仅作提示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "A Deep Learning Approach to Network Intrusion Detection",
+  "self_check": "已核对：摘要与结论中的 97.85%、85.42%、89.22%、97.72%、78.19%、98.81%、5% 等关键数值与 Table 2/3/4/5/6 及讨论段一致；公式(1)-(5)及 Accuracy/Precision/Recall/False Alarm/F-score 定义按提取文本原样保留；NDAE 结构（2 个 NDAE、各 3 隐藏层、神经元数等于特征数）与 10 折交叉验证结果 0.995999 +/- 0.000556 已保留。不确定处：Table 1 中 NSL-KDD 的 Total 训练/测试数（125973/18794）与 Table 5 的 125881/17802 不一致，属原文表格差异，未作改动；\"U2L\" 疑为 \"U2R\" 笔误，已在 extraction_issues 标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3840,
+      "prompt_tokens": 14496,
+      "total_tokens": 18336,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6879,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "706c05a0bad418b53aec5badfc134eb90798bc5e",
+  "title": "Alleviation of Dendrite Formation on Zinc Anodes via Electrolyte Additives",
+  "doi": "https://doi.org/10.1021/acsenergylett.0c02371",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/706c05a0bad418b53aec5badfc134eb90798bc5e/index.html",
+  "source_chars": 40959,
+  "markdown_chars": 3562,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "This may because at the same values of",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页以‘ZnSO4 concentration’接续，但中间插入图注及页码，可能存在拼接问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Zn//OdNVO",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "前文写作‘Od-NVO’，此处缺失连字符，可能为排版不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The red ball shows a measured capacitance",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "‘red ball’可能应为‘red bar’或‘red point’，但无更多证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Figure 1. a) Galvanostatic charge/discharge curve ... be) SEM of Zinc electrode surface ...",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图注中‘be)’应为‘b-e)’或类似，可能为OCR/排版错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "As the 2 M LiCl additive produces a solution with suitable pH around the electrodes, this is close to the optimal value for inhibiting the growth of ZHS and ZnO. As the 2 M LiCl additive produces a solution of pH 2.3, this is likely close to the optimal value for inhibiting the growth of Zn by-products and dendrites during the cycling process.",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "两个句子表达几乎相同，可能为原文编辑残留或抽取重复。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：0.2 mA cm⁻²下过电位从220 mV降至38 mV；2 M LiCl最佳，3 M反而恶化；XRD峰位（21.1°、28.7°、32.7°、33.8°对应Zn₄SO₄(OH)₆·0.5H₂O）；pH 2.3；XPS的C 1s 289.7 eV、O 1s 531.5 eV；AFM最大高度1.3 μm vs 47 nm；全电池容量415/333/380 mAh/g及1000次循环272.1 vs 206.8 mAh/g；EIS 2 Ω vs 6 Ω。公式未出现。对提取文本中疑似重复、跨页断句、图注错误等已在extraction_issues中标注，未做静默修正。部分数值（如150 F/g、40 mAh/g）与原文一致。DFT模拟细节仅提及支持信息，未臆测具体参数。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4474,
+      "prompt_tokens": 11817,
+      "total_tokens": 16291,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1478
+      }
+    },
+    "content_chars": 5446
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

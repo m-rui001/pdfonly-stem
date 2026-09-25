@@ -1,0 +1,64 @@
+{
+  "sha1": "3bbd7473e61705ffd46716a188da406ff6970a95",
+  "title": "Toward Global Soil Moisture Monitoring With Sentinel-1: Harnessing Assets and Overcoming Obstacles",
+  "doi": "https://doi.org/10.1109/tgrs.2018.2858004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3bbd7473e61705ffd46716a188da406ff6970a95/index.html",
+  "source_chars": 117055,
+  "markdown_chars": 4437,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "A current study [89] tackles this problem, as it examines the orientation of the slope and discusses a new method to simultaneously normalise for the incidence- and the azimuthal- angle of a Sentinel-1 measurement.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "方位角校正研究文献[89]被描述为'current study'，但原文并未给出作者和标题，仅编号，不足以判断文本抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "Since the dry- and wet parameters are statistically determined, extreme events can lead to SSM values out of the range 0% – 100%. Values that are less than ±20% off-limit are set 0% or 100%, respectively, and values exceeding those extended limits are masked as no-data.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该段位于页码标记之前，前后文连贯，未发现明显断裂；但'Values that are less than ±20% off-limit'表述存在歧义（可能应为'within ±20% of the limits'），文本本身可读，暂不列为错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "Fig.8c is a plot of the Pearson correlation coefﬁcients (R) between the satellite and the model data, mapping 8991 1km grid pixels.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "图中标注为'Fig.8c'，但前文描述为'Figure 8'中的子图，文中多处混用'Fig.'和'Figure'，属正常风格差异，不构成文本抽取问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心公式：SSM定义式(1)、敏感性式(2)、DGU高斯核标准差σ=424.7 m、回归坡度系数a=-0.01725, b=0.00553, c=0.02546、LIA归一化式(7)、百分位参考参数式(8)(9)、SSM缩放式(10)、最大误差式(12)的数值与符号。核对关键统计：DGU处理时间因子9、RMSD 0.05 dB；翁布里亚模型域中值R=0.38/0.45（S-1 vs ASCAT）、冬季0.57/0.75；COSMOS站R=0.49；Torre站R=0.11。已确认摘要与正文结论一致（农业区高一致性、森林区低、生长季正偏差）。不确定之处：文本中'Fig.8c'的'c'是否准确对应该图盘编号（无图版可核对），以及'ΔSSMmax'公式中系数'1.09'的推导过程未完整展开（仅给最终式，原文未解释β项来源，照录）。另原文'Values that are less than ±20% off-limit'措辞有歧义，但按文中逻辑理解为超出±20%界限则截断。所有数值均来自提取文本，未作推测补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3571,
+      "prompt_tokens": 30326,
+      "total_tokens": 33897,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      }
+    },
+    "content_chars": 6313
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

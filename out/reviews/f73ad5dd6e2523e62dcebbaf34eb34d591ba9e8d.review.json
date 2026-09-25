@@ -1,0 +1,73 @@
+{
+  "sha1": "f73ad5dd6e2523e62dcebbaf34eb34d591ba9e8d",
+  "title": "Reconfigurable Intelligent Surfaces for 6G Systems: Principles, Applications, and Research Directions",
+  "doi": "https://doi.org/10.1109/mcom.001.2001076",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f73ad5dd6e2523e62dcebbaf34eb34d591ba9e8d/index.html",
+  "source_chars": 34722,
+  "markdown_chars": 7587,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the scenariooperating without RIS",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“scenariooperating”缺少空格，应为“scenario operating”，属轻微 OCR 拼接错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the RIS is located mid-way between BS 1 and the RIS",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原文此处应为 RIS 位于 BS 1 与用户（或另一节点）之间，OCR 将第二个节点误作“the RIS”，导致语义自相矛盾；但无更强文本证据确定正确词，故仅标出疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "$ \\mathbf{G}=\\operatorname{diag}\\left(\\mathbf{h}{r}^{\\mathrm{H}}\\right)\\mathbf{H} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中 $\\mathbf{h}{r}$ 的下标 r 与主体 h 之间缺少下划线或括号分隔，疑似 OCR 丢失下标标记；正文前文亦写作 $\\mathbf{h}{r}$，同一符号多处出现相同缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Reconfigurable Intelligent Surfaces for 6G Systems: Principles, Applications, and Research Directions",
+  "self_check": "已核对摘要四问与八方向、Table I 的 RIS 与中继对比维度、案例研究中的参数（$\\alpha_{\\mathrm{BU}}=3.75$、$\\alpha_{\\mathrm{RIS}}=2.2$、半径 20 m、$X_{\\mathrm{RIS}}$ 从 50 m 到 300 m）以及各应用关键数值（80 元件和速率翻倍、0.2 mW 下 5.5 m 到 9 m、100 元件时延 115 ms 到 65 ms）。公式 $\\mathbf{G}=\\operatorname{diag}\\left(\\mathbf{h}{r}^{\\mathrm{H}}\\right)\\mathbf{H}$ 按提取文本原样保留，其下标分隔疑似 OCR 损坏已在 extraction_issues 标出。案例研究中“mid-way between BS 1 and the RIS”一句语义矛盾，已标为疑点，未擅自改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4897,
+      "prompt_tokens": 8729,
+      "total_tokens": 13626,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9161,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Reconfigurable Intelligent Surfaces for 6G Systems: Principles, Applications, and Research Directions",
+    "translated_title": "面向6G系统的可重构智能表面：原理、应用与研究方向",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

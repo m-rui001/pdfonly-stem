@@ -1,0 +1,156 @@
+{
+  "sha1": "f3e8d4ae7a333c6e796da2176549e31ba98642cb",
+  "title": "OpenMS: a flexible open-source software platform for mass spectrometry data analysis",
+  "doi": "https://doi.org/10.1038/nmeth.3959",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f3e8d4ae7a333c6e796da2176549e31ba98642cb/index.html",
+  "source_chars": 54818,
+  "markdown_chars": 9264,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Hannes L. Röst $ ^{}, ^{1, 2} $ Timo Sachsenberg $ ^{}, ^{3, 4} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者名后的上标符号在 OCR 中丢失，仅保留空的上标标记，影响作者贡献标注的完整读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Stephan Aiche $ ^{ \\dagger}, ^{5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标中的 dagger 符号被 OCR 转义为 LaTeX 命令，未保留原始符号形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "OpenMS 2.0 (http://www.openms.org), a robust open-source, cross-platform software",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "URL 后紧跟逗号，可能丢失了 URL 末尾的斜杠或路径，但无法从文本确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "making it it more easily accessible",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "重复的“it”是明显的 OCR 或排版重复错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "OpenMS also provides implementations to address the most common quantitative proteomics and metabolomics tasks including quantification, identification, and visualization (see Fig. 3), as well as algorithms for isotopic deconvolution, chromatographic peak picking, retention time alignment, or feature linking across multiple runs.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句紧接前句“...across multiple software tools and computing platforms.”之后，缺少空格或换行，可能是 OCR 阅读顺序或段落合并问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Developers profits from the centralized infrastructure",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "主谓不一致，“profits”应为“profit”，属于 OCR 或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "OpenSWATH analysis module [35]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "引用编号使用了方括号而非上标，与全文其他引用格式不一致，可能是 OCR 格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Wright et al. used OpenMS to to implement",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "重复的“to”是明显的 OCR 或排版重复错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "cathepsin $ \\mathrm{L}^{[4 2]} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "引用编号中的数字被空格分隔为“4 2”，且使用了 LaTeX 命令，可能影响引用编号的准确读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "http://www.openms.org/getting started",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "URL 中“getting started”包含空格，可能应为连字符或下划线，但无法从文本确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "[29] L. Y. Geer, S. P. Markey, J. A. Kowalak, L. Wagner, M. Xu, D. M. Maynard, X. Yang,",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献 [29] 出现重复条目，且作者名“Maynard”在下一行被误写为“Mayhard”，属于 OCR 重复与拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "[34] K. Kramer, T. Sachsenberg, B. M. Beckmann, S. Qamar, K.-L. Boon, M. W. Hentze, O. Kohlbacher, and H. Urlaub. \"Photo-cross-linking and high-resolution mass spectrometry for",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献 [34] 出现重复条目，且第二处作者名“Qamar”被误写为“Qamal”，属于 OCR 重复与拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "This allowed Liu et al. [32] to decompose the variance",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中引用编号为 [32]，但正文中 Liu 等人的引用编号为 [40]，可能为 OCR 或原文引用编号不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "OpenMS: A flexible open-source software platform for mass spectrometry data analysis",
+  "self_check": "已核对 OCR 正文标题与登记标题一致，均为“OpenMS: a flexible open-source software platform for mass spectrometry data analysis”，年份 2016、DOI 10.1038/nmeth.3959 与正文首页元数据一致。关键数值已核对：OpenMS 2.0 提供 185 个工具（摘要）与超过 180 个工具（正文）的表述差异已保留；SWATH 案例中 200 多份血浆样本、300 多种血浆蛋白、可遗传成分超过 60% 到几乎为零、13 个 cis-pQTL 等均按原文保留；降解组学案例中 23 个 cathepsin L 新底物、蛋白质基因组学案例中超过 5500 万张串联质谱图、40 多个新蛋白编码基因注释等均按原文保留。公式与符号方面，作者上标、引用编号等 OCR 损坏已在 extraction_issues 中标出，未静默修正。仍不确定之处：部分 URL 末尾斜杠或路径可能丢失；图注中 Liu 等人引用编号 [32] 与正文 [40] 不一致，无法从文本判断是 OCR 错误还是原文引用错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6557,
+      "prompt_tokens": 14452,
+      "total_tokens": 21009,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13670,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

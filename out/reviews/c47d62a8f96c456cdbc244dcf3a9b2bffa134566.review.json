@@ -1,0 +1,73 @@
+{
+  "sha1": "c47d62a8f96c456cdbc244dcf3a9b2bffa134566",
+  "title": "A Survey of Techniques for Approximate Computing",
+  "doi": "https://doi.org/10.1145/2893356",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c47d62a8f96c456cdbc244dcf3a9b2bffa134566/index.html",
+  "source_chars": 136965,
+  "markdown_chars": 5638,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "disproSupport for this work was provided by U.S. Department of Energy",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在“dispro”处中断，后接“Support”，疑似原本为“disproportionate”与“Support”被跨页页眉拼接，原文应有“disproportionate”但受页眉干扰而截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "may require voltage shifters for moving data be- tween different voltage domains",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“data be-”与下一页“tween”拼成“between”，但页间有页眉和空白，提取中出现了直接拼接，需注意原文实际是跨页连字符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "Load value proximation",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "术语应为“Load value approximation”，此处缺失“ap”可能是表格排版或提取遗漏，但原文表格标题如此，不能确定是否为拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Table V. A classification based on processing unit, processor component, memory technology and optimization objective",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表格内容跨页，表头后直接接续内容，但提取中未见页码中断标记异常，仅标注表格跨页可能带来阅读断点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数据：k-means 50×节能与5%精度损失、逆运动学26×加速与<5%误差、3D raytracer 98% FP操作与91%数据可近似、PSNR 30dB与10%误差阈值、电压从1V到0.725V汉明距离0-2、近似乘法器15/16正确率、sin函数[0,π/4]训练等。公式（如y=2.823−1.882x，y=2.08−1.1911x）已按原文保留。不确定处：第1页“disproSupport”缺失字母，已标记；第11页“load value proximation”疑似缺字，已标记；表格中部分内容因跨页未能完全核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4067,
+      "prompt_tokens": 31647,
+      "total_tokens": 35714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 210
+      }
+    },
+    "content_chars": 7174
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

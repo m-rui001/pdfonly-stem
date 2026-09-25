@@ -1,0 +1,111 @@
+{
+  "sha1": "12db48139f307742ad0d00f498353766db9484bb",
+  "title": "Vapor-assisted deposition of highly efficient, stable black-phase FAPbI 3 perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.abb8985",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/12db48139f307742ad0d00f498353766db9484bb/index.html",
+  "source_chars": 54000,
+  "markdown_chars": 8461,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "FAPbI $ {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式下标在OCR中大量以LaTeX片段形式出现（如$ {3} $），部分位置下标丢失或格式不一致，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "FAPbl $ {3} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "多处将FAPbI₃误识别为FAPbl₃（大写I误为小写l），如摘要和正文中反复出现，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "two-dimensional (2D) perovskites (28), and epitaxial growth and stabilization of $ \\alpha $ - FAPbI $ {3} $ has been reported recently (29). Swarnkar et al. showed that $ \\alpha $ - CsPbI $ {3} $ can be stabilized",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "该段文字出现在'Characterization of FAPbl₃ films'标题之前，但内容属于引言部分，OCR阅读顺序错乱，导致段落归属不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "B\n\nD\n\n$ 2 \\theta \\left( ^ {0} \\right) $\n\nF\n\nC\n\nG",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图1的标签和坐标轴文字被OCR提取为孤立片段，阅读顺序严重损坏，无法还原图注结构。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Fig. 2. $ ^{1 4} $N- and $ ^{1} $H-MAS-ssNMR spectroscopy measurements.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图2的图注被插入正文段落之间，且图注内容与正文交错，结构受损，但关键信息仍可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "A\n\nB\n\nD\n\nE\n\nFig. 4. Vapor-treated FAPbl $ _{3} $ -based PSC characterization.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "图4的标签和部分图注被提取为孤立片段，阅读顺序错乱，影响对图表结构的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Fig. 5. Operational stability test of the vapor-treated FAPbl $ _{3} $ -based PSCs.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图5图注出现在正文段落之间，且与稳定性讨论文字交错，阅读顺序受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "PSCs were fabricated using an ITO/SnO $ {2} $ FAPbI $ {3} $ /Spiro-MeOTAD/Au configuration.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "方法部分器件结构中SnO₂与FAPbI₃之间缺少斜杠分隔符，原文应为ITO/SnO₂/FAPbI₃/...，OCR遗漏了分隔符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Vapor-assisted deposition of highly efficient, stable black-phase FAPbI 3 perovskite solar cells",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：PCE 23.1%、Jsc 24.4 mA/cm²、Voc 1.165 V、FF 81.3%、IMT认证效率22.4%、Voc损失330 mV、开启电压0.75 V、EQE_EL 6.5%、Urbach能量14 meV、带隙1.52 eV、PL寿命299.3 ns、MA含量1.8%、85°C退火500小时保持α相、MPP跟踪500小时后PCE保持约90%、暗态恢复后94.4%、储存2500小时后97.8%。公式Voc = Voc,rad + (kT/q)ln(ηext)已原样保留。仍不确定之处：部分化学式下标在OCR中格式不一致（如FAPbI₃与FAPbl₃混用），已按原文照录并在extraction_issues中标出；图1、图4、图5的标签和坐标轴文字提取不完整，无法还原完整图注结构。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6596,
+      "prompt_tokens": 15928,
+      "total_tokens": 22524,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11397,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

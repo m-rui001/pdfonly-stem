@@ -1,0 +1,74 @@
+{
+  "sha1": "bf69f5b020034605f759cf36e67c0430806a7682",
+  "title": "Structural decline in China’s CO2 emissions through transitions in industry and energy systems",
+  "doi": "https://doi.org/10.1038/s41561-018-0161-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bf69f5b020034605f759cf36e67c0430806a7682/index.html",
+  "source_chars": 44445,
+  "markdown_chars": 3892,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the cusum test suggests that only the change from 2015 (at 95% condifence intervel) is structurally significant.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'condifence intervel'应为'confidence interval'，为原文拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "In the absence of other factors, these three factors would have caused emissions over 2013-2016 to decrease by 10.0%, 7.8%, and 5.1%, respectively (22.9% in total).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第4页末尾和第5页开头叙述有一定断档，review是否遗漏了部分数字。",
+      "quote_context": "页面4结尾与页面5开头之间可能存在衔接问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Decreasing energy intensity (energy per unit GDP) and emissions intensity (emissions per unit energy) also contributed to the decline.",
+      "type": "疑似错别字（原文措辞）",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "摘要中的表述为'decreasing energy intensity和emissions intensity contributed'，但全篇分解结果中的'emissions intensity'指燃料品质（单位能源排放），与摘要此处'emissions per unit energy'对应，原文措辞无误，但易与'碳强度'混淆。无需改动，仅提示注意术语一致性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Similarly rapid economic growth in the mid-1980s dropped dramatically to 4% between 1989 and 1991 before accelerating again in the 1990s.",
+      "type": "疑似数字/史实矛盾",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "1980年代中期的高增长在1989–1991年跌至4%，然后1990年代再次加速——这个数字在原文中与前后语境的一致性和表述的精确性存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "关键数据核对：2000–2016年排放增长9.3%/年，峰值2013年9.5Gt，2014-2016年各年降幅1.0%/1.8%/0.4%，2016年9.2Gt（8.5+0.7）；碳强度下降27%；非化石能源占比2016年13.3%、煤占比62%；分解数字（29.3/24.6、12.5/5.4、15.4/3.2、1.1/7.3、6.2/1.1、10.0/7.8/5.1/22.9、18.2/1.6/0.1/0.2/1.0）均已核对。2013-2016年数字与分解之和（-4.2%）方向一致：增长效应（人口+经济+燃气+油+燃料品质）与下降效应（工业结构+煤占比+能源强度）的净效应与总降幅吻合。公式(1)(2)(3)(4)及LMDI权重定义均按原文转录，未补充推测内容。不确定性：第4页跨页衔接处（2013-2016年人口增长叙述）虽从上下文可推断，但提取文本在第4页末尾断句，已在提取问题中标注；公式(3)中指标定义（S_j=G_i/G应为G_j/G）原文如此，未修改。置信区间、cusum检验细节（具体临界值、残差分布）按原文描述，未补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3880,
+      "prompt_tokens": 12906,
+      "total_tokens": 16786,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 743
+      }
+    },
+    "content_chars": 5994
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

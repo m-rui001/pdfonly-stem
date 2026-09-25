@@ -1,0 +1,72 @@
+{
+  "sha1": "f08392d3b21b52e71f120c728cc9304393208356",
+  "title": "Bright colloidal quantum dot light-emitting diodes enabled by efficient chlorination",
+  "doi": "https://doi.org/10.1038/s41566-018-0105-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f08392d3b21b52e71f120c728cc9304393208356/index.html",
+  "source_chars": 38818,
+  "markdown_chars": 2145,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "Commented [Z1]: Here is ACN or Toluene??",
+      "type": "非正文批注混入",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "提取文本中出现了审稿人或编辑批注，非论文正文，应标记为文档注释干扰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Shockley-Read-Hall ( ), radiative ( ) and Auger ( ) recombination ( , and are the related coefficients)46 . These components show linear, quadratic and cubic dependence on the carrier concentration n (Equation 1), respectively.",
+      "type": "公式符号缺失",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "括号内变量符号及公式本身未提取到，影响对式(1)的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": " (1) ",
+      "type": "公式内容缺失",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "仅出现公式编号(1)，公式主体未在提取文本中呈现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "recombination in QLED, which consists of three components: trap-assisted nonradiative",
+      "type": "跨页断句疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句在第9页末尾可能被截断，下一句起始在第10页，但未发现实质内容缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：C-S/C-S-S尺寸6/12 nm，壳厚3 nm；溶液PLQY 70%/75%，膜PLQY 45%/63%，氯化膜60±2%；SOCl₂浓度0.014 M；开启电压3.5→2.5 V；1000 cd/m²偏压4.9→3.9 V；最大亮度460,000 cd/m²；EQE在1000 mA/cm²约6%；点间距13.5→11 nm；FTIR峰位等均与原文一致。式(1)公式内容未提取，仅保留关系描述，未补充任何推测符号。结论中'两倍于此前最高'来自原文，未给出具体比较数值。跨页断裂处已拼接理解，未产生信息丢失。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7482,
+      "prompt_tokens": 10923,
+      "total_tokens": 18405,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5528
+      }
+    },
+    "content_chars": 3558
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

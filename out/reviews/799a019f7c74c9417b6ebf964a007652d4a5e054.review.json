@@ -1,0 +1,54 @@
+{
+  "sha1": "799a019f7c74c9417b6ebf964a007652d4a5e054",
+  "title": "CRISPRi-based genome-scale identification of functional long noncoding RNA loci in human cells",
+  "doi": "https://doi.org/10.1126/science.aah7111",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/799a019f7c74c9417b6ebf964a007652d4a5e054/index.html",
+  "source_chars": 52898,
+  "markdown_chars": 3421,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "resulting in 169 “neighbor hits” and 499 “lncRNA hits,” 299 of which are distal from any protein coding gene (~90% of which would not measurably impact growth upon knockdown).",
+      "type": "语义不清/疑似成分缺失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句语法上易产生歧义：499个hit中299个远离编码基因，但随后约90%“敲低不影响生长”与此处语境不符，可能原文有省略或抽取丢失成分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "8 of these properties (expression, Pol2/CTCF looping by ChIA-PET, enhancers and super enhancers from (51), copy number variation) were cell type-dependent.",
+      "type": "疑似列举不完整",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "声称8个性质但括号内仅列出4项，疑为提取遗漏或原文即如此，无法确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：靶向16,401个lncRNA位点、499个非邻居hit、89.4%单细胞型特异性、82.6%（表达于所有细胞系中的hit）、PVT1 tiling 1kb窗口、RNA-seq同一基因不同sgRNA相关系数0.980与不同基因0.942、LINC00263的ChIP-seq与ASO结果、机器学习预测因子及其倍数（1.66和1.4倍）。公式γ的定义（按细胞倍增归一化）与正文描述一致。不确定之处：第5页关于“299个远端hit”的句子语义不清，已在extraction_issues中标注；第9页“8 of these properties”列举不全，未擅自补全。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6260,
+      "prompt_tokens": 13916,
+      "total_tokens": 20176,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3821
+      }
+    },
+    "content_chars": 4546
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

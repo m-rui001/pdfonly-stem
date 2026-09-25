@@ -1,0 +1,76 @@
+{
+  "sha1": "47a3001f3df70d636f88bd2ec9edce9890006bf8",
+  "title": "CO 2 electrolysis to multicarbon products in strong acid",
+  "doi": "https://doi.org/10.1126/science.abg6582",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/47a3001f3df70d636f88bd2ec9edce9890006bf8/index.html",
+  "source_chars": 35198,
+  "markdown_chars": 3876,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The definitive version was published in Science on Volume 371 June 4 2021",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文首页引用信息为Science 372(6546), 1074-1078 (2021)，而此处写Volume 371 June 4 2021，卷号与日期不一致，疑为OCR或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "\\mathrm{C_{2} H_{4}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "部分化学式下标格式不统一，如C2H4的2和4下标在提取文本中有时正确有时丢失，影响公式一致性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "1 \\mathrm{M H}{3} \\mathrm{PO}{4} with 3 M KCl",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式下标H3PO4的3和4在LaTeX中丢失了下标标记，显示为H{3}PO{4}，影响公式可读性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "\\mathrm{CO}{2} R reactivity",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "CO2R的下标2丢失，显示为CO{2} R，影响符号准确性。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "CO2 electrolysis to multi-carbon products in strong acid",
+  "self_check": "已核对摘要、正文关键数值与结论：单程CO2利用率77%、C2+转换效率50%、电流密度1.2 A/cm²、全电池电压4.2 V、Tafel斜率0.28 V/dec、C2+产率600 mA/cm²、SPCE约77%等均与原文一致。公式符号如pH、电流密度、FE等保留原样。仍不确定之处：第1页出版信息中Volume 371与正文引用372(6546)冲突，已作为OCR问题标出；部分化学式下标在提取文本中格式不统一，但未影响关键数值理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2981,
+      "prompt_tokens": 10830,
+      "total_tokens": 13811,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 5303,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "e8ec971ae0bfd4af958cf4eb11029f5d14365134",
+  "title": "3D scanning and 3D printing as innovative technologies for fabricating personalized topical drug delivery systems",
+  "doi": "https://doi.org/10.1016/j.jconrel.2016.05.034",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e8ec971ae0bfd4af958cf4eb11029f5d14365134/index.html",
+  "source_chars": 43112,
+  "markdown_chars": 2865,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "Fig. 2. TGA results for Salicylic acid (SA), the extruded filaments (blank) and the drug loaded filaments.",
+      "type": "疑似图编号重复",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "前文第12页已有Fig. 2为SEM图，此处TGA图标注为Fig. 2，疑为原文编号错误（应接续为Fig. 3）。照录原文，未推测修正。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "unlike FDM 3DP,, salicylic acid is not thermally degraded",
+      "type": "标点冗余",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "提取文本中“3DP,,”出现连续双逗号，疑为原文排版或录入笔误，不影响语义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "291 µg/cm2 within 3 hour for PEGDA/PED (4:6)-salicylic acid",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "原文出现“PEGDA/PED”，而全文其他位置均为“PEGDA/PEG”，系明显笔误；另一处（第21页结论中）同样将PEG误写为PED，此处仅列一处作代表。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：FPLA载药丝0.63% w/w、PCL载药丝1.34% w/w；打印后FPLA 0.35%、PCL 1.21%；SLA两种配方1.95%和1.96%；扩散数据摘要中“less than 187”与正文中FPLA 53、PCL 187（最大191）基本一致但摘要表述为“小于187”略有不精确，正文结论明确写为53和187，已按正文引用。SLA扩散数据摘要为229和291，与结论一致。热分析中水杨酸熔点160°C、完全降解约200°C等数据已保留。公式部分无特殊公式。提取文本中图3图注编号重复及PEGDA/PED拼写错误已列入issues；未发现明显的跨页断句问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5512,
+      "prompt_tokens": 12572,
+      "total_tokens": 18084,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3141
+      }
+    },
+    "content_chars": 4127
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "a8c447bae1e2f1f4a7b2c6b720e9924a072b3a23",
+  "title": "Addition of multiple limiting resources reduces grassland diversity",
+  "doi": "https://doi.org/10.1038/nature19324",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a8c447bae1e2f1f4a7b2c6b720e9924a072b3a23/index.html",
+  "source_chars": 39786,
+  "markdown_chars": 1793,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "F1,783=4.37, P0.037",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "P后缺少等号，应为P=0.037，属于抽取丢失字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "Models using dead biomass and PAR used the subset of 30 sites for which we had data for these variables.",
+      "type": "跨页不一致",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "正文统计部分称30个站点有死生物量和PAR数据，但Extended Data Table 3图例（第14页）称32个站点，两者矛盾，可能是原文笔误或提取不一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "𝐸𝐸𝐸𝐸𝐸𝐸𝑃𝑃𝑃𝑃𝑃𝑃 = 1 / ∑𝑠𝑠𝑖𝑖 𝑝𝑝𝑖𝑖 2",
+      "type": "疑似排版/OCR问题",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中字符出现重复和乱码，可见形式可能为ESNPIE = 1 / (∑ p_i^2)，但无法确定，照录。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对主要统计量：图1b的F值、图2各F值、图3c的R2=0.11、图4c的R2=0.10、补充表中AIC等均与原文一致。多样性计算公式按原样保留，但公式显示有乱码。样本量45、34、11等已核对。不确定之处：正文统计部分30站点与补充表3的32站点不一致，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6770,
+      "prompt_tokens": 10342,
+      "total_tokens": 17112,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5233
+      }
+    },
+    "content_chars": 2762
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

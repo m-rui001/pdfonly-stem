@@ -1,0 +1,64 @@
+{
+  "sha1": "727839b068cf1ade38774864476266432a7aafc6",
+  "title": "A Surrogate-Assisted Reference Vector Guided Evolutionary Algorithm for Computationally Expensive Many-Objective Optimization",
+  "doi": "https://doi.org/10.1109/tevc.2016.2622301",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/727839b068cf1ade38774864476266432a7aafc6/index.html",
+  "source_chars": 101672,
+  "markdown_chars": 4440,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "The results obtained with the four compared algorithms over 25 independent runs are collected in Table 1.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第15页参数设置中写明“Number of independent runs = 10”，此处却写“25 independent runs”，前后矛盾，且表格也显示多次运行，但无法判定正确值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "One contribution of K-RVEA is the development of a strategy to select training samples reference vectors, the number of samples for training Kriging models is kept constant",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在“reference vectors”后明显缺失连接词（如“using”），上下文不完整，疑似页间截断或抽取缺损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "pi = (p1i , p2i , . . . , pki ),  0 1 (2) Pk j pji = H , H,... H j=1 pi = 1 H ,",
+      "type": "公式抽取损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2)的排版在抽取后变得混乱，无法辨认正确分式结构，但保留原文可见字符，未作推测。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、方法描述、算法流程、参数设置、主要表格（Table 1-3及补充表格）中的关键数值，如NI=11n-1、FEmax=300、u=5、δ=0.05N、wmax=20、DTLZ7中70%空参考向量、聚合反应IGD值等，均与原文一致。公式部分尽量保留原样，未补写或修改。发现的文本矛盾（运行次数10与25）和句子缺失已列入issues。未读取PDF或图片，只依据提供的文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3435,
+      "prompt_tokens": 29760,
+      "total_tokens": 33195,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 260
+      }
+    },
+    "content_chars": 5758
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

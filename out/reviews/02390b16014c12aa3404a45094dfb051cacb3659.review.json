@@ -1,0 +1,210 @@
+{
+  "sha1": "02390b16014c12aa3404a45094dfb051cacb3659",
+  "title": "The global burden of pathogens and pests on major food crops",
+  "doi": "https://doi.org/10.1038/s41559-018-0793-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/02390b16014c12aa3404a45094dfb051cacb3659/index.html",
+  "source_chars": 77176,
+  "markdown_chars": 14403,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The responses from the survey represented countries that account for a total of 83,94,79,69 and 95% of the global production for wheat, rice, maize, potato and soybean, respectively",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "百分比列表“83,94,79,69 and 95%”中逗号分隔符疑似应为“83、94、79、69 和 95%”，但当前形式可能被误读为数字 83,94（即 8394）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "global crop loss estimates per crop of 21.5, 30.0, 22.6, 17.2 and 21.4%",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要中玉米损失为 22.5%，此处正文为 22.6%，两处数值不一致；可能为 OCR 错误或原文本身不一致，影响关键数值准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "loss magnitude and crop $ \\left( \\chi^{2}=5 7. 7; 1 2 \\mathrm{d}. \\mathrm{f}. ; P<0. 0 0 1 \\right) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中数字间存在多余空格（如“5 7. 7”、“1 2”），可能影响公式可读性，但数值本身可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Variable namea Variable typeb Variable meaning(remarks) Variable classes(categorical) Variable classes(numerical)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 的表头在 OCR 中丢失了列分隔和格式，导致表格结构不清晰，可能影响对变量分类的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "0.5%3.0%12.5%40.0%80.0%",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 中损失幅度数值类别的百分比值连在一起，缺少分隔，可能被误读为单个数字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "1.00.50.20.1",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 中损失频率数值类别的分数值连在一起，缺少分隔，可能被误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Yield Q1Yield Q2Yield Q3Yield Q4",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中产量四分位数类别名称连在一起，缺少分隔，可能影响可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Very lowLowMediumHigh",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中产量四分位数对应的描述性类别连在一起，缺少分隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Arid; humid continental; equatorial; Mediterranean; monsoon; oceanic; subtropics; humid tropics",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中气候类别列表虽以分号分隔，但整体格式在表格中可能丢失，不过内容可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "USM&C; SB&A; NWE; WANA; SSA; China; IGP; SEA",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中热点列表格式在表格中可能丢失，但内容可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Wheat; rice; maize; potato; soybean None",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中作物类别与“None”连在一起，可能影响表格结构理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Many names of diseases(causal pathogens) or pests(see Supplementary Table 2) None",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中描述与“None”连在一起，可能影响表格结构理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Very low(2) Low(3) Moderate(4) High(5) Very high",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中损失幅度类别与编号连在一起，缺少分隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Chronic(2) Frequent(3) Infrequent(4) Rare",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中损失频率类别与编号连在一起，缺少分隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Emerging or re-emerging P&Psc",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中“P&Psc”可能为“P&Ps”与上标“c”的 OCR 合并，影响可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Mean yield of each crop(2010-2014), corresponding to the country of the response35 None None",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中描述与“None None”连在一起，可能影响表格结构理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Categories of average yields for each crop according to quartiles Yield Q1Yield Q2Yield Q3Yield Q4 Very lowLowMediumHigh",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中描述与类别名称连在一起，缺少分隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Some of the reported P&Ps were considered emerging on the basis of their recent expansion (geographical, or in terms of host range) or recent genetic evolution $ ^{20-22} $.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 脚注与表格内容混在一起，可能影响表格结构理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Cardinal data correspond to qualitative variables with modalities that do not correspond to a rank or order, such as crop names, names of diseases and pests, climatic zones or regions of the world.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 脚注与表格内容混在一起，可能影响表格结构理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "The global burden of pathogens and pests on major food crops",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 18781,
+      "total_tokens": 28781,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 20278,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

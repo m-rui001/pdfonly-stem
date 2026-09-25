@@ -1,0 +1,617 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review</h1><p class="meta">https://doi.org/10.1016/j.optlaseng.2016.04.022 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>BNL-112695-2016-JA</p>
+<p>File # 93627</p>
+<h2>Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review</h2>
+<div>
+
+# Chao Zuo, Lei Huang, Minliang Zhang, Qian Chen and Anand Asundi
+
+</div>
+<div>
+
+# Submitted to Optics and Lasers in Engineering
+
+</div>
+<p>October 1, 2016</p>
+<div>
+
+# Photon Sciences Department
+
+</div>
+<div>
+
+# Brookhaven National Laboratory
+
+</div>
+<p>U.S. Department of Energy USDOE Office of Science (SC), Basic Energy Sciences (BES) (SC-22)</p>
+<p>Notice: This manuscript has been authored by employees of Brookhaven Science Associates, LLC under Contract No. DE- SC0012704 with the U.S. Department of Energy. The publisher by accepting the manuscript for publication acknowledges that the United States Government retains a non-exclusive, paid-up, irrevocable, world-wide license to publish or reproduce the published form of this manuscript, or allow others to do so, for United States Government purposes.</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><h2>DISCLAIMER</h2>
+<p>This report was prepared as an account of work sponsored by an agency of the United States Government. Neither the United States Government nor any agency thereof, nor any of their employees, nor any of their contractors, subcontractors, or their employees, makes any warranty, express or implied, or assumes any legal liability or responsibility for the accuracy, completeness, or any third party's use or the results of such use of any information, apparatus, product, or process disclosed, or represents that its use would not infringe privately owned rights. Reference herein to any specific commercial product, process, or service by trade name, trademark, manufacturer, or otherwise, does not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States Government or any agency thereof or its contractors or subcontractors. The views and opinions of authors expressed herein do not necessarily state or reflect those of the United States Government or any agency thereof.</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><div>
+
+# Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review
+
+</div>
+<p>Chao Zuo, $ ^{a,b,\dagger} $ Lei Huang, $ ^{c} $ Minliang Zhang, $ ^{a,b} $ Qian Chen $ ^{b,*} $ , and Anand Asundi $ ^{d} $</p>
+<p>$ ^{a} $Smart Computational Imaging Laboratory (SCILab), Nanjing University of Science and Technology, Nanjing, Jiangsu Province 210094, China $ ^{b} $Jiangsu Key Laboratory of Spectral Imaging &amp; Intelligent Sense, Nanjing University of Science and Technology, Nanjing, Jiangsu Province 210094, China $ ^{c} $Brookhaven National Laboratory, NSLS II 50 Rutherford Drive, Upton, New York 11973-5000, United States</p>
+<p>$ ^{d} $Centre for Optical and Laser Engineering (COLE), School of Mechanical and Aerospace Engineering, Nanyang Technological University, Singapore 639798, Singapore $ ^{\dagger} $surpasszuo@163.com $ ^{*} $chenqian@njust.edu.cn</p>
+<h2>Abstract</h2>
+<p>In fringe projection profilometry (FPP), temporal phase unwrapping is an essential procedure to recover an unambiguous absolute phase even in the presence of large discontinuities or spatially isolated surfaces. So far, there are typically three groups of temporal phase unwrapping algorithms proposed in the literature: multi-frequency (hierarchical) approach, multi-wavelength (heterodyne) approach, and number-theoretical approach. In this paper, the three methods are investigated and compared in details by analytical, numerical, and experimental means. The basic principles and recent developments of the three kind of algorithms are firstly reviewed. Then, the reliability of different phase unwrapping algorithms is compared based on a rigorous stochastic noise model. Furthermore, this noise model is used to predict the optimum fringe period for each unwrapping approach, which is a key factor governing the phase measurement accuracy in FPP. Simulations and experimental results verified the correctness and validity of the proposed noise model as well as the prediction scheme. The results show that the multi-frequency temporal phase unwrapping provides the best unwrapping reliability, while the multi-wavelength approach is the most susceptible to noise-induced unwrapping errors.</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><p>Keywords: Phase measurement, Fringe projection profilometry, Temporal phase unwrapping</p>
+<h2>1. Introduction</h2>
+<p>High-speed, high-accuracy, and non-contact three dimensional (3D) shape measurement has been an extensively studied research area due to the diversity of potential application which extends to a variety of fields including but not limited to mechanical engineering, industrial monitoring, computer vision, virtual reality, biomedicine and other industrial applications [1, 2]. Among others, fringe projection profilometry (FPP) approaches have proven to be one of the most promising techniques [3-7]. In practice, the simplest FPP system is composed of one camera, one projector, and a processing unit (computer). Controlled by the computer, a series of well-designed fringe patterns are projected onto a target object. The camera captures the corresponding deformed fringe patterns, which contain phase information of the projected patterns. The computer then performs decoding algorithm to extract phase information from the deformed fringe patterns, and maps it to real world 3D coordinates of the object through triangulation [4, 8-11].</p>
+<p>Many fringe projection techniques have been proposed to measure the surface shape of an object using phase information, among which phase-shifting profilometry [12-15] and Fourier transform profilometry [5, 7, 16, 17] are the two main methods to get phases at present. However, each of these two techniques estimates the phase distribution by employing an arctangent calculation undertaken over the four quadrants of phasor space. The retrieved phase distribution corresponding to the object height is therefore wrapped to principle values ranging between $ -\pi $ and $ \pi $ , and consequently, the phase discontinuities occur at the limits every time when the unknown true phase changes by $ 2\pi $ . To correctly reconstruct the three-dimensional surface shape, the process of phase unwrapping must be carried out in order to remove the discontinuities from their principal values and to obtain an estimate of the true continuous phase</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>map [18-20].</p>
+<p>Two-dimensional phase unwrapping is nowadays a mature field with immense amounts of literature on this subject. Not just limited to FPP, phase unwrapping has been adapted to many different applications and measurement modalities. Interferometry [21], synthetic aperture radar (SAR) [22], magnetic resonance imaging (MRI) [23], optical Doppler tomography [24], acoustic imaging [25], and X-ray crystallography [26] also require phase unwrapping to convert raw measurements into useful quantities. Several dozen algorithms have been proposed for two-dimensional phase unwrapping during past decades. In terms of the working domains, these algorithms can be classified into two principal groups: spatial phase unwrapping [18, 27-29] and temporal phase unwrapping [20, 30-34].</p>
+<p>Spatial phase unwrapping is a natural and straightforward way to unwrap a wrapped phase map if phase continuity can be assumed. With different considerations, a number of spatial phase unwrapping methods have been investigated in variety, such as Goldstein's method [18], quality-guided method [27] Flynns method [28], and minimum $ L_{p} $ -norm method [29]. There have been many reviews on the general subject of spatial phase unwrapping [19, 35, 36] as well as comparisons of different algorithms for particular applications [37-39]. Usually, only a single wrapped phase map is employed and the unwrapped phase of a subject pixel is derived according to the phase values within a local neighborhood about the pixel. However, such spatial phase unwrapping algorithms have one common limitation: they tend to fail in cases where a field of view contains discontinuous or isolated objects [33, 40].</p>
+<p>Contrast to spatial approaches, temporal phase unwrapping methods have been proposed to unwrap the phase of a profile with large discontinuities and separations [20, 33, 40, 41]. As the name implies, this unwrapping process is not implemented in the spatial domain but in the temporal domain. The common idea is to employ more than one unwrapped phase maps or additional black and white coded patterns to provide extra information about the fringe orders. One advantage of using temporal phase unwrapping is being able to analyze</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>highly discontinuous objects, because each spatial pixel from the measured data is unwrapped independently from its neighbors [33, 40]. Another feature is that noisy pixels remain isolated and do not spread uncertainties to less noisy regions ruining the entire unwrapping process [20].</p>
+<p>The Gray-code temporal phase unwrapping is perhaps the simplest approach to resolve the phase ambiguity [41, 42]. In this approach, fringe orders of the wrapped phase are encoded within a serial binary Gray-code patterns over time. Since N patterns can only code $ 2^{N} $ fringe orders, the minimum number of additional binary patterns required is $ \mathrm{INT}\left(\log_{2} f\right)+1 $ , where f is the total number of fringe orders within the full phase map and INT is the 'integer part' function [43]. Since the entire duration of data acquisition is significantly prolonged, this approach proves to be inefficient in some time-critical situations such as on-line inspection and real-time scanning requirement [44]. Furthermore, pattern edges blur caused by optical defocusing is also a source for additional errors [45]. It is common to see pixels incorrectly unwrapped at the partial boundary between adjacent Gray-coded image areas [46, 47].</p>
+<p>An alternative group of temporal phase unwrapping methods is to unwrap the phase with the aid of additional wrapped phase map(s) differing in their fringe periods [20, 30-34]. There are three typical methods falling in this group: multi-frequency (hierarchical) approach [20, 30, 48-50], multi-wavelength (heterodyne) approach [31-33, 51-53], and number-theoretical approach [34, 54-57]. All these methods effectively solve the phase ambiguity of surface discontinuities or spatially isolated objects, and greatly outperform the Gray-code approach in terms of pattern efficiency, unambiguous range, and unwrapping accuracy. Since the surface discontinuity is the rule rather than the exception in general objects, these temporal phase unwrapping algorithms have to be applied to almost all fringe projection profilometers, including most of commercial fringe projection 3D scanners. Furthermore, the inherent computational simplicity of these methods allows them to be easily implemented for real-time measurement of generally-shaped objects [44, 58-63].</p>
+<p>Despite these great improvements and extensive applications, the literature</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><p>survey conducted by the authors reveals one important but often overlooked issue in the temporal phase unwrapping for FPP: How to select a proper temporal phase unwrapping algorithm, or in other words, which algorithm is the best one among these three (multi-frequency approach, multi-wavelength approach, and number-theoretical approach). There are few published works concerning the comparison of temporal phase unwrapping algorithms despite their widespread applications. In fact, in many research of FPP, the choice of temporal phase unwrapping algorithms is rather empirical; and sometimes it becomes more a matter of personal preference than that of measurement solution type.</p>
+<p>To this end, this paper provides a detailed comparison of the three most widely used temporal phase unwrapping algorithms. Before getting down to the main point of this paper, we must understand what factors make a good phase unwrapping algorithms. It is understandable that each algorithm should have its own advantages and disadvantages, and strictly speaking, the "best" algorithm should be dependent on the specific kind of applications. For example, in FPP, if the application is not restricted by acquisition time and number of fringe, all those three approaches have proved to offer robust phase unwrapping solutions. While in interferometric optical testing, the multi-wavelength approach is apparently the most suitable choice due to its highest flexibility in selecting the wavelength. Nevertheless, in this work, we only limit to the study of FPP, with emphasis on high-speed or real-time measurement applications. In such context, it is always desirable that the phase unwrapping algorithm to be robust and less sensitive to sensor noise due to the very limited exposure time. Though computational efficiency, simplicity, memory use are also very important factors, in this work we only evaluate different phase unwrapping algorithms with two most important criterions: the unwrapping reliability and the level of fringe order errors. Besides, the analysis, simulations, and experimental results are only limited to the phase unwrapping from two sets of phase-shifting patterns (i.e. two-frequency or two-wavelength approaches). This is a reasonable choice for minimizing the total acquisition time and reducing the potential motion artifacts for measuring moving object. Moreover, the results</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>and related conclusions can be easily generalized to more dataset conditions (e.g. three-frequency or three-wavelength approaches).</p>
+<p>The reminder of this paper is organized as follows: In Section 2, the basic principle of fringe projection profilometry and phase unwrapping is briefly introduced. Section 3 is devoted to reviewing the three phase unwrapping algorithms (multi-frequency approach, multi-wavelength approach, and number-theoretical approach) compared in this work. In Section 4, the performances of different algorithms are compared in detail based on a rigorous stochastic noise model. Simulations and experimental verifications are presented in Section 5 and Section 6, whereas Section 7 summarized the comparison results. Finally, conclusions are drawn in Section 8.</p>
+<h2>2. Principle of fringe projection profilometry and phase unwrapping</h2>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 1: Schematic diagram of a FPP setup. Point A is the pixel on the projected pattern, Point B is where it falls on the object surface, and point C is what the camera sees. The 3D geometry can be triangulated, if correspondence among A, B, and C can be established.
+
+</div>
+<p>As its nomination, the FPP technique is basically to project the fringe pattern(s)</p></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><p>onto target object and to capture the deformed fringe pattern(s) by using a digital camera. Typically, sinusoidal patterns are used for projection. The depth of the object surface is encoded in the phase of the distorted fringe, and can be further reconstructed through triangulation [8-11]. To ensure the triangulation is sensitive with phase values, fringe patterns should be properly generated with a phase orientation parallel to the baseline between optical centers of projector and camera, as illustrated in Fig. 1.</p>
+<h2>2.1. Wrapped phase extraction</h2>
+<p>In FPP, the fringe distortion is quantified by its phase distribution, which can be converted to the surface profile of the measured object. Many fringe analysis techniques have been proposed to extract the phase distribution from the distorted fringe(s), such as phase-shifting profilometry [12-15], Fourier-transform profilometry [5, 7, 16, 17], windowed Fourier-transform profilometry [64, 65] and wavelet-transform profilometry [66, 67]. Among these techniques, the phase-shifting profilometry provides highest measurement resolution and accuracy since it completely eliminates interferences from ambient light and surface reflectivity. In phase-shifting profilometry, multiple phase-shifted sinusoidal intensityprofile fringe patterns are projected sequentially onto an object surface. The distorted fringe distribution captured by the camera can be represented as:</p>
+<div class="formula">$$
+I _ {n} (x, y) = A (x, y) + B (x, y) \cos [ \phi (x, y) - 2 \pi n / N ]
+$$</div>
+<p>where $ A ( x,y) $ is the average intensity relating to the pattern brightness and background illumination, $ B ( x,y) $ is the intensity modulation relating to the pattern contrast and surface reflectivity, n is phase-shift index and n=0,1,2,..., N-1, and $ \phi ( x,y) $ is the corresponding wrapped phase map which can be extracted by the following equation [12,68,69]:</p>
+<div class="formula">$$
+\phi (x, y) = \tan^ {- 1} \frac {\sum_ {n = 0} ^ {N - 1} I _ {n} (x , y) \sin (2 \pi n / N)}{\sum_ {n = 0} ^ {N - 1} I _ {n} (x , y) \cos (2 \pi n / N)}
+$$</div>
+<p>Since there are three unknowns $ A ( x,y), B ( x,y) $ and $ \phi ( x,y) $ in Eq. (1), at least three images $ I_{1}(x,y), I_{2}(x,y), I_{3}(x,y) $ should be used to enable calculation of</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><div>
+
+Figure 2: Example of three-step phase-shifting algorithm and phase unwrapping. (a) shows the intensity cross-sections of $ I_{1} $ $ I_{2} $ , and $ I_{3} $ , (b) shows the relation between the wrapped phase $ \phi(x,y) $ and the wrapped phase $ \Phi(x,y). $
+
+</div>
+<h2>2.2. Basic principle of phase unwrapping</h2>
+<p>Since the arctangent function only ranges from $ -\pi $ to $ \pi $ , the phase value provided from Eq. (2) will have $ 2\pi $ phase discontinuities. To obtain a continuous phase distribution, phase unwrapping must be carried out. Figure 2(b) gives a simplified single dimensional example of the wrapping nature of the arctangent operation. The rudimentary phase unwrapping procedure is revealed as a process concerned with traversing through the wrapped phase vector sequentially in the x direction and adding or subtracting integer multiples of $ 2\pi $ . This results in an unwrapped phase map which is given by Eq. (3), and also shown in Fig. 2(b).</p>
+<div class="formula">$$
+\Phi (x, y) = \phi (x, y) + 2 \pi k (x, y)
+$$</div>
+<p>where $ \phi(x,y) $ is the unwrapped phase, $ \Phi(x,y) $ is the unwrapped phase obtained from Eq. (3), and k(x,y) is the integer number to represent fringe orders. The</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>key to a phase unwrapping algorithm is quickly and correctly finding $ k ( x,y) $ for each pixel in the phase map. While in the theoretical sense this process is simple and straightforward, practical phase contain additive noise and other discontinuities which may impede the phase unwrapping process. For example, as illustrated in Fig. 3, the inherent depth ambiguities in FPP represents a major obstacle for spatial phase unwrapping. Since the spatial phase unwrapping methods are based on the phase information of spatial neighboring pixels, it cannot determine the fringe order in the captured image of two isolated surfaces [Fig. 3(a)] or surface discontinuity [Fig. 3(b)] by using only single phase distribution [33, 40, 55, 61]. Thus, to unwrap a more general phase map which may contain large discontinuities and separations, temporal phase unwrapping approaches have to be used to remove such depth ambiguities.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<div>
+
+Figure 3: Illustration of depth ambiguities. (a) Two isolated object: the fringe order of two pixels $ ( C_{1} $ and $ C_{2} $ ) in the camera image cannot be unambiguously determined since are mapped from two points on two isolated object surfaces, respectively. (b) A object with surface discontinuity: the large height discontinuity results in missing order and continuity artifact from the camera view such that different fringe orders $ ( B $ and $ B^{\prime} $ ) appear as the same one in the captured image.
+
+</div></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><h2>3. Introduction to multi-frequency, multi-wavelength, and numbertheoretical temporal phase unwrapping algorithms</h2>
+<p>In this section, we will briefly review the basic principle and recent advances of three different groups of temporal phase unwrapping algorithms, namely, the multi-frequency, multi-wavelength, and number-theoretical algorithms. This will be served as a background and preparation for the subsequent analysis and comparison.</p>
+<p>The common idea of the three algorithms is to unwrap the phase with the aid of one (or more) additional wrapped phase map with different fringe periods. These two unwrapped phase maps are both retrieved from phase-shifting algorithm [Eq. (2)] [12-15] or other phase detection approaches [16, 17, 64, 66], ranging from $ -\pi $ to $ \pi $ . In the following, the two wrapped phase maps are denoted as $ \phi_{l} $ and $ \phi_{h} $ , with a fringe wavelength of $ \lambda_{l} $ and $ \lambda_{h} $ , respectively $ (\lambda_{h}&lt;\lambda_{l} $ subscripts 'h' and 'l' denote 'high frequency' and 'low frequency', respectively). The continuous phase maps corresponding to $ \phi_{l} $ and $ \phi_{h} $ are denotes as $ \Phi_{l} $ and $ \Phi_{h} $ , respectively. It is easy to prove that the two continuous phase maps should have the following relationship:</p>
+<div class="formula">$$
+\Phi_ {h} (x, y) = \left(\lambda_ {l} / \lambda_ {h}\right) \Phi_ {l} (x, y)
+$$</div>
+<h2>3.1. Multi-frequency (hierarchical) temporal phase unwrapping</h2>
+<p>The multi-frequency temporal phase unwrapping was proposed first by Huntley and Saldner [20] in 1993, and later investigated and improved by others [30, 48-50]. In this strategy, the fringe pattern with different fringe densities are projected, and the coarsest fringe pattern has only one fringe in all, of which the phase without any 'wraps' (because its values do not exceed the range of $ [-\pi,\pi) $ ) is then used as fundamental information for further phase unwrapping. The other phase maps are unwrapped based on their previous unwrapped phase maps one by one according to the relation of their frequencies or fringe numbers. Since the phases are unwrapped from the coarsest layer to the finer ones, this sort method is also well known as 'hierarchical' unwrapping approach [54, 70, 71].</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><div>
+
+Figure 4: Illustration of two-frequency temporal phase unwrapping $ \left( \lambda_{l}=1 0 0 0 \mathrm{p i x e l s}, \mathrm{a n d} \lambda_{h}=2 0 0 \mathrm{p i x e l s} \right). $
+
+</div>
+<p>Several multi-frequency temporal phase unwrapping algorithms have been proposed to maximize the unwrapping accuracy and minimize the necessary amount of data [20, 30, 48-50, 72, 73]. According to the type of fringe sequence used, these algorithms can be further divided into several categories: linear sequence [20], exponential sequence [72], reversed exponential sequence [73], modified exponential sequence [49], generalized reversed exponential sequence [48], generalized exponential sequence [50], etc. Unfortunately, for most algorithms in order to achieve good 3D reconstruction accuracy, the total number of relative phase maps is typically fairly large (usually &gt; 5 maps). In the applications where the measurement time needs to be shortened, the required number of maps can be actually reduced to 2, as demonstrated by Zhao et al. [30]. Based on Eq. (4), the relations between the phase maps $ (\Phi_{h} $ or $ \Phi_{l} $ ) and the wrapped phase maps $ (\phi_{h} $ or $ \phi_{l} $ ) can be written as</p>
+<div class="formula">$$
+\left\{ \begin{array}{l} \Phi_ {h} (x, y) = \phi_ {h} (x, y) + 2 \pi k _ {h} (x, y) \\ \Phi_ {l} (x, y) = \phi_ {l} (x, y) + 2 \pi k _ {l} (x, y) \end{array} \right.
+$$</div>
+<p>where the $ k_{h} $ and $ k_{l} $ are the respective integer fringe orders. In two-frequency temporal phase unwrapping, the low-resolution phase distribution $ \phi_{l} $ is retrieved by using a set of unit frequency patterns, and thus no phase unwrapping is</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>required for $ \phi_{l} $ , that is, $ \Phi_{l}=\phi_{l} $ . Then referring to Eqs. (4) and (5), the fringe order $ k_{h} $ for each pixel can be determined easily:</p>
+<div class="formula">$$
+k _ {h} (x, y) = R o u n d \left[ \frac {\left(\lambda_ {l} / \lambda_ {h}\right) \phi_ {l} (x , y) - \phi_ {h} (x , y)}{2 \pi} \right]
+$$</div>
+<p>where Round[ ] denotes to obtain the closest integer value. By this means the high frequency phase $ \phi_{h} $ can be unwrapped, as illustrated in Fig. 4. Since total number of acquired images is greatly reduced, this two-frequency approach is also called reduced hierarchical approach [74]. In general terms, the algorithm is consequently referred as multi-frequency phase unwrapping approach in the following comparisons.</p>
+<h2>3.2. Multi-wavelength (heterodyne) temporal phase unwrapping</h2>
+<p>The two-wavelength, or heterodyne approach is evolved from the coalescing of full field phase-shifting interferometry and two-wavelength holography around the early 1970's [31-33, 51-53]. Decades later, this technique has been introduced in FPP and shown to be useful in resolving phase discontinuities [10, 54, 75, 76]. Such approach is to extend the unambiguous phase range to the synthetic wavelength at the beat frequency of two close frequencies. Since the coarse (reference) phase is generated from the wrapped difference of two phase functions, this sort of temporal phase unwrapping method is also termed as phase difference approach [74]. The two-wavelength algorithm involves subtracting the phase measurements taken at each of the wavelengths,</p>
+<div class="formula">$$
+\phi_ {e q} (x, y) = \phi_ {h} (x, y) - \phi_ {l} (x, y)
+$$</div>
+<p>yielding the same result as if the measurement had been taken at an equivalent wavelength</p>
+<div class="formula">$$
+\lambda_ {e q} = \frac {\lambda_ {l} \lambda_ {h}}{\lambda_ {l} - \lambda_ {h}}
+$$</div>
+<p>where the $ \lambda_{e q} $ is also called synthetic wavelength at beat frequency. If $ \lambda_{h}&lt;\lambda_{l}&lt;2\lambda_{h} $ , we have $ \lambda_{h}&lt;\lambda_{l}&lt;\lambda_{e q} $ [77]. When $ \lambda_{h} $ and $ \lambda_{l} $ are properly chosen and spaced closely, the synthetic wavelength can be large enough so that the phase ambiguity can be removed. However, two-wavelength algorithm increases the</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><div>
+
+Figure 5: Illustration of two-wavelength temporal phase unwrapping $ \lambda_{l}=2 5 0 $ pixels, and $ \lambda_{h} $ =200 pixels). The equivalent phase map is taken as the wrapped difference between the two unwrapped phase functions $ \lambda_{e q}=1 0 0 0 $ pixels) (a). $ \phi_{e q} $ is then used as a reference to unwrap $ \phi_{h} $ (b).
+
+</div></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><p>unambiguous measurement range by sacrificing its signal to noise ratio (SNR). Therefore, the synthetic phase map $ \phi_{e q} $ is usually only used as a reference phase to assist phase unwrapping [33, 54, 75]. The ratio of the synthetic wavelength to the smaller original wavelength defines a scaling factor that is applied to the phase at the beat frequency to determine fringe orders at the more sensitive wavelength:</p>
+<div class="formula">$$
+k _ {h} (x, y) = R o u n d \left[ \frac {\left(\lambda_ {e q} / \lambda_ {h}\right) \phi_ {e q} (x , y) - \phi_ {h} (x , y)}{2 \pi} \right]
+$$</div>
+<p>The whole process of two-wavelength phase unwrapping is illustrated in Fig. 5. It should be noted that the two-wavelength temporal phase unwrapping method can be extended to three or even more wavelengths, which allows to further increase the equivalent wavelength. The unambiguous measurement range can be maximized based on an optimization criterion that leads to a geometric series of wavelengths [77, 78]. In general terms, the algorithm described above is consequently referred as multi-wavelength phase unwrapping approach in the following comparisons.</p>
+<h2>3.3. Number-theoretical temporal phase unwrapping</h2>
+<p>The final method included in this comparison is the so-called number-theoretical approach [34, 54-57, 79-83], which is based on the properties of relative prime numbers. The number-theoretical approach was originally introduced by Gushov and Solodkin [34] in 1991, who use at least two phase maps with fringe pattern frequencies that are proportional to the relative primes. This approach was later improved by Takeda et al. [55] and Towers et al. [57] to increase its robustness to phase errors. Another interesting improvement is proposed by Zhong et al. [56, 84] in 2001, who introduce a look-up-table (LUTs) for simple and speedy phase unwrapping with two phase maps. After that, similar LUT-based approaches were still being reinvestigated by several researchers until recently [79, 80, 82, 83].</p>
+<p>The basic idea of the number-theoretical approach relies on the fact that for suitable chosen wavelength lengths $ \lambda_{l} $ and $ \lambda_{h} $ , one can obtain a unique set of</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><p>pairs $ (\phi_{h},\phi_{l}) $ along the absolute phase axis. "Suitable" means that the pattern</p>
+<div>
+
+Figure 6: A simple example explaining the basic idea of number-theoretical temporal phase unwrapping $ \lambda_{l}=5 $ pixels, $ \lambda_{h}=3 $ pixels, and $ LCM(\lambda_{l},\lambda_{h})=15 $ pixels). Each small rectangular block represents one pixel, labeled by its fringe order. It can be observed that each combination of wrapped phase values $ (\phi_{h},\phi_{l}) $ is unique.
+
+</div>
+<p>Indeed, the number-theoretical method can also be applied even with sets of wavelengths which are not necessarily relative primes [80, 81]. More specifically, it correctly unwraps the phase up to the value in the absolute phase which equals to $ L C M (\lambda_{l},\lambda_{h}) $ . Here LCM() represents a function whose output is the least common multiple for input parameters, which is a minimal number divisible by the wavelengths used. It should be plain to see that in cases where wavelengths</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><div>
+
+Figure 7: Illustration of number-theoretical temporal phase unwrapping $ \lambda_{l}=500 $ pixels, $ \lambda_{h}=200 $ pixels, $ LCM(\lambda_{l},\lambda_{h})=1000 $ pixels). The value $ \frac{5\phi_{l}-2\phi_{h}}{2\pi} $ can be used to uniquely determine the fringe order pair $ (k_{h},k_{l}) $
+
+</div>
+<p>are prime numbers, then the LCM() function simply boils down to multiplication of the two wavelengths. To determine the two integers $ ( k_{h} $ and $ k_{l} $ ) via the two unwrapped phase maps, we rewrite Eq. (4) as:</p>
+<div class="formula">$$
+f _ {h} \Phi_ {l} (x, y) = f _ {l} \Phi_ {h} (x, y)
+$$</div>
+<p>where $ f_{l} $ and $ f_{h} $ stands for the total number of fringes for their corresponding patterns within the unambiguous range:</p>
+<div class="formula">$$
+\left\{ \begin{array}{l} f _ {h} = \operatorname {L C M} \left(\lambda_ {h}, \lambda_ {l}\right) / \lambda_ {h} \\ f _ {l} = \operatorname {L C M} \left(\lambda_ {h}, \lambda_ {l}\right) / \lambda_ {l} \end{array} \right.
+$$</div>
+<p>Combining Eqs. (10) and (5) yields:</p>
+<div class="formula">$$
+\left(f _ {h} \phi_ {l} - f _ {l} \phi_ {h}\right) / 2 \pi = k _ {h} f _ {l} - k _ {l} f _ {h}
+$$</div>
+<p>Generally, the wavelength should be integers (in pixels), so the right hand side of Eq. (12) is an integer. Therefore, the left-hand side must also be the same integer. The value of the left-hand side can be used as an entry to determine the fringe order pair $ ( k_{h}, k_{l} ) $ on the right hand side, as we illustrated in Fig. 7. When the unambiguous measurement range $ L C M ( \lambda_{l}, \lambda_{h} ) $ can cover the whole field of the projected pattern, this mapping should be unique. As suggested in</p></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><p>[56], all these unique map pairs of $ ( k_{h}, k_{l} ) $ can be pre-computed and the results can be stored in a look-up-table (LUT). When the two phase maps at a given position are obtained, we calculate their weighted difference $ ( f_{h} \phi_{l}-f_{l} \phi_{h} ) / 2 \pi $ round the value to the closest integer, and then use the pre-computed LUT to determine the fringe order pair $ ( k_{h}, k_{l} ) $:</p>
+<div class="formula">$$
+\left(k _ {h}, k _ {l}\right) = L U T \left\{R o u n d \left[ \frac {f _ {h} \phi_ {l} - f _ {l} \phi_ {h}}{2 \pi} \right] \right\}
+$$</div>
+<p>The content of the LUT used in the above equation is constructed according to Table 1. Once $ ( k_{h}, k_{l} ) $ is obtained, the absolute phase can be obtained using Eq. (5). It should be also noted that when the total number of fringes of the low-frequency phase is chosen as one, the number-theoretical method then reduces to two-frequency temporal phase unwrapping. Thus, the number-theoretical method can also be viewed as a generalized version of two-frequency temporal phase unwrapping. In the following analysis, we only consider the case $ f_{l}\neq1 $ (which is true in general cases) to differentiate it from the previous two-frequency temporal phase unwrapping method.</p>
+<div>
+
+Table 1: The LUT of number-theoretical temporal phase unwrapping
+
+</div>
+<table><tbody><tr><td>Round $[\frac{f_{h}\phi_{l}-f_{l}\phi_{h}}{2\pi}]$</td><td>...</td><td>$k_{h}=-2$</td><td>$k_{h}=-1$</td><td>$k_{h}=0$</td><td>$k_{h}=1$</td><td>$k_{h}=2$</td><td>...</td></tr><tr><td>$\vdots$</td><td>...</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>...</td></tr><tr><td>$k_{l}=-2$</td><td>...</td><td>$-2f_{l}-2f_{h}$</td><td>$-f_{l}-2f_{h}$</td><td>$-2f_{h}$</td><td>$f_{l}-2f_{h}$</td><td>$2f_{l}-2f_{h}$</td><td>...</td></tr><tr><td>$k_{l}=-1$</td><td>...</td><td>$-2f_{l}-f_{h}$</td><td>$-f_{l}-f_{h}$</td><td>$-f_{h}$</td><td>$f_{l}-f_{h}$</td><td>$2f_{l}-f_{h}$</td><td>...</td></tr><tr><td>$k_{l}=0$</td><td>...</td><td>$-2f_{l}$</td><td>$-f_{l}$</td><td>0</td><td>$f_{l}$</td><td>$2f_{l}$</td><td>...</td></tr><tr><td>$k_{l}=1$</td><td>...</td><td>$-2f_{l}+f_{h}$</td><td>$-f_{l}+f_{h}$</td><td>$f_{h}$</td><td>$f_{l}+f_{h}$</td><td>$2f_{l}+f_{h}$</td><td>...</td></tr><tr><td>$k_{l}=2$</td><td>...</td><td>$-2f_{l}+2f_{h}$</td><td>$-f_{l}+2f_{h}$</td><td>$2f_{h}$</td><td>$f_{l}+2f_{h}$</td><td>$2f_{l}+2f_{h}$</td><td>...</td></tr><tr><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\vdots$</td><td>$\ddots$</td></tr></tbody></table></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><ol>
+<li>Comparison of multi-frequency, multi-wavelength, and numbertheoretical temporal phase unwrapping algorithms</li>
+</ol>
+<p>In phase-shifting profilometry, there are four major causes of error have been recognized:</p>
+<ul>
+<li>The real phase shift is different from the nominal one, which is frequently referred as mis-calibration [68, 86, 87].</li>
+</ul>
+<ul>
+<li>The real pattern profile is not perfectly sinusoidal; that is, harmonics are present in the captured signal [6, 88].</li>
+</ul>
+<ul>
+<li>The measured object is not motionless during the acquisition process; that is, one point in the projected pattern sequence can map to different points on the object surface, which causes so-called motion artifacts [89, 90].</li>
+</ul>
+<ul>
+<li>The captured images suffer from sensor noise [91-94].</li>
+</ul>
+<p>Among these four aspects, the phase shift mis-calibration and non-sinusoidal error belong to systematic errors, which are relatively easy to tackle: The miscalibration can be avoided by employing a digital phase shifter device, for example, the commonly used DLP or LCD video projectors; while the non-sinusoidal error can be eliminated through carefully calibration [6, 44] or post-capture compensation algorithms [88, 95, 96]. The motion artifacts and sensor noise, however, belong to random errors that are not easy to control. To reduce the motion artifacts, the most practical way is to use high-frame-rates hardware and minimizing the number of projected patterns [6, 14, 44, 60]. But by doing so, the sensitivity to noise is increased due to the very limited projection and camera exposure time. In the following analysis, only the sensor noise problem will be solely considered. The real phase shift is supposed to be perfect, the projected intensity signal is supposed to be a perfect sine, and the object is assumed to be static during the acquisition process.</p>
+<p>In subsequent content of this section, the effect of noise on three different temporal phase unwrapping algorithms will be analyzed and compared. More</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><p>specifically, we will first review the noise model of phase-shifting profilometry, and explain how noise affects the phase measurement. This model is then extended to temporal phase unwrapping, which can be used to analyze and compare the unwrapping reliability of different algorithms in the presence of noise.</p>
+<h2>4.1. Noise model of phase-shifting profilometry</h2>
+<p>Looking specifically at the problem of sensor noise, many studies have been performed on understanding its effects on the phase reconstruction, and several noise models have been developed to quantitatively analyze the noise-induced phase error in phase-shifting algorithm [92, 97-100]. Though these models are derived based on different considerations from various angles, the final conclusions they arrived at are quite similar: the variance in the phase error depends primarily on the noise variance, intensity modulation $ [ B ( x,y) $ in Eq. (1)], and the fringe density. In this work, we adopt the noise model proposed by Li et al. [92] and assume a Gaussian distributed additive noise with a variance of $ \sigma^{2} $ This assumption is valid for typical image sensor in which thermal or shot noise is the main noise type. The importance of the Gaussian distribution arises from the fact that many distributions can be approximated by the Gaussian one. Furthermore, a combination of noise sources of the same kind usually behaves like a Gaussian noise source (central limit theorem). When the sensor noise is small compared to the true intensity signal, its effect can be considered as a small perturbation on the measured phase, which leads to the following first-order approximation of the variance of phase error:</p>
+<div class="formula">$$
+\sigma_ {\phi} ^ {2} = \sum_ {n = 0} ^ {N - 1} \left[ \left(\frac {\partial \phi}{\partial I _ {n}}\right) ^ {2} \sigma^ {2} \right]
+$$</div>
+<p>Since both the phase-shifting and temporal phase unwrapping algorithms are operated on a single pixel basis, the coordinates notation $ ( x,y) $ will be removed from our equations henceforth. Substituting Eq. (2) into Eq. (14) and using</p></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><p>the properties of trigonometric functions, we obtain</p>
+<div class="formula">$$
+\sigma_ {\phi} ^ {2} = \sum_ {n = 0} ^ {N - 1} \left[ \left(- \frac {2}{N B} \sin \left(\phi - \frac {2 \pi n}{N}\right)\right) ^ {2} \sigma^ {2} \right] = \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>Equations (14) and (15) suggests that the noise-induced phase error is also Gaussian distributed with a variance of $ \sigma_{\phi}^{2} $ , which is so-called the rule of Gaussian error propagation [97, 101]. Furthermore, if the phase is unwrapped, the phase unambiguous range can be extend from $ 2\pi $ to $ 2\pi f $ , where f is the total number of periods in the fringe pattern. In another words, when the final absolute phase is scaled into the same range $ [-\pi,\pi) $ , the phase error variance can be further reduced by a factor of $ f^{2} $</p>
+<div class="formula">$$
+\sigma_ {\Phi} ^ {2} (x, y) = \frac {2}{N f ^ {2}} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>According to Eq. (16), typically there are three factors can be considered to suppress noise in the phase reconstruction [92-94]. The first one is to increase the number of phase-shifting steps N, which is obviously undesirable for high speed or real-time measurement applications. The second factor is to improve the ratio between the light strength of the projected patterns versus the noise variance (so-called pattern SNR). But for a fixed system, the projected pattern intensity strength is limited by the light source of the projector while sensor noise is inherent to the selected camera. The last factor is to use pattern(s) with denser fringes, i.e., increase f, which is the only practical way to reduce the phase error. However, using denser fringes means more phase ambiguities in the reconstruction process that need to be dealt with by means of phase unwrapping. Therefore, for a given system, where the measured object, measurement time, and number of fringe pattern are fixed, the phase measurement accuracy is only dependent on the total number of fringe periods, which is determined by the capability of phase unwrapping algorithm used.</p>
+<h2>4.2. Noise model of temporal phase unwrapping algorithms</h2>
+<p>It is plain to see that for all temporal phase unwrapping algorithms, the only difference lies in the approach to determine fringe orders at the more sensitive</p></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><p>wavelength. The final phase accuracy of the three methods will therefore be identical if a given wrapped phase map can be successfully unwrapped. Thus, the reliability of the unwrapping, that is, the probability of recovering the unwrapped phase successfully should be adopted for a fair comparison among these three approaches. Close inspection on Eqs. (6), (9), and (13) reveals that in all temporal phase unwrapping approaches mentioned above, the fringe orders are computed from a general weighted phase difference function:</p>
+<div class="formula">$$
+k _ {h} \Leftarrow R o u n d \left[ \frac {\alpha \phi_ {l} - \beta \phi_ {h}}{2 \pi} \right] \doteq R o u n d \left[ \frac {\Delta \phi}{2 \pi} \right]
+$$</div>
+<p>with different coefficients</p>
+<div class="formula">$$
+\left\{ \begin{array}{l l} \alpha = \lambda_ {l} / \lambda_ {h}; \beta = 1; &amp; \text {f o r m u l t i - f r e q u e n c y a p p r o a c h} \\ \alpha = - \frac {\lambda_ {l}}{\lambda_ {l} - \lambda_ {h}}; \beta = - \frac {\lambda_ {h}}{\lambda_ {l} - \lambda_ {h}}; &amp; \text {f o r m u l t i - w a v e l e n g t h a p p r o a c h} \\ \alpha = \frac {\mathrm {L C M} \left(\lambda_ {l}, \lambda_ {h}\right)}{\lambda_ {h}}; \beta = \frac {\mathrm {L C M} \left(\lambda_ {l}, \lambda_ {h}\right)}{\lambda_ {l}}; &amp; \text {f o r n u m b e r - t h e o r e t i c a l a p p r o a c h} \end{array} \right.
+$$</div>
+<p>Now we consider the situation that the two wrapped phases were both retrieved from N-step phase-shifting algorithm, and the captured images were corrupted by additive sensor noise with a variance of $ \sigma^{2} $ . According to Eq. (15), the phase error variance of the two wrapped phase maps should be identical (Note that using denser fringes does not reduce noise in the wrapped phase. Instead, it encodes the depth information of the object with a larger phase range. The noise reduction actually results from the phase range reduction when the phase is unwrapped and scaled by the total number of periods into unit frequency range $ [-\pi ,\pi) $ . This point is essential in the follow analysis but often misunderstood or misapplied by researchers [56, 102]).</p>
+<div class="formula">$$
+\sigma_ {\phi_ {h}} ^ {2} = \sigma_ {\phi_ {l}} ^ {2} = \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>Then the variance of the weighted phase difference function $ \Delta\phi $ in Eq. (17) can be calculated as:</p>
+<div class="formula">$$
+\sigma_ {\Delta \phi} ^ {2} = \alpha^ {2} \sigma_ {\phi_ {l}} ^ {2} + \beta^ {2} \sigma_ {\phi_ {h}} ^ {2} = \left(\alpha^ {2} + \beta^ {2}\right) \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>Equation (20) suggests that the noise-induced phase error in the weighted phase difference function is also Gaussian distributed with a variance of $ \sigma_{\Delta \phi}^{2} $ . It can be</p></section>
+<section class="page" id="page-24"><div class="page-label">第 24 页</div><p>predicted that when $ \sigma_{\Delta\phi}^{2} $ is small, the fringe order can still be correctly identified since the Round operation can effectively suppress the adverse influence of the phase error. However, when the phase noise is large enough so that the error in the weighted phase difference function $ \Delta\phi $ exceeds $ \pi $ , then $ k_{h} $ will deviate from its excepted value, resulting in a fringe order error. The success rate for phase unwrapping, denoted as R, can be quantified by standardizing the Gaussian distribution</p>
+<div class="formula">$$
+R = P \left(\frac {\pi}{\sigma_ {\Delta \phi}}\right)
+$$</div>
+<p>where P(x) is the cumulative distribution function of the standard Gaussian distribution</p>
+<div class="formula">$$
+P (x) = \frac {1}{\sqrt {2 \pi}} \int_ {- x} ^ {x} e ^ {- u ^ {2} / 2} d u
+$$</div>
+<p>Most frequently, the three-sigma rule of thumb is used in the empirical sciences, which expresses a conventional heuristic that "nearly all" values are taken to lie within three standard deviations of the mean, that is, to treat 99.73% probability as "near certainty". However, in FPP applications, we prefer to adopt a stricter limit at 4.5-sigma (99.9993% confidence): a 4.5 $ \sigma $ event corresponds to a chance of about 7 parts per million. For example, if the measurement is taken by a camera with $ 6 4 0 \times4 8 0 $ pixel resolution, phase unwrapping error is expected to occur only at 2 pixels over the whole image. Thus, the condition $ 4. 5 \sigma_{\Delta \phi}&lt;\pi $ provides a good rule for predicting whether the phase unwrapping process can succeed or not.</p>
+<ol>
+<li>
+<ol>
+<li>Comparison of the success rate of temporal phase unwrapping algorithms It is obvious from Eq. (21) that to compare the success rate for different phase unwrapping algorithm, we only need to compare their $ \sigma_{\Delta\phi}^{2} $ . But before doing this, it should be emphasized that the comparison should be made under identical conditions: First, as we mentioned before, the two wrapped phases were both retrieved from N-step phase-shifting algorithm. Second, the total number of periods in the high frequency phases (denoted as $ f_{h} $ ) for different approaches should be the same, that is, $ \lambda_{h} $ is identical for all approaches. Under such</li>
+</ol>
+</li>
+</ol></section>
+<section class="page" id="page-25"><div class="page-label">第 25 页</div><p>circumstance, all three methods should generate identical measurement accuracy [Eq. (16)], if the phase unwrapping process is free from any unwrapping mistakes.</p>
+<p>As we discussed in Section 3.1, for multi-frequency temporal phase unwrapping, to unwrap a phase map with $ f_{h} $ periods, the low-resolution phase distribution $ \phi_{l}(x,y) $ must be retrieved from a set of unit frequency patterns, that is, $ f_{l}=1 $ . Using the relation $ \lambda_{l} / \lambda_{h}=f_{h} / f_{l} $ , we can derive the $ \sigma_{\Delta\phi}^{2} $ of multi-frequency temporal phase unwrapping algorithm:</p>
+<div class="formula">$$
+\sigma_ {\Delta \phi} ^ {2} = \left(f _ {h} ^ {2} + 1\right) \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>Similarly, for multi-wavelength temporal phase unwrapping, to unwrap a phase map with $ f_{h} $ periods, the synthetic wavelength should be at least $ \lambda_{e q}=\lambda_{h} f_{h}. $ Using Eq. (8), the following relation can be easily deduced:</p>
+<div class="formula">$$
+\lambda_ {l} = \frac {f _ {h}}{f _ {h} - 1} \lambda_ {h}
+$$</div>
+<p>or equivalently</p>
+<div class="formula">$$
+f _ {l} = f _ {h} - 1
+$$</div>
+<p>which means there is only one more finge period in the high frequency phase than the low frequency one. Then the $ \sigma_{\Delta\phi}^{2} $ of multi-wavelength temporal phase unwrapping algorithm can be calculated as:</p>
+<div class="formula">$$
+\sigma_ {\Delta \phi} ^ {2} = \left(f _ {h} ^ {2} + \left(f _ {h} - 1\right) ^ {2}\right) \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>For number-theoretical temporal phase unwrapping, to unwrap a phase map with $ f_{h} $ , the wavelength of the low frequency unwrapped phase should be carefully chosen such that the unambiguous range in the absolute phase can cover the full width of the image:</p>
+<div class="formula">$$
+\mathrm {L C M} \left(\lambda_ {h}, \lambda_ {l}\right) = \lambda_ {h} f _ {h} = \lambda_ {l} f _ {l}
+$$</div>
+<p>This in turn requires the ratio of $ f_{h} $ to $ f_{l} $ to be irreducible [56, 84, 102, 103]. In other words, the total fringe numbers of the two wrapped phase maps $ ( f_{h}, f_{l} ) $ to be relative primes</p>
+<div class="formula">$$
+\mathrm {L C M} \left(f _ {h}, f _ {l}\right) = f _ {h} f _ {l}
+$$</div></section>
+<section class="page" id="page-26"><div class="page-label">第 26 页</div><p>Obviously, there are usually more than one choice of $ f_{l} $ . The $ f_{l}=1 $ and $ f_{l}=f_{h}-1 $ are both qualified but usually not used in practical implementations. When a eligible $ f_{l} $ is selected, the $ \sigma_{\Delta\phi}^{2} $ of number-theoretical algorithm can be calculated as:</p>
+<div class="formula">$$
+\sigma_ {\Delta \phi} ^ {2} = \left(f _ {h} ^ {2} + f _ {l} ^ {2}\right) \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>From the results derived in Eqs. (23), (26) and (29), it can be summarized that the variances of the weighted phase difference function for different algorithms also share a similar format:</p>
+<div class="formula">$$
+\sigma_ {\Delta \phi} ^ {2} = \gamma \frac {2}{N} \frac {\sigma^ {2}}{B ^ {2}}
+$$</div>
+<p>with different coefficients $ \gamma $</p>
+<div class="formula">$$
+\left\{ \begin{array}{l l} \gamma = f _ {h} ^ {2} + 1; &amp; \text {f o r m u l t i - f r e q u e n c y a p p r o a c h} \\ \gamma = f _ {h} ^ {2} + \left(f _ {h} - 1\right) ^ {2}; &amp; \text {f o r m u l t i - w a v e l e n g t h a p p r o a c h} \\ \gamma = f _ {h} ^ {2} + f _ {l} ^ {2}; &amp; \text {f o r n u m b e r - t h e o r e t i c a l a p p r o a c h} \end{array} \right.
+$$</div>
+<p>In general, we have $ f_{h}&gt;f_{l}\geq 1 $ and $ f_{h}\gg 1 $ . The comparison of these three algorithms now becomes straightforward: the multi-frequency temporal phase unwrapping is expected to be of the best reliability of the unwrapping. The multi-wavelength approach is the most sensitive to noise, with the noise variance almost doubled compared to the multi-frequency approach. The reliability of the number-theoretical approach is somewhere in between, depending on the choice of $ f_{l} $ . Using a smaller $ f_{l} $ is expected to be more tolerant to noise than using a larger one.</p>
+<h2>4.4. Optimum frequency estimation for different temporal phase unwrapping algorithms</h2>
+<p>The noise model derived in Section 4.3 can be further used to estimate the optimum number of periods in the high frequency fringe patterns $ f_{hopt} $ , which is a key factor governing the phase measurement accuracy. According to Eq. (16), $ f_{hopt} $ should be chosen as the maximum possible number without triggering failure in phase unwrapping. The 4.5-sigma limit in Eq. (21) can be used as</p></section>
+<section class="page" id="page-27"><div class="page-label">第 27 页</div><p>a boundary to predict the whether nearly all of the pixel (99.9993%) can be correctly unwrapped. When $ 4. 5 \sigma_{\Delta \phi}&lt;\pi $ , the overall phase unwrapping process can be considered as reliable. The parameters in Eq. (30) can be either predefined, or estimated through carefully calibrations. For example, the number of phase-shifting steps N can be pre-determined based on the maximum allowable measurement time. The noise variance $ \sigma^{2} $ can be calibrated from the average of temporal fluctuation of each sensor pixel. The intensity modulation B can be estimated through a phase-shifting measurement on typical target object. With all these parameters at hand, the $ f_{hopt} $ is then chosen as the maximum number satisfying the 4.5-sigma rule $ 4. 5 \sigma_{\Delta \phi}&lt;\pi $ . Since the multi-frequency temporal phase unwrapping algorithm has the smallest $ \sigma_{\Delta \phi}^{2} $ among three algorithms under same conditions, it is expected that its $ f_{hopt} $ would be greater, and thus, can achieve the higher phase measurement accuracy than the other two algorithms.</p>
+<h2>4.5. Analysis of fringe order error for different temporal phase unwrapping algorithms</h2>
+<p>It is known from the analysis in Section 4.2 that the sensor noise will introduce fringe order errors, which in turn bring phase errors to the unwrapped phase. Although this kind of phase error does not spread to the adjacent pixel during the phase unwrapping, it will result in measurement error to the eventually reconstructed 3D profile. According to noise models of temporal phase unwrapping algorithms [Eq. (30)], three factors govern the reliability of phase unwrapping: the noise level, the intensity modulation, and the fringe density. It also suggests that the $ \sigma_{\Delta\phi}^{2} $ is independent of the actual phase values. A rule of thumb is that phase unwrapping is prone to fail under conditions of high noise level, low intensity modulation, and dense fringe patterns. For a fixed system and a given fringe density, the reliability of phase unwrapping only depends on the intensity modulation B, which is proportional to the surface reflectivity. Put simply, fringe order error is more likely to appear in the low contrast regions rather than high contrast regions, which coincides well with the observations given by Zhang et al. [104].</p></section>
+<section class="page" id="page-28"><div class="page-label">第 28 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 8: Illustration of the unstable region of the of the arctangent function. Its principal value has a discontinuity (so-called branch cut) at $ \pm\pi $ , shown by the red line. Abnormal phase jumps are likely to appear in the unstable (red-shaded) region.
+
+</div>
+<p>As demonstrated before, the variance analysis based noise model provides a simple, straightforward tool for understanding, analyzing and comparison of different temporal phase unwrapping algorithms. Nevertheless, one should note that such variance analysis is meaningful only in the statistical sense, and the noise-induced phase error should be small enough to fulfill the first-order approximation on which Eq. (14) are based [97, 101]. Though the noise is often small compared to the measured intensity in most practical situations, the resultant phase noise-induced phase error is not necessarily small, which may make the linearization in Eq. (14) break down. The reason lies in that the inherent abnormal phase jump errors of the arctangent function. As we illustrated in Fig. 8, the sign of the unwrapped phase value detected from the arctangent function can be easy altered near the phase discontinuity areas even by a very small disturbance, resulting in an erroneous $ 2\pi $ jump. Obviously, such phase jump error will affect the phase unwrapping in a different way that cannot be described by the noise model, and the unwrapping reliability therefore becomes dependent of the phase value. In the rest of this section, we will further analyze this important factor for the fringe order error to provide further insight into different temporal phase unwrapping algorithms.</p>
+<p>In multi-frequency temporal phase unwrapping algorithm, the single-frequency phase is used as the reference to determine the fringe order. Thus, abnormal</p></section>
+<section class="page" id="page-29"><div class="page-label">第 29 页</div><div>
+
+Figure 9: Illustration of the influence of abnormal phase jumps on multi-frequency temporal phase unwrapping algorithm $ \lambda_{l}=1 0 0 0 $ pixels, and $ \lambda_{h}=2 0 0 $ pixels).
+
+</div>
+<p>phase jumps only emerges in the edge regions at both ends of the phase map (where the $ \phi_{l} $ is close to $ \pm\pi $ ), and consequently, it will lead to fringe order errors, as illustrated in Fig. 9. For the high frequency wrapped phase, despite that inherent phase jumps many appear in numerous phase discontinuous regions, these error can be rectified in the continuous phase map as long as $ \phi_{l} $ is free from inherent phase jumps. Thus, the intermediate region should not be affected by abnormal phase jumps.</p>
+<p>In multi-wavelength temporal phase unwrapping algorithm, the synthetic phase map $ \phi_{eq} $ is used as the reference to determine the fringe order. Since the synthetic phase $ \phi_{eq} $ is just the wrapped difference of two phase functions, it also suffers from abnormal phase jump problems at both ends of the phase map (where the difference between $ \phi_{h} $ and $ \phi_{l} $ is close to $ \pm\pi $ ), as we illustrated in Fig. 10. For the intermediate region, the abnormal phase jumps of $ \phi_{h} $ and $ \phi_{l} $ are removed in the rewrapping, and thus not spread to $ \phi_{eq} $ . It can be also observed that the abnormal phase jumps of $ \phi_{eq} $ in the unstable (red-shaded) region is more serious than the $ \phi_{l} $ in multi-frequency algorithm (Fig. 9). This is because $ \phi_{eq} $ is calculated from two phase maps $ \phi_{h} $ and $ \phi_{l} $ , thus the probability</p></section>
+<section class="page" id="page-30"><div class="page-label">第 30 页</div><div>
+
+(b) Regions where abnormal phase jumps can be corrected Unstable regions
+
+</div>
+<div>
+
+Figure 10: Illustration of the influence of abnormal phase jumps on multi-wavelength temporal phase unwrapping algorithm $ \lambda_{l}=1 0 0 0 $ pixels, and $ \lambda_{h}=2 0 0 $ pixels). Abnormal phase jumps affect both ends of of the equivalent phase map (a), leading to fringe order errors in $ \phi_{h} $ at the corresponding positions (b).
+
+</div></section>
+<section class="page" id="page-31"><div class="page-label">第 31 页</div><p>of error occurrence should be larger.</p>
+<div>
+
+(a) Regions where abnormal phase jumps can be corrected Unstable regions
+
+</div>
+<div>
+
+(b) Regions where abnormal phase jumps can be corrected Unstable regions
+
+</div>
+<div>
+
+Figure 11: Illustration of the influence of abnormal phase jumps on number-theoretical temporal phase unwrapping algorithm $ \lambda_{l}=500 $ pixels, and $ \lambda_{h}=200 $ pixels). Errors caused by abnormal phase jumps in $ \phi_{h} $ and $ \phi_{l} $ spreads to the entry values of the LUT (a), but most of these errors does not affect the phase unwrapping expect those at both ends of the phase map (b).
+
+</div>
+<p>In number-theoretical temporal phase unwrapping algorithm, the abnormal phase jumps of $ \phi_{h} $ and $ \phi_{l} $ will both spread to the entry values of the LUT $ \left(Round \left[ \frac{f_{h} \phi_{l}-f_{l} \phi_{h}}{2 \pi} \right]\right) $ , as illustrated in Fig. 11(a). However, most of these errors can be corrected in the final unwrapped phase map except those at both ends of the phase map [Fig. 11(b)]. This is because an abnormal $ \pm 2\pi $ jump in $ \phi_{h} $ or $ \phi_{l} $ on the left hand side of Eq. (12) is naturally compensated by an additional</p></section>
+<section class="page" id="page-32"><div class="page-label">第 32 页</div><p>$ \pm1 $ in $ k_{l} $ or $ k_{h} $ on the right hand side. For the edge regions (red-shaded), those errors cannot be corrected due to the ambiguity or overflow of fringe order in the LUT. It is also noted that the number-theoretical algorithm is least sensitive towards abnormal phase jumps since the width of unstable region is narrowest among the three.</p>
+<p>From the above discussion, it can be concluded that the affected area of abnormal phase jumps is highly localized in all the three temporal phase unwrapping algorithms. It only influences the edge regions of the continuous phase rather than spoils the whole measurement prevailingly. This problem has attracted little attention so far since using a smaller portion of the fringe pattern (exclude the edge parts) for actual measurements is a common practice in FPP. Furthermore, such fringe order errors can be easily corrected with additional processing: For example, the $ \phi_{l} $ in multi-frequency temporal phase unwrapping algorithm and the $ \phi_{e q} $ in multi-wavelength temporal phase unwrapping algorithm should contain no phase jumps. This property makes it possible to detect the existence of the phase error caused by abnormal phase jumps by calculating the phase difference between two adjacent pixels and comparing it with a preset threshold.</p>
+<p>Another important issue needs to mention is that the fringe order miscount in phase unwrapping will inevitably introduce large phase error (usually as much as $ 2\pi $ ) and thus, depth error on the resulting 3D surface reconstruction. This problem is even worse in number-theoretical approach since the phase can differ by as much as several times of $ 2\pi $ , depending on the form of the LUT constructed. The causes of the problem are the fringe orders of the adjacent two entries in the LUT are not continuous (see Table 1): small changes in Round $ \left[ \frac{f_{l}\phi_{h}-f_{h}\phi_{l}}{2\pi} \right] $ (e.g. $ \pm1 $ ) can result in large changes in the fringe order $ k_{h} $ . This is one major shortcoming of number-theoretical approach that is not reflected by the statistical noise model presented in Section 4.2.</p></section>
+<section class="page" id="page-33"><div class="page-label">第 33 页</div><h2>5. Comparison by simulations</h2>
+<p>In this section, the performance of three different phase unwrapping algorithms is compared by numerical simulations. Two different situations will be considered in the simulation. The smooth surface (phase map 1, generated from the MATLAB built-in function 'peaks') and a discontinuous surface (phase map 2) with sharp abrupt edges. The true wrapped and continuous phase maps are shown in Figs. 12(a) and 12(f), respectively. The true continuous high frequency phases with $ f_{h}=2 0 $ are shown in Figs. 12(b) and 12(g), and the corresponding wrapped phase maps are shown in Figs. 12(c) and 12(h). These noise-free versions of the phase maps are used to assess the phase error as well as the success rate of the phase unwrapping. In this simulation, two sets of three-step phase-shifting fringe patterns $ (5 1 2 \times5 1 2 $ pixels), corrupted by normally distributed random noise with a mean value of zero and a variance of 5.0, are simulated as shown in Figs. 12(d) and 12(i). The average intensity map $ A(x,y) $ and modulation map $ B(x,y) $ for each pixel are set as 128 and 70, respectively. The wrapped phases are then retrieved from these noisy fringe patterns using the three-step phase-shifting algorithm and are shown in Figs. 12(e) and 12(j).</p>
+<p>In the first simulation, the total number of periods in the high frequency phase $ f_{h} $ varies from 1 to 50. The wrapped phases retrieved from 3-step phase-shifting algorithm are then independently unwrapped by different temporal phase unwrapping algorithms. Figure 13 shows the relation of the phase measurement accuracy versus $ f_{h} $ for different phase unwrapping approaches. Note the $ \sigma_{\Phi}^{2} $ is calculated only from the central $ 200\times 200 $ pixels that are considered free-from any boundary errors. A decrease tendency of $ \sigma_{\Phi}^{2} $ with the increase of $ f_{h} $ can be clearly observed in both situations, which closely matches the excepted model [Eq. (16)]. The three curves perfectly overlap when $ f_{h} $ is small, suggesting the phase can be successful unwrapped for all the three approaches. With $ f_{h} $ further increases, the three curves reach their turning points in succession and begin to surge, signifying failures in phase unwrapping. For number-theoretical</p></section>
+<section class="page" id="page-34"><div class="page-label">第 34 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 12: Simulated of phase maps and fringe patterns. (a) Phase map 1, (b) true wrapped phase map $ ( f_{h}=2 0) $ , (c) continuous wrapped phase map $ ( f_{h}=2 0) $ , (d) three-step phase-shifted fringe patterns with noise. (e) retrieved wrapped phase. (f) Phase map 2, (g) true wrapped phase map $ ( f_{h}=2 0) $ , (h) continuous wrapped phase map $ ( f_{h}=2 0) $ , (i) three-step phase-shifted fringe patterns with noise, (j) retrieved wrapped phase.
+
+</div>
+<div>
+
+Figure 13: Phase noise variance $ \sigma_{\Phi}^{2} $ versus $ f_{h} $ for different phase unwrapping approaches: (a) Phase map 1, (b) Phase map 2. The number-theoretical approach is also stimulated with three different selection rules for $ f_{l} $: (c) Phase map 1, (d) Phase map 2.
+
+</div></section>
+<section class="page" id="page-35"><div class="page-label">第 35 页</div><p>approach, three different selection rules for $ f_{l} $ are also simulated to study its impact on the reliability of phase unwrapping [Figs. 13(c) and 13(d)]: (1) Small $ f_{l} $ : Use the smallest possible $ f_{l} $ and $ f_{l} &gt; 1 $; (2) Medium $ f_{l} $ : Use the medium $ f_{l} $ that nearest to the half of $ f_{h} $; (3) Large $ f_{l} $ : Use the greatest possible $ f_{l} $ and $ f_{l} &lt; f_{h}-1 $ . For example, when $ f_{h}=20 $ , we use $ f_{l}=3 $ $ f_{l}=11 $ , and $ f_{l}=17 $ for the cases of small, medium, and large $ f_{l} $ , respectively. Based on the results illustrated in Fig. 13, it can be concluded that the multi-frequency approach can achieve the highest number of periods and the best phase measurement accuracy among these three algorithms. For number-theoretical approach, using a smaller $ f_{l} $ provides better noise resistance than using a larger one.</p>
+<div>
+
+Figure 14: Variance of the weighted phase difference function $ \sigma_{\Delta\phi}^{2} $ versus $ f_{h} $ for different phase unwrapping approaches: (a) Phase map 1, (b) Phase map 2. The number-theoretical approach is also stimulated with three different selection rules for $ f_{l} $: (c) Phase map 1, (d) Phase map 2.
+
+</div>
+<p>To better understand the behavior of each algorithm shown in Fig. 14, we plot the variances of the weighted phase difference function $ \sigma_{\Delta \phi}^{2} $ versus $ f_{h} $ for different approaches in Fig. 14. All these simulation results strictly follow the theoretical relationships given in Eqs. (30) and (31). When $ f_{h} $ is low, the $ \sigma_{\Delta \phi}^{2} $</p></section>
+<section class="page" id="page-36"><div class="page-label">第 36 页</div><p>is much lower compared to 4.5-sigma limit (represented by the red-dashed lines in Fig. 14), therefore, all three approaches can unwrap the phase free from any fringe order errors. The curve of multi-wavelength algorithm is fastest growing with the increase in $ f_{h} $ , and it firstly cross the 4.5-sigma boundary at $ f_{h}=1 8 $ . The phase error of number-theoretical approach is highly dependent on $ f_{l} $ : smaller $ f_{l} $ provides better noise resistance, as illustrated in Figs. 14(c) and 14(d). The multi-frequency approach shows the best stability towards noise, and it successfully unwraps a phase map with the total number of periods up to $ f_{h}=2 4 $ .</p>
+<div>
+
+Figure 15: Unwrapped success rate (R) versus $ f_{h} $ for different phase unwrapping approaches: (a) Phase map 1, (b) Phase map 2. The number-theoretical approach is also stimulated with three different selection rules for $ f_{l} $: (c) Phase map 1, (d) Phase map 2.
+
+</div>
+<p>Finally, we turn to the unwrapping success rates of the different phase unwrapping approaches. The unwrapping success rate is directly linked to $ \sigma_{\Delta\phi}^{2} $ as described by Eq. (21). Figure 15 shows the obtained success rates (R) of the different approaches as a function of $ f_{h} $ . It is seen that the success rate drops with increased $ f_{h} $ as expected, which perfectly coincides with the expressions given by Eq. (21). It is also seen that the multi-frequency approach offers the</p></section>
+<section class="page" id="page-37"><div class="page-label">第 37 页</div><p>highest success rate compared with either the multi-wavelength or the number-theoretical approach. To better illustrate their phase unwrapping performance, Fig. 16 shows typical unwrapped phase maps of different approaches for the limiting case of $ f_{h}=2 4 $ (when the multi-frequency approach almost breaks the 4.5-sigma limit). Note the linear carrier phase (phase ramp) is removed from each result to get a better view. It can be found that all three approaches suffer from varying degrees of edge errors, which confirms our analysis in Section 5.5. Apart from these edge pixels, phase unwrapping errors can be easily recognized in results of multi-wavelength approach and number-theoretical approach with a large $ f_{l} $ , but rarely occur in multi-frequency and number-theoretical approach with a small $ f_{l} $ . These simulation results demonstrate that Eq. (21) may be used in combination of Eq. (30) as an accurate estimator of the expected success rate for different temporal phase unwrapping algorithms.</p>
+<div>
+
+Figure 16: Unwrapped phase maps of different approaches when $ f_{h}=2 4 $: (a-e) Phase map 1, (f-j) Phase map 2. From left to right of each row: multi-frequency approach, multi-wavelength approach, number-theoretical approach (medium $ f_{l} $ $ f_{l}=1 3 $), number-theoretical approach (small $ f_{l} $ $ f_{l}=3 $), number-theoretical approach (large $ f_{l} $ $ f_{l}=1 9 $).
+
+</div>
+<h2>6. Experimental comparisons</h2>
+<p>The performances of different temporal phase unwrapping algorithms are compared experimentally as an independent verification of the results from the previous sections. The experiments are based on a 3D shape measurement system comprising a DMD projector (X1161PA, Acer) and a CCD camera (DMK</p></section>
+<section class="page" id="page-38"><div class="page-label">第 38 页</div><p>23U445, The Imaging Source) with a computar M1214-MP2 lens F/1.4 with focal length of 12 mm. The resolution of the camera is $ 1 2 8 0 \times9 6 0 $ , with a maximum frame rate of 30 frames per second. The projector has a solution of $ 8 0 0 \times6 0 0 $ with a lens of F/2.41-2.55 focal length of 21.79 mm-23.99 mm. Gamma correction of the projector was performed by pre-distorting the ideal sinusoidal patterns based on a calibrated gamma curves stored in a LUT [44]. In the following</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 17: Measurement results of a flat white board using the 16-step phase-shifting algorithm. (a) One captured fringe pattern with $ f_{h}=50 $ (b) intensity modulation distribution, (c) wrapped phase retrieved from the 16-step phase-shifting algorithm. (d) the 'ground-truth' continuous phase averaged from 500 measurement results.
+
+</div>
+<p>In the first experiment, we compare the accuracy of the three different phase unwrapping algorithms by measuring a flat white board. In order to obtain the 'ground-truth' phase of the white board, we scanned the board 500 times using the 16-step phase-shifting algorithm, combining with a highly redundant least-square fitting based multi-frequency temporal phase unwrapping strategy $ \left(f_{h}=50\right) $ [72]. And the ground-truth phase is the averaged value of the 500</p></section>
+<section class="page" id="page-39"><div class="page-label">第 39 页</div><p>continuous phase values. The corresponding captured fringe pattern $ ( f_{h}=5 0) $ the intensity modulation, and the 'ground-truth' continuous phase of the white board are shown in Fig. 17. Next, to quantify the differences between different temporal phase unwrapping algorithms, the board is then measured by 3-step phase-shifting algorithm with the total number of periods in the high frequency phase $ f_{h} $ varies from 1 to 50. Then the high frequency phase is independently unwrapped by different temporal phase unwrapping algorithms. The relation of the phase measurement accuracy $ (\sigma_{\Phi}^{2}) $ , the variance of the weighted phase difference function $ (\sigma_{\Delta\phi}^{2}) $ , and the success rate of phase unwrapping (R) for different approaches are plotted against $ f_{h} $ in Fig. 18. Note these results are calculated only from a small portion $ ( 2 0 0 \times2 0 0 $ pixels, labelled with red dot lines in Fig. 17(b)) from the whole measurement, within which the intensity modulation can be approximated to be uniform $ B\approx 7 2. 4 4 $ . The experimental results in general mirror the results from the simulations. The differences between the experimental data and the analytic models are possibly caused by the nonconformity of the intensity modulation, and actual noise being non-stationary or signal-dependent.</p>
+<p>In order to reflect the performance of different algorithms more intuitively, the phase unwrapping results when $ f_{h}=4 0 $ are illustrated and compared in Fig. 19. The success rates and phase unwrapping error maps are also provided in the insets. It can be seen from Fig. 19(a) that the multi-frequency approach provide the highest success rate and smallest phase unwrapping errors as expected. Only 53 out of the totally 40,000 pixels are not correctly unwrapped. In contrast, unwrapping errors are far more prevailing in the result of multiwavelength approach, with 2082 pixels are contaminated by a fringe order error [Fig. 19(b)]. The number-theoretical approach, though having a higher success rate than the multi-wavelength approach, provides spinous results teemed with significant delta-spike artifacts [Fig. 19(c)]. This is because in number-theoretical approach, the fringe order errors are not limited to small values $ (\pm1) $ as in the multi-frequency and multi-wavelength approach. By subtracting each unwrapped phase with the ground-truth value, and then divided by $ 2\pi $ , it is cal-</p></section>
+<section class="page" id="page-40"><div class="page-label">第 40 页</div><div>
+
+Figure 18: Experimental results of phase noise variance $ \sigma_{\Phi}^{2} $ (a), variance of the weighted phase difference function $ \sigma_{\Delta\phi}^{2} $ (b), and unwrapping success rate R (c) for different phase unwrapping approaches. The number-theoretical approach is also tested with three different selection rules for $ f_{l} $ (b,d,f).
+
+</div></section>
+<section class="page" id="page-41"><div class="page-label">第 41 页</div><p>culated that the fringe order errors of number-theoretical approach are mostly $ \pm 2 1 $ for the case of medium $ f_{l} $ （ $ f_{l}=21 $ ）[Figs.19(c)]，and $ \pm 1 3 $ for both small （ $ f_{l}=3 $ ）and large $ f_{l} $ （ $ f_{l}=3 7 $ ）[Fig.19(d) and 19(e)] . It can also observed that when $ f_{l} $ is small, the success rate of number-theoretical approach is close to the multi-frequency approach. When $ f_{l} $ is large, the success rate then becomes closer to the multi-wavelength approach. These experimental results confirm our theoretical analysis in Sections 4.3 and 4.5.</p>
+<div>
+
+Figure 19: Unwrapped phase maps of a small portion of a flat board for different phase unwrapping approaches $ ( f_{h}=4 0) $ : (a) Multi-frequency approach; (b) multi-wavelength approach; (c) number-theoretical approach (medium $ f_{l} $ $ f_{l}=2 1 $ ; (d) multi-wavelength approach (small $ f_{l} $ $ f_{l}=3 $ ; (e) number-theoretical approach (large $ f_{l} $ $ f_{l}=3 7 $ . The insets illustrate the success rates and phase unwrapping error maps for different approaches.
+
+</div>
+<p>As the second experiment, we measure a more complicated scene which contained a small desk fan on the left and a plaster model separately on the right. Unlike the plane measured in the first experiment, there are two isolated objects with several discontinuities. Figure 20 shows the fringes patterns with different number of periods and corresponding unwrapped phase maps obtained from 3-step phase-shifting algorithm and least-square fitting based multi-frequency temporal phase unwrapping [72]. To have a better comparison, the unwrapped</p></section>
+<section class="page" id="page-42"><div class="page-label">第 42 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 20: Measurement results of a more complicated scene using 3-step phase-shifting algorithm and least-square fitting based multi-frequency temporal phase unwrapping. The first row shows captured fringe patterns with different number of periods: (a) $ f_{h}=1 $; (b) $ f_{h}=5 $; (c) $ f_{h}=15 $; (d) $ f_{h}=30 $; The second row shows the respective unwrapped phase maps: (e) $ f_{h}=1 $; (f) $ f_{h}=5 $; (g) $ f_{h}=15 $; (h) $ f_{h}=30. $
+
+</div>
+<p>phase maps are shown with the linear carrier phase removed by post-posting algorithm [105, 106]. The significant improvement of phase measurement quality with the number of periods can be obviously seen in Fig. 20. Therefore, in FPP $ f_{h} $ is a key factor that governing the phase measurement accuracy, provided that the ambiguities introduced by the periodic dense fringe can be correctly removed by phase unwrapping. In this experiment, we estimate the optimum fringe period $ f_{hopt} $ of different phase unwrapping algorithms and assume only two sets of 3-step phase-shifting patterns can be projected (totally 6 patterns). Obviously, the large $ f_{hopt} $ the algorithm can bear, the better measurement quality can be finally achieved with the 6 projected patterns.</p>
+<p>Since the system setup and object are kept unchanged during the whole procedure of experiments, the noise variance is the same. However, because the scene becomes much more complex, the dynamic range of intensity modulation is rather high. In most part of the plaster model, the fringe quality is very good due to the fact that the white model has a high albedo. While in other darker regions (for example, the rod and base of the desk fan), the intensity modulation is much lower than that of the flat board. For such complex scene, there is always a dilemma in choosing $ f_{hopt} $ to accommodate both bright and</p></section>
+<section class="page" id="page-43"><div class="page-label">第 43 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<div>
+
+X(pixel)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(b)
+
+</div>
+<div>
+
+(c)
+
+</div>
+<div>
+
+X(pixel)
+
+</div>
+<div>
+
+X(pixel)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(d)
+
+</div>
+<div>
+
+X(pixel)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(e)
+
+</div>
+<div>
+
+X(pixel)
+
+</div>
+<div>
+
+Figure 21: Unwrapped phase maps of different approaches: (a) Multi-frequency approach, $ f_{hopt}=27 $; (b) multi-wavelength approach, $ f_{hopt}=17 $; (c) number-theoretical approach (medium $ f_{l} $ $ f_{l}=12 $), $ f_{hopt}=23 $; (d) multi-wavelength approach, $ f_{h}=27 $; (e) number-theoretical approach (medium $ f_{l} $ $ f_{l}=14 $), $ f_{h}=27 $ . The insets illustrate the success rates and phase unwrapping error maps for different approaches.
+
+</div>
+<p>dark regions. To avoid such complexity, here we simply adopt the results from the previous experiment to predict the optimum number of periods for each phase unwrapping algorithm. According to Fig. 18(c), the optimum frequency is determined to be 27, 17, and 23 for multi-frequency, multi-wavelength, and number-theoretical algorithms (medium $ f_{l} $ ), respectively. The phase unwrapping results of different approaches with the respective predicted $ f_{hopt} $ are presented in Figs. 21(a)-21(c), respectively. Note the residual low modulation points ( $ B&lt;10 $ ) are treated as shadows or un-illuminated background, thus are not included in the results. It can be seen from Fig. 21 that all the three approaches provides acceptable results with more than 90% percentage of pixels are correctly unwrapped. The limited fringe order errors are mostly concentrated on the dark regions and object edges where the fringe quality is low. If we further increase the $ f_{h} $ of the multi-wavelength and number-theoretical algorithms (medium $ f_{l} $ ) to the same number as the multi-frequency algorithms</p></section>
+<section class="page" id="page-44"><div class="page-label">第 44 页</div><table><tbody><tr><td rowspan="2">success rate
+100%
+65%</td><td rowspan="2">Multi-frequency</td><td rowspan="2">Multi-wavelength</td><td colspan="3">Number-theoretical method</td></tr><tr><td>(mediumf1)</td><td>(smallf1)</td><td>(largef1)</td></tr><tr><td>fh=5</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=10</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=15</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=20</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=25</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=30</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>fh=35</td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+<div>
+
+Figure 22: Matrix of unwrapped phase maps of different approaches as a function of $ f_{h} $
+
+</div></section>
+<section class="page" id="page-45"><div class="page-label">第 45 页</div><p>($ f_{h}=2 7 $), phase unwrapping errors can be obviously seen in both results [Figs. 21(d) and 21(e)]. The reconstructed phase of multi-wavelength approach is completely obviated, with a drastic reduction of unwrapping success rate from 91.98% to 79.44%. The number-theoretical algorithm give a better result than the multi-wavelength approach, but phase unwrapping errors are still remarkable. For completeness, Fig. 22 shows a matrix of unwrapped phase maps of different approaches with different values of $ f_{h} $ . For each phase map, the unwrapping errors are labelled as dark spots and the success rate is manifested by the background color. The phase unwrapping performances from the worst to the best are, multi-frequency approach, number-theoretical approach with a small $ f_{l} $ , number-theoretical approach with a medium $ f_{l} $ , number-theoretical approach with a large $ f_{l} $ , and multi-wavelength approach, which is consistent with our theoretical expectations.</p>
+<h2>7. Summary of comparison results</h2>
+<p>From the analytical, numerical, and experimental results, it can be summarized as follows:</p>
+<p>(1) Under the same conditions (same N, B $ \sigma^{2} $ , and $ f_{h} $ ), the multi-frequency temporal phase unwrapping provides the best unwrapping reliability in the statistical sense. The multi-wavelength approach is most sensitive to noise. The number-theoretical approach lies in between, depending on the choice of $ f_{l} $ : a smaller $ f_{l} $ provides better unwrapping reliability than a larger one does. Strictly speaking, the 'more reliable' means that the algorithm should provide a higher success rate when unwrapping a high-frequency phase map with same $ f_{h} $ without any ambiguities (theoretical unambiguous measurement range is $ 2\pi f_{h} $ ), and under the same measurement conditions.</p>
+<p>(2) When the system and measured object are fixed (same N, B, and $ \sigma^{2} $), the multi-frequency temporal phase unwrapping can support the largest unambiguous measurement range/total period number of the high frequency</p></section>
+<section class="page" id="page-46"><div class="page-label">第 46 页</div><p>fringe patterns $ f_{h} $ for a successful measurement. Thus, it can achieve the best phase measurement accuracy/sensitivity among these three algorithms. The unambiguous measurement of the multi-wavelength approach is the smallest. The number-theoretical approach lies in between, depending on the choice of $ f_{l} $ : using a smaller $ f_{l} $ can bear larger unambiguous measurement range than using a larger one. Strictly speaking, the 'larger unambiguous measurement range' means that the algorithm is able to successfully generate a continuous phase map with a higher dynamic range without triggering failure in phase unwrapping (4.5-sigma confidence level). It should also be noted that the 'unambiguous measurement range' mentioned here is not directly connected to the 'theoretical/ideal unambiguous measurement range' because the statistics of the noise is taken into account explicitly.</p>
+<p>(3) For all the three temporal phase unwrapping algorithms, abnormal phase jumps induced fringe order errors only influence two edge regions at both ends of the continuous phase map. This kind of error can be avoided by using a smaller field of view of the projected patterns for actual measurements, or be corrected with additional compensation algorithms. The number-theoretical algorithm is the least sensitive towards abnormal phase jumps since the width of its unstable region is narrowest among the three.</p>
+<p>(4) Fringe order errors are inevitable when phase noise exceeds the 'safety line' for each phase unwrapping algorithm (the error in the weighted phase difference function $ \Delta\phi $ exceeds $ \pi $ ). In the multi-frequency and multiwavelength algorithms, fringe order errors are almost 1 or $ -1 $ (phase error $ \pm2\pi $ ). While in number-theoretical approach, the fringe order can differ by a very large integer (phase error $ \pm2L\pi $ , $ L\geq1 $ ), leading to more prominent spike-like errors.</p></section>
+<section class="page" id="page-47"><div class="page-label">第 47 页</div><h2>8. Conclusions and discussions</h2>
+<p>In this paper, we provide a detailed comparative study of the most widely used three temporal phase unwrapping algorithms: the multi-frequency, multiwavelength, and number-theoretical algorithms. We firstly reviewed the basic principle and the recent development of the three kind of algorithms. Then, the stochastic noise model for different temporal phase unwrapping algorithms is presented. To our knowledge, this is the first work to introduce a rigorous mathematical model for analyzing the effect of noise and the reliability of different phase unwrapping algorithms. A comparison of different phase unwrapping algorithms based on the noise model was conducted, revealing that the multi-frequency temporal phase unwrapping provides the best reliability of the unwrapping, while the multi-wavelength approach is the most susceptible to noise. Furthermore, this noise model can be further used to predict the optimum number of periods for each approaches, which is a key factor governing the phase measurement accuracy in FPP. Simulations and experimental results verified the correctness of our model and the validity of the proposed prediction scheme. The proposed noise model, the optimum frequency prediction scheme, as well as the comparison results may provide valuable insights on designing an accurate and efficient shape measurement scheme for general objects that may have discontinuities or spatially isolated surfaces.</p>
+<p>While this paper has concentrated specifically on comparing different temporal phase unwrapping algorithms in the presence of noise, a number of issues beyond the scope of this work require further attention to facilitate high-speed and reliable fringe projection 3D data acquisition:</p>
+<p>(1) Temporal phase unwrapping with reduced number of patterns: According to the phase-shifting formula [Eqs. (1) and (2)], the minimum number of patterns required to get the phase information is 3. If we employ temporal phase unwrapping method based on phase-shifting profilometry, at least 6 patterns should be involved for obtaining two unwrapped phases. Obviously, the increased number of required patterns is undesirable for</p></section>
+<section class="page" id="page-48"><div class="page-label">第 48 页</div><p>real-time measurement applications, where it is preferable to minimize acquisition time to alleviate motion-induced artifacts. To this end, numerous non-conventional pattern schemes have been proposed to further reduce the number of patterns required for un-ambiguous measurements. For example, by assuming the average intensity of the two sets of fringes is the same, the pattern number can be reduced to 5 by using dual-frequency multiplexing patterns scheme [60], or bi-frequency phase-shifting method that combining the standard 3-step and 2+1 phase-shifting algorithms [74]. If the intensity modulation is also assumed to be the same for different projected pattern, the pattern number can be further reduced to 4 or 3 by encoding an additional auxiliary signal (can be a ramp [44], triangular wave [61], or speckle pattern [107, 108], acting as a reference or cue signal for temporal phase unwrapping) into the projected pattern set. For these unconventional pattern scheme, the noise model presented here [Eq. (30)] cannot be directly applied. However, it can be easily reformulated to adapt to most of these new pattern strategies by applying the similar analytical approach as we did in this work.</p>
+<p>(2) Fringe order error reduction and compensation: As one propose of this work, we suggest to predict and reduce the probability of fringe order error by choosing a proper algorithm as well as an optimum fringe period. However, one should note there are also other approaches can achieve the similar purpose. For example, complex domain Gaussian filtering [90, 109], modulation consistency [90], and absolute phase monotonicity [109-112] can be used to identify the fringe order error and refine the final continuous phase map. It is also possible to combine the temporal phase unwrapping algorithms with the spatial domain algorithms (for example, the quality guided phase unwrapping) to achieve higher reliability and noise tolerance, as demonstrated in [104, 113].</p>
+<p>(3) Possible SNR improvement by phase averaging: In this work, we only consider the situation that the final continuous phase (which is used to con-</p></section>
+<section class="page" id="page-49"><div class="page-label">第 49 页</div><p>verted to the surface profile of the measured object) is unwrapped from the wrapped phase map with the higher frequency or fringe density. In this case, the multi-frequency temporal phase unwrapping can achieve the best phase measurement accuracy (sensitivity) since it can achieve the largest unambiguous measurement range among these three algorithms. However, we should never forget that each algorithm eventually can produce two unwrapped phase maps with different periods. This allows for additional SNR improvement by averaging these two phases (using their respective wavelength as the weighting coefficients) [79, 113]. From this perspective, the final phase noise variance obtained by multi-wavelength approach can be further reduced by nearly half if both of the two phase maps are successfully unwrapped. This phase averaging process, though seldom employed in current FPP measurement, is not considered in the noise model presented in our work.</p>
+<h2>Acknowledgments</h2>
+<p>This work was supported by the National Natural Science Fund of China (11574152, 61505081), Six Talent Peaks project (2015-DZXX-009, Jiangsu Province, China) and '333 Engineering' research project (BRA2015294, Jiangsu Province, China), Fundamental Research Funds for the Central Universities (30915011318), and Open Research Fund of Jiangsu Key Laboratory of Spectral Imaging &amp; Intelligent Sense (3092014012200417). C. Zuo thanks the support of the 'Zijin Star' program of Nanjing University of Science and Technology.</p></section>
+<section class="page" id="page-50"><div class="page-label">第 50 页</div><h2>References</h2>
+<p>[1] F. Chen, G. M. Brown, and M. Song, "Overview of three-dimensional shape measurement using optical methods," Optical Engineering 39, 1022 (2000).</p>
+<p>[2] F. Blais, "Review of 20 years of range sensor development," Journal of Electronic Imaging 13 (2004).</p>
+<p>[3] S. Zhang, "Recent progresses on real-time 3d shape measurement using digital fringe projection techniques," Optics and Lasers in Engineering 48, 149-158 (2010). Fringe Projection Techniques.</p>
+<p>[4] S. S. Gorthi and P. Rastogi, "Fringe projection techniques: Whither we are?" Optics and Lasers in Engineering 48, 133-140 (2010). Fringe Projection Techniques.</p>
+<p>[5] X. Su and Q. Zhang, "Dynamic 3-d shape measurement method: A review," Optics and Lasers in Engineering 48, 191-204 (2010). Fringe Projection Techniques.</p>
+<p>[6] P. S. Huang, C. Zhang, and F.-P. Chiang, "High-speed 3-d shape measurement based on digital fringe projection," Optical Engineering 42, 163-168 (2003).</p>
+<p>[7] X. Su and W. Chen, "Fourier transform profilometry:: a review," Optics and Lasers in Engineering 35, 263-284 (2001).</p>
+<p>[8] S. Zhang and P. S. Huang, "Novel method for structured light system calibration," Optical Engineering 45, 083601-083601-8 (2006).</p>
+<p>[9] H. Du and Z. Wang, "Three-dimensional shape measurement with an arbitrarily arranged fringe projection profilometry system," Opt. Lett. 32, 2438-2440 (2007).</p></section>
+<section class="page" id="page-51"><div class="page-label">第 51 页</div><p>[10] Z. Li, Y. Shi, C. Wang, and Y. Wang, "Accurate calibration method for a structured light system," Optical Engineering 47, 053604-053604-9 (2008).</p>
+<p>[11] L. Huang, P. S. K. Chua, and A. Asundi, "Least-squares calibration method for fringe projection profilometry considering camera lens distortion," Appl. Opt. 49, 1539-1548 (2010).</p>
+<p>[12] V. Srinivasan, H. C. Liu, and M. Halioua, "Automated phase-measuring profilometry of 3-d diffuse objects," Appl. Opt. 23, 3105-3108 (1984).</p>
+<p>[13] X.-Y. Su, G. von Bally, and D. Vukicevic, "Phase-stepping grating profilometry: utilization of intensity modulation analysis in complex objects evaluation," Optics Communications 98, 141-150 (1993).</p>
+<p>[14] S. Zhang and S.-T. Yau, "High-resolution, real-time 3d absolute coordinate measurement based on a phase-shifting method," Opt. Express 14, 2644-2649 (2006).</p>
+<p>[15] P. S. Huang and S. Zhang, "Fast three-step phase-shifting algorithm," Appl. Opt. 45, 5086-5091 (2006).</p>
+<p>[16] M. Takeda, H. Ina, and S. Kobayashi, "Fourier-transform method of fringe-pattern analysis for computer-based topography and interferometry," J. Opt. Soc. Am. 72, 156-160 (1982).</p>
+<p>[17] M. Takeda and K. Mutoh, "Fourier transform profilometry for the automatic measurement of 3-d object shapes," Appl. Opt. 22, 3977-3982 (1983).</p>
+<p>[18] R. M. Goldstein, H. A. Zebker, and C. L. Werner, "Satellite radar interferometry: Two-dimensional phase unwrapping," Radio science 23, 713-720 (1988).</p>
+<p>[19] D. C. Ghiglia and M. D. Pritt, Two-dimensional phase unwrapping: theory, algorithms, and software, vol. 4 (Wiley New York, 1998).</p></section>
+<section class="page" id="page-52"><div class="page-label">第 52 页</div><p>[20] J. M. Huntley and H. Saldner, "Temporal phase-unwrapping algorithm for automated interferogram analysis," Appl. Opt. 32, 3047-3052 (1993).</p>
+<p>[21] M. A. Schofield and Y. Zhu, "Fast phase unwrapping algorithm for interferometric applications," Opt. Lett. 28, 1194-1196 (2003).</p>
+<p>[22] M. Pritt, "Phase unwrapping by means of multigrid techniques for interferometric sar," Geoscience and Remote Sensing, IEEE Transactions on 34, 728-738 (1996).</p>
+<p>[23] S. Chavez, Q.-S. Xiang, and L. An, "Understanding phase maps in mri: a new cutline phase unwrapping method," Medical Imaging, IEEE Transactions on 21, 966-977 (2002).</p>
+<p>[24] V. X. Yang, M. L. Gordon, A. Mok, Y. Zhao, Z. Chen, R. S. Cobbold, B. C. Wilson, and I. A. Vitkin, "Improved phase-resolved optical doppler tomography using the kasai velocity estimator and histogram segmentation," Optics Communications 208, 209-214 (2002).</p>
+<p>[25] J. Tribolet, "A new phase unwrapping algorithm," Acoustics, Speech and Signal Processing, IEEE Transactions on 25, 170-177 (1977).</p>
+<p>[26] A. Momose, "Recent advances in x-ray phase imaging," Japanese Journal of Applied Physics 44, 6355 (2005).</p>
+<p>[27] H. Lim, W. Xu, and X. Huang, "Two new practical methods for phase unwrapping," in "Geoscience and Remote Sensing Symposium, 1995. IGARSS '95. 'Quantitative Remote Sensing for Science and Applications', International," , vol. 1 (1995), vol. 1, pp. 196-198 vol.1.</p>
+<p>[28] T. J. Flynn, "Two-dimensional phase unwrapping with minimum weighted discontinuity," J. Opt. Soc. Am. A 14, 2692-2701 (1997).</p>
+<p>[29] D. C. Ghiglia and L. A. Romero, "Minimum lp-norm two-dimensional phase unwrapping," J. Opt. Soc. Am. A 13, 1999-2013 (1996).</p></section>
+<section class="page" id="page-53"><div class="page-label">第 53 页</div><p>[30] H. Zhao, W. Chen, and Y. Tan, "Phase-unwrapping algorithm for the measurement of three-dimensional object shapes," Appl. Opt. 33, 4497- 4500 (1994).</p>
+<p>[31] Y.-Y. Cheng and J. C. Wyant, "Two-wavelength phase shifting interferometry," Appl. Opt. 23, 4539-4543 (1984).</p>
+<p>[32] J. C. Wyant, "Testing aspherics using two-wavelength holography," Appl. Opt. 10, 2113-2118 (1971).</p>
+<p>[33] K. Creath, "Step height measurement using two-wavelength phase-shifting interferometry," Appl. Opt. 26, 2810-2816 (1987).</p>
+<p>[34] V. Gushov and Y. Solodkin, "Automatic processing of fringe patterns in integer interferometers," Optics and Lasers in Engineering 14, 311-324 (1991).</p>
+<p>[35] T. Judge and P. Bryanston-Cross, "A review of phase unwrapping techniques in fringe analysis," Optics and Lasers in Engineering 21, 199-239 (1994).</p>
+<p>[36] X. Su and W. Chen, "Reliability-guided phase unwrapping algorithm: a review," Optics and Lasers in Engineering 42, 245-261 (2004).</p>
+<p>[37] H. A. Zebker and Y. Lu, "Phase unwrapping algorithms for radar interferometry: residue-cut, least-squares, and synthesis algorithms," J. Opt. Soc. Am. A 15, 586-598 (1998).</p>
+<p>[38] E. Zappa and G. Busca, "Comparison of eight unwrapping algorithms applied to fourier-transform profilometry," Optics and Lasers in Engineering 46, 106-116 (2008).</p>
+<p>[39] M. Zhao, L. Huang, Q. Zhang, X. Su, A. Asundi, and Q. Kemao, "Qualityguided phase unwrapping technique: comparison of quality maps and guiding strategies," Appl. Opt. 50, 6214-6224 (2011).</p></section>
+<section class="page" id="page-54"><div class="page-label">第 54 页</div><p>[40] H. O. Saldner and J. M. Huntley, "Temporal phase unwrapping: application to surface profiling of discontinuous objects," Appl. Opt. 36, 2770- 2775 (1997).</p>
+<p>[41] G. Sansoni, M. Carocci, and R. Rodella, "Three-dimensional vision based on a combination of gray-code and phase-shift light projection: analysis and compensation of the systematic errors," Appl. Opt. 38, 6565-6573 (1999).</p>
+<p>[42] G. Sansoni, S. Corini, S. Lazzari, R. Rodella, and F. Docchio, "Three-dimensional imaging based on gray-code light projection: characterization of the measuring algorithm and development of a measuring system for industrial applications," Appl. Opt. 36, 4463-4472 (1997).</p>
+<p>[43] J. Salvi, J. Pags, and J. Batlle, "Pattern codification strategies in structured light systems," Pattern Recognition 37, 827-849 (2004). Agent Based Computer Vision.</p>
+<p>[44] C. Zuo, Q. Chen, G. Gu, S. Feng, and F. Feng, "High-speed three-dimensional profilometry for multiple objects with complex shapes," Opt. Express 20, 19493-19510 (2012).</p>
+<p>[45] Y. Wang, S. Zhang, and J. H. Oliver, "3d shape measurement technique for multiple rapidly moving objects," Opt. Express 19, 8539-8545 (2011).</p>
+<p>[46] Q. Zhang, X. Su, L. Xiang, and X. Sun, "3-d shape measurement based on complementary gray-code light," Optics and Lasers in Engineering 50, 574-579 (2012). Computational Optical Measurement.</p>
+<p>[47] D. Zheng and F. Da, "Self-correction phase unwrapping method based on gray-code light," Optics and Lasers in Engineering 50, 1130-1139 (2012). Fringe Analysis Methods &amp; Applications.</p>
+<p>[48] L. Kinell and M. Sjödahl, "Robustness of reduced temporal phase unwrapping in the measurement of shape," Appl. Opt. 40, 2297-2303 (2001).</p></section>
+<section class="page" id="page-55"><div class="page-label">第 55 页</div><p>[49] X. Peng, Z. Yang, and H. Niu, "Multi-resolution reconstruction of 3-d image with modified temporal unwrapping algorithm," Optics Communications 224, 35-44 (2003).</p>
+<p>[50] J. Tian, X. Peng, and X. Zhao, "A generalized temporal phase unwrapping algorithm for three-dimensional profilometry," Optics and Lasers in Engineering 46, 336-342 (2008).</p>
+<p>[51] A. J. Alcock and S. A. Ramsden, "Two wavelength interferometry of a laserinduced spark in air," Applied Physics Letters 8 (1966).</p>
+<p>[52] C. Polhemus, "Two-wavelength interferometry," Appl. Opt. 12, 2071- 2074 (1973).</p>
+<p>[53] R. Dandliker, R. Thalmann, and D. Prongué, "Two-wavelength laser interferometry using superheterodyne detection," Opt. Lett. 13, 339-341 (1988).</p>
+<p>[54] J. Burke, T. Bothe, W. Osten, and C. F. Hess, "Reverse engineering by fringe projection," (2002).</p>
+<p>[55] M. Takeda, Q. Gu, M. Kinoshita, H. Takai, and Y. Takahashi, "Frequency-multiplex fourier-transform profilometry: a single-shot three-dimensional shape measurement of objects with large height discontinuities and/or surface isolations," Appl. Opt. 36, 5347-5354 (1997).</p>
+<p>[56] J. Zhong and M. Wang, "Phase unwrapping by a lookup table method: application to phase maps with singular points," Optical Engineering 38, 2075-2080 (1999).</p>
+<p>[57] C. E. Towers, D. P. Towers, and J. D. Jones, "Time efficient chinese remainder theorem algorithm for full-field fringe phase analysis in multiwavelength interferometry," Opt. Express 12, 1136-1143 (2004).</p>
+<p>[58] C. Coggrave and J. Huntley, "Real-time visualisation of deformation fields using speckle interferometry and temporal phase unwrapping," Optics and Lasers in Engineering 41, 601-620 (2004). Fringe Analysis.</p></section>
+<section class="page" id="page-56"><div class="page-label">第 56 页</div><p>[59] J. Kühn, T. Colomb, F. Montfort, F. Charrière, Y. Emery, E. Cuche, P. Marquet, and C. Depeursinge, "Real-time dual-wavelength digital holographic microscopy with a single hologram acquisition," Opt. Express 15, 7231-7242 (2007).</p>
+<p>[60] K. Liu, Y. Wang, D. L. Lau, Q. Hao, and L. G. Hassebrook, "Dualfrequency pattern scheme for high-speed 3-d shape measurement," Opt. Express 18, 5229-5244 (2010).</p>
+<p>[61] Y. Wang, K. Liu, Q. Hao, D. Lau, and L. Hassebrook, "Period coded phase shifting strategy for real-time 3-d structured light illumination," Image Processing, IEEE Transactions on 20, 3001-3013 (2011).</p>
+<p>[62] S. Feng, Q. Chen, C. Zuo, J. Sun, and S. L. Yu, "High-speed real-time 3-d coordinates measurement based on fringe projection profilometry considering camera lens distortion," Optics Communications 329, 44-56 (2014).</p>
+<p>[63] H. Nguyen, D. Nguyen, Z. Wang, H. Kieu, and M. Le, "Real-time, high accuracy 3d imaging and shape measurement," Appl. Opt. 54, A9-A17 (2015).</p>
+<p>[64] Q. Kemao, "Windowed fourier transform for fringe pattern analysis," Appl. Opt. 43, 2695-2702 (2004).</p>
+<p>[65] Q. Kemao, "Two-dimensional windowed fourier transform for fringe pattern analysis: Principles, applications and implementations," Optics and Lasers in Engineering 45, 304-317 (2007). Phase Measurement Techniques and their applicationsPhase Measurement Techniques and their applications.</p>
+<p>[66] J. Zhong and J. Weng, "Spatial carrier-fringe pattern analysis by means of wavelet transform: wavelet transform profilometry," Appl. Opt. 43, 4993-4998 (2004).</p>
+<p>[67] L. Huang, Q. Kemao, B. Pan, and A. K. Asundi, "Comparison of fourier transform, windowed fourier transform, and wavelet transform methods</p></section>
+<section class="page" id="page-57"><div class="page-label">第 57 页</div><p>for phase extraction from a single fringe pattern in fringe projection profilometry," Optics and Lasers in Engineering 48, 141-148 (2010). Fringe Projection Techniques.</p>
+<p>[68] P. de Groot, "Derivation of algorithms for phase-shifting interferometry using the concept of a data-sampling window," Appl. Opt. 34, 4723-4730 (1995).</p>
+<p>[69] Y. Surrel, "Design of algorithms for phase measurements by the use of phase stepping," Appl. Opt. 35, 51-60 (1996).</p>
+<p>[70] Z. Wang, D. A. Nguyen, and J. C. Barnes, "Some practical considerations in fringe projection profilometry," Optics and Lasers in Engineering 48, 218-225 (2010). Fringe Projection Techniques.</p>
+<p>[71] W. Osten, W. Nadeborn, and P. Andrae, "General hierarchical approach in absolute phase measurement," (1996).</p>
+<p>[72] J. M. Huntley and H. O. Saldner, "Error-reduction methods for shape measurement by temporal phase unwrapping," J. Opt. Soc. Am. A 14, 3188-3196 (1997).</p>
+<p>[73] J. M. Huntley and H. O. Saldner, "Shape measurement by temporal phase unwrapping: comparison of unwrapping algorithms," Measurement Science and Technology 8, 986 (1997).</p>
+<p>[74] C. Zuo, Q. Chen, G. Gu, S. Feng, F. Feng, R. Li, and G. Shen, "Highspeed three-dimensional shape measurement for dynamic scenes using bifrequency tripolar pulse-width-modulation fringe projection," Optics and Lasers in Engineering 51, 953-960 (2013).</p>
+<p>[75] C. Reich, R. Ritter, and J. Thesing, "3-d shape measurement of complex objects by combining photogrammetry and fringe projection," Optical Engineering 39, 224-231 (2000).</p>
+<p>[76] S. Zhang, "Digital multiple wavelength phase shifting algorithm," (2009).</p></section>
+<section class="page" id="page-58"><div class="page-label">第 58 页</div><p>[77] C. E. Towers, D. P. Towers, and J. D. C. Jones, "Optimum frequency selection in multifrequency interferometry," Opt. Lett. 28, 887-889 (2003).</p>
+<p>[78] C. Towers, D. Towers, and J. Jones, "Absolute fringe order calculation using optimised multi-frequency selection in full-field profilometry," Optics and Lasers in Engineering 43, 788-800 (2005). Fringe Analysis special interest group (FASIG).</p>
+<p>[79] E. Lilienblum and B. Michaelis, "Optical 3d surface reconstruction by a multi-period phase shift method," Journal of Computers 2, 73-83 (2007).</p>
+<p>[80] T. Pribani, S. Mrvo, and J. Salvi, "Efficient multiple phase shift patterns for dense 3d acquisition in structured light scanning," Image and Vision Computing 28, 1255-1266 (2010).</p>
+<p>[81] C. Zuo, Q. Chen, G. Gu, S. Feng, F. Feng, R. Li, and G. Shen, "Highspeed three-dimensional shape measurement for dynamic scenes using bifrequency tripolar pulse-width-modulation fringe projection," Optics and Lasers in Engineering 51, 953-960 (2013).</p>
+<p>[82] Y. Ding, J. Xi, Y. Yu, and J. Chicharo, "Recovering the absolute phase maps of two fringe patterns with selected frequencies," Opt. Lett. 36, 2518-2520 (2011).</p>
+<p>[83] Y. Ding, J. Xi, Y. Yu, and F. Deng, "Absolute phase recovery of three fringe patterns with selected spatial frequencies," Optics and Lasers in Engineering 70, 18-25 (2015).</p>
+<p>[84] J. Zhong and Y. Zhang, "Absolute phase-measurement technique based on number theory in multifrequency grating projection profilometry," Appl. Opt. 40, 492-500 (2001).</p>
+<p>[85] K. H. Rosen, Elementary number theory (Pearson Education, 2011).</p>
+<p>[86] K. Hibino, K. Larkin, B. F. Oreb, and D. I. Farrant, "Phase shifting for nonsinusoidal waveforms with phase-shift errors," J. Opt. Soc. Am. A 12, 761-768 (1995).</p></section>
+<section class="page" id="page-59"><div class="page-label">第 59 页</div><p>[87] J. Schmit and K. Creath, "Extended averaging technique for derivation of error-compensating algorithms in phase-shifting interferometry," Appl. Opt. 34, 3610-3619 (1995).</p>
+<p>[88] S. Zhang and S.-T. Yau, "Generic nonsinusoidal phase error correction for three-dimensional shape measurement using a digital video projector," Appl. Opt. 46, 36-43 (2007).</p>
+<p>[89] T. Weise, B. Leibe, and L. Van Gool, "Fast 3d scanning with automatic motion compensation," in "Computer Vision and Pattern Recognition, 2007. CVPR '07. IEEE Conference on," (2007), pp. 1-8.</p>
+<p>[90] S. Feng, Q. Chen, C. Zuo, R. Li, G. Shen, and F. Feng, "Automatic identification and removal of outliers for high-speed fringe projection profilometry," Optical Engineering 52, 013605-013605 (2013).</p>
+<p>[91] F. Berryman, P. Pynsent, and J. Cubillo, "A theoretical comparison of three fringe analysis methods for determining the three-dimensional shape of an object in the presence of noise," Optics and Lasers in Engineering 39, 35-50 (2003).</p>
+<p>[92] J. Li, L. G. Hassebrook, and C. Guan, "Optimized two-frequency phase measuring-profilometry light-sensor temporal-noise sensitivity," J. Opt. Soc. Am. A 20, 106-115 (2003).</p>
+<p>[93] Y. Wang, K. Liu, D. L. Lau, Q. Hao, and L. G. Hassebrook, "Maximum snr pattern strategy for phase shifting methods in structured light illumination," J. Opt. Soc. Am. A 27, 1962-1971 (2010).</p>
+<p>[94] C. Zuo, Q. Chen, G. Gu, J. Ren, X. Sui, and Y. Zhang, "Optimized three-step phase-shifting profilometry using the third harmonic injection," Optica Applicata 43, 393-408 (2013).</p>
+<p>[95] B. Pan, Q. Kemao, L. Huang, and A. Asundi, "Phase error analysis and compensation for nonsinusoidal waveforms in phase-shifting digital fringe projection profilometry," Opt. Lett. 34, 416-418 (2009).</p></section>
+<section class="page" id="page-60"><div class="page-label">第 60 页</div><p>[96] K. Liu, Y. Wang, D. L. Lau, Q. Hao, and L. G. Hassebrook, "Gamma model and its analysis for phase measuring profilometry," J. Opt. Soc. Am. A 27, 553-562 (2010).</p>
+<p>[97] C. Rathjen, "Statistical properties of phase-shift algorithms," J. Opt. Soc. Am. A 12, 1997-2008 (1995).</p>
+<p>[98] Y. Surrel, "Additive noise effect in digital phase detection," Appl. Opt. 36, 271-276 (1997).</p>
+<p>[99] A. Patil, R. Langoju, P. Rastogi, and S. Ramani, "Statistical study and experimental verification of high-resolution methods in phase-shifting interferometry," J. Opt. Soc. Am. A 24, 794-813 (2007).</p>
+<p>[100] M. Servin, J. C. Estrada, J. A. Quiroga, J. F. M. no, and M. Cywiak, "Noise in phase shifting interferometry," Opt. Express 17, 8789-8794 (2009).</p>
+<p>[101] K. Freischlad and C. L. Koliopoulos, "Fourier description of digital phase measuring interferometry," J. Opt. Soc. Am. A 7, 542-551 (1990).</p>
+<p>[102] Y. Ding, J. Xi, Y. Yu, W. Cheng, S. Wang, and J. F. Chicharo, "Frequency selection in absolute phase maps recovery with two frequency projection fringes," Opt. Express 20, 13238-13251 (2012).</p>
+<p>[103] J. Zhong, Y. Zhang, F. Li, and H. Di, "Phase indeterminacy in phase analysis methods for spatial carrier fringe pattern (in chinese)," Acta Optica Sinica 5, 024 (2001).</p>
+<p>[104] C. Zhang, H. Zhao, and L. Zhang, "Fringe order error in multifrequency fringe projection phase unwrapping: reason and correction," Appl. Opt. 54, 9390-9399 (2015).</p>
+<p>[105] C. Zuo, Q. Chen, W. Qu, and A. Asundi, "Phase aberration compensation in digital holographic microscopy based on principal component analysis," Opt. Lett. 38, 1724-1726 (2013).</p></section>
+<section class="page" id="page-61"><div class="page-label">第 61 页</div><p>[106] S. Feng, Q. Chen, C. Zuo, J. Sun, T. Tao, and Y. Hu, "A carrier removal technique for fourier transform profilometry based on principal component analysis," Optics and Lasers in Engineering 74, 80-86 (2015).</p>
+<p>[107] Y. Zhang, Z. Xiong, and F. Wu, "Unambiguous 3d measurement from speckle-embedded fringe," Appl. Opt. 52, 7797-7805 (2013).</p>
+<p>[108] S. Feng, Q. Chen, and C. Zuo, "Graphics processing unit assisted real-time three-dimensional measurement using speckle-embedded fringe," Appl. Opt. 54, 6865-6873 (2015).</p>
+<p>[109] S. Zhang, "Phase unwrapping error reduction framework for a multiplewavelength phase-shifting algorithm," Optical Engineering 48, 105601- 105601-8 (2009).</p>
+<p>[110] H. Wang, Q. Kemao, and S. H. Soon, "Valid point detection in fringe projection profilometry," Opt. Express 23, 7535-7549 (2015).</p>
+<p>[111] J. Lu, R. Mo, H. Sun, Z. Chang, and X. Zhao, "Invalid phase values removal method for absolute phase recovery," Appl. Opt. 55, 387-394 (2016).</p>
+<p>[112] L. Huang and A. K. Asundi, "Phase invalidity identification framework with the temporal phase unwrapping method," Measurement Science and Technology 22, 035304 (2011).</p>
+<p>[113] J. Luo, Y. Wang, A. Xiong, and J. Yuan, "A new phase unwrapping algorithm using two digital phase-shifting gratings of different period for fringe projective 3d profile sensor," Proc. SPIE 6623, 662324-662324-14 (2007).</p></section></main></body></html>

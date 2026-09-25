@@ -1,0 +1,112 @@
+{
+  "sha1": "a3dfae4f1e9ded0484d924825a564fa6bc500c0c",
+  "title": "Hydrogen as an energy vector",
+  "doi": "https://doi.org/10.1016/j.rser.2019.109620",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a3dfae4f1e9ded0484d924825a564fa6bc500c0c/index.html",
+  "source_chars": 211070,
+  "markdown_chars": 7849,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Zinc-zinc oxide (1)Dissociation:ZnO→Zn+1/2 (1)~2000 [82]",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "反应式不完整，缺少O₂产物，且温度与引用编号混排，影响ZnO/Zn循环化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "SnO2/SnO based cycleCerium(IV)oxide-cerium(III)oxide cycle (2)Hydrolysis:Zn+H2O→ZnO+H2(1)SnO2→SnO+1/2O2(2)SnO+H2O→SnO2+H2(1)Dissociation:2CeO2→Ce2O3+0.5O2(2)Hydrolysis:Ce2O3+H2O→2CeO2+H2 (1)1500(2)530(1)~2000(2)~430 [83]",
+      "type": "table_structure_damage",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "表格行严重错乱，SnO₂/SnO循环与CeO₂/Ce₂O₃循环的反应、温度、引用编号混杂，无法可靠对应。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Hybrid thermochemical-electrochemical Single-step Hybrid sulphur cycle(withH2SO4asbyproduct) (1)S(s)+O2(g)→SO2(g)(2)SO2(aq)+2H2O(l)→H2SO4(aq)+H2(g) ?? [87]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "温度范围处出现“??”，原文应有具体数值，影响单步混合硫循环条件复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "At the beginning of 2013, nearly 688 underground storage facilities were operational with a working capacity of 377 b m $ ^{3} $ (i.e. 10.3% of 2012 the global gas consumption) and are anticipated to reach 557-631 b $ ^{3} $ by 2030 [201].",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "单位“b m³”与“b³”不一致，且“b”可能为“billion”的缩写，但原文未明确，影响容量数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "the nominated capacity were respectively $260 MM (371 $/m/S $^{2},12.1 $/kg of $ H_{2} $) and $ 205 MM ($ 293/m/S $^{2} of solar collection area, levelised cost of hydrogen product (LCH) $ 11.4H_{2} /kg ).",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "单位“$/m²”被抽取为“$/m/S²”，且“$11.4H₂/kg”缺少“$”和“/kg”前的数值分隔，影响成本数据准确性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "TheHI是 then separated by distillation or liquid/liquid gravitic separation.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "中英文混杂且语法不通，应为“The HI is then separated...”，影响对S-I循环步骤的理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "The cost of $ \\mathrm{NaBH}{4} $ regeneration should reduce from ca. $ \\mathrm{50/kg} $ to as low as $ \\mathrm{1/kg}. $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "货币符号丢失，应为“$50/kg”和“$1/kg”，影响成本数值理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 26,
+      "quote": "The range of $ \\mathrm{H_{2}} $ production costs for projected current case studies was shown as $ \\mathrm{2.58}-\\mathrm{\\$ 51.02 per kg of H_{2}} $.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "货币符号和数值格式混乱，应为“$2.58–$51.02 per kg of H₂”，影响成本范围理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Hydrogen as an energy vector",
+  "self_check": "已核对摘要、正文数据和结论：制氢路径占比（96%化石燃料，49%天然气、29%液态烃、18%煤）、SMR热效率70–85%、电解氢纯度99.999 vol%、SOE效率>95% HHV、ZnO/Zn理论产氢12.3 mmol H₂/g ZnO、铁氧体理论产氢4.3 mmol H₂/g Fe₃O₄、钙钛矿氧容量1.7和5.5 wt%、S-I循环温度393/1123/723 K、Cu-Cl循环温度723/303–353/648/803 K、压缩氢密度23.32 kg/m³（350 bar）和39.22 kg/m³（700 bar）、液氢液化能耗约35% LHV、NaBH₄储氢10.9 wt%、LaNi₅H₆体积容量115 kg/m³、H2A模型IRR 10%、PEM电解成本$5.14–4.20/kg H₂、电价占电解制氢成本78%等关键数值与原文一致。公式均按提取文本原样保留，未补写或修复。仍不确定处：部分表格结构损坏（如SnO₂/SnO与CeO₂/Ce₂O₃循环混排）、个别货币符号和单位丢失，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6584,
+      "prompt_tokens": 51742,
+      "total_tokens": 58326,
+      "prompt_tokens_details": {
+        "cached_tokens": 51712
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11719,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

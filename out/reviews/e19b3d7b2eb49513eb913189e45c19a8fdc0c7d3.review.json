@@ -1,0 +1,112 @@
+{
+  "sha1": "e19b3d7b2eb49513eb913189e45c19a8fdc0c7d3",
+  "title": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
+  "doi": "https://doi.org/10.1126/science.aai8878",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e19b3d7b2eb49513eb913189e45c19a8fdc0c7d3/index.html",
+  "source_chars": 35981,
+  "markdown_chars": 5639,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Field-grown plants showed similar increases in protein levels (47-, 3- and 75-fold for VDE, PsbS and ZEP, Fig. S4), although increases in transcript levels were less pronounced (4-, 1.2- and 7-fold for VDE, PsbS and ZEP, Fig. S4).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文前文称田间植株蛋白水平增加为 47、3、75 倍，但同一句紧接着说转录本增加为 4、1.2、7 倍；转录本增加幅度远小于蛋白增加幅度，且 1.2 倍对 PsbS 而言与温室 3 倍转录本增加不一致，疑似 OCR 或原文数值有误，但无法从文本内确定正确值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "averaging an increase of 9% (p<0.02).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句报告 CO₂ 固定速率平均增加 9%，但后文摘要和讨论中报告量子产率增加 14%、生产力增加 15%；9% 与 14% 可能对应不同测量指标，但文本未明确区分，存在数值归属不清的风险。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Plants from VPZ lines exhibited greater total dry weight per plant by 14 to 20% relative to WT (Fig. 5A)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文此处报告总干重增加 14%–20%，而摘要、图 5 标题和讨论中均报告约 15%；14%–20% 与 15% 的差异可能源于不同株系或统计方式，但文本未说明，存在数值不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Zea 3.81±3.81 *1.48±0.48 *1.23±0.24 *1.94±0.49",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表 1 中 2000 μmol 恒定光下 WT 的 Zea 值为 3.81±3.81，标准误等于均值，数值异常大，疑似 OCR 或原表排版错误；同时该行 VPZ 值前有星号，但 WT 值无星号，星号归属可能因表格结构损坏而错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Fluctuating between2000 and 200μmol photonsm-2s-1 Vio 4.20±0.16 *7.11±0.57 *5.72±0.15 *6.14±0.34",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表 1 波动光处理下 Vio 行 VPZ 三个值均标有星号，但正文称 VPZ 株系保留更多紫黄质，若 WT 为 4.20 而 VPZ 为 5.72–7.11，则 VPZ 显著更高，星号应标在 VPZ 值上，此处星号位置与正文方向一致，但表格中 WT 值无星号而 VPZ 值有星号，结构可能因 OCR 而错位；此外表头 'between2000' 和 'photonsm-2s-1' 缺少空格，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "DES 52.5±5.5 *11.4±0.9 *25.5±17.3 *16.4±4.2",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表 1 波动光处理下 DES 行 VPZ-34 的值为 25.5±17.3，标准误极大，与同列其他值（11.4±0.9、16.4±4.2）相比异常，疑似 OCR 或原表数值错误；同时正文称波动光下 VPZ 的 DES 为 18% 对 WT 53%，而表中 VPZ-34 为 25.5%，VPZ-56 为 16.4%，平均约 18%，与正文一致，但 VPZ-34 的大标准误可能影响均值可靠性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "ΦCO₂₋max",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中 ΦCO₂₋max 的下标格式在 OCR 中部分丢失或变形，如 'ΦCO₂₋max' 与 'ΦCO₂₋max' 混用，但符号含义可从上下文推断，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "ΦPSII₋max",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中 ΦPSII₋max 的下标格式在 OCR 中部分丢失或变形，如 'ΦPSII₋max' 与 'ΦPSII₋max' 混用，但符号含义可从上下文推断，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Improving Photosynthesis and Crop Productivity by Accelerating Recovery from Photoprotection.",
+  "self_check": "已核对摘要、正文结果与讨论中的关键数值：NPQ 弛豫 τ₂ 在 VPZ 中平均 753 s 对 WT 2684 s，τ₁ 平均 15 s 对 21 s；CO₂ 固定速率在遮阴后 150 s 内平均增加 9%；稳态 ΦCO₂₋max 无差异（0.092 CO₂/吸收光子），波动光下 WT 降至 0.058、VPZ 为 0.066；ΦPSII₋max 波动光下 WT 0.54、VPZ 0.60 e⁻/吸收光子；VPZ 的 ΦCO₂₋max 和 ΦPSII₋max 分别比 WT 高 11.3% 和 14.0%；田间总干重增加 14%–20%，摘要和图 5 标题称约 15%；DES 在高光下 VPZ 约 26% 对 WT 46%，波动光下 VPZ 约 18% 对 WT 53%。公式符号如 ΦCO₂₋max、ΦPSII₋max、τ₁、τ₂、Vcmax、Jmax 已按原文保留。仍不确定之处：田间蛋白增加倍数（47、3、75）与转录本增加倍数（4、1.2、7）的对应关系；CO₂ 固定速率增加 9% 与量子产率增加 14% 的指标差异；表 1 中部分数值和星号归属可能因 OCR 表格结构损坏而存在误差。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5283,
+      "prompt_tokens": 10813,
+      "total_tokens": 16096,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9197,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

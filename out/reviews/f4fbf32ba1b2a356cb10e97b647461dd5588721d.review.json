@@ -1,0 +1,82 @@
+{
+  "sha1": "f4fbf32ba1b2a356cb10e97b647461dd5588721d",
+  "title": "An artificial interphase enables reversible magnesium chemistry in carbonate electrolytes",
+  "doi": "https://doi.org/10.1038/s41557-018-0019-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f4fbf32ba1b2a356cb10e97b647461dd5588721d/index.html",
+  "source_chars": 73464,
+  "markdown_chars": 1790,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "2,205 mAh g1",
+      "type": "上标缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "应为mAh g⁻¹，负号缺失",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "1.19×10-6 S cm1",
+      "type": "上标缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "应为S cm⁻¹，负号缺失",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "σ= ! !!/ ! !",
+      "type": "公式提取乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式字符无法辨认，根据上下文应为σ = l/(R_b A)",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "R = ∆V ∆I",
+      "type": "缺失符号",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "缺少除号，应为R = ∆V/∆I",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "R = dV dI",
+      "type": "缺失符号",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "缺少除号，应为R = dV/dI",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：离子电导率1.19×10⁻⁶ S cm⁻¹、电子电导率1.04×10⁻⁷ S cm⁻¹、对称电池1000小时稳定、全电池容量47和140 mAh g⁻¹、库仑效率94.02%至98.30%及全电池93.07%至>99%等，均与原文一致。公式σ=l/(R_b·A)为根据上下文推断，原文本公式字符乱码；另外多处单位上标负号缺失（如S cm1、mAh g1），在笔记中已按上下文修正为标准写法。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8876,
+      "prompt_tokens": 17809,
+      "total_tokens": 26685,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7188
+      }
+    },
+    "content_chars": 2934
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

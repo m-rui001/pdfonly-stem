@@ -1,0 +1,99 @@
+{
+  "sha1": "ccb30a733a574e5777de26c69d62edcb5dd665d4",
+  "title": "A critical investigation of Industry 4.0 in manufacturing: theoretical operationalisation framework",
+  "doi": "https://doi.org/10.1080/09537287.2018.1424960",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ccb30a733a574e5777de26c69d62edcb5dd665d4/index.html",
+  "source_chars": 71992,
+  "markdown_chars": 2667,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "petition for transformed production processes",
+      "type": "疑似文字错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "根据上下文'Increasing global competition'，'petition'应为'competition'的截断或拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "fourth industrial revelation brought about by introduction of IoT and CPSs",
+      "type": "疑似文字错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'revelation'应为'revolution'，'工业革命'的常见表达。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Cyber Physical Systems (SPSs)",
+      "type": "疑似缩写错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "标题应为CPSs，文中均使用CPSs，'SPSs'为拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "Zrousell, Moad, and Tate, 2014",
+      "type": "疑似引用错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "全文其他位置引用均为Brousell，此为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "for analysis ad aggregation",
+      "type": "疑似文字错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "'ad'应为'and'，根据上下文语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "organisations that are far behand industry 4.0 operational perspective",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "'behand'应为'behind'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Thramboulidis, K. 2o15",
+      "type": "疑似年份错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "应为2015，数字'2o'应为'20'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对文中关键数值：26 billion connected devices by 2020、$300 billion-$8.9 trillion、60% ROI within 2 years、4% devices connected；框架步骤编号（1-10）与文本描述一致；公式未出现。不确定处：图1和图2的具体内容未在文本中详细描述，仅保留编号；部分引用年份（如2012 IPv6）与正文一致，但个别引用笔误已在issues中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2352,
+      "prompt_tokens": 16321,
+      "total_tokens": 18673,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 164
+      }
+    },
+    "content_chars": 4551
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

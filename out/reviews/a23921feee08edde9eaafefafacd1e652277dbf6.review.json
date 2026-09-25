@@ -1,0 +1,57 @@
+{
+  "sha1": "a23921feee08edde9eaafefafacd1e652277dbf6",
+  "title": "Data-driven health estimation and lifetime prediction of lithium-ion batteries: A review",
+  "doi": "https://doi.org/10.1016/j.rser.2019.109254",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a23921feee08edde9eaafefafacd1e652277dbf6/index.html",
+  "source_chars": 119941,
+  "markdown_chars": 17202,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "Section Error! Reference source not found.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "正文交叉引用损坏，无法确定所指章节编号，影响论证顺序的复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Coventru, CV4 7AL, UK",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "机构地址疑似 OCR 误识别（Coventry 被识别为 Coventru），但不影响研究骨架理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Data-driven health estimation and lifetime prediction of lithium-ion batteries: A review",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 26870,
+      "total_tokens": 36870,
+      "prompt_tokens_details": {
+        "cached_tokens": 26752
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18048,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

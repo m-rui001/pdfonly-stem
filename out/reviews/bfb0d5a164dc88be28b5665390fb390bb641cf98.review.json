@@ -1,0 +1,82 @@
+{
+  "sha1": "bfb0d5a164dc88be28b5665390fb390bb641cf98",
+  "title": "A Perspective on the Selective Catalytic Reduction (SCR) of NO with NH3 by Supported V2O5–WO3/TiO2 Catalysts",
+  "doi": "https://doi.org/10.1021/acscatal.8b01357",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bfb0d5a164dc88be28b5665390fb390bb641cf98/index.html",
+  "source_chars": 94515,
+  "markdown_chars": 4280,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Information about coimpregenation of V- and W-precursors onto crystalline TiO2 supports has not received as much attention",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "文本为 'coimpregenation'，结合上下文应为 'coimpregnation'（共浸渍）。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "1% V2O5-5% WO3/TiO2 (1V5WTi) ... 1 V5WTi",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注中催化剂名称 '1% V2O5-5% WO3/TiO2 (1V5WTi)' 与图中标签 '1 V5WTi' 存在格式不一致，可能是排版或提取的细微差别。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "N2 formation exclusively involves one 15NO molecule and one 14NH3 molecule by selectively forming 15N14N.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.2,
+      "reason": "摘要和讨论中提到的 15N18O 同位素标记实验，此处原文仅写 15NO，可能省略了 18O 标记，也可能原文即如此，存疑标注。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "Monolayer surface coverage of SO2 and SO3 species are estimated to correspond to ~4 S atoms/nm2 for isolated species.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文表述为 'Monolayer surface coverage ... are estimated'，主谓不一致，疑似为 'is estimated'，但内容无实质影响。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "(93) Hadjiivanov, K.; Concepcion, P. ... J. Catal. 1989, 119, 71−82. 页眉与正文交界处",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本在参考文献 (92) 和 (93) 之间出现 'nitric Oxide and ammonia over supported platinum at 200−250 °C. J. Phys. Chem. 1970, 74, 2690−2698.'，此属于文献 (92) 的标题内容，且页眉处拼接痕迹明显，可能发生截断或错位。经查，(93) 对应的应为 Hadjiivanov 等人的文章，标题拼接后内容断裂，属于跨页拼接疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "关键数值核对：单层覆盖度阈值（8 V atoms/nm2 和 4.5 W atoms/nm2）、Raman 特征峰位（V=O 1027-1030 cm-1，W=O 1009-1010 cm-1，V-O-Ti ~920-940 cm-1）、N2O 选择性（16%至2%）、SO2 浓度范围（200-1500 ppmw）均已核对，与摘要正文一致。公式（1）（2）（11）（14）（18）已尽量原样保留。结论方向核对：活性位点归属（表面 VOx 为活性中心，WOx 为促进剂）和反应机理（Mars-van Krevelen，速率决定步骤为 N-H 键断裂）前后论述一致。不确定之处：公式（18）中 K1 = k2 × KNH3/k3 和 K2 = k−2/k3 的表达式原样保留，未做数学验证；DFT 小节中提及的 V2O9H 等团簇模型来源明确但未验证化学式正确性。同位素实验描述（如 15N18O vs 15NO）与原文一致，未做推测性修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6819,
+      "prompt_tokens": 27170,
+      "total_tokens": 33989,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 597
+      }
+    },
+    "content_chars": 10806
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

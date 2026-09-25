@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/shu/ed/ed77ea230bf866b38821ca15c8f8734d54a9ff48.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Volatility estimation for Bitcoin: A comparison of GARCH models</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>Volatility estimation for Bitcoin: A comparison of GARCH models</h1><p class="source">2017 · <a href="https://doi.org/10.1016/j.econlet.2017.06.023">https://doi.org/10.1016/j.econlet.2017.06.023</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/shu/ed/ed77ea230bf866b38821ca15c8f8734d54a9ff48.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Volatility estimation for Bitcoin: A comparison of GARCH models KATSIAMPA, Paraskevi &lt;http://orcid.org/0000-0003-0477-6503&gt; Available from Sheffield Hallam University Research Archive (SHURA) at: https://shura.shu.ac.uk/16526/</p>
+<p>This document is the Accepted Version [AM] Citation: KATSIAMPA, Paraskevi (2017). Volatility estimation for Bitcoin: A comparison of GARCH models. Economics Letters, 158, 3-6. [Article]</p>
+<p>Copyright and re-use policy See http://shura.shu.ac.uk/information.html</p>
+<p>Sheffield Hallam University Research Archive http://shura.shu.ac.uk</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>Volatility estimation for Bitcoin: A comparison of GARCH models Paraskevi Katsiampa 1 Sheffield Business School, Sheffield Hallam University, Sheffield, S1 1WB, UK</p>
+<p>Abstract: Bitcoin is undoubtedly the most popular cryptocurrency. Earlier studies have found that Bitcoin is mainly used as an asset, and hence analysing its volatility is of great importance. In this article, we explore the optimal conditional heteroskedasticity model with regards to goodness-of-fit to the data. It is found that the best conditional heteroskedasticity model is the AR-CGARCH model, highlighting the significance of including both a short-run and a long-run component of the conditional variance.</p>
+<p>Keywords: Bitcoin, Cryptocurrency, GARCH, Volatility</p>
+<p>JEL classification: C22, C5, G1</p>
+<p>1. Introduction</p>
+<p>The analysis of Bitcoin has recently received much attention. This can be attributed to its innovative features, simplicity, transparency and its increasing popularity (Urquhart 2016), while since its introduction it has posed great challenges and opportunities for policy makers, economists, entrepreneurs, and consumers (Dyhrberg 2016b). Bitcoin is probably the most successful – and probably most controversial – virtual currency scheme to date (ECB 2012, p. 21), representing about 66.8% of the total estimated cryptocurrency capitalisation at present.</p>
+<p>However, recent fluctuations in Bitcoin prices (see Figure 1) have resulted in periods of high volatility. In fact, as Bitcoin is mainly used as an asset rather than a currency (Glaser et al. 2014; Baek and Elbeck 2015; Dyhrberg 2016a), the Bitcoin market is currently highly speculative, and more volatile and susceptible to speculative bubbles than other currencies (Grinberg 2011; Cheah and Fry 2015). Bitcoin has therefore a place in the financial markets and in portfolio management (Dyhrberg 2016a), and examining its volatility is crucial.</p>
+<p>Paraskevi Katsiampa E-mail address: p.katsiampa@shu.ac.uk</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>Moreover, the presence of long memory and persistent volatility (Bariviera et al. 2017) justifies the application of GARCH-type models.</p>
+<p>Earlier studies have employed various GARCH-type models, such as the linear GARCH (Glaser et al. 2014; Gronwald 2014), the Threshold GARCH (TGARCH) (Dyhrberg 2016b; Bouoiyour and Selmi 2015, 2016; Bouri et al. 2017), the Exponential GARCH (EGARCH) (Dyhrberg 2016a; Bouoiyour and Selmi 2015, 2016), and the Component with Multiple Threshold-GARCH (CMT-GARCH) (Bouoiyour and Selmi 2015, 2016). However, as most of the previous studies of the Bitcoin price volatility have used a single conditional heteroskedasticity model, a question that remains unanswered is which conditional heteroskedasticity model can better explain the Bitcoin data. Only the studies of Bouoiyour and Selmi (2015, 2016) considered comparing some of the GARCH-type models. Nevertheless, their sample was split into sub-periods without examining volatility estimation throughout the whole interval since the introduction of Bitcoin. Hence, the aim of this study is to investigate which conditional heteroskedasticity model can describe the Bitcoin price volatility better over the whole period since its introduction.</p>
+<p>The paper is organised as follows. Section 2 discusses the data and methodology employed. Section 3 discusses empirical results. Section 4 concludes.</p>
+<p>2. Data and methodology The data used are the daily closing prices for the Bitcoin Coindesk Index from 18th July 2010 (as the earliest date available) to 1st October 2016, which corresponds to a total of 2267 observations. The data are publicly available online at http://www.coindesk.com/price.</p>
+<p>The returns are calculated by taking the natural logarithm of the ratio of two consecutive prices. Figure 1 illustrates both the Bitcoin prices and price returns.</p>
+<p>The models used in this research consist of an Autoregressive model for the conditional mean and a first-order GARCH-type model for the conditional variance 2, as follows 2</p>
+<p>In this research our interest lies particularly in low-order models, since low orders of GARCH-type models can catch most of the nonlinearity of the conditional variance, and hence only the first order models are presented for simplicity.</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>s</p>
+<p>rt = c + ∑ φ i rt −i + u t , i =1</p>
+<p>ut = ht zt , zt ~ i.i.d.(0,1) ,</p>
+<p>where rt is the Bitcoin price return on day t , u t is the error term, zt is a white noise process, and ht is the conditional standard deviation. Table A.1 (Appendices) presents the different GARCH-type models used in this research, namely GARCH, EGARCH, TGARCH, Asymmetric Power ARCH (APARCH), Component GARCH (CGARCH) and Asymmetric Component GARCH (ACGARCH).</p>
+<p>The optimal model is chosen according to three information criteria, namely Akaike (AIC), Bayesian (BIC) and Hannan-Quinn (HQ), all of which consider both how good the fitting of the model is and the number of parameters in the model, rewarding a better fitting and penalising an increased number of parameters for given data sets. The selected model is the one with the minimum criteria values.</p>
+<p>Fig. 1. Daily closing prices and price returns of the Coindesk Bitcoin Index (US Dollars). .6</p>
+<p>1,200</p>
+<p>.4</p>
+<p>800 Returns</p>
+<p>Coindesk Bicoin Index</p>
+<p>1,000</p>
+<p>600</p>
+<p>.2</p>
+<p>.0</p>
+<p>400 -.2</p>
+<p>200</p>
+<p>-.4</p>
+<p>0 2010</p>
+<p>3. Empirical results</p>
+<p>Table 1 presents the summary statistics for the daily closing returns of the Bitcoin price index. As can be easily seen, the daily average return is equal to 0.5778% with a standard deviation of 0.0617. The returns are positively skewed, while the excess kurtosis suggests</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>leptokurtic behaviour. The value of the Jarque-Bera (JB) statistic indicates the departure from normality, while the value of the ARCH(5) test for conditional heteroskedasticity confirms that there exist ARCH effects in the returns of the Bitcoin price index, suggesting that the Autoregressive model for the conditional mean needs to be expanded to include an Autoregressive Conditional Heteroskedasticity model for the conditional variance. For a more detailed investigation of the statistical properties of the Bitcoin market, see Bariviera et al. (2017). In addition, according to the results of both the Augmented Dickey-Fuller (ADF) and Phillips-Perron (PP) unit-root tests we fail to accept the null hypothesis of a unit root for the returns, and, hence, stationarity is guaranteed.</p>
+<p>Table 1. Descriptive statistics and unit roots tests. Panel A: Descriptive statistics Observations</p>
+<p>2267</p>
+<p>Mean</p>
+<p>0.005778</p>
+<p>Median</p>
+<p>0.000290</p>
+<p>Maximum</p>
+<p>0.528947</p>
+<p>Minimum</p>
+<p>-0.388309</p>
+<p>Std. Dev.</p>
+<p>0.061737</p>
+<p>Skewness</p>
+<p>0.857187</p>
+<p>Kurtosis</p>
+<p>15.11666</p>
+<p>JB</p>
+<p>14145.36***</p>
+<p>ARCH(5)</p>
+<p>54.36935***</p>
+<p>Panel B: Unit root test statistics ADF</p>
+<p>-45.90099***</p>
+<p>PP</p>
+<p>-46.55311***</p>
+<p>Note: *** indicates the rejection of the null hypotheses at the 1% level.</p>
+<p>Table A.2 (Appendices) shows the estimation results of the GARCH-type models. It can be noticed that the log-likelihood value is maximised under the AR(1)-CGARCH(1,1) model. Interestingly, all the three information criteria also select the AR(1)-CGARCH(1,1) model. Moreover, all the parameter estimates are statistically significant for the AR(1)CGARCH(1,1) model, while the results of the ARCH(5) and Q 2 (10) tests, which have been used as diagnostic tests, applied to the squared residuals and squared standardised residuals respectively of the AR(1)-CGARCH(1,1) model indicate that the selected AR(1)CGARCH(1,1) model is appropriate for the Bitcoin price returns, as the hypotheses of no remaining ARCH effects and no autocorrelation cannot be rejected. Finally, even though the</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>residuals of the AR(1)-CGARCH(1,1) model still depart from normality, the value of the Jarque-Bera test has considerably decreased compared with the corresponding value for the returns.</p>
+<p>All in all, the AR-CGARCH model appears to be an appropriate tool to describe the volatility of the Bitcoin price returns. This finding seems to be consistent with the study of Bouoiyour and Selmi (2016) which showed that the optimal model for the period between December 2010 and December 2014 is the CMT-GARCH model, which also consists of both a transitory and a permanent component.</p>
+<p>4. Conclusion</p>
+<p>Cryptocurrencies are a globally spreading phenomenon that is frequently and also prominently addressed by media, venture capitalists, financial and governmental institutions alike (Glaser et al. 2014). The Bitcoin market in particular has recently seen huge growth. As Bitcoin is mainly used for investment purposes, examining its volatility is of high importance. This paper investigated the ability of several competing GARCH-type models to explain the Bitcoin price volatility. We found evidence that the optimal model in terms of goodness-of-fit to the data is the AR-CGARCH, a result which suggests the importance of having both a short-run and a long-run component of conditional variance.</p>
+<p>Bitcoin is different from any other asset on the financial market and thereby creates new possibilities for stakeholders with regards to risk management, portfolio analysis and consumer sentiment analysis (Dyhrberg 2016b). Hence, it can be a useful tool for portfolio and risk management, and our results can help investors make more informed decisions.</p>
+<p>Acknowledgements The author gratefully acknowledges helpful suggestions from an anonymous referee.</p>
+<p>References Baek, C., &amp; Elbeck, M. (2015). Bitcoins as an investment or speculative vehicle? A first look. Applied Economics Letters, 22(1), 30-34.</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>Bariviera, A. F., Basgall, M. J., Hasperué, W., &amp; Naiouf, M. (2017). Some stylized facts of the Bitcoin market. Physica A: Statistical Mechanics and its Applications, 484, 82-90. Bouoiyour, J., &amp; Selmi, R. (2015). Bitcoin price: Is it really that new round of volatility can be on way? (No. 65580). University Library of Munich, Germany. Bouoiyour, J., &amp; Selmi, R. (2016). Bitcoin: A beginning of a new phase?. Economics Bulletin, 36(3), 14301440. Bouri, E., Azzi, G., &amp; Dyhrberg, A. H. (2017). On the return-volatility relationship in the Bitcoin market around the price crash of 2013. Economics: The Open-Access, Open-Assessment E-Journal, 11 (2), 1-16. Cheah, E. T., &amp; Fry, J. (2015). Speculative bubbles in Bitcoin markets? An empirical investigation into the fundamental value of Bitcoin. Economics Letters, 130, 32-36. Dyhrberg, A. H. (2016a). Bitcoin, gold and the dollar–A GARCH volatility analysis. Finance Research Letters, 16, 85-92. Dyhrberg, A. H. (2016b). Hedging capabilities of bitcoin. Is it the virtual gold?. Finance Research Letters, 16, 139-144. European Central Bank (ECB) (2012), Virtual http://www.ecb.int/pub/pdf/other/virtualcurrencyschemes201210en.pdf</p>
+<p>Currency</p>
+<p>Schemes,</p>
+<p>Glaser, F., Haferhorn, M., Weber, M. C., Zimmarmann, K., &amp; Siering, M. (2014). Bitcoin – Asset or currency? Revealing users’ hidden intentions. ECIS 2014 (Tel Aviv). Grinberg, R. (2011). Bitcoin: An innovative alternative digital currency. Hastings Science &amp; Technology Law Journal, 4, 160-211. Gronwald, M. (2014). The Economics of Bitcoins-Market characteristics and price jumps (No. 5121). CESifo Group Munich. Urquhart, A. (2016). The inefficiency of Bitcoin. Economics Letters, 148, 80-82.</p>
+<p>Appendices GARCH</p>
+<p>Table A.1 GARCH-type models used. ht2 = ω + αut2−1 + βht2−1</p>
+<p>TGARCH</p>
+<p>u  u log(ht2 ) = ω + α  t −1 − 2 / π  + β log(ht2−1 ) + δ t −1 ht −1  ht −1  ht2 = ω + αut2−1 + βht2−1 + γut2−1I t −1</p>
+<p>APARCH</p>
+<p>htδ = ω + α ( ut −1 − γut −1 )δ + βhtδ−1</p>
+<p>EGARCH</p>
+<p>CGARCH</p>
+<p>(</p>
+<p>) ( ) q = ω + ρ (q − ω ) + q (u − h ) q = ω + ρ (q − ω ) + q (u − h ) h = q + α (u − q ) + γ (u − q )D + β (h − q ) ht2 = qt + α ut2−1 − qt −1 + β ht2−1 − qt −1 t</p>
+<p>ACGARCH</p>
+<p>t</p>
+<p>2 t</p>
+<p>t</p>
+<p>2 t −1</p>
+<p>t −1</p>
+<p>t −1</p>
+<p>2 t −1</p>
+<p>2 t −1</p>
+<p>t −1</p>
+<p>2 t −1</p>
+<p>2 t −1</p>
+<p>2 t −1</p>
+<p>t −1</p>
+<p>t −1</p>
+<p>2 t −1</p>
+<p>t −1</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>Table A.2 Estimation results of GARCH-type models for Bitcoin returns. Const (c ) AR(1) (φ1 ) Const (ω ) ARCH (α ) GARCH ( β )</p>
+<p>ARGARCH 0.0020*** (0.0007) 0.0627** (0.0245) 0.0001*** (0.0000) 0.2363*** (0.0114) 0.7753*** (0.0066)</p>
+<p>EGARCH (δ )</p>
+<p>-</p>
+<p>TGARCH (γ )</p>
+<p>-</p>
+<p>AREGARCH 0.0054*** (0.0003) 0.0614** (0.0240) -0.6759*** (0.0213) 0.4008*** (0.0144) 0.9328*** (0.0027) 0.0251*** (0.0093) -</p>
+<p>ARTGARCH 0.0022*** (0.0007) 0.0590** (0.0243) 0.0001*** (0.0000) 0.2577*** (0.0165) 0.7752*** (0.0069)</p>
+<p>ARAPARCH 0.0027*** (0.0007) 0.0601** (0.0242) 0.0003*** (0.0001) 0.2391*** (0.0106) 0.7839*** (0.0066)</p>
+<p>ARCGARCH 0.0017** (0.0007) 0.0551** (0.0251) 0.1327* (0.0752) 0.1825*** (0.0095) 0.7855*** (0.0091)</p>
+<p>ARACGARCH 0.0016*** (0.0005) 0.0531*** (0.0155) 0.0022*** (0.0003) 0.1579*** (0.0065) 0.3038*** (0.0398)</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>0.9999*** (0.0001) 0.0549*** (0.0044)</p>
+<p>0.9792*** (0.0025) 0.1032*** (0.0065) 0.1265*** (0.0234) 3851.997 -3.392760 -3.372545 -3.385384 0.051647 (0.9984) 2.5747 (0.990) 8779.822 (0.0000)</p>
+<p>-0.0475*** (0.0178)</p>
+<p>1.6560*** (0.0769) -0.0517** (0.0202)</p>
+<p>APARCH (δ )</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>APARCH (γ )</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>ACGARCH (γ )</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>LL AIC BIC HQ</p>
+<p>3844.403 -3.388705 -3.376071 -3.384095 0.731170 (0.6000) 6.0119 (0.814) 12519.62 (0.0000)</p>
+<p>3834.304 -3.378909 -3.363748 -3.373377 0.331901 (0.8939) 3.5632 (0.965) 16465.20 (0.0000)</p>
+<p>3845.744 -3.389006 -3.373846 -3.383475 0.764652 (0.5752) 6.2269 (0.796) 12298.83 (0.0000)</p>
+<p>3847.812 -3.389949 -3.372261 -3.383495 1.051928 (0.3853) 7.7002 (0.658) 12726.26 (0.0000)</p>
+<p>3885.692 -3.423382 -3.405695 -3.416929 0.336490 (0.8910) 4.7343 (0.908) 7899.348 (0.0000)</p>
+<p>CGARCH/ ACGARCH ( ρ ) CGARCH/ ACGARCH (θ )</p>
+<p>ARCH(5) 2</p>
+<p>Q (10) JB</p>
+<p>Note: Standard errors of estimates are reported in parentheses. The p-values associated with the statistical tests are presented in brackets. *, ** and *** represent the significance at the 10%, 5% and 1% levels, respectively.</p></section></article></body></html>

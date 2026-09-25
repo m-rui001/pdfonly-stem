@@ -1,0 +1,54 @@
+{
+  "sha1": "9845012325e8b4fe2cf07b23cb9809cdf268ad53",
+  "title": "Intergranular Cracking as a Major Cause of Long-Term Capacity Fading of Layered Cathodes",
+  "doi": "https://doi.org/10.1021/acs.nanolett.7b00379",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9845012325e8b4fe2cf07b23cb9809cdf268ad53/index.html",
+  "source_chars": 29367,
+  "markdown_chars": 2680,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "have either 3",
+      "type": "疑似引用编号被提取为正文数字",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "句子中“either”后出现数字3，疑似上标引用[3]被提取为普通数字，导致语序异常，但根据上下文“either simulated failure ... or recovered”可推断为引用标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "~C/20,14 2.7-4.5 V",
+      "type": "疑似引用编号被提取为正文数字",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“14”位于电流符号之后，可能为参考文献上标编号，但被提取为普通数字，与后文“C/n corresponds”语义连贯性未受根本影响。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：放电容量203→163 mAh/g（降幅20%），循环条件14 mA/g、2.7-4.5 V、C/20，平均可逆循环0.6 Li/f.u.，归一化容量0.57与电化学0.58吻合，活性群体0.7 Li/f.u.（约195 mAh/g），迟缓群体占40%，首循环后5%相损失，对比LiNi0.5Mn1.5O4在4.95 V下100循环无衰减，以及>4.7 V时化学降解主导等，均与提取文本一致。公式未涉及。不确定处：文中引用上标数字与正文混淆（如“either 3”和“C/20,14”），已在提取问题中标出；其他如“Figure 1b”可能为笔误，但未在笔记中引用该编号。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7844,
+      "prompt_tokens": 7962,
+      "total_tokens": 15806,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5801
+      }
+    },
+    "content_chars": 3563
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "38038f16e2d7b3466c8c680e731c3bc785866f87",
+  "title": "Grazing and ecosystem service delivery in global drylands",
+  "doi": "https://doi.org/10.1126/science.abq4062",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/38038f16e2d7b3466c8c680e731c3bc785866f87/index.html",
+  "source_chars": 266167,
+  "markdown_chars": 3929,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "which largely influence dryland functioning (18, 8",
+      "type": "跨页拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "第 8 页末尾 '18, 8' 疑似是文献引用被截断，下一页以 '19). However' 接续。但 '8' 也可能为引用编号 8 的起始，无法判断是否缺损，仅做标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 75,
+      "quote": "expressed as µg CO2-C s1",
+      "type": "疑似公式/符号渲染错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上标 's-1'（每秒）被渲染为 's1'，似为 PDF 文字提取时丢失负号和/或上标格式。该处不支持推测改写，仅标出。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 93,
+      "quote": "Cstatitic = 30.32 df =30 P value = 0.45",
+      "type": "疑似拼写错误/跨文本不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图 S11a 标题中 'Cstatitic' 明显为 'C statistic' 之拼写误植；且此 C 统计量与表 S4 给出的 'Value of C statistic (P value) = 30.70 (0.42), df = 30' 不一致（30.32 vs. 30.70）。同一项路径分析结果在两个补充材料中出现不同数值，属于强文本内证据，疑似版本未同步。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 80,
+      "quote": "我们检测到对于水源调节、土壤肥力和地上植物生物量及其时间稳定性分别存在 9、8 和 4 个异常值，占整个数据集的 0.007%",
+      "type": "疑似数值逻辑",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "9+8+4=21 个异常值，相对于 326 个样地应约为 6.4%，而非 0.007%。0.007% 可能指异常值占全部观测值（含所有变量）的比例，或存在单位/表述偏差。原文未给出分母，无法核验，但数值表述有歧义。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：98 站点、326 样地（43 无放牧/88 低/97 中/98 高）、九类生态系统服务、交互出现频率（86%、48%、37%、44%、33%）、年均温（MAT）与降雨季节性（RASE）的比例（40%、20%）、路径分析 C 统计量与 P 值均引自正文及补充材料。公式（混合模型公式、NDVI、Mean_j、lnRR）均照录原文可见文本。不确定处：图 3 各面板字母对应关系（原文正文提及 3A-3I 具体服务，但未详述各面板趋势数值）；正文与图 S11/表 S4 中 C 统计量数值存在出入（30.32/30.70），已作为疑点标注；正文'0.007%'异常值比例与简单计算不符，已标注。未推测或补写任何 PDF/图片内未提取的信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6557,
+      "prompt_tokens": 88365,
+      "total_tokens": 94922,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3419
+      }
+    },
+    "content_chars": 5567
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

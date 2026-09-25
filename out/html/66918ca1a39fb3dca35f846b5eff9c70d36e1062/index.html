@@ -1,0 +1,994 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/dr/66/66918ca1a39fb3dca35f846b5eff9c70d36e1062.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Machine learning in additive manufacturing: State-of-the-art and perspectives</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>Machine learning in additive manufacturing: State-of-the-art and perspectives</h1><p class="source">2020 · <a href="https://doi.org/10.1016/j.addma.2020.101538">https://doi.org/10.1016/j.addma.2020.101538</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/dr/66/66918ca1a39fb3dca35f846b5eff9c70d36e1062.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Journal Pre-proof Machine learning in additive manufacturing: State-of-the-art and perspectives C. Wang, X.P. Tan, S.B. Tor, C.S. Lim</p>
+<p>PII:</p>
+<p>S2214-8604(20)30910-6</p>
+<p>DOI:</p>
+<p>https://doi.org/10.1016/j.addma.2020.101538</p>
+<p>Reference:</p>
+<p>ADDMA 101538</p>
+<p>To appear in:</p>
+<p>Additive Manufacturing</p>
+<p>Received Date:</p>
+<p>28 January 2020</p>
+<p>Revised Date:</p>
+<p>9 August 2020</p>
+<p>Accepted Date:</p>
+<p>9 August 2020</p>
+<p>Please cite this article as: { doi: https://doi.org/ This is a PDF ﬁle of an article that has undergone enhancements after acceptance, such as the addition of a cover page and metadata, and formatting for readability, but it is not yet the deﬁnitive version of record. This version will undergo additional copyediting, typesetting and review before it is published in its ﬁnal form, but we are providing this version to give early visibility of the article. Please note that, during the production process, errors may be discovered which could affect the content, and all legal disclaimers that apply to the journal pertain. © 2020 Published by Elsevier.</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>Machine Learning in Additive Manufacturing: State-of-the-Art and Perspectives C. Wanga, X.P. Tana,*xptan1985@gmail.com; xptan@ntu.edu.sg , S.B. Tora,b, C.S. Limb a</p>
+<p>Singapore Centre for 3D Printing, School of Mechanical and Aerospace Engineering,</p>
+<p>Nanyang Technological University, 50 Nanyang Avenue, Singapore 639798 b</p>
+<p>School of Mechanical and Aerospace Engineering, Nanyang Technological University, 50</p>
+<p>Nanyang Avenue, Singapore 639798</p>
+<p>ro of</p>
+<p>*Corresponding author:</p>
+<p>Abstract</p>
+<p>Additive manufacturing (AM) has emerged as a disruptive digital manufacturing technology.</p>
+<p>-p</p>
+<p>However, its broad adoption in industry is still hindered by high entry barriers of design for additive manufacturing (DfAM), limited material library, various processing defects, and</p>
+<p>re</p>
+<p>inconsistent product quality. In recent years, machine learning (ML) has gained increasing attention in AM due to its unprecedented performance in data tasks such as classification,</p>
+<p>lP</p>
+<p>regression and clustering. This article provides a comprehensive review on the state-of-the-art of ML applications in a variety of AM domains. In the DfAM, ML can be leveraged to output new high-performance metamaterials and optimized topological designs. In AM processing, contemporary ML algorithms can help to optimize process parameters, and conduct</p>
+<p>na</p>
+<p>examination of powder spreading and in-process defect monitoring. On the production of AM, ML is able to assist practitioners in sophisticated pre-manufacturing planning, and product quality assessment and control. Moreover, there has been an increasing concern about data</p>
+<p>ur</p>
+<p>security in AM as data breaches could occur with the aid of ML techniques. In the end, it concludes with a section summarizing the main findings from the literature and providing</p>
+<p>Jo</p>
+<p>perspectives on some selected interesting applications of ML in research and development of AM.</p>
+<p>Keywords: Additive manufacturing; Process; Machine Learning; Production; Design</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>1.</p>
+<p>Introduction 1.1 Additive manufacturing Additive manufacturing (AM) is a disruptive digital manufacturing technology</p>
+<p>to make 3D objects, usually layer upon layer, according to computer-aided design (CAD) models. Compared to conventional manufacturing technologies, it has the advantages of fabricating intricate parts with complex geometries and designs, unique microstructures and properties, as well as reduced lead time and cost. Therefore, in recent years, AM has attracted a great deal of research interest in both academic research and industrial applications worldwide.</p>
+<p>ro of</p>
+<p>According to the ASTM F42, AM processes can be broadly classified into 7 categories [1]. The AM techniques involving Machine Learning (ML) in this article mainly fall under 3 classes of technology, namely powder bed fusion (PBF), directed energy deposition (DED) and material extrusion, as they are currently the mainstream</p>
+<p>-p</p>
+<p>AM processes that have attracted great attention in both academic research and</p>
+<p>industrial applications (see Figure 1). Although ML has also been applied in other AM processes such as materials jetting [2] and stereolithography [3], these research works</p>
+<p>re</p>
+<p>are not very relevant to the focus of this article hence they are not specifically discussed</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>here.</p>
+<p>Figure 1. Chart of the 3 classes of AM processes that are involved with ML techniques.</p>
+<p>Under the PBF category, a laser or electron beam is used as the energy source to selectively melt powder bed which is uniformly spread by re-coating layer by layer [4-6]. In the DED process, a focused laser beam melts the continuous powder stream</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>or wire which are fed from the deposition nozzle into the melt pool in order to fabricate near-net-shape parts [7, 8]. One typical material extrusion process is fused deposition modelling (FDM). The filament is fed into the liquefier head by a driver gear and is subsequently heated to the glass transition state. The semi-liquid filament material is then deposited from the extrusion nozzle to print parts layer by layer [9]. 1.2 Machine learning ML is an artificial intelligence (AI) technique that allows a machine or system to learn from data automatically and make decisions or predictions without being explicitly programmed. In research, ML is gaining popularity in medical diagnostics</p>
+<p>ro of</p>
+<p>[10-12], material property prediction [13-15], smart manufacturing [16-18], autonomous driving [19-21], natural language processing [22-24] and object recognition [25-27]. ML algorithms are commonly categorized as supervised, unsupervised and reinforcement learning.</p>
+<p>-p</p>
+<p>Supervised learning enables a computer programme to learn from a set of</p>
+<p>labelled data in the training set so that it can identify unlabelled data from a test set with</p>
+<p>re</p>
+<p>the highest possible accuracy [28]. The datasets can be in a variety of forms including forms of images [29, 30], audio clips [31, 32] or text [33]. There is an objective function</p>
+<p>lP</p>
+<p>known as cost function, which calculates the error between the predicted output values and the actual output values. In the training process, the parameters (or weights) between neurons in adjacent layers are updated in order to reduce the cost function after</p>
+<p>na</p>
+<p>each iteration (or epoch) [34]. In the testing process, the previously unseen new data, i.e. test set, is introduced to provide an unbiased evaluation of the model’s accuracy.</p>
+<p>ur</p>
+<p>Unsupervised learning infers from unlabelled data [35, 36]. It is a data-driven ML technique which can uncover hidden patterns or group similar data together (i.e. clustering) in a given random dataset [37]. Unsupervised learning is widely used in</p>
+<p>Jo</p>
+<p>anomaly detection [38], recommendations systems [39], and market segmentation [40, 41].</p>
+<p>Reinforcement learning is a semi-supervised ML paradigm which allows the</p>
+<p>model to interact with the environment and learn to take the best actions that can yield the greatest rewards [42]. It requires no training dataset, and the model learns from its own actions. Reinforcement learning is popularly adopted in robotic arms [43, 44], autonomous cars [45, 46], and AlphaGo [47-49].</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>The terminologies of the ML algorithms that are mentioned in this overview article can be found in the Appendix. Readers are suggested to refer to the recommended textbooks or research papers in this table to gain more insights into the details of each ML algorithm. This paper aims to provide a state-of-the-art review of applications of ML techniques in various domains of AM production practices from the most recent literatures as well as our perspectives on some impactful research directions that are still on-going or may occur in the future. To clearly elucidate the benefits of using ML in AM, we broadly classify the applications into 3 categories, namely design for</p>
+<p>ro of</p>
+<p>additive manufacturing (DfAM), AM process and AM production, as illustrated in Figure 2. This is to reflect a logical sequence from design, process optimization &amp; inprocess monitoring, to manufacturing planning, product quality control and data</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>security that are closely linked to overall production concerns.</p>
+<p>Figure 2 Applications of ML techniques in various domains of AM research works.</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>2.</p>
+<p>Machine learning in design for additive manufacturing DfAM significantly differs from the design principles commonly practised in</p>
+<p>conventional manufacturing due to its boundless design freedom. Here, the applications of ML in DfAM will be elucidated in three aspects, namely material design, topology design and AM planning. 2.1 Material design For decades, materials scientists and engineers have invented a wide variety of composites with properties that are not found in nature but exceed their constituent bulk materials, which are often referred to as metamaterials. However, designing metamaterials manually by the Edisonian approach is very challenging and exhaustive.</p>
+<p>ro of</p>
+<p>This is due to the astronomical number of possible combinations. With the aid of the</p>
+<p>contemporary ML techniques, the discovery process of metamaterials can be</p>
+<p>significantly expedited [50]. The recent advancement of ML allows material scientists</p>
+<p>and engineers to leap from predicting material properties [13, 51] to designing novel</p>
+<p>-p</p>
+<p>metamaterials [52, 53]. Moreover, AM techniques can materialize the designs that were unfeasible to fabricate, as demonstrated in many researchers’ works [54-57].</p>
+<p>re</p>
+<p>The potential for the synergy of state-of-the-art ML in materials design and AM techniques remains relatively unexploited. Chet et al. [58] developed a completely</p>
+<p>lP</p>
+<p>automated process to discover optimal structures for metamaterials, which were later experimentally validated by selective laser sintering (SLS) process with the PEBA2301 elastic material (see Figure 3). It is envisioned that given the desired elastic material</p>
+<p>na</p>
+<p>properties, i.e. Young’s modulus, Poisson’s ratio and shear modulus, the system can generate bespoke microstructure that matches the specification by means of ML. Gu et al. [50] randomly generated 100,000 microstructures by using 3 types of unit cells on</p>
+<p>ur</p>
+<p>an 8 by 8 lattice structure, which correspond to less than 10-8 % of all the possible combinations. CNN was then applied to train the database where mechanical properties</p>
+<p>Jo</p>
+<p>were calculated by finite element method (FEM) and created new microstructural patterns of a composite metamaterial that was 2 times stronger and 40 times tougher. Their designs were validated by multi-material jetting AM process (see Figure 4). One highlight is that calculating the mechanical properties took FEM simulation approximately 5 days, while it only needed 10 hrs for CNN to train and less than 1 min to output the same amount of data.</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>Figure 3 A computational pipeline for the discovery of extremal microstructure families given the desired</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>elastic material properties [58].</p>
+<p>lP</p>
+<p>Figure 4 Tougher and stronger materials could be designed by optimizing the microstructures by ML [50].</p>
+<p>2.2 Topology design Unfortunately, the relevant research work of using ML in topology design for</p>
+<p>na</p>
+<p>AM is still limited. Yao et al. [59] proposed a hybrid ML approach for AM design feature recommendation during the conceptual design stage using hierarchical clustering (unsupervised ML) together with support vector machines (SVM). One case</p>
+<p>ur</p>
+<p>study is demonstrated in Figure 5. However, this work only replaced the bulky structures in the original design with lightweight structures imported from a database,</p>
+<p>Jo</p>
+<p>which did not involve any topology optimization (TO) processes.</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>Figure 5 Remote control racing car case study: existing designs of the target components vs. re-designed</p>
+<p>ro of</p>
+<p>components additively manufactured by SLM after implementing hybrid ML approach for AM design feature recommendation [59].</p>
+<p>TO is a systematic method that generates structures by optimizing the material</p>
+<p>distribution within a given design space subject to specific loads and constraints [60].</p>
+<p>-p</p>
+<p>Typically, conventional TO process may require numerous iterations of design and</p>
+<p>prototyping and is thus computationally demanding particularly for large-scale, complicated structures. ML models, particularly for very deep neural networks, also</p>
+<p>re</p>
+<p>face this challenge during the training phase. However, once the ML models are well trained, they can output favourable designs quickly without having to start from scratch,</p>
+<p>conventional TO approach.</p>
+<p>lP</p>
+<p>which enables the ML-centric method to serve as a complementary alternative to the</p>
+<p>na</p>
+<p>To solve a mechanical problem, CNN was used to train the intermediate topologies received from conventional TO processes. i.e. the TO solver was stopped at an intermediate stage after only a few iterations, in order to predict the optimized structures</p>
+<p>ur</p>
+<p>[61]. It was found that the trained CNN model could predict the final topology optimized structures up to 20 times faster with some rare pixel-wise changes as</p>
+<p>Jo</p>
+<p>compared to the standard simplified isotropic material with penalization (SIMP) approach. The proposed pipeline could also be applied to solve heat conduction problems, and it outperformed SIMP results in speed and binary accuracy with thresholding. It proves the strong generalizability of the CNN model without relying on the expertise of the nature of the problem. Banga et al. [62] extended this method to generate 3D structures. Once trained, it is able to virtually predict the final structures instantaneously with an average binary accuracy of 96.2% and 40% reduction in time when the FEM-based SIMP method was employed solely. The optimized structures can</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>also be predicted without any SIMP iterations, which was achieved by the generative adversarial network (GAN) coupled with other deep learning techniques [63, 64]. GAN is an approach to generative modelling using advanced deep learning methods [65]. Given the constraints and conditions, a well-trained GAN model can generate a large number of unseen designs with complex structures that satisfy the design requirements. Some case studies are illustrated in Figure 6. It should be noted that all the training data were still produced by the conventional TO process. Hence, ML cannot substitute the conventional TO approach but to downstream the iterations and speed up the optimization process. Besides, the ML-based TO approach could be used for a rough,</p>
+<p>ro of</p>
+<p>quick prediction of preliminary results instead. However, the works reported above</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>have not been adopted in AM yet.</p>
+<p>Figure 6 (a) CNN was used to predict the optimized structures from the intermediate topologies which served as inputs. The predicted results are compared with ground truth, which is obtained from</p>
+<p>Jo</p>
+<p>conventional TO methods [61]. (b) The same approach is extended for 3D structures [62]. (c) GAN was used to generate TO structures. [64].</p>
+<p>3.</p>
+<p>Machine learning in additive manufacturing process 3.1 Process parameter optimization Traditionally, process parameter development and optimization are implemented</p>
+<p>by design of experiment or simulation methods to additively manufacture new materials. Nevertheless, the design of experiment approach usually involves trial-and-error, which is time-consuming and costly, particularly for metal AM [4, 66-68]. The physical-based</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>simulation can reveal the underlying mechanism for the formation of specific features during processing, e.g. melt pool geometry, keyhole, microstructure. Nevertheless, macro-scale simulations, e.g. FEM, may suffer from discrepancies with experimental results due to the simplified assumptions [69]. The increasingly more sophisticated techniques, e.g. computational fluid dynamics, usually focus on single tracks [70] or a minimal number of tracks and layers [71]. This makes it challenging to predict the mechanical properties of the parts at a macro scale or continuum. Therefore, many researchers have explored the feasibility of introducing ML approaches to solve the above-mentioned challenges in process optimization of metal AM, as summarized in</p>
+<p>ro of</p>
+<p>Table 1. It is found that under the various AM processes, ML was mainly used to link their key process parameters to the quality indicators at two levels, namely mesoscale level (i.e. porosity or relative density, melt pool geometries) and macroscale level (i.e. mechanical properties). Moreover, some researchers applied ML to construct process</p>
+<p>maps, which could serve as an excellent visualization tool to identify the process</p>
+<p>-p</p>
+<p>windows.</p>
+<p>Outputs</p>
+<p>Purposes</p>
+<p>Refs</p>
+<p>High cycle fatigue life</p>
+<p>To predict high cycle fatigue life with ‘process-based’ and ‘property-based’ models</p>
+<p>[72]</p>
+<p>To predict porosity and microhardness</p>
+<p>[73]</p>
+<p>To construct a process map and predict melt pool depth To model and predict porosity at any combination of process parameters from a small dataset To link the process parameters to pore formation</p>
+<p>[74]</p>
+<p>To construct a spreading process map to optimize surface roughness and spreading efficiency for powder bed To construct a process map from a small dataset To investigate the influence of support structure parameters on part quality</p>
+<p>[77]</p>
+<p>SS316L</p>
+<p>Laser power, scan speed</p>
+<p>GP</p>
+<p>SLM</p>
+<p>SS17-4 PH</p>
+<p>Laser power, scan speed</p>
+<p>GP</p>
+<p>Porosity</p>
+<p>SLM</p>
+<p>In718</p>
+<p>Part orientation, part position, fraction of recycled powder</p>
+<p>RF</p>
+<p>SLM</p>
+<p>Ti-6Al4V</p>
+<p>Spreader translation and rotation speed</p>
+<p>MLP</p>
+<p>Porosity, median pore diameter and spacing Powder bed Surface roughness, spread speed</p>
+<p>EBM</p>
+<p>CoCr</p>
+<p>Beam current, scan speed</p>
+<p>SVM</p>
+<p>Energy density</p>
+<p>EBM</p>
+<p>–</p>
+<p>Presence of core support, support density and angle</p>
+<p>Decision trees, Bayes classifier</p>
+<p>Classification of part quality</p>
+<p>ur</p>
+<p>na</p>
+<p>SLM</p>
+<p>Relative density, microhardness Melt pool depth</p>
+<p>Jo</p>
+<p>lP</p>
+<p>re</p>
+<p>Table 1 ML methods used to optimize AM process parameters. AM Materials Inputs ML methods processes Powder-bed fusion SLM SS316L Laser power, scan speed, Adaptive neurolayer thickness, postfuzzy interference processing temperature, system tensile properties SLM Bronze Laser power, scan speed, MLP hatch distance</p>
+<p>[75]</p>
+<p>[76]</p>
+<p>[78] [79]</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>SVM, MLP</p>
+<p>Open porosity</p>
+<p>To predict open porosity</p>
+<p>[80]</p>
+<p>58wt%H A+ 42wt% PA mixture Directed energy deposition DED CopperWire feed rate, welding coated speed, arc voltage, steel wire nozzle-to-plate distance DED CopperWelding speed, welding coated voltage steel wire</p>
+<p>Ensemble-based multi-gene genetic programming</p>
+<p>Open porosity</p>
+<p>To achieve desired open porosity values by regulating the process parameters</p>
+<p>[81]</p>
+<p>MLP</p>
+<p>Bead width, height</p>
+<p>To predict bead width and height</p>
+<p>[82]</p>
+<p>MLP</p>
+<p>To model the relationship between the bead’s geometry and the offset distance</p>
+<p>[83]</p>
+<p>DED</p>
+<p>2020 Al alloy powder</p>
+<p>Laser power, scan speed, powder feeding rate</p>
+<p>MLP</p>
+<p>Offset distance between the centre of weld bead and fed wire Melt pool width, depth and height</p>
+<p>[84]</p>
+<p>DED</p>
+<p>–</p>
+<p>Laser power, scan speed, scan strategy, build size and shape</p>
+<p>RNN</p>
+<p>Thermal history</p>
+<p>DED</p>
+<p>SS316L</p>
+<p>Laser power, scan speed, powder feeding rate</p>
+<p>MLP, SVM</p>
+<p>Depositing height</p>
+<p>To estimate the process parameters required to obtain a specified melt pool geometry To predict the highdimensional thermal history of complex parts during printing To predict and control depositing height</p>
+<p>Layer thickness, air gap, raster angle, build orientation, road width, No. of contours Print speed, cooling fan speed, print temperature</p>
+<p>MLP</p>
+<p>To optimize process parameters and improve viscoelastic responses</p>
+<p>[86]</p>
+<p>To predict maximal printable bridge length and minimize support waste To predict dynamic modulus of elasticity for loadcarrying parts under dynamic and cyclic conditions To generate a mathematical model to predict tensile strength corresponding to three raster patterns To optimize parameters and improve wear resistance</p>
+<p>[87]</p>
+<p>To optimize process parameters and improve compressive strength</p>
+<p>[91]</p>
+<p>SLS</p>
+<p>Material extrusion FDM PC-ABS</p>
+<p>PLA</p>
+<p>FDM</p>
+<p>PC-ABS</p>
+<p>Layer thickness, air gap, raster angle, build orientation, road width, No. of contours</p>
+<p>FDM</p>
+<p>PLA</p>
+<p>Temperature, layer thickness, raster angle</p>
+<p>FDM</p>
+<p>ABS</p>
+<p>FDM</p>
+<p>ABS</p>
+<p>MLP</p>
+<p>lP</p>
+<p>FDM</p>
+<p>ur</p>
+<p>na</p>
+<p>MLP</p>
+<p>Jo</p>
+<p>Layer thickness, orientation, raster angle, road width, air gap Layer thickness, part orientation, raster angle, road width, air gap</p>
+<p>ro of</p>
+<p>Layer thickness, laser power, feed rate Layer thickness, laser power, scan speed</p>
+<p>-p</p>
+<p>PLA</p>
+<p>Creep compliance, recoverable compliance Printable bridge length</p>
+<p>re</p>
+<p>SLS</p>
+<p>Dynamic modulus of elasticity</p>
+<p>MLP</p>
+<p>Tensile strength</p>
+<p>MLP</p>
+<p>Sliding wear value</p>
+<p>MLP</p>
+<p>Compressive strength</p>
+<p>At the mesoscale, single tracks act as the fundamental building blocks of highenergy AM processes. The melt pool morphology, such as geometry, continuity and uniformity, can largely influence the final product quality. Therefore, MLP was utilized to predict the melt pool geometry (particularly width, depth and height) for powderbased [84] and wire-based [82, 83] DED processes based on limited experimental</p>
+<p>[69]</p>
+<p>[85]</p>
+<p>[88]</p>
+<p>[89]</p>
+<p>[90]</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>datasets. The melt pool geometries were hence closely linked to the process parameters. This implies that a specified melt pool geometry is achievable by controlling the process parameters in a reverse way. To better visualize the linkage, Tapia et al. [74] introduced a Gaussian process-based (GP) surrogate model to construct 3D response maps of melt pool depth versus process parameters, as illustrated in Figure 7 (a)-(c). The process window can, therefore, be determined to avoid the undesirable keyhole mode melting. It should be noted that the 139 data points used in the study were obtained from a combination of their own one experimental dataset and two additional datasets from the published literatures. Moreover, a few ad hoc filters were put in place to remove outliers,</p>
+<p>ro of</p>
+<p>leading to a total of 96 valid data points. Their prediction error of 6.023 µm is acceptable as they were comparable to the errors occurred in data collection process.</p>
+<p>Another critical concern at mesoscale is the porosity of AM-built parts. In metal AM, achieving full density is the primary objective, as the porosity significantly affects</p>
+<p>-p</p>
+<p>the mechanical performance of parts, especially fatigue properties [92]. MLP is able to model complex non-linear relationships while hardly interpreting how it makes the</p>
+<p>re</p>
+<p>prediction. Moreover, GP usually can estimate the uncertainties in prediction results, but the process is more computationally expensive given the same amount of input data as MLP. Hence, MLP [73], as well as GP coupled with Bayesian methods [78], were</p>
+<p>lP</p>
+<p>adopted to predict the porosity based on the combinations of process parameters in selective laser melting (SLM), as depicted in Figure 7 (d)-(e). Moreover, open porosity is required in some cases, such as auxetic structures for energy absorption and porous</p>
+<p>na</p>
+<p>structures for medical implants. In SLS processing of PLA material, SVM and MLP techniques were explored to predict the open porosity [80]. Multi-gene genetic</p>
+<p>ur</p>
+<p>programming (MGGP) is an evolutionary approach that can automatically evolve the model structure and its coefficient while one disadvantage is that its generalization</p>
+<p>Jo</p>
+<p>ability is limited. In the context of printing a 58wt%HA + 42wt%PA powder mixture using SLS, an ensemble-based MGGP with higher generalization ability was established to achieve desired open porosity values by regulating the process parameters [81].</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>ro of</p>
+<p>Figure 7 GP-based model for mesoscale characteristics prediction of the parts fabricated by SLM.</p>
+<p>SS316L samples [74]: (a) Optical micrograph of the single track. (b) melt pool depth prediction from</p>
+<p>-p</p>
+<p>experiments (c) and from the simulation. SS17-4 PH samples [75]: (d) As-built test coupons. (e) Spatial behaviour of the observation across the grid of process parameters (white values mean no test coupons in that location). (e) Porosity prediction at any desired power-speed combinations.</p>
+<p>re</p>
+<p>The macro-scale properties of AM-built parts can also be analyzed by the ML approach. Adaptive-network-based fuzzy inference system (ANFIS) usually can only</p>
+<p>lP</p>
+<p>handle relative truths. Hence it is good for the assessment of fatigue properties due to many uncertainties involved in the fatigue process. Zhang et al. [72] collected 139 fatigue data from SS316L parts processed by the same SLM machine under a total of</p>
+<p>na</p>
+<p>18 varying processing conditions. They successfully applied ANFIS to predict the highcycle fatigue life with root mean squared errors of ~ 11- 16% using two models: the</p>
+<p>ur</p>
+<p>‘process-based’ model (printing process parameters and heat treatment temperatures) and the ‘property-based’ model (ultimate tensile strength and elongation). However, the performance of their models was downgraded when they attempted to use the</p>
+<p>Jo</p>
+<p>trained model to predict fatigue life using the 66 data points collected from published literature data, which was mainly due to the machine-to-machine variability. Hence, it is suggested to incorporate both experimental and literature data in model training in order to improve its generalisation capability. According to Wang et al. [66], observing the top build surface condition can help to narrow down the process window for electron beam melting (EBM). SVM performs well particularly when the margin of separation between classes is clear, while the drawback is that it is easy to overfit.</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>Hence, Aoyagi et al. [78] proposed a simple method to construct process maps for EBM out of only 11 samples. The SVM classifier was trained to correlate process parameters (beam current and scan speed) to surface conditions (see Figure 8). However, it should be noted that SVM in their work was only used for data fitting in order to plot the decision boundaries. It was challenging to allocate a test set to evaluate the accuracy of the entire model as their data set was too small. RNN is used for times series forecasting. Therefore, considering the temporal dependency of the input data, RNN was used to train FEM data in order to predict the high-dimensional thermal history of complex parts in DED process, as demonstrated by Mozaffar et al. [69]. Moreover, Lu et al. [85]</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>attempted both MLP and SVM to predict depositing height of thin walls for DED.</p>
+<p>lP</p>
+<p>Figure 8 SVM used for predicting macro-properties of EBM-built parts [78]. (i) Top surface conditions the samples printed under 12 different process parameters. (ii) The corresponding cross-sectional micrographs of each sample. (iii) A process map was constructed to optimize process parameters to print</p>
+<p>na</p>
+<p>parts with low porosity and good surface.</p>
+<p>In the material extrusion-based AM process, the focus of research is macroscale mechanical properties. In FDM, the process parameters that were extensively</p>
+<p>ur</p>
+<p>investigated include layer thickness, print temperature, raster angle and build orientation. In this process, the most prevailing ML approach is MLP. A properly</p>
+<p>Jo</p>
+<p>trained MLP shows superiority in capturing the non-linear relationship of the system for data fitting and estimation capabilities. Hence, it was vastly employed to predict tensile properties [89], compressive strength [91], wear rate [90], dynamic modulus of elasticity [88], creep and recovery properties [86] of PLA and PC-ABS materials. Moreover, Jiang et al. [87] applied MLP to predict the maximum printable bridge length in order to minimize the usage of support materials.</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>3.2 Powder spreading characterization In PBF process, the degree of uniformity for powder spreading plays a vital role in the quality of the final parts. Improper powder spreading may introduce various defects or even lead the entire build to fail due to warping or swelling. Powder spreading defects can be manifold, e.g. re-coater striking curled-up or humped parts, re-coater dragging contaminants, re-coater blade damage, debris over powder bed. Moreover, it is highly desirable to eliminate the need for human-created detectors for specific anomalies. To this end, a system for autonomous detection and classification of powder spreading defects during the entire build was introduced. With the aid of contemporary computer vision technique, Scime and Beuth applied k-means clustering</p>
+<p>ro of</p>
+<p>[93] and multi-scale CNN [94] to train the system to correctly classify the powder-bed image patches into 7 types, based on the images captured during SLM process (see Figure 9). This methodology also paves the way for in-process rectification of defects</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>in the AM process when a feedback control system is implemented.</p>
+<p>Figure 9 Flowchart of the implementation of the multi-scale CNN for autonomous anomaly detection in</p>
+<p>Jo</p>
+<p>the SLM process. (i) One layer of powder bed with various anomalies. (ii) The architecture of the multiscale CNN. (iii) Anomalies in this layer are classified into different types [94].</p>
+<p>3.3 In-process defect monitoring Currently, the AM process still suffers from various processing-related defects</p>
+<p>such as cracks, delamination, distortion, rough surface, lack of fusion, porosity, foreign inclusions, process instability (keyhole, balling). These defects usually originate from the layer-wise material deposition process. Some may propagate from one layer to the subsequent layers, causing the entire build to fail. Hence, in-process monitoring plays</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>a crucial role. Researchers have dedicated tremendous efforts to monitoring defects during printing, which involves a series of tedious steps and low fidelity. In this regard, ML provides a novel route for tackling the challenges, as compiled in Table 2. It should be noted that acoustic signals used for acoustic-based monitoring mainly originate from plasma in SLM processing and audible stepper motor in FDM processing, respectively. In optical-based monitoring, the inputs are mainly plume and spatter signatures, melt pool profiles and intensity, as well as layer-wise surface images captured by a variety of cameras and sensors. One interesting observation is that the real-time computed tomography (CT) inspection can become available by incorporating ex-situ CT</p>
+<p>a few works which will be discussed below.</p>
+<p>FDM</p>
+<p>ABS</p>
+<p>10×10×20mm3 cubes –</p>
+<p>FDM</p>
+<p>–</p>
+<p>–</p>
+<p>High-speed camera</p>
+<p>SLM</p>
+<p>Zinc</p>
+<p>5×5×5mm3 cubes</p>
+<p>SLM</p>
+<p>In718</p>
+<p>Single tracks, unsupported overhangs</p>
+<p>SLM</p>
+<p>SS</p>
+<p>ur</p>
+<p>Optical-based monitoring SLM SS316L Single tracks</p>
+<p>Fibre Bragg grating sensor Acoustic emission sensor Acoustic emission sensor</p>
+<p>Acoustic signals Acoustic signals</p>
+<p>re</p>
+<p>SS</p>
+<p>Acoustic signals</p>
+<p>Acoustic signals</p>
+<p>lP</p>
+<p>SLM</p>
+<p>Input features</p>
+<p>na</p>
+<p>IR camera</p>
+<p>Classify melting states Classify of build qualities Identify failure mode Identify extruder state</p>
+<p>[95]</p>
+<p>K-means clustering Hidden semiMarkov model</p>
+<p>[96] [97] [98]</p>
+<p>[99]</p>
+<p>Unsupervised ML</p>
+<p>Detect unstable melting condition</p>
+<p>[100]</p>
+<p>SVM</p>
+<p>Detect keyhole porosities and balling instabilities</p>
+<p>[101]</p>
+<p>Layer-wise images under 8 lighting conditions, ex-situ CT scan data Intensity, morphology, thermal profile of melt pools</p>
+<p>SVM</p>
+<p>Detect and locate anomalies</p>
+<p>[102]</p>
+<p>MLP, SVM, Knearest neighbours</p>
+<p>[103]</p>
+<p>DBN, CNN, MLP DBN</p>
+<p>Gaussian mixture model</p>
+<p>Distinguish between the overhang and bulk build states Classify melting states Classify MP images concerning laser power Detect faulty bars</p>
+<p>SS304</p>
+<p>Single tracks</p>
+<p>SLM</p>
+<p>SS304</p>
+<p>8.5×8.5×4mm3 cubes</p>
+<p>High-speed camera</p>
+<p>Plume and spatter signatures Images and locations of melt pools</p>
+<p>SLM</p>
+<p>IN718</p>
+<p>Tensile bars</p>
+<p>Visible light and IR photodiode sensors</p>
+<p>Plasma emission and thermal radiation of melt pools</p>
+<p>Jo</p>
+<p>DBN, MLP, SVM Spectral CNN</p>
+<p>Detect anomalies of melt tracks</p>
+<p>40.5° unsupported overhangs</p>
+<p>SLM</p>
+<p>Refs</p>
+<p>SVM, CNN</p>
+<p>In625</p>
+<p>SLM</p>
+<p>Output targets</p>
+<p>Layer-wise images of melt pools, plume and spatter IR images (plumes and laser-heated zones) In-situ and ex-situ morphologies of the melt pool</p>
+<p>High-speed camera, optical microscope (exsitu) Digital single lens reflex camera, CT scan (ex-situ) Photodetector, high-speed camera, IR camera Near-IR camera</p>
+<p>Step cylinder</p>
+<p>ML methods</p>
+<p>-p</p>
+<p>Table 2 ML methods used for in-situ AM process monitoring AM Materials Builds Sensors processes Acoustic-based monitoring SLM SS304 Single tracks Microphone</p>
+<p>ro of</p>
+<p>scanning into in-process monitoring with the aid of ML techniques, as demonstrated by</p>
+<p>[104] [105]</p>
+<p>[106, 107]</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>Ø16×44 mm3 cylinder, 50×50×50mm3 lattice structure Hollow cylinders</p>
+<p>High-speed camera</p>
+<p>Intensity profile of melt pools</p>
+<p>K-means clustering</p>
+<p>Detect and locate defects due to overheating</p>
+<p>[108]</p>
+<p>Optical camera</p>
+<p>RF, SVM</p>
+<p>Ø40×20 mm3 cylinder</p>
+<p>Digital singlelens reflex camera</p>
+<p>DED</p>
+<p>Ti-6Al4V</p>
+<p>Thin walls</p>
+<p>Ti-6Al4V</p>
+<p>Thin walls</p>
+<p>SOM</p>
+<p>Detect location of pores</p>
+<p>[112]</p>
+<p>FDM</p>
+<p>PLA, ABS –</p>
+<p>DNA model</p>
+<p>Thermal profile and location of the melt pool Morphological and thermal characteristics of the melt pool Images of parts at specified checkpoints Simulated images from software, real images from camera</p>
+<p>SOM</p>
+<p>DED</p>
+<p>Pyrometer, IR camera, CT scan (ex-situ) Pyrometer, IR camera, CT scan (ex-situ) Optical camera</p>
+<p>Detect elevated regions after laser exposure To recognize defects induced by process nonconformities Detect the location and size of pores</p>
+<p>[109]</p>
+<p>In718</p>
+<p>Layer-wise surface images before and after powder coating Layer wise surface images before and after powder coating</p>
+<p>SVM</p>
+<p>Classify good and defective parts Detect malicious infill structure</p>
+<p>[113]</p>
+<p>SS316L</p>
+<p>SLM</p>
+<p>–</p>
+<p>SLM</p>
+<p>Parts with different types of infills</p>
+<p>Cameras mounted on both extruder and frame of printer</p>
+<p>KNN, RF, unsupervised ML</p>
+<p>-p</p>
+<p>3.3.1 Acoustic-based monitoring Acoustic signals show some advantages over optical signals as the existing</p>
+<p>re</p>
+<p>sensors are highly sensitive and relatively cost-effective [96]. They can also provide a high temporal resolution allowing for tracking the location of defects more accurately.</p>
+<p>lP</p>
+<p>Moreover, it is faster to process 1D acoustic data as compared to 2D image data or 3D tomography data. However, the background noise is noticeable for many AM processes, in particular for the laser metal AM processes with inert gas environment. Therefore,</p>
+<p>na</p>
+<p>the ML-based intelligent monitoring could provide a better solution. Recently, acoustic signals collected from the plasma that is generated at powder bed surface have been used for in-process monitoring in PBF process. The underheating</p>
+<p>ur</p>
+<p>or overheating of metal powder may change the surface temperature of parts, thus changing the plasma density. The variation of plasma density together with the fluctuation of atmospheric pressure in the enclosed chamber influences the acoustic</p>
+<p>Jo</p>
+<p>FDM</p>
+<p>CNN, SVM</p>
+<p>ro of</p>
+<p>SLM</p>
+<p>intensity. Based on this principle, Ye et al. [95] used a microphone to collect acoustic signals, followed by applying DBN to recognize melt track conditions (balling, normal, overheating) for SLM process. As compared to the traditional ML methods which involve many sequential steps (e.g. data processing, denoising and feature extraction), DBN can simplify and accelerate the processing by generative pre-training and discriminative fine-tuning (see Figure 10). Shevchik et al. [96] adopted a highsensitivity fibre Bragg grating sensor with a sampling rate of 1 MHz embedded in</p>
+<p>[110]</p>
+<p>[111]</p>
+<p>[114, 115]</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>Concept M2 system to gather airborne acoustic signals for SLM process. Particularly, in order to achieve a balance between the spatial resolution in defect detection and the classification accuracy, the time span for each running window (RW) was configured to be 160 ms. Each class of the 3 porosity levels was equally represented by 300 patterns with no overlapping RW between training and testing datasets. Spectral CNN was utilized to classify parts with different porosity levels with an accuracy range of ~ 83 -</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>89%.</p>
+<p>ur</p>
+<p>Figure 10 Using acoustic signals with DBN for defect detection in SLM processing. (a) The machine setup for collecting acoustic signals, which are later fed into (b) DBN to differentiate (c) the 5 defect</p>
+<p>Jo</p>
+<p>states with the corresponding signals in the time domain. A to E states are balling, slight balling, normal, slight overheating, and overheating, respectively [95].</p>
+<p>In the FDM process, the acoustic waves emitted from the extruder and printed</p>
+<p>parts can be detected by sensors. Wu et al. [97] applied the K-means clustering to differentiate normal and failed printing process, as the change in acoustic feature patterns reflects the occurrence of anomalies. Besides, they achieved the same objective by employing the hidden semi-Markov model with reduced feature dimensions and faster data processing [98].</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>3.3.2 Optical-based monitoring Optical-based techniques are the most widely adopted in-process monitoring methods in the AM community. Digital cameras, high-speed cameras and infrared (IR) thermal cameras are commonly used to capture the optical signals. In some cases, photodiodes and pyrometers can provide supplementary information. Usually, signatures of the plume and spatter, shape and temperature profiles of melt pools, top build surface images, are collected as the inputs layer by layer. Considering the high feature dimensions of the images, ML is gaining the popularity in in-process monitoring of AM processes.</p>
+<p>ro of</p>
+<p>In the high-temperature melting of laser metal PBF process, the plume would be generated due to the ionization of metallic vapour originating from the melt pool surface. Meanwhile, the recoil pressure may drive some liquid drops to vertically escape at high velocity, thus forming spattering. Although plume and spattering can</p>
+<p>disturb melt pools, they can provide useful information to access process stability as</p>
+<p>-p</p>
+<p>they are by-products of laser-material interactions. Hence, Grasso et al. [100] integrated the acquisition of plume images from IR camera with a sampling frequency of 50 Hz</p>
+<p>re</p>
+<p>and a spatial resolution of 320 × 240 pixels. An unsupervised ML to automatedly detect unstable melt pool states for zinc powder in SLM. Particularly, the dataset consists of</p>
+<p>lP</p>
+<p>14 non-consecutive layers in SLM processing acquired in IR image streams. The first 4 layers near the bottom region of the sample were used for training, and the next 10 layers were used for monitoring by a control chart. The thermal images were</p>
+<p>na</p>
+<p>normalized to grayscale, and the regions of interest were extracted by image thresholding and segmentation, so that only the relevant portion of the image was used for monitoring in order to effectively reduce processing time and computational cost.</p>
+<p>ur</p>
+<p>Similarly, Ye et al. [104] employed plume and spatter signatures acquired by IR camera to classify 5 different melting states with MLP, CNN and DBN models (see Figure 11).</p>
+<p>Jo</p>
+<p>Here, DBN demonstrates high accuracy (≈83.4%) with little signal pre-processing, less parameter selection and feature extraction. In the work performed by Zhang et al. [99], plumes and spatters were captured together with melt pool by a high-speed camera, as the combination of these three objects can significantly improve the classification accuracy for melt pool anomalies. In their work, CNN outperforms SVM as it can automatically extract features from raw data without prior expert knowledge.</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>Figure 11 Configuration of SLM in-process monitoring. The plume and spatter signatures were segmented from the IR images and trained by DBN in order to differentiate the 5 different melting states [104].</p>
+<p>ro of</p>
+<p>Melt pool images are the most informative process signatures for in-process monitoring, as the shape and temperature of melt pools determine the occurrence of</p>
+<p>defects and dimensional accuracy. The typical layout of the sensors installed in AM</p>
+<p>systems is schematically illustrated in Figure 12. Melt pool images can be acquired by</p>
+<p>high-speed (to capture shape) and IR cameras (to capture temperature profile). Kwon</p>
+<p>-p</p>
+<p>et al. [105] used the high-speed camera to simultaneously collect melt pool images and location information under different laser powers in the SLM process. Deep neural</p>
+<p>re</p>
+<p>networks were applied to accurately classify melt pool images concerning different laser powers, as it resulted in different levels of porosity. Supervised ML methods,</p>
+<p>lP</p>
+<p>including MLP and SVM, were applied to differentiate the distinctive thermal signatures of melt pool of overhang sections from bulk sections [103]. As the intensity profiles of melt pool images pixels of overheated regions significantly differ from the</p>
+<p>na</p>
+<p>normal melting state, k-means clustering was used to detect and locate such defects [108]. To bridge the gap between unsupervised ML and supervised ML, bag of words (a method for feature extraction) was used to identify in-situ flaw formation signatures</p>
+<p>ur</p>
+<p>from melt pools, while SVM was used to build the linkage of in-situ and ex-situ morphologies to classify features of melt pools during the fusion of overhangs [101]</p>
+<p>Jo</p>
+<p>(see Figure 13a). In some practical applications, completely labelled information may be very expensive or not available, for example, fatigue testing. Using a Gaussian mixture model, both labelled (with corresponding ultimate tensile strength) and unlabelled (without corresponding ultimate tensile strength) melt pool data can be leveraged to detect faulty AM builds with low tensile strengths [106]. This paves a promising way towards automated certification of AM builds with a reduced cost. In DED process, thermal profiles of melt pools were processed by SOM to identify</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>abnormal melt pool and predict porosity with the help of ex-situ CT scan data [112] (see Figure 13b). This framework could serve as a real-time CT scanner for laser-based AM process. With the same method, the misclassification costs for spatial distribution of microstructural defects were further considered, since the mechanical properties of</p>
+<p>-p</p>
+<p>ro of</p>
+<p>AM-built parts also depend on size, location and types of pores [111].</p>
+<p>re</p>
+<p>Figure 12 Typical layout of sensors used to capture melt pool images in (a) SLM processing [103] and</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>(b) DED processing [112].</p>
+<p>Figure 13 In-process monitoring with ML techniques using melt pool images captured by IR cameras. (a) The flowchart to apply SVM to classify the melt pool morphologies [101]. (b) Flowchart of using unsupervised SOM technique for anomaly detection of melt pools in DED processing [112].</p>
+<p>Alternatively, direct examination of the top build surfaces layer by layer offers a more straightforward approach to identify processing-related defects (e.g. pores, lack</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>of fusion, cracks, balling, warpage and curling). In laser PBF process, the layer-wise surfaces images before and after powder re-coating are mutually complementary, especially when warpage is concerned. Different ML algorithms, including the CNN, SVM and random forest (RF) have been explored to detect defects for SLM process [109, 110]. Likewise, layer-wise images can also be coupled with post-built CT scan data in order to locate defects precisely. In the meanwhile, as the defects may propagate through several layers, the ground truth labels obtained from CT scan data are more desirable. Hence, Gobert et al. [102] adopted this approach to identify and locate defects with SVM. They found that the classification accuracy could be significantly enhanced</p>
+<p>ro of</p>
+<p>from 62% to 85% if 8 images under different lighting conditions were used (see Figure 14). In the FDM process, SVM was used to classify good and defective parts from the</p>
+<p>images taken by a digital camera at present checkpoints [113]. To detect various kinds of malicious infills, layer-wise images were processed by the K-nearest neighbour</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>the highest classification accuracy [114, 115].</p>
+<p>-p</p>
+<p>(KNN), RF and unsupervised ML methods, where unsupervised ML methods offered</p>
+<p>Figure 14 Flowchart of applying ML techniques for defect detection of SLM processing using in-situ layer-wise top build surface imaging combined with ex-situ CT scanning [102].</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>4.</p>
+<p>Machine learning in additive manufacturing production 4.1 Additive manufacturing planning As AM is still considered as an expensive manufacturing process in the current</p>
+<p>stage, high yield is essential to many end-users. A delicate pre-manufacturing plan for the AM production chain starting from CAD design to final product quality control is needed. Hence, some works have adopted ML to assist in AM planning. In pre-manufacturing, the manufacturability of a part can be determined with the help of ML, as for example conducted by Tang et al. [116] for FDM-printed lattice structures. In addition, a multimodal learning method comprising of CNN and MLP was proposed to predict whether a metal part can be successfully printed by using SLM</p>
+<p>ro of</p>
+<p>based on the designs, materials and process parameters [117]. Likewise, Lu [118] used SVM to improve the accuracy of a 3D printability checker software that can help to</p>
+<p>assess if the AM process is good for a particular design. In addition, to estimate build time more accurately, MLP was constructed and trained to reduce the error rate from</p>
+<p>-p</p>
+<p>20 ~ 35% to 2 ~ 15%, as compared to the existing parametric and empirical time estimators built in an SLS machine software [119].</p>
+<p>re</p>
+<p>4.2 Machine learning in additive manufacturing quality control One critical factor that hinders the certification of AM products is the</p>
+<p>lP</p>
+<p>inconsistency of product quality from machine to machine of the same process, or even from build to build of the same machine. The inconsistency may lead to variations in geometrical accuracy, relative density, process stability and mechanical properties.</p>
+<p>na</p>
+<p>Hence, extensive research works have attempted to apply ML methods to achieve quality control of AM parts.</p>
+<p>ur</p>
+<p>Geometric errors can be minimized by three methods, namely rescaling the entire part, modifying the original CAD, and implementing process control. The scaling</p>
+<p>Jo</p>
+<p>ratio can be predicted through MLP or CNN to adjust the overall size of parts before fabrication [120]. The shape-dependent geometric deviations due to thermal stress can be modelled by ML algorithms so as to make necessary geometric modification in CAD file. More specifically, MLP was implemented to compensate for geometrical deformation to counteract the thermal effects resulting from SLM processing, as demonstrated by Chowdhury et al. [121]. FEM simulation data were trained to predict the deformed locations in order to modify the original CAD geometry (see Figure 15). A similar approach was utilized by Noriega et al. [122] in FDM printing, where</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>experimental data were trained instead of simulation data. To achieve process control, SOM can link specific types of geometric deviations to certain process conditions [123]. This approach can also significantly reduce the amount of 3D point cloud data needed when assessing the geometric accuracy of AM parts using a laser scanner, as compared to many mainstream supervised ML approaches [124]. Moreover, by controlling process parameters for DED, the shape of single tracks can be manipulated in order to reduce geometric errors at the macro scale [82, 84, 85]. In the PBF process, surface images taken of each produced layer after laser exposure can be used to train ML algorithms for early detection of warped parts before powder coating was performed</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>[109].</p>
+<p>Figure 15 A ML methodology in counteracting thermal distortion in SLM processing [121].</p>
+<p>To improve the relative build density, process stability and mechanical</p>
+<p>na</p>
+<p>performance of AM-built parts, in-process monitoring is employed by introducing various sensors and cameras as discussed previously. The signal emissions, mainly</p>
+<p>ur</p>
+<p>visual signals and acoustic signals, are collected and processed to train different ML algorithms to monitor the printing process. Here in AM, ML can be applied to automatically diagnose printing status [98, 113, 125, 126] and failure modes [97, 114,</p>
+<p>Jo</p>
+<p>115, 127], melting condition [95, 100-102, 104, 105, 108, 128, 129], porosity detection [96, 111, 112], tensile property prediction [106, 107], and surface roughness prediction [130].</p>
+<p>4.3 Machine learning in additive manufacturing data security Intellectual property (IP) protection is considered as high priority in many fields. In general, digital manufacturing consists of two major components, i.e. cyber domain and physical domain, as illustrated by an AM example in Figure 16 (a). Although data</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>breach or IP leakage is usually caused by the cyber domain, it can also occur through the physical domain (also known as side channels), as AM systems can emit various signals when creating 3D objects. IP espionage may take advantage of ML techniques</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>to process the emitted signals to reconstruct CAD data indirectly.</p>
+<p>Figure 16 (a) Cyber and physical attack in the life cycle of the AM system. (b) Acoustic side-channel</p>
+<p>lP</p>
+<p>attack model. (c) A case study for reconstructing a key using this model [131].</p>
+<p>Until now, utilizing ML to reconstruct 3D objects from side channels is proven to be feasible mainly via collecting acoustic signals during printing. The acoustic</p>
+<p>na</p>
+<p>signals from stepper motors of an FDM could be collected by microphones, as shown in Figure 16 (b). This signal can indirectly reflect G-code, which leaks the information such as the movement of axis, speed of nozzle, temperature and extrusion amount of</p>
+<p>ur</p>
+<p>materials for the FDM process. The extracted features of acoustic data can be utilized to train ML algorithms to reconstruct a key model with axis prediction accuracy of 78%</p>
+<p>Jo</p>
+<p>and length prediction error of 18%, according to Mohammad et al. [131], as demonstrated in Figure 16 (c). In a more hard-to-detect IP theft scenario, the espionage can even place his</p>
+<p>mobile phone near the equipment to capture the acoustic data. Hojjati et al. [132] have successfully taken advantage of this data to reconstruct an aeroplane model within 1 mm error in length and 1 degree of error in angle.</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>5.</p>
+<p>Summary and Perspectives The recently established applications of the ML-based methods in the DfAM,</p>
+<p>AM process, and AM production were comprehensively reviewed in the abovementioned sections. It can be observed that the vast majority of the current applications of ML in AM research fields are intensively concentrated on processing-related processes such as parameter optimization and in-process monitoring. However, we can expect to see the overwhelming ML research efforts paid on new materials, rational manufacturing plan as well as in-process automated feedback system for AM, which would further help to push forward smart or intelligent AM in the near future. We also</p>
+<p>boost both computational speed and performance.</p>
+<p>ro of</p>
+<p>envision that more advanced ML algorithms, such as XGBoost [133], can significantly</p>
+<p>Like two sides of the same coin, there might be some disadvantages of adopting ML in the design, process or production of AM. A major concern would be regarding</p>
+<p>the discrepancy of ML predictive outputs which may cause loss or even damage to AM</p>
+<p>-p</p>
+<p>practice. It is thus suggested that robust, big data-driven and transferable ML algorithms</p>
+<p>re</p>
+<p>are key to minimize or eliminate any process or machine errors.</p>
+<p>Moreover, it is realised that one of the main challenges of leveraging ML techniques in AM is about the small dataset available [134], especially in different</p>
+<p>lP</p>
+<p>processing conditions, mechanical properties and micrographs as well as data labelling and feature extraction that may require expertise in both materials science and computer</p>
+<p>na</p>
+<p>science. Fortunately, some newly emerged algorithms like the few-shot learning [135], which only require minimalist datasets may provide new avenues for tackling this challenge in AM. Here, we propose a solution to tackle this challenge without the need</p>
+<p>ur</p>
+<p>for collecting massive data, namely data augmentation and transfer learning, which will be elaborated below.</p>
+<p>Jo</p>
+<p>It is worth noting that most of the AM literatures involving ML that we have</p>
+<p>reviewed in this article are mainly focusing on the engineering and design aspects of AM. However, the usage of ML in science and technology aspects of AM is still rarely reported, in particularly the microstructure study, new alloy design, property prediction and topology optimization. This review aims to explore the feasibility of translating state-of-the-art ML techniques into many other interesting research sub-fields in AM in the near future. We believe that the following ML-based applications selected below will have a significant impact on the AM community.</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>5.1 Microstructural characterization AM can produce any geometries of parts with unique microstructures that are usually different from their counterparts by conventional manufacturing methods. Traditionally, microstructure characterization relies heavily on expert knowledge and individual research experience, which may introduce bias and potential errors. The digital image analysis techniques may be instrumental if the microstructure features are well-defined and a catalogue of these features is constructed. Nevertheless, when the feature sets are unknown or when the microstructure differs significantly, these methods may fail [136]. Some research works have therefore taken advantage of ML techniques to achieve this objective. So far, ML was adopted to identify dendritic</p>
+<p>ro of</p>
+<p>morphologies for Sn-Ah-Cu alloys [137], classify different microstructural constituents for various steels [138-142], and discriminate between microstructure classes for 7 types of metallic materials [136].</p>
+<p>The traditional ML techniques usually require hand-crafted features (e.g. the</p>
+<p>-p</p>
+<p>number of voids, the average size of grains) by human experts prior to microstructural classification. In contrast, CNN can take raw micrograph data as inputs and extract</p>
+<p>re</p>
+<p>representative features automatically while the data passes through convolutional layers. Training CNN needs a big data size (e.g. 1000 images per class) typically. However,</p>
+<p>lP</p>
+<p>the size of the micrograph database for AM-built parts is limited, especially for novel alloys (e.g. high entropy alloys [143]). This may result in overfitting and decreased accuracy. To address this challenge, transfer learning [144] is introduced to migrate the</p>
+<p>na</p>
+<p>parameters previously trained by other models to new CNN models. This approach can boost the speed and accuracy of training. Examples of using CNN with transfer learning to reduce data size for microstructural classification can be found in the works of</p>
+<p>ur</p>
+<p>Chowdhury et al. [137], DeCost et al. [141] and Azimi et al. [138]. These works pave</p>
+<p>Jo</p>
+<p>the way for automatic recognition of microstructures with small datasets. Another challenge is the generalization of ML models to a wider range of</p>
+<p>material library. In addition, the microstructures produced by different AM techniques may also differ significantly. To crossover this hurdle, a few researchers have demonstrated that transfer learning [145] and generalized featurization [146] can provide an off-the-shelf solution to process complicated microstructures.</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>5.2 Microstructure-to-property linkage Establishing the microstructure-to-property relationship is of core interest to material scientists. Various mathematical models have been developed in the past few decades. A widely accepted model is the Hall-Petch relationship, which links yield strength to grain size [147]. However, in the context of metal AM, pores, precipitates, sub-grains, and anisotropy and heterogeneity may be present in microstructure due to the rapid, directional solidification [148]. Hence, it is difficult to make predictions solely based on the critical features in microstructures, as the properties are also affected by complex multi-scale physics. Fortunately, some advanced ML techniques can build the entire microstructure-to-property linkage from micrographs. A few</p>
+<p>ro of</p>
+<p>research works have employed ML methods, particularly CNN to predict ionic</p>
+<p>conductivity in zirconia ceramics [149], optical absorption for different materials [145], tensile properties in steels [15] and Ti-6Al-4V alloys [150] based on their micrographs. Once again, building the linkage between microstructure and property in AM is</p>
+<p>-p</p>
+<p>challenging due to limited data size. It is impractical to fabricate thousands of samples and collect millions of metallurgical micrographs in order to train ML algorithms. In</p>
+<p>re</p>
+<p>addition to transfer learning, data augmentation [151] (e.g. random cropping, flipping, rotating, mirroring, warping) can help improve the accuracy and reduce the data size.</p>
+<p>lP</p>
+<p>5.3 New material design and development One of the challenges that AM faces is the lack of material varieties. This is especially true for metal AM, as many metals and alloys that can be processed by</p>
+<p>na</p>
+<p>conventional manufacturing techniques are not applicable to AM. The discovery of new alloys or the re-design of existing alloys with good processability and desired properties for AM is therefore imperative. However, the design or development of new alloys via</p>
+<p>ur</p>
+<p>conventional trial-and-error experiment and simulation methods remain a lengthy, expensive process, and designing new alloys for AM is particularly challenging due to</p>
+<p>Jo</p>
+<p>complicated thermal history and beam-material interaction in AM processing. In previous works, ML has been utilized to predict solidification crack</p>
+<p>susceptibility of stainless steels with varying chemical compositions [152], design high entropy alloys with high hardnesses [153] and predicted phases [154]. Some research works were devoted to predicting phase transformation temperatures for NiTi-based shape memory alloys [155] and synthesize Heusler compounds [156]. Recently, it is reported that deep neural networks powered by the Intellegens’ AlchemiteTM Engine</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>are being leveraged to design a new Ni-based combustor alloy that well suits to be processed by a laser-based DED technique and the AMed component could satisfy the performance targets for application in a jet engine. More excitingly, the use of ML algorithm is said to save the team at University of Cambridge an estimated 15 years of materials research effort and in the region of US$10 million in research and development costs [157, 158]. It can be envisioned that data-driven ML techniques indeed offer a quick and cost-effective way to alloy design for AM. Printability assessment of any new alloys designed for AM is supposed to be put as a high priority. ML algorithms can be used to predict and determine the</p>
+<p>ro of</p>
+<p>processing or printability map in terms of featured experimental data extracted from single melt tracks, build surfaces or in-process melting signals. With a well-defined printable region, selection of a specific set of process parameters aiming for desired</p>
+<p>microstructure and properties could be realised. It is worth noting that the ML-based</p>
+<p>-p</p>
+<p>alloy design method can only be valid based on sufficient dataset from existing materials information and usually requires new experimental data to train its algorithm</p>
+<p>re</p>
+<p>and make it robust. Learning and understanding of the underlying relationships between alloying element-printability-microstructure-property form the basis to alloy design for</p>
+<p>lP</p>
+<p>AM.</p>
+<p>5.4 Experiment, simulation and machine learning in parallel In general, the experimental approach produces reliable data but may be tedious</p>
+<p>na</p>
+<p>and expensive, while the simulation approach reveals the underlying physics but may not be reliable. A new alternative, namely ML, opens up new opportunities for research in the field of AM. The power of the ML-assisted experimental approach has already</p>
+<p>ur</p>
+<p>been discussed in previous sections. Hence, we mainly focus on ML-assisted simulations here. A few works have exhibited that the synergy of ML and simulation</p>
+<p>Jo</p>
+<p>can make the computational speed orders of magnitude faster than pure physics-based simulation models in AM processing [50, 77, 145, 159, 160]. It is therefore possible to extend AM modelling and simulation to a large scale and to cover a wide range of parameters.</p>
+<p>ML can also be leveraged to conduct virtual experiments in AM research. To improve the properties of a material, it is important to understand the influence of compositional and microstructural parameters on a given property by control of experiments. Unfortunately, in practice, it is not feasible to systematically vary a single</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>microstructure feature or alloying content while keeping the values of other components fixed. This is because these parameters are usually interdependent. Hence, ML can use the high-fidelity database to reveal the hidden dependency of the property on a given feature through virtual experiments, as for example performed by Collins et al. [150, 161]. Another exciting application of ML is to reconstruct microstructure images of AM-built samples. Imagine that, given a set of process parameters, the corresponding micrographs can be generated much faster and on a larger scale than the numerical simulations, as explored by Cang et al. [162], Li et al. [145] and Wang et al. [15]. The</p>
+<p>ro of</p>
+<p>state-of-the-art deep learning generative models, especially GAN, can improve the fidelity of the generated virtual micrographs, as the training sets use the real micrographs.</p>
+<p>-p</p>
+<p>5.5 Topology optimization As mentioned above, the application of ML in TO for AM is still rarely reported. Although some state-of-the-art deep learning techniques have been applied to generate</p>
+<p>re</p>
+<p>topologically-optimized designs, most of the works are focused on 2D structures [61, 63, 64, 163-166]. As AM is a series of 3D fabrication technology group, only TO of 3D structures is helpful to AM. This additional one dimension in design space makes it</p>
+<p>lP</p>
+<p>more challenging for ML to perform TO. Moreover, the resolution of the optimized structures is still limited, which prevents it from deploying TO in more complicated</p>
+<p>na</p>
+<p>designs.</p>
+<p>Nevertheless, the frameworks proposed in these pioneering works can be translated to DfAM. Besides, the available TO designs for AM parts are exponentially</p>
+<p>ur</p>
+<p>increasing every year, although they were generated by conventional TO routes. Therefore, with the advancing ML algorithms, improving neural network architectures</p>
+<p>Jo</p>
+<p>and growing 3D TO data size, it is believed that this gap can be bridged in the near future.</p>
+<p>Acknowledgements</p>
+<p>This research is supported by the National Research Foundation, Prime Minister’s Office, Singapore under its Medium-Sized Centre funding scheme.</p></section>
+<section class="pdf-page" id="pdf-page-31"><h2 class="page-number">Page 31</h2><p>Appendix Machine learning terminology To better understand how the different ML techniques work, especially for those mentioned in this overview, their classification, brief introduction and tasks are summarized in Table A.1. In fact, many of the algorithms below can be used for both classification and regression tasks. For the sake of simplicity, we just present the tasks that the authors aimed to achieve in their respective works. It is noted that multi-layer perceptron (MLP), convolutional neural networks (CNN), recurrent neural networks</p>
+<p>ro of</p>
+<p>(RNN), adaptive network-fuzzy interference system (ANFIS), self-organizing map (SOM) and deep belief network (DBN) are classified as the neural networks-based ML techniques. The remaining algorithms belong to the traditional ML techniques. Neural</p>
+<p>networks, as inspired by how biological neurons pass information, can represent highly</p>
+<p>complex relationships with non-linearity between inputs and outputs [134]. It consists</p>
+<p>-p</p>
+<p>of 3 types of layers, namely the input layer, the hidden layers and the output layer. The ML algorithms with many hidden layers (usually more than 2) in the neural networks</p>
+<p>re</p>
+<p>are known as deep learning. The elements of each layer are called neurons. The coefficients of connectivity between neurons in adjacent layers are controlled by</p>
+<p>lP</p>
+<p>weights. In the training phase, they are updated iteratively by an algorithm called backpropagation to calculate the gradients so that the cost function can be minimised. The most classical neural network is MLP (see Figure A.1), which is usually referred</p>
+<p>na</p>
+<p>to as artificial neural networks (ANN). Other neural networks are variants of MLP, where the architectures of their hidden layers are dissimilar. In general, training neural</p>
+<p>ur</p>
+<p>networks requires a large dataset to prevent from overfitting. Table A.1 Different types of ML algorithms. ML algorithms Decision trees</p>
+<p>Jo</p>
+<p>Classifications Supervised</p>
+<p>Random forest</p>
+<p>Support vector machines K-nearest neighbours</p>
+<p>Brief introduction A hierarchical tree-shape model that classifies instances by sorting them based on feature values An ensemble learning method consisting of a large number of individual decision trees that operate as an ensemble, where the class with the most votes from each decision tree becomes the model’s output A model that maps the input points into high-dimensional feature space in order to find a separating hyperplane that maximizes the margin between the two classes A model that identifies the k nearest neighbours to a query example and uses those neighbours to determine the class of the query, which is based on the simple majority voting or distance weighted voting</p>
+<p>Tasks Classification</p>
+<p>Refs [167]</p>
+<p>Classification, regression</p>
+<p>[168]</p>
+<p>Classification, regression</p>
+<p>[169]</p>
+<p>Classification</p>
+<p>[170]</p></section>
+<section class="pdf-page" id="pdf-page-32"><h2 class="page-number">Page 32</h2><p>Hidden semiMarkov model Multi-layer perceptron Convolutional neural network Recurrent neural network</p>
+<p>Unsupervised</p>
+<p>K-means clustering Gaussian mixture model</p>
+<p>Regression</p>
+<p>[172]</p>
+<p>Regression</p>
+<p>[173]</p>
+<p>Classification</p>
+<p>[174]</p>
+<p>Classification, regression Classification</p>
+<p>[175]</p>
+<p>Time series prediction</p>
+<p>[177]</p>
+<p>Regression</p>
+<p>[178]</p>
+<p>A neural network that reduces the high-dimensional inputs in order to represent its distribution as a map A neural network constructed from many layers of restricted Boltzmann machines, where each layer is connected with each other, but units are not A method to partition a given dataset into disjoint groups</p>
+<p>Clustering</p>
+<p>[179]</p>
+<p>Classification</p>
+<p>[180]</p>
+<p>Clustering</p>
+<p>[181]</p>
+<p>An algorithm that clusters data based on the assumption that each data point is a sample from a mixture of Gaussian distributions</p>
+<p>Clustering</p>
+<p>[107]</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>Semisupervised</p>
+<p>Adaptive network-based fuzzy inference system Self-organizing map Deep belief network</p>
+<p>[171]</p>
+<p>ro of</p>
+<p>Multi-gene genetic programming</p>
+<p>Classification</p>
+<p>-p</p>
+<p>Gaussian process</p>
+<p>A graphical model that represents the probability relationships among a set of random variables, which combines graph-theoretic approaches with approaches of probability theory. A collection of random variables which have a joint Gaussian distribution that is completely specified by its mean function and covariance function. An algorithm that combines the model structure selection ability of genetic programming (based on Darwin’s theory of “survival of the fittest”) with the parameter estimation power of classical regression A model that allows the underlying stochastic process to be a semi-Markov chain with a variable duration for each state A typical neural network with interconnected neurons which can approximate extremely non-linear functions A deep learning algorithm popular for image recognition, which typically consists of several convolutional layers and pooling layers, followed by fully connected layers. A deep learning neural network popular for processing time-series data and other sequential data, where the outputs from neurons are used as feedback to the neurons of the previous layer A hybrid model that implements a fuzzy inference system in the framework of adaptive ANN</p>
+<p>re</p>
+<p>Bayesian network</p>
+<p>Figure A.1 Schematic representation of an MLP with 3 hidden layers.</p>
+<p>[176]</p></section>
+<section class="pdf-page" id="pdf-page-33"><h2 class="page-number">Page 33</h2><p>References</p>
+<p>[7]</p>
+<p>[8] [9]</p>
+<p>[10] [11] [12]</p>
+<p>[13] [14]</p>
+<p>Jo</p>
+<p>[15]</p>
+<p>ro of</p>
+<p>[6]</p>
+<p>-p</p>
+<p>[5]</p>
+<p>re</p>
+<p>[4]</p>
+<p>lP</p>
+<p>[3]</p>
+<p>na</p>
+<p>[2]</p>
+<p>ASTM. 2012. Standard terminology for additive manufacturing technologies. ASTM Stand. F2792-12a Wang T, Kwok T-H, Zhou C, Vader S. 2018. In-situ droplet inspection and closed-loop control system using machine learning for liquid metal jet printing. J. Manuf. Syst. 47: 83-92 Lee, S, Park WS, Cho HS, Zhang W, Leu MC. 2001. A neural network approach to the modelling and analysis of stereolithography processes. Proc. Instn. Mech. Engrs. 215(Part B): 1719-1733 Sun Z, Tan X, Tor SB, Yeong WY. 2016. Selective laser melting of stainless steel 316L with low porosity and high build rates. Mater. Des. 104:197-204 Yuan S, Shen F, Bai J, Chua CK, Wei J, Zhou K. 2017. 3D soft auxetic lattice structures fabricated by selective laser sintering: TPU powder evaluation and process optimization. Mater. Des. 120:317-327 Zhao S, Li SJ, Wang SG, Hou WT, Li Y, Zhang LC, Hao YL, Yang R, Misra RDK, Murr LE. 2018. Compressive and fatigue behavior of functionally graded Ti-6Al-4V meshes fabricated by electron beam melting. Acta Mater. 150: 1-15 Rahman NU, Capuano L, Cabeza S, Feinaeugle M, Garcia-Junceda A, de Rooij MB, Mathews DTA, Walmag G, Gibson I, Römer GRBE. 2019. Directed energy deposition and characterization of high-carbon high speed steels. Addit. Manuf. 30: 100838 Åkerfeldt P, Antti M-L, Pederson R. 2016. Influence of microstructure on mechanical properties of laser metal wire-deposited Ti-6Al-4V. Mater. Sci. Eng., A. 674: 428-437 Ning F, Cong W, Qiu J, Wei J, Wang S. 2015. Additive manufacturing of carbon fiber reinforced thermoplastic composites using fused deposition modeling. Composites Part B. 80: 369-378 Al-Shayea QK. 2011. Artificial neural networks in medical diagnosis. International Journal of Computer Science Issues. 8(2): 150-154 Bruijne M. 2016. Machine learning approaches in medical image analysis: From detection to diagnosis. Med. Image Anal. 33: 94-97 Kourou K, Exarchos TP, Exarchos KP, Karamouzis MV, Fotiadis DI. 2015. Machine learning applications in cancer prognosis and prediction. Comput. Struct. Biotechnol. J. 13: 8-17 Pilania G, Wang C, Jiang X, Rajasekaran S, Ramprasad R. 2013. Accelerating materials property predictions using machine learning. Sci. Rep. 3: 2810 Ward L, Agrawal A, Choudhary A, Wolverton C. 2016. A general-purpose machine learning framework for predicting properties of inorganic materials. npj Comput. Mater. 2: 16028 Wang Z-L, Adachi Y. 2019. Property prediction and properties-to-microstructure inverse analysis of steels by a machine-learning approach. Mater. Sci. Eng., A. 744: 661-670 Wang J, Ma Y, Zhang L, Gao RX, Wu D. 2018. Deep learning for smart manufacturing: Methods and applications. J. Manuf. Syst. 48: 144-156 Wu D, Jennings C, Terpenny J, Gao RX, Kumara S. 2017. A comparative study on machine learning algorithms for smart manufacturing: tool wear prediction using random forests. J. Manuf. Sci. Eng. 139(7): 071018 Susto GA, Schirru A, Pampuri S, McLoone S, Beghi. 2014. Machine learning for predictive maintenance: A multiple classifier approach. IEEE Trans. Ind. Inf. 11(3): 812-820 Sallab AE, Abdou M, Perot E, Yogamani S. 2017. Deep reinforcement learning framework for autonomous driving. Soc. Imaging Sci. Technol. 7: 70-76</p>
+<p>ur</p>
+<p>[1]</p>
+<p>[16] [17]</p>
+<p>[18]</p>
+<p>[19]</p></section>
+<section class="pdf-page" id="pdf-page-34"><h2 class="page-number">Page 34</h2><p>[27] [28] [29]</p>
+<p>[30] [31] [32]</p>
+<p>[33] [34] [35]</p>
+<p>[36] [37]</p>
+<p>Jo</p>
+<p>[38]</p>
+<p>ro of</p>
+<p>[25] [26]</p>
+<p>-p</p>
+<p>[24]</p>
+<p>re</p>
+<p>[23]</p>
+<p>lP</p>
+<p>[22]</p>
+<p>na</p>
+<p>[21]</p>
+<p>Navarro P, Fernandez C, Borraz R, Alonso D. 2017. A machine learning approach to pedestrian detection for autonomous vehicles using high-definition 3D range data. Sensors. 17:18 Shalev-Shwartz S, Shammah S, Shashua A. 2016. Safe, multi-agent, reinforcement learning for autonomous driving. arXiv:1610.03295 Young T, Hazarika D, Poria S, Cambria E. 2018. Recent trends in deep learning based natural language processing. IEEE Comput. Intell. Mag. 13(3): 55-75 Collobert R, Weston J, Bottou L, Karlen M, Kavukcuoglu K, Kuksa P. 2011. Natural language processing (almost) from scratch. J. Mach. Learn. Res. 12: 2493-2537 Bordes A, Chopra S, Weston J. 2014. Question answering with subgraph embeddings. arXiv:1406.3676 LeCun Y, Bengio Y, Hinton G. 2015. Deep learning. Nature. 521: 436-444 Liang M. Hu X. 2015. Recurrent convolutional neural network for object recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3367-3375. Stallkamp J, Schlipsing M, Salmen J, Igel C. 2012. Man vs. computer: Benchmarking machine learning algorithms for traffic sign recognition. Neural networks. 32: 323-332 Learned-Miller EG. 2014. Introduction to supervised learning. 2014. University of Massachusetts, Amherst Shi B, Bai X, Yao C. 2016. An end-to-end trainable neural network for image-based sequence recognition and its application to scene text recognition. IEEE Trans. Pattern Anal. Mach. Intell. 39(11): 2298-2304 Lempitsky V, Zisserman A. 2010. Learning to count objects in images. Adv. Neural Inf. Process Syst. 1324-1332 Xie J, Zhu M. 2019. Handcrafted features and late fusion with deep learning for bird sound classification. Ecol. Inf. 52: 74-81 O’Shea TJ, Corgan J, Clancy TC. 2016. Convolutional radio modulation recognition networks. International conference on engineering applications of neural networks. pp. 213-226 Tong S, Koller D. 2001. Support vector machine active learning with applications to text classification. J. Mach. Learn. Res. 2: 45-66 Daelemans W, Hoste V, Meulder FD, Naudts B. 2003. Combined optimization of feature selection and algorithm parameters in machine learning of language. European Conference on Machine Learning. pp. 84-95 Raina R, Battle A, Lee H, Packer B, Ng AY. 2007. Self-taught learning: transfer learning from unlabeled data. In Proceedings of the 24th international conference on Machine learnin. pp. 759-766 Weber M, Welling M, Perona P. 2000. Unsupervised learning of models for recognition. European conference on computer vision. pp. 18-32 Alabi MO, Nixon K, Botef I. 2018. A Survey on Recent Applications of Machine Learning with Big Data in Additive Manufacturing Industry. Am. J. Eng. Appl. Sci. 11:1114-1124 Omar S, Ngadi A, Jebur HH. 2013. Machine learning techniques for anomaly detection: an overview. Int. J. Comput. Appl. Technol. 79(2): 33-41 Tanev H. 2007. Unsupervised learning of social networks from a multiple-source news corpus. Proceedings of the Workshop Multi-source Multilingual Information Extraction and Summarization. pp. 33-40. Orriols-Puig A, Casillas J, Martínez-López F. 2009. Unsupervised learning of fuzzy association rules for consumer behavior modeling. Mathware Soft Comput. 16:29-43 Figueiredo V, Rodrigues F, Vale Z, Gouveia JB. 2005. An electric energy consumer characterization framework based on data mining techniques. IEEE Trans. Power Syst. 20(2): 596-602</p>
+<p>ur</p>
+<p>[20]</p>
+<p>[39]</p>
+<p>[40] [41]</p></section>
+<section class="pdf-page" id="pdf-page-35"><h2 class="page-number">Page 35</h2><p>[48]</p>
+<p>[49]</p>
+<p>[50]</p>
+<p>[51]</p>
+<p>[52] [53] [54]</p>
+<p>[55] [56]</p>
+<p>Jo</p>
+<p>[57]</p>
+<p>ro of</p>
+<p>[47]</p>
+<p>-p</p>
+<p>[46]</p>
+<p>re</p>
+<p>[45]</p>
+<p>lP</p>
+<p>[44]</p>
+<p>na</p>
+<p>[43]</p>
+<p>Jordan MI, Mitchell TM. 2015. Machine learning: Trends, perspectives, and prospects. Science. 349(6245): 255-260 Suárez-Ruiz F, Zhou X, Pham QC. 2018. Can robots assemble an IKEA chair? Sci. Rob. 3(17): 6385 Khan SG, Herrmann G, Lewis FL, Pipe T, Melhuish C. 2012. Reinforcement learning and optimal adaptive control: An overview and implementation examples. Annu. Rev. Control. 36(1): 42-59 Kuderer M, Gulati S, Burgard W. 2015. Learning driving styles for autonomous vehicles from demonstration. IEEE International Conference on Robotics and Automation, IEEE, pp. 2641-2646 Kim J, Canny J. 2017. Interpretable learning for self-driving cars by visualizing causal attention. In Proceedings of the IEEE international conference on computer vision. pp. 2942-2950 Silver D, Hubert T, Schrittwieser J, Antonoglou I, Lai M, Guez A, Lanctot M, Sifre L, Kumaran D, Graepel T, Lillicrap T, Simonyan K, Hassabis D. 2018. A general reinforcement learning algorithm that masters chess, shogi, and Go through self-play. Science. 362(6419): 1140-1144 Wang F-Y, Zhang JJ, Zheng X, Wang X, Yuan Y. 2016. Where does AlphaGo go: From church-turing thesis to AlphaGo thesis and beyond. IEEE/CAA J. Autom. Sin. 3(2): 113-120 Silver D, Schrittwieser J, Simonyan K, Antonoglou I, Huang A, Guez A, Hubert T, Baker L, Lai M, Bolton A, Chen Y, Lillicrap T, Hui F, Sifre L, Driessche GVD, . Graepel T, Hassabis D. 2017. Mastering the game of go without human knowledge. Nature. 550(7676): 354-359 Gu GX, Chen C-T, Richmond DJ, Buehler MJ. 2018. Bioinspired hierarchical composite design using machine learning: simulation, additive manufacturing, and experiment. Mater. Horiz. 5(5): 939-945 Liu R, Kumar A, Chen Z, Agrawal A, Sundararaghavan V, Choudhary A. 2015. A predictive machine learning approach for microstructure optimization and materials design. Sci. Rep. 5: 11551 Gu GX, Chen C-T, Buehler MJ. 2018. De novo composite design based on machine learning algorithm. Extreme Mech. Lett. 18: 19-28 Ma W, Cheng F, Liu Y. 2018. Deep-learning-enabled on-demand design of chiral metamaterials. ACS nano. 12(6): 6326-6334 Li S, Hassanin H, Attallah MM, Adkins NJ, Essa K. 2016. The development of TiNibased negative Poisson&#x27;s ratio structure using selective laser melting. Acta Mater. 105: 75-83 Pham M-S, Liu C, Todd I, Lertthanasarn J. 2019. Damage-tolerant architected materials inspired by crystal microstructure. Nature. 565: 305-311 Vyatskikh A, Delalande S, Kudo A, Zhang X, Portela CM, Greer JR. 2018. Additive manufacturing of 3D nano-architected metals. Nat. Commun. 9(1): 593 Chen D, Zheng X. 2018. Multi-material additive manufacturing of metamaterials with giant, tailorable negative Poisson’s ratios. Sci. Rep. 8: 9139 Chen D, Skouras M, Zhu B, Matusik W. 2018. Computational discovery of extremal microstructure families. Sci. Adv. 4(1): 7005 Yao X, Moon SK, Bi G. 2017. A hybrid machine learning approach for additive manufacturing design feature recommendation. Rapid Prototyp. J. 23(6): 983-997 Bendsøe MP. 2009. Topology optimization. Springer Sosnovik I, Oseledets I. 2019. Neural networks for topology optimization. Russ. J. Number Anal. M. 34(4): 215-223 Banga S, Gehani H, Bhilare S, Patel S, Kara L. 2018. 3D Topology Optimization using Convolutional Neural Networks. arXiv:1808.07440</p>
+<p>ur</p>
+<p>[42]</p>
+<p>[58] [59] [60] [61] [62]</p></section>
+<section class="pdf-page" id="pdf-page-36"><h2 class="page-number">Page 36</h2><p>[69]</p>
+<p>[70]</p>
+<p>[71]</p>
+<p>[72]</p>
+<p>[73]</p>
+<p>[74]</p>
+<p>[75] [76]</p>
+<p>Jo</p>
+<p>[77]</p>
+<p>ro of</p>
+<p>[68]</p>
+<p>-p</p>
+<p>[67]</p>
+<p>re</p>
+<p>[66]</p>
+<p>lP</p>
+<p>[65]</p>
+<p>na</p>
+<p>[64]</p>
+<p>Yu Y, Hur T, Jung J. 2018. Deep learning for topology optimization design. arXiv:1801.05463 Rawat S, Shen M. 2018. A novel topology design approach using an integrated deep learning network architecture. arXiv:1808.02334 Goodfellow IJ, Pouget-Abadie J, Mirza M, Xu B, Warde-Farley D, Ozair S, Courville A, Bengio Y. 2014. Generative adversarial nets. Adv Neural Inf Process Syst. pp. 26722680 Wang C, Tan X, Liu E, Tor SB. 2018. Process parameter optimization and mechanical properties for additively manufactured stainless steel 316L parts by selective electron beam melting. Mater. Des. 147: 157-166 Olakanmi E, Cochrane R, Dalgarno K. 2011. Densification mechanism and microstructural evolution in selective laser sintering of Al–12Si powders. J. Mater. Process. Technol. 211(1): 113-121 Wang C, Tan XP, Du Z, Chandra S, Sun Z, Lim CWJ, Tor SB, Lim CS, Wong CH. 2019. Additive manufacturing of NiTi shape memory alloys using pre-mixed powders. J. Mater. Process. Technol. 271: 152-161 Mozaffar M, Paul A, Al-Bahrani R, Wolff S, Choudhary A, Agrawal A, Ehmann K, Cao J. 2018. Data-driven prediction of the high-dimensional thermal history in directed energy deposition processes via recurrent neural networks. Manuf. Lett. 18: 35-39 Tang C, Tan J, Wong C. 2018. A numerical investigation on the physical mechanisms of single track defects in selective laser melting. Int. J. Heat Mass Transfer. 126: 957968 Yan W, Qian Y, Ge W, Lin S, Liu WK, Lin F, Wagner GJ. 2018. Meso-scale modeling of multiple-layer fabrication process in selective electron beam melting: interlayer/track voids formation. Mater. Des. 141: 210-219 Zhang M, Sun C-N, Zhang X, Goh PC, Wei J, Hardacre D, Li H. 2019. High cycle fatigue life prediction of laser additive manufactured stainless steel: A machine learning approach. Int. J. Fatigue. 128: 105194 Singh A, Cooper D, Blundell N, Gibbons G, Pratihar D. 2012. Modelling of direct metal laser sintering of EOS DM20 bronze using neural networks and genetic algorithms. In Proceedings of the 37th International MATADOR Conference. pp. 395398 Tapia G, Khairallah S, Matthews M, King WE, Elwany A. 2018. Gaussian processbased surrogate modeling framework for process planning in laser powder-bed fusion additive manufacturing of 316L stainless steel. Int. J. Adv. Manuf. Tech. 94(9-12): 3591-3603 Tapia G, Elwany A, Sang H. 2016. Prediction of porosity in metal-based additive manufacturing using spatial Gaussian process models. Addit. Manuf. 12: 282-290 Kappes B, Moorthy S, Drake D, Geerlings H, Stebner A. 2018. Machine learning to optimize additive manufacturing parameters for laser powder bed fusion of Inconel 718. In Proceedings of the 9th International Symposium on Superalloy 718 &amp; Derivatives: Energy, Aerospace, and Industrial Applications, pp. 595-610 Zhang W, Mehta A, Desai PS, Higgs C. 2017. Machine learning enabled powder spreading process map for metal additive manufacturing (AM). In Solid Freeform Fabrication Proceedings, pp. 1235-1249. Austin: Univ. Tex. Aoyagi K, Wang H, Sudo H, Chiba A. 2019. Simple method to construct process maps for additive manufacturing using a support vector machine. Addit. Manuf. 27: 353-362 Douard A, Grandvallet C, Pourroy F, Vignat F. 2018. An Example of Machine Learning Applied in Additive Manufacturing. In 2018 IEEE International Conference on Industrial Engineering and Engineering Management (IEEM), IEEE, pp. 17461750. Garg, A. and J.S.L. Lam, Measurement of environmental aspect of 3-D printing process using soft computing methods. Measurement, 2015. 75: p. 210-217.</p>
+<p>ur</p>
+<p>[63]</p>
+<p>[78] [79]</p>
+<p>[80]</p></section>
+<section class="pdf-page" id="pdf-page-37"><h2 class="page-number">Page 37</h2><p>[87]</p>
+<p>[88]</p>
+<p>[89]</p>
+<p>[90] [91]</p>
+<p>[92] [93]</p>
+<p>[94]</p>
+<p>[95]</p>
+<p>Jo</p>
+<p>[96]</p>
+<p>ro of</p>
+<p>[86]</p>
+<p>-p</p>
+<p>[85]</p>
+<p>re</p>
+<p>[84]</p>
+<p>lP</p>
+<p>[83]</p>
+<p>na</p>
+<p>[82]</p>
+<p>Garg A, Lam JSL, Savalani M. 2015. A new computational intelligence approach in formulation of functional relationship of open porosity of the additive manufacturing process. Int. J. Adv. Manuf. Tech. 80(1-4): 555-565 Xiong J, Zhang G, Hu J, Wu Li. 2014. Bead geometry prediction for robotic GMAWbased rapid manufacturing through a neural network and a second-order regression analysis. J. Intell. Manuf. 25(1): 157-163. Li Y, Sun Y, Han Q, Zhang G, Horváth I. 2018. Enhanced beads overlapping model for wire and arc additive manufacturing of multi-layer multi-bead metallic parts. J. Mater. Process. Technol. 252: 838-848 Caiazzo F, Caggiano A. 2018. Laser direct metal deposition of 2024 Al alloy: trace geometry prediction via machine learning. Materials. 11(3): 444 Lu Z, Li D, Lu B, Zhang A, Zhu G, Pi G. 2010. The prediction of the building precision in the Laser Engineered Net Shaping process using advanced networks. Opt. Lasers Eng. 48(5): 519-525 Mohamed OA, Masood SH, Bhowmik JL. 2017. Influence of processing parameters on creep and recovery behavior of FDM manufactured part using definitive screening design and ANN. Rapid Prototyp. J. 23(6): 998-1010 Jiang J, Hu G, Li X, Xu X, Zheng P, Stringer J. 2019. Analysis and prediction of printable bridge length in fused deposition modelling based on back propagation neural network. Virtual Phys. Prototy. 14(3): 253-266 Mohamed OA, Masood SH, Bhowmik JL. 2016. Investigation of dynamic elastic deformation of parts processed by fused deposition modeling additive manufacturing. Adv. Prod. Eng. Manage. 11(3): 227-238 Bayraktar Ö, Uzun G, Çakiroğlu R, Guldas A. 2017. Experimental study on the 3D‐ printed plastic parts and predicting the mechanical properties using artificial neural networks. Polym. Adv. Technol. 28(8): 1044-1051 Sood AK, Equbal A, Toppo V, Ohdar R, Mahapatra S. 2012. An investigation on sliding wear of FDM built parts. CIRP J. Manuf. Sci. Technol. 5(1): 48-54 Sood AK, Ohdar RK, Mahapatra SS. 2012. Experimental investigation and empirical modelling of FDM process for compressive strength improvement. J. Adv. Res. 3(1): 81-90 Lewandowski JJ, Seifi M. 2016. Metal additive manufacturing: a review of mechanical properties. Annu. Rev. Mater. Res. 46: 151-186 Scime L, Beuth J. 2018. Anomaly detection and classification in a laser powder bed additive manufacturing process using a trained computer vision algorithm. Addit. Manuf. 19: 114-126 Scime L, Beuth J. 2018. A multi-scale convolutional neural network for autonomous anomaly detection and classification in a laser powder bed fusion additive manufacturing process. Addit. Manuf. 24: 273-286 Ye D, Hong GS, Zhang Y, Zhu K, Fuh JYH. 2018. Defect detection in selective laser melting technology by acoustic signals with deep belief networks. Int. J. Adv. Manuf. Tech. 96(5-8): 2791-2801 Shevchik SA, Kenel C, Leinenbach C, Wasmer K, 2018. Acoustic emission for in situ quality monitoring in additive manufacturing using spectral convolutional neural networks. Addit. Manuf. 21: 598-604 Wu H, Yu Z, Wang Y. 2016. A new approach for online monitoring of additive manufacturing based on acoustic emission. In Proceedings of the ASME 2016 International Manufacturing Science and Engineering Conference. V003T08A013 Wu H, Yu Z, Wang Y. 2017. Real-time FDM machine condition monitoring and diagnosis based on acoustic emission and hidden semi-Markov model. Int. J. Adv. Manuf. Tech. 90(5-8): 2027-2036 Zhang Y, Hong GS, Ye D, Zhu K, Fuh JY. 2018. Extraction and evaluation of melt pool, plume and spatter information for powder-bed fusion AM process monitoring. Mater. Des. 156: 458-469</p>
+<p>ur</p>
+<p>[81]</p>
+<p>[97]</p>
+<p>[98]</p>
+<p>[99]</p></section>
+<section class="pdf-page" id="pdf-page-38"><h2 class="page-number">Page 38</h2><p>[106]</p>
+<p>[107]</p>
+<p>[108]</p>
+<p>[109]</p>
+<p>[110]</p>
+<p>[111]</p>
+<p>[112]</p>
+<p>[113]</p>
+<p>Jo</p>
+<p>[114]</p>
+<p>ro of</p>
+<p>[105]</p>
+<p>-p</p>
+<p>[104]</p>
+<p>re</p>
+<p>[103]</p>
+<p>lP</p>
+<p>[102]</p>
+<p>na</p>
+<p>[101]</p>
+<p>Grasso M, Demir A, Previtali B, Colosimo B. 2018. In situ monitoring of selective laser melting of zinc powder via infrared imaging of the process plume. Rob. Comput. Integr. Manuf. 49: 229-239 Scime L, Beuth J. 2019. Using machine learning to identify in-situ melt pool signatures indicative of flaw formation in a laser powder bed fusion additive manufacturing process. Addit. Manuf. 25: 151-165 Gobert C, Reutzel EW, Petrich J, Nassar AR, Phoha S. 2018. Application of supervised machine learning for defect detection during metallic powder bed fusion additive manufacturing using high resolution imaging. Addit. Manuf. 21: 517-528 Montazeri M, Rao P. 2018. Sensor-Based Build Condition Monitoring in Laser Powder Bed Fusion Additive Manufacturing Process Using a Spectral Graph Theoretic Approach. J. Manuf. Sci. Eng. 140(9): 091002 Ye D, Fuh JYH, Zhang Y, Hong GS, Zhu K. 2018. In situ monitoring of selective laser melting using plume and spatter signatures by deep belief networks. ISA Trans. 81: 96104 Kwon O, Kim HG, Ham MJ, Kim W, Kim G-H, Cho J-H, Kim N, Kim K. 2020. A deep neural network for classification of melt-pool images in metal additive manufacturing. J. Intell. Manuf. 31:375–386 Okaro IA, Jayasinghe S, Sutcliffe C, Black K, Paoletti P, Green PL. 2018. Automatic Fault Detection for Selective Laser Melting using Semi-Supervised Machine Learning. preprint. Okaro IA, Jayasinghe S, Sutcliffe C, Black K, Paoletti P, Green PL. 2019. Automatic fault detection for laser powder-bed fusion using semi-supervised machine learning. Addit. Manuf. 27: 42-53 Grasso M, Laguzza V, Semeraro Q, Colosimo BM. 2017. In-process monitoring of selective laser melting: spatial detection of defects via image data analysis. J. Manuf. Sci. Eng. 139(5): 051001 Jacobsmühlen JZ, Kleszczynski S, Witt G, Merhof D. 2015. Detection of elevated regions in surface images from laser beam melting processes. In IECON 2015 Annual Conference of the IEEE Industrial Electronics Society, IEEE, pp. 1270-1275 Caggiano A, Zhang J, Alfieri V, Caiazzo F, Gao R, Teti R. 2019. Machine learningbased image processing for on-line defect recognition in additive manufacturing. CIRP Annals. 68: 451-454 Jafari-Marandi R, Khanzadeh M, Tian W, Smith B, Bian L. 2019. From in-situ monitoring toward high-throughput process control: cost-driven decision-making framework for laser-based additive manufacturing. J. Manuf. Syst. 51: 29-41 Khanzadeh M, Chowdhury S, Tschopp MA, Doude HR, Marufuzzaman M, Bian L. 2019. In-situ monitoring of melt pool images for porosity prediction in directed energy deposition processes. IISE Transactions. 51(5): 437-455 Delli U, Chang S. 2018. Automated process monitoring in 3D printing using supervised machine learning. Procedia Manuf. 26: 865-870 Wu M, Zhou H, Lin LL, Silva B, Song Z, Cheung J, Moon Y. 2017. Detecting attacks in CyberManufacturing Systems: additive manufacturing example. In MATEC Web of Conferences. 108: 06005 Wu M, Song Z, Moon YB. 2019. Detecting cyber-physical attacks in CyberManufacturing systems with machine learning methods. J. Intell. Manuf. 30(3): 1111-1123 Tang Y, Dong G, Zhou Q, Zhao YF. 2017. Lattice structure design and optimization with additive manufacturing constraints. IEEE Transactions on Automation Science and Engineering. 15(4): 1546-1562. Zhang Y, Dong G, Yang S, Zhao YF. 2019. Machine Learning Assisted Prediction of the Manufacturability of Laser-Based Powder Bed Fusion Process. In International Design Engineering Technical Conferences and Computers and Information in Engineering Conference, ASME, V001T02A008</p>
+<p>ur</p>
+<p>[100]</p>
+<p>[115]</p>
+<p>[116]</p>
+<p>[117]</p></section>
+<section class="pdf-page" id="pdf-page-39"><h2 class="page-number">Page 39</h2><p>[124]</p>
+<p>[125] [126]</p>
+<p>[127] [128]</p>
+<p>[129]</p>
+<p>[130]</p>
+<p>[131]</p>
+<p>Jo</p>
+<p>[132]</p>
+<p>ro of</p>
+<p>[123]</p>
+<p>-p</p>
+<p>[122]</p>
+<p>re</p>
+<p>[121]</p>
+<p>lP</p>
+<p>[120]</p>
+<p>na</p>
+<p>[119]</p>
+<p>Lu T. 2016. Towards a fully automated 3D printability checker. In 2016 IEEE International Conference on Industrial Technology (ICIT), IEEE, pp. 922-927 Munguía J, Ciurana J, Riba C. 2009. Neural-network-based model for build-time estimation in selective laser sintering. P. I. Mech. Eng. B-J. Eng. 223(8): 995-1003 Baturynska I, Semeniuta O, Wang K. 2018. Application of machine learning methods to improve dimensional accuracy in additive manufacturing. In International Workshop of Advanced Manufacturing and Automation. pp. 245-252 Chowdhury S, Mhapsekar K, Anand S. 2018. Part Build Orientation Optimization and Neural Network-Based Geometry Compensation for Additive Manufacturing Process. J. Manuf. Sci. Eng. 140(3) Noriega A, Blanco D, Alvarez B, Garcia A. 2013. Dimensional accuracy improvement of FDM square cross-section parts using artificial neural networks and an optimization algorithm. Int. J. Adv. Manuf. Tech. 69(9-12): 2301-2313 Khanzadeh M, Rao P, Jafari-Marandi R, Smith BK, Tschopp MA, Bian L. 2018. Quantifying geometric accuracy with unsupervised machine learning: using selforganizing map on fused filament fabrication additive manufacturing parts. J. Manuf. Sci. Eng. 140(3): 031011 Tootooni MS, Dsouza A, Donovan R, Rao PK, Kong ZJ, Borgesen P. 2017. Classifying the dimensional variation in additive manufactured parts from laser-scanned threedimensional point cloud data using machine learning approaches. J. Manuf. Sci. Eng. 139(9): 091005 Uhlmann E, Pontes RP, Laghmouchi A, Bergmann A. 2017. Intelligent pattern recognition of a SLM machine process and sensor data. Procedia Cirp. 62: 464-469 P Rao PK, Liu JP, Roberson D, Kong ZJ, Williams C. 2015. Online real-time quality monitoring in additive manufacturing processes using heterogeneous sensors. J. Manuf. Sci. Eng. 137(6): 061007 He K, Yang Z, Bai Y, Long J, Li C. 2018. Intelligent fault diagnosis of delta 3D printers using attitude sensors based on support vector machines. Sensors. 18(4): 1298 Renken V, Albinger S, Goch G, Neef A, Emmelmann C. 2017. Development of an adaptive, self-learning control concept for an additive manufacturing process. CIRP J. Manuf. Sci. Technol. 19: 57-61 Khanzadeh M, Tian W, Yadollahi A, Doude HR, Tschopp MA, Bian L. 2018. Dual process monitoring of metal-based additive manufacturing using tensor decomposition of thermal image streams. Addit. Manuf. 23: 443-456 Li Z, Zhang Z, Shi J, Wu D. 2019. Prediction of surface roughness in extrusion-based additive manufacturing with machine learning. Rob. Comput. Integr. Manuf. 57: 488495 Faruque A, Abdullah M, Chhetri SR, Canedo A, Wan J. 2016. Acoustic side-channel attacks on additive manufacturing systems. In Proceedings of the 7th International Conference on Cyber-Physical Systems, IEEE, pp. 1-10 Hojjati A, Adhikari A, Struckmann K, Chou E, Nguyen TNT, Madan K, Winslett MS, Gunter CA, King WP. 2016. Leave your phone at the door: Side channels that reveal factory floor secrets. In Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security, pp. 883-894 Chen T, Guestrin C. 2016. Xgboost: A scalable tree boosting system. in Proceedings of the 22nd acm sigkdd international conference on knowledge discovery and data mining. pp. 785-794 Qi X, Chen G, Li Y, Cheng X, Li C. 2019. Applying Neural-Network-Based Machine Learning to Additive Manufacturing: Current Applications, Challenges, and Future Perspectives. Engineering. 5:721-729 Snell J, Swersky K, Zemel R. 2017. Prototypical networks for few-shot learning. in Advances in neural information processing systems. arXiv:1703.05175 DeCost BL, Holm EA. 2015. A computer vision approach for automated analysis and classification of microstructural image data. Comput. Mater. Sci. 110: 126-133</p>
+<p>ur</p>
+<p>[118]</p>
+<p>[133]</p>
+<p>[134]</p>
+<p>[135] [136]</p></section>
+<section class="pdf-page" id="pdf-page-40"><h2 class="page-number">Page 40</h2><p>[143]</p>
+<p>[144] [145]</p>
+<p>[146]</p>
+<p>[147]</p>
+<p>[148]</p>
+<p>[149]</p>
+<p>[150]</p>
+<p>Jo</p>
+<p>[151]</p>
+<p>ro of</p>
+<p>[142]</p>
+<p>-p</p>
+<p>[141]</p>
+<p>re</p>
+<p>[140]</p>
+<p>lP</p>
+<p>[139]</p>
+<p>na</p>
+<p>[138]</p>
+<p>Chowdhury A, Kautz E, Yener B, Lewis D. 2016. Image driven machine learning methods for microstructure recognition. Comput. Mater. Sci. 123: 176-187 Azimi SM, Britz D, Engstler M, Fritz M, Mücklich F. 2018. Advanced steel microstructural classification by deep learning methods. Sci. Rep. 8(1): 2128 Tsutsui K, Terasaki H, Maemura T, Hayashi K, Moriguchi K, Morito S. 2019. Microstructural diagram for steel based on crystallography with machine learning. Comput. Mater. Sci. 159: 403-411 Gola J, Webel J, Britz D, Guitar A, Staudt T, Winter M, Mücklich F. 2019. Objective microstructure classification by support vector machine (SVM) using a combination of morphological parameters and textural features for low carbon steels. Comput. Mater. Sci. 160: 186-196 DeCost BL, Francis T, Holm EA. 2017. Exploring the microstructure manifold: image texture representations applied to ultrahigh carbon steel microstructures. Acta Mater. 133: 30-40 Bulgarevich DS, Tsukamoto S, Kasuya T, Demura M, Watanabe M. 2018. Pattern recognition with machine learning on optical microscopy images of typical metallurgical microstructures. Sci. Rep. 8(1): 2078 Sun Z, Tan X, Descoins M, Mangelinck D, Tor S, Lim C. 2019. Revealing hot tearing mechanism for an additively manufactured high-entropy alloy via selective laser melting. Scr. Mater. 168: 129-133 Yosinski J, Clune J, Bengio Y, Lipson H. 2014. How transferable are features in deep neural networks? Adv. Neural Inf. Process Syst. 3320-3328 Li X, Zhang Y, Zhao H, Burkhart C, Brinson LC, Chen W. 2018. A transfer learning approach for microstructure reconstruction and structure-property predictions. Sci. Rep. 8: 13461 Ling J, Hutchinson M, Antono E, DeCost B, Holm EA, Meredig B. 2017. Building data-driven models with microstructural images: Generalization and interpretability. Mater. Discover. 10: 19-28 Yanushkevich Z, Dobatkin S, Belyakov A, Kaibyshev R. 2017. Hall-Petch relationship for austenitic stainless steels processed by large strain warm rolling. Acta Mater. 136: 39-48 Kok Y, Tan XP, Wang P, Nai M, Loh NH, Liu E, Tor SB. 2018. Anisotropy and heterogeneity of microstructure and mechanical properties in metal additive manufacturing: A critical review. Mater. Des. 139: 565-586 Kondo R, Yamakawa S, Masuoka Y, Tajima S, Asahi R. 2017. Microstructure recognition using convolutional neural networks for prediction of ionic conductivity in ceramics. Acta Mater. 141: 29-38 Collins PC, Koduri S, Welk B, Tiley J, Fraser HL. 2013. Neural networks relating alloy composition, microstructure, and tensile properties of α/β-processed TIMETAL 6-4. Metall. Mater. Trans. A. 44(3): 1441-1453 Wong SC, Gatt A, Stamatescu V, McDonnell MD. 2016. Understanding data augmentation for classification: when to warp? In 2016 international conference on digital image computing: techniques and applications (DICTA), IEEE, pp. 1-6 Feng S, Zhou H, Dong H. 2019. Using deep neural network with small dataset to predict material defects. Mater. Des. 162: 300-310 Wen C, Zhang Y, Wang C, Xue D, Bai Y, Antonov S, Dai L, Lookman, Su Y. 2019. Machine learning assisted design of high entropy alloys with desired property. Acta Mater. 170: 109-117 Huang W, Martin P, Zhuang HL. 2019. Machine-learning phase prediction of highentropy alloys. Acta Mater. 169: 225-236 Xue D, Xue D, Yuan R, Zhou Y, Balachandran PV, Ding X, Sun J, Lookman T. 2017. An informatics approach to transformation temperatures of NiTi-based shape memory alloys. Acta Mater. 125: 532-541</p>
+<p>ur</p>
+<p>[137]</p>
+<p>[152] [153]</p>
+<p>[154] [155]</p></section>
+<section class="pdf-page" id="pdf-page-41"><h2 class="page-number">Page 41</h2><p>[163]</p>
+<p>[164] [165]</p>
+<p>[166]</p>
+<p>[167] [168] [169] [170] [171] [172]</p>
+<p>Murthy SK. 1998. Automatic construction of decision trees from data: A multidisciplinary survey. Data Min. Knowl. Discovery. 2(4): 345-389 Pal M. 2005. Random forest classifier for remote sensing classification. Int. J. Remote Sens. 26(1): 217-222 Lin C-F, Wang S-D. 2002. Fuzzy support vector machines. IEEE Trans. Neural Networks. 13(2): 464-471 Weinberger KQ, Saul LK. 2009. Distance metric learning for large margin nearest neighbor classification. J. Mach. Learn Res. 10: 207-244 Jensen FV. 2016. An introduction to Bayesian networks. UCL press, London. Williams CK, Rasmussen CE. 2006. Gaussian processes for machine learning. MIT press, Cambridge, MA Gandomi AH, Alavi AH. 2012. A new multi-gene genetic programming approach to nonlinear system modeling. Part I: materials and structural engineering problems. Neural Comput. Appl. 21(1): 171-187 Yu S-Z. 2010. Hidden semi-Markov models. Artif. Intell. 174(2): 215-243 Gardner MW, Dorling S. 1998. Artificial neural networks (the multilayer perceptron)a review of applications in the atmospheric sciences. Atmos. Environ. 32(14-15): 26272636 LeCun Y, Bottou L, Bengio Y, Haffner P. 1998. Gradient-based learning applied to document recognition. Proceedings of the IEEE. 86(11): 2278-2324 Zaremba W, Sutskever I, Vinyals O. 2014. Recurrent neural network regularization. arXiv:1409.2329</p>
+<p>Jo</p>
+<p>[173]</p>
+<p>ro of</p>
+<p>[162]</p>
+<p>-p</p>
+<p>[161]</p>
+<p>re</p>
+<p>[160]</p>
+<p>lP</p>
+<p>[159]</p>
+<p>na</p>
+<p>[157] [158]</p>
+<p>Oliynyk AO, Antono E, Sparks TD, Ghadbeigi L, Gaultois MW, Meredig B, Mar A. 2016. High-throughput machine-learning-driven synthesis of full-Heusler compounds. Chem. Mater. 28(20): 7324-7331 Intellegens, https://intellegens.ai. (Accessed on 22 April 2020) 3D Printing.com, https://3dprint.com/242940/alchemite-used-to-design-new-alloyfor-direct-laser-deposition. (Accessed on 22 April 2020) Stathatos E, Vosniakos G-C. 2019. Real-time simulation for long paths in laser-based additive manufacturing: a machine learning approach. Int. J. Adv. Manuf. Tech. 1-18 Popova E, Rodgers TM, Gong X, Cecen A, Madison JD, Kalidindi SR. 2017. Processstructure linkages using a data science approach: application to simulated additive manufacturing data. Integrating Materials and Manufacturing Innovation. 6(1): 54-68 Collins PC, Haden C, Ghamarian I, Hayes B, Ales T, Penso G, Dixit V, Harlow G. 2014. Progress toward an integration of process–structure–property–performance models for “three-dimensional (3-D) printing” of titanium alloys. JOM. 66(7): 12991309 Cang R, Ren MY. 2016. Deep network-based feature extraction and reconstruction of complex material microstructures. In ASME 2016 International Design Engineering Technical Conferences and Computers and Information in Engineering Conference, pp: 95–104 Lei X, Liu C, Du Z, Zhang W, Guo X. 2019. Machine learning-driven real-time topology optimization under moving morphable component-based framework. J. Appl. Mech. 86(1): 011004 Lynch ME, Sarkar S, Maute K. 2019. Machine Learning to Aid Tuning of Numerical Parameters in Topology Optimization. J. Mech. Des. 141(11): 114502 Ulu E, Zhang R, Kara LB. 2016. A data-driven investigation and estimation of optimal topologies under variable loading configurations. Comput. Method Biomec. 4(2): 6172 Zhang Y, Chen A, Peng B, Zhou X, Wang D. 2019. A deep Convolutional Neural Network for topology optimization with strong generalization ability. arXiv:1901.07761</p>
+<p>ur</p>
+<p>[156]</p>
+<p>[174] [175]</p>
+<p>[176] [177]</p></section>
+<section class="pdf-page" id="pdf-page-42"><h2 class="page-number">Page 42</h2><p>[178] [179] [180]</p>
+<p>Jo</p>
+<p>ur</p>
+<p>na</p>
+<p>lP</p>
+<p>re</p>
+<p>-p</p>
+<p>ro of</p>
+<p>[181]</p>
+<p>Jang J-S. 1993. ANFIS: adaptive-network-based fuzzy inference system. IEEE Trans. Syst. Man Cybern. 23(3): 665-685 Sacco D, Motta G, You L, Bertolazzo N, Chen C, Pavia U. 2013. Smart cities, urban sensing, and big data: mining geo-location in social networks. AICA, Salerno, Italy Hamel P, Eck D. 2010. Learning features from music audio with deep belief networks. 11th International Society for Music Information Retrieval Conference, pp. 339-344 Likas A, Vlassis N, Verbeek JJ. 2003. The global k-means clustering algorithm. Pattern Recognit. 36(2): 451-461</p></section></article></body></html>

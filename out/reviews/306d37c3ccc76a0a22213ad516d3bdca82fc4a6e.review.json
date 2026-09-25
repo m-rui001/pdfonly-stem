@@ -1,0 +1,55 @@
+{
+  "sha1": "306d37c3ccc76a0a22213ad516d3bdca82fc4a6e",
+  "title": "Strong Electron–Phonon Coupling and Self-Trapped Excitons in the Defect Halide Perovskites A 3 M 2 I 9 (A = Cs, Rb; M = Bi, Sb)",
+  "doi": "https://doi.org/10.1021/acs.chemmater.7b01184",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/306d37c3ccc76a0a22213ad516d3bdca82fc4a6e/index.html",
+  "source_chars": 98566,
+  "markdown_chars": 4550,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 25,
+      "quote": "Rb Sb2I9 Fit Peak Fit Peak 1.7 1.81.9 1.8 2.0 2.0 2.1 2.2 Energy (eV)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图注中“Rb Sb2I9”缺少下标“3”，可能为OCR错误，但原文是图像标签，不影响正文，故此条作为疑似标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "ab Residual 2.5 mW 10 mW 25 mW 3 50 mW Rb Sb2I9 Fit Peak Fit Peak 1.7 1.81.9 1.8 2.0 2.0 2.1 2.2 Energy (eV) Energy (eV) 2.2 Rb3Sb2I9 13K 15.0mW 10.0mW 5.0mW 2.5mW 1.5mW 0.5mW a 1.7 1.8 1.9 2.0 2.1 2.2 Energy (eV) Log(Integrated PL Intensity) PL Intensity (a.u.) (a.u.) PL Intensity 13K Log(Integrated PL) (x100) Rb 3Sb2I 9 PL Intensity (a.u.) they will not affect the error significantly. -3.5 c -4.0 Fitted Slope: Slope: b = 1.0252 +/- .02 k =1.079 +/- 0.017 -4.5 0.0 -0.8 -0.4 0.4 0.0 0.8 0.4 Log(Power (mW)) Log(Power (mW))",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第25页开头插入图11的坐标轴标签、数据点和图注，截断了第24页末尾句子的连续性。实际正文应为“they will not affect the error significantly.”之后继续“The dependence of PL emission intensity on laser power...”，但提取文本中夹杂了图表元素，需删除这些非正文内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的带隙、PL峰值、Huang-Rhys参数、声子能量、激活能等关键数值与正文一致。公式(1)-(5)已按提取文本原样保留，变量定义未更改。提取文本中第25页的图表混入已剔除，但已在extraction_issues中记录。Rb₃Sb₂I₉的低温段拟合参数S1=50.4和Eph1=7.1 meV与表3一致，高温段S2=21.2和Eph2=19.6 meV亦对应。Cs₃Bi₂I₉的S=79.5为单峰拟合结果，原文注明可能高估。电阻率和光导数据已保留。不确定之处：第25页的“Rb Sb2I9”是否为OCR错误，但该文本属于图注，不影响结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9507,
+      "prompt_tokens": 28077,
+      "total_tokens": 37584,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5598
+      }
+    },
+    "content_chars": 6150
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "a05913bfab7f3418c95a6cc64f617d06b1eb2aa7",
+  "title": "Giga-voxel computational morphogenesis for structural design",
+  "doi": "https://doi.org/10.1038/nature23911",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a05913bfab7f3418c95a6cc64f617d06b1eb2aa7/index.html",
+  "source_chars": 42112,
+  "markdown_chars": 9021,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "min _ {x \\in \\square^ {n}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "优化问题中设计变量 x 的取值空间符号在 OCR 中显示为 \\square，疑似丢失了原本的实数集符号（如 \\mathbb{R}），影响公式的精确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": " Load scenario: Conventional design[J] Optimized Design[J] Improvement \n\n Load case1: 511,479 506,756 0.92% \n\n Load case2: 15,112,593 14,987,090 0.83%",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 1 的表格结构在 OCR 中严重损坏，列标题与数据行之间缺乏明确分隔，且表头中的单位标记 [J] 可能为 OCR 误读，影响表格数据的准确解读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "N _ {e} = {i \\mid r_{\\mathrm{i}}-r_{\\mathrm{e}}\\leq R}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "邻域集定义中缺少集合花括号的转义或格式标记，OCR 文本中花括号直接出现，可能影响公式的准确解析。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Giga-voxel computational morphogenesis for structural design",
+  "self_check": "已核对摘要、正文关键数值与结论：机翼半翼展 27 m、内弦 12 m、外弦 1.5 m、11 亿体素、网格 1,216×3,456×256、翼根单元 0.8 cm、马赫 0.85、海拔 10,700 m、攻角 0° 和 4°、减重 2%–5%、每翼 200–500 kg、每年 40–200 吨燃料、8,000 CPU、1–5 天、过滤半径 27 体素、惩罚参数从 1 到 3 步长 0.25、400 设计循环、约六百万自由度粗水平、四个几何多重网格水平、1.41 亿单元/4.3 亿自由度、640 核心、Extended Data Table 1 中 0.92% 和 0.83% 改进、总减重 400–1,000 kg。公式已按提取文本原样保留，未补写或修改。仍不确定之处：Extended Data Table 1 的表格结构损坏可能影响数据对应关系的精确性；公式中 \\square 符号疑似丢失实数集符号，但无法从文本确认原符号。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5735,
+      "prompt_tokens": 10329,
+      "total_tokens": 16064,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10677,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Giga-voxel computational morphogenesis for structural design",
+    "translated_title": "用于结构设计的千兆体素计算形态发生",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

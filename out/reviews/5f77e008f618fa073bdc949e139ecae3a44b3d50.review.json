@@ -1,0 +1,100 @@
+{
+  "sha1": "5f77e008f618fa073bdc949e139ecae3a44b3d50",
+  "title": "Perovskite Solar Cells with ZnO Electron‐Transporting Materials",
+  "doi": "https://doi.org/10.1002/adma.201703737",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5f77e008f618fa073bdc949e139ecae3a44b3d50/index.html",
+  "source_chars": 112614,
+  "markdown_chars": 5492,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "On the basis of",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页以'On the basis of'结尾，第6页开头为's work,'，中间明显缺失内容，可能是'this'或具体作者名，影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "but the low stab",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第21页末尾'but the low stab'后第22页以'[41]'开头，句子不完整，疑似跨页丢失了'ility'等词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "P the spiro-OMeTAD can permeate",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "句首的'P'疑似OCR误识别，可能应为'Then'或'The'，但无法确定。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "s surfaces.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第27页以不完整的's surfaces.'结尾，前文缺失，可能指'nanorods surfaces'或类似，无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "shown Equation 1:[138] (1) Where",
+      "type": "公式缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文提到式(1)但未提取到公式本体，只有变量定义，公式内容缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "OH-+CH3NH3 CH3NH3 3NH3OH+I 3NH2 +H2O (heat)",
+      "type": "疑似错误/公式损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "化学方程式严重乱码，无法辨认原子数，应为OCR错误，原式可能为OH⁻+CH3NH3⁺→CH3NH2+H2O一类。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 44,
+      "quote": "Go,[164]",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "掺杂元素'Go'疑为'Ga'（镓），但无充分证据，可能原文即如此。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数据：PSC最高PCE超过20%，ZnO基PSC最佳约17%（正文后续给出17.6%和17.3%），电子迁移率数值（钙钛矿7.5 cm²V⁻¹s⁻¹，TiO2 0.1–4，C60约1，PCBM 2.6×10⁻⁴）及能级位置（C60 -6.3 eV，PCBM -6.0，TiO2 -8.0）与正文一致。核对各器件效率：Tseng 15.9%，ALD 7%，静电喷涂10.8%-3.4%，Liu纳米颗粒15.7%，Zhang颗粒尺寸15.92%，You 16.1%，Hwang 11.96%，Zhou 8.73%/4.29%，Bi 5.0%，Son 11.13%，溶剂工程6.63%，Al2O3+溶剂退火17.3%，纳米墙13.6%，单根纳米线0.0338%/0.139%，QDs 9.73%。改性后16.08%和17.6%已核对。公式(1)未提取到，仅描述变量关系；反应式损坏未采用。不确定点：'Go'是否为'Ga'，'P the spiro-OMeTAD'的'P'，以及跨页缺失词均已在问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7969,
+      "prompt_tokens": 37574,
+      "total_tokens": 45543,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3437
+      }
+    },
+    "content_chars": 7594
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "sha1": "e2c7828f51559d0eee3eb611ec62f3a421a97a35",
+  "title": "Metal Thio‐ and Selenophosphates as Multifunctional van der Waals Layered Materials",
+  "doi": "https://doi.org/10.1002/adma.201602852",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e2c7828f51559d0eee3eb611ec62f3a421a97a35/index.html",
+  "source_chars": 191370,
+  "markdown_chars": 7707,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 33,
+      "quote": "Earler PFM imaging of the band excitation amplitude noted a regular network of ferrielectric domai\n\nradians in piezoresponse between these domains) and areas",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第 33 页末尾句子在‘domai’处中断，下一页（第 34 页）以残缺短语‘radians in piezoresponse...’继续，且中间缺失了部分文字，疑似跨页截断或抽取丢失内容。原文可能为‘domains (with phase differences of ... radians)’之类，但无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "M21+M2+[+[P2X6]4–",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原文中多次出现‘M21+M2+[+[P2X6]4–’的写法，多余一个‘+’号，且电荷表示不规范。应为 M2^1+M2+[P2X6]4– 类型，但抽取文本中多处出现此符号异常，需根据上下文判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "M1+M3+[P2S6]4– compounds have more variability in their structure. Two compounds, AgInP2S6 and AgScP2S6, are reported as trigonal ( P13c ) and centrosymmetric at room temperature.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第 8 页开头句子‘M1+M3+[P2S6]4– compounds...’前面缺少上页的衔接内容，但整体语义可理解，不视为错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Stoichiometric quantities of the starting elements were sealed into a quartz ampoule and heated at 600 oC for 2–3 days.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句子与前面关于 5–10 g 批次的描述衔接自然，未发现问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：带隙范围 1.2–3.4 eV（正文）与 1.3–3.5 eV（摘要/结论）并存，正文 Table 3 给出具体值，表述时区分了测量值与综述性范围。CuInP2S6 的 Tc=315 K、Ps=2.55/3.01 µC cm–2、dTc/dp=210 K GPa–1、热释电系数 13 nC cm–2·K 与原文一致。磁性数据（Mn2P2S6 TN≈78 K、Fe2P2S6 TN≈116–123 K、Ni2P2S6 TN=155 K、Mn2P2Se6 TN=74 K、Ni2P2Se6 206 K）已按原文列出。公式部分保留离子交换反应式（第 4 式）和 Arrenius 表达式，未自行改写。不确定点：CuInP2S6 的偶极玻璃温度范围（原文为低于 175 K）以及部分合金相图具体边界未逐字引用；跨页截断处已列为 extraction_issues。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6203,
+      "prompt_tokens": 55426,
+      "total_tokens": 61629,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 53
+      }
+    },
+    "content_chars": 9614
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

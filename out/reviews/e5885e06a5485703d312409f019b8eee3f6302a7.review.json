@@ -1,0 +1,54 @@
+{
+  "sha1": "e5885e06a5485703d312409f019b8eee3f6302a7",
+  "title": "Global glacier change in the 21st century: Every increase in temperature matters",
+  "doi": "https://doi.org/10.1126/science.abo1324",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e5885e06a5485703d312409f019b8eee3f6302a7/index.html",
+  "source_chars": 46391,
+  "markdown_chars": 3657,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "retreat onto land (4457% of all marine-terminating glaciers)",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "4457%明显不合逻辑，极可能是44–57%的连字符或空格在抽取时丢失，导致百分号范围被并为一个数字。原文应表达为44%到57%。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "98±38 mm SLE (SSP12.6) to 166±83 mm SLE (SSP5-8.5)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "SSP12.6在其他位置均写为SSP1-2.6（如表1和后续文字），此处应为SSP1-2.6的抽取或排版错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表格中的关键数值：全球质量损失26±6%至41±11%，海平面贡献90±26至154±44毫米，冰川消失数量104,000±20,000（49±9%至83±7%），区域贡献百分比（阿拉斯加等五区60-65%），以及对比数值（如RCP2.6 90±36 vs 79±57等）。所有数值在正文和表1中一致。不确定处：文本中‘4457%’和‘SSP12.6’疑似错误，已在问题中标注；其余数值与上下文逻辑一致，但原始PDF可能因提交稿未完全校对，个别符号（如±）和单位（如mm SLE）已照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11199,
+      "prompt_tokens": 13445,
+      "total_tokens": 24644,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8475
+      }
+    },
+    "content_chars": 4532
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

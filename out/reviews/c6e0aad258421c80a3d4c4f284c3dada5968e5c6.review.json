@@ -1,0 +1,81 @@
+{
+  "sha1": "c6e0aad258421c80a3d4c4f284c3dada5968e5c6",
+  "title": "Mechanistic Insights into Electrochemical Nitrogen Reduction Reaction on Vanadium Nitride Nanoparticles",
+  "doi": "https://doi.org/10.1021/jacs.8b08379",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c6e0aad258421c80a3d4c4f284c3dada5968e5c6/index.html",
+  "source_chars": 31899,
+  "markdown_chars": 3085,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 26,
+      "quote": "VOx (x  2)",
+      "type": "疑似乱码",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "字符“”应为“≤”的乱码表示，原文应为x ≤ 2。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "VNxOy, VOx (x  2)",
+      "type": "疑似乱码",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同样“”应为“≤”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "0.8315 0.1551 − 14 𝑔/𝑚𝑜𝑙 (51 + 14) 𝑔/𝑚𝑜𝑙 2.5 × 10−3 𝑔 × = 12.4 µ𝑚𝑜𝑙 (51 + 0.7 × 14 + 0.45 × 16) 𝑔/𝑚𝑜𝑙 (14 ∗ 0.7) 𝑔/𝑚𝑜𝑙 − 14 𝑔/𝑚𝑜𝑙 (51 + 14) 𝑔/𝑚𝑜𝑙",
+      "type": "公式排版损坏",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "TON计算过程公式在提取中缺失了分数线、括号和乘号，导致无法准确复原计算步骤。照录可见文本，但需注意公式不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "1 − 16.85 𝑤𝑡% = 83.15 𝑤𝑡%",
+      "type": "公式可疑",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原意应为V的质量分数（100% − 16.85% = 83.15%），但表达中缺少（100% −）的说明，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "NH4+ + 2[HgI4 ]2− + 4OH − → HgO ∙ Hg(NH2 )I ↓ +7I − + 3H2 O",
+      "type": "符号不规范",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式中的方括号和降号有缺失，但整体可读，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：BET 177 m²/g，N含量15.51 wt%，C含量16.85 wt%，TGA组成60/20/20，稳定性7%/12%，氨平衡控制实验86.0±12.2和102.0±11.3 µg，15N2实验结论，XPS峰位，DFT结合能差值（N强2.51 eV和2.36 eV，H强0.32和0.28 eV），产氨速率3.31e-10 mol s^-1 cm^-2，FE 5.95%，TON 29.2和62.8，XAS 57.8%。所有数值均来自提取文本。不确定处：TON计算公式排版损坏，部分符号乱码，已标记；其余数值与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5284,
+      "prompt_tokens": 10586,
+      "total_tokens": 15870,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2514
+      }
+    },
+    "content_chars": 4614
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "sha1": "1876b90815791be33771f2e8002a30a5aea37e02",
+  "title": "Elastic Properties of the Solid Electrolyte Li 7 La 3 Zr 2 O 12 (LLZO)",
+  "doi": "https://doi.org/10.1021/acs.chemmater.5b03854",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1876b90815791be33771f2e8002a30a5aea37e02/index.html",
+  "source_chars": 51220,
+  "markdown_chars": 4506,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "(indenter information?)",
+      "type": "疑似编辑注释/杂散文本",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该文本明显不是原文内容，可能是提取过程带入的注释或占位符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "= (8)",
+      "type": "公式缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "式(8)仅有编号和等号，公式内容未被提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the grains are < 50",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页7表格前句子在'< 50'处中断，表格后接'µm, the elastic moduli represent isotropic'，跨页打断导致'µm'缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Li6.17Al0.28La3Zr2O3",
+      "type": "疑似原文错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "化学式末尾为O3，但上下文均写为O12（如Li6.17Al0.28La3Zr2O12），可能是原文笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "147. GPa",
+      "type": "疑似提取缺失",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "比较文本中写'147. GPa'，但表1中对应值为147.2 GPa，可能小数点后数字缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "with no second",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页5末尾句子在'second'处中断，页6开头接'phases, as compared to cubic LLZO'，明显是跨页拼接导致'phases'缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "三个弹性常数：, , 和 。",
+      "type": "公式/符号缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "弹性常数符号缺失，仅保留逗号和括号，无法从上下文确定具体符号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Al掺杂DFT 0K的B=112.4、E=162.6、G=64.6 GPa；外推298K为E=154.5、G=61.4；Ta掺杂外推E=147.2、G=59.4。实测脉冲激发E：Al 146.1±0.8、Ta 139.9±2.7；纳米压痕E：Al 150.3±2.2、Ta 153.8±2.7；平均G约60和58 GPa。锂的G=4.25 GPa，临界值8.5 GPa。B/G=1.74和1.59。Zener比1.27和1.32。公式(1)-(7)大部分因提取缺失而无法完整呈现，已在text中标注。结论方向与摘要一致。不确定之处：式(1)中C11与B和C12的关系因提取缺符号无法验证；Al掺杂化学式O3疑似错误，已列入问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6204,
+      "prompt_tokens": 14957,
+      "total_tokens": 21161,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2345
+      }
+    },
+    "content_chars": 6397
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

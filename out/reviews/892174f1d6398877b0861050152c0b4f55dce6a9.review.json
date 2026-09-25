@@ -1,0 +1,75 @@
+{
+  "sha1": "892174f1d6398877b0861050152c0b4f55dce6a9",
+  "title": "Reynolds averaged turbulence modelling using deep neural networks with embedded invariance",
+  "doi": "https://doi.org/10.1017/jfm.2016.615",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/892174f1d6398877b0861050152c0b4f55dce6a9/index.html",
+  "source_chars": 31795,
+  "markdown_chars": 7849,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "by the Caley-Hamilton theory",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标准术语为 Cayley-Hamilton，OCR 将 Cayley 误抽为 Caley。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "It predicted zero anisotropy for $ \\mathbf{b}{11}, $ $ \\mathbf{b}{22}, $ $ \\mathbf{b}{33}, $ and $ \\mathbf{b}{12}. $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "下标花括号丢失，$\\mathbf{b}{11}$ 等应为 $\\mathbf{b}_{11}$ 等；同页 $\\mathbf{S}{11}$、$\\mathbf{S}{22}$、$\\mathbf{S}{12}$、$\\mathbf{S}_{33}$ 同样丢失下标括号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "$ \\mathbf{b}{1 3} $ and $ \\mathbf{b}{2 3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "下标花括号丢失且数字间有空格，应为 $\\mathbf{b}_{13}$ 和 $\\mathbf{b}_{23}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the true DNS anisotropy values were also implemented in the RANS solver as a point of comparison. This DNS anisotropy (DNS- b) model",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“DNS- b”中连字符与 b 之间多出空格，全文多处出现该写法，可能为 OCR 对“DNS-b”的抽取不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Reynolds Averaged Turbulence Modeling using Deep Neural Networks with Embedded Invariance",
+  "self_check": "已核对：摘要主张（TBNN 嵌入伽利略不变性、优于通用网络、两个测试算例优于 LEVM/QEVM）；表 I 数值（管流 LEVM 0.23、QEVM 0.18、TBNN 0.13、MLP 0.33；波浪壁 LEVM 0.18、QEVM 0.11、TBNN 0.08、MLP 0.09）；正文百分比（管流 TBNN 比 LEVM 准确 43%、比 QEVM 28%；波浪壁比 LEVM 降 56%、比 QEVM 降 27%）；超参数（MLP 10 隐层×10 节点、学习率 2.5e-6；TBNN 8 隐层×30 节点、学习率 2.5e-7）；QEVM 系数 C1=-0.1、C2=0.1、C3=0.26；数据集 9 个流动（6 训练、1 验证、2 测试）及雷诺数。公式按提取文本原样保留，未补写或修正。不确定处：OCR 中 $\\mathbf{b}{11}$ 等下标括号丢失、Caley-Hamilton 拼写、DNS-b 空格，已在 extraction_issues 标出；未读取 PDF/图片，未使用外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5182,
+      "prompt_tokens": 8802,
+      "total_tokens": 13984,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10038,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

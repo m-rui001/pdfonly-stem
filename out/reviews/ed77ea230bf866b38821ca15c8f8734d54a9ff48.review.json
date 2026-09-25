@@ -1,0 +1,57 @@
+{
+  "sha1": "ed77ea230bf866b38821ca15c8f8734d54a9ff48",
+  "title": "Volatility estimation for Bitcoin: A comparison of GARCH models",
+  "doi": "https://doi.org/10.1016/j.econlet.2017.06.023",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ed77ea230bf866b38821ca15c8f8734d54a9ff48/index.html",
+  "source_chars": 14699,
+  "markdown_chars": 2465,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Note: Standard errors of estimates are reported in parentheses. The p-values associated with the statistical tests are presented in brackets. $ ^{} $ , $ ^{} $ and $ ^{**} $ represent the significance at the 10%, 5% and 1% levels, respectively.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "显著性星号标注在 OCR 中丢失，仅剩空的上标占位符，无法从文本判断 10%、5%、1% 分别对应哪个星号标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The optimal model is chosen according to three information criteria, namely Akaike (AIC), Bayesian (BIC) and Hannan-Quinn (HQ), all of which consider both how good the fitting of the model is and the number of parameters in the model, rewarding a better fitting and penalising an increased number of parameters for given data sets.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句语法略显不完整（'rewarding a better fitting' 缺少宾语），可能是 OCR 抽取时遗漏了词，但不影响对信息准则含义的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Volatility estimation for Bitcoin: A comparison of GARCH models",
+  "self_check": "已核对：日均收益 0.5778%、标准差 0.0617、观测数 2267、AR-CGARCH 的 LL 3885.692 与 AIC/BIC/HQ 值、ARCH(5) 与 Q2(10) 的 p 值、JB 值 7899.348，均与 Table 1 和 Table A.2 一致。公式按 OCR 原文照录，未补写或修改。不确定处：Table A.2 中显著性星号的具体对应关系因 OCR 丢失无法确认；ACGARCH 的 $h_t^2$ 公式中 $D_{t-1}$ 的定义原文未给出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 1906,
+      "prompt_tokens": 5533,
+      "total_tokens": 7439,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 3971,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

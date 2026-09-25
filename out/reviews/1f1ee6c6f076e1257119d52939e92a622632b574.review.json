@@ -1,0 +1,91 @@
+{
+  "sha1": "1f1ee6c6f076e1257119d52939e92a622632b574",
+  "title": "Understanding Compound, Interconnected, Interacting, and Cascading Risks: A Holistic Framework",
+  "doi": "https://doi.org/10.1111/risa.13128",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1f1ee6c6f076e1257119d52939e92a622632b574/index.html",
+  "source_chars": 70536,
+  "markdown_chars": 3848,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The findings could be used toused to improve policy",
+      "type": "疑似拼写/重复错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“toused”疑似“used to”的重复或拼写错误，原文未提供正确形式，标出以示存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the uncertainties inherent in erging threats",
+      "type": "疑似缺字",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“erging”疑似应为“emerging”，但从提取文本无法确认，照录并标出。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Pescaroli and alexander",
+      "type": "疑似编辑残留",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文中出现“ , add here Pescaroli and alexander”字样，明显是注释性文本，非正式正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "in line with the SDFF",
+      "type": "疑似缩写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“SDFF”应为“SFDRR”（Sendai Framework for Disaster Risk Reduction）的笔误，但原文如此，照录并标出。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "distinguish distinguishing the complementarities of the social domain",
+      "type": "疑似重复/编辑残留",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "“distinguish distinguishing”为不确定的原文异常，可能为“distinguishing”的重复或编辑笔记。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "These relationships are shown in Figure 1... Figure 1. A framework for compound, interacting, interconnected and cascading risks",
+      "type": "跨页顺序/图文编号疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第18页先提到“Figure 1”后，又在同一页出现“Figure 1. A framework...”，且后文第20页出现“Figure 2”，实际图序可能不一致，但提取文本无法确定正确编号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心公式（Hazard×Vulnerability×Exposure=Risk→Impact）、关键数值（Eyjafjallajökull气流条件占6%时间、Natech占工业事故约5%、Sandy约50人死亡）及三个案例的论证顺序和结论。提取文本中存在多处OCR/排版噪声（如重复词、编辑残留），已在issues中列出；公式和数值均基于提取文字，未作推测。关于图和表的编号，原文中Figure 1、Figure 2、Figure 3的引用顺序存在混乱，但正文描述的内容与图片主题基本可对应，因此未在Markdown中强行指定编号顺序，仅在问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3862,
+      "prompt_tokens": 18975,
+      "total_tokens": 22837,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 909
+      }
+    },
+    "content_chars": 5831
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

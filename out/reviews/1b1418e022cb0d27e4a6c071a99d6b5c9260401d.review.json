@@ -1,0 +1,75 @@
+{
+  "sha1": "1b1418e022cb0d27e4a6c071a99d6b5c9260401d",
+  "title": "Hobit and Blimp1 instruct a universal transcriptional program of tissue residency in lymphocytes",
+  "doi": "https://doi.org/10.1126/science.aad2035",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/1b1418e022cb0d27e4a6c071a99d6b5c9260401d/index.html",
+  "source_chars": 32859,
+  "markdown_chars": 4549,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Zfp3611 $ ^{f1} $ , Zfp3612 $ ^{f1} $ and ROSA26 $ ^{L1} $ mice",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "小鼠基因名疑似 OCR 误读（如 Zfp3611/Zfp3612 与 ROSA26 等位基因标记），但属补充材料可用性说明，不影响主论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "10.1126/science.aad5978",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该 DOI 出现在补充材料段落末尾，与本文 DOI（aad2035）不同，疑为相邻文章或排版残留，不影响正文论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "INNATE IMMUNITY\n\n# Mx1 reveals innate pathways to antiviral resistance and lethal influenza disease",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第 6 页末尾混入另一篇论文（Mx1 相关）的标题与摘要，属相邻文章串入，非本文内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "www.sciencemag.org/content/352/6284/459/suppl/DC1 Materials and Methods Figs. S1 to S17 References (31-44) 10 August 2015; accepted 21 March 2016 10.1126/science.aad2035",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "补充材料段落中同时出现本文 DOI 与另一篇论文的补充材料信息，排版混杂，但本文身份可由标题与 DOI 确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Hobit and Blimp1 instruct a universal transcriptional program of tissue residency in lymphocytes",
+  "self_check": "已核对：OCR 正文首页标题与登记题名、DOI（10.1126/science.aad2035）一致，record_match 为 match。关键数值与结论方向已逐项核对：Hobit 在 Trm 中特异性上调、Blimp1 在效应期峰值、Hobit/Blimp1 双缺陷损害皮肤与肠道 Trm 及肝脏 NKT/trNK 维持、192 个 CD103⁺ Trm 相关基因、30 个跨谱系驻留基因、4510 个 Blimp1 结合位点/3241 基因、404 个 Hobit 位点、>50% 重叠、78% 与 31% 比例、S1pr1/Ccr7/Tcf7 直接结合、Klf2 仅 Blimp1 结合，均与原文一致。不确定处：第 2 页 Zfp3611/Zfp3612 等基因名及第 6 页混入的 Mx1 论文内容，已作为抽取问题标出，未纳入正文论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3411,
+      "prompt_tokens": 10396,
+      "total_tokens": 13807,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6366,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "sha1": "b077e5bede347a32fcce3610857a1a3b58f5a8ee",
+  "title": "Steering post-C–C coupling selectivity enables high efficiency electroreduction of carbon dioxide to multi-carbon alcohols",
+  "doi": "https://doi.org/10.1038/s41929-018-0084-7",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b077e5bede347a32fcce3610857a1a3b58f5a8ee/index.html",
+  "source_chars": 44561,
+  "markdown_chars": 7756,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Tao-Tao Zhuang $ ^{1,2} $ $ ^{2 \\dagger} $ , Zhi-Qin Liang $ ^{1 \\dagger} $ , Ali Seifitokaldani $ ^{1 \\dagger} $ , Yi Li $ ^{2} $ , Phil De Luna $ ^{3} $ Thomas Burdyny $ ^{4} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者列表中标点与上标格式混乱，如 Phil De Luna 后缺少逗号，且 Tao-Tao Zhuang 出现重复上标 $ ^{2 \\dagger} $，可能为 OCR 抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "methane $ (\\mathrm{CH}{4})^{7} $ , and ethylene $ (\\mathrm{C{2}H_{4}})^{8} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失，CH4 和 C2H4 被抽取为 CH{4} 和 C{2}H_{4}，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "formate $ (\\mathrm{HCOOH})^{9-15} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "甲酸盐化学式 HCOOH 虽可识别，但原文可能为 HCOO⁻ 或 HCO₂⁻，OCR 未保留电荷或正确下标，存在符号损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the adsorbed $ \\mathrm{C H_{2} C H O} $ intermediate $ \\mathrm{(^{*}C_{2} H_{3} O)} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "中间体符号 *C2H3O 被抽取为 ^{*}C_{2} H_{3} O，星号位置和下标格式不规范，可能影响公式复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the CSVE nanocatalyst shows peak alcohol production. Interestingly, propanol $ \\mathrm{(C_{3}H_{7}OH)} $ and ethanol $ \\mathrm{(C_{2}H_{5}OH)} $ follow a similar selectivity trend",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学式 C3H7OH 和 C2H5OH 被抽取为 C_{3}H_{7}OH 和 C_{2}H_{5}OH，下标格式不规范，但内容可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Figure 1 | Reaction Gibbs free energy diagram. (a) Atomic models. (b-d) Reaction Gibbs free energy diagram from the adsorbed $ \\mathrm{C_{2} H_{3}O} $ intermediate to ethylene (black lines) and ethanol (red lines) for (b) pristine copper (Cu), (c) Cu with Cu vacancy, and (d) Cu with Cu vacancy and subsurface sulfur (S) slab models. (e-g) The same reaction free energy diagrams after applying -0.5 V bias potential.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中化学式 C2H3O 被抽取为 C_{2} H_{3}O，下标格式不规范，但内容可识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "$$ ^ {*} \\mathrm {C} _ {2} \\mathrm {H} _ {3} \\mathrm {O} + \\left(\\mathrm {H} ^ {+} + \\mathrm {e} ^ {-}\\right)\\rightarrow^ {*} \\mathrm {O} + \\mathrm {C} _ {2} \\mathrm {H} _ {4} $$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "反应式中星号位置和下标格式不规范，如 ^ {*} 与后续化学式分离，可能影响公式的准确解读。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "the $ \\mathrm{V-C u_{2} S} $ exhibits $ \\mathrm{C u_{2} S} $ features",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "V-Cu2S 被抽取为 V-C u_{2} S，元素符号与下标间出现空格，可能为 OCR 格式错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "the alcohol-to-ethylene ratio is enhanced from 0.18 on the bare-Cu NPs to 1.2, a 6x increase with the CVSE catalyst",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "催化剂缩写 CSVE 被误写为 CVSE，与全文其他处 CSVE 不一致，可能为 OCR 抽取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "$$E \\left(v e r s u s R H E\\right) = E \\left(v e r s u s A g / A g C l\\right) + 0. 1 9 7 V + 0. 0 5 9 1 \\times p H$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中变量名被拆分为带空格的字符，如 v e r s u s，且数字间有空格，影响公式的准确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Steering post-C-C coupling selectivity enables high efficiency electroreduction of carbon dioxide to multi-carbon alcohols",
+  "self_check": "已核对摘要、正文数据与结论：C2+ 醇产率 126 ± 5 mA cm⁻²、FE 32 ± 1%、醇/乙烯比提升 6 倍、H 型池中乙醇 FE 15 ± 1%、丙醇 FE 8 ± 0.7%、流动池中 C2+ 醇 FE 32%（乙醇 25 ± 1%、丙醇 7 ± 0.5%）、分电流密度 >120 mA cm⁻² 等关键数值均与原文一致。公式已按提取文本保留，未做推测性修复。仍不确定处：部分化学式下标和星号位置在 OCR 中格式不规范，但未影响核心结论；CVSE/CSVE 缩写混用已作为 OCR 问题标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5946,
+      "prompt_tokens": 12840,
+      "total_tokens": 18786,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11960,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

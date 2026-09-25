@@ -1,0 +1,91 @@
+{
+  "sha1": "db3e4b7707614c37e0e9c1ad9329f80a14e75fda",
+  "title": "Histone H1 couples initiation and amplification of ubiquitin signalling after DNA damage",
+  "doi": "https://doi.org/10.1038/nature15401",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/db3e4b7707614c37e0e9c1ad9329f80a14e75fda/index.html",
+  "source_chars": 72615,
+  "markdown_chars": 2370,
+  "heading_h2_count": 1,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "we first characterized the impact of Ubc13 loss on global K63-linked ubiquitylation",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页以“under steady state conditions.”接续，正常阅读时需跨页连接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Basal levels of H1 K63",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页以“polyubiquitylation in non-irradiated cells dropped substantially”接续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Consistently, the H1-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "连字符断开，下一页以“binding ability of UDM1 was at least partially mediated by the LRM1 motif”接续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "For chromation fractionation",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "上下文均为“chromatin”相关术语，此为“chromatin”的拼写变体，但原文提取如此，照录并标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "而RNF8",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页以“recruitment was normal”接续，页码标记间可能丢失连字符或空格。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "This could be rescued by co-overexpression of H1 or by WT but not",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页以“catalytically inactive RNF168”接续。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Ubc13敲除降低K63总水平约50%，超过3000个位点中<1%下降>2倍，371个K63候选蛋白，H1.2和H1x为靶点，siRNA下调H1减弱K63泛素化、RNF168、53BP1、BRCA1（不影响MDC1），HMGB1实验，UDM1结合K63链和H1但不结合H2A等。结论方向与摘要一致。不确定之处：具体IR剂量（4Gy/10Gy）仅出现在方法中，正文未提，笔记未强调；跨页断句已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8312,
+      "prompt_tokens": 23398,
+      "total_tokens": 31710,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6084
+      }
+    },
+    "content_chars": 4180
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

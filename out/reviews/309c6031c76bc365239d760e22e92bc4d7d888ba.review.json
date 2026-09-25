@@ -1,0 +1,82 @@
+{
+  "sha1": "309c6031c76bc365239d760e22e92bc4d7d888ba",
+  "title": "Revisiting a Key Innovation in Evolutionary Biology: Felsenstein’s “Phylogenies and the Comparative Method”",
+  "doi": "https://doi.org/10.1086/703055",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/309c6031c76bc365239d760e22e92bc4d7d888ba/index.html",
+  "source_chars": 94833,
+  "markdown_chars": 3189,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "generate n 2 1 independent contrasts",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "上下文中应为“n−1”个独立对比，数字2疑为连字符被OCR识别为数字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Cov(X i , X j ) p j2 t ij",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "布朗运动模型下协方差应为σ²乘以时间，“j2”疑似希腊字母σ²的OCR误识，“p”应为等号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "the denominator should be v3 1 v60 (not v3 1 v6 )",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "v60同样疑为v'_6，“1”应为加号。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "v60 p v6 1 v4 v5 /(v4 1 v5)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "v60疑为v'_6（v6 prime）的OCR误识，“1”疑为加号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "The expression for v80 should start with v08 p v8 1 ⋯ (not v08 p v07 1 ⋯)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "v80和v08疑为v'_8的变体，“1”应为加号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Felsenstein(1985a)被引5825次，Nei(1972) 6793次，Paine(1966) 3192次。公式中n−1、σ²、v'_6等疑点已在issues中标注；附录C中的两个typo已按原文提及的方式保留，未进行具体数值推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9421,
+      "prompt_tokens": 22241,
+      "total_tokens": 31662,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7131
+      }
+    },
+    "content_chars": 4522
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

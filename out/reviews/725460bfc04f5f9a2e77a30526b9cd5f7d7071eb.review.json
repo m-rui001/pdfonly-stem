@@ -1,0 +1,73 @@
+{
+  "sha1": "725460bfc04f5f9a2e77a30526b9cd5f7d7071eb",
+  "title": "Polymeric graphitic carbon nitride (g-C3N4)-based semiconducting nanostructured materials: Synthesis methods, properties and photocatalytic applications",
+  "doi": "https://doi.org/10.1016/j.jenvman.2019.02.075",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/725460bfc04f5f9a2e77a30526b9cd5f7d7071eb/index.html",
+  "source_chars": 54533,
+  "markdown_chars": 5232,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "10 C10H14O + 95 O2 → 100 CO2 + 7H2O",
+      "type": "疑似配平/转录错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该反应式原子数不平衡：左侧O原子数=10×1+95×2=200，右侧=100×2+7×1=207；H原子左侧140，右侧14也不平衡。疑为提取错误或原文笔误，正确系数应为2 C10H14O + 25 O2 → 20 CO2 + 14 H2O（或C10H14O + 12.5 O2 → 10 CO2 + 7 H2O），但无法确证原文写法，照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The reaction rate coefficients estimated ranged in 0.0064–0.0100 L mol−1 min−1",
+      "type": "数值不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "结论中速率常数范围下限为0.0064，但Table 3中2% Fe/TiO2的k为0.0061，为全部催化剂中的最小值。结论数值未覆盖表内最小值，可能是作者省略或表述不严谨，照录原文未修正。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": null,
+      "quote": "Polymeric graphitic carbon nitride (g-C3N4)-based semiconducting nanostructured materials: Synthesis methods, properties and photocatalytic applications",
+      "type": "metadata mismatch",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "用户提供的元数据标题为g-C3N4综述（J. Environ. Manage. 2019），但提取文本实际为Scientific Reports 2019年关于Fe-doped TiO2降解4-叔丁基苯酚的研究论文，两者内容完全不一致。笔记以实际文本内容为准。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "F2O3",
+      "type": "疑似OCR/转录错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "Table 2中写作F2O3，但正文XRF结果描述为Fe2O3（3.597%）且Fe2O3/TiO2=3.74%，化学式应为Fe2O3，F2O3不可能是正确化学式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文、表格中的关键数值：4% Fe/TiO2 TOC去除86%、UV/H2O2 TOC去除31%且4-t-BP 100%转化、基底TiO2的4-t-BP去除97%、Fe掺杂催化剂92-93%、EEO范围28-147 kWh/m3/order（表4与摘要一致）、pH从6.3降至3.8、铁浸出量0.14/0.40 ppm及0.35%/1%占比、动力学参数（表3）、初始TOC 24.5±0.5 vs 理论23.96 mg/L、Scherrer晶粒尺寸17-24 nm、XRF成分分析等均与原文一致。不确定之处：(1) 元数据标题与实际文本论文不匹配，已在extraction_issues中标注；(2) 总反应式(11)的化学计量系数配平可疑，无法确证原文正确写法，照录并标注；(3) 结论中速率常数范围0.0064–0.0100与表3最小值0.0061不一致，未修正；(4) Table 2中F2O3应为Fe2O3，已在extraction_issues中标注。未引入任何外部知识或推测性内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8205,
+      "prompt_tokens": 15143,
+      "total_tokens": 23348,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4058
+      }
+    },
+    "content_chars": 7139
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

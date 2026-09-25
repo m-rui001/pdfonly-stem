@@ -1,0 +1,83 @@
+{
+  "sha1": "2e7b91ce1a95406292a00c0ce21b123680ef2622",
+  "title": "MoS 2 ‐on‐MXene Heterostructures as Highly Reversible Anode Materials for Lithium‐Ion Batteries",
+  "doi": "https://doi.org/10.1002/anie.201710616",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2e7b91ce1a95406292a00c0ce21b123680ef2622/index.html",
+  "source_chars": 32833,
+  "markdown_chars": 2345,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "at 500 8C or 700 8C",
+      "type": "字符错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "温度单位中的“8C”应为“°C”（度符号抽取错误）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "two broad peaks at 36 and 438 and a narrower peak at 638",
+      "type": "数值/符号疑似错误",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "“438”和“638”可能应为“43°”和“63°”（角度），缺少度符号且数字疑似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Li-S bond length of 2.09 \u0003 and Li-S-Li bond angle of 1388",
+      "type": "单位/符号错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“1388”可能应为“138°”，“\u0003”应为“Å”（埃）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "d-spacing of 21.53 \u0003",
+      "type": "单位符号丢失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“\u0003”应为“Å”（埃），单位符号抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "was head treated",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“head”应为“heat”（热处理），OCR拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的容量（646/554 mAh g^-1、509 mAh g^-1、482/126 mAh g^-1）、倍率性能（50至5000 mA g^-1对应548至90 mAh g^-1）、库仑效率（86%、50%）、层间距（21.53/14.06/13.71 \u0003，6.62 \u0003）、a-LP（2.93/3.16/3.06 \u0003）、CV峰位（0.8/0.5/1.3/2.3 V）等关键数值一致。不确定之处：温度单位“8C”、角度“438/638/1388”及“\u0003”单位已列入extraction_issues；XRD峰位13.58缺少单位及可能的度符号，存疑。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12345,
+      "prompt_tokens": 12063,
+      "total_tokens": 24408,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10257
+      }
+    },
+    "content_chars": 3753,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

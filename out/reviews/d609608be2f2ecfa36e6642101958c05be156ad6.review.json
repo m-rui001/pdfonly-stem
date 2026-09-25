@@ -1,0 +1,91 @@
+{
+  "sha1": "d609608be2f2ecfa36e6642101958c05be156ad6",
+  "title": "Consumption-based emission accounting for Chinese cities",
+  "doi": "https://doi.org/10.1016/j.apenergy.2016.06.094",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d609608be2f2ecfa36e6642101958c05be156ad6/index.html",
+  "source_chars": 63688,
+  "markdown_chars": 3835,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "200\n\n71% Imported emissions\n\n150\n\n100\n\nDomestic emissions\n\n70% 43% 68% 38%\n\n50\n\n66% 74% 72% 29% 65%\n\n68% 54% 94%\n\n0",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图1的百分比数值以散排形式出现在页面上，缺少对应城市标签，直接拼接易导致对应关系不明或错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Error! Reference source not found. presents the methodology framework of the inventory compilation.",
+      "type": "疑似提取错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文中残留Word交叉引用占位符“Error! Reference source not found.”，替换了原本的图编号，导致对图S1的引用缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the embodied emissions of Xian’s imports are 34 Gt CO2, whereas the embodied emissions of its exports are only 6 Gt CO2",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "西安的进口内含排放用Gt（十亿吨）量级与城市尺度严重不符，上下文亦明确为城市CO₂排放（Mt量级，如上海140 Mt CO₂），应为Mt笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "0.02\n\n43.04\n\n9.79\n\n6.40\n\n0.04\n\n1.57\n\n0.01\n\n0.01\n\n0.10\n\n3.91\n\n47.4\n3 0.00\n\n0.52\n\n0.00\n\n0.00\n\n0.00\n\n0.01\n\n0.00",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "表S6中唐山列出现“47.4”和“0.00”等数值跨行排列，且数值47.43与前后数字格式不一致，疑为表格排版断裂或拼接错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Consumption-based CO2 emissions have been accepted by an increasing number of researchers and policy makers.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第12页页首直接从Conclusions开头开始，前文第11页图5之后有大量留白，正文跨页断裂但无实质缺失，仅页码标记位置需要核对。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "emissions embodied in Tangshan’s imports equal 22 Gt CO2, which is less than half the emissions embodied in its exports (55 Gt CO2)",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "唐山城市进口内含排放用Gt量级与上下文和城市排放尺度明显矛盾，应为Mt。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已逐项核对摘要、正文中所有关键数值与结论的一致性：摘要所述70%进口占比与图1正文一致（京沪津三市约70%）；人均消费侧排放上海14吨、北京12吨、天津10吨与第12页正文一致；资本形成贡献32–65%与第8页正文一致；石家庄生产侧87 Mt与消费侧47 Mt在正文多次重复同一数值；西安52 Mt对24 Mt一致；沈阳、宁波、西安、石家庄资本形成排放占比61–65%与图2文字一致；碳强度数值（石家庄366、北京85、上海120 g CO₂/元，进口/出口碳强度）均已在正文中逐一对应。公式和符号按原文保留，未补充推断。不确定处：图1各城市百分比标签缺失对应关系（已在issues中标出）；第9页和第10页出现的“Gt CO₂”与城市尺度不符，判断为Mt的疑似笔误；第22页表S6数值排列存在疑似错位。所有数值均以正文文字为准，未对表格中未被文字描述的数值作专门核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3797,
+      "prompt_tokens": 17406,
+      "total_tokens": 21203,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 487
+      }
+    },
+    "content_chars": 6277
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

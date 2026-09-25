@@ -1,0 +1,45 @@
+{
+  "sha1": "8b1ba1037aefddec9ce9d07858f661b72a1b41fe",
+  "title": "Physics-Informed Generative Adversarial Networks for Stochastic Differential Equations",
+  "doi": "https://doi.org/10.1137/18m1225409",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8b1ba1037aefddec9ce9d07858f661b72a1b41fe/index.html",
+  "source_chars": 62030,
+  "markdown_chars": 5184,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 24,
+      "quote": "40 dim 2.7±1.8 % 73.2±0.8 % reference 0 72.5 %",
+      "type": "疑似数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文第22页明确说明输入噪声维度取2、4、20和50，但表1中列出“40 dim”，与正文不一致，疑为抽取或原文笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论中的关键数值：相关长度l=1/0.5/0.2，传感器数6/11，快照数1000与1e4，输入噪声维度2/4/20/50（表1中40疑误），快照数300/1000/3000，13维与30维能量99%，误差对比与随机配点/蒙特卡洛参考，相关系数C(k,f)≈2-3%、C(k,u)≈73-74%。公式(1)、(2)、(17)、(18)及WGAN损失均已保留。未发现其他明显抽取错误；跨页断行处如“several 2 / scattered measurements”属正常分页，不计为问题。表格中“40 dim”已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6430,
+      "prompt_tokens": 16956,
+      "total_tokens": 23386,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2899
+      }
+    },
+    "content_chars": 6121
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

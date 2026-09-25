@@ -1,0 +1,64 @@
+{
+  "sha1": "dd6440a38b26d5dbe61f7196c91bf7260da3117f",
+  "title": "NK cells and type 1 innate lymphoid cells: partners in host defense",
+  "doi": "https://doi.org/10.1038/ni.3482",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/dd6440a38b26d5dbe61f7196c91bf7260da3117f/index.html",
+  "source_chars": 49178,
+  "markdown_chars": 6181,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "IL-12 IL-15 IL-18",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第5页中 'IL-12 IL-15 IL-18' 前后文本在 [PDF extracted page 5] 边界处突然出现，前文为 'human peripheral blood and noninflamed tonsils'，后文为 'Perforin IFN-γ and granzyme'。此处明显缺失了至少一个关键短语（如'produced by'或'stimulation with'），且这些词像是之前页面文本的一部分，但输入文本中未见该页面标签。这可能是跨页顺序/拼接缺陷。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Expression of a number of cell surface antigens and the transcription factors T-bet and Eomes on subsets of human ILC1s, peripheral blood NK cells and tissue-resident NK cells. ... aThese cells are designated ILC1s because of their expression of T-bet and capacity to produce IFN-γ and lack of TCRαβ and TCRγδ.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 1 的标题和注释（含脚注 a 和 b）在输入文本中被放置在页面中间，紧接在 'lose expression of CD127' 之后，且 Table 1 的标题下一行才是正文中 'or lack Eomes28; therefore...' 的句子。这看起来像是表格标题和注释被嵌入正文中间，而非独立于表格，导致阅读顺序混乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "CD49a+CD49b−Eomes− ILC1s are not precursors of Eomes+ NK cells, as they do not develop into Eomes+ NK cells when adoptively transferred into congenically marked recipients25. What complicates a clear definition of ILC1s are emerging data indicating that ILC1s and NK cells in different tissues have overlapping but different phenotypes and functions (Table 1). Intestinal and hepatic ILC1s are CD49a+CD49b−, produce high amounts of IFN-γ and are Eomes− and less cytotoxic than NK cells32. These hepatic cells have been referred to in the literature as ILC1s or NK cells by different investigators25,32. Hepatic ILC1 cytotoxicity is mediated by the cytokine TRAIL rather than perforin, which characterizes NK cell–mediated cytotoxicity, although in human both activated CD56hiCD16− and CD56loCD16+ NK cells can express TRAIL33, and in mice, TRAIL can be induced on NK cells by interferons34. Another",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第3页末尾 'Another' 之后紧接着第4页以 'cells in the small intestine) were analyzed.' 开头，中间缺少谓语动词（如 'study'）。这显然是跨页时缺失了关键动词短语，导致句子不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对正文与笔记的关键结论：ILC1保护小鼠抵抗T. gondii（依赖T-bet）和S. enterica（源自RORγt+ ILC3）；IL-12是ILC2/ILC3向ILC1转分化的关键细胞因子；IL-12RB1突变患者缺乏ILC1；唾液腺ILC1/NK细胞不依赖Nfil3。公式或数值未涉及。主要不确定处：第5页缺失 'IL-12 IL-15 IL-18' 上下文，无法确认原句含义；表格1/2的部分注释信息在第3-4页可能因跨页排列顺序异常而未完全反映。其他数值和结论均基于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5584,
+      "prompt_tokens": 13949,
+      "total_tokens": 19533,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 872
+      }
+    },
+    "content_chars": 8741
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

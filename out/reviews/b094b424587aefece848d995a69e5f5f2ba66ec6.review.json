@@ -1,0 +1,74 @@
+{
+  "sha1": "b094b424587aefece848d995a69e5f5f2ba66ec6",
+  "title": "Effect of geometry on drug release from 3D printed tablets",
+  "doi": "https://doi.org/10.1016/j.ijpharm.2015.04.069",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b094b424587aefece848d995a69e5f5f2ba66ec6/index.html",
+  "source_chars": 18136,
+  "markdown_chars": 1897,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "355.3 ± 23.7.5",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数值中'23.7.5'含两个小数点，可能误植，但无法确定正确数字。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Electron micrographs show little evidence of paracetamol crystallites within the polymer filaments, Figure 7,",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "后文明确Figure 6为SEM图，Figure 7为溶出曲线图，此处引用应指向SEM图（Figure 6）。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "the printhead temperature used during tablet fabrication is 230 oC",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "方法部分明确挤出/打印温度为180°C，此处230°C与之矛盾，可能为笔误或抽取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Filaments\n\nthermogravimetric analysis (TGA).",
+      "type": "文本缺失疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子不完整，可能缺失'were characterised with differential scanning calorimetry (DSC) and'等词，但无法确认原文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：药物含量（丝材3.95%±0.01，片剂3.78%±0.01）、t90范围（金字塔<2h，球体和圆柱体近12h）、恒定表面积/体积比时金字塔约9h。核对热分析（PVA熔融175-200°C，降解>260°C，对乙酰氨基酚熔融168°C）。确认溶出顺序与图7一致。不确定：打印头温度矛盾（180 vs 230°C）未解决；表格中圆柱体重量数值'23.7.5'疑似错误；SEM引用图号可能错误（Figure 7应指Figure 6）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8568,
+      "prompt_tokens": 6252,
+      "total_tokens": 14820,
+      "prompt_tokens_details": {
+        "cached_tokens": 6144
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6859
+      }
+    },
+    "content_chars": 3246,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

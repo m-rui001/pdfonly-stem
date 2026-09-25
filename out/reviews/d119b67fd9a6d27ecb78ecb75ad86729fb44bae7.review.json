@@ -1,0 +1,55 @@
+{
+  "sha1": "d119b67fd9a6d27ecb78ecb75ad86729fb44bae7",
+  "title": "Microplastics: An introduction to environmental transport processes",
+  "doi": "https://doi.org/10.1002/wat2.1268",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d119b67fd9a6d27ecb78ecb75ad86729fb44bae7/index.html",
+  "source_chars": 46844,
+  "markdown_chars": 2909,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "chemical degradation (e.g. exposure to acids or alkalis) and UV degradation (exposure to",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该短语在第3页末尾被截断，第4页开头才出现下一部分，但第3页正文中已有“UV radiation)”和“Biological degradation”等内容，疑似页面拼接顺序错乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "available to organisms following ingestion, while plasticiser chemicals can leach out within the environment.76, 77\n\n.\n\nHarm may occur as a result of physical damage due to clogging of the gut or gills, or",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第14页中间出现孤立句点并换行，且“Harm may occur...”与后文“internal lacerations”的衔接被截断，疑似页码切分导致句子顺序错乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对文中的关键数值（1950年产量1.7 Mt、2015年322-380 Mt、累计8300 Mt、60%堆积、污水去除率99%、欧洲污泥施加量125-850吨/百万居民/年、欧洲滞留量473,000-910,000吨、污泥纤维在土壤中保留15年、25 cm深度等）与原文一致。表1中聚合物密度数据已按原文保留，未改写或补全。塑料循环概念、生物污损影响密度、形状对沉降的影响等结论均基于文本。不确定之处：第3页和第14页的跨页顺序问题已在提取问题中标记，正文未擅自调整措辞；图2和图3的细节仅依据文字描述，未补充图内信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4016,
+      "prompt_tokens": 12569,
+      "total_tokens": 16585,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1743
+      }
+    },
+    "content_chars": 4051
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

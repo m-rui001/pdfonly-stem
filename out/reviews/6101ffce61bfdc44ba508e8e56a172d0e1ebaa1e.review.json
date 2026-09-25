@@ -1,0 +1,93 @@
+{
+  "sha1": "6101ffce61bfdc44ba508e8e56a172d0e1ebaa1e",
+  "title": "Wearable sweat sensors",
+  "doi": "https://doi.org/10.1038/s41928-018-0043-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/6101ffce61bfdc44ba508e8e56a172d0e1ebaa1e/index.html",
+  "source_chars": 83017,
+  "markdown_chars": 13045,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "sweat presents its own challenges for reliably measuring and interpreting biomarker concentrations, its advantages over other biofluids have rapidly promoted it to the forefront of wearable technology innovation $ ^{16} $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句以“While”开头（见第4页末“While”），但第5页续接处缺少“While”对应的主句连接词，疑为跨页抽取时丢失或错位，影响句子完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "The rate of reabsorption is fairly constant and causes $ \\mathrm{N a^{+}} $ and $ \\mathrm{C l^{-}} $ in the final secreted sweat to typically increase with sweat rate $ ^{18} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句末尾缺少句号，疑为抽取时标点丢失，但不影响语义理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "can be incorporated to lower the redox potential of the target reaction $ ^{61,62} $ This technique is canonically used in glucose sensors",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "引用编号后缺少句号，疑为抽取时标点丢失，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "better performance at low analyte concentrations However, it is difficult to identify selective aptamers",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“concentrations”后缺少句号，疑为抽取时标点丢失，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 49,
+      "quote": " Cl^{-}$ 10-100mM Ag/AgCl 7,59 \n\n K^{+}$ 1-18.5mM K ionophore 6,59 \n\n Ca^{2+}$ 0.41-12.4mM Ca ionophore 59,60",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 1 中 Cl⁻、K⁺、Ca²⁺ 等行的分析物名称前缺少开头的“$”符号（如“ Cl^{-}$”而非“$Cl^{-}$”），疑为表格抽取时公式定界符丢失，影响公式符号完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 49,
+      "quote": "Cortisol 8-140ng/ml ZnO,MoS_{2}$ Electrochemical Impedance Spectroscopy 49,50",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“MoS_{2}$”缺少开头的“$”定界符，疑为公式符号抽取丢失，影响化学式呈现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Wearable Sweat Sensors",
+  "self_check": "已核对：摘要与结论方向一致（汗液传感的价值、挑战与未来方向）；关键数值如出汗率 20 nL/gland/min、1 cm² 约 3 μL/min、Nernst 方程 59 mV/10 倍浓度变化、检测限 10⁻⁸ 至 10⁻¹¹ M、蓝牙约 30 mW、Na⁺/Cl⁻ 10-100 mM、K⁺ 1-18.5 mM、Ca²⁺ 0.41-12.4 mM、葡萄糖 10-200 μM、乳酸 5-20 mM、乙醇 2.5-22.5 mM 等均与原文一致；公式符号 Na⁺、Cl⁻、Ca²⁺、K⁺、MoS₂ 等按原文保留。不确定处：Table 1 中部分行公式定界符丢失（已在 extraction_issues 标出）；第5页 While 句跨页连接词缺失，语义仍可理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8797,
+      "prompt_tokens": 18479,
+      "total_tokens": 27276,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15661,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

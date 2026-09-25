@@ -1,0 +1,72 @@
+{
+  "sha1": "be173b1e8950fac79565e1adda41db5d2961e1e0",
+  "title": "Oligonucleotide therapy: An emerging focus area for drug delivery in chronic inflammatory respiratory diseases",
+  "doi": "https://doi.org/10.1016/j.cbi.2019.05.028",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/be173b1e8950fac79565e1adda41db5d2961e1e0/index.html",
+  "source_chars": 73453,
+  "markdown_chars": 4882,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "These are short, single stranded oligodeoxynucleotides that have the capability to modify RNA and can alter the protein expression [7].",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文写'can alter the protein expression'，但根据上下文应为'alter protein expression'或类似，但缺不定冠词。不过也可能是原文如此，证据不足，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "These molecules are mostly used as therapeutic or diagnostic agents or as biosens [13].",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'biosens'后直接出现文献编号，疑似'bi'被截断，原词可能为'biosensors'，但无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Tarantula et al., reported mesoporous silica nanoparticles (MSN) that can deliver drug molecules to incise cancer cells.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "前文作者为Taratula（第13页也出现'Taratula et al.'），此处拼写为'Tarantula'，可能为原文笔误或抽取误差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "carbosilane dendrimers with hemagglutinin binding peptide",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "可能为'hemagglutinin-binding peptide'，但缺少连字符不影响理解。存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：siRNA递送45±2%肺细胞、RNase H效率80-95%、siRNA 19-21nt、miRNA 21-25nt、OMR降低50%端粒酶活性、转染效率130倍、PEG化胶束包封率96%等。公式：无公式。结论方向一致：寡核苷酸需纳米载体提升递送效率。不确定处：部分作者姓名拼写（Tarantula/Taratula）、'biosens'截断、'five base pairs'应为'five bases'（原文如此）。已按提取文本照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3752,
+      "prompt_tokens": 19845,
+      "total_tokens": 23597,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      }
+    },
+    "content_chars": 6481
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

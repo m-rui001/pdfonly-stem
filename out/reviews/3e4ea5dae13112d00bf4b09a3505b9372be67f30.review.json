@@ -1,0 +1,139 @@
+{
+  "sha1": "3e4ea5dae13112d00bf4b09a3505b9372be67f30",
+  "title": "Atomic-layered Au clusters on α-MoC as catalysts for the low-temperature water-gas shift reaction",
+  "doi": "https://doi.org/10.1126/science.aah4321",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3e4ea5dae13112d00bf4b09a3505b9372be67f30/index.html",
+  "source_chars": 29194,
+  "markdown_chars": 7543,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Jose Rodriguez (rodrigez@bnl.gov)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "通讯作者邮箱拼写疑似 OCR 错误，正文前文已出现正确拼写 rodriguez，此处 rodrigez 缺 u。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "GSVH=180,000 $ h^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "空速缩写疑似应为 GHSV，OCR 将 H 与 V 顺序颠倒为 GSVH。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "productfree gas",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "product-free 连字符丢失，属 OCR 抽取错误，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "with barriers of 1.91 and 1.66 eV, and the reactions are endothermic by 1.57 and 1.15 eV",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句位于第 6 页，但对应 Fig. S16 的讨论在原文中可能跨页，OCR 页码归属与上下文略有错位，不影响数值本身。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "2% Au/α-MoC 313 3%CO-6%H2O-20%N2-Ar 1.22 0.012",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 的列对齐在 OCR 中丢失，部分行缺少表观活化能或参考文献列，导致表格结构不完整，但关键数值仍可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "α-MoC 393 11%CO-26%H2O-26%H2-7%CO2-N2 2.05",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "α-MoC 行缺少金属归一化活性列，且 423 K 行仅给出 8.57 与 64，列对应关系不完整，属表格结构损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "2%Au/SiO2 673 10.5%CO-21%H2O-20%N2-Ar 0.24 2.4 E-3",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "2%Au/SiO₂ 行缺少表观活化能与参考文献列，表格结构不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "2%Au/CeO2 423 11%CO-26%H2O-26%H2-7%CO2-N2 1.1 0.01",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "2%Au/CeO₂ 行缺少表观活化能与参考文献列，表格结构不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Tables S1 and S5",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中引用 Table S1 和 Table S2，此处写作 Tables S1 and S5，S5 疑似 OCR 误读或原文笔误，但无法确证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "2wt%Au/$ \\beta $ -Mo $ {2} $ C (13,14), 2wt%Au/$ \\mathrm{S i O}{2} $ (15) and 2wt%Au/$ \\mathrm{C e O}{2} $ (1)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "化学式下标在 OCR 中丢失或错位，如 β-Mo₂C、SiO₂、CeO₂ 被抽取为 Mo $ {2} $ C、S i O{2}、C e O{2}，影响化学式可读性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "the $ E_{\\mathrm{app}} $ increased to 41 kJ/mol after NaCN leaching",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句位于第 5 页，但 NaCN 浸出实验描述在第 6 页，存在跨页断句或阅读顺序问题；quote 本身文本正确，仅页码归属存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Atomic layered Au clusters on α-MoC as catalyst for the low temperature water gas shift reaction",
+  "self_check": "已核对摘要、正文与 Table 1 中的关键数值：2%Au/α-MoC 在 393 K 无产物气体中 CO 转化率 >95%、423 K 达 98%；Au 归一化活性 313/353/393/423/473 K 分别为 0.012/0.13/1.05/1.66/3.19 mol_CO/(mol_Au·s)；E_app 为 22±1 kJ/mol（2%Au/α-MoC）与 58±10 kJ/mol（α-MoC）；TTN 385400 mol_CO/mol_Au；NaCN 浸出后 Au 负载降至约 0.9 wt%，393/423 K 活性降至原值约 1/11 和 1/6，E_app 增至 41 kJ/mol；DFT 势垒 0.77 eV、0.22 eV、0.72 eV、0.52 eV 与原文一致。公式符号如 Au₁₅/α-MoC(111)、CO+2H₂O→CO+2OH+H₂ 等按 OCR 可见文本保留。仍不确定处：Table 1 部分行列对应关系因 OCR 表格结构损坏而无法完全复原；第 5 页 NaCN 浸出相关句子的页码归属存疑；通讯作者邮箱 rodrigez 拼写疑似 OCR 错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6371,
+      "prompt_tokens": 9784,
+      "total_tokens": 16155,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11121,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

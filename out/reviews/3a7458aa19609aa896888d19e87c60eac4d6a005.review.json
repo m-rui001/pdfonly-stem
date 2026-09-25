@@ -1,0 +1,193 @@
+{
+  "sha1": "3a7458aa19609aa896888d19e87c60eac4d6a005",
+  "title": "A review of performance enhancement of PCM based latent heat storage system within the context of materials, thermal stability and compatibility",
+  "doi": "https://doi.org/10.1016/j.enconman.2016.02.045",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3a7458aa19609aa896888d19e87c60eac4d6a005/index.html",
+  "source_chars": 128129,
+  "markdown_chars": 12607,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "Thermal Conductivity [13,15] 0.2W/mK 0.2W/mK 0.7W/mK 40.6W/mK 0.680W/mK",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 2中热导率单位标注为W/mK，但金属类40.6 W/mK与其余类别0.2–0.7 W/mK并列，单位可能应为W/mK或表格列对应关系在OCR中错位，影响对金属类热导率量级的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "ThermalConductivity(kJ/kgK)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 3表头将热导率单位标为kJ/kgK，与热导率物理量不符，应为W/mK，属OCR或原表单位错误，影响对热导率数值单位的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Thermal \n\n Conductivity(kJ/kg K)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 4表头将热导率单位标为kJ/kg K，与热导率物理量不符，应为W/mK，属OCR或原表单位错误，影响对热导率数值单位的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "$MgCl_{2}\\cdot4H_{2}O}$ [11] 58 178",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$MgCl_{2}\\cdot4H_{2}O}$末尾多出右花括号，属OCR符号残留，不影响化学式识别但属抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Na(CH_{3}COO)\\cdot3H_{2}O}$ [12,15,20] 58 264-267 0.63 1450 1280",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Na(CH_{3}COO)\\cdot3H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Fe(NO_{3})_{2}\\cdot6H_{2}O}$ [11,20] 60 126",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Fe(NO_{3})_{2}\\cdot6H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Na_{3}PO_{4}\\cdot12H_{2}O}$ [11,12] 65-69 190",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Na_{3}PO_{4}\\cdot12H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Na_{2}P_{2}O_{7}\\cdot10H_{2}O}$ [12,20] 70 184",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Na_{2}P_{2}O_{7}\\cdot10H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "LiCH_{3}COO\\cdot2H_{2}O}$ [11] 70 150",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$LiCH_{3}COO\\cdot2H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Al(NO_{3})_{2}\\cdot9H_{2}O}$ [11] 72 155",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Al(NO_{3})_{2}\\cdot9H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Ba(OH)_{2}\\cdot8H_{2}O}$ [20,29,37] 78 265-280 1.225 0.653 2070 1937",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Ba(OH)_{2}\\cdot8H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Mg(NO_{3})_{2}\\cdot6H_{2}O}$ [15,20,37] 89 162.8 0.611 0.49 1636 1550",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$Mg(NO_{3})_{2}\\cdot6H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "KAl(SO_{4})_{2}\\cdot12H_{2}O}$ [11] 91 184",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$KAl(SO_{4})_{2}\\cdot12H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "(NH_{4})Al(SO_{4})\\cdot6H_{2}O}$ [12] 95 269",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$(NH_{4})Al(SO_{4})\\cdot6H_{2}O}$末尾多出右花括号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "hexahydrate (MgCl_{2}6H_{2}O}$ [41] 110.8 138 1000",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "化学式$MgCl_{2}6H_{2}O}$末尾多出右花括号，且缺少点号，属OCR符号残留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 46,
+      "quote": "1 Twm=80,Tm=70,Twf=60 1750 Single 363228 0.757 -",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 6中温度条件行与数值列对应关系在OCR中可能错位，如Twm、Tm、Twf与1750、Single等列的对齐不清晰，影响对多PCM性能数据的准确解读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 46,
+      "quote": "$$\\left(^ {0} \\mathrm {C}\\right)$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 6中温度单位°C的公式抽取损坏，显示为$\\left(^ {0} \\mathrm {C}\\right)$，影响对温度列单位的理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A review of performance enhancement of PCM based latent heat storage system within the context of materials, thermal stability and compatibility",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 33258,
+      "total_tokens": 43258,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17546,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

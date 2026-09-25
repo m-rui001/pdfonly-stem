@@ -1,0 +1,63 @@
+{
+  "sha1": "ecc91f33e498b1b135ec720308cb55af3f82a4f7",
+  "title": "Phosphorescent Pt(II) and Pd(II) Complexes for Efficient, High‐Color‐Quality, and Stable OLEDs",
+  "doi": "https://doi.org/10.1002/adma.201601861",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ecc91f33e498b1b135ec720308cb55af3f82a4f7/index.html",
+  "source_chars": 86513,
+  "markdown_chars": 4377,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 43,
+      "quote": "2b CH2Cl2 7.9 465–470 0.87 [30",
+      "type": "缺失符号",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "表格中化合物2b的引用项“[30”缺少右括号，疑似提取时遗漏，但上下文可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "carbozolyl-pyridine",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文此处拼写为“carbozolyl”，且文中带有作者询问(check spelling of carbozolyl)，确实为拼写疑点，标准拼写应为carbazolyl。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "3\n\nLC/3MLCT",
+      "type": "格式/断行",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "提取文本中“3LC”的“3”和“LC”之间出现换行，实际应为“3LC/3MLCT”，不影响理解但属于文本拼接问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对正文与表格中主要量子产率、发射波长、EQE、CIE坐标等数据的一致性，如PtON7 Φ=0.89、EQE 23.7%、CIE(0.14,0.15)；PdN3N Φ=0.72、EQE 20.9%、LT90>400h；PtN1N FWHM 18nm等。未发现数值矛盾。不确定之处：部分化合物编号所指分子结构依赖图表，文本中仅给出编号；提取文本中编辑注释（qry）不影响数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9113,
+      "prompt_tokens": 24883,
+      "total_tokens": 33996,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5773
+      }
+    },
+    "content_chars": 5332
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

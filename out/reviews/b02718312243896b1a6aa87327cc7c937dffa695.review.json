@@ -1,0 +1,102 @@
+{
+  "sha1": "b02718312243896b1a6aa87327cc7c937dffa695",
+  "title": "Graphene Oxide‐Based Electrode Inks for 3D‐Printed Lithium‐Ion Batteries",
+  "doi": "https://doi.org/10.1002/adma.201505391",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b02718312243896b1a6aa87327cc7c937dffa695/index.html",
+  "source_chars": 43148,
+  "markdown_chars": 4721,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "DOI: 10.1002/((please add manuscript number))",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "首页DOI为占位符，与登记DOI 10.1002/adma.201505391不同；但同页脚注明确给出登记DOI，正文题名与登记题名一致，故仅标记为低严重度元数据不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Lithium iron phosphate $ \\left(\\mathrm{L i F e P O}{4}\\right) $ , LFP) and lithium titanium oxide $ \\left(\\mathrm{L i}{4} \\mathrm{T i}{5} \\mathrm{O}{1 2}\\right) $ , LTO)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "化学式下标在OCR中丢失或错位，LiFePO4与Li4Ti5O12的化学计量下标未正确保留，影响公式复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "at a specific current of 200 mA/.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单位缺失，应为mA/g，但OCR仅显示mA/，影响数值单位理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "capacities slightly decrease to 169 and 198 mAh/g",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第20次循环放电容量198 mAh/g高于第10次循环的171 mAh/g，与“slightly decrease”矛盾，疑似OCR将171误识为198，影响数据一致性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "specific capacities of $ \\sim160 $ mAh/g and $ \\sim170 $ mA/g",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第二个容量单位误为mA/g，应为mAh/g，影响单位一致性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "annealed LFP/rGO as well as LTP/rGO",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "LTP/rGO应为LTO/rGO，与全文其他处及图注中LTO/rGO不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "XRD data for annealed LFP/rGO and LTP/rGO",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "同上，LTP/rGO应为LTO/rGO。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Graphene oxide-based electrode inks for 3D printed lithium-ion batteries",
+  "self_check": "已核对关键数值：GO浓度85 mg/mL、LFP/LTO与GO质量比7:3、GO浓度80 mg/mL、固体浓度约285 mg/mL、1 s⁻¹下表观黏度10²–10³ Pa·s、G′平台10⁴–10⁵ Pa、屈服应力10³ Pa、聚合物墨水屈服应力<10 Pa、单层厚约0.18 mm、6/12/18层总厚1.06/2.20/3.26 mm、退火后电导率31.6和6.1 S/cm、LFP首次容量168/164 mAh/g、LTO首次容量184/185 mAh/g、全电池首次117/91 mAh/g、负载约18 mg/cm²。公式符号如LiFePO4、Li4Ti5O12、Al2O3、PVDF-co-HFP、LiPF6等按OCR可见文本保留，未擅自补全。仍不确定处：第20次LTO循环放电容量198 mAh/g与“slightly decrease”矛盾，已标记为OCR疑点；部分化学式下标在OCR中丢失，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4033,
+      "prompt_tokens": 11941,
+      "total_tokens": 15974,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7226,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

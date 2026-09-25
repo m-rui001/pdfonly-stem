@@ -1,0 +1,73 @@
+{
+  "sha1": "25a38684b66418d0f14a6fb8c16cc04281c74d5e",
+  "title": "Digital twin and its implementations in the civil engineering sector",
+  "doi": "https://doi.org/10.1016/j.autcon.2021.103838",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/25a38684b66418d0f14a6fb8c16cc04281c74d5e/index.html",
+  "source_chars": 121020,
+  "markdown_chars": 5207,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The development history of Digital Twin (DT) is relatively brief. It is widely acknowledged that Michael W. Grieves's",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "句子在'Grieves's'处中断，下一页直接接'DT is a fast-evolving technology concept...'，明显缺失了连接词或从句，属于跨页顺序问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "First, DT can be easily confused with Building Information Modelling (BIM) and Cyber-Physical Systems (CPS). Second, the constituents of DT applications in this sector are not well-defined. Also, what the DT can bring to the civil engineering industry is still ambiguous. To address these problems, we reviewed 468 articles related to DT, BIM and CPS, proposed a DT definition and its constituents in civil engineering and compared DT with BIM and CPS. Then we reviewed 134 papers related to DT in the civil engineering sector out of 468 papers in detail. We extracted DT research clusters based on the co-occurrence analysis of paper keywords' and the relevant DT constituents. This research helps establish the state-of-the-art of DT in the civil engineering sector and suggests future DT development. Digital Twin (DT) concept has recently emerged in civil engineering; however, some problems still need to be addressed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要首句和末句顺序颠倒，疑似PDF提取顺序错乱，但不影响内容理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "2 Definition of DT The first round of literature review aims to establish a definition of DT and its key components. The review was conducted through the following steps, as shown in Fig. 1.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第2页末尾出现'2'和'Definition of DT'，但下一段开头又重复了标题，且页码间存在断句，可能提取顺序有误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "services. technologies.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第5页末尾出现孤立词语，可能属于表格或段落截断，后续无连贯上下文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：468篇检索论文、134篇DT细读论文、27篇影响性文献、约30%能耗模拟差异。核对了DT定义五部分、BIM/CPS对比表关键要素、研究聚类（DT创建、设计、施工、运维）及讨论中的未来方向。公式无特殊数学公式。对提取文本中疑似顺序错乱和断句问题已标记，未擅自修复。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4192,
+      "prompt_tokens": 30163,
+      "total_tokens": 34355,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 535
+      }
+    },
+    "content_chars": 7542
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

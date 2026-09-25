@@ -1,0 +1,148 @@
+{
+  "sha1": "e4f02fa657d321384bd823d1655585bc68ac64c4",
+  "title": "A low energy demand scenario for meeting the 1.5 °C target and sustainable development goals without negative emission technologies",
+  "doi": "https://doi.org/10.1038/s41560-018-0172-6",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e4f02fa657d321384bd823d1655585bc68ac64c4/index.html",
+  "source_chars": 71775,
+  "markdown_chars": 10727,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "everrising",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 ever-rising，连字符丢失，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "30 $ m^{2} $ /capita",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单位 m² 的 LaTeX 标记在正文中保留，但可读；非实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "274 EJ in 2050; see Figure 6.18 on $ p444^{17} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页码引用格式异常（$ p444^{17} $），但数值 274 EJ 和 Figure 6.18 可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Gilli et al. 19965, Nakicenovic et al. 199359, Cullen & Allwood 20106",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "参考文献编号与年份粘连（19965 应为 1996 和 5；199359 应为 1993 和 59；20106 应为 2010 和 6），影响引用解析但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "139 MJ/m2in Global North",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单位与文字间缺少空格（m2in），不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "16.7 GJ/t",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该数值在表1工业行出现，但正文未明确重复；OCR 提取本身可读，无强证据表明错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "TOTAL North* -53 82 245",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表2的 TOTAL 行结构在 OCR 中列对齐混乱，North 和 South 的百分比变化与能源需求数值可能错位；但 245 EJ 总量与正文一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "Camera 10W .9W",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图2的设备功率表在 OCR 中丢失小数点前导零（.9W 应为 0.9W），但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "CH_{4}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式 CH₄ 的 LaTeX 标记保留，可读；非实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "CO_{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式 CO₂ 的 LaTeX 标记保留，可读；非实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "1. 5^{\\circ} \\mathrm{C}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "温度单位 1.5°C 的 LaTeX 标记保留，可读；非实质错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "M E S S A G E - G L O B I O M",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "模型名 MESSAGE-GLOBIOM 被字母间空格拆开，属 OCR 格式问题，不影响识别。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A Low Energy Demand Scenario for Meeting the 1.5 °C Target and Sustainable Development Goals without Negative Emission Technologies",
+  "self_check": "已核对：摘要中2050年终端能源需求245 EJ、较当前低约40%；正文中2050年245 EJ与表2总量一致；1.5°C目标、390 Gt CO₂预算（2020-2100）、无CCS/BECCS/直接空气捕集约束；终端能源中电力和氢占比近60%；低碳资源和非生物质可再生能源在一次能源中占比80%和55%；森林覆盖从4000增至4300百万公顷；2020-2100森林碳汇累计168 Gt CO₂；供应侧投资比其他1.5°C情景低2-3倍；需求增加+50%敏感性下结论稳健。公式符号如m²、CO₂、CH₄、1.5°C等以LaTeX标记保留，未擅自改写。不确定处：表2 TOTAL行结构在OCR中列对齐混乱，North/South的百分比变化与能源需求数值可能错位，但245 EJ总量与正文一致；表1中部分参考文献编号与年份粘连，不影响论证理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7177,
+      "prompt_tokens": 17192,
+      "total_tokens": 24369,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14084,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

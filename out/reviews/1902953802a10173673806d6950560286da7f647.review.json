@@ -1,0 +1,55 @@
+{
+  "sha1": "1902953802a10173673806d6950560286da7f647",
+  "title": "The role of supply-chain initiatives in reducing deforestation",
+  "doi": "https://doi.org/10.1038/s41558-017-0061-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1902953802a10173673806d6950560286da7f647/index.html",
+  "source_chars": 54656,
+  "markdown_chars": 4024,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "Fire activity in Sumatra and Kalimantan was significantly lower on RSPO certified concessions than non-RSPO certified concessions, but only for years and locations with a low likelihood of fire . 34,35\n\n36\n\n37\n\n38\n\n23\n\n39\n\n40\n\n41",
+      "type": "引用编号散落",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "段落末尾的引用编号被单独拆分并乱序排列，疑为上标提取所致，不影响正文内容，但影响排版连续性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "however, for goals to be reached, specific actions must be implemented. We identify four categories of initiatives aiming to reduce deforestation (Table 1): (i) collective aspirations by stakeholder groups that go beyond the direct control of individual actors; (ii) company pledges that express a company’s commitment in their operations or supply chains; (iii) company codes of conduct that define specific",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第2页末尾'define specific'在第3页被接续为'production or sourcing practices;...'，中间有页码标记，疑似正常分页断句，但需确认无内容缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：760项公开承诺、447家公司、20-25%的CGF成员行动计划、85%依赖认证、2016年实施进度低于50%等；关键研究结论（如FSC在不同国家效应、RSPO减少毁林、巴西大豆/牛禁令效果、智利废弃协议）均与原文一致。公式无。不确定处：原文中上标引用编号被拆散，已标记；跨页断句未发现内容缺失，已低置信度标记。未引入外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4843,
+      "prompt_tokens": 12078,
+      "total_tokens": 16921,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2023
+      }
+    },
+    "content_chars": 5386
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

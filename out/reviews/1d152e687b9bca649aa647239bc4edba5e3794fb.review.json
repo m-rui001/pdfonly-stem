@@ -1,0 +1,157 @@
+{
+  "sha1": "1d152e687b9bca649aa647239bc4edba5e3794fb",
+  "title": "Unsupervised word embeddings capture latent knowledge from materials science literature",
+  "doi": "https://doi.org/10.1038/s41586-019-1335-8",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/1d152e687b9bca649aa647239bc4edba5e3794fb/index.html",
+  "source_chars": 52606,
+  "markdown_chars": 10516,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "behave consistently with chemical intuition when they are combined using various vector operations (projection, addition, subtraction). For example, many words in our corpus represent chemical compositions of materials, and the five materials most similar to $ \\mathrm{L i C o O_{2}} $ (a well-known lithium-ion cathode compound) can be determined through a dot product (projection) of normalized word embeddings. According to our model, the compositions with the highest similarity to $ \\mathrm{L i C o O_{2}} $ are $ \\mathrm{L i M n_{2} O_{4}} $ $ \\mathrm{L i N i_{0.5} M n_{1.5} O_{4}} $ $ \\mathrm{L i N i_{0.8} C o_{0.2} O_{2}} $ $ \\mathrm{L i N i_{0.8} C o_{0.15} A l_{0.05} O_{2}} $ and $ \\mathrm{L i N i O_{2}} $ all of which are also lithium-ion cathode materials.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学式在 OCR 中被拆成带空格的 LaTeX 片段（如 $ \\mathrm{L i C o O_{2}} $），虽可读但非正常排版；不影响理解，仅提示抽取格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The average maximum power factor of $ 40.8\\mu W K^{-2} cm^{-1} $ for these top ten predictions is 3.6 times larger than the average of candidate materials $ (11.5\\mu W K^{-2} cm^{-1}) $ and 2.4 times larger than the average of known thermoelectrics $ (17.0\\mu W K^{-2} cm^{-1}) $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "单位中的微符号和上标在 OCR 中呈现为 $\\mu W K^{-2} cm^{-1}$，与正文一致，但 LaTeX 包裹方式可能影响公式原样复现；数值本身可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The final two predictions, HgZnTe and $ \\mathrm{S m I n O}{3} $ contain expensive (Sm, In) or toxic (Hg) elements and have not been studied yet, and $ \\mathrm{S m I n O}{3} $ has dropped appreciably in ranking with the addition of more data.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "化学式 $\\mathrm{SmInO_{3}}$ 在 OCR 中丢失下标括号，呈现为 $ \\mathrm{S m I n O}{3} $，可能影响公式原样复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The phrases were generated using a minimum phrase count of 10, score threshold of 15 (ref. $ ^{12} $ ）and phrase depth of 2.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "右括号误用为全角“）”，属标点 OCR 错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "A $ + U $ correction was applied to transition metal oxides $ ^{16} $ . Seebeck coefficient (S) and electrical conductivity ( $ \\sigma $ ) were calculated using the BoltzTraP package $ ^{33} $ using a constant relaxation time of $ 10^{-14} $ s at simulated temperatures between 300 K and 1,300 K and for carrier concentrations (doping) between $ 10^{16} $ cm $ ^{-3} $ and $ 10^{22} $ cm $ ^{-3} $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式和单位在 OCR 中被 LaTeX 片段包裹，虽可读但非原始排版；不影响关键数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Formally, this is $ \\mathrm{PF}{avg,max}^{T{cut},c_{cut}} \\equiv \\max \\mathrm{PF}(\\eta,T,c) $ such that $ T \\leq T_{cut},c \\leq c_{cut} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中下标和上标在 OCR 中错位，如 $ \\mathrm{PF}{avg,max}^{T{cut},c_{cut}} $ 应为 $\\mathrm{PF}_{avg,max}^{T_{cut},c_{cut}}$，影响公式原样复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "c, Predicted versus actual (DFT) values of formation energies of approximately 10,000 $ \\mathrm{A B C_{2} D_{6}} $ elpasolite compounds $ ^{40} $ using a simple neural network model with word embeddings of elements as features",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "化学式 $\\mathrm{ABC_{2}D_{6}}$ 在 OCR 中呈现为带空格的 LaTeX 片段，可读但非正常排版。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "d topological insulator topological, topologically",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该行位于 Extended Data Fig. 2 的表格中，OCR 将“d”与“topological insulator”等文字混排，可能影响表格结构理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Extended Data Table 1 | Materials science analogies\n\n Relationship Example vector operation Answer Validation pairs Accuracy(%) \n\n Chemical element names helium-He+Fe = iron 8372 71.4 \n\n Crystal symmetries cubic-GaAs+CdSe = hexagonal 2034 35.4 \n\n Crystal structure names zincblende-GaP+GaN = wurtzite 556 18.7 \n\n Elemental crystal structures dhcp-La+Cr = bcc 1198 48.6 \n\n Principal oxides Al2O3-Al+Si = SiO2 650 48.8 \n\n Units pressure-Pa+Hz = frequency 452 35.4 \n\n Magnetic properties ferromagnetic-NiCo+IrMn = antiferromagnetic 622 41.0 \n\n Applications thermoelectric-PbTe+LiFePO4 = cathode materials - - \n\n Grammar structures-structure+energy = energies 15162 61.6 \n\n Total 29046 60.1",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格在 OCR 中丢失列分隔，各行数据挤在一起，可能影响对类比类型、示例、答案、验证对数和准确率的对应关系理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Extended Data Table 2 | Top 50 thermoelectric predictions\n\n Top 50 thermoelectric predictions \n\n 1. Li2CuSb 11. MgB2C2 21. CuIn5S8 31. Ag3SbS3 41. Eu2CuSi3 \n\n 2. Cu3Nb2O8 12. AlGaSb 22. AlFe2B2 32. (CH3NH3)3Bi2I9 42. Cu2ZnSiS4 \n\n 3. CsAgGa2Se4 13. Li3Sb$\\cdot$ 23. CeTe 33. Ba4Ga4SnSe12 43. Bi4Br4 \n\n 4. Cu7Te5 14. Ba24Si100 24. Pb0.902Sn0.098Se 34. In3Se2 44. (YbS)1.25CrS2 \n\n 5. Ge15Sb47Te38 15. GaNAsP 25. Bi0.95La0.05FeO3 35. Ag2PbGeS4 45. KCu2SbS3 \n\n 6. CsGel3 16. ZnGa2Te4 26. CdSnP2$\\cdot$ 36. AgCrO2 46. Cu2GeTe3 \n\n 7. KAg2SbS4 17. Cu3TaS4 27. PdTe 37. TlCu2Se2 47. NaLaS2 \n\n 8. SnTe2$\\cdot$ 18. HgMnTe 28. HgZnTe 38. AgGa 48. Hg0.78Cd0.22Te \n\n 9. Ni2Te3 19. MnBi2Se4 29. Pr0.7Ca0.3Mn0.95Co0.05O3 39. BSb 49. InSn \n\n 10. Yb11AlSb9 20. Ag6Si2O7 30. Cd4GeSe6 40. CdIn2S2Se2 50. ReSSe",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格在 OCR 中丢失列分隔，多列数据挤在一起，可能影响对预测排名的对应关系理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Extended Data Table 3 | Top five functional material predictions and context words\n\n Prediction Top 10 most contributing context words \n\n Topological Insulator \n\n 1. $ \\mathrm{S c_{2} C F_{2}} $ armchair direction, zigzag direction, phosphorene, $ \\mathrm{S c_{2} C ( O H )_{2}} $，MXene，semiconducting，armchair，semiconductor，$ \\mathrm{S c_{2} A l C} $，strongly anisotropic \n\n 2. LaCuOSe layered oxychalcogenides，oxychalcogenides，oxychalcogenide，degenerate semiconductor，semiconductor，(LaO)CuS，LaAgSeO，p-type，ZrCuSiAs，LaCuOTe \n\n 3. $ \\mathrm{C o_{2} F e A l} $ heusler alloy，$ \\mathrm{C o_{2} C r_{0.6} F e_{0.4} A l} $，full-heusler，$ \\mathrm{C o_{2} F e A l_{1-x} S i_{x}} $，heusler，half-metallic，spin polarized，heusler compound，MFTJs，ferromagnet \n\n 4. $ \\mathrm{C a_{5} I n_{2} S b_{6}} $ $ \\mathrm{C a_{5} A l_{2} S b_{6}} $，$ \\mathrm{C a_{5} G a_{2} S b_{6}} $，zintl compound，$ \\mathrm{S r_{5} I n_{2} S b_{6}} $，thermoelectric，thermoelectric properties，carrier concentration，carrier mobility，effective mass \n\n 5. $ \\mathrm{A g B i P_{2} S e_{6}} $ atomically thin，ferroelectricity，semiconductor，two-dimensional，ferroelectric，monolayer，devices，band edge，ground state，plane \n\n Photovoltaics \n\n 1. MoOHCF electrochromic window，electrochromic，electrochromic device，vivid color，counter electrode，visible wavelengths，prussian blue，transmittance，optical transmittance，thin film \n\n 2. MoN2 renewable energy，appealing， applications，NIBs，great potential，realization，ion batteries，dinitride，promising，MoN3 \n\n 3. $ \\mathrm{N i_{0. 4} C o_{0. 6} ( O H )_{2}} $ flexible，supercapacitors，peony-like，fabrication，step hydrothermal，strategy，CFC，carbon fiber，cloth，superior \n\n 4. NiFeS NiVS，highly efficient，low cost，FeNiS2，[NiFe]，NiFeVS，efficient electrocatalyst，Ni-Fe-V，OER，promising \n\n 5. $ \\mathrm{S i_{2} B N} $ graphenelike，have attracted，NB2Si，anode material，much attention，nanostructures，hydrogen storage，battery anode，$ \\mathrm{S i_{3} B_{3} N_{7}} $，buckled \n\n Ferroelectric \n\n 1. $ \\mathrm{B a T i S i_{2} O_{7}} $ spontaneous polarization，dielectric，lead-free，fresnoite，ceramics，[TiO5]，difficult to prepare，glass，phase，properties \n\n 2. $ \\mathrm{G d T i O_{3}} $ $ \\mathrm{B a T i O_{3}} $，BTO，SmTiO3，SrTiO3，gate dielectric，ferrimagnetic，mott insulator，perovskite，pyrochlore，magnetic ordering \n\n 3. $ \\mathrm{T l G a T e_{2}} $ dielectric，dependences of the permittivity，dielectric constant，TlInSe2，TlInTe2，relaxors，permittivity，x(TlGaTe2)x，ε(T)，dielectric relaxation \n\n 4. $ \\mathrm{B a_{5} N d T i_{3} T a_{7} O_{30}} $ dielectric，$ \\mathrm{B i_{4} T i_{3} O_{12}} $，tungsten-bronze，dielectrics，$ \\mathrm{B a_{4} N d_{2} T i_{4} T a_{6} O_{30}} $，co-substitution，ceramics，tetragonal，x，co-modification \n\n 5. $ \\mathrm{P b_{3} M n_{7} O_{15}} $ dielectric，$ \\mathrm{P b_{2} T e_{3} O_{8}} $，magnetic ordering，$ \\mathrm{Z n_{2} P b O_{4}} $，antiferromagnetic，$ \\mathrm{M n_{2} T e_{3} O_{8}} $，$ \\mathrm{P b_{3} R h_{7} O_{15}} $，$ \\mathrm{P b_{2} Z n T e O_{6}} $，orthorhombic，manganite",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格在 OCR 中丢失列分隔，预测材料与上下文词挤在一起，可能影响对对应关系理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Extended Data Table 4 | Importance of the text corpus\n\n Text corpus Materials Grammar All Corpus size \n\n Wikipedia 2.6 72.8 51.0 2.81B words \n\n Wikipedia elements 2.7 72.1 41.4 1.08B words \n\n Wikipedia materials 2.2 72.8 41.3 781M words \n\n All abstracts 43.3 58.3 51.0 643M words \n\n Relevant abstracts 48.9 54.9 52.0 290M words \n\n Pre-trained model from Kim et al39 10.4 47.1 30.8 640k papers",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格在 OCR 中丢失列分隔，各列数据挤在一起，可能影响对语料、材料类比分数、语法分数、总体分数和语料大小的对应关系理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "The sharp increase in the rank of layered $ \\mathrm{R e S_{2}} $ in 2015 coincides with the discovery of a record zT for",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句在页末中断，下一段以“$ \\mathrm{S n S e}^{2 4} $ also a layered material.”开头，中间缺失连接词或短语，导致阅读不连贯。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Unsupervised word embeddings capture latent knowledge from materials science literature",
+  "self_check": "已核对关键数值：前十个预测平均最大功率因子 40.8 μW K⁻² cm⁻¹，候选材料平均 11.5 μW K⁻² cm⁻¹，已知热电材料平均 17.0 μW K⁻² cm⁻¹，倍数 3.6 和 2.4；实验秩相关 59% 和 52%，DFT 秩相关 31%；历史验证中前 50 预测在五年内被研究为热电材料的可能性是随机未研究材料的 8 倍、非零带隙随机材料的 3 倍；语料约 330 万篇摘要、约 50 万词、200 维嵌入；分类器标注 1,094 篇，准确率 89%；DFT 计算 48,770 种材料子集，重叠 9,483 种，候选 7,663 种；Extended Data Table 1 总计 29,046 对，60.1%。公式已尽量原样保留，但部分化学式和公式在 OCR 中下标/上标错位，已在 extraction_issues 中标出。仍不确定处：Fig. 3a 中具体年份的累积百分比数值未在正文中给出，仅描述趋势；Extended Data Table 2 中部分化学式因 OCR 丢失下标，可能影响精确复现。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9683,
+      "prompt_tokens": 13730,
+      "total_tokens": 23413,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21537,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

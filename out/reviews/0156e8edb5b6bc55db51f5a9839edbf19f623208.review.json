@@ -1,0 +1,81 @@
+{
+  "sha1": "0156e8edb5b6bc55db51f5a9839edbf19f623208",
+  "title": "Cyber Threats Facing Autonomous and Connected Vehicles: Future Challenges",
+  "doi": "https://doi.org/10.1109/tits.2017.2665968",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0156e8edb5b6bc55db51f5a9839edbf19f623208/index.html",
+  "source_chars": 112019,
+  "markdown_chars": 3268,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "For example, an",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末尾句子不完整，第3页以 'from connection mechanisms and infrastructure are discussed later.' 接续，但中间明显缺失内容，无法判断完整语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Differential Global Positioning Systems (GPS)) provide",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "出现连续两个右括号，疑似多余字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Inertial measurement units units are used",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": " 'units' 重复出现，疑为录入或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "object recognition, trajectory planning ??, etc.",
+      "type": "文本缺失/损坏",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "出现连续问号 '??'，表示原文或提取文本中相应字符缺失或无法识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Table III provides a summary of the knowledge gaps",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文称 'Table III'，但后续实际出现的表格标题为 'TABLE I'，编号不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：GPS频率1575.42 MHz、信号强度-163 dBW；TPMS频率315/443/866 MHz、40m攻击距离；蓝牙PIN破解时间0.06秒；彩虹表1.5 TB；CAV代码量约100M行、ECU数50-70个；LiDAR干扰、摄像头致盲等案例均与原文一致。公式未出现。结论方向与原文一致。不确定点：跨页缺失部分无法复原；表格编号冲突已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4849,
+      "prompt_tokens": 23684,
+      "total_tokens": 28533,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2464
+      }
+    },
+    "content_chars": 4708
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

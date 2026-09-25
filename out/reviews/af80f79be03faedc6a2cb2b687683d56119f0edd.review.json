@@ -1,0 +1,45 @@
+{
+  "sha1": "af80f79be03faedc6a2cb2b687683d56119f0edd",
+  "title": "High Surface Area MoS 2 /Graphene Hybrid Aerogel for Ultrasensitive NO 2 Detection",
+  "doi": "https://doi.org/10.1002/adfm.201601562",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/af80f79be03faedc6a2cb2b687683d56119f0edd/index.html",
+  "source_chars": 41417,
+  "markdown_chars": 2464,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Raman spectra, shown in Figures 3a and 3b",
+      "type": "疑似错误（图编号不一致）",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "正文称Raman谱显示在图3a和3b，但同页图3标注中(a-d)为XPS谱，(e-f)为Raman谱，存在内部矛盾。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：比表面积700 vs 18 m²/g，检测限50 ppb（实测）和14 ppb（计算），t90响应/恢复21.6/29.4 s，功率室温~0.1 mW、200°C ~4 mW，响应定义式(Rgas-Rair)/Rair，S:Mo比2.4，晶格间距0.35/0.65 nm。结论方向与摘要、正文一致。不确定处：图3编号矛盾已标注；微加热器尺寸（100 nm长）按原文照录，未作推测修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6712,
+      "prompt_tokens": 11855,
+      "total_tokens": 18567,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4850
+      }
+    },
+    "content_chars": 3002
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

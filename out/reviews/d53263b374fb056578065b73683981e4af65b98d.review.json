@@ -1,0 +1,91 @@
+{
+  "sha1": "d53263b374fb056578065b73683981e4af65b98d",
+  "title": "Recent advances in carbon-based polymer nanocomposites for electromagnetic interference shielding",
+  "doi": "https://doi.org/10.1016/j.pmatsci.2019.02.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d53263b374fb056578065b73683981e4af65b98d/index.html",
+  "source_chars": 289196,
+  "markdown_chars": 5416,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 50,
+      "quote": "Direct result of the good dispersion of MWNTs achieved in solution as well as polymer matrix, electrical conductivity increased at 0.50-0.75 wt% MWNT, reaching promising values of 6.8 × 10-7 S/cm at 0.75 wt% MWNT, showing that non-covalent dispersant may improve the affinity of polymers to nanotubes (and it is expected to be similar with other carbon-based",
+      "type": "cross-page interruption/concatenation issue",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在页尾中断，下一页（page 51）以“nanofillers) and thus may be useful...”接续，但句子中断可能影响阅读连续性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 59,
+      "quote": "Otero-Navas et al. [356] have investigated the effect of CNTs on the broadband dielectric properties of PP-PS blends, showing that the selective localization of said CNTs at the interface and inside the PS phase in both co-continuous as well as PP-rich blends led to an improved conductive network and decreased the amount of PS-CNT phase needed to percolate in PP phase.",
+      "type": "potential typo",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文为 “Otero-Navas”，但此处疑似为 “Otero-Navas et al.”，文献通常署名“Otero-Navas”，未发现明确错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 20,
+      "quote": "this way providing a more realistic representation of the interconnectivity between nanotubes. Additionally, different RVE dimensions in different material directions were considered, this way exploring the possibility of anisotropic percolation, giving a more realistic vision of the structure-property relations of electrically conductive polymer-carbon nanoparticles system. A cubic-like RVE was considered in this work (see Figure 8(a)) with electric current being considered to propagate from the high voltage electrode to the low voltage one and CNTs assumed to have a rod-like geometry with interconnected conductive nodes (Figure 8(b)). Polymer nanocomposites’ electrical conductivity was modelled, after considering the contribution of the interconnecting CNTs across the boundary surfaces of adjacent RVEs (see Figure 9), as follows:",
+      "type": "cross-page interruption/concatenation issue",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页码标记 [PDF extracted page 32] 出现在句子“this way providing...”之前，该句是上一页（page 31）内容的延续，说明跨页拼接时存在页面中断与续接问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "as separation analysis of the different concentration regions is strengthened by the inclusion of tunnelling approach (quantum tunnelling characteristics of the polymer matrix) above the percolation threshold.",
+      "type": "cross-page interruption/concatenation issue",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句结尾处 [PDF extracted page 35] 出现，但句意完整，疑似只是分页。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 48,
+      "quote": "leading to electrical conductivities in the range of semiconductors (around 10-4 S/cm), which authors related to the formation of an interconnected nanotubes network throughout the crystalline structure formed in PEN nanocomposites.",
+      "type": "cross-page interruption/concatenation issue",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页码标记 [PDF extracted page 49] 出现在该句之前，该句是上一页的延续，确认为跨页拼接。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 89,
+      "quote": "giving rise to intimate nanosheet-polymer interactions and a percolated interphase essential to mechanical and thermal enhancement. Given these properties and the abundance of graphite, graphene-based fillers such as FGS or others have excellent potential to revolutionize the use of nanocomposites and enable their widespread use in large-scale applications [226].",
+      "type": "terminology ambiguity",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "文中首次出现“FGS”缩写，未说明全称，可能为“functionalized graphene sheets”，但提取文本未明确指出，不可推断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：MWNT导电率可达2×10⁷ S/m（page 29）；PCL-MWNT体系0.15 wt%时电导率约2.5×10⁻² S/cm，EMI SE于1.8 wt%时约24 dB（page 78）；MXene/PS体系电导率1081 S/m，EMI SE >54 dB，逾渗阈值为0.26 vol%（page 70）；石墨烯气凝胶/环氧EMI SE约35 dB（page 69，0.33 wt%），后续发展至83 dB（page 69）；Yu等报道0.66 wt% CNT海绵/环氧EMI SE为33 dB（page 69）。PCL/MWNT泡沫0.249 vol%时EMI SE约60 dB，0.107 vol%约20 dB（page 97）；PLA/MWNT泡沫比屏蔽效率高达1010 dB·cm³/g（page 98）。公式（1）σ=σ₀(φ−φ_c)^t已保留，t=2对应3D网络（page 30）；式（2）及式（3）—（8）均按原文转录。结论方向与摘要一致：碳基纳米复合材料可通过结构调控实现吸收主导屏蔽。不确定之处：部分跨页句子可能受页码标记干扰（已在extraction_issues中列出）；文献编号在正文中未逐一核对，但在Markdown中已按原文保留有需要之处；部分图表（如图2-4、表1-3）仅引用正文描述，未臆测具体数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6890,
+      "prompt_tokens": 67009,
+      "total_tokens": 73899,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 638
+      }
+    },
+    "content_chars": 15560
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

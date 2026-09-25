@@ -1,0 +1,55 @@
+{
+  "sha1": "cb56beb952a7d589a548d0d1a47eecba48720aec",
+  "title": "Protein “requirements” beyond the RDA: implications for optimizing health",
+  "doi": "https://doi.org/10.1139/apnm-2015-0550",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cb56beb952a7d589a548d0d1a47eecba48720aec/index.html",
+  "source_chars": 61393,
+  "markdown_chars": 3021,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 37,
+      "quote": "Total daily protein intake (g/kg) 0.8 7.6",
+      "type": "疑似数值错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "后文显示optimal平衡模式为1.6-1.8 g/kg/d，且0.8对应RDA，7.6超出合理范围，疑为‘1.6’的OCR/扫描错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "Padddon-Jones and Rasmussen 2009",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者姓氏应为Paddon-Jones，但提取文本中多了一个‘d’，可能为原稿笔误或提取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：RDA 0.8 g/kg/d、推荐1.2–1.6 g/kg/d、每餐约30 g、运动员每餐0.25与0.4 g/kg/餐、老年IAAO估计1.0–1.1和1.2–1.3等，均与正文一致。不确定之处：Table 2中‘7.6’疑似应为‘1.6’，已列入问题；此外部分引用年份如‘Leidy et al. In press’因原始提取无具体年份，未作补充。所有结论方向与摘要和正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6789,
+      "prompt_tokens": 16649,
+      "total_tokens": 23438,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4574
+      }
+    },
+    "content_chars": 3797
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

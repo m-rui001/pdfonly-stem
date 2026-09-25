@@ -1,0 +1,85 @@
+{
+  "sha1": "9d1015aaa7d31f2701ed3c5469a2d7e493218597",
+  "title": "Synthetic nacre by predesigned matrix-directed mineralization",
+  "doi": "https://doi.org/10.1126/science.aaf8991",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/9d1015aaa7d31f2701ed3c5469a2d7e493218597/index.html",
+  "source_chars": 22412,
+  "markdown_chars": 3431,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "nondclassical crystallization mechanism",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 nonclassical，OCR 多出一个 d，属拼写抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "antiflaw performance",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "应为 anti-flaw performance（抗缺陷性能），OCR 将 flaw 误识为 flaw 的变体，影响术语理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "engineering ceramics (21 24)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "引用编号范围 21-24 中的连字符丢失，属格式抽取问题，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "L. Jager, P. Frazzi, Biophys. J. 79, 1737/1746 (2000).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "参考文献中作者名 Fratzl 被误为 Frazzi，页码分隔符异常，属参考文献抽取错误，不影响正文论证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Olive Pharr model",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为 Oliver-Pharr model，OCR 漏掉 r 并误分，属人名抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Synthetic nacre by predesigned matrix-directed mineralization",
+  "self_check": "已核对：合成珍珠层厚度1-2 mm、CaCO₃含量91 wt %、文石层2-4 μm、有机层100-150 nm、纳米晶粒10-100 nm、晶体取向度约9%、有机体积分数约14% vs 天然<8%、制备时间2周，均与原文一致。公式符号如Ca(HCO₃)₂、Mg²⁺、β几丁质、K_Jc等按原文保留。不确定处：参考文献中部分作者名和页码存在OCR噪声，但不影响正文论证骨架。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2727,
+      "prompt_tokens": 6922,
+      "total_tokens": 9649,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 4980,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

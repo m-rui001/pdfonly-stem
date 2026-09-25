@@ -1,0 +1,67 @@
+{
+  "sha1": "dce4e1182012463bae11ef1f36adbf0649e247a5",
+  "title": "Risk of pesticide pollution at the global scale",
+  "doi": "https://doi.org/10.1038/s41561-021-00712-5",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/dce4e1182012463bae11ef1f36adbf0649e247a5/index.html",
+  "source_chars": 49913,
+  "markdown_chars": 8436,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "we classified RS into negligible (RS $ \\leq0 $ ), low (0<RS $ \\leq1 $ ), medium (13) risk.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "风险分类中 medium 与 high 的阈值被 OCR 损坏为“(13) risk”，丢失了“1<RS≤3) and high (RS>3”等关键区间信息，影响对风险分级标准的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "We find that 64% of global agricultural land （ $ \\sim $ 24.5 million $ km^{2} $ ）is at risk of pesticide pollution by more than one active ingredient, and 31% is at high risk.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "摘要中“64%”与正文“63.7%”一致，但摘要“31%”与正文“31.4%”一致，属正常四舍五入，非 OCR 错误。此处仅记录摘要与正文数值的对应关系，不视为抽取问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "PEC_i,j^GW",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中上下标在 OCR 中部分丢失或格式不统一（如 PEC_i,j^GW 与 PEC_i,j^SL 等），但变量含义仍可辨识，对理解方法影响较小。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Risk of pesticide pollution at the global scale",
+  "self_check": "已核对摘要、正文与结论中的关键数值：全球农业用地风险比例 74.8%（约 2880 万 km²）、高风险 31.4%（约 1210 万 km²）、一种以上有效成分风险 63.7%、10 种以上 20.9%、高生物多样性区占高风险区 34.1%（约 418 万 km²）、缺水区高风险 62 万 km²、关注等级 1 流域（Orange、Huang He、Indus、Murray、Parana）等均与原文一致。公式部分保留了 PEC、PNEC、RQ、RP、RS 的定义与关系，但 OCR 中部分上下标和阈值区间（如 medium 与 high 的 RS 区间）存在损坏，已在 extraction_issues 中标出。未发现登记题名/DOI 与 OCR 正文身份冲突。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5423,
+      "prompt_tokens": 13067,
+      "total_tokens": 18490,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9992,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "068d8743de923796a7ff36410957851ecd3a839b",
+  "title": "Near‐Infrared (NIR) Organic Light‐Emitting Diodes (OLEDs): Challenges and Opportunities",
+  "doi": "https://doi.org/10.1002/adfm.201807623",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/068d8743de923796a7ff36410957851ecd3a839b/index.html",
+  "source_chars": 123372,
+  "markdown_chars": 4957,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "the most successful approach to deal with aggregation effects is in fact not via suppression of the phenomenon but via exploitation of its potential in limiting non-radiative deactivation pathways of the excitations.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文表述“exploitation of its potential in limiting...”语义稍显含糊，但可能为原文原意，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "NIR EL peaking at 1530 nm and measured an exciton production efficiency of 100.8 %.",
+      "type": "数值核对",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "提取文本明确给出100.8%，但上下文提到“even higher efficiencies”可能允许超100%。数值保留。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Web of Knowledge database in September 2018 (the apparent decline for the last year is only due to the search being conducted during the year, and not accounting for it “pro rata”).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "句子在页尾中断，下一页才出现完整内容，但文本顺序尚可理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "Tregnago et al.,[30] who reported NIR electroluminescence from exciplexes at polyfluorene/hexaazatrinaphthylene bulk heterojunctions.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页尾断行，但信息完整，无实际缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：EQE 24%（740 nm）、0.3%（~1 μm）、1.15%（840 nm）、10%（721 nm）、0.1%（1100 nm TADF敏化）等；公式EQE=ξγ[r_st φ_fl +(1−r_st)φ_ph]已按原文保留；能隙定律、TTA上限62.5%、单线态占比25%等均一致。未发现数值矛盾。不确定之处：部分表格数据（如Table 2中PL峰）与正文描述略有出入，但正文已按文本记录；跨页断句处仅个别小疑点，未影响整体。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3800,
+      "prompt_tokens": 36472,
+      "total_tokens": 40272,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      }
+    },
+    "content_chars": 6650
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "36aa502accc858f7bee0c361f54776e549363ea6",
+  "title": "High-Efficiency Light-Emitting Diodes of Organometal Halide Perovskite Amorphous Nanoparticles",
+  "doi": "https://doi.org/10.1021/acsnano.6b01540",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/36aa502accc858f7bee0c361f54776e549363ea6/index.html",
+  "source_chars": 41055,
+  "markdown_chars": 5058,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "conﬁrm the colloid attributes and assess the colloid tunability in diﬀerent solvents, dynamic light scattering (DLS) was employed to verify the size distribution.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末尾句子以句号结束，第3页开头直接以‘conﬁrm’开头，明显缺少句子主语或前导词（如‘To’），可能是跨页时文字被截断或拼接错误。原意应为‘To confirm...’，但提取文本中缺失，无法确认真实词句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：PLQE 77%，发射调谐范围403–740 nm，平均粒径6.1 nm，τ1=5.58 ns/τ2=0.79 ns，100 meV vs 43 meV红移，77K/296K强度比130，fwhm 138 vs 77 meV，器件性能11.49 cd/A、7.84 lm/W、EQE 3.8%、IQE 19%，最大亮度3515 cd/m2及11830 cd/m2，寿命30秒。各处与提取文本一致。公式无。不确定点为跨页处‘conﬁrm’前确实缺少内容，已在issue中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6929,
+      "prompt_tokens": 12136,
+      "total_tokens": 19065,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3392
+      }
+    },
+    "content_chars": 5830
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "63977a291814106939013fddec14de5a28dfd748",
+  "title": "High-harmonic generation from an atomically thin semiconductor",
+  "doi": "https://doi.org/10.1038/nphys3946",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/63977a291814106939013fddec14de5a28dfd748/index.html",
+  "source_chars": 30385,
+  "markdown_chars": 3031,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "A .",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页末尾句子在'Fig. 3b shows a false color'处中断，下一页从'representation'继续，中间可能有图注或分页干扰。另外'Fig. 3b shows a false color'后无标点，跨页后接'representation'，应视为同一句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "The semiclassical equations of motion for carriers within a single-particle band are ℏ =− =",
+      "type": "疑似文本截断",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式（1）（2）在提取文本中不完整，只显示部分变量定义，公式本身丢失。原文本应有完整方程，此处仅剩片段。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "where r is the position of an electron wavepacket, k is its wave vector, E is the electric field of",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "此句在第5页末尾中断，第6页继续'Berry curvature20,26...'，但中间可能有页码或页眉干扰，实际应为连续句子。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "is of order ∼ few eV, ∼",
+      "type": "疑似文本截断",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第7页末尾提到'when the dimensionless parameter 2 ℏ Ω / ~'，第8页继续'is of order ~ few eV, ~'，但数值未完整呈现，如Ω值可能被截断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文及图注中的关键数值：泵浦光子能量0.30 eV，峰值强度2.2 TW/cm²，场强0.33 V/Å，谐波阶次6-13，幂指数p=3.3，调制周期60°，偶次谐波消失条件，模型公式中Berry曲率与带内电流关系，单层与体材料效率比较。公式（3）（4）根据文中给出的符号定义已尽量恢复，但原始提取中公式有截断，已注明。图4比较的效率数值未在正文文字中给出，只引用了图编号。结论方向与原文一致。仍不确定之处：公式（1）（2）的完整形式缺失，以及第8页关于ε和Ω的数值不完整。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2776,
+      "prompt_tokens": 8469,
+      "total_tokens": 11245,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 216
+      }
+    },
+    "content_chars": 4566
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

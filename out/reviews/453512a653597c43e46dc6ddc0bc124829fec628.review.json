@@ -1,0 +1,55 @@
+{
+  "sha1": "453512a653597c43e46dc6ddc0bc124829fec628",
+  "title": "Non-iridium-based electrocatalyst for durable acidic oxygen evolution reaction in proton exchange membrane water electrolysis",
+  "doi": "https://doi.org/10.1038/s41563-022-01380-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/453512a653597c43e46dc6ddc0bc124829fec628/index.html",
+  "source_chars": 64674,
+  "markdown_chars": 2094,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "S number = , Where is",
+      "type": "文本提取缺失/公式不完整",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "S-number计算公式的文字及符号被截断，仅剩“S number = , Where is”，缺少公式主体和变量定义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "While these two Ru K-edges appeared to be very close to each other (Fig. 1e)",
+      "type": "疑似错误——图编号引用",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "上下文讨论Ru K-edge XANES，图2e是Ru K-edge XANES图，而图1e是TEM/FFT图，且后文补充图19与Ru K-edge相关，故“Fig. 1e”疑为“Fig. 2e”笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：Ni-RuO2过电位214 mV@10 mA cm-2，Tafel斜率42.6 mV dec-1，稳定性200h vs RuO2的<40h，S-number=7.4×10^5，PEM 1000h@200 mA cm-2，DFT能垒1.87→2.22 eV（Ru脱金属）、1.67→2.12 eV（次表面氧丢失），PEM电压1.78/1.95/2.10 V对应500/1000/1500 mA cm-2。公式方面，AEM/LOM极限电位1.89/3.76 V已核对。不确定之处：图编号引用“(Fig. 1e)”疑似错误；S-number公式提取缺失，其余数值与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6961,
+      "prompt_tokens": 19660,
+      "total_tokens": 26621,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5251
+      }
+    },
+    "content_chars": 3049
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

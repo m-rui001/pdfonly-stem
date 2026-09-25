@@ -1,0 +1,91 @@
+{
+  "sha1": "3657ee8924fdebc57a22813373251db1dca7c68b",
+  "title": "Vacancy‐Rich Monolayer BiO 2− x as a Highly Efficient UV, Visible, and Near‐Infrared Responsive Photocatalyst",
+  "doi": "https://doi.org/10.1002/anie.201708709",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3657ee8924fdebc57a22813373251db1dca7c68b/index.html",
+  "source_chars": 24187,
+  "markdown_chars": 2144,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "BiO2@x",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "摘要及正文中多处出现“BiO2@x”，而标题和DOI元数据为“BiO2−x”，@ 应为 − 的下标字符在提取中丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "a = 5.476 c",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "晶格常数单位“c”疑似应为“Å”（埃），但原文提取仅见“c”，无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "similar phenomenon has been observed in other reported literatures",
+      "type": "语法/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句与前段末尾“which can be attributed to the inner defective structure...”之间缺少主语或连接，可能为页间断裂造成。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "DMPO-CO2@",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "该符号在自由基实验中应为 DMPO-·O₂− 或类似形式，但提取文本为“DMPO-CO2@”，无法断定准确写法。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "The shorter lifetime (t1, around 160 ps) ... whereas another component (t2, around 220 ps)...",
+      "type": "上下文不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文前文实测 t1 为 235/241 ps，t2 为 527/601 ps，此处说 t1 约 160 ps、t2 约 220 ps，应为理论计算值，但提取文本未明确标注“计算”，导致表述混乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "It is understandable that suggesting the high energy of (110) facet, it may exhibit the highest reactivity. It is understandable that during hydrothermal process...",
+      "type": "重复/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“It is understandable that”重复出现，前一句与后一句明显多余，疑为原文编辑错误或提取时重复。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：厚度1.0 nm、晶面间距0.317/0.274 nm、带隙1.46/1.4 eV、吸收边850→890 nm、价带/导带位移、氧空位浓度（TG：8.5%/36%；XPS：11.5%/20.5%）、光催化降解率（RhB：100%/100%/95%；苯酚：52%/47%）均与正文一致。公式和符号尽量保留原文，但“BiO2@x”按元数据视为“BiO2−x”，并已在issues中标注。理论计算的正电子寿命值（约160/220 ps）与实验值（235/241 ps、527/601 ps）关系在原文中因提取顺序可能混淆，已按“理论模拟”理解并保留数字。其余不确定处已在issues中列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3508,
+      "prompt_tokens": 7833,
+      "total_tokens": 11341,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1312
+      }
+    },
+    "content_chars": 4150
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "7405c4633179d98dd06c27c0b948de5e08554fea",
+  "title": "Recovery, regeneration and sustainable management of spent adsorbents from wastewater treatment streams: A review",
+  "doi": "https://doi.org/10.1016/j.scitotenv.2022.153555",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7405c4633179d98dd06c27c0b948de5e08554fea/index.html",
+  "source_chars": 208214,
+  "markdown_chars": 4141,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "Palygorskite nanoparticles and",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "此短语单独位于第17页末，第18页开头出现'palygorskite microparticles achieved...'，两处之间缺少完整句子，原文可能被分页截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "Functionalized attapulgite with polyaniline and magnetite demonstrated an excellent adsorption capacity of 270, 189, and 143 mg/g for commonly-encountered Pb2+, Cu2+, and Ni2+",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在第17页末尾处未完成，第18页开头接续为'palygorskite microparticles achieved maximal adsorption capacities of 238 and 64 mg/g for Cr6+, respectively, mainly via film diffusion and pore diffusion processes (Rouhaninezhad et al., 2020).' 但中间缺少连接，疑似PDF抽取时漏掉或错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "The possible reason for this improved adsorption capacity was the generation and activation of new adsorption sites in the adsorbent by EDTA-4Na.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "前文提到EDTA螯合剂，此处出现'EDTA-4Na'，可能是'EDTA-4Na'或'EDTA'的变体，但缺乏原文其他证据，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "Notably, the bio-regenerated GAC showed similar adsorption capacity during the first few hours when compared to fresh GAC; after 4.5 hours they showed a significant reduction in adsorption capacity.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第31页末句以分号结尾，第32页开头出现'This shows that...'，内容连贯但分页可能切断了自然段落，需检查上下文是否有缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值，如各吸附容量（Cr3+ 92 mg/g，Pb2+ 591 mg/g，Hg2+ 1080 mg/g等）、再生效率（如82%、97%、95%等）和条件（温度、时间、浓度）。公式方面，正文中未出现需要保留的独立公式，仅化学式和数值。结论部分与摘要一致。不确定处：第17页跨页缺失连接词；表格数据过多，仅引用正文提及的数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4513,
+      "prompt_tokens": 59836,
+      "total_tokens": 64349,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1209
+      }
+    },
+    "content_chars": 6037
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

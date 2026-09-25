@@ -1,0 +1,57 @@
+{
+  "sha1": "dfe62a7f29f7330e758f7665ee337d82fe81f13d",
+  "title": "Efficient and stable solution-processed planar perovskite solar cells via contact passivation",
+  "doi": "https://doi.org/10.1126/science.aai9081",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/dfe62a7f29f7330e758f7665ee337d82fe81f13d/index.html",
+  "source_chars": 37135,
+  "markdown_chars": 5728,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "Long-term device stability of perovskite solar cells with $ \\mathrm{T i O_{2}-C l} $ and $ \\mathrm{T i O_{2}-C l} $ .",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Fig. 4 图题中两个对比对象被抽成相同的 TiO₂-Cl，而正文明确对比的是 TiO₂-Cl 与 TiO₂，疑为 OCR 将对照层误识为 TiO₂-Cl。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "（B） Histogram of the PCE values among 204 devices on $ \\mathrm{T i O_{2}-C l} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Fig. 3B 图题写 204 devices，而正文写 200 planar PSCs，两处器件数不一致，可能为 OCR 数字误识或原文本身不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Efficient and stable solution-processed planar perovskite solar cells via contact passivation",
+  "self_check": "已核对：认证 PCE 20.1%（0.049 cm²）与 19.5%（1.1 cm²）、最佳实验室 PCE 20.9%（MAFA）与 21.4%（CsMAFA）、平均 V_oc 1.06→1.14 V、FF 69%→77%、平均 PCE 15.8%→19.8%、τ_r 64→145 μs、理想因子 1.73→1.25、τ_t ~3.4 μs、陷阱态密度 ~3×10¹⁵ cm⁻³、EQE 积分 22.6 mA cm⁻²、稳定性 500 h 保持 90%（暗恢复 97%）、暗存储 60 天 95% vs 38%、90 天 96%。公式与化学式按提取文本原样保留（如 FA₀.₈₅MA₀.₁₅PbI₂.₅₅Br₀.₄₅、Cs₀.₀₅FA₀.₈₁MA₀.₁₄PbI₂.₅₅Br₀.₄₅）。仍不确定处：Fig. 3B 器件数 204 与正文 200 不一致；Fig. 4 图题对照层疑似 OCR 误识。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4141,
+      "prompt_tokens": 11328,
+      "total_tokens": 15469,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7032,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

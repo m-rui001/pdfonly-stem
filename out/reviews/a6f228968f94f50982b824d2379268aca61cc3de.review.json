@@ -1,0 +1,129 @@
+{
+  "sha1": "a6f228968f94f50982b824d2379268aca61cc3de",
+  "title": "Promoting transparency and reproducibility in enhanced molecular simulations",
+  "doi": "https://doi.org/10.1038/s41592-019-0506-8",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a6f228968f94f50982b824d2379268aca61cc3de/index.html",
+  "source_chars": 28365,
+  "markdown_chars": 4682,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Furthermore, despite great efforts have been made to define good practices for preparing, executing, and analyzing MD simulations $ ^{5} $ , to make them reproducible, shareable and comparable across different MD codes and computational platforms, and ultimately to validate the results in a standardized way, there is still much work to do to ensure that the community is able to reap the maximal benefit from recent and ongoing developments.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句子结构不完整，'despite great efforts have been made' 疑似应为 'despite the great efforts that have been made' 或类似，但 OCR 提取如此，影响理解轻微。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "new integrative methods to improve the accuracy of molecular mechanics force fields by incorporating either quantum-chemical or experimental data $ ^{4} $ Furthermore, despite great efforts have been made",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "引用编号 $ ^{4} $ 后缺少句号，且与下句直接相连，疑似 OCR 丢失标点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "A strategy to resolve this problem was pioneered a decade ago with the creation of $ \\mathrm{P L U M E D}^{7} $ , an open-source library",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "PLUMED 被 OCR 为 $ \\mathrm{P L U M E D}^{7} $，格式异常，但可识别为 PLUMED。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "ABIN $ ^{0} $ , CP2K $ ^{18} $ , i-PI $ ^{19} $ , PINY-MD $ ^{20} $ and Quantum Espresso $ ^{21} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "ABIN 的引用编号为 $ ^{0} $，明显错误，应为其他数字，但无法确定正确编号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "PLUMED-NEST $ ^{\\mathrm{p}} $ , which all members of the consortium",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标 p 被 OCR 为 $ ^{\\mathrm{p}} $，格式异常但可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "The list of the members of the consortium will regularly be updated on the PLUMED website $ ^{q} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标 q 被 OCR 为 $ ^{q} $，格式异常但可识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "which is a crucial part of any methodological advancement $ ^{25} $ Therefore, we welcome all future members who share our vision.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "引用编号 $ ^{25} $ 后缺少句号，疑似 OCR 丢失标点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The DRR module implements the Extended-System Adaptive Biasing Force method for enhanced-sampling and free-energy calculations $ ^{30} $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "引用编号 $ ^{30} $ 后句号位置可能异常，但影响轻微。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the permutation invariant vector $ ^{33} $ , a general-purpose representation of the structure of materials",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "引用编号 $ ^{33} $ 后逗号位置可能异常，但影响轻微。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "PLUMED-NEST will serve multiple functions. It will i) promote scientific reproducibility",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "列表项 i) 后缺少空格或格式异常，但可读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "The PLUMED consortium: A community effort to promote openness, transparency and reproducibility in molecular simulations",
+  "self_check": "已核对：论文标题、DOI、年份与登记元数据一致；正文关键结论（PLUMED 联盟成立、PLUMED-NEST 存储库、模块贡献）与摘要及 Box 内容一致；公式符号如 $ \\mathrm{P L U M E D}^{7} $ 等已按原文保留；数值如“40 多个示例”已核对。仍不确定：ABIN 的引用编号 $ ^{0} $ 明显错误，但无法确定正确编号；部分标点缺失可能影响句子结构，但未改变核心含义。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3681,
+      "prompt_tokens": 7572,
+      "total_tokens": 11253,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8645,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

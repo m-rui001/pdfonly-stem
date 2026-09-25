@@ -1,0 +1,64 @@
+{
+  "sha1": "a6c28a91363fb4e3befc02a736f6368c3b9a77f1",
+  "title": "Activatable Photosensitizers: Agents for Selective Photodynamic Therapy",
+  "doi": "https://doi.org/10.1002/adfm.201604053",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a6c28a91363fb4e3befc02a736f6368c3b9a77f1/index.html",
+  "source_chars": 52066,
+  "markdown_chars": 3460,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "cyclic RDG (cRDG) peptide",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "文中同一分子后文写作cRGD，且通常为RGD序列，此处RDG可能为笔误或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "polysaccharide/chlorine e6 conjugate",
+      "type": "疑似拼写不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "后文多处使用chlorin e6（如第7页），此处chlorine e6可能为chlorin e6之误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "developed a very interesting new aPS, two-dimensional Figure 12. A schematic illustration of activatable agent for macrophage-targeted imaging and subsequent PDT.",
+      "type": "cross-page/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "此处句子明显不完整，原文应描述Ma等开发的二维分子信标可被mRNA激活，但提取文本中出现了图注混入且缺少“mRNA”等关键词，跨页导致拼接错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文及结论中的关键数值，如ΦΔ=56%、ΦΔ=0.72、ΦF=0.48、IC50=0.053 µm vs 1.27 µm、IC50~0.02 µm、GSH浓度等，与原文一致。pH范围、生存率等亦正确。不确定处：Ma等研究中的“mRNA”一词原文提取缺失，仅根据上下文推断，已在issues中标明；另外pH响应系统中“chlorine e6”与“chlorin e6”拼写不一致，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12422,
+      "prompt_tokens": 15082,
+      "total_tokens": 27504,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9714
+      }
+    },
+    "content_chars": 4576
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

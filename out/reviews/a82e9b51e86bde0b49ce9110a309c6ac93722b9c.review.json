@@ -1,0 +1,84 @@
+{
+  "sha1": "a82e9b51e86bde0b49ce9110a309c6ac93722b9c",
+  "title": "Blockchain technology: implications for operations and supply chain management",
+  "doi": "https://doi.org/10.1108/scm-09-2018-0309",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a82e9b51e86bde0b49ce9110a309c6ac93722b9c/index.html",
+  "source_chars": 89174,
+  "markdown_chars": 12269,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Manuscript ID SCM-09-2018-0309.R2",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页显示稿件编号为SCM-09-2018-0309.R2，而登记DOI为10.1108/scm-09-2018-0309，两者基本一致，但.R2表示修订版，可能影响元数据精确匹配。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Yermac, 2017",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献列表中为Yermack, D. (2017)，正文中误写为Yermac，属于OCR或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Hackius and Peterson, 2017",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献列表中为Hackius and Petersen (2017)，正文中误写为Peterson。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "we provide a starting point for this but further exploration is required.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文此处可能缺少标点或连接词，导致句子结构不完整，但语义可理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "Kouvala Innovation are attempting to use blockchain and RFID to communicate business need to move goods from point A to point B by a certain date.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公司名称“Kouvala Innovation”可能为OCR误识别，但无法确认正确拼写。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Blockchain Technology: Implications for operations and supply chain management",
+  "self_check": "已核对摘要、正文关键数据（如区块链四个特征、技术采纳三阶段、六个研究主题）与结论方向一致。公式和符号未在提取文本中出现。不确定之处：部分参考文献年份或作者名可能存在OCR误差，但未影响主要论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7051,
+      "prompt_tokens": 19741,
+      "total_tokens": 26792,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13985,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

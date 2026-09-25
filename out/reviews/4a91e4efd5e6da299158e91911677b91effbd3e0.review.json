@@ -1,0 +1,64 @@
+{
+  "sha1": "4a91e4efd5e6da299158e91911677b91effbd3e0",
+  "title": "Electrolyte design for Li-ion batteries under extreme operating conditions",
+  "doi": "https://doi.org/10.1038/s41586-022-05627-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4a91e4efd5e6da299158e91911677b91effbd3e0/index.html",
+  "source_chars": 50918,
+  "markdown_chars": 3877,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "Rct, cathode = 22.5, Rct, anode =25.2) at 25oC increased to RSEI cathode = 72.3, RSEI anode =81.5; Rct cathode = 228.5, Rct anode =241.2 at 30oC",
+      "type": "疑似数字/单位错误",
+      "severity": "high",
+      "confidence": 0.75,
+      "reason": "上下文明确讨论从25°C降温至-30°C的阻抗变化，且数值增大一个量级，因此'at 30oC'应为'-30oC'。但提取文本如此，标注为疑似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "𝑆 ∆𝐺298𝐾 𝐺 =− − 1.4 𝑉 𝐹",
+      "type": "跨页/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "公式提取不完整，分式结构断裂，缺少明确的还原电位符号与等式左边。保留可见文本，无法推断正确形式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "MDFSA (fluorosulfonyl acetoacetate...推测)",
+      "type": "边界截取",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "提取文本中MDFSA化学名称为'fluorosulfonyl substituted MDFA'，但未给出具体结构。另一处提及'loss of SO2F products'，可能涉及MDFSA的特定官能团，但文本不足，存疑不推测。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：容量保持率（80.1%、93.9%、75%、54%）、库仑效率（99.94%、99.98%、>99.9%）、电导率（1.8、1.7、0.6、6.4 mS/cm）、SEI厚度（2 nm vs 14 nm）、阻抗值（25°C与低温）、配位数（1.92 MDFA、1.66 TFSI、0.09 MDFSA）、反应能（-0.49, -0.45, -0.05, -0.31, +0.50, -1.03 eV）。公式部分：还原电位公式按提取文本保留，但存在拼接不清晰，已在问题中标出。数据的方向与结论一致，未发现矛盾。仍不确定：原文'Sat -30oC'处提取为'30oC'，已标注；降温度范围'-90°C至+90°C'与摘要'±60°C'不冲突（DSC更宽），未擅自修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3557,
+      "prompt_tokens": 13932,
+      "total_tokens": 17489,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 423
+      }
+    },
+    "content_chars": 5205
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

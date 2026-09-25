@@ -1,0 +1,54 @@
+{
+  "sha1": "6e0e30342f7fdecc7293b609a38a53f9a088773d",
+  "title": "High temperature shockwave stabilized single atoms",
+  "doi": "https://doi.org/10.1038/s41565-019-0518-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6e0e30342f7fdecc7293b609a38a53f9a088773d/index.html",
+  "source_chars": 48900,
+  "markdown_chars": 3976,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The stability of single atom catalysts is critical for their practical applications. While high",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末尾'While high'显然不完整，应接续第3页开头的'temperature can promote...'，但第3页开头却是'Single atom catalysts, offering...'，中间缺少'温度可促进成键'等句子，疑似PDF抽取时遗漏了第3页起始部分内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "We used the large-scale atomic/molecular massively parallel simulator to perform molecular dynamic (MD) simulations.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "通常为LAMMPS（Large-scale Atomic/Molecular Massively Parallel Simulator），原文未写出缩写，照录可见文本，但可能抽取时丢失了LAMMPS首字母缩写。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对了关键数值与公式：1500–2000 K合成温度、55 ms开启、10倍关断、平均约400 K；Pt负载0.24 wt%、CA-CNF比表面积56 m²/g；EXAFS键距1.931 Å、配位数2.8，DFT Pt-C3键距1.940 Å；MD模拟能垒1.48 eV；CO氧化活化能50.7/53.2 kJ/mol；甲烷转化选择性>90%及TOF提高1000倍。公式Eb和ΔE原样保留。不确定点：第2页跨页缺失内容无法补全；第20页模拟器名称未扩展，按原文保留。其余数值与正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4419,
+      "prompt_tokens": 13661,
+      "total_tokens": 18080,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1516
+      }
+    },
+    "content_chars": 5077
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "5983b560841438501c6f660aebaed0afc4ac1dfd",
+  "title": "Evidence for climate change in the satellite cloud record",
+  "doi": "https://doi.org/10.1038/nature18273",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5983b560841438501c6f660aebaed0afc4ac1dfd/index.html",
+  "source_chars": 54842,
+  "markdown_chars": 1652,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "180-320 hPa",
+      "type": "inconsistent_interval_label",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文多次使用180-310 hPa，而表1及扩展数据图例使用180-320 hPa，疑似原文印刷不一致或抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：观测与ALL网格总云量趋势相关0.39，PI模拟超过15000年无更正值，趋势时段1983-2009，云顶区间分歧已标出。表1中其他数值因提取格式混乱未逐一引用；正文中未明确给出的数值未写入。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8684,
+      "prompt_tokens": 14579,
+      "total_tokens": 23263,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7525
+      }
+    },
+    "content_chars": 2087
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

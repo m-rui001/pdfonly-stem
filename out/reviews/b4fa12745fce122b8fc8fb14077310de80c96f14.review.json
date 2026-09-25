@@ -1,0 +1,54 @@
+{
+  "sha1": "b4fa12745fce122b8fc8fb14077310de80c96f14",
+  "title": "Constraint on the matter–antimatter symmetry-violating phase in neutrino oscillations",
+  "doi": "",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b4fa12745fce122b8fc8fb14077310de80c96f14/index.html",
+  "source_chars": 54954,
+  "markdown_chars": 4185,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "JCP,l =",
+      "type": "公式排版断裂",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式(1)的Jarlskog不变量表达式被分成两行，中间夹有页码分隔符，可能影响阅读顺序，但文本内容完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "P (νµ → νe ) ≈ sin2 (2θ13 ) sin2 (θ23 ) sin2 E",
+      "type": "公式抽取疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式(2)的sin²括号内缺少完整的参数表达式，后续文本有补充，但抽取中未见完整的Δm²·L/E项，可能存在缺字或排版截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对主要结果：δCP的3σ区间（正质量顺序[−3.41,−0.03]，反质量顺序[−2.54,−0.32]）、95%排除CP守恒点、sin²θ23=0.53⁺⁰·⁰³₋₀·₀₄、Δm²₃₂=(2.45±0.07)×10⁻³ eV²/c⁴、后验89%偏好正质量顺序、贝叶斯因子8、Jarlskog不变式形式与数值0.033 sinδCP、夸克对比3×10⁻⁵。系统不确定度来源及数值（通量9%，νe/ν̄e截面3.0%，移除能3.7%，Δm²额外误差3.9×10⁻⁵等）均已核对。公式(1)(2)(3)(4)按抽取文本保留，未补写缺失部分；公式(2)中sin²括号内部不完整，已在issues中标记。不确定处：DOI未提供；公式(2)中1.27Δm²₂₁L/E项后缺少乘sin(1.27Δm²₃₂L/E)的完整形式，但原文抽取如此，未擅自修复。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3404,
+      "prompt_tokens": 14506,
+      "total_tokens": 17910,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 35
+      }
+    },
+    "content_chars": 5128
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "9fe7ed8cd2eed499f44254de4426eaff2b34e8c3",
+  "title": "Multi-site electrocatalysts for hydrogen evolution in neutral media by destabilization of water molecules",
+  "doi": "https://doi.org/10.1038/s41560-018-0296-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9fe7ed8cd2eed499f44254de4426eaff2b34e8c3/index.html",
+  "source_chars": 42620,
+  "markdown_chars": 3070,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "we obtained Tafel slopes of 64, and 81, per decade for CrO x/Cu-Ni and Pt/C respectively",
+      "type": "疑似单位缺失",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Tafel斜率单位通常为mV/dec，此处\"per decade\"前缺少\"mV\"，但提取文本中未出现，可能原文省略或提取遗漏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Ni and CrO x were then subsequently deposited on 3D Cu nanowire scaffold using thermodepostion of nitrate salts",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"thermodepostion\"应为\"thermodeposition\"。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Asymmetric doping and O-OH bond destabilization",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文标题中\"O-OH\"可能应为\"H-OH\"（水分子中的键），但上下文没有明确证据，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "more than 50 % of metallic Ni was converted to Ni(OH) in the presence of water",
+      "type": "疑似不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文描述Ni表面转化为Ni(OH)₂，此处写为Ni(OH)，可能省略了下标；但根据后续\"large amount of Ni(OH)2\"，此处应为Ni(OH)₂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：48 mV @ 10 mA cm⁻²、各电流密度比较（如3.3 vs 0.3 mA cm⁻²）、Tafel斜率64与81 mV/dec、ECSA比值（1.6、2.2倍）、DFT能量ΔE₃₋₁≈−0.01 eV与−0.89 eV、稳定性24 h等。公式中ΔE₃₋₁和ΔE₂₋₁的定义与原文一致。不确定之处：原文中“O-OH”可能为笔误，Ni(OH)与Ni(OH)₂的表述不一致，Tafel斜率单位缺失，这些已在issues中标注。未引入任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3331,
+      "prompt_tokens": 11483,
+      "total_tokens": 14814,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 792
+      }
+    },
+    "content_chars": 4542
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

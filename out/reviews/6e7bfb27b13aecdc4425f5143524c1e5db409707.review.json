@@ -1,0 +1,63 @@
+{
+  "sha1": "6e7bfb27b13aecdc4425f5143524c1e5db409707",
+  "title": "How microbes can, and cannot, be used to assess soil health",
+  "doi": "https://doi.org/10.1016/j.soilbio.2020.108111",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6e7bfb27b13aecdc4425f5143524c1e5db409707/index.html",
+  "source_chars": 48951,
+  "markdown_chars": 2714,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "Microbial functional gene composition Abundances of particular known genes (e.g. amoA, nifK) in soil. Analogous to microbial community composition, with genes instead of taxa Rate of N fixed per volume of soil per unit time",
+      "type": "疑似表格行错位/拼接错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "‘Rate of N fixed per volume of soil per unit time’ 明显属于下一个指标‘Nitrogen fixation’的描述，却紧跟在‘functional gene composition’的文本后，无分隔，疑似表格抽取时同行不同单元格内容被拼接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "-\n\nNitrification rates",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第14页开头单独一个‘-’，随后另起一行‘Nitrification rates’。该‘-’可能是前页表格某单元格内容的延续，但页间缺少衔接文本，无法确认完整内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Abundances of specific bacteria in the rhizosphere\nqPCR, high-throughput marker gene (16S) sequencing\nGreater N-fixation rates promote greater N availability Greater abundances of these taxa indicate greater benefits to plant growth Adding PGPR improves plant growth",
+      "type": "疑似表格行错位",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "‘Abundances of specific bacteria in the rhizosphere’ 后的方法列与描述列混杂了‘Greater N-fixation rates’和‘Adding PGPR’等内容，顺序明显错乱，多个单元格内容被压在同一行。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对论文主张、关键数值（如约50美元/样本、0.5 ha田块、多个数量级）与建议顺序，与正文一致；未发现数值矛盾。正文中引用的作者和年份均来自提取文本。关于表1的总结仅基于正文提及的指标和正文所述问题，未额外补充表格细节。提取文本中的表格内容在页14存在明显错位，已在extraction_issues中标出，且这些错位不影响正文论述的数值引用。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6006,
+      "prompt_tokens": 11700,
+      "total_tokens": 17706,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3917
+      }
+    },
+    "content_chars": 4314
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

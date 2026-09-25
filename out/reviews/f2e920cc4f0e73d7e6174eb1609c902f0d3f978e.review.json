@@ -1,0 +1,55 @@
+{
+  "sha1": "f2e920cc4f0e73d7e6174eb1609c902f0d3f978e",
+  "title": "Leaching of rare earths from bauxite residue (red mud)",
+  "doi": "https://doi.org/10.1016/j.mineng.2015.01.005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f2e920cc4f0e73d7e6174eb1609c902f0d3f978e/index.html",
+  "source_chars": 34796,
+  "markdown_chars": 4325,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Ce 368+68",
+      "type": "疑似提取错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同表其他元素均用±表示标准偏差，此处应为±而非+，系字符提取丢失或误认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "This is due to dissolution of alumunium and silicon from the sodium aluminosilicates.",
+      "type": "疑似拼写错误（原文可能如此）",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "‘alumunium’拼写可疑，通常应为aluminium；但该页报头为postprint而非正式版，可能是作者原始拼写或OCR错误，证据不足，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文、结论中的关键数值：REE总浓度约0.1 wt.%、Sc 121 g/tonne、Fe₂O₃ 44.6 wt.%、6 N HCl下Sc/La/Ce约70–80%与Y/Nd/Dy>80%、Fe溶出约60%、Al/Si/Ti溶出30–50%、水洗除钠10–15 wt.%、粒度90%<10 µm和50%<0.06 µm、柠檬酸90 °C等效性、Sc约50%可回收而不大量带入Fe、相邻REE线性相关R²>0.99（Sc、Ce例外）等。各数据与摘要及结论部分一致。公式无；文中出现的±符号（表2）在Ce处被提取为+，已在问题中标注。表中La/Ce等直接照录原始格式。未发现其他数值矛盾或需要猜测的内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4378,
+      "prompt_tokens": 9975,
+      "total_tokens": 14353,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1194
+      }
+    },
+    "content_chars": 5231
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

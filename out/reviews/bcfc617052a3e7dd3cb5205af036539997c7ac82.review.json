@@ -1,0 +1,63 @@
+{
+  "sha1": "bcfc617052a3e7dd3cb5205af036539997c7ac82",
+  "title": "Lawson Criterion for Ignition Exceeded in an Inertial Fusion Experiment",
+  "doi": "https://doi.org/10.1103/physrevlett.129.075001",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bcfc617052a3e7dd3cb5205af036539997c7ac82/index.html",
+  "source_chars": 97560,
+  "markdown_chars": 2638,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "While the NIF can deliver up to 1.9 MJ of laser en-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在页尾断开，下一页先插入图注和图表标题，然后才以'ergy [5, 22–24] in frequency tripled'继续，跨页序列中缺失了页眉/图注，需注意原文连续性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "3.3-3.5 g/3 for HDC vs. 1.05 g/3 for plastic",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "密度单位'g/3'明显应为'g/cm³'，提取文本丢失了'cm'，原文本中其他位置均写作'g/cm3'或'g/cc'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "and correspond-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单词在页尾断开，下一页以'ing lower Tion'继续，属于正常分页断词，但可标注以示删除线。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文与表格关键数值：产额1.37 MJ、靶丸增益5.8、靶增益0.72、激光能量1.92 MJ、各判据概率（GLCL 99.6%，GLCH 100%，Eα/2Ehs 0-D 100%和1-D 99.8%，ITFX 100%）与原文一致。公式保留原样（式1–8），变量定义与原文匹配。不确定之处：表I中N210207的ρRhs误差写法'0.37 ± 0.4'存疑（可能为0.04），但无强文本证据，未改动；ITFX相关符号'IT F X'与'ITFX'混用，按原文照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3476,
+      "prompt_tokens": 32569,
+      "total_tokens": 36045,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1323
+      }
+    },
+    "content_chars": 3757
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

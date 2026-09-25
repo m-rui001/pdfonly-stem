@@ -1,0 +1,81 @@
+{
+  "sha1": "b1fc312c32f1d7b7f60bf3eaa06ed04a3508d334",
+  "title": "Observation of a periodic array of flux-closure quadrants in strained ferroelectric PbTiO 3 films",
+  "doi": "https://doi.org/10.1126/science.1259869",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b1fc312c32f1d7b7f60bf3eaa06ed04a3508d334/index.html",
+  "source_chars": 35029,
+  "markdown_chars": 2771,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "are well known in ferromagnetic materials (8–10), and their topological properties and dynamics are under investigation (9, 10).",
+      "type": "跨页截断/句子起点缺失",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "本句以'are'开头，缺少主语，疑似上一页末尾被页眉/图注打断，或抽取时丢失了句子前半部分。原文前文可能为'Flux-closure domains...'等。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "u5 ≈ − F44 PS Rc cosh 2 ( x1 Rc )",
+      "type": "公式疑似排版/抽取错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该公式缺少必要的分数线或括号，无法按常规数学表达式理解。常见形式应为 u5 ≈ -F44 PS / (Rc cosh²(x1/Rc))，但原文提取文本中未见分数线。照录可见文本并标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the ratio of period/thickness is ~1.45; i.e., w ≈ 2d .",
+      "type": "数值矛盾（疑似错误）",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "前文明确说周期/厚度比为~1.45，后文却说 w ≈ 2d，1.45 与 2 明显不一致。可能是原文有误或抽取错误（如将 w ≈ 1.45d 误为 2d，或 w ≈ √2 d 被误为 2d）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "with α = 0 and β = 2 .",
+      "type": "数值疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "根据前文周期/厚度比~1.45，线性定律 w ≈ α + βd 中的 β 应接近1.45或√2（≈1.414），而提取为2，疑为β=√2被误作2。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The linear fit is close to .",
+      "type": "文本截断（公式缺失）",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "此句以'close to'结尾后无任何内容，缺失了图注中的数学表达式，明显是抽取时丢失了后续文字。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文与结论中的数据一致性：应变梯度（远离顶点~4×10⁶ m⁻¹，顶点~10⁹ m⁻¹）、F₄₄估算（1.5–2 Å 偏移，Ps=0.75 C·m⁻²，F₄₄≈10⁻¹⁰ C⁻¹·m³）、核心应变25%、应力~20 GPa、理论强度~14 GPa、BiFeO₃对比1.5%、厚度范围15–36 nm、周期/厚度比~1.45等均与提取文本一致。但“w≈2d”与“β=2”与“周期/厚度比~1.45”存在数值矛盾，已在extraction_issues中标出。公式u5的排版疑似有误，照录原文未做修饰。其余关于图1–4的描述均基于正文文字。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6222,
+      "prompt_tokens": 10861,
+      "total_tokens": 17083,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3570
+      }
+    },
+    "content_chars": 4547
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

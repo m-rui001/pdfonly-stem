@@ -1,0 +1,64 @@
+{
+  "sha1": "8f25c3419be06d2a62a3e1e7d419a07548ac9d25",
+  "title": "Coastal vulnerability across the Pacific dominated by El Niño/Southern Oscillation",
+  "doi": "https://doi.org/10.1038/ngeo2539",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8f25c3419be06d2a62a3e1e7d419a07548ac9d25/index.html",
+  "source_chars": 44033,
+  "markdown_chars": 4911,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "s=\n\nymin − ymin ymin\n\n(1)",
+      "type": "公式排版/字符损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "提取文本中的公式(1)渲染损坏，变量ymin的上下标和叠置排版无法辨认（提取中两个ymin完全相同，无法区分ymin与均值符号ȳmin）。虽可从后文语义推断第二个ymin应为带横线的均值，但公式原样已不可复原。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "F=\n\nρ g² Hs²T 64π\n\n(2)",
+      "type": "公式排版/字符损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式(2)以变量占位符代替实际希腊字符（ρ、π均为占位符而非实际希腊字母），系字符编码渲染问题而非语义错误。变量定义在正文中给出（ρ、g、Hs、T），但公式中π字符属性无法确定是否原文就如此。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "As a proxy for anomalous coastal erosion, the minimum annual shoreline position (most landward) for the largest winter climate index events was computed relative to the mean annual minimum position of each shoreline change record",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Page 7 结尾的句子在页尾处被截断（句末缺少句号），后续内容需结合原文可确定该段是指岸线侵蚀的代理指标计算方式；但页尾句未完整闭合，无法确认是否存在遗漏词句。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：东北太平洋El Niño冬季侵蚀增加69%、南太平洋减少68%、La Niña期间澳大利亚和太平洋西北部侵蚀增加110%、东北太平洋El Niño冬季波能通量+23%、西太平洋-9%、PDO负事件波能通量日本+21%至东北太平洋-16%、北美西海岸El Niño冬季水位+0.11m、波向偏移东北太平洋PDO -4°/El Niño -6°/PNA -7°/La Niña +8°、CMIP5极端La Niña频率+73%。公式(1)(2)的符号定义已在文中按可见文本转写，但公式(1)中的变量上划线无法从提取文本复原，公式(2)中的希腊字符以变量占位符出现，已如实在extraction_issues中标记。表1中各区域分项数值（如加州El Niño侵蚀129%、PNA 182%等）已在笔记中部分引用，其中个别区域（如加州PNA 182%）在正文描述中未单独列出百分比，笔记未擅自补充未在正文出现的表内细节。研究样本量（48个海滩、16个研究地点、1979-2012、ERA-Interim 1.5°网格）已核对。不确定性：正文叙述中\"eroded 69% more\"对应正文原文明确无歧义；但公式字符损坏处无法确认真实排版。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4092,
+      "prompt_tokens": 11583,
+      "total_tokens": 15675,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 428
+      }
+    },
+    "content_chars": 6573,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

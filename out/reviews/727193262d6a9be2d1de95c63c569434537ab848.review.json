@@ -1,0 +1,73 @@
+{
+  "sha1": "727193262d6a9be2d1de95c63c569434537ab848",
+  "title": "Is bilingualism associated with enhanced executive functioning in adults? A meta-analytic review.",
+  "doi": "https://doi.org/10.1037/bul0000142",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/727193262d6a9be2d1de95c63c569434537ab848/index.html",
+  "source_chars": 205727,
+  "markdown_chars": 3585,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "Grundy and Timmer (2006)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "同一段前后文及综述引用均为Grundy and Timmer (2016)，此处年份写为2006，疑为原文笔误或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 23,
+      "quote": "Inclusion related to stimuli. We included switching tasks consisting of both nonverbal and verbal stimuli",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上一页末尾已出现'Inclusion related to stimuli.'，下一页开头重复该标题再继续正文，疑为提取时页面拼接造成的重复。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 51,
+      "quote": "Due to the low numbers of effect sizes reported for TEA and WSCT",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "上下文及全文其他位置均使用'WCST'（威斯康星卡片分类测试），此处写作'WSCT'疑为拼写错误或提取误识。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "smaller bilingual advantages could be observed\"than for other EF tasks.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "引号位置异常，原文应为'observed than for other EF tasks'，多出一个引号字符，疑为提取错位。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：总体效应g=0.06（未校正）与校正后g=-0.08；各领域校正前后g值；言语流畅性g=-0.28；任务效应表中TEA切换、WCST等数值；AoA及工作记忆的调节效应。公式方面未涉及复杂公式，仅保留统计量如g、QM、p。部分数值如自我报告中提到的ICC值（对结果对内.129，对对集群内.464）已收录。仍不确定的地方：'WSCT'是否确为WCST笔误；Grundy和Timmer年份（2006 vs 2016）无更多证据；[PDF extracted page 23]标题重复是否确为拼接问题，但基于上下文已标为低置信度。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7755,
+      "prompt_tokens": 57025,
+      "total_tokens": 64780,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4945
+      }
+    },
+    "content_chars": 5289
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

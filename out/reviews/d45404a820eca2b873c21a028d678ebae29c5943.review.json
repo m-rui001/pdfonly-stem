@@ -1,0 +1,72 @@
+{
+  "sha1": "d45404a820eca2b873c21a028d678ebae29c5943",
+  "title": "Suppression of atomic vacancies via incorporation of isovalent small ions to increase the stability of halide perovskite solar cells in ambient air",
+  "doi": "https://doi.org/10.1038/s41560-018-0192-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d45404a820eca2b873c21a028d678ebae29c5943/index.html",
+  "source_chars": 48390,
+  "markdown_chars": 3440,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "ܧி஺௉௕ூయ ௙ = 1 108 ൫ܧி஺௉௕ூయ−108ܧி஺ூ−108ܧ௉௕ூమ൯, ... ܧ௩ ௙= ܧௗ௘௙௘௖௧+ ܧ∗−ܧ௣௘௥௙௘௖௧",
+      "type": "疑似公式符号损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式中的下标、上标和特殊字符（如ܧ、௙等）在提取文本中显示为乱码，无法复原完整表达式。照录可见字符，未作修复。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "where ܧ∗ ௙ are desired formation energies and ܧ∗ is the DFT obtained energy of compound \" ∗\".",
+      "type": "疑似错误/乱码",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "变量名称被乱码替代，无法确认原文具体符号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "pointing to substantially reduced trap states in CsMAFA. This finding agrees with the improved perfromance of mixed perovskites",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文将performance拼写为perfromance，属于提取文本中的明显拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "The computational cell consisting of 108 APbXଷ units",
+      "type": "疑似字符丢失",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "下标3显示为ଷ，应为APbX₃。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：FAPbI₃中PbI₂空位形成能约0.25 eV，平衡密度约3×10¹⁷ cm⁻³；CsMAFA中形成能提高三倍以上，空位浓度降低10⁹倍；Cd掺杂使碘空位形成能提高≥0.5 eV，Cl掺杂≥0.3 eV；器件PCE约20.5%，储存30天保持>95% vs CsMAFA 60%；MPP衰减速率CsMAFA -1.5%/min、Cl -0.25%/min、Cd -0.1%/min；PL寿命快分量~0.3 µs、慢分量~3.7 µs；晶胞参数a=6.25 Å。公式部分因提取文本乱码未能准确还原，已照录可见符号。跨页顺序未发现明显拼接问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3242,
+      "prompt_tokens": 14587,
+      "total_tokens": 17829,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 352
+      }
+    },
+    "content_chars": 4904
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

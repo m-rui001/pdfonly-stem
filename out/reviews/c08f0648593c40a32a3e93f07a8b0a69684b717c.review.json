@@ -1,0 +1,91 @@
+{
+  "sha1": "c08f0648593c40a32a3e93f07a8b0a69684b717c",
+  "title": "Genome encode analyses reveal the basis of convergent evolution of fleshy fruit ripening",
+  "doi": "https://doi.org/10.1038/s41477-018-0249-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c08f0648593c40a32a3e93f07a8b0a69684b717c/index.html",
+  "source_chars": 44863,
+  "markdown_chars": 3326,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Analysis of the fruitENCODE data consistint of 361",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "consistint 应为 consisting，强文本内证据",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "idependently evolved through",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "idependently 应为 independently，上下文线索明确",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "exogenous tomato ACS2 and MADS genes are responsable for",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "responsable 应为 responsible",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "evolved from pre-existing pathways that served diferent functions",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "diferent 应为 different，多处出现该拼写错误",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "the first NAC-type loop could be blocked by inhibidor 1-MCP",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "inhibidor 应为 inhibitor，结合上下文及1-MCP可知",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "These results suggest that the epigenome acts as a developmental switch to restrict the activities of ripening regulators before seed maturation.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句从第4页末尾跨到第5页开头，中间插入页标和页眉，但内容连贯，不影响理解，仅为页间断裂标记",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：数据规模（361转录组、71染色质可及性、147组蛋白、45甲基化）、香蕉双回路乙烯增产54.27%（P=2.91×10^-5）、番茄/桃等组织阶段、H3K27me3和DNA甲基化描述。公式无，基因名和基序（EIN3、NAC、MADS）均按原文保留。结论部分仅依据文本陈述，未添加推测。不确定处：部分物种特异性数值（如桃NAC蛋白ID）已保留，但补充材料信息未展开；图注中的样本量未在文中具体数值，已省略。提取文本中有多处拼写错误已记录，不影响核心内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4039,
+      "prompt_tokens": 11879,
+      "total_tokens": 15918,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1291
+      }
+    },
+    "content_chars": 5149
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

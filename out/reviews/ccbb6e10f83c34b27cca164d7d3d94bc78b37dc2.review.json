@@ -1,0 +1,64 @@
+{
+  "sha1": "ccbb6e10f83c34b27cca164d7d3d94bc78b37dc2",
+  "title": "Narrowing the Gap between Theoretical and Practical Capacities in Li‐Ion Layered Oxide Cathode Materials",
+  "doi": "https://doi.org/10.1002/aenm.201602888",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ccbb6e10f83c34b27cca164d7d3d94bc78b37dc2/index.html",
+  "source_chars": 180612,
+  "markdown_chars": 3551,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 71,
+      "quote": "the ubiquity of ethyl carbonate (EC) in Li-ion batteries",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "前文出现 ethylene carbonate (EC)，此处为 ethyl carbonate，可能为笔误或排版错误。原文可能应为 ethylene carbonate。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "the average oxidation state of the transition metal increases from +3 to +4; the greater degree of electrostatic repulsion destabilizes the tetrahedral sites",
+      "type": "跨页顺序？",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句位于页面33中间，前后段落衔接自然，无明显断裂，可能只是正常换行。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 21,
+      "quote": "V =− ηecat − ηean − e",
+      "type": "文本拼接/格式损坏",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式(1)显示不完整或乱码，无法确定确切形式，但据上下文可推断为 V = -(η_e^cat - η_e^an)/e。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：LiCoO2约50%理论容量、NCA约70%、4.3V截止电压、NaxCoO2理论容量235 vs LiCoO2 274 mAh/g、Mn溶解速率差16倍、Li-excess >280 mAh/g、交换电流密度0.1-10 mA/cm2、极化0.5-1V等。公式如Butler-Volmer方程未完全提取，仅按文本描述；Nernst方程以文字表述。部分图表细节（如Figure 19、20具体曲线）未在文本中提取，仅引述其结论。对于提取文本中的公式乱码和可能的术语不一致，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7227,
+      "prompt_tokens": 49151,
+      "total_tokens": 56378,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4428
+      }
+    },
+    "content_chars": 4790
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

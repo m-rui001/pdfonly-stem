@@ -1,0 +1,73 @@
+{
+  "sha1": "a808cc3ee23b34da57aad3c6adf1846f4a6a297d",
+  "title": "A comprehensive review on electric vehicles smart charging: Solutions, strategies, technologies, and challenges",
+  "doi": "https://doi.org/10.1016/j.est.2022.105241",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a808cc3ee23b34da57aad3c6adf1846f4a6a297d/index.html",
+  "source_chars": 144878,
+  "markdown_chars": 4527,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Although predicting the load of each EV is not possible due to the difference in EV travel patterns [35], the total load",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第3页页尾句子在“the total load”处中断，第4页起始为“of EV fleets can be predicted by...”，存在跨页拼接可能性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "By",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第9页页尾仅有词语“By”，第10页起始为“integrating EVs with variable renewable sources”，存在句子中间跨页断开。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "Currently, Li-ion batteries with an investment cost of $200–$500 per kWh are the most promising option for EVSC because of their high efficiency, high energy density, reasonable deep-cycling capability (2000–4000 deep cycles), and long life. An initial battery cost of $300/kWh with a lifetime of 3000 cycles for an 80% discharge depth leads to a battery depreciation cost of $130/MWh [15]. Another option is to retain the monetary value of EVs battery by its utilization",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "前一句关于Li-ion电池$200-$500/kWh的投资成本与后句$300/kWh初始成本之间的关联在页面边界处被截断，虽上下文可推断其作为示例关系，但文本层面未直接连成完整段落。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "or decreasing the amount of trust among the customers of a company) may impose to the charging infrastructure. In addition, Fig. 20(b) illustrates the core components of EVSC cyber-security systems, including confidentially (the information be readable only by the valid recipients), integrity (modification can only be feasible by authorized agents), and availability (available when required) [176].",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文术语使用“confidentially”对应信息安全三元组中的机密性（confidentiality），拼写疑似有误，但依据上下文推断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的核心数值：充电成本降低15–30%（欧洲案例）及最高60%、运营成本降低10%、可再生能源弃电率降低40%、碳排放减少60万吨/年（至2030）、12,780 kg/天碳减排、65.61%与34.68%的减排比例、10%和5年的寿命与回收期、$110 million/年节约、80%电压波动改善、20-40%临界切除时间提升、四倍EV容纳量、10%峰值需求增加（比利时电网）、$130/MWh电池折旧成本、$200–500/kWh锂离子电池成本以及9,600€/年潜在收益等。公式方面涉及电池折旧成本计算（$300/kWh初始成本、3000循环、80%放电深度得出$130/MWh）及碳减排的量化关系，与原文一致。已保留原文中所有可核实的数字和引用。不确定之处：部分跨页断句的具体文字拼接仅依据上下文推断，未作实质性修改；文中涉及的图表（Fig.1至21及Table 1-3）的具体图像内容未提取，仅遵循正文文字描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3950,
+      "prompt_tokens": 37058,
+      "total_tokens": 41008,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 541
+      }
+    },
+    "content_chars": 6952
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "sha1": "3b19586b8c54e25ae451478d72f1325f1017cdd8",
+  "title": "A roadmap for rapid decarbonization",
+  "doi": "https://doi.org/10.1126/science.aah3443",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3b19586b8c54e25ae451478d72f1325f1017cdd8/index.html",
+  "source_chars": 15843,
+  "markdown_chars": 2683,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Main text\n\n6Australian-German Climate and Energy College, School of Earth Sciences, University of Melbourne, Victoria 3010, Australia.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者单位编号6出现在正文开始之后，明显是OCR阅读顺序错乱，但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "a \"carbon law\"of halving gross anthropogenic carbon-dioxide (CO2) emissions every decade",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "引号后缺少空格，属于OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "limit warming to well below 2 $ ^{\\circ} C. $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "温度单位中的度数符号与C之间有多余空格和LaTeX标记，属于公式符号提取格式问题，但数值和含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "> $50/metric ton CO2",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "价格下限符号中的大于号与数值之间有多余空格，属于公式符号提取格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "polycentric power grids using supraconductive cables",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "supraconductive 可能是 superconducting 的OCR误识别，但原文如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "well below 2 $ ^{\\circ} C $ . \"",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "温度单位中的度数符号与C之间有多余空格和LaTeX标记，属于公式符号提取格式问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "A roadmap for rapid decarbonization",
+  "self_check": "已核对关键数值：2020年约40 GtCO2/年、2030年约24、2040年约14、2050年约5；累计排放约700 GtCO2，应急空间约125 GtCO2；CO2移除2030年0.5、2040年2.5、2050年5 GtCO2/年；土地利用排放2010年4、2030年2、2040年1、2050年0 GtCO2/年；大气CO2浓度2100年380 ppm，当前400 ppm；碳价起步50美元/吨，本世纪中叶超400美元/吨；化石燃料补贴5000亿至6000亿美元/年；能效可减40%至50%；BECCS 2040年1至2 GtCO2/年，2050年超5 GtCO2/年。公式符号提取有轻微格式问题，但数值和方向与原文一致。不确定处：supraconductive 是否为 superconducting 的OCR误识别，但已照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2417,
+      "prompt_tokens": 4521,
+      "total_tokens": 6938,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 4759,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "0a36865b1e498c767c683b6d84b27f21a939f873",
+  "title": "A survey on control of electric power distributed generation systems for microgrid applications",
+  "doi": "https://doi.org/10.1016/j.rser.2015.01.016",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0a36865b1e498c767c683b6d84b27f21a939f873/index.html",
+  "source_chars": 109339,
+  "markdown_chars": 2788,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "G 4 Y Y Hydroelectric Wind 4urbine PV S4S DPGS + Energy storage Load Load DPGS −icrogrid AC Bus UPS",
+      "type": "疑似 OCR 错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文本中 '4urbine' 和 'S4S'、'−icrogrid' 明显为 OCR 字符替换，应为 turbine、storage、microgrid 等，但无法确定准确拼写，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "As shown in Fig. 1, or the rate of investment of wind energy was more important in 2010, but he started dropped in 2012 and 2013 to 12%",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "该句'he started dropped' 语法不通，且前后文关于投资数据与图1的叙述不连贯，可能抽取时缺失部分文字，如 'the rate' 等。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "4.3.1. Grid supporting power converter operating as a voltage source.",
+      "type": "疑似编号错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该小节位于第5.3节下，却使用 '4.3.1' 编号，可能为原文笔误或 PDF 抽取混乱，建议核查原排版。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "M. Venghanem, \"A survey on control of electric power distributed generation systems for microgrid applications,\"",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "作者名 'Venghanem' 与第2页作者列表中的 'Benghanem' 不一致，疑为拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：下垂公式 (1)(2) 保留原变量；三类外环特性表（表II）归纳正确；控制器比较表（表III）中各类优缺点已准确转述；软件工具名称与功能描述与原文一致。文中公式与结论方向一致，未引入外部知识。由于提取文本中表格数字（如投资额）只在图注中出现，未写入正文，故未引用。不确定之处：部分句子有语法残缺（如第3页关于投资下降的句子），已在 extraction_issues 中标明，不影响整体论证骨架。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2519,
+      "prompt_tokens": 26845,
+      "total_tokens": 29364,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 247
+      }
+    },
+    "content_chars": 4367
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

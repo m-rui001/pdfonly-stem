@@ -1,0 +1,63 @@
+{
+  "sha1": "87b4ae39edc91c78226914f636038ea4bf065ed4",
+  "title": "The projected effect on insects, vertebrates, and plants of limiting global warming to 1.5°C rather than 2°C",
+  "doi": "https://doi.org/10.1126/science.aar3646",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/87b4ae39edc91c78226914f636038ea4bf065ed4/index.html",
+  "source_chars": 22554,
+  "markdown_chars": 2190,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "49% (3165%)",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "括号内\"3165%\"疑为\"31-65%\"的OCR错误，但无法确证，保留原文表示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "6 (-114%)",
+      "type": "疑似OCR错误/截断",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该处应为脊椎动物在1.5°C下的整合范围损失，疑为\"6% (1-14%)\"或类似格式，但原文如此，无法确认正确形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the proportions gaining over half their range are vastly greater than the proportions losing over half",
+      "type": "疑似逻辑/文字错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "上下文逻辑上获得>50%范围的物种比例应远小于失去>50%的，但原文写为\"greater\"，可能为\"smaller\"之误或另有含义，仅按原文记录并标出存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的核心数值：当前承诺3.2°C、2°C、1.5°C下昆虫/植物/脊椎动物失去>50%范围的物种比例，以及2°C到1.5°C的减少百分比（昆虫~66%，植物和脊椎动物~50%），均与提取文本一致。总整合范围损失各数值也已核对。公式仅涉及指标定义，已保留。对疑似OCR错误的位置未作修正，仅标注问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4254,
+      "prompt_tokens": 6959,
+      "total_tokens": 11213,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2484
+      }
+    },
+    "content_chars": 3200
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

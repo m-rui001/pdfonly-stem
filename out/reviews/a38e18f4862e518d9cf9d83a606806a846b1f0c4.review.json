@@ -1,0 +1,54 @@
+{
+  "sha1": "a38e18f4862e518d9cf9d83a606806a846b1f0c4",
+  "title": "The human secretome",
+  "doi": "https://doi.org/10.1126/scisignal.aaz0274",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a38e18f4862e518d9cf9d83a606806a846b1f0c4/index.html",
+  "source_chars": 51641,
+  "markdown_chars": 1966,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "having important effects in the 1 of 8",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第2页末尾句子在‘in the’处中断，第3页开头以页眉和‘human body’继续，中间插入页脚‘1 of 8’，属于跨页拼接，内容实际连续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Spearman’s  value of 0.79",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "正文写Spearman ρ=0.79，但图3C标注为0.78，同一论文内数值不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：2641、730、932、1709、365、3223、205、86、748、142等，均与提取文本一致。注意正文与图注中Spearman相关系数存在0.79与0.78的矛盾，已在issue中标记。其他浓度、样本量等未见明显冲突。跨页断句已在issue中记录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5502,
+      "prompt_tokens": 13831,
+      "total_tokens": 19333,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4034
+      }
+    },
+    "content_chars": 2669
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

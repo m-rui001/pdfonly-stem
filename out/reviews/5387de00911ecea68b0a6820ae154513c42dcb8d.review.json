@@ -1,0 +1,57 @@
+{
+  "sha1": "5387de00911ecea68b0a6820ae154513c42dcb8d",
+  "title": "Inertial-confinement fusion with lasers",
+  "doi": "https://doi.org/10.1038/nphys3736",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5387de00911ecea68b0a6820ae154513c42dcb8d/index.html",
+  "source_chars": 94122,
+  "markdown_chars": 16036,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "PACS numbers: 52.57.-z, 52.57.Bc",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "PACS 编号出现在摘要之后，但该文为 Nature Physics 综述，通常不含 PACS；可能是 OCR 混入或原文格式残留，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the function $ f ( T ) $ has a minimum $ ( f_{min}\\approx1 ) $ for $ T\\approx1 5 $ keV",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中数字与符号间空格异常（如 $ T\\approx1 5 $ keV），可能为 OCR 抽取时对公式的间距损坏，但数值 15 keV 可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Inertial Confinement Fusion with Lasers",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 23712,
+      "total_tokens": 33712,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17190,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

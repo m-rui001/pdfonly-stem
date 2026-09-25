@@ -1,0 +1,67 @@
+{
+  "sha1": "0d71c65750f96d97d71d372ac1fea99f965da3d0",
+  "title": "Two-dimensional sp 2 carbon–conjugated covalent organic frameworks",
+  "doi": "https://doi.org/10.1126/science.aan0202",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/0d71c65750f96d97d71d372ac1fea99f965da3d0/index.html",
+  "source_chars": 26775,
+  "markdown_chars": 5346,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "a = 34.4632 $ \\mathrm{\\AA} $ b = 35.4951 $ \\mathrm{\\AA} $ c = 3.7199 $ \\mathrm{\\AA} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "晶胞参数之间缺少逗号或分号分隔，属 OCR 标点丢失，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The $ \\mathrm{sp^{2} c} $ COF solid samples",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此处“sp²c COF”缺少连字符，与全文“sp²c-COF”写法不一致，疑为 OCR 抽取时连字符丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "14. 2 , and $ 24. 7^{\\circ} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "PXRD 峰列表中“14. 2”缺少角度符号，与前后峰格式不一致，疑为 OCR 抽取时丢失“°”。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Two-Dimensional sp²-Carbon-Conjugated Covalent Organic Frameworks",
+  "self_check": "已核对：摘要与正文中带隙 1.9 eV、电导率提升 12 个数量级、BET 692 m² g⁻¹、孔径 1.88 nm、层间距 3.58 Å、芘间距 2 nm、碘掺杂电导率 7.1 × 10⁻² S m⁻¹、原始电导率 6.1 × 10⁻¹⁴ S m⁻¹、自旋浓度 0.7/芘单元、Weiss 温度 8.1 K、ESR 强度对比 120/25/406/5 倍、对照自旋密度 0.004 和 0.057/芘单元等关键数值均与原文一致。公式 HOMO/LUMO 计算式按原文保留。仍不确定处：PXRD 峰列表中 14.2° 的度数符号在 OCR 中缺失，已按上下文补全为 14.2°；晶胞参数分隔符缺失但不影响数值。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4051,
+      "prompt_tokens": 8740,
+      "total_tokens": 12791,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6622,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

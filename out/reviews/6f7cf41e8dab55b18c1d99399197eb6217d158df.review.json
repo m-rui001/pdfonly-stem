@@ -1,0 +1,82 @@
+{
+  "sha1": "6f7cf41e8dab55b18c1d99399197eb6217d158df",
+  "title": "The Role of Organic Aerosol in Atmospheric Ice Nucleation: A Review",
+  "doi": "https://doi.org/10.1021/acsearthspacechem.7b00120",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6f7cf41e8dab55b18c1d99399197eb6217d158df/index.html",
+  "source_chars": 274401,
+  "markdown_chars": 7196,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 37,
+      "quote": "As an analogue to Fig. 15a-c, we assume Jhet(∆aw) from China et al. (2017)102 in Fig. 13d-f as representative of ambient organic coatings.",
+      "type": "疑似图表编号错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "上下文描述的是图15的内容（与图15a-c对应），且图15d-f正是描述此场景；正文其他多处明确引用“Fig. 15d-f”。此处“Fig. 13d-f”应为“Fig. 15d-f”，属于图号引用混乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 85,
+      "quote": "αpinene reaction with OH (red, green, and blue Charnawskas et al., 2017110)",
+      "type": "引用编号不一致",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "正文多处将Charnawskas et al. (2017)标为引用编号112，而此图注中出现“2017110”。参考文献110对应Dreischmeier et al. (2017)，与Charnawskas et al. (2017)不符。应为“2017112”的笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "SRFA   Suwannee River fluvic acid",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "术语表中将“Suwannee River fulvic acid”拼写为“fluvic acid”，但正文第30页明确写作“Suwannee River fulvic acid (SRFA)”。“fluvic”应为“fulvic”的拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 35,
+      "quote": "The fractional coverage of solid HA, forg(s), is parameterized with a quadratic equation (see Fig. 13a, red line), where forg(s) = 1 prior to glass transition and forg(s) = 0 at a FDRH = 98%.",
+      "type": "疑似图表编号错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "此处描述的是HA包覆illite的模拟场景，对应图15a-c（图15a中红色线即为forg(s)）；而图13是INM尺寸与核化温度的关系，与forg(s)无关。应为“Fig. 15a”的笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "The recent advances in single particle micro-spectroscopic analyses of aerosol particle populations further demonstrate the complex morphology and composition of ambient aero- / sol70",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在“aero-”处于页尾中断，下一页页首以“sol70”接续，构成“aerosol70”一词。属于PDF提取的跨页断词拼接，不影响语义但需标记以确认无遗漏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值与公式：Jhom最大值约(2×10^12±10^2) cm⁻³ s⁻¹（约229 K）；堆垛无序冰230 K时比六方冰稳定约14 kJ mol⁻¹、速率高3个数量级；OA占亚微米气溶胶质量20–90%；混合相云和中高层冰晶云全球出现频率约18%和33%；Ice nucleation实验中α-pinene SOA的Sice区间（1.45–1.65）与温度区间（205–268 K）已按原文保留；INM尺寸约3 nm/10² kDa及核化温度区间（253–258 K和248–267 K）已核对；ABIFM模拟中ωhet=Jhet,org·Aorg+Jhet,dust·Adust、Aorg=Ap·forg(s)、Adust=Ap·(1−forg(s))、Ap≈10⁻³ cm²、双峰粒径分布参数（N₁=95 cm⁻³, μ₁=100 nm, σ₁=0.5; N₂=5 cm⁻³, μ₂=800 nm, σ₂=1.0）均已核对，模拟关键节点（∆aw=0.2/0.24/0.245/0.25、Nice范围10⁻²至>100 L⁻¹、均相起点∆aw>0.313）与正文一致；Nice=0.2 L⁻¹时80%置信区间10⁻³–10 L⁻¹已核对。不确定之处：部分图表编号引用疑似错乱（Fig. 13应为Fig. 15；图11图注中引用编号110疑似应为112），已在extraction_issues中标注；术语表中SRFA拼写疑似错误已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10443,
+      "prompt_tokens": 87189,
+      "total_tokens": 97632,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4716
+      }
+    },
+    "content_chars": 9899
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "cbf4ecdc113bf23fbaea08e59919573fe0e51bf1",
+  "title": "An industrial perspective on catalysts for low-temperature CO2 electrolysis",
+  "doi": "https://doi.org/10.1038/s41565-020-00823-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cbf4ecdc113bf23fbaea08e59919573fe0e51bf1/index.html",
+  "source_chars": 90681,
+  "markdown_chars": 4955,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "Argawal et al.138 found that their tin catalyst",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同一人名在文献列表第138条写为‘Agarwal’，正文出现‘Argawal’，疑为抽取或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Garcia et at.140 found similar results",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "‘et at.’应为‘et al.’，且前文同一句引用He等，此处应为Garcia等。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "More e ffort to lower cell voltages",
+      "type": "疑似排版/抽取错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "‘e ffort’中间有空格，应为‘effort’。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数值：FE≥80%、电流>200 mA/cm²、CO中试、甲酸中试等与正文一致。CO部分：3800小时电压上升11 mV（3 µV/hr）、平均FE 97%、平衡电压1.44 V、2.0V约10 mA/cm²、2.6V 100 mA/cm²、3-3.1V 500 mA/cm²、50°C下0.5 A/cm²、250 A/g、50 bar下1.5 A/cm²，均与摘要和表1一致。甲酸部分：平衡电位1.41 V、三室额外0.5-0.7 V、铋氧化物FE随时间下降（100h 80%、500h 75%、1000h 65-70%）、锡催化剂数据等与表2一致。C2部分：Yano 2004年80% FE at 11 mA/cm²、Zhu 80% at 11 mA/cm²、Li 124 mA/cm²、Hoang 300 mA/cm²、Wang 52%、García de Arquer 912 mA/cm²，表4数据均保留。公式（反应式）原样保留，未作修改。不确定之处：经济分析中具体成本数值未完整提取（图2A仅给出相对成本变化），但已保留关键比例（MEA成本下降、电费6.7%等）。提取问题已列明，其余未见明显文本损坏。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7117,
+      "prompt_tokens": 25908,
+      "total_tokens": 33025,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3514
+      }
+    },
+    "content_chars": 6263
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

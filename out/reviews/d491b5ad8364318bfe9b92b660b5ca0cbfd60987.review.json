@@ -1,0 +1,82 @@
+{
+  "sha1": "d491b5ad8364318bfe9b92b660b5ca0cbfd60987",
+  "title": "Water desalination using nanoporous single-layer graphene",
+  "doi": "https://doi.org/10.1038/nnano.2015.37",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d491b5ad8364318bfe9b92b660b5ca0cbfd60987/index.html",
+  "source_chars": 37794,
+  "markdown_chars": 2298,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "exceeding 105 g m-2 s-1",
+      "type": "疑似上标缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "摘要中水通量数值应写作10^5 g m⁻² s⁻¹，但提取文本中上标丢失；下文提及'five orders of magnitude'可佐证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "S ~105",
+      "type": "疑似上标缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "选择性数值应写作S ~10^5，对应随后提到的'five orders of magnitude'，提取文本丢失上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "4.2×106 g m-2 s-1",
+      "type": "疑似上标缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "流量数值应为4.2×10^6 g m⁻² s⁻¹，提取文本中指数6丢失上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "g m-2 s-1",
+      "type": "单位符号上标缺失",
+      "severity": "low",
+      "confidence": 1,
+      "reason": "全文多处单位如g m-2 s-1、cm-1等，上标-2、-1、-1等均以普通数字呈现，属排版丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Q= ∆P / R3 µ C + 8L/πR",
+      "type": "公式提取疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式中'R3'应为R^3，且分母结构可能缺失括号，提取文本无法确认精确的数学关系。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的水通量（>10^5 g m⁻² s⁻¹）、盐排斥（近100%）、选择性（S~10^5降至~10）、孔尺寸（0.5–1 nm）和孔密度（1/100 nm²）等关键数值，与正文一致。公式（式1、式2）按提取文本保留，但式2的精确结构因上标/括号丢失存在不确定性，已在issues中标注。其余如ID/IG对应关系、40°C条件、KCl浓度等均照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9042,
+      "prompt_tokens": 9808,
+      "total_tokens": 18850,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6929
+      }
+    },
+    "content_chars": 3641
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

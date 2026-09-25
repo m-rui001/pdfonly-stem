@@ -1,0 +1,112 @@
+{
+  "sha1": "9b10291f363e50e3ba3b7fc7df5a93510f03198b",
+  "title": "Attribution of climate extreme events",
+  "doi": "https://doi.org/10.1038/nclimate2657",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/9b10291f363e50e3ba3b7fc7df5a93510f03198b/index.html",
+  "source_chars": 38485,
+  "markdown_chars": 7554,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "National Center for Atmospheric Research (NCAR)\n\nP.O. Box 3000\n\nBoulder CO 80307\n\nDepartment of Meteorology, University of Reading, Reading RG6 6BB, UK",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "作者单位信息在OCR中未标明上标编号对应关系，可能造成单位归属混淆，但不影响核心论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the most recent of which — \"Explaining extreme events of 2013 from a climate perspective\" was published by the American Meteorological Society in September $ 2014^{4} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "上标引用编号4与年份2014之间的OCR格式异常，但年份和引用编号可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the unusually high SSTs in the tropical Atlantic Ocean $ (1. 5^{\\circ} \\mathrm{C} $ above normal)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "温度数值1.5°C的OCR格式有空格和符号异常，但数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the SSTs off the West Coast of Mexico, south of Baja, west of Guadalajara, were over $ 3 0^{\\circ} \\mathrm{C} $ and more than $ 1^{\\circ} \\mathrm{C} $ above normal in August 2013",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "温度数值30°C的OCR格式有空格异常，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "SSTs average $ > 0.4^{\\circ} \\mathrm{C} $ above the mean",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "温度数值0.4°C的OCR格式有异常，但数值和比较关系可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Fig. 2. August SSTs for $ 1 2-2 0^{\\circ} \\mathrm{N} $ $ 1 1 0-1 0 0^{\\circ} \\mathrm{W} $ , just west of Mexico. The mean value is $ 2 8. 9 2^{\\circ} \\mathrm{C} $ for 1982-1999.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "经纬度范围和温度均值的OCR格式有空格异常，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "543 Fig. 5. Imagery on 15 September 2013 showing tropical storms Manuel and Ingrid from 544 Moderate Resolution Imaging Spectroradiometer (MODIS) on NASA's Terra satellite. 545 Courtesy NASA.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注文本中混入了行号543、544、545，属于OCR读取顺序或格式问题，但不影响图注内容理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "the average depth of the storm was increased by 7.6 hPa, the wind speeds were increased by $ 3.6 \\mathrm{~m} \\mathrm{~s}^{-1} $ and the precipitation increased by 35%",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "风速单位m s⁻¹的OCR格式有异常空格，但数值和单位可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Attribution of climate extreme events",
+  "self_check": "已核对摘要、正文数据和结论：摘要中171词、正文4104词、38篇参考文献、5张图与正文一致；Sandy风暴深度增加7.6 hPa、风速增加3.6 m s⁻¹、降水增加35%、海平面高约19 cm、损失超650亿美元等关键数值与原文一致；Haiyan气压895 hPa、风速315 km/h、阵风378 km/h、海平面趋势16 mm/yr vs 全球3.3 mm/yr等数值与原文一致；Boulder洪水水汽34 mm、SST超30°C、水汽75 mm等数值与原文一致；Clausius-Clapeyron约7% per °C、SST增加约0.6°C、水汽增加约5%、海平面上升19 cm等与原文一致。公式和符号已尽量原样保留。仍不确定的地方：部分上标引用编号和单位的OCR格式有轻微异常，但不影响数值和论证方向的理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5560,
+      "prompt_tokens": 9970,
+      "total_tokens": 15530,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10872,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

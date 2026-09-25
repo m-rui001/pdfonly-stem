@@ -1,0 +1,73 @@
+{
+  "sha1": "71e26b0db372356cea5236adf30f2bd4ca4d1d2a",
+  "title": "Biocontainment of genetically modified organisms by synthetic protein design",
+  "doi": "https://doi.org/10.1038/nature14121",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/71e26b0db372356cea5236adf30f2bd4ca4d1d2a/index.html",
+  "source_chars": 92959,
+  "markdown_chars": 4243,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "150 μL LBL",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "生长条件中应包含生物培养基成分，无文本依据说明‘150 μL LBL’中的LBL被限定为某种特定形式，但‘150’后缺失单位体积的培养基类型可能不完整；更可能为实验条件文字，此处照录并不影响主要结论，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "the first organism possessing an altered genetic code",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第1页摘要与第2页正文开头之间内容连续（摘要末尾GMO应用场景与第2页‘protect natural ecosystems’衔接），但第1页末尾‘In order to protect natural’在页边界处中断，下一页从‘ecosystems and address public concern’续接，属于正常页间拆分，无文本缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "媒体由LB-Lennox (LBL, 10 g/L bacto tryptone, 5 g/L sodium chloride, 5 g/L yeast extract)。许可生长",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "‘Growth media consisted of LB-Lennox’被译写为‘媒体由’并出现双引号，应为‘生长培养基由’或‘培养基为’的转录/OCR错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "strain, the s.e.m. SX̄ across technical replicates of the cumulative escape frequency ν scored for a given day was calculated as: [formula appears corrupted] , where τ is the mean number of c.f.u. plated",
+      "type": "公式提取缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式文本在抽取中丢失，仅有冒号后直接跟逗号，缺少公式表达式本身。文本明确说明有公式计算s.e.m.，但抽取结果为空，属于跨页/公式渲染缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值包括：检测限2.2×10⁻¹²逃逸子/c.f.u.（双/叁酶+工程BipARS组合）；adk.d6_tyrS.d8检测限7.44×10⁻¹¹；叁酶合成营养缺陷菌株检测限6.4×10⁻¹¹；Δasd 7天逃逸频率8.97×10⁻⁹；ΔasdΔthyA为8.79×10⁻⁹；bipA成本每升$3.62；晶体结构分辨率2.65 Å、Rwork/Rfree 0.222/0.306；Lon验证实验27/27。全文未发现摘要与正文数值矛盾。公式部分存在一处抽取缺失（第15页s.e.m.计算公式），已在extraction_issues中标记。另外补充表4的具体菌株逃逸数据未被提取文本完全展开，仅使用文中明确给出的数值。整体结论方向与摘要一致性已核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3672,
+      "prompt_tokens": 23181,
+      "total_tokens": 26853,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 247
+      }
+    },
+    "content_chars": 6044
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

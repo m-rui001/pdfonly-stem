@@ -1,0 +1,64 @@
+{
+  "sha1": "cccdc20f89174422e60c4161edfaa425f8a3591c",
+  "title": "Visualizing interfacial collective reaction behaviour of Li–S batteries",
+  "doi": "https://doi.org/10.1038/s41586-023-06326-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cccdc20f89174422e60c4161edfaa425f8a3591c/index.html",
+  "source_chars": 87598,
+  "markdown_chars": 3124,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Density functional theory (DFT) calculations and molecular dynamics (MD) 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句末“3”疑似页码，下一页以“simulations pointed out”接续，应为“MD simulations”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Specifically, the initial redox reaction of LiPSs 9",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句末“9”疑似页码，下一页以“revealed a much lower nucleation/dissolution barrier”接续。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "According to the Lifshitz-Slyozov-Wagner model (LSW, Area ∝ tn), the initial deposition at both –0.1 and –0.5 V followed a reaction5",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“reaction5”中的“5”疑似插入的页码，后一页以“limited”开头，应连为“reaction-limited”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：能量密度2600 Wh kg⁻¹、容量占比3/4、放电电位−0.5/−0.1 V、扩散系数2.73×10⁻⁷与4.88×10⁻⁹ cm² s⁻¹、Mo电荷+7.37 e、EIS 6.9与132.7 Ω、容量倍数2.4、电流提前1410 s、活化能0.27/0.5 eV等。公式如MSD=4Dt、F=(kBT/D)v已按提取文本原样保留。不确定之处：图注中大量字体乱码（如“&XUUHQW”）未在正文引用，故未列入问题；跨页页码已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8856,
+      "prompt_tokens": 24489,
+      "total_tokens": 33345,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6367
+      }
+    },
+    "content_chars": 4356
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

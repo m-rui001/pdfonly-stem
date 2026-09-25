@@ -1,0 +1,54 @@
+{
+  "sha1": "be6bb03e6ef61043c15090629649af09754e7a43",
+  "title": "Highly stretchable polymer semiconductor films through the nanoconfinement effect",
+  "doi": "https://doi.org/10.1126/science.aah4496",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/be6bb03e6ef61043c15090629649af09754e7a43/index.html",
+  "source_chars": 34080,
+  "markdown_chars": 3257,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "and these are all. desirable for stretchable materials.",
+      "type": "疑似文本错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文“these are all. desirable”中句点疑似多余，应为“these are all desirable”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "and is more scalable and low cost., We describe a CONjugated-",
+      "type": "疑似文本错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“low cost.,”中逗号与句点顺序异常，疑似应为“low cost.”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值：100%应变下CONPHINE-1膜平均迁移率1.08 cm²/Vs、最大1.32 cm²/Vs；200%应变下0.33 cm²/Vs；100次循环后0.2 cm²/Vs；全拉伸晶体管平均迁移率0.59 cm²/Vs，拉伸100%后0.55 cm²/Vs；四种额外聚合物在100%应变下迁移率均>1.0 cm²/Vs。各数值在正文中一致。公式未出现。提取文本中“1.32 cm2/Vs”和“0.33 cm2/Vs”等单位写法保留原样。不确定处：第3页“at the meanwhile”疑似为“at the same time”但无强证据，未标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3872,
+      "prompt_tokens": 10169,
+      "total_tokens": 14041,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1426
+      }
+    },
+    "content_chars": 4168
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

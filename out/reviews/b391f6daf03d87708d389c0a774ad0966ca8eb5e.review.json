@@ -1,0 +1,118 @@
+{
+  "sha1": "b391f6daf03d87708d389c0a774ad0966ca8eb5e",
+  "title": "Six-junction III–V solar cells with 47.1% conversion efficiency under 143 Suns concentration",
+  "doi": "https://doi.org/10.1038/s41560-020-0598-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b391f6daf03d87708d389c0a774ad0966ca8eb5e/index.html",
+  "source_chars": 66445,
+  "markdown_chars": 3517,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "these ultimate Unfortunately, practical considerations the realization of These considerations include",
+      "type": "词序错乱/碎片化",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "摘要尾部多个句子片段乱序混合，无法确定原文正确句序，可能缺失连接词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Two junction devices (typically and three comprising GaInP, GaAs, and Ge)",
+      "type": "疑似缺词",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "短语'typically and three'语义不通，原文很可能在'typically'后有被省略的词（如'lattice-matched'），提取时缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the CGB,",
+      "type": "跨页/段落顺序疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该短语孤立出现在段落之间，与前句'grown at the same lattice constant'及后句'TEM (Fig. 1a) shows'逻辑断裂，原文此处应有更长的过渡句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "spec !\" = ∫ (Ref(*),$(*)-* ∫ (Ref(*),%(*)-* × ∫ (Sim(*),%(*)-* ∫ (Sim(*),$(*)-*",
+      "type": "公式提取损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式1的数学符号与变量完全乱序，并出现'!'等无意义字符，无法复原正确结构。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "ref = suns on junction j .%/% !\" suns on junction i .$/$ = meas//% meas//$ cal cal",
+      "type": "公式提取损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式2严重损坏，文字'cal'等被拆散，无法复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "! = ∫ (Ref(*),$ ∫ (Ref(*),$ ref(*)-* )*+(*)-* × ∫ (Sim(*),$ ∫ (Sim(*),$ DUT(*)-* ref(*)-*",
+      "type": "公式提取损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式3同样损坏，符号与文本混合，无法复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "1.42E-18 1.20E-14 3.21E-11 3.38E-07 4.12E-17 6.72E-13 1.96E-09 6.75E-05 2.15E-08 4.72E-09 2.93E-06 5.64E-02 1.24E-10 4.61E-29 1.49E-23 3.09E-26 8.34E-22 1.66E-16",
+      "type": "表格数据提取混乱",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1数值列顺序无法对应到列标题，表格结构在提取中严重失真。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "low in Supplementary Fig. 9. At",
+      "type": "断句/顺序问题",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'At'前面的内容被截断为'low'，完整句子应为'...can only be used over a small range of irradiances as shown in Supplementary Fig. 9. At...'，提取时词序被打乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "is \"inverted\" with respect to",
+      "type": "词序错乱",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该短语与前后文顺序混乱，应为完整句子的一部分，提取顺序被打乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：摘要中47.1%（143 suns）与39.2%（1-sun AM1.5G）与正文表征数据一致；六个带隙值、合金成分、TDD≈10^6 cm^-2、VOC/JSC/FF数值均与正文提取文本一致。不确定处：(1) 摘要称44.9%保持至1117 suns，正文写1116 suns，为原文自身不一致，未判定哪个正确；(2) 方法部分'one-sun irradiance is defined as 1000 W/cm2'单位疑为W/m²之误，但无文本内证据修正，笔记中未采用该数值；(3) 公式1-3提取损坏，笔记中仅保留变量定义文字，未重建公式；(4) Table 1参数提取混乱，笔记中未详列具体拟合参数。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 20190,
+      "prompt_tokens": 18213,
+      "total_tokens": 38403,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 16667
+      }
+    },
+    "content_chars": 6365
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

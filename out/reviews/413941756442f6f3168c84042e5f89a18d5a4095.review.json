@@ -1,0 +1,64 @@
+{
+  "sha1": "413941756442f6f3168c84042e5f89a18d5a4095",
+  "title": "Planck 2015 results",
+  "doi": "https://doi.org/10.17863/cam.32861",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/413941756442f6f3168c84042e5f89a18d5a4095/index.html",
+  "source_chars": 392699,
+  "markdown_chars": 16609,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "PPL13 and PCP13 used a parametric approach",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为 PCP13，OCR 将 C 识别为 L，属明显字符错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "$$\\mathcal {D} _ {\\ell} \\equiv \\ell (\\ell +$$\n\n$$\\mu \\mathrm {K} ^ {2}$$\n\n$$\\ell = 4 0, 2 2 0,$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "派生参数 $\\mathcal{D}_{\\ell}$ 的定义被拆成多个不完整片段，缺少 $1)C_{\\ell}/2\\pi$ 的完整表达式与后续说明，影响公式复原。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Planck 2015 results",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 111969,
+      "total_tokens": 121969,
+      "prompt_tokens_details": {
+        "cached_tokens": 111872
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19720,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Planck 2015 results",
+    "translated_title": "普朗克2015年结果",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "sha1": "9f6c673bc165d060d7a7e1ce18b880e52f8545da",
+  "title": "Automatic Differentiation in Machine Learning: a Survey",
+  "doi": "",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/9f6c673bc165d060d7a7e1ce18b880e52f8545da/index.html",
+  "source_chars": 81245,
+  "markdown_chars": 13255,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 21,
+      "quote": "C#F# Mxyzptlk OO F Fermi National Accelerator Laboratory Shtof et al(2013) http://autodiff.codeplex.com/",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 5 的列对齐在 OCR 中明显错乱：语言列出现“C#F#”合并，Mxyzptlk 的机构/参考文献/URL 与相邻行可能错位，影响工具归属判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "DiffSharp OO F,R National University of Ireland Maynooth http://www.mcs.anl.gov/research/projects/adifor/",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 5 中 DiffSharp 行与 ADIFOR 行的 URL/机构信息疑似错位，DiffSharp 的 URL 被替换为 ADIFOR 的 URL，影响工具信息准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "adautograd OO R Python package https://pypi.python.org/pypi/ad",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 5 中“adautograd”疑似“ad”与“autograd”两行合并，且 URL 指向 ad 包而非 autograd，工具名称与链接错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Scheme R6RS-AD OO R Harvard Intelligent Probabilistic Systems Group https://github.com/HIPS/autograd",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 5 中 R6RS-AD 行被赋予 Harvard Intelligent Probabilistic Systems Group 和 autograd 的 URL，与正文所述 R6RS-AD 为 Scheme 包不一致，属表格错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Scmutils OO F MIT Computer Science and Artificial Intelligence Lab. Sussman and Wisdom(2001) https://groups.csail.mit.edu/mac/users/gjs/6946/refman.txt",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 5 中 Scmutils 行的 URL 指向参考手册而非工具主页，且与相邻行信息可能错位，但影响较小。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Evaluating variables $v_{i}$ one by one together with their corresponding $\\dot{v}{i}$ values gives us the required derivative in the final variable $\\dot{v}{5}=\\frac{\\partial y}{\\partial x_{1}}.$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OCR 中 $\\dot{v}{i}$ 和 $\\dot{v}{5}$ 的下标花括号丢失，应为 $\\dot{v}_{i}$ 和 $\\dot{v}_{5}$，影响公式可读性但不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "In simple terms, we are interested in computing the contribution $\\bar{v}{i}=\\frac{\\partial y}{\\partial v{i}}$ of the change in each variable $v_{i}$ to the change in the output y.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OCR 中 $\\bar{v}{i}$ 和 $\\partial v{i}$ 的下标花括号丢失，应为 $\\bar{v}_{i}$ 和 $\\partial v_{i}$，影响公式可读性但不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "After the forward sweep on the left hand side, we run the reverse sweep of the adjoints on the right hand side, starting with $\\bar{v}{5}=\\bar{y}=\\frac{\\partial y}{\\partial y}=1$ . In the end we get the derivatives $\\frac{\\partial y}{\\partial x{1}}=\\bar{x}{1}$ and $\\frac{\\partial y}{\\partial x{2}}=\\bar{x}_{2}$ in just one reverse sweep.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OCR 中 $\\bar{v}{5}$、$\\partial x{1}$、$\\bar{x}{1}$、$\\partial x{2}$ 的下标花括号丢失，应为 $\\bar{v}_{5}$、$\\partial x_{1}$、$\\bar{x}_{1}$、$\\partial x_{2}$，影响公式可读性但不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Automatic differentiation in machine learning: a survey",
+  "self_check": "已核对摘要、章节顺序、公式与关键数值。Table 4 中反向 AD 相对列时间稳定在约 1.96–2.31，前向 AD 从 1.34 升至 7.69，数值微分从 1.08 升至 28.63，与正文结论一致。公式如对偶数运算、链式法则、Jacobian-向量乘积、Hessian-向量乘积等均按 OCR 文本保留。仍不确定处：Table 5 的列对齐错乱导致部分工具的语言、机构、URL 归属可能不准确，已在 extraction_issues 中标出；部分公式下标花括号丢失已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8297,
+      "prompt_tokens": 21589,
+      "total_tokens": 29886,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17324,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Automatic differentiation in machine learning: a survey",
+    "translated_title": "机器学习中的自动微分：综述",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

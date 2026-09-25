@@ -1,0 +1,63 @@
+{
+  "sha1": "694eb343d01873a3505bbbab34ff081026c065a9",
+  "title": "Cryoprotectants: A review of the actions and applications of cryoprotective solutes that modulate cell recovery from ultra-low temperatures",
+  "doi": "https://doi.org/10.1016/j.cryobiol.2017.04.004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/694eb343d01873a3505bbbab34ff081026c065a9/index.html",
+  "source_chars": 149166,
+  "markdown_chars": 3348,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 39,
+      "quote": "propylene glycol – 3 31M",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字“3 31M”之间缺少小数点，应为3.31M，但原文提取如此，无法确认是原文笔误还是提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "polyethelyne glycol (MW 8000; 6% w/vol)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "常见拼写应为polyethylene，提取为polyethelyne，疑为OCR或笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 75,
+      "quote": "Hydroxeythyl starch",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为Hydroxyethyl starch，提取文本为Hydroxeythyl，明显拼写错误，但仅出现在表格中，正文未引用。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值，如均衡质成核温度约−40°C、异质成核范围−5~−30°C、CPA常用浓度5–10% w/v（约1 mol/L）、蔗糖缓冲液0.2–0.3 mol/L、VS1/VS55/M22组成、PVS2配方、肿瘤细胞存活率（30% vs 14%）、4组分混合物最低毒性等，均与提取文本一致。公式qv*和τ已按原文保留。不确定之处：第39页“propylene glycol – 3 31M”缺小数点为明显疑点，已列出；表格中部分数值（如Tg、CCR）未在正文展开，仅按正文提及引用。未发现其他跨页断句问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7245,
+      "prompt_tokens": 38274,
+      "total_tokens": 45519,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4791
+      }
+    },
+    "content_chars": 4388
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

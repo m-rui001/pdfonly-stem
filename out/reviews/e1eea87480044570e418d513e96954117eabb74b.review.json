@@ -1,0 +1,63 @@
+{
+  "sha1": "e1eea87480044570e418d513e96954117eabb74b",
+  "title": "Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review",
+  "doi": "https://doi.org/10.1016/j.optlaseng.2016.04.022",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e1eea87480044570e418d513e96954117eabb74b/index.html",
+  "source_chars": 105787,
+  "markdown_chars": 15775,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "where $ \\phi(x,y) $ is the unwrapped phase, $ \\Phi(x,y) $ is the unwrapped phase obtained from Eq. (3)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式 $\\Phi(x,y)=\\phi(x,y)+2\\pi k(x,y)$ 中 $\\phi$ 应为包裹相位、$\\Phi$ 为展开相位，但正文描述将两者均称为 unwrapped phase，与公式含义矛盾，疑为 OCR 或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "small changes in Round $ \\left[ \\frac{f_{l}\\phi_{h}-f_{h}\\phi_{l}}{2\\pi} \\right] $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "此处 Round 内分子写作 $f_l\\phi_h-f_h\\phi_l$，与第 19 页 LUT 条目式 $f_h\\phi_l-f_l\\phi_h$ 符号相反，疑为 OCR 或原文符号错误，影响对数论法误差机制的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Temporal phase unwrapping algorithms for fringe projection profilometry: A comparative review",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 27703,
+      "total_tokens": 37703,
+      "prompt_tokens_details": {
+        "cached_tokens": 27520
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17925,
+    "json_repaired": true
+  },
+  "summary_length_check": {
+    "minimum_chars": 1000,
+    "actual_chars": 15775,
+    "passed": true,
+    "retry_attempted": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

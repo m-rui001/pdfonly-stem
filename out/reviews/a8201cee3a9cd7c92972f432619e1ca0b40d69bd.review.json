@@ -1,0 +1,73 @@
+{
+  "sha1": "a8201cee3a9cd7c92972f432619e1ca0b40d69bd",
+  "title": "W hats H ap : Weighted Haplotype Assembly for Future-Generation Sequencing Reads",
+  "doi": "https://doi.org/10.1089/cmb.2014.0157",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a8201cee3a9cd7c92972f432619e1ca0b40d69bd/index.html",
+  "source_chars": 46138,
+  "markdown_chars": 3458,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "2 · 100 bp and a 2 · 250 bp paired-end data set",
+      "type": "疑似前后矛盾",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文只提到 2×100 bp 和 2×250 bp，但表 1（页 7）中 MiSeq 数据写为 2×150，疑似原文或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "+ 51=2 errors ( 27 +30116 · 100)",
+      "type": "公式提取乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该表达式在上下文中明显是分数与百分比计算，但提取为 '27 +30116' 无法读通，属于跨页或排版提取问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Lengths 1,000; 5.000; 10,000; and 50,000",
+      "type": "疑似排版/标点问题",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "前文（页 6）写的是 '5,000 bp'，此处写 '5.000' 应为逗号误为句点。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "F (i‚ j) 6¼ -",
+      "type": "符号提取异常",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "'6¼' 在数学上下文中应为 '≠'，提取符号错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表 1/2 中的关键数值：覆盖度 10–15× 足够、错误率 0.1–0.25%、运行时间对比（如覆盖 15× 时 WhatsHap 62.6s vs Deng 377.8s）、加权歧义减少示例（1×50000 歧义从 51 降至 6）。公式 W0/W1/DP 递推与原文一致，未做修改。不确定处为页 10 的百分比计算表达式（提取乱码）和页 7 表格中 '2×150' 与正文 '2×250' 的矛盾，已在 extraction_issues 中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4691,
+      "prompt_tokens": 13257,
+      "total_tokens": 17948,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1987
+      }
+    },
+    "content_chars": 4703
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

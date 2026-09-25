@@ -1,0 +1,112 @@
+{
+  "sha1": "d60f7e5679d7865e9539eed64d897adbeb5c8d5e",
+  "title": "Measuring pro-environmental behavior: Review and recommendations",
+  "doi": "https://doi.org/10.1016/j.jenvp.2019.04.009",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d60f7e5679d7865e9539eed64d897adbeb5c8d5e/index.html",
+  "source_chars": 106953,
+  "markdown_chars": 9494,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "Seebauer, FleiB, & Schweighart, 2017",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者姓氏中的 ß 被误识为 B（Fleiß 误作 FleiB），属 OCR 字符识别错误，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Joansson-Stenman, 2008",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者姓氏 Johansson-Stenman 漏识 h，属 OCR 字符丢失，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Geller, Wittmer, & Tuso, 1977",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "参考文献表中同一文献作 Witmer，正文作 Wittmer，属 OCR 拼写不一致，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "The framing and parameters of the PEB can easily be adapted",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "此处应为 PEBT（Pro-Environmental Behavior Task），OCR 漏掉末尾 T，导致任务名称与行为缩写混淆，可能影响读者对任务指称的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "domain development context items $\\alpha_{\\mathrm{tot}}$ dim subscale example item $\\alpha_{\\mathrm{sub}}$ correlates",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table S1 的表格结构在 OCR 中严重损坏，列标题与数据行错位、跨页断裂，部分单元格（如 n/p、α 值）与所属量表对应关系难以可靠复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "30-65 .72-.88.71-88$\\cdot$ 1",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "GEB 量表的条目数与信度数值出现符号粘连与异常字符（.72-.88.71-88·），数值边界无法可靠解析。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "8 .49$\\cdot$ 1",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "Children's Environmental Behavior Jumping Game 的 α 值后出现异常符号 $\\cdot$，数值表达受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 50,
+      "quote": "How much of your $\\mathrm{CO_{2}}$ emissions do you offset by buying credits?",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "CO2 下标在 OCR 中转为 LaTeX 形式，属公式符号呈现损失，但化学式本身可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Measuring pro-environmental behavior: review and recommendations",
+  "self_check": "已核对：摘要与结论对测量谱系（自我报告、现场观察、实验室任务）的定位一致；GEB 被表述为心理测量支持最强的领域一般自我报告测量；PEBT 的等待时间与 USB 灯能耗、GGG 的翻倍与随机支付规则、FISH 的再生率与捕鱼比例指标均按原文保留；补充材料中 33 个量表、20 个领域一般与 13 个领域特定、单维与多维各十项研究的数字与原文一致。仍不确定：Table S1 因表格结构损坏，部分量表的条目数、α 值与维度数无法可靠对应，已在 extraction_issues 中标出；正文中个别作者姓氏拼写（Fleiß、Johansson-Stenman、Witmer）存在 OCR 字符错误，已照录并标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6297,
+      "prompt_tokens": 26293,
+      "total_tokens": 32590,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12133,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

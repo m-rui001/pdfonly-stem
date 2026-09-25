@@ -1,0 +1,72 @@
+{
+  "sha1": "8f019cc55c1fc222a6134b41370eb8b1507d02ab",
+  "title": "Hybrid Polymer/Garnet Electrolyte with a Small Interfacial Resistance for Lithium‐Ion Batteries",
+  "doi": "https://doi.org/10.1002/anie.201608924",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8f019cc55c1fc222a6134b41370eb8b1507d02ab/index.html",
+  "source_chars": 25031,
+  "markdown_chars": 3271,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The constant cubic lattice parameter",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页末尾句子以'The constant cubic lattice parameter'中断，第4页开头为'shows that the LiF has little influence...'，两句应拼接为完整句子，但抽取分属两页，可能缺失了连接词或分页导致断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "o C (Figure S5). The interfacial resistances between Li metal and LLZT pellets with different amounts of LiF are shown in Figure S6",
+      "type": "文本断裂疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句以温度单位'o C'开头，前面缺少具体温度数值和上下文，疑似上一页或段落衔接处抽取缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "surface is not able to eliminate the Li2CO3 on the surfaces of the particles inside the pellets.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "第4页末尾为'polishing of LLZT'，第5页开头为'surface is not able...'，应为'polishing of LLZT surface is not able...'，跨页断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "at the current density of 200 μA",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在第5页末尾中断，第6页开头为'cm–2.'，属于正常的页间拆分，但需注意拼接。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：晶格常数12.9340 Å，致密度93.2%和92.2%，体电导率10⁻³ S cm⁻¹，总电导率5.5和5.2×10⁻⁴ S cm⁻¹，活化能0.35和0.30 eV，界面电阻345 vs 1260 Ω cm²，XPS Li2CO3比例79.8% vs 20.7%，TGA失重0.6% vs 2.2%，电池容量和循环数据均与摘要及正文一致。注意Li–S电池总电阻原文顺序为LLZT=1000、LLZT-2LiF=2620 Ω cm²，但后文性能提升，可能存在逻辑矛盾，但文本如此，未做调整。部分跨页断裂处已标记，未补充推测内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8372,
+      "prompt_tokens": 8532,
+      "total_tokens": 16904,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5699
+      }
+    },
+    "content_chars": 4850
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

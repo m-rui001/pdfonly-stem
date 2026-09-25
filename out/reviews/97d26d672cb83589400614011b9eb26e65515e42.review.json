@@ -1,0 +1,73 @@
+{
+  "sha1": "97d26d672cb83589400614011b9eb26e65515e42",
+  "title": "Global spatial risk assessment of sharks under the footprint of fisheries",
+  "doi": "https://doi.org/10.1038/s41586-019-1444-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/97d26d672cb83589400614011b9eb26e65515e42/index.html",
+  "source_chars": 93219,
+  "markdown_chars": 2039,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "whether exposure to high fishing effort extends across ocean-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页12末尾以“ocean-”结束，页13开头（在页眉和期刊信息之后）接续“wide population ranges”，实际应连为“ocean-wide”；中间的页眉行造成拼接中断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "pelagic sharks1214,29",
+      "type": "疑似缺空格",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "数字“1214,29”紧接在“sharks”后，原文应为引用编号“sharks 12,14,29”或类似，但提取时丢失了空格。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "1 × 1 grid cell",
+      "type": "疑似字符乱码",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“”疑似度符号°的乱码，原文应为“1 × 1°”。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "60%",
+      "type": "疑似字符乱码",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“”疑似约等号“~”的乱码，原文应为“~60%”。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：整体月均重叠23.7%±32.7%（中位数4.5%，n=1681，约24%），区域重叠（东太平洋8%、大洋洲24%、北大西洋37%、西南印度洋38%），蓝鲨（49%总体、北大西洋76%、东太平洋14%）、鲑鲨1.3%、公牛鲨94%、白鲨西南印度洋64%等；FEI与渔获量回归r²=0.45、F=6.72（p<0.05）；北大西洋短鳍鲭鲨标签回报率19.3%（n=119）；公式1-3已按提取文本原样保留。不确定点：个别字符（如“”“”）疑为乱码但未改动；“8732 FEI”回归系数仅照录，未加外部推断；“1,804”与“1,681”的差异为有效轨迹数，已在文中说明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11951,
+      "prompt_tokens": 24177,
+      "total_tokens": 36128,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10108
+      }
+    },
+    "content_chars": 3319
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

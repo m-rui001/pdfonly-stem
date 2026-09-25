@@ -1,0 +1,63 @@
+{
+  "sha1": "63d3fed7a268374c4075ca7501c4ef6d6bb7da15",
+  "title": "Worldwide alteration of lake mixing regimes in response to climate change",
+  "doi": "https://doi.org/10.1038/s41561-019-0322-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/63d3fed7a268374c4075ca7501c4ef6d6bb7da15/index.html",
+  "source_chars": 60803,
+  "markdown_chars": 2127,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "under RCP 2.0 and 6.0",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "原文其他所有位置均写 RCP 2.6，此处单独出现 RCP 2.0，且上下文语义为 RCP 2.6，应为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "result in a",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第 3 页页尾句子中断于“result in a”，第 4 页页首续接“vertical layering”，中间可能缺失页码或页眉，需核对原 PDF。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "monomicitc lakes",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同一段后续及全文其他位置拼写均为 monomictic，此处明显为拼写错误，但属于原文文本，照录并标出。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：冰期减少（RCP 2.6: 15天±5；RCP 6.0: -29±8天）、表面温度升高（RCP 2.6: 1.1±0.4°C；RCP 6.0: 2.3±0.6°C；最大5.4±1.1°C）、混合方式改变数量（59±7和96±15）、主要转变比例（25±5%、17±5%）等均与原文一致。摘要中的“中位数升温约2.5°C”未在正文重复，但两者不矛盾，笔记中未强调中位数。公式部分仅保留混合判据（|ΔT|<1°C）和冰盖判据（<1°C），均与原文方法一致。不确定之处：RCP 2.0 疑为笔误已标出；跨页拼接位置已标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4220,
+      "prompt_tokens": 16505,
+      "total_tokens": 20725,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2386
+      }
+    },
+    "content_chars": 3161
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "91df9e17824be1c68243d40f3a2eccc7a2f2b924",
+  "title": "Eco-driving technology for sustainable road transport: A review",
+  "doi": "https://doi.org/10.1016/j.rser.2018.05.030",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/91df9e17824be1c68243d40f3a2eccc7a2f2b924/index.html",
+  "source_chars": 110604,
+  "markdown_chars": 6611,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Road type and grade could influence fuel economy and emissions significantly.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该完整句子在第8页末尾已出现一次，第9页开头再次出现同一句子后接续内容，表明页间截取时句子先断开后又重复起始部分；笔记已按一次出现处理。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值包括：最优巡航速度区间（60–90、50–70、40–50、60–80、50–60 km/h）、限速降低120→110 km/h的节油率（柴油12%、汽油18%、现实情形2–3%）、激进驾驶影响（15–30%、10–40%）、怠速油耗（0.6–5.7 L/h）、临界加速度值（2.598、1.4705 m/s²）、坡度影响（0→5%：CO₂增65–81%、NOx增85–115%；6% vs 0%/−6%：油耗+86%/+171%）、各因素节油范围（加速3.5–40%、速度2–29%、路线2.2–25%、怠速6–20%）、培训节油率（总体2–15%、具体12.5%、11.3%、6.8%、16.9%等）、车载设备短期>10%和长期<8%、40%渗透率饱和点，以及PEMS重量100–500 kg等。不确定处：图2中各数据点所代表的具体来源区间在提取文本中未完全展开，笔记只描述文中明确写出的范围；表3中多条培训项目记录未逐条保留了具体样本量、周期和节油数据，因原文表格信息密度极高且笔记以论证脉络为主，保留了关键代表值；引用[59]所对应的在线调查与参考列表中的会议论文在内容上存疑但无文本内强证据，未列为抽取问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14934,
+      "prompt_tokens": 25535,
+      "total_tokens": 40469,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10584
+      }
+    },
+    "content_chars": 7543
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

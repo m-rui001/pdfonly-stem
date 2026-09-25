@@ -1,0 +1,55 @@
+{
+  "sha1": "03302d1ee5faf2cc152cd64ccd88eb9162fa0c26",
+  "title": "Spatio-temporal fusion for daily Sentinel-2 images",
+  "doi": "https://doi.org/10.1016/j.rse.2017.10.046",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/03302d1ee5faf2cc152cd64ccd88eb9162fa0c26/index.html",
+  "source_chars": 69812,
+  "markdown_chars": 4922,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "C2 (X, lb )  a(X, lb )C1 ( X, lb )  b( X, lb )  R( X, lb )",
+      "type": "疑似编码/乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式中的运算符（如等号、加号）显示为私有区字符“、”，原文本应为标准数学符号，疑似PDF提取或编码损坏。笔记中已照录可见字符，未擅自修复。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "Fig. 1(a) and Fig. 1(b) show the Sentinel-2 images (in BOA) acquired on the two days for Coleambally",
+      "type": "疑似图表引用错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "本文前述图1为方法流程图，而后续图题中图2和图3分别展示Coleambally和Currawarna的Sentinel-2影像。这里写“Fig. 1(a)”疑为“Fig. 2(a)”之误，但原文如此，只能标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与表3、表4中的关键数值：Fit-FC在Coleambally平均RMSE 0.0321、CC 0.7865、UIQI 0.7672；Currawarna平均RMSE 0.0295、CC 0.7606、UIQI 0.7471。核对三步增益的数值与表3一致（如Coleambally从RM到SF平均CC增加0.0272等）。公式部分因原提取文本存在编码乱码，未做任何猜测性修复，仅照录可见字符。图表编号引用错误已标注，未推测正确编号。文中其他数值（如CC、RMSE）均直接取自提取文本，无外部补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7944,
+      "prompt_tokens": 21214,
+      "total_tokens": 29158,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4478
+      }
+    },
+    "content_chars": 5915
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "ca50653fe7b431148129e3f6408424f84c7e725f",
+  "title": "Formation of Hierarchical Co 9 S 8 @ZnIn 2 S 4 Heterostructured Cages as an Efficient Photocatalyst for Hydrogen Evolution",
+  "doi": "https://doi.org/10.1021/jacs.8b07721",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ca50653fe7b431148129e3f6408424f84c7e725f/index.html",
+  "source_chars": 19955,
+  "markdown_chars": 2579,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Figure 4. (a) Photocatalytic H2 evolution performance of different samples. (b) Time-yield plots of H2. (c) H2 generation rate in every four-hour-reaction for successive 5 cycles. (f) H2 production under photoirradiation of different wavelengths.",
+      "type": "疑似抽取缺失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "图题中从(c)直接跳到(f)，缺少(d)和(e)的图题描述，可能是提取过程中跳过了部分文本。但无法确认原文是否确实有(d)(e)，故标记存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "The as-obtained ZIF-67 is then converted to amorphous co-\n\n[PDF extracted page 2]\n\nPage 2\n\nbalt sulfide (denoted as CoSx)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单词 'cobalt' 在第1页末尾被截断为 'co-'，第2页开头以 'balt' 继续，提取文本直接拼接为 'co-balt'，但实际应为 'cobalt'。标记为跨页断词问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：产氢速率6250 μmol h⁻¹ g⁻¹、带隙0.97/2.12 eV、平带电位-0.75/-0.95 V、TRPL寿命5.43/3.88 ns、对比样品速率2160和4650 μmol h⁻¹ g⁻¹、BET面积81 m² g⁻¹、Co 2p结合能等。结论方向一致。不确定处：图4中缺(d)(e)，以及跨页断词，已在问题中标出。其余根据提取文本忠实转述，未添加外部信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2834,
+      "prompt_tokens": 6629,
+      "total_tokens": 9463,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 596
+      }
+    },
+    "content_chars": 3691
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

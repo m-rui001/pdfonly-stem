@@ -1,0 +1,64 @@
+{
+  "sha1": "0c5a90aa802af914ede62fcd11c47f9f22e92607",
+  "title": "Aluminium alloys as structural material: A review of research",
+  "doi": "https://doi.org/10.1016/j.engstruct.2020.111372",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0c5a90aa802af914ede62fcd11c47f9f22e92607/index.html",
+  "source_chars": 91814,
+  "markdown_chars": 2353,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "EN 1999-11:2007 [5]",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "多处出现EN 1999-11:2007，但标准实际为EN 1999-1-1:2007，且文中其他位置也写为EN 1999-1-1，应为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "EN 1993-13:2005 [132]",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标准编号EN 1993-13:2005应为EN 1993-1-3:2005，参考文献列表中写为EN 1993-1-3，此处可能为排版/转录错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Table 3: ... n 列: 12 10 26 74 65",
+      "type": "数据缺失",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表3中合金有6行，但n值只列出5个数字，存在缺失，可能为抽取或原文数据遗漏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要和正文数据：全球铝产量25%用于建筑、能源降低75%、碳足迹降40%；表3中f0.2/fu值（0.82,0.94,0.81,0.54,0.96,0.94）与原文一致，但n值缺失一个；柱、梁、腹板屈曲的均值/COV均按表记录；高温试验结论与原文一致。不确定之处：表3中n值个数不匹配，以及个别标准编号可能为原文错误，已在issue中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4078,
+      "prompt_tokens": 24607,
+      "total_tokens": 28685,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2203
+      }
+    },
+    "content_chars": 3310
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

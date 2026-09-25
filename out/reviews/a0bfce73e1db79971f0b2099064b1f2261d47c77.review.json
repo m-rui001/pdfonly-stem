@@ -1,0 +1,112 @@
+{
+  "sha1": "a0bfce73e1db79971f0b2099064b1f2261d47c77",
+  "title": "Guidelines for Synthesis and Processing of Two-Dimensional Titanium Carbide (Ti 3 C 2 T x MXene)",
+  "doi": "https://doi.org/10.1021/acs.chemmater.7b02847",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a0bfce73e1db79971f0b2099064b1f2261d47c77/index.html",
+  "source_chars": 84381,
+  "markdown_chars": 7150,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "The 30F-Ti $ \\mathrm{C}{2} \\mathrm{T}{x} $ powder exhibited similar color",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失，应为 30F-Ti3C2Tx，OCR 漏掉 Ti 的 3 与 C 的 2 下标，影响对样品命名的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "shift to a lower 20-angle",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "应为 2θ-angle，OCR 将 2θ 误识为 20，影响对 XRD 峰位移表述的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the (002) peak centered at $ 8.6^{\\circ} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该数值与上下文一致，但 OCR 中角度符号与数字间距异常，可能为格式问题而非数值错误，仅作低置信度提示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the (002) peak shift from $ 9. 0^{\\circ} $ to $ 6. 0^{\\circ} $ 20-angle",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "20-angle 应为 2θ-angle，OCR 将 2θ 误识为 20，影响对 XRD 角度表述的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the $ 3^{\\mathrm{rd}} $ centrifuge wash for 1 hour",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 rd 格式异常，但语义可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the （001）peaks",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "全角括号与半角混用，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the electrical conductivities of spray/spin coated, vacuum-filtered, or painted films of $ \\mathrm{T i}{3} \\mathrm{C}{2} \\mathrm{T}_{x} $ MXene can be measured using a four-point probe",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "化学式下标格式在 OCR 中部分丢失，但整体可读，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "the 30F-Ti $ \\mathrm{C}{2} \\mathrm{T}{x} $ powder",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同上，Ti3C2Tx 的 Ti 下标 3 与 C 下标 2 在 OCR 中丢失，导致化学式不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Guidelines for Synthesis and Processing of 2D Titanium Carbide (Ti3C2Tx MXene)",
+  "self_check": "已核对关键数值：HF 浓度 30/10/5 wt.% 及对应刻蚀时间 5/18/24 小时；Ti3AlC2 (002) 峰 9.5° 移至 Ti3C2Tx 9.0°；NH4-Ti3C2Tx 峰 8.5° 和 7.15° 对应 10.35 Å 和 12.37 Å；MILD 优化用 12M LiF/9M HCl，pH 4–5，黑色浆料 (002) 8.6°；TMA-5F-Ti3C2Tx (002) 从 9.0° 移至 6.0°，d 间距 9.7 Å 至 14.7 Å；TMA-NH4-Ti3C2Tx (002) 5.9°，14.86 Å；MILD 膜电导约 8000 S/cm，TMAOH 膜约 200 S/cm；MILD 胶体浓度约 1–2 mg/ml，TMA 溶液 <0.5 mg/ml。公式符号如 Mn+1XnTx、Mn+1AXn、M2X/M3X2/M4X3 等已按原文保留。仍不确定处：部分化学式下标在 OCR 中丢失（如 30F-TiC2Tx），已在 extraction_issues 中标出；原文中 2θ 被 OCR 误为 20 的情况也已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5758,
+      "prompt_tokens": 25002,
+      "total_tokens": 30760,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9942,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "37a50aeea63c6df5e99c2ad7ee9e0aefba5f0f1d",
+  "title": "The Subseasonal to Seasonal (S2S) Prediction Project Database",
+  "doi": "https://doi.org/10.1175/bams-d-16-0017.1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/37a50aeea63c6df5e99c2ad7ee9e0aefba5f0f1d/index.html",
+  "source_chars": 51903,
+  "markdown_chars": 3594,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Developing 4 earthquakes) (source Munich Re:",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第6页末尾的'Developing'与第7页开头的'countries are most affected...'构成一个完整句子，但被页码和无关文本（'4 earthquakes'）打断，需合并阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "countries are most affected by major gaps in access to forecasts and knowledge.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "接续第6页的'Developing'，但中间缺失了'countries'之前的内容，且第6页有'(source Munich Re:'等碎片，表明文本顺序混乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "An extensive database containing sub-seasonal (up to 60 days) forecasts and",
+      "type": "疑似截断/顺序问题",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该行后直接跟项目符号列表，但句子不完整；后文出现'reforecasts (sometimes known as hindcasts) has been created'，可能原文本应将两者相连，但被列表分隔。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "reforecasts (sometimes known as hindcasts) has been created to enable research to operational pathways to accomplish these goals.",
+      "type": "疑似截断/顺序问题",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句缺少主语，与上一行'An extensive database...'分离，疑为同一句被拆开。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：11个中心、60天预报、3周延迟、1999–2010共同再预报期、MJO振幅超4个标准差、Pam气旋等级5级、2–3周提前预报、300用户/30TB/22TB等。结论方向一致：数据库支持多模式预报、案例研究和遥相关缺陷识别。不确定之处：表1的提取文本完全乱序，但正文描述已充分覆盖主要差异，未在markdown中直接引用表1的原始数字；第6–7页跨页断裂已标记，第8页句子截断已标记。另有一处疑似重复的'4.1'小节编号（Multi-model prediction与The strong March 2015 MJO event），但内容独立，未影响理解。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6258,
+      "prompt_tokens": 14896,
+      "total_tokens": 21154,
+      "prompt_tokens_details": {
+        "cached_tokens": 14336
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3468
+      }
+    },
+    "content_chars": 5231
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

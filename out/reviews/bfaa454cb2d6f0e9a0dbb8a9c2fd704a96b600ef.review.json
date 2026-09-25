@@ -1,0 +1,64 @@
+{
+  "sha1": "bfaa454cb2d6f0e9a0dbb8a9c2fd704a96b600ef",
+  "title": "Planck 2015 results: XI. CMB power spectra, likelihoods, and robustness of parameters",
+  "doi": "https://doi.org/10.17863/cam.44053",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bfaa454cb2d6f0e9a0dbb8a9c2fd704a96b600ef/index.html",
+  "source_chars": 472127,
+  "markdown_chars": 2969,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 36,
+      "quote": "∆DEE ` /σ(D` )\n\n3 2 1 0 1 2 3 3 2 1 0 1 2 3 TT 143x143",
+      "type": "图表标签混入正文",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "页面开头出现图30的图例和坐标轴标签，与后续正文无关，疑为图像文本被错误提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 55,
+      "quote": "This effectively rules out any detectable systematic contribution from the data pipeline or or from the instrumental effects",
+      "type": "疑似文字重复",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“or or”连续出现两次，可能为原文排印错误或提取重复。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 50,
+      "quote": "-pri or\n\nLO W\n\nL3\n\n0\n\nPli\nkT T+ τ",
+      "type": "图表标签混入正文",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "提取文本在正文句子（“are in”和“good agreement”）之间插入了图42的轴标签和刻度文字，打断了句子连续性。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与表格中的关键数值：τ=0.078±0.019、ns=0.9655±0.0062、H0=67.31±0.96、AL=1.159±0.090、Neff=2.7±0.33等。公式（1）–（3）及前景模板公式（7）已按原样保留。部分图表标签混入提取文本，已在问题中标记。未发现数值方向不一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4917,
+      "prompt_tokens": 134404,
+      "total_tokens": 139321,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2599
+      }
+    },
+    "content_chars": 3997
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "sha1": "623560ee54a94478bc47828250675f36b9eb82cc",
+  "title": "Recent advances in transition metal-based electrocatalysts for alkaline hydrogen evolution",
+  "doi": "https://doi.org/10.1039/c9ta03220g",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/623560ee54a94478bc47828250675f36b9eb82cc/index.html",
+  "source_chars": 177436,
+  "markdown_chars": 6830,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "Cu NDs/Ni3S2 NTs-CFs32 168",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "Table 1 中 'Cu NDs/Ni3S2 NTs-CFs32' 与 '168' 数字断开跨页，无法确定 168 是 Tafel 斜率还是其他数值；且行内 '58' 可能为引用编号或页码残留。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "TMTes CoNiSe2@CoNiLDHs/NF71",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "CoNiSe2@CoNi-LDHs/NF 属于 TMSes（硒化物）类别，却被列在 TMTes（碲化物）分类下，可能是表格排版跨页错位，但证据不够强，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "The obtained catalysts exhibited a low η10 of 85 mV, a low Tafel slope of 53 mV dec-1 and an extremely high TOF of 6.35 H2 s-1 (η=120 mV)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "前文 W-SAC 的 TOF 数值 6.35 H2 s-1 异常高（相比其他单原子催化剂的 0.53 H2 s-1），可能为抽取或原文笔误，但无文本内证据确认。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "MoSe2-CoSe72 Hybridization 1 M KOH 127 (η0) 89",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "Table 1 中 η10 列出现 '127 (η0)'，η0 并非常规表示，可能为抽取错误或原文表注特殊；无法确定该行数据的实际含义。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：摘要与正文均围绕碱性 HER 中 TM 基催化剂按阴离子分类展开；Volmer-Heyrovsky/Tafel 方程式及 Tafel 斜率理论值（118.2/39.4/29.6 mV dec-1）、TOF 公式、NiMoP 的 Ead/Eac/ΔGH* 关系、Pt 碱性活性低两个数量级、β-Ni(OH)2/Pt 与 NiFeRu-LDH 的水解离能垒（0.50 vs. 1.02 eV）、MoS2/NiCo-LDH 的 Rct（1.7 vs. 11.2 Ω）、RuB2 水解离能（0.64 vs. 0.85 eV）等关键数值均与正文一致。仍不确定：Table 1 中若干跨页拼接的数值归属（如 Cu NDs/Ni3S2 后的 168、CoSe2 的 η0 ），以及 W-SAC 的 TOF 6.35 H2 s-1 是否笔误，已列入 extraction_issues。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5471,
+      "prompt_tokens": 55795,
+      "total_tokens": 61266,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 498
+      }
+    },
+    "content_chars": 8464
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

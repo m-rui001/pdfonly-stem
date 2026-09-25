@@ -1,0 +1,66 @@
+{
+  "sha1": "781215b4ef4b58dfda97d34b22ea707bb4912c2d",
+  "title": "Nonradiative Plasmon Decay and Hot Carrier Dynamics: Effects of Phonons, Surfaces, and Geometry",
+  "doi": "https://doi.org/10.1021/acsnano.5b06199",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/781215b4ef4b58dfda97d34b22ea707bb4912c2d/index.html",
+  "source_chars": 67925,
+  "markdown_chars": 17574,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "Nonradiative Plasmon Decay and Hot Carrier Dynamics: Effects of Phonons, Surfaces, and Geometry",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "登记题名与OCR正文首页题名在连字符与并列连词上略有差异（Nonradiative vs Non-Radiative；Surfaces, and vs Surfaces and），但作者、期刊、DOI一致，属同一篇文章的题名书写差异，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "where $\\tilde{\\rho}{\\mathbf{q}^{\\prime}n^{\\prime}},\\mathbf{q}{n}(\\mathbf{G})$ is the plane-wave expansion",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "下标花括号错位，$\\tilde{\\rho}$ 的下标被拆成 $\\tilde{\\rho}{\\mathbf{q}^{\\prime}n^{\\prime}},\\mathbf{q}{n}$，应为 $\\tilde{\\rho}_{\\mathbf{q}^{\\prime}n^{\\prime},\\mathbf{q}n}$，属公式符号抽取损坏。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "and $\\epsilon{\\mathbf{G G}^{\\prime}}^{-1}(\\mathbf{k},\\omega)$ is the microscopic dielectric function",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "下标花括号错位，$\\epsilon{\\mathbf{G G}^{\\prime}}^{-1}$ 应为 $\\epsilon_{\\mathbf{G}\\mathbf{G}^{\\prime}}^{-1}$，属公式符号抽取损坏。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Non-Radiative Plasmon Decay and Hot Carrier Dynamics: Effects of Phonons, Surfaces and Geometry",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 17404,
+      "total_tokens": 27404,
+      "prompt_tokens_details": {
+        "cached_tokens": 17280
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 20302,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "271585b80dc1afd47b3f742c657667dbc7a1c6cb",
+  "title": "Rashba Spin–Orbit Coupling Enhanced Carrier Lifetime in CH 3 NH 3 PbI 3",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b01854",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/271585b80dc1afd47b3f742c657667dbc7a1c6cb/index.html",
+  "source_chars": 38446,
+  "markdown_chars": 3961,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "when the VBM and CBM have opposite and aligned spins, respectively.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页页首句子以'when the VBM and CBM have opposite and aligned spins, respectively.'开头，明显接续第2页页尾被截断的句子，缺少完整主句；第2页页尾为'T'开头的段落，页首与页尾衔接断裂。引用可见文本，无法还原完整句。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数值：导带 Rashba 劈裂 0.108 eV、价带 0.016 eV、弛豫率~10^15 s⁻¹、复合率~10^9 s⁻¹、B_{1,1}≈3.7B_{1,−1}、0.1 eV 劈裂带来数量级增强、赝立方晶格常数 6.31/6.32 Å、声子频率等，均与正文一致。公式（1）（2）（3）（4）及变量定义按提取文本保留，未做任何猜测性修补。不确定处：第3页页首拼接断裂（见extraction_issues）；'C4v symmetry removes Dresselhaus splitting'后的引用编号30、42未保留；PBE+SOC低估带隙的表述原文如此。未涉及外部知识，所有结论均源于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3007,
+      "prompt_tokens": 11756,
+      "total_tokens": 14763,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 36
+      }
+    },
+    "content_chars": 4726
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

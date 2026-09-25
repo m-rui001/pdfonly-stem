@@ -1,0 +1,45 @@
+{
+  "sha1": "6b5ac63fade73ce3e785e814cebce8f83f2da679",
+  "title": "Active sites in heterogeneous ice nucleation—the example of K-rich feldspars",
+  "doi": "https://doi.org/10.1126/science.aai8034",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6b5ac63fade73ce3e785e814cebce8f83f2da679/index.html",
+  "source_chars": 36325,
+  "markdown_chars": 1674,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "nucleating from their (0110) planes",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "文中多处明确冰以初级棱柱面(1010)与(100)面匹配，图4F caption中的(0110)与上下文不一致，疑为(1010)笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：冰c轴倾角116°与β=116.03°一致，吸附能-0.58 eV/H2O，O-O间距2.74 Å、角109.4°及误差0.01 Å/0.1°，晶体取向比例80%/85%/平均90%，温度范围233-248 K，条件（老化、冷却速率、起始温度>230 K）均与原文一致。模拟力场与水模型描述无误。不确定之处为图4F中(0110)可能是(1010)的笔误，已在extraction_issues中报告。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4280,
+      "prompt_tokens": 9985,
+      "total_tokens": 14265,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2957
+      }
+    },
+    "content_chars": 2228
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

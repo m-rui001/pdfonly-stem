@@ -1,0 +1,81 @@
+{
+  "sha1": "d4637801b38f7f1caa964235af9fc94715a271be",
+  "title": "Hydrogenation of CO 2 to Methanol: Importance of Metal–Oxide and Metal–Carbide Interfaces in the Activation of CO 2",
+  "doi": "https://doi.org/10.1021/acscatal.5b01755",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d4637801b38f7f1caa964235af9fc94715a271be/index.html",
+  "source_chars": 55807,
+  "markdown_chars": 4310,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "6.3 x 10 ^ molecules per Cu site per second",
+      "type": "疑似数字缺失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "指数部分缺失，原文为“10 ^”后无数字，无法判断数量级。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "9.3 x icr2 molecules per Cu site per second",
+      "type": "文本乱码/疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "“icr2”疑似为“10^-2”的误识别，但无直接证据，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "16.2 kcalZmol (0.7 eV)",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“kcalZmol”应为“kcal/mol”的乱码，保留原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Aus/CeOx/TiOzlT 10)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“TiOzlT 10)”疑似“TiO2(110)”的跨页拼接或OCR错误，前后文有类似“Ti02(110)”写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "cooper and gold in contact with TiC(001)",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“cooper”应为“copper”，但原文如此，照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要中的活性提升倍数（2-3个数量级）、Cu(111)与Cu/ZnO(0001)的TOF对比及活化能、CeOx/Cu(111)的TOF=1.3和活化能12 kcal/mol、Cu/CeOx/TiO2(110)的TOF=8.1和提升倍数、TiC(001)上Cu/Au的活性与电子转移数据。公式1-3已按原文保留。不确定之处：第5页两处TOF数值因指数缺失/乱码无法确认精确值；部分化学式中的下标和乱码（如“kcalZmol”、“TiOzlT”）已照录原文。整体结论与原文摘要和正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5617,
+      "prompt_tokens": 17266,
+      "total_tokens": 22883,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2321
+      }
+    },
+    "content_chars": 5735
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

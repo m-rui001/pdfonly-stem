@@ -1,0 +1,64 @@
+{
+  "sha1": "f03487e302b53d699999944f02b1a18feeabfc91",
+  "title": "Modified spontaneous emission in nanophotonic structures",
+  "doi": "https://doi.org/10.1038/nphoton.2015.103",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f03487e302b53d699999944f02b1a18feeabfc91/index.html",
+  "source_chars": 61431,
+  "markdown_chars": 7098,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "and is proportaional to the radiative enhancement factor",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文为 'proportaional'，应为 'proportional'，属明显拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "by fabricating microcavities containing several QDs,37 and the effect of detuning between molecules or colloidal QDs and plasmons in MNPs was studied by coupling the emitters to MNPs with different shapes and sizes (see Figure 4a).51",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "第13页顶部句子从第12页页尾延续，但此处文本完整，未发现缺失；仅因页眉分隔导致顺序正常，无需特别标注。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "A true single-mode LED will thus need to employ a single QD as an emitter. This is challenging to achieve, but opens up new technological possibilities.",
+      "type": "正常叙述",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "无明显问题，上下文连贯。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和公式（式1-6）的数值与单位：Γ₀、Γ_g、F_P=3Qλ³/(4π²V₀)、Γ_tot=Γ_g+Γ₀′+Γ_nr^em+Γ_q、QY₀=Γ₀/(Γ₀+Γ_nr^em)、QY=F_rad/F_tot。关键数字如PC腔品质因子10⁴、MNP品质因子10、模体积0.1(λ₀/n)³与10⁻⁶(λ₀/n)³、Purcell因子约3（Drexhage）、约1.4（反蛋白石）、约8（二维PC腔）、高达1000（纳米间隙）、β=37%、92%、98%等均来自原文。公式中下标字符可能因抽取不完整（如Γ𝑜𝑜等），但已按语义正确解读。不确定处：式2中ℇ𝑜𝑜的符号（原文为ℇ𝑜𝑜，可能是电场幅度）；式3中λ³可能为(λ/n)³但原文如此；第15页‘proportaional’已标注。没有引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5198,
+      "prompt_tokens": 16143,
+      "total_tokens": 21341,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 75
+      }
+    },
+    "content_chars": 8550
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

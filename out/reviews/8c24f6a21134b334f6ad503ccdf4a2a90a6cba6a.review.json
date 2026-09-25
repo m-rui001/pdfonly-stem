@@ -1,0 +1,112 @@
+{
+  "sha1": "8c24f6a21134b334f6ad503ccdf4a2a90a6cba6a",
+  "title": "Spatial and temporal patterns of mass bleaching of corals in the Anthropocene",
+  "doi": "https://doi.org/10.1126/science.aan8048",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/8c24f6a21134b334f6ad503ccdf4a2a90a6cba6a/index.html",
+  "source_chars": 20026,
+  "markdown_chars": 2960,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Scott F. Heron $ ^{3,4,} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "作者单位上标末尾出现多余逗号，疑为OCR抽取噪声，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Mia Hoogenboom $ ^{1,2} $ Ryan J. Lowe $ ^{12} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "两位作者之间缺少逗号分隔，疑为OCR抽取时标点丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Supplemental Figure X",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "补充图编号显示为占位符“X”，疑为OCR未能识别实际编号，影响对具体补充图的引用。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "2015- 2016",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "年份范围中出现多余空格，疑为OCR断行或抽取噪声。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "so far(Fig. 2B",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "括号前缺少空格，疑为OCR抽取时格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Fitting Linear Mixed-Effects Models Using Ime4",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "软件包名“lme4”被抽取为“Ime4”（大写I代替小写l），属OCR字符混淆。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "$ 3 1^{\\circ} \\mathrm{N} $ and $ 3 1^{\\circ} \\mathrm{S} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "纬度数值“31”被拆分为“3 1”，疑为OCR公式抽取时数字间距异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "J. M, Lough",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "参考文献中作者名缩写后出现逗号而非句点，疑为OCR抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Spatial and temporal patterns of mass bleaching of corals in the Anthropocene",
+  "self_check": "已核对摘要、正文关键数值与结论方向：中位重现时间6年、严重事件300次/中度312次、2015—2016影响75%地点、1997—1998影响74%、仅6个地点逃过严重白化、严重事件中位数3次、88%再次严重白化、31%经历四次以上、年风险3.9%和4.3%、重现时间从27年缩短至5.9年、33%重现时间为1—3年、西大西洋1998年前平均4.1次/地点、西大西洋平均10次/地点、广泛白化次数（西大西洋7次、澳大拉西亚和印度洋各3次、太平洋2次）、恢复时间10—15年、增温1.5°C或2°C等，均与原文一致。公式与符号按提取文本保留。仍不确定处：补充图编号“Supplemental Figure X”实际编号无法从文本确认；部分作者单位上标标点疑有OCR噪声，但不影响论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2742,
+      "prompt_tokens": 6169,
+      "total_tokens": 8911,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 5222,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

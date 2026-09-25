@@ -1,0 +1,75 @@
+{
+  "sha1": "07c506aa8dc0562f798013a3378c706406ddda16",
+  "title": "ERFNet: Efficient Residual Factorized ConvNet for Real-Time Semantic Segmentation",
+  "doi": "https://doi.org/10.1109/tits.2017.2750080",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/07c506aa8dc0562f798013a3378c706406ddda16/index.html",
+  "source_chars": 57866,
+  "markdown_chars": 10104,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "suffers from the degradation problem [6][7][21] We propose to redesign",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第3页末尾与第4页开头重复了“suffers from the degradation problem [6][7][21]”，且第4页开头缺少句号，属于跨页重复/标点丢失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "TABLE I\n\nCOMPARISON OF WEIGHT SIZES BETWEEN ORIGINAL RESIDUAL BLOCKS AND OUR PROPOSED 1D DESIGN (#FM = NUMBER OF FEATURE MAPS RECEIVED AT MODULE INPUT (EXT) AND COMPUTED INTERNALLY (INT)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "表I标题括号未闭合，且表头“Residual block #ext-fm(#int-fm) #Weights”与数据行之间的列对齐关系在OCR中不清晰，可能影响对表结构的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "TABLE VII\n\nINFERENCE TIMES OF FASTEST ARCHITECTURES ON TEGRA TX1 AND TITAN X AT DIFFERENT RESOLUTIONS\n\n Model NVIDIA TEGRA TX1(Jetson) NVIDIA TITAN X(Maxwell) \n\n ms480x320 ms640x360 ms1280x720 ms640x360 ms1280x720 ms640x360 ms1280x720 ms640x360 ms1280x720 ms640x360 ms1280x720",
+      "type": "table_structure_damage",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "表VII的列标题重复且混乱（ms480x320、ms640x360、ms1280x720等多次出现），无法确定各列与Tegra TX1/Titan X及分辨率的对应关系，严重影响对该表数值的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "ERFNet 93 10.8 141 7.1 535 1.9 12 83.3 41 24.4 88 11.4",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表VII中ERFNet行的数值与列标题的对应关系因表头混乱而无法确定，且数值排列可能因OCR丢失了部分分隔或单位，影响对推理时间的准确解读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentation",
+  "self_check": "已核对：摘要中83 FPS（Titan X）和7 FPS（Jetson TX1）与第8页计算资源部分一致；Cityscapes测试集69.7% Class IoU和87.3% Category IoU与表V及正文一致；24ms（41 FPS）在1024×512分辨率与表VII及正文一致；IoU公式、残差层公式、1D分解公式均按OCR原文保留；表III、表IV、表V、表VI的关键数值已按正文描述保留。仍不确定：表VII的列对应关系因OCR表头混乱无法完全复原，已在extraction_issues中标注；表I的列对齐关系不清晰，但关键结论（non-bt-1D参数49K vs 非瓶颈73K vs 瓶颈69K）在正文中有明确文字描述，已保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6574,
+      "prompt_tokens": 15559,
+      "total_tokens": 22133,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12378,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

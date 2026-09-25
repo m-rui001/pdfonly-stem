@@ -1,0 +1,64 @@
+{
+  "sha1": "aa3d55f1cfa342cb05772512cf695752069cdd1a",
+  "title": "Soft Somatosensitive Actuators via Embedded 3D Printing",
+  "doi": "https://doi.org/10.1002/adma.201706383",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/aa3d55f1cfa342cb05772512cf695752069cdd1a/index.html",
+  "source_chars": 42430,
+  "markdown_chars": 3693,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "since\n\nthe hygroscopic sensor ink uptakes water",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第4页末段以“since”结尾，第5页开头为“the hygroscopic sensor ink uptakes water”，语义连贯，但跨页处可能存在换行或分页中断，无实质缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Shore-A Harness of 40",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文写“Harness”，应为“Hardness”的拼写错误或提取误读，但为忠实于提取文本，未作改正。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "σ = ρ −1 = α ⋅ exp −   (T − T0 ) ",
+      "type": "公式符号乱码/缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "提取文本中公式的方括号和指数位置显示为乱码字符（如、、），无法完整复原原公式排版，但变量σ、ρ、α、β、T、T0仍可辨认，公式(2)中亦存在类似乱码。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：τ_y≈150 Pa（6 wt% fumed silica）、R₀=1186±134 kΩ（n=21）、阻塞力0.38±0.01 N @152 kPa、湿度稳定时间4 d、动态测试压力范围0–152 kPa（14 kPa增量）、夹爪演示中55/83/97/124/152/165 kPa各压力值、RT球ΔR_contact≈9 kΩ、光滑球40 kΩ、尖刺球300–500 kΩ、深触传感器ΔR_deep分别约8/10/12 kΩ（P1/P2/P3）。公式R=ρL/A和VFT方程已按提取文本录入，但公式中乱码字符未能复原，已在extraction_issues中标出。温度实验热球≈60 °C、冷球≈0 °C来自图3e描述，文中明确。六个月稳定性仅有文字描述，无具体数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3713,
+      "prompt_tokens": 11985,
+      "total_tokens": 15698,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 903
+      }
+    },
+    "content_chars": 4909
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

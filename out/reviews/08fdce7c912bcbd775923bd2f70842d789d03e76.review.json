@@ -1,0 +1,64 @@
+{
+  "sha1": "08fdce7c912bcbd775923bd2f70842d789d03e76",
+  "title": "Atomically Dispersed Molybdenum Catalysts for Efficient Ambient Nitrogen Fixation",
+  "doi": "https://doi.org/10.1002/anie.201811728",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/08fdce7c912bcbd775923bd2f70842d789d03e76/index.html",
+  "source_chars": 29365,
+  "markdown_chars": 1971,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The electrocatalytic",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页面3末尾以“The electrocatalytic”截断，页面4开头直接是“This theoretical work”，缺少应衔接的“N2 reduction reaction”部分，可能因分页导致内容缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "dervied",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文为“characteristic peaks dervied from Mo clusters”，应为“derived”，属拼写/OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "spetra",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文为“XPS spetra”，在化学语境中应为“spectra”，属明显拼写/OCR错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：NH3产率34.0±3.6 μgNH3 h–1 mgcat.–1、FE 14.6±1.6%在摘要与正文一致；XANES拟合Mo6+占比82.5%、XPS中74% Mo6+与26% Mo4%的差异为原文所载，未做统一；酸性介质中FE 6.8±0.3%、产率31.5±1.2 μgNH3 h–1 mgcat.–1等数值与正文一致。跨页缺失的“N2 reduction reaction”未补写，仍存疑。其他数值如BET、Mo负载量、对照实验数据均依据原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5340,
+      "prompt_tokens": 9323,
+      "total_tokens": 14663,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3661
+      }
+    },
+    "content_chars": 2992
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

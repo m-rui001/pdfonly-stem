@@ -1,0 +1,64 @@
+{
+  "sha1": "082151d49e3e690b5efdfd69f68d206197e5b7c5",
+  "title": "The EAGLE simulation of galaxy formation: public release of halo and galaxy catalogues",
+  "doi": "",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/082151d49e3e690b5efdfd69f68d206197e5b7c5/index.html",
+  "source_chars": 93380,
+  "markdown_chars": 3350,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "2×3763",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "粒子数应为2×376^3（立方），但提取文本中上标丢失，写作3763。结合上下文其他模拟的粒子数（如2×7523、2×15043）可推断为立方。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Note also that in the Millnenium database",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Millnenium应为Millennium，原文或提取过程可能拼写有误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "mg mdm [M ] [M ]",
+      "type": "表头单位提取不完整",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表1中mg和mdm的单位显示为重复的[M ]，缺少具体的质量单位符号（如M_sun），可能是原始表格中的下标或单位丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：宇宙学参数、表1中的粒子数、质量、软化长度及子网格参数与原文一致；注意事项中的20%质量密度差异、0.3-0.5 dex SFR差异等与原文吻合。公式部分仅保留了伪熵和动能定义，与附录D一致。不确定处：粒子数上标、表1单位、拼写错误已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11519,
+      "prompt_tokens": 25269,
+      "total_tokens": 36788,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9114
+      }
+    },
+    "content_chars": 4255
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

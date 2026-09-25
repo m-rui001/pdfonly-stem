@@ -1,0 +1,73 @@
+{
+  "sha1": "1e04080f27ef041669e8fde9ff5243e2c688bc77",
+  "title": "Magnetic and Electric Hotspots with Silicon Nanodimers",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b00128",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1e04080f27ef041669e8fde9ff5243e2c688bc77/index.html",
+  "source_chars": 32499,
+  "markdown_chars": 2221,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "For X-polarized light, the electric",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第7页末尾句子在'For X-polarized light, the electric'处中断，第8页开头为'field in the gap is stronger...'，中间插入页眉和页码，需确认无缺失词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Hydrogen silesquioxane",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学名称常见拼写为'silsesquioxane'，提取文本写为'silesquioxane'，可能为转录或拼写错误，但原文如此，保留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "The work at IMTO University",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "全文其他处均为'ITMO University'，此处'IMTO'疑为拼写或OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "Inductively couple plasma chemical vapor deposition",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "标准术语应为'Inductively coupled plasma'，提取缺失'd'，可能为原文拼写或OCR错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：圆柱直径140 nm、高150 nm，间隙30/60/120 nm；X偏振单峰600 nm，Y偏振双峰560/650 nm；电场增强X偏振间隙>6、Y偏振~4（原文第7页，但第8页表述可能需结合上下文）；磁场增强Y偏振>6、X偏振~3；5 nm间隙磁场可达10；实验最强增强3.5（X偏振30 nm），最弱2.0（X偏振120 nm）。多极分解结论（环形偶极与电偶极相消干涉）与原文一致。公式无提取。不确定处：第8页电场增强数值在原文中表述为'over 6'和'~4x'，但所在段落顺序可能因跨页有微小错位，已按原样保留。另外注意原文中'Figure 1'、'Figure 2'等编号保留，但未提取图，仅依据文字描述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2972,
+      "prompt_tokens": 10234,
+      "total_tokens": 13206,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 962
+      }
+    },
+    "content_chars": 3619
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

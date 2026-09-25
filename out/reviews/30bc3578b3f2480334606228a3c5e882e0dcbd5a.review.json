@@ -1,0 +1,73 @@
+{
+  "sha1": "30bc3578b3f2480334606228a3c5e882e0dcbd5a",
+  "title": "Machine learning for digital soil mapping: Applications, challenges and suggested solutions",
+  "doi": "https://doi.org/10.1016/j.earscirev.2020.103359",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/30bc3578b3f2480334606228a3c5e882e0dcbd5a/index.html",
+  "source_chars": 140476,
+  "markdown_chars": 7017,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 22,
+      "quote": "A theoretical framework for multivariate RF is described by Segal & Xiao (2011) and was further implemented in the R language by Rahman et al. (2017). For support vector machines, a multivariate extension is described in Xu et al. (2013).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“For support vector machines”在正文中紧接“For support vector machines, a multivariate extension is described in Xu et al. (2013)”，但通常应为“For support vector machines, a multivariate extension...”结构不变，仅提示可能存在断句/标点缺失，但语义可读，标注为低风险疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "sampling configurations are optimized with active learning for mapping with support vector machines. In the first study, the selected sampling units are the most beneficial for the algorithm, avoiding mis-classification between temperature below or above 20Cs (categorical mapping)",
+      "type": "疑似原文表述不清/疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文为“20Cs”，疑似为“20°C”的排版错误（C 与 °C 混淆），但无法确认，按原样保留，标注为疑似问题而非静默修正。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Wadoux et al. (2019a) in a study comparing five sampling designs (viz. simple random sampling, cLHS, spatial coverage sampling (SCS), FSCS and a design optimized in terms of mean square error) for soil property mapping with random forest.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第 21 页起始段落在上下文中接续第 20 页结尾的句式（“Experimental results are provided by”），第 21 页以“Wadoux et al. (2019a)...”开头，句子在被截断后又接续，但拼接逻辑尚可辨识，标注为低风险拼接疑点。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "Machine learning for digital soil mapping: applications, challenges and suggested solutions Alexandre M.J-C. Wadouxa,∗, Budiman Minasnya , Alex B. McBratneya a",
+      "type": "疑似元数据提取错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第 13 页起始处重复了论文标题与作者信息（来自第 2 页元数据），属于页眉或重复文本被截入正文提取流的现象，应在笔记中去除重复，标注为重复元数据问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值与结论：（1）摘要中“WoSIS 超过 600 万条记录”与正文第 6 行一致；（2）平均样本量 1,000 单元、平均采样密度 0.24 个/km²、90% 研究面积小于 650,000 km² 等统计与第 5-7 页正文一致；（3）30% 交叉验证/30% 数据分割/30% 不确定性量化的比例与第 12 页正文一致；（4）变异分区公式 y = f(XW) + ε 及分量 [a+b+c+d]=1 与图 1 说明一致；（5）三要素（合理性、可解释性、可说明性）与结论部分一致。公式与化学式均按原文保留，未擅自展开或替换任何缩写（如 EC、ethylene 等未出现）。不确定处：第 9 行“20Cs”是否为排版错误（已列为 extraction_issue）；“试验比较五种采样设计”的结果细节（FSCS 与最优设计最接近）与原文第 19-20 页陈述一致，未做进一步推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5674,
+      "prompt_tokens": 36943,
+      "total_tokens": 42617,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 716
+      }
+    },
+    "content_chars": 9535
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

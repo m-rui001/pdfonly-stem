@@ -1,0 +1,63 @@
+{
+  "sha1": "d57c2b46f08cdbd5bcc1e52544f8a1abb0d6cfb2",
+  "title": "Worldwide evidence of a unimodal relationship between productivity and plant species richness",
+  "doi": "https://doi.org/10.1126/science.aab3916",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d57c2b46f08cdbd5bcc1e52544f8a1abb0d6cfb2/index.html",
+  "source_chars": 33623,
+  "markdown_chars": 1704,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "the same maximum biomass as observed by Adler et al. (1,535 gm-2)",
+      "type": "疑似不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "同一篇论文关于Adler数据最大生物量在正文中先后出现1,535和1,534两个值，疑似抽取或原文不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "a maximum of 1,534 g m-2",
+      "type": "疑似不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "与第6页的1,535 gm-2不符，两处数值矛盾。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "All 29 sites included in the current analysis",
+      "type": "疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "摘要与正文均提到30个地点，此处写29个，可能为笔误或抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：N=9,016个样方，生物量范围2–5711 g/m²，>1000 g/m²样方981个（约11%），28个站点中17个下凹等。确认公式未涉及。不确定之处：Adler最大生物量在文中出现1,535和1,534两个数值，本笔记按原文分别保留，未擅自统一；站点总数30与29的差异亦按原文保留，并标记疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6385,
+      "prompt_tokens": 9648,
+      "total_tokens": 16033,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4995
+      }
+    },
+    "content_chars": 2630
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

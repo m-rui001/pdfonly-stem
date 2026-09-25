@@ -1,0 +1,45 @@
+{
+  "sha1": "53aeb3f413c819b56b5bc90577b3fdbcfabbaa74",
+  "title": "Bimolecularly passivated interface enables efficient and stable inverted perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.adk1633",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/53aeb3f413c819b56b5bc90577b3fdbcfabbaa74/index.html",
+  "source_chars": 34011,
+  "markdown_chars": 2519,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "The energy level difference between the conduction band maximum and Fermi level for the perovskite films treated with different ligands.",
+      "type": "inconsistent_terminology",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "正文使用 conduction band minimum (ECBM)，而图注写为 conduction band maximum，疑为笔误，但无法从文本确认原图是否正确。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中关键数值：载流子寿命提升五倍、PLQY损失降低三倍、认证QSS 25.1%、串联28.1%、65°C/2000h保留96%等。DFT能量数值（-0.22、-0.13、-0.38 eV）、距离（2.72/3.33 Å）、形成能（-0.79至-0.71 eV）、XPS位移0.23 eV、ToF-SIMS比率、UPS能级差（0.10/0.20/0.17 eV）、光伏参数（26.4%、1.17V、85.8%等）均与原文一致。不确定之处：图3C中conduction band maximum与正文minimum不一致，已列出；FA空位形成能数值方向（increased）按原文保留，未作推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7944,
+      "prompt_tokens": 9451,
+      "total_tokens": 17395,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5945
+      }
+    },
+    "content_chars": 3293
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

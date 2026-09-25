@@ -1,0 +1,64 @@
+{
+  "sha1": "b2f2e8e07943d7e9bdae200c4bfaab8330c5537e",
+  "title": "Six modes of co-production for sustainability",
+  "doi": "https://doi.org/10.1038/s41893-021-00755-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b2f2e8e07943d7e9bdae200c4bfaab8330c5537e/index.html",
+  "source_chars": 104534,
+  "markdown_chars": 2025,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Co-productive agility and four collaborative pathways to sustainability transformations",
+      "type": "元数据不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该页标题与用户提供的论文元数据标题'Six modes of co-production for sustainability'不一致，可能为手稿与出版版本的差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Man crip ( i ho",
+      "type": "疑似文本损坏",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该片段疑似'Manuscript'等词的乱码，但无法确定正确版本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "due to less focus on action and little engagement (and thus avoided tensions)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "此句在第8页末尾中断，第9页开头以'with external actors positioned against desired changes.'接续，中间插入页眉和章节标题，实际应为连续句子。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：32个案例、42位合著者、平均每案例6份文档、四个路径、六个过程、两大张力。摘要与正文数据一致。公式无。结论方向与原文一致。不确定之处：标题不一致问题已在extraction_issues中标记；跨页句子已保留原样并标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7043,
+      "prompt_tokens": 24241,
+      "total_tokens": 31284,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5530
+      }
+    },
+    "content_chars": 3074
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

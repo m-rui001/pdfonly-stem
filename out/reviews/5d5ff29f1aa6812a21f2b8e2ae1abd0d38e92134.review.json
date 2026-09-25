@@ -1,0 +1,93 @@
+{
+  "sha1": "5d5ff29f1aa6812a21f2b8e2ae1abd0d38e92134",
+  "title": "Molecular tuning of CO2-to-ethylene conversion",
+  "doi": "https://doi.org/10.1038/s41586-019-1782-2",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5d5ff29f1aa6812a21f2b8e2ae1abd0d38e92134/index.html",
+  "source_chars": 28524,
+  "markdown_chars": 3802,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "the faradaic efficiency (FE) for ethylene is still low in neutral media (60% at a partial current density of 7 mA $ \\mathrm{c m}^{-2} $ in the best catalyst reported so far $ ^{9} $ )",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "单位 mA cm⁻² 被 OCR 拆成 'mA $ \\mathrm{c m}^{-2} $'，不影响数值理解，但属于公式/单位符号抽取格式异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The enhancement of CO binding energy decreases the desorption of $ ^{} $ CO and increases the likelihood of further reduction of $ ^{} $ CO to ethylene",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文应为 *CO，但 OCR 中上标星号丢失，仅剩空的上标标记 '$ ^{} $'，导致中间体符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Since the nitrogen atom of the N-aryl-substituted pyridine ring influences the binding of $ ^{} \\mathrm{C O} $ we posited",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同上，*CO 的星号丢失，仅剩空上标标记，影响中间体符号识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the ratio of $ \\mathrm{C O}{\\mathrm{a t o p}} $ to $ \\mathrm{C O}{\\mathrm{b r i d g e}} $ on Cu-12",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "CO_atop 和 CO_bridge 的下标格式在 OCR 中丢失，'atop' 和 'bridge' 被错误地作为独立文本块，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The error bars for the ratio of $ \\mathrm{C O}{\\mathrm{a t o p}} $ to $ \\mathrm{C O}{\\mathrm{b r i d g e}} $ in a and b",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "同页 7 问题，CO_atop 和 CO_bridge 下标格式丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "The anode and cathode were seperated by an anion exchange membrane",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'seperated' 应为 'separated'，拼写错误，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Molecular tuning of CO2-to-ethylene conversion",
+  "self_check": "已核对关键数值：乙烯 FE 72%、分电流密度 230 mA cm⁻²、全电池 EE 20%、MEA 运行 190 小时、稳定电流约 600 mA、乙烯选择性 64%、CO 二聚化能垒 0.72 eV（顶位:桥位）和 0.82 eV（桥位:桥位）、总反应 E° = 1.15 V。公式已按原文保留。仍不确定之处：OCR 中 *CO 的星号在部分位置丢失，已按原文可见文本照录并在 extraction_issues 中标出；单位 mA cm⁻² 的 OCR 格式异常已标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3159,
+      "prompt_tokens": 8431,
+      "total_tokens": 11590,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6227,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

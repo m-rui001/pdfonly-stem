@@ -1,0 +1,67 @@
+{
+  "sha1": "f285ba1c1ffeaae4ca4f9722c6e34f2e649818f2",
+  "title": "Negating interfacial impedance in garnet-based solid-state Li metal batteries",
+  "doi": "https://doi.org/10.1038/nmat4821",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f285ba1c1ffeaae4ca4f9722c6e34f2e649818f2/index.html",
+  "source_chars": 57396,
+  "markdown_chars": 11985,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "leads to a ~300 fold decrease in interfacial to only 5 $ \\Omega\\cdot\\mathrm{c m}^{2}. $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该句缺少被降低的对象（应为 interfacial impedance/resistance），且数值 5 Ω·cm² 与后文摘要及结论中的 1 Ω·cm² 不一致，疑似 OCR 抽取或原文表述错误，影响对关键数值的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "The total impedance for the symmetric Li/garnet/Li cells with and without ALD coating are 176 and $ 3528 \\Omega\\cdot\\mathrm{c m}^{2}, $ respectively.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "此处总阻抗 176 Ω·cm² 与表 1 中总 EIS ASR 176 Ω·cm² 一致，但正文前句已给出晶界/界面 ASR 为 150 和 3500 Ω·cm²，数值体系存在轻微不一致，可能为原文表述或 OCR 抽取问题，不影响主要结论。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 23,
+      "quote": "the interfacial ASR from $ 1 6 9 6 \\, \\Omega\\cdot\\mathrm{c m}^{2} $ of the pristine Li/garnet to $ 1 \\, \\Omega\\cdot\\mathrm{c m}^{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "结论中原始 Li/石榴石界面 ASR 为 1696 Ω·cm²，而摘要和正文中为 1710 Ω·cm²，数值不一致，可能为 OCR 抽取错误或原文笔误，影响关键数值的精确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Negating Interfacial Impedance in Garnet-Based Solid-State Li-Metal Batteries",
+  "self_check": "已核对摘要、正文和结论中的关键数值：界面 ASR 从 1710 Ω·cm² 降至 1 Ω·cm²（摘要、正文、结论），EIS 界面 ASR 从 1710 降至 34 Ω·cm²，直流 ASR 为 110 Ω·cm²，界面直流 ASR 为 1 Ω·cm²，全电池首圈容量 103 mAh/g、库仑效率 83%、50 圈稳定在约 110 mAh/g。公式符号如 LixAl2O3+x/2、Li2Al4O7、Li7La2.75Ca0.25Zr1.75Nb0.25O12 等均按原文保留。仍不确定之处：正文中“~300 fold decrease ... to only 5 Ω·cm²”与摘要/结论的 1 Ω·cm² 不一致；结论中 1696 Ω·cm² 与摘要/正文的 1710 Ω·cm² 不一致，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8215,
+      "prompt_tokens": 16028,
+      "total_tokens": 24243,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13784,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

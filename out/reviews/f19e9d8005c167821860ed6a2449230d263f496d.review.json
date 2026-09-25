@@ -1,0 +1,64 @@
+{
+  "sha1": "f19e9d8005c167821860ed6a2449230d263f496d",
+  "title": "Demonstration of sub-3 ps temporal resolution with a superconducting nanowire single-photon detector",
+  "doi": "https://doi.org/10.1038/s41566-020-0589-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f19e9d8005c167821860ed6a2449230d263f496d/index.html",
+  "source_chars": 59006,
+  "markdown_chars": 2571,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "𝑃𝐶𝑅(𝑡, 𝐼( , 𝑇* , 𝐸 ) = Θ0𝑡 − 𝜏345 (𝐼( , 𝑇* , 𝐸 )6",
+      "type": "疑似公式提取错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "数学公式中的希腊字母、下标和特殊符号被错误识别为普通字符，导致公式无法辨认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "𝐻 (𝑡 ) = − B √DEF exp J− (>(5,KL ,MN )O>P )Q 8>(5,KL ,MN ) DF Q R 85",
+      "type": "疑似公式提取错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该公式中多个数学符号（如分数、指数、偏导数等）被错误提取为乱码，无法理解其真实含义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "lim 𝜏345 (𝐼( , 𝑇* , 𝐸 ) = 𝜏@ . >→@",
+      "type": "疑似公式提取错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "极限表达式的符号和下标损坏，无法辨认具体变量和极限过程。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和图表描述中的关键数值：可见光抖动2.6±0.2 ps、1550 nm抖动4.3±0.2 ps（最佳值），80 nm线在1550 nm和775 nm的IRF分别为4.6±0.2 ps和3.8±0.3 ps，相对延迟4.2±0.4 ps，退位电流比例85%，WSi相对延迟因子2-3.5，激光测距1 mm精度等。这些数值在正文和讨论中一致。公式部分因提取文本损坏，已照录原文乱码并标注为疑似错误，未进行任何推测性修复。模拟参数和材料参数（如Tc=8.65 K、Rsq=340 Ω/□等）均来自提取文本，未发现矛盾。由于缺少图表原始数据，仅依赖正文文字描述，未对图表未提及的内容做推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8480,
+      "prompt_tokens": 14957,
+      "total_tokens": 23437,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6368
+      }
+    },
+    "content_chars": 3677
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

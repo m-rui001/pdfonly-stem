@@ -1,0 +1,65 @@
+{
+  "sha1": "d35192329a9e8078ddacc6b655f978cfe06454e0",
+  "title": "Polymerization-induced self-assembly of block copolymer nanoparticles via RAFT non-aqueous dispersion polymerization",
+  "doi": "https://doi.org/10.1016/j.progpolymsci.2015.10.002",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d35192329a9e8078ddacc6b655f978cfe06454e0/index.html",
+  "source_chars": 71965,
+  "markdown_chars": 4330,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "PDMA 20-PPPPMA47",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "上下文均写为PPMA（3-苯基丙基甲基丙烯酸酯），此处多了一个P，应为PDMA20-PPPMA47。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 20,
+      "quote": "PDMA66-PBzMA80 worms",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "前文讨论的是PDMS-PETTC体系，图14标注也均为PDMS，此处PDMA可能是PDMS的笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "G37H60-B30",
+      "type": "缩写未展开",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该符号所指代的嵌段共聚物未在文本中给出完整化学名称或结构，仅作为已知表述使用。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：苯乙烯转化率30-70%（80°C/48h）、BzMA转化率>95%（70°C/24h）、RAFT链端存活率≥73% vs 55-60%（TFEMA体系）、PLMA16-PBzMA37蠕虫凝胶脱凝胶起始温度约47°C、160°C完全球形、5% w/w以下不可逆转变；一锅法PLMA50-PBzMA100在矿物油中合成，Mw/Mn<1.20，转化率>95%，9h完成。公式P=V/(a0 lc)已保留，并明确各变量定义。不确定之处：图7中PHPMA63-PBzMA200的命名与正文一致；图14c中PDMS66-PBzMA的DP数值（25、80、250）与图注一致，但第20页文本将蠕虫误写为PDMA66，已在issues中标记。未引入外部知识，所有内容均基于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4439,
+      "prompt_tokens": 18024,
+      "total_tokens": 22463,
+      "prompt_tokens_details": {
+        "cached_tokens": 16384
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1126
+      }
+    },
+    "content_chars": 5392,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

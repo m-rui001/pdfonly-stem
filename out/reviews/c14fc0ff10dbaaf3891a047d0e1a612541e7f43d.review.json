@@ -1,0 +1,74 @@
+{
+  "sha1": "c14fc0ff10dbaaf3891a047d0e1a612541e7f43d",
+  "title": "Understanding, Monitoring, and Controlling Biofilm Growth in Drinking Water Distribution Systems",
+  "doi": "https://doi.org/10.1021/acs.est.6b00835",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c14fc0ff10dbaaf3891a047d0e1a612541e7f43d/index.html",
+  "source_chars": 164226,
+  "markdown_chars": 6154,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Psl exopolysaccharides formed by Pseudomonas aeruginosa",
+      "type": "疑似断行/拼接问题",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "提取文本中该短语前后断裂，原文可能为完整句子，但此处仅影响排版，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "and the subsequent\ninitial\nattachment/adhesion\nof",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第13页末尾句子在“of”处中断，第14页以“microorganisms on the films.”续接，但页间插有页眉和空白，存在跨页断句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "Sun et al.90 reported a positive correlation between the percentage of aliphatic\ncarbon, indicated by H-to-C ratio of organic matters with their bioavailability",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表述“percentage of aliphatic carbon”后接“H-to-C ratio”可能原意为“H/C比”，但提取文本中“H-to-C”无误，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "denaturing\ngradient gel electrophoresis (DGGE)",
+      "type": "无问题",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "正常。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：摘要中温度对比（22°C vs 12°C，AOB和V. cholera相反）、生物膜体积占比（水占99%、微生物2-5%）、EPS占TOC 50-90%、磷添加浓度范围1-300 µg/L、氮碳比阈值（10和0.1）、pH范围（硝化菌7-8，Nitrobacter 7.2-7.6, Nitrosomonas 7.9-8.2）、氯浓度0.8-1.5 mg/L、ATP检测限0.05 ng/L、ALVIM检测1%表面覆盖、光学传感器饱和值10^10 cells/cm²等。公式无。结论方向与摘要一致。不确定处：提取文本中“V. cholera”未写为“V. cholerae”，按原文照录；个别字符（如温度符号）显示异常，但数值可辨。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4851,
+      "prompt_tokens": 44517,
+      "total_tokens": 49368,
+      "prompt_tokens_details": {
+        "cached_tokens": 43008
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 424
+      }
+    },
+    "content_chars": 7680,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

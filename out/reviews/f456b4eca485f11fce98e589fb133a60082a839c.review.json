@@ -1,0 +1,82 @@
+{
+  "sha1": "f456b4eca485f11fce98e589fb133a60082a839c",
+  "title": "Toward a Unified Model of Information Security Policy Compliance1",
+  "doi": "https://doi.org/10.25300/misq/2018/13853",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f456b4eca485f11fce98e589fb133a60082a839c/index.html",
+  "source_chars": 163086,
+  "markdown_chars": 3700,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 23,
+      "quote": "Role values were proposed as a new contract in the previoius section.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为'construct'，文本为'contract'，上下文明确为构念。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Rogers (1975) proposed the protection motivation theor (PMT)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'theory'，拼写不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "Mattila is a mid-level manager in a medium-sized business where he has worked for several years.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句位于附录A开头，但前文页29为空白页，页30突然出现完整附录，可能存在页间内容缺失，但上下文连续，暂存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "This paper (1) reviews 11 theories that have served the majority of previous information security behavior models",
+      "type": "抽取文本正常",
+      "severity": "low",
+      "confidence": 0.0,
+      "reason": "无问题，仅为示例。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "Neutralization—Condemnation of the condemners  0.700",
+      "type": "正常",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该行内容完整，无异常。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论中的关键数值：Study 1样本量274（回复率30.5%），Study 2样本量393（回复率24.86%）；表4中TRA的RMSEA=0.053, CFI=0.944, TLI=0.956；表7中PMT2的R²=0.60，TIB的R²=0.59；Study 2的模型拟合χ²796=1665.91, CFI=0.980, TLI=0.964, RMSEA=0.058, SRMR=0.086；角色价值观→意图β=0.773, p<0.001；恐惧→意图β=-0.144, p<0.001；习惯→意图β=-0.289, p<0.001；威胁→恐惧β=0.591；反应效能→威胁β=0.333；中性化→抗拒β=0.250；恐惧→抗拒β=0.493；意图R²=0.677。注意原文中Study 2的样本数在结论部分出现笔误（写为n=274，实际为393），已在笔记中按正文数据修正。所有公式与符号均按原文提取，未推测。不确定处：图4中的路径系数已核对，但图2、图3中的标签（如'Social Factors'）在提取文本中出现在图4中，而图5未标系数，均按原文描述处理。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2897,
+      "prompt_tokens": 41137,
+      "total_tokens": 44034,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 26
+      }
+    },
+    "content_chars": 5524
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

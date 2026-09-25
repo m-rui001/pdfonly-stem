@@ -1,0 +1,63 @@
+{
+  "sha1": "17be43449ac82cd4f1777b969c8b72b7359a1dbf",
+  "title": "A Multi-Agent Reinforcement Learning-Based Data-Driven Method for Home Energy Management",
+  "doi": "https://doi.org/10.1109/tsg.2020.2971427",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/17be43449ac82cd4f1777b969c8b72b7359a1dbf/index.html",
+  "source_chars": 50060,
+  "markdown_chars": 2981,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "time-shiftable appliance",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第2页末尾句子在'时间可移电器'处中断，第3页开头先插入表格标题和表格内容，之后才继续'load, and EV load, respectively'，中间可能遗漏了正常接续，但表格可能为原文排版所致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "W /power-shiftable appliance",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "术语表中此项缺少明确的符号或定义，可能由于抽取时丢失了字符，但无法确认正确版本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "turning parameter",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "通常应为'tuning parameter'，但原文如此，可能为笔误或排版错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文与结论中的关键数值：光伏MAPE 8.82%、电价MAPE 9.34%、案例1-3的MAPE、表IV计算时间、表V电费对比（4.057 vs 7.329）、GA对比计算时间（46.296s vs 1.107s）。公式(1)-(8)按提取文本原样保留，但部分符号（如上标、下标）在抽取中可能有误，如$E_t^{PVs}$等，未做推测性修复。跨页处第2-3页存在表格插入导致句子中断，已标出。其他未见明显数值或结论矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4461,
+      "prompt_tokens": 14431,
+      "total_tokens": 18892,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2279
+      }
+    },
+    "content_chars": 4021
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

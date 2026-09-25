@@ -1,0 +1,220 @@
+{
+  "sha1": "6871c1def0b877707ef16bb77634fdf5decddd09",
+  "title": "Atmospheric transport and deposition of microplastics in a remote mountain catchment",
+  "doi": "https://doi.org/10.1038/s41561-019-0335-5",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/6871c1def0b877707ef16bb77634fdf5decddd09/index.html",
+  "source_chars": 57606,
+  "markdown_chars": 12633,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Steve Allen $ ^{+} $ $ ^{a,b} $ , Deonie Allen $ ^{+*} $ $ ^{a} $ , Vernon R. Phoenix $ ^{b} $ , Gaël Le Roux $ ^{a} $ , Pilar Durantez $ ^{a} $ , Anaëlle Simonneau $ ^{c} $ , Stéphane Binet $ ^{a,c} $ , Didier Galop $ ^{d} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者名中的上标标记（+、a、b 等）被 OCR 提取为 LaTeX 上标格式，影响作者单位对应关系的可读性，但不影响正文论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "identify fibres up to $ \\sim 7 5 0 \\ \\mu m $ long and fragments $ \\leq 3 0 0 \\mu m $ as microplastics",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数学符号（~、≤、μ）在 OCR 中保留但被 LaTeX 标记包裹，若直接阅读可能影响数值理解；数值本身（750 μm、300 μm）可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "average daily particle deposition of $ 3 6 5 / \\mathrm{m}^{2} / \\mathrm{d a y} $ ( $ \\pm 6 9 $ standard deviation)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单位 m²/day 和 ± 符号被 LaTeX 标记包裹，数值 365 和 69 可辨识，但格式影响阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "PE has a low density compared to other plastics, $ 0.92-0.97\\mathrm{g/cm}^{27} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "密度单位应为 g/cm³，OCR 提取为 g/cm²⁷，上标 3 被误识别为 27，影响数值单位准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "PS has a higher density than PE, $ 0.96-1.1\\mathrm{g/cm}^{3,27} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "密度单位 g/cm³ 后的上标 3 与参考文献编号 27 混淆，提取为 g/cm³,²⁷，影响单位与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "It is the least dense of all plastics $ ( 0. 9-0. 9 1 \\mathrm{~ g} / \\mathrm{c m}^{3} )^{2 7} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "密度单位 g/cm³ 后的上标 3 与参考文献编号 27 混淆，提取为 g/cm³)²⁷，影响单位与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Backtrajectory duration is defined as ~2hrs (0.1m/s settling velocity $ ^{36} $ for 600m a.g.l. Pyrenean planetary boundary layer depth $ (\\mathrm{P B L})^{3 7} $ ）",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "右括号被提取为全角中文括号“）”，与左括号不匹配，影响公式或定义的完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "555 $ X_{1,2,3}= $ the MP count for a sample area 1,2,3 etc. (sample area = 13mm $ ^{2} $ )",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "行首出现孤立数字“555”，疑似行号或 OCR 噪声，与公式定义无关，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "556 n = sample area number (6 sample areas were investigated for each sample period)",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "行首出现孤立数字“556”，疑似行号或 OCR 噪声，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "559 $ y=\\mathrm{s a m p l e} \\mathrm{a r e a} \\left(1 3 \\mathrm{m m}^{2} \\mathrm{o r} 0. 0 0 0 0 1 3 \\mathrm{m}^{2}\\right) $",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "行首出现孤立数字“559”，疑似行号或 OCR 噪声，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "560 $ Y= $ total filter area （346 $ mm^{2} $ or 0.0003 $ m^{2} $ ）",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "行首出现孤立数字“560”，疑似行号或 OCR 噪声，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "561 $ \\varepsilon= $ sampling error, the number of MP particulates found on the blank samples",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "行首出现孤立数字“561”，疑似行号或 OCR 噪声，影响阅读顺序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Figure Cations",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“Figure Cations”疑似为“Figure Captions”的 OCR 误识别，影响图注标题的可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "SpectraGryph $ ^{\\circ} $ spectral analysis software",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "SpectraGryph 后的上标符号“°”疑似为注册商标符号“®”的误识别，不影响核心信息。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "10ml hydrogen peroxide $ \\left( \\mathrm{H}{2} \\mathrm{O}{2} \\right) $ 30%w/w",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 H₂O₂ 的下标 2 在 OCR 中丢失，提取为 H2O2 且被 LaTeX 标记包裹，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "a further 5ml of $ \\mathrm{H}{2} \\mathrm{O}{2} $ 30%w/w was added",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 H₂O₂ 的下标 2 在 OCR 中丢失，提取为 H2O2 且被 LaTeX 标记包裹，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "zinc chloride (technipur $ \\mathrm{Z n C h l}_{2} $ ) at 1.6g/ml density",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 ZnCl₂ 的下标 2 在 OCR 中保留但被 LaTeX 标记包裹，且“ZnChl”疑似为“ZnCl”的误识别，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "back-trajectory duration = the duration MP is airborne (sec); calculated as maximum elevation (600m a.g.l) $ ^{37} $ / settling velocity $ (0.1\\mathrm{m / s})^{36} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中的除号和单位被 LaTeX 标记包裹，影响公式的可读性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 22,
+      "quote": "H_{2} O_{2} digestion",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 H₂O₂ 的下标 2 在 OCR 中保留但被 LaTeX 标记包裹，影响化学式准确性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "distance = \\frac { b a c k - t r a j e c t o r y \\ d u r a t i o n}{w i n d s p e e d}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式被 LaTeX 标记包裹，且分子分母中的变量名被空格分隔，影响公式的可读性和准确性。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Atmospheric transport and deposition of microplastics in a remote mountain catchment",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：365 MP/m²/day（±69）、249 碎片/73 薄膜/44 纤维 per m²、纤维长度 100–200 μm 和 200–300 μm、最长纤维 3000 μm、碎片 ≤50 μm、薄膜 50–200 μm、PS/PE/PP 组成、95 km 传输距离、巴黎 110（±96）和 53（±38）颗粒/m²/day、东莞 228（±43）颗粒/m²/day、≥200 μm 时 40（±20）颗粒/m²/day 且 70% 为纤维、纤维 ≥100 μm 时 36（±18）纤维/m²/day、≥200 μm 时 28（±13）纤维/m²/day、纤维计数范围 22–62 纤维/m²/day。公式部分保留了提取文本中的方程和变量定义，但部分化学式下标和单位上标存在 OCR 损坏（如 H₂O₂ 下标丢失、g/cm³ 上标误识别为 27），已在 extraction_issues 中标出。不确定之处：Figure 1–3 的具体内容未在提取文本中完整呈现，仅依据正文描述保留其结论；部分参考文献编号和作者名中的上标标记可能影响单位对应关系，但不影响核心论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9976,
+      "prompt_tokens": 15088,
+      "total_tokens": 25064,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19453,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "sha1": "d2991bc86b13870c821134d219f676630463c147",
+  "title": "A review of pumped hydro energy storage development in significant international electricity markets",
+  "doi": "https://doi.org/10.1016/j.rser.2016.04.019",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d2991bc86b13870c821134d219f676630463c147/index.html",
+  "source_chars": 78152,
+  "markdown_chars": 5377,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 21,
+      "quote": "report highlights the value of PHES and its ability to lower the overall energy system costs.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "引用Koritarov等人报告时未保留原文文献编号，且正文上下文可能被截断，但文本可读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Table 2: Installed PHES capacity by country and current (2014) capacity under construction. Percentage of total installed generation corresponding to PHES is also given.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格标题后未给出正文表格，直接跳至第7页表1/2的位置，文中表2在正文中被引用但表格内容（国家、装机、在建容量）呈现不完整，疑似跨页抽取断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "Table 3:Ownership of PHES on a per GW basis and number of plants",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表格标题中'per GW basis'语义不清晰，结合正文描述应为'per GW'或'总装机容量'，但无强文本内证据，仅作存疑标注。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：全球PHES装机约130 GW（摘要）与125 GW以上（正文第5页）的差异——保留原文两处数值，未做统一。4.9 GW/117 GW为全文核心统计，已核对。英国套利收益900万英镑、Coire Glas 8亿英镑、Dinorwig频率响应收入约1080万英镑/年，均与正文一致。中国弃风率11%（部分地区超25%）与水电装机280 GW已核对。瑞士2010年进出口66.6/66.1 TWh及出口价高36.6%已核对。表1技术参数、表2国别装机数据均按原文保留。公式方面：原文正文无定量公式，仅有算法引用（Barbour 2012/Connolly 2011），已如实标注来源与可下载自energystoragesense.com。不确定之处：表格数据部分（表1、2、4）在提取文本中可能不完整，已尽量从正文行文中恢复关键数值；图1、图2的曲线细节无法从提取文本获知，笔记中仅保留正文对各图的定性描述，未做任何推测。引用文献编号（如[9]、[47]）在正文中保留以维持论证脉络，未列参考文献表。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4018,
+      "prompt_tokens": 18655,
+      "total_tokens": 22673,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 338
+      }
+    },
+    "content_chars": 6888,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "sha1": "a2a909cd5939f801dee9ba332fd5411cf91ab65f",
+  "title": "Identification of durable and non-durable FeNx sites in Fe–N–C materials for proton exchange membrane fuel cells",
+  "doi": "https://doi.org/10.1038/s41929-020-00545-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a2a909cd5939f801dee9ba332fd5411cf91ab65f/index.html",
+  "source_chars": 62432,
+  "markdown_chars": 2305,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "main degradation mechanisms in acidic medium are i) demetallation,19-23 ii) surface carbon oxidation via Fenton reactions,24,25 iii) bulk carbon corrosion,21,26,27 iv) protonation of nitrogen groups followed by anion adsorption - a phenomenon particularly important for Fe-N-C catalysts comprising highly basic N-groups.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该句在页4末尾开始，页5继续，但提取文本中页4结尾为“anion adsorption - a phenomenon particularly important for Fe-N-C catalysts comprising highly basic N-groups.”，页5开头为“1”和后续内容，无明显的句子断裂，但可能因分页导致文本顺序有轻微中断，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Ex situ 57Fe Mössbauer spectroscopy at 5 K after PEMFC operation reveals that S2 is durable while S1 is not, with corresponding Fe cations forming ferric oxide nanoparticles.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "此句逻辑上“S2 is durable while S1 is not”与后文“with corresponding Fe cations forming ferric oxide nanoparticles”在语法上不完全匹配（应为S1的Fe阳离子形成氧化铁），可能是原文表述或提取遗漏，但不确定是否为原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Operando (extended) X-ray absorption near-edge and fine structure (XANES and EXAFS, respectively) was acquired at Fe K-edge in PEMFC (Cell 2,41 Figure S2a, Supporting Text 2).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "“Operando (extended) X-ray absorption near-edge and fine structure”应为“Operando X-ray absorption near-edge structure (XANES) and extended X-ray absorption fine structure (EXAFS)”，提取文本中括号位置和措辞混乱，但关键缩写可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Regarding doublet D3 (IS~1.15·mm s-1 and QS~2.5 mm·s-1)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“IS~1.15·mm s-1”中单位写法“·mm s-1”疑似为“mm·s-1”的排版错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "To further support this, we applied our recently reported DFT methods33 to calculate the QS-value of different high-spin OH-Fe(III)N4C12, OHFe(III)N4C10, Fe(II)N4C12 and Fe(II)N4C10 models",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“OHFe(III)N4C10”应为“OH-Fe(III)N4C10”，缺失连字符，但可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "A restricted ORRactivity decrease from 23 to 15 mA·cm-2 is observed at 0.8 V",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“ORRactivity”缺少空格，应为“ORR activity”，且“restricted”可能为“restricted”或“strong”等形容词，但原文如此。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "For example, we showed with in situ XAS that CoNx sites do not change oxidation state in acidic medium in the same region but catalyze ORR.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句位于页12中部，前后文连续，无明显断裂，但“CoNx sites”前文未提及，可能引用自其他工作，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Figure 1. Initial activity of Fe0.5-cathode and reversible spectroscopic changes of the iron centers with potential as observed operando or in situ in PEMFC. (a) PEMFC Tafel plots of Fe0.5 and Fe0.5-950(10);",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“Fe0.5-950(10)”在摘要和正文中均出现过，但图注中写成“Fe0.5-950(10)”，与正文一致，无错误。此处无问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Figure 4. EoT characterisation of Fe0.5-cathode after durability tests for different duration at 0.5 V in PEMFC. (a) Ex situ 57Fe Mössbauer spectrum at 5 K of the pristine Fe0.5cathode.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页16末尾图注结束于“Fe0.5cathode”，页17开头为“and absorption contrast.”，图注跨页，但正文顺序正常，无缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Figure 5. Evolution of the ORR activity and amount of FeNx sites in the Fe0.5-cathode with operating time at 0.5 V in PEMFC and structure-activity correlations. (a) Current density of the Fe0.5-cathode at 0.8 V vs. duration of operation at 0.5 V in H2/O2 PEMFC,",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“H2/O2 PEMFC”应为“H2/O2 PEMFC”，提取无误。无问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "Then the mixed precursor was pyrolyzed in flash mode in Ar at 1050 oC for 1 hour. Owing to a mass loss of 65–70 wt % during pyrolysis in Ar, caused by volatile products formed from ZIF-8 and Phen, the iron content in Fe0.5 is about three times the iron content in the catalyst precursor.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“the iron content in Fe0.5 is about three times the iron content in the catalyst precursor”中“catalyst precursor”应为“catalyst precursor”，但“the catalyst precursor”指代清晰。无问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Zelenary, P. & Mayers, D. J. Hydrogen and Fuel Cells Program-2019 Annual Merit Review and Peer Evaluation Meeting- ElectroCat (Electrocatalysis Consortium).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“Zelenary”应为“Zelenay”，但这是参考文献中的姓名拼写错误，不影响正文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "This indicates demetallation of a significant fraction of sites S1 during the first hold at 0.2 V, in line with 1540% activity loss after 10k load-cycles in inert gas reported by us for two Fe-N-C catalysts (almost) exclusively comprising FeNx sites.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "“1540%”应为“15–40%”或“15-40%”，提取时丢失了连接符或范围符号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "The fittings indicate unmodified spectral parameters and absolute intensity with operation time for D2 with operation time, continuously decreasing signal intensity for D1H",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“with operation time”重复出现，且句子结构混乱，疑似提取时重复或缺失标点。原文应为“The fittings indicate unmodified spectral parameters and absolute intensity for D2 with operation time, continuously decreasing signal intensity for D1H”。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 24,
+      "quote": "Acknowledgements The research leading to these the French National Research Agency results has received partial funding from the CAT2CAT contract (ANR-16-CE05-0007) and the FCH Joint Undertaking (CRESCENDO Project, Grant Agreement n°779366).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "原文“The research leading to these results has received funding from ...”被错误地拆分为“leading to these the French National Research Agency results”，且“partial funding”可能为“partial funding”但“partial”原文即“partial”，此处“partial”正常。关键是“these the French National Research Agency”明显顺序错误，原文应为“these results has received funding from the French National Research Agency (ANR)”，但提取文本中“the French National Research Agency”插入在“these”与“results”之间，且“partial”后无“funding”直接接“from”但文字为“partial funding from”，总体可辨识，但属于跨页或提取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：D1 QS范围0.9-1.2，D2 QS范围1.8-2.8（页4）；5K下Fe0.5阴极氧化铁占9%（页6）；D3 IS~1.15、QS~2.5（页8）；D1H QS 0.6-1.0，D1L QS 1.7-2.0，Fe(II)N4C10 QS>3.0（页9）；活性从23降至15 mA cm⁻²（页10）；50 h运行后D2不变（页11）；外推y截距接近零（页12）。公式部分（页31）中电场梯度公式提取不完整，仅保留了“∆=12 1+3”和后续变量定义，未提取完整公式，但关键变量（Q、Vii、η）已保留。正文中“1540%”疑为“15–40%”，已标记。跨页顺序问题已在extraction_issues中列出。其余结论与摘要一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3998,
+      "prompt_tokens": 19004,
+      "total_tokens": 23002,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 19
+      }
+    },
+    "content_chars": 9673
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

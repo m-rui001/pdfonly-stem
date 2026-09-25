@@ -1,0 +1,100 @@
+{
+  "sha1": "c4236f6d5e878b3bdeaeb11a7d4a426d240c0892",
+  "title": "Additively manufactured carbon fiber-reinforced composites: State of the art and perspective",
+  "doi": "https://doi.org/10.1016/j.addma.2019.100962",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c4236f6d5e878b3bdeaeb11a7d4a426d240c0892/index.html",
+  "source_chars": 244992,
+  "markdown_chars": 7318,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "Fused Filamnet Fabrication",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题 'Fused Filamnet Fabrication' 中的 'Filamnet' 是 'Filament' 的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "power bed fusion (e.g., selective laser sintering (SLS))",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "'power bed fusion' 疑为 'powder bed fusion' 的拼写或识别错误，原文为增材制造术语。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 36,
+      "quote": "after the fabrication of ten parts in an out-of-oven VARTM process, the distortion in the mold was negligible [H14]",
+      "type": "疑似引用编号异常",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文中出现 [H14]、[H16]、[H28-29]、[H23] 等非标准引用编号，与正文其余部分的数字编号体系不一致，疑似抽取或排版异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "𝜒1𝜒2 = (∫∫ f(l)g(θ)(l/l + mean)(l/2lc))exp (μθ)d/dθ) / (∫∫ f(l)g(θ)(l\\l mean)(1 ‒ Af tan(θ)) × (1 ‒ lc(1 ‒ Af tan(θ))/(2l exp(μθ)))d/dθ",
+      "type": "疑似公式抽取损坏",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "Eq. (2) 中 (l/l + mean) 和 (l\\l mean) 的数学符号明显残缺/拼接错误，无法正确复现原公式；同时积分边界 (θmax/θmin, lmax/lmin, lcθ) 的排列在分子分母中疑似颠倒，但无法确定正确版本。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "An example of the increase in the void content of AM parts over that in compression-molded short-fiber composites can be seen in Figure 7. Cross-sectional micrographs of compression-molded short-fiber composites (top) and short fiber composites additively manufactured via FFF (bottom). The fiber volume fraction increases from left to right from unfilled to 30 wt.% in 10 wt.% increments.",
+      "type": "跨页顺序/图注信息矛盾",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "图 7 图注称纤维体积分数从无填充以 10 wt.% 梯度增至 30 wt.%，但正文第 16 页描述 Tekinalp 等人的实验为 0, 10, 20, 30, 40 wt.% 五个梯度，图注与正文可能不一致或图注截断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "It is interesting that the authors found that increasing the thermal conductivity of the feedstock had an adverse impact on the size of the part that can be printed without warping/delamination [65].",
+      "type": "跨页断裂",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第 23 页末句'It is interesting that the authors found that increasing the thermal conductivity of the feedstock had an adverse impact on the size of the part that can be printed without warping/delamination [65]'在第 24 页直接接续'Although BAAM enables printing of a variety...'，句子结构完整但分页处无标记，属于正常页间断句。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 90,
+      "quote": "One of the research done by LLNA validated the stiffness-optimized short CFRPs experimentally",
+      "type": "疑似文本损坏",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "'LLNA' 疑为 'LLNL'（ Lawrence Livermore National Laboratory）或 'LLNL' 相关机构缩写的识别错误，原文未展开该缩写。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：碳纤维临界长度在 ABS 中约 640 µm，常用磨碎纤维 <150 µm；模型预测纤维长径比 ≥1000（对应 5–7 mm 长度）可达到理论强度的 80% 以上；13 wt.% 碳纤维使 CTE 从 87 降至 10 µm/mK、热导率从 0.177 增至 0.397 W/mK；连续纤维热固性体系最高拉伸强度 1476 MPa、模量 100 GPa、弯曲强度 858 MPa，后固化使空隙率从 10.05% 降至 2.53%；Markforged 连续纤维约 700 MPa/50 GPa；SLS 中 30/40/50 wt.% 碳纤维的弯曲强度提升 44.5/83.3/114%，弯曲模量提升 93.5/129.4/243.4%。公式仅按提取文本原样保留，Eq. (2) 存在明显的数学符号残缺（(l/l+mean) 与 (l\\l mean)），未作修复。图 7 图注（30 wt.% 梯度）与正文（40 wt.% 梯度）存在不一致，已标记。部分页面跨页断句（如第 23-24 页）语义连贯，不影响理解。图表数值仅采用正文明确描述的数据，未对图表本身做任何推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7629,
+      "prompt_tokens": 60536,
+      "total_tokens": 68165,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1876
+      }
+    },
+    "content_chars": 10769
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

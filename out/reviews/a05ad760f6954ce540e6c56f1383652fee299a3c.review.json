@@ -1,0 +1,45 @@
+{
+  "sha1": "a05ad760f6954ce540e6c56f1383652fee299a3c",
+  "title": "Warmer and Drier Fire Seasons Contribute to Increases in Area Burned at High Severity in Western US Forests From 1985 to 2017",
+  "doi": "https://doi.org/10.1029/2020gl089858",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a05ad760f6954ce540e6c56f1383652fee299a3c/index.html",
+  "source_chars": 46719,
+  "markdown_chars": 3566,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Monthly climate at 1/24th degree resolution from 1985 to ABhs ABhs AB AB 2017 representing VPDmax and Tmax was obtained from PRISM Climate Ecoregion (ha; 1985) (ha; 2017) (ha; 1985) (ha; 2017) Group, Oregon State University (version AN81m-M3, http://prism.oregonstate.edu, accessed 26 June 2020). These datasets have been recently Western Mountains 4,225 70,568 13,933 210,491 updated to remedy the artificial elevation-dependent warming described Northern Mountains 6,392 75,693 29,113 164,241 by Oyler et al. (2015). CWD at 1/120th degree resolution was calculated Southwest 531 36,017 7,675 128,301 following Dobrowski et al. (2013) using PRISM inputs for temperature, All 25,903 210,282 88,798 586,272 precipitation, and humidity (version LT81m), 10-m wind and downward Note. The California Coast ecoregion did not exhibit a statistically significant shortwave radiation from NLDAS2 (Mitchell et al., 2004), and soil water positive trend (Figure 1). holding capacity from POLARIS (Chaney et al., 2016). VPDmax, Tmax, and CWD were summarized over the lead up to the fire season for each year.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页4末尾的叙述句子在“from 1985 to”后突然插入表1的表格数据和注释，随后页5才出现表1标题并继续“activity”一词，导致方法文字与表格数据混排，明显为跨页提取时的顺序错乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：AABhs八倍增长（184,000 ha增量）、表1中各生态区1985/2017的AABhs和AB数值、相关范围（AABhs与VPDmax r=0.59–0.90，西部整体0.83；AAB r=0.55–0.89，西部整体0.80；SEVmean与VPDmax r=0.65，HSprop r=0.58）、敏感性（VPDmax z分数每增1，AABhs增197,000 ha，AAB增476,000 ha；SEVmean增0.11–0.31，HSprop增0.04–0.08）。公式和统计描述已按原文保留。不确定之处：表1数据在提取文本中位置错乱，但数值本身已按可见文本录入；跨页拼接导致方法叙述中“fire activity”被截断，恢复时依据上下文推断为“fire activity”。其他无明显问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6403,
+      "prompt_tokens": 13917,
+      "total_tokens": 20320,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3642
+      }
+    },
+    "content_chars": 5372
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

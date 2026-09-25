@@ -1,0 +1,63 @@
+{
+  "sha1": "506e7abf8565c8922dc5ff1f89c68a5db9da8658",
+  "title": "Transition Metal Nitride Coated with Atomic Layers of Pt as a Low-Cost, Highly Stable Electrocatalyst for the Oxygen Reduction Reaction",
+  "doi": "https://doi.org/10.1021/jacs.5b11364",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/506e7abf8565c8922dc5ff1f89c68a5db9da8658/index.html",
+  "source_chars": 36764,
+  "markdown_chars": 3677,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "8 mL catalyst ink was piped onto the GCE surface",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "前文使用 4 μL 量级，且玻碳电极面积仅 0.196 cm²，8 mL 体积明显不合理，疑似为 8 μL 的误写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "In the Pt 4f XPS spectra of the Pt@TiNiN catalyst (Figure 4)",
+      "type": "疑似图号错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文明确 Figure 4 为 XRD 图谱，Figure 5 为 XPS 谱，此处引述 Pt 4f XPS 却标注 Figure 4，疑为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Waiting for the results of XANS and STEM.",
+      "type": "未完成注释",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该句单独成段，内容似为作者未删除的进展注释，与正文论述无关。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值：质量活性 0.83 A mg⁻¹_Pt、比活性 0.57 mA cm⁻²、ECSA 94/97/55.4 m² g⁻¹_Pt、半波电位 893 mV 及差值 16/44 mV、ADT 后 ECSA 保留 78%、Pt/C 损失 55%、Pt/C 半波位移 >25 mV、Pt@TiNiN <10 mV、Pt 粒径 3.2→8.7 nm。公式保留 Koutecky–Levich 方程 1/i=1/i_k+1/i_d。XPS 结合能 70.8/71.2 eV 已核对。提取文本中部分单位（cm⁻²）和辐射源（Cu-K）保留原文写法，未擅自修改。图号引用与原文不一致处已在 extraction_issues 标出。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4423,
+      "prompt_tokens": 11291,
+      "total_tokens": 15714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1601
+      }
+    },
+    "content_chars": 4839
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

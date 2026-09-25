@@ -1,0 +1,163 @@
+{
+  "sha1": "db360d39733bb7295a918eeaf825c7b40deb4a6c",
+  "title": "Farming with crops and rocks to address global climate, food and soil security",
+  "doi": "https://doi.org/10.1038/s41477-018-0108-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/db360d39733bb7295a918eeaf825c7b40deb4a6c/index.html",
+  "source_chars": 66296,
+  "markdown_chars": 3914,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "(5.85",
+      "type": "跨页断裂/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第6页末尾以'(5.85'结束，第7页开头为'8.3 Pg)30,53.'，数字区间被截断，可能原为'5.8–8.3 Pg'或'5.85–8.3 Pg'，但文本证据不足，照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Basalt is widely recognized as producing productive soils",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句子在第4页末尾中断，第5页以'because it weathers...'接续，中间有页标和页眉插入，但内容连续，未缺失词语。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "iherzolite",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "岩石学术语应为'lherzolite'（二辉橄榄岩），首字母错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "cadmium arsenic and lead",
+      "type": "疑似缺失标点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "元素列举应带逗号，如'cadmium, arsenic and lead'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "t ha1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "单位应为't ha⁻¹'，上标缺失，文中多处出现，此处代表。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "0.3t",
+      "type": "疑似缺失空格",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'0.3 t'，数值和单位之间应有空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "soilatmosphere",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'soil-atmosphere'，缺少连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "intergration",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'integration'，表格中拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "fertilzer",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'fertilizer'，表格中拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "effectivness",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'effectiveness'，表格标题中拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "preserve or increase",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第11页末尾句子中断，第12页开头接续'downstream food web...'，但第12页为参考文献前的内容，页标插入，无实际缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "565 55 PgC",
+      "type": "疑似缺失符号",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字之间缺失间隔符号，可能为'565±55 PgC'或'565–55 PgC'，但原文证据不足，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "Ni- and Crenriched",
+      "type": "疑似缺失连字符",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应写作'Ni- and Cr-enriched'，'Cr'缺失连字符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "12 × 108 ha",
+      "type": "疑似缺失上标",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为'12×10⁸ ha'，上标丢失，类似问题出现在第7页'38 × 108 ha'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：海洋碳储量38,000 Pg C、Hubbard Brook实验的3.5 t/ha硅灰石、CO₂捕获上限110-224 g/m²、效率60%、玄武岩捕获潜力0.3 t CO₂/t、北美玉米带0.2-1.1 PgCO₂、全球0.5-4 PgCO₂/yr、成本US$52-480/tCO₂、BECCS成本$504-1296/tCO₂、全球农田12×10⁸ ha、岩石需求9-27 Pg/yr、钢渣5.8-8.3 Pg、侵蚀率6 t/ha/yr、N₂O减排~50%等。公式无复杂推导，化学式已照录。不确定之处：'565 55 PgC'缺失运算符，'5.85'与'8.3 Pg'跨页断裂，单位上标缺失等已在提取问题中标注。未加入任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 15883,
+      "prompt_tokens": 16239,
+      "total_tokens": 32122,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12044
+      }
+    },
+    "content_chars": 7173
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "sha1": "1b52e756196ebf3d92b94a982f503722c1154c29",
+  "title": "Metal ion cycling of Cu foil for selective C–C coupling in electrochemical CO2 reduction",
+  "doi": "https://doi.org/10.1038/s41929-017-0009-x",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/1b52e756196ebf3d92b94a982f503722c1154c29/index.html",
+  "source_chars": 59329,
+  "markdown_chars": 11570,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "FE $ = j_{!} $ $ i_{!}\"!#\\$ \\times100\\% $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "FE 计算公式中分母符号被 OCR 损坏为乱码，无法直接读出 j_i / i_total 的完整关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "where $ x_{!} $ is the volume fraction",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 i 被 OCR 识别为 !，虽不影响理解但属于符号抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "$ n_{!} $ is the number of electrons transferred, $ p_{!}=1 0 1. 3 $ kPa",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 i 被 OCR 识别为 !，p_0 被识别为 p_!，属于符号抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "there is a higher OH $ ^{+} $ production rate per geometric electrode area",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "OH+ 应为 OH-，OCR 将上标负号误识别为正号，影响对界面 pH 升高机制的理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "Due to GGA functionals placing the unfilled CO $ 2\\pi^{} $ orbital too low in energy",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "2π* 轨道的星号上标在 OCR 中丢失，显示为 2π^{}，影响对轨道标识的准确理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "based on the vibrational frequency of the internal CO stretch of $ ^{} $ CO",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "*CO 的星号上标在 OCR 中丢失，显示为 ^{} CO，影响对吸附物种标识的准确理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Metal ion Cycling of Cu Foil for Selective C-C coupling in Electrochemical CO2 Reduction",
+  "self_check": "已核对摘要、正文与结论中的关键数值：C2+ FE 最高 60.5%、H2 低于 20%、C2+ 分电流超过 40 mA/cm2、C2+/C1 比提升 6 倍、100-cycle Cu 在 -0.963 V vs. RHE 下 C2H4 FE 32%、总电流 68 mA/cm2、CO2RR 分电流 56 mA/cm2、C2+ 分电流 41 mA/cm2，均与原文一致。公式 E = d/dz(V_total - V_slab - V_water - V_ion) 和 ΔE = με - 1/2 αε² 已原样保留。已标注 OH+ 应为 OH-、FE 公式分母损坏、下标 i 被识别为 ! 等 OCR 问题。仍不确定之处：Fig. 1b 中 -1 V/Å 场下 0.2 eV 稳定化数值的上下文表述；Supplementary Table 7 中“最佳之列”的具体比较对象未在正文中展开。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7458,
+      "prompt_tokens": 16272,
+      "total_tokens": 23730,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13847,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

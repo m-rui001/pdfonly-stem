@@ -1,0 +1,54 @@
+{
+  "sha1": "b1ed3f8dd6d20a7588043f25de107037bcc9fdca",
+  "title": "Fully integrated wearable sensor arrays for multiplexed in situ perspiration analysis",
+  "doi": "https://doi.org/10.1038/nature16521",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b1ed3f8dd6d20a7588043f25de107037bcc9fdca/index.html",
+  "source_chars": 66286,
+  "markdown_chars": 4022,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "a c se acid onic Gluc tate Lac e– o Gluc GOx vate Pyru e– LOx l gC Ag/A + K PVB + Na re tu ra pe m d",
+      "type": "extracted text order confusion",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图1c中的化学物质标签被截断且顺序混乱，疑似PDF文本提取时图内文字排版错乱，不影响正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Potential(mV) (V)",
+      "type": "formatting error in figure caption",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图2图注中坐标轴标签重复/乱序（如Potential(mV) (V)），可能为提取格式问题，正文数值不受影响。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和Methods中的关键数值：葡萄糖灵敏度2.35 nA/μM、乳酸220 nA/mM、Na灵敏度64.2 mV/decade、K灵敏度61.3 mV/decade、温度灵敏度0.18%/°C、恒定负荷150W、阶梯负荷75W→200W、补水150ml/5min、脱水约2.5%体重等，均与原文一致。公式仅涉及能斯特响应理论值59 mV/decade，已保留。不确定点：图1c中的标签文字因提取混乱未在笔记中引用，温度补偿实验的具体噪声水平未写入；原文中\"near-Nerstian\"拼写可能为\"near-Nernstian\"，但照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9794,
+      "prompt_tokens": 16557,
+      "total_tokens": 26351,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6968
+      }
+    },
+    "content_chars": 4974
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

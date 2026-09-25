@@ -1,0 +1,64 @@
+{
+  "sha1": "4d09955d0989c661cc76c3f64840c9dfc9f071d5",
+  "title": "Barriers to smart waste management for a circular economy in China",
+  "doi": "https://doi.org/10.1016/j.jclepro.2019.118198",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4d09955d0989c661cc76c3f64840c9dfc9f071d5/index.html",
+  "source_chars": 81536,
+  "markdown_chars": 5857,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "Figure 1: Triangular fuzzy numbers represent linguistic variables",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图中标注“e f g 0.0 1.0”等符号位于公式(1)与图注之间，疑似图注文字与公式区域交错，但正文无缺失语义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "i.e. where k = 1, 2, 3 4...n (number of experts in a decision panel)",
+      "type": "疑似错误/原文截取",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“3 4...n”中数字之间疑似漏掉逗号，且未明确n是否表示专家总数，原文可能即如此排版或存在抽取瑕疵。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 36,
+      "quote": "Hong, I., Park, S., Lee, B., Lee, J., Jeong, D., Park, S., 2014. IoT-based smart garbage system for efficient food waste management. The Scientific World Journal, 1-13.",
+      "type": "疑似错误（低置信度，仅作提示）",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该条参考文献缺少出版年份后的卷号或文章编号信息，部分期刊格式可能如此，无法从提取文本确认是否遗漏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：摘要中三项关键因果障碍（B2监管压力、B7环保教育文化、B5市场压力）与结论及正文讨论一致；三方DEMATEL阈值（0.271、0.209、0.274）及显著关系箭头（B1→B3、B2→B8/B9、B7→B3/B5/B9等）均与各表及图2-4描述一致；三角模糊数转换表数值、去模糊化公式(2)、归一化式(3)(4)、总关系式(5)、R/C式(6)(7)均按原文保留。仍不确定之处：部分公式区域的排版细节（如公式(1)中k与K的含义）抽取文本不完整，但计算步骤在文中有完整描述；附录2中n14的行业类型从“Manufacturing”推断，提取文本原文即如此。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4677,
+      "prompt_tokens": 19746,
+      "total_tokens": 24423,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 743
+      }
+    },
+    "content_chars": 7162
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

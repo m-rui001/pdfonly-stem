@@ -1,0 +1,54 @@
+{
+  "sha1": "515d3fd48cb5fd6af9a7b49012fd4fe87c1273f7",
+  "title": "Associations of non‐symbolic and symbolic numerical magnitude processing with mathematical competence: a meta‐analysis",
+  "doi": "https://doi.org/10.1111/desc.12372",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/515d3fd48cb5fd6af9a7b49012fd4fe87c1273f7/index.html",
+  "source_chars": 79636,
+  "markdown_chars": 5050,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 30,
+      "quote": "doi: 10.1 016/j.jecp.2012.09.015",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "DOI 中“10.1”与“016”之间插入意外空格，不符合 DOI 标准格式，疑为文本提取过程中产生的空格或原文排版问题；无法确定正确版本，故仅列疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "doi: 10.1 0971WNR.Ob013e32836140ed",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "DOI 字符串明显异常（“1 097”间有空格，整体结构不符合 DOI 格式），疑为提取错误或原排版问题；不推测正确版本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表格中的关键数值：总体 r = .278 [.241, .315]、非符号 r = .241 [.198, .284]、符号 r = .302 [.243, .361]、年龄分组（<6: .305; 6-9: .283; >9: .280）、水平1连续年龄 b = -.006 (p = .013)、水平2连续年龄 b = -.003 (p = .105)、比较测量 R² = .142 (p = .006)、能力测量 R² = .138 (p = .003)、七个比较测量效应量、五类能力测量效应量、I² = .418 (p < .001)、fail-safe N = 9,101、敏感性分析 Δr = ±.008 及 Träff 例外 Δr = -.012、功率分析所需样本量（非符号102人，符号64人），以上均与原文提取文本一致。Table 1 中“Younger than 6 years”CI 为 [.205, .402]（Table 2 对应单元格为 [.205, .405]），两者相差 0.003，可能源于不同模型设定，未列为错误。文献部分两处 DOI 异常已列入 extraction_issues；未对其他参考文献的细微拼写差异（如“Loureneo”）作判断，因无法区分原文错误与提取错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 16324,
+      "prompt_tokens": 20185,
+      "total_tokens": 36509,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12890
+      }
+    },
+    "content_chars": 6221
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

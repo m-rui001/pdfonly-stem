@@ -1,0 +1,81 @@
+{
+  "sha1": "d78b6986e9de4ab02709efbf0232a39c74433403",
+  "title": "Switching on electrocatalytic activity in solid oxide cells",
+  "doi": "https://doi.org/10.1038/nature19090",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d78b6986e9de4ab02709efbf0232a39c74433403/index.html",
+  "source_chars": 21961,
+  "markdown_chars": 2693,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "voltage-driven reduction 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "页末出现孤立的数字'1'，下一页以'produced'继续，可能为页码或杂散字符，导致句子中断，但可连接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "exolved",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文'Both samples exolved Ni metal particles'，'exolved'应为'exsolved'，但原文如此，可能是作者拼写变体或笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "exolution",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文'subsequent exolution'，'exolution'应为'exsolution'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "led to higher extent of exsolution (~3.7∙10-7 vs ~6.2∙10-7 Ni atoms μm-2)",
+      "type": "疑似数值/逻辑错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "'higher extent'后给出的两个数值中，3.7×10⁻⁷小于6.2×10⁻⁷，与'higher'矛盾，可能顺序颠倒或单位有误，但无法确定正确版本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "electorlyte",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图2标题中'electorlyte'应为'electrolyte'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文的关键数值：2 V、150 s、7倍功率提升、2 W cm⁻²（FC，900 °C）、2.75 A cm⁻²（EC，1.3 V，900 °C）、150小时无退化、析出深度130/240 nm、极化电阻0.42→0.24 Ω cm⁻²等。公式（1）-（3）按原文保留。不确定之处：析出程度数值与'higher'表述矛盾，已在标记中说明；另文本中'γ'与'O3-γ'的写法未改动。未引入外部知识，所有内容均基于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6181,
+      "prompt_tokens": 6191,
+      "total_tokens": 12372,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3914
+      }
+    },
+    "content_chars": 4176
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

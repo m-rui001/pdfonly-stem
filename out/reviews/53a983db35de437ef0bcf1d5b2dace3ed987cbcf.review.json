@@ -1,0 +1,120 @@
+{
+  "sha1": "53a983db35de437ef0bcf1d5b2dace3ed987cbcf",
+  "title": "Interpretation of europium(III) spectra",
+  "doi": "https://doi.org/10.1016/j.ccr.2015.02.015",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/53a983db35de437ef0bcf1d5b2dace3ed987cbcf/index.html",
+  "source_chars": 389767,
+  "markdown_chars": 3533,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "Table 1. The $ 1 1 9^{2 S+1} \\mathrm{L} (\\tau) $ terms of the $ 4 \\mathrm{f}^{6} $ configuration of $ \\mathrm{E u}^{3+} $ [102].",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取119个项的具体列表。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Table 2. Average free-ion parameters for $ \\mathrm{E u}^{3+} $ [95].",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取具体的参数值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Table 3. Calculated energies of free-ion levels for $ \\mathrm{E u}^{3+} $ between 0 and $ 4 0 0 0 0 \\mathrm{c m}^{-1} $ , calculated with the parameters listed in Table 2 [117].",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取具体的能级计算值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "Table 4. Number of sublevels of a $ ^{2 S+1} L_{J} $ term for the different symmetry classes.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取不同对称性类别下的子能级数目。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "Table 5. Overview of the transitions observed in luminescence spectra of europium(III) compounds.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取跃迁的偶极特性、波长范围等关键信息。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "Table 6. Selection rules for intraconfigurational f-f transitions.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取ED和MD跃迁的选择定则。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 68,
+      "quote": "Table 7. Overview of the transitions observed in absorption spectra of europium(III) compounds. $ ^{a} $",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取吸收光谱中跃迁的详细信息。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 97,
+      "quote": "Table 8. Number of crystal-field components for the $ ^{5} \\mathrm{D}_{0} \\rightarrow^{7} \\mathrm{F}_{\\mathrm{J}} $ (J = 0-4) transitions in the luminescence spectra of the $ \\mathrm{Eu}^{3+} $ ion in sites of different point group symmetry (adapted from ref. [81]",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表格内容在OCR提取中完全丢失，仅保留了表题，无法获取不同点群对称性下晶体场分量数目的具体数据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "H _ {D _ {2 d}} = B _ {0} ^ {2} C _ {0} ^ {2} + B _ {0} ^ {2} C _ {0} ^ {4} + B _ {4} ^ {4} \\left(C _ {- 4} ^ {4} + C _ {4} ^ {4}\\right) + B _ {0} ^ {6} C _ {0} ^ {6} + B _ {4} ^ {6} \\left(C _ {- 4} ^ {6} + C _ {4} ^ {6}\\right)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中第二个 $B_0^2$ 项应为 $B_0^4$，OCR提取错误导致符号丢失，影响对晶体场哈密顿量形式的准确理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Interpretation of europium(III) spectra",
+  "self_check": "已核对关键数值：自由离子参数（Table 2）、能级计算值（Table 3）、晶体场分裂实例（如 ⁷F₁ 分裂值）、Judd-Ofelt 参数（Ω₂, Ω₄, Ω₆）、寿命值（如 Y₂O₂S:Eu³⁺ 的 0.440 ms）以及水合数公式。公式已按原文保留，但 Table 1-8 的内容在 OCR 中完全丢失，无法核对表格内具体数据。已识别并报告了公式符号丢失和表格结构损坏的 OCR 问题。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3770,
+      "prompt_tokens": 122885,
+      "total_tokens": 126655,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7011,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

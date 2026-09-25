@@ -1,0 +1,595 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Designing materials for electrochemical carbon dioxide recycling</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Designing materials for electrochemical carbon dioxide recycling</h1><p class="meta">https://doi.org/10.1038/s41929-019-0306-7 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>TSpace Research Repository</p>
+<p>tspace.library.utoronto.ca</p>
+<div>
+
+# Designing materials for electrochemical carbon dioxide recycling
+
+</div>
+<p>Michael B. Ross, Phil De Luna, Yifan Li, Cao Thang-Dinh, Dohyung Kim, Peidong Yang, Edward H. Sargent</p>
+<p>Version Post-print/Accepted Manuscript</p>
+<p>Citation Ross, M. B., De Luna, P., Li, Y., Dinh, C. T., Kim, D., Yang, P., &amp; (published version) Sargent, E. H. (2019). Designing materials for electrochemical carbon dioxide recycling. Nature Catalysis, 1.</p>
+<p>DOI: https://doi.org/10.1038/s41929-019-0306-7. Retrieved from https://www.nature.com/articles/s41929-019-0306-7#article-info</p>
+<p>How to cite TSpace items</p>
+<p>Always cite the published version, so the author(s) will receive recognition through services that track citation counts, e.g. Scopus. If you need to cite the page number of the author manuscript from TSpace</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><p>because you cannot access the published version, then cite the TSpace version in addition to the published version using the permanent URI (handle) found on the record page.</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><div>
+
+# Designing materials for electrochemical carbon dioxide recycling
+
+</div>
+<p>Michael B. Ross, $ ^{1,2} $ Phil De Luna, $ ^{2,3} $ Yifan Li, $ ^{1,4} $ Cao Thang-Dinh, $ ^{2,5} $ Dohyung Kim, $ ^{6} $ Peidong Yang, $ ^{<em>1,2,4,6,-8} $ Edward H. Sargent $ ^{</em>2,5} $</p>
+<p>$ ^{1} $Department of Chemistry, University of California, Berkeley, Berkeley, CA 94720, USA</p>
+<p>$ ^{2} $Bio-inspired Solar Energy Program, Canadian Institute for Advanced Research, Toronto,</p>
+<p>Ontario M5G 1Z8, Canada.</p>
+<p>$ ^{3} $Department of Materials Science and Engineering, University of Toronto, Toronto, Ontario,</p>
+<p>M5S 3E4, Canada.</p>
+<p>$ ^{4} $Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, CA 94720,</p>
+<p>USA</p>
+<p>$ ^{5} $Department of Electrical and Computer Engineering, University of Toronto, Toronto, Ontario, M5S 3G4, Canada.</p>
+<p>$ ^{6} $Department of Materials Science and Engineering, University of California, Berkeley, Berkeley,</p>
+<p>CA 94720, USA</p>
+<p>$ ^{7} $Chemical Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, CA 94720,</p>
+<p>USA</p>
+<p>$ ^{8} $Kavli Energy Nanoscience Institute, University of California, Berkeley, Berkeley, CA 94720,</p>
+<p>USA</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><h2>Preface</h2>
+<p>Electrochemical carbon dioxide recycling provides an attractive approach to synthesizing fuels and chemical feedstocks using renewable energy. On the path to deploying this technology, basic and applied scientific hurdles remain. Integrating catalytic design with mechanistic understanding yields scientific insights and progresses the technology closer to industrial relevance. Catalysts must be able to generate valuable carbon-based products with better selectivity, lower overpotentials, and improved current densities with extended operation. Here we describe progress and identify mechanistic questions and performance metrics for catalysts that can enable carbon-neutral renewable energy storage and utilization.</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>Society's rate of fossil fuel utilization has grown eleven-fold since the Industrial Revolution. $ ^{1} $ With increasing global energy usage combined with intensifying anthropogenic climate change, $ ^{2,3} $ there exists an urgent need to lessen dependence on fossil fuels and to decouple emissions and economic growth. $ ^{4} $ Today we rely on fossil fuels not only as portable and dispatchable energy carriers; we also use them in chemical feedstocks, materials, and fertilizers. For all of these reasons, secure, renewable, and dependable access to these chemicals is of urgent importance. $ ^{2,3} $</p>
+<p>Technologies that consume $ \mathrm{C O_{2}} $ ,utilizing it as a feedstock and transforming it into value-added chemicals, are therefore of interest. The growing abundance of renewable sources of electricity—driven by decreases in the levelized cost of electricity (LCOE) for solar ($ 0.04-0.06 $ kWh $ ^{-1} $ ) and wind ($ 0.08-0.06 $ kWh $ ^{-1} $ ) that are approaching parity with fossil fuels enable these transformations to increasingly be renewable-powered. $ ^{2,3} $ At the heart of such technologies is a catalyst that drives the $ \mathrm{C O_{2}} $ reduction reaction $ (\mathrm{C O_{2}} \mathrm{R R}) $ : the pathway from renewable energy, $ \mathrm{H_{2} O} $ , and $ \mathrm{C O_{2}} $ toward useful chemical products. $ ^{5,6} $ $ \mathrm{C O_{2}} \mathrm{R R} $ technologies offer avenues to seasonal-scale electrical grid-level storage, chemical feedstocks and fertilizers, transportation fuels, and even specialty chemicals and pharmaceuticals. $ ^{7} $ Renewables-powered strategies achieve these goals while closing the carbon cycle.</p>
+<p>We review the key aspects needed to realize electrochemical $ \mathrm{C O_{2}} $ -recycling technology, building from atomic-level materials design, the basis of chemical product selectivity, to devicelevel considerations that promote higher reaction rates and improved stability. Throughout, we offer a mechanistic understanding of electrocatalyst atomistic design, and point out gaps that exist in our physicochemical picture today. We identify specific bottlenecks to further progress in electrocatalytic $ \mathrm{C O_{2}} $ -recycling, particularly toward the high-selectivity generation of</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>increasingly valuable chemical products. These demand a deepened understanding of mechanistic steps, new insights into the nature of electrocatalyst structure during operation, and integration with state-of-the-art improvements in electrolyzer technology.</p>
+<h2>Electrochemical carbon dioxide recycling</h2>
+<p>Electrochemical $ \mathrm{C O_{2}} $ -recycling (ECR) systems (Figure 1a) include a cathode, an anode, a $ \mathrm{C O_{2}} $ -containing electrolyte, and a membrane. The cathode is the electrocatalyst that implements the $ \mathrm{C O_{2}} $ reduction reaction $ (\mathrm{C O_{2}} \mathrm{R R}) $ . The anode provides a site for oxidation, such as the oxygen evolution reaction (OER). The electrolyte is required to enable transport of charged species, to facilitate transport of $ \mathrm{C O_{2}} $ to the electrocatalyst surface, and plays a critical role (via its pH, both global (by choice of salt or salt mixtures) and local (by $ \mathrm{O H^{-}} $ generation under $ \mathrm{C O_{2}} \mathrm{R R} $ )) in influencing the energetics of $ \mathrm{C O_{2}} $ reduction. The membrane separates the products of oxidation and reduction while maintaining charge balance.</p>
+<p>This review focuses primarily on the $ \mathrm{C O_{2}} $ reduction electrocatalyst (cathode) and its interactions with the electrolyte environment, looking particularly at the underpinning physical design principles for improved selectivity, overpotentials, and productivity.</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><div>
+
+Figure 1 Electrochemical CO2 reduction. (a) A typical electrochemical $ \mathrm{C O_{2}} $ recycling system. The anode and cathode electrocatalysts perform oxidation and reduction, respectively. The membrane separates these compartments, allowing proton transport to the cathode. The electrolyte contains positive and negative species that facilitate charge and $ \mathrm{C O_{2}} $ transport. (b) Energetic considerations for $ \mathrm{C O_{2}} $ reduction. On the reversible hydrogen electrode (RHE) scale, the thermodynamic potentials for OER (+1.23 V), HER (0.0 V), $ \mathrm{C O_{2}} $ -to- $ \mathrm{C_{2} H_{4}} $ (+0.07 V) are compared, alongside the typical kinetic overpotentials needed for $ \mathrm{C O_{2}} $ RR. Progress in lowering these overpotentials (at current densities of 5 mA/cm $ ^{2} $ ) are shown with the shaded bars.
+
+</div>
+<h2>Fundamental chemical challenges</h2>
+<p>$ \mathrm{C O_{2}} $ requires input energy to reduce it to more desirable products. The thermodynamic</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>cost of reducing $ \mathrm{C O_{2}} $ is comparable to that for the hydrogen evolution reaction (HER): for example, products such as carbon monoxide and ethylene are thermodynamically formed at - 0.11 and +0.07 V (vs. RHE, reversible hydrogen electrode), respectively (Figure 1b). $ ^{8} $ However, in practice the energy input required for electrochemical $ \mathrm{C O_{2}} $ reduction is noticeably greater than the thermodynamic ideal. Higher energy input, i.e. electrochemical overpotential beyond the thermodynamic requirement, is required to drive the $ \mathrm{C O_{2}} $ RR at appreciable rates (Figure 1).</p>
+<p>In addition to the $ \mathrm{C O_{2}} $ activation barrier, $ \mathrm{C O_{2}} $ reduction pathways involve multiple single-step reactions that further add to the chemical sluggishness of $ \mathrm{C O_{2}} $ RR. These are kinetic contributions to the overpotential. Because the adsorption strengths of similar molecules are related, there are limited degrees of freedom by which complex, multi-step reaction pathways can be optimized. $ ^{9} $ The need for proton donors to participate in $ \mathrm{C O_{2}} $ RR, either directly or through proton coupled electron transfer (PCET) steps, $ ^{10} $ further complicates catalysis because protons can also be readily reduced to $ \mathrm{H_{2}} $ . Additionally, the large number of available catalytic pathways also leads to multiple products at higher overpotentials, limiting selectivity.</p>
+<p>Headway has been made in recent years to tackle these chemical challenges through the development of electrocatalysts, electrolyte environments, and flow-cell configurations that bring us closer to thermodynamic limits (Figure 1b) and technological viability.</p>
+<h2>From gaseous carbon dioxide to valuable chemicals</h2>
+<p>In an ECR system, it is essential to consider the path $ \mathrm{C O_{2}} $ takes from the gas phase all the way to final reduction into a desirable product. This path involves multiple chemical and physical processes that can be delineated into four distinct steps: solvation dynamics, activation, preferential dimerization, and higher-order selectivity (Figure 2).</p></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 2: The path from gaseous CO2 to valuable products. Solution dynamics, activation preferential dimerization, and higher order selectivity. Solution dynamics includes the dissolution, equilibration, and transport of $ \mathrm{C O_{2}} $ in water. Activation describes the initial adsorption and stabilization of $ \mathrm{C O_{2}} $ . Preferential dimerization describes the branching point at which adsorbed CO can either be further hydrogenated or be dimerized toward multi-carbon products. Higher-order selectivity depicts some of the many products accessible with control beyond dimerization.
+
+</div></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><p>$ \mathrm{C O_{2}} $ from the gas phase first dissolves in solution, resulting in aqueous $ \mathrm{C O_{2}} $ . This aqueous $ \mathrm{C O_{2}} $ reacts with water to form carbonic acid $ \left( \mathrm{H}<em>{2} \mathrm{C O}</em>{3} \right) $ ; however, the dominant species in a $ \mathrm{C O_{2}} $ -saturated aqueous solution (pH 6.8) is bicarbonate $ \left( \mathrm{H C O}<em>{3}^{-} \right) $ . $ ^{11} $ Aqueous electrolytes saturate at 34 mM $ \mathrm{C O</em>{2}} $ at ambient conditions, limiting the rate at which $ \mathrm{C O_{2}} $ can be transported to the electrocatalyst assuming typical Nernstian diffusion layers: this mass transport challenge ultimately must be overcome to reach industrially viable $ \mathrm{C O_{2}} $ reduction rates. $ ^{12} $ Additionally, the local concentrations of $ \mathrm{C O_{2}} $ and protons—and thus the pH—vary during catalysis, necessitating a more sophisticated model for the design of electrocatalytic interfaces. $ ^{13,14} $</p>
+<p>After solvation and equilibration, the first step involving the electrocatalytic surface involves the activation of $ \mathrm{C O_{2}} $ . This requires the adsorption of $ \mathrm{C O_{2}} $ in a conformation that prepares it for further reactivity. The two dominant activation geometries are $ \ast $ OCHO and $ \ast $ COOH. $ ^{15-17} $ After adsorption, a series of proton and electron transfers occur, where $ \ast $ OCHO is reduced to formate while $ \ast $ COOH is reduced to CO. While these are thought to be the primary modes of $ \mathrm{C O_{2}} $ activation toward CO and formate, numerous other activation geometries can be envisioned, $ ^{15,18} $ and cross-reactivity between these pathways can also occur, e.g. $ \ast $ COOH being reduced to formate. $ ^{17} $</p>
+<p>On some metals — Cu most prominently—CO is adsorbed long enough to react further. Here, the fate of $ ^{<em>}CO $ diverges: preferential hydrogenation sets off a series of proton and electron transfers that is the principal path toward $ \mathrm{C H_{4}} $ . Meanwhile, preferential dimerization results in C-C bond formation, after which a wide variety of products can be imagined. $ ^{8,19} $ CO reduction exhibits similar product distributions as $ \mathrm{C O_{2}} $ reduction on Cu, further supporting that C-C bonded products proceed through $ ^{</em>}CO $ as an intermediate. $ ^{20} $ At least thirteen products have been</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>observed from Cu, though many more are conceivable. $ ^{19} $ To synthesize these products selectively requires control at each branching point in the multi-step mechanism, $ ^{21-24} $ which is complicated further by the linearly related adsorption energies of these species—the linear scaling relations. $ ^{9,16} $ In combination with the Sabatier principle—the concept that an intermediate must be bound neither too strongly nor too weakly—linear scaling relations provide a lens through which $ \mathrm{C O_{2} R R} $ selectivity can be considered (Figure 3).</p>
+<p>The challenge of scaling relations can be seen clearly even in the synthesis of a single carbon product such as CO. The reaction first proceeds by a proton-coupled electron transfer to $ \mathrm{C O_{2}} $ to form bound $ \mathrm{<em>C O O H} $ . Next, another proton-coupled electron transfer occurs which liberates $ \mathrm{H_{2} O} $ , leaving bound $ \mathrm{</em>C O} $ . Finally, this bound $ \mathrm{<em>C O} $ desorbs in a chemical step to form the gaseous CO product. Here, the binding energies of $ \mathrm{</em>C O O H} $ （ $ \sim0 $ eV）and $ \mathrm{<em>C O} $ （ $ \sim-0.6 $ eV） scale linearly with each other, a consequence of the fact that both intermediates interact with the catalyst through similar C-metal bonds. Due to linear scaling relations, designing a heterogeneous catalyst to have the ideal $ \mathrm{</em>C O O H} $ binding would result in non-ideal $ \mathrm{*C O} $ binding, and vice versa. This means that the binding energy for activation or release will necessarily be non-optimal unless scaling relations are broken.</p>
+<p>The challenges of linear scaling relations are compounded when targeting multi-carbon products, where competing reaction pathways can generate a variety of chemically-similar bound intermediates. Figure 3 schematically shows the linear relationships between three postulated $ \mathrm{C O_{2} R R} $ intermediates, adapted from previous literature calculations. $ ^{24} $ Understanding these pathways and learning to break these linear scaling relationships remains a primary challenge to achieving selectivity's that approach unity. The unification of comprehensive materials design</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>with understanding of each rate determining step along the path from gaseous $ \mathrm{C O_{2}} $ to a final product remains the ultimate goal toward selective $ \mathrm{C O_{2}} $ RR.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 3: Example of linear scaling relations. Calculated binding strengths of $ \mathrm{C O_{2} R R} $ intermediates are shown to be linearly related. The adsorption energies for $ \mathrm{^*} C O H $ (red), $ \mathrm{^*} C H O H $ (blue), and $ \mathrm{^*} C H O $ (orange) are compared against $ \mathrm{^*} C O $ for Pt, Pd, Cu, Au, and Ag. The gray shaded regions highlight the approximate area that the binding strengths are within for each element, adapted from reference 24.
+
+</div>
+<p>Competition with dihydrogen evolution</p>
+<p>Alongside the $ \mathrm{C O_{2}} $ activation and reduction process, the reduction of bound proton intermediates $ \left( \mathrm{H}^{*} \right) $ into $ \mathrm{H}<em>{2} $ serves as a parasitic competing reaction. Because protons are necessary to reduce carbon dioxide, but are also readily reduced themselves, several strategies to manipulate HER relative to $ \mathrm{C O</em>{2}} $ RR have been developed. For example, catalyst morphology can help control</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><p>the relative diffusion of $ \mathrm{C O_{2} R R} $ and HER reagents, such that the diffusion of HER intermediates is kinetically suppressed, enhancing $ \mathrm{C O_{2} R R} $ selectivity. $ ^{25} $ Additionally, the simultaneous adsorption of $ \mathrm{H^{<em>}} $ with $ ^{</em>} \mathrm{C O} $ and other $ \mathrm{C O_{2} R R} $ intermediates can modify their relative binding strengths, in turn influencing kinetics. $ ^{26,27} $ Future strategies could take advantage of this to suppress or enhance HER by a judicious choice of transition metals. $ ^{28} $</p>
+<h2>Interfacial interactions at the surface</h2>
+<p>Because electrocatalysis occurs at solid-liquid and solid-liquid-gaseous interfaces, understanding the coordination and solvation environment is essential for manipulating reactivity. These coordination and solvation effects often manifest at length scales beyond the atomic, requiring an intimate understanding of solvation, charge screening over tens of nanometers, and even system-level design on the micron-to-millimeter-scale.</p>
+<p>The interfacial structure at an aqueous electrocatalyst surface involves multiple species and length scales of coordination. Of particular importance is the double layer, the charged interfacial environment at the polarized electrode that includes the screening of charges at the surface by solvated species. During $ \mathrm{C O_{2} R R} $ , negative charge at the cathode is screened by solvated cations, typically $ \mathrm{N a^{+}} $ , $ \mathrm{K^{+}} $ , or $ \mathrm{C s^{+}} $ . The nature of the cationic species has a pronounced effect on catalysis through multiple mechanisms, the most prominent being stabilization of an intermediate through surface coordination and by variation in the local environment brought about by chemical and physical differences in the cation properties. $ ^{13,29} $</p>
+<p>For coordination of $ \mathrm{C O_{2} R R} $ intermediates with cations, $ \mathrm{K^{+}} $ has been shown to lower the activation energy for the rate-limiting activation step on Au, enhancing the production of CO to current densities at high as $ 2 2 \mathrm{m A / c m^{2}} $ at -0.35 V vs RHE. $ ^{2 9} $ Electric fields also play a role in the stabilization or destabilization of specific intermediates $ ^{2 9,3 0} $ . Importantly, these cation</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>coordination effects are not limited to single carbon products; for example, the choice of cation can modulate hydrocarbon selectivity between methane and ethylene on Cu by virtue of the specific stabilization of C-C bond forming intermediates. $ ^{31,32} $ For the generation of $ C_{2} $ products, these differences can manifest as suppression of methane production relative to ethylene, for example on polycrystalline Cu, $ C s^{+} $ promotes ethylene generation (3.3 $ C_{2} H_{4} $ : $ CH_{4} $ ratio) compared to $ Li^{+} $ (0.3 $ C_{2} H_{4} $ : $ CH_{4} $ ratio). $ ^{13} $</p>
+<p>Molecular adsorbates and ionic liquid electrolytes also dramatically alter catalytic activity and selectivity. One of the most prominent examples is the observation that the use of a ionic liquid electrolyte lowers the activation barrier to the conversion of $ \mathrm{C O_{2}} $ to CO on Ag to less than 200 mV with &gt;95% selectivity. $ ^{33} $ While ionic liquids are thought to lower overpotentials by stabilizing $ \mathrm{C O_{2}} $ RR intermediates or by complexation with $ \mathrm{C O_{2}} $ , questions remain as to the exact nature of coordination at the surface. $ ^{34} $ The ability for non-ionic liquid organic additives to modulate both $ \mathrm{C_{1}} $ and $ \mathrm{C_{2}} $ activity provide further avenues to explore these mechanistic questions. $ ^{35} $</p>
+<h2>Solubility limitations in water</h2>
+<p>The majority of $ \mathrm{C O_{2}} $ RR studies to-date have been performed in $ \mathrm{C O_{2}} $ -saturated aqueous media. However, aqueous media rely on bulk diffusion to the electrode (Figure 4a), limited by the low solubility (34 mM) of $ \mathrm{C O_{2}} $ at standard conditions. This low solubility limits current densities to a few tens of $ \mathrm{m A/cm^{2}} $ . Most technoeconomic analyses and industrial benchmarking, however, suggest that current densities 1-2 orders of magnitude higher are necessary for commercial viability. $ ^{36-38} $ Strategies are needed that overcome mass transport limits in aqueous systems.</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 4: Solution dynamics in CO2 reduction. $ \mathrm{C O_{2}} $ adsorption and diffusion in an aqueous system (a.) compared with direct dissolution of $ \mathrm{C O_{2}} $ at a thin (10-500 nm) active layer in a flow cell (b.).
+
+</div>
+<p>Strategies to overcome this limit include the use of non-aqueous solvents with higher $ \mathrm{C O_{2}} $ solubilities; moving to higher pressure and lower temperature to increase $ \mathrm{C O_{2}} $ solubility in water; and moving to the gas phase where $ \mathrm{C O_{2}} $ transport is significantly enhanced because of the reduced diffusion length to the electrode surface. The latter approach, such as with gas diffusion flow cells (Figure 4b) incorporates a gas diffusion layer—a hydrophobic porous material—that enables the delivery of gas phase $ \mathrm{C O_{2}} $ to the electrocatalytic interface. Gas diffusion flow cells can perform $ \mathrm{C O_{2}} $ RR in basic, high pH electrolyte, which is desirable because $ \mathrm{H_{2}} $ production is significantly suppressed in these media. This is challenging in typical aqueous systems because $ \mathrm{C O_{2}} $ would be converted to carbonate species before reaching the electrocatalyst surface. Gas</p></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><p>diffusion flow cells are effective for dramatically increasing current densities, commonly to 200- 400 mA/cm $ ^{2} $ , both for $ C_{1} $ and $ C_{2} $ product generation. $ ^{39-45} $ Furthermore, the structure of the polymer layer and catalyst provides an important handle for manipulating catalysis: changing the thickness of the polymer and catalyst layer enabled the synthesis of ethylene at &gt;70% Faradaic efficiency at only -0.55 V vs. RHE using polycrystalline copper as the catalyst. $ ^{42} $ The continued growth and development of gas diffusion flow cells, and other strategies that move beyond aqueous transport limits, will help progress ECR technology. $ ^{46} $</p>
+<h2>Activation defines reactivity</h2>
+<p>Electrocatalytic $ \mathrm{C O_{2}} $ -recycling reactions must begin with adsorption and electron transfer to $ \mathrm{C O_{2}} $ (Figure 2). This initial activation step determines which metal electrocatalysts show appreciable activity toward $ \mathrm{C O_{2}} $ RR, in addition to the nominal grouping of elements into their primary products (Figure 5a). $ ^{8} $ Mechanistic understanding of this initial activation step has enabled the rational design of materials that can generate formate or CO with high Faradaic efficiencies (&gt;90%), low overpotential (200-400 mV), and at high current densities (&gt;100 $ \mathrm{m A/cm^{2}} $ ). Several recent technoeconomic analyses suggest that the selective and high rate production of formate, CO, and syngas $ (\mathrm{C O+H_{2}}) $ is approaching commercial viability, at least in the sense that positive margins (30%) can be achieved. $ ^{36-38} $ Notably, many downstream multi-carbon products pass through some of these initial activation intermediates: as a result, learning to manipulate this early step can make more advanced ECR more efficient. $ ^{21-23} $</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><div>
+
+$ \mathrm{C O}_{2} \mathrm{R R} $ Intermediate Binding Strength
+
+</div>
+<table><tbody><tr><td>Pb In Sn</td><td>Zn Ag Au</td><td>Cu</td><td>Fe Ni CoPt</td></tr><tr><td>Formate</td><td>Carbon Monoxide</td><td>Mixed Hydrocarbons</td><td>Dihydrogen</td></tr></tbody></table>
+<div>
+
+b
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 5 Designing materials to activate $ \mathrm{C O_{2}} $ (a) Composition relationship to product (b) Proposed intermediates species on reduced $ \mathrm{S n O_{x}} $ electrocatalysts that produce formate. (c) An example of how $ \mathrm{A u_{x} C u_{1-x}} $ alloy nanoparticles can enhance binding of the $ \mathrm{C O O H^{*}} $ intermediate through local nearest neighbor coordination. (d) An example of how nanostructuring can be used to preferentially stabilize intermediates.
+
+</div>
+<p>Empirically, metals are binned into four main groups by the major products that they form: formate, CO, mixed hydrocarbons, and $ \mathrm{H}<em>{2} $ . It is now understood that these empirical groupings are defined by the intrinsic chemical and physical properties of the metals, primarily through d-band theory and their differing abilities to bind specific chemical intermediates. The metals that generate formate most effectively, e.g. Sn, Hg, Pb, and Bi, all bind most $ \mathrm{CO}</em>{2} \mathrm{RR} $ intermediates too weakly. However, these metals also bind $ \mathrm{H^{*}} $ weakly and thus primarily act as a source of electrons when cathodically polarized. The other metals, which interact with the $ \mathrm{CO}_{2} \mathrm{RR} $ intermediates more strongly, can be further distinguished by the interaction strength of</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><p>the primary intermediate $ ^{<em>}CO $ CO generating metals, that include Au, Ag, and Zn, bind $ ^{</em>}CO $ relatively weakly that allows its release upon generation. On the other hand, metals that bind $ ^{<em>}CO $ too strongly, e.g. Pt, Fe, and Ni, primarily generate $ H_{2} $ as the primary product, due in part to the inability to release or even allow further reduction of CO after its formation. Cu is unique in this aspect that it binds $ ^{</em>}CO $ optimally to produce hydrocarbons, as such it facilitates the synthesis of a wide variety of products from $ CO_{2} $ (Figure 2). Finally, these relationships between product and material, coupled with mechanistic understanding, has enabled the rational design of materials for the generation of CO and formate.</p>
+<h2>Designing for activation</h2>
+<p>For $ \mathrm{C O_{2} R R} $ , the Sabatier heuristic can guide one toward the optimal material to generate a given product by relating the binding strengths of reaction intermediates with material properties. $ ^{8,9,16} $ Integration between mechanistic understanding and materials design has driven improved electrocatalytic generation of both CO and formate.</p>
+<p>Activation toward formate. For formate, a variety of field-leading catalysts contain Sn, where its electronic properties sit near the Sabatier optimum for $ ^{*} $ OCHO. $ ^{17} $ However, many of the best performing catalysts are not composed solely of $ \mathrm{S n}^{0} $ ; oxide-based materials often are superior, enhancing Faradaic efficiencies toward $ \mathrm{C O}_{2} \mathrm{R R} $ products 2-6-fold. $ ^{47,48} $ These materials have brought about interesting mechanistic questions and discrepancies, where theoretical calculations, electrochemical analysis, and in situ spectroscopy are not presently in agreement about the essential intermediate steps (Figure 5b). $ ^{15} $ Most electrochemical analyses and theoretical models assume bidentate coordination of some $ \mathrm{C O O}^{-} $ species, whereas recent in situ</p></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><p>vibrational spectroscopy on $ \mathrm{S n O_{x}} $ suggest that a O-coordinated COOH-species is present. $ ^{15,17,18} $ A unified understanding of the rate-limiting intermediate will enable the precise design of a catalytic surface to better stabilize the intermediate based on its coordination environment.</p>
+<p>Activation toward CO. Improvements in the generation of CO are intimately linked with mechanistic understanding and materials design. For example, the rate-limiting step toward CO production is generally understood to proceed through a $ ^{<em>} $ COOH intermediate, and among the transition metal surfaces, Sabatier optimal metals have been identified as Au, Ag, and Cu. However, compared to carbon monoxide dehydrogenase (CODH), an enzyme that converts $ \mathrm{CO}_{2} $ to CO at near-zero overpotential reversibility, these simple metallic surfaces may not provide the optimum binding configurations for $ ^{</em>} $ COOH. $ ^{16} $</p>
+<p>Because the binding properties of intermediates are determined by the electronic properties of a metal, i.e. the nature of the d-band electrons, alloying has proven to be a powerful tool for designing and tuning $ \mathrm{C O_{2} R R} $ materials. $ ^{9} $ This tunability has been demonstrated by alloying Au and Cu to produce $ \mathrm{A u_{x} C u_{1-x}} $ materials that exhibit a linear combination of the bulk electronic properties, thus enabling tuning the intermediate binding strength to a near-optimal value (Figure 5c). $ ^{16,49,50} $ More recently, ordered AuCu mixtures were shown to reduce overpotentials by 200 mV and increasing turnover 3-fold toward $ \mathrm{C O}, $ $ ^{51} $ and Cu-overlayered on Au was demonstrated as a strategy for manipulating the composition of syngas through the 0.6- 4.0 range of industrial interest. $ ^{52} $ Overall, the systematic tuning of alloyed materials has provided a rich territory to explore catalytic activity while remaining linked with the gating mechanistic step toward CO.</p></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><p>While alloying provides a straightforward means to tuning molecular binding strength by virtue of modulating electronics, local structure also plays an important role for manipulating activity (Figure 5d). The unique coordination environments provided by different facets or faces of a crystalline nanomaterial can more finely control the nature of d-band electrons in a site-specific manner. $ ^{53} $ For example, it has been seen that Au nanowires with predominant edge sites (&gt;16%) promote 94% Faradaic efficiency of CO generation at a potential of -0.35 V vs RHE. $ ^{54} $</p>
+<p>There is growing interest in non-archetypal electrocatalysts for $ \mathrm{C O_{2}} $ RR, such as $ \mathrm{M o S_{2}} $ and metal carbides, which could potentially break the linear scaling relations between bound intermediates and products. $ ^{55,56} $ They do so by virtue of their complex and varied active sites, which can provide multiple coordination sites for different $ \mathrm{C O_{2}} $ RR species. The continued refinement and integration between $ \mathrm{C O_{2}} $ activation and optimal intermediate binding is likely to further improve catalytic activities, reduce energy efficiencies, and push CO and formate generation closer to commercial viability.</p>
+<h2>Carbon dimerization on copper</h2>
+<p>Mature ECR systems will synthesize multi-carbon saturated hydrocarbons, olefins, aldehydes, and alcohols with high activity and selectivity. At present, Cu is the only known material that can catalyze the conversion of $ \mathrm{C O_{2}} $ to $ \mathrm{C_{2+}} $ products with Faradaic efficiencies greater than a few percent. $ ^{57} $ An explosion of interest has focused on understanding how to manipulate selectivity on Cu-based electrocatalysts: nanostructuring, controlled oxidation, faceting, and porosity have all been demonstrated as strategies. However, competing mechanisms seem to underlie this tunability (Figure 6).</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 6. Motifs on Cu that may influence dimerization. Insets (clockwise from top left) include facet dependence, nanoscale transport effects, elevated local pH during catalysis, and the presence of sub-surface oxide species.
+
+</div>
+<p>Facet controlled selectivity. $ C_{2+} $ selectivity was observed to be heavily dependent on faceting in early experiments. $ ^{58} $ The (100) facet was found to promote $ C_{2} $ formation, with $ C_{2} H_{4} $ : $ CH_{4} $ ratios two orders of magnitude greater than the (111) facet. Given that $ CO_{2} $ and CO reduction have similar facet-dependent product distributions, the observed structural sensitivity further supports the importance of CO dimerization on Cu. Further evidence supports that (100) terraces have the lowest barrier to CO dimerization, $ ^{59,60} $ and recent theoretical work has shown that dimerization can be further modulated by a charged water layer, $ ^{61} $ local field perturbations, $ ^{62} $ and high CO coverages. $ ^{63} $</p>
+<p>Inspired by these observations that $ \mathrm{C u} ( 1 0 0 ) $ surfaces favor the formation of $ \mathrm{C}<em>{2+} $ products at several hundred mV lower overpotentials, many works have sought to emulate this cubic motif in nanostructured materials that can further improve $ \mathrm{C}</em>{2}: \mathrm{C}_{1} $ selectivity ratios at high current densities. This has been achieved using electrochemical cycling, $ ^{6 4} $ plasma-treated cubes, $ ^{6 5} $ and</p></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><p>colloidally synthesized cubes, $ ^{66} $ all of which show high $ C_{2}:C_{1} $ selectivity. Notably, in most of these cases, the cubic species generated is a Cu oxide that is reduced in situ. Postelectrocatalysis, as well as in situ studies have shown that cubic Cu oxide structures can lose their cubic nature, and thus much of their (100 faceting), after reduction. $ ^{67} $ It remains unclear whether the catalytic properties of these cubic catalysts is through their (100) faceting or through other aspects of their synthesis or in-situ structural evolution that promotes $ C_{2+} $ selectivity.</p>
+<p>Copper oxides and oxide-derived copper. Oxide-derived copper (OD-Cu) catalysts were reported to promote increased activity at modest overpotentials $ (-0.4- -0.5\mathrm{V}\mathrm{vs}\mathrm{RHE}) $ in $ \mathrm{CO}<em>{2} $ $ ^{68} $ and CO reduction. $ ^{69} $ Typically, OD-Cu catalysts are generated through deliberate oxidation and subsequent in situ electrochemical reduction, resulting in increased surface roughness. This increased activity, particularly toward $ \mathrm{C}</em>{2+} $ products, was further explained by the presence of grain boundaries and undercoordinated Cu atoms that serve as enhanced activity sites. $ ^{70} $ Since these first reports, a number of OD-Cu foil electrodes and nanoparticle catalysts have shown that hydrocarbon selectivity—particularly toward ethylene and ethanol—can be tuned by controlling the thickness, $ ^{71} $ pre-catalyst oxidation state, $ ^{72} $ and morphology. $ ^{64} $ In aqueous-bicarbonate systems, high ethylene Faradaic efficiency (60% at -0.9 V vs RHE) is also shown by plasma- activated copper catalysts, where the authors attribute the increased selectivity with the presence of $ \mathrm{Cu}^{+} $ species that persist during reaction. $ ^{73} $</p>
+<p>The presence, persistence, and importance of $ \mathrm{C u^{+}} $ and subsurface oxides remains a subject of debate. $ ^{5} $ It is possible that $ \mathrm{C u^{+}} $ species are stabilized by the electrolyte and exist in a transient state during $ \mathrm{C O_{2} R R} $ . The enhancement of activity in OD-Cu may also be due to atomic rearrangement under reduction that leads to highly active undercoordinated $ \mathrm{C u^{0}} $ sites, or</p></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><p>increasingly high surface area electrodes that modulate local electrolyte environments through high current. While $ \mathrm{C u^{+}} $ has been observed experimentally under $ \mathrm{C O_{2} R R} $ and $ \mathrm{C O_{2} R R} $ -like conditions, it remains unclear if these $ \mathrm{C u^{+}} $ are directly serving at catalytically active sites. Experimental methods with enhanced surface sensitivity in situ, such as total electron yield Xray absorption spectroscopy (XAS), are promising yet difficult: techniques such as this will be required to conclusively determine the importance and role of $ \mathrm{C u^{+}} $ in $ \mathrm{C O_{2} R R}. $</p>
+<p>High surface areas promote dimerization. An emerging school of thought suggests that nanoscale high surface area is sufficient to achieve selectivity toward $ C_{2+} $ products. High electrochemical surface areas per geometric area can promote high currents, consuming protons and locally elevating the pH, suppressing $ H_{2} $ evolution and promoting dimerization. $ ^{74} $ Two separate surveys that compared a variety of Cu-based electrocatalysts, including OD-Cu, suggest that surface area is the principal determinant of limiting currents and overpotentials toward $ C_{2+} $ products. $ ^{75,76} $ Furthermore, in CO reduction, OD-Cu electrocatalysts have similar performance as polycrystalline Cu foil when normalized to surface area differences in selectivity are attributed primarily to mesoscopic transport effects. $ ^{77} $</p>
+<p>Highсимпликент $ \mathrm{C}<em>{2+} $ selectivity and manipulate the onset potentials for $ \mathrm{C H}</em>{4}, $ $ \mathrm{C}<em>{2} \mathrm{H}</em>{4}, $ and $ \mathrm{C}<em>{2} \mathrm{H}</em>{5} \mathrm{O H}. $ Mesoscopic transport effects are cited as an advantage in Cu-foam based catalysts. $ ^{78} $ While it is not likely the only origin of enhanced selectivity, low overpotential formation of $ \mathrm{C}_{2+} $ products on Cu nanoparticle ensembles may be partly due to the high surface area of the support in comparison with analogous nanoparticulate systems. $ ^{79} $</p></section>
+<section class="page" id="page-24"><div class="page-label">第 24 页</div><p>Catalysts evolve during reaction. Many Cu-based electrocatalysts evolve during reaction: this evolution is typically observed through changes in the selectivity. $ ^{5} $ As discussed above, OD-Cu is well-known to evolve during reaction conditions in oxidation state and structure, e.g. the reduction of metal oxide pre-catalyst into a more active, grain-boundary-rich metallic copper. $ ^{70,80} $ Preserving active structures has thus emerged as a goal in itself: in Cu nanowires that exhibit high $ \mathrm{CH_{4}} $ selectivity (55% at -1.25 V vs. RHE), wrapping in reduced graphene oxide (rGO) was found to preserve the structure over time whereas without rGO wrapping, the structure and selectivity degrade rapidly. $ ^{81} $ Some Cu materials evolve into distinct morphologies with activity that far surpasses the original. Electro-redeposition of Cu from sol-gel can be used to generate sharp needle-like structures that promote high current densities and ethylene: methane ratios— 160 mA/cm $ ^{2} $ and 200:1, respectively, at -1.0 V vs. RHE. $ ^{82} $ Nanoparticles are particularly susceptible to changes under bias, $ ^{79} $ e.g. dense ensembles of small (~7 nm) Cu nanoparticles evolve into electrocatalysts that evolve &gt; 60% $ \mathrm{C_{2}} $ and $ \mathrm{C_{3}} $ products at low overpotentials (-0.75 V vs. RHE). In this case, well-defined precursor nanoparticles transform into the active catalyst during operation.</p>
+<p>WhatWhat remains critically lacking is a fundamental understanding of how to precisely control these evolution processes to selectively produce a favored and lasting structural motif. In situ and operando spectroscopic and microscopic techniques are essential to this goal and are being developed. $ ^{6} $ For example, scanning probe techniques have recently been used to directly observe the reconstruction of Cu surfaces from (111) to (100) under bias $ ^{83} $ as well as the loss of faceting and increase in porosity of $ \mathrm{C u_{2} O} $ cubes. $ ^{67} $ Spectroscopic methods provide a chemical handle for tracking oxidation state and structure over time: infrared spectroscopy can identify the formation of Cu-clusters in $ \mathrm{C O_{2} R R} $ conditions, $ ^{84} $ while X-ray absorption spectroscopy (XAS) is</p></section>
+<section class="page" id="page-25"><div class="page-label">第 25 页</div><p>becoming an essential tool for tracking oxidation state and coordination environment in situ. For example, XAS was used to track the formation of $ \sim2 $ nm Cu clusters from molecularly-defined $ \mathrm{Cu(II)} $ phthalocyanine catalysts that promote $ \mathrm{CH_{4}} $ formation (66% Faradaic efficiency at -1.06 V vs. RHE). $ ^{85} $</p>
+<h2>Pathway manipulation beyond dimerization</h2>
+<p>While dimerization remains an active area of exploration on Cu based catalysts, synthesizing more complex products will require understanding and controlling mechanistic steps downstream. $ ^{19} $ However, to identify the key gating mechanistic steps, new approaches are needed to resolve the series of proton and electron transfers that occur downstream. Model reactions have been proposed to address these mechanistic questions. $ ^{21,86} $ For example, acetaldehyde has been shown to be the $ 2 \mathrm{e}^{-} $ precursor to ethanol formation. $ ^{87} $ Additionally, the use of isotopic probes has recently been used to provide mechanistic insight into the differentiation between higher-order products on OD-Cu surfaces. $ ^{88} $ However, mechanistic conclusions of $ \mathrm{CO}_{2} $ or CO reduction using isotopic ratios, especially $ ^{18} \mathrm{O} $ in oxygenates, $ ^{89} $ must be considered carefully due to the possibility of product-solvent isotope exchange after reaction. $ ^{90,91} $</p>
+<p>Structural manipulation provides a powerful tool for controlling downstream activity. One prominent example is the separation of ethylene and oxygenate products, which is hypothesized as a rate-determining step. Oxygenate formation is promoted on Cu(751) surfaces, which are rich with kinked terraces, compared with lower-energy facets. $ ^{92} $ Nanostructuring a Cu surface can increase selectivity toward alcohols during the reduction of CO by providing an avenue for further reaction of aldehyde intermediates on the nanostructured surface. $ ^{77} $ Composition provides a different structural tool, where unique coordination environments, such as in $ \mathrm{C u Z n}^{9 3} $ and $ \mathrm{C u A g}^{9 4} $ materials, at the active sites can alter selectivity toward oxygenates.</p></section>
+<section class="page" id="page-26"><div class="page-label">第 26 页</div><p>Even less is known about the direct formation of $ C_{3} $ products; however, both propanol and propanal are consistently reported in detectable quantities. One proposed mechanism for $ C_{3} $ formation involves the carbonylation of ethylene intermediates, $ ^{95} $ while another catalyst seemingly shows that $ C_{3} $ formation is independent of $ C_{2} $ formation and may involve methane intermediates coupling with CO. $ ^{79} $ Strategies that couple reactions may provide a distinct avenue to synthesizing high value multi-carbon products. For example, one pot ethane synthesis by the hydrogenation of ethylene was achieved on Pd-Cu surfaces where the active species for hydrogenation is a transient Pd intermediate. $ ^{96} $ Coupling with classically homogeneous catalysts could enable the use of $ CO_{2} $ or of CO synthesized from $ CO_{2} $ to upgrade molecules with a variety of functionalities, taking advantage of a vast reaction space. $ ^{97-99} $ The integration with downstream bacteria provides an attractive approach to creating high value $ C_{3} $ and $ C_{4} $ + products from syngas. $ ^{100} $</p>
+<h2>E us for a discussion on Emerging materials and motifs</h2>
+<p>To-date, the vast majority of high-performing electrocatalysts comprise unary or multi- metallic nanostructured metals. In principle, new materials that take advantage of enhanced $ \mathrm{C O_{2} R R} $ mechanistic understanding and material design principles could provide lower material costs, enhanced performance, and improved mass activity compared to the state-of-the-art. Recently, new classes of heterogeneous electrocatalysts are emerging, including single-atom catalysts, $ ^{101-104} $ metal- and nitrogen-doped carbon materials, $ ^{105} $ heterogenized molecular motifs, $ ^{106,107} $ and sulfide-based materials. $ ^{108,109} $ The majority of these new electrocatalysts generate CO or formate; however, improved mechanistic understanding of multi-carbon product formation could ultimately enable these new catalytic motifs to precisely control C-C bond formation in unique ways.</p></section>
+<section class="page" id="page-27"><div class="page-label">第 27 页</div><p>Accelerating materials discovery</p>
+<p>Holistically, ECR systems, and $ \mathrm{C O_{2} R R} $ in particular, involve an interconnected web of parameters that are numerous and co-dependent. As such, the search space for both materials and reaction environments is far too large to explore iteratively. Recent advances in computing power, combined with a greater understanding of the theoretical underpinnings of catalysts, have allowed the growth of machine learning and high-throughput experimentation methods to screen materials more efficiently $ ^{110-112} $</p>
+<p>Machine learning algorithms in particular have had recent success coupled with quantum mechanical calculations for refining the $ \mathrm{C O_{2} R R} $ catalytic compositional space. For example, machine learning has recently been used to identify and experimentally confirm newly active bimetallic NiGa facets, $ ^{113} $ to explore complex, non-linear adsorption of intermediates in alloys, $ ^{114} $ and to identify candidate electrocatalyst $ ^{115} $ and photocatalyst $ ^{116} $ materials. Despite this progress, experimental realization of theoretical predictions remains a challenge, likely in part due to theoretical limitations of density functional theory (DFT) that limit the exploration of nanoscale morphology, local pH, and kinetic effects.</p>
+<p>Another opportunity is to implement consistent and systematic electrochemical screening experiments. Enhancing the input data requires improved reporting of failed data, which can improve algorithmic refinement, as well as advances in high-throughput experimentation. Synthetic approaches for exploring new catalysts along compositional and structural gradients are essential, $ ^{117} $ as is their integration with advances in robotics that facilitate autonomous experiments. $ ^{118,119} $</p></section>
+<section class="page" id="page-28"><div class="page-label">第 28 页</div><h2>Forecast and Outlook</h2>
+<p>The development of technology that recycles carbon dioxide into desirable fuels and chemical products will require contributions from a variety of scientific fields, policymakers, and industrial partners. $ ^{2-4} $</p>
+<p>Design principles are emerging for promoting the synthesis of both single- and multi-carbon products. Strategies such as alloying and purposeful oxidation have reduced overpotentials by 200-400 mV for the production of CO and formate, while gas diffusion electrodes architectures and judicious nanostructuring have enhanced current densities to reach 200-400 mA/cm $ ^{2} $ . Further progress would bring these catalysts closer to targets described in recent technoeconomic analyses that could enable the productions these chemicals with positive margins. $ ^{36-38} $ Cu catalysts for synthesizing multi-carbon products exhibit a series of consistent motifs—oxidation, high surface area, nanostructuring, and specific faceting—that promote the formation of ethylene and ethanol at consistently lower overpotentials (-0.5--0.9 V vs. RHE) with Faradaic efficiencies approaching 50-60%. This remarkable progress in electrocatalytic $ \mathrm{CO_{2}} $ recycling to CO, formate, ethylene, and ethanol is summarized in Table 1. Design strategies for increasing catalyst lifetimes to 100-1000s of hours, while also increasing current densities to 400-500 $ \mathrm{mA/cm^{2}} $ , will be essential.</p>
+<div>
+
+Table 1. The state of electrochemical $ \mathrm{C O_{2}} $ recycling
+
+</div>
+<table><tbody><tr><td>产品</td><td>Potential Range(V vs.RHE)</td><td>Faradaic Efficiency(%)</td><td>Partial Current Density(mA/cm2,aqueous)</td><td>Partial Current Density(mA/cm2,vapor)</td></tr><tr><td>Carbon monoxide</td><td>-0.4 to-0.6</td><td>&gt;90</td><td>5-20</td><td>100-500</td></tr><tr><td>Formate</td><td>-0.7 to-1</td><td>&gt;90</td><td>5-50</td><td>100-200</td></tr><tr><td>Ethylene</td><td>-0.7 to-1</td><td>20-60</td><td>1-10</td><td>100-500</td></tr><tr><td>Ethanol</td><td>-0.8 to-1</td><td>10-20</td><td>0.1-2</td><td>50-100</td></tr></tbody></table></section>
+<section class="page" id="page-29"><div class="page-label">第 29 页</div><p>The ranges provided describe the typical leading electrocatalysts in both aqueous and vaporbased systems. Data are adapted from references 19, 29, 40-47, 65, 72, 75, 79.</p>
+<p>Further integrating materials design with mechanistic understanding has the broadest scope and potential impact. Creating a material where the atoms are arranged to precisely manipulate each step of the reaction, with minimal energy input, is the longstanding goal of efficient catalysis. For $ \mathrm{C O_{2} R R} $ , this will require new spectroscopic tools and enhanced theoretical techniques that together illuminate unknown mechanistic steps, $ ^{6,21-24} $ such as the protonation steps that convert bound CO into $ \mathrm{C H_{4}} $ , the singular or multiple C-C bond formation step(s), and the factors that drive selectivity among oxygenates. $ ^{120-122} $ Ideally, these tools should operate in situ and operando, providing real-time insight into material evolution along with insight into the chemical origins of $ \mathrm{C O_{2}} $ activation and C-C bond formation. Marrying material and mechanistic knowledge will push ECR technology forward along the three pillars of catalysis: activity, selectivity, and stability. Inspiration from other forms of $ \mathrm{C O_{2}} $ utilization (Box 1) could enable the realization of better reactivity; translation from and between these approaches could provide breakthrough performance, new classes of active sites and coordination environments, and more robust, cost-effective electrocatalysts. Strategies that emulate and integrate these diverse approaches provide opportunities for dramatic reductions in overpotential and enhanced mechanistic understanding.</p>
+<p>Integration into electrolyzers remain essential for achieving reaction rates that are industrially meaningful. $ ^{4 3} $ This goal requires contributions from several areas including: membrane development, stable support materials, understanding $ \mathrm{C O_{2}} $ and carbonate chemistry in harsh basic environments, and electrical integration with photovoltaics and electricity grids.</p></section>
+<section class="page" id="page-30"><div class="page-label">第 30 页</div><p>Ins could fuel cells provide strategies and characterization approaches that were used to investigate similar material challenges in solid oxides. $ ^{123} $</p>
+<p>Sinceince the first observations of electrochemical carbon dioxide reduction, remarkable progress has been made: carbon monoxide, formic acid, and synthesis gas can now be synthesized with high yield, integrated electrolyzers have been developed that push chemical production rates toward the industrially meaningful, and the mechanistic puzzles of how to form C-C bonds are being unraveled. Multiple independent technoeconomic analyses suggest that commercial impact is on the horizon. $ ^{36-38} $ A world where fuels and chemicals are derived from renewable energy and $ \mathrm{C O_{2}} $ , rather than from fossil fuels, is coming into focus.</p>
+<div>
+
+Box Box 1: $ \mathrm{C O_{2}} $ utilization in catalytic systems
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Non-electrochemical systems can also promote the utilization of $ \mathrm{C O_{2}} $ , providing new
+
+</div>
+<p>Non 11-1 Non-electrochemical systems can also promote the utilization of $ \mathrm{C O_{2}} $ providing new design principles and lessons that could ultimately be translated to electrochemical systems. Gas phase heterogeneous catalysts provide well-understood surface mechanisms that can be applied to electrocatalysts, though these are complicated in electrochemical media by solvation and electrolyte salts. Homogeneous catalysts use well-defined reaction cycles and precisely designed local electronic structures to optimally coordinate $ \mathrm{C O_{2}} $ . And finally, biology synthesizes complex molecules by coordinating a series of distinct chemical transformation steps using</p></section>
+<section class="page" id="page-31"><div class="page-label">第 31 页</div><p>compartmentalization in specialized structures. We look forward to the translation of these ideas into electrochemical systems, unlocking new chemistries and reaction motifs.</p>
+<h2>References</h2>
+<ol>
+<li>Smil, V. Energy Transitions: History, Requirements, Prospects. (2010).</li>
+</ol>
+<ol>
+<li>Chu, S. &amp; Majumdar, A. Opportunities and challenges for a sustainable energy future. Nature 488, 294-303 (2012).</li>
+</ol>
+<ol>
+<li>Chu, S., Cui, Y. &amp; Liu, N. The path towards sustainable energy. Nat. Mater. 16, 16-22 (2016).</li>
+</ol>
+<ol>
+<li>Obama, B. The irreversible momentum of clean energy. Science 355, 126-129 (2017).</li>
+</ol>
+<ol>
+<li>Gao, D., Aran-Ais, R. M., Jeon, H. S. &amp; Roldan Cuenya, B. Rational catalyst and electrolyte design for $ \mathrm{C O_{2}} $ electroreduction towards multicarbon products. Nat. Catal. 2, 198-210 (2019).</li>
+</ol>
+<ol>
+<li>Handoko, A. D., Wei, F., Jenndy, Yeo, B. S. &amp; Seh, Z. W. Understanding heterogeneous electrocatalytic carbon dioxide reduction through operando techniques. Nat. Catal. 1, 922-934 (2018).</li>
+</ol>
+<ol>
+<li>Kim, D., Sakimoto, K. K., Hong, D. &amp; Yang, P. Artificial photosynthesis for sustainable fuel and chemical production. Angew. Chem. Int. Ed. 54, 3259-3266 (2015).</li>
+</ol>
+<ol>
+<li>Hori, Y. Electrochemical $ \mathrm{C O_{2}} $ Reduction on Metal Electrodes. in Modern Aspects of Electrochemistry (2008).</li>
+</ol>
+<ol>
+<li>Seh, Z. W. et al. Combining theory and experiment in electrocatalysis: Insights into materials design. Science 355, eaad4998 (2017).</li>
+</ol>
+<ol>
+<li>Gottle, A. J. &amp; Koper, M. T. M. Proton-coupled electron transfer in the electrocatalysis of</li>
+</ol></section>
+<section class="page" id="page-32"><div class="page-label">第 32 页</div><p>$ \mathrm{C O_{2}} $ reduction: prediction of sequential vs. concerted pathways using DFT. Chem. Sci. 8, 458-465 (2017).</p>
+<ol>
+<li>Singh, M. R., Clark, E. L. &amp; Bell, A. T. Effects of electrolyte, catalyst, and membrane composition and operating conditions on the performance of solar-driven electrochemical reduction of carbon dioxide. Phys. Chem. Chem. Phys. 17, 18924-18936 (2015).</li>
+</ol>
+<ol>
+<li>Weiss, R. F. Carbon dioxide in water and seawater: the solubility of a non-ideal gas. Mar. Chem. 2, 203-215 (1974).</li>
+</ol>
+<ol>
+<li>Singh, M. R., Kwon, Y., Lum, Y., Ager, J. W. &amp; Bell, A. T. Hydrolysis of Electrolyte Cations Enhances the Electrochemical Reduction of $ \mathrm{C O_{2}} $ over Ag and Cu. J. Am. Chem. Soc. 138, 13006-13012 (2016).</li>
+</ol>
+<ol>
+<li>Wuttig, A., Yaguchi, M., Motobayashi, K., Osawa, M. &amp; Surendranath, Y. Inhibited proton transfer enhances Au-catalyzed $ \mathrm{C O_{2}} $ -to-fuels selectivity. Proc. Natl. Acad. Sci. 113, E4585-E4593. (2016).</li>
+</ol>
+<ol>
+<li>Lee, C. W., Cho, N. H., Yang, K. D. &amp; Nam, K. T. Reaction Mechanisms of the Electrochemical Conversion of Carbon Dioxide to Formic Acid on Tin Oxide Electrodes. ChemElectroChem 4, 2130-2136 (2017).</li>
+</ol>
+<ol>
+<li>Hansen, H. A., Varley, J. B., Peterson, A. A. &amp; Nørskov, J. K. Understanding trends in the electrocatalytic activity of metals and enzymes for $ \mathrm{C O_{2}} $ reduction to CO. J. Phys. Chem. Lett. 4, 388-392 (2013).</li>
+</ol>
+<ol>
+<li>Feaster, J. T. et al. Understanding Selectivity for the Electrochemical Reduction of Carbon Dioxide to Formic Acid and Carbon Monoxide on Metal Electrodes. ACS Catal. 7, 4822- 4827 (2017).</li>
+</ol>
+<ol>
+<li>Baruch, M. F., Pander, J. E., White, J. L. &amp; Bocarsly, A. B. Mechanistic Insights into the</li>
+</ol></section>
+<section class="page" id="page-33"><div class="page-label">第 33 页</div><p>Reduction of $ \mathrm{C O_{2}} $ on Tin Electrodes using in Situ ATR-IR Spectroscopy. ACS Catal. 5, 3148-3156 (2015).</p>
+<ol>
+<li>Kuhl, K. P., Cave, E. R., Abram, D. N. &amp; Jaramillo, T. F. New insights into the electrochemical reduction of carbon dioxide on metallic copper surfaces. Energy Environ. Sci. 5, 7050-7059 (2012).</li>
+</ol>
+<ol>
+<li>Hori, Y., Takahashi, R., Yoshinami, Y. &amp; Murata, A. Electrochemical Reduction of CO at a Copper Electrode. J. Phys. Chem. B 101, 7075-7081 (1997).</li>
+</ol>
+<ol>
+<li>Schmid, B. et al. Reactivity of Copper Electrodes towards Functional Groups and Small Molecules in the Context of $ \mathrm{C O_{2}} $ Electro-Reductions. Catalysts 7, 161 (2017).</li>
+</ol>
+<ol>
+<li>Kortlever, R., Shen, J., Schouten, K. J. P., Calle-Vallejo, F. &amp; Koper, M. T. M. Catalysts and Reaction Pathways for the Electrochemical Reduction of Carbon Dioxide. J. Phys. Chem. Lett. 6, 4073-4082 (2015).</li>
+</ol>
+<ol>
+<li>Goodpaster, J. D., Bell, A. T. &amp; Head-Gordon, M. Identification of Possible Pathways for C-C Bond Formation during Electrochemical Reduction of $ \mathrm{C O_{2}} $ : New Theoretical Insights from an Improved Electrochemical Model. J. Phys. Chem. Lett. 7, 1471-1477 (2016).</li>
+</ol>
+<ol>
+<li>Liu, X. et al. Understanding trends in electrochemical carbon dioxide reduction rates. Nat. Commun. 8, 15438 (2017).</li>
+</ol>
+<ol>
+<li>Hall, A. S., Yoon, Y., Wuttig, A. &amp; Surendranath, Y. Mesostructure-Induced Selectivity in $ \mathrm{C O_{2}} $ Reduction Catalysis. J. Am. Chem. Soc. 137, 14834-14837 (2015).</li>
+</ol>
+<ol>
+<li>Zhang, Y. J., Sethuraman, V., Michalsky, R. &amp; Peterson, A. A. Competition between $ \mathrm{CO}<em>{2} $ reduction and $ \mathrm{H}</em>{2} $ evolution on transition-metal electrocatalysts. ACS Catal. 4, 3742-3748 (2014).</li>
+</ol></section>
+<section class="page" id="page-34"><div class="page-label">第 34 页</div><ol>
+<li>Cave, E. R. et al. Trends in the Catalytic Activity of Hydrogen Evolution during $ \mathrm{C O_{2}} $ Electroreduction on Transition Metals. ACS Catal. 8, 3035-3040 (2018).</li>
+</ol>
+<ol>
+<li>Ross, M. B. et al. Electrocatalytic Rate Alignment Enhances Syngas Generation. Joule 3, 257-264 (2019).</li>
+</ol>
+<ol>
+<li>Liu, M. et al. Enhanced electrocatalytic $ \mathrm{CO}_{2} $ reduction via field-induced reagent concentration. Nature 537, 382-386 (2016).</li>
+</ol>
+<ol>
+<li>Chen, L. D., Urushihara, M., Chan, K. &amp; Nørskov, J. K. Electric Field Effects in Electrochemical $ \mathrm{C O_{2}} $ Reduction. ACS Catal. 6, 7133-7139 (2016).</li>
+</ol>
+<ol>
+<li>Pérez-Gallent, E., Marcandalli, G., Figueiredo, M. C., Calle-Vallejo, F. &amp; Koper, M. T. M. Structure- and Potential-Dependent Cation Effects on CO Reduction at Copper Single-Crystal Electrodes. J. Am. Chem. Soc. 139, 16412-16419 (2017).</li>
+</ol>
+<ol>
+<li>Perez-Gallent, E., Figueiredo, M. C., Calle-Vallejo, F. &amp; Koper, M. T. M. Spectroscopic Observation of a Hydrogenated CO Dimer Intermediate During CO Reduction on Cu(100) Electrodes. Angew. Chem. Int. Ed. 129, 3675-3678 (2017).</li>
+</ol>
+<ol>
+<li>Rosen, B. A. et al. Ionic liquid-mediated selective conversion of $ \mathrm{C O_{2}} $ to CO at low overpotentials. Science 334, 643-644 (2011).</li>
+</ol>
+<ol>
+<li>Urushihara, M., Chan, K., Shi, C. &amp; Nørskov, J. K. Theoretical Study of $ \mathrm{E M I M}^{+} $ Adsorption on Silver Electrode Surfaces. J. Phys. Chem. C 119, 20023-20029 (2015).</li>
+</ol>
+<ol>
+<li>Han, Z., Kortlever, R., Chen, H.-Y., Peters, J. C. &amp; Agapie, T. $ \mathrm{C O_{2}} $ Reduction Selective for $ \mathrm{C_{2+}} $ Products on Polycrystalline Copper with N-Substituted Pyridinium Additives. ACS Cent. Sci. 3, 853-859 (2017).</li>
+</ol>
+<ol>
+<li>Verma, S., Kim, B., Jhong, H. R. M., Ma, S. &amp; Kenis, P. J. A. A Gross-Margin Model for Defining Technoeconomic Benchmarks in the Electroreduction of $ \mathrm{C O_{2}} $ . ChemSusChem 9,</li>
+</ol></section>
+<section class="page" id="page-35"><div class="page-label">第 35 页</div><p>1972-1979 (2016).</p>
+<ol>
+<li>Jouny, M., Luc, W. W. &amp; Jiao, F. A General Techno-Economic Analysis of $ \mathrm{C O_{2}} $ Electrolysis Systems. Ind. Eng. Chem. Res. 57, 2165-2177 (2018).</li>
+</ol>
+<ol>
+<li>Bushuyev, O. S. et al. What Should We Make with $ \mathrm{C O_{2}} $ and How Can We Make It? Joule 2, 825-832 (2018).</li>
+</ol>
+<ol>
+<li>Hoang, T. T. H. et al. Nano Porous Copper-Silver Alloys by Additive-Controlled Electrodeposition for the Selective Electroreduction of $ \mathrm{C O_{2}} $ to Ethylene and Ethanol. J. Am. Chem. Soc. 140, 5791-5797 (2018).</li>
+</ol>
+<ol>
+<li>Verma, S. et al. Insights into the Low Overpotential Electroreduction of $ \mathrm{C O_{2}} $ to CO on a Supported Gold Catalyst in an Alkaline Flow Electrolyzer. ACS Energy Lett. 3, 193-198 (2018).</li>
+</ol>
+<ol>
+<li>Ma, S. et al. One-step electrosynthesis of ethylene and ethanol from $ \mathrm{C O_{2}} $ in an alkaline electrolyzer. J. Power Sources 301, 219-228 (2016).</li>
+</ol>
+<ol>
+<li>Dinh, C. et al. Sustained high-selectivity $ \mathrm{C O_{2}} $ electroreduction to ethylene via hydroxide-mediated catalysis at an abrupt reaction interface. Nature 787, 783-787 (2018).</li>
+</ol>
+<ol>
+<li>Jhong, H.-R. "Molly", Ma, S. &amp; Kenis, P. J. Electrochemical conversion of $ \mathrm{C O_{2}} $ to useful chemicals: current status, remaining challenges, and future opportunities. Curr. Opin. Chem. Eng. 2, 191-199 (2013).</li>
+</ol>
+<ol>
+<li>Ripatti, D. S., Veltman, T. R. &amp; Kanan, M. W. Carbon Monoxide Gas Diffusion Electrolysis that Produces Concentrated $ C_{2} $ Products with High Single-Pass Conversion. Joule 3, 240-256 (2019).</li>
+</ol>
+<ol>
+<li>Yang, H., Kaczur, J. J., Sajjad, S. D. &amp; Masel, R. I. Electrochemical conversion of $ \mathrm{C O_{2}} $ to formic acid utilizing Sustainion $ ^{\mathrm{TM}} $ membranes. J. $ \mathrm{C O_{2}} $ Util. 20, 208-217 (2017).</li>
+</ol></section>
+<section class="page" id="page-36"><div class="page-label">第 36 页</div><ol>
+<li>Burdyny, T. &amp; Smith, W. A. $ \mathrm{C O_{2}} $ reduction on gas-diffusion electrodes and why catalytic performance must be assessed at commercially-relevant conditions. Energy Environ. Sci. (2019). doi:10.1039/c8ee03134g</li>
+</ol>
+<ol>
+<li>Chen, Y. &amp; Kanan, M. W. Tin oxide dependence of the $ \mathrm{C O_{2}} $ reduction efficiency on tin electrodes and enhanced activity for tin/tin oxide thin-film catalysts. J. Am. Chem. Soc. 134, 1986-1989 (2012).</li>
+</ol>
+<ol>
+<li>Luc, W. et al. Ag-Sn bimetallic catalyst with a core-shell structure for $ \mathrm{C O_{2}} $ reduction. J. Am. Chem. Soc. 139, 1885-1893 (2017).</li>
+</ol>
+<ol>
+<li>Kim, D., Resasco, J., Yu, Y., Asiri, A. M. &amp; Yang, P. Synergistic geometric and electronic effects for electrochemical reduction of carbon dioxide using gold-copper bimetallic nanoparticles. Nat. Commun. 5, 4948 (2014).</li>
+</ol>
+<ol>
+<li>Christophe, J., Doneux, T. &amp; Buess-Herman, C. Electroreduction of Carbon Dioxide on Copper-Based Electrodes: Activity of Copper Single Crystals and Copper-Gold Alloys. Electrocatalysis 3, 139-146 (2012).</li>
+</ol>
+<ol>
+<li>Kim, D. et al. Electrochemical Activation of $ \mathrm{C O_{2}} $ through Atomic Ordering Transformations of AuCu Nanoparticles. J. Am. Chem. Soc. 139, 8329-8336 (2017).</li>
+</ol>
+<ol>
+<li>Ross, M. B. et al. Tunable Cu Enrichment Enables Designer Syngas Electrosynthesis from $ \mathrm{C O_{2}} $ . J. Am. Chem. Soc. 139, 9359-9363 (2017).</li>
+</ol>
+<ol>
+<li>Durand, W. J., Peterson, A. A., Studt, F., Abild-Pedersen, F. &amp; Nørskov, J. K. Structure effects on the energetics of the electrochemical reduction of $ \mathrm{C O_{2}} $ by copper surfaces. Surf. Sci. 605, 1354-1359 (2011).</li>
+</ol>
+<ol>
+<li>Zhu, W. et al. Active and selective conversion of $ \mathrm{C O_{2}} $ to CO on ultrathin Au nanowires. J. Am. Chem. Soc. 136, 16132-16135 (2014).</li>
+</ol></section>
+<section class="page" id="page-37"><div class="page-label">第 37 页</div><ol>
+<li>Hong, X., Chan, K., Tsai, C. &amp; Norskov, J. K. How doped $ \mathrm{M o S_{2}} $ breaks transition-metal scaling relations for $ \mathrm{C O_{2}} $ electrochemical reduction. ACS Catal. 6, 4428-4437 (2016).</li>
+</ol>
+<ol>
+<li>Handoko, A. D., Khoo, K. H., Tan, T. L., Jin, H. &amp; Seh, Z. W. Establishing new scaling relations on two-dimensional MXenes for $ \mathrm{C O_{2}} $ electroreduction. J. Mater. Chem. A 6, 21885-21890 (2018).</li>
+</ol>
+<ol>
+<li>Hori, Y., Wakebe, H., Tsukamoto, T. &amp; Koga, O. Electrocatalytic process of CO selectivity in electrochemical reduction of $ \mathrm{C O_{2}} $ at metal electrodes in aqueous media. Electrochim. Acta 39, 1833-1839 (1994).</li>
+</ol>
+<ol>
+<li>Hori, Y., Takahashi, I., Koga, O. &amp; Hoshi, N. Selective Formation of $ C_{2} $ Compounds from Electrochemical Reduction of $ \mathrm{C O_{2}} $ at a Series of Copper Single Crystal Electrodes. J. Phys. Chem. B 106, 15-17 (2002).</li>
+</ol>
+<ol>
+<li>Calle-Vallejo, F. &amp; Koper, M. T. M. Theoretical considerations on the electroreduction of CO to $ C_{2} $ Species on Cu(100) electrodes. Angew. Chem. Int. Ed. 52, 7282-7285 (2013).</li>
+</ol>
+<ol>
+<li>Schouten, K. J. P., Qin, Z., Gallent, E. P. &amp; Koper, M. T. M. Two pathways for the formation of ethylene in CO reduction on single-crystal copper electrodes. J. Am. Chem. Soc. 134, 9864-9867 (2012).</li>
+</ol>
+<ol>
+<li>Montoya, J. H., Shi, C., Chan, K. &amp; Nørskov, J. K. Theoretical Insights into a CO Dimerization Mechanism in $ \mathrm{C O_{2}} $ Electroreduction. J. Phys. Chem. Lett. 6, 2032-2037 (2015).</li>
+</ol>
+<ol>
+<li>Sandberg, R. B., Montoya, J. H., Chan, K. &amp; Nørskov, J. K. CO-CO coupling on Cu facets: Coverage, strain and field effects. Surf. Sci. 654, 56-62 (2016).</li>
+</ol>
+<ol>
+<li>Huang, Y., Handoko, A. D., Hirunsit, P. &amp; Yeo, B. S. Electrochemical Reduction of $ \mathrm{C O_{2}} $ Using Copper Single-Crystal Surfaces: Effects of CO* Coverage on the Selective</li>
+</ol></section>
+<section class="page" id="page-38"><div class="page-label">第 38 页</div><p>Formation of Ethylene. ACS Catal. 7, 1749-1756 (2017).</p>
+<ol>
+<li>Roberts, F. S., Kuhl, K. P. &amp; Nilsson, A. High selectivity for ethylene from carbon dioxide reduction over copper nanocube electrocatalysts. Angew. Chem. Int. Ed. 54, 5179- 5182 (2015).</li>
+</ol>
+<ol>
+<li>Gao, D. et al. Plasma-Activated Copper Nanocube Catalysts for Efficient Carbon Dioxide Electroreduction to Hydrocarbons and Alcohols. ACS Nano 11, 4825-4831 (2017).</li>
+</ol>
+<ol>
+<li>Loiudice, A. et al. Tailoring Copper Nanocrystals towards $ C_{2} $ Products in Electrochemical $ \mathrm{C O_{2}} $ Reduction. Angew. Chem. Int. Ed. 55, 5789-5792 (2016).</li>
+</ol>
+<ol>
+<li>Grosse, P. et al. Dynamic Changes in the Structure, Chemical State and Catalytic Selectivity of Cu Nanocubes during $ \mathrm{C O_{2}} $ electroreduction: Size and Support Effects. Angew. Chem. Int. Ed. 130, 6300-6305 (2018).</li>
+</ol>
+<ol>
+<li>Li, C. W. &amp; Kanan, M. W. $ \mathrm{C O_{2}} $ reduction at low overpotential on Cu electrodes resulting from the reduction of thick $ \mathrm{C u_{2} O} $ films. J. Am. Chem. Soc. 134, 7231-7234 (2012).</li>
+</ol>
+<ol>
+<li>Li, C. W., Ciston, J. &amp; Kanan, M. W. Electroreduction of carbon monoxide to liquid fuel on oxide-derived nanocrystalline copper. Nature 508, 504-507 (2014).</li>
+</ol>
+<ol>
+<li>Verdaguer-Casadevall, A. et al. Probing the Active Surface Sites for CO Reduction on Oxide-Derived Copper Electrocatalysts. J. Am. Chem. Soc. 137, 9808-9811 (2015).</li>
+</ol>
+<ol>
+<li>Kas, R. et al. Electrochemical $ \mathrm{C O_{2}} $ reduction on $ \mathrm{C u_{2} O} $ -derived copper nanoparticles: controlling the catalytic selectivity of hydrocarbons. Phys. Chem. Chem. Phys. 16, 12194- 12201 (2014).</li>
+</ol>
+<ol>
+<li>Ren, D. et al. Selective Electrochemical Reduction of Carbon Dioxide to Ethylene and Ethanol on Copper(I) oxide catalysts. ACS Catal. 5, 2814-2821 (2015).</li>
+</ol>
+<ol>
+<li>Mistry, H. et al. Highly selective plasma-activated copper catalysts for carbon dioxide</li>
+</ol></section>
+<section class="page" id="page-39"><div class="page-label">第 39 页</div><p>reduction to ethylene. Nat. Commun. 7, 12123 (2016).</p>
+<ol>
+<li>Kas, R., Kortlever, R., Yilmaz, H., Koper, M. T. M. &amp; Mul, G. Manipulating the Hydrocarbon Selectivity of Copper Nanoparticles in $ \mathrm{C O_{2}} $ Electroreduction by Process Conditions. ChemElectroChem 2, 354-358 (2015).</li>
+</ol>
+<ol>
+<li>Lum, Y., Yue, B., Lobaccaro, P., Bell, A. T. &amp; Ager, J. W. Optimizing C-C Coupling on Oxide-Derived Copper Catalysts for Electrochemical $ \mathrm{C O_{2}} $ Reduction. J. Phys. Chem. C 121, 14191-4203 (2017).</li>
+</ol>
+<ol>
+<li>Ren, D., Fong, J. &amp; Yeo, B. S. The effects of currents and potentials on the selectivities of copper toward carbon dioxide electroreduction. Nat. Commun. 9, 925 (2018).</li>
+</ol>
+<ol>
+<li>Bertheussen, E. et al. Electroreduction of CO on Polycrystalline Copper at Low Overpotentials. ACS Energy Lett. 3, 634-640 (2018).</li>
+</ol>
+<ol>
+<li>Dutta, A., Rahaman, M., Luedi, N. C., Mohos, M. &amp; Broekmann, P. Morphology Matters: Tuning the Product Distribution of $ \mathrm{C O_{2}} $ Electroreduction on Oxide-Derived Cu Foam Catalysts. ACS Catal. 6, 3804-3814 (2016).</li>
+</ol>
+<ol>
+<li>Kim, D., Kley, C. S., Li, Y. &amp; Yang, P. Copper nanoparticle ensembles for selective electroreduction of $ \mathrm{C O_{2}} $ to $ \mathrm{C_{2}-C_{3}} $ products. Proc. Natl. Acad. Sci. 114, 10560-10565 (2017).</li>
+</ol>
+<ol>
+<li>Feng, X., Jiang, K., Fan, S. &amp; Kanan, M. W. A Direct Grain-Boundary-Activity Correlation for CO Electroreduction on Cu Nanoparticles. ACS Cent. Sci. 2, 169-174 (2016).</li>
+</ol>
+<ol>
+<li>Li, Y. et al. Structure-sensitive $ \mathrm{C O_{2}} $ electroreduction to hydrocarbons on ultrathin fivefold twinned copper nanowires. Nano Lett. 17, 1312-1317 (2017).</li>
+</ol>
+<ol>
+<li>De Luna, P. et al. Catalyst electro-redeposition controls morphology and oxidation state</li>
+</ol></section>
+<section class="page" id="page-40"><div class="page-label">第 40 页</div><p>for selective carbon dioxide reduction. Nat. Catal. 1, 103-110 (2018).</p>
+<ol>
+<li>Kim, Y. G., Baricuatro, J. H., Javier, A., Gregoire, J. M. &amp; Soriaga, M. P. The evolution of the polycrystalline copper surface, first to Cu(111) and then to Cu(100), at a fixed $ \mathrm{C O_{2} R R} $ potential: A study by operando EC-STM. Langmuir 30, 15053-15056 (2014).</li>
+</ol>
+<ol>
+<li>Gunathunge, C. M. et al. Spectroscopic Observation of Reversible Surface Reconstruction of Copper Electrodes under $ \mathrm{C O_{2}} $ Reduction. J. Phys. Chem. C 121, 12337-12344 (2017).</li>
+</ol>
+<ol>
+<li>Weng, Z. et al. Active sites of copper-complex catalytic materials for electrochemical carbon dioxide reduction. Nat. Commun. 9, 415 (2018).</li>
+</ol>
+<ol>
+<li>Xiao, H., Cheng, T. &amp; Goddard, W. A. Atomistic mechanisms underlying selectivities in $ C_{1} $ and $ C_{2} $ products from electrochemical reduction of CO on $ \mathrm{C u} ( 1 1 1 ) $ . J. Am. Chem. Soc. 139, 130-136 (2017).</li>
+</ol>
+<ol>
+<li>Bertheussen, E. et al. Acetaldehyde as an Intermediate in the Electroreduction of Carbon Monoxide to Ethanol on Oxide-Derived Copper. Angew. Chem. Int. Ed. 55, 1450-1454 (2016).</li>
+</ol>
+<ol>
+<li>Lum, Y. &amp; Ager, J. W. Evidence for product-specific active sites on oxide-derived Cu catalysts for electrochemical $ \mathrm{C O_{2}} $ reduction. Nat. Catal. 2, 86-93 (2019).</li>
+</ol>
+<ol>
+<li>Lum, Y., Cheng, T., Goddard, W. A. &amp; Ager, J. W. Electrochemical CO Reduction Builds Solvent Water into Oxygenate Products. J. Am. Chem. Soc. 140, 9337-9340 (2018).</li>
+</ol>
+<ol>
+<li>Jouny, M., Luc, W. &amp; Jiao, F. High-rate electroreduction of carbon monoxide to multi carbon products. Nat. Catal. 1, 748-755 (2018).</li>
+</ol>
+<ol>
+<li>Clark, E. L. et al. Explaining the Incorporation of Oxygen Derived from Solvent Water into the Oxygenated Products of CO Reduction over Cu. J. Am. Chem. Soc. 141, 4191- 4193 (2019).</li>
+</ol></section>
+<section class="page" id="page-41"><div class="page-label">第 41 页</div><ol>
+<li>Hahn, C. et al. Engineering Cu surfaces for the electrocatalytic conversion of $ \mathrm{C O_{2}} $ : Controlling selectivity toward oxygenates and hydrocarbons. Proc. Natl. Acad. Sci. 114, 5918-5923 (2017).</li>
+</ol>
+<ol>
+<li>Ren, D., Ang, B. S. H. &amp; Yeo, B. S. Tuning the Selectivity of Carbon Dioxide Electroreduction toward Ethanol on Oxide-Derived $ \mathrm{C u_{x} Z n} $ Catalysts. ACS Catal. 6, 82398247 (2016).</li>
+</ol>
+<ol>
+<li>Clark, E. L., Hahn, C., Jaramillo, T. F. &amp; Bell, A. T. Electrochemical $ \mathrm{C O_{2}} $ Reduction over Compressively Strained CuAg Surface Alloys with Enhanced Multi-Carbon Oxygenate Selectivity. J. Am. Chem. Soc. 139, 15848-15857 (2017).</li>
+</ol>
+<ol>
+<li>Ren, D., Wong, N. T., Handoko, A. D., Huang, Y. &amp; Yeo, B. S. Mechanistic Insights into the Enhanced Activity and Stability of Agglomerated Cu Nanocrystals for the Electrochemical Reduction of Carbon Dioxide to n-Propanol. J. Phys. Chem. Lett. 7, 2024 (2016).</li>
+</ol>
+<ol>
+<li>Chen, C. S., Wan, J. H. &amp; Yeo, B. S. Electrochemical Reduction of Carbon Dioxide to Ethane Using Nanostructured $ \mathrm{C u_{2} O} $ -Derived Copper Catalyst and Palladium(II) Chloride. J. Phys. Chem. C 119, 26875-26882 (2015).</li>
+</ol>
+<ol>
+<li>Jensen, M. T. et al. Scalable carbon dioxide electroreduction coupled to carbonylation chemistry. Nat. Commun. 8, 489 (2017).</li>
+</ol>
+<ol>
+<li>Ostapowicz, T. G., Schmitz, M., Krystof, M., Klankermayer, J. &amp; Leitner, W. Carbon dioxide as a $ C_{1} $ building block for the formation of carboxylic acids by formal catalytic hydrocarboxylation. Angew. Chem. Int. Ed. 52, 12119-12123 (2013).</li>
+</ol>
+<ol>
+<li>Klankermayer, J., Wesselbaum, S., Beydoun, K. &amp; Leitner, W. Selective Catalytic Synthesis Using the Combination of Carbon Dioxide and Hydrogen: Catalytic Chess at the</li>
+</ol></section>
+<section class="page" id="page-42"><div class="page-label">第 42 页</div><p>Interface of Energy and Chemistry. Angew. Chem. Int. Ed. 55, 7296-7343 (2016).</p>
+<ol>
+<li>Haas, T., Krause, R., Weber, R., Demler, M. &amp; Schmid, G. Technical photosynthesis involving $ \mathrm{C O_{2}} $ electrolysis and fermentation. Nat. Catal. 1, 32-39 (2018).</li>
+</ol>
+<ol>
+<li>Zhao, C. et al. Ionic Exchange of Metal-Organic Frameworks to Access Single Nickel Sites for Efficient Electroreduction of $ \mathrm{C O_{2}} $ . J. Am. Chem. Soc. 139, 8078-081 (2017).</li>
+</ol>
+<ol>
+<li>Yang, H. Bin et al. Atomically dispersed Ni(I) as the active site for electrochemical CO2 reduction. Nat. Energy 3, 140-147 (2018).</li>
+</ol>
+<ol>
+<li>Wang, X. et al. Regulation of Coordination Number over Single Co Sites: Triggering the Efficient Electroreduction of $ \mathrm{C O_{2}} $ . Angew. Chem. Int. Ed. 57, 1944-1948 (2018).</li>
+</ol>
+<ol>
+<li>Jiang, K. et al. Isolated Ni Single Atoms in Graphene Nanosheets for High-Performance $ \mathrm{C O_{2}} $ Reduction. Energy Environ. Sci. 11, 893-903 (2018).</li>
+</ol>
+<ol>
+<li>Ju, W. et al. Understanding activity and selectivity of metal-nitrogen-doped carbon catalysts for electrochemical reduction of $ \mathrm{C O_{2}} $ . Nat. Commun. 8, 944 (2017).</li>
+</ol>
+<ol>
+<li>Zhang, X. et al. Highly selective and active $ \mathrm{C O_{2}} $ reduction electrocatalysts based on cobalt phthalocyanine/carbon nanotube hybrid structures. Nat. Commun. 8, 14675 (2017).</li>
+</ol>
+<ol>
+<li>Jackson, M. N. et al. Strong Electronic Coupling of Molecular Sites to Graphitic Electrodes via Pyrazine Conjugation. J. Am. Chem. Soc. 140, 1004-1010 (2018).</li>
+</ol>
+<ol>
+<li>Deng, Y. et al. On the Role of Sulfur for the Selective Electrochemical Reduction of $ \mathrm{C O_{2}} $ to Formate on $ \mathrm{C u S_{x}} $ Catalysts. ACS Appl. Mater. Interfaces 10, 28572-28581 (2018).</li>
+</ol>
+<ol>
+<li>Zheng, X. et al. Sulfur-Modulated Tin Sites Enable Highly Selective Electrochemical Reduction of $ \mathrm{C O_{2}} $ to Formate. Joule 1, 794-805 (2017).</li>
+</ol>
+<ol>
+<li>Jain, A. et al. Commentary: The materials project: A materials genome approach to accelerating materials innovation. APL Mater. 1, 011002 (2013).</li>
+</ol></section>
+<section class="page" id="page-43"><div class="page-label">第 43 页</div><ol>
+<li>Bligaard, T. et al. The Brnsted-Evans-Polanyi relation and the volcano curve in heterogeneous catalysis. J. Catal. 224, 206-217 (2004).</li>
+</ol>
+<ol>
+<li>Aspuru-Guzik, A., Lindh, R. &amp; Reiher, M. The Matter Simulation (R)evolution. ACS Cent. Sci. 4, 144-152 (2018).</li>
+</ol>
+<ol>
+<li>Ulissi, Z. W. et al. Machine-learning methods enable exhaustive searches for active Bimetallic facets and reveal active site motifs for $ \mathrm{C O_{2}} $ reduction. ACS Catal. 7, 6600- 6608 (2017).</li>
+</ol>
+<ol>
+<li>Ma, X., Li, Z., Achenie, L. E. K. &amp; Xin, H. Machine-Learning-Augmented Chemisorption Model for $ \mathrm{C O_{2}} $ Electroreduction Catalyst Screening. J. Phys. Chem. Lett. 6, 3528-3533 (2015).</li>
+</ol>
+<ol>
+<li>Tran, K. &amp; Ulissi, Z. W. Active learning across intermetallics to guide discovery of electrocatalysts for $ \mathrm{C O_{2}} $ reduction and $ \mathrm{H_{2}} $ evolution. Nat. Catal. 1, 696-703 (2018).</li>
+</ol>
+<ol>
+<li>Singh, A. K., Montoya, J. H., Gregoire, J. M. &amp; Persson, K. A. Robust and synthesizable photocatalysts for $ \mathrm{C O_{2}} $ reduction: a data-driven materials discovery. Nat. Commun. 10, 443 (2019).</li>
+</ol>
+<ol>
+<li>Huang, L. et al. Catalyst design by scanning probe block copolymer lithography. Proc. Natl. Acad. Sci. 115, 3764-3769 (2018).</li>
+</ol>
+<ol>
+<li>Nikolaev, P. et al. Autonomy in materials research: A case study in carbon nanotube growth. npj Comput. Mater. 2, 16031 (2016).</li>
+</ol>
+<ol>
+<li>Gromski, P. S., Henson, A. B., Granda, J. M. &amp; Cronin, L. How to explore chemical space using algorithms and automation. Nat. Rev. Chem. 3, 119-128 (2019).</li>
+</ol>
+<ol>
+<li>Nie, X., Esopi, M. R., Janik, M. J. &amp; Asthagiri, A. Selectivity of $ \mathrm{C O_{2}} $ reduction on copper electrodes: The role of the kinetics of elementary steps. Angew. Chem. Int. Ed. 52, 2459-</li>
+</ol></section>
+<section class="page" id="page-44"><div class="page-label">第 44 页</div><p>462(2013).</p>
+<ol>
+<li>Liu, X. et al. pH effects on the electrochemical reduction of $ \mathrm{C O}<em>{(2)} $ towards $ \mathrm{C}</em>{2} $ products on stepped copper. Nat. Commun. 10, 32 (2019).</li>
+</ol>
+<ol>
+<li>Cheng, T., Fortunelli, A. &amp; Goddard III, W. A. Reaction intermediates during operando electrocatalysis identified from full solvent quantum mechanics molecular dynamics. Proc. Natl. Acad. Sci. U. S. A. (2019). doi:10.1073/pnas.1821709116</li>
+</ol>
+<ol>
+<li>Irvine, J. T. S. et al. Evolution of the electrochemical interface in high-temperature fuel cells and electrolysers. Nat. Energy 1, 15014 (2016).</li>
+</ol>
+<h2>Highlighted References</h2>
+<ol>
+<li>Handoko, A. D., Wei, F., Jenndy, Yeo, B. S. &amp; Seh, Z. W. Understanding heterogeneous electrocatalytic carbon dioxide reduction through operando techniques. Nature Catalysis (2018). doi:10.1038/s41929-018-0182-6</li>
+</ol>
+<p>A comprehensive review of state-of-the-art characterization of $ \mathrm{C O_{2} R R} $ electrocatalysts under working conditions.</p>
+<ol>
+<li>Hori, Y. Electrochemical $ \mathrm{C O_{2}} $ Reduction on Metal Electrodes. 42, 89-189 (2008). This chapter provides a comprehensive summary of $ \mathrm{C O_{2}} $ RR electrochemistry on a variety of metal surfaces.</li>
+</ol>
+<ol>
+<li>Seh, Z. W. et al. Combining theory and experiment in electrocatalysis: Insights into materials design. Science 355, 4998 (2017).</li>
+</ol></section>
+<section class="page" id="page-45"><div class="page-label">第 45 页</div><p>This review describes the interplay between experiment and theory in electrocatalysis for a variety of reactions, as well as introducing intermediate binding strength and scaling relations as frameworks for understanding catalytic activity.</p>
+<ol>
+<li>Kuhl, K. P., Cave, E. R., Abram, D. N. &amp; Jaramillo, T. F. New insights into the electrochemical reduction of carbon dioxide on metallic copper surfaces. Energy &amp; Environmental Science 5, 7050 (2012). Sixteen distinct products are accounted for from $ \mathrm{C O_{2} R R} $ on a polycrystalline Cu surface, providing insight into the competing reaction pathways for multi-carbon product formation on Cu surfaces.</li>
+</ol>
+<ol>
+<li>Verma, S., Kim, B., Jhong, H. R. M., Ma, S. &amp; Kenis, P. J. A. A Gross-Margin Model for Defining Technoeconomic Benchmarks in the Electroreduction of $ \mathrm{C O_{2}} $ ChemSusChem 1972-1979 (2016).</li>
+</ol>
+<p>This work presents a thorough technoeconomic analysis of $ \mathrm{C O_{2}} $ reduction at the device level, explicitly describing how to treat capital costs, catalyst durability, and electricity prices.</p>
+<ol>
+<li>Dinh, C. et al. Sustained high-selectivity CO2 electroreduction to ethylene via hydroxide-mediated catalysis at an abrupt reaction interface. Submitted to. Nature 787, 783-787 (2018). This work illustrates how the design of an electrolyzer system can dramatically improve performance, here particularly for the synthesis of ethylene.</li>
+</ol></section>
+<section class="page" id="page-46"><div class="page-label">第 46 页</div><ol>
+<li>Chen, Y., Li, C. W. &amp; Kanan, M. W. Aqueous $ \mathrm{C O_{2}} $ Reduction at Very Low Overpotential on Oxide-Derived Au Nanoparticles. Journal of the American Chemical Society 134, 19969-19972 (2012).</li>
+</ol>
+<p>The first demonstration of the oxide-derived approach in $ \mathrm{C O_{2}} $ RR electrocatalysis that has consistently been shown to improve activity and selectivity.</p>
+<ol>
+<li>Kim, D., Kley, C. S., Li, Y. &amp; Yang, P. Copper nanoparticle ensembles for selective electroreduction of $ \mathrm{C O_{2}} $ to $ \mathrm{C_{2}-C_{3}} $ products. Proc. Natl. Acad. Sci. U. S. A. 114, 10560-10565 (2017).</li>
+</ol>
+<p>This work demonstrates the importance of Cu structural dynamics in electrolytic conditions that produce multi-carbon products.</p>
+<h2>Acknowledgements</h2>
+<p>This work was supported by the CIFAR Bio-Inspired Solar Energy program; by the Director, Office of Science, Office of Basic Energy Sciences, Chemical Sciences, Geosciences, &amp; Biosciences Division, of the U.S. Department of Energy under Contract No. DE-AC02- 05CH11231, FWP No. CH030201; and by the Director, Office of Science, Office of Basic Energy Sciences, Materials Science and Engineering Division, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231. M.B.R. gratefully acknowledges support from the CIFAR Bio-Inspired Solar Energy Program. PDL wishes to thank the Natural Sciences and Engineering Research Council (NSERC) of Canada for support in the form of the Canadian Graduate Scholarship - Doctoral award. D.K. acknowledges support from Samsung Scholarship.</p></section>
+<section class="page" id="page-47"><div class="page-label">第 47 页</div><p>Author Contributions</p>
+<p>All authors contributed to the conception and writing of this manuscript.</p>
+<h2>Author Information</h2>
+<p>Reprints and permissions information is available at www.nature.com/reprints. The authors declare no competing financial interests. Readers are welcome to comment on the online version of the paper. Correspondence and requests for materials should be addressed to P.Y. (p_yang@berkeley.edu) and E.H.S. (ted.sargent@utoronto.ca)</p>
+<p>Competing interests</p>
+<p>The authors claim no competing interests.</p></section></main></body></html>

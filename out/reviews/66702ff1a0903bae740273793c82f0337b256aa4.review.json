@@ -1,0 +1,64 @@
+{
+  "sha1": "66702ff1a0903bae740273793c82f0337b256aa4",
+  "title": "Carbon‐Nanotube‐Based Thermoelectric Materials and Devices",
+  "doi": "https://doi.org/10.1002/adma.201704386",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/66702ff1a0903bae740273793c82f0337b256aa4/index.html",
+  "source_chars": 176383,
+  "markdown_chars": 5377,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "signifcantly more conductive than heavily doped m-SWCNT",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页脚句子不完整，下一页开头没有直接接续，但根据上下文可推断为对比句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Note that both studies predict very large values for the intrinsic thers-SWCNT networks become incredibly conductive when heavily doped",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "句子在页尾中断，'ther'后接's-SWCNT'，疑似'thermopower of s-SWCNTs'，但文本抽取中'networks become...'插入，导致语义断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "sectors (transportation, electricity generation, manufacturing, etc.)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "首句前缺少主语，可能为'energy sectors'，但无强证据，仅标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对公式形式及关键数值：zT定义、Seebeck公式、热导率分解、效率公式；功率因子350/700 µW/mK²、zT=0.14、热导率约17 W/mK等。部分表格数据因文本排列错乱未采用，仅依赖正文明确内容。温度依赖、掺杂策略等结论方向一致。不确定处：个别跨页句子拼接疑点已在issues中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5000,
+      "prompt_tokens": 54491,
+      "total_tokens": 59491,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1084
+      }
+    },
+    "content_chars": 6509
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

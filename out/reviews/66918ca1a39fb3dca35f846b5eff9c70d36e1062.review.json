@@ -1,0 +1,45 @@
+{
+  "sha1": "66918ca1a39fb3dca35f846b5eff9c70d36e1062",
+  "title": "Machine learning in additive manufacturing: State-of-the-art and perspectives",
+  "doi": "https://doi.org/10.1016/j.addma.2020.101538",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/66918ca1a39fb3dca35f846b5eff9c70d36e1062/index.html",
+  "source_chars": 102139,
+  "markdown_chars": 4037,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 29,
+      "quote": "It is reported that deep neural networks powered by the Intellegens’ AlchemiteTM Engine are being leveraged to design a new Ni-based combustor alloy that well suits to be processed by a laser-based DED technique and the AMed component could satisfy the performance targets for application in a jet engine.",
+      "type": "疑似专名拼写不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文中后段出现“Intellegens”，此处为“Intellegens”，可能为同一公司名的拼写变体或抽取差异，但无法确认原文是否一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、各章节中的关键数值（如Gu等的数据：10^5个微观结构、2倍强40倍韧、FEM 5天 vs CNN 10小时等）、方法（GP、MLP、SVM、CNN、GAN等）与结论方向一致。公式未出现于提取文本，故未涉及。少数跨页表格（表1、表2）的条目因页间断裂仅按正文叙述保留，未补全表格全部内容。附录术语表未在正文展开。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2720,
+      "prompt_tokens": 24852,
+      "total_tokens": 27572,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8
+      }
+    },
+    "content_chars": 4850
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

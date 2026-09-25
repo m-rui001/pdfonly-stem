@@ -1,0 +1,65 @@
+{
+  "sha1": "63bd0c80b8a734a6ce76e1a842ef9956ba953af4",
+  "title": "NHC-Catalyzed Generation of α,β-Unsaturated Acylazoliums for the Enantioselective Synthesis of Heterocycles and Carbocycles",
+  "doi": "https://doi.org/10.1021/acs.accounts.8b00550",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/63bd0c80b8a734a6ce76e1a842ef9956ba953af4/index.html",
+  "source_chars": 79843,
+  "markdown_chars": 2628,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 18,
+      "quote": "19,60 – 19,341 = 0,26",
+      "type": "疑似数值转录错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表中2016年11月数值为19.34，计算式中出现19.341，应为19.34的OCR误读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "Munich Personal RePEc Archive ... Smoothing of financial time series, Part 1 Stefanescu, Răzvan and Dumitriu, Ramona",
+      "type": "元数据与内容不符",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "给定论文元数据为NHC催化合成杂环和碳环（2019，DOI 10.1021/acs.accounts.8b00550），但提取文本实际为罗马尼亚语金融时间序列平滑论文（2017，MPRA Paper No. 78329），两者主题、年份、DOI完全不匹配，无法按原元数据生成笔记。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Figura 1.1. Evoluția valorilor zilnice efective (CURSZ_CHF) și ajustate (CURSZ_CHF_aj_l) ale cursului valutar leu/franc elvețian din luna martie 2017",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该图注后正文继续，但页眉（如Page 4）在跨页时插入，未发现句子断裂，仅当存疑记录；实际文本连续，暂不判定为错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：CAC40示例中MAD=16.125、MAPE=0.32%、MSE=359.36、RMSE=18.957；保加利亚存款利率平均动态指数I_d=0.7994，2016/2017年预测分别为0.491%/0.392%，MAD=1.51%，MAPE=42.19%；PX指数MA(3)的CFE=-0.27、MAD=8.42；BUX指数MA(4)的RMSE=478.40、MA(5)的RMSE=498.06；列伊/英镑MA(6)的MAD=0.0359。公式如(1.1)-(1.11)、(2.1)-(2.11)、(3.1)-(3.3)、(4.1)均按原文保留。不确定点：原文部分示例中单位不一致（mld. lei 与 mld. euro 混用），已在笔记中按原样保留；提取文本中个别罗马尼亚语字符有缺失（如Răzvan），不影响理解；元数据与内容不符为根本性问题，导致无法对NHC论文做任何验证。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8112,
+      "prompt_tokens": 30948,
+      "total_tokens": 39060,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5771
+      }
+    },
+    "content_chars": 4149,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

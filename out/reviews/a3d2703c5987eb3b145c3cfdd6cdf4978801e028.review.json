@@ -1,0 +1,157 @@
+{
+  "sha1": "a3d2703c5987eb3b145c3cfdd6cdf4978801e028",
+  "title": "La- and Mn-doped cobalt spinel oxygen evolution catalyst for proton exchange membrane electrolysis",
+  "doi": "https://doi.org/10.1126/science.ade1499",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a3d2703c5987eb3b145c3cfdd6cdf4978801e028/index.html",
+  "source_chars": 123585,
+  "markdown_chars": 4545,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "LaMn@Co-ZIF/PAN",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该处括号内文字在提取文本中显示为“(LaMn@Co-ZIF/PAN)”，但前后文均用LaMn@Co-ZIF/PAN，格式一致，不构成实质问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "The MEA with LCMF was also subjected",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "全文催化剂缩写为LMCF，此处“LCMF”应为OCR或原文笔误，影响读者对同一材料的识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "I: $ \\mathrm{d i s L a^{0} _ H^{}} $ $ + 2 \\mathrm{L a}^{3+} $ , II: $ \\mathrm{d i s L a^{0} _ C o^{T} O O H^{}} $ $ + 2 \\mathrm{L a}^{3+} $ , III: bri3OH_H $ ^{} $ , IV: bri3OH $ ^{} $ , and V: $ \\mathrm{L a^{0} 3 O _ C o^{T} O^{}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Pourbaix图相标签中的上标/下标符号在OCR中大量丢失或错位（如“disLa0_H*”显示为“disLa0_H^{}”），影响对相组成的精确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "bri3OH_H $ ^{} $ , IV: bri3OH $ ^{} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "相III和IV的标签中星号上标丢失，无法区分OH*与OH_H*的具体形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "the surface is protected by $ \\mathrm{OH^{} } $ to form a bri3OH $ ^{} $ stable structure (Phase IV)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "OH*和bri3OH*的上标星号在OCR中丢失，影响对表面物种的精确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "This operating window falls within Phase V: $ \\mathrm{L a}^{0} 3 \\mathrm{O} _ {-} \\mathrm{C o}^{T} \\mathrm{O}^{*} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "相V标签中La的上标0和O的下标/上标格式在OCR中部分丢失，但核心信息可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "The elemental analysis showed atomic ratio of Co:Mn:La = 80:8:12 in LMCF.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "正文第6页ICP-OES测得Co:Mn:La为80:12:8，此处补充材料写为80:8:12，Mn和La比例互换，两处数值矛盾，影响对催化剂组成的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "The leaching rate of Co during the 81-hour testing was calculated to be $ \\sim1.9 $ wt.% , which led to an estimated lifetime of LMCF of ca. $ 4800\\pm 500 $ h.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文第10页提到80小时测试，此处写81小时，可能为OCR或原文不一致，不影响主要结论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 77,
+      "quote": "LMCF 0.26±0.03 0.1MHClO4 353@10 360 97% 2Acm-2@2.2ViR-corr,decay rate=1.3mVhr-1@100mAcm-2for60hours This work",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table S2中LMCF行的PEMWE性能数据“2Acm-2@2.2ViR-corr,decay rate=1.3mVhr-1@100mAcm-2for60hours”与正文第10页“2000 mA cm-2 at 2.47 V (2.20 V after cell iR-correction)”及第11页恒电流测试描述不完全一致，表格结构在OCR中可能受损，数值需谨慎对待。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 77,
+      "quote": "LCF 0.26±0.03 0.1MHClO4 400@10 330 - This work",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table S2中LCF的稳定性数据“330”小时在正文中未提及，且与LMCF的360小时接近，表格结构可能受损导致列对齐错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 80,
+      "quote": "Mn$_{3}$O$_{4}$ Mn-O 1.862 4",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "Table S6中Mn3O4参考物的配位数和键长数据在OCR中可能因表格结构损坏而缺失部分列（如σ²和R factor），但核心数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 82,
+      "quote": "W0.57Ir0.43O3d 0(1.0MH2SO4) $0.00087^{**}$ (63)",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table S8中该行缺少TOF@370mV和TOF@650mV列的数据，表格结构在OCR中可能受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "zeolitic methylimidazolate framework (Co-ZIF)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文其他处均作“zeolitic imidazolate framework”，此处“methylimidazolate”疑为OCR或原文笔误，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "La- and Mn-doped cobalt spinel oxygen evolution catalyst for proton exchange membrane electrolysis",
+  "self_check": "已核对：摘要中353 mV@10 mA cm-2、360小时稳定性、2000 mA cm-2@2.47 V（Nafion 115）、4000 mA cm-2@3.00 V（Nafion 212）与正文第8-10页一致；正文第6页ICP-OES Co:Mn:La=80:12:8与补充材料第30页80:8:12矛盾，已在extraction_issues中标注；Co平均价态+2.51至+2.32、Co-O键长1.91→1.87 Å、Mn-O配位数5.5±0.4、Mn-Co配位数7.2±0.3、La-O配位数8.3等关键数值与Table S5、S6一致；TOF 0.079±0.011 s-1（370 mV，总质量）和0.87±0.09 s-1（ECSA）与Table S7一致；法拉第效率99.3±5%与图S18一致；Pourbaix图相标签因上标丢失存在不确定性，已在extraction_issues中标注。仍不确定：Table S2中LMCF的PEMWE性能数据与正文描述存在差异，可能为表格结构损坏或原文不同测试条件所致，未在笔记中采用表格中的具体衰减速率数值。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4808,
+      "prompt_tokens": 36214,
+      "total_tokens": 41022,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9245,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

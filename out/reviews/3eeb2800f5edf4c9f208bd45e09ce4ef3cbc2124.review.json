@@ -1,0 +1,112 @@
+{
+  "sha1": "3eeb2800f5edf4c9f208bd45e09ce4ef3cbc2124",
+  "title": "Metal–Organic Frameworks for Electrocatalytic Reduction of Carbon Dioxide",
+  "doi": "https://doi.org/10.1021/jacs.5b08212",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3eeb2800f5edf4c9f208bd45e09ce4ef3cbc2124/index.html",
+  "source_chars": 41700,
+  "markdown_chars": 8145,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "第 1 页",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR 文本中混入了中文页码标记“第 1 页”等，属于提取过程引入的非原文内容，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "$ \\mathrm{A l}{2} \\left( \\mathrm{O H}\\right){2} \\mathrm{T C P P}-\\mathrm{C o} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "化学式中的下标在 OCR 中丢失或错位，如 Al₂(OH)₂TCPP-Co 被提取为 Al2(OH)2TCPP-Co 的 LaTeX 形式，影响化学计量读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "The MOF catalytic performance is maximized at a starting layer thickness of 50 ALD cycles (D), which offers a balance of charge transport, mass transport, and active-site density.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Figure 2 说明文字中“starting layer thickness of 50 ALD cycles”与正文“50 ALD cycles”一致，但“thickness”与“cycles”混用，可能为 OCR 或原文表述问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The In- and In-Al-based MOF catalysts",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此处“In- and In-Al-based”可能为“In- and Al-based”或“In- and In-Al-based”的 OCR 误读，但原文上下文提及 M = Al 和 In，不影响主要结论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the formal redox potential $ (E{1/2}) $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "形式电位符号 E₁/₂ 在 OCR 中丢失下标，提取为 E{1/2}，影响公式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "va RHE",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“va RHE”应为“vs RHE”，OCR 漏掉字母 s，影响电位参照的准确理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "underlying 反应",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中英文混杂，“underlying”未翻译，可能为 OCR 或提取时未处理，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "λ=1.24 A",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "波长单位 Å 在 OCR 中丢失，提取为 A，影响单位准确性。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Metal-Organic Frameworks for Electrocatalytic Reduction of Carbon Dioxide",
+  "self_check": "已核对摘要、正文关键数值（76% Faradaic efficiency、TON=1400、TOF≈200 h⁻¹、Tafel 斜率 165 mV/decade、Co 负载 6.1×10¹⁶ atoms/cm²、电位 -0.4 V vs RHE 等）与结论方向一致。公式符号如 Al₂(OH)₂TCPP-Co、E₁/₂ 等存在 OCR 下标丢失，已在 extraction_issues 中标出。未引入外部知识，所有内容均基于提供的 OCR 文本。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5870,
+      "prompt_tokens": 12832,
+      "total_tokens": 18702,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10730,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

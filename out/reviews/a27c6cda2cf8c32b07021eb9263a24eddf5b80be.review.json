@@ -1,0 +1,64 @@
+{
+  "sha1": "a27c6cda2cf8c32b07021eb9263a24eddf5b80be",
+  "title": "Photon recycling in lead iodide perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.aaf1168",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a27c6cda2cf8c32b07021eb9263a24eddf5b80be/index.html",
+  "source_chars": 24803,
+  "markdown_chars": 2460,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "poly-3,4-ethylenedioxythiophene (PEDOT) from an 3,4-ethylenedioxythiophene (EDOT) monomer-based solution",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“from an 3,4-...”中冠词“an”应为“a”，但这是原文小语法错误，不影响科学内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "r Iλ(r) = r0 Iλ0 ∙ e−(αλ∙r)",
+      "type": "公式疑似缺失符号",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "原文公式(1)在提取中写作“r Iλ(r) = r0 Iλ0 ∙ e−(αλ∙r)”，但上下文显示贝朗-比尔公式应含径向衰减因子，可能缺少除号或分式结构，导致等式两边量纲不符。照录可见文本，未擅自修复。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "PLQEext = ∑∞ 𝑃𝑒𝑠𝑐𝑎𝑝𝑒 = 1−PLQE int(1−𝑃𝑒𝑠𝑐𝑎𝑝𝑒)",
+      "type": "公式排版疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式(2)的提取文本存在明显排版混乱，无法准确确认几何级数的完整形式，但核心关系（外PLQE与内PLQE及逃逸概率相关）可辨。照录可见文本，未推测修复。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值：激发距离≥50 μm、光谱红移至800 nm以上、初始峰值765 nm、薄膜厚度~100 nm、D=0.5 cm²/s、k1=10^6 s⁻¹、k2=10^-10 cm³/s、内部PLQE>50%、外PLQE~10%、平均一次循环事件、传输距离20 μm（高密度>50 μm）、350 nm厚度、理想光子密度25 suns（n=2.5）。公式(1)和(2)因提取不完整，仅照录可见文本，并在issues中标注。未发现摘要与正文数据矛盾之处。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7274,
+      "prompt_tokens": 6907,
+      "total_tokens": 14181,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5178
+      }
+    },
+    "content_chars": 3633
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

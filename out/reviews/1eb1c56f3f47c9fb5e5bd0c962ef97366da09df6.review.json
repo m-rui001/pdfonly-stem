@@ -1,0 +1,73 @@
+{
+  "sha1": "1eb1c56f3f47c9fb5e5bd0c962ef97366da09df6",
+  "title": "Cone penetration test (CPT)-based soil behaviour type (SBT) classification system — an update",
+  "doi": "https://doi.org/10.1139/cgj-2016-0044",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1eb1c56f3f47c9fb5e5bd0c962ef97366da09df6/index.html",
+  "source_chars": 102600,
+  "markdown_chars": 4476,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "due to the cost effective, rapid, continuous and reliable measurements. The most common CPT- Dr based classification systems are based on behaviour characteristics and are often referred af to as a Soil Behaviour Type (SBT) classification.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该段中提取文本将'CPT-'与'Dr'和'af'等页眉标注穿插在句中，推测原文句子跨页后接续，但无法确定具体断句位置。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "The objective of this paper is to present an update to the Robertson (1990, 2009) and Schneider et al. (2008) CPT-based SBT classification system with behaviour-based descriptions for each soil group.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "'update'与'with behaviour-based descriptions'搭配略显不顺，原文可能是'updates...with'，无强证据，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 24,
+      "quote": "The boundary between the original (Robertson 1990) SBTn zones 4 (silt-mixtures) and 5 (sand-mixtures) is the approximate boundary between soils that are either more clay-like or more sand-like and can be approximated by Ic = 2.6",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该页末尾句子在页中间断开，下一段落起始时用'Dr'和'af'标注穿插，无法确认跨页断句是否完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 26,
+      "quote": "Hence, soils with 0.2 < Bq < 0.6 tend to be CC and soils with 0.6 < Bq < 1.0 and Qtn > 4 tend to be CCS",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该段在页底结束，页眉'Dr'和'af'插入句中，无法确认跨页连接是否完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对主要公式（Qt、Fr、Bq、Ic、Qtn、n、KG、IG、K*G、CD、IB、St、SCF）的代数形式与变量定义，与提取文本一致。关键阈值K*G = 330（区分理想土/结构土）、CD = 70（剪缩/剪胀边界）、IB = 32/22（砂状/黏状边界）、Ic = 2.6（旧边界）、St = 7.1/Fr、SCF = (K*G/215)^1.334均已保留。案例数据K*G值核对无误。不确定处：部分跨页段落中的数值与图表编号可能因页眉插入而错位，无法从提取文本完全确认；表1中各场地的Qtn、Fr、U2、IG范围值已在文中保留代表性均值，未逐场展开全部范围；公式[6]中σ'vo/pa的单位隐含一致性未在文中明确说明，但已照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4066,
+      "prompt_tokens": 26902,
+      "total_tokens": 30968,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 509
+      }
+    },
+    "content_chars": 6477
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

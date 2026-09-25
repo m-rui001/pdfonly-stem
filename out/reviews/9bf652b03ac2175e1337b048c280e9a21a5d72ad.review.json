@@ -1,0 +1,64 @@
+{
+  "sha1": "9bf652b03ac2175e1337b048c280e9a21a5d72ad",
+  "title": "cisTopic: cis-regulatory topic modeling on single-cell ATAC-seq data",
+  "doi": "https://doi.org/10.1038/s41592-019-0367-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9bf652b03ac2175e1337b048c280e9a21a5d72ad/index.html",
+  "source_chars": 67033,
+  "markdown_chars": 3901,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "𝑛)$,/ + 𝛽 𝑛)$,/ + 𝛼 𝑛)$,/ + 𝑅𝛽 𝑛(4) + 𝑇𝛼 )$",
+      "type": "公式抽取损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式片段包含重复的变量下标和括号不匹配，无法准确复原原公式；上标/下标丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "89:,; = > 89:,; =?> exp",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "该表达式与后续概率定义不符，可能是抽取过程中符号错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "𝛽0,/ (𝑙𝑜𝑔𝛽0,/ − C ∑Y M ;Z[ VWX><,; )",
+      "type": "公式抽取损坏",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "积分/求和符号与下标不完整，公式难以解析。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和数据数值：确认了主题数（造血17、大脑23、SOX10 KD 15）、细胞数和区域数（2,755/488,825；34,520/287,381；3,034/139,504；598/78,262）、超参数（α=50/T, β=0.1）、burn-in/iterations 等。公式部分因抽取文本损坏，已照录可见符号并标注问题。结论方向一致：cisTopic在低深度下ARI更高，能发现时序性GATA主题及SOX10 KD后loss topics。不确定之处：部分公式符号原义无法复原；Figure 1b中的ARI具体数值未在正文给出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2675,
+      "prompt_tokens": 18624,
+      "total_tokens": 21299,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 31
+      }
+    },
+    "content_chars": 4925
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

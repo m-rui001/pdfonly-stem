@@ -1,0 +1,45 @@
+{
+  "sha1": "0b4ce90f56b5ea4cb3adf5c1e8665df70d0e68ce",
+  "title": "Oxygen redox chemistry without excess alkali-metal ions in Na2/3[Mg0.28Mn0.72]O2",
+  "doi": "https://doi.org/10.1038/nchem.2923",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0b4ce90f56b5ea4cb3adf5c1e8665df70d0e68ce/index.html",
+  "source_chars": 43817,
+  "markdown_chars": 2876,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The synthesis of sodium transition-metal oxides is often accompanied by the formation of Na2CO3.23–",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第2页末尾以“23–”结尾，第3页开头出现“26”，实际应为参考文献编号“23–26”，中间被页码标记截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：Mn初始氧化态+3.81，区域I脱出0.14 Na，充电终态Na0.14[Mg0.28Mn0.72]O2，CO2释放量0.009 mol/mol，放电容量0.6 e-/式量、氧还原补偿约0.4 e-/式量，U=4 eV。这些数值均与原文提取文本一致。不确定之处：放电与氧还原的具体电子数（0.6和0.4）来自原文叙述，但原文未给出更精确的分项数值；另外“23–26”的跨页拼接已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8818,
+      "prompt_tokens": 12333,
+      "total_tokens": 21151,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6692
+      }
+    },
+    "content_chars": 3483
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

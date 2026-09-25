@@ -1,0 +1,310 @@
+{
+  "sha1": "45d2853c40724299cb066f2d724d061c9bce84c7",
+  "title": "Net-zero emissions energy systems",
+  "doi": "https://doi.org/10.1126/science.aas9793",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/45d2853c40724299cb066f2d724d061c9bce84c7/index.html",
+  "source_chars": 120175,
+  "markdown_chars": 10457,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "From e- H2 CxOyHz NH3",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1 的表头与行标签在 OCR 中严重错位，行标签（e-、H2、CxOyHz、NH3）与列标题混在一起，导致表格结构无法可靠复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Electrolysis($5 to 6/kgH2)$Electrolysis+methanation Electrolysis+methanation Electrolysis+Haber-Bosch",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 单元格内容与行列对应关系在 OCR 中丢失，多个过程被串联在一起，无法判断每个过程对应的行与列。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Combustion Methanation($0.07to0.57/m3CH4)$ Haber-Bosch($0.50to0.60/kgNH3)$",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中 H2 行的单元格内容与列标题错位，成本数值与过程名称的对应关系不可靠。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Oxidation via fuel cell Fischer-Tropsch($4.40to15.00/gallon of gasoline-equivalent)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中 H2 行的后续单元格与列标题错位，Fischer-Tropsch 成本数值的列归属不明确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Combustion Steam reforming($1.29to1.50/kgH2)$ Steam reforming+Haber-Bosch",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中 CxOyHz 行的单元格内容与列标题错位，Steam reforming 成本数值的列归属不明确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Biomass gasification($4.80to5.40/kgH2)$",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中 CxOyHz 行的 Biomass gasification 单元格与列标题错位，无法确定其对应的列。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Combustion Metal catalysts(~$3/kgH2)$ Metal catalysts+methanation/Fischer-Tropsch",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中 NH3 行的单元格内容与列标题错位，Metal catalysts 成本数值的列归属不明确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Sodium amide",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 中 NH3 行的 Sodium amide 单元格与列标题错位，无法确定其对应的列。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Electrolysis($5 to 6/kgH2)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中电解制氢成本写作“$5 to 6/kgH2”，缺少美元符号和单位格式，疑似 OCR 丢失了“$”和“/kg H2”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Methanation($0.07to0.57/m3CH4)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中甲烷化成本写作“$0.07to0.57/m3CH4”，缺少美元符号和单位格式，疑似 OCR 丢失了“$”和“/m³ CH4”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Haber-Bosch($0.50to0.60/kgNH3)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中 Haber-Bosch 成本写作“$0.50to0.60/kgNH3”，缺少美元符号和单位格式，疑似 OCR 丢失了“$”和“/kg NH3”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Fischer-Tropsch($4.40to15.00/gallon of gasoline-equivalent)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中 Fischer-Tropsch 成本写作“$4.40to15.00/gallon of gasoline-equivalent”，缺少美元符号，疑似 OCR 丢失了“$”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Steam reforming($1.29to1.50/kgH2)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中蒸汽重整成本写作“$1.29to1.50/kgH2”，缺少美元符号和单位格式，疑似 OCR 丢失了“$”和“/kg H2”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Biomass gasification($4.80to5.40/kgH2)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中生物质气化成本写作“$4.80to5.40/kgH2”，缺少美元符号和单位格式，疑似 OCR 丢失了“$”和“/kg H2”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Metal catalysts(~$3/kgH2)$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中金属催化剂成本写作“~$3/kgH2”，缺少单位格式，疑似 OCR 丢失了“/kg H2”的规范写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "~U.S. $5.50/kg $ H_{2} (assuming industrial electricity costs of U.S. $0.07/kWh and 75% utilization rates)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中氢成本写作“~U.S. $5.50/kg $ H_{2}”，美元符号与单位之间出现多余空格，疑似 OCR 格式问题，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ H_{2} from steam reforming of fossil $ CH_{4} $ into $ CO_{2} $ and $ H_{2} $ currently costs $1.30 to 1.50 per kg (Fig. 3D, red line) (29,31)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中化石制氢成本写作“$1.30 to 1.50 per kg”，缺少第二个美元符号，疑似 OCR 丢失，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "hydrogen costs of $2.00/kg (approaching the cost of fossil-derived hydrogen and synthesized diesel of ~$0.79/liter or $3.00/gallon)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中合成柴油成本写作“~$0.79/liter or $3.00/gallon”，缺少第二个美元符号，疑似 OCR 丢失，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the use of electric arc furnace (EAF) \"minimills\" that operate by using emissions-free electricity efficiency improvements (such as top gas recovery), new process methods (such as \"ultra-low $ \\mathrm{CO}{2} $ direct reduction,\" ULCORED), process heat fuelswitching, and decreased demand via better engineering",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句在“emissions-free electricity”与“efficiency improvements”之间缺少连接词或标点，导致语义断裂，疑似 OCR 丢失了“and”或逗号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the other improvements reducebut do not eliminate-emissions",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“reducebut do not eliminate-emissions”缺少空格和破折号格式，应为“reduce—but do not eliminate—emissions”，OCR 丢失了空格和破折号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Fig. 3. Comparisons of energy sources and technologies. A) The energy density of energy sources for transportation, including hydrocarbons (purple), ammonia (orange), hydrogen (blue), and current lithium ion batteries (green). (B) Relationships between fixed capital versus variable operating costs of new generation resources in the United States, with shaded ranges of regional and tax credit variation and contours of total levelized cost of electricity, assuming average capacity factors and equipment lifetimes. NG cc, natural gas combined cycle. (113). (C) The relationship of capital cost (electrolyzer cost) and electricity price on the cost of produced hydrogen (the simplest possible electricity-to-fuel conversion) assuming a 25-year lifetime, 80% capacity factor, 65% operating efficiency, 2-year construction time, and straight-line depreciation over 10 years with $0 salvage value (29). For comparison, hydrogen is currently produced by steam methane reformation at costs of ~$1.50/kg $ H_{2} $ （~$10/GJ; red line). (D) Comparison of the levelized costs of discharged electricity as a function of cycles per year, assuming constant power capacity, 20-year service life, and full discharge over 8 hours for daily cycling or 121 days for yearly cycling. Dashed lines for hydrogen and lithium ion reflect aspirational targets. Further details are provided in the supplementary materials.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Fig. 3 的图注在 OCR 中被插入到正文段落之间，且图注内部 (B) 与 (C) 之间出现“(113).”这样的孤立引用，阅读顺序和内容归属受到干扰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the flexibility, scalability, and low capital costs of electricity that can currently be provided by natural gas-fired generatorsbut without emitting fossil $ \\mathrm{CO}_{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“generatorsbut”缺少空格，应为“generators but”，OCR 丢失了空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "such as coal-burning plants, may be less efficient and effective when generators operate at lower capacity factors (65)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句在“capacity factors”后直接接“(65)”，但前文已有“(65)”引用，疑似 OCR 重复或错位，但不影响主要语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "round-trip efficiency (energy out divided by energy in) of >30% (74)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“>30%”在 OCR 中可能丢失了“>”符号的格式，但文本中已保留“>”，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "now 40 to 50% in protonexchange membrane designs",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“protonexchange”缺少连字符，应为“proton-exchange”，OCR 丢失了连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "lessefficient (for example, 70% round-trip) batteries",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“lessefficient”缺少连字符，应为“less-efficient”，OCR 丢失了连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "assuming 20 to 100 cycles per year over 20 years (81)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句与前文“assuming 20 to 100 cycles per year over 20 years”重复，疑似 OCR 重复或错位，但不影响主要语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Sensible heat storage systems are characterized by low energy densities [36 to 180 kJ/kg or 10 to 50 watt-hour thermal $ \\mathrm{(W h_{th}) / k g} $ ] and high costs (84, 87, 88). Future cost targets are < $ 15 / k \\mathrm{W h_{th}} $ (89).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "热能储存成本目标写作“< $ 15 / k \\mathrm{W h_{th}} $”，美元符号与单位之间空格不规范，疑似 OCR 格式问题，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "reducing the need for underused, flexible back-up generators (90, 91)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“underused, flexible back-up generators”中的逗号可能为 OCR 误加，但不影响主要语义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "$1.50 to 1.70/liter of diesel equivalent [or $5.50 to 6.50/gallon and $42 to 50 per GJ, assuming carbon feedstock costs of $0 to 100 per ton of $ CO_{2} and very low process costs of $0.05/ liter or $1.50 per GJ (28)]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中合成碳氢化合物成本区间写作“$1.50 to 1.70/liter”和“$5.50 to 6.50/gallon”，缺少第二个美元符号，疑似 OCR 丢失，但不影响数值理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Net-zero emissions energy systems",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 32724,
+      "total_tokens": 42724,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21513,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

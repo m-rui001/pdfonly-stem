@@ -1,0 +1,54 @@
+{
+  "sha1": "2bdf6ecc3d6c622ed2a57ad3e1b7edf670df4b09",
+  "title": "Biaxially strained PtPb/Pt core/shell nanoplate boosts oxygen reduction catalysis",
+  "doi": "https://doi.org/10.1126/science.aah6133",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2bdf6ecc3d6c622ed2a57ad3e1b7edf670df4b09/index.html",
+  "source_chars": 33272,
+  "markdown_chars": 2547,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "abreaction corrected HAADF-STEM imaging technique",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文明指像差校正（aberration corrected），原文“abreaction”应为“aberration”的笔误，但提取文本如此，未擅自修正。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "HAADF-STEM image from out-of-plate view",
+      "type": "疑似术语错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中对应描述为“from the [001] PtPb zone axis (plane-view)”，图注“out-of-plate view”可能应为“plane-view”或“side-view”，但无法确证正确版本，仅标记存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：SA 7.8 mA/cm²、MA 4.3 A/mgPt、SA相对Pt/C 33.9倍、MA相对Pt/C 26.9倍（仅摘要）、PtPb NPs SA 1.9、Pt/C SA 0.23、ECSA 55.0/43.4/68.9、50,000圈后MA损失7.7%/37.0%/66.7%、MOR/EOR数值均一致。应变百分比（11%压缩、7.5%拉伸、1.0%压缩）与原文一致。DFT部分应变范围和位点类型按原文描述。不确定点：质量活性26.9倍仅在摘要出现，正文未明确给出Pt/C的MA对照值；图注中“out-of-plate view”与正文“plane-view”有出入，已列为疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5246,
+      "prompt_tokens": 10408,
+      "total_tokens": 15654,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3197
+      }
+    },
+    "content_chars": 3527
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

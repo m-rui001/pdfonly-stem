@@ -1,0 +1,73 @@
+{
+  "sha1": "cbdec2da963b2c88c962bc415f686d0b31daa928",
+  "title": "Anomalously weak Labrador Sea convection and Atlantic overturning during the past 150 years",
+  "doi": "https://doi.org/10.1038/s41586-018-0007-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cbdec2da963b2c88c962bc415f686d0b31daa928/index.html",
+  "source_chars": 59419,
+  "markdown_chars": 3696,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "The emergence of this weaker state (i.e.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页面在\"(i.e.\"处中断，下一页以\"smoothed record exceeds a noise threshold of 2σ pre-Industrial era variability)\"继续，形成不完整句子，存在跨页拼接疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "2 pre-Industrial era variability",
+      "type": "疑似字符损坏",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "提取文本中σ显示为乱码字符“”，应为希腊字母sigma（σ），表示标准差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "560. Adkins, J. F., Boyle, E. A., Keigwin, L. & Cortijo, E.",
+      "type": "疑似引用编号错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "引用编号出现\"560.\"而非连续的\"60.\"，疑为提取或排版错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "smoothed record exceeds a noise threshold of 2σ pre-Industrial era variability), takes place at ~1880",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "承接上一页\"The emergence of this weaker state (i.e.\"的断句，完整表述应为\"(i.e. smoothed record exceeds a noise threshold of 2σ pre-Industrial era variability)\"，但提取文本在跨页处中断，σ符号在部分位置显示为特殊字符或缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：DWBCLSW流速变化（56JPC从17降至14.5 cm/s，48JPC从14降至12 cm/s，约15%降幅，分别对应3σ和4σ）、相关系数（r²=0.56, 0.58, 0.76）、淡水通量估算（10–100 mSv，5–10 mSv，10 mSv，50年10 mSv）以及约1880年突破2σ阈值。已核对关键结论方向：过去150年AMOC异常减弱、转变发生约1750–1900年、淡水强迫假设、与模式模拟的差异及滞后/持续强迫解释。不确定处：部分特殊字符（σ）在提取文本中显示为乱码；图1和图2的具体数值细节部分依赖图注文字，图内未提取的数据点未作推测。JPC岩芯的具体经纬度来自方法部分，已保留。Rahmstorf等(2015)的1°C≈2.3Sv换算仅在图3c图注中提及，已在笔记中保留其20世纪指标下降来源的讨论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5807,
+      "prompt_tokens": 16775,
+      "total_tokens": 22582,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 563
+      }
+    },
+    "content_chars": 9069
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

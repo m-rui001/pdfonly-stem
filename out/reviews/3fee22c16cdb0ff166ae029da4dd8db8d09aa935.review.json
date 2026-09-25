@@ -1,0 +1,63 @@
+{
+  "sha1": "3fee22c16cdb0ff166ae029da4dd8db8d09aa935",
+  "title": "Inducing High Ionic Conductivity in the Lithium Superionic Argyrodites Li 6+ x P 1– x Ge x S 5 I for All-Solid-State Batteries",
+  "doi": "https://doi.org/10.1021/jacs.8b10282",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3fee22c16cdb0ff166ae029da4dd8db8d09aa935/index.html",
+  "source_chars": 54164,
+  "markdown_chars": 4251,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "9 𝑑67867 ∙ 𝐾<=>?@AB< . 6",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式中的数字和符号明显乱码，无法识别正确表达式。原文应为扩散系数公式，但提取文本中'9'和'6'的位置及乱码字符导致公式无法解读，疑似OCR将分数或上下标错误识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "𝜎= 𝐷𝑁𝑞 9 . 𝑘G 𝑇",
+      "type": "疑似OCR错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "电导率公式中'q 9'应为'q^2'，但数字9疑为2的误识别，且点号位置异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the free S in half of the tetrahedral 2–",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页末'2–'是S^2-电荷的上标残片，下一页以'sites'继续，但缺少了'S'和电荷的完整表示，属于跨页中断导致的不完整文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：冷压电导率5.4±0.8 mS cm⁻¹、烧结18.4±2.7 mS cm⁻¹、活化能拐点x≈0.25、无序~7%、渗透阈值4%、NMR活化能0.11/0.21 eV、电池容量120.8/88.8/99.3 mAh g⁻¹、150次循环稳定。公式部分因OCR乱码无法准确还原，已按原文照录并在issue中标记。摘要与正文数据一致，未发现数值矛盾。不确定点：公式确切形式、烧结温度原文为823 K、电阻单位是否为Ω cm²。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6647,
+      "prompt_tokens": 15212,
+      "total_tokens": 21859,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3384
+      }
+    },
+    "content_chars": 5290
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "sha1": "17d9b4a28ab40b3462c91152daf15e6d52ba1c68",
+  "title": "Activated lignin-chitosan extruded blends for efficient adsorption of methylene blue",
+  "doi": "https://doi.org/10.1016/j.cej.2016.08.089",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/17d9b4a28ab40b3462c91152daf15e6d52ba1c68/index.html",
+  "source_chars": 47911,
+  "markdown_chars": 11205,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "For longer times, the relationship between weight uptake and diffusion can be described by the approximated Boyd model [31]： $ \\mathrm{B t}=0.4 9 7 7 \\ln(1-\\mathrm{F}) $ (14) where $ \\mathrm{F}=\\mathrm{g} / \\mathrm{a} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Boyd 模型公式在 OCR 中出现两个版本：先为 Bt=0.4977 ln(1-F)，后为 Bt=-0.4977-ln(1-F)，符号和形式不一致，且 F=qt/qe 被误写为 F=g/a，影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The $ \\mathrm{R}{L} $ values are shown in Figure 5B (0.448 to 0.091) and suggest that the adsorption of MB onto ALiCE is a favourable one, and at high $ \\mathrm{C}{0} $ values, the adsorption is nearly irreversible.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标格式错误：RL 和 C0 被 OCR 提取为 R{L} 和 C{0}，虽不影响理解，但属于格式错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "where $ A_{\\mathrm {M B}} $ is the surface area taken by one molecule of MB $ = 1 3 0 \\mathrm{\\AA}^{2} $ $ N_{\\mathrm {L}} $ is the Avogadro's number $ = 6. 0 2 3 \\times1 0^{2 3} $ molecule/mole and MW is the molecular weight of MB $ = 3 2 0 \\mathrm{g / m o l} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "MB 分子量在摘要和材料部分为 319.85 g/mol，此处写为 320 g/mol，可能是原文近似值或 OCR 误差，但数值差异小，不影响结论。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Activated lignin-chitosan extruded blends for efficient adsorption of methylene blue",
+  "self_check": "已核对摘要、正文数据和结论：最大吸附容量 36.25 mg/g 在摘要、等温线部分和结论中一致；Langmuir R²=0.997 与表 4 一致；准二级模型 R² 接近 1 与表 2 一致；pH 7 时最大去除率 87.69% 与离子强度部分一致；BET 比表面积 80.77 m²/g 与 MB 法 88.69 m²/g 一致。公式已按提取文本保留，但 Boyd 模型公式存在 OCR 不一致，已在 extraction_issues 中标出。不确定之处：Boyd 模型公式的正确形式需核对原文；MB 分子量 320 g/mol 与 319.85 g/mol 的差异可能为原文近似。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7393,
+      "prompt_tokens": 13510,
+      "total_tokens": 20903,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13329,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

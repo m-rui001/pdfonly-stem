@@ -1,0 +1,121 @@
+{
+  "sha1": "96f6e59ffc7be989549d1e26a898d0aac8ff2417",
+  "title": "Isolated Diatomic Ni‐Fe Metal–Nitrogen Sites for Synergistic Electroreduction of CO2",
+  "doi": "https://doi.org/10.1002/anie.201901575",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/96f6e59ffc7be989549d1e26a898d0aac8ff2417/index.html",
+  "source_chars": 27964,
+  "markdown_chars": 5362,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "FeN-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为Fe-N-C，缺少连字符，影响催化剂名称的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "NiN-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为Ni-N-C，缺少连字符，影响催化剂名称的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "FeN-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为Fe-N-C，缺少连字符，影响催化剂名称的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "reactios",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为reactions，不影响核心理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "CO2+ H+ + e− → COOH",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "反应式中COOH中间体缺少星号（*），原文应为COOH*，影响对表面吸附中间体的理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 1,
+      "quote": "COOH+ H+ + e− → CO+ H2O",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "反应式中COOH和CO缺少星号（*），原文应为COOH*和CO*，影响对表面吸附中间体的理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 1,
+      "quote": "CO → CO+",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "反应式中CO和产物CO缺少星号（*），原文应为CO* → CO + *，影响对脱附步骤的理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "Fe N4 and Ni-N4",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Fe N4应为FeN4，空格可能为OCR错误，影响化学式准确性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "CO2 occurs on the Fe site (iiiV)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "罗马数字标注错误，应为(iii-iv)，影响对反应步骤顺序的理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Isolated Diatomic Ni-Fe Metal-Nitrogen Sites for Synergistic Electroreduction of CO2",
+  "self_check": "已核对关键数值：CO法拉第效率在-0.7 V下为98%，30小时电解后保持99%初始选择性；TOF值在-1.0 V下分别为7682、3690和813 h⁻¹；Tafel斜率分别为96、101和143 mV decade⁻¹；理论过电位从0.76 V降至0.47 V。公式符号如COOH*、CO*的星号在OCR中丢失，已在问题中标注。结论方向与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4086,
+      "prompt_tokens": 9356,
+      "total_tokens": 13442,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7577,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

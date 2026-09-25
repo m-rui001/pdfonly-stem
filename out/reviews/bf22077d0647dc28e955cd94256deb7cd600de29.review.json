@@ -1,0 +1,139 @@
+{
+  "sha1": "bf22077d0647dc28e955cd94256deb7cd600de29",
+  "title": "Middleware for Internet of Things: A Survey",
+  "doi": "https://doi.org/10.1109/jiot.2015.2498900",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/bf22077d0647dc28e955cd94256deb7cd600de29/index.html",
+  "source_chars": 160433,
+  "markdown_chars": 15755,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "as are some surverys [8], [13], [36]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“surverys”应为“surveys”，属拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "IoT-specific middlewares are emerging [8], [14], [31] $ - [35] $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "引用范围被 OCR 渲染为数学符号 $ - $，原文应为 [31]-[35]，属格式抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "VM $ ^{} $ [124] and Melete [126] are based on Maté",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "“VM*”的上标星号在 OCR 中丢失，显示为 VM $ ^{} $，影响方案名称识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "However, VM $ ^{*} $ does not offer support for adaptability.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一方案名 VM* 的星号被 OCR 以 $ ^{*} $ 形式呈现，格式不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "TinyCubus [?] is a cross-layer framework implemented on top of TinyOS.",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "TinyCubus 的引用编号缺失，显示为 [?]，无法确认原始文献编号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Cougar [167], [168], [?] DD-ND RM DPA, DS NS NS",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "表 I 中 Cougar 的第三个引用编号缺失为 [?]。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Cougar[167],[168],[?] NI NS N N NI N M N",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "表 III 中 Cougar 的第三个引用编号缺失为 [?]。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "TinyCubus[?] S NeI Y Y SA Y E Y",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "表 III 中 TinyCubus 的引用编号缺失为 [?]。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "$ KSpot^{+} $ [166] is a data-centric distributed middleware for WSN.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“KSpot+”的上标加号被 OCR 渲染为 $ KSpot^{+} $，属格式抽取问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "Cougar[167],[168],[?] NLWSNS I S NI SRT S",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "表 II 中 Cougar 的第三个引用编号同样缺失为 [?]。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "TinyCubus[?] NLWSNS N S DR HRT NS",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "表 II 中 TinyCubus 的引用编号缺失为 [?]。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Middleware for Internet of Things: a Survey",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 38163,
+      "total_tokens": 48163,
+      "prompt_tokens_details": {
+        "cached_tokens": 38144
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18854,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

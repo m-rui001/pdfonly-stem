@@ -1,0 +1,63 @@
+{
+  "sha1": "37dfda9afb73fb9c0d4ec115a5484e5e60f7afa3",
+  "title": "Magnetic iron oxide nanoparticles for drug delivery: applications and characteristics",
+  "doi": "https://doi.org/10.1080/17425247.2019.1554647",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/37dfda9afb73fb9c0d4ec115a5484e5e60f7afa3/index.html",
+  "source_chars": 61526,
+  "markdown_chars": 5161,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "the final nanocarriers were characterized by efficient drug encapsulation (43.2 ± 0.2%)",
+      "type": "疑似数值不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文中Unterweger工作的包封率写为43.2±0.2%，而Table 2同一引文行的LE列写为43.2±3%。同一数据存在两种表示，无法判定哪个为原文正确值。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "Table 2 ... 570 GEM/NP Amphiphilic polymer 80 GEM DH ≈ 65.9 nm ... 274 PTX/NP PEG/carboxymethylated β82 PTX DH ≈ 30.2 nm",
+      "type": "表格行标识符疑似残损",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格提取文本中出现了“570 GEM/NP”和“274 PTX/NP”这样可疑的行前缀，可能是相邻单元格内容在提取时错位拼接或参考编号粘连，无法判断其确切含义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "Christabel",
+      "type": "无法判断",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "第4页底部出现“Christabel”一词，上下文缺失，无法判断其为真实文本内容还是抽取噪声，亦无法核实拼写。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文数据与结论的一致性。确认的关键数值包括：热疗温度窗42–49°C；D-HINPS水合粒径50.8±5.2 nm；Wagstaff金包覆顺铂IONs细胞毒性增加110倍；Unterweger包封率43.2±0.2%（与表格43.2±3%不一致，已在extraction_issues中标出）；Kievit载药量1089±21 DOX/颗粒；Ahmed双靶向系统细胞毒性两倍增加、PTX所需浓度降低十倍；Quinto系统升温43°C。所有关键数值在正文与摘要中方向一致，无矛盾。不确定之处：表格中部分行因提取残损无法确认其列与数值的严格对应关系，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4908,
+      "prompt_tokens": 15138,
+      "total_tokens": 20046,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1160
+      }
+    },
+    "content_chars": 6440
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

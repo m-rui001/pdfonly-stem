@@ -1,0 +1,45 @@
+{
+  "sha1": "4fa8c70852e949534440dc0a4350a7cf813f1bbf",
+  "title": "N-heterocyclic carbene-functionalized magic-number gold nanoclusters",
+  "doi": "https://doi.org/10.1038/s41557-019-0246-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4fa8c70852e949534440dc0a4350a7cf813f1bbf/index.html",
+  "source_chars": 43280,
+  "markdown_chars": 2107,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "seen to contract upon introduction of the NHC ligand, however localized bonds experience contractions and expansions that may be significant for catalysis (see Supplementary Information: Figures 57, 58, Tables 11 and 12).\n\ncarbon paper electrodes with a catalyst loading of 0.25 mg/cm2.",
+      "type": "文本缺失",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第5页开头在'seen to contract...'之后直接出现'carbon paper electrodes...'，中间明显缺少了'Stability and catalytic activity of nanoclusters'一节的起始段落（包括CID质谱、热稳定性等描述），原文中这些内容应位于此位置。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：DFT能量差（0.18/0.07/0.06 eV）、Au–C键长差（11.4 pm、1.9 pm）、Au–Au膨胀（3 pm、1.0 pm）、13C位移（209 ppm）、XRD键长（2.09(2) Å）、稳定性顺序（2<3a<3b<3c）、催化条件（0.25 mg/cm2、180 °C、–1.0 V）。公式未出现。结论方向与摘要一致。不确定之处：缺失段落中的具体数值（如CID电压、详细热稳定性数据）因提取缺失无法核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11017,
+      "prompt_tokens": 11970,
+      "total_tokens": 22987,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9248
+      }
+    },
+    "content_chars": 3018
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

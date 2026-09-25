@@ -1,0 +1,130 @@
+{
+  "sha1": "5eb8f3a38425e2b6edbebbbe94803bd404cdf1dd",
+  "title": "Reproducibility in density functional theory calculations of solids",
+  "doi": "https://doi.org/10.1126/science.aad3000",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5eb8f3a38425e2b6edbebbbe94803bd404cdf1dd/index.html",
+  "source_chars": 52700,
+  "markdown_chars": 6497,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Reproducibility in density-functional theory calculations of solids",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR 正文首页题名为 'Reproducibility in density-functional theory calculations of solids'，登记题名为 'Reproducibility in density functional theory calculations of solids'，仅连字符差异，属同一论文，但严格按规则记为首页题名与登记题名不完全一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ ^{26} $Department of Physics, Wake Forest University, Winston Salem, NC 27100, USA",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一机构编号 26 在相邻行重复出现且邮编不同（27100 与 27109），属 OCR 重复/错误，但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "systematic assesments of precision",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误 'assesments' 应为 'assessments'，属 OCR 字符错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "commonly used for accuracy assessments (1519)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "引用编号 '(1519)' 疑为 '(15-19)' 的 OCR 连写错误，属引用格式问题，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "The $ \\triangle $ matrix",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "标题中的 Δ 符号被 OCR 为 $\\triangle$，与正文中使用的 $\\Delta$ 符号不一致，属符号提取损失，可能影响公式符号一致性理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The 1.0 meV/atom maximum $ \\Delta $ between all-electron codes (Fig. 4, top) corresponds to an average volume deviation of 0.14 $ \\mathrm{\\AA}^{3} $ /atom (0.38%) or a median deviation of 0.05 $ \\mathrm{\\AA}^{3} $ /atom (0.24%) over the entire 71-element test set.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数值与单位提取基本完整，但 '0.14 $ \\mathrm{\\AA}^{3} $ /atom' 中单位与数值间空格可能为 OCR 格式问题，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the larger deviation of approximately 0.2 meV/atom in comparisons with respect to exciting can partly be attributed to a different scalar-relativistic treatment",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "代码名 'exciting' 在正文中未大写，可能为 OCR 格式问题，但代码名本身正确，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "with a low approaching 0.3 meV/atom",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'a low' 疑为 'a low' 或 'a value as low as' 的 OCR 截断，但数值 0.3 meV/atom 明确，不影响关键结论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "the most recent versions of the implementations discussed here agree on this value by 0.01 $ \\mathring{\\mathrm{A}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "单位 $\\mathring{\\mathrm{A}}$ 提取正确，但 'agree on this value by 0.01' 表述可能为 OCR 断句问题，不影响数值理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "$$\\Delta_{i}(a,b)=\\sqrt{\\frac{\\int_{0.94V_{0,i}}^{1.06V_{0,i}}\\left(E_{b,i}(V)-E_{a,i}(V)\\right)^{2}\\mathrm{d}V}{0.12V_{0,i}}}$$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中积分上下限与分母的数值（0.94、1.06、0.12）与正文描述 '±6% interval around the equilibrium volume' 一致，但 OCR 公式中下标/上标格式可能不完整，属公式提取格式问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Reproducibility in density-functional theory calculations of solids",
+  "self_check": "已核对：摘要中 15 个代码、40 种势/基组、71 种元素晶体、18,602 次计算；Δ 公式中积分限 0.94V0 至 1.06V0、分母 0.12V0 与正文 ±6% 描述一致；全电子方法最大 Δ 1.0 meV/atom 对应体积偏差 0.14 Å³/atom (0.38%)、中位 0.05 Å³/atom (0.24%)，体弹模量平均偏差 1.6 GPa (4.0%)、中位 0.8 GPa (1.6%)；实验 Δ_exp = 1.0 meV/atom 与平均全电子 Δ 0.8 meV/atom；锇晶体 APW+lo 比较中数值噪声 0.02-0.04 meV/atom、与 exciting 偏差约 0.2 meV/atom；GPAW 0.9 PAW 集 Δ=0.6 meV/atom、Schlipf-Gygi ONCVPSP Δ=0.3 meV/atom、GBRV 1.4 Δ=0.3 meV/atom、GBRV 1.2 Δ=0.7 meV/atom；硅晶格常数历史散布 0.05 Å 与最新一致到 0.01 Å。不确定处：部分 OCR 拼写错误（assesments、1519）已标为低严重度；Δ 符号在标题中提取为 $\\triangle$ 与正文 $\\Delta$ 不一致已标出；公式中积分限与分母数值与正文一致，但 OCR 格式可能不完整。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5414,
+      "prompt_tokens": 14461,
+      "total_tokens": 19875,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10668,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

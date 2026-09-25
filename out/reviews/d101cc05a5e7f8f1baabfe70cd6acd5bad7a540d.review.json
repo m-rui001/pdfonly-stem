@@ -1,0 +1,45 @@
+{
+  "sha1": "d101cc05a5e7f8f1baabfe70cd6acd5bad7a540d",
+  "title": "Lake heatwaves under climate change",
+  "doi": "https://doi.org/10.1038/s41586-020-03119-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d101cc05a5e7f8f1baabfe70cd6acd5bad7a540d/index.html",
+  "source_chars": 73478,
+  "markdown_chars": 2961,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 20,
+      "quote": "Kd = 5.681 × depth0.795",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "该经验公式中的指数为正（0.795），但物理上消光系数通常随深度增加而减小（基于Secchi深度转换Kd=1.7/Zsecchi，而Zsecchi与深度正相关）。原文可能缺失负号，但文本显示无负号，照录并标记疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：历史期强度3.7±0.1°C、持续7.7±0.4天；RCP2.6末强度4.0±0.2°C、持续27.0±7.6天；RCP8.5末强度5.4±0.8°C、持续95.5±35.3天；永久热浪湖泊数80.5±47（范围18–124）；年总热浪天数17±3增至219±44天；分类比例（历史期70%/22%/4%/4%，RCP8.5下4%/14%/17%/65%）；深度关系R2adj=0.72（强度）和0.42（持续时间）。公式Kd=5.681×depth^0.795按原文照录，但指数符号存疑（见issues）。去趋势分析、模型验证、季节百分比等均与原文一致。未发现其他数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5905,
+      "prompt_tokens": 19200,
+      "total_tokens": 25105,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3687
+      }
+    },
+    "content_chars": 3646
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

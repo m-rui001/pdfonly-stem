@@ -1,0 +1,83 @@
+{
+  "sha1": "ea06bafa17e3448c46855de4cc7b6e9b10ab1555",
+  "title": "Ammonia synthesis from N 2 and H 2 O using a lithium cycling electrification strategy at atmospheric pressure",
+  "doi": "https://doi.org/10.1039/c7ee01126a",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ea06bafa17e3448c46855de4cc7b6e9b10ab1555/index.html",
+  "source_chars": 49959,
+  "markdown_chars": 4944,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "These two a",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第1页尾部句子中途截断，下一句‘processes are very different’在第2页续接，中间被页码/页眉隔开，拼接处缺词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "6LiOH - 6Li + 3H2O + 3/2O2(g)",
+      "type": "疑似错误（OCR符号坏损）",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "化学方程式中的箭头被记录为连字符‘-’，文中所有方程式均存在同一问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "(200 1C each) resulting in a theoretical yield of 0.01439 g Li",
+      "type": "疑似错误（OCR符号坏损）",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "结合0.2A×1000s=200 C及法拉第定律算得理论产锂量与此处数值一致，判断‘1C’系‘C’（库仑）的OCR叠加噪声。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "DGi ðU; T Þ ¼ DHi0ðT Þ TDSi0ðT Þ yi DG0H2O",
+      "type": "疑似错误（OCR符号坏损）",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "热力学公式中希腊字母Δ与运算符号被OCR替换为D、ð、¼、空白等字符，定量结构无法直接复原；笔记中按上下文惯例给出了重构后的表述，具体形式仍存不确定性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "The melt was held at 450 1C",
+      "type": "疑似错误（OCR符号坏损）",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "据上下文应为450°C；文中多处温度（如427 1C）均有同一‘1C’代替‘°C’的问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：88.5%电流效率（S.D. 0.8%）在摘要、结果与结论中一致；电解最低电位3.0V与理论2.8V（700K）及工业LiCl电解3.6V的对比一致；200 C电荷与0.2A×1000s等三组电流时间乘积一致；理论产锂0.01439g与法拉第定律计算相符；氮化12h近完全转化、LiOH回收98%、扩散能垒约0.6eV、3V下能耗约14kWh/kg NH₃及传统约10/中国煤基约15 kWh/kg NH₃等均与正文一致。不确定之处：Li–N–O–H相图公式的精确符号与运算顺序——因提取文本中希腊字母和运算符严重损坏，我按上下文惯例重构了ΔG_i(U,T)的表示，具体项的符号与系数设置可能存在偏差；4B表格中候选金属（Zr/V/Cr/Ti等）的具体排序标准仅有正文文字概括，未含表格完整数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 17349,
+      "prompt_tokens": 12714,
+      "total_tokens": 30063,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 13307
+      }
+    },
+    "content_chars": 6628,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

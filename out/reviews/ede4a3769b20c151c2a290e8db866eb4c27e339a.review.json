@@ -1,0 +1,73 @@
+{
+  "sha1": "ede4a3769b20c151c2a290e8db866eb4c27e339a",
+  "title": "Hybrid Dion–Jacobson 2D Lead Iodide Perovskites",
+  "doi": "https://doi.org/10.1021/jacs.8b00542",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ede4a3769b20c151c2a290e8db866eb4c27e339a/index.html",
+  "source_chars": 49865,
+  "markdown_chars": 2462,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Top-view of (3AMP)PbI4, (4AM)PPbI4",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同句中出现(3AMP)PbI4，而此处(4AM)PPbI4明显应为(4AMP)PbI4，但提取文本如此，需标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "(BA)2(MA)n= 2 - 5) (BA = butylammonium),27-28 1PbnI3n+1 (n (GA)(MA)nPbnI3n+1 (GA = guanidinium, n = 2 - 3)",
+      "type": "文本拼接/损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在列举已知高n二维钙钛矿时出现明显乱码，化学式和括号结构混乱，可能是PDF提取时公式和文字错位，无法还原原文精确表述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Figure 3. Optical properties of the 3AMP and 4AMP series. a,b, Optical absorption spectra of 3AMP and 4AMP series. c,d, Steady-state photoluminescence (PL) spectra of 3AMP and 4AMP series. e,f, Summary of absorption and PL in energy from n = 1 to 5. a b 1.0",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图注之后紧接图内轴标签和曲线文字（如“a b 1.0”），这些内容可能属于图本身而非正文，提取时被混入，跨页断句不连续。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Figure 4. Comparison of the a. optical absorption spectra and b. PL spectra between (3AMP)(MA)2Pb3I10, (4AMP)(MA)2Pb3I10, (GA)(MA)3Pb3I10 and (BA)2(MA)2Pb3I10. b 1.0",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图注后紧跟图内文本“b 1.0”等，与图注之间无正文逻辑，属于图内内容混入，且图跨页。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：3AMP系列带隙从n=1的2.23 eV到n=4的1.87 eV，4AMP从2.38到1.89 eV；最佳器件(3AMP)(MA)3Pb4I13的PCE=7.32%，Jsc=10.17 mA·cm^-2，Voc=1.06 V，FF=67.60%。DFT计算带隙数值（0.48/0.70等）与实验趋势一致。公式Kubelka–Munk方程已保留。注意摘要中PEA定义为phenylethylammonium，后文出现phenylethylamine，可能为原文笔误，但未作改动。提取文本中表格数据未完全录入笔记，仅保留正文描述的关键数值。仍不确定的地方：部分跨页图内文本与正文的边界，以及引言中乱码段的确切含义。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5907,
+      "prompt_tokens": 17680,
+      "total_tokens": 23587,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3435
+      }
+    },
+    "content_chars": 4251
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "3814e84bac9165805a7a154cd97980695bfffec0",
+  "title": "Orienteering Problem: A survey of recent variants, solution approaches and applications",
+  "doi": "https://doi.org/10.1016/j.ejor.2016.04.059",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3814e84bac9165805a7a154cd97980695bfffec0/index.html",
+  "source_chars": 125484,
+  "markdown_chars": 5816,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 26,
+      "quote": "F landersCycle",
+      "type": "跨页/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文中 'FlandersCycle' 可能因换行或连字符被拆成 'F landersCycle'，但在同一页及后文多次出现，疑似文本抽取时误加入空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "F landersCycle",
+      "type": "跨页/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，此处再次出现，且同一句中还有 'LAF lickr' 疑似 'Flickr' 拆分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "LAF lickr",
+      "type": "跨页/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文应为 'Flickr'，但被拆成 'LAF lickr'，疑似文本抽取时错误断开。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言、模型公式和主要结论。公式符号均照原文转录，未修改。关键数值如 SOPTW 的 9.2% 和 26.3%、GRILS 的 5.19% 差距、ILS 和 SAILS 的 57.9%/57.2% 比例等均在文中正确体现。不确定处：表 5 中各项百分比仅选取了代表性平均值，未逐行复制；F landersCycle 和 LAF lickr 已标记为拼接疑点；其他表格数字（如表 2 中改进数量）已保留，但未全部列出以免冗长。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7810,
+      "prompt_tokens": 31333,
+      "total_tokens": 39143,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3938
+      }
+    },
+    "content_chars": 6833
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

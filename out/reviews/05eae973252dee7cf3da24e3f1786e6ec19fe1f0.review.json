@@ -1,0 +1,55 @@
+{
+  "sha1": "05eae973252dee7cf3da24e3f1786e6ec19fe1f0",
+  "title": "A critical comparison of green building rating systems",
+  "doi": "https://doi.org/10.1016/j.buildenv.2017.07.007",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/05eae973252dee7cf3da24e3f1786e6ec19fe1f0/index.html",
+  "source_chars": 92915,
+  "markdown_chars": 4782,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Comprehensive Assessment System for Page 1 of 26",
+      "type": "cross-page order/splicing",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页尾短语在页码标记后中断，下一页以‘Building Environmental Efficiency’接续，存在跨页顺序疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "BREAM and LEED have a significant number of green certified buildings globally.",
+      "type": "suspected typo",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文多处出现‘BREAM’和‘BREEAM’混用，但上下文明确指同一体系，可能是笔误，并非文本抽取缺陷。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数据：BREEAM认证561,600，LEED 79,100，CASBEE 541，Green Star NZ 125；LEED覆盖160+国家，BREEAM 77国家；BREEAM占欧洲市场80%；LEED分数从69（v2）到145（v4）；子类目数LEED和Green Star NZ为68，BREEAM 53，CASBEE 51；社区手册LEED 56，BREEAM 41，CASBEE 29；BEE=Q/L公式及等级划分。所有数值均来自提取文本，未作推测。公式和结论方向一致。未发现明显矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5125,
+      "prompt_tokens": 23386,
+      "total_tokens": 28511,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2258
+      }
+    },
+    "content_chars": 5716,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

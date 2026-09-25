@@ -1,0 +1,55 @@
+{
+  "sha1": "90424055b022e8dfeb1e6f80c9e59bc699f5246e",
+  "title": "Linking plant phenology to conservation biology",
+  "doi": "https://doi.org/10.1016/j.biocon.2015.12.033",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/90424055b022e8dfeb1e6f80c9e59bc699f5246e/index.html",
+  "source_chars": 123435,
+  "markdown_chars": 2956,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 44,
+      "quote": "BOX 1: A BRIEF PRATICAL GUIDE FOR THE INTEGRATION OF PLANT PHENOLOGY INTO CONSERVATION SCIENCE",
+      "type": "spelling",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题中'PRATICAL'应为'PRACTICAL'，明显拼写错误，原文如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "“phenospecies” (i.e. sympatric species that share the same phenological triggers and strategies (Proença et al. 2012), may help",
+      "type": "paren_conflict",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "文本中括号不匹配，两个开括号后只有一个闭括号，推测原文可能有遗漏或排版错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：热带动物传粉比例94%（Ollerton et al. 2011）、全球无脊椎动物下降超过45%（1970-2010）、厄尔尼诺事件导致巴罗科罗拉多岛果实歉收（Wright et al. 1999）、Kew千年种子库保存25%植物多样性、图例中的2-4个月干旱假设。公式无。结论方向与原文一致。不确定之处：图1图例在正文中多次出现但未重复引用；括号匹配问题已标注。所有引用依据提取文本，未补充外部信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7616,
+      "prompt_tokens": 32443,
+      "total_tokens": 40059,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5489
+      }
+    },
+    "content_chars": 3877
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

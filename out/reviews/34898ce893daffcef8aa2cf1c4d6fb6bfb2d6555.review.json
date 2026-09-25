@@ -1,0 +1,63 @@
+{
+  "sha1": "34898ce893daffcef8aa2cf1c4d6fb6bfb2d6555",
+  "title": "A review of remote sensing applications in agriculture for food security: Crop growth and yield, irrigation, and crop losses",
+  "doi": "https://doi.org/10.1016/j.jhydrol.2020.124905",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/34898ce893daffcef8aa2cf1c4d6fb6bfb2d6555/index.html",
+  "source_chars": 12384,
+  "markdown_chars": 1806,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Munich Personal RePEc Archive\n\nProspects for franchising in the russian economy Razumova, Anastasia The Financial University under the Government of the Russian Federation\n\n23 December 2014\n\nOnline at https://mpra.ub.uni-muenchen.de/65106/ MPRA Paper No. 65106, posted 17 Jun 2015 21:49 UTC",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第1页为MPRA存档封面信息（含标题、作者、日期、存档号），与后文内容不连贯，且后续页从俄语文章开始，疑似抽取时混入无关元数据页。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Аннотация: В статье рассматривается один из новых и развивающихся видов бизнеса – франчайзинг.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "原文标题为“Prospects for franchising in the russian economy”，但后续元数据年份为2020且DOI指向遥感主题，而实际内容为俄语特许经营文章，存在明显主题不一致，疑为提取时源文件错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "при наших расчетах оборот составляет около 100000 рублей в месяц, значит 30000 рублей нужно посылать правообладателю каждый месяц.",
+      "type": "疑似数值不一致",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "前文称特许权使用费为营业额的3%，若月营业额为100000卢布，则3%应为3000卢布，而非30000卢布。原文写30000，疑似笔误或数字抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数字：俄罗斯特许经营前三位行业（零售54、餐饮14、儿童9）；案例“Унция”的初始投资约180万卢布、回收期30个月及节假日缩短至22–25个月、特许权使用费3%但计算中30000/100000=30%明显矛盾，已标出；法律依据为民法典第54章“商业特许”。元数据与正文严重不符，已按实际文本生成笔记。未补充任何外部知识，公式未出现。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 1791,
+      "prompt_tokens": 4469,
+      "total_tokens": 6260,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 146
+      }
+    },
+    "content_chars": 3284
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

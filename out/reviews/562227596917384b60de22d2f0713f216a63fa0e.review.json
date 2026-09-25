@@ -1,0 +1,54 @@
+{
+  "sha1": "562227596917384b60de22d2f0713f216a63fa0e",
+  "title": "Relative contribution of monsoon precipitation and pumping to changes in groundwater storage in India",
+  "doi": "https://doi.org/10.1038/ngeo2869",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/562227596917384b60de22d2f0713f216a63fa0e/index.html",
+  "source_chars": 51057,
+  "markdown_chars": 2949,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "which may be due to increased groundwater abstraction for irrigation as a precipitation contribution to",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾句子在'to'处中断，第6页开头为'increased ET is less in the dry season'，两句不连贯，疑似中间缺失内容或页间拼接错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "We finally selected 2,458 wells with a minimum 15 yr (out of the entire record of 17 yr) of observations in each month (January, May, August, and September).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "正文多次明确CGWB数据仅在January, May, August, November四个月观测（见图1图注），此处写September，与文内其他证据矛盾，疑为原文笔误或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：GRACE北印度下降2 cm yr⁻¹、南印度上升1-2 cm yr⁻¹；井水位趋势15-25 cm yr⁻¹；相关系数0.46/0.77；SPI对变异解释29%/30%/64%，SAI解释38%/10%/30%；EOF-1解释46%；SPI与SAI相关-0.80/-0.72/-0.46等。所有数值均取自提取文本并保持一致。公式仅有相关系数，已保留。不确定之处：方法中月份的September疑为错误，已在issues中说明；跨页断句问题已标注。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6312,
+      "prompt_tokens": 14014,
+      "total_tokens": 20326,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4119
+      }
+    },
+    "content_chars": 4023
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

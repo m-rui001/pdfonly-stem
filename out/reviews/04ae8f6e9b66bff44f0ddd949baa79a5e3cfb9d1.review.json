@@ -1,0 +1,76 @@
+{
+  "sha1": "04ae8f6e9b66bff44f0ddd949baa79a5e3cfb9d1",
+  "title": "Solvent-Mediated Crystallization of CH3NH3SnI3Films for Heterojunction Depleted Perovskite Solar Cells",
+  "doi": "https://doi.org/10.1021/jacs.5b06658",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/04ae8f6e9b66bff44f0ddd949baa79a5e3cfb9d1/index.html",
+  "source_chars": 49718,
+  "markdown_chars": 6550,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "the characteristic C-S and S-O stretching vibrations from the $ \\mathrm{S n}^{2+} $ -coordinated DMSO solvent at 960 and $ 1 0 1 2 \\mathrm{c m}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Figure 1c 图注中同一组振动被描述为 C-S 和 C-O stretching，而正文此处写作 C-S 和 S-O stretching，两处对同一 DMSO 特征峰的归属不一致，可能为 OCR 或原文笔误，影响对 FTIR 证据的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the characteristic C=O bonding of the DMF solvent is absent",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "DMF 的特征振动通常描述为 C=O 伸缩，此处表述本身可读，但与前文 DMSO 的 C-S/S-O 归属并列时存在术语一致性问题，可能影响对溶剂残留判断的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The $ \\mathrm{C H_{3} N H_{3} P b I_{3}} $ device generates a carrier density of the order of $ 1 0^{1 6} \\mathrm{c m}^{-3} $ under white LED illumination.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句中的上标 10^16 在 OCR 中保留，但同段后续 10^9–10^11 和 10^14–10^17 的上下标格式在部分位置出现空格或缺失，可能影响对数量级范围的准确读取。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "The black perovskite film forms in seconds after finishing the spinning process without any heat treatment.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句位于 GBL 讨论段落之后，但主语未明确指代 GBL，且与前文 NMP 段落之间插入 Figure 3 图注，阅读顺序可能被打乱，影响对 GBL 结晶行为的准确理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Solvent-Mediated Crystallization of CH3NH3SnI3 Films for Heterojunction Depleted Perovskite Solar Cells",
+  "self_check": "已核对：摘要与结论中光电流 21 mA cm−2、器件效率 3.15%、Voc 320 mV、FF 0.46、Jsc 21.4 mA cm−2、铅基对照 15.2 mA cm−2/668 mV/0.57/5.79%、IPCE 积分 20.58 与 15.17 mA cm−2、稳态光电流 16.8 mA cm−2、载流子密度 10^16 cm−3 与高一个数量级、复合寿命 10–20 μs、带隙 1.3 eV 与 1.55 eV、导带边 4.17 eV 与 3.93 eV、SnI2·3DMSO 晶胞参数与键长、Table 1 溶剂参数等均与原文一致。不确定处：Figure 1c 图注与正文对 DMSO 特征振动归属（C-O 与 S-O）不一致，已在 extraction_issues 中标出；GBL 段落中“black perovskite film forms in seconds”的主语指代因阅读顺序问题不够明确。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4999,
+      "prompt_tokens": 14948,
+      "total_tokens": 19947,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8685,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

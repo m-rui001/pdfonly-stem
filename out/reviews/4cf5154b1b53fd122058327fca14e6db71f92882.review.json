@@ -1,0 +1,63 @@
+{
+  "sha1": "4cf5154b1b53fd122058327fca14e6db71f92882",
+  "title": "Terawatt-scale photovoltaics: Transform global energy",
+  "doi": "https://doi.org/10.1126/science.aaw1845",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4cf5154b1b53fd122058327fca14e6db71f92882/index.html",
+  "source_chars": 22862,
+  "markdown_chars": 2893,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Declining costs at the PV system level have translated into a dramatic decline in the price of PV-generated electricity sciencemag.org relative to other forms of generation.",
+      "type": "跨页/拼接疑点",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "正文句子中混入了页脚网站名 'sciencemag.org'，该词不属于原文句子，应被移除或标记为页眉/页脚插入。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "copper indium gallium selenide",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "页面2末尾在 'copper indium gallium selenide' 处中断，页面3以 'CIGS' 接续，中间可能隔有页眉，但语义连续，仅需注意跨页拼接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "in CdTe PV recycling Multi-terawatt capacity also raises",
+      "type": "拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'recycling' 与 'Multi-terawatt' 之间缺少标点或空格，疑似原文有句号或换行未被正确提取，但语义可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：500 GW（2018年底）、约10 TW（2030）、30-70 TW（2050）、组件价格低于0.25美元/W、德国渗透率8-20%、加州18%、电池价格下降80%、特斯拉100 MW回收14%、电动车销量2百万辆、热泵COP 3-4、TFC占比39%/17%/27%、氨<400美元/吨、氢<2美元/千克、硅26.7%、CIGS 23.4%、GaAs 29.1%、钙钛矿20.9%/24.2%、叠层35.9%/28.0%、银消耗20±5吨/GW、CAPEX 1.2亿美元、年增长率20%、学习曲线23%。公式方面原文无数学公式，仅保留1370 kWh/kWp容量因子。跨页拼接问题已标记；未发现数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7251,
+      "prompt_tokens": 6120,
+      "total_tokens": 13371,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4972
+      }
+    },
+    "content_chars": 4200
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

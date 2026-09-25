@@ -1,0 +1,630 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/mpr/63/63bd0c80b8a734a6ce76e1a842ef9956ba953af4.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NHC-Catalyzed Generation of α,β-Unsaturated Acylazoliums for the Enantioselective Synthesis of Heterocycles and Carbocycles</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>NHC-Catalyzed Generation of α,β-Unsaturated Acylazoliums for the Enantioselective Synthesis of Heterocycles and Carbocycles</h1><p class="source">2019 · <a href="https://doi.org/10.1021/acs.accounts.8b00550">https://doi.org/10.1021/acs.accounts.8b00550</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/mpr/63/63bd0c80b8a734a6ce76e1a842ef9956ba953af4.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Munich Personal RePEc Archive</p>
+<p>Smoothing of financial time series, Part 1 Stefanescu, Răzvan and Dumitriu, Ramona &quot;Dunarea de Jos&quot; University of Galati, &quot;Dunarea de Jos&quot; University of Galati</p>
+<p>15 April 2017</p>
+<p>Online at https://mpra.ub.uni-muenchen.de/78329/ MPRA Paper No. 78329, posted 17 Jan 2018 07:09 UTC</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>Ajustarea seriilor de timp financiare, Partea întâi R zvan tef nescu Ramona Dumitriu Rezumat: Ajustarea seriilor de timp financiare poate facilita identificarea unor caracteristici importante precum trendul, ciclicitatea sau sezonalitatea. Poate fi, de asemenea, util în prognoza evolu iei unor variabile financiare. În aceast lucrare vom aborda câteva metode simple de ajustare a seriilor de timp precum cele pe baza mediilor mobile simple sau centrate.</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>Capitolul 1 Utiliz ri ale ajust rii seriilor de timp financiare Evolu iile unor variabile financiare, în special în cazul celor asociate pie elor cu o natur predominant speculativ , sunt marcate de fluctua ii frecvente i abrupte, cauzate de factori cu ac iune ciclic , sezonier sau întâmpl toare. Astfel de fluctua ii pot fi eliminate sau, cel pu in, atenuate prin ajustarea unei serii de timp, astfel încât valorile rezultate pot fi asociate impactului factorilor cu ac iune esen ial (Tsay, 2005; Andersen et al., 2009; Sewell, 2011; Swift &amp; Piff, 2014). În aceste condi ii, se poate aprecia c valorile ajustate aproximeaz trendul evolu iei unei variabile. Relevarea, prin ajustare, a tendin ei unei serii de timp financiare are numeroase utiliz ri (Prado &amp; West, 2010; Woodward et al., 2011; Montgomery et al., 2015; Chatfield, 2016; Brockwell et al., 2016). Vom aborda, în continuare, câteva dintre acestea: a. identificarea sensului evolu iei unei variabile financiare; b. studiul ciclicit ii i sezonalit ii seriilor de timp financiare; c. previziunea evolu iilor viitoare ale variabilelor financiare. a. Identificarea sensului evolu iei unei variabilelor financiare. Unele metode de ajustare eviden iaz direc ia pe care o urmeaz valorile unei serii de timp. De exemplu, cele care aproximeaz tendin a variabilei printr-o func ie liniar faciliteaz relevarea sensului evolu iei pentru perioada de timp analizat : ascendent , descendent sau relativ sta ionar . Un exemplu de tendin ascendent este furnizat de evolu ia valorilor zilnice ale cursului valutar leu/franc elve ian din luna martie 2017 (Figura 1.1.). Cu toate c în aceast perioad valorile efective ale variabilei au înregistrat, de la o zi la alta, atât cre teri cât i sc deri, panta dreptei asociate valorilor ajustate indic o tendin ascendent semnificativ care corespunde deprecierii monedei na ionale a României în raport cu cea a Elve iei. 4.2650</p>
+<p>4.2550 CURSZ_CHF</p>
+<p>4.2450</p>
+<p>CURSZ_CHF_aj_l</p>
+<p>4.2350</p>
+<p>4.2250 1-Mar17</p>
+<p>6-Mar17</p>
+<p>11-Mar17</p>
+<p>16-Mar17</p>
+<p>21-Mar17</p>
+<p>26-Mar17</p>
+<p>31-Mar17</p>
+<p>Figura 1.1. Evolu ia valorilor zilnice efective (CURSZ_CHF) i ajustate (CURSZ_CHF_aj_l) ale cursului valutar leu/franc elve ian din luna martie 2017 Sursa datelor: http://www.bnr.ro</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>Pentru aceea i perioad de timp, leul românesc s-a apreciat în raport cu dolarul australian. În acest caz, panta valorilor ajustate indic o tendin semnificativ descendent (Figura 1.2.). 3.3000 3.2800 3.2600 CURSZ_AUD</p>
+<p>3.2400</p>
+<p>CURSZ_AUD_aj_l</p>
+<p>3.2200 3.2000 3.1800 1-Mar17</p>
+<p>6-Mar- 11-Mar- 16-Mar- 21-Mar- 26-Mar- 31-Mar17 17 17 17 17 17</p>
+<p>Figura 1.2. Evolu ia valorilor zilnice efective (CURSZ_AUD) i ajustate (CURSZ_AUD_aj_l) ale cursului valutar leu/dolar australian din luna martie 2017 Sursa datelor: http://www.bnr.ro Adeseori, randamentele activelor financiare au evolu ii sta ionare, oscilând în jurul nivelului mediu. În Figura 1.3. este ilustrat evolu ia randamentelor logaritmice calculate pe baza valorilor zilnice de închidere ale indicelui IPSA de la Bursa de Valori din Santiago de Chile în perioada 3 februarie – 10 martie. Seria de timp, care are o tendin ascendent aproape imperceptibil , poate fi considerat relativ sta ionar . 1.3 1.1 0.9 0.7 0.5</p>
+<p>r_IPSA</p>
+<p>0.3</p>
+<p>r_IPSA_aj_l</p>
+<p>0.1 -0.1 -0.3 -0.5 4-Feb-17 10-Feb-17 16-Feb-17 22-Feb-17 28-Feb-17 6-Mar-17</p>
+<p>Figura 1.3. Evolu ia randamentelor logaritmice efective (r_IPSA) i ajustate (r_IPSA_aj_l), calculate pe baza valorilor zilnice de închidere ale indicelui IPSA de la Bursa de Valori din Santiago de Chile în perioada 6 Februarie – 10 Martie 2017 Sursa datelor: http://finance.yahoo.com b. Studiul ciclicit ii i sezonalit ii seriilor de timp financiare. Factorii cu ac iune ciclic sau sezonier pot afecta semnificativ evolu ia unor variabile financiare. Pentru unele cursuri formate pe pie ele valutare sau de capital sezonalitatea reprezint un aspect</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>important, care poate fi exploatat în cadrul unor strategii de investi ii. Câteva dintre metodele utilizate destul de frecvent pentru analiza ciclicit ii i sezonalit ii seriilor de timp pornesc de la identificarea trendului prin intermediul ajust rii. c. Previziunea evolu iilor viitoare ale variabilelor financiare. Multe metode de prognoz pornesc de la premisa c , în viitor, principalii parametri ai dinamicii unui fenomen vor avea valori asem n toare celor din trecut. În acest caz, prin extrapolarea trendului i luând în considerare, atunci când este cazul, factorii cu ac iune ciclic i sezonier , pot fi realizate previziuni asupra evolu iei viitoare a fenomenului (Wiener, 1949; Carbone &amp; Armstrong, 1982; Abraham &amp; Ledolter, 2005; De Gooijer &amp; Hyndman, 2006 ; Montgomery et al., 2015).</p>
+<p>1,500.00</p>
+<p>1,480.00 BET-BK BET-BK _aj_l</p>
+<p>1,460.00</p>
+<p>F_BET-BK</p>
+<p>1,440.00</p>
+<p>1,420.00 1-Feb-17</p>
+<p>8-Feb-17</p>
+<p>15-Feb-17</p>
+<p>22-Feb-17</p>
+<p>1-Mar-17</p>
+<p>Figura 1.4. Valori de închidere ale indicelui BET-BK de la Bursa de Valori din Bucure ti (F_BET-BK) prognozate pentru perioada 28 februarie – 2 martie 2017 prin extrapolarea valorilor ajustate (BET-BK_aj_l) din perioada 1 – 27 februarie 2017 Sursa datelor: http://www.bvb.ro Un exemplu de previziune prin extrapolarea trendului, în condi iile unor componente ciclice i sezoniere neglijabile, este oferit în Figura 1.4. Valorile zilnice de închidere ale indicelui BET-BK de la Bursa de Valori din Bucure ti, înregistrate în perioada 1 – 27 februarie 2017, au fost ajustate printr-o func ie liniar . Prelungind dreapta asociat acestei func ii sunt ob inute valorile prognozate pentru urm toarele trei zile. Unul dintre aspectele esen iale ale previziunii este reprezentat de acurate ea asociat valorilor prognozate. Aceasta poate fi apreciat prin intermediul erorii de prognoz (Ei) calculat ca o diferen dintre valoarea efectiv (yi) i cea prognozat (F(yi)): ei = yi − F ( yi )</p>
+<p>(1.1.)</p>
+<p>Evident, în momentul previziunii nu poate fi cunoscut eroarea de prognoz . Aceasta poate fi, totu i, estimat prin a a-numite prognoze ex-ante care aplic algoritmul de previziune pentru a determina valori prognozate aferente unui num r ( ) de perioade din trecut (Makridakis et al, 1982; Hyndman &amp; Koehler, 2006; Chatfield, 2016). În cadrul metodelor de previziune au fost introduse mai multe m rimi care servesc la aprecierea</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>gradului în care valorile prognozate difer de cele efective. Vom prezenta succint, în continuare, câteva dintre acestea: i. media erorilor absolute; ii. media erorilor procentuale absolute; iii. media erorilor standard; iv. media p tratic a erorilor; i. Media erorilor absolute (MAD) este calculat ca o medie aritmetic a valorilor absolute ale erorilor de prognoz : η</p>
+<p>ei MAD =</p>
+<p>(1.2.)</p>
+<p>i =1</p>
+<p>η</p>
+<p>Se poate considera c acurate ea prognozei este cu atât mai mare cu cât valoarea acestui indicator este mai mic . O valoare nul (practic, imposibil de atins), ar însemna c pentru to i cei termeni valorile efective i cele prognozate ex-ante coincid. ii. Media erorilor procentuale absolute (MAPE) difer fa de indicatorul precedent prin faptul c apreciaz acurate ea previziunii printr-o m rime relativ , eroarea absolut procentual de prognoz (APEi). Aceasta este determinat , pentru fiecare dintre cei termeni, ca un raport (exprimat într-o form procentual ) între eroarea de prognoz i valoarea efectiv : e (1.3.) APEi = i yi Valoarea MAPE este calculat ca o medie aritmetic a erorilor absolute de prognoz : η</p>
+<p>APEi MAPE = i =1</p>
+<p>(1.4.)</p>
+<p>η</p>
+<p>Evident, precizia prognozei este cu atât mai mare cu cât valoarea MAPE este mai mic . iii. Media p tratelor erorilor (MSE) este reprezentat de media p tratelor erorilor de prognoz , notate cu SEi: η</p>
+<p>ei MSE =</p>
+<p>i =1</p>
+<p>η</p>
+<p>η</p>
+<p>2</p>
+<p>SEi =</p>
+<p>i =1</p>
+<p>η</p>
+<p>(1.5.)</p>
+<p>La fel ca în cazul MAD sau MAPE, acurate ea prognozei este cu atât mai mare cu cât valoarea MSE este mai mic . Utilizarea p tratelor erorilor m re te impactul diferen elor mari dintre valorile efective i cele prognozate. v. Media p tratic a erorilor (RMSE) este ob inut extr gând r d cina p trat din MSE:</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>η</p>
+<p>ei RMSE = MSE =</p>
+<p>2</p>
+<p>(1.6.)</p>
+<p>i =1</p>
+<p>η</p>
+<p>Fa de MSE, acest indicator are avantajul c este exprimat în unitatea de m sur a valorilor efective. Exemplul 1.1. În Tabelul 1.1. sunt prezentate valorile zilnice de închidere, efective i prognozate ex-ante prin intermediul mediei mobile, ale indicelui CAC 40, de la Bursa de Valori din Paris, înregistrate în perioada 5-12 aprilie 2017. Vom calcula valorile celor patru indicatori ai acurate ei prognozelor prezenta i anterior. Tabelul 1.1. Valori efective i prognozate ex-ante ale indicelui CAC 40 Zi Valori efective Valori CAC 40 prognozate MA ale CAC 40 (yi) ex-ante ( Fant ( yi ) ) 5-Apr-17 5091,85 5099,797 6-Apr-17 5121,44 5100,35 7-Apr-17 5135,28 5100,083 10-Apr-17 5107,45 5112,425 11-Apr-17 5101,86 5114,005 12-Apr-17 5101,11 5116,507 Sursa datelor: http://finance.yahoo.com Rezolvare: Începem prin a determina totalul erorilor absolute de prognoz (Tabelul 1.2.). Tabelul 1.2. Calculul erorilor absolute de prognoz pentru valorile CAC 40 Zi Valori Eroare de prognoz (ei) Valori Eroare efective prognozate absolut de MA (yi) prognoz ( Fant ( yi ) ) ( ( ei ) (0)</p>
+<p>(1)</p>
+<p>(2)</p>
+<p>(3) = (2) – (1)</p>
+<p>5-Apr-17 5091,85 5099,797 5091,85 -5099,797 = -7,947 6-Apr-17 5121,44 5100,35 5121,44 - 5100,35 = 21,090 7-Apr-17 5135,28 5100,083 5135,28 - 5100,083 = 35,197 10-Apr-17 5107,45 5112,425 5107,45 - 5112,425 = -4,975 11-Apr-17 5101,86 5114,005 5101,86 - 5114,005 = -12,145 12-Apr-17 5101,11 5116,507 5101,11 - 5116,507 = -15,398 Total x x 15,822 η Simbol x x ei pentru i =1 total Sursa datelor: http://finance.yahoo.com Aplicând rela ia (1.2.) rezult media erorilor absolute:</p>
+<p>(4) = (3) 7,947 21,090 35,197 4,975 12,145 15,398 96,752 η</p>
+<p>ei i =1</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>η</p>
+<p>ei i =1</p>
+<p>MAD =</p>
+<p>=</p>
+<p>η</p>
+<p>96,752 = 16,125. 6</p>
+<p>Tabelul 1.3. Calcule intermediare pentru determinarea valorilor MAPE i MSE aferente evolu iei indicelui CAC 40 Eroare de Eroare absolut P tratul erorii de Zi Valori procentual de prognoz (SEi) prognoz (ei) efective prognoz (APEi) (yi) (4) =(2)2 (0) (1) (2) ( 2) (3) = (1) 5-Apr-17 5091,85 − 7,947 = 0,16% 5091,85 (-7,947)2 = 63,16 -7,947 6-Apr-17 5121,44 21,090 = 0,41% 5091,85 (21,090)2 = 444,79 21,090 7-Apr-17 5135,28 35,197 = 0,69% 5135,28 (35,197)2 = 1238,85 35,197 10-Apr-17 5107,45 − 4,975 = 0,10% 5107,45 -4,975 (-4,975)2 = 24,75 11-Apr-17 5101,86 − 12,145 = 0,24% 5101,86 -12,145 (-12,145)2 = 147,50 12-Apr-17 5101,11 − 15,398 = 0,30% 5101,11 -15,398 (-15,398)2 = 237,09 Total x 15,822 1,89% 2156,13 η η η Simbol x APE ei SEi i pentru i =1 i =1 i =1 total Sursa datelor: http://finance.yahoo.com Vom calcula, în continuare, totalul erorilor absolute procentuale (Tabelul 1.3.). Prin aplicarea rela iei (1.4.) ob inem media erorilor procentuale absolute: η</p>
+<p>APEi MAPE =</p>
+<p>i =1</p>
+<p>=</p>
+<p>η</p>
+<p>1,89% = 0,32% 6</p>
+<p>Determin m, în continuare, media p tratelor erorilor prin intermediul rela iei (1.5.): η</p>
+<p>ei</p>
+<p>η</p>
+<p>2</p>
+<p>SE i</p>
+<p>2156,13 = 359,36 η η 6 Prin extragerea r d cinii p trate din valoarea MSE ob inem media p tratic a erorilor:</p>
+<p>MSE =</p>
+<p>i =1</p>
+<p>=</p>
+<p>i =1</p>
+<p>=</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>RMSE = MSE = 359,36 = 18,957 Indicatorii acurate ei pot servi drept criterii de alegere a variantei optime dintre mai multe procedee de prognoz .</p>
+<p>Exemplul 1.2. Pentru previziunea valorilor ratei dobânzii ROBOR overnight au fost luate în considerare dou procedee de ajustare: pe baza mediei mobile i prin intermediul unei func ii liniare de regresie. Acurate ea metodelor este apreciat pe baza unor prognoze exante pentru valorile din perioada 6 – 12 aprilie 2017 (Tabelul 1.4.). Vom selecta metoda optim pe baza valorilor MAPE. Tabelul 1.4. Valori efective i prognozate ex-ante ale ratei dobânzii ROBOR overnight - %/anZi Valori Valori ale ROBOR overnight prognozate efective ale ex-ante ROBOR pe baza mediei printr-o func ie liniar MA overnight (yi) de regresie ( Fantfl ( yi ) ) mobile ( Fant ( yi ) ) 6-Apr-17 0,46 0,514 0,464 7-Apr-17 0,46 0,502 0,459 10-Apr-17 0,46 0,480 0,454 11-Apr-17 0,45 0,466 0,449 12-Apr-17 0,44 0,458 0,444 Sursa datelor: http://www.bvb.ro Rezolvare: Vom aprecia, pentru început, acurate ea prognozei pe baza mediei mobile. Prin intermediul Tabelului 1.4. este determinat totalul erorilor absolute procentuale. Tabelul 1.4. Determinarea erorilor absolute procentuale de prognoz aferente previziunii evolu iei ROBOR overnight pe baza mediei mobile Valori Eroare absolut Zi Valori Eroare de prognozate procentual de efective (yi) prognoz (ei) MA [%/an] [%/an] prognoz ( Fant ( yi ) ) (APEi) [%/an] (0) (1) (2) (3) = (1) – (2) (3) ( 4) = (1) 6-Apr-17 0,46 0,514 -0,054 11,74% 7-Apr-17 0,46 0,502 -0,042 9,13% 10-Apr-17 0,46 0,480 -0,020 4,35% 11-Apr-17 0,45 0,466 -0,016 3,56% 12-Apr-17 0,44 0,458 -0,018 4,09% Total x x -0,150 32,86% η η Simbol x x APE i ei pentru total i =1</p>
+<p>i =1</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>Sursa datelor: http://www.bvb.ro Rezult , pentru previziunea pe baza mediei mobile, o medie a erorilor absolute procentuale: η</p>
+<p>APEi MAPE</p>
+<p>MA</p>
+<p>=</p>
+<p>i =1</p>
+<p>η</p>
+<p>=</p>
+<p>32,86% = 6,57% 5</p>
+<p>Tabelul 1.5. Determinarea erorilor absolute procentuale de prognoz aferente previziunii evolu iei ROBOR overnight pe baza unei func ii liniare de regresie Valori Eroare absolut Zi Valori Eroare de procentual de prognoz (ei) prognozate efective (yi) fl [%/an] [%/an] prognoz ( Fant ( yi ) ) (APEi) [%/an] (0) (1) (2) (3) = (1) – (2) (3) ( 4) = (1) 6-Apr-17 0,46 0,464 -0,004 0,87% 7-Apr-17 0,46 0,459 0,001 0,22% 10-Apr-17 0,46 0,454 0,006 1,30% 11-Apr-17 0,45 0,449 0,001 0,22% 12-Apr-17 0,44 0,444 -0,004 0,91% Total x x 0,000 3,52% η η Simbol x x APE i ei pentru total i =1</p>
+<p>i =1</p>
+<p>Sursa datelor: http://www.bvb.ro În Tabelul 1.5. este ilustrat modul de calcul al erorilor procentuale absolute. Media acestora reprezint : η</p>
+<p>APEi</p>
+<p>3,52% = 0,705% η 5 Din compara ia celor dou valori rezult o acurate e superioar pentru prognoza pe baza unei func ii liniare de regresie. fl</p>
+<p>MAPE =</p>
+<p>i =1</p>
+<p>=</p>
+<p>Un aspect important al acurate ei unei previziuni este reprezentat de a a-numitul bias al valorilor prognozate care const în tendin a acestora de a se situa, în ansamblu, sub sau peste valorile efective. Vom prezenta, în continuare, dou m rimi care pot servi în evaluarea acestei tendin e: i. eroarea de prognoz cumulat ; ii. eroarea medie de prognoz ;</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>iii. eroarea medie procentual de prognoz . i. Eroarea de prognoz cumulat (CFE), corespunde totalului erorilor de prognoz pentru num rul ( ) de perioade de timp succesive: η</p>
+<p>CFE =</p>
+<p>(1.7.)</p>
+<p>ei i =1</p>
+<p>ii. Eroarea medie de prognoz (MD) este reprezentat de media aritmetic a diferen elor dintre valorile efective i cele previzionate: η</p>
+<p>ei i =1</p>
+<p>MD =</p>
+<p>(1.8.)</p>
+<p>η</p>
+<p>iii. Eroarea medie procentual de prognoz (MPE) reflect nivelul mediu al erorilor procentuale de prognoz . Pentru un termen cu num rul de ordine i, eroarea procentual (PEi) este reprezentat de raportul (transpus într-o form procentual ) dintre eroarea de prognoz i valoarea efectiv :</p>
+<p>PEi =</p>
+<p>ei yi</p>
+<p>(1.9.)</p>
+<p>Valoarea MPE este dat de rela ia: η</p>
+<p>PEi MPE =</p>
+<p>i =1</p>
+<p>η</p>
+<p>(1.10.)</p>
+<p>Interpretarea sensului i intensit ii bias-ului este asem n toare pentru to i cei trei indicatori. O valoare negativ indic tendin a prognozei de a dep i valorile efective în timp ce una semnificativ pozitiv reflect , pe ansamblu, situarea valorilor prognozate sub cele efective. Bias-ul este cu atât mai intens cu cât valoarea absolut a indicatorului este mai mare. Exemplul 1.2. Vom interpreta bias-ul unei previziuni, pe baza mediei mobile, asupra evolu iei ratei dobânzii Eonia prin intermediul unei prognoze ex-ante aferent valorilor lunare din perioada noiembrie 2016 – martie 2017 (Tabelul 1.6.). Tabelul 1.6. Valori lunare, efective i prognozate ex-ante, ale ratei dobânzii Eonia în perioada noiembrie 2016 – martie 2017 - %/an Luna Valori efective ale ratei Valori prognozate ex-ante MA dobânzii Eonia (yi) ( Fant ( yi ) ) 2016 -Nov -0,3487 -0,3393 2016 -Dec -0,3504 -0,3443</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>2017 - Jan -0,3515 2017- Feb -0,3529 2017 - Mar -0,3535 Total x Simbol pentru x total Sursa datelor: http://sdw.ecb.europa.eu</p>
+<p>-0,3472 -0,3493 -0,3509 x x</p>
+<p>Rezolvare: Calculul erorilor de prognoz este ilustrat în Tabelul 1.7. Eroarea de prognoz cumulat reprezint : η</p>
+<p>ei = -0,0261%/an</p>
+<p>CFE = i =1</p>
+<p>Tabelul 1.7. Determinarea erorilor de prognoz pentru valorile lunare ale ratei dobânzii Eonia Valori Eroare procentual de Luna Valori Eroare de prognozate prognoz (ei) prognoz (PEi) efective MA [%/an] (yi) [%/an] ( Fant ( yi ) ) (0)</p>
+<p>(1)</p>
+<p>[%/an] (2)</p>
+<p>2016 -Nov</p>
+<p>-0,3487</p>
+<p>-0,3393</p>
+<p>-0,0094</p>
+<p>− 0,0094 = -2,70% − 0,3487</p>
+<p>2016 -Dec</p>
+<p>-0,3504</p>
+<p>-0,3443</p>
+<p>-0,0061</p>
+<p>− 0,0061 = -1,75% − 0,3504</p>
+<p>2017 - Jan</p>
+<p>-0,3515</p>
+<p>-0,3472</p>
+<p>-0,0043</p>
+<p>− 0,0043 = -1,23% − 0,3515</p>
+<p>2017- Feb</p>
+<p>-0,3529</p>
+<p>-0,3493</p>
+<p>-0,0036</p>
+<p>− 0,0036 = -1,02% − 0,3529</p>
+<p>2017 - Mar</p>
+<p>-0,3535</p>
+<p>-0,3509</p>
+<p>-0,0026</p>
+<p>Total Simbol pentru total</p>
+<p>x x</p>
+<p>x x</p>
+<p>-0,0261</p>
+<p>− 0,0026 = -0,74% − 0,3535 -7,44%</p>
+<p>Eroarea medie de prognoz are valoarea: η</p>
+<p>ei MD =</p>
+<p>η</p>
+<p>η</p>
+<p>=</p>
+<p>− 0,0261 = -0,052%/an 5</p>
+<p>( 4) =</p>
+<p>(3) (1)</p>
+<p>η</p>
+<p>ei i =1</p>
+<p>Sursa datelor: http://sdw.ecb.europa.eu</p>
+<p>i =1</p>
+<p>(3) = (1) – (2)</p>
+<p>PEi i =1</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>Aplicând rela ia (1.10.) se ob ine eroarea medie procentual de prognoz : η</p>
+<p>PEi</p>
+<p>− 7,44% = -1,49% η 5 Valorile negative ale acestor m rimi sugereaz o tendin a valorilor prognozate de a le dep i pe cele efective. MPE =</p>
+<p>i =1</p>
+<p>=</p>
+<p>În cadrul metodelor de evaluare a prognozelor au fost dezvoltate procedee care faciliteaz identificarea perioadelor aferente prognozei ex-ante în care bias-ul dep e te limite considerate admisibile. Una dintre cele mai r spândite astfel de tehnici are la baz determinarea unui a a-numit „semnal de tip tracking” pentru ale c rui valori este stabilit un interval admisibil de varia ie. Valoarea semnalului tracking (TSi) pentru un termen cu num rul de ordine i poate fi calculat prin rela ia:</p>
+<p>TSi =</p>
+<p>CFE (i ) MAD(i )</p>
+<p>(1.11.)</p>
+<p>unde CFE(i) este eroarea de prognoz cumulat iar MAD(i) media erorilor absolute determinate, ambele, pentru seria de timp pân la termenul i.</p>
+<p>Exemplul 1.3. Vom calcula valorile semnalului tracking pentru o prognoz ex-ante pe baza mediei mobile, realizat asupra valorilor zilnice de închidere ale indicelui DAX, de la Bursa de Valori din Frankfurt, din perioada 3 – 12 aprilie 2017 (Tabelul 1.8.). Pentru valorile acestei m rimi a fost adoptat intervalul admisibil de varia ie [-2; 2]. Tabelul 1.8. Valori zilnice de închidere, efective i prognozate ex-ante, ale indicelui DAX din perioada 3 – 12 aprilie 2017 zi Valori efective ale Valori DAX prognozate ex-ante MA indicelui DAX (yi) ( Fant ( yi ) ) 3-Apr-17 12257,20 12163,68 4-Apr-17 12282,34 12195,83 5-Apr-17 12217,54 12243,54 6-Apr-17 12230,89 12254,90 7-Apr-17 12225,06 12259,54 10-Apr-17 12200,52 12254,32 11-Apr-17 12139,35 12235,59 12-Apr-17 12154,70 12215,95 Sursa datelor: http://finance.yahoo.com Rezolvare: Determinarea erorilor cumulate de prognoz este ilustrat în Tabelul 1.9. (eroarea cumulat se ob ine adunând eroarea curent la valoarea termenului precedent; face excep ie primul termen la care eroarea cumulat coincide cu cea curent ). Tabelul 1.9. Calculul erorilor cumulate de prognoz pentru valorile DAX zi Valori Valori Eroare de Eroare de prognoz</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>efective prognozate prognoz (ei) MA (yi) ( Fant ( yi ) ) (0) (1) (2) (3) = (1) – (2) 3-Apr-17 12257.20 12163.68 93.52 4-Apr-17 12282.34 12195.83 86.51 5-Apr-17 12217.54 12243.54 -26.00 6-Apr-17 12230.89 12254.90 -24.01 7-Apr-17 12225.06 12259.54 -34.49 10-Apr-17 12200.52 12254.32 -53.80 11-Apr-17 12139.35 12235.59 -96.24 12-Apr-17 12154.70 12215.95 -61.25 Sursa datelor: http://finance.yahoo.com</p>
+<p>cumulat (CFE(i)) (4) 93.52 93.52 + 86,51 = 180.03 180.03 + (-26.00) =154.03 154.03 + (-24.01) =130.02 130.02 + (-34.49) = 95.54 95.54 + (-53.80) = 41.74 41.74 + (-96.24) = -54.50 -54.50 + (-61.25) = -115.75</p>
+<p>Pentru a calcula valorile MAD(i) începem prin a stabili valorile erorii absolute cumulate (Tabelul 1.10).</p>
+<p>Tabelul 1.10. Calculul erorilor absolute cumulate ale unei prognoze ex-ante asupra evolu iei indicelui DAX Eroare absolut cumulat Zi Eroare de Eroare absolut de prognoz (ei) (CFAEi) prognoz ( ei ) (0)</p>
+<p>(1)</p>
+<p>(2) = (1)</p>
+<p>3-Apr-17 93,52 93,52 4-Apr-17 86,51 86,51 5-Apr-17 -26,00 26,00 6-Apr-17 -24,01 24,01 7-Apr-17 -34,49 34,49 10-Apr-17 -53,80 53,80 11-Apr-17 -96,24 96,24 12-Apr-17 -61,25 61,25 Sursa datelor: http://finance.yahoo.com</p>
+<p>(3) 93,52 93,52 + 86,51 = 180,03 180,03 + 26,00 = 206,03 206,03 +24,01 = 230,04 230,04 + 34,49 = 264,53 264,53 + 53,80 = 318,33 318,33 + 96,24 = 414,57 414,57 + 61,25 = 475,82</p>
+<p>Valorile mediei erorilor absolute (MAD(i)) sunt determinate împ r ind, pentru fiecare termen i, valoarea erorii absolute cumulate la num rul de termeni pe baza c rora aceasta a fost determinat . Se ob ine, astfel, o medie a erorilor absolute pân la termenul i (Tabelul 1.11).</p>
+<p>Tabelul 1.11. Calculul valorilor mediei erorilor absolute pentru o prognoz ex ante asupra evolu iei indicelui DAX Zi Eroare absolut Nr. termeni (i) Media erorilor absolute cumulat (CFAEi) (MAD(i)) (0) (1) (2) (1) (3) = ( 2) 3-Apr-17 93,52 1 93,52 = 93,52 1</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>4-Apr-17</p>
+<p>180,03</p>
+<p>5-Apr-17</p>
+<p>2 3</p>
+<p>206,03 6-Apr-17</p>
+<p>4 230,04</p>
+<p>7-Apr-17</p>
+<p>5 264,53</p>
+<p>10-Apr-17</p>
+<p>6 318,33</p>
+<p>11-Apr-17</p>
+<p>7 414,57</p>
+<p>12-Apr-17 475,82 Sursa datelor: http://finance.yahoo.com</p>
+<p>8</p>
+<p>180,03 = 90,02 2 206,03 = 68,68 3 230,04 = 57,51 4 264,53 = 52,91 5 318,33 = 53,05 7 414,57 = 59,22 7 475,82 = 59,48 8</p>
+<p>Aplicând rela ia (1.11) ob inem valorile zilnice ale variabilei TSi (Tabelul 1.12).</p>
+<p>Tabelul 1.12. Determinarea semnalului tracking pentru o prognoz ex ante asupra evolu iei indicelui DAX Media erorilor Semnal tracking Zi Eroare de prognoz cumulat absolute (MAD(i)) (TSi) (CFE(i)) (0) (1) (2) (1) (3) = ( 2) 3-Apr-17 93,52 93,52 = 1,00 93,52 93,52 4-Apr-17 90,02 180,03 = 2,00 90,02 180,03 5-Apr-17 68,68 154,03 = 2,24 68,68 154,03 6-Apr-17 57,51 130,02 = 2,26 57,51 130,02 7-Apr-17 52,91 95,54 = 1,81 52,91 95,54 10-Apr-17 53,05 41,74 = 0,79 53,05 41,74 11-Apr-17 59,22 − 54,50 = -0,92 59,22 -54,50 12-Apr-17 59,48 − 115,75 = -1,95 59,48 -115,75</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>Sursa datelor: http://finance.yahoo.com Valorile semnalului tracking dep esc limita superioar a intervalul admisibil de varia ie în perioada 4 – 6 aprilie 2017 i se apropie de cea inferioar în ziua de 12 aprilie 2017 (Figura 1.5.). 2.5 2 1.5 1 0.5</p>
+<p>Lim_inf</p>
+<p>0 -0.5</p>
+<p>Lim_sup TS</p>
+<p>-1 -1.5 -2 -2.5 3-Apr-17</p>
+<p>6-Apr-17</p>
+<p>9-Apr-17</p>
+<p>12-Apr-17</p>
+<p>Figura 1. 5. Valori ale semnalului tracking pentru prognoza asupra valorilor indicelui DAX Sursa datelor: http://finance.yahoo.com</p>
+<p>Capitolul 2 Ajustarea seriilor de timp pe baza unor indicatori medii ai seriilor de timp Aceast categorie de metode de ajustare are la baz premisa c impactul factorilor esen iali poate fi reflectat prin unele m rimi medii ale dinamicii. În acest capitol vom prezenta dou astfel de procedee: - ajustarea pe baza sporului mediu; - ajustarea pe baza indicelui mediu al dinamicii.</p>
+<p>2.1. Ajustarea pe baza sporului mediu Sporul mediu al unei serii de timp poate fi calculat ca o medie aritmetic a sporurilor cu baz în lan calcula i începând cu al doilea termen. Un spor cu baz în lan aferent termenului i (i = 1, 2,…N), notat ∆ i / i −1 , rezult din formula: ∆ i / i −1 = y i − y i −1</p>
+<p>(2.1.)</p>
+<p>Suma celor N-1 sporuri ale seriei este egal cu diferen a dintre ultimul i primul termen:</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>N</p>
+<p>(2.2.)</p>
+<p>∆ i / i −1 = y N − y1 i=2</p>
+<p>Rezult , astfel, o rela ie simplificat de calcul a sporului mediu: N</p>
+<p>∆ i / i −1 ∆=</p>
+<p>i =2</p>
+<p>N −1</p>
+<p>=</p>
+<p>y N − y1 N −1</p>
+<p>(2.2.)</p>
+<p>O valoare pozitiv a sporului mediu indic o tendin ascendent în timp ce una negativ corespunde unei tendin e descendente. Pentru ajustarea unei serii de timp prin intermediul sporului mediu poate fi aplicat un algoritm descris de dou reguli: 1. pentru primul termen, valoarea ajustat coincide cu cea efectiv ; 2. pentru urm torii termeni, valoarea ajustat este determinat prin formula:</p>
+<p>yˆi∆+1 = y1 + i × ∆</p>
+<p>(2.3.)</p>
+<p>sau, într-o form recurent :</p>
+<p>yˆi∆+1 = yi∆ + ∆ Evident, pentru ultimul termen, valoarea ajustat coincide cu cea efectiv : ( N − 1) × ( y N − y1) yˆ N∆ = y1 + ( N − 1) × ∆ = y1 + = yN (2.4.) N −1 Dac se consider c sezonalitatea i ciclicitatea seriei de timp pot fi neglijate, valorile astfel ajustate pot servi la prognoza prin extrapolare pentru un num r rezonabil de p perioade viitoare:</p>
+<p>Fy∆N + p = y N∆ + p × ∆</p>
+<p>(2.5.)</p>
+<p>sau, într-o form recurent : Fy∆N + p = Fy∆N + p −1 + ∆</p>
+<p>Exemplul 2.1. În Tabelul 2.1. este prezentat evolu ia valorilor lunare, din perioada iunie – decembrie 2016, a datoriei externe publice a României aferent emisiunii de obliga iuni. Vom ajusta aceast serie prin intermediul sporului mediu prognozând, totodat , prin intermediul acestui indicator, evolu ia variabilei pentru urm toarele dou luni. Vom aprecia, în continuare, acurate ea valorilor previzionate calculând, în cadrul unei</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>prognoze ex-ante pentru întreaga perioad analizat ( =N), eroarea de prognoz cumulat i media erorilor absolute.</p>
+<p>Tabelul 2.1. Evolu ia datoriei externe publice a României (emisiuni de obliga iuni) în perioada iunie – decembrie 2016 Luna Datorie extern public aferent emisiunii de obliga iuni (DE6L_DPO) [ mld. euro] Jun. 2016 18,19 Jul. 2016 18,53 Aug. 2016 19,58 Sep. 2016 19,56 Oct. 2016 19,99 Nov. 2016 19,34 Dec. 2016 19,60 Sursa datelor: http://www.bnr.ro Rezolvare: Sporurile cu baz în lan sunt determinate prin intermediul rela iei 2.1. (Tabelul 2.2.). Media aritmetic a acestora corespunde sporului mediu: N</p>
+<p>∆ i / i −1 ∆=</p>
+<p>i =2</p>
+<p>N −1</p>
+<p>=</p>
+<p>1,41 = 0,235 mld. lei 7 −1</p>
+<p>sau: y N − y1 19,60 − 18,19 = = 0,235 mld. lei N −1 7 −1 Valoarea pozitiv a sporului mediu indic o tendin ascendent a variabilei în perioada analizat . ∆=</p>
+<p>Tabelul 2.2. Sporuri cu baz în lan asociate evolu iei datoriei publice externe (emisiuni de obliga iuni) în perioada iunie – decembrie 2016 Spor cu baz în lan Luna Datorie public extern aferent ( ∆ i / i −1 ) [ mld. euro] emisiunii de obliga iuni (DE6L_DPO) [ mld. euro] Jun. 2016 18,19 x Jul. 2016 18,53 18,53 – 18,19 = 0,34 Aug. 2016 19,58 19,58 – 18,53 = 1,05 Sep. 2016 19,56 19,56 – 19,58 = -0,02 Oct. 2016 19,99 19,99 – 19,56 = 0,43 Nov. 2016 19,34 19,34 – 19,99 = -0,65 Dec. 2016 19,60 19,60 – 19,341 = 0,26</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Total Simbol pentru total</p>
+<p>x x</p>
+<p>1,41 N</p>
+<p>∆ i / i −1 i=2</p>
+<p>Sursa datelor: http://www.bnr.ro În continuare, determin m valorile ajustate ale seriei de timp (Tabelul 2.3.). Pentru prima lun prelu m valoarea efectiv iar pentru lunile urm toare aplic m rela ia (2.3.).</p>
+<p>Tabelul 2.3. Ajustarea datoriei publice externe (emisiuni de obliga iuni) în perioada iunie – decembrie 2016 prin intermediul sporului mediu - mld. euro Valori ajustate prin Luna Datorie public extern sporul mediu ( ŷi∆ ) aferent emisiunii de obliga iuni (yi) Jun. 2016 18,19 18,190 Jul. 2016 18,53 18,190 + 0,235 = 18,425 Aug. 2016 19,58 18,425 + 0,235 = 18,660 Sep. 2016 19,56 18,660 + 0,235 = 18,895 Oct. 2016 19,99 19,130 + 0,235 = 19,130 Nov. 2016 19,34 19,130 + 0,235 = 19,365 Dec. 2016 19,60 19,130 + 0,235 = 19,600 Sursa datelor: http://www.bnr.ro</p>
+<p>20.5 20 DE6L_DPO</p>
+<p>19.5</p>
+<p>DE6L_DPO_aj_sm 19</p>
+<p>F_DE6L_DPO</p>
+<p>18.5 18 Jun. 2016</p>
+<p>Aug. 2016</p>
+<p>Oct. 2016</p>
+<p>Dec. 2016</p>
+<p>Feb-16</p>
+<p>Figura 2.1. Valori efective (DE6L_DPO), ajustate (DE6L_DPO_aj_sm) i prognozate (F_DE6L_DPO) ale datoriei publice externe a României aferente emisiunii de obliga iuni [mld. euro] Sursa datelor: http://www.bnr.ro</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>Extrapolând impactul factorilor esen iali pot fi ob inute, prin rela ia (2.5.), valorile prognozate pentru lunile ianuarie i februarie 2017 (Figura 2.1.). Pentru ianuarie 2017 valoarea prognozat reprezint : ∆ Fy∆Ian = yˆ Dec + 1 × ∆ = 19,60 + 0,235 = 19,835 mld. lei</p>
+<p>Ad ugând, la aceast valoare, sporul mediu, se ob ine previziunea pentru luna februarie: Fy∆Feb = Fy∆Ian + ∆ = 19,835 +0,235 = 20,070 mld. lei. Pentru a aprecia acurate ea valorilor previzionate vom determina erorile unei prognoze ex-ante în care valorile prognozate coincid cu cele ajustate (Tabelul 2.4.).</p>
+<p>Tabelul 2.4. Determinarea erorilor absolute de prognoz ex-ante pentru evolu ia datoriei publice externe a României aferente emisiunii de obliga iuni - mld. euro Valori Eroare absolut Luna Eroare de prognoz (ei) Valori ajustate de prognoz ( ei ) ∆ efective ˆ ( yi +1 ) (yi) (0)</p>
+<p>(1)</p>
+<p>(2)</p>
+<p>(3) = (1) – (2)</p>
+<p>(4) = (3)</p>
+<p>Jun. 2016 Jul. 2016 Aug. 2016 Sep. 2016 Oct. 2016 Nov. 2016 Dec. 2016 Total Simbol pentru total</p>
+<p>18,19 18,53 19,58 19,56 19,99 19,34 19,60 x x</p>
+<p>18,190 18,425 18,660 18,895 19,130 19,365 19,600 x</p>
+<p>18,19 – 18,19 = 0 18,53 - 18,425 = 0,105 19,58 – 18,660 = 0,920 19,56 -18,895 = 0,665 19,99 - 19,130 = 0,860 19,34 - 19,365 = -0,025 19,600 - 19,600 = 0 2,525</p>
+<p>0 0,105 0,920 0,665 0,860 0,025 0 2,575</p>
+<p>x Sursa datelor: http://www.bnr.ro</p>
+<p>N</p>
+<p>N</p>
+<p>ei i =1</p>
+<p>ei i =1</p>
+<p>Rezult o eroare de prognoz cumulat : N</p>
+<p>ei = 2,525 mld. euro</p>
+<p>CFE = i =1</p>
+<p>Valoarea pozitiv a acestui indicator al bias-ului reflect o tendin a valorilor prognozate de a se situa sub cele efective. Prin intermediul rela iei (1.2.) ob inem media erorilor absolute: N</p>
+<p>ei MAD =</p>
+<p>i =1</p>
+<p>N</p>
+<p>=</p>
+<p>2,575 = 0,368 mld. euro 7</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>Pentru serii de timp cu un num r mare de termeni este indicat utilizarea unor programe soft specializate (de exemplu, Microsoft Excel).</p>
+<p>Exemplul 2.2. Vom ajusta, pe baza sporului mediu, valorile lunare ale rate dobânzii EURIBOR 3M din perioada ianuarie 2015 - februarie 2017, exprimate în procente pe an, furnizate de Banca Finlandei. Valorile astfel determinate vor fi extrapolate pentru a previziona evolu ia variabilei în urm toarele trei luni. Pentru a aprecia acurate ea prognozei vom determina eroarea cumulat i media erorilor absolute. Rezolvare: Datele culese sunt introduse într-o foaie de lucru Microsoft Excel. Într-o coloan distinct calcul m sporul cu baz în lan pentru al doilea termen introducând, în prima celul , formula de calcul (Figura 2.2.).</p>
+<p>Figura 2.2. Determinarea sporurilor cu baz în lan pentru valorile lunare ale EURIBOR 3M Sursa datelor: https://www.suomenpankki Rela ia înscris în prima celul este transpus pentru rândurile urm toare, ob inându-se, astfel, valorile ajustate pentru întreaga serie. Calcul m, în celula E2, sporul mediu ca o medie aritmetic a tuturor sporurilor cu baz în lan (Figura 2.3.). A rezultat o valoare negativ care corespunde unei tendin e descendente.</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>Figura 2.3. Calculul sporului mediu al valorilor lunare ale EURIBOR 3M din perioada ianuarie 2008 - februarie 2017 Sursa datelor: https://www.suomenpankki Aplic m, în continuare, algoritmul de ajustare a seriei de timp prin intermediul sporului mediu (Figura 2.4.). Pentru prima lun , valoarea ajustat coincide cu cea efectiv . Introducem, apoi, rela ia (2.3.) pentru luna urm toare (sporul mediu a fost înscris în expresia valorii ajustate sporul mediu sub forma „$E$2” pentru a i se men ine valoarea în cadrul transpunerii formulei c tre celulele coloanei). Aceast rela ie de calcul este transferat , apoi, c tre rândurile urm toare determinându-se, astfel, valorile ajustate pentru întreaga perioad .</p>
+<p>Figura 2.4. Determinarea valorilor lunare ale EURIBOR 3M ajustate pe baza sporului mediu</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>Sursa datelor: https://www.suomenpankki Pentru previziunea evolu iei din urm toarele trei luni se recurge la extrapolarea trendului (Figura 2.5.). În coloane distincte sunt înscrise num rul de luni aferente orizontului de prognoz i valorile prognozate. Pentru prima lun a orizontului de prognoz este înscris rela ia de calcul (2.5.) a valorii prognozate (valoarea ajustat a ultimei luni este introdus sub forma „$D$29” iar sporul mediu sub forma „$E$2” astfel încât valoarea acestuia s se men in în cadrul translat rii formulei de calcul).</p>
+<p>Figura 2.5. Formula de calcul pentru prognoza valorilor lunare ale EURIBOR 3M Sursa datelor: https://www.suomenpankki Formula de calcul este transpus c tre celelalte rânduri ob inându-se, astfel, valorile prognozate pentru lunile aprilie i mai (Figura 2.6.).</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>Figura 2.6. Valori lunare ale EURIBOR 3M prognozate pentru perioada martie – mai 2017 Sursa datelor: https://www.suomenpankki Valorile prognozate se afl în continuarea celor ajustate (Figura 2.7.). 0.1 0 -0.1</p>
+<p>EURIBOR 3M</p>
+<p>-0.2</p>
+<p>EURIBOR 3M_aj_sm F_EURIBOR 3M</p>
+<p>-0.3 -0.4 -0.5 Jan- May- Sep- Jan15 15 15 16</p>
+<p>May- Sep- Jan- May16 16 17 17</p>
+<p>Figura 2.7. Valori ale ratei dobânzii EURIBOR 3M (F_EURIBOR 3M) din perioada martie – mai 2017 prognozate pe baza valorilor efective (EURIBOR 3M) i ajustate (EURIBOR 3M_aj_sm) ale perioadei ianuarie 2008 - februarie 2017 Sursa datelor: https://www.suomenpankki Calcul m, în continuare, erorile unei prognoze ex-ante în care valorile previzionate sunt asimilate celor ajustate. Pentru început, determin m, pentru primul termen al seriei, diferen a dintre valorile efective i cele prognozate (Figura 2.8.). Rela ia de calcul va fi apoi transpus c tre ceilal i termeni ai seriei.</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>Figura 2.8. Formula de calcul a erorilor unei prognoze ex-ante pentru valorile EURIBOR 3M Sursa datelor: https://www.suomenpankki Eroarea cumulat a prognozei (CFE) este calculat ca o sum a tuturor erorilor (Figura 2.9.).</p>
+<p>Figura 2.9. Formula de calcul a totalului erorilor unei prognoze ex-ante pentru valorile EURIBOR 3M Sursa datelor: https://www.suomenpankki A fost ob inut , astfel, o valoare negativ care reflect tendin a valorilor prognozate de a le dep i pe cele efective (Figura 2.10.).</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>Figura 2.10. Valoarea erorii cumulate a prognozei ex-ante pentru evolu ia EURIBOR 3M Sursa datelor: https://www.suomenpankki Determin m, în continuare, media aritmetic a erorilor absolute (Figura 2.11.).</p>
+<p>Figura 2.11. Formula de calcul a erorii medii absolute aferent unei prognoze ex-ante asupra evolu iei EURIBOR 3M Sursa datelor: https://www.suomenpankki Rezultatul ob inut reprezint valoarea MAD (Figura 2.12.).</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>Figura 2.12. Valoarea mediei erorilor absolute (MAD) pentru o prognoz ex-ante asupra evolu iei EURIBOR 3M Sursa datelor: https://www.suomenpankki</p>
+<p>2.2. Ajustarea pe baza indicelui mediu al dinamicii Indicele mediu al dinamicii al unei serii de timp poate fi determinat ca o medie geometric a indicilor dinamicii cu baz în lan (ace tia sunt calcula i pentru to i termenii seriei cu excep ia primului). Pentru un termen cu num rul de ordine i (i = 1, 2,…N), indicele dinamicii cu baz în lan notat Id i / i −1 rezult din rela ia: y (2.6.) Id i / i −1 = i yi −1 Produsul celor N-1 indici ai dinamicii aferen i unei serii de timp este egal cu raportul dintre ultimul i primul termen: N</p>
+<p>∏ Id</p>
+<p>i / i −1</p>
+<p>=</p>
+<p>i=2</p>
+<p>yN y1</p>
+<p>(2.7.)</p>
+<p>Se ob ine, astfel, formula de calcul simplificat a indicelui mediu al dinamicii: N</p>
+<p>I d = N −1 ∏ Id i / i −1 = N −1 i =2</p>
+<p>yN y1</p>
+<p>(2.8.)</p>
+<p>O valoare subunitar a indicelui mediu al dinamicii corespunde unei tendin e descendente în timp ce una supraunitar semnific o tendin ascendent .</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>Algoritmul de ajustare a unei serii de timp pe baza indicelui mediu al dinamicii este descris de urm toarele reguli: 1. la fel ca în cazul ajust rii pe baza sporului mediu, pentru primul termen, valoarea ajustat coincide cu cea efectiv ; 2. pentru urm torii termeni ai seriei se aplic rela ia de calcul: yˆiId+1 = y1 × I d i −1 care poate fi transpus</p>
+<p>(2.9.) i într-o form recurent :</p>
+<p>yˆiId+1 = yˆiId × I d Pentru ultimul termen al seriei valoarea ajustat trebuie s fie egal cu cea efectiv : y (2.10.) yˆ NId = y1 × Id N −1 = y1 × N y1 Neglijând sezonalitatea i ciclicitatea seriei de timp, valorile extrapolate ale trendului pentru un num r rezonabil de p perioade viitoare pot fi asimilate celor previzionate: FyIdN + p = yˆ NId × I d p</p>
+<p>(2.11.)</p>
+<p>sau, într-o form recurent : FyIdN + p = FyIdN + p−1 × Id</p>
+<p>Exemplul 2.3. În Tabelul 2.5. sunt prezentate valorile anuale ale ratelor dobânzilor pentru depozitele bancare (FR.INR.DPST) din Bulgaria în perioada 2007 – 2015, furnizate de Banca Mondial . Vom ob ine trendul acestei serii de timp prin ajustare pe baza indicelui mediu al dinamicii prognozând, totodat , evolu ia variabilei pentru urm torii doi ani. Acurate ea acestei prognoze va fi apreciat prin intermediul mediei erorilor absolute. Tabelul 2.5. Valori anuale ale ratelor dobânzilor pentru depozitele bancare din Bulgaria An Rate ale dobânzilor (yi) [%/an] 2007 2008 2009 2010 2011 2012 2013 2014 2015</p>
+<p>3,682 4,445 6,178 4,076 3,368 3,084 2,413 1,656 0,614</p>
+<p>Sursa datelor: http://data.worldbank.org Rezolvare: Modul de calcul al indicilor dinamicii cu baz în lan este descris în Tabelul 2.6.. Media geometric a acestora corespunde indicelui mediu al dinamicii.</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>Tabelul 2.6. Determinarea indicilor dinamicii cu baz în lan pentru valorile anuale ale ratelor dobânzilor pentru depozitele bancare din Bulgaria An Rate ale dobânzilor (yi) Indice al dinamicii cu baz în [%/an] lan ( Id i / i −1 ) 2007 3,682 x 2008 4,445 4,445 = 1,2071 3,682 2009 6,178 6,178 = 1,3899 4,445 2010 4,076 4,076 = 0,6598 6,178 2011 3,368 3,368 = 0,8264 4,076 2012 3,084 3,084 = 0,9157 3,368 2013 2,413 2,413 = 0,7825 3,084 2014 1,656 1,656 = 0,6861 2,413 2015 0,614 0,614 = 0,3707 1,656 Sursa datelor: http://data.worldbank.org Aplicând rela ia (2.8) rezult indicele mediu al dinamicii:</p>
+<p>y N 0,614 = = 0,7994 y1 3,682 Valoarea subunitar a acestui indicator reflect o tendin descendent pronun at . I d = N −1</p>
+<p>Tabelul 2.6. Ajustarea valorilor anuale ale ratelor dobânzilor pentru depozitele bancare din Bulgaria pe baza indicelui mediu al dinamicii An Ratele dobânzilor pentru Valori ajustate prin depozitele bancare din Bulgaria indicele mediu al (yi) [%/an] dinamicii ( ŷiId ) [%/an] 2007 3,682 3,682 2008 4,445 3,682 × 0,7994 = 2,943 2009 6,178 2,943 × 0,7994 = 2,353 2010 4,076 2,353 × 0,7994 = 1,881 2011 3,368 1,881 × 0,7994 = 1,503 2012 3,084 1,503 × 0,7994 = 1,202</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>2013 2,413 2014 1,656 2015 0,614 Sursa datelor: http://data.worldbank.org</p>
+<p>1,202 × 0,7994 = 0,961 0,961 × 0,7994 = 0,768 0,768 × 0,7994 = 0,614</p>
+<p>Extrapolând valorile trendului, prin rela ia (2.11.), rezult valorile prognozate pentru urm torii doi ani. Pentru anul 2016 s-ar ob ine: Id FyId2016 = yˆ 2015 × I d = 0,614 × 0,7994 = 0,491%/an</p>
+<p>Valoarea prognozat pentru anul 2017 reprezint :</p>
+<p>FyId2017 = FyId2016 × I d = 0,491 × 0,7994 = 0,392%/an 7.000 6.000 5.000 4.000 3.000</p>
+<p>FR.INR.DPST FR.INR.DPST_aj_imd F_FR.INR.DPST</p>
+<p>2.000 1.000</p>
+<p>20 07 20 08 20 09 20 10 20 11 20 12 20 13 20 14 20 15 20 16 20 17</p>
+<p>0.000</p>
+<p>Figura 2.13. Valori efective (FR.INR.DPST), ajustate(FR.INR.DPST_aj_imd) i prognozate (F_FR.INR.DPST) ale ratelor dobânzilor pentru depozitele bancare din Bulgaria Sursa datelor: http://data.worldbank.org Aceste valori prognozate se afl în continuarea celor ajustate (Figura 2.13). Pentru a aprecia acurate ea previziunii recurgem la o prognoz ex-ante în care valorile anticipate coincid cu cele ajustate. Pe baza acestora calcul m erorilor absolute (Tabelul 2. 7.).</p>
+<p>Tabelul 2. 7. Determinarea erorilor absolute ale unei prognoze ex-ante asupra evolu iei ratelor dobânzilor pentru depozitele bancare din Bulgaria An Ratele Eroare absolut a Eroare absolut Valori Id dobânzilor ajustate ( ŷi ) prognozei ex-ante procentual de (yi) [%/an] [%/an] prognoz (APEi) ( ei ) [%/an] (0) (1) (2) (3) (3) = (1) − (2) ( 4) = (1)</p></section>
+<section class="pdf-page" id="pdf-page-31"><h2 class="page-number">Page 31</h2><p>3,682 3,682 0,000 4,445 2,943 1,502 6,178 2,353 3,825 4,076 1,881 2,195 3,368 1,504 1,864 3,084 1,202 1,882 2,413 0,961 1,452 1,656 0,768 0,888</p>
+<p>0,614</p>
+<p>0,614</p>
+<p>0,000</p>
+<p>Total Simbol pentru total</p>
+<p>x x</p>
+<p>x x</p>
+<p>13,608</p>
+<p>0,000 = 0,00% 3,682 1,502 = 33,78% 4,445 3,825 = 61,91% 6,178 2,195 = 53,85% 4,076 1,864 = 55,36% 3,368 1,882 = 61,03% 3,084 0,000 = 60,18% 3,682 0,888 = 53,62% 1,656 0,000 = 0,00% 0,614 379,73%</p>
+<p>N</p>
+<p>N</p>
+<p>ei i =1</p>
+<p>APEi i =1</p>
+<p>Sursa datelor: http://data.worldbank.org Media erorilor absolute ale prognozei ex-ante reprezint : N</p>
+<p>ei MAD =</p>
+<p>i =1</p>
+<p>N</p>
+<p>=</p>
+<p>13,608 = 1,51%/an 9</p>
+<p>Aplicând rela ia (1.4.) ob inem un nivel mediu semnificativ al erorilor absolute procentuale: N</p>
+<p>APEi MAPE =</p>
+<p>i =1</p>
+<p>N</p>
+<p>=</p>
+<p>379,73% = 42,19% 9</p>
+<p>Pentru seriile de timp cu un num r mare de termen este indicat utilizarea unor programe software specializate.</p>
+<p>Exemplul 2.4. Vom ajusta, pe baza indicelui mediu al dinamicii, valorile lunare ale datoriei externe a României pe termen lung (DE6L_DTML) din perioada ianuarie 2015 – decembrie 2016. Vom previziona, de asemenea, prin extrapolare, evolu ia variabilei din</p></section>
+<section class="pdf-page" id="pdf-page-32"><h2 class="page-number">Page 32</h2><p>urm toarele patru luni. Pentru a aprecia acurate ea previziunii vom determina media erorilor absolute ale unei prognoze ex-ante.</p>
+<p>Rezolvare: Într-o foaie de lucru Excel au fost introduse, pe o coloan , valorile lunare ale variabilei DE6L_DTML (Figura 2.14.). În alt coloan calcul m indicele dinamicii cu baz în lan pentru al doilea termen prin rela ia (2.6.). Aceast formul este transpus , în continuare, c tre termenii ulteriori.</p>
+<p>Figura 2.14. Determinarea indicilor dinamicii cu baz în lan pentru valorile lunare ale datoriei externe a României pe termen lung (DE6L_DTML), exprimate în milioane de euro Sursa datelor: http://www.bnr.ro Într-o celul al turat este calculat, ca o medie geometric a indicilor dinamicii cu baz în lan , indicele mediu al dinamicii (Figura 2.15.). Se ob ine, astfel, o valoare subunitar care relev o tendin descendent .</p>
+<p>Figura 2.15. Calculul indicelui mediu al dinamicii pentru datoria extern a României pe termen lung din perioada ianuarie 2015 – decembrie 2016 Sursa datelor: http://www.bnr.ro</p></section>
+<section class="pdf-page" id="pdf-page-33"><h2 class="page-number">Page 33</h2><p>În continuare, este aplicat algoritmul de ajustare pe baza indicelui mediu al dinamicii (Figura 2.16). Pentru primul termen, este preluat valoarea efectiv iar pentru urm torul este introdus rela ia (2.10). Formula de calcul este, apoi, transpus c tre termenii urm tori (indicelui mediu al dinamicii a fost înscris în rela ia de calcul sub forma „$E$2” pentru a i se men ine valoarea în cadrul translat rii).</p>
+<p>Figura 2.16. Determinarea trendului pentru datoria extern a României pe termen lung Sursa datelor: http://www.bnr.ro Dup determinarea valorilor ajustate se trece la extrapolarea acestora pentru a se previziona evolu ia variabilei în urm toarele luni (Figura 2.17). Coloanele al turate sunt asociate num rului de luni al orizontului de prognoz i valorilor prognozate. Pentru prima lun a intervalului de prognoz este înscris rela ia de calcul (2.12.) a valorii prognozate.</p>
+<p>Figura 2.17. Formula de calcul pentru extrapolarea trendului datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro</p></section>
+<section class="pdf-page" id="pdf-page-34"><h2 class="page-number">Page 34</h2><p>Rela ia de calcul este transpus pentru rândurile urm toare prognozându-se, astfel, evolu ia viitoare a variabilei (Figura 2.18).</p>
+<p>Figura 2.18. Prognoza datoriei externe a României pe termen lung din perioada ianuarie aprilie 2017, realizat prin extrapolarea valorilor ajustate pe baza indicelui mediu al dinamicii Sursa datelor: http://www.bnr.ro Aceste valori prognozate se afl în continuarea liniei valorilor ajustate (Figura 2.19.).</p>
+<p>76000 74000 DE6L_DTML 72000</p>
+<p>DE6L_DTML_aj_imd F_DE6L_DTML</p>
+<p>70000 68000 66000 Jan- Apr- Jul- Oct- Jan- Apr- Jul- Oct- Jan- Apr15 15 15 15 16 16 16 16 17 17</p>
+<p>Figura 2.19. Valori efective (DE6L_DTML), ajustate (DE6L_DTML_aj_imd) i prognozate (F_DE6L_DTML) asociate evolu iei datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro Pentru a estima precizia acestei previziuni vom asimila valorile ajustate unei prognoze ex-ante. Determin m, pentru primul termen, eroarea de prognoz ca o diferen dintre valoarea efectiv i cea prognozat (Figura 2.20.). Aceast rela ie este transpus , apoi, c tre celelalte luni.</p></section>
+<section class="pdf-page" id="pdf-page-35"><h2 class="page-number">Page 35</h2><p>Figura 2.20. Formula de calcul a erorii de prognoz pentru evolu ia datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro Calcul m, în continuare, erorile absolute ale prognozei ex-ante. Înscriem, pentru primul termen, formula de calcul care va fi, apoi, transpus c tre celelalte luni (Figura 2.21.).</p>
+<p>Figura 2.21. Formula de calcul a erorii absolute procentuale pentru o prognoz ex-ante asociat evolu iei datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro Introducem, într-o celul separat , rela ia (1.4.) de calcul a mediei erorilor procentuale absolute (Figura 2.22.).</p></section>
+<section class="pdf-page" id="pdf-page-36"><h2 class="page-number">Page 36</h2><p>Figura 2.22. Rela ia de calcul a mediei erorilor procentuale absolute pentru o prognoz ex-ante asupra evolu iei datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro Se ob ine, astfel, o medie a erorilor procentuale absolute (MAPE) de 2,25% (Figura 2.23.).</p>
+<p>Figura 2.22. Media erorilor procentuale absolute pentru o prognoz ex-ante asociat evolu iei datoriei externe a României pe termen lung Sursa datelor: http://www.bnr.ro</p>
+<p>Capitolul 3 Ajust ri pe baza mediei mobile simple Metodele de ajustare pe baza mediilor mobile pornesc de la premisa c impactul factorilor esen iali poate fi transpus în nivelul mediu al valorilor unor termeni consecutivi.</p></section>
+<section class="pdf-page" id="pdf-page-37"><h2 class="page-number">Page 37</h2><p>Evident, acest nivel mediu variaz de la un termen la altul, ceea ce d denumirea de medie mobil . În acest capitol vom aborda ajustarea pe baza mediei mobile simple care are la baz formula: yˆiMA( n ) =</p>
+<p>yi − n +1 + yi − n + 2 + ... + yi n</p>
+<p>(3.1.)</p>
+<p>unde: - yˆiMA( n ) este valoarea ajustat pentru termenul cu num rul de ordine i (i n); - n este num rul de termeni consecutivi pe baza c rora este determinat media mobil . Calculul valorilor ajustate începe de la termenul cu num rul de ordine n (altfel spus, nu sunt determinate valorile ajustate pentru primii n-1 termeni). Rezultatele ajust rii pot servi ca o baz pentru prognozele variabilelor financiare. De regul , se consider c (n) valoarea prognozat pentru o anumit perioad ( FyMA ) corespunde valorii ajustate i +1 aferente perioadei imediat anterioare: (n) FyMA = yˆiMA( n ) (3.2.) i +1 Previziunile pentru orizonturi de timp mai îndep rtate se lovesc de obstacolul indisponibilit ii valorilor efective utilizate în cadrul ajust rii. O solu ie la aceast problem poate fi luarea în considerare a valorilor ajustate anterior. Num rul maxim de termeni pentru care pot fi determinate valori prognozate ex-ante este reprezentat de diferen a dintre num rul (N) de termeni ai seriei i num rul (n) de termeni consecutivi pe baza c rora este determinat media mobil :</p>
+<p>max(η ) = N − n</p>
+<p>(3.3.)</p>
+<p>Exemplul 3.1. În Tabelul 3.1. sunt prezentate valorile zilnice de închidere ale indicelui PX de la Bursa de Valori din Praga din perioada 21 Februarie – 8 martie 2017. Vom determina trendul acestei variabile prin ajustare pe baza mediei mobile simple calculat pentru trei perioade previzionând, totodat , valorile de închidere din zilele de 9 i 10 martie 2017. Pentru a aprecia acurate ea previziunii vom determina eroarea de prognoz cumulat i media erorilor absolute. Vom calcula, de asemenea, valorile semnalului de tip „tracking” i vom analiza bias-ul prognozei raportându-ne la intervalul admisibil de varia ie [-2,5; 2,5]. Tabelul 3.1. Valori zilnice de închidere ale indicelui PX în perioada 21 Februarie – 8 Martie 2017 Zile Valori zilnice de închidere 21-Feb-17 974,47 22-Feb-17 972,72 23-Feb-17 972,20 24-Feb-17 960,05 27-Feb-17 958,61</p></section>
+<section class="pdf-page" id="pdf-page-38"><h2 class="page-number">Page 38</h2><p>28-Feb-17 1-Mar-17 2-Mar-17 3-Mar-17 6-Mar-17 7-Mar-17 8-Mar-17 Sursa datelor: https://www.pse.cz</p>
+<p>953,92 971,95 977,16 974,23 975,57 971,70 972,24</p>
+<p>Rezolvare: Aplicarea formulei (3.1.) de ajustare pe baza mediei mobile a trei termeni consecutivi este ilustrat în Tabelul 3.2. Tabelul 3.2. Determinarea valorilor ajustate pentru evolu ia indicelui PX Zile Valoare efectiv (yi) Valoare ajustat ( yˆiMA(3) ) 21-Feb-17 22-Feb-17 23-Feb-17</p>
+<p>974,47 972,72 972,20</p>
+<p>24-Feb-17</p>
+<p>960,05</p>
+<p>27-Feb-17</p>
+<p>958,61</p>
+<p>28-Feb-17</p>
+<p>953,92</p>
+<p>1-Mar-17</p>
+<p>971,95</p>
+<p>2-Mar-17</p>
+<p>977,16</p>
+<p>3-Mar-17</p>
+<p>974,23</p>
+<p>6-Mar-17</p>
+<p>975,57</p>
+<p>7-Mar-17</p>
+<p>971,70</p>
+<p>8-Mar-17</p>
+<p>972,24</p>
+<p>x x 974,47 + 972,72 + 972,20 = 973,13 3 972,72 + 972,20 + 960,05 = 968,32 3 972,20 + 960,05 + 958,61 = 963,62 3 960,05 + 958,61 + 953,92 = 957,53 3 958,61 + 953,92 + 971,95 = 961,49 3 953,92 + 971,95 + 977,16 = 967,68 3 971,95 + 977,16 + 974,23 = 974,45 3 977,16 + 974,23 + 975,57 = 975,65 3 974,23 + 975,57 + 971,70 = 973,83 3 975,57 + 971,70 + 972,24 = 973,17 3</p>
+<p>Sursa datelor: https://www.pse.cz În Figura 3.1. sunt prezentate valorile efective i ajustate ale indicelui PX.</p></section>
+<section class="pdf-page" id="pdf-page-39"><h2 class="page-number">Page 39</h2><p>980 975 970 PX</p>
+<p>965</p>
+<p>PX_aj_MA(3)</p>
+<p>960 955 950 21-Feb-17 24-Feb-17 27-Feb-17</p>
+<p>2-Mar-17</p>
+<p>5-Mar-17</p>
+<p>8-Mar-17</p>
+<p>Figura 3.1. Valori efective (PX) i ajustate (PX_aj_MA(3)) ale indicelui PX din perioada 21 Februarie – 8 Martie 2017 Sursa datelor: https://www.pse.cz Valoarea de închidere previzionat pentru 9 martie 2017 corespunde celei ajustate din 8 martie 2017. ( 3) ( 3) FyMA = yˆ8MA − Mar = 973,17 9− Mar</p>
+<p>Pentru a previziona valoarea de închidere din 10 martie 2017 trebuie s determin m valoarea ajustat din ziua anterioar . Deoarece nu dispunem de valoarea efectiv din 9 martie 2017 vom utiliza, în schimb, valoarea prognozat : ( 3) ( 3) F yMA = yˆ 9MA − Mar = 10 − Mar</p>
+<p>971,70 + 972,24 + 973,17 = 972,37 3</p>
+<p>În cadrul estim rii acurate ei previziunii vom considera c fiecare valoare ajustat dintr-o zi reprezint prognoza ex-ante pentru ziua urm toare. Calcul m, astfel, erorile de prognoz (Tabelul 3.3.).</p>
+<p>Tabelul 3.3. Determinarea erorilor prognozei ex-ante asupra evolu iei indicelui PX Zile PX (yi) Valoare Valoare Eroare a prognozei ex-ante ajustat prognozat (ei) MA ( 3) ex-ante ( yˆi ) ( F ant ( yi ) ) (0) (1) (2) (3) (4) = (1) – (3) 21-Feb-17 974,47 x x x 22-Feb-17 972,72 x x x 23-Feb-17 972,2 973,13 x x 24-Feb-17 960,05 968,32 973,13 960,05 - 973,13 = -13,08</p></section>
+<section class="pdf-page" id="pdf-page-40"><h2 class="page-number">Page 40</h2><p>27-Feb-17 28-Feb-17 1-Mar-17 2-Mar-17 3-Mar-17 6-Mar-17 7-Mar-17 8-Mar-17 Total Simbol pentru total</p>
+<p>958,61 953,92 971,95 977,16 974,23 975,57 971,70 972,24 x x</p>
+<p>963,62 957,53 961,49 967,68 974,45 975,65 973,83 973,17 x x</p>
+<p>968,32 963,62 957,53 961,49 967,68 974,45 975,65 973,83 x x</p>
+<p>958,61 - 968,32 = -9,71 953,92 - 963,62 = -9,70 971,95 - 957,53 = 14,42 977,16 - 961,49 = 15,67 974,23 - 967,68 = 6,55 975,57 - 974,45 = 1,12 971,70 - 975,65 = -3,95 972,24 - 973,83 = -1,59 -0,27 N −n</p>
+<p>ei i =1</p>
+<p>Sursa datelor: https://www.pse.cz Eroarea de prognoz cumulat pentru ansamblul seriei reprezint : N −n</p>
+<p>CFE =</p>
+<p>ei = - 0,27 i =1</p>
+<p>Valoarea negativ a acestui indicator reflect tendin a valorilor prognozate de a le dep i pe cele efective. Determin m, în continuare, pentru fiecare termen al seriei, eroarea cumulat i absolut (Tabelul 3.4.). Tabelul 3.4. Calculul erorilor cumulate i absolute ale unei prognoze ex-ante asupra evolu iei indicelui PX Zile Eroare a Eroare de prognoz Eroare absolut prognozei cumulat (CFE(i)) ( ei ) ex-ante (ei) (0) 24-Feb-17 27-Feb-17 28-Feb-17 1-Mar-17 2-Mar-17 3-Mar-17 6-Mar-17 7-Mar-17 8-Mar-17 Total</p>
+<p>(1)</p>
+<p>(2) -13,08 -9,71 -9,70 14,42 15,67 6,55 1,12 -3,95 -1,59 -0,27</p>
+<p>-13,08 -9,71+ (-13,08) = -22,79 -9,7 + (-22,79) = -32,49 14,42 + (-32,49) = -18,07 15,67 + (-18,07) = -2,40 6,55 + (-2,4) = 4,15 1,12 + 4,15 = 5,27 -3,95 + 5,27 = 1,32 1,59 + 1,32 = -0,27 x</p>
+<p>(3) = (1) 13,08 9,71 9,70 14,42 15,67 6,55 1,12 3,95 1,59 75,79</p></section>
+<section class="pdf-page" id="pdf-page-41"><h2 class="page-number">Page 41</h2><p>Simbol pentru total</p>
+<p>N −n</p>
+<p>N −n</p>
+<p>ei</p>
+<p>ei</p>
+<p>x</p>
+<p>i =1</p>
+<p>i =1</p>
+<p>Sursa datelor: https://www.pse.cz Aplicând rela ia (1.2.) ob inem o valoare a mediei erorilor absolute: N −n</p>
+<p>ei MAD =</p>
+<p>i =1</p>
+<p>N −n</p>
+<p>=</p>
+<p>75,79 = 8,42 12 − 3</p>
+<p>Determin m, în continuare, pentru fiecare termen, media erorilor absolute (Tabelul 3.5.). Tabelul 3.5. Calculul mediei erorilor absolute pentru valorile prognozate ex-ante ale indicelui PX Nr. Erori absolute Eroare absolut Media erorilor Zile termeni ) absolute cumulat (CFAE i ( ei ) (i) (MAD(i)) (0)</p>
+<p>(1)</p>
+<p>(2)</p>
+<p>24-Feb-17</p>
+<p>13,08</p>
+<p>27-Feb-17</p>
+<p>9,71</p>
+<p>(3) 1</p>
+<p>13,08 2</p>
+<p>9,71 + 13,08 = 22,79 28-Feb-17</p>
+<p>3</p>
+<p>9,70 9,70 +22,79 = 32,49</p>
+<p>1-Mar-17</p>
+<p>4</p>
+<p>14,42 14,42 + 32,49 = 46,91</p>
+<p>2-Mar-17</p>
+<p>5</p>
+<p>15,67 15,67 + 46,91 = 62,58</p>
+<p>3-Mar-17</p>
+<p>6,55</p>
+<p>6-Mar-17</p>
+<p>1,12</p>
+<p>7-Mar-17</p>
+<p>3,95</p>
+<p>8-Mar-17</p>
+<p>1,59</p>
+<p>6</p>
+<p>6,55 +62,58 = 69,13 7</p>
+<p>1,12 + 69,13 = 70,25 8</p>
+<p>3,95 + 70,25 = 74,2 9</p>
+<p>1,59 +74,2 = 75,79</p>
+<p>( 2) (3) 13,08 = 13,08 1 22,79 = 11,40 2 32,49 = 10,83 3 46,91 = 11,73 4 62,58 = 12,52 5 69,13 = 11,52 6 70,25 = 10,04 7 74,20 = 9,28 8 75,79 = 8,42 9</p>
+<p>( 4) =</p>
+<p>Sursa datelor: https://www.pse.cz Raportând, pentru fiecare termen al seriei de timp, eroarea de prognoz cumulat la media erorilor absolute ob inem valorile semnalului tracking (Tabelul 3.6.).</p></section>
+<section class="pdf-page" id="pdf-page-42"><h2 class="page-number">Page 42</h2><p>Tabelul 3.6. Determinarea valorilor semnalului tracking pentru o prognoz ex-ante asupra evolu iei indicelui PX Eroare de prognoz Zile Media erorilor Semnal tracking (TSi) cumulat (CFE(i)) absolute (MAD(i)) (0) (1) (2) (1) (3) = ( 2) 24-Feb-17 − 13,08 = -1,00 13,08 -13,08 13,08 27-Feb-17 − 22,79 = -2,00 11,40 -22,79 11,40 28-Feb-17 − 32,49 = -3,00 10,83 -32,49 10,83 1-Mar-17 − 18,07 = -1,54 11,73 -18,07 11,73 2-Mar-17 − 12,52 = -0,19 − 2,40 -2,40 12,52 3-Mar-17 4,15 = 0,36 11,52 4,15 11,52 6-Mar-17 5,27 = 0,53 10,04 5,27 10,04 7-Mar-17 1,32 = 0,14 9,28 1,32 9,28 8-Mar-17 − 0,27 = -0,03 8,42 -0,27 8,42 Sursa datelor: https://www.pse.cz Valorile semnalului tracking dep esc limita inferioar a intervalul admisibil de varia ie în ziua de 28 februarie 2017 (Figura 3.2.). 3.5 2.5 1.5 TS</p>
+<p>0.5</p>
+<p>Lim_inf</p>
+<p>-0.5</p>
+<p>Lim_sup</p>
+<p>-1.5 -2.5 -3.5 24-Feb-17 26-Feb-17 28-Feb-17</p>
+<p>2-Mar-17</p>
+<p>4-Mar-17</p>
+<p>6-Mar-17</p>
+<p>8-Mar-17</p></section>
+<section class="pdf-page" id="pdf-page-43"><h2 class="page-number">Page 43</h2><p>Figura 3.2. Valori ale semnalului tracking pentru o prognoz ex-ante asupra evolu iei indicelui PX Sursa datelor: https://www.pse.cz Pentru ajustarea seriilor de timp cu un num r mare de termeni pot fi utilizate facilit ile oferite de programul Excel Microsoft.</p>
+<p>Exemplul 3.2. Vom ajusta, pe baza mediei mobile simple, determinat pentru o perioad de ase zile (MA(6)), valorile zilnice ale cursului valutar leu – lir sterlin din perioada 3 ianuarie – 6 aprilie 2017. Prin extrapolarea valorilor astfel ajustate vom prognoza evolu ia cursului în ziua de apte aprilie. Acurate ea previziunii va fi estimat prin intermediul mediei erorilor absolute ale unei prognoze ex ante. În plus, vom calcula valorile semnalului tracking al prognozei apreciind bias-ul prin raportare la intervalul admisibil de varia ie [-3; 3]. Rezolvare: Valorile cursului sunt înscrise într-o foaie de lucru Microsoft Excel (Figura 3.3.). Într-o coloan al turat sunt determinate valorile ajustate MA(6). Pentru al aselea termen, care corespunde zilei de 10 Ianuarie 2017, este calculat media aritmetic a valorilor efective din acea zi i din cele cinci zile anterioare. Formula de calcul este transpus , apoi, c tre zilele urm toare.</p>
+<p>Figura 3.3. Ajustarea valorilor zilnice ale cursului leu/lir sterlin (CURSZ_GBP) pe baza mediei mobile simple (MA(6)) Sursa datelor: http://www.bnr.ro Se ob in, astfel, valorile ajustate care atenueaz fluctua iile cursului valutar (Figura 3.4.).</p></section>
+<section class="pdf-page" id="pdf-page-44"><h2 class="page-number">Page 44</h2><p>5.4000 5.3500 5.3000 5.2500</p>
+<p>CURSZ_GBP CURSZ_GBP_aj_MA(6)</p>
+<p>5.2000 5.1500 5.1000 3-Jan- 17-Jan- 31-Jan- 14-Feb- 28-Feb-14-Mar- 28-Mar17 17 17 17 17 17 17</p>
+<p>Figura 3.4. Valori zilnice efective (CURSZ_GBP) i ajustate (CURSZ_GBP_aj_MA(6)) ale cursului leu/lir sterlin din perioada 3 ianuarie – 6 aprilie 2017 Sursa datelor: http://www.bnr.ro Componenta „Data Analysis” a programului Microsoft Excel ofer posibilitatea unei ajust ri rapide a seriilor de timp pe baza mediilor mobile. Calculul demareaz cu selectarea op iunii „Moving Average” din fereastra „Analysis Tools” (Figura 3.5.).</p>
+<p>Figura 3.5. Selectarea op iunii „Moving Average” pentru ajustarea cursului leu/lir sterlin prin intermediul mediei mobile simple Sursa datelor: http://www.bnr.ro Se deschide, în continuare, o fereastr de dialog (Figura 3.6.) unde vor fi înscrise: - adresele celulelor aferente valorilor efective („Input Range”); - num rul n al termenilor pe baza c rora este calculat media mobil („Interval”); - prezen a denumirii variabilei („Labels in First Row”);</p></section>
+<section class="pdf-page" id="pdf-page-45"><h2 class="page-number">Page 45</h2><p>- adresele celulelor unde vor fi afi ate valorile ajustate („Output Range”).</p>
+<p>Figura 3.6. Completarea ferestrei de dialog „Moving Average” pentru ajustarea cursului leu/lir sterlin prin intermediul mediei mobile simple Sursa datelor: http://www.bnr.ro Dup introducerea parametrilor ajust rii se aplic un „click” butonului „OK”. Rezult , astfel, valorile ajustate, identice cu cele determinate anterior (Figura 3.7.).</p></section>
+<section class="pdf-page" id="pdf-page-46"><h2 class="page-number">Page 46</h2><p>Figura 3.6. Valori ajustate ale cursului leu/lir sterlin ob inute prin op iunea „Moving Average” Sursa datelor: http://www.bnr.ro Valoarea ajustat din 6 aprilie 2017 corespunde prognozei pentru ziua de 7 aprilie 2017 (Figura 3.7.).</p>
+<p>Figura 3.7. Valoarea prognozat a cursului leu/lir sterlin pentru ziua de 7 aprilie 2017 Sursa datelor: http://www.bnr.ro Pentru a aprecia acurate ea previziunii vom considera c fiecare dintre valorile ajustate corespunde unei prognoze ex-post pentru ziua urm toare. Aplic m aceast condi ie pentru 11 ianuarie 2017 i transpunem formula de calcul pentru zilele ulterioare (Figura 3.8.).</p>
+<p>Figura 3.8. Formula de calcul pentru o prognoz ex-ante asupra cursului leu/lir sterlin Sursa datelor: http://www.bnr.ro Determin m, în continuare, eroarea de prognoz pentru 11 ianuarie 2017 ca o diferen între valoarea efectiv i cea previzionat (Figura 3.9.). Vom transpune, apoi, aceast rela ie c tre zilele urm toare.</p></section>
+<section class="pdf-page" id="pdf-page-47"><h2 class="page-number">Page 47</h2><p>Figura 3.9. Formula de calcul pentru eroarea unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Dup determinarea erorilor de prognoz trecem la calculul valorilor absolute ale acestora (Figura 3.10.). Introducem, pentru început, rela ia de calcul aferent zilei de 11 ianuarie 2017 (prima zi pentru care putem determina valorile prognozate ex-ante) pe care o vom translata c tre zilele urm toare.</p>
+<p>Figura 3.10. Formula de calcul pentru eroarea absolut a unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Aplic m, în continuare, rela ia (1.2.) prin care determin m media erorilor absolute (Figura 3.11.).</p></section>
+<section class="pdf-page" id="pdf-page-48"><h2 class="page-number">Page 48</h2><p>Figura 3.11. Formula de calcul pentru media erorilor absolute ale unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Se ob ine, astfel, o medie a erorilor absolute de 0,0359 RON/GBP (Figura 3.12.).</p></section>
+<section class="pdf-page" id="pdf-page-49"><h2 class="page-number">Page 49</h2><p>Figura 3.12. Media erorilor absolute ale unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Pentru a aprecia bias-ul prognozei începem prin a determina, pentru fiecare termen al seriei, eroarea de prognoz cumulat (CFE(i)). Pentru ziua de 11 aprilie 2017 valoarea acesteia coincide cu eroarea de prognoz . Pentru zilele urm toare, eroarea de prognoz cumulat este calculat recurent, ad ugând la valoarea termenului anterior eroarea de prognoz curent . Introducem, pentru început, formula de calcul pentru ziua de 12 aprilie 2017 (Figura 3.13.). Aceast formul este transpus , apoi, c tre zilele urm toare.</p></section>
+<section class="pdf-page" id="pdf-page-50"><h2 class="page-number">Page 50</h2><p>Figura 3.13. Formula de calcul pentru erorile cumulate ale unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Determin m, în continuare, pentru fiecare termen i, valoarea asociat mediei erorilor absolute (MAD(i)) a unei serii de timp cu i termeni (Figura 3.14.). Pentru ziua de 11 aprilie 2017 este introdus func ia mediei aritmetice (adresa primului termen a fost înscris sub forma „$I$9” astfel încât acesta s r mân punctul de început al seriei pentru care se calculeaz media aritmetic ). Aceast func ie este translatat , apoi, c tre zilele anterioare.</p></section>
+<section class="pdf-page" id="pdf-page-51"><h2 class="page-number">Page 51</h2><p>Figura 3.14. Formula de calcul pentru valorile MAD(i) ale unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Stabilim, în continuare, valorile semnalului tracking pentru prognoza ex-ante (Figura 3.15.). Pentru ziua de 11 aprilie 2017 determin m raportul dintre CFE(i) i MAD(i).</p>
+<p>Figura 3.15. Formula de calcul pentru valorile semnalului tracking ale unei prognoze ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Sunt ob inute, astfel, valori ale TS(i) prezentate în Figura 3.16.</p></section>
+<section class="pdf-page" id="pdf-page-52"><h2 class="page-number">Page 52</h2><p>Figura 3.16. Valori ale semnalului tracking pentru o prognoz ex-ante asupra cursului valutar leu/lir sterlin Sursa datelor: http://www.bnr.ro Pentru perioada analizat , aceste valori p r sesc, în unele zile, intervalul admisibil de varia ie (Figura 3.17.). 12 9 6 3 0</p>
+<p>Lim_inf TS Lim_sup</p>
+<p>-3 -6 11-Jan-17 26-Jan-17 10-Feb-17 25-Feb-17 12-Mar-17 27-Mar-17</p>
+<p>Figura 3.17. Aprecierea bias-ului unei prognoze ex-ante asupra cursului valutar leu/lir sterlin prin intermediul valorilor semnalului tracking Sursa datelor: http://www.bnr.ro Num rul n al termenilor pe baza c rora este calculat media mobil influen eaz semnificativ rezultatele ajust rii. O valoare mare a acestuia poate atenua substan ial influen a factorilor întâmpl tori, sezonieri sau ciclici majorând diferen ele dintre valorile ajustate i cele efective. Aceste diferen e sunt diminuate dac se alege o valoare mic a lui n îns exist posibilitatea ca influen a factorilor neesen iali s fie prea pu in redus . În</p></section>
+<section class="pdf-page" id="pdf-page-53"><h2 class="page-number">Page 53</h2><p>cazul prognozelor pe baza ajust rii prin intermediul mediei mobile, poate fi ales drept criteriu un indicator al acurate ei prognozei.</p>
+<p>Exemplul 3.3. Vom realiza prognoza evolu iei indicelui BUX, de la Bursa de Valori din Budapesta din ziua de 7 aprilie 2017 prin intermediul ajust rii pe baza mediei mobile simple. Vom lua în considerare dou variante pentru num rul n: 4 i 5. Pentru a alege varianta optim vom utiliza drept criteriu valoarea mediei p tratice a erorilor. Rezolvare: Introducem valorile indicelui într-o foaie de lucru Microsoft Excel. Alegem, din fereastra „Analysis Tools”, op iunea „Moving Average” (Figura 3.18.).</p>
+<p>Figura 3.18. Alegerea op iunea „Moving Average” pentru ajustarea MA(4) a valorilor indicelui BUX Sursa datelor: https://www.bse.hu În fereastra de dialog care se deschide introducem parametrii ajust rii (Figura 3.19.).</p></section>
+<section class="pdf-page" id="pdf-page-54"><h2 class="page-number">Page 54</h2><p>Figura 3.19. Introducerea parametrilor ajust rii MA(4) a valorilor indicelui BUX Sursa datelor: https://www.bse.hu Sunt ob inute, astfel, valorile ajustate pe baza a patru termeni (Figura 3.20.).</p>
+<p>Figura 3.20. Valori ale indicelui BUX ajustate prin procedeul MA(4) Sursa datelor: https://www.bse.hu Ajustarea MA(4) a atenuat, într-o anumit m sur , fluctua iile indicelui (Figura 3.21.).</p></section>
+<section class="pdf-page" id="pdf-page-55"><h2 class="page-number">Page 55</h2><p>34500 34000 33500 33000</p>
+<p>BUX</p>
+<p>32500</p>
+<p>BUX_aj_MA(4)</p>
+<p>32000 31500 31000 1-Feb-17</p>
+<p>11-Feb-17</p>
+<p>21-Feb-17</p>
+<p>3-Mar-17</p>
+<p>13-Mar-17</p>
+<p>23-Mar-17</p>
+<p>2-Apr-17</p>
+<p>Figura 3.21. Evolu ia valorilor efective (BUX) i ajustate prin procedeul (BUX_aj_MA(4)) ale indicelui BUX de la Bursa de Valori din Budapesta Sursa datelor: https://www.bse.hu Valoarea prognozat pentru ziua de 7 aprilie 2017 coincide cu cea ajustat din ziua precedent (Figura 3.22.).</p>
+<p>Figura 3.22. Valoarea indicelui BUX prognozat prin ajustare MA(4) pentru ziua de 7 aprilie 2017 Sursa datelor: https://www.bse.hu Pentru a aprecia acurate ea previziunii vom considera c fiecare valoare ajustat corespunde unei prognoze ex-ante pentru ziua urm toare (Figura 3.23.).</p></section>
+<section class="pdf-page" id="pdf-page-56"><h2 class="page-number">Page 56</h2><p>Figura 3.23. Formula de calcul pentru valorile unei prognoze ex-ante asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu Determin m, în continuare, eroarea de prognoz (Figura 3.24.). Introducem, pentru început, formula de calcul (diferen a dintre valoarea efectiv i cea prognozat ex-ante) pentru ziua de 7 februarie 2017 (prima zi pentru care poate fi determinat o valoare prognozat ex-ante). Aceast formul va fi translatat , apoi, c tre zilele urm toare.</p>
+<p>Figura 3.24. Formula de calcul pentru determinarea erorii unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu Dup stabilirea erorilor de prognoz determin m p tratele acestora (Figura 3.25). Formula introdus pentru ziua de 7 februarie 2017 va fi transpus , apoi, c tre zilele urm toare.</p></section>
+<section class="pdf-page" id="pdf-page-57"><h2 class="page-number">Page 57</h2><p>Figura 3.25. Formula de calcul pentru determinarea p tratelor erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu Calcul m, în continuare, media aritmetic a p tratelor erorilor de prognoz sau MSE (Figura 3.26.).</p>
+<p>Figura 3.26. Formula de calcul pentru media p tratelor erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu Media p tratic a erorilor (RMSE) corespunde r d cinii p trate a MSE (Figura 3.27.).</p></section>
+<section class="pdf-page" id="pdf-page-58"><h2 class="page-number">Page 58</h2><p>Figura 3.27. Formula de calcul pentru media p tratic a erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu A fost ob inut , astfel, o medie p tratic a erorilor de 478,40 (Figura 3.28.).</p>
+<p>Figura 3.28. Valoarea mediei p tratice a erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(4) Sursa datelor: https://www.bse.hu</p></section>
+<section class="pdf-page" id="pdf-page-59"><h2 class="page-number">Page 59</h2><p>Vom parcurge, în continuare, acelea i etape pentru a determina valoarea RMSE pentru prognoza pe baza ajust rii MA(5). Alegem, iar i, op iunea „Moving Average” din fereastra „Analysis Tools”,(Figura 3.29.).</p>
+<p>Figura 3.29. Alegerea op iunea „Moving Average” pentru ajustarea MA(5) a valorilor indicelui BUX Sursa datelor: https://www.bse.hu Introducem, apoi, parametrii ajust rii în fereastra de dialog „Moving Average” (Figura 3.30.).</p></section>
+<section class="pdf-page" id="pdf-page-60"><h2 class="page-number">Page 60</h2><p>Figura 3.30. Introducerea parametrilor ajust rii MA(5) a valorilor indicelui BUX Sursa datelor: https://www.bse.hu Dup aplicarea unui „click” asupra butonului „OK” ob inem valorile ajustate pe baza a cinci termeni (Figura 3.31.).</p>
+<p>Figura 3.31. Valori ale indicelui BUX ajustate prin procedeul MA(5) Sursa datelor: https://www.bse.hu În Figura 3.32. poate fi remarcat atenuarea fluctua iilor indicelui BUX prin ajustarea MA(5)</p></section>
+<section class="pdf-page" id="pdf-page-61"><h2 class="page-number">Page 61</h2><p>34500 34000 33500 33000</p>
+<p>BUX</p>
+<p>32500</p>
+<p>BUX_aj_MA(5)</p>
+<p>32000 31500 4/5/17</p>
+<p>3/29/17</p>
+<p>3/22/17</p>
+<p>3/15/17</p>
+<p>3/8/17</p>
+<p>3/1/17</p>
+<p>2/22/17</p>
+<p>2/15/17</p>
+<p>2/8/17</p>
+<p>2/1/17</p>
+<p>31000</p>
+<p>Figura 3.32. Evolu ia valorilor efective (BUX) i ajustate prin procedeul (BUX_aj_MA(5)) ale indicelui BUX de la Bursa de Valori din Budapesta Sursa datelor: https://www.bse.hu Valoarea prognozat pentru ziua de 7 aprilie 2017 corespunde valorii ajustate din ziua precedent (Figura 3.33.).</p>
+<p>Figura 3.33. Valoarea indicelui BUX prognozat prin ajustare MA(5) pentru ziua de 7 aprilie 2017 Sursa datelor: https://www.bse.hu Determin m, în continuare, valorile prognozate ex-ante aferente ajust rii (Figura 3.34.).</p></section>
+<section class="pdf-page" id="pdf-page-62"><h2 class="page-number">Page 62</h2><p>Figura 3.34. Formula de calcul pentru valorile unei prognoze ex-ante asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5) Sursa datelor: https://www.bse.hu Pentru a calcula erorile de prognoz , introducem formula de calcul pentru ziua de 8 februarie 2015 (Figura 3.35.). Aceast rela ie va fi, apoi, transpus c tre celelalte zile.</p>
+<p>Figura 3.35. Formula de calcul pentru determinarea erorii unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5) Sursa datelor: https://www.bse.hu</p></section>
+<section class="pdf-page" id="pdf-page-63"><h2 class="page-number">Page 63</h2><p>Determin m, în continuare, p tratele erorilor de prognoz (Figura 3.36.). Introducem, pentru început, formula de calcul aferent zilei de 8 februarie 2015 dup care translat m aceast rela ie c tre zilele urm toare.</p>
+<p>Figura 3.36. Formula de calcul pentru determinarea p tratelor erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5) Sursa datelor: https://www.bse.hu Determin m valoarea MSE ca o medie aritmetic a p tratelor erorilor de prognoz (Figura 3.37.).</p>
+<p>Figura 3.37. Formula de calcul pentru media p tratelor erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5) Sursa datelor: https://www.bse.hu</p></section>
+<section class="pdf-page" id="pdf-page-64"><h2 class="page-number">Page 64</h2><p>Extragem r d cina p trat din MSE, care corespunde mediei p tratice a erorilor (Figura 3.38.).</p>
+<p>Figura 3.38. Formula de calcul pentru media p tratic a erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5) Sursa datelor: https://www.bse.hu Rezult , astfel, o medie p tratic a erorilor de 498,06 (Figura 3.39.).</p>
+<p>Figura 3.39. Valoarea mediei p tratice a erorilor unei prognoze asupra evolu iei indicelui BUX ob inut pe baza ajust rii MA(5)</p></section>
+<section class="pdf-page" id="pdf-page-65"><h2 class="page-number">Page 65</h2><p>Sursa datelor: https://www.bse.hu Se poate aprecia, pe baza valorilor RMSE, c prognoza prin intermediul ajust rii MA(4) ofer o acurate e mai mare decât cea ob inut prin intermediul ajust rii MA(5).</p>
+<p>Capitolul 4 Ajustarea pe baza mediei mobile centrate La aceast metod , valoarea ajustat corespunde centrului intervalului pentru care se determin media mobil . De regul , pentru calculul mediei mobile se alege un num r impar de termeni (n), care poate fi exprimat sub forma: n = 2s +1. Ajustarea pe baza mediei mobile centrate are la baz formula de calcul: y + yi − s +1 + ... yi + ... yi + s −1 + yi + s yˆiCMA( n ) = i − s (4.1.) n unde yˆiCMA( n ) este valoarea ajustat pentru termenul cu num rul de ordine i (i s). Determinarea valorilor ajustate exclude primii i ultimii s termeni.</p>
+<p>Exemplul 4.1. Tabelul 4.1. con ine valorile anuale ale ratelor reale ale dobânzilor pentru credite (FR.INR.RINR) practicate în Ungaria în perioada 2007 – 2015, furnizate de Banca Mondial . Vom determina valorile ajustate ale acestei variabile pe baza mediei mobile centrate calculate pentru cinci perioade. Tabelul 4.1. Rate anuale reale ale dobânzilor pentru credite practicate în Ungaria în perioada 2007 – 2015 An Rat real a dobânzii (FR.INR.RINR) [%/an] 2007 3,542 2008 4,955 2009 6,804 2010 5,162 2011 5,978 2012 5,405 2013 3,269 2014 1,052 2015 1,150 Sursa datelor: http://data.worldbank.org Rezolvare: În Tabelul 4.2. este prezentat determinarea valorilor ajustate prin procedeul mediei mobile centrate CMA(5). Tabelul 4.2. Rate anuale reale ale dobânzilor pentru credite practicate în Ungaria în perioada 2007 – 2015 An Rat real a dobânzii Valoare ajustat ( yˆiCMA( 5) ) [%/an] (FR.INR.RINR) [%/an]</p></section>
+<section class="pdf-page" id="pdf-page-66"><h2 class="page-number">Page 66</h2><p>2007 2008 2009</p>
+<p>3,542 4,955 6,804</p>
+<p>x x</p>
+<p>3,542 + 4,955 + 6,804 + 5,162 + 5,978 = 5,288 5 2010 5,162 4,955 + 6,804 + 5,162 + 5,978 + 5,405 = 5,661 5 2011 5,978 6,804 + 5,162 + 5,978 + 5,405 + 3,269 = 5,324 5 2012 5,405 5,162 + 5,978 + 5,405 + 3,269 + 1,052 = 4,173 5 2013 3,269 5,978 + 5,405 + 3,269 + 1,052 + 1,150 = 3,371 5 2014 1,052 x 2015 1,150 x Sursa datelor: http://data.worldbank.org Valorile efective i cele ajustate ale ratelor reale ale dobânzilor sunt prezentate în Figura 4.1. 8 7 6 5 FR.INR.RINR</p>
+<p>4</p>
+<p>FR.INR.RINR_aj_CMA(5)</p>
+<p>3 2 1 0 2007 2008 2009 2010 2011 2012 2013 2014 2015</p>
+<p>Figura 4.1. Valori anuale efective (FR.INR.RINR) i ajustate (FR.INR.RINR_aj_CMA(5)) ale ratelor reale ale dobânzilor pentru credite practicate în Ungaria în perioada 2007 – 2015 Sursa datelor: http://data.worldbank.org Media mobil centrat poate fi calculat , prin intermediul interpol rilor, i pentru un num r par de termeni. Pentru seriile cu un num r mare de termeni este indicat realizarea calculelor prin intermediul programelor software specializate.</p>
+<p>Exemplul 4.2. Vom determina, prin ajustare pe baza mediei mobile centrate calculat pentru apte termeni consecutivi, trendul valorilor lunare ale ratei fondurilor federale (FRED), exprimate în procente pe an, din perioada mai 2015 – februarie 2017.</p></section>
+<section class="pdf-page" id="pdf-page-67"><h2 class="page-number">Page 67</h2><p>Rezolvare: Valorile variabilei au fost introduse într-o foaie de lucru Excel. Pentru un num r de termeni n = 7, a rezultat o valoare s = 3. În dreptul termenului cu num rul de ordine s + 1, care corespunde perioadei august 2015, introducem formula de calcul a mediei aritmetice pentru cei apte termeni consecutivi (Figura 4.2.).</p>
+<p>Figura 4.2. Formula de calcul a mediei centrate pentru valorile lunare ale ratei fondurilor federale Sursa datelor: https://fred.stlouisfed.org Rela ia de calcul este transpus , apoi, c tre rândurile inferioare, pân la ultimii s termeni (Figura 4.3).</p>
+<p>Figura 4.3. Transpunerea formulei de calcul a mediei centrate pentru valorile lunare ale ratei fondurilor federale</p></section>
+<section class="pdf-page" id="pdf-page-68"><h2 class="page-number">Page 68</h2><p>Sursa datelor: https://fred.stlouisfed.org Valorile efective i ajustate ale variabilei sunt prezentate în Figura 4.4.</p>
+<p>0.70 0.60 0.50 0.40</p>
+<p>FRED</p>
+<p>0.30</p>
+<p>FRED_aj_CMA(7)</p>
+<p>0.20 0.10 0.00 May-15</p>
+<p>Sep-15</p>
+<p>Jan-16</p>
+<p>May-16</p>
+<p>Sep-16</p>
+<p>Jan-17</p>
+<p>Figura 4.4. Valori lunare efective (FRED) i ajustate (FRED_aj_CMA(7)) ale ratei fondurilor federale din perioada mai 2015 – februarie 2017 Sursa datelor: https://fred.stlouisfed.org</p>
+<p>Bibliografie Aadland, D. (2002). Detrending time-aggregated data. Economics Research Institute Study Paper, 5, 1. ftp://129.123.19.10/RePEc/usu/pdf/ERI2002-05.pdf Abraham, B., &amp; Ledolter, J. (2005). Statistical methods for forecasting. John Wiley &amp; Sons, Inc. Publication. Andersen, T. G., Davis, R. A., Kreiss, J. P., &amp; Mikosch, T. V. (Eds.). (2009). Handbook of financial time series. Springer – Verlag Berlin. Armstrong, J. S., &amp; Collopy, F. (1992). Error measures for generalizing about forecasting methods: Empirical comparisons. International Journal of Forecasting, 8(1), 69-80. http://repository.upenn.edu/cgi/viewcontent.cgi?article=1075&amp;context=marketing_papers Armstrong, J. S., &amp; Collopy, F. (2007). Rule-based Forecasting: Development and Validation of an Expert Systems Approach to Combining Time Series Extrapolations. Retrieved from http://repository.upenn.edu/marketing_papers/68 Brockwell, P. J., &amp; Davis, R. A. (2016). Introduction to time series and forecasting. Third Edition. Springer. Brown, R. G. (2004). Smoothing, forecasting and prediction of discrete time series. Dover Publications, Inc. Reprint, Originally published in 1963 by Prentice-Hall, Inc., Englewood Cliffs. Campbell, J. Y., &amp; Hentschel, L. (1992). No news is good news: An asymmetric model of changing volatility in stock returns. Journal of Financial Economics, 31(3), 281-318.</p></section>
+<section class="pdf-page" id="pdf-page-69"><h2 class="page-number">Page 69</h2><p>Carbone, R., &amp; Armstrong, J. S. (1982). Evaluation of extrapolative forecasting methods: Results of a survey of academicians and practitioners. http://repository.upenn.edu/cgi/viewcontent.cgi?article=1086&amp;context=marketing_papers Carlberg, C. (2015). More Predictive Analytics: Microsoft Excel. Que Publishing. Chatfield, C. (1988). What is the ‘best’method of forecasting?. Journal of Applied Statistics, 15(1), 1938. Chatfield, C. (2016). The analysis of time series: an introduction, Sixth Edition. Chapman &amp; Hall/CRC, New York. Cont, R. (2001). Empirical properties of asset returns: stylized facts and statistical issues. Quantitative Finance, 1, 223-236. http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.480.6085&amp;rep=rep1&amp;type=pdf De Gooijer, J. G., &amp; Hyndman, R. J. (2006). 25 years of time series forecasting. International Journal of Forecasting, 22(3), 443-473. https://pdfs.semanticscholar.org/6b2a/6e8107642bb2137db52ecbd1805fd9632d93.pdf Diebold, F. X., &amp; Lopez, J. A. (1996). Forecast evaluation and combination. prepared for G.S. Maddala and C.R. Rao (eds.), Handbook of Statistics, Amsterdam. http://economics.sas.upenn.edu/~fdiebold/papers/paper9/paeva.pdf Doane, D. P., &amp; Seward, L. E. (2013). Applied statistics in business and economics. Fourth Edition, McGraw-Hill/Irwin, New York. Fildes, R. (1992). The evaluation of extrapolative forecasting methods. International Journal of Forecasting, 8(1), 81-98. Granger, C. W., &amp; Newbold, P. (1973). Some comments on the evaluation of economic forecasts. Applied Economics, 5(1), 35-47. Hyndman, R. J., &amp; Koehler, A. B. (2006). Another look at measures of forecast accuracy. International Journal of Forecasting, 22(4), 679-688. Kaeppel, J. (2009). Seasonal stock market trends. John Wiley &amp; Sons, Inc., Hoboken, New Jersey. Lawrence, K. D., Klimberg, R. K., &amp; Lawrence, S. M. (2009). Fundamentals of forecasting using Excel. Industrial Press, Inc., New York. Lütkepohl, H. (2005). New introduction to multiple time series analysis. Springer. Makridakis, S., Andersen, A., Carbone, R., Fildes, R., Hibon, M., Lewandowski, R., Newton, J., Parzen, E. &amp; Winkler, R. (1982). The accuracy of extrapolation (time series) methods: Results of a forecasting competition. Journal of Forecasting, 1(2), 111-153. Montgomery, D. C., Jennings, C. L., &amp; Kulahci, M. (2015). Introduction to time series analysis and forecasting. Second Edition. John Wiley &amp; Sons, Inc., Hoboken, New Jersey. Nelson, C. R., &amp; Plosser, C. R. (1982). Trends and random walks in macroeconmic time series: some evidence and implications. Journal of Monetary Economics, 10(2), 139-162. http://www.ccee.edu.uy/ensenian/catmetec/material/Plosser.PDF</p></section>
+<section class="pdf-page" id="pdf-page-70"><h2 class="page-number">Page 70</h2><p>Pant, P. N., &amp; Starbuck, W. H. (1990). Innocents in the forest: Forecasting and research methods. Journal of Management, 16(2), 433-460. Prado, R., &amp; West, M. (2010). Time series: modeling, computation, and inference. Chapman and Hall/CRC, New York. Sewell, M. (2011). Characterization of financial time series. UCL Department of Computer Science, Research Note RN/11/1. http://www.cs.ucl.ac.uk/fileadmin/UCLCS/images/Research_Student_Information/RN_11_01.pdf Stefanescu, R., &amp; Dumitriu, R. (2010). Bazele Statisticii. Editura Europlus, Gala i. Stefanescu, R., &amp; Dumitriu, R. (2015). Con inutul analizei seriilor de timp financiare. Available at SSRN: http://ssrn.com/abstract=2672628 Stefanescu, R., &amp; Dumitriu, R. (2016). Statistica descriptiv a seriilor de timp financiare. Available at SSRN: https://ssrn.com/abstract=2801838 Swift, L., &amp; Piff, S. (2014). Quantitative methods: for business, management and finance. Forth Edition. Palgrave Macmillan, New York. Tsay, R. S. (2005). Analysis of financial time series. Second Edition. John Wiley &amp; Sons. Watson, M. W. (1986). Univariate detrending methods with stochastic trends. Journal of monetary economics, 18(1), 49-75. https://www.princeton.edu/~mwatson/papers/Watson_JME_1986.pdf Wegner, T. (2007) Applied Business Statistics: Methods and Excel-based applications. Second Edition. Juta &amp; Co. Ltd., Cape Town. Weiers, R. (2011) Introduction to Business Statistics. Seventh Edition. Cengage Learning. Wiener, N. (1949). Extrapolation, interpolation, and smoothing of stationary time series; with engineering applications, The M.I.T. Press, Cambridge. Woodward, W. A., Gray, H. L., &amp; Elliott, A. C. (2011). Applied time series analysis. Chapman and Hall/CRC, New York.</p></section></article></body></html>

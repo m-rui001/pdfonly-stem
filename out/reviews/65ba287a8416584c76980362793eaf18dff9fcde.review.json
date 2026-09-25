@@ -1,0 +1,55 @@
+{
+  "sha1": "65ba287a8416584c76980362793eaf18dff9fcde",
+  "title": "Substantial emission reductions from Chinese power plants after the introduction of ultra-low emissions standards",
+  "doi": "https://doi.org/10.1038/s41560-019-0468-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/65ba287a8416584c76980362793eaf18dff9fcde/index.html",
+  "source_chars": 63009,
+  "markdown_chars": 3043,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "China’s continuous emission monitoring 3 systems (CEMS) network",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中'3'误插在'systems'前，应为'continuous emission monitoring systems (CEMS)'，数字'3'可能是页码标记误入。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "...fine particulate matter with an aerodynamic diameter of 2.5 μm or less (PM2.5) (53 μg m-3)1-3. and number of deaths (0.85 million) attributable to PM2.5 in 20171. Thermal power",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "句子在页尾断开，'Thermal power'和'plants combusting...'被'and number of deaths...'插入，疑似跨页顺序错乱，原文应为'...PM2.5 (53 μg m-3)1-3. Thermal power plants combusting...'，且死亡人数信息位置异常。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：摘要中SO2/NOX/PM降幅65%/60%/72%与正文65.03%/59.50%/72.37%一致；排放量2014年2.21/3.11/0.52 Mt和2017年0.77/1.26/0.14 Mt对应；其他如合规率、浓度降幅、技术占比等均在文中一致。公式（1）（2）（3）按原样保留，变量定义与原文一致。不确定性±9.03%和±2.47%在方法与讨论中重复出现，无矛盾。提取问题中跨页断句已标记，其余数值未发现明显冲突。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5877,
+      "prompt_tokens": 16891,
+      "total_tokens": 22768,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3566
+      }
+    },
+    "content_chars": 4146
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "137e8317a8681aa615a22f3638ba97761d76cb97",
+  "title": "A hybrid MLP-CNN classifier for very fine resolution remotely sensed image classification",
+  "doi": "https://doi.org/10.1016/j.isprsjprs.2017.07.014",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/137e8317a8681aa615a22f3638ba97761d76cb97/index.html",
+  "source_chars": 74376,
+  "markdown_chars": 3150,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "J (W , b; x, y) = 2 1 hw, b ( x) − y 2",
+      "type": "疑似公式提取乱序",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "损失函数表达式提取为'2 1 hw, b ( x) − y 2'，疑似应为1/2范数平方的格式，数字和变量顺序混乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "Fi ,qj = max ( f1q+p-1( i -1),1+ p ( j -1) ,..., f piq-1,1+ p ( j -1) ,..., f1q+p-1( i -1), pj ,... f piq- pj1 )",
+      "type": "疑似公式提取乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "池化操作公式上下标混乱，无法准确还原数学含义，但文本明确为最大池化操作。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "class ( h, v ) = { class_mlp class_mlp class_cnn class_cnn ...}",
+      "type": "疑似公式提取乱码",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "决策融合规则公式的分支条件部分在提取中重叠，四个条件分支无法清晰对应，但根据上下文可知基于CNN置信度与阈值比较。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的总体精度数值（S1 OA 90.93%、S2 89.64%等）、Kappa z检验数值与结论一致。类级精度增加百分比与表2具体数值存在部分出入（如Concrete roof相对CNN增加9.77%与表2中17.43%不符），但文中明确写出这些数值，故照录。公式(1)(4)(6)(7)基本可确认，式(3)和式(5)提取乱码已标记。融合阈值α1=0.4、α2=0.6与原文一致。WorldView-2结果与原文一致。不确定之处：表2中部分类精度数字在提取中排列混乱，未完全采用；讨论部分引用图2置信度分布与图6趋势一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8408,
+      "prompt_tokens": 20718,
+      "total_tokens": 29126,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5965
+      }
+    },
+    "content_chars": 4341
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

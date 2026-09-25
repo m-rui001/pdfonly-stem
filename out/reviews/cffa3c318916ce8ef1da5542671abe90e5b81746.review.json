@@ -1,0 +1,55 @@
+{
+  "sha1": "cffa3c318916ce8ef1da5542671abe90e5b81746",
+  "title": "Seven Defining Features of Terahertz (THz) Wireless Systems: A Fellowship of Communication and Sensing",
+  "doi": "https://doi.org/10.1109/comst.2022.3143454",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cffa3c318916ce8ef1da5542671abe90e5b81746/index.html",
+  "source_chars": 173011,
+  "markdown_chars": 2448,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "• Resource sharing and allocation: The resources (e.g. time, space, frequency) that must be used for sensing and communication signals can be statically or dynamically shared. Dynamic sharing of spatial resources (e.g. number of antennas or metasurfaces allocated) is more efﬁcient, however, THz communication beams must be stable and pointing sharply, whereas THz sensing requires time-varying directional scanning beams. The design of scheduling and dynamic resource allocation schemes while balancing the high data rate and high-resolution sensing tradeoff is therefore an open research area.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "该段在页15开头出现，但前一页（14）末尾句子被截断，此处可能承接上页内容，但页15开头无异常，仅为正常分页。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Table II: List of our main acronyms. Acronym Description Acronym Description THz Terahertz ML Machine learning ... QoE Quality of experience HF High frequency IS Information shower QoS Quality of service AI Artiﬁcial intelligence GAN Generative adversarial network RL Reinforcement learning CDMA code divison multiple access OFDM Orthogonal frequency division multiplexing TDD Time division duplex OFDMA Orthogonal frequency division multiple access MAC Medium-access-control SINR Signal-to-inferference-noise-ratio OMA Orthogonal multiple access HRLLC High-rate and high-reliability low latency communications NTN Non-terrestrial networks UAV Unmanned aerial vehicle LEO Radio frequency",
+      "type": "疑似抽取错误/表内容不完整",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "表II中'LEO'后缺失描述，且'Radio frequency'出现在末尾，疑似表格抽取不完整或边界截断，但不足以确认错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：反射路径衰减5–10 dB和>15 dB、THz范围0.1–10 THz、XR速率5 Tbps、工业4.0连接密度10^7/km²、NTN 16 km以上分子吸收较低、延迟指标（XR 5ms运动到光子、工业0.1–1ms RTT）等，与原文一致。公式未出现。提取的图1-6结论均基于正文描述，未额外推断。不确定处：表I和表II的完整性（表I仅部分引用，表II若未影响论证则省略），以及页15开始的段落衔接，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2126,
+      "prompt_tokens": 37698,
+      "total_tokens": 39824,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 40
+      }
+    },
+    "content_chars": 4496
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

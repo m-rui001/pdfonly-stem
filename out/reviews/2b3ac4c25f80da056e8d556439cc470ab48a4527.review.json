@@ -1,0 +1,82 @@
+{
+  "sha1": "2b3ac4c25f80da056e8d556439cc470ab48a4527",
+  "title": "Engineering bunched Pt-Ni alloy nanocages for efficient oxygen reduction in practical fuel cells",
+  "doi": "https://doi.org/10.1126/science.aaw7493",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2b3ac4c25f80da056e8d556439cc470ab48a4527/index.html",
+  "source_chars": 48611,
+  "markdown_chars": 9452,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "The differences in hollow microstructures between PtNi-BNSs/C and PtNi-BNSs/C were likely caused by the different corrosion methods",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "此处比较对象应为 PtNi-BNSs/C 与 PtNi-BNCs/C，但 OCR 文本两处均写作 PtNi-BNSs/C，导致比较对象混淆，影响对结构差异来源的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "causing different electrocatalytic in-situ XANES and EXAFS behaviors between PtNi-BNSs/C and PtNi-BNSs/C",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同上，比较对象应为 PtNi-BNSs/C 与 PtNi-BNCs/C，OCR 重复为 PtNi-BNSs/C，影响对两种催化剂行为差异的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "PtNi-BNCs/C (C, D) and PtNi-BNCs/C (E, F)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Fig. 4 图注中 (C, D) 与 (E, F) 对应的样品名重复为 PtNi-BNCs/C，根据正文应为 PtNi-BNSs/C 和 PtNi-BNCs/C，影响对耐久性测试对象的准确对应。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "the irregular hollow structures in PtNi-BNSs/C easily created local overstrained domains that undermined the electrochemical stability of PtNi-BNSs/C to some extent, whereas the dimensionally uniform hollow structures in PtNi-BNSs/C were observed to be stable",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "末句的 PtNi-BNSs/C 应为 PtNi-BNCs/C，否则与“尺寸均匀的中空结构稳定”的结论矛盾，影响论证逻辑。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Engineering Bunched Pt-Ni Alloy Nanocages for Efficient Oxygen Reduction in Practical Fuel Cells",
+  "self_check": "已核对摘要、正文数据与结论：质量活性 3.52 A mg_Pt⁻¹、比活性 5.16 mA cm⁻²、50,000 次循环衰减 <1.5%、燃料电池 1.5 A cm⁻² @ 0.6 V、峰值功率 920 mW cm⁻²、稳定运行 180 小时、ECSA 68.2 m² g_Pt⁻¹、Tafel 斜率 54 mV decade⁻¹、EXAFS 键长 2.69/2.71/2.76 Å 等关键数值均与原文一致。公式符号如 ΔE_O*、ε_d、χ、CN 等按原文保留。仍不确定处：Fig. 4 图注中 (C, D) 与 (E, F) 的样品名重复，已作为 OCR 问题标出；正文中 PtNi-BNSs/C 与 PtNi-BNCs/C 的几处混淆已标出，但未静默改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6400,
+      "prompt_tokens": 15175,
+      "total_tokens": 21575,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11461,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Engineering Bunched Pt-Ni Alloy Nanocages for Efficient Oxygen Reduction in Practical Fuel Cells",
+    "translated_title": "工程化束状Pt-Ni合金纳米笼用于实际燃料电池中的高效氧还原",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

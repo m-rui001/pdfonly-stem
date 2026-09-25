@@ -1,0 +1,84 @@
+{
+  "sha1": "0190bf80b2a82a455c7485a62b856c09663391a6",
+  "title": "General Techno-Economic Analysis of CO 2 Electrolysis Systems",
+  "doi": "https://doi.org/10.1021/acs.iecr.7b03514",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/0190bf80b2a82a455c7485a62b856c09663391a6/index.html",
+  "source_chars": 66153,
+  "markdown_chars": 5277,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "The energetic efficiency is defined by the following question:",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'equation'而非'question'，属OCR识别错误，不影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Figures 2a and c show the Faradaic efficiencies versus current density while Figures 3b and d show the energetic efficiencies",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Figure 2的说明中引用'Figures 3b and d'，但上下文讨论的是Figure 2的b和d子图，应为'Figures 2b and d'，属OCR或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "gloyoxal",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为'glyoxal'（乙二醛），OCR拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "carbon monoxde",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为'carbon monoxide'，OCR拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "which $ \\mathrm{C O_{2}} $ reduction product should be targeted for commercialization?",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文应为'which CO2 reduction product'，OCR将'which'误识别为'which'，但'which'在此处语法正确，实际原文可能为'which'，属轻微问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "A General Techno-Economic Analysis of CO2 Electrolysis Systems",
+  "self_check": "已核对Table 1中七种产物及析氢反应的标准电位数值、Table 2中市场价格与年产量数据、Table 3中基准与乐观情形参数、Table 4中敏感性分析范围、法拉第效率公式与能量效率公式、以及正文中引用的关键数值（如甲酸归一化价格16.1×10^-3 $/electron、甲烷年产量250 Mtonne、正丙醇年产量0.2 Mtonne、2016年乙烯和乙醇法拉第效率分别达41%和63%、甲酸分离成本降低50%后NPV为9710万美元、乙醇电流密度从300降至100 mA/cm2导致NPV减少5100万美元等）。公式符号与变量定义已按原文保留。仍不确定之处：Figure 2说明中'Figures 3b and d'是否为原文笔误或OCR错误；部分化学名称拼写（如gloyoxal）已标为OCR问题。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3791,
+      "prompt_tokens": 17473,
+      "total_tokens": 21264,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7178,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

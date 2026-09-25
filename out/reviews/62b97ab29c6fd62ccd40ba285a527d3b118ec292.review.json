@@ -1,0 +1,85 @@
+{
+  "sha1": "62b97ab29c6fd62ccd40ba285a527d3b118ec292",
+  "title": "A Fast Single Image Haze Removal Algorithm Using Color Attenuation Prior",
+  "doi": "https://doi.org/10.1109/tip.2015.2446191",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/62b97ab29c6fd62ccd40ba285a527d3b118ec292/index.html",
+  "source_chars": 57423,
+  "markdown_chars": 10416,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "e ^ {- \\frac {d g _ {i} - \\left(\\theta_ {0} + \\theta_ {1} v \\left(x _ {i}\\right) + \\theta_ {2} s \\left(x _ {i}\\right)\\right)}{2 \\sigma^ {2}}}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "式(13)与式(14)中高斯指数项的分母疑似丢失平方，按上下文应为 (dg_i - (θ0+θ1v+θ2s))^2 / (2σ^2)，当前抽取文本缺少平方符号，影响公式正确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "\\frac {\\partial \\ln L}{\\partial \\sigma} = - \\frac {n}{\\sigma} + \\frac {1}{\\sigma^ {3}} \\sum_ {i = 1} ^ {n} \\left(d g _ {i} - \\left(\\theta_ {0} + \\theta_ {1} v \\left(x _ {i}\\right) + \\theta_ {2} s \\left(x _ {i}\\right)\\right)\\right)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "式(15)中求和项疑似丢失平方，按最大似然推导应为 (dg_i - (θ0+θ1v+θ2s))^2，当前抽取文本缺少平方符号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "\\theta_ {i} := \\theta_ {i} + \\frac {\\partial \\ln L}{\\partial \\theta_ {i}} s. t. i \\in \\{0, 1, 2 \\}.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "更新式中的学习率符号疑似丢失，当前文本为 θ_i := θ_i + ∂lnL/∂θ_i，缺少学习率因子，可能影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "d_{thresold}",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "阈值符号拼写不一致，多处出现 d_{thresold} 与 d_{threshold} 混用，疑似 OCR 或原文拼写错误，但不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Nishona et al.'s",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "作者名拼写错误，应为 Nishino et al.'s，属 OCR 识别错误，不影响论证理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A Fast Single Image Haze Removal Algorithm Using Color Attenuation Prior",
+  "self_check": "已核对：大气散射模型公式、颜色衰减先验关系式 d∝c∝v-s、线性模型及参数学习公式、最终恢复公式、训练参数（θ0=0.121779, θ1=0.959710, θ2=-0.780245, σ=0.041337）、实验参数（r=15, β=1.0）、MSE与SSIM结论、表I时间数据。不确定处：式(13)(14)(15)中高斯指数项疑似丢失平方，已按原文照录并在 extraction_issues 中标出；更新式学习率符号疑似丢失，同样照录并标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6774,
+      "prompt_tokens": 16344,
+      "total_tokens": 23118,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12864,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

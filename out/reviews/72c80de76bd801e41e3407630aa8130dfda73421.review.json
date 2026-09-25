@@ -1,0 +1,100 @@
+{
+  "sha1": "72c80de76bd801e41e3407630aa8130dfda73421",
+  "title": "Processing thermogravimetric analysis data for isoconversional kinetic analysis of lignocellulosic biomass pyrolysis: Case study of corn stalk",
+  "doi": "https://doi.org/10.1016/j.rser.2017.09.113",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/72c80de76bd801e41e3407630aa8130dfda73421/index.html",
+  "source_chars": 57850,
+  "markdown_chars": 3262,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "T  Ti   t",
+      "type": "formula_garbled",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)中的特殊符号和等号显示为乱码，无法辨认正确数学表达式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "  i 1   i  Ti 1  Ti   d   1  i   i 1 1  i 1   i      dT i  2 Ti  Ti 1 2 Ti 1  Ti   i   i 1  Ti  Ti 1 ",
+      "type": "formula_garbled",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式(3)的有限差分分段表达式完全乱码，无法复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "ln  i     ln  A f     RT ,i   dT  ,i ",
+      "type": "formula_garbled",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "表1中Friedman方法的公式显示为乱码，数学符号缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "O.F.   i 1 j  i",
+      "type": "formula_garbled",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1中NL和ANL方法的目标函数公式乱码，求和符号及积分表达式无法辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "K min1",
+      "type": "superscript_lost",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "升温速率单位应为K min⁻¹，上标缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "For a given a, Ea and ln[Aαf(α)]",
+      "type": "ocr_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文均为α，此处'a'应为'α'，OCR将希腊字母识别为英文a。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 27,
+      "quote": "a ≥ 0.85",
+      "type": "ocr_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为α≥0.85，OCR遗漏希腊字母。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：有效活化能从148到473 kJ mol⁻¹（α=0.05–0.85），五个升温速率2.5–40 K min⁻¹，峰值温度592.0–645.8 K及峰值速率等与原文一致。公式(1)-(8)均按提取文本保留，但因原文PDF提取乱码，公式实际字符不可靠，已在issues中标注。文中关于R²、AICc最优sp=0.04、α=0.85时R²=0.8998等数字均直接取自正文。结论部分与原文相符。仍不确定的是公式乱码的准确数学形式，以及表1中部分符号含义，但所有推断均基于上下文变量定义，未添加外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7971,
+      "prompt_tokens": 16303,
+      "total_tokens": 24274,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4955
+      }
+    },
+    "content_chars": 5207
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

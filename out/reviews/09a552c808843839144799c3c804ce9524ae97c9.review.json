@@ -1,0 +1,92 @@
+{
+  "sha1": "09a552c808843839144799c3c804ce9524ae97c9",
+  "title": "Channeling Fisher: Randomization Tests and the Statistical Insignificance of Seemingly Significant Experimental Results*",
+  "doi": "https://doi.org/10.1093/qje/qjy029",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/09a552c808843839144799c3c804ce9524ae97c9/index.html",
+  "source_chars": 106555,
+  "markdown_chars": 4093,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "largely limited to the papers 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页码标记'2'混入正文，句子在下一页开头'and regressions with concentrated leverage.'才接续，疑似页脚页码被拼接进正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "the average number of significant treatment effects found using the randomization distribution of the t-statistic is only .78 and .88 as large at the two levels",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "正文称.78和.88，但表V中randomization-t对应值为.78和.87，数值不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Figure III graphs the randomization-t p-values against the conventional p-values",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "前文及图注（第48页）对应图IV，此处可能应为Figure IV；但无法从文本确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "βˆ ~ i = βˆ − ~ xi εˆ i 2 ~ x (1 − h )",
+      "type": "公式提取不完整/乱码",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "公式(2)的文本碎片缺失下标和括号，无法完整还原；同一页后续有'∑ i ii i'等片段。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "sampling randomizat ion p - value = N 1 N 1  1 I ( > T ) + U * 1 + IS (= TE )  ∑ ∑ S E  N + 1 S =1 N + 1  S =1 ",
+      "type": "公式提取乱码",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "公式(5)的方括号和求和索引完全错乱，无法辨识原式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "which account for anything from 3 10 to 610 of all changes",
+      "type": "疑似字符缺失",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "可能应为'3/10到6/10'，但分数斜杠和分子被剥离，无法确定原始表述。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值：个体检验比率0.78/0.87（正文0.88与表V0.87冲突，已在issues标记），联合检验比率0.51/0.67（表VII），回归水平0.76/0.83（表VI），高杠杆0.42/0.58。摘要中的13%/22%与0.87/0.78对应一致；33%/49%与0.67/0.51一致。蒙特卡洛表III、IV的关键模式（随机化-t稳健、高维失真）已依据正文描述。公式(2)-(5)因提取乱码仅保留可见部分，未做修复。杠杆数值（0.058、0.091、0.338等）取自表II及正文。未加入任何外部信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6396,
+      "prompt_tokens": 25005,
+      "total_tokens": 31401,
+      "prompt_tokens_details": {
+        "cached_tokens": 24576
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3185
+      }
+    },
+    "content_chars": 6170,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

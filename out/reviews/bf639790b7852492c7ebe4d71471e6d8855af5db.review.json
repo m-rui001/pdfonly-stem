@@ -1,0 +1,75 @@
+{
+  "sha1": "bf639790b7852492c7ebe4d71471e6d8855af5db",
+  "title": "Correlation of energy disorder and open-circuit voltage in hybrid perovskite solar cells",
+  "doi": "https://doi.org/10.1038/nenergy.2015.1",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/bf639790b7852492c7ebe4d71471e6d8855af5db/index.html",
+  "source_chars": 34269,
+  "markdown_chars": 6506,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "The $ \\mathrm{M A P b I}{3} $ layers were formed by the interdiffusion of lead iodide $ (\\mathrm{P b I}{2}) $ and a methyl ammonium iodide $ (\\mathrm{C H}{3} \\mathrm{N H}{3} \\mathrm{I}, \\mathrm{C H}{3} \\mathrm{N H}{3}=\\mathrm{M A}) $ stacking layer",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失：$\\mathrm{MAPbI}{3}$ 应为 $\\mathrm{MAPbI_{3}}$，$\\mathrm{PbI}{2}$ 应为 $\\mathrm{PbI_{2}}$，$\\mathrm{CH}{3}\\mathrm{NH}{3}\\mathrm{I}$ 应为 $\\mathrm{CH_{3}NH_{3}I}$，$\\mathrm{CH}{3}\\mathrm{NH}{3}$ 应为 $\\mathrm{CH_{3}NH_{3}}$，下标 3/2 被错误置于花括号外。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the device PCE increased from 17.1 % to 19.4 %. The increasing of PCE here mainly comes from the $ \\mathrm{V{O C}} $ enhancement from 1.04 V to 1.13 V",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "$\\mathrm{V_{OC}}$ 被抽取为 $\\mathrm{V{O C}}$，下标 OC 丢失，符号表示损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "only have now impact to device $ V_{\\mathrm{O C}} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "“have now impact”语义不通，疑为“have no impact”之误，影响对 PCBM 厚度与 $V_{OC}$ 关系的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "650 mg ml-1 $ \\mathrm{P b I}{2} $ DMF precursor were used with 75 mg ml-1 methylammonium iodide (MAI) 2-propanol precursor solution",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "浓度单位“mg ml-1”未用上标表示，且 $\\mathrm{PbI}{2}$ 下标 2 丢失，应为 $\\mathrm{PbI_{2}}$。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Correlation of Energy Disorder and Open-circuit Voltage in Hybrid Perovskite Solar Cells",
+  "self_check": "已核对：PCE 17.1%→19.4%、$V_{OC}$ 1.04 V→1.13 V、$J_{SC}$ ~22.6 mA cm$^{-2}$、FF ~75.0%、串联电阻 15 与 3.80 $\\Omega$ cm$^{2}$、并联电阻 2564 与 2380 $\\Omega$ cm$^{2}$、积分 $J_{SC}$ 22.3 mA cm$^{-2}$、$\\sigma_{n}$ 136 meV→90 meV、纯 PCBM 73 meV、ICBA PCE 12.8% 与 $V_{OC}$ 0.97 V、$3\\times10^{17}$ cm$^{-3}$ 下 $V_{OC}$ 0.99 V 与 1.07 V、PCBM 厚度 20–60 nm，均与正文一致。高斯 DOS 公式按提取文本原样保留。不确定处：第 10 页“have now impact”疑为“have no impact”，已在 extraction_issues 标出；XRD 峰位 $20.5^{\\circ}$ 与部分化学式下标在 OCR 中损坏，已照录并标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4752,
+      "prompt_tokens": 9530,
+      "total_tokens": 14282,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8951,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

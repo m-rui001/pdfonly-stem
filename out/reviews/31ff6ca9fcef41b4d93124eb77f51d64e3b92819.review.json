@@ -1,0 +1,82 @@
+{
+  "sha1": "31ff6ca9fcef41b4d93124eb77f51d64e3b92819",
+  "title": "Quadruplex Nucleic Acids as Novel Therapeutic Targets",
+  "doi": "https://doi.org/10.1021/acs.jmedchem.5b01835",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/31ff6ca9fcef41b4d93124eb77f51d64e3b92819/index.html",
+  "source_chars": 179421,
+  "markdown_chars": 4131,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "and dervivatives.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "原文明显拼写错误，应为'derivatives'，但照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "post-translational gene regulation",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "在5'UTR四链体语境下更可能是'post-transcriptional'，但原文为'post-translational'，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the quartets stack together",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "前句以句号结束，但'the'小写且主语不连贯，可能因页断缺少连接词，但内容可读，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 23,
+      "quote": "frontotemporal dementia (FDT)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "标准缩写应为FTD，原文FDT可能为笔误，但照录。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "pyridinium rings replacing the quinolones",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "上下文讨论quindoline类似物，'quinolones'可能应为'quinolines'，但原文如此，无法确定。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：约350,000个计算预测位点、716,310个高通量实验位点、451,646个新预测位点、CEB25环长9、hTERT环长26、BCL-2环长13、c-KIT环长5、K-RAS下调80%等。关键化合物编号（1-27）均按原文保留。结论方向与摘要一致：小分子稳定四链体可抑制肿瘤生长，但选择性仍是挑战。不确定之处：原文中'post-translational'、'quinolones'、'FDT'等可能有拼写错误，已在issues中列出；未发现数据矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6335,
+      "prompt_tokens": 55758,
+      "total_tokens": 62093,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3012
+      }
+    },
+    "content_chars": 5570
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

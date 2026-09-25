@@ -1,0 +1,64 @@
+{
+  "sha1": "24dc42ef03eae7f3a2f11bdde6df10be7f4f74d3",
+  "title": "Navigating the complexity of ecological stability",
+  "doi": "https://doi.org/10.1111/ele.12648",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/24dc42ef03eae7f3a2f11bdde6df10be7f4f74d3/index.html",
+  "source_chars": 83128,
+  "markdown_chars": 5899,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 44,
+      "quote": "kinds of disturbances. The one-dimensional approach to disturbances and stability means that we underestimate the impacts of perturbations and cannot identify the mechanisms that underpin the overall stability of ecosystem structure or others.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第44页出现一段不完整的正文，与前面页面内容重复且被截断，疑为抽取时正文碎片或页边文本混入。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 42,
+      "quote": "and Synthesis Navigating the complex 42 859 The restricted focus of studies on single components of stability (a) and disturbances (b). The total number of studies is sligh 860 Figure 2 some of the studies we surveyed did not include an explicit disturbance.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第42页开头混入了页眉（and Synthesis、Navigating the complex）和图2图例的碎片，且与后面内容不连续，疑似PDF抽取时页眉与正文拼接错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 43,
+      "quote": "Overview of studies of ecological stability. Number of studies identified by our survey of the literature that quantified different f mined the effects of different components of disturbance on those (b) and that used biomass, taxonomic composition or ecosystem as a Figurefunctioning basis for measuring stability (c).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第43页重复出现图3的图例，且‘Figurefunctioning’为拼接错误，正文段落被截断后插入图例，顺序混乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：文献调查894篇、354篇测量，4%结合理论实证；单因素比例93%/85%，单扰动83%/80%；理论57%渐近、实验61%/观测72%变异性，实证4%渐近，理论18%变异性；持久性10%、恢复力7%、抵抗力7%；扰动类型70%单脉冲、83%多脉冲、38%压、47%多脉冲；15%扰动大小；63%生物量、35%组成、2%功能；6项组成恢复力研究；陆地52%、草原53%、淡水29%、海洋16%；政策调查42个机构，25/42可持续、13/42保护。公式无。所有数值均直接来自提取文本。不确定之处：图2b中'80%'和'83%'的表述与原文一致但细微，已保留；Box1和Box2内容已压缩但要点完整。跨页拼接问题已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9810,
+      "prompt_tokens": 21043,
+      "total_tokens": 30853,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5888
+      }
+    },
+    "content_chars": 7808
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

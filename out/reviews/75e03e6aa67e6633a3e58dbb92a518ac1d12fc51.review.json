@@ -1,0 +1,82 @@
+{
+  "sha1": "75e03e6aa67e6633a3e58dbb92a518ac1d12fc51",
+  "title": "Lifetime prediction of biodegradable polymers",
+  "doi": "https://doi.org/10.1016/j.progpolymsci.2017.02.004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/75e03e6aa67e6633a3e58dbb92a518ac1d12fc51/index.html",
+  "source_chars": 292789,
+  "markdown_chars": 6766,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 55,
+      "quote": "In a drawn fiber, er-oriented chain will have a different effect on mechanical properties than scission of the non-oriented fiber.",
+      "type": "疑似缺失字符或拼写错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "source 文本中“er-oriented”应为“oriented”或“draw-oriented”，为疑似OCR或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 52,
+      "quote": "with the tensile strength and n decreasing at the same relative rate:",
+      "type": "疑似错误（下标丢失）",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "source 应为“Mn”，n 缺少下标M，可能为排版或OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 46,
+      "quote": "t\n\n, it will degrade through a",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第46页以“t”结尾，第47页以“, it will degrade through a”开头，但完整句子应为“larger than Lcrit...”。页间断裂导致关键术语Lcrit或ε被撕裂，需查看原文确认。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "Solving this first order equation and noting the initial carboxyl end group concentration: n0",
+      "type": "公式符号不完整/上下文断裂",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式下方的“n0”疑似应为“n0”（初始链数或聚合度），但提取文本中公式和符号不完整，无法确认。原文中相继出现Mn0和n0的上下文，此处符号未定义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 48,
+      "quote": "If the matrix dimension for a particular polymer is larger than t, it will degrade through a surface erosion mechanism.",
+      "type": "跨页断裂/符号缺失",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "“larger than t”后缺少“Lcrit或εt”符号，且句子在页尾断裂，需对照原文确认。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：PLA的Me=8-10 kg/mol、PHA的Me=13 kg/mol；PHBV在蒸馏水中机械性能阈值为110,000 g/mol；PLA脆化点断链数2.5、碎裂点4.4，CO₂释放仅20%；PLLA干扰螺钉4年（37°C）vs 25天（70°C）；PCL在pH 8缓冲液中16周强度损失80%、质量损失10%；PHBV水解活化能93 kJ/mol；PHB酶解活化能82 kJ/mol；水在聚合物中的扩散系数取值10⁻¹² m²/s；PLA临界水浓度0.0293 g/cm³（Mw=10,000 g/mol）；PBAT地膜8周即失去力学完整性（总辐照800 MJ/m²）、凝胶含量25%、溶胶Mw=10,000 g/mol；PCL酶解活化能200 kJ/mol（模型化合物31 kJ/mol）；PHBV在海水（50°C）的降解机理在40°C以上发生变化。公式已按提取文本原样保留，但式(26)-(33)中的部分希腊字母和上下标在提取过程中有缺失，已标注。提取文本中部分公式符号（如λ2.5、c1、c2等）虽不完整，但已按原文关系保留并注明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5705,
+      "prompt_tokens": 67424,
+      "total_tokens": 73129,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 811
+      }
+    },
+    "content_chars": 8904
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

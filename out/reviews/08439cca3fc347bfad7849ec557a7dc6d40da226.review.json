@@ -1,0 +1,82 @@
+{
+  "sha1": "08439cca3fc347bfad7849ec557a7dc6d40da226",
+  "title": "Improved image-based deformation measurement for geotechnical applications",
+  "doi": "https://doi.org/10.1139/cgj-2015-0253",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/08439cca3fc347bfad7849ec557a7dc6d40da226/index.html",
+  "source_chars": 56323,
+  "markdown_chars": 3181,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": " 2 ρ px    L ",
+      "type": "疑似公式损坏",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "该行是公式片段，前后缺少完整表达式和变量下标，无法确定与后文δε、δθ的对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "1 δε = 2 δr L 4",
+      "type": "疑似公式损坏",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中缺少除号或括号，且数字1、4可能为公式编号，但位置混乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "total maximum shear strain ζ at 1D penetration",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中使用ξ表示总最大剪应变，图12标题中却用ζ，可能为符号不一致或字体渲染问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "t af Dr 4",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第11页末尾出现页眉残留与数字4，紧接着第12页开头是公式残片，公式在页间被截断，且缺失了δε_y、δε_xy等下标及运算符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "until ~0.01 or 1% strain",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "‘~0.01 or 1%’ 表达不完整，可能原为 ‘~0.01% or 1%’，但缺少百分号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：GeoPIV-RG在平动中ρpx≈0.0008像素，转动中ρpx<1/1000像素，应变误差在2°转动、L=25px时为<0.03%，单元体试验中2500px标距、0.1%应变时误差约0.05微应变。摘要中“至少10倍”与正文“至少一个数量级”一致。公式因提取乱码未能完整核对，已在issues中标出。应用试验参数（30mm直径、200g、20mm砂层等）与表1参数均已保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9105,
+      "prompt_tokens": 14718,
+      "total_tokens": 23823,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6581
+      }
+    },
+    "content_chars": 4535
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

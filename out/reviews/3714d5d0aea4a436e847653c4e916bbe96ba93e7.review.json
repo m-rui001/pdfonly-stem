@@ -1,0 +1,73 @@
+{
+  "sha1": "3714d5d0aea4a436e847653c4e916bbe96ba93e7",
+  "title": "Flood Prediction Using Machine Learning Models: Literature Review",
+  "doi": "",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3714d5d0aea4a436e847653c4e916bbe96ba93e7/index.html",
+  "source_chars": 166822,
+  "markdown_chars": 2524,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "The9literature",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "出现'9'与'literature'粘连，疑似抽取错误或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "were2018, given priority toREVIEW",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文本断裂且包含年份'2018'，疑似抽取时混入页眉或格式错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "applications in flood prediction can be classified according to flood resource variables, i.e., water flood, soil moisture, rainfall–discharge, precipitation, river inflow, peak river flow, water level, river flood, soil moisture, rainfall–discharge, precipitation, river inflow, peak flow, river flow, rainfall–runoff, flash flood, rainfall, streamflow, seasonal stream flow, flood peak discharge, level, rainfall stage, flood frequency analysis, flood quantiles, urban flood, plain flood, groundwater level, extreme flow, storm surge, typhoon rainfall, and daily flows [59].",
+      "type": "重复文本",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一句在提取文本中重复出现，可能为PDF排版或抽取问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "ML methods used for short-term flood prediction. Section 5 presents the survey of ML methods used for long-term flood prediction.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句在第5页开头重复出现两次，且第4页末尾也有类似句子，疑似跨页时页眉/重复导致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、方法、短期/长期预测中的关键数值（如R²=0.70、0.94、0.9、0.87等）、公式（CC和RMSE）以及四个改进趋势。公式按原文保留，未做修改。不确定之处：图3、4、7-10的具体数值未在正文中完整给出，仅描述趋势；表格2、5的定性比较未量化。所有结论均基于文本描述，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4436,
+      "prompt_tokens": 40559,
+      "total_tokens": 44995,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2364
+      }
+    },
+    "content_chars": 4245
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

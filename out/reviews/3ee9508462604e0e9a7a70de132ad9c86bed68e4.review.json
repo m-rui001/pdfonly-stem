@@ -1,0 +1,64 @@
+{
+  "sha1": "3ee9508462604e0e9a7a70de132ad9c86bed68e4",
+  "title": "Fluoroethylene Carbonate and Vinylene Carbonate Reduction: Understanding Lithium-Ion Battery Electrolyte Additives and Solid Electrolyte Interphase Formation",
+  "doi": "https://doi.org/10.1021/acs.chemmater.6b02282",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3ee9508462604e0e9a7a70de132ad9c86bed68e4/index.html",
+  "source_chars": 58507,
+  "markdown_chars": 4374,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "Spectra were acquired with 10 kHz MAS at 500 MHz (b-i, b-ii) and 700 MHz (a-i, a-ii, a,b-iii)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号中 'a,b-iii' 疑为排版错误，应为 'a-iii, b-iii' 或类似，原文中其他部分分别以 a-iii 和 b-iii 描述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "shifts were externally referenced to adamantane (1H 1.9 ppm, C 38.5 ppm, CH2)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页2开头句子缺少主语（前文应有 '1H and 13C chemical' 等文字），疑因跨页拼接导致前文缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "carbonate CO (1793 cm−1)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学中羰基通常写作C=O，提取文本中的CO疑似为PDF字符识别错误，多次出现。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：XPS元素浓度(FEC: O16/C41/Li27/F16; VC: O35/C52/Li12)、GC-MS CO/CO2比1:4.4、稀释实验VC峰值(1.0×10^4至1.1×10^5)、固态NMR化学位移峰、半当量实验结论等。不确定处：反应机理为基于谱学数据的假设，非直接观测；CO2在VC体系中未检测到的解释依赖文献推理；'C=O'符号照录提取文本中的'CO'，未擅自修复。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14598,
+      "prompt_tokens": 16128,
+      "total_tokens": 30726,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11407
+      }
+    },
+    "content_chars": 5491
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

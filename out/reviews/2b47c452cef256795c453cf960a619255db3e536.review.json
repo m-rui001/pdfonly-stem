@@ -1,0 +1,45 @@
+{
+  "sha1": "2b47c452cef256795c453cf960a619255db3e536",
+  "title": "Interpretable machine learning for knowledge generation in heterogeneous catalysis",
+  "doi": "https://doi.org/10.1038/s41929-022-00744-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2b47c452cef256795c453cf960a619255db3e536/index.html",
+  "source_chars": 60310,
+  "markdown_chars": 2187,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "limiting potentials at 50 mA cm−2ox of oxygen evolution reaction current",
+      "type": "suspected extraction/rendering error",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "单位 'cm−2ox' 中 'ox' 与单位连接异常，可能为 'cm^-2' 后接 'oxide' 或 'oxygen' 的缩写，但无空格或下标，可能为 PDF 提取拼接错误。原文上下文无法确认真实格式，故照录并标记为疑似错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值和结论：文中提到的365种膦配体、24个簇、约2000个催化剂、四个钙钛矿催化剂、μ/t描述符等均保留；化学吸附趋势与Pauli排斥的解释一致；GAM和PCA等方法的结论方向与原文相符。不确定处：单位'cm−2ox'的准确格式无法确认，已在issues中标出；其他内容均基于提取文本，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6867,
+      "prompt_tokens": 13566,
+      "total_tokens": 20433,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5314
+      }
+    },
+    "content_chars": 2795
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "sha1": "093c5523dc75a52bc1c26531e45bc8afd1e230b4",
+  "title": "Orbitally driven giant phonon anharmonicity in SnSe",
+  "doi": "https://doi.org/10.1038/nphys3492",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/093c5523dc75a52bc1c26531e45bc8afd1e230b4/index.html",
+  "source_chars": 55195,
+  "markdown_chars": 3649,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "𝑉 = 𝑉! + ! !!\n\n! !,! ! ! !,!,!,! Φ!,! 𝑢! 𝑢! + !!",
+      "type": "疑似公式提取损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)中的指数、阶乘符号和求和下标显示为乱码（如!、!!），无法复原为规范LaTeX，照实录出但需注意。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "!,!,!\n\nThe cubic IFCs, Ψ!,!,! , correspond to third-order derivatives",
+      "type": "上下标乱码",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "文本中多处出现“!,!,!”和乱码上下标，疑似PDF提取时数学符号损坏，但可推断为三阶力常量的指标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "(Fig.4-e), similar to the frozen-phonon potential discussed above. As can be seen from Fig. 4-h",
+      "type": "图序号引用疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文中引用Fig.4-e、4-h等，但图注中只有4-a至4-i，未明确标注4-h，疑为提取误差或原图注差异。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "!,!,! We note also that the distortion corresponding to Ψ!,!,!\"",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第7页开头出现“!,!,! We note also”，前面章节的数学符号与正文拼接，可能丢失了前一页的公式或文本，影响连贯性。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：κlat<1 W/mK、zT>2、不同温度下TOc能量（100K约4.5meV，648K约3.6meV）、软化比例（Γ-X约20%，Γ-Y约10%）、群速度下降百分比（TAa 11%和9%，LA 14%和11%）、Born有效电荷和介电常数数值。公式(1)-(4)已按提取文本中的可见符号保留，但公式1存在明显乱码，无法确认完整形式。表I、表II的部分关键数据（如群速度数值）未完全展开，因提取文本中表格数据分散且部分乱码，但已提取主要趋势。图4中的收敛曲线（d0≈6Å）和冻结声子势不对称性已描述。结论与摘要、正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4421,
+      "prompt_tokens": 16319,
+      "total_tokens": 20740,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1539
+      }
+    },
+    "content_chars": 5196,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

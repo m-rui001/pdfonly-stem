@@ -1,0 +1,91 @@
+{
+  "sha1": "04f7010bbb4d349802a14e85844f45da14b5aa9b",
+  "title": "On-machine and in-process surface metrology for precision manufacturing",
+  "doi": "https://doi.org/10.1016/j.cirp.2019.05.005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/04f7010bbb4d349802a14e85844f45da14b5aa9b/index.html",
+  "source_chars": 181680,
+  "markdown_chars": 4629,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "A 1 mm vertical resolution and a 10 mm lateral resolution has been achieved",
+      "type": "疑似单位错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "后文提到将视场缩小到 12 mm×12 mm 和垂直范围 3 mm 时得到该分辨率，垂直/水平分辨率不可能为毫米级，疑为 μm。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Ra values up to 6 mm",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表面粗糙度 Ra 值 6 mm 不合理，疑为 6 μm。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "approximately 45 mm",
+      "type": "疑似单位错误",
+      "severity": "high",
+      "confidence": 0.75,
+      "reason": "SiC 镜面加工误差初始 45 mm 明显不合理，且后文减至约 2 mm，疑为 μm。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "39 mm depth",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "结合上下文为刀具磨损深度，39 mm 显然不合理，疑为 39 μm；但提取文本写作 mm。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "15 mm depth",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "抛光金属板表面变化深度 15 mm 不合理，疑为 μm。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "0.1 mm",
+      "type": "疑似单位错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "多处出现“0.1 mm”垂直分辨率等，结合精密计量语境疑为 0.1 μm。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值，如 4.2 m 镜面、900 rpm、1/20 λ、0.1 nm Sq、0.005°、5 μm 等。大部分数值方向一致；但多处“mm”疑为“μm”，已在 extraction_issues 中列出，markdown 中照录原文。未补充任何未提取的信息，公式仅以文字保留。跨页顺序未发现明显断句问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6276,
+      "prompt_tokens": 42168,
+      "total_tokens": 48444,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2812
+      }
+    },
+    "content_chars": 6176
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

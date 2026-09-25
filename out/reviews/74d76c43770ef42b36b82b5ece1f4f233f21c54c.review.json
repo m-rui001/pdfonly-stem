@@ -1,0 +1,64 @@
+{
+  "sha1": "74d76c43770ef42b36b82b5ece1f4f233f21c54c",
+  "title": "Rapid intensification of the emerging southwestern North American megadrought in 2020–2021",
+  "doi": "https://doi.org/10.1038/s41558-022-01290-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/74d76c43770ef42b36b82b5ece1f4f233f21c54c/index.html",
+  "source_chars": 36186,
+  "markdown_chars": 2271,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "tree-ring reconsructions",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "reconsructions 应为 reconstructions，可能是原文或提取拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Calculations were made form weekly shapefiles",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "form 应为 from，可能为提取或原文笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "available at at https://doi.org/10.25921/8pt9-hz08",
+      "type": "疑似重复单词",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "出现两个 at，可能为提取重复或原文排版问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：2000–2021年降水距平-8.3%、温度+0.91°C；22年异常-0.87σ，第二为-0.83σ；2021年异常-2.58σ，2002年-2.59σ；ACC贡献42%（22年）和19%（2021年）；持续概率94%和75%（无ACC时为76%和33%）。重建技能R²=0.74–0.85。不确定之处：1934年观测优先值-2.12σ已明确；方法中重建细节依据原文描述。提取文本中的拼写疑点不影响数据理解。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6640,
+      "prompt_tokens": 10474,
+      "total_tokens": 17114,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4920
+      }
+    },
+    "content_chars": 3223
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "78d24471d60cff29cd0421e5473d4cb31fc71555",
+  "title": "Governance in the Blockchain Economy: A Framework and Research Agenda",
+  "doi": "https://doi.org/10.17705/1jais.00518",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/78d24471d60cff29cd0421e5473d4cb31fc71555/index.html",
+  "source_chars": 56788,
+  "markdown_chars": 4970,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "agreedupon transactions would be enforced autonomously following rules defined by smart contracts.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "\"agreedupon\" 疑为 \"agreed-upon\" 的抽取缺连字符问题，不影响语义；照录原文可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Non-pecuniary incentives relate observable agent behaviour to non-monetary reward, such",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "前文用 \"behavior\"（美式拼写），此处为 \"behaviour\"（英式拼写），同一段落拼写不一致，可能为原文如此或抽取误差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 35,
+      "quote": "In early 2018, Bitcoin’s proof-ofwork consensus mechanism was estimated to create a yearly CO2 emission equivalent to one million transatlantic flights.",
+      "type": "疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "\"proof-ofwork\" 疑为 \"proof-of-work\" 的排版/抽取缺连字符问题；该估计为2018年新闻报道数据，文中以脚注形式标注来源。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "数据收集部分提到\"Data sampling aligned with preconceptions about challenges in blockchain governance\"",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第13页末尾为\"As such, Swarm City serves as an example of how blockchain might engender the blockchain economy and challenges our understanding of IT governance.\"，第14页开始为完整句子\"Since there was no well-defined company...\"，未见明显断句问题，疑似正常分页。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：数据总量343页（111页访谈转录，215页博客，17页白皮书）；访谈8次（2016年12月至2017年2月5次，2018年2月3次）时长40-90分钟；Swarm City交易费上限1%；比特币工作量证明碳排放约相当于每年100万次跨大西洋航班。已核对治理分析框架的三个维度（决策权、问责、激励）及其理论来源（Weill 2004; Fama & Jensen 1983; Jensen & Meckling 1976; Ba et al. 2001）在文中的定义与引用。已核对四大治理问题的对应关系（表3）及研究议程的问题清单（表4）。不确定处：图1 \"Extended IT Governance Framework\" 的具体视觉内容未被提取文本描述，因此无法在笔记中总结其图形展示方式，只能保留下标引用。表2的访谈者职位清单为提取文本中的列表项，笔记中概括为\"8位与Swarm City相关的个人\"。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3853,
+      "prompt_tokens": 12630,
+      "total_tokens": 16483,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 356
+      }
+    },
+    "content_chars": 6943
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

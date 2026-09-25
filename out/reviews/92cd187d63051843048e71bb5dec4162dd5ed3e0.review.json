@@ -1,0 +1,81 @@
+{
+  "sha1": "92cd187d63051843048e71bb5dec4162dd5ed3e0",
+  "title": "Current Status and Future Prospects of Metal–Sulfur Batteries",
+  "doi": "https://doi.org/10.1002/adma.201901125",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/92cd187d63051843048e71bb5dec4162dd5ed3e0/index.html",
+  "source_chars": 280051,
+  "markdown_chars": 4245,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "charge-storage capacity of less than 800 mA h mg-1",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "上下文均用 mA h g-1，此处 mg-1 与后文容量数值矛盾，应为 g-1。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "~ 10-30 S cm-2 and ~ 10-14 S cm-2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "电导率单位应为 S cm⁻¹，原文两次出现 S cm-2，疑为抽取或排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "shuttle back to the cathode because of the electric field from the anode to the cathode.[12,45,118-121 The resulting",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "引号内缺失闭合方括号，且句子在引号处中断，后接“The resulting”可能跨页，建议核对页码边界。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "carbon back",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "列举导电剂时应为 carbon black，原文作 carbon back，疑为拼写或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 61,
+      "quote": "volumetric energy density of 500 W h L1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "L1 应为 L⁻¹，上标丢失，上下文均为 W h L⁻¹。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对核心数值：硫理论容量1672 mA h g⁻¹，锂金属3862 mA h g⁻¹，锂硫理论能量密度2500 Wh/kg和2780 Wh/L，上/下平台容量418/1254 mA h g⁻¹，硫负载/含量/电解液比等关键阈值得自原文。公式S+2Li=Li2S、S8+16Li=8Li2S等照录。结论方向与原文一致。不确定处：原文电导率单位S cm-2疑似错误，已在issues标注；文献引用号有缺漏未处理。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4991,
+      "prompt_tokens": 102533,
+      "total_tokens": 107524,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1609
+      }
+    },
+    "content_chars": 5732
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

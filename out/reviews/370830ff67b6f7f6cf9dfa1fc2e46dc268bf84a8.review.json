@@ -1,0 +1,65 @@
+{
+  "sha1": "370830ff67b6f7f6cf9dfa1fc2e46dc268bf84a8",
+  "title": "Advanced internet of things for personalised healthcare systems: A survey",
+  "doi": "https://doi.org/10.1016/j.pmcj.2017.06.018",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/370830ff67b6f7f6cf9dfa1fc2e46dc268bf84a8/index.html",
+  "source_chars": 100294,
+  "markdown_chars": 2264,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "many developed countries in \n are now facing the fact that their fast-growing demographics is the over-80s.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在'countries in'后中断，可能缺失国家名称，下一页首行为'are now facing'，存在拼接或缺失单词的可能性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "MOSKUS (Mobile Musculoskeletal User Self-management) [1], [145]is a to develop a smart ICT solution",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "原文'is a to develop'语法不通，可能为提取错误或原文笔误，但无强证据推测正确词。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Thus, we will mainly concern three research issues mentioned in Section II: topology, architecture, security and privacy.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "前文提及多个网络层问题（如网络管理、能耗、QoS等），此处仅列三项，可能是作者有意聚焦，也可能是抽取不完整，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：MSP三个版本准确率（83.6%、93.8%、87.4%）、R. Das心脏病诊断准确率（89.01%）、En-Co-training在90%未标注样本下优于监督方法等，均与原文一致。公式在原文中未出现。保留的引用编号仅用于标识来源身份。不确定处已在extraction_issues中标注，未做推测性修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3608,
+      "prompt_tokens": 23947,
+      "total_tokens": 27555,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1921
+      }
+    },
+    "content_chars": 3468,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

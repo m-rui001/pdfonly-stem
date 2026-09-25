@@ -1,0 +1,64 @@
+{
+  "sha1": "c48fc8c66a1a9736cc8ac0458dd56c4d0ffd5e0e",
+  "title": "3‐D uncertainty‐based topographic change detection with structure‐from‐motion photogrammetry: precision maps for ground control and directly georeferenced surveys",
+  "doi": "https://doi.org/10.1002/esp.4125",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c48fc8c66a1a9736cc8ac0458dd56c4d0ffd5e0e/index.html",
+  "source_chars": 109255,
+  "markdown_chars": 4473,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 63,
+      "quote": "Horizontal Vertical",
+      "type": "疑似抽取不完整",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图8(a)的图例文字'Horizontal Vertical'中很可能缺少数值或方位标注，但无法确知缺失内容，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "However, knowing camera positions more precisely geve little gain",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "上下文及语义要求此处为过去式主动词，'geve' 应为 'gave' 的拼写错误，但原文如此，照录并标注。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 32,
+      "quote": "then rotational georeferencing components formed an import contribution to dilute point precision",
+      "type": "疑似缺词/拼写错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "短语 'an import contribution' 语法不通，疑为 'an important contribution' 之误，属强文本内证据支持的疑似抽取或原文错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：loD公式（式1）与M3C2-PM的LoD95%公式（式2）均已照录并明确变量含义；案例区面积约4700 m²（表5用4710 m²）、2014/2015影像数104/99、GCP 19/20个、蒙特卡洛4000次迭代、研究区水平/垂直精度23/26 mm、年度变化四种方法的平均变化值（-36.5/-25.4/-3.5/-18.2 mm/a）与表5泥沙量数值一致；n^(-1/2)缩放关系、直接地理参考与GCP精度比较（约1/3、2–3倍）均出自原文。相机模型、相关性判断（Model A保留、Model B过参数化）与原文结论方向一致。不确定处：表5中面积4710 m²与正文'~4,700 m2'略有出入，系原文如此；'geve'、'import contribution'两处拼写为照录并标注的文本疑点；图11及表3部分数值来自图表本身但未在正文逐字复述，笔记仅保留正文实际描述的数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3842,
+      "prompt_tokens": 27914,
+      "total_tokens": 31756,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 538
+      }
+    },
+    "content_chars": 5808
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

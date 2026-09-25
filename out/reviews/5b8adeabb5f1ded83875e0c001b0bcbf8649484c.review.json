@@ -1,0 +1,129 @@
+{
+  "sha1": "5b8adeabb5f1ded83875e0c001b0bcbf8649484c",
+  "title": "Cations in Octahedral Sites: A Descriptor for Oxygen Electrocatalysis on Transition‐Metal Spinels",
+  "doi": "https://doi.org/10.1002/adma.201606800",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5b8adeabb5f1ded83875e0c001b0bcbf8649484c/index.html",
+  "source_chars": 44467,
+  "markdown_chars": 8352,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Please cite this article as doi: 10.1002/ad.201606800.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文首页引用的 DOI 为 10.1002/ad.201606800，与登记 DOI 10.1002/adma.201606800 不一致，疑为 OCR 漏字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "with $ \\delta $ ranging from 0.1 to",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "化学式后 δ 范围句子在页末截断，缺少上界数值，影响对氧非化学计量范围的完整理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$ \\mathrm{M n C o_{2} O_{4}} $ -500 $ ^{\\circ} \\mathrm{C} $ , where $ < 3 $ w% $ \\mathrm{M n O_{x}} / \\mathrm{C o O_{x}} $ is present",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "杂质相写作 MnOₓ/CoOₓ，可能为 OCR 对具体杂质相名称的模糊化，但原文未给出更明确形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the $ e_{\\mathrm{g}} $ occupancy of active transition metal cations at octahedral site is the activity descriptor",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该处 e_g 未加下标花括号，与全文其他位置 e_{\\mathrm{g}} 写法不一致，属公式符号格式损失，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "$ \\mathrm{C o}^{3+} $ $ (t_{2\\mathrm{g}}^{6}-x\\mathrm{e}{\\mathrm{g}}^{\\mathrm{x}}), $ low spin) to $ \\mathrm{C o}^{3+} $ $ (t{2\\mathrm{g}}^{6}-x\\mathrm{e}{\\mathrm{g}}^{\\mathrm{x}}), $ $ x \\approx 1 $ , intermediate spin)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "自旋态公式中 t_{2g} 与 e_g 的下标花括号在第二处丢失（t{2g}、e{g}），且两处公式完全相同却分别标注低自旋与中间自旋，疑有符号抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "tetragonal $ (\\mathrm{M n}{x-2} \\mathrm{C o}{3-x}){\\mathrm{t e t}}(\\mathrm{M n}{2}){\\mathrm{o c t}} \\mathrm{O}{4+ \\delta} $ spinel",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "化学式下标花括号丢失（Mn{x-2}、Co{3-x}、Mn{2}、O{4+δ}），且 Mn 下标 x-2 与常见化学计量写法不符，疑为 OCR 抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "$ \\mathrm{M n C o_{2} O_{4}-1 5 0} $ $ ^{\\circ} \\mathrm{C} $ was produced by hydrothermally treating",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "温度标记与化学式之间空格异常，属 OCR 排版噪声，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "$ \\mathrm{M n_{x} C o_{3}-} $ $ \\mathrm{x O_{4}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "MnₓCo₃₋ₓO₄ 的下标被拆断为 Co_{3}- 与 x O_{4}，公式结构损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "10 $ \\mu\\mathrm{L} $ of as-prepared ink with the final concentrations of $ 1.8\\mathrm{m g_{O x i d e}} $ mL $ ^{-1} $ $ 4.2\\mathrm{m g_{A B}} $ mL $ ^{-1} $ , and $ 1\\mathrm{m g_{N a f i o n}} $ mL $ ^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "浓度数值之间缺少分隔标点，属 OCR 标点丢失，数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "Red circle is the Mn of tetragonal spinels $ (\\mathrm{M n_{2} C o_{1} O_{4}},\\mathrm{M n_{2.5} C o_{0.5} O_{4}} $ and $ \\mathrm{M n_{3} O_{4}} $ )",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "Mn₂Co₁O₄ 写作 Co₁ 而非 Co，与正文 MnₓCo₃₋ₓO₄ 体系表述略有出入，疑为 OCR 或原文排版问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Cations in Octahedral Sites: A Descriptor for Oxygen Electrocatalysis on Transition Metal Spinels",
+  "self_check": "已核对：摘要与结论均指向八面体位活性阳离子 e_g 占据数为尖晶石 ORR/OER 描述符；MnCo₂O₄ 中 Mn 价态 +3.2 至 +3.7、Co 约 +2.5、约 80% Mn 占八面体、约 10% 占四面体；ORR 极限电流约 5.5 mA cm⁻²_disk、Pt/C 约 5.7 mA cm⁻²_disk、K-L 斜率 0.151 mA cm⁻²_disk rpm⁻⁰·⁵；ORR 火山峰位于 Mn³·⁴⁺、本征活性定义 25 μA cm⁻²_Oxi；共 17 种尖晶石、活性差异约 3 个数量级（ORR）与约 2 个数量级（OER）；e_g≈1 最优、共价性导致约 120 mV 偏差。仍不确定处：δ 上界缺失；Li₂Co₂O₄ 自旋态公式两处相同却分别标注低自旋与中间自旋，疑 OCR 损坏；MnₓCo₃₋ₓO₄ 与 (Mnₓ₋₂Co₃₋ₓ)_tet(Mn₂)_octO₄₊δ 下标抽取异常，已照录可见文本。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7020,
+      "prompt_tokens": 14052,
+      "total_tokens": 21072,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12355,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

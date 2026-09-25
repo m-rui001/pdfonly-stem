@@ -1,0 +1,102 @@
+{
+  "sha1": "809af16c10358cb7a9d7f0e9c264717800144cfa",
+  "title": "Promoter Effects of Alkali Metal Cations on the Electrochemical Reduction of Carbon Dioxide",
+  "doi": "https://doi.org/10.1021/jacs.7b06765",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/809af16c10358cb7a9d7f0e9c264717800144cfa/index.html",
+  "source_chars": 58093,
+  "markdown_chars": 11641,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "$ 0.05 \\mathrm{M} \\mathrm{M}{2} \\mathrm{CO}{3} $ (M referring to an alkali metal cation)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标丢失：M₂CO₃ 被抽取为 M2CO3，CO3 被抽取为 CO3，影响电解质组成的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The cathode chamber was sparged with $ \\mathrm{CO}{2} $ (99.999% Praxair)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "CO₂ 的下标 2 在抽取中丢失，显示为 CO2 的 LaTeX 形式，属符号损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "the partial currents for $ \\mathrm{H C O O}^{-}, $ $ \\mathrm{C}{2} \\mathrm{H}{4}, $ and $ \\mathrm{C}{2} \\mathrm{H}{5} \\mathrm{O H}. $ No significant effect on the partial currents of $ \\mathrm{H}{2}, $ CO, and $ \\mathrm{C H}{4}, $ was observed.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "多个化学式的下标丢失（C₂H₄、C₂H₅OH、H₂、CH₄ 被抽取为 C2H4、C2H5OH、H2、CH4），影响产物识别的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "We note that $ \\mathrm{H^{}} $ does not have a significant value of $ \\mu $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "吸附态氢 *H 的星号标记丢失，显示为 H^{}，影响对吸附物种的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "reduction of $ ^{} $ CO to form $ ^{} $ CHO is the limiting step",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "吸附态标记 *CO 和 *CHO 的星号丢失，显示为 ^{} CO 和 ^{} CHO，影响对反应路径的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "the field stabilization should be large, $ \\sim1 $ eV for fields of $ \\sim-1 $ V/ $ \\mathrm{\\AA} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文中 CO₂、OCCO、OCCHO 等吸附质列表在抽取中缺少逗号分隔，可能影响阅读顺序，但数值本身可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "deposited on crystalline Si(100) and(111) surfaces",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "Si(111) 被抽取为 (111)，缺少 Si 标识，但结合上下文可推断为 Si(111)。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Promoter effects of alkali metal cations on the electrochemical reduction of carbon dioxide",
+  "self_check": "已核对摘要、正文数据与结论的一致性：总电流密度随阳离子尺寸增大而增加（Figure 2）；HCOO⁻、C₂H₄、C₂H₅OH 分电流随阳离子尺寸增大而增加，H₂ 和 CO 基本不受影响（Figure 3）；Cu(111) 上 CsHCO₃ 中 C₂H₄ 约 40% FE（Figure 5）；混合电解质中少量大阳离子主导产物分布（Figure 6）；Ag 和 Sn 上 CO 和 HCOO⁻ 电流密度随阳离子尺寸增加（Figure 7）；乙二醛还原中 CH₃CHO 和 C₂H₅OH 分电流不受阳离子尺寸影响（Figure 8）；DFT 计算的偶极矩和极化率（Table 1）与场稳定化结论一致；ΔΔE 随阳离子尺寸增大而更负，顺序为 Li⁺ < Na⁺ < K⁺ < Rb⁺ < Cs⁺（Figure 11）。公式 ΔE = με − ½αε² + … 和 U = (Φ − Φ_SHE)/e 已原样保留。仍不确定之处：部分化学式下标在 OCR 中丢失（如 M₂CO₃、CO₂、C₂H₄ 等），已在 extraction_issues 中标出；Figure 9 和 Figure 10 的具体数值未在正文文字中完整提取，仅依据正文描述保留其结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8247,
+      "prompt_tokens": 16140,
+      "total_tokens": 24387,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14623,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,431 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>General Techno-Economic Analysis of CO 2 Electrolysis Systems</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>General Techno-Economic Analysis of CO 2 Electrolysis Systems</h1><p class="meta">https://doi.org/10.1021/acs.iecr.7b03514 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>Title: A General Techno-Economic Analysis of $ \mathrm{C O_{2}} $ Electrolysis Systems</p>
+<p>Matthew Jouny, Wesley Luc, Feng Jiao $ ^{*} $</p>
+<p>Center of Catalytic Science and Technology, Department and Biomolecular Engineering University of Delaware, Newark, DE 19716 USA</p>
+<p>*Corresponding author: jiao@udel.edu</p>
+<h2>Abstract</h2>
+<p>The electrochemical reduction of carbon dioxide $ \left( \mathrm{C O}<em>{2} \right) $ has received significant attention in academic research, although the techno-economic prospects of the technology for the large-scale production of chemicals are unclear. In this work, we briefly reviewed the current state-of-the-art $ \mathrm{C O}</em>{2} $ reduction figures of merit, and performed an economic analysis of a generalized $ \mathrm{C O}<em>{2} $ electrolyzer system for the production of 100 tons/day of various $ \mathrm{C O}</em>{2} $ reduction products. While carbon monoxide and formic acid were the most economically favorable products under current conditions, higher-order alcohols such as ethanol and n-propanol could be highly promising if reasonable electrocatalytic performance benchmarks were achieved. Herein, we established performance targets such that if these targets are achieved, electrochemical $ \mathrm{C O}_{2} $ reduction for fuels and chemicals production can become a profitable option as part of the growing renewable energy infrastructure.</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><h2>1. Introduction</h2>
+<p>Atmospheric carbon dioxide $ \left( \mathrm{C O}<em>{2} \right) $ emissions have recently reached the highest levels in human history. It is widely believed that failure to curb these rising emissions could lead to potentially devastating climate change effects. $ ^{1} $ Mitigating $ \mathrm{C O}</em>{2} $ emissions on a global scale remains a major challenge since the global population, and subsequently the global energy usage, is projected to continue to increase. Although renewable energy sources such as wind and solar are beginning to gain more market share, fossil fuel resources will continue to be the dominate energy source through the mid-century. A major driver for this is the continued dependence of the transportation and chemical sectors on fossil fuels. For example, the U.S. Energy Information Administration (EIA) estimated that while renewable sources will account for over 27% of electricity generation by 2040, renewable energy in the transportation and chemical sectors will only be &lt;1% and 9%, respectively. $ ^{2} $ This is because petroleum-based vehicles will continue to dominate economically, and fossil fuel sources will continue to be a critical chemical feedstock in the near future.</p>
+<p>The conversion of $ \mathrm{C O_{2}} $ into fuels and chemicals using renewable electricity is one promising method of increasing the penetration of renewables into the fuels and chemicals industry. $ ^{3-5} \mathrm{C O_{2}} $ conversion can be performed through biological, thermochemical, photochemical, and electrochemical means, each of which has been widely studied. $ ^{6-8} $ Electrochemical conversion of $ \mathrm{C O_{2}} $ has several advantages including: fine control of reaction rates/selectivities through the applied voltage, wide scalability due to modular electrolyzer designs, and excellent coupling to intermittent renewable energy sources. With this process, carbon-neutral electricity sources such as wind, solar, and nuclear can be used to electrochemically reduce $ \mathrm{C O_{2}} $ to valuable fuels and chemicals, thus closing the carbon loop and reducing $ \mathrm{C O_{2}} $ emissions.</p>
+<p>In recent years, there has been a remarkable increase in studying electrochemical $ \mathrm{C O_{2}} $ reduction （e $ \mathrm{C O_{2}} $ R). Most research has been focused on the fundamental understanding of the catalysis and reaction mechanisms, while other works involved the design of lab-scale $ \mathrm{C O_{2}} $ electrolyzer flow systems. $ ^{9-13} $ However, there has been limited efforts related to understanding the feasibility of this technology as a means of producing fuels and chemicals on a techno-economic basis, as well as what role $ \mathrm{e C O_{2}} $ R could play in the future renewable energy infrastructure. Some researchers have raised questions regarding the potential of $ \mathrm{C O_{2}} $ reduction to mitigate $ \mathrm{C O_{2}} $ emissions at an appreciable level, and whether the process can be performed in an economical way competitive to traditional chemical manufacturing processes. $ ^{14} $ In this work, we reviewed the historical performance trends for the electrochemical reduction of $ \mathrm{C O_{2}} $ to commonly reported $ \mathrm{C O_{2}} $ reduction products. Next, we developed a techno-economic model for a generalized $ \mathrm{e C O_{2}} $ R plant. Using this model, we analyzed the economic viability of various reduction products under current and future conditions and proposed performance targets to enable the profitable production of these products. Finally, we considered the role $ \mathrm{e C O_{2}} $ R can play in reducing greenhouse gas emissions as part of the future renewable energy infrastructure.</p>
+<h2>2. $ \mathrm{C O_{2}} $ Reduction Products</h2>
+<p>The electrochemical reduction of $ \mathrm{C O_{2}} $ can proceed through a two-, four-, six-, eight-, twelve-, or even an eighteen-electron reduction pathway to produce various gaseous products (carbon monoxide, methane, and ethylene) and liquid products (formic acid, methanol, ethanol, and propanol). Table 1 summarizes seven common $ \mathrm{C O_{2}} $ electrochemical reduction products and</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>their half-cell electrochemical reactions as well as the thermodynamic electrode potentials versus the standard hydrogen electrode (V vs SHE) under standard conditions, calculated from the standard Gibbs free energies. Others have also reported up to sixteen different $ \mathrm{C O_{2}} $ reduction products including gloyoxal, ethylene glycol, acetaldehyde, propionaldehyde, etc. $ ^{15-16} $ However, these products are either reported as trace amounts or uncommon; and thus, the seven major products listed in Table 1 are the main focus. In addition, if $ \mathrm{C O_{2}} $ reduction is performed in aqueous environment, then the undesirable hydrogen evolution reaction also occurs in competition to the $ \mathrm{C O_{2}} $ reduction reaction (also listed in Table 1).</p>
+<div>
+
+Table 1: Selected standard potentials for the electrochemical reduction of $ \mathrm{C O_{2}} $
+
+</div>
+<table><tbody><tr><td>Half-Cell Electrochemical Reactions</td><td>Potential(V vs SHE)</td></tr><tr><td>$CO_{2(g)}+2H^{+}+2e^{-}\leftrightarrow CO_{(g)}+H_{2}O_{(l)}$</td><td>-0.106</td></tr><tr><td>$CO_{2(g)}+2H^{+}+2e^{-}\leftrightarrow HCOOH_{(l)}$</td><td>-0.250</td></tr><tr><td>$CO_{2(g)}+6H^{+}+6e^{-}\leftrightarrow CH_{3}OH_{(l)}+H_{2}O_{(l)}$</td><td>0.016</td></tr><tr><td>$CO_{2(g)}+8H^{+}+8e^{-}\leftrightarrow CH_{4(g)}+2H_{2}O_{(l)}$</td><td>0.169</td></tr><tr><td>$2CO_{2(g)}+12H^{+}+12e^{-}\leftrightarrow C_{2}H_{4(g)}+4H_{2}O_{(l)}$</td><td>0.064</td></tr><tr><td>$2CO_{2(g)}+12H^{+}+12e^{-}\leftrightarrow C_{2}H_{5}OH_{(l)}+3H_{2}O_{(l)}$</td><td>0.084</td></tr><tr><td>$3CO_{2(g)}+18H^{+}+18e^{-}\leftrightarrow C_{3}H_{7}OH_{(l)}+5H_{2}O_{(l)}$</td><td>0.095</td></tr><tr><td>$2H^{+}+2e^{-}\leftrightarrow H_{2(g)}$</td><td>0.000</td></tr></tbody></table>
+<p>As shown in Table 1, $ \mathrm{C O_{2}} $ can be electrochemically reduced to several products at similar potentials, and thus, a critical equation arises: which $ \mathrm{C O_{2}} $ reduction product should be targeted for commercialization? The answer to this question greatly depends on economics, the supply and demand of certain products, which indirectly relates to the current state-of-the-art technologies that can affect the overall costs and production rates. To help facilitate this discussion, the market price (US $ \mathrm{k g}^{-1} $ ) of the seven $ \mathrm{C O_{2}} $ reduction products are listed in Table 2 and these values were taken and averaged from various sources including the Independent Chemical Information Service (ICIS), U.S. EIA and various published works. $ ^{17-19} $ The market price was also normalized to the number of required electrons to incorporate the electrical cost to produce each product since ideally, electrical energy will be used to drive the reduction of $ \mathrm{C O_{2}} $ . Lastly, the annual global production of each product was also tabulate, which reflect the market capacity and demand for each product and were also taken from various sources including the U.S. Department of Energy (DOE), private company/organization websites, and various published works. $ ^{20-24} $</p>
+<p>In the case of carbon monoxide (CO), it was broken down into two sub-products, syngas and pure CO, since majority of industrially produced CO is in the form of syngas and is typically produced in-line with downstream gas-to-liquid processing units. Interestingly, although formic acid had the highest normalized market price $ (16.1\times 10^{-3}$ $ \mathrm{e l e c t r o n}^{-1} $ ), which is reflected by the number of electrons needed to produce formic acid, the annual production of formic acid was the second to</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><p>lowest (0.6 million metric tons per year). This value reflects the limited industrial use of formic acid as preservative and antibacterial agent. On the contrary, being a major source for power generation and domestic heating as well as having abundant sources of natural gas, methane had the highest annual production (250 million metric tons per year) and the lowest normalized market price $ (0.4\times 10^{-3} $ electron $ ^{-1} $ ). Turning to n-propanol, although this chemical is an industrially important chemical precursor, it had the lowest annual production (0.2 million metric tons per year) because it is limited by the difficulty in production. However, if n-propanol could be efficiently produced through $ \mathrm{CO_{2}} $ reduction, it could supplant ethanol as a transportation fuel additive due to its higher energy density, greatly increasing its potential market share. From Table 2, it can be concluded that the highly desirable products include ethylene, methanol, ethanol, and syngas since these products have high market capacity as well as decent normalized market prices. These four products have major industrial uses as chemical precursors, fuel additives, and fuel for energy generation. It must be noted that these values were organized from an economic perspective to facilitate the following discussion about the economic analysis of the $ \mathrm{CO_{2}} $ electrochemical reduction process. The overall assessment of which product is the most desirable for $ \mathrm{CO_{2}} $ electrolysis technology will take the state-of-the-art technologies such as catalyst, electrochemical reactor design, separation, and storage into account.</p>
+<div>
+
+Table 2: Market price and annual global production of major $ \mathrm{C O_{2}} $ reduction products
+
+</div>
+<table><tbody><tr><td>产品</td><td>Number of Electrons</td><td>Market Price($/kg)</td><td>Normalized Price($/electron)X10^{3}$</td><td>Annual Global Production(Mtonne)</td></tr><tr><td>Carbon monoxide(syngas)</td><td>2</td><td>0.06</td><td>0.8</td><td>150.0</td></tr><tr><td>Carbon monoxide</td><td>2</td><td>0.6</td><td>8.0</td><td>-</td></tr><tr><td>Formic acid</td><td>2</td><td>0.70</td><td>16.1</td><td>0.6</td></tr><tr><td>Methanol</td><td>6</td><td>0.60</td><td>3.1</td><td>110.0</td></tr><tr><td>Methane</td><td>8</td><td>0.18</td><td>0.4</td><td>250.0</td></tr><tr><td>Ethylene</td><td>12</td><td>1.30</td><td>3.0</td><td>140.0</td></tr><tr><td>Ethanol</td><td>12</td><td>1.00</td><td>3.8</td><td>77.0</td></tr><tr><td>n-Propanol</td><td>18</td><td>1.40</td><td>4.8</td><td>0.2</td></tr></tbody></table>
+<h2>3. Figures of Merit</h2>
+<p>The $ \mathrm{C O_{2}} $ molecule is a fully oxidized and thermodynamically stable and thus catalysts are needed to help facilitate the chemical transformation to minimize the energy penalty required to reduce $ \mathrm{C O_{2}} $ . The study of catalysts for the electrochemical reduction of $ \mathrm{C O_{2}} $ can be dated back to the mid-1980s when Hori et al. completed a comprehensive study on various transition-based metal electrodes to determine their selectivity as well as their catalytic activity towards different $ \mathrm{C O_{2}} $ reduction products. $ ^{25-26} $ Metals such as Au, Ag, and Zn were discovered to be selective towards producing CO while metals such as Pb and Sn were selective towards producing formic</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>acid. Interestingly, Cu was the only metal that could reduce $ \mathrm{C O_{2}} $ to $ \mathrm{C_{2}} $ hydrocarbons and alcohols at appreciable levels. Since then, there have been significant efforts in developing new catalysts to improve selectivity, catalytic activity, and overall stability. These efforts include developing nanostructured catalysts to increase the number of active sites, $ ^{27-31} $ tuning selectivity by developing bimetallic catalysts, $ ^{32-33} $ and even exploring catalysts beyond just simple metallics such as transition metal chalcogenides $ ^{34-35} $ and even nitrogen-doped carbon-based materials that have shown interesting catalytic abilities. $ ^{36-37} $ In addition, the choice of electrolyte, electrochemical reactor design, electrode preparation, and delivery of reactant and products to and from the active sites have also been studied to improve the overall performance of $ \mathrm{e C O_{2} R}. $ $ ^{10-11}, $ $ ^{38-41} $</p>
+<p>In general, an efficient $ \mathrm{C O_{2}} $ electrolyzer requires not only highly active, stable, and selective catalysts, but also durable devices with minimal ohmic resistance and high mass transport properties under reacting conditions. The characterization of each individual feature of an electrolyzer is quite complex. However, there are several figures of merit that are commonly used to characterize the performance of an electrochemical system, namely current density, Faradaic efficiency, energetic efficiency, and stability. $ ^{5,42} $</p>
+<p>The current density is defined as the current flow divided by the active electrode area at a given potential. The most commonly used is the geometric area. The current density is a measure of the electrochemical reaction rate (catalytic activity) per area of electrode and is used to determine the overall electrode size needed to obtain a desired reaction rate. Furthermore, the current density is also dependent on multiple factors such as catalyst loading, utilization of the catalyst, and transport rate of reactants and products to and from the electrode. High current density is ideal since it minimizes the overall electrolyzer size and reduces capital investment for a desired production rate.</p>
+<p>The Faradaic efficiency, also known as the current efficiency, for a given product is defined by the following equation:</p>
+<div class="formula">$$
+\varepsilon_ {F a r a d a i c} = \frac {z \cdot n \cdot F}{Q}
+$$</div>
+<p>where z is the number of required electrons to produce a given product, n is the number of moles of the given product, F is Faraday's constant, and Q is the total charged passed. In other words, the Faradaic efficiency of a given product is the selectivity of reducing $ \mathrm{C O_{2}} $ to that product. A high Faradaic efficiency is desired to minimize necessary separation processes that could dramatically increase the overall capital and operational costs.</p>
+<p>The energetic efficiency is defined by the following question:</p>
+<div class="formula">$$
+\varepsilon_ {e n e r g e t i c} = \sum_ {i} \frac {E _ {i} ^ {o} \varepsilon_ {i , F a r a d a i c}}{E _ {i} ^ {o} + n}
+$$</div>
+<p>where $ E_{i}^{o} $ is the equilibrium cell potential for product i, $ \varepsilon_{i,Faradaic} $ is the Faradaic efficiency of product i, and n is the total cell overpotentials including the anodic and cathodic kinetic activations, limited mass transports, and ohmic resistances. The energetic efficiency describes the ratio</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>between energy stored in the desired products versus input energy needed to produce those products. Qualitatively, a high energetic efficiency signifies a small energy penalty needed to produce the desired product.</p>
+<p>The stability describes the gradual degradation/deactivation of the electrode catalyst and the overall electrochemical cell. Unfortunately, the durability of the electrochemical cell is probably the least studied aspect of electrochemical reduction of $ \mathrm{C O_{2}} $ and is strongly affected by the nature of working load and operating conditions. It has also been known that slight impurities in the electrolyte can significantly deactivate or alter the catalytic performance of $ \mathrm{C O_{2}} $ reduction catalysts. In regards to other related technologies, PEM water-splitting electrolyzers have shown to operate beyond 20,000 hrs under mild conditions; and therefore, $ \mathrm{C O_{2}} $ electrolyzers will probably need to operate with lifetimes of similar ranges. $ ^{5} $ Overall, better stability will reduce maintenance and replacement costs as well as downtime during operation.</p>
+<div>
+
+Figure 1: $ \mathrm{C O_{2}} $ reduction Faradaic efficiencies versus year (when reported) for a) $ \mathrm{C_{1}} $ and b) $ \mathrm{C_{2}-C_{3}} $ products. 15,25-28,30-31,33-37,39,43-72
+
+</div>
+<p>Figures 1 shows the general trends of Faradaic efficiencies towards various $ \mathrm{C O_{2}} $ reduction products versus time dating back to the comprehensive study published by Hori et al. in 1985 $ \mathrm{C_{1}} $ products for Figure 1a and $ \mathrm{C_{2}-C_{3}} $ products for Figure 1b). $ ^{25-26} $ Although both homogeneous and heterogeneous catalysts for $ \mathrm{C O_{2}} $ reduction have been reported, heterogeneous catalysts are the main focus of this review considering the robustness of the catalysts. It must be noted, that Figure 1 does not fully reflect the true performance of the state-of-the-art catalysts since some catalysts were able to achieve high selectivity (i.e., Faradaic efficiency) by sacrificing catalytic activity (i.e., current density) and vice-versa, which will be discussed in detail in the following section. In the case of $ \mathrm{C_{1}} $ products, Faradaic efficiencies for CO and formic acid have been consistently high (&gt;80%) with majority of these catalysts being Ag and Sn-based for CO and formic acid production, respectively. In the case of methanol, only a few catalysts were reported to be methanol selective and the reported methanol Faradaic efficiencies varied greatly from 30% to 98%. On the contrary, methane Faradaic efficiencies have been consistently low (&lt;50%) with majority of these catalysts being Cu-based. In the case of $ \mathrm{C_{2}} $ products, Faradaic efficiencies of ethylene and ethanol have, but</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><p>not until recently, been consistently low and majority of these catalysts were also Cu-based. However, in 2016, significant strides have been made on improving the Faradaic efficiency for $ C_{2} $ products, achieving as high as 41% and 63% for ethylene and ethanol, respectively. $ ^{67} $ For the case of $ C_{3} $ products, the Faradaic efficiency for n-propanol was still significantly low (&lt;5%) which reflects the energy intensive (18 electrons) process and complex reaction pathway that requires multiple of carbon-carbon coupling.</p>
+<div>
+
+Figure 2: Faradaic efficiency versus current density for a) $ C_{1} $ and c) $ C_{2}-C_{3} $ products and energetic efficiency versus current density for c) $ C_{1} $ and d) $ C_{2}-C_{3} $ products. 15,25-28,30-31,33-37,39,43-72
+
+</div>
+<p>Figures 2a and c show the Faradaic efficiencies versus current density while Figures 3b and d show the energetic efficiencies for $ C_{1} $ and $ C_{2}-C_{3} $ products versus current density, respectively. In the case of energetic efficiencies, majority of $ \mathrm{C O_{2}} $ reduction research only focused on the cathodic reaction and only reported the overpotential of the $ \mathrm{C O_{2}} $ reduction reaction. Because of this, the assessment assumed that the anodic reaction was the water oxidation reaction with a standard potential of 1.23 V vs SHE with an anode overpotential of 0.3 V, typical activation overpotential for the state-of-the-art oxygen evolution reaction catalyst. $ ^{73} $ It must be noted that each data point was not consistent with each other and varied in terms of type of catalyst, electrode preparation, electrochemical cell configuration, and operating conditions. With that in</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>consideration, Figure 2 aims to convey the general catalytic performance trends of various catalysts towards producing CO, formic acid, methanol, methane, ethylene, ethanol, and n-propanol. Overall, it has been difficult to simultaneously achieve high current density, Faradaic efficiency, and energetic efficiency, which illustrates that further efforts are needed to develop better $ \mathrm{C O_{2}} $ reduction catalysts. In general, high Faradaic efficiencies can be achieved at the expense of current densities, and majority of the energetic efficiencies for reduction $ \mathrm{C O_{2}} $ were less than 60%. It must be noted that majority of reported $ \mathrm{C O_{2}} $ reduction studies were conducted under short timescales (&lt;5 hrs), and thus long term stability in the range of hundreds or even thousands of hours are unknown.</p>
+<h2>4. Model for $ \mathrm{C O_{2}} $ Electrolyzer System</h2>
+<p>Despite the significant amount of research that has been performed on $ \mathrm{eCO_{2}R} $ catalysts and electrolyzers, there have been few technical and economic analyses that evaluate the potential and feasibility of implementing the $ \mathrm{CO_{2}} $ electrolyzer technology on a large scale. Previously, Perez-Fortes et al. analyzed the economic and environmental potential of $ \mathrm{CO_{2}} $ reduction to formic acid using ChemCAD simulations. $ ^{74} $ Li et al. investigated the greenhouse gas emission reductions and economic viability of an electrochemical $ \mathrm{CO_{2}} $ to CO system coupled with a Fischer-Tropsch process to produce synthetic fuels. $ ^{75} $ Furthermore, Verma et al. developed a gross-margin model to determine and compare the maximum feasible operating voltage for the production of various $ \mathrm{CO_{2}} $ electrolysis products. $ ^{76} $</p>
+<p>Although these various investigations provide useful insights to the economic potential of $ \mathrm{C O_{2}} $ reduction, there still lacks a capital investment analysis of a general $ \mathrm{C O_{2}} $ electrolysis system, from which the return on capital investment and time-valued net present value for the production of the most commonly reported products can be determined. Due to the lack of commercially developed analogues for a $ \mathrm{C O_{2}} $ reduction process, a highly detailed analysis is difficult. However, the use of engineering approximations and assumptions based on existing technologies allow for an insightful analysis to be made.</p>
+<p>Herein, we developed an economic model for a $ \mathrm{C O_{2}} $ electrolyzer system that calculated the material and energy balances for the process, estimated the capital investment and operating costs, and performed a cash flow analysis to determine the end-of-life net present value (NPV). This allowed for the comparison of various $ \mathrm{C O_{2}} $ reduction products, as well as the sensitivity to the potentially changing operating/market conditions. A schematic of the general $ \mathrm{C O_{2}} $ reduction system is shown in Figure 3.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 3: Schematic of a general $ \mathrm{C O_{2}} $ electrolysis process.
+
+</div></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><p>In a general $ \mathrm{eCO_{2}R} $ process, $ \mathrm{CO_{2}} $ is first captured from either a point source or the air, and purified for use in the $ \mathrm{CO_{2}} $ electrolysis system. The concentrated $ \mathrm{CO_{2}} $ stream is fed along with water to the $ \mathrm{CO_{2}} $ electrolyzer system, where liquid and gas products are formed. The liquid products that are formed in the electrolyte stream are fed to a separation system to extract the liquid products, while the electrolyte is recycled back to the electrolyzer. Since the single pass accumulation for liquid products is typically very small ( $ &lt; 0.01\% $ ), the electrolyte is recycled until the liquid products accumulate to an appreciable amount before separation. The gas products, along with unconverted $ \mathrm{CO_{2}} $ and byproduct hydrogen, are separated in a gas separation unit, from which the $ \mathrm{CO_{2}} $ is recycled back to the reactor. The gas products are then compressed for storage and transportation, or fed to another downstream chemical process.</p>
+<h2>5. Modeling of System Components</h2>
+<h2>5.1 $ \mathrm{C O_{2}} $ Capture</h2>
+<p>To provide an estimate for the capital costs of the $ \mathrm{C O_{2}} $ capture &amp; purification process, various existing technologies were first examined. The $ \mathrm{C O_{2}} $ feedstock for the electrochemical process can be obtained either from a point source such as a power plant or chemical facility, or directly from the atmosphere. The incorporation of $ \mathrm{C O_{2}} $ capture systems to coal and natural gas power plants is currently an area of intense research. The current state-of-the-art involves chemical adsorption using monoethanolamine (MEA) at a cost of $ 70 $ USD per ton of $ \mathrm{C O_{2}} $ captured. $ ^{77} $ This high cost is the main barrier for the incorporation of $ \mathrm{C O_{2}} $ capture to power plants. Through solvent and process design improvements, the cost of capture could be reduced to as much as $ 44 $ USD per ton $ \mathrm{C O_{2}} $ $ ^{78} $ Furthermore, the use of $ \mathrm{C O_{2}} $ in an electrochemical conversion to create value added products could also increase the economic viability of capture. One concern of $ \mathrm{C O_{2}} $ capture from point sources is the presence of other combustion products such as $ \mathrm{S O_{x}} $ and $ \mathrm{N O_{x}} $ compounds. The impact of these compounds on electrolyzer performance is not yet understood, but the $ \mathrm{C O_{2}} $ stream likely needs to be of high purity for stable and efficient conversions.</p>
+<p>Alternatively, the capture of $ \mathrm{C O_{2}} $ from air has yet to be commercially developed, although a small demo facility by Climeworks in Switzerland recently opened. The cost estimates for such a system range anywhere between US$30-US$1000 per ton of $ \mathrm{C O_{2}} $ $ ^{79-80} $ One advantage of DAC is the portability of the process, which allows for distributed use, which couples well with renewable energy sources. Furthermore, the capture of $ \mathrm{C O_{2}} $ from air represents a net-reduction in $ \mathrm{C O_{2}} $ as opposed to avoided emissions since the $ \mathrm{C O_{2}} $ is being taken from the atmosphere. For the purposes of this analysis, it was assumed that $ \mathrm{C O_{2}} $ was obtained at a base price of US$100 per ton.</p>
+<h2>5.2 Electrochemical Cell</h2>
+<p>Currently, $ \mathrm{C O_{2}} $ electrolyzers exist only at the bench scale. Furthermore, there is no standard design for a $ \mathrm{C O_{2}} $ electrolyzer cell with several configurations reported. $ ^{12-13,70} $ To provide an estimate for the capital costs of an electrolyzer system, an alkaline water electrolyzer stack as a representative model was used. In $ \mathrm{C O_{2}} $ electrolysis, non-precious metal catalysts are used, making the alkaline comparison appropriate. Furthermore, the auxiliary systems and balance of plant for a $ \mathrm{C O_{2}} $ electrolyzer are likely to be similar. The main difference would be the electrolyzer design requiring a direct feed of $ \mathrm{C O_{2}} $ to the catalyst surface, which would have a minimal cost difference. The design of the reactor between different products would also be consistent, with the exception being formate requiring protonation to formic acid. This has been demonstrated at the lab scale. $ ^{13} $</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><p>Therefore, the capital and operating costs for the $ \mathrm{C O_{2}} $ electrolyzer were based on the DOE Current Central H2A base case for an alkaline electrolyzer. $ ^{81} $ In this analysis, the uninstalled capital costs were $ 327 / \mathrm{kW} $ . To make the model sensitive to current density, a cost per surface area was also determined. This cost was calculated based on the typical operating conditions of $ 175 \mathrm{mA} / \mathrm{cm}^{2} $ and $ 1.75 \mathrm{V} $ for the Norsk Hydro HPE Atmospheric Type No. 5040 alkaline electrolyzer on which the base case was derived from, corresponding to an uninstalled cost of $ 1065 / \mathrm{m}^{2} $ . An installation factor of 1.5 was used for the capital investment. Furthermore, it was assumed that maintenance costs were 2.5% of the capital investment per year. These costs included replenishing the catalysts and electrolytes used in the system. The balance of plant (BoP) costs were assumed to be 20% of the cost of the electrolyzer system, and these values were derived from the H2A model. $ ^{81} $ The only operating cost for the system was electricity, which was calculated based on the Faradaic mass balances across the electrolyzer.</p>
+<h2>5.3 Product Separation</h2>
+<p>For gas product separation, pressure swing adsorption is an industrially used process with low operating costs, high efficiency, and limited footprint. $ ^{82} $ For $ \mathrm{C O_{2}} $ electrolysis, the reactor exit gas consists of unconverted $ \mathrm{C O_{2}} $ and gas products, as well as some hydrogen. A similar separation is the upgrading of biogas, which consists of roughly equal amounts of methane and $ \mathrm{C O_{2}} $ Industrial reports have been developed regarding the costs of biogas upgrading with PSA and allowed for an estimation of the separation costs for $ \mathrm{C O_{2}} $ electrolysis gas product separation based on commercial systems. $ ^{83-84} $ Based on these studies, a reference cost of $ 1,990,000 $ per 1000 $ \mathrm{m^{3}} $ /hr capacity was used, with a capacity scaling factor of 0.7 and operating costs consisting of only electricity at 0.25 kWh/m $ ^{3} $ . $ ^{85} $ After separation, the gas products need to be compressed and stored, unless they are transported to and used immediately in a downstream process. Here, this additional cost was neglected.</p>
+<p>Distillation was used as the separation process for the $ \mathrm{C O_{2}} $ reaction liquid products, as alcohols are separated by distillation commercially. Formic acid can also be separated by distillation, although it is highly energy intensive due to the close boiling points of water and formic acid. Furthermore, water was the distillate product leading to a high heat duty needed for the column. Alternatively, BASF utilizes a liquid-liquid extraction process to purify formic acid solutions up to 95% by weight. $ ^{86} $ However, to allow for consistent comparison, the separation of formic acid was also modeled through distillation. The separation processes were modeled using the RadFrac block in Aspen Plus, and capital and utility costs were estimated using the Aspen Plus Economic Analyzer. An electrolyte flow rate of 1000 L/min was assumed for the base case, with a concentration of 10% product in water. The separation was modeled as a single column with the product leaving near the azeotropic concentration. In practice, more elaborate methods such as extractive or pressure swing distillation would allow for higher product purity. The capital costs were then scaled with a capacity factor of 0.7, while the utility costs were scaled linearly.</p>
+<h2>6. Model Assumptions</h2>
+<h2>6.1 Base Model Assumptions</h2></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>To perform a comparison of the various $ \mathrm{C O_{2}} $ reduction products, several process assumptions were made. We considered two sets of parameters: a base case based on current feedstock prices and electrolyzer performance, and an optimistic case that considered what these values may be in the future. These assumptions are summarized in Table 3.</p>
+<div>
+
+Table 3: Process assumptions for $ \mathrm{C O_{2}} $ electrolyzer model
+
+</div>
+<table><tbody><tr><td>Parameter</td><td>Base Case</td><td>Optimistic Case</td></tr><tr><td>Production Rate(ton/day)</td><td>100</td><td>100</td></tr><tr><td>Lifetime(years)</td><td>20</td><td>20</td></tr><tr><td>Operating time(days/year)</td><td>350</td><td>350</td></tr><tr><td>Electricity Price($/kWh)</td><td>0.05</td><td>0.03</td></tr><tr><td>Current Density(mA/cm2)</td><td>200</td><td>300</td></tr><tr><td>Cell Voltage(V)</td><td>2.3</td><td>2</td></tr><tr><td>Product Selectivity(%)</td><td>90</td><td>90</td></tr><tr><td>Conversion(%)</td><td>50</td><td>50</td></tr><tr><td>CO2Price($/ton)</td><td>100</td><td>50</td></tr><tr><td>Interest Rate(%)</td><td>10</td><td>7.5</td></tr><tr><td>Electrolyzer Cost($/m2)</td><td>2830</td><td>1415</td></tr></tbody></table>
+<p>For both cases, a product production rate of 100 tons/day was chosen to allow for large scale chemical production, for which the capital costs were more favorable and differences between products were more discernable, while keeping the electrolyzer system power requirements within the range of the largest commercial systems (~100 MW). It was assumed that the system would require 2 weeks of downtime each year for maintenance over a 20-year lifetime. The base case electricity price of 0.05 $/kWh was consistent with the cheapest industrial electricity rates currently available. As renewable energy sources such as solar and wind continue to become cheaper, the price of electricity could be as low as 0.02 $/kWh. $ ^{87} $ An optimistic case value of 0.03 $ /kWh was chosen. The electrolyzer total current density of 200 mA/cm $ ^{2} $ has been demonstrated in numerous laboratory reactors at roughly 2.3 V. $ ^{70} $ For the optimistic case, a current density of 300 mA/cm $ ^{2} $ was assumed at cell voltage of 2 V, which fell within the range of commercial water electrolyzers. As shown in Figure 2, Faradaic efficiencies of 90% have been demonstrated for numerous $ \mathrm{CO_{2}} $ reduction products such as CO, formic acid, and methanol, and were assumed for these cases. A baseline reactor conversion of 50% was chosen for the analysis. It must be noted that $ \mathrm{CO_{2}} $ conversion is not often reported in the literature because most of studies are performed in either a batch cell or single-pass flow cell with conversions less than 10%. A better electrolyzer design could potentially boost the $ \mathrm{CO_{2}} $ conversion to 50%. A low conversion results in a more challenging product separation due to the unreacted $ \mathrm{CO_{2}} $ in the reactor effluent that needs to be recycled.</p>
+<h2>6.2 Financial Model Assumptions</h2>
+<p>To estimate the return on capital investment for the development of a $ \mathrm{C O_{2}} $ electrolysis facility, a cash flow spreadsheet was developed to estimate the yearly revenue and present value of the plant over the project lifetime. It was assumed that construction of the facility was completed in the first year, with product production beginning in the second year. The working capital was</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>assumed to be 5% of the capital investment. A MACRS 10-year depreciation schedule was used with a 20% salvage value at the end of plant life. A base case nominal interest rate of 10% compounded annually, and a total effective income tax rate of 40% were assumed. These financial assumptions were consistent with those in the DOE's H2A analysis for water electrolysis. $ ^{81} $ The yearly profit was calculated as the income from selling product minus the yearly operating costs of the plant. The cost of sales, cost of labor, and inflation were not accounted for in the financial model. From this model, the net present value of the facility at the end of life was calculated.</p>
+<h2>7. Economic Cost Analysis</h2>
+<div>
+
+Figure 4: End-of-life NPV values for the production of various chemicals.
+
+</div>
+<p>The net present value for the main products using the base case and optimistic case assumptions are shown in Figure 4. Methane is not shown because its current market value was lower than the price of $ \mathrm{C O_{2}} $ , making profitability impossible regardless of process performance. The X's indicate that the production was not profitable on a yearly basis, so the NPV could not be calculated.</p>
+<p>At the base case conditions, CO and formic acid were the only profitable products for the $ \mathrm{C O_{2}} $ electrolysis system, whereas the other products were not even profitable on a yearly basis. This is because CO and formic acid have the highest product value per electron (Table 2). Even at a modest electricity cost of $ 0.05 / \mathrm{kWh} $ , the amount of electricity needed to produce hydrocarbons and alcohols outweighed the values of the chemical products. However, these products became much more favorable under the optimistic case assumptions. The production of n-propanol was the most favorable product, with methanol being the only product with a negative NPV. Based on $ \mathrm{C O_{2}} $ reduction studies in the literature, selectively obtaining n-propanol as the sole product is likely to be a major challenge, as the selectivity towards n-propanol is still quite low. However, a mixture of these liquid $ \mathrm{C_{2}-C_{3}} $ alcohols would still be economically valuable since ethanol was also favorable under the optimistic case.</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><div>
+
+Figure 5: a) Capital and b) operating costs for various products under optimistic case assumptions.
+
+</div>
+<p>To give a relative sense of the various costs of the process, the breakdown of capital and operating costs for each product under optimistic case assumptions are shown in Figure 5. Of all products, ethylene had the highest capital and operating costs due to the large amount of current (electricity) needed per kg of product. These high costs, along with a large $ \mathrm{C O_{2}} $ feedstock requirement, contributed to the low profitability of ethylene relative to other products. In contrast, formic acid and CO benefited from a small power requirement, which reduced the cost of electricity and electrolyzer size. For formic acid, much of the cost was associated with the challenging distillation process. As stated earlier, there are industrial processes that may be more cost effective than distillation, which could further improve the profitability of formic acid. For example, a 50% reduction in the operating and capital costs for formic acid separation gave an NPV of $ 97.1 $ million. It must be noted, that while the distillation and PSA systems had similar capital investment requirements, the PSA systems had a much lower operating cost. Although this cheaper separation was an advantage for gaseous products, they will likely require additional compression for transportation/storage, which could increase costs significantly.</p>
+<p>To understand the sensitivity of the process profitability to different parameters, a sensitivity analysis was performed. The range of values considered for each parameter is listed in Table 4, with the results shown in Figure 6.</p>
+<div>
+
+Table 4: Range of values for sensitivity analysis
+
+</div>
+<table><tbody><tr><td>Sensitivity Parameters</td><td>Better</td><td>Base</td><td>Worse</td></tr><tr><td>Electric Price($/kWh)</td><td>0.02</td><td>0.03</td><td>0.04</td></tr><tr><td>Selling Price($/kg)</td><td>+15%</td><td>Base</td><td>-15%</td></tr><tr><td>Selectivity(%)</td><td>80</td><td>90</td><td>100</td></tr><tr><td>Voltage(V)</td><td>1.7</td><td>2</td><td>2.3</td></tr><tr><td>Electrolyzer Cost($/m2)</td><td>707.5</td><td>1415</td><td>2830</td></tr><tr><td>CO2 Cost($/ton)</td><td>0</td><td>50</td><td>100</td></tr><tr><td>Current Density(mA/cm2)</td><td>500</td><td>300</td><td>100</td></tr><tr><td>Conversion(%)</td><td>70</td><td>50</td><td>30</td></tr></tbody></table></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><div>
+
+a
+
+</div>
+<div>
+
+b
+
+</div>
+<div>
+
+C
+
+</div>
+<div>
+
+d
+
+</div>
+<div>
+
+Figure 6: Sensitivity analysis of $ \mathrm{C O_{2}} $ reduction products: a) carbon monoxde, b) formic acid, c) ethylene, and d) n-propanol.
+
+</div>
+<p>For all products, a deviation in selling price of 15% had a significant impact on the end-of-life NPV of the process. Over a 20-year period, the product price could fluctuate significantly due to changes in market demand and development of new technologies. Therefore, the production of products such as CO, n-propanol, and formic acid are advantageous since they remained profitable even if the product selling price dropped significantly. For all products other than CO and formic acid, electricity was the major operating cost, resulting in a strong economic dependence on the price of electricity. Even a change of just $0.01/kWh resulted in a NPV difference of $40 million for n-propanol production. Therefore, it is critical for the $ \mathrm{CO_{2}} $ electrolyzer to have a steady supply of cheap electricity if hydrocarbons and alcohols are produced, which could be obtained through renewable sources in the near future. $ ^{87} $</p>
+<p>In terms of electrolyzer performance, selectivity and voltage were the most important parameters for higher electron products such as alcohols and ethylene. A higher selectivity reduced the total current needed because less electricity was wasted on hydrogen generation. This led to a lower power requirement and subsequently a lower electricity operating cost. Less hydrogen also reduced the separation requirement for recycling the $ \mathrm{C O_{2}} $ , which was a significant cost even for liquid products. Also, a decrease in total current reduced the total electrolyzer area, resulting in a lower electrolyzer capital cost. Reducing the cell voltage (overpotentials) lowered the overall</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><p>power requirement, which significantly impacted products with high electricity operating cost fraction. Furthermore, the reactor conversion also impacted the economics. A lower reactor conversion resulted in a higher separation cost due to an increased amount of unconverted $ \mathrm{C O_{2}} $ in the separation/recycle loop, and this consequentially increased the size/capital cost of the PSA system. However, in the case of low conversion and high selectivity towards liquid products, the gas stream exiting the reactor consisted almost entirely of $ \mathrm{C O_{2}} $ with some residual hydrogen. Thus, multiple passes were made before separation, as a small dilution of the $ \mathrm{C O_{2}} $ feedstock did not significantly influence reactor performance.</p>
+<p>Interestingly, the current density was the least important parameter of electrolyzer performance once above a certain threshold. This was due to the inverse square relationship between the electrolyzer capital cost and current density. Thus, for products that required large amounts of electricity, increasing the current density to at least 250-300 mA/cm $ ^{2} $ was critical. In the case of ethanol, a decrease in current density to 100 mA/cm $ ^{2} $ resulted in a NPV decrease of $ 51 $ million, while an increase to 500 mA/cm $ ^{2} $ only gave an extra $ 10 $ million (Supplementary Figure S1). After a certain threshold, the capital costs of the electrolyzer, which were directly influenced by current density, became insignificant to the other costs. Stemming from these calculations, since the cell voltage was a significant cost due to the extra power requirement, the $ \mathrm{CO_{2}} $ electrolyzer should operate at as low of a voltage possible while still maintaining an appreciable current density.</p>
+<h2>8. Catalyst Activity Targets</h2>
+<p>The $ \mathrm{C O_{2}} $ electrolyzer model was used to define activity targets for electrolyzer performance needed to be profitable for a given $ \mathrm{C O_{2}} $ reduction product. As shown in the sensitivity analysis, cell potential and selectivity were the major parameters. Since the anode of the $ \mathrm{C O_{2}} $ electrolyzer is typically water oxidation, and anion exchange membrane development is vastly improving, the cell potential was simplified to the overpotential associated with the electrochemical reduction of $ \mathrm{C O_{2}} $ . We assumed the optimistic base case conditions with a current density of 300 mA/cm $ ^{2} $ . The anodic overpotential was estimated as 0.3 V with a cell resistance overpotential of 0.1 V. Figure 7 shows the overpotential/selectivity performance curves for various products needed to obtain an end-of-life NPV of $ \$ 0 $ (IRR of 7.5%). For the process to be profitable, the electrolyzer performance must lie to the right of the curve. It can be seen that the production of CO and formic acid can be done profitably under the optimistic base conditions with relatively poor electrolyzer performance, requiring Faradaic efficiencies much lower than currently obtained. However, n-propanol requires a modest selectivity, while ethanol and ethylene require relatively high Faradaic efficiencies. Altogether, it is promising that the activity targets for the profitable production of these hydrocarbon and alcohol products are feasible, as they have a much larger market potential compared to CO and formic acid.</p></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><div>
+
+Figure 7: Electrolyzer performance curves for an IRR of 7.5%.
+
+</div>
+<h2>9. $ \mathrm{C O_{2}} $ Emissions Reduction</h2>
+<p>Although $ \mathrm{eCO_{2}R} $ has the potential to profitably produce valuable chemical feedstocks, it is unlikely that the technology alone can significantly reduce the atmospheric $ \mathrm{CO_{2}} $ concentration for a couple of reasons. Firstly, as discussed early, the direct air capture of $ \mathrm{CO_{2}} $ is still expensive. Secondly, the total amount of $ \mathrm{CO_{2}} $ emission is too large to be handled by electrochemical processes alone. Per the EIA, the US emitted roughly 5.2 MMmt of $ \mathrm{CO_{2}} $ from the energy-sector alone in 2015. Reducing this $ \mathrm{CO_{2}} $ to a two-electron product like formic acid would require ~1.5 TW, which is equivalent to roughly 8% of the world's energy output.</p>
+<p>However, if low-carbon electricity sources such as wind and solar are used, additional $ \mathrm{C O_{2}} $ emissions can be mitigated if the $ \mathrm{C O_{2}} $ is sourced from industrial sources such as fossil fuel power plants and chemical facilities, since converting this $ \mathrm{C O_{2}} $ through $ \mathrm{e C O_{2} R} $ would then be a reduction of emissions as opposed to the commonly used case where the $ \mathrm{C O_{2}} $ is simply emitted. This is true even if the $ \mathrm{C O_{2}} $ reduction product is a fuel that is later burned, provided it replaces those derived from fossil fuels. For example, consider the electrochemical reduction of $ \mathrm{C O_{2}} $ to ethanol for use as a fuel additive. We estimated the greenhouse gas emissions (reported as grams of $ \mathrm{C O_{2}} $ equivalent) for the process associated with the electricity used, as this is the major operating cost. Additional emissions would result from construction of the facility materials and other process costs (steam, heating, etc.), which were not considered as they are assumed to be small, compared to the electrical system. Despite being "renewable" sources, wind and solar have some associated emissions due to construction and maintenance. $ ^{88} $ As illustrated in Figure 8, the associated emissions with the electrochemical production of ethanol from $ \mathrm{C O_{2}} $ are much less than those of gasoline, and comparable to ethanol derived from corn feedstocks, which is the current dominant production method. $ ^{89} $ This shows that $ \mathrm{C O_{2}} $ -derived chemicals and fuels can indirectly lead to a reduction of $ \mathrm{C O_{2}} $ emissions.</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><div>
+
+Figure 8: Greenhouse gas emissions for the production of gasoline and corn ethanol (ref. 89) compared to electrochemical $ \mathrm{C O_{2}} $ reduction
+
+</div>
+<h2>10. Conclusions</h2>
+<p>The generalized techno-economic model for $ \mathrm{eCO_{2}R} $ presented in this work provides insight into the feasibility of various common $ \mathrm{CO_{2}} $ reduction products for large-scale chemical production. We found that current density is the least important electrolyzer parameter after a certain threshold (200-400 mA) is reached, while selectivity and overpotential are critical, especially for high-electron products. Simple products such as CO and formic acid were more profitable under current economic conditions and performance based on the current state-of-the-art electrocatalysts, although only lab-scale electrolyzer systems have been demonstrated. However, the small market potential for formic acid and the difficulty associated with storing/transporting gaseous products motivates the production of liquids such as ethanol and n-propanol, which could be profitable under more favorable economic conditions in the future and may have a much higher market potential. For higher-order alcohols to become profitable, cheaper electricity costs and improved catalytic performance are needed. However, with continual efforts, the electrocatalytic performance benchmarks for these alcohols can be achievable, and the use of $ \mathrm{C_{2}-C_{3}} $ alcohols produced from $ \mathrm{eCO_{2}R} $ would allow for renewable energy sources to penetrate into the transportation and chemical sectors while potentially reducing GHG emissions. Overall, the electrochemical reduction of $ \mathrm{CO_{2}} $ is a promising technology that could play a significant role in the future renewable energy infrastructure if further strides are made.</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><h2>11. References</h2>
+<ol>
+<li>IPCC, IPCC Fifth Assessment Synthesis Report. Cambridge University Press: Cambridge, UK New York, NY, USA: 2014.</li>
+</ol>
+<ol>
+<li>U.S. Energy Information Administration, Annual Energy Outlook 2017. 2017.</li>
+</ol>
+<ol>
+<li>She, Z. W.; Kibsgaard, J.; Dickens, C. F.; Chorkendorff, I. B.; Norskov, J. K.; Jaramillo, T. F., Combining theory and experiment in electrocatalysis: Insights into materials design. Science 2017, 355 (6321).</li>
+</ol>
+<ol>
+<li>Whipple, D. T.; Kenis, P. J., Prospects of $ \mathrm{C O_{2}} $ utilization via direct heterogeneous electrochemical reduction. The Journal of Physical Chemistry Letters 2010, 1 (24), 3451- 3458.</li>
+</ol>
+<ol>
+<li>Martin, A. J.; Larrazabal, G. O.; Perez-Ramirez, J., Towards sustainable fuels and chemicals through the electrochemical reduction of $ \mathrm{C O_{2}} $: lessons from water electrolysis. Green Chemistry 2015, 17 (12), 5114-5130.</li>
+</ol>
+<ol>
+<li>Goeppert, A.; Czaun, M.; Jones, J. P.; Surya Prakash, G. K.; Olah, G. A., Recycling of carbon dioxide to methanol and derived products - closing the loop. Chem Soc Rev 2014, 43 (23), 7995-8048.</li>
+</ol>
+<ol>
+<li>Mikkelsen, M.; Jorgensen, M.; Krebs, F. C., The teraton challenge. A review of fixation and transformation of carbon dioxide. Energy Environ. Sci. 2010, 3 (1), 43-81.</li>
+</ol>
+<ol>
+<li>Li, H.; Liao, J. C., Biological conversion of carbon dioxide to photosynthetic fuels and electrofuels. Energy &amp; Environmental Science 2013, 6 (10), 2892.</li>
+</ol>
+<ol>
+<li>Li, Y.; Sun, Q., Recent Advances in Breaking Scaling Relations for Effective Electrochemical Conversion of $ \mathrm{C O_{2}} $ . Advanced Energy Materials 2016, 6 (17), 1600463.</li>
+</ol>
+<ol>
+<li>Luc, W.; Rosen, J.; Jiao, F., An Ir-based anode for a practical $ \mathrm{CO_{2}} $ electrolyzer. Catalysis Today 2017, 288, 79-84.</li>
+</ol>
+<ol>
+<li>Delacourt, C.; Ridgway, P. L.; Kerr, J. B.; Newman, J., Design of an Electrochemical Cell Making Syngas $ \mathrm{(C O+H_{2})} $ from $ \mathrm{C O_{2}} $ and $ \mathrm{H_{2}O} $ Reduction at Room Temperature. Journal of The Electrochemical Society 2008, 155 (1), B42-B49.</li>
+</ol>
+<ol>
+<li>Dufek, E. J.; Lister, T. E.; McIlwain, M. E., Bench-scale electrochemical system for generation of CO and syn-gas. Journal of Applied Electrochemistry 2011, 41 (6), 623-631.</li>
+</ol>
+<ol>
+<li>Yang, H.; Kaczur, J. J.; Sajjad, S. D.; Masel, R. I., Electrochemical conversion of $ \mathrm{C O_{2}} $ to formic acid utilizing Sustainion $ ^{\mathrm{TM}} $ membranes. Journal of $ \mathrm{C O_{2}} $ Utilization 2017, 20, 208- 217.</li>
+</ol>
+<ol>
+<li>Pletcher, D., The cathodic reduction of carbon dioxide—What can it realistically achieve? A mini review. Electrochemistry Communications 2015, 61, 97-101.</li>
+</ol>
+<ol>
+<li>Kuhl, K. P.; Cave, E. R.; Abram, D. N.; Jaramillo, T. F., New insights into the electrochemical reduction of carbon dioxide on metallic copper surfaces. Energy &amp; Environmental Science 2012, 5 (5), 7050-7059.</li>
+</ol>
+<ol>
+<li>Kuhl, K. P.; Hatsukade, T.; Cave, E. R.; Abram, D. N.; Kibsgaard, J.; Jaramillo, T. F., Electrocatalytic Conversion of Carbon Dioxide to Methane and Methanol on Transition Metal Surfaces. Journal of the American Chemical Society 2014, 136 (40), 14107-14113.</li>
+</ol>
+<ol>
+<li>Independent Chemical Information Services https://www.icis.com/.</li>
+</ol>
+<ol>
+<li>U.S. Energy Information Administration https://www.eia.gov/.</li>
+</ol>
+<ol>
+<li>Lu, Q.; Jiao, F., Electrochemical $ \mathrm{CO_{2}} $ reduction: Electrocatalyst, reaction mechanism, and process engineering. Nano Energy 2016, 29, 439-456.</li>
+</ol>
+<ol>
+<li>Gasification &amp; Syngas Technologies Council http://www.gasification-syngas.org.</li>
+</ol>
+<ol>
+<li>TechnipFMC http://www.technip.com/en.</li>
+</ol></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><ol>
+<li>Mondal, P.; Dang, G. S.; Garg, M. O., Syngas production through gasification and cleanup for downstream applications — Recent developments. Fuel Processing Technology 2011, 92 (8), 1395-1410.</li>
+</ol>
+<ol>
+<li>International Gas Union http://www.igu.org/.</li>
+</ol>
+<ol>
+<li>U.S. Department of Energy Alternative Fuels Data Center. https://www.afdc.energy.gov/.</li>
+</ol>
+<ol>
+<li>Hori, Y., Electrochemical $ \mathrm{C O_{2}} $ reduction on Metal Electrodes. In Modern Aspects of Electrochemistry, Vayenas, C. G.; White, R. E.; Gamboa-Aldeco, M. E., Eds. Springer New York: New York, NY, 2008; pp 89-189.</li>
+</ol>
+<ol>
+<li>Hori, Y.; Wakebe, H.; Tsukamoto, T.; Koga, O., Electrocatalytic process of CO selectivity in electrochemical reduction of $ \mathrm{C O_{2}} $ at metal electrodes in aqueous media. Electrochimica Acta 1994, 39 (11), 1833-1839.</li>
+</ol>
+<ol>
+<li>Lu, Q.; Rosen, J.; Zhou, Y.; Hutchings, G. S.; Kimmel, Y. C.; Chen, J. G.; Jiao, F., A selective and efficient electrocatalyst for carbon dioxide reduction. Nature Communications 2014, 5, 3242.</li>
+</ol>
+<ol>
+<li>Zhang, S.; Kang, P.; Meyer, T. J., Nanostructured Tin Catalysts for Selective Electrochemical Reduction of Carbon Dioxide to Formate. Journal of the American Chemical Society 2014, 136 (5), 1734-1737.</li>
+</ol>
+<ol>
+<li>Zhu, W.; Michalsky, R.; Metin, Ö.; Lv, H.; Guo, S.; Wright, C. J.; Sun, X.; Peterson, A. A.; Sun, S., Monodisperse Au Nanoparticles for Selective Electrocatalytic Reduction of $ \mathrm{C O_{2}} $ to CO. Journal of the American Chemical Society 2013, 135 (45), 16833-16836.</li>
+</ol>
+<ol>
+<li>Chen, Y.; Li, C. W.; Kanan, M. W., Aqueous $ \mathrm{C O_{2}} $ Reduction at Very Low Overpotential on Oxide-Derived Au Nanoparticles. Journal of the American Chemical Society 2012, 134 (49), 19969-19972.</li>
+</ol>
+<ol>
+<li>Li, C. W.; Kanan, M. W., CO2 Reduction at Low Overpotential on Cu Electrodes Resulting from the Reduction of Thick Cu2O Films. Journal of the American Chemical Society 2012, 134 (17), 7231-7234.</li>
+</ol>
+<ol>
+<li>Ren, D.; Ang, B. S.-H.; Yeo, B. S., Tuning the Selectivity of Carbon Dioxide Electroreduction toward Ethanol on Oxide-Derived CuxZn Catalysts. ACS Catalysis 2016, 6 (12), 8239-8247.</li>
+</ol>
+<ol>
+<li>Luc, W.; Collins, C.; Wang, S.; Xin, H.; He, K.; Kang, Y.; Jiao, F., Ag-Sn Bimetallic Catalyst with a Core-Shell Structure for CO2 Reduction. Journal of the American Chemical Society 2017, 139 (5), 1885-1893.</li>
+</ol>
+<ol>
+<li>Asadi, M.; Kim, K.; Liu, C.; Addepalli, A. V.; Abbasi, P.; Yasaei, P.; Phillips, P.; Behranginia, A.; Cerrato, J. M.; Haasch, R.; Zapol, P.; Kumar, B.; Klie, R. F.; Abiade, J.; Curtiss, L. A.; Salehi-Khojin, A., Nanostructured transition metal dichalcogenide electrocatalysts for $ \mathrm{CO_{2}} $ reduction in ionic liquid. Science 2016, 353 (6298), 467-470.</li>
+</ol>
+<ol>
+<li>Asadi, M.; Kumar, B.; Behranginia, A.; Rosen, B. A.; Baskin, A.; Repnin, N.; Pisasale, D.; Phillips, P.; Zhu, W.; Haasch, R.; Klie, R. F.; Král, P.; Abiade, J.; Salehi-Khojin, A., Robust carbon dioxide reduction on molybdenum disulphide edges. Nature Communications 2014, 5, 4470.</li>
+</ol>
+<ol>
+<li>Wu, J.; Ma, S.; Sun, J.; Gold, J. I.; Tiwary, C.; Kim, B.; Zhu, L.; Chopra, N.; Odeh, I. N.; Vajtai, R.; Yu, A. Z.; Luo, R.; Lou, J.; Ding, G.; Kenis, P. J. A.; Ajayan, P. M., A metal-free electrocatalyst for carbon dioxide reduction to multi-carbon hydrocarbons and oxygenates. Nature Communications 2016, 7, 13869.</li>
+</ol>
+<ol>
+<li>Zhang, S.; Kang, P.; Ubnoske, S.; Brennaman, M. K.; Song, N.; House, R. L.; Glass, J. T.; Meyer, T. J., Polyethylenimine-Enhanced Electrocatalytic Reduction of $ \mathrm{C O_{2}} $ to Formate at</li>
+</ol></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><p>Nitrogen-Doped Carbon Nanomaterials. Journal of the American Chemical Society 2014, 136 (22), 7845-7848.</p>
+<ol>
+<li>Ma, S.; Luo, R.; Moniri, S.; Lan, Y.; Kenis, P. J. A., Efficient Electrochemical Flow System with Improved Anode for the Conversion of CO2 to CO. Journal of The Electrochemical Society 2014, 161 (10), F1124-F1131.</li>
+</ol>
+<ol>
+<li>Verma, S.; Lu, X.; Ma, S.; Masel, R. I.; Kenis, P. J. A., The effect of electrolyte composition on the electroreduction of CO2 to CO on Ag based gas diffusion electrodes. Physical Chemistry Chemical Physics 2016, 18 (10), 7075-7084.</li>
+</ol>
+<ol>
+<li>Wu, K.; Birgersson, E.; Kim, B.; Kenis, P. J. A.; Karimi, I. A., Modeling and Experimental Validation of Electrochemical Reduction of CO2 to CO in a Microfluidic Cell. Journal of The Electrochemical Society 2015, 162 (1), F23-F32.</li>
+</ol>
+<ol>
+<li>Jhong, H.-R. M.; Brushett, F. R.; Kenis, P. J. A., The Effects of Catalyst Layer Deposition Methodology on Electrode Performance. Advanced Energy Materials 2013, 3 (5), 589-599.</li>
+</ol>
+<ol>
+<li>Jhong, H.-R. M.; Ma, S.; Kenis, P. J. A., Electrochemical conversion of CO2 to useful chemicals: current status, remaining challenges, and future opportunities. Current Opinion in Chemical Engineering 2013, 2 (2), 191-199.</li>
+</ol>
+<ol>
+<li>Furuya, N.; Koide, S., Electroreduction of carbon dioxide by metal phthalocyanines. Electrochimica Acta 1991, 36 (8), 1309-1313.</li>
+</ol>
+<ol>
+<li>Kaneco, S.; Iiba, K.; Ohta, K.; Mizuno, T.; Saji, A., Electrochemical reduction of CO2 on Au in KOH + methanol at low temperature. Journal of Electroanalytical Chemistry 1998, 441 (1), 215-220.</li>
+</ol>
+<ol>
+<li>Kaneco, S.; Iiba, K.; Ohta, K.; Mizuno, T.; Saji, A., Electrochemical reduction of CO2 at an Ag electrode in KOH-methanol at low temperature. Electrochimica Acta 1998, 44 (4), 573- 578.</li>
+</ol>
+<ol>
+<li>Gao, D.; Zhou, H.; Wang, J.; Miao, S.; Yang, F.; Wang, G.; Wang, J.; Bao, X., Size-Dependent Electrocatalytic Reduction of $ \mathrm{C O_{2}} $ over Pd Nanoparticles. Journal of the American Chemical Society 2015, 137 (13), 4288-4291.</li>
+</ol>
+<ol>
+<li>Rasul, S.; Anjum, D. H.; Jedidi, A.; Minenkov, Y.; Cavallo, L.; Takanabe, K., A Highly Selective Copper-Indium Bimetallic Electrocatalyst for the Electrochemical Reduction of Aqueous CO2 to CO. Angewandte Chemie International Edition 2015, 54 (7), 2146-2150.</li>
+</ol>
+<ol>
+<li>Kornienko, N.; Zhao, Y.; Kley, C. S.; Zhu, C.; Kim, D.; Lin, S.; Chang, C. J.; Yaghi, O. M.; Yang, P., Metal-Organic Frameworks for Electrocatalytic Reduction of Carbon Dioxide. Journal of the American Chemical Society 2015, 137 (44), 14129-14135.</li>
+</ol>
+<ol>
+<li>Zhou, L. Q.; Ling, C.; Jones, M.; Jia, H., Selective $ \mathrm{CO_{2}} $ reduction on a polycrystalline Ag electrode enhanced by anodization treatment. Chemical Communications 2015, 51 (100), 17704-17707.</li>
+</ol>
+<ol>
+<li>Ma, S.; Luo, R.; Gold, J. I.; Yu, A. Z.; Kim, B.; Kenis, P. J. A., Carbon nanotube containing Ag catalyst layers for efficient and selective reduction of carbon dioxide. Journal of Materials Chemistry A 2016, 4 (22), 8573-8578.</li>
+</ol>
+<ol>
+<li>Wang, H.; Chen, Y.; Hou, X.; Ma, C.; Tan, T., Nitrogen-doped graphenes as efficient electrocatalysts for the selective reduction of carbon dioxide to formate in aqueous solution. Green Chemistry 2016, 18 (11), 3250-3256.</li>
+</ol>
+<ol>
+<li>Sen, S.; Liu, D.; Palmore, G. T. R., Electrochemical Reduction of CO2 at Copper Nanofoams. ACS Catalysis 2014, 4 (9), 3091-3095.</li>
+</ol></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><ol>
+<li>Furuya, N.; Yamazaki, T.; Shibata, M., High performance Ru $ \cdot $ Pd catalysts for CO2 reduction at gas-diffusion electrodes. Journal of Electroanalytical Chemistry 1997, 431 (1), 39-41.</li>
+</ol>
+<ol>
+<li>Gao, S.; Lin, Y.; Jiao, X.; Sun, Y.; Luo, Q.; Zhang, W.; Li, D.; Yang, J.; Xie, Y., Partially oxidized atomic cobalt layers for carbon dioxide electroreduction to liquid fuel. Nature 2016, 529 (7584), 68-71.</li>
+</ol>
+<ol>
+<li>Won, D. H.; Choi, C. H.; Chung, J.; Chung, M. W.; Kim, E.-H.; Woo, S. I., Rational Design of a Hierarchical Tin Dendrite Electrode for Efficient Electrochemical Reduction of CO2. ChemSusChem 2015, 8 (18), 3092-3098.</li>
+</ol>
+<ol>
+<li>Kortlever, R.; Peters, I.; Koper, S.; Koper, M. T. M., Electrochemical $ \mathrm{CO_{2}} $ reduction to Formic Acid at Low Overpotential and with High Faradaic Efficiency on Carbon-Supported Bimetallic Pd-Pt Nanoparticles. ACS Catalysis 2015, 5 (7), 3916-3923.</li>
+</ol>
+<ol>
+<li>Summers, D. P.; Leach, S.; Frese, K. W., The electrochemical reduction of aqueous carbon dioxide to methanol at molybdenum electrodes with low overpotentials. Journal of Electroanalytical Chemistry and Interfacial Electrochemistry 1986, 205 (1), 219-232.</li>
+</ol>
+<ol>
+<li>Frese, K. W., Electrochemical Reduction of CO2 at Intentionally Oxidized Copper Electrodes. Journal of The Electrochemical Society 1991, 138 (11), 3338-3344.</li>
+</ol>
+<ol>
+<li>Bandi, A.; Kühne, H. M., Electrochemical Reduction of Carbon Dioxide in Water: Analysis of Reaction Mechanism on Ruthenium-Titanium-Oxide. Journal of The Electrochemical Society 1992, 139 (6), 1605-1610.</li>
+</ol>
+<ol>
+<li>Popić, J. P.; Avramov-Ivić, M. L.; Vuković, N. B., Reduction of carbon dioxide on ruthenium oxide and modified ruthenium oxide electrodes in 0.5 M NaHCO3. Journal of Electroanalytical Chemistry 1997, 421 (1), 105-110.</li>
+</ol>
+<ol>
+<li>Kobayashi, T.; Takahashi, H., Novel CO2 Electrochemical Reduction to Methanol for H2 Storage. Energy &amp; Fuels 2004, 18 (1), 285-286.</li>
+</ol>
+<ol>
+<li>Le, M.; Ren, M.; Zhang, Z.; Sprunger, P. T.; Kurtz, R. L.; Flake, J. C., Electrochemical Reduction of CO2 to CH3OH at Copper Oxide Surfaces. Journal of The Electrochemical Society 2011, 158 (5), E45-E49.</li>
+</ol>
+<ol>
+<li>Hara, K.; Sakata, T., Electrocatalytic Formation of CH4 from CO2 on a Pt Gas Diffusion Electrode. Journal of The Electrochemical Society 1997, 144 (2), 539-545.</li>
+</ol>
+<ol>
+<li>Takahashi, I.; Koga, O.; Hoshi, N.; Hori, Y., Electrochemical reduction of CO2 at copper single crystal Cu(S)-[n(111) $ \times $ (111)] and Cu(S)-[n(110) $ \times $ (100)] electrodes. Journal of Electroanalytical Chemistry 2002, 533 (1), 135-143.</li>
+</ol>
+<ol>
+<li>Yano, H.; Tanaka, T.; Nakayama, M.; Ogura, K., Selective electrochemical reduction of CO2 to ethylene at a three-phase interface on copper(I) halide-confined Cu-mesh electrodes in acidic solutions of potassium halides. Journal of Electroanalytical Chemistry 2004, 565 (2), 287-293.</li>
+</ol>
+<ol>
+<li>Loiudice, A.; Lobaccaro, P.; Kamali, E. A.; Thao, T.; Huang, B. H.; Ager, J. W.; Buonsanti, R., Tailoring Copper Nanocrystals towards C2 Products in Electrochemical $ \mathrm{CO}_{2} $ reduction. Angewandte Chemie International Edition 2016, 55 (19), 5789-5792.</li>
+</ol>
+<ol>
+<li>Song, Y.; Peng, R.; Hensley, D. K.; Bonnesen, P. V.; Liang, L.; Wu, Z.; Meyer, H. M.; Chi, M.; Ma, C.; Sumpter, B. G.; Rondinone, A. J., High-Selectivity Electrochemical Conversion of CO2 to Ethanol using a Copper Nanoparticle/N-Doped Graphene Electrode. ChemistrySelect 2016, 1 (19), 6055-6061.</li>
+</ol></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><ol>
+<li>Manthiram, K.; Beberwyck, B. J.; Alivisatos, A. P., Enhanced Electrochemical Methanation of Carbon Dioxide with a Dispersible Nanoscale Copper Catalyst. Journal of the American Chemical Society 2014, 136 (38), 13319-13325.</li>
+</ol>
+<ol>
+<li>Kwon, Y.; Lum, Y.; Clark, E. L.; Ager, J. W.; Bell, A. T., CO2 Electroreduction with Enhanced Ethylene and Ethanol Selectivity by Nanostructuring Polycrystalline Copper. ChemElectroChem 2016, 3 (6), 1012-1019.</li>
+</ol>
+<ol>
+<li>Ma, S.; Sadakiyo, M.; Luo, R.; Heima, M.; Yamauchi, M.; Kenis, P. J. A., One-step electrosynthesis of ethylene and ethanol from CO2 in an alkaline electrolyzer. Journal of Power Sources 2016, 301, 219-228.</li>
+</ol>
+<ol>
+<li>Chen, C. S.; Wan, J. H.; Yeo, B. S., Electrochemical Reduction of Carbon Dioxide to Ethane Using Nanostructured Cu2O-Derived Copper Catalyst and Palladium(II) Chloride. The Journal of Physical Chemistry C 2015, 119 (48), 26875-26882.</li>
+</ol>
+<ol>
+<li>Ohya, S.; Kaneco, S.; Katsumata, H.; Suzuki, T.; Ohta, K., Electrochemical reduction of CO2 in methanol with aid of CuO and Cu2O. Catalysis Today 2009, 148 (3), 329-334.</li>
+</ol>
+<ol>
+<li>McCrory, C. C. L.; Jung, S.; Ferrer, I. M.; Chatman, S. M.; Peters, J. C.; Jaramillo, T. F., Benchmarking Hydrogen Evolving Reaction and Oxygen Evolving Reaction Electrocatalysts for Solar Water Splitting Devices. Journal of the American Chemical Society 2015, 137 (13), 4347-4357.</li>
+</ol>
+<ol>
+<li>Pérez-Fortes, M.; Schoneberger, J. C.; Boulamanti, A.; Harrison, G.; Tzimas, E., Formic acid synthesis using CO2 as raw material: Techno-economic and environmental evaluation and market potential. International Journal of Hydrogen Energy 2016, 41 (37), 16444- 16462.</li>
+</ol>
+<ol>
+<li>Li, X.; Anderson, P.; Jhong, H.-R. M.; Paster, M.; Stubbins, J. F.; Kenis, P. J. A., Greenhouse Gas Emissions, Energy Efficiency, and Cost of Synthetic Fuel Production Using Electrochemical CO2 Conversion and the Fischer-Tropsch Process. Energy &amp; Fuels 2016, 30 (7), 5980-5989.</li>
+</ol>
+<ol>
+<li>Verma, S.; Kim, B.; Jhong, H. R.; Ma, S.; Kenis, P. J., A Gross-Margin Model for Defining Technoeconomic Benchmarks in the Electroreduction of CO2. ChemSusChem 2016, 9 (15), 1972-9.</li>
+</ol>
+<ol>
+<li>Ho, M. T.; Allinson, G. W.; Wiley, D. E., Factors affecting the cost of capture for Australian lignite coal fired power plants. Energy Procedia 2009, 1 (1), 763-770.</li>
+</ol>
+<ol>
+<li>Raksajati, A.; Ho, M. T.; Wiley, D. E., Reducing the Cost of CO2 Capture from Flue Gases Using Aqueous Chemical Absorption. Industrial &amp; Engineering Chemistry Research 2013, 52 (47), 16887-16901.</li>
+</ol>
+<ol>
+<li>Sanz-Perez, E. S.; Murdock, C. R.; Didas, S. A.; Jones, C. W., Direct Capture of CO2 from Ambient Air. Chem Rev 2016, 116 (19), 11840-11876.</li>
+</ol>
+<ol>
+<li>Zeman, F., Reducing the cost of Ca-based direct air capture of CO2. Environ Sci Technol 2014, 48 (19), 11730-5.</li>
+</ol>
+<ol>
+<li>Steward, D.; Ramsden, T.; Zuboy, J., H2A Central Hydrogen Production Model, Version 3 User Guide (DRAFT). National Renewable Energy Laboratory 2012.</li>
+</ol>
+<ol>
+<li>Wiheeb, A.; Helwani, Z.; Kim, J.; Othman, M., Pressure swing adsorption technologies for carbon dioxide capture. Separation &amp; Purification Reviews 2016, 45 (2), 108-121.</li>
+</ol>
+<ol>
+<li>Tamm, D.; Persson, T.; Hulteberg, C.; Bauer, F., Biogas upgrading-Review of commercial technologies. SGC Rapport 2013, 270.</li>
+</ol>
+<ol>
+<li>Persson, M.; Jönsson, O.; Wellinger, A., Biogas upgrading to vehicle fuel standards and grid injection. IEA Bioenergy 2006.</li>
+</ol></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><ol>
+<li>Patsurska, A.; Repele, M.; Bazbauers, G., Economic Assessment of Biomethane Supply System based on Natural Gas Infrastructure. Energy Procedia 2015, 72, 71-78.</li>
+</ol>
+<ol>
+<li>Wolf, D.; Schmidt, R.; Block, U.; Schoenmakers, H.; Bott, K.; Kaibel, G., Production of anhydrous or substantially anhydrous formic acid. Google Patents: 1982.</li>
+</ol>
+<ol>
+<li>Wiser, R.; Bolinger, M. 2014 Wind Technologies Market Report; DOE/GO-102015-4 Other: 7152 United States 10.2172/1220532 Other: 7152 EE-LIBRARY English; ; Lawrence Berkeley National Laboratory: 2015; p Medium: ED; Size: 93.</li>
+</ol>
+<ol>
+<li>Schlomer, S.; Bruckner, T.; Fulton, L.; Hertwich, E.; McKinnon, A.; Perczyk, D.; Roy, J.; Schaeffer, R.; Sims, R.; Smith, P., Annex III: Technology-specific cost and performance parameters. Climate change 2014, 1329-1356.</li>
+</ol>
+<ol>
+<li>Wang, M.; Han, J.; Dunn, J. B.; Cai, H.; Elgowainy, A., Well-to-wheels energy use and greenhouse gas emissions of ethanol from corn, sugarcane and cellulosic biomass for US use. Environmental Research Letters 2012, 7 (4), 045905.</li>
+</ol>
+<h2>Acknowledgement</h2>
+<p>Acknowledgment is made to the National Science Foundation Faculty Early Career Development program (Award No. CBET-1350911).</p></section></main></body></html>

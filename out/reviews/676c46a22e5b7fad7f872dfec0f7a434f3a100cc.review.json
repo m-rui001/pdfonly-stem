@@ -1,0 +1,72 @@
+{
+  "sha1": "676c46a22e5b7fad7f872dfec0f7a434f3a100cc",
+  "title": "PdMo bimetallene for oxygen reduction catalysis",
+  "doi": "https://doi.org/10.1038/s41586-019-1603-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/676c46a22e5b7fad7f872dfec0f7a434f3a100cc/index.html",
+  "source_chars": 62450,
+  "markdown_chars": 2779,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "By revealing the striking electrocatalytic property and quantum size effect of PdMo metallene",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文标题及全文均使用“PdMo bimetallene”，此处写为“PdMo metallene”，疑为拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "For the synthesis of Pd metallene, 10 mg of Pd(acac)2 and 30 mg of AA were first dissolved in 5 mL of OAm under sonication.",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上下文对比样品应为Pd metallene（单金属Pd烯），此处写法与标题一致，但后续也有“PdMo metallene”等，需注意区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "via the Koutechy-Levich equation",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文中其他处拼写为“Koutecky-Levich”，此处为“Koutechy-Levich”，疑为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "λ＝0.15406 nm",
+      "type": "字符缺失疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文中“λ”字符可能缺失或显示异常，但结合上下文可推断为Cu Kα辐射波长，仅作提示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表中的关键数值：PdMo bimetallene的ECSA 138.7 m²/gPd，质量活性16.37 A/mgPd（0.9 V vs RHE），倍率77.9和327.4，半波电位0.95 V，DFT应变最优~1%，电荷转移0.89 e，d带中心下移0.26 eV，电池数据等。实验中各数据与摘要一致。注意：原文中“PdMo metallene”与“PdMo bimetallene”混用，已在issues中标注；应变公式和EXAFS数据在文中保留。另，部分数值如“0.89 nm”与“0.88 nm”在厚度描述中略有出入，但属于不同测量位置，未列为问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5377,
+      "prompt_tokens": 17344,
+      "total_tokens": 22721,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3040
+      }
+    },
+    "content_chars": 4207
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "sha1": "d6ca835807f079acdb703fcd2c3409c43491670e",
+  "title": "Oil spill problems and sustainable response strategies through new technologies",
+  "doi": "https://doi.org/10.1039/c5em00070j",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d6ca835807f079acdb703fcd2c3409c43491670e/index.html",
+  "source_chars": 103938,
+  "markdown_chars": 8244,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "even though temperatures were about 5C",
+      "type": "字符显示异常",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "源文本中温度单位显示为 'C'，实际应为 '°C' 或 '℃'，属于PDF抽取字符映射问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "650-1250C",
+      "type": "字符显示异常",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同样温度单位显示异常，应为'°C'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "4.1–4.5% per year [1].",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第3页开头引用[1]但在参考文献列表中出现完整条目，无实际问题，但需注意引用编号与文献对应。此处无明显断句问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "M.F. Fingas [44] described general conditions necessary for in-situ burning.",
+      "type": "人名缩写疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文中'M.F. Fingas'应为'M.F. Fingas'，但常写为'Fingas'，此处无足够证据判错，仅提示可能为首字母缩写。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、海洋和陆地响应策略中的关键数值：如产量递减率4.1-4.5%、每30米深度增加8.5%事故概率、海洋每年200万吨油、约18%来自炼油/海上作业、Exxon Valdez肥料用量（氮48400kg，磷5200kg）、生物降解速率（表面油28%/年，地下油12%/年）、实验室降解率（90%烷烃、36%总油质量）、PAH和脂肪烃降解倍数（2倍和5倍）、Deepwater Horizon消油剂量（184万加仑）、411次燃烧移除4000-5000万升油等。公式和温度单位保留原样（如5C标记为异常）。文献编号和表格信息仅保留正文提及部分，未额外补充。存在温度单位显示异常，已标记。其他内容基于原文提取，未添加外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5616,
+      "prompt_tokens": 26110,
+      "total_tokens": 31726,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 22
+      }
+    },
+    "content_chars": 9619,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "sha1": "f049e601c82b33baa367c6d5ad8b0af4edd24a87",
+  "title": "Induction therapy with the selective interleukin-23 inhibitor risankizumab in patients with moderate-to-severe Crohn's disease: a randomised, double-blind, placebo-controlled phase 2 study",
+  "doi": "https://doi.org/10.1016/s0140-6736(17)30570-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f049e601c82b33baa367c6d5ad8b0af4edd24a87/index.html",
+  "source_chars": 56617,
+  "markdown_chars": 4560,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "15 · 0%, 95% CI 0•1 to 30-1; p=0∙0489",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "提取文本中混有中点（·、•、∙）和连字符表示小数点和逗号，疑似OCR/文本抽取错误。例如'15 · 0%'应为'15.0%'，'0•1'应为'0.1'，'30-1'应为'30.1'，'p=0∙0489'应为'p=0.0489'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Crohn's Disease Activity Index (CDAI)19 of 220-450",
+      "type": "上标丢失",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字'19'应为参考文献上标引文（对应参考文献19），而非正文连续内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Crohn's Disease Endoscopic Index of Severity (CDEIS)19",
+      "type": "上标丢失",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，'19'应为参考文献上标引文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "14·5% (2·0 to 27·0; ρ=0·0228) in the 200 mg risankizumab arm and 21·7% (7·7 to 35·7; p=0∙0023)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "同页中同一分句内'ρ=0·0228'和'p=0∙0023'混用希腊字母rho和拉丁字母p，且ρ=0·0228应为p=0.0228。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "ρ<0·0001 for each arm vs placebo",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "'ρ'（希腊字母rho）应为'p'（概率值标注），属于OCR/抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "median % change from baseline to week 12 -74·4% [IQR -91·7 to -1·0] vs 2·5% [-55·5 to 107·1], p=0∙0003",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "分隔符使用不一致（·和∙），应为小数点'.'；数值本身可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "ρ<0∙0001 for change from baseline in CRP for versus placebo",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图注中'ρ'应为'p'，且'for versus placebo'疑为'versus placebo'或'for each arm versus placebo'的截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "‡ρ=0∙0160 for median percentage change from baseline in serum interleukin 22 versus placebo",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "'ρ'应为'p'，且与正文中报告600 mg组血清IL-22 p=0.0180不一致，疑为图注中不同比较（可能为200 mg组）。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对：主要终点临床缓解率（200 mg 24%、600 mg 37%、安慰剂15%、汇总差异15.0% p=0.0489）、各剂量差异和CI、次要终点（临床应答、内镜缓解、内镜应答、深度缓解）的关键数值和p值、生物标志物变化（CRP、FCP、IL-22）、IBDQ变化、安全性数据（不良事件、严重不良事件、停药、抗药抗体）均在摘要和结果部分一致。统计方法（分层CMH检验、非应答归因、样本量计算参数）在方法部分完整。不确定之处：图注中IL-22的p值（0.0160）与正文（0.0180）存在差异，可能为不同比较或抽取误差；耐药株相关数值均未出现。已保留原数据单位的完整性。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4690,
+      "prompt_tokens": 15213,
+      "total_tokens": 19903,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 795
+      }
+    },
+    "content_chars": 7046
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

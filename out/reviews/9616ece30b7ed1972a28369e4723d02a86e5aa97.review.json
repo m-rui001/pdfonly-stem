@@ -1,0 +1,90 @@
+{
+  "sha1": "9616ece30b7ed1972a28369e4723d02a86e5aa97",
+  "title": "Novel segmented stacked autoencoder for effective dimensionality reduction and feature extraction in hyperspectral imaging",
+  "doi": "https://doi.org/10.1016/j.neucom.2015.11.044",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9616ece30b7ed1972a28369e4723d02a86e5aa97/index.html",
+  "source_chars": 41431,
+  "markdown_chars": 3232,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "p   N",
+      "type": "疑似公式符号乱码",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中数学符号显示为乱码，原文应为 p 属于 N 维实数空间等含义，但具体符号无法还原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "y  f wyp  by",
+      "type": "公式排版乱码",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中变量和运算符粘连，无法准确辨析如 w_y、b_y 的下标，但可推断为 AE 的标准形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Segment 1-35 1 3 5 6 N1 2nd F1 1st L2=13 Segment 36-104 2 3 5 7 N2 2nd F2 Segment N3 Segment N1 Segment N2\n\n105-200\n\n1-80 81-102\n\n1st\n\nL3=13\n\n2nd\n\nF3\n\nPavia CA 1st L1=20 2nd F1 1st L2=20 2nd F2\n\n2\n\n4\n\n5\n\n7\n\n3\n\n5\n\n8\n\n10\n\n2\n\n5\n\n7\n\n10",
+      "type": "表格结构错乱",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Table III 的提取严重错位，行、列、数字混杂，无法还原分段与节点数、特征数的对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "SSA 97.35 [+1.31] (102) 82.13 [+11.7] (200)",
+      "type": "疑似数据错位",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "Table V 中 SSA 行两个数据括号内数字（102 和 200）与正文描述不符：正文提到 SSA 在 92AV3C 用 200 特征、在 Pavia CA 用 102 特征，但此处提取顺序颠倒了。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "SSA 100.0 20.77 89.18 96.04 98.90 97.11 100.0 86.00 97.35",
+      "type": "表格拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table VII 中 SSA 行的类级精度与 Table V 中 Pavia CA 的 SSA 总体精度 97.35 一致，但此处提取顺序和列对齐可能存在问题，需对照原文图。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "For the 92AV3C data set, conventional SAE seems to perform worse than the rest techniques except the EMD. However, for Pavia CA, SAE presents the third best result. In both cases, S-SAE outperforms not only SAE but the rest of methods, only the SSA in the 92AV3C case provides higher accuracy, but employing much more features, 200 instead of 20.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该段文字位于第12页页尾，句子完整但后续图表编号（Fig.10 等）在第12页顶部，可能因页眉和图表位置导致阅读顺序中断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文及表格中的主要数值：92AV3C 上 S-SAE 最高 OA 80.66% (F=20)，Pavia CA 上 97.42% (F=5)；常规 SAE 分别 74.01% 和 97.29%；PCA 77.01%/97.06%、ICA 76.90%/96.93%、MNF 78.03%/97.16%、EMD 65.40%/90.71%、SSA 82.13%/97.35% 均与表 V 一致。McNemar z 值、连接数表 VIII、时间表 IX 均已保留原数。公式部分因提取乱码仅照录可见符号，未做任何修复。Table III 分段配置的提取错乱已在 issues 中标出，markdown 中未引用具体模糊数字。结论中关于 SSA 特征数（92AV3C 用 200、Pavia CA 用 102）与 Table V 提取顺序矛盾，已在 issues 中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3161,
+      "prompt_tokens": 11753,
+      "total_tokens": 14914,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 103
+      }
+    },
+    "content_chars": 5719
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

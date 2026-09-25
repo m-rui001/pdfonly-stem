@@ -1,0 +1,76 @@
+{
+  "sha1": "23c740ae30258790b800297df80fed3fba5d8d70",
+  "title": "Mechanism of Hydrogen Evolution Reaction on 1T-MoS 2 from First Principles",
+  "doi": "https://doi.org/10.1021/acscatal.6b01211",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/23c740ae30258790b800297df80fed3fba5d8d70/index.html",
+  "source_chars": 50544,
+  "markdown_chars": 9909,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "formed a transition state with H-H distance of 1.24.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Tafel 过渡态 H-H 距离缺少单位，前文同类距离均带 Å，疑为抽取时单位丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "shown in Figur 10b",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "Figure 被抽成 Figur，属明显拼写抽取错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "electronic strucure",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "structure 被抽成 strucure，属明显拼写抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "ΔE_{ZPE}=E_{ZPE}^{n H}-Z_{ZPE}^{(n-1) H}-\\frac{1}{2} E_{ZPE}^{H_{2}}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "零点能变化公式中第二项被抽成 Z_{ZPE}^{(n-1)H}，按上下文应为 E_{ZPE}^{(n-1)H}，符号 E 被误识别为 Z。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Mechanism of Hydrogen Evolution Reaction on 1T-MoS2 from First Principles",
+  "self_check": "已核对摘要、正文与结论中的关键数值：ΔG_H 最优覆盖度 12.5%~25%（−0.28~0.13 eV）、25% 最优、Volmer 外推活化能 0.16 eV、Heyrovsky 外推活化能 0.62 eV、Tafel 活化能 1.07 eV、Tafel 斜率 40 mV/decade、电极电势 −0.22 V，方向与结论一致。公式 ΔG_H = ΔE_H + 0.26 及 ΔE_H、ΔE_ZPE、ΔS_H 定义已按原文保留。仍不确定处：Tafel 过渡态 H-H 距离 1.24 的单位在抽取文本中缺失；零点能公式中 Z_{ZPE} 疑为 E_{ZPE} 的抽取错误，已照录并在 extraction_issues 标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6842,
+      "prompt_tokens": 15930,
+      "total_tokens": 22772,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11418,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

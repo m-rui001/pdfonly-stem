@@ -1,0 +1,55 @@
+{
+  "sha1": "8cef86095642b55d2671ea39a69e3505314e3f46",
+  "title": "Self‐Assembled Hole Transporting Monolayer for Highly Efficient Perovskite Solar Cells",
+  "doi": "https://doi.org/10.1002/aenm.201801892",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8cef86095642b55d2671ea39a69e3505314e3f46/index.html",
+  "source_chars": 70258,
+  "markdown_chars": 2462,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "a weaker n-π* band in the 350450 nm region",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“350450”缺少连字符，推测应为“350–450”，但缺乏更强文本证据，仅作低置信度疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "the layer thickness must be below 5 [page break] 2 nm in order to show an absorption of under 1% at 375 nm.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页面5结尾为“below 5”，页面6开头为“2 nm”，拼接后成为“below 5 2 nm”，明显应为“below 2 nm”。该数字对厚度结论重要，疑似跨页断句错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：PCE 17.8%（最佳）、平均FF接近80%、Jsc差异约0.3 mA·cm⁻²、Ip值（V1036 SAM 4.98 eV，混合5.09 eV，PTAA 5.18 eV）、合成产率46%、吸收峰304 nm、分解温度343°C等。结论方向与摘要及正文一致。跨页断句问题已在issues中标记，其他公式未在正文出现，无需保留。不确定处：表2与表3中平均FF数值与“接近80%”的表述需结合统计上下文理解，已在笔记中明确说明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8551,
+      "prompt_tokens": 22250,
+      "total_tokens": 30801,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6602
+      }
+    },
+    "content_chars": 3338
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

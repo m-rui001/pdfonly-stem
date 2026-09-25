@@ -1,0 +1,438 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/lir/50/5074f236d62f4b91ae8d0b5f72f1959672f2b0e7.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mechanical fault diagnosis using Convolutional Neural Networks and Extreme Learning Machine</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>Mechanical fault diagnosis using Convolutional Neural Networks and Extreme Learning Machine</h1><p class="source">2019 · <a href="https://doi.org/10.1016/j.ymssp.2019.106272">https://doi.org/10.1016/j.ymssp.2019.106272</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/lir/50/5074f236d62f4b91ae8d0b5f72f1959672f2b0e7.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Mechanical fault diagnosis using Convolutional Neural Networks and Extreme Learning Machine Zhuyun Chen1,2, Konstantinos Gryllias2,3,Weihua Li1* 1 School of Mechanical and Automotive Engineering, South China University of Technology, 510640, China 2 Department of Mechanical Engineering, KU Leuven, Celestijnenlaan 300, Leuven, 3001, Belgium 3 Dynamics of Mechanical and Mechatronic Systems, Flanders Make, Belgium *Corresponding author: whlee@scut.edu.cn</p>
+<p>Abstract In the era of the so called 4th industrial revolution, the Factory of the Future and the Industrial Internet of Things, the industrial mechanical systems become continuously more intelligent and more complex. Therefore, there is a clear need for research and development on data driven methodologies and condition monitoring techniques which are able to achieve fast, reliable and high-quality diagnosis in an automatic manner. In this paper, a novel fault diagnosis approach integrating Convolutional Neural Networks (CNN) and Extreme Learning Machine (ELM) is proposed, consisting of three main stages. Firstly, the Continuous Wavelet Transform (CWT) is employed in order to obtain pre-processed representations of raw vibration signals. Secondly, a CNN with a square pooling architecture is constructed to extract high-level features. The model does not require extra training and fine-tuning, which can effectively reduce computational cost. Finally, ELM as a strong classifier is further utilized to improve the classification performance on the diagnosis framework. Two datasets, including a gearbox dataset and a motor bearing dataset, have been collected and used to verify the effectiveness of the proposed method. A comprehensive comparison and analysis with widely used algorithms is also performed. The results demonstrate that the proposed method can detect different fault types and outperforms other methods in terms of classification accuracy.</p>
+<p>Keyword: Fault diagnosis, Convolutional Neural Network, Extreme Learning Machine, Wavelet Transform</p>
+<p>1 Introduction Rotating machines are widely used in manufacturing industry, operating usually for long time under harsh conditions. Sudden failures occurring on key machine components such as gears and bearings may lead to unexpected breakdown of machines and cause economic loss, environmental pollution and human casualties. As a result, early and accurate detection of defects and failures of such components of rotating machinery is critical to ensure operational reliability and avoid catastrophic accidents in industrial applications. Therefore, on one hand under the demand for continuous condition monitoring and on the other hand under the presence of large amounts of industrial data, Machine Learning (ML) intelligent diagnosis approaches for rotating machinery are increasingly gaining more attention as they appear as a promising</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>and powerful tool, which is able to handle and exploit useful information from sufficient available history data [1-3]. A number of typical intelligent diagnosis techniques have been proposed to improve the classification performance, including mainly two steps: (1) the feature extraction and (2) the fault recognition. Feature extraction involves the incorporation of expertise knowledge to obtain condition symptoms and to reveal the relationship between discriminative features and health conditions of machines. Various types of feature extraction techniques such as the wavelet entropy and the Time-Frequency analysis have been developed to enhance the diagnostic efficiency and reliability [4-6]. The different types of representations are sensitive to the different types and levels of severity of faults, which provides a comprehensive reflection of the inherent fault information from different aspects. Through feature extraction, the raw signals are converted into compact relevant representations, which can be then fed into a classifier in order to train and optimize a decision function. Regarding different classification techniques, Artificial Neural Networks (ANN) and Support Vector Machines (SVM) are commonly applied for the detection and diagnosis of machine faults [7-8]. In addition, a generalized single hidden-layer feed-forward neural network called ELM has been proposed, presenting a simple structure and fast learning speed [9]. ELM generates a suitable number of hidden nodes where the parameters are randomly assigned and do not need to be updated. The learning algorithm implemented in one step is extremely fast and achieves comparable or even higher prediction accuracy in comparison to ANN and SVM [9-10]. Due to its fast learning speed, its strong generalization performance and its straightforward solution, ELM has been applied in fault detection and diagnosis classification [11-12], and can be regarded as a promising solution for quick model training, fault detection and diagnosis. Recently, Deep Learning (DL) algorithms have attracted increasing attention in the field of fault diagnosis. Unlike the traditional shallow learning algorithms, such as ANN, SVM and ELM, which are incapable to learn deep representations [3]. DL algorithms refer to models consisting of multiple levels of non-linear operations. Those models aim to automatically learn hierarchy features from low level to high level, enabling more intelligent think and decision. Many DL models such as the Stacked Auto Encoders (SAE), the Deep Belief Networks (DBN) and the CNN have been explored for the fault diagnosis of rotating machinery [13-18]. DBN and SAE implement unsupervised learning using unlabeled data during the pre-training procedure. They are very efficient in extracting features from vibration measurements and frequency spectra. In addition, CNN having convolutional layers and pooling layers presents the advantage in capturing the structure information from complex two-dimensional image input. Moreover, it has less weights to be optimized due to the local connection and a weight sharing strategy. A variety of CNN models have been proposed for mechanical fault diagnosis tasks. Wang [19] constructed a CNN model to learn features and utilized Hidden Markov Models (HMM) in order to classify rolling element bearing faults. Liu [20] developed a Dislocated Time Series CNN (DTS-CNN) to capture the relationship between different fault signals and improved the classification capability of faults in induction motors. Janssens [21] extracted the absolute amplitudes of the frequency spectrum using two accelerometers and then a 2D CNN with one convolutional layer was designed to learn useful features for bearing fault detection. In the works mentioned above, raw vibration data or frequency spectra are adopted. However, both of them are sometimes incapable of representing the dynamic behavior of a machine operating under different conditions, which may limit their applications, since the running conditions of a rotary machinery are usually nonstationary. To reveal the dynamic</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>behavior of a machine, time-frequency analysis tools such as the Short Time Fourier Transform (STFT) [22], and the Wavelet Transform (WT) [23] have been adopted. WT provides a high resolution in both the time-domain and frequency-domain. Though high computational cost is required, WT usually provides better information about the health conditions of rotary machinery, which can be used to improve the classification performance. Gan [24] adopted the Wavelet Packet Transform (WPT) to extract representative features and then designed a twolayer hierarchical diagnosis network (HDN) for rolling bearing faults. Zhao [25] combined wavelet packet features and a Deep Residual Network (DRN) for fault diagnosis of planetary gearboxes. Guo [26] adopted the CWT to process raw vibration signals, and employed CNN for the fault diagnosis of gas turbine. Verstraete [23] investigated the feature extraction ability of STFT, CWT and Hilbert-Huang Transform and found CWT presenting better classification performance. Yoo [27] took the advantage of CWT to convert the vibrations signals into twodimensional images, which were fed into a CNN for the Remaining Useful Lifetime (RUL) prediction. In the abovementioned literature, CNN achieves satisfactory performance in many different diagnosis tasks and presents a superiority to the traditional ML methods. However, the training of CNN sometimes is a challenge, since CNN is sensitive to the selection of the network hyper-parameters such as the kernel size, the learning rate, and the batch size. It relies on a Back-Propagation (BP) algorithm to update the model and to adapt to new fault diagnosis tasks. On the other hand, in order to find the optimum network architecture and evaluate its performance, the network should be retrained each time, which requires extra computational resources. This is a truly big obstacle as high computational power is needed. Recently, some researchers found that a certain network architecture with random, untrained weights could perform well in different tasks. By conducting thorough experiments, Pinto [28] explored thousands of potential convolutional pooling architectures on an array of basic object recognition tasks. The conclusion was that a network with random weights could achieve significant gains in a variety of vision systems. Jarrett [29] conducted experiments finding that in certain network architectures, a two-stage system with random filters could obtain rather competitive results. A similar result can also be found in [30], which shows that certain convolutional pooling architectures can be inherently frequency selective and translation invariant, even with random weights. Those conclusions are of great practical signiﬁcance, as they mean that good performance can be yielded by designing and choosing the best architectures rather than only adjusting the parameters of the network. Inspired by previous works, a novel approach integrating CNN and ELM is proposed for vibration-based fault diagnosis of gearboxes and motors. The proposed method not only leverages the excellent feature learning capability of CNN, but also exploits the outstanding classification performance of ELM. The proposed method firstly utilizes the CWT to provide good representations of raw vibration signals. Then a CNN with a square pooling architecture is constructed to extract high-level features. During the training procedure of CNN, random weights are used to reduce the computational cost during the network fine-tuning procedure. Finally, ELM is adopted to conduct the final fault classification. The generalization capability and the training speed are further guaranteed by inheriting the advantages of ELM. The remaining part of the paper is organized as follows. In Section 2, the theory of the ELM and the CNN are provided. The diagnosis procedure using the proposed method is introduced in Section 3. In Section 4, a comprehensive experimental description and the analytical analysis of the results are presented. Finally, some conclusions are drawn in Section 5.</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>2 Introduction to Extreme Learning Machine and Convolutional Neural Networks 2.1 Extreme Learning Machine ELM has been proposed in order to effectively train generalized Single hidden Layer Feedforward neural Networks (SLFNs). Unlike the traditional neural networks, where all the parameters of the hidden nodes of the SLFN need to be tuned, the hidden weights in ELM are randomly generated and then are kept fixed during the training procedure without any further tuning. The connections between the output nodes and the hidden nodes are adjustable through an effective pseudoinverse calculation. Compared to the ANN, there are two obvious advantages: (1) For ELM, the input weights and the biases are generated randomly, and they stay fixed without any iteration in the training stage. This characteristic is helpful and rather crucial for fast training without degrading the universal approximations capability. (2) ANN only tends to reach the minimum training error, whereas ELM attempts to minimize both the training error and the norm of the output weights, which provides good generalization performance on unseen data according to Bartlett’s theory [31].</p>
+<p>Fig. 1. The structure of ELM.</p>
+<p>The basic structure of ELM is shown in Fig. 1. For an input x  [x1 , x2 ,</p>
+<p>, xm ] d m ,</p>
+<p>and if there are L nodes at the hidden layer, then h(x)  [h1 (x), h 2 (x), ..., h L ( x)] m L is the hidden layer corresponding to the nonlinear feature mapping of the ELM. The output function can be obtained by: L</p>
+<p>t(x j )   βi h i ( x j )  h( x j )β</p>
+<p>j  1, 2, ..., m,</p>
+<p>(1)</p>
+<p>i 1</p>
+<p>where β  [β1 , β 2 ,..., β L ] is the output weight matrix connecting the output layer nodes and the hidden layer nodes. In real applications, h(x) is a nonlinear piecewise continuous function. The commonly used feature mapping function in ELM can be a Sigmoid function, a Gaussian function, and a Hyperbolic Tangent function, etc. It has been also proven that most activation functions, although they are not required to be continuous and differentiable, could guarantee the universal approximation capability of ELM [31], thus allowing ELM to learn arbitrary decision hyperplanes for classification tasks. Basically, training an ELM includes two stages: (a) the random filter mapping and (b) the linear parameter solving. In the first stage, the weights w  [w1 , w 2 , ..., w L ]  R d  L and the biases b  [b1 , ..., bL ]  R1 L are randomly generated. Then the hidden layer nodes can be computed as:</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p> h(x1 )   h1 (w1 x1  b1 ),  H      h(x m )   h1 (w1T x m  b1 ),  T</p>
+<p>, h L ( wTL x1  bL )    T , h L (w L x m  bL ) </p>
+<p>(2)</p>
+<p>In the second stage, the output weight β is solved by minimizing the approximation error in the squared error matrix with respect to the training samples. The ELM solution aims to simultaneously reach the minimum training error and the minimum norm of the output weights:</p>
+<p>min Lc</p>
+<p>βR</p>
+<p>1 2 C 2 β  Hβ  Y 2 2</p>
+<p>(3)</p>
+<p>The first term is the norm of the weights and the second term is the training error. C is the penalty coefficient controlling the trade-off between the two terms. Y  [y1 , y 2 , ..., y m ] cm is the target matrix of the training samples used, and c is the number of class in the output layer. As the optimization of equation (3) is convex, the optimal solution to the output weight β can be calculated with efficient methods like the Singular Value Decomposition and the matrix inversion. It should be noted that if the number of m training samples is larger than that of the hidden nodes L, then the hidden output matrix H has more rows than columns (m&gt;L). To solve the smallest norm least squares solution β . Huang [10] provided the following solution, β*  H + Y , where H + is the Moore–Penrose generalized inverse of the matrix H . By setting</p>
+<p>the gradient of equation (3) to zero, we have: β*  CHT (Y  Hβ* )  0</p>
+<p>(4)</p>
+<p>and the closed form solution of the  can be represented as： 1</p>
+<p>I  β*  H + Y   H T H   H T Y C </p>
+<p>(5)</p>
+<p>where I is the identity matrix of dimensionality L. Since H is a full column rank, HT H is an invertible matrix, and it is clear that when the gradient of equation (3) equals to zero, the training error of ELM can reach the minimum. Thus, the ELM meets the convergence. If the number of m training data is less than that of the hidden nodes (m&lt;L) , then the orthogonal project method with the SVD decomposition can be used to calculate the Moore-Penrose generalized inverse of matrix H : when HHT is nonsingular, H   H T (H T H )1 , and the closed form solution of</p>
+<p>β can be obtained as： 1</p>
+<p>I  β*  H + Y  H T  H T H   Y C  </p>
+<p>(6)</p>
+<p>The β* is the unique solution of the equation (3)and therefore, the ELM not only reaches the minimum training error but also obtains the smallest norm of weights. Then the convergence is also reached. Once the parameter of the loss function in equation (3) is calculated with training data, the predicted output value of new testing samples can be computed as:</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>1    I h(x) *   H T H   H T Y  if m  L   C    T  h(x)β*   1  T T   I h( x ) * H H H  Y   if m  L     C    </p>
+<p>(7)</p>
+<p>2.2 Convolutional Neural Networks CNN is a variant of a multilayer fully connected feedforward neural networks, which could automatically extract local features to perform classification. As a type of efficient algorithm, it has been widely used in diverse computer vision applications. Though many variants of CNN model have been developed, the architecture of the typical CNN is constructed with a convolutional layer, a pooling or a sub sampling layer and a fully connected layer as in a standard multiple neural network. Different kinds of layers play different roles. The Convolutional layer is used to detect the local conjunctions of features on the input data by the local connectivity of the weights. The Pooling layer is used to merge similar features into one to reduce the network parameters and achieve a translation invariant characteristic. The fullconnected layer is used to convert the input into a vector and to achieve the categories for different tasks. The CNN architecture is able to take advantage of the 2D structures like image and speech spectrogram. Compared to a full-connected network, the CNN presents fewer parameters by having local connections, shared weights and pooling operators and shows superior performance in a number of applications.</p>
+<p>2.2.1 Convolutional layer Convolutional layer is one of the main building blocks of CNN. It is usually made of a set of learnable kernels (or filters) and one trainable bias per feature map. In the convolutional layer, each filter is connected to the local patches in the feature maps of the previous layer. Various convolutional kernels are utilized to slide the whole previous layer’s input data. Then the local weighted sum of the convolution is passed through the non-linear activation function th to produce output feature maps. For the input xl-1 1 of the (l-1) layer, the next layer’s feature map can be expressed as [32]: N</p>
+<p>xli  f ( xli 1 * k lij  blj )</p>
+<p>(8)</p>
+<p>i 1</p>
+<p>where N is the number of kernels in (l-1)th layer; xlj is the jth feature map in lth layer; k and b are the corresponding convolutional kernels and additive biases, and f(·) represents the non-linear activation function.</p>
+<p>2.2.2 Pooling layer After the convolutional layer, it is common to add a pooling layer between the CNN layers. The pooling operation combines the outputs of the neighboring neurons at one layer into a single neuron in the next layer. Those combinations among different feature maps are good to obtain more abstract feature representations. It is helpful to shorten the computations and control overfitting by reducing the dimensionality of the input to reduce the number of parameters. If there is an input map, then an output map with a reduced size will be obtained by a pooling operation, which can be expressed as:</p>
+<p>xlj  f ( lj down(xlj1 )  blj )</p>
+<p>(9)</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>where down(·) represents a sub-sampling or pooling function, β is the multiplicative bias and b is the additive bias for each feature map. Additionally, there are also different types of pooling operations like the average pooling and the max pooling. After the convolutional and the pooling layers, the fully connected layers are used to connect all the neurons in the previous layer as the standard ANN does. The last output usually is the Softmax, which is used to classify the input data into various classes. Then the training procedure for the CNN is the same as that for a regular neural network by using the back propagation and the gradient descent algorithm.</p>
+<p>3 The proposed CNN-ELM model In this section, a novel intelligent approach based on CNN and ELM, named CNN-ELM, is proposed which is able to tackle the problems of high-dimensional time-frequency images and to improve the training speed and the generalization performance. The proposed network consists of two stages: the design of a CNN for feature extraction and the construction of an ELM for classification.</p>
+<p>3.1 Design of CNN The Topography Independent Component Analysis (TICA) network is used to build a CNN with a square pooling architecture, learning feature representations directly from raw signals [30, 33]. A typical TICA network consists of three layers including the input layer, the convolutional layer and the square pooling layer as shown in Fig. 2. The network learns to construct features in a topographical map by pooling together local groups of related features. TICA network can be regarded as a two-stage optimization procedure with Squares and Square Root nonlinearities respectively in each stage.</p>
+<p>Fig. 2. The structure of Topography Independent Component Analysis (TICA).</p>
+<p>In the first stage, given an input data {x(t)}Tt=1, CNN firstly extracts features by computing the convolution on the raw input data with the weights W between the input and the hidden nodes. The weights W in the convolutional layer with a set of kernels are applied on each small position in the input image and then the inner product of the filter template at every location is calculated. The results of the feature maps can be regarded as the representation output in the hidden layer of the ELM. The convolutional operation on the kth feature map can be obtained by: ck (xt ; W)   j 1 Wkj xtj n</p>
+<p>k  1,</p>
+<p>,m</p>
+<p>(10)</p>
+<p>where W mn , m is the number of units in a hidden layer and n is the input dimensionality. Usually the weights are randomly initialized yielding a Gaussian probability distribution. Following the convolutional layer, the square pooling layer is adopted and applied to all feature maps in the previous layer by combining the local neighboring response regions into one value.</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>The square pooling layer can be regarded as a nonlinear activation function, which includes a square operation and a summation operation. The activation functions of the pooling units are the sum of the squares of the units in the previous convolutional layer. The weights V in the second layer are fixed to create invariance to small transformations of the input in the first layer. The hidden unit output pi refers to the pooling features, preserving important information while discarding irrelevant details by grouping the spatially neighboring neurons in a lower layer. It further receives the input signal from the layer below and returns a scalar value. Finally, the parameter W can be solved by finding sparse feature representations in the second layer using the equation: pi (xt ; W, V) </p>
+<p></p>
+<p>m k 1</p>
+<p></p>
+<p>Vik (c k ) 2  T</p>
+<p>m k 1</p>
+<p>Vik ( j 1 Wkj xtj ) 2 n</p>
+<p>(11)</p>
+<p>m</p>
+<p>min  pi (x(t) , W, V ) t 1 i 1</p>
+<p>(12)</p>
+<p>subject to WW  I T</p>
+<p>where V mm is a fixed matrix, Vik =1 or 0 marks whether the pooling neuron is connected to the convolutional feature map unit k or not. The weight V between the convolutional layer and the pooling layer is hard-coded in order to represent the topographic structure of neurons in the training stage. Furthermore, the orthonormal constraint WWT=I forces the network to provide diversity for the features. This architecture retains selectivity for a specific feature of the input due to the convolution operation and robustness to small translations of input due to the pooling operation. Compared to the standard CNN, the proposed architecture presents several differences: First, the local weights of the proposed CNN are restricted to the orthogonality, which helps to achieve divergent feature representations. Second, the square pooling architecture is adopted, which can make better use of the activation maps and is superior to average and max pooling. Third, the proposed CNN is used as the feature extractor, which is regarded as the nonlinear mapping layer of the ELM, where the weights of CNN are randomly initialized and not updated, leading to fast learning speed. In the proposed CNN-ELM approach, the parameters of the convolutional layer are randomly initialized and keep fixed during the training stage, for a number of reasons listed below. Firstly, the feature learning capability of the CNN with a square pooling architecture under the random weight should be explored. Thus, more attention is paid on the contribution of the intrinsic properties of the architecture itself. Secondly, some works have found that certain CNN architectures with random, untrained weights can achieve competitive results [2830]. In [30], it has been proven that a CNN with a square pooling architecture is inherently frequency selective and translation invariant, even with random weights. Thirdly, from the point of view of ELM theory [9], ELM with multiple hidden layers can be generated according to almost any nonlinear piecewise activation function, and those random feature mappings can still provide a universal approximation capability. In this sense, CNN can be regarded as a feature mapping of the ELM, which includes multiple hidden layers. Thus, the proposed method could exploit the generalization performance of the ELM classifier by leveraging deep feature representations of CNN architecture.</p>
+<p>3.2 Fault diagnosis based on the proposed CNN-ELM After building the architecture of the CNN, a framework combining CNN and ELM is proposed for fault diagnosis of gearboxes and motors as presented in Fig. 3. The CNN consists of an input layer, a convolutional layer and a square pooling layer. The parameters of the convolution and of the pooling is 8@7x7 and 8@7x7, respectively. The input layer corresponds</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>to a time-frequency representation of a vibration signal. The convolutional layer is designed to extract 2D structural features from input images and preserve the relationship between pixels. The pooling layer reduces the dimensionality of each map but retains the useful information. Then an ELM is attached for effectively supervised learning using a simple generalized inverse operation and classification. The two-dimensional Time-Frequency Representation (TFR) is obtained by implementing the CWT with 1024 scales. Thus, the dimension of TFR is 1024×fs/2, where fs is the sampling frequency. Usually, a large image contains redundant information and is not easy to be processed by neural network due to high computational cost. The image is downsized with the bicubic interpolation algorithm leading to smooth and less interpolation distortion for the reduced images [34]. In addition, a reduced image will require less computational cost, but it will lead to larger information loss, which may deteriorate the classification performance. The image size is set to 32×32 by balancing the tradeoff between computation and accuracy. During the training procedure of CNN-ELM, only the output weights are updated, while the weights of the CNN and the weights of the ELM in the hidden layer are randomly initialized. The training samples firstly pass through the CNN to obtain the high-level representations, which are denoted as H = [h1, h2, …, hL]. Those feature filters are all combined together in order to be converted into one vector, which is regarded as the input of the ELM. Then the parameters β* are calculated by a single-step matrix inversion as in equation (4) or equation (5), and the ELM can be effectively trained. During the testing stage, the new samples Xtest, are processed to extract multiple non-linear features h(Xtest), and the prediction output can be obtained by equation (6). The diagnosis scheme of the proposed method can be summarized as follows, Step 1: Time-series vibration signals are measured by accelerometers at different machines. Step 2: The WT is used to convert the 1D time signals into 2D time-frequency images to obtain good representative features. The images are further downsized to size 32×32 without any additional preprocessing. Step 3: The CNN is constructed, and the parameters including the convolutional kernel size s and the number of filters m are determined. The weights of the network are randomly initialized (yielding a Gaussian probability distribution) and a weights’ orthogonality constraint is applied. Step 4: The ELM is constructed, and the parameters are determined including the number of hidden nodes L and the penalty coefficient C. Step 5: In CNN-ELM, the training samples are firstly fed into the CNN architecture to obtain the feature maps. Then all the features are combined together and are regarded as the input of the ELM model which can be efficiently trained by a generalized inverse operation. Step 6: At the testing phase, the testing samples are fed into the trained CNN-ELM model to obtain the final diagnosis result.</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>Fig. 3. The structure of the proposed CNN-ELM model for fault diagnosis.</p>
+<p>4 Experimental validation and verification In order to validate the effectiveness of the proposed method in the recognition of different fault categories, two case studies are considered. Case 1 is designed to perform gear and bearing fault diagnosis on an automotive gearbox. Moreover, Case 2 focuses on the diagnosis of bearing faults, using the benchmark data of Case Western Reserve University Bearing Data Center [35].</p>
+<p>4.1 Fault diagnosis of an automotive gearbox 4.1.1 Data description Vibration measurements have been performed on an automotive five-speed gearbox in which bearings and gears faults are introduced. The transmission test rig is shown in Fig. 4. The main components of the experimental platform include a driven motor, a torque transducer, a gearbox, and a loading motor. The gearbox has five forward gear pairs and one backward gear pair. In the experiment, the fifth speed gear is used to conduct the fault test. In order to simulate different bearing fault severities, two levels of inner race faults, 0.2mm and 2mm are introduced to the bearing on the output shaft by electro-discharge machining. In addition, a minor chipped fault and a missed tooth fault are introduced to the fifth-shift gear. Compound faults are also considered, which contain not only bearing faults but also gear faults. Totally, there are seven types of health conditions, including a healthy condition, an outer race bearing fault, a minor chipped gear fault, a missed tooth gear fault, and three types of compound faults. The accelerometers are mounted on the bearing housing of the output shaft to collect vibration signals with a sampling rate of 24 KHz. The output shaft load torque is set to 50N•m. Three operating conditions are implemented with shaft rotating speeds of 750rpm, 1000rpm and 1250rpm, respectively. Finally, for each type of condition, 1,200,000 data points have been collected and are split in 100 samples of 12,000 data points (0.5 second), Each sample is transformed into a wavelet scalogram by using the CWT. The data captured under the three different speeds are combined into one dataset to simulate the operation under non-stationary conditions. Additionally, it should be clarified that the data of the same health condition, even under the three different speeds, are regarded as the same category. Therefore, there are 300 samples obtained for each health condition under three different speeds. Finally, a dataset with 2100 samples is obtained for algorithm verification, as presented in Table 1. In order to verify the effectiveness of the proposed method, 30% of the samples are randomly selected for training and the rest of samples are used for testing.</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>Fig. 4. The gearbox test rig. Table 1 Fault type and sample description of gearbox dataset. Dataset Speed Fault types (rpm) The fifth shift gear Output bearing Healthy Healthy Minor chipped tooth Healthy Missing tooth Healthy 750&amp;1000 C1 Normal 0.2mm inner race fault &amp;1250 Minor chipped tooth 0.2mm inner race fault Missing tooth 0.2mm inner race fault Missing tooth 2mm inner race fault</p>
+<p>Number of samples 300 300 300 300 300 300 300</p>
+<p>Class label 1 2 3 4 5 6 7</p>
+<p>CWT can decompose the raw signal into a time-scale plane with localized components represented by scaling and translating operations [36], and therefore, it is employed in the preprocessing procedure to obtain sensitive signal representations. In this work, the Morlet wavelet function is used to solve problems related to fault diagnosis as its shape is similar to the impulsive characteristics of mechanical fault signals [23]. The wavelet scalograms of seven health conditions under the speed of 750rpm are presented at Fig. 5(a)-Fig. 5(g). Generally, the occurrence of a local damage on the surface of a gear or a bearing, may lead to impacts over the fault surfaces exciting one or more structural resonant frequencies. From the time-frequency scalograms, it can be found that the frequency distributions of different categories present a relative similarity. The fault characteristic frequencies are masked by the meshing frequency and the excited resonance bands, so it is difficult to extract useful frequency components to detect the fault. Additionally, since signals under different speeds are included in the dataset, the difficulty of fault diagnosis is significantly increasing. From the pattern recognition point of view, the constructed features in the timefrequency domain could provide more useful discriminative information due to their efficiency in characterizing the non-stationary properties of the vibration signals. In addition, due to some degree of translational invariance of the CNN, it is expected that CNN could capture the complex relationship from the time-frequency representations, improving the fault diagnosis under varying operating conditions.</p>
+<p>(a) Wavelet scalogram of class 1.</p>
+<p>(b) Wavelet scalogram of class 2.</p>
+<p>(c) Wavelet scalogram of class 3.</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>(d) Wavelet scalogram of class 4.</p>
+<p>(e) Wavelet scalogram of class 5.</p>
+<p>(f) Wavelet scalogram of class 6.</p>
+<p>(g) Wavelet scalogram of class 7. Fig. 5. Wavelet scalograms of seven health conditions of gearbox dataset.</p>
+<p>4.1.2 Parameter optimization of the proposed method Considering the architecture of CNN-ELM, there are some key hyper-parameters, including the kernel sizes s and the number of filters m in the CNN, as well as the hidden nodes L and the penalty coefficients C in the ELM, whose influence on performance should be investigated. From the practical point of view, it may be time consuming and tedious to choose the appropriate parameter combination. For the proposed CNN-ELM, due to the adoption of the random weights of the CNN and the ELM, it is feasible to search for the optimum parameter set through a large parameter space in a relative short time. The effects of the parameter combinations including (C, L), (C, s) and (C, m) on the diagnosis performance of the proposed model are explored. A parameter optimization using the grid search approach is employed on a broad range of parameters: the parameter C is from {102 , 101 , 100 , 101 , 102 , 103 } , L is from {2, 5, 10, 20, 30, 40, 50, 60} , s is decided from {3, 5, 7, 9,11,13} and m is decided from {2, 4, 6, 8,10,12} . The results are presented in Fig. 6 - Fig. 8. It can be observed that CNN-ELM method can achieve good generalization as long as the penalty coefficient C takes values in a relatively small range of 10-2 to 100. Moreover, the performance is sensitive to the number of hidden nodes L, and the accuracy is low if L is selected in the range of 200 to 2000. Above 2000, a high and steady accuracy could be achieved. As a result, a relatively large number of hidden nodes is necessary to obtain a good ability to approximate the complex nonlinear mappings and to increase the diagnosis effectiveness of the network. Furthermore, for the size of the kernel s, usually a small kernel size will provide detailed diagnostic information, but it could be easier disturbed by high frequency noise of an industrial environment. On the other hand, the large kernel size may also lead to loss of details during the convolutional operation. In this study, the classification performance is less sensitive to the kernel size, as presented in Fig. 7, which enabling the selection of suitable parameters in a wide range. Additionally, the influence of the number of filters has been analyzed, and it can be seen that the classification accuracy rises with the increase of the number of filters from 2 to 10. Then a slight decrease occurs when the number of the filter reaches the number 12. This is due to the fact that increasing the number</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>of the feature maps allows the correct approximation of the data set, and as a result, the learning capabilities of the network are extended. On the other hand, too many feature maps also may lead to parameter redundancy deteriorating the classification performance. From the results presented in Fig. 8, it can be concluded that the CNN-ELM may achieve high and relatively steady performance, using eight (8) maps. Finally, based on the abovementioned conclusions, the parameter set (C, L, s, m) = (0.1, 5000, 7, 8) is selected to evaluate the generalization performance of the proposed method. The detailed parameter description of the proposed method is listed in Table 2.</p>
+<p>Fig. 6. The effect of parameters L and C on the testing accuracy.</p>
+<p>Fig. 7. The effect of parameters s and C on the testing accuracy.</p>
+<p>Fig. 8. The effect of parameters m and C on the testing accuracy.</p>
+<p>Table 2. Parameter description of the proposed method. Network Parameters Kernel Size s Pool size CNN Number of filters m Activation function (Conv) Activation function (Pool) Penalty Coefficient C ELM Number of hidden nodes L Activation function</p>
+<p>Values 7 2 8 Square function Square root function 0.1 5000 Sigmoid function</p>
+<p>4.1.3 Evaluation on weight orthogonality constraint The effectiveness of the weight orthogonality strategy on the classification is further investigated by the constraints of WWT=I in the CNN architecture. The orthogonality constraint actually can be regarded as a regularization term to achieve divergent feature</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>representations and reduce the overfitting of the network. The orthogonality strategy has been used in Auto Encoders to improve the generalization performance [15]. In this work, two weight schemes in CNN are presented. The one is the weight setting without orthogonality constraints, and the other is that with orthogonality constraints. Two weight matrixes WWT, with and without orthogonality, are shown in Fig. 9. As it can be seen, the weights along the diagonal without orthogonality constraint are nearly approaching 1, but other weights present different magnitude. Meanwhile, the weights along the diagonal with orthogonality constraint are almost approaching 1, and other weights are almost 0. This reveals that each weight vector is less correlated with others in the proposed model, which is helpful to learn the least-redundant features. Furthermore, the effects of the orthogonality constraint on the classification performance are explored with different training data size. A ratio of 10% to 40% of the training sample size is utilized to train the network in turn, while the rest is used for testing. The comparison results of two schemes are displayed in Fig. 10, where it can be seen that the classification performance rises with the increase of the training samples. Notable, the proposed method with weight orthogonality is relative less sensitive to the change of the training samples. When 10% of the training samples are used, network with weight orthogonality reaches a testing accuracy of 99.16% with a standard deviation of 0.47%, whereas for a network without constraint, the accuracy is 97.30% with a large standard deviation of 1.67%. Therefore, it can be seen that the CNN with weight orthogonality constraint is a better choice, which helps forcing feature diversity to improve the final classification performance.</p>
+<p>(a) Weight without orthogonality</p>
+<p>(b) Weight orthogonality</p>
+<p>Fig. 9. The weight matrix visualization of CNN.</p>
+<p>Fig. 10. Comparison of the average testing accuracy with and without weight orthogonality.</p>
+<p>4.1.4 The efficiency of CNN In the constructed CNN, the square pooling architecture is adopted, compared with the traditional CNN with mean or max pooling. x represents an activation map, and the pooling</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>size M is [W, H], where W and H are the width and height of the local receptive field. Then a pooling operation can be implemented to convert each local field into a single value: F(x)  (</p>
+<p>1 1 M P P x )  i M i 1</p>
+<p>(13)</p>
+<p>When p equals to 1, it represents the 1-norm mean pooling; on the other hand, when p   , it corresponds to the max pooling. Moreover, when p equals to 2, the square pooling operation is obtained. It can be seen that square pooling is the intermediate 2-norm between mean and max pooling. Recent work [37] has shown that the square pooling (2-norm) can make better use of information over the activation maps and is superior to the average (1-norm) and max pooling (infinity norm). This motivates the study of the intermediate 2-norm, which may be more suitable for the diagnosis tasks. In order to verify the superiority of the constructed CNN model, a comparison between the constructed CNN and a standard CNN is carried out. The standard CNN with one convolutional layer and one pooling layer is designed, sharing the same network architecture and the same parameters with the constructed CNN. The parameters of the convolutional kernels of the standard CNN are randomly initialized without further pretraining procedure. The samples are input into the standard CNN for feature extraction. Then the ELM is employed to provide the final diagnosis. Two different pooling schemes (including mean pooling and max pooling) are implemented for comprehensive comparison. Ten trials are carried out, and the results (mean value and standard deviation) of the three methods are shown in Fig. 11 and in Table 3. It can be seen that the training accuracies of the two standard CNN methods are all above 99.20% with low training standard deviations of 0.41% and 0.11%, respectively. The CNN with the average pooling architecture achieves a testing accuracy of 96.45% and a standard deviation of 1.25%, while the CNN with max pooling reaches a testing accuracy of 97.11% with a standard deviation of 0.84%, which achieves better results compared to the CNN with the average pooling operation. It is possible that the max pooling operation attempts to extract the most important features to improve the classification performance by taking a large local magnitude, which is similar to the operation of squaring the convolutional features in the proposed CNN, while the average pooling takes all the low magnitudes into consideration. The training accuracy of the proposed method is 100%, and the average testing accuracy is 99.83% with a standard deviation of 0.24%. Obviously, the proposed method achieves better results compared to the standard CNN and exhibits the superiority of the specific architecture design.</p>
+<p>Fig. 11. Result comparison of different CNN architectures in ten trials. Table 3 Result comparison of different CNN architectures. ELM integrating CNN Training accuracy (%)</p>
+<p>Testing accuracy (%)</p>
+<p>CNN with average pooling</p>
+<p>96.45±1.25</p>
+<p>99.22±0.41</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>CNN with max pooling</p>
+<p>99.95±0.11</p>
+<p>97.11±0.84</p>
+<p>The proposed method</p>
+<p>100±0.00</p>
+<p>99.83±0.24</p>
+<p>4.1.5 The efficiency of ELM In the DL fault diagnosis, two typical classifiers are SVM and Softmax. When considering the ELM alone, it is difficult to judge whether it obviously outperforms SVM and Softmax or not. The three methods have their own advantages. However, when considering the role of ELM in the proposed framework, the main advantage is that ELM is flexible enough to adjust its architecture to improve performance. Morover, Softmax requires multiply gradient update to obtain good performance; SVM is limited to specific kernel function and requires m(m-1)/2 binary SVM for m classes, while ELM is optimized by the Moore–Penrose generalized inverse matrix, and is able to implement m classes with faster training speed. In this study, to verify the effectiveness of the ELM, the constructed CNN is firstly used to extract features. Then, the corresponding samples are converted into high-level feature representations which are fed into different classifiers for diagnosis. Liblinear SVM [38] is adopted to conduct the multiclass classification, requiring the selection of only one parameter. The regularization term C is optimally selected as 1 by using a grid search method in a large value range of {0.001, 0.01, 0.1, 1, 10}. For the Softmax, the Limited-memory Broyden–Fletcher–Goldfarb–Shanno (L–BFGS) algorithm is adopted to optimize the weights with100 epochs. Ten trials are realized in order to reduce the random error. The classification results and the computational cost are listed in Table 4. From the results, it can be seen that all the three classifiers achieve nearly 100% training accuracy and similarly high testing accuracy (99.72%, 99.68% and 99.83%, respectively). Therefore, the features extracted by the proposed CNN are robust and discriminative. Moreover, ELM achieves great superiority in computational speed compared with the other two classifiers. For a given CNN architecture, the learning time of ELM is only 4s, while 11s for the SVM and 7s for the Softmax. Furthermore, ELM shows equal advantages to the Softmax and obviously outperforms the SVM in testing time. It takes 0.5s to predict for all the testing samples which is beneficial to the diagnosis task. Table 4 Result comparison of different classifiers. Classifier Training accuracy (%) Testing accuracy (%)</p>
+<p>Training time (s)</p>
+<p>Testing time (s)</p>
+<p>SVM</p>
+<p>99.98±0.05</p>
+<p>99.72±0.22</p>
+<p>11</p>
+<p>0.9</p>
+<p>Softmax</p>
+<p>100±0</p>
+<p>99.68±0.21</p>
+<p>7</p>
+<p>0.5</p>
+<p>ELM</p>
+<p>100±0</p>
+<p>99.83±0.24</p>
+<p>4</p>
+<p>0.5</p>
+<p>4.1.6 Result comparison with other methods In order to further illustrate the superiority of the proposed method, six classical classification algorithms including the traditional ML methods (KNN and SVM) and the DL methods (SAE, DBN and CNN) are applied on the same datasets for comprehensive comparison. Each parameter is selected by random search in a large parameter range, and the suitable parameters are used for the final models. For KNN, SVM, DBN, and SAE, FFT is used to get 1-D frequency spectra as their network inputs. [14]. Each sample contains 2048 data points (one rotation per sample). Then each health condition contains 585 samples under one operating speed, and thus, there are in total 12,285 samples (i.e. 7 health conditions ×3 operating</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>speeds × 585 samples). Moreover, in the case of the CNN, the CNN2, and the proposed method, wavelet scalograms are directly used as inputs. The details of the different algorithm configurations are listed as follows, (1) KNN. The number of nearest neighbors k needs to be carefully set up. Here, an optimum value of k is searched in a set of neighbors varied from 2 to 10. Finally, the k is selected equal to 5. (2) SVM. Liblinear SVM is adopted to conduct multiclass classification. For the regularization term C, large range values among {0.001, 0.01, 0.1, 1, 10} are evaluated by searching the given parameter space. Finally, the C is set equal to 0.1. (3) Deep Belief Network (DBN). A five-layer deep belief network is constructed, whose architecture is set as 1024-500-250-100-7. Firstly, the input nodes are equal to the dimensionality of the input sample. Here the number of input nodes corresponds to the 1024 data points of Fourier coefficients. Secondly, the number of the hidden layers depends on the learning capability of the deep network. Three hidden layers are selected as in [13-14]. Thirdly, the number of nodes in each hidden layer is set in descending order, which leverages SAE to obtain a compression representation of original data. The number of nodes of three hidden layers are 500, 250 and 100, respectively. The number of the output equals to the number of the health conditions. Each Restricted Boltzmann Machine (RBM) is pre-trained in 50 epochs, and the fine-tuning procedure is implemented in 200 epochs. Following the similar selection strategy of SVM, the learning rate, and the momentum are set to 0.1 and 0.9 respectively. (4) Stacked Auto-Encoder network (SAE). The architecture is set as 1024-500-250-100-7. The selected principle is similar to that of DBN. The three auto encoders are firstly pre-trained using the back-propagation algorithm with a learning rate of 0.1, a momentum of 0.9 and 50 epochs. Then three auto encoders are stacked together to construct the SAE which is fine-tuned with 200 epochs. (5) CNN. The convolutional kernel and the number of filters are the same as those of the proposed CNN architecture. Max pooling is adopted. The learning rate is an important parameter, having a great effect on the classification performance. In order to select an optimal learning rate, a large range value from {0.001, 0.01, 0.1, 1,10} has been evaluated by searching the given parameter space. The best learning rate is set to 0.1. The epochs are set to 200. (6) CNN2. Following the construction of CNN, two-layer convolutional and pooling layers are constructed. The first convolutional and pooling layers are the same as those of the CNN, and the second convolutional layer is set with a convolutional kernel of 4 and output filters of 8. The second pooling layer is the same as the first one. Training is conducted with a learning rate of 0.1 and epochs of 200. All the data processing is performed on a desktop PC (i7 4GHz CPU, 16G RAM) with MATLAB 2017b environment. In order to reduce the influence of the random initialization on the classification, the final results are averaged by ten trials, as shown in Fig. 12. It can be observed that FFT-SAE presents good and steady performance in ten trials compared to DBN, and even better than the proposed method in the 4th trial. It demonstrates good feature representation capacity of FFT preprocessing scheme. In addition, CNN with only one convolutional layer also obtains relative steady results, which shows the advantage of CNN on scalogram input. The CNN2 with a two-layer architecture does not improve the diagnosis performance, though sometimes it is better than CNN (7th trial). Considering the results of ten trials, the proposed method achieves the best results and robust performance.</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>In addition, the classification results of different methods are listed in Table 5, and Table 6. The computational cost (including preprocessing time and network training time) of each diagnosis model is shown in Fig. 13. From the results, it can be seen that the traditional ML methods including KNN and SVM achieve lower training and testing accuracy compared to other DL approaches. KNN achieves an average testing accuracy of only 86.31%, which is less than that of SVM (93.87%). Additionally, KNN needs more time for training(259s), while SVM requires only 7s. This is due to the fact that KNN calculates the Euclidean distance for each sample to find the k nearest neighbors. DL algorithms including DBN, SAE, CNN and CNN2 obtain better results than the KNN and the SVM, showing the advantages of deep architecture in learning discriminative representations. However, one disadvantage of deep algorithms is that they require long training time (346s, 323s, 818s and 882s, respectively). In addition, the computational cost of CNN, CNN2 and the proposed methods are longer than that of SAE and DBN, because more time is required for the WT. On the contrary, the proposed method performs best with an average testing accuracy of 99.83% and requires 705s for training, outperforming the CNN methods. Compared to other DL algorithms, the proposed method exhibits better classification performance. This is mostly due to the fact that the traditional DL algorithms like DBN, SAE and CNN have many hyper-parameters such as the learning rate, the momentum and the iterations, which should be carefully selected. Thus, their performances are easily influenced by the parameter selection. In addition, the models with deep architectures have many network weights to be optimized during the training stage, which also increases the risk of the over-fitting problem. However, for the proposed method, the structure of CNN is modified using random weights in order to extract features, overcoming the limitation of parameter selection and reducing the human intervention. Furthermore, the ELM as a strong classifier is employed to offer faster convergence speed and better optimization performance.</p>
+<p>Fig. 12. Result comparison with different methods in ten trials.</p>
+<p>Fig. 13. The computational cost comparison with different methods</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Table 5 Result comparison with different methods. Methods Training accuracy (%)</p>
+<p>Testing accuracy (%)</p>
+<p>FFT-KNN</p>
+<p>90.84±0.69</p>
+<p>86.31±0.64</p>
+<p>FFT-SVM</p>
+<p>98.58±0.27</p>
+<p>97.85±0.42</p>
+<p>FFT-DBN</p>
+<p>100±0.00</p>
+<p>98.27±0.53</p>
+<p>FFT-SAE</p>
+<p>100±0.00</p>
+<p>99.23±0.11</p>
+<p>CNN</p>
+<p>99.33±1.26</p>
+<p>98.30±1.75</p>
+<p>CNN2</p>
+<p>98.87±1.29</p>
+<p>98.29±1.63</p>
+<p>Proposed</p>
+<p>100±0.00</p>
+<p>99.83±0.24</p>
+<p>Table 6 Testing result comparison for each health condition with different methods. Methods Accuracy (%) of each fault type 1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>Average</p>
+<p>FFT-KNN</p>
+<p>85.44</p>
+<p>93.46</p>
+<p>99.71</p>
+<p>100</p>
+<p>88.07</p>
+<p>69.38</p>
+<p>68.41</p>
+<p>86.31</p>
+<p>FFT-SVM</p>
+<p>100</p>
+<p>100</p>
+<p>99.89</p>
+<p>100</p>
+<p>99.90</p>
+<p>97.22</p>
+<p>88.68</p>
+<p>97.96</p>
+<p>FFT-DBN</p>
+<p>98.90</p>
+<p>98.87</p>
+<p>99.50</p>
+<p>99.49</p>
+<p>99.41</p>
+<p>96.50</p>
+<p>95.23</p>
+<p>98.27</p>
+<p>FFT-SAE</p>
+<p>99.97</p>
+<p>99.98</p>
+<p>99.64</p>
+<p>100</p>
+<p>99.98</p>
+<p>98.24</p>
+<p>96.81</p>
+<p>99.23</p>
+<p>CNN</p>
+<p>100</p>
+<p>100</p>
+<p>98.58</p>
+<p>100</p>
+<p>100</p>
+<p>99.76</p>
+<p>89.79</p>
+<p>98.30</p>
+<p>CNN2</p>
+<p>100</p>
+<p>100</p>
+<p>98.00</p>
+<p>99.77</p>
+<p>100</p>
+<p>97.74</p>
+<p>92.51</p>
+<p>98.29</p>
+<p>Proposed</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>99.95</p>
+<p>98.87</p>
+<p>99.83</p>
+<p>Finally, the confusion matrix of the first trial is listed in Fig. 14. As it can be seen, most of the samples are correctly identified and classified. There are a few samples, which are misclassified between the 6th and the 7th category. Specifically, 0.46% of the samples in category 7 are misclassified as those in category 6, and 0.49% of samples in category 6 are misclassified as those in category 7. The result is in accordance with the intuition that the samples of those two categories are not easily separated, as they include the same type of compound faults with different severity levels.</p>
+<p>Fig. 14. The multi-class confusion matrix of the proposed method in the last trial.</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>4.2 Motor bearing fault diagnosis 4.2.1 Data description In order to further validate the performance of the proposed algorithm for fault diagnosis of mechanical components, the proposed approach is applied on the rolling element bearing data of the Case Western Reserve University (CWRU) Bearing Data Center which is often used as a benchmark dataset. The original vibration data have been obtained by accelerometers mounted at the driving end of the motor with a sampling frequency of 12 kHz. The test rig shown in Fig. 15 has been operated under the four different load conditions (0, 1, 2, and 3 hp). The dataset consists of healthy and faulty data. The bearing fault types contain Inner race Faults (IF), Outer race Faults (OF) and Ball faults (BF). Each fault type contains fault diameters of 0.007 inch, 0.014 inch and 0.021 inch, respectively. Thus, there are in total ten types of bearing health conditions under different loads. Each sample contains 2000 data points, and is further converted into a time-frequency representation by using the WT. Each health condition contains 60 samples under each load. In total, there are 2400 samples collected for algorithm verification, and 30% of samples are randomly selected for training and the rest for testing. The details of the dataset are described in Table 7.</p>
+<p>Fig. 15. The bearing test rig Table 7 Fault type and sample description of bearing dataset. Dataset Load (hp) Bearing Fault conditions diameters (inch) Health 0 BF 0.007 IF 0.007 OF 0.007 BF 0.014 C2 0&amp;1&amp;2&amp;3 IF 0.014 OF 0.014 BF 0.021 IF 0.021 OF 0.021</p>
+<p>Number of samples 240 240 240 240 240 240 240 240 240 240</p>
+<p>Class label 1 2 3 4 5 6 7 8 9 10</p>
+<p>4.2.2 Evaluation on weight orthogonality constraint The comparison results of the proposed CNN model with and without weight orthogonality constraints are shown in Fig. 16. It is clear that the testing accuracy rises, and its standard deviation reduces with the increase of the training sample size in both algorithms. On the other hand, when only small data sets are used for training, the performance drops dramatically. In this case, only 10% of the samples are used for training, which consist of 240 labeled images under 10 categories. There are roughly only 6 samples in each category under each working load. It is a rather small data size compared to the number of categories. It can be seen that the proposed method with orthogonality constraints still achieves a high testing accuracy. It is slight superior to the method without orthogonality constraint. This is due to the</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>fact that the orthogonality technique could force to learn more diverse sets of features, which is helpful to yield good results even in small data sizes.</p>
+<p>Fig. 16. Comparison of the average testing accuracy with and without weight orthogonality.</p>
+<p>4.2.3 The efficiency of CNN In addition, the comparison results between the proposed CNN and the standard CNN architecture are presented in Fig. 17 and Table 8. It can be seen that the standard CNN with mean pooling and that with max pooling achieve testing accuracy of 97.97% and 98.75%, respectively. However, the proposed CNN yields a high testing accuracy and a low standard deviation, indicating a superior classification performance.</p>
+<p>Fig. 17. Result comparison of different CNN architectures in ten trials. Table 8 Result comparison of different CNN architectures. ELM integrating CNN Training accuracy (%)</p>
+<p>Testing accuracy (%)</p>
+<p>CNN with average pooling</p>
+<p>99.11±0.71</p>
+<p>97.97±1.39</p>
+<p>CNN with max pooling</p>
+<p>99.43±0.51</p>
+<p>98.75±0.92</p>
+<p>The proposed method</p>
+<p>100±0.00</p>
+<p>99.92±0.14</p>
+<p>4.2.4 The efficiency of ELM The comparison results of the CNN with the ELM, the SVM and the Softmax are displayed in Table 9, respectively. It can be seen that all classifiers achieve high classification performance. Specifically, they all achieve 100% training accuracy and reach testing accuracy of 99.92%, 99.87% and 99.70%, respectively. The low standard deviations indicate the good stability in each trial. In addition, it is clear that ELM gives slightly better performance among the three methods. Especially, the ELM algorithm is more efficient in terms of the learning speed, In the training time, ELM only requires 6s, which is nearly three times faster than the SVM. This allows for fast training and applying to new data.</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>Table 9 Results comparison of different classifiers. Classifier Training accuracy (%) Testing accuracy (%)</p>
+<p>Training time (s)</p>
+<p>Testing time (s)</p>
+<p>SVM</p>
+<p>100±0</p>
+<p>99.87±0.17</p>
+<p>17</p>
+<p>1.2</p>
+<p>Softmax</p>
+<p>100±0</p>
+<p>99.70±0.18</p>
+<p>10</p>
+<p>0.6</p>
+<p>ELM</p>
+<p>100±0</p>
+<p>99.92±0.14</p>
+<p>6</p>
+<p>0.6</p>
+<p>4.2.5 Result comparison with other methods Similarly, traditional CNN and CNN2 with wavelet scalograms are evaluated and, the proposed method is also compared with FFT-KNN, FFT-SVM, FFT-DBN and FFT-SAE with Fourier spectra input. Each sample contains 512 data points of one rotation in length, and each health condition has 209 samples under one load. There are in total 8360 samples (i.e. 10 health conditions ×4 operating loads × 209 samples). DBN and SAE are designed with the architecture of 256-250-150-100-10 based on the same principle of Section t 4.1, so as the KNN and the SVM. Ten repetitions of the experiments are performed, and the averages are taken as the final results, which are presented in Fig.18, Table10 and Table 11. The computational cost (including preprocessing time and network training time) for each method is presented in Fig. 19. From the results, it can be seen that the training accuracy of KNN and SVM is 98.28% and 98.75%, and the testing accuracy 97.83% and 97.11%, respectively. In addition, they only need less time to train the models, (35s and 2s, respectively). On the contrary, DBN, SAE, CNN and CNN2 algorithms achieve an average testing accuracy of 98.48%, 98.06%, 99.18% and 98.22%, respectively and need 44s, 49s, 314s and 377s to complete their whole training step. The proposed method achieves the best testing accuracy of 99.92%. As an architecture with random weights is adopted, it requires a relative short training time (176s), compared to those of the CNN and CNN2. CNN-ELM is updated by a close-form equation with a single-step matrix inversion. Hence, less computation is required when the network weighs are initialized. In addition, the confusion matrix of the last trial is also listed in Fig. 20. It can be found that misclassified samples occur between category 5 and category 8. There are 0.56% testing samples belonging to category 5, which are classified as samples of category 8. Both two categories belong to BF faults, but they are related to different severity levels. Thus, the signal characteristics are more similar, increasing the classification difficulty.</p>
+<p>Fig. 18. Result comparison with different methods in ten trials.</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>Fig. 19. The computational cost comparison with different methods. Table 10 Result comparison of different methods. Methods Training accuracy (%)</p>
+<p>Testing accuracy (%)</p>
+<p>FFT-KNN</p>
+<p>98.28±0.12</p>
+<p>97.83±0.11</p>
+<p>FFT-SVM</p>
+<p>98.75±0.21</p>
+<p>97.11±0.53</p>
+<p>FFT-DBN</p>
+<p>99.46±0.35</p>
+<p>98.45±0.39</p>
+<p>FFT-SAE</p>
+<p>99.11±0.43</p>
+<p>98.22±0.88</p>
+<p>CNN</p>
+<p>99.61±0.20</p>
+<p>99.18±0.48</p>
+<p>CNN2</p>
+<p>99.12±0.45</p>
+<p>98.22±0.60</p>
+<p>Proposed</p>
+<p>100±0.00</p>
+<p>99.92±0.14</p>
+<p>Table 11 Testing result comparison of different methods for each health condition. Methods Accuracy (%) of each fault type 1</p>
+<p>Average</p>
+<p>FFT-KNN</p>
+<p>99.00</p>
+<p>97.72</p>
+<p>99.00</p>
+<p>95.39</p>
+<p>97.56</p>
+<p>98.53</p>
+<p>98.97</p>
+<p>95.49</p>
+<p>99.00</p>
+<p>97.61</p>
+<p>97.83</p>
+<p>FFT-SVM</p>
+<p>100</p>
+<p>96.56</p>
+<p>100</p>
+<p>99.57</p>
+<p>99.30</p>
+<p>92.52</p>
+<p>100</p>
+<p>95.31</p>
+<p>100</p>
+<p>87.80</p>
+<p>97.11</p>
+<p>FFT-DBN</p>
+<p>100</p>
+<p>98.64</p>
+<p>99.94</p>
+<p>98.79</p>
+<p>98.64</p>
+<p>97.78</p>
+<p>99.51</p>
+<p>95.22</p>
+<p>99.76</p>
+<p>96.19</p>
+<p>98.54</p>
+<p>FFT-SAE</p>
+<p>100</p>
+<p>98.24</p>
+<p>100</p>
+<p>98.38</p>
+<p>98.23</p>
+<p>97.32</p>
+<p>99.43</p>
+<p>95.15</p>
+<p>100</p>
+<p>95.49</p>
+<p>98.22</p>
+<p>CNN</p>
+<p>99.77</p>
+<p>95.87</p>
+<p>100</p>
+<p>99.26</p>
+<p>99.72</p>
+<p>99.09</p>
+<p>100</p>
+<p>98.20</p>
+<p>99.94</p>
+<p>99.94</p>
+<p>99.18</p>
+<p>CNN2</p>
+<p>99.41</p>
+<p>93.24</p>
+<p>100</p>
+<p>98.99</p>
+<p>97.78</p>
+<p>99.10</p>
+<p>100</p>
+<p>94.18</p>
+<p>99.53</p>
+<p>99.94</p>
+<p>98.22</p>
+<p>Proposed</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>100</p>
+<p>99.88</p>
+<p>100</p>
+<p>100</p>
+<p>99.33</p>
+<p>100</p>
+<p>99.94</p>
+<p>99.92</p>
+<p>Fig. 20. The multi-class confusion matrix of the proposed method in the last trial.</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>Since the bearing dataset provides a benchmark for mechanical fault diagnosis, a comparison between the proposed method and other published studies on the same dataset is conducted. The comparison results are shown in Table 12. In [39], a deep stacking network is adopted by modeling the sparsity of the output label. Four health conditions under load 1 are classified by using raw time-series signals as inputs, and a 100% accuracy is obtained. In [40], a LiftingNet has been proposed to learn robust features from raw data, and four health conditions under four loads are used to train the network. An average testing accuracy of 96.5% is achieved. In [41] a Deep CNN with wide first-layer kernels (WDCNN) has been proposed. By combining a wider convolutional kernel and batch normalization technique, the WDCNN achieved a 100% testing accuracy on the ten health conditions. In [42] a sparse filtering is proposed to adaptively learn features from vibration signals in an unsupervised way, and Softmax is adopted for classification. A 99.63% testing accuracy is reached with a standard deviation of 0.19%. In [43], 2-D gray images are extracted from raw signals, and then the modified LetNet-5 is used for classification, obtaining a testing accuracy of 99.79% and a standard deviation of 0.08%. Table 12 Result comparison with existing methods. Training Testing Method Input type load load</p>
+<p>No. of health condition</p>
+<p>Testing accuracy</p>
+<p>[39]</p>
+<p>Time-series signal</p>
+<p>1</p>
+<p>1</p>
+<p>4</p>
+<p>100±0</p>
+<p>[40]</p>
+<p>Time-series signal</p>
+<p>0,1,2,3</p>
+<p>0,1,2,3</p>
+<p>4</p>
+<p>99.63</p>
+<p>[41]</p>
+<p>Time-series signal</p>
+<p>1,2,3</p>
+<p>1,2,3</p>
+<p>10</p>
+<p>100±0</p>
+<p>[42]</p>
+<p>Time-series signal</p>
+<p>0,1,2,3</p>
+<p>0,1,2,3</p>
+<p>10</p>
+<p>99.66±0.19</p>
+<p>[43]</p>
+<p>Gray image</p>
+<p>0,1,2,3</p>
+<p>0,1,2,3</p>
+<p>10</p>
+<p>99.79±0.08</p>
+<p>Proposed</p>
+<p>Wavelet scalogram</p>
+<p>0,1,2,3</p>
+<p>0,1,2,3</p>
+<p>10</p>
+<p>99.92±0.14</p>
+<p>From the abovementioned results, it can be found that the proposed method obtains an average testing accuracy of 99.92% with a standard deviation of 0.14%. Those results either outperform or are at least as successful as other state-of-art methods. However, compared to other methods, and especially the traditional CNNs, the proposed approach presents some advantages: (1) Better classification performance. The proposed method takes advantages of the powerful feature learning capacity of CNN and the generalization performance of ELM. The proposed CNN with square pooling and weight orthogonality helps to learn meaningful discriminative features, and the ELM, as a strong classifier, is further considered to obtain good generalization performance. (2) Fast training speed. The proposed method can be regarded as a multiply layer ELM, where CNN includes the multiply hidden layers, implementing the nonlinear feature maps. In this architecture, unlike the traditional DL algorithms, whose weights need to be trained, the hidden layer weights of ELM are randomly initialized and are kept fixed during the training stage. Only the output layer weight needs to be optimized. Thus, the proposed method presents advantages in the learning speed. (3) Fast architecture search and selection. As it is known, existing DL fault diagnosis methods often use BP algorithms to update the weights. Each candidate architecture for performance evaluation requires extra computational resources, as the network should be retrained to search for more suitable parameters. This may limit their further applications in practice. In this work, since the training speed is impressive, the proposed method could allow searching the optimal architecture through a large parameter space. (4) Flexible diagnosis framework. In this paper, CNN is utilized to demonstrate the effectiveness of the proposed framework. However, this can be replaced with other deep neural networks that is suitable for different data and tasks.</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>5 Conclusion In this study, a novel method combining CNN and ELM is proposed towards fast and accurate automated fault diagnosis of rotating machinery. CNN has shown a powerful ability in automated feature extraction, while ELM has been proposed as a fast and efficient algorithm for classification. Initially raw vibration data, captured on the machinery, are processed using the CWT, and the scalograms are used as inputs. In the first stage of the proposed method, a CNN with square pooling architecture is constructed and used as an automatic feature extractor to enhance the feature learning capability. In the second stage, the ELM is further employed to improve the classification performance and the learning speed. The proposed method has been validated for recognizing fault patterns on two datasets, captured on a gearbox and a motor, containing different fault types of bearings and gears under various operating conditions. Finally, the performance of the proposed method is verified by the comparison with other widely used methods. Unlike the traditional DL methods (e.g., SAE, DBN and CNN) requiring significant time to select parameters, the proposed CNN is designed based on random weights and a square pooling architecture to reduce the training complexity and obtain robust features. In addition, compared to the widely-used classifiers (Softmax and SVM), ELM searches for the optimal solutions through random feature mapping and linear parameters, leading to less human intervention and better generalization performance. To further improve the diagnostic performance, different CNN structure and classifier will be investigated in near future.</p>
+<p>Acknowledgements This work is supported by National Natural Science Foundation of China (Grant No. 51875208), National Key R&amp;D Program of China (Grant No. 2018YFB1702402) and Guangzhou “Elite Overseas Study Program”.</p>
+<p>References: [1] [2] [3] [4] [5] [6] [7]</p>
+<p>[8] [9] [10]</p>
+<p>S. Khan, T. Yairi, A review on the application of deep learning in system health management, Mech. Syst. Signal Process. 107 (2018) 241-265. Y. Liao, L. Zhang, W. Li, C. Li, J.V. de Oliveira, Regrouping particle swarm optimization based variable neural network for gearbox fault diagnosis, Journal of Intelligent &amp; Fuzzy Systems. 34 (2018) 3671-3680. R. Zhao, R. Yan, Z. Chen, K. Mao, P. Wang, R.X. Gao, Deep learning and its applications to machine health monitoring, Mech. Syst. Signal Process. 115 (2019) 213-237. B. Zhang, S. Zhang, W. Li, Bearing performance degradation assessment using long short-term memory recurrent network, Computers in Industry. 106 (2019) 14-29. M. Gan, C. Wang, C.a. Zhu, Multiple-domain manifold for feature extraction in machinery fault diagnosis, Measurement, 75 (2015) 76-91. Y. Li, K. Ding, G. He, X. Jiao, Non-stationary vibration feature extraction method based on sparse decomposition and order tracking for gearbox fault diagnosis, Measurement. 124 (2018) 453-469. K. C. Gryllias, I. A. Antoniadis, A Support Vector Machine approach based on physical model training for rolling element bearing fault detection in industrial environments, Engineering Applications of Artificial Intelligence, 25 (2012), 326-344 R. Liu, B. Yang, X. Zhang, S. Wang, X. Chen, Time-frequency atoms-driven support vector machine method for bearings incipient fault diagnosis, Mech. Syst. Signal Process. 75 (2016) 345-370. G.-B. Huang, Q.-Y. Zhu, C.-K. Siew, Extreme learning machine: Theory and applications, Neurocomputing. 70 (2006) 489-501. G. Huang, G.B. Huang, S. Song, K. You, Trends in extreme learning machines: a review, Neural Netw, 61 (2015) 32-48.</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>[11]</p>
+<p>[12] [13] [14]</p>
+<p>[15] [16] [17] [18] [19] [20]</p>
+<p>[21]</p>
+<p>[22] [23] [24]</p>
+<p>[25] [26] [27] [28] [29] [30] [31]</p>
+<p>[32] [33] [34] [35] [36] [37] [38] [39]</p>
+<p>W. Mao, J. He, Y. Li, Y. Yan, Bearing fault diagnosis with auto-encoder extreme learning machine: A comparative study, Proceedings of the Institution of Mechanical Engineers, Part C: Journal of Mechanical Engineering Science. 231 (2016) 1560-1578. S. Haidong, J. Hongkai, L. Xingqiu, W. Shuaipeng, Intelligent fault diagnosis of rolling bearing using deep wavelet auto-encoder with extreme learning machine, Knowl.-Based Syst. 140 (2018) 1-14. Z.Y. Chen, W.H. Li, Multisensor Feature Fusion for Bearing Fault Diagnosis Using Sparse Autoencoder and Deep Belief Network, Ieee T Instrum Meas. 66 (2017) 1693-1702. F. Jia, Y. Lei, J. Lin, X. Zhou, N. Lu, Deep neural networks: A promising tool for fault characteristic mining and intelligent diagnosis of rotating machinery with massive data, Mech. Syst. Signal Process. 72-73 (2016) 303-315. F. Jia, Y.G. Lei, L. Guo, J. Lin, A neural network constructed by deep learning technique and its application to intelligent fault diagnosis of machines, Neurocomputing, 272 (2018) 619–628. H. Shao, H. Jiang, H. Zhang, W. Duan, T. Liang, S. Wu, Rolling bearing fault feature learning using improved convolutional deep belief network with compressed sensing, Mech. Syst. Signal Process. 100 (2018) 743-765.. R. Huang, Y. Liao, S. Zhang, W. Li, Deep Decoupling Convolutional Neural Network for Intelligent Compound Fault Diagnosis, IEEE Access. 7 (2019) 1848-1858. W. Sun, R. Zhao, R. Yan, S. Shao, X. Chen, Convolutional Discriminative Feature Learning for Induction Motor Fault Diagnosis, IEEE Transactions on Industrial Informatics. 13 (2017) 1350-1359. S. Wang, J. Xiang, Y. Zhong, Y. Zhou, Convolutional neural network-based hidden Markov models for rolling element bearing fault identification, Knowl.-Based Syst. 144 (2018) 65-76. R. Liu, G. Meng, B. Yang, C. Sun, X. Chen, Dislocated Time Series Convolutional Neural Architecture: An Intelligent Fault Diagnosis Approach for Electric Machine, IEEE Transactions on Industrial Informatics. 13 (2017) 1310-1320. O. Janssens, V. Slavkovikj, B. Vervisch, K. Stockman, M. Loccufier, S. Verstockt, R. Van de Walle, S. Van Hoecke, Convolutional Neural Network Based Fault Detection for Rotating Machinery, J. Sound Vibrat. 377 (2016) 331-345. H. Liu, L. Li, J. Ma, Rolling Bearing Fault Diagnosis Based on STFT-Deep Learning and Sound Signals, Shock Vibrat. 2016 (2016) 1-12. D. Verstraete, A. Ferrada, E. L. Droguett, V. Meruane, M. Modarres, Deep learning enabled fault diagnosis using time-frequency image analysis of rolling element bearings. Shock and Vibration, vol. 2017, Oct. 2017. M. Gan, C. Wang, C.a. Zhu, Construction of hierarchical diagnosis network based on deep learning and its application in the fault pattern recognition of rolling element bearings, Mech. Syst. Signal Process. 72-73 (2016) 92-104. M. Zhao, M. Kang, B. Tang, M. Pecht, Deep Residual Networks With Dynamically Weighted Wavelet Coefficients for Fault Diagnosis of Planetary Gearboxes, IEEE Trans. Industr. Electron. 65 (2018) 4290-4300. S. Guo, T. Yang, W. Gao, C. Zhang, A Novel Fault Diagnosis Method for Rotating Machinery Based on a Convolutional Neural Network, Sensors (Basel), 18 (2018). Y. Yoo, J.-G. Baek, A Novel Image Feature for the Remaining Useful Lifetime Prediction of Bearings Based on Continuous Wavelet Transform and Convolutional Neural Network, Applied Sciences, 8 (2018) 1102. N. Pinto, D. D. Cox, “Beyond simple features: A large-scale feature search approach to unconstrained face recognition,” In IEEE International Conference on Au- tomatic Face and Gesture Recognition, May. 2011. K. Jarrett, K. Kavukcuoglu, Y. LeCun, “What is the best multi-stage architecture for object recognition?,” In Computer Vision, 12th International Conference on IEEE, pp. 2146-2153, Sep. 2009. A. M. Saxe AM, P. W. Koh, Z. Chen, M. Bhand, B. Suresh, A. Y. Ng, “On Random Weights and Unsupervised Feature Learning,” In ICML, pp. 1089-1096, Jun. 2011. G. B. Huang. Q. Y. Zhu, C. K. Siew, Extreme learning machine: a new learning scheme of feedforward neural networks, InNeural Networks, Proceedings. 2004 IEEE International Joint Conference on 2004, 2 (2004) 985990. J. Bouvrie, Notes on convolutional neural networks, 2006. A. Hyvarinen, J. Hurri, P. Hoyer. Natural Image Statistics. Springer, 2009. D. Han, D, Comparison of commonly used image interpolation methods. In Proceedings of the 2nd International Conference on Computer Science and Electronics Engineering. Atlantis Press, Mar, 2013. Case Western Reserve University Bearing Data Center Website 〈http://csegroups.case.edu/bearingdatacenter/home〉. R. Yan, R.X. Gao, X. Chen, Wavelets for fault diagnosis of rotary machines: A review with applications, Signal Processing. 96 (2014) 1-15. Y Z. Chen, J. Lin, V. Chandrasekhar and L. Y. Duan, Gated Square-Root Pooling for Image Instance Retrieval. In 2018 25th IEEE International Conference on Image Processing (ICIP), pp. 1982-1986, Oct, 2018. R. E. Fan, K. W. Chang, C. J. Hsieh, X. R. Wang, C. J. Lin, LIBLINEAR: A library for large linear classification, Journal of machine learning research, 2008, 1871-1874. C. Sun, M. Ma, Z. Zhao, X. Chen, Sparse Deep Stacking Network for Fault Diagnosis of Motor, IEEE Transactions on Industrial Informatics. 14 (2018) 3261-3270.</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>[40]</p>
+<p>[41] [42] [43]</p>
+<p>J. Pan, Y. Zi, J. Chen, Z. Zhou, B. Wang, LiftingNet: A Novel Deep Learning Network With Layerwise Feature Learning From Noisy Mechanical Data for Fault Classification, IEEE Trans. Industr. Electron. 65 (2018) 49734982. W. Zhang, G. Peng, C. Li, Y. Chen, Z. Zhang, A New Deep Learning Model for Fault Diagnosis with Good Anti-Noise and Domain Adaptation Ability on Raw Vibration Signals, Sensors (Basel). 17 (2017) Y.G. Lei, F. Jia, J. Lin, S.B. Xing, S.X. Ding, An Intelligent Fault Diagnosis Method Using Unsupervised Feature Learning Towards Mechanical Big Data, IEEE Trans. Industr. Electron. 63 (2016) 3137-3147. L. Wen, X. Li, L. Gao, Y. Zhang, A New Convolutional Neural Network-Based Data-Driven Fault Diagnosis Method, IEEE Trans. Industr. Electron. 65 (2018) 5990-5998.</p></section></article></body></html>

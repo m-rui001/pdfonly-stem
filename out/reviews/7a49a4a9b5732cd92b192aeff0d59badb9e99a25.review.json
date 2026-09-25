@@ -1,0 +1,90 @@
+{
+  "sha1": "7a49a4a9b5732cd92b192aeff0d59badb9e99a25",
+  "title": "Monolayer PtSe 2 , a New Semiconducting Transition-Metal-Dichalcogenide, Epitaxially Grown by Direct Selenization of Pt",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b00964",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7a49a4a9b5732cd92b192aeff0d59badb9e99a25/index.html",
+  "source_chars": 30728,
+  "markdown_chars": 2515,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The shift of the peak to lower binding energy and the appearance of two peaks (labeled by the blue arrows at binding energies 55.19 eV and 54.39 eV, which are the characteristic signal of Se2-)",
+      "type": "疑似排版/拼接问题",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "此处与图注部分重复，但正文上下文完整，不构成错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Here the top of the valence band is observed to be at -1.2 eV at the  point",
+      "type": "字符显示异常",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“the  point”中的Gamma符号显示为乱码，应为“Γ point”，但文本抽取中显示为“”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "which, according to calculations15 , is a semimetal.",
+      "type": "参考编号问题",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "上标引用编号可能被空格分隔，不构成核心问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Starting from a trilayer, PtSe2 becomes semi-metallic. (Calculated band structures of bilayer and trilayer PtSe2 are listed in the Supplementar y Information.)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此处疑似换页中断，后文直接接续，但未丢失内容，仅排版。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "The momentum dependence of the degree of circular |𝑃 ( 𝑘 )|2−|𝑃 ( 𝑘)|2 dichroism of 1T-PtSe2 is given by 𝜂(𝑘) = | +( )|2 | −( )|2, where 𝑃± (𝑘) = 𝑃𝛼𝑐𝑖 (𝑘) ± 𝑖𝑃𝛼𝑐𝑖 (𝑘).",
+      "type": "公式抽取损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式的分子分母下标及括号明显缺失，无法完整复原，原样照录并标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The photocatalytic activity of as-prepared monolayer PtSe 2 films was tested by catalytic degradation of methylene blue serving as a standard model dye under visible-light irradiation at room temperature.",
+      "type": "无问题",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "正常句子。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文与图表结论中的关键数据：单层PtSe₂带隙LDA 1.20 eV、GW 2.10 eV；双层0.21 eV；价带顶-1.2 eV；MB降解24分钟38%，比纳米晶快4倍；STO周期b1=3a1≈11.1 Å；Se-Se间距2.53 Å；XPS结合能数值。公式η(k)的抽取文本明显不完整，已照录并标注问题。未引入外部知识，所有结论均来自提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2452,
+      "prompt_tokens": 8704,
+      "total_tokens": 11156,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 57
+      }
+    },
+    "content_chars": 4671
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

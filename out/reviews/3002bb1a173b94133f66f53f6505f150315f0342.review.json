@@ -1,0 +1,111 @@
+{
+  "sha1": "3002bb1a173b94133f66f53f6505f150315f0342",
+  "title": "Designing materials for electrochemical carbon dioxide recycling",
+  "doi": "https://doi.org/10.1038/s41929-019-0306-7",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3002bb1a173b94133f66f53f6505f150315f0342/index.html",
+  "source_chars": 78939,
+  "markdown_chars": 10969,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "solar ($ 0.04-0.06 $ kWh $ ^{-1} $ ) and wind ($ 0.08-0.06 $ kWh $ ^{-1} $ )",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "风电 LCOE 范围写为 0.08-0.06，下限大于上限，疑似 OCR 或原文笔误，影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "Highсимпликент $ \\mathrm{C}{2+} $ selectivity and manipulate the onset potentials",
+      "type": "ocr_text_error",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "出现无意义字符串“Highсимпликент”，明显为 OCR 损坏，导致该句语义不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "E us for a discussion on Emerging materials and motifs",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该句为明显 OCR 损坏，无法还原原意，影响对新兴材料部分引导句的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "Sinceince the first observations",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "单词重复“Sinceince”，应为“Since”，属 OCR 字符重复错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "Box Box 1: $ \\mathrm{C O_{2}} $ utilization in catalytic systems",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“Box”重复，属 OCR 重复错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "Non 11-1 Non-electrochemical systems can also promote the utilization of $ \\mathrm{C O_{2}} $ providing new",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "出现无意义字符串“Non 11-1 Non-”，且与后文重复，属 OCR 损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Pb In Sn Zn Ag Au Cu Fe Ni CoPt",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "图 5a 的元素列表在 OCR 中丢失分隔，Co 与 Pt 连写为“CoPt”，影响对金属分组图的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Formate Carbon Monoxide Mixed Hydrocarbons Dihydrogen",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图 5a 的产物分组标签在 OCR 中丢失结构，仅以连续文本出现，影响图表可读性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Designing materials for electrochemical carbon dioxide recycling",
+  "self_check": "已核对：摘要与正文一致，论文主张为整合催化设计与机理理解以推动 CO₂ 电化学回收；关键数值如 CO 和乙烯热力学电位（-0.11 和 +0.07 V vs. RHE）、CO₂ 溶解度 34 mM、K⁺ 下 Au 上 CO 电流密度 22 mA/cm² at -0.35 V vs RHE、Cs⁺ 与 Li⁺ 下 C₂H₄:CH₄ 比（3.3 和 0.3）、气体扩散流动池电流密度 200-400 mA/cm²、Cu 上至少十三种产物、OD-Cu 过电位 -0.4 至 -0.5 V vs RHE、Cu 纳米线 CH₄ 选择性 55% at -1.25 V vs RHE、针状 Cu 电流密度 160 mA/cm² 和乙烯:甲烷比 200:1 at -1.0 V vs RHE、~7 nm Cu 纳米颗粒 >60% C₂ 和 C₃ at -0.75 V vs RHE、Cu(II) 酞菁形成 ~2 nm Cu 簇 CH₄ 法拉第效率 66% at -1.06 V vs RHE、表 1 中 CO/甲酸盐/乙烯/乙醇的电位范围、法拉第效率和部分电流密度均已按原文保留。公式符号如 *OCHO、*COOH、*CO、H*、Cu⁺、Cu⁰、AuₓCu₁₋ₓ 等按提取文本保留。仍不确定处：第 5 页风电 LCOE 范围 0.08-0.06 疑似 OCR 或原文笔误；第 23 页“Highсимпликент”和第 26 页“E us”为明显 OCR 损坏，无法还原原意；第 17 页图 5a 元素列表和产物标签结构损坏。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7736,
+      "prompt_tokens": 20938,
+      "total_tokens": 28674,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13957,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

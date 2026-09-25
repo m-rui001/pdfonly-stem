@@ -1,0 +1,72 @@
+{
+  "sha1": "2210bcd045153b45daaa50ea12f97ad17cd2a76f",
+  "title": "Reticular Chemistry for Highly Porous Metal–Organic Frameworks: The Chemistry and Applications",
+  "doi": "https://doi.org/10.1021/acs.accounts.1c00707",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2210bcd045153b45daaa50ea12f97ad17cd2a76f/index.html",
+  "source_chars": 58698,
+  "markdown_chars": 3321,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "an",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第4页末尾出现孤立的'an'，第5页开头为'isoreticular chemistry approach ( Figure 2).'，显然是一句被页码标记和页眉截断，跨页拼接后应为'an isoreticular chemistry approach'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "we set out to synthesize a Zr-MOF with this missing 4.3 Zr-MOFs based on the alb net",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "原文中'missing'后直接出现'4.3'，与上下文逻辑矛盾，应为'missing alb net'后接章节编号'4.3'，提取时章节标题与正文错位拼接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "a-lactabumin",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "常见蛋白名称应为'α-lactalbumin'，提取文本中'a-lactabumin'疑似拼写错误，但缺乏强文本内证据，保留原样。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "0.124 g cm3",
+      "type": "疑似缺上标",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "密度单位应为'g cm⁻³'，提取文本'cm3'缺少上标，属于排版抽取问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：NU-1501-Al BET 7310 m² g⁻¹、2060 m² cm⁻³、9150 m² g⁻¹（仅前两条准则）；H₂ 14.0 wt%、46.2 g L⁻¹、2.9 wt%、8.4 g L⁻¹；CH₄ 5-80 bar 0.54/0.44 g g⁻¹及214/174 cm³(STP) cm⁻³，5-100 bar 0.60/0.50 g g⁻¹及238/198 cm³(STP) cm⁻³；NU-1103/1104 6550/6230 m² g⁻¹；NU-1600/1601/1602 BET 2085/3970/4500 m² g⁻¹；NU-1300 BET 2100 m² g⁻¹、孔体积2.8 cm³ g⁻¹、孔径3.9 nm、窗口2.4 nm；NU-1301 a=173.262(4) Å、密度0.124 g cm⁻³、BET 4750 m² g⁻¹、孔体积3.9 cm³ g⁻¹、孔径6.2 nm。以上均与提取文本一致。不确定处：原文中'NU-1501-Al'有时写作'NU-1501Al'，已按常见格式统一；'a-lactabumin'拼写存疑；密度单位缺失上标已标记。未引入任何外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6516,
+      "prompt_tokens": 15815,
+      "total_tokens": 22331,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3603
+      }
+    },
+    "content_chars": 4939
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

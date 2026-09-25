@@ -1,0 +1,73 @@
+{
+  "sha1": "4298e38bfc15538ddec68997ed040e58dbefb608",
+  "title": "Three-dimensional piezoelectric polymer microsystems for vibrational energy harvesting, robotic interfaces and biomedical implants",
+  "doi": "https://doi.org/10.1038/s41928-018-0189-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4298e38bfc15538ddec68997ed040e58dbefb608/index.html",
+  "source_chars": 65456,
+  "markdown_chars": 2551,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "f =α  K h =α M HS  E ρ .",
+      "type": "疑似公式OCR乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2)的提取文本混乱，涉及共振频率、刚度、质量等关系，原样无法直接解析。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Ebh3 ∂F , is linearly proportional to 2 (see H S ∂u u → 0",
+      "type": "疑似文本截断/乱序",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "关于刚度K定义的句子在提取中被截断和颠倒，可能缺失了变量和运算符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "9 micron in thickness",
+      "type": "疑似单位不一致",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文其他处均用μm，此处写为micron，可能是OCR识别差异，但也可能原稿如此，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "u , =U   ( FH 2 S  ) 3  L  Ebh L  ",
+      "type": "疑似公式OCR乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)的提取文本明显乱序，难以辨认。结合上下文应表达归一化位移与力的标度关系，但原样无法复原正确符号顺序。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：RMS电压范围2-790 mV（正文给出2.02 mV、1.73 mV、0.79 V等），灵敏度60 mV/N（小力段），超低刚度值0.26/0.18/0.084 N/m，临界力2 μN，共振频率低于100 Hz，拉伸2.5%应变两方向电压18.5和2.5 mV，弯曲ΔROC~3 mm时2.8和2.1 mV，植入后~100 μV及>1 mV输出。公式(1)和(2)的变量定义已按上下文描述，但原始提取文本存在乱码，已在extraction_issues中标注。其他未发现数据矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10826,
+      "prompt_tokens": 17577,
+      "total_tokens": 28403,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8714
+      }
+    },
+    "content_chars": 3799
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

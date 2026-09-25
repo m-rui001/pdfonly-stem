@@ -1,0 +1,66 @@
+{
+  "sha1": "997b2115a111e1416b0375001955ecf4b4f92210",
+  "title": "Cooling and societal change during the Late Antique Little Ice Age from 536 to around 660 AD",
+  "doi": "https://doi.org/10.1038/ngeo2652",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/997b2115a111e1416b0375001955ecf4b4f92210/index.html",
+  "source_chars": 31168,
+  "markdown_chars": 5246,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Interpretation of concurrences between cooling in the $ 6^{\\mathrm{th}} $ century and pandemic $ ^{7,8} $ rising and falling civilizations $ ^{1-6} $ human migrations and political turmoil $ ^{8-13} $ lacks understanding of scalar and causal mechanisms.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句在pandemic、rising and falling civilizations、human migrations等并列成分之间缺少逗号或连接词，疑为OCR丢失标点，但不影响核心语义理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The growth-climate linkage was tested for temporal and spatial stability (Fig. S7, S7).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "同一图号S7重复出现，疑为OCR将不同图号（如S7a/S7b）误识为相同编号，影响对具体图件的引用准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Normalized Alpine (3) and Altai RCS TRW chronologies",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "括号内“(3)”疑为参考文献编号或图注标记的OCR误识，原文此处可能为引用编号而非数字3，影响对图注细节的准确复原。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Cooling and societal change during the Late Antique Little Ice Age from 536 to around 660 AD",
+  "self_check": "已核对：阿尔泰660条TRW序列、234,399次测量、平均树龄355年、AGR 0.44 mm、五样点相关0.93（p<0.0001）、Rbar 0.53–0.87均值0.72；最暖夏季982 CE（+1.6 °C）与2003年阿尔卑斯（+3.5 °C）；最冷夏季172 CE（-4.6 °C）与1821 CE（-3.3 °C）；540年代-3.2和-1.9 °C；火山强迫-11.3、-19.1、-17.2、-1.1 W m⁻²；LALIA定义536至约660 CE。公式与符号按提取文本原样保留。仍不确定处：Fig. S7重复引用、图注中“(3)”的具体含义，以及部分并列成分间标点缺失是否影响原文语义，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3776,
+      "prompt_tokens": 8757,
+      "total_tokens": 12533,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6876,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

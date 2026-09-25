@@ -1,0 +1,103 @@
+{
+  "sha1": "b4fc77531e423af37e9d0b4a9e3dd2a9c792d6e8",
+  "title": "Marine defaunation: Animal loss in the global ocean",
+  "doi": "https://doi.org/10.1126/science.1255641",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b4fc77531e423af37e9d0b4a9e3dd2a9c792d6e8/index.html",
+  "source_chars": 60426,
+  "markdown_chars": 6588,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "extant global marine faunal\n\nassemblages remain today",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "段落被分页标记和换行打断，但语义可恢复，属于正常页间断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "B\n\nFig. 3. Comparisons of range contractions for select marine and terrestrial fauna.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图3的标签“B”出现在图注之前，可能为版面阅读顺序问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "median 4.5 km $ ^{2} $ ）than the home range size",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "右括号误用为全角右括号“）”，应为半角“)”，属于OCR符号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "have affected ~50 million km $ ^{2} $ of seafloor (40).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单位“km²”以LaTeX形式提取，但语义完整，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "De-\n\nON OUR WEB SITE\n\nRead the full article at http://dx.doi. org/10.1126/ science.1255641\n\ndafaunation began in earnest",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "摘要中“Defaunation”被拆断，且网页侧栏文字插入到句子中间，导致阅读顺序错乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "Fig.1. Comparative chronology of human-associated terrestrial and marine animal extinctions. Green bars indicate animal extinctions that occurred on land, and blue bars indicate marine animal extinctions. Timeline mea-\n\nsures years before 2014 CE.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中“measures”被断词为“mea-\nsures”，属于OCR断词问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "1126/science.1255641",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "补充材料部分末尾的DOI前缀“10.”缺失，可能为OCR截断。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Marine defaunation: Animal loss in the global ocean",
+  "self_check": "已核对关键数值：IUCN记录过去514年15次海洋动物全球灭绝、同期陆地514次；海洋脊椎动物四十年下降22%，海洋鱼类下降38%，某些须鲸下降80-90%；大型中上层鱼类约90%分布收缩；底拖网影响约5000万km²海底；海洋保护区上限约3.6%，中位数4.5 km²；珊瑚礁可消散最多97%波浪能量；珊瑚-甲藻共生对1°至2°C敏感。公式与单位已按原文保留。仍不确定之处：部分图注和正文因分页、断词或阅读顺序问题存在轻微OCR错误，但未影响核心论证与结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4812,
+      "prompt_tokens": 16339,
+      "total_tokens": 21151,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8994,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

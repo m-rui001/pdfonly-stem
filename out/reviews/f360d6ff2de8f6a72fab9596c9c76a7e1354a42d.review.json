@@ -1,0 +1,72 @@
+{
+  "sha1": "f360d6ff2de8f6a72fab9596c9c76a7e1354a42d",
+  "title": "Wearable Microfluidic Diaphragm Pressure Sensor for Health and Tactile Touch Monitoring",
+  "doi": "https://doi.org/10.1002/adma.201701985",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f360d6ff2de8f6a72fab9596c9c76a7e1354a42d/index.html",
+  "source_chars": 30516,
+  "markdown_chars": 3475,
+  "heading_h2_count": 1,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "As different applications may require sensing pressure applied over different sized areas, four sensors with diameters of 1.8, 10, 15, and 20 mm",
+      "type": "文本内部矛盾",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "此处列表为1.8、10、15和20 mm四种直径，但下一段文字却提及“15, 9, and 1.8 mm sensors were modified”，将10 mm写成了9 mm，前后不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Both tangential and radial strains are maximum and same at the diaphragm center, given by",
+      "type": "公式缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“given by”之后公式本身未被提取，下一页开头是“The tangential strain decreases away from the center…”直接接续，说明原位置的公式在抽取中丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Figure 1. Microfluidic tactile diaphragm pressure sensor.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第3页以“When uniform pressure is applied above the tangential sensing grids, tension around the”结尾，第4页开头接“center causes a decrease…”可通读；但第4页“Both tangential and radial strains are maximum and same at the diaphragm center, given by”后公式缺失，且图注“Figure 1.”位于正文段落之间，可能存在图表插入造成的文本排序异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The liquid PDMS membrane was then cured at 70 °C for 1 h. Another plain PDMS membrane was fabricated in similar ways except that the liquid PDMS was spin coated onto an unpatterned glass slide (Figure S2c,d, Supporting Information).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中此段多次引用“Figure S2”，但前面第6页实验细节处与正文第3页均提到“Figure S1”是制造流程图；此处引用的S2c,d等可能应为S1中的对应子图；也可能是S1与S2编号约定不同，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文与结论中的关键数值：灵敏度0.0835/0.0834 kPa⁻¹、检测限约98 Pa、分辨率低于50 Pa、响应时间90 ms、线性度R²=0.999、温度范围20–50 °C、温度灵敏度漂移0.07% °C⁻¹、最大承受压力0.8 MPa、脉搏75–80→137 bpm、加热功率100/200/300 W、微通道截面70 µm×70 µm、传感器直径20/15/10/1.8 mm、PDMS膜厚约170 µm。摘要中“sub-100 Pa detection limits”（亚100 Pa）与正文98 Pa一致；sub-50 Pa分辨率一致。公式（应变与输出电压关系）原文中明确给出但提取缺失，已在extraction_issues中标注，未自行补写公式内容。直径列表前后不一致（10 vs 9 mm）已标为疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3360,
+      "prompt_tokens": 8456,
+      "total_tokens": 11816,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 497
+      }
+    },
+    "content_chars": 5622
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

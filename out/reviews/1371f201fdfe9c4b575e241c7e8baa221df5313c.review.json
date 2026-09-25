@@ -1,0 +1,55 @@
+{
+  "sha1": "1371f201fdfe9c4b575e241c7e8baa221df5313c",
+  "title": "High-performing commercial Fe–N–C cathode electrocatalyst for anion-exchange membrane fuel cells",
+  "doi": "https://doi.org/10.1038/s41560-021-00878-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1371f201fdfe9c4b575e241c7e8baa221df5313c/index.html",
+  "source_chars": 69679,
+  "markdown_chars": 3361,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "The first test in this regard was",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "短语在页尾结束，下一页开头为‘informed by the polarization curve...’，中间缺主谓语，属于跨页断句问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "To match the high beginning-of-life performance, this",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "句子在页尾中断，下一页开头为‘AEMFC setup also showed...’，明显缺词/缺句，无法连贯理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：峰值功率2.05 W cm−2（H2/O2）、1.01 W cm−2（H2/air）、0.9 V iR-free 100 mA cm−2、半波电位0.846 V、n=3.99、H2O2<1%、耐久性0.46 mV h−1、比功率10.4 W mgPGM−1等，与提取文本一致。公式部分因提取损坏，仅保留变量定义，未凭记忆补写。不确定点：文中‘Figure 3c’可能应为‘Figure 5c’但无文本依据；图7对比数据仅参考文字描述。跨页断句已列入问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9592,
+      "prompt_tokens": 21346,
+      "total_tokens": 30938,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7183
+      }
+    },
+    "content_chars": 4222
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

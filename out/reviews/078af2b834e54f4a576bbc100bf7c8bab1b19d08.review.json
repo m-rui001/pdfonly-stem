@@ -1,0 +1,63 @@
+{
+  "sha1": "078af2b834e54f4a576bbc100bf7c8bab1b19d08",
+  "title": "Large-Scale Data for Multiple-View Stereopsis",
+  "doi": "https://doi.org/10.1007/s11263-016-0902-9",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/078af2b834e54f4a576bbc100bf7c8bab1b19d08/index.html",
+  "source_chars": 63089,
+  "markdown_chars": 2596,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Also, several H. Aanæs, R.R. Jensen and A.B. Dahl Technical University of Denmark, Lyngby, Denmark E-mail: {aanes, raje, abda}@dtu.dk G. Vogiatzis Aston University, Birmingham, England E-mail: g.vogiatzis@aston.ac.uk E. Tola Aurvis, Ankara, Turkey E-mail: tola@aurvis.com\n\nissues that we hypothesized would challenge MVS",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "作者信息被插入到上一页末尾的‘Also, several’和下一页的‘issues that we hypothesized’之间，导致句子被截断和重排。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "dense triangulated surfaces, i.e. meshing. A previous and more limited version of this study appeared in [17].",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第2页开头出现‘dense triangulated surfaces...’但该短语与上一页末尾的‘1 Introduction’标题间缺少衔接，疑似缺失‘2 Related Work’标题或部分内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Stretcha et al. contains six",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "文中出现‘Stretcha’，但上下文与参考文献[34]为Strecha等，可能是拼写错误，但无法确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表3、表4中的关键数值：80场景、49/64相机位、1200×1600分辨率、13.4百万参考点、0.17/0.14毫米精度、ANOVA模型公式、表3和表4的均值/中位数以及显著性水平。注意表4中‘Light varied’的精度均值与中位数与全光相同（0.576/0.322/0.325），但表4中标记为†和‡的显著性仅对应完整性，精度无标记。相关系数矩阵已原样保留。公式中的希腊字母和下标已尽量还原，但提取文本中的‘⇥’（乘号）和‘µ’等符号已按常见格式处理。仍不确定的地方：第2页开头缺失‘2 Related Work’标题，但正文内容可辨识；第1页作者信息与句子拼接的顺序颠倒已在问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5692,
+      "prompt_tokens": 16874,
+      "total_tokens": 22566,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3539
+      }
+    },
+    "content_chars": 4152
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

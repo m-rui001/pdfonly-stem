@@ -1,0 +1,55 @@
+{
+  "sha1": "d602f60b428b2fe1428cce408ecb74e35d65c90c",
+  "title": "Noninvasive Alcohol Monitoring Using a Wearable Tattoo-Based Iontophoretic-Biosensing System",
+  "doi": "https://doi.org/10.1021/acssensors.6b00356",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d602f60b428b2fe1428cce408ecb74e35d65c90c/index.html",
+  "source_chars": 48531,
+  "markdown_chars": 3997,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "The tattoo-based biosensor system provides reliable monitoring of alcohol consumption in realworld settings, as conﬁrmed using a variety of control experiments. Such development of a low-cost single-use epidermal alcohol biosensor brings a highly useful tool for",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "此句在第 8 页末尾中断，第 9 页继续为 'monitoring alcohol on our highways...'，中间直接进入结论段落，属于典型的跨页拼接场景。第 9 页开头仅继续了该句子，不复存在文本丢失，但需注明第 8 页页尾与第 9 页页首之间的句子连续性依赖版面判断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "For example, three subjects in Figure 3B have 0.022%, 0.017%, and 0.026% BAC, respectively, after consuming the same amount of alcohol. The BAC of the above subjects can thus be converted to 6.7 mM, 5.2 mM, and 7.9 mM alcohol sweat concentrations, respectively.",
+      "type": "数值一致性存疑",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "原文给出的 BAC 值为 g/dL 百分比（如 0.022%），而换算方程 BAC (g L⁻¹) = 0.71 × sweat ethanol concentration (g L⁻¹) 中的单位不一致。若 0.022% 对应 0.22 g/L 或 0.022 g/dL，按方程换算所得汗液酒精摩尔浓度应约为 6.7 mM 的推论在文本中未给完整推导过程，且单位换算在抽取/排版中可能有省略，导致数值逻辑审查困难。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：校准曲线斜率 0.362 ± 0.009 μA/mM，截距 1.810 ± 0.170 μA，R²=0.993；干扰物浓度；PB 峰电流降低 39.7%；离子导入参数 0.6 mA、5 min、电位 −0.2 V、检测 150 s（体外 60 s）；三受试者 BAC 0.022%/0.017%/0.026%；换算汗液乙醇浓度 6.7/5.2/7.9 mM；BAC-电流线性斜率 102 μA/BAC %，R²=0.999。公式 BAC (g L⁻¹)=0.71×sweat ethanol concentration (g L⁻¹)，r=0.912 已保留。仍不确定处：BAC 百分比单位与换算方程中 g L⁻¹ 的换算过程在文本中未完整呈现；正文提及体外检测 60 s 但集成系统检测 150 s，提取文本中两种时长并存且均来自原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3165,
+      "prompt_tokens": 12251,
+      "total_tokens": 15416,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 18
+      }
+    },
+    "content_chars": 5655
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

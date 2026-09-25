@@ -1,0 +1,83 @@
+{
+  "sha1": "9c8b0d27581e1f0d5165b49a64326eb001865567",
+  "title": "g-C 3 N 4 /NiAl-LDH 2D/2D Hybrid Heterojunction for High-Performance Photocatalytic Reduction of CO 2 into Renewable Fuels",
+  "doi": "https://doi.org/10.1021/acsami.7b18835",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9c8b0d27581e1f0d5165b49a64326eb001865567/index.html",
+  "source_chars": 71274,
+  "markdown_chars": 3128,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "CO Selectivity (%) = 2N\u0012\u0013 × 100 2N\u0012\u0013 + 2N\u0015\u0016",
+      "type": "公式文本乱码",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "CO选择性公式中N后面的下标符号被乱码替代，且缺少除号或括号分隔，疑似PDF抽取损坏。原文下一句明确说明N_CO和N_H2分别代表CO和H2的产量，故可按语义理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "the morphology of the CCG-10 photocatalyst did not change significantly after the reaction.",
+      "type": "疑似笔误",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "原文此处将CNLDH-10误写为CCG-10，上下文中催化剂一直为CNLDH-10，且前后文均无CCG-10定义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "1 CN⁄LDH + hϑ ⟶ CN⁄LDH (h0 ./ + e\u0012/ ) 1 0 1 CN⁄LDH (h0 ./ + e\u0012/ ) ⟶ CN(h./ ) / LDH (e\u0012/ ) 2H3 O ⟶ 4H 0 + O3 + 4e1 (E 6 = +0.82 V) CO3 + 2H 0 + 2e1 ⟶ CO + H3 O (E 6 = −0.53 V) 2H 0 + 2e1 ⟶ H3 (E 6 = −0.41 V)",
+      "type": "公式文本乱码",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "反应方程式中的上标/下标、电荷符号和分子式（如H2O、O2、H+、e−）被抽取为乱码（如h0./、e\u0012/、H3 O等），无法可靠复原，照录可见文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "AQY (%) = the no of reacted electrons × 100 / the no of incident photons = the no of evolved CO molecules × 2 × 100 / the no of incident photons",
+      "type": "公式文本乱码",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "AQY公式中缺少分子分母的明确排版，但逻辑可读，行列难以对应。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "CNLDH-10 sample before and after the photocatalytic reaction and no obvious peak change in the XRD patterns was observed, suggesting the structural stability of the composites during the photocatalytic reaction process. Moreover, the TEM image (Figure S7) of the reused sample also clearly demonstrated that the morphology of the CCG-10 photocatalyst did not change significantly after the reaction.",
+      "type": "跨页顺序/落字",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "此段位于[PDF extracted page 21]末尾，下一句“CCG-10”疑似笔误，且前后逻辑有跳跃，但整体可读。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：最佳CO产率8.2 µmol h⁻¹ g⁻¹（纯g-C3N4为1.56，纯LDH为0.92），选择性82%，AQY 0.39%（400 nm）和0.21%（420 nm），循环后保留86%，比表面106.9/28.5 m²/g，带隙2.7/2.32 eV，VB 1.38/1.62 eV，CB -1.32/-0.7 eV。公式因原文抽取乱码，仅保留可辨识部分并标注问题。文中CCG-10应为CNLDH-10的笔误，已在问题中标记。其余内容均基于提取文本，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5537,
+      "prompt_tokens": 23412,
+      "total_tokens": 28949,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2512
+      }
+    },
+    "content_chars": 5395,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

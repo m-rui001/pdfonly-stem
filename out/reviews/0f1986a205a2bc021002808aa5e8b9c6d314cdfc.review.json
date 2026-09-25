@@ -1,0 +1,63 @@
+{
+  "sha1": "0f1986a205a2bc021002808aa5e8b9c6d314cdfc",
+  "title": "HVDC Transmission: Technology Review, Market Trends and Future Outlook",
+  "doi": "https://doi.org/10.1016/j.rser.2019.04.062",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0f1986a205a2bc021002808aa5e8b9c6d314cdfc/index.html",
+  "source_chars": 164253,
+  "markdown_chars": 7128,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "Table 1: Technical comparison summary between HVAC and HVDC transmission. Transmission Type",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第 3 页底部出现 'Table 1: Technical comparison summary between HVAC and HVDC transmission. Transmission Type'，紧接着第 4 页开头才是表格内容。表格标题与表格正文被分页隔开，表头行 'Transmission Type' 与后续数据行之间可能存在跨页断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 44,
+      "quote": "Figure 21: Summary of RES curtailment problem in China and its effect on HV Interconnectors Utilization",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页面 44 的末尾出现 'Figure 21: Summary of RES curtailment problem in China...'，该图注之后页面即结束，但正文中并未提及该图的引用位置。可能存在图注与图体分离或正文引用缺失的情况。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 42,
+      "quote": "Having said that, it is important to address that the process of constructing a cross-border DC grid is incremental.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.55,
+      "reason": "该句位于第 42 页中部，句子上下文中出现了关于欧洲电网投资、法国核电占比以及'questionable'等讨论，但上一页（第 41 页）末尾以'[199].'结束参考文献，随后第 42 页开头直接继续讨论，两者之间可能存在文献引用与正文的衔接问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：全球发电量 2016 年 24,000 TWh、2040 年 38,000 TWh；HVDC 盈亏平衡距离 300-800 km（架空）/50-100 km（电缆）；截至 2017 年全球容量超 200 GW，2022 年预计超 400 GW；LCC 损耗 0.6%-0.8%，VSC 约 1%；VSC 占地比 LCC 小 40%-50%；DCCB 原型参数（ABB 80kV/5ms、Alstom 130kV/5.5ms、GEIRI 200kV/3ms）；INELFE 2×1000MW/±320kV/64.5km/700M欧元；Western Link 2200MW/±600kV/420km/1B英镑。公式与数值方向与结论一致。不确定之处：图 4 中‘Total Subset’等图内标签不完整，无法完全复原数据；图 11 中的具体数据点仅凭正文无法逐一核对；表 6 中的元器件展望数据（如 LCC 12,000 MW 对应 ±1,200 kV）与正文中提到的 ±1,100 kV 不完全一致，已按提取文本照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5692,
+      "prompt_tokens": 38482,
+      "total_tokens": 44174,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 622
+      }
+    },
+    "content_chars": 8920
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

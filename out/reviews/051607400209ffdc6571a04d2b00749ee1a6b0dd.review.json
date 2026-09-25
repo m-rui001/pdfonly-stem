@@ -1,0 +1,103 @@
+{
+  "sha1": "051607400209ffdc6571a04d2b00749ee1a6b0dd",
+  "title": "From Metal–Organic Frameworks to Single‐Atom Fe Implanted N‐doped Porous Carbons: Efficient Oxygen Reduction in Both Alkaline and Acidic Media",
+  "doi": "https://doi.org/10.1002/anie.201803262",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/051607400209ffdc6571a04d2b00749ee1a6b0dd/index.html",
+  "source_chars": 27944,
+  "markdown_chars": 5198,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "From MOFs to Single Fe Atoms Implanted N-doped Porous Carbons: Efficient Oxygen Reduction in Both Alkaline and Acidic Media",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页标题为'From MOFs to Single Fe Atoms...'，与登记题名'From Metal–Organic Frameworks to Single‐Atom Fe Implanted...'措辞不同，但指向同一论文，属题名表述差异而非身份冲突。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "FeSA-N-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "正文中该缩写多处出现，但首页摘要写作'FeSA-N-C'，而正文部分位置写作'FeSA-N-C'与'FeSA-N-C'混用，OCR对下标/连字符处理不一致，影响符号一致性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "FeSA-N-C",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文中FeSA-N-C的Fe、SA、N、C下标关系在OCR中部分丢失或错位，如'FeSA-N-C'与'FeSA-N-C'混用，影响化学式精确复现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "FeSA-N-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "XAS部分'FeSA-N-C'与'FeSA-N-C'混用，且'Feδ+'、'Fe-Nx'等符号下标/上标在OCR中部分丢失，影响公式符号精确性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "FeSA-N-C",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "电化学性能部分'FeSA-N-C'与'FeSA-N-C'混用，且'FeSA-N-C'在SAXS段落写作'FeSA-C-N'，属OCR符号错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "FeSA-C-N",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "SAXS段落中'FeSA-C-N'与全文'FeSA-N-C'不一致，应为同一材料，OCR元素顺序错乱，影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "FeSA-N-C",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "电化学部分'FeSA-N-C'、'FeNP-N-C'、'Fe0-N-C'等下标在OCR中部分丢失或错位，影响化学式精确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "From MOFs to Single Fe Atoms Implanted N-doped Porous Carbons: Efficient Oxygen Reduction in Both Alkaline and Acidic Media",
+  "self_check": "已核对关键数值：Fe载量1.76 wt%、N含量4.67 wt%、BET比表面积2062 m2/g（Fe20-PCN-222）和532 m2/g（FeSA-N-C）、孔径1.2 nm/3.2 nm/约9 nm、E1/2碱性0.891 V、酸性0.776 V、Jk 23.27 mA/cm2（0.85 V）和9.60 mA/cm2（0.75 V）、电子转移数约4.0、H2O2产率<5.5%（碱性）和<1.0%（酸性）、5000次循环衰减6 mV（酸性）、SCN-毒化半波电位下降50 mV。公式符号如FeSA-N-C、Fe-Nx、Feδ+、Fe2p3/2等下标/上标在OCR中部分丢失或错位，已按可见文本照录。仍不确定处：OCR中'FeSA-N-C'与'FeSA-N-C'混用，'FeSA-C-N'出现一次，均按原文照录未静默改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4172,
+      "prompt_tokens": 9582,
+      "total_tokens": 13754,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7643,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

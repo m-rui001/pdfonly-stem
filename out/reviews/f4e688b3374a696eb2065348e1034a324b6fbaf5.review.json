@@ -1,0 +1,211 @@
+{
+  "sha1": "f4e688b3374a696eb2065348e1034a324b6fbaf5",
+  "title": "Genetic studies of body mass index yield new insights for obesity biology",
+  "doi": "https://doi.org/10.1038/nature14177",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f4e688b3374a696eb2065348e1034a324b6fbaf5/index.html",
+  "source_chars": 140370,
+  "markdown_chars": 13114,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "metaanalysis",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 'meta-analysis'，OCR 丢失连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "HeK27ac",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为 'H3K27ac'，OCR 将 '3' 误识为 'e'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "varia NT",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "MAGENTA 全称中 'variaNT' 被空格拆开，应为 'variant'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "dos not include",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为 'does not include'，OCR 漏掉字母 e。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "receiveroperating",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 'receiver-operating'，OCR 丢失连字符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "BDAF(B,M,N)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Extended Data Table 2 中 rs11030104 的 Notable gene(s) 应为 'BDNF'，OCR 将 'N' 误识为 'A'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "E7V5(N)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Extended Data Table 2 中 rs1516725 的 Notable gene(s) 应为 'ETV5'，OCR 将 'T' 误识为 '7'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "M4P2K5(B,D,N)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Extended Data Table 2 中 rs16951275 的 Notable gene(s) 应为 'MAP2K5'，OCR 将 'A' 误识为 '4'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "PBMC meta-analys",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Extended Data Table 3 中 Reference 列 'PBMC meta-analys' 被截断，应为 'PBMC meta-analysis'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs10182181 2 G Subcutaneous ADCY3 0.022 7.57E-06 0.69 rs11684619 0.72 8.70E-09 0.05 Zhong et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'G'，但 ADCY3 的 BMI 增加等位基因应为 'G'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs2176040 2 A Omental IRS1 -0.036 3.74E-09 0.97 rs908252 0.87 3.98E-10 0.47 Zhong et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'A'，但 IRS1 的 BMI 增加等位基因应为 'A'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs13107325 4 T Liver SLC39A8 -0.101 1.29E-17 1 rs13107325 1.00 1.29E-17 1 Zhong et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 SLC39A8 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs205262 6 G Blood SNRPC -0.462 9.60E-15 0.58 rs6457792 0.96 9.40E-15 0.55 Emilsson et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'G'，但 SNRPC 的 BMI 增加等位基因应为 'G'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs3817334 11 T SKIN C1QTNF4 -0.051 1.34E-09 0.82 rs7124681 1.00 9.42E-10 0.34 Grundberg et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 C1QTNF4 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs3817334 11 T Subcutaneous MTCH2 0.044 7.64E-13 0.76 rs12794570 0.76 2.54E-15 0.10 Zhong et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 MTCH2 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs3817334 11 T Brain MTCH2 28.255 7.51E-08 NA NA NA NA NA Myers et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 MTCH2 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs3817334 11 T FAT SPI1 -0.090 9.90E-07 0.90 rs10769262 0.70 1.15E-08 1 Grundberg et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 SPI1 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs12016871 13 T PBMC GTF3A -0.258 6.68E-34 0.90 rs7988412 0.81 1.81E-36 0.29 PBMC meta-analysis",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 GTF3A 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "rs12016871 13 T Lymphocyte GTF3A -0.375 3.89E-15 0.32 rs7988412 0.86 1.32E-15 0.06 Dixon et al.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中该行 'BMI increasing allele' 列显示为 'T'，但 GTF3A 的 BMI 增加等位基因应为 'T'，此处可能因表格列对齐问题导致信息错位，需核对原表。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Genetic studies of body mass index yield new insights for obesity biology",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 41917,
+      "total_tokens": 51917,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19115,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

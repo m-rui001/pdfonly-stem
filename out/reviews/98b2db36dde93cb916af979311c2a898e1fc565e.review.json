@@ -1,0 +1,63 @@
+{
+  "sha1": "98b2db36dde93cb916af979311c2a898e1fc565e",
+  "title": "Cooling cities through urban green infrastructure: a health impact assessment of European cities",
+  "doi": "https://doi.org/10.1016/s0140-6736(22)02585-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/98b2db36dde93cb916af979311c2a898e1fc565e/index.html",
+  "source_chars": 78383,
+  "markdown_chars": 4420,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "2,644 (95% CI 2,4452,824)",
+      "type": "疑似数字错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "摘要中95%置信区间下界写作'2,4452,824'，缺少连字符且与结果部分'2,444-2,824'不一致，疑似印刷或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Moreover, we were not able to build the uncertainty",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 1.0,
+      "reason": "第17页末尾句子在'uncertainty'处中断，第18页以'ranges for both population counts...'接续，原文跨页断裂，需结合两页阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "In spite of the cooling model limitations, the coarse-grained",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 1.0,
+      "reason": "第18页末尾在'coarse-grained'中断，第19页以'approach here can provide a first order guideline...'接续，跨页断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、结果和表1中的关键数值：UHI 1.5°C、TC 30%降温0.4°C、UHI归因死亡6,700（95% CI 5,254–8,162）、可预防死亡2,644（95% CI：摘要2,445-2,824与结果2,444-2,824存在下界差异，已标记）。公式Eq.1和Eq.2已按原文照录。其他结果如城市范围、百分比、敏感性变化等均与正文一致。未发现其他数字矛盾。跨页断裂已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10888,
+      "prompt_tokens": 20504,
+      "total_tokens": 31392,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7719
+      }
+    },
+    "content_chars": 5546
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

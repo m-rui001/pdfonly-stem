@@ -1,0 +1,82 @@
+{
+  "sha1": "b8ce5e75a4eecc23b9edba8964e4a51bb63ded5d",
+  "title": "Antioxidant and antibacterial lignin nanoparticles in polyvinyl alcohol/chitosan films for active packaging",
+  "doi": "https://doi.org/10.1016/j.indcrop.2016.09.061",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b8ce5e75a4eecc23b9edba8964e4a51bb63ded5d/index.html",
+  "source_chars": 62640,
+  "markdown_chars": 3644,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "Xap - 3984",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "全文一致使用Xap-3894，此处3984为笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "each tube containing 5 mL of liquid broth (NB) with 1 x 106 CFU/mL of Xap - 1115 and Pco - 3894",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "前文明确菌株为Xap-3894和Pco-1115，此处编号互换，应为Xap-3894和Pco-1115。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "Kuko et al. (Kubo and Kadla, 2003)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献列表为Kubo and Kadla，此处Kuko应为Kubo。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "a Tg reduction from 131.2 to 123.1°C",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表2中CH/3LNP的Tg为123.3°C，正文写123.1，可能为细微差异或抽取误差，但无强证据。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "transmittance of the previous studied nanocomposite films (Figure 7a) containing LNP in the UV region (for instance 320 nm) reached value below 2 %",
+      "type": "数据矛盾",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表4提取数据中PVA/1LNP的320 nm透射率为24.43%，与'below 2%'矛盾；可能是表4列错位或正文指其他样品，但无足够证据校正。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：拉伸强度（45.8→51.5 MPa）、模量（1100→2100 MPa）、断裂伸长率（163.4→115.5/30.5%）、DSC中Tg、Tc、结晶度（9.8→18.1%）、TGA峰值（258.0→278.6°C）、DPPH RSA（78.2/89.0/20.3/92.0/85.6/91.7%）、总体迁移（30.5 mg/kg）、320 nm透射率（<2%）、抗菌菌落数等。公式按原文保留。不确定之处：表4部分数据与正文矛盾，已列入问题；菌株编号有两处笔误已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6934,
+      "prompt_tokens": 18793,
+      "total_tokens": 25727,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3962
+      }
+    },
+    "content_chars": 5267
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

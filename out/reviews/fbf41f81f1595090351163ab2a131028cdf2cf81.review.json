@@ -1,0 +1,54 @@
+{
+  "sha1": "fbf41f81f1595090351163ab2a131028cdf2cf81",
+  "title": "Carbon monoxide electroreduction as an emerging platform for carbon utilization",
+  "doi": "https://doi.org/10.1038/s41929-019-0388-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fbf41f81f1595090351163ab2a131028cdf2cf81/index.html",
+  "source_chars": 55932,
+  "markdown_chars": 2914,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "a OHexchange membrane (HEM) MEA",
+      "type": "疑似拼写/连字符缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "常见术语为OH-exchange membrane，提取文本中为OHexchange，疑缺连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Cannizarro-type disproportionation",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为Cannizzaro-type disproportionation，原文拼写少一个z。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：CO2R制乙烯化学计量（2 mol CO2/8 mol H2O生成12 mol OH-，额外6 mol CO2形成碳酸盐，损失75%）、COR能量效率（40% at 600 mA/cm2，35% at ~800 mA/cm2）、乙酸FE>45%、单程转换率70%、TEA电价阈值（乙酸5.0/2.7¢，乙烯3.3/1.8¢）、电子数（乙酸4e-，乙烯8e-）、LCA可再生能源占比阈值（完全LCA>90%，LCB约80%）等。不确定处：图2中各研究具体数值未提取，仅依赖文字描述；LCA中绝对排放数值依赖于数据库，本笔记仅保留文字明确给出的数字。公式和化学式均照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7569,
+      "prompt_tokens": 14501,
+      "total_tokens": 22070,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5444
+      }
+    },
+    "content_chars": 3768
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

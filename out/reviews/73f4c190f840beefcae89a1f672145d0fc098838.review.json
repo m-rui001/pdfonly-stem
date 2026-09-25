@@ -1,0 +1,82 @@
+{
+  "sha1": "73f4c190f840beefcae89a1f672145d0fc098838",
+  "title": "Exploring pro-environmental behaviors of consumers: An analysis of contextual factors, attitude, and behaviors",
+  "doi": "https://doi.org/10.1016/j.jbusres.2016.06.010",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/73f4c190f840beefcae89a1f672145d0fc098838/index.html",
+  "source_chars": 61640,
+  "markdown_chars": 4383,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "H1a: Consumers’ perception of lesser busyness (i.e. more time available) has a positive relationship with their pro-environmental behavior",
+      "type": "方向表述与正文数据疑似不一致",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "假设 H1a 表述为‘感知更少忙碌’正向关联 PEB，但正文第 13-14 页结果中‘perceived busyness is positively related to attitude’及表 3/表 4 中忙碌度与私有行为负向（虽不显著）、与公共行为正向的混合结果，使‘更少忙碌’的表述方向与‘忙碌程度’变量的关系需要澄清；原文第 5.3 节亦直接写‘perceived busyness is positively related to attitude’，若该变量测量的是忙碌感本身而非时间充裕感，则假设应表述为相反方向。此为文本内可见的不一致，需核对原始变量测量方向。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Item 4 (“Commuting by bike, walking, or public transit) in the “cost” construct displayed a low factor loading (.372) and was therefore deleted.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "正文未说明‘Commuting’条目属于‘cost’构念的测量项；按测量部分描述，该条目是私有领域 PEB 的行为条目，被删除后再从其他构念中剔除虽可理解，但‘在 cost 构念中’的表述可能有误或有省略的模型设定信息，建议核对原始模型。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "The results of the mediation test lend partial support to H1a-c.",
+      "type": "跨页/逻辑衔接疑问",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文在 H4 结果后提及 H1a-c 得到部分支持，但前文 5.1 和 5.3 节并未明确报告 H1a-c 的检验结果，表 4 中的 c 路径数值虽隐含其结果（如忙碌度对公共行为显著正、对私有不显著），但 H1 的总体支持程度需从表 4 综合推断，行文连接处有信息跳跃。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "0-5%, 6-20%, 21-35%, 36-50%, 51-65%, 66- 80%, and 95-100%",
+      "type": "疑似抽取遗漏",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "7 级量表最后一档为 95-100%，与上一档 66-80% 之间间隔过大（缺少 81-94%），疑为原文排版或抽取遗漏，原文可能有‘81-94%’档。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 29,
+      "quote": "H4a H4b H4c H4a H4b H4c",
+      "type": "表格标注位置疑似混乱",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "表 4 中 H4a/H4b/H4c 的列标注在不同子表间位置不一致（如感知忙碌子表标记为 H4a，感知财富子表标记为 H4b，感知权力子表标记为 H4c），可能为表格排版或抽取拼接问题，但数值内容本身可通过路径系数推断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对数值：CFA 拟合（χ²=2075.2063, CFI=.95, RMSEA=.06）、SEM 拟合（χ²=2370.3578, CFI=.92, RMSEA=.06）、各路径系数（context→attitude .658***、attitude→behavior .982***、context→behavior -.007 n.s.）、中介效应（busyness→importance→private .125 CI [.05,.21]；busyness→cost→public .333 CI [.25,.42]；wealth→importance→private .255 CI [.21,.36]；wealth→cost→private .281 CI [.25,.42]；power 无中介）、替代模型调节效应 |.0061|~|.0194| vs 中介 |.125|~|.494|，均与原文一致。论述方向核对：H1a 的‘lesser busyness’表述与正文变量‘perceived busyness’的方向关系不确定，已在 extraction_issues 标记；H2a-c 结果为部分支持（wealth→duration 不显著、power→importance/cost 不显著），与原文一致。公式与符号：原文无非数学公式。文献引用仅保留了正文明确提出的关键来源（Steg & Vlek 2009; Stern 2000; Guagnano et al. 1995; Grimmer et al. 2015），未展开参考文献表。剩余不确定点：表 4 中 H4a/H4b/H4c 列标注位置有轻微混乱，但不影响数值解读。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4394,
+      "prompt_tokens": 15106,
+      "total_tokens": 19500,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 697
+      }
+    },
+    "content_chars": 7118
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

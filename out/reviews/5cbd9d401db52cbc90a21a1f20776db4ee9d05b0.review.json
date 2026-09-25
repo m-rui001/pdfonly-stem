@@ -1,0 +1,85 @@
+{
+  "sha1": "5cbd9d401db52cbc90a21a1f20776db4ee9d05b0",
+  "title": "Insight into the Ligand-Mediated Synthesis of Colloidal CsPbBr 3 Perovskite Nanocrystals: The Role of Organic Acid, Base, and Cesium Precursors",
+  "doi": "https://doi.org/10.1021/acsnano.6b03863",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5cbd9d401db52cbc90a21a1f20776db4ee9d05b0/index.html",
+  "source_chars": 55530,
+  "markdown_chars": 8313,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "The $ \\mathrm{C s P b B r}{3} $ nanocrystals were worked up",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "下标 3 在公式标记中丢失，写作 CsPbBr{3} 而非 CsPbBr_{3}，属公式符号抽取损坏，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the remaining $ \\mathrm{C s P b B r}{3} $ solid",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，CsPbBr 下标 3 丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the CsPbBr $ {3} $ nanocrystals obtained from C18A-C6B combination",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "公式标记中下标 3 的花括号位置异常，属抽取格式损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "temperature-dependent dynamic surface一ligand interaction",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "连字符被 OCR 识别为汉字“一”，应为 surface-ligand。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "CsPbBr $ {3} $ perovskite nanocrystals",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "结论段中 CsPbBr 下标 3 的公式标记花括号位置异常，属抽取格式损坏。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Insight into the Ligand-Mediated Synthesis of Colloidal CsPbBr 3 Perovskite Nanocrystals: The Role of Organic Acid, Base, and Cesium Precursors",
+  "self_check": "已核对：摘要与结论中关于 CsOAc 替代 Cs₂CO₃、羧酸链长与纳米立方尺寸单调增大、胺链长与纳米片厚度减小、最薄三个晶胞、¹H NMR 与 IR 确认羧酸盐与铵共存且铵在丙酮洗涤中脱落等关键结论方向一致。Table 1 中 C18A-C18B 170 °C 纳米立方 7.1±0.8 nm、PLQY 87%，C18A-C18B 140 °C 纳米片 2.6±0.3 nm、86%，C12A-C18B 9.5±1.2 nm、63%，C8A-C18B 12±1.8 nm、55%，C6A-C18B 170 °C 13±2.3 nm、59%，C6A-C18B 140 °C 2.6±0.4 nm、38%，C2A-C18B 120 °C 纳米片 n.d.、22%，C18A-C12B 4.5±0.6 nm、51%，C18A-C8B 170 °C 3.5±0.4 nm、61%，C18A-C8B 140 °C 2.6±0.3 nm、46%，C18A-C6B 1.8±0.3 nm、36%，均与正文描述一致。XRD 峰位 17.6°、25.1°、35.6°、39.6°、43.5°、50.2°、53.2°、56.2°（Co Kα，1.79 Å）与正文一致。d 间距 5.8 和 4.1 Å 对应 (001) 和 (110) 面，与正文一致。IR 峰 1545 cm⁻¹（羧酸盐不对称伸缩）、1575 cm⁻¹（N-H 弯曲）、1465 和 1375 cm⁻¹（C-H 弯曲）与正文一致。不确定处：部分公式下标在 OCR 中花括号位置异常，已按可见文本照录；Table 1 中 C2A-C18B 的 n.d. 上标 c 标注为 Not determined，已保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6340,
+      "prompt_tokens": 15803,
+      "total_tokens": 22143,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10565,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

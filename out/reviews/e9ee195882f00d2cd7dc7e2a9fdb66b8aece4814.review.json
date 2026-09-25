@@ -1,0 +1,63 @@
+{
+  "sha1": "e9ee195882f00d2cd7dc7e2a9fdb66b8aece4814",
+  "title": "High Performance Pseudocapacitor Based on 2D Layered Metal Chalcogenide Nanocrystals",
+  "doi": "https://doi.org/10.1021/nl504764m",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e9ee195882f00d2cd7dc7e2a9fdb66b8aece4814/index.html",
+  "source_chars": 32094,
+  "markdown_chars": 2891,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "T\nAnother type of energy storage mechanism",
+      "type": "疑似断字/拼接",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "文本中 'T' 单独成行，后续接 'Another type'，但实际应为 'The' 开头（后面有 'he extraordinary' 另起一段）。首字母 'T' 与 'he' 被拆开，属于抽取断字，不影响语义但需注意原文 'T' 后的 'h' 缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "he extraordinary properties of graphene",
+      "type": "疑似断字/拼接",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "此处应为 'The extraordinary'，首字母 'T' 出现在前一行，本行开头为 'he'，与上一行 'T' 拼接才能得到 'The'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "E",
+      "type": "页脚标记干扰",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第5页末尾出现单独字母 'E'，后接 DOI，可能是页脚或装饰性字母，与正文无关，但提取文本将其置于正文之后，可能影响阅读顺序。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：2D-TiS2 体积变化 2%，B-TiS2 10%；50 nm 样品 1 mV/s 下容量 167 mAh/g（0.74 Li/TiS2）；10 mV/s 下电容贡献 100 nm 为 91%、50 nm 为 84%、体相为 6%；b 值 100 nm 为 0.95、50 nm 为 0.83；膜电极 320 F/g，30 s。公式 (1)-(4) 已按原文保留。存在不确定：c/a 轴初始值括号内数字为误差，未明确单位；图 4 中标注 'eq 4' 但实际为 eq 3（式编号可能有误），未在正文改写。另外，正文中 'b-value' 分析提到 'eq 4'，但该公式为 i=aν^b，原文此处可能笔误，已按原文照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4974,
+      "prompt_tokens": 9876,
+      "total_tokens": 14850,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2514
+      }
+    },
+    "content_chars": 4098
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

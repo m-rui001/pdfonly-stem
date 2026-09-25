@@ -1,0 +1,55 @@
+{
+  "sha1": "449138f7f6b7fad5addda594337837496f676330",
+  "title": "Reversible magnesium and aluminium ions insertion in cation-deficient anatase TiO2",
+  "doi": "https://doi.org/10.1038/nmat4976",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/449138f7f6b7fad5addda594337837496f676330/index.html",
+  "source_chars": 54873,
+  "markdown_chars": 2177,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "typically 2",
+      "type": "pagination artifact",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页码数字'2'混入正文，原句应为'Divalent Mg2+ typically exhibits...'，'2'为上一页页码残留。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "(TiIV0.78-2xTiIII2x◻0.22- [4a] O1.12F0.40(OH)0.48 (1). xMgx)",
+      "type": "text corruption",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)提取中下标和括号丢失，'xMgx'应为'Mg_x'，且'0.22-'后应接下标'x'，原文存在排版断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的嵌入能（Li/Mg/Al在TiO2和F-TiO2）、容量数据（25、165、140、155、30、120、90 mAh/g）、空位浓度22%、Mg扩散系数（约9e-17和4e-18 cm2/s）、TiIII比例32%、理论容量166 mAh/g等，均与原文一致。公式(1)中提取文本存在明显下标丢失，笔记中按化学计量推断为'◻_{0.22-x}Mg_x'，但此推断基于上下文，原提取为'0.22-xMgx'，已列入问题。其余数据与结论方向一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12140,
+      "prompt_tokens": 14932,
+      "total_tokens": 27072,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10365
+      }
+    },
+    "content_chars": 3010
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

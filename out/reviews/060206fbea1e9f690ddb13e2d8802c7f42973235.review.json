@@ -1,0 +1,45 @@
+{
+  "sha1": "060206fbea1e9f690ddb13e2d8802c7f42973235",
+  "title": "Self-Cleaning CO2 Reduction Systems: Unsteady Electrochemical Forcing Enables Stability",
+  "doi": "https://doi.org/10.1021/acsenergylett.0c02401",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/060206fbea1e9f690ddb13e2d8802c7f42973235/index.html",
+  "source_chars": 33169,
+  "markdown_chars": 2366,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "the rate of generation exceeds to migration rate",
+      "type": "疑似文本错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "原文中“exceeds to”搭配不标准，大概率是“exceeds the migration rate”的笔误或提取误差，但无强文本证据，照录原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：溶度积2073（20°C）、1200秒达到溶解度极限、60秒后碳酸根2.1 M、30秒再生后约10⁻³ M（2000倍降低）、交替模拟最高3.4 M、20秒再生峰值约6 M；银体系连续12小时CO选择性98%→76%，电流密度170→160 mA cm⁻²；铜体系连续48小时选择性降至72%，交替157小时（总236小时）保持80% C2选择性和138 mA cm⁻² C2部分电流密度，能耗<1%；早期电流密度110→250 mA cm⁻²，2000周期后跳至175 mA cm⁻²。这些数据均与摘要、正文和结论一致。不确定处：原文中交替模拟图引用为Figure 2c，但按上下文可能对应2d，因未提供图内容，仅照录；另“exceeds to”疑似笔误已标记。所有数值均来自提取文本，未做任何推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4814,
+      "prompt_tokens": 9288,
+      "total_tokens": 14102,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3067
+      }
+    },
+    "content_chars": 3090
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

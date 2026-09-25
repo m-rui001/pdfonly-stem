@@ -1,0 +1,46 @@
+{
+  "sha1": "b471a505bc5c582541f32b64b3fb1e9097e665f7",
+  "title": "Design Thinking and Organizational Culture: A Review and Framework for Future Research",
+  "doi": "https://doi.org/10.1177/0149206317744252",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b471a505bc5c582541f32b64b3fb1e9097e665f7/index.html",
+  "source_chars": 121966,
+  "markdown_chars": 3125,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 22,
+      "quote": "Figure 1 An Experiential Learning Framework Relating Design Thinking Tools and Cultures",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页22末尾出现图1标题后，页23开头紧接着是\"organizational culture.\"（不完整短语），中间缺失了图的具体内容以及可能的小节标题或段落起始文字，疑似跨页抽取时图注与正文衔接处信息丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言、方法、三个主要发现及其对应的实证文章数量（33、38、25、22、18）、案例总数（299个案例，86篇实证文章）等关键数值。文中引用的具体案例（Deutsche Bank、旧金山歌剧院、LEGO、三星、Continuum、Levi's等）及其结论均与原文一致。经验学习循环的四个阶段描述准确。未发现数值或结论矛盾。唯一不确定的是图1在页22-23之间的位置和上下文衔接存在抽取疑点，已通过extraction_issues标注。另外，原文中个别引用年份和作者名（如Karlgren、Vetterli等）在文本中出现拼写变体，但正文引用与参考文献列表基本一致，未视为错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4645,
+      "prompt_tokens": 26945,
+      "total_tokens": 31590,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2689
+      }
+    },
+    "content_chars": 3869,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

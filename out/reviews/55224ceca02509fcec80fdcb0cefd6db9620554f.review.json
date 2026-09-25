@@ -1,0 +1,73 @@
+{
+  "sha1": "55224ceca02509fcec80fdcb0cefd6db9620554f",
+  "title": "The need for uncertainty quantification in machine-assisted medical decision making",
+  "doi": "https://doi.org/10.1038/s42256-018-0004-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/55224ceca02509fcec80fdcb0cefd6db9620554f/index.html",
+  "source_chars": 25235,
+  "markdown_chars": 2744,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "chemical reactions1,2 and assistance in the exploration and discovery of the molecular characteristics of medical phenomena from the available data using deep learning and other AI methods1.3,14",
+      "type": "疑似引用编号格式损坏",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "文中引用编号'1,2'与'1.3,14'格式异常，疑为'12'与'13,14'的抽取错误。第3页后文另有'chemical reactions1,2'同现编号，参考第5页参考文献列表中第12项为Coley et al.关于有机化学反应预测的机器学习研究，与'chemical reactions'上下文相符；第13、14项为癌症数据与癌症登月计划相关文献，与'molecular characteristics of medical phenomena'上下文相符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "a density of points makes sense only after irrelevant dimensions, are projected out",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "'irrelevant dimensions, are'之间的逗号位置及语法均不连贯，疑似提取时页面拼接错位或源文排版问题，缺少的内容无法从可见文本复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Tanmoy Bhattacharya2,,",
+      "type": "疑似抽取/格式错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "作者列表中'Bhattacharya2,,'存在双逗号，疑为提取时作者单位编号与分割符重叠造成的格式问题，不影响正文内容，仅作记录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "with reported performance comparable to that of the human experts5, , 6 or better7. , 8",
+      "type": "疑似抽取/格式错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'experts5, , 6'存在双逗号，'better7. , 8'句号位置异常，疑为引用编号上标格式在抽取时损坏，原文应为'expert5,6 or better7,8'之类的引用标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论的论点方向一致：主张医疗DL需要形式化UQ才能建立信任，以核安全领域UQ为参照，论述DL应用范围、不确定性来源、四组挑战与研究方向。关键数值与事实数据（1992年核试验暂停、1950年代引入随机对照试验、CNN/RNN/LSTM架构、GAN用于分布外检测等）均取自原文正文，未添加外部信息。公式：原文不含数学公式，无需保留。不确定处：图1为DL管线的部分不确定性来源，笔记未臆测图中具体内容；文中引用编号部分存在可疑格式（已列入extraction_issues）；第3页'hyperparameters'一词在原文中含义为模型参数，笔记按原文语义使用'高维参数'描述，未改动原文术语。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5439,
+      "prompt_tokens": 6153,
+      "total_tokens": 11592,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3160
+      }
+    },
+    "content_chars": 4598
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

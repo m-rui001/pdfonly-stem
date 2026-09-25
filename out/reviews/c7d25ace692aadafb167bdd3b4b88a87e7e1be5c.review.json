@@ -1,0 +1,73 @@
+{
+  "sha1": "c7d25ace692aadafb167bdd3b4b88a87e7e1be5c",
+  "title": "Social factors influencing household waste separation: A literature review on good practices to improve the recycling performance of urban areas",
+  "doi": "https://doi.org/10.1016/j.jclepro.2019.118605",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c7d25ace692aadafb167bdd3b4b88a87e7e1be5c/index.html",
+  "source_chars": 128284,
+  "markdown_chars": 7039,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "1900",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图2（按年份分布的出版物）的x轴标签中，年份序列出现‘1900’，与上下文（1971-2018）不符，疑似抽取或标注错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "The advice of Adriana Artola Casacuberta",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "此项为致谢内容，拼写可能与常见名字不同，但无法确认是否为抽取错误，仅作低置信度提示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "Equestria",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "原文提及‘Equestria (South Africa)’，此拼写疑似为‘Equatoria’或‘Equeefa’等南非地名的抽取误读，但无足够文本内证据，故标为存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": null,
+      "quote": "While in some areas the acceptance of legal norms is the most common reason for recycling (Miafodzyeva, 2012), they appear less influential in others (Hage et al., 2009).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "此句（第9页末段）与第10页开头在逻辑上可能与‘政治背景’部分衔接，但第9-10页之间出现页眉和页码中断，句子本身完整，未发现明显拼接错误，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数据：全球城市固体废弃物年产量约20亿吨；欧盟2020年回收50%目标；社会维度文献占0.69%；文献来源分布（英27、美22、瑞典9）；卢布尔雅那回收率61%（10年）及人均可回收物145公斤（2014）；爱丁堡垃圾桶缩小提升85%；圣何塞PAYT首年增加149%；Contarina源头分类达85%；酒店毛巾实验提升26%。已确认公式和理论框架（如TPB、规范激活模型、理性选择理论）的描述与原文一致。不确定项：原文图2年份轴中‘1900’存疑；‘Equestria’地名拼写存疑；第25-26页致谢和参考文献的抽取完整性未能完全验证。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5032,
+      "prompt_tokens": 30183,
+      "total_tokens": 35215,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 526
+      }
+    },
+    "content_chars": 8504
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

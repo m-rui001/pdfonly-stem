@@ -1,0 +1,73 @@
+{
+  "sha1": "3b38591443e5bf6a21551ca323dba7d6b30583e7",
+  "title": "Efficient electrically powered CO2-to-ethanol via suppression of deoxygenation",
+  "doi": "https://doi.org/10.1038/s41560-020-0607-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3b38591443e5bf6a21551ca323dba7d6b30583e7/index.html",
+  "source_chars": 32883,
+  "markdown_chars": 3823,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 53,
+      "quote": "Cathodic EEethanol (%) 31 This work References N-C/Cu 52 ± 1 (mA cm-2) 156 ± 3",
+      "type": "表格对齐疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表头与数值的对应关系在提取文本中不清晰：数值31与Cathodic EEethanol的列对齐不明确，且N-C/Cu行中的单位(mA cm-2)位置异常。经与FEethanol=52±1%、J=156 mA cm-2交叉验证，31%应为N-C/Cu的阴极乙醇能效，但原文本对齐方式无法完全确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "d-f, The corresponding side views of CO dimerization initial state on Cu (d), Cu with carbon layer (e), and Cu with nitrogen-doped carbon layer (f).",
+      "type": "疑似原文笔误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "补充图3的图注描述transition state，但侧视图文字写为initial state；补充图4（final state）的图注中同样出现initial state。可能是作者笔误或复制粘贴错误，按原文照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 62,
+      "quote": "Jtotal FEacetate FEethylene FEethanol (%) FEformate FECO FEmethane FEhydrogen (mA cm-2) (%) (%) (%) (%) (%) (%)",
+      "type": "表格列顺序歧义",
+      "severity": "high",
+      "confidence": 0.5,
+      "reason": "补充表10的表头在提取文本中未能清晰区分FEethylene和FEethanol的列顺序；正文数据中34% N-C/Cu在300 mA下的数值52.3±0.7%与补充表1中的52±1%一致，据此可推断第2个产物列对应FEethanol，但表头文字本身不足以消除歧义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 29,
+      "quote": "the resistance increases from 5.5  at the beginning of the electrolysis to 6.5  after 20 min electrolysis",
+      "type": "字符编码缺陷",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "提取文本中电阻数值后方的单位符号缺失（应为Ω），属于PDF字体编码导致的字符丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：CO二聚Ea（Cu 0.72、C/Cu 0.77、N-C/Cu 0.70 eV）与ΔH（0.65、0.62、0.52 eV）；HOCCH*分叉反应能（补充表3）；补充表6中带电水模型与GCQM方法的路径能量差；乙醇FE 52±1%、J_ethanol 156±3 mA cm-2与阴极能效31%（补充表1）与补充表10中34% N-C/Cu在300 mA下52.3±0.7%的交叉验证；CO2吸附能0.60/1.17 eV；CO吸附能-0.48/+0.10/-0.60 eV；d(N-C/Cu)=7.42 Å。不确定处：补充表10中C/Cu在300 mA下的正丙醇FE为20.5±0.8%，明显高于其他催化剂和电流密度下6–12%的范围，但无文本内证据判定为提取错误，照录原值；补充表10各产物FE之和偶有超过100%的情况（如34% N-C/Cu在300 mA下总和约104%），可能源于列解读或实验误差，已在extraction_issues中标明列顺序歧义。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18689,
+      "prompt_tokens": 10918,
+      "total_tokens": 29607,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 15338
+      }
+    },
+    "content_chars": 5827
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

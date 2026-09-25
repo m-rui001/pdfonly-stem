@@ -1,0 +1,75 @@
+{
+  "sha1": "857f5fc0eb0ddf378d61ef885d482707a84b92f7",
+  "title": "Digital Twin in the IoT Context: A Survey on Technical Features, Scenarios, and Architectural Models",
+  "doi": "https://doi.org/10.1109/jproc.2020.2998530",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/857f5fc0eb0ddf378d61ef885d482707a84b92f7/index.html",
+  "source_chars": 258334,
+  "markdown_chars": 16716,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "An archetypical Multi-agent platform is sketched in 오류! 참조 원분을 참을 수 없습니다.오류! 참조 원분을 참을 수 없습니다.Figure 5오류! 참조 원분을 참을 수 없습니다.오류! 참조 원분을 참을 수 없습니다.오류! 참조 원분을 참을 수 없습니다.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "出现韩文错误提示文本，应为图 5 的引用标记，OCR 抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "\\forall i x _ {i} \\equiv x _ {1} ^ {\\prime}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中下标疑似应为 $x_i'$ 而非 $x_1'$，与上下文 $\\forall i$ 不一致，OCR 抽取可能丢失或误识别下标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "\\forall i \\in S, \\exists ! x _ {i} ^ {\\prime} s u c h t h a t f _ {i} \\left(x _ {i}\\right) \\equiv x _ {i} ^ {\\prime}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中 'such that' 被 OCR 识别为无空格文本 's u c h t h a t'，影响可读性但语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Similar issues the edge level) have been considered and analyzed in [140].",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "括号不匹配，疑似原文为 'Similar issues (at the edge level) have been considered...'，OCR 丢失左括号与 'at'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Digital Twin in the IoT context: a survey on technical features, scenarios and architectural models",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 58099,
+      "total_tokens": 68099,
+      "prompt_tokens_details": {
+        "cached_tokens": 57984
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 22254,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

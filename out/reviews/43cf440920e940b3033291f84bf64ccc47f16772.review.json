@@ -1,0 +1,84 @@
+{
+  "sha1": "43cf440920e940b3033291f84bf64ccc47f16772",
+  "title": "Enhanced Nitrate-to-Ammonia Activity on Copper–Nickel Alloys via Tuning of Intermediate Adsorption",
+  "doi": "https://doi.org/10.1021/jacs.9b13347",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/43cf440920e940b3033291f84bf64ccc47f16772/index.html",
+  "source_chars": 38590,
+  "markdown_chars": 7282,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "A mechanism wherein Cu performs the adsorption of $ \\mathrm{N O{3}^{}} $ and Ni is the binding site of $ \\mathrm{H^{}} $ was proposed by Simpson and Johnson;",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式/符号抽取损坏：`$ \\mathrm{N O{3}^{}} $` 应为 NO₃⁻，`$ \\mathrm{H^{}} $` 应为 H*，星号与电荷上标丢失，影响对吸附物种的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "tuning the adsorption energy of both $ \\mathrm{H^{}} $ and $ \\mathrm{N O}_{3} $ $ ^{} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "吸附物种符号抽取损坏：`$ \\mathrm{H^{}} $` 应为 H*，`$ \\mathrm{N O}_{3} $ $ ^{} $` 应为 NO₃*，星号丢失，影响对吸附能调控对象的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ \\mathrm{C u_{50} N i_{50} / P T F E} $ electrode in 1 M KOH+100 M $ \\mathrm{K N O_{3}} $ (Fig. 4h).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "浓度单位疑似 OCR 错误：`100 M` 应为 `100 mM`，与全文其他处 100 mM KNO₃ 条件不一致，影响实验条件复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "introducing an excess of Ni, i.e. the $ \\mathrm{C u_{30} N i_{70}} $ catalyst, reaction intermediates too strongly, which lowers the activity and selectivity.",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子成分缺失：`reaction intermediates too strongly` 前缺少动词（如 adsorbs/binds），导致该句语法不完整，影响对过量 Ni 导致中间体吸附过强这一论点的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the reaction free energy for $ \\mathrm{N H_{2}} $ hydrogenation increases to -0.39 and -0.34 eV at -0.14 V vs. SHE",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "中间体符号星号丢失：`$ \\mathrm{N H_{2}} $` 在上下文中应为 *NH₂，与同段前文 `$ \\mathrm{N H_{2}} $ intermediate adsorptions` 一致，影响对吸附中间体的准确识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Enhanced Nitrate-to-Ammonia Activity on Copper–Nickel Alloys via Tuning of Intermediate Adsorption",
+  "self_check": "已核对：摘要与结论中 0.12 V 半波电位正移、0 V vs. RHE 下 6 倍活性提升、0.2 V 过电位降低、99±1% NH₃ FE、40% 半电池 EE、31% 全电池 EE、Cu₅₀Ni₅₀ 中 Cu:Ni≈52:48、d 带中心 -2.84 eV 及正移 0.14/0.28/0.32 eV、PDS 从 NO₃⁻ 吸附转移到 *NH₂ 氢化、Cu₃₀Ni₇₀ 和纯 Ni 上 NH₂ 氢化自由能 -0.39/-0.34 eV 等关键数值与结论方向一致。公式 NO₃⁻+6H₂O+8e⁻→NH₃+9OH⁻, E⁰=0.69 V vs. RHE (pH=14) 已原样保留。仍不确定处：第 10 页 `100 M KNO₃` 应为 `100 mM` 但原文如此；第 11 页句子成分缺失；部分化学式星号与电荷上标在 OCR 中丢失，已在 extraction_issues 中标出，未静默改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5770,
+      "prompt_tokens": 12482,
+      "total_tokens": 18252,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9865,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

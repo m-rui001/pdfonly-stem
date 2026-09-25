@@ -1,0 +1,120 @@
+{
+  "sha1": "d4be23fac7e52a1d25780daa6f36c0da1f332bed",
+  "title": "Pervasive shifts in forest dynamics in a changing world",
+  "doi": "https://doi.org/10.1126/science.aaz9463",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d4be23fac7e52a1d25780daa6f36c0da1f332bed/index.html",
+  "source_chars": 82395,
+  "markdown_chars": 8434,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Chronically changing drivers: Atmospheric $ \\mathrm{CO}{2} $ has risen more than 125 ppm since the industrial revolution (11), and is projected to rise an additional 50 to 200 ppm by 2100. Higher $ \\mathrm{CO}{2} $ increases leaf-level water use efficiency",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "CO₂ 的下标在 OCR 中丢失为 $ \\mathrm{CO}{2} $，同一段落中多处出现，影响公式/符号的准确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "which differs from that in Figure (2B, C). This disparity is likely attributable to consideration of different forest types (closed-canopy versus all forests) and to differences in definition of stand size and age used in inventories versus used in satellite-based estimates Chronically changing drivers: Atmospheric",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "“Chronically changing drivers” 标题与上一段末尾之间缺少分段/换行，导致阅读顺序和段落边界损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "due perhaps to nutrient (7,48) and hydraulic path-length limitations (49).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此处引用编号 (7,48) 与上下文其他引用格式不一致，可能为 OCR 误读，但证据不足以确定具体错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Wildfire is increasing in many forests worldwide (85) (Figure 41), although human management of landscapes has led to wildfire suppression in some biomes (86).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“Figure 41” 应为 “Figure 4I”，OCR 将字母 I 误读为数字 1，影响图表编号识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Biotic disturbances from insects, insect-pathogen complexes, and other biotic agents have been increasing in frequency, severity, and extent in recent decades (17,104,105) (Figure 3M).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“Figure 3M” 应为 “Figure 4M”，OCR 将数字 4 误读为 3，影响图表编号识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Tree mortality during outbreaks is usually partial at the stand-level because many biotic agents preferentially attack trees of specific size- or health-classes, or are host-specific (16).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "此处引用编号 (16) 与上下文其他引用格式不一致，可能为 OCR 误读，但证据不足以确定具体错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "The global Coupled Model Intercomparison Projet CMIP6 now includes a dedicated model intercomparison activity focused on the effects of changes of land-use on carbon and climate (147).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“Projet” 应为 “Project”，OCR 漏掉字母 c。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Ultimately, model formulations that include environmentally sensitive, PFT-specific processes compatible with the cohort-based approach are likely to provide the best compromise between process-detail and parsimony and therefore most likely to capture changes in large-scale forest dynamics under future conditions.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句本身语义完整，但位于 Summary 之前且无标题，可能为原文段落边界丢失，证据不足，仅标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "The equation is h = $ A_{s} \\ast k_{s} \\ast(\\Delta\\Psi) / G \\ast A_{l} \\ast VPD $ , where h is height, $ A_{s} $ is sapwood area, $ k_{s} $ is specific conductivity, $ \\Delta\\Psi $ is the leaf to soil water potential gradient, G is stomatal conductance, and $ A_{l} $ is leaf area $ ^{53} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中乘号被 OCR 转义为 \\ast，且分母范围可能因缺少括号而歧义；原文公式的准确结构可能受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Pervasive shifts in forest dynamics in a changing world",
+  "self_check": "已核对：年轻林面积从 1900 年 4.8 million km² 增至 2015 年 12.5 million km²，占比 11.3% 至 33.6%；CO₂ 自工业革命上升 >125 ppm，预计 2100 年再升 50–200 ppm；年轻林 CO₂ 富集实验十年生物量增量增加 30%；GFAD v1.1 给出 16.5 M km² 原始林和 26.3 M km² 年轻林；图 5 公式 h = A_s * k_s * (ΔΨ) / G * A_l * VPD 及变量定义已按 OCR 文本保留。仍不确定：部分引用编号和图表编号（如 Figure 41、Figure 3M）的 OCR 误读已标记；公式中乘号和分母括号的准确形式无法从文本完全确认。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6385,
+      "prompt_tokens": 20694,
+      "total_tokens": 27079,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12830,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

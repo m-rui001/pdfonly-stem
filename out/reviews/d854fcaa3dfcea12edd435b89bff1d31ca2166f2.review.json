@@ -1,0 +1,91 @@
+{
+  "sha1": "d854fcaa3dfcea12edd435b89bff1d31ca2166f2",
+  "title": "Carboplatin in BRCA1/2-mutated and triple-negative breast cancer BRCAness subgroups: the TNT Trial",
+  "doi": "https://doi.org/10.1038/s41591-018-0009-7",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d854fcaa3dfcea12edd435b89bff1d31ca2166f2/index.html",
+  "source_chars": 57560,
+  "markdown_chars": 6764,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "Of the 31 BRCA1 mutation carriers XX had ER+ve disease and of the 12 BRCA2 mutation carriers XX had ER+ve disease.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "原文中具体数字被替换为“XX”，导致无法获知BRCA1/2突变携带者中ER阳性病例数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "BRCA1 mRNA1-low",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "疑似OCR错误，应为“BRCA1 mRNA-low”，多出字符“1”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Supplemntary Figure S3",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为“Supplementary Figure S3”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "cyclosphosphamide",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为“cyclophosphamide”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "metatstatic",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为“metastatic”。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Carboplatin in BRCA1/2-mutated and triple-negative breast cancer BRCAness subgroups: the TNT Trial",
+  "self_check": "已核对摘要、主要结果和讨论中的关键数值与结论：总体ORR 31.4% vs 34.0% (p=0.66)，gBRCA突变亚组ORR 68% vs 33% (交互p=0.01)，BRCA1甲基化无交互(p=0.35)，HRD无交互(p=0.75)，基底样亚组交互p=0.003。公式和单位（AUC 6, 100 mg/m²）保留。OCR问题已列出，包括数字缺失（XX）和拼写错误。未发现其他影响理解的抽取错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4765,
+      "prompt_tokens": 14411,
+      "total_tokens": 19176,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8271,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Carboplatin in BRCA1/2-mutated and triple-negative breast cancer BRCAness subgroups: the TNT Trial",
+    "translated_title": "卡铂在BRCA1/2突变和三阴性乳腺癌BRCAness亚组中的应用：TNT试验",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

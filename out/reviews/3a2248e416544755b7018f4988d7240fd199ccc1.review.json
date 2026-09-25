@@ -1,0 +1,102 @@
+{
+  "sha1": "3a2248e416544755b7018f4988d7240fd199ccc1",
+  "title": "Metabolomics by Gas Chromatography–Mass Spectrometry: Combined Targeted and Untargeted Profiling",
+  "doi": "https://doi.org/10.1002/0471142727.mb3004s114",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3a2248e416544755b7018f4988d7240fd199ccc1/index.html",
+  "source_chars": 112308,
+  "markdown_chars": 14594,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Metabolomics by Gas Chromatography-Mass Spectrometry: the combination of targeted and untargeted profiling",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文标题为“the combination of targeted and untargeted profiling”，登记标题为“Combined Targeted and Untargeted Profiling”，措辞不同但指向同一论文，属轻微题名差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "（'quadrupole) but also target mass spectrometers （'triple quadrupole) and accurate mass instruments （'quadrupole-time of flight')",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号和引号使用异常，疑似OCR将括号识别为全角或错位，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "usually 150 s metabolites are identified",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "“150 s metabolites”中“s”疑似OCR误加，应为“150 metabolites”，影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "ice bath (<0 $ ^{\\circ} \\mathrm{C} $ by adding sodium chloride (i...e., table salt) to crushed ice)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“i...e.”为OCR错误，应为“i.e.”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "To 1 mL of MSTFA and add 10 $ \\mu\\mathrm{L} $ of FAME marker.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子缺少动词，疑似OCR遗漏“Add”或类似词，影响步骤理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Use a Agilent split/splitless injector",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“a Agilent”应为“an Agilent”，语法错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "putrescine (m/z 174, not shown here) to a-ketoglutarate ratios might fall below < 20:1",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“a-ketoglutarate”应为“α-ketoglutarate”，希腊字母α被OCR识别为“a”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Metabolomics by Gas Chromatography-Mass Spectrometry: the combination of targeted and untargeted profiling",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 28605,
+      "total_tokens": 38605,
+      "prompt_tokens_details": {
+        "cached_tokens": 28544
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17648,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

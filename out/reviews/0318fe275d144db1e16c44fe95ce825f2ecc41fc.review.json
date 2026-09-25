@@ -1,0 +1,63 @@
+{
+  "sha1": "0318fe275d144db1e16c44fe95ce825f2ecc41fc",
+  "title": "The prehistoric peopling of Southeast Asia",
+  "doi": "https://doi.org/10.1126/science.aat3628",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0318fe275d144db1e16c44fe95ce825f2ecc41fc/index.html",
+  "source_chars": 30957,
+  "markdown_chars": 3039,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The remaining ancient individuals are modeled in fastNGSadmix as containing East Asian and Southeast Asian components present in high proportions in present-day Austroasiatic, Austronesian, and Hmong-Mien speakers, along with a broad East Asian component. A PCA including only East Asian and Southeast Asian populations that did not show considerable Papuan or Önge-like ancestry (fig. S11) separates the present-day speakers of ancestral language families in the region: TransHimalayan (formerly Sino-Tibetan), Austroasiatic, and Austronesian/Kradai (20).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "第3页顶部先出现图3说明，随后正文开头“Tiányuán; X, Mbuti)...”（D统计量公式的一部分）疑似上页页尾被截断，本段中“A PCA including only East Asian...”与上文“The remaining ancient individuals are modeled in fastNGSadmix...”之间可能有关联，但提取顺序中在“Tiányuán; X, Mbuti”前缺少公式起始部分，存在拼接断裂风险。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "D-statistics of the form D(Papuan, Tiányuán; Y, Mbuti), where Y is a test population, are consistent with present-day East Asian populations and most populations of ancient and present-day SEA being more closely related to Tiányuán [a 40-kaold East Asian individual (17)] than to Papuans (Fig. 1) (11, 18). However, this D statistic is not significantly different from 0 for Y = Jehai, Önge, Jarawa or group 1 (the ancient Hòabìnhians) (table S12). D statistics of the form D(Önge,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "此段结尾“D statistics of the form D(Önge,”在页尾中断，下一页页首先出现图注“Fig. 2. Exploratory analyses...”和“Fig. 1. Maps of ages...”，然后才接“Tiányuán; X, Mbuti)”，跨页顺序被打断，但文本本身可复原（第1页末和第3页中段）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "The two oldest samples—Hòabìnhians from Pha Faen, Laos [La368; 7950 with 7795 calendar years before the present (cal B.P.)] and Gua Cha, Malaysia (Ma911; 4415 to 4160 cal B.P.)—henceforth labeled “group 1,” cluster most closely with present-day Önge from the Andaman Islands and away from other East Asian and Southeast Asian populations (Fig. 2), a pattern that differentiates them from all other ancient samples.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“La368; 7950 with 7795 calendar years”中的“with”疑为“to”或“and”之误，但抽取文本如此，无法确认真实数值。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值：26个古代基因组（25东南亚+1日本绳文）、组1年代（7950、4415–4160 cal B.P.）、组2–6年代范围、D统计量的比较对象、各分组与语言群聚类关系、约4 ka和约2 ka的迁移时间节点、Denisovan成分（Ma554最高）、Austronesian到达印尼和菲律宾时间（2.1 ka、1.8 ka）等，与原文一致。公式部分仅正文出现D统计量形式，已按提取文本保留。不确定性：部分句子跨页断裂处（如D(Önge, Tiányuán; X, Mbuti)的完整性）已在extraction_issues中标注；La368年代表达中“with”疑似笔误但未改动。未引用补充材料中未提供的数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2731,
+      "prompt_tokens": 9220,
+      "total_tokens": 11951,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 29
+      }
+    },
+    "content_chars": 5814
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

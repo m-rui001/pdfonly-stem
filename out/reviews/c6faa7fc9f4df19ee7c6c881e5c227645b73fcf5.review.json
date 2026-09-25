@@ -1,0 +1,63 @@
+{
+  "sha1": "c6faa7fc9f4df19ee7c6c881e5c227645b73fcf5",
+  "title": "Cellular Uptake of Nanoparticles versus Small Molecules: A Matter of Size",
+  "doi": "https://doi.org/10.1021/acs.accounts.8b00292",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c6faa7fc9f4df19ee7c6c881e5c227645b73fcf5/index.html",
+  "source_chars": 43626,
+  "markdown_chars": 3143,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "results in large intracellular vacuoles (>0.2 μM), known as macropinosomes.",
+      "type": "unit inconsistency",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "同一段中其他尺寸均使用 μm（如 0.5 μm、50–60 nm），此处 μМ 应为 μm 之误，但照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "An activable cell penetrating peptide",
+      "type": "spelling inconsistency",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文中同时出现 activatable（第8页）和 activable（此处及图注），可能为拼写变体或错误，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Hercepcin-targeted AuNPs",
+      "type": "spelling error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "Hercepcin 疑为 Herceptin（曲妥珠单抗）之拼写错误，但无其他文本证据，照录原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文数据与结论：文中所有关键数值（如4–10 nm膜厚、10%基因、0.5 μm/0.2 μm、50–60 nm、40–50 nm、1 kDa、500 Da、10%前药、4-log、20倍、800种CPPs、2 nm Au NPs、50 nm Au NPs、pH 7.4/6.5等）均出自提取文本，并保持与原文方向一致。公式无。结论部分与摘要及正文一致。不确定处：图注中的引用编号（如Figure 6对应ref 46 vs 正文ref 45）未作为问题，因不属于文本缺陷；单位μМ疑点已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7742,
+      "prompt_tokens": 11338,
+      "total_tokens": 19080,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5271
+      }
+    },
+    "content_chars": 4276
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

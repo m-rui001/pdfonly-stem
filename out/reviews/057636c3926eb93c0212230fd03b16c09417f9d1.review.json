@@ -1,0 +1,165 @@
+{
+  "sha1": "057636c3926eb93c0212230fd03b16c09417f9d1",
+  "title": "N6-methyladenosine marks primary microRNAs for processing",
+  "doi": "https://doi.org/10.1038/nature14281",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/057636c3926eb93c0212230fd03b16c09417f9d1/index.html",
+  "source_chars": 45012,
+  "markdown_chars": 9553,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "# $ \\mathrm{N}^{6} $ -methyl-adenosine (m6A) marks primary microRNAs for processing",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "正文首页标题为“N6-methyl-adenosine (m6A) marks primary microRNAs for processing”，与登记题名“N6-methyladenosine marks primary microRNAs for processing”存在连字符差异，属OCR/排版差异，不影响身份判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Hyeseung Lee $ ^{} $ , Hani Goodarzi $ ^{} $ , Nils Halberg, and Sohail F. Tavazoie",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者名后出现空的LaTeX上标标记“$ ^{} $”，应为OCR抽取残留，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the m6A modification is enriched within pri-miRNA sequences",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句前文“Thus, these results reveal that”与后文衔接正常，但“m6A”在OCR中多处写作“m6A”，此处无实质错误，仅记录格式一致性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "pri-let-7e was more efficiently processed by the microprocessor to produce pre-let7e relative to its unmethylated counterpart",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“pre-let7e”与全文其他处“pre-let-7e”写法不一致，疑为OCR漏连字符，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the m6A mark on transcripts at pri-miRNA sequences initiates a global co-transcriptional program",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“co-transcriptional”在OCR中连字符正常，但该词在上下文中无其他异常，仅记录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Rabbit $ \\alpha $ -m6A antibody (Synaptic Systems)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "希腊字母α以LaTeX形式“$ \\alpha $”出现，属OCR公式符号抽取，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "a $ ^{32} $ P-labeled linker was ligated to the RNA on the beads",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同位素标记32P以LaTeX上标形式出现，属OCR公式符号抽取，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "a-METTL3 (mouse, Novus Biologicals), a-DGCR8 (mouse, Abcam), a-m6A (mouse, Synaptic Systems)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "抗体名称中的α被OCR识别为“a-”，属常见OCR字符替换，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "N6-methyl-ATP (tri-link) was used in a ratio 4:1 to ATP",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“tri-link”疑为试剂品牌名，OCR保留原文，无实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the y-axis represents the $ -\\log_{10} $ of the p-value, and the x-axis represents the fold change $ (\\log_{2}) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "对数符号以LaTeX形式出现，属OCR公式符号抽取，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "in mouse embryonic stem cells in which METTL3 has been targeted using $ \\mathrm{CRISPR}^{2 6} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "CRISPR上标引用以LaTeX形式出现，属OCR公式符号抽取，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "We thank C. Zhao and C. Lai of the Rockefeller Genomics Resource Center",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "致谢部分人名OCR正常，无实质错误，仅记录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Figure 1. m6A mark is present in pri-miRNA regions",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注标题中“m6A”与正文一致，无实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "Figure 4. m6A methylation of pri-miRNAs is required for normal processing by DGCR8 a, In vitro pri-miRNA processing reactions.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注标题与子图说明“a,”之间缺少换行或标点，属OCR阅读顺序/格式问题，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "N6-methyladenosine marks primary microRNAs for processing",
+  "self_check": "已核对摘要、正文关键数值（p=2.15E-15、~70%、56%/29%/12%/3%、p<2.4E-15、4:1比例、3×10^7细胞、400 mJ/cm²、90–140 bp、150–170 bp等）与结论方向一致。公式符号如m6A、N6-methyladenosine、MgCl2、32P、α等按OCR原文保留，未擅自补全或替换。仍不确定处：正文首页标题与登记题名存在连字符差异，但身份一致；部分LaTeX上标/下标为OCR抽取格式，不影响理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6894,
+      "prompt_tokens": 12624,
+      "total_tokens": 19518,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14015,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

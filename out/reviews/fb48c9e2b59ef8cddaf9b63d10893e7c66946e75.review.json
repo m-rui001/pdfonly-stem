@@ -1,0 +1,54 @@
+{
+  "sha1": "fb48c9e2b59ef8cddaf9b63d10893e7c66946e75",
+  "title": "Mangrove canopy height globally related to precipitation, temperature and cyclone frequency",
+  "doi": "https://doi.org/10.1038/s41561-018-0279-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fb48c9e2b59ef8cddaf9b63d10893e7c66946e75/index.html",
+  "source_chars": 57212,
+  "markdown_chars": 2693,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "In addition, these wetlands grow in riverdominated coastal settings with low human population densities,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页面1末尾句子以逗号中断，后续文字在页面2中因图表插入而延迟出现（'potentially high nutrient availability, reduced soil salinity values...'），中间缺失接续文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "our total is close to the mean (1.88 Tg) of a range of published values",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文以Pg为单位（1.75 Pg、2.83 Pg），此处突然出现Tg，且与'mean of published values'语境不符，疑为Pg之误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：74%解释率、62.8 m最高树（正文另处写'62±6.8 m'，存疑但照录）、5.03 Pg总碳、22.7%印尼占比、13.2 m中位高度、R²=0.91及峰值1.13°N、AGB 910.5±84.2 Mg ha⁻¹、总AGB 1.75 Pg、平均AGB密度129.1±87.2 Mg ha⁻¹等，均保持一致。公式（1）（2）（3）（4）按提取文本原样保留。不确定之处：1.88 Tg单位疑为Pg，已在issues中标出；'62±6.8 m'与后文62.8 m的表述差异未作修改，因无强证据判别。跨页断句问题已标记。未引入任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7951,
+      "prompt_tokens": 15589,
+      "total_tokens": 23540,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5843
+      }
+    },
+    "content_chars": 3742
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "sha1": "481a9077eae496ac3c05e53a74b1c390c3cba88a",
+  "title": "Polaritons in van der Waals materials",
+  "doi": "https://doi.org/10.1126/science.aag1992",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/481a9077eae496ac3c05e53a74b1c390c3cba88a/index.html",
+  "source_chars": 63755,
+  "markdown_chars": 9848,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "the phenomenological relaxation times $ \\tau_{\\mathrm{f}} $ and $ \\tau_{\\mathrm{b}} $ (related to Q in Table 1 by $ \\tau=Q / \\omega) $ .",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "括号配对异常，$\\tau=Q/\\omega$ 后的右括号位置可疑，可能为 OCR 抽取时括号错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the value of $ S_{\\mathrm{f}} $ can be controlled via electrical gating, doping, and photoexcitation. In insulators, where $ S_{\\mathrm{b}} \\sim(e^{2} / \\hbar) f \\omega_{\\mathrm{b}} $ the dimensionless parameter f scales linearly",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式 $S_{\\mathrm{b}} \\sim(e^{2}/\\hbar) f \\omega_{\\mathrm{b}}$ 后缺少逗号或连接词，可能是 OCR 抽取时标点丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Anisotropic SPP (black phosphorus) N/A <60($k\\parallel\\Gamma-X$),\n$<40(k\\parallel\\Gamma-Y)$ (109)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表1中黑磷各向异性 SPP 行的 $\\lambda_{\\mathrm{p}}$、max$\\lambda_0/\\lambda_{\\mathrm{p}}$、maxQ 等列数据缺失，仅剩能量范围与参考文献编号，表格结构明显损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "C\n\nD\n\nE\n\nF\n\nG",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图1的标签 C、D、E、F、G 被单独抽取为连续行，与图注文字分离，阅读顺序受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "E Type II hyperbolic material\n\nB Conducting film\n\nG Graphene on hBN",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图3的子图标签与标题被抽取为不连续行，顺序为 E、B、G，与图注中 A 至 G 的逻辑顺序不符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\omega $ (eV)\n\nC\n\nD",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图4的坐标轴标签和子图标签被抽取为孤立行，与图注文字分离，阅读顺序受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Fig. 5. Impending applications and future opportunities. (A) Subdiffractional focusing via phonon polaritons in h-BN (16, 82). Top: Au discs are deposited on the bottom surface of a h-BN slab. Middle: Image obtained on the top surface of the slab using a broadband source centered at $ \\lambda_{0}=1 2. 5 \\ \\mu\\mathrm{m} $ ; scale bar, 500 nm. Bottom: Image of a pattern showing subdiffractional features, acquired with $ \\lambda_{0}=6 \\ \\mu\\mathrm{m} $ ; scale bar, 1 $ \\mu\\mathrm{m} $ . [Reproduced from (16, 82)]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "数值 $ \\lambda_{0}=1 2. 5 \\ \\mu\\mathrm{m} $ 中数字间有空格，可能为 OCR 抽取时格式问题，但数值本身可读。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Polaritons in van der Waals materials",
+  "self_check": "已核对：式1 $\\lambda_{\\mathrm{p}} = 4\\pi^2 \\operatorname{Im}\\{\\sigma/\\omega\\varepsilon_{\\mathrm{a}}\\}$ 与原文一致；式2 Drude+Lorentz 形式与原文一致；石墨烯 SPP 束缚比 $\\lambda_0/\\lambda_{\\mathrm{p}} = (\\varepsilon_{\\mathrm{a}}/\\alpha)(\\hbar\\omega/2E_{\\mathrm{F}})$ 与原文一致；表1中石墨烯 Dirac SPP 的 $\\lambda_{\\mathrm{p}}$ 50–450 nm、max$\\lambda_0/\\lambda_{\\mathrm{p}}$ 220、maxQ 40 与原文一致；h-BN 双曲声子极化激元 maxQ 200 与原文一致；$\\mathrm{MoSe_2}$ 异质结构 Rabi 分裂 29 meV、温度 4.2 K 与原文一致；石墨烯等离激元传播长度 $\\sim 1\\ \\mu\\mathrm{m}$、寿命 $\\sim 500$ fs、电子温度 $T=5000$ K 与原文一致。不确定处：表1中黑磷行数据缺失，已在 extraction_issues 中标注；图3子图标签顺序异常，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7160,
+      "prompt_tokens": 18513,
+      "total_tokens": 25673,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13589,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

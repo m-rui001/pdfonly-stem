@@ -1,0 +1,54 @@
+{
+  "sha1": "f53062e0f25e22c2fab1754987b7ab8ec4dc1c7c",
+  "title": "Catalytic reduction of CO 2 by H 2 for synthesis of CO, methanol and hydrocarbons: challenges and opportunities",
+  "doi": "https://doi.org/10.1039/c5ee02657a",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f53062e0f25e22c2fab1754987b7ab8ec4dc1c7c/index.html",
+  "source_chars": 58982,
+  "markdown_chars": 4018,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Gracini et al. supported a reducible oxide, CeOx on Cu(111).",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "后文（第6页）同一人写作 Graciani，且参考文献条目也为 Graciani，故此处字母顺序疑似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "NiO supported on mesporous CeO2",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "mesporous 应为 mesoporous（介孔），上下文语境明确为介孔材料。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：RWGS在300 °C、1 MPa下平衡转化率约23%；甲醇理论产率300 °C、0.1 MPa下0.06%；Cu/ZnO/Al₂O₃时空产率7729 gMeOH kgcat⁻¹ h⁻¹（36 MPa，10:1）；CO₂-FT中CO₂最高转化率45%（Fe基），Co催化剂CH₄选择性高；Ru/TiO₂在160 °C甲烷产率100%。公式和化学式均照录原文。未发现跨页顺序断裂。不确定处：表1中部分催化剂选择性数据缺失，正文未列举具体数值；图1-5内容基于文字描述未臆测。已按原文论证顺序撰写，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4045,
+      "prompt_tokens": 19393,
+      "total_tokens": 23438,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1099
+      }
+    },
+    "content_chars": 4862
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "sha1": "5f0b9bca05631268611572900d74cce2f2a988a4",
+  "title": "Organic Synthesis: March of the Machines",
+  "doi": "https://doi.org/10.1002/anie.201410744",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5f0b9bca05631268611572900d74cce2f2a988a4/index.html",
+  "source_chars": 65864,
+  "markdown_chars": 4431,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "mixtures of phenol, cyclohenanone or cyclohenane of varying composition",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "根据上下文为催化氧化产物，cyclohenanone/cyclohenane 很可能是 cyclohexanone/cyclohexane 的拼写错误；但源文如此，笔记照录，判为疑似而非断言。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Candida antartica lipase B (CaLB)",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标准种名为 Candida antarctica，源文丢失一个字母 c。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "lipase catalysed isoamyl acaetate preparation",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "acaetate 应为 acetate 之误，源文如此。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "three-step cascade processes leading to 1monoacylglycerol",
+      "type": "疑似排版错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "1monoacylglycerol 缺少连字符，应为 1-monoacylglycerol。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "is currently a postodctoral research associate",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "postodctoral 应为 postdoctoral 之误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "we showed that ferrulic acid amides",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "常用拼写为 ferulic acid，源文多一个 r；也可能是原文排版或抽取问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Gimeno, M. P. Soler, J. Herguido, J. Men ndez, M.",
+      "type": "疑似字符缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "作者姓 Men ndez 中缺失字符，可能为 Menéndez。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数据：超临界光氧化产率86%、顺式选择性85%；ε-己内酰胺400°C/400 bar下转化率约94%对比传统3–6%；糠醛双柱产物收率>80%；烟酸乙酯氢化2.0 M、4 g Rh/Al2O3、100 bar、160°C、530 g/6.5 h（约2 kg/天）；Polar Bear最低-89°C、Plus重量65→12 kg；烟酸甲酯高压下>73 bar及水288°C沸点；金刚石生长21 µm/h；Coflore 12 mL/min、0.1 M、3.8 kg/周；MJOD产能80 g/天；他莫昔芬日产可供2万患者；Shono氧化20 mol%电解质；五个反应器比较中微反应器效率更高。公式：本文无数学公式。不确定之处：超临界流体章节中部分引用文献的细节未展开；图2/图3产物名称及图8中催化剂负载量未在正文中说明；参考文献部分存在个别拼写疑点已在extraction_issues列明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11437,
+      "prompt_tokens": 17020,
+      "total_tokens": 28457,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7727
+      }
+    },
+    "content_chars": 6595
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

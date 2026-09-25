@@ -1,0 +1,85 @@
+{
+  "sha1": "47c09db1e8ba2253eeb3556b268e56b18f23f509",
+  "title": "Protected Lithium‐Metal Anodes in Batteries: From Liquid to Solid",
+  "doi": "https://doi.org/10.1002/adma.201701169",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/47c09db1e8ba2253eeb3556b268e56b18f23f509/index.html",
+  "source_chars": 123599,
+  "markdown_chars": 6093,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "propylene carbonate (EC)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "EC通常指ethylene carbonate，此处OCR将EC误写为propylene carbonate，与PC混淆，影响对碳酸酯类溶剂的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 55,
+      "quote": "sulfate and oxide garnet",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "sulfate应为sulfide，OCR错误可能影响对二元电解质组成的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "LiN_{x}O_{y}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标格式在OCR中部分丢失，但化学式含义可辨，不影响论证理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "ALD-{2}O_{3}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Al₂O₃的Al丢失，但上下文可推断，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 46,
+      "quote": "ZnO_{2}",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "ZnO₂应为ZnO，OCR错误可能影响对涂层材料的理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Protected Lithium Metal Anode in Batteries: From Liquid to Solid",
+  "self_check": "已核对关键数值：锂金属比容量3860 mA h g⁻¹、电位-3.04 V、Li-air能量密度~3500 Wh kg⁻¹、Li-S~2600 Wh kg⁻¹、库仑效率99.1% after 360 cycles、99.86% for Cs⁺、99% for LiNO₃+Li₂S₈、98.4% for 4 M LiFSI、界面阻抗从1710降至34 Ω cm²、从3000降至380 Ω cm²、从925降至127 Ω cm²、离子导率2.5×10⁻⁴ S cm⁻¹等。公式符号已尽量保留。仍不确定处：部分下标格式在OCR中丢失，但化学式可辨；单位cm⁻³可能为cm⁻²之误；EC被误写为propylene carbonate；ZnO₂应为ZnO；sulfate应为sulfide。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5225,
+      "prompt_tokens": 33764,
+      "total_tokens": 38989,
+      "prompt_tokens_details": {
+        "cached_tokens": 33664
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9112,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

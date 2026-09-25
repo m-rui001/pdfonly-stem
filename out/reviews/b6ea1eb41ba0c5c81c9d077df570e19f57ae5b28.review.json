@@ -1,0 +1,63 @@
+{
+  "sha1": "b6ea1eb41ba0c5c81c9d077df570e19f57ae5b28",
+  "title": "Colossal mid-infrared bulk photovoltaic effect in a type-I Weyl semimetal",
+  "doi": "https://doi.org/10.1038/s41563-019-0297-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b6ea1eb41ba0c5c81c9d077df570e19f57ae5b28/index.html",
+  "source_chars": 30300,
+  "markdown_chars": 2135,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Colossal Bulk Photovoltaic Effect in a Weyl Semimetal",
+      "type": "标题不一致",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "提取文本首页标题缺少'mid-infrared'和'type-I'，与元数据及正式发表版本不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the first being the the spot size versus the contact separation",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "'the the' 连续重复，疑为文本提取或原文笔误，应为单个'the'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "in good agreement with previously the established band structure of TaAs",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "语序'previously the established'疑为'previously established'，但无强证据，仅存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：σaac理论201 µA/V²、实验表观34±3.7、反射修正后154±17 µA/V²；Glass系数G=1.65±0.18×10⁻⁷ cm/V；载流子浓度ne=8.08×10¹⁷、nh=9.35×10¹⁷ cm⁻³。公式J(φ)拟合函数已保留。结论方向一致：移位电流主导、Weyl节点贡献。不确定之处：标题差异已标出，理论计算中带16→17贡献251和带16→18贡献-50，提取文本清晰，已保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3767,
+      "prompt_tokens": 8120,
+      "total_tokens": 11887,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2033
+      }
+    },
+    "content_chars": 3208
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

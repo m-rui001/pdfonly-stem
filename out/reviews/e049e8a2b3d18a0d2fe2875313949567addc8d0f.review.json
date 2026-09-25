@@ -1,0 +1,45 @@
+{
+  "sha1": "e049e8a2b3d18a0d2fe2875313949567addc8d0f",
+  "title": "Electrochemical Activation of CO2 through Atomic Ordering Transformations of AuCu Nanoparticles",
+  "doi": "https://doi.org/10.1021/jacs.7b03516",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e049e8a2b3d18a0d2fe2875313949567addc8d0f/index.html",
+  "source_chars": 44695,
+  "markdown_chars": 2400,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Each electrode was then tested in a customized electrochemical setup",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第4页页尾句子'Each electrode was then / tested...'在第5页被第4页的'Figure 1'图注和电化学参数说明（'tested in a customized...'）接续，但页与页之间插入的图注并非正文句子的一部分，提取文本中可能存在拼接，需核实'Each electrode was then tested'与后文'but the sentence continues as ...'是否完整衔接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：d-AuCu FE(H2)≈61%、FE(CO)≈34%；o-AuCu FE(CO)≈80%；CO部分电流密度0.43→1.39 mA/cm²（3.2倍）；质量活性~830 A/gAu vs Au NP ~320 A/gAu（2.6倍）；Au NP CO FE 87%与1.01 mA/cm²；XRD有序度S=0.611（~80%有序原子）；EXAFS CN(Cu)=9.0±1.2、CN(Au)=6.9±1.1；DFT施加~6%压缩应变、UL(CO2)与UL(CO2)–UL(H2)的顺序关系。公式：ΔG = ΔG0 + eU、UL = −ΔG0/e、E(RHE)换算公式等均已保留。待确认点：12 h稳定性测试中的具体条件与'15%活性损失'的准确定义（磁力搅拌？电位区间？）；计算细节中(211)模型的具体尺寸（超胞参数）与表面覆盖度未在正文说明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2312,
+      "prompt_tokens": 12761,
+      "total_tokens": 15073,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 433
+      }
+    },
+    "content_chars": 3313
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

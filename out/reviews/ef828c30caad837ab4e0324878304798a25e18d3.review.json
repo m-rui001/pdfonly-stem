@@ -1,0 +1,54 @@
+{
+  "sha1": "ef828c30caad837ab4e0324878304798a25e18d3",
+  "title": "Efficient Deep CNN-Based Fire Detection and Localization in Video Surveillance Applications",
+  "doi": "https://doi.org/10.1109/tsmc.2018.2830099",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ef828c30caad837ab4e0324878304798a25e18d3/index.html",
+  "source_chars": 60717,
+  "markdown_chars": 2470,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "Related work done by the same group is reported in [24], where they obtained 70 frames/sec using the above traditional PC with 92.59% accuracy and a 6.67% false positive rate group is reported in [24], where they obtained 70 frames/sec using the above traditional PC with 92.59% accuracy and a 6.67% false positive rate.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "同一句子在页尾和页首重复出现，明显是跨页提取拼接造成的内容重复，后一个片段不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "our model simplifies the SqueezeNet model by removing no residual connections",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原文表达“removing no residual connections”语义不通，可能应为“removing residual connections”或“having no residual connections”，但无强文本内证据，照录并标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表格中的关键数值：微调后准确率94.50%、误报率8.87%、模型大小3 MB（原238 MB）、计算量0.72 vs 2 GFLOPS/image、Dataset1中AlexNet微调后准确率94.39%与误报9.07%、Dataset2中F值0.91（精确率0.86、召回率0.97）。注意表格II中Proposed after FT的三个数字顺序与正文有歧义（2.12%、8.87%、94.50%），我按正文叙述解读为假阴性率2.12%、误报率8.87%、准确率94.50%，与“false negatives remained almost the same”吻合。算法中的二值化公式和阈值T均照录原文。另有跨页重复和一处语病已在issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4763,
+      "prompt_tokens": 14965,
+      "total_tokens": 19728,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2793
+      }
+    },
+    "content_chars": 3778
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

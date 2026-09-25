@@ -1,0 +1,73 @@
+{
+  "sha1": "0b6792bbebd17c23befc3743eb1dc13ec2d881ce",
+  "title": "Acceleration of global N2O emissions seen from two decades of atmospheric inversion",
+  "doi": "https://doi.org/10.1038/s41558-019-0613-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0b6792bbebd17c23befc3743eb1dc13ec2d881ce/index.html",
+  "source_chars": 58260,
+  "markdown_chars": 6192,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "in 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "第2页末尾的 \"In 1\" 是页码标记 'In 1' 的一部分，后面第3页开头接续 'order to meet ambitious climate targets'。文本在此处被截断并跨页，应标记为拼接问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "the growth rate for 1998 to 2000 is more uncertain. Our discussion, therefore, focuses on trends from 2000 onwards.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第3页有单词跨页，例如 \"calibration accuracy\" 与后续内容之间可能被页眉打断，但此句本身完整，未发现文本缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "REFERENCES (main text)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第4页末尾出现 'REFERENCES (main text)' 标题后仅列出编号2的文献，缺少编号1；第5页从编号2开始，但编号1（Ciais等2013）缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "For South Asia, we find an EF of 0.8 ± 0.4%, which was not sensitive to emission anomalies and is lower than the IPCC default.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "南亚EF为0.8%±0.4%，但高于0.8%的数值（1.2%）仍低于IPCC默认值1.375%，上下文可理解，但表述容易造成歧义。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：全球平均排放17.0（16.6-17.4）TgN/yr；增长率从0.68（2000-2005）升至0.98 ppb/yr（2010-2015）；全球排放从16.3增至17.9 TgN/yr；全球EF=2.3±0.6% vs IPCC 1.375%；中国EF=2.1±0.4%（GAINS情景下1.4±0.4%）；巴西EF=2.6±0.7%；南亚EF=0.8±0.4%。排放增幅1.6（1.4-1.7）TgN/yr（2000-2005至2010-2015）与结论一致；IPCC EF预测增幅0.59 TgN/yr与反演1.55 TgN/yr比较无误。公式已按原文保留：代价函数、一阶导数、EFtot加权平均式、FN2O计算式。仍不确定处：平流层寿命118-129年对应的中位丰度1522 TgN与计算1.1 TgN/yr差异的推导细节未在正文完全展开；INV3观测不确定度中\"1-sigma标准偏差\"未给出具体均值数值；提取文本中参考文献编号1缺失（第4页直接跳到编号2），已标为跨页疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5523,
+      "prompt_tokens": 16047,
+      "total_tokens": 21570,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 814
+      }
+    },
+    "content_chars": 7940
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

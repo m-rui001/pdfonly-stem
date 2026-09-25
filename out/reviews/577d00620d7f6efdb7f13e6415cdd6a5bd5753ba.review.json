@@ -1,0 +1,63 @@
+{
+  "sha1": "577d00620d7f6efdb7f13e6415cdd6a5bd5753ba",
+  "title": "Redox reactions of small organic molecules using ball milling and piezoelectric materials",
+  "doi": "https://doi.org/10.1126/science.aay8224",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/577d00620d7f6efdb7f13e6415cdd6a5bd5753ba/index.html",
+  "source_chars": 26116,
+  "markdown_chars": 1707,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "using a 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第4页末尾“using a 3”与第5页开头“Retch MM400 mixer mill...”之间明显缺少文字（如“mL”或“jar”），导致句子不完整，疑似跨页缺词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Retch",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "常见品牌名为Retsch，此处拼写为Retch，可能是提取或原文笔误，但无强文本证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "in-plain strain",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "应为in-plane strain，in-plain可能是拼写或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：芳基化产率40%（20 Hz）、81%（30 Hz）、24%（LiNbO3）、15%（ZnO）、82%（大罐）；硼化产率21%初始、89%（MeCN+延长时间）、86%（大罐）；克级71%；回收三次；区域选择性92:8；锤击实验43% NMR收率；还原电位−0.16 V、−0.30 V、水分解电位1.23 V；温度约30°C。结论方向与原文一致。不确定处：跨页缺词、Retch与in-plain拼写问题已在issues中列出，其余数值均直接取自提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6740,
+      "prompt_tokens": 8440,
+      "total_tokens": 15180,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5193
+      }
+    },
+    "content_chars": 2668
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

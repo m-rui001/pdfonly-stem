@@ -1,0 +1,64 @@
+{
+  "sha1": "d1c50504f2a11261e37a3b8f1351dd386a61a86d",
+  "title": "Citizen science and the United Nations Sustainable Development Goals",
+  "doi": "https://doi.org/10.1038/s41893-019-0390-3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d1c50504f2a11261e37a3b8f1351dd386a61a86d/index.html",
+  "source_chars": 53701,
+  "markdown_chars": 3611,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "Tier 1 indicator 15.5.1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文其余位置均用罗马数字Tier I/II/III，此处写为Tier 1，可能为笔误或提取差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The National Aeronautical Space Agency (NASA) in the US is exploring",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "NASA的标准全称应为National Aeronautics and Space Administration，此处Aeronautical疑为Aeronautics之误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "highlighting how the different dimensions of the data can provide value for the SDGs,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该短语在页5末尾和页6开头重复出现，且紧接着的句子在页6继续，疑似PDF提取时重复拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对主要数值：SDG指标数量（101/84/41/6）、成本区间（人口普查数亿至120亿USD、调查46万至170万USD）、Open Data Inventory得分50-85%、志愿者数量（BirdLife 5000人、Curious Noses 2000/20000人）、菲律宾32个指标等。公式无。结论方向与摘要、正文一致。仍不确定之处：Tier 1写法是否为原文；NASA全称拼写是否如原文；跨页重复仅根据文本证据判断，未涉及PDF视觉布局。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6233,
+      "prompt_tokens": 12251,
+      "total_tokens": 18484,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3873
+      }
+    },
+    "content_chars": 4729
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

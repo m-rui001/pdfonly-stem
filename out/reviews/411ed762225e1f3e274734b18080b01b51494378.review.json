@@ -1,0 +1,130 @@
+{
+  "sha1": "411ed762225e1f3e274734b18080b01b51494378",
+  "title": "Three-Phase PLLs: A Review of Recent Advances",
+  "doi": "https://doi.org/10.1109/tpel.2016.2565642",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/411ed762225e1f3e274734b18080b01b51494378/index.html",
+  "source_chars": 79353,
+  "markdown_chars": 9556,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "closed-loop transfer function relating $ \\Delta\\hat{\\omega}{g} $ to $ \\Delta\\omega{g} $ i",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该句在公式前被截断，缺少谓语（应为 is），属抽取时文字丢失，但不影响公式与结论理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "at the origin $ ^{1} $ [2], [3], [8], [15], [72]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "脚注标记 $^{1}$ 在此处出现，但正文中未见对应脚注内容，疑为脚注文本抽取缺失或标记错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "which minimizing the dynamic interaction",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "语法上应为 which minimizes，属抽取/识别造成的词形错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "it may results in DC injection",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "语法错误，应为 it may result in，属识别错误，不影响语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "adding an integrator-based DC offset estimation/rejection loop to the standard PLL structure.",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句缺少主句谓语（应为 is suggested 等），疑为抽取时文字缺失，但不影响方法理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "in which $ \\lambda $ is a positive constant",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式 $\\frac{1}{1+\\lambda(v_q/v_d)^2}$ 中 $\\lambda$ 的定义在正文出现，但公式本身在抽取文本中与上下文衔接略有断裂，符号完整性存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "respectively",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该词在 VCO-less PLL 等价性讨论末尾出现，但前文对应关系在抽取文本中不完整，疑为句子被截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "is recommeded",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 recommended，属 OCR 字符识别错误，不影响语义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "the unit vector $[\\sin (\\hat{\\theta})$ and $ \\cos(\\hat{\\theta})]$",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号不匹配，应为 $[\\sin(\\hat\\theta)$ 和 $\\cos(\\hat\\theta)]$，属抽取格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "if $ V=1 $ It is worth mentioning",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句末缺少句号，且 It 大写，属抽取时标点/分段丢失，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Three-Phase PLLs: A Review of Recent Advances",
+  "self_check": "已核对：SRF-PLL 特征多项式 s^2+Vk_p s+Vk_i=0、闭环传递函数 (7)(8)(9)、频率斜坡稳态误差 e_ss=sin^{-1}(A/(Vk_i))、1 型 PLL 频率阶跃稳态误差 e_ss=sin^{-1}(Δω_g/(k_p V))、QT1-PLL 线性化误差 Δω_g/k_p、自适应增益因子 1/(1+λ(v_q/v_d)^2)、无 VCO PLL 的频率/幅值/相位传递函数及 V=1 等价条件，均与原文一致。Table I 的定性比较（滤波能力、动态响应、计算负担、噪声免疫等）按正文文字保留，未臆测未提取的数值。仍不确定处：部分脚注标记（如 $^{1}$、$^{2}$、$^{3}$）对应的脚注文本在抽取中缺失；个别句子存在截断或语法错误，已在 extraction_issues 中标出，未静默改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6777,
+      "prompt_tokens": 23036,
+      "total_tokens": 29813,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12970,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

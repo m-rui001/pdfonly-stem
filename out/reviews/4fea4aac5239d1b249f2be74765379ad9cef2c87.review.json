@@ -1,0 +1,45 @@
+{
+  "sha1": "4fea4aac5239d1b249f2be74765379ad9cef2c87",
+  "title": "Compositional Engineering for Efficient Wide Band Gap Perovskites with Improved Stability to Photoinduced Phase Segregation",
+  "doi": "https://doi.org/10.1021/acsenergylett.7b01255",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4fea4aac5239d1b249f2be74765379ad9cef2c87/index.html",
+  "source_chars": 35222,
+  "markdown_chars": 2682,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "In some cases it is clear that 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第1页末尾出现孤立数字“1”，第2页开头为“photoinduced halide segregation, referred to here as the Hoke effect22, occurs.”，可能因页码标记混入导致句子断裂，原文应为“it is clear that photoinduced halide segregation ... occurs”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：带隙系数 Cs 2.3±0.2 meV/%Cs、Br 5.7±0.2 meV/%Br；1.68 eV 组 Cs25/Br20 效率 17.4%、VOC 1.10 V、FF 0.81、JSC 19.4 mA cm⁻²；1.75 eV 组 Cs40/Br30 效率 16.3%、VOC 1.17 V、FF 0.80；Cs35/Br18 效率 17.3%。TRPL 寿命为 Cs17/Br25=6 ns、Cs25/Br20=50 ns、Cs17/Br40=6 ns、Cs40/Br30=12 ns（从表 1 中对应数字读取）。Hoke 效应 PL 行为及 VOC 损失数值（14/5/23/7 mV）与原文一致。不确定之处：表 1 的寿命数值从提取文本的行列位置推断，未直接标注列名；图号 3/4 的交叉引用在原文中略有混乱，但已按文本引用保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4373,
+      "prompt_tokens": 10769,
+      "total_tokens": 15142,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2295
+      }
+    },
+    "content_chars": 3524
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

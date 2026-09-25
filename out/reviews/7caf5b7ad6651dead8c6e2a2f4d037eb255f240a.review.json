@@ -1,0 +1,63 @@
+{
+  "sha1": "7caf5b7ad6651dead8c6e2a2f4d037eb255f240a",
+  "title": "Cost-Optimal Energy Management of Hybrid Electric Vehicles Using Fuel Cell/Battery Health-Aware Predictive Control",
+  "doi": "https://doi.org/10.1109/tpel.2019.2915675",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7caf5b7ad6651dead8c6e2a2f4d037eb255f240a/index.html",
+  "source_chars": 55164,
+  "markdown_chars": 3976,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "∆Q = M (c) exp A(c)z (7)",
+      "type": "跨页公式拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾的公式(7)在下一页开头未直接续接，且第6页出现重复残片“−Ea (c) M (c) exp −E A(c)z”，指数项似乎缺失或被错位截断，导致(7)式结构不完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "Atol (c, Tc ) =  (9) a (c) M (c) exp −E a R c T c 1/z ",
+      "type": "公式渲染/抽取乱码",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式(9)的抽取文本中“a (c)”与“−E a R c T c”明显是错置或渲染失败的符号（疑似应含M(c)、exp与分数结构），原文中的上下标和括号关系无法复原。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "N (c, Tc ) =3600Atol (c, Tc ) . Q",
+      "type": "公式换行/拼接异常",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式(10)中分母Q被置于独立一行，抽取文本未保留分数结构，虽然符号可见但格式信息丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：MBC总成本1.5390$（氢1.0331$、PEMFCS退化0.3941$、电池退化0.1118$）、预测误差标准差1时总成本近乎翻倍、CSC较MBC降36.4%（$0.28/km vs $0.44/km）、Gothenburg降22.7%（$0.34/km）、2018与2019年成本较2017年分别+11.27%和+26.02%、SOH下降<0.005%，与摘要及正文一致。公式（1）（3）（4）（5）（7）（8）（12）（14）–（21）（23）按原文保留符号与编号；其中（7）和（9）因抽取文本跨页错位或乱码，已照录可见文本并在issues中标出，未凭记忆补全指数项。电池电学与SOC/SOH边界值来自表IV，退化率来自表II，未做推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10483,
+      "prompt_tokens": 15211,
+      "total_tokens": 25694,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7475
+      }
+    },
+    "content_chars": 5230
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "8466af16745cbe487bec229fbba1497e2f3081db",
+  "title": "Sub-particle reaction and photocurrent mapping to optimize catalyst-modified photoanodes",
+  "doi": "https://doi.org/10.1038/nature16534",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8466af16745cbe487bec229fbba1497e2f3081db/index.html",
+  "source_chars": 67653,
+  "markdown_chars": 2433,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "lengths = 1735 ± 437",
+      "type": "疑似缺失单位",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "宽度有nm单位，长度数值后缺少单位，应为nm。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "even though the 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页2末尾为'even though the 2'，页3开头为'same {100} facets span the length of each nanorod'，中间缺失'same'的一部分，应为'even though the same {100} facets'，可能因分页截断导致'me'缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "i = ηqI 0α   W = ηqI 0α    S  S qN d",
+      "type": "公式提取乱码",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式字符损坏，无法辨认具体数学形式，但正文文字描述了其物理含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "see Supplementary Fig. 20b in Supplementary Note Error! Reference source not found.",
+      "type": "引用占位符错误",
+      "severity": "low",
+      "confidence": 1,
+      "reason": "文本中残留'Error! Reference source not found.'，为Word域错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "vAR = kh I 0  α s 4 2εε 0 ( E − Eon,GB ) AS  qN d",
+      "type": "公式提取乱码",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式结构不完整，字符混乱，无法直接阅读。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：纳米棒尺寸（宽度127±27 nm，长度1735±437缺单位）、热点尺寸~50 nm、相关性ρ=0.84、平均距离~40 nm、η平均增60%、16%位点正移、Eon,GB平均−70 mV、Eon,ss=−0.47 V、Eon,GB拟合−0.66 V、Δη/η超200%等，均与原文一致。公式1-3因提取乱码未保留符号，仅用文字描述其关系，并已标注提取问题。结论方向（最优沉积位点与典型沉积相反）与摘要相符。不确定处：长度单位推测为nm但未明确；公式具体形式未复原。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4341,
+      "prompt_tokens": 18013,
+      "total_tokens": 22354,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2168
+      }
+    },
+    "content_chars": 3982
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

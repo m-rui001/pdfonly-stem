@@ -1,0 +1,63 @@
+{
+  "sha1": "692091a79827e05096c19df481f929be69a631e4",
+  "title": "Satellites reveal widespread decline in global lake water storage",
+  "doi": "https://doi.org/10.1126/science.abo2812",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/692091a79827e05096c19df481f929be69a631e4/index.html",
+  "source_chars": 42011,
+  "markdown_chars": 3182,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "We identify widespread decline in global LWS over the past 28 years. Over half (53 ± 2%) of the large lakes experienced significant water losses 1 of 7 ... Lakes cover 3% of the global land area (1), storing standing or slowly flowing water",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "引言开头“Lakes cover 3%”出现在结果“We identify widespread decline”之后，导致背景和结果顺序颠倒，可能是页面拼接错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "with the latter changes most often attributed to climate change (41, 42). Before ... this study, many of the human and climate change footprints",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“Before”和“this study”被页脚分隔，形成不连续句子。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Recent droughts may have contributed to re- ... servoir storage declines, particularly in the southwestern United States",
+      "type": "跨页断词",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单词“reservoir”被页脚拆成“re-”和“servoir”，跨页拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：53±2%显著下降、全球净变化-21.51±2.54 Gt/yr、自然湖泊-26.38±1.59 Gt/yr、56±9%归因、水库净增4.87±1.98 Gt/yr等，与摘要和正文一致。公式无。结论方向与数值相符。不确定：图1注中湖泊数量（1058/922）与正文（1051/921）略有差异，但原文如此，未修改。跨页顺序已在笔记中按逻辑重排，不影响内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14397,
+      "prompt_tokens": 11752,
+      "total_tokens": 26149,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11893
+      }
+    },
+    "content_chars": 4550
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "caae62da722ded10419c149e5222cfd4e83ee015",
+  "title": "Building ultraconformal protective layers on both secondary and primary particles of layered lithium transition metal oxide cathodes",
+  "doi": "https://doi.org/10.1038/s41560-019-0387-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/caae62da722ded10419c149e5222cfd4e83ee015/index.html",
+  "source_chars": 49580,
+  "markdown_chars": 1914,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "332.8 oC",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "温度单位中“oC”应为“°C”，可能为抽取过程中的符号转换错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "Temperature (C)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注中“C”为乱码，应表示“°C”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "poly(vinydifluoride)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "术语拼写疑似有误，可能为“poly(vinylidene fluoride)”，但原文如此，仅作提示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数据：容量保持率（C/10 50圈76.7/85.2/96.6/95.8% vs 67.6%；1C 200圈79.1/83.0/91.1/89.5% vs 47.7%）、PEDOT厚度与时间关系（20/40/60/80min对应7/14/20/28nm）、体积变化降低50%、HF浓度降低约50%、DSC温度332.8/208.1°C及ΔH 48.5/153.3 J/g、氧释放峰250/425°C等，均与原文一致。温度符号在部分位置存在显示问题，已在提取问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6721,
+      "prompt_tokens": 12846,
+      "total_tokens": 19567,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5125
+      }
+    },
+    "content_chars": 2814
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "sha1": "31fbd4e8d62087307d3a87f54699c196505758d1",
+  "title": "Solar cell efficiency tables (Version 55)",
+  "doi": "https://doi.org/10.1002/pip.3228",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/31fbd4e8d62087307d3a87f54699c196505758d1/index.html",
+  "source_chars": 48448,
+  "markdown_chars": 7688,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "giving an improvement in efficiency to 24.3%",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句位于描述两个4 cm²两端三结GaInP/(Al)GaAs/Si电池改进的段落中，前一句为34.1%，此处24.3%与表3中GaInP/GaAs/Si单片24.3%一致，但正文表述“improvement in efficiency to 24.3%”与“改进”语义存在矛盾，疑为OCR或原文表述问题，影响对改进方向的判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Si(crystalline cell) 26.7±0.5 79.0(da) 0.738 42.65a 84.9 AIST(3/17) Kaneka,n-type rear IBC[4]",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表1中Jsc列数值“42.65a”与上标脚注字母粘连，且表头列名与数据行在OCR中未严格对齐，可能影响对具体数值与脚注对应关系的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Organic(cell) 13.45±0.2r 1.023(da) 0.8422 23.28b 68.6 FhG-ISE(6/19) UniPotsda n[22]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“UniPotsda n”应为“UniPotsdam”，OCR在单词中插入了空格，影响机构名称识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Organic(minimodule) 12.6±0.2r 26.129(da) 0.8315c 21.32c,b 71.1 FhG-ISE(9/19) ZAE Bayer n(12 cells)[23]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“ZAE Bayer n”应为“ZAE Bayern”，OCR在单词中插入了空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Organic(submodule) 11.7±0.2r 203.98(da) 0.8177c 20.68c,b 69.3 FhG-ISE(10/19) ZAE Bayer n(33 cells)[23]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“ZAE Bayer n”应为“ZAE Bayern”，OCR在单词中插入了空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Si(large crystalline) 25.1±0.4 244.45(t) 0.7470 39.55f 85.0 ISFH(9/19) Haergy,1-type top/rear contacts[32]",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“Haergy”与正文中“Hanergy Thin Film Power Group”不一致，且“1-type”疑为“n-type”的OCR误读，影响对器件类型和制造商的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Si(nulticrystalline) 20.4±0.3 14818(ap) 39.90 9.833b 77.2 FhG-ISE(10/19) Ha wha Q Cells(60 cells)[54]",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "“Si(nulticrystalline)”应为“Si(multicrystalline)”，且“Ha wha Q Cells”应为“Hanwha Q Cells”，OCR在单词中插入了空格并误读字母，影响分类和机构名称识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "CdTe(thin-film) 19.0±0.9 23573(dz) 227.8 2.560b 76.6 FhG-ISE(9/19) First Solar[57]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "面积单位“(dz)”在表4其他行中未见，疑为“(da)”或“(ap)”的OCR误读，影响面积定义的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "InGaP/GaAs/InGaAs 44.4±26i 0.1652(da) 302 FhG-ISE(4/13) Sharp,3j inverted metamorphic[67]",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "效率值“44.4±26i”中“26”疑为“2.6”的OCR误读，与表5其他效率值格式不一致，影响数值准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "AlGaInP/AlGaAs/GaAs/GaInAs(3)(2.15/1.72/1.41/1.17/0.96/0.70eV) 47.1±2.6d,f 0.099(da) 143 NREL(3/19) NREL,6jinv.m’morphic[53]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "分类名称“AlGaInP/AlGaAs/GaAs/GaInAs(3)”与括号内6个带隙值数量不匹配，且“6jinv.m’morphic”疑为“6j inverted metamorphic”的OCR压缩，影响对多结结构的准确理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "SOLAR CELL EFFICIENCY TABLES (VERSION 55)",
+  "self_check": "已核对摘要、引言、新增结果、表格与附录中的关键数值与结论，确保与提取文本一致。表1至表5的效率、面积、测试中心与日期均按原文照录，未补写或推测。公式与符号（如面积单位da/ap/t、带隙值、EQE/JV等）保留原文形式。仍不确定之处：表2中“Haergy”与正文“Hanergy”的对应关系、表4中“(dz)”面积单位、表5中“44.4±26i”的数值精度，以及部分机构名称因OCR空格导致的拼写问题，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6132,
+      "prompt_tokens": 16234,
+      "total_tokens": 22366,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11343,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "499ffcb111a0b902eafe5c1b97e2d055d78e1ccc",
+  "title": "Mycorrhizal association as a primary control of the CO 2 fertilization effect",
+  "doi": "https://doi.org/10.1126/science.aaf4610",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/499ffcb111a0b902eafe5c1b97e2d055d78e1ccc/index.html",
+  "source_chars": 43496,
+  "markdown_chars": 1960,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "DOI: 10.1126/science.ssf4610",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "元数据中DOI为science.aaf4610，此处文本为ssf4610，疑为OCR或转录错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Science, vol. 353, issue 6294 (July 2016), p. 72-74. DOI: 10.1126/science.ssf4610",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句位于第1页末尾，但DOI中的字母与元数据不一致，可能因跨页或OCR导致字符误识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "some of the CO2 experiments in our study contained N-fixing species, which might have increased N availability (Table S3). eCO2 stimulated aboveground biomass in AM species under low N by 8 ± 3% (P=0.019) in this subgroup of experiments that included N-fixing species, whereas the remaining AM experiments under low N availability showed no biomass response to eCO2 (1 ± 10%, P=0.893).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第3页末尾与第4页开头衔接自然，但需注意‘whereas’后的对比是否完整，此处未见断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数值：总体响应20±3%、ECM 30±3%、AM 7±4%、低氮下AM 0±5%、ECM 28±5%、高氮下AM 20±6%、ECM 33±4%，以及与原文摘要和正文一致。公式和符号未涉及复杂公式，仅保留ΔCO₂等变量。敏感性分析和机制描述均基于提取文本，未引入外部知识。不确定点：原文第1页DOI中‘ssf4610’与元数据‘aaf4610’不一致，已在issues中标出；另第3-4页跨页处‘and’后接续正常，但无强证据判定错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2168,
+      "prompt_tokens": 12523,
+      "total_tokens": 14691,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 395
+      }
+    },
+    "content_chars": 3343
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

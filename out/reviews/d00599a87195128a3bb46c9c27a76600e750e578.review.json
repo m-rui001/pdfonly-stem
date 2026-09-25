@@ -1,0 +1,73 @@
+{
+  "sha1": "d00599a87195128a3bb46c9c27a76600e750e578",
+  "title": "The path towards sustainable energy",
+  "doi": "https://doi.org/10.1038/nmat4834",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d00599a87195128a3bb46c9c27a76600e750e578/index.html",
+  "source_chars": 43619,
+  "markdown_chars": 3979,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "with a non4",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "第4页末尾出现 'with a non4'，第5页开头为 'wetting droplet of water efficiently picking up dirt'，应为 'non-wetting'，跨页断词且缺少连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Oher advanced CO2 capture approaches",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": " 'Oher' 应为 'Other'，上下文明显为 'Other advanced CO2 capture approaches'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "access to (highoccupancy vehicle lanes",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": " 'highoccupancy' 应为 'high-occupancy' 或 'high occupancy'，且存在多余左括号 '（'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "focusing on carbon emissions in the transportation and electricity generating sectors with account for less than half of GHG emissions",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": " 'with account for' 语法不通，可能为 'which account for' 或 'accounting for'；文本证据不足，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：2012年能耗549 Quad BTU，CO₂ 278→410 ppm，CO₂当量496 ppm；光伏价格3→0.5美元/W，SunShot目标0.06/0.09美元/kWh；电池目标125美元/kWh，硅容量4200 mAh/g，锂金属3860 mAh/g，硫1700 mAh/g；Pt₃Ni纳米框架36x/22x增强；ZT公式及热化学ZT>3.5；碳价5-6 vs 70-80欧元/吨。公式按原文保留为2H₂O↔2H₂+O₂和CO₂+H₂O↔HₓCᵧO_z+O₂。水分解半反应与催化剂名称均与原文一致。不确定点：第2页 'with account for' 语法疑点已标注；第4/5页 'non4' 跨页疑点已标注；第9页 'Oher' 拼写疑点已标注。所有数值仅来自给定文本，未引入外部资料。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5547,
+      "prompt_tokens": 10908,
+      "total_tokens": 16455,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2470
+      }
+    },
+    "content_chars": 5561
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

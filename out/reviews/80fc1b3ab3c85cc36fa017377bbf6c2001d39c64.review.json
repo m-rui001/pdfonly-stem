@@ -1,0 +1,100 @@
+{
+  "sha1": "80fc1b3ab3c85cc36fa017377bbf6c2001d39c64",
+  "title": "Advances in stationary and portable fuel cell applications",
+  "doi": "https://doi.org/10.1016/j.ijhydene.2016.02.057",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/80fc1b3ab3c85cc36fa017377bbf6c2001d39c64/index.html",
+  "source_chars": 77133,
+  "markdown_chars": 4817,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 21,
+      "quote": "It is possible for a metastaABble Alane to undergo a controlled thermal dehydrogenation",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "明显应为\"metastable\"，出现多余大写AB，提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "theory was developed and applied to explore Alane as a H2 storage material for a portable, low temperature fuel cell system by (50jmo).",
+      "type": "疑似引用标记损坏",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "(50jmo)不像正常引用编号或作者缩写，可能是\"(50)\"或作者名\"J.M.??\"，无法确定。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "the European FCH JU has a target of V5000/kWe plus household heating",
+      "type": "疑似字符错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "V5000应为€5000（欧元符号识别错误）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "gird-assisted systems export electricity to the grid",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "\"gird\"应为\"grid\"。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Alane provides a reasonable volumetric hydrogen capacity at a density of (1480 kg m3 )",
+      "type": "单位格式疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文缺少上标和括号规范，但数值明确，不构成错误。仅提示格式问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "Fig 1. Portable Applications For Fuel Cells.",
+      "type": "疑似图号错乱",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文第10页提到\"as we can see in (figure 2)\"，但此处图注写为Fig 1；且第3页已有一个Fig 1为燃料电池示意图，同一编号重复。推测原文可能为Fig 2，但无确证。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "Fig 3. Stationary Applications For Fuel Cells.",
+      "type": "疑似图号错乱",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第14页前文写\"As can be seen from (figure 5)\"，但此处图注为Fig 3，编号不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的市场数据（45,700台、67,000台、59MW、360MW等）、公式(1)、各燃料电池类型的效率/温度范围（表4）、便携设备功率表（表5）、成本数据（MEA 40-50%、Pt占1/3、Nafion $800/m²、Li-ion 200Wh/kg、固定式成本范围、Ene-Farm目标等）均与提取文本一致。图号错乱（Fig1/2、Fig3/5）和个别拼写错误已在extraction_issues中标注。未引入文本外信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5192,
+      "prompt_tokens": 18424,
+      "total_tokens": 23616,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1580
+      }
+    },
+    "content_chars": 7015
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

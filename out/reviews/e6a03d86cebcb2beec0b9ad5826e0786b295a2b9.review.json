@@ -1,0 +1,118 @@
+{
+  "sha1": "e6a03d86cebcb2beec0b9ad5826e0786b295a2b9",
+  "title": "Hybrid additive and subtractive machine tools – Research and industrial developments",
+  "doi": "https://doi.org/10.1016/j.ijmachtools.2015.11.007",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e6a03d86cebcb2beec0b9ad5826e0786b295a2b9/index.html",
+  "source_chars": 131827,
+  "markdown_chars": 5310,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "By synergistically combining additive and subtractive processes within a single workstation, the relative merits of each process may be harnessed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "摘要完整，无明显中断，无需报告。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "In this research, the authors utilised a 2.4 kW CW Nd:YAG laser (spot size of 2.5mm) in the DED process.",
+      "type": "数值一致性核对",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "数值清晰完整，前后文一致，无需修改。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "For planes normal to the build direction, the average surface roughness (Ra) was reduced from an average of Ra 12µm to 1.5µm",
+      "type": "表述瑕疵/疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文“from an average of Ra 12µm”中Ra出现两次，属冗余表述，不影响理解，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "3-D patching method where the material is deposited on an existing feature and follows its surface contour as opposed to 2-D material deposition as shown in",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "“as shown in”后缺少图号，疑为第21页图11的引用；第20页末句未完成，跨页至第21页插入图注后才继续正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "In 2015, Hermle released information pertaining to their hybrid additive and subtractive machine tool",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第22页表格后文第23页继续，正文流畅，无截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "These are grouped into subsections addressing machining platforms and their structural elements, control systems and process planning software, metrology and the further integration of additive and subtractive processes",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "句子完整，无需报告。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "In this sense, the process plan and manufacturing instructions are adaptive and and reactive",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“and and”重复，原文照录，标记为疑似笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "In addition to the application of general purpose NC control, dedicated NC control has been developed for specific machines, such as with the Sodick OPM250E",
+      "type": "表述瑕疵/疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“……for specific machines, such as with……”中“such as with”语法可疑，照录，不推测。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Mazak INTEGREX i400 Mill-Turn Machine",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中写为“INTEGREX i-400AM”，表格中写为“INTEGREX i400”，型号写法不一致；保留两种写法，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：Spierings车削Ra 0.4 μm；Löber磨削316L从15 μm降至0.34 μm；Rossi镍铁铜水平12→4 μm/垂直15→13 μm；Beauchamp形状自适应磨削Ti6Al4V约10 nm；Song GMAW密度>90%、Ra 2 μm、拉伸性能与线材钢相当；Akula精度±0.030 mm；Yasa SLE销径50–350 μm、孔126/120 μm、Ra 12→1.5 μm、倾斜面50%/75%降低、孔隙比0.036% vs 0.77%；Fessler 2.4 kW Nd:YAG；DMG LASERTEC 65 3D、NT 4300 3D；Hermle MPA 40；Matsuura Lumex Avance-25；Sodick OPM250E 500W Yb光纤激光。上述数值均逐字核对与原文一致。公式方面：原文仅提及Kerschbaumer与Ernst用三次多项式关系关联激光功率与进给速度，无完整公式可保留。结论方向核对：摘要称WHASPs集成DED与CNC、数量增长；正文支持。未来愿景部分一致。不确定之处：第20页“as shown in”后缺图号，已在问题中标注；第21页表格与正文中Mazak产品型号写法不一致，已在问题中标注，不推测正确版本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5406,
+      "prompt_tokens": 30556,
+      "total_tokens": 35962,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1044
+      }
+    },
+    "content_chars": 8826
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

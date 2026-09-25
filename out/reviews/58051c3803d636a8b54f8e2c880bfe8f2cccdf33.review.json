@@ -1,0 +1,54 @@
+{
+  "sha1": "58051c3803d636a8b54f8e2c880bfe8f2cccdf33",
+  "title": "In situ quantification of interphasial chemistry in Li-ion battery",
+  "doi": "https://doi.org/10.1038/s41565-018-0284-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/58051c3803d636a8b54f8e2c880bfe8f2cccdf33/index.html",
+  "source_chars": 38405,
+  "markdown_chars": 4209,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "𝐿𝑖𝑃𝐹6 + 𝐻2 𝑂 → 2HF + 𝑃𝑂𝐹3 + 𝐿𝑖𝐹 +𝑒 1\n\nHF + 𝐿𝑖 + → 2 𝐻2 + 𝐿𝑖𝐹",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "式(1)与式(2)在页4末尾与页5开头之间有跨页断连，文本中“+𝑒 1”位于式(1)行末，而式(2)的化学计量关系（原应嵌入在“+𝑒 1”与式2间）不完整；且第5页顶部以“+𝑒 1”承接并插入“HF + 𝐿𝑖 + → 2 𝐻2 + 𝐿𝑖𝐹”，此反应式本身的化学计量不平衡，疑为公式排版/拼接问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "(5)",
+      "type": "疑似截断/公式缺失",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "式(5)在文中被引用为可能的氧化反应途径并给出了产物构成和质量损失，但公式本身在提取文本中仅显示编号“(5)”，化学式内容未出现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值：EQCM在各电位区间的Δm/dq值（24.7、41.4、66.8、78.2、7.9、-67.1）、LiF理论值25.9、LEDC理论值80.9、LMC理论值81.9、裸Li+值6.9、AFM台阶高度增量（1.3 nm、8.8 nm、约20 nm）、单分子层膨胀距离1.56 nm、DEMS气体比例4:2:1均与文中摘要、正文和结论一致。公式(1)的化学计量式（PF6-水解）中的平衡关系“+𝑒 1”因跨页断裂无法确认完整化学计量，已在问题中标注。式(5)的具体内容在提取文本中缺失，已标注。文中提及的式(2)反应式化学计量不平，疑与原式不符，同样已标注。除上述问题外，所有数值与结论均有文本支持，未作外部推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3827,
+      "prompt_tokens": 10356,
+      "total_tokens": 14183,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 546
+      }
+    },
+    "content_chars": 5222
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

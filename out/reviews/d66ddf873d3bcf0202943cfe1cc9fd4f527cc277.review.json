@@ -1,0 +1,54 @@
+{
+  "sha1": "d66ddf873d3bcf0202943cfe1cc9fd4f527cc277",
+  "title": "Theoretical Calculation Guided Design of Single-Atom Catalysts toward Fast Kinetic and Long-Life Li–S Batteries",
+  "doi": "https://doi.org/10.1021/acs.nanolett.9b04719",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d66ddf873d3bcf0202943cfe1cc9fd4f527cc277/index.html",
+  "source_chars": 21146,
+  "markdown_chars": 2702,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "usingDemeter software1",
+      "type": "拼写疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "缺少空格，原文可能为 using Demeter software1，但提取文本中无空格。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "which is closed to the V4+ position",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "closed 应为 close，属于拼写或笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：TG/ICP 金属含量（V: 4.35 wt% TG, 4.30 wt% ICP；Co: 3.98 wt% TG, 3.85 wt% ICP）、XPS 峰位（Co 2p 780.4 eV）、EXAFS 距离（1.42 Å Co–N/C）、电化学循环（0.5 C 200次）等，均与原文描述一致。理论计算部分因原文未给出具体吸附能或分解势垒数值，仅做定性描述，未添加任何推断数值。文本抽取中未发现跨页断句或截断问题，仅指出两处轻微拼写疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12377,
+      "prompt_tokens": 7485,
+      "total_tokens": 19862,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10412
+      }
+    },
+    "content_chars": 3439
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

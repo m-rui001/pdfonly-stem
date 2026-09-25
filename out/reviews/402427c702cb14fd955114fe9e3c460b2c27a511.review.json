@@ -1,0 +1,83 @@
+{
+  "sha1": "402427c702cb14fd955114fe9e3c460b2c27a511",
+  "title": "Distributed Power-Generation Systems and Protection",
+  "doi": "https://doi.org/10.1109/jproc.2017.2696878",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/402427c702cb14fd955114fe9e3c460b2c27a511/index.html",
+  "source_chars": 108232,
+  "markdown_chars": 3046,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "However, it",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 1,
+      "reason": "第17页末尾句子中断，下一页开头为'also introduces side effects.'，应拼接为'However, it also introduces side effects.'，但中间被页眉和换页隔断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "may contribute to the grid",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第13页末尾句子中断，下一页开头为'recovery.'，应拼接为'may contribute to the grid recovery.'，但被分页打断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "to detect faults and",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第15页末尾'to detect faults and'，第16页开头'determine fault types.'，中间被页眉分隔。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "Distance Protection | Robust for different operational modes |",
+      "type": "表格内容顺序疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表I中距离保护一行的缺点缺失，其缺点文本'Accuracy affected by fault location, fault resistance, current transients, harmonics, and decaying DC currents'出现在表格后、结论前，疑似表格排版错序。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "Figure 24. Comparison of the fault-current contributions from a conventional synchronous generator and an inverter-based distributed generator.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图题中'inverter-based'可能为'inverter-interfaced'或原文如此，无强证据，仅标记存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：风电2015年增长率17%、光伏28%、丹麦风电占比>50%、频率窗口49-51Hz（中国49.5-50.2Hz）、电压0.9-1.1p.u.、THD<5%、DFIG变换器容量30%、故障电流限制约2倍额定、差动保护响应约5ms、频率调节2-12%额定功率、fset=50.2Hz等，均与提取文本一致。公式未出现。表I中距离保护缺点缺失已标记为提取问题。未补充任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3349,
+      "prompt_tokens": 25806,
+      "total_tokens": 29155,
+      "prompt_tokens_details": {
+        "cached_tokens": 24576
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 865
+      }
+    },
+    "content_chars": 4832,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

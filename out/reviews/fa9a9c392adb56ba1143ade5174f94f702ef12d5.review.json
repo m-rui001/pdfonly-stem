@@ -1,0 +1,54 @@
+{
+  "sha1": "fa9a9c392adb56ba1143ade5174f94f702ef12d5",
+  "title": "Edge Analytics in the Internet of Things",
+  "doi": "https://doi.org/10.1109/mprv.2015.32",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fa9a9c392adb56ba1143ade5174f94f702ef12d5/index.html",
+  "source_chars": 30145,
+  "markdown_chars": 3207,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "itory for crowd-sourced video content",
+      "type": "截断/缺词",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "摘要起始处缺少\"An Internet-scale repos-\"等前文，'itory'应为'repository'的一部分，属抽取不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "To solve this problem, we propose GigaSight, a hybrid 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页1末尾句子不完整，页2先出现侧栏\"Marketing and Advertising:\"等，之后才出现正文继续\"cloud architecture that is effectively...\"，页面排序和正文拼接被侧栏打断，缺失位置在\"hybrid 1\"之后。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：YouTube每秒1小时视频、3600并发上传、100 Gbps链路、8.5 Mbps上传率、12000用户、8.5 Tbps需求；GE发动机1 TB/24h、Boeing 787半TB/航班；AES-128密钥；MSRC21 21类；边缘云台约120用户、30 fps。公式/关系：N与F的权衡（F<FE时N≤NE，F>FE时N<NE）已按原文保留。不确定处：图5中的阈值FE、NE具体数值未在文本中给出，仅保留含义；页1摘要开头缺失\"repository\"一词，跨页顺序中正文被侧栏打断，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7135,
+      "prompt_tokens": 7336,
+      "total_tokens": 14471,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4812
+      }
+    },
+    "content_chars": 4159
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "sha1": "15fb1936c175fab7d61c8bf7ef1fb45ccc97cfc5",
+  "title": "Managing grains and interfaces via ligand anchoring enables 22.3%-efficiency inverted perovskite solar cells",
+  "doi": "https://doi.org/10.1038/s41560-019-0538-4",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/15fb1936c175fab7d61c8bf7ef1fb45ccc97cfc5/index.html",
+  "source_chars": 58963,
+  "markdown_chars": 6201,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "CsMAFA-8 films",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文其余处均写作 CsFAMA，此处出现 CsMAFA-8，疑为 OCR 或原文笔误，可能影响组分名称一致性理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "CsMAFA-8 devices",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "与全文 CsFAMA 命名不一致，疑为 OCR 或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "Figure 3. Defect density and energy level characterization of perovskite films with AALs. a, Temperature-dependent capacitance versus frequency C-f plots for CsFAMA device with AALs (OAm). b, Temperature-dependent capacitance versus frequency C-f plots for the pristine CsFAMA device and the CsFAMA device with AALs (OAm) showing trap density profiles.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注中 a、b 两分句描述几乎相同，疑为图注抽取时 a/b 对应关系错乱，可能影响对图 3a 与 3b 内容分工的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Managing grains and interfaces via ligand anchoring enables 22.3% efficiency inverted perovskite solar cells",
+  "self_check": "已核对：TRPL 寿命（114/195/265/789/1049 ns）、接触角（60/63/71/88/98°）、带隙 1.56 eV、扩散长度约 1 与 2 μm、迁移率 1.6 与 3 cm²V⁻¹s⁻¹、器件参数（原始 20.5%/24.2 mA cm⁻²/1.06 V/80%；OAm 平均 22.0%/24.1/1.17/78.2%；冠军 23%/24.1/1.17/81.6%；认证 22.34%/23.9/1.14/82%）、电压亏损 0.39 V、陷阱密度（1×10²³ 与 4.4×10²² m⁻³eV⁻¹）、EQE_EL（0.65% 与 0.07%）、ΔVoc 约 60 mV、TPV 寿命 0.67→1.5 μs、功函数 4.58→4.41 eV、Ea 243 与 422 meV、稳定性数据（350 h 损失 42%；1000 h 无损失，21.2%→21.6%；85 °C 约 1020 h 损失约 39% 与约 10%）。公式 L_D≈(2L/π)√(2(τ/τq−1))、L_D=√(D×τ)、D=μ·k_B·T/q、ΔVoc=k_BT/q·ln(EQE_AALs/EQE_Pristine)、Ln(Tτ⁻¹)=C−Ea/kT、N_T(Eω) 与 Eω 两式均按提取文本保留。不确定处：CsMAFA-8 与 CsFAMA 命名不一致；图 3 图注 a/b 描述疑似错乱；部分上标/下标（如 C60、PbI2、FAPbI3）在 OCR 中格式不统一，已按可读形式保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4750,
+      "prompt_tokens": 16135,
+      "total_tokens": 20885,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8105,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

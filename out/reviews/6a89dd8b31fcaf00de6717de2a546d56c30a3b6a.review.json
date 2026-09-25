@@ -1,0 +1,63 @@
+{
+  "sha1": "6a89dd8b31fcaf00de6717de2a546d56c30a3b6a",
+  "title": "Pressure-tailored lithium deposition and dissolution in lithium metal batteries",
+  "doi": "https://doi.org/10.1038/s41560-021-00917-3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6a89dd8b31fcaf00de6717de2a546d56c30a3b6a/index.html",
+  "source_chars": 32371,
+  "markdown_chars": 1667,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "the CE deceased from 92.5%",
+      "type": "疑似错别字",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文“deceased”在上下文中应为“decreased”的笔误，但文本本身如此，照录并标记疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "As shown in Fig. 1LO",
+      "type": "疑似OCR/格式错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“1LO”应为“1L-O”的误读（指图1L至1O），提取文本缺少连字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "20 25 nm",
+      "type": "疑似格式错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数字间以空格代替连字符，实际应为“20–25 nm”或“20-25 nm”，但原文提取如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：首圈CE（92.5%、85.5%、92%、98%/97%/96%）、循环寿命（116-125 vs ~73）、电极厚度（3.677 vs 1.697 µm）、孔隙率（43.57% vs 0.51%）、归一化体积（1.107 vs 1.036）、SEI厚度（20-25 nm）、剥离残留Li（12% vs 3%）及CE（87% vs 96%）均与提取文本一致。公式未出现。结论方向与摘要和正文相符。仍不确定处：原文“Fig. 1LO”和“20 25 nm”的精确格式，以及“deceased”是否为原文笔误，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5801,
+      "prompt_tokens": 8579,
+      "total_tokens": 14380,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4363
+      }
+    },
+    "content_chars": 2668
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

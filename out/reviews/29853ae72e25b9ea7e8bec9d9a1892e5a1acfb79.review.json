@@ -1,0 +1,55 @@
+{
+  "sha1": "29853ae72e25b9ea7e8bec9d9a1892e5a1acfb79",
+  "title": "The scope of the antimicrobial resistance challenge",
+  "doi": "https://doi.org/10.1016/s0140-6736(24)00876-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/29853ae72e25b9ea7e8bec9d9a1892e5a1acfb79/index.html",
+  "source_chars": 19007,
+  "markdown_chars": 2263,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "AMR mortality(year) = AMR mortality(2019) / (yearly rate of change year - 2019)",
+      "type": "疑似公式不完整",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "分母中 'yearly rate of change year - 2019' 可能应为 'yearly rate of change^(year-2019)'，但原文如此，照录并标注疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "resistant to at least one of the main antibiotics used to treat neonatal sepsis",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第2页末尾断开于'at least one of the'，第3页继续'main antibiotics...'，句子完整但跨页，需注意页码标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要和正文中的关键数值：数据年份（2000-2019）、样本来源（BARNARDS、NeoObs、CHAMPS等）、抗生素清单、公式(1)及反事实公式、误差修正因子1/√n均与原文一致。公式中'yearly rate of change'的指数关系在原文中表达不明确，已如实保留并标记疑点。图中具体数值未在文字中给出，未做推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2673,
+      "prompt_tokens": 5090,
+      "total_tokens": 7763,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1006
+      }
+    },
+    "content_chars": 3159
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

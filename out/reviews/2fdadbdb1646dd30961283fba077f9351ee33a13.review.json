@@ -1,0 +1,55 @@
+{
+  "sha1": "2fdadbdb1646dd30961283fba077f9351ee33a13",
+  "title": "Molecular spins for quantum computation",
+  "doi": "https://doi.org/10.1038/s41557-019-0232-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2fdadbdb1646dd30961283fba077f9351ee33a13/index.html",
+  "source_chars": 57616,
+  "markdown_chars": 5415,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "This idea has been realized in practice by binding two lanthanides to an odd number of asymmetric bdiketonic bridging ligands, which create two different coordination sites.62,63 This is",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "句子以 “This is” 止于第 11 页末尾，第 12 页开头先出现图 3 的图注文本 “illustrated in Figs. 3a and b…平”, 正文延续部分应接 “illustrated in Figs. 3a and b”，但页间插入图注后正文顺序被打断，无法确定正文与图注在版面上的实际衔接顺序。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "Ω& = (0)𝑔+ 𝜇- 𝐽/ ∙ ℎ2⃗45 )16/ℏ",
+      "type": "疑似文本损坏（数学公式乱码）",
+      "severity": "high",
+      "confidence": 0.99,
+      "reason": "Box 1 的 Rabi 频率公式极可能为 LaTeX/Unicode 渲染错误，变量定义（Ω、g_J、μ_B 等）无法辨识。原文明确给出公式存在，但本提取文本中的符号序列矛盾且含无意义字符，属于明显的抽取/编码损坏。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：HoW10 隧穿劈裂 9.18 GHz（约 0.306 cm⁻¹）、基态 mJ = ±4、T2 = 8 µs 在高自旋浓度（每 10 分子一个 Ho）下成立；TbW30 隧穿劈裂估计约 30 GHz（约 1 cm⁻¹）、mJ = ±5；Mn12 隧穿劈裂约 10⁻⁹ GHz、总劈裂约 50 cm⁻¹；GdW10 D = −0.124 cm⁻¹（总劈裂 1.44 cm⁻¹ 即 44 GHz），GdW30 总劈裂 < 0.6 cm⁻¹（17 GHz），7 个允许跃迁，9.8 GHz X-band 脉冲；TbPc2 核自旋 I = 3/2、mJ = ±6 电子基态；稀释比 1:10000；Cr7Ni T2 > 1 µs（最早）、CuPc 80 K T2 = 1 µs、VOPc 300 K、Cu(mnt)2 T2 = 68 µs、VIV(C8S8) T2 = 700 µs；耦合条件 Jex/ℏ < ωR 但 > T2⁻¹；电路 QED 波长 30 mm–3 mm、耦合条件 ωR·T2 >> 1。摘要与正文中均出现“80 K 磁滞”和“每个奇数元素同位素皆携带核自旋”等论断，相互一致。公式方面，正文中 Box 1 的 Rabi 频率公式因文本提取损坏无法核对，已在 extraction_issues 中标注为疑似损坏，未进行推测性修复。关于萃取协议中跨页顺序疑点，已按输入文本如实标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7481,
+      "prompt_tokens": 14459,
+      "total_tokens": 21940,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3246
+      }
+    },
+    "content_chars": 6938
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "sha1": "f0c291dfc3129d57d0239f43d8d99480e17254f7",
+  "title": "Tailoring Electronic and Optical Properties of MXenes through Forming Solid Solutions",
+  "doi": "https://doi.org/10.1021/jacs.0c07395",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f0c291dfc3129d57d0239f43d8d99480e17254f7/index.html",
+  "source_chars": 40473,
+  "markdown_chars": 2180,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "... have a curious dip in the low-concentration",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第5页正文在“low-concentration”处被图3标题（Figure 3...）插入，第6页开头接续“regime.”，完整的短语应为“low-concentration regime”。提取文本中图注夹在句子中间，导致语句断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：y=0.4/0.8/1.2/1.6共12种组成；Ti分支比0.40 vs 0.39，V分支比0.48 vs 0.45；室温电导率纯Ti2CTx和V2CTx>1000 S/cm；光学峰391/472 nm和915 nm；电导率变化三个数量级、电阻率变化六个数量级；DFT与实验趋势相反等。所有数字均摘自正文。不确定之处在于跨页处图注位置，已标记；未发现其他文本明显错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6844,
+      "prompt_tokens": 11476,
+      "total_tokens": 18320,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5183
+      }
+    },
+    "content_chars": 2783
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

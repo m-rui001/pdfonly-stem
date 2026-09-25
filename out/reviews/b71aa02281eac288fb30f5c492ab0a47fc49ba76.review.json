@@ -1,0 +1,73 @@
+{
+  "sha1": "b71aa02281eac288fb30f5c492ab0a47fc49ba76",
+  "title": "Sustainable Preparation of MIL-100(Fe) and Its Photocatalytic Behavior in the Degradation of Methyl Orange in Water",
+  "doi": "https://doi.org/10.1021/acs.cgd.6b01776",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b71aa02281eac288fb30f5c492ab0a47fc49ba76/index.html",
+  "source_chars": 55121,
+  "markdown_chars": 3979,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "HF-free MIL1(Fe)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文均为MIL-100(Fe)，此处MIL1(Fe)明显为MIL-100(Fe)遗漏'-100'，属于抽取或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "the latter only contains the smallest cages7 (Figure 4b)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "Figure 4为TGA图，而此处讨论的是孔径分布，可能应为Figure 5b；但无强证据，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "low number of photons, which has paramount significance in photocatalysis, is adsorbed",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "物理上应为'absorbed'（被吸收）而非'adsorbed'（被吸附），但原文如此，可能为作者笔误或抽取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "Photocatalytic degaradation / %",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单词'degaradation'拼写错误，应为'degradation'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数据：合成条件（室温、24 h、1.5 Fe:1.0 H3BTC:3.0 NaOH:880 H2O、产率76%）、比表面积（1974/2028/925/885 m²/g）、BJH孔径（1.84/2.23，1.85/2.26）、带隙（3.08/3.19 eV）、光催化降解率（UV下64%、太阳光下40%、Fe2O3为18%、Fe-BTC-RT无活性）、晶胞参数（70.74 Å vs 文献73.34 Å）均与提取文本一致。TGA失重温度（403/383/346°C）和失重比（1.53/1.68/2.22）也已保留。公式方面仅提及Kubelka–Munk函数，未包含具体公式，按原文处理。不确定之处：图4b与孔径讨论的对应关系存疑；'adsorbed'是否应为'absorbed'无法确证，未擅自修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3699,
+      "prompt_tokens": 18015,
+      "total_tokens": 21714,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 652
+      }
+    },
+    "content_chars": 5417
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "a6b5bc7383ae62533759b07d430970f52f35c85e",
+  "title": "Elastic and failure response of imperfect three-dimensional metallic lattices: the role of geometric defects induced by Selective Laser Melting",
+  "doi": "https://doi.org/10.1016/j.jmps.2017.07.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a6b5bc7383ae62533759b07d430970f52f35c85e/index.html",
+  "source_chars": 79386,
+  "markdown_chars": 3445,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "fabricated with geometric imperfections via Selective Laser Sintering",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "标题及全文使用Selective Laser Melting (SLM)，摘要此处误写为Selective Laser Sintering，且文中明确为SLM工艺，疑为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "The homogenized value obtained from the reconstructed RVE is in good agreement (5.8%) with its experimental counterpart",
+      "type": "跨页/数值不一致疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "此处仅给出单一5.8%误差，但页28文字给出octet和rhombicuboctahedron两个值（5.1%和5.8%），且页34全尺寸模拟误差数值不同，疑似原文针对不同模型或表述省略，需核对原文是否连贯。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：相对密度10.4%/14.7%，实验模量690/1250 MPa，强度4.7/9.1 MPa，构建方向模量保留比70%/71%，缺陷统计参数μ_r^h=+24.5%、μ_o^h=17.2%，参数研究中250%放大后模量降至50%、强度降至40%，失效模式转变阈值（octet比值1.8、rhombic比值1.2）等均与提取文本一致。公式方面无复杂公式，统计符号按原文保留。仍不确定：页23的5.8%与页28的5.1%和5.8%之间的对应关系未完全厘清；摘要中'Selective Laser Sintering'疑为笔误但未修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6012,
+      "prompt_tokens": 20064,
+      "total_tokens": 26076,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3525
+      }
+    },
+    "content_chars": 4495
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

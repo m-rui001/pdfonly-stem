@@ -1,0 +1,73 @@
+{
+  "sha1": "28d81fe835fe0b2cdc281bf89c8a838bed713081",
+  "title": "MAS-Based Distributed Coordinated Control and Optimization in Microgrid and Microgrid Clusters: A Comprehensive Overview",
+  "doi": "https://doi.org/10.1109/tpel.2017.2761438",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/28d81fe835fe0b2cdc281bf89c8a838bed713081/index.html",
+  "source_chars": 127870,
+  "markdown_chars": 3937,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "δω =k pω (ωMG − ωMG ) + kiω ∫ (ωMG − ωMG )dt + Δωs",
+      "type": "疑似文本错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "公式中两个ωMG完全相同，与后文'compared with the references ω*MG'不符，疑应为ωMG*或ω*MG，但提取文本如此。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "δ E =k pE ( EMG − EMG ) + kiE ∫ (EMG − EMG )dt",
+      "type": "疑似文本错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "同(3)，两个EMG重复，疑应为参考值E*MG。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "∑∑ [Pi , j ( k ) + Pi , j ( k )] + ∑ Pj (k )",
+      "type": "疑似缺失上下标",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式(29)分母中两个Pi,j(k)相同，疑应为PV和MT上标，与(27)类似。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "∑∑[P (k ) + P (k )] + ∑ P (k ) = ∑ D (k )",
+      "type": "疑似缺失上下标",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式(27)中两个P(k)项疑似应分别为Pi,jPV(k)和Pi,jMT(k)，但提取时上下标丢失，导致无法区分。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关于MAS综述的总体主张、层次控制公式(1)-(6)、MAS更新公式(7)-(12)、共识协议(13)-(19)、延迟补偿公式(20)-(22)及经济调度公式(23)-(29)的数值和符号。主要不确定点：(3)(4)中的自减疑为编辑错误；(27)(29)中的上下标丢失。这些已在extraction_issues中标注。未引入外部知识，未擅自修改原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8729,
+      "prompt_tokens": 32741,
+      "total_tokens": 41470,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5832
+      }
+    },
+    "content_chars": 5230
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

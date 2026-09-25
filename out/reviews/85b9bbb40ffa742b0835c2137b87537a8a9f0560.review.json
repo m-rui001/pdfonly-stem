@@ -1,0 +1,73 @@
+{
+  "sha1": "85b9bbb40ffa742b0835c2137b87537a8a9f0560",
+  "title": "Disruptive, Soft, Wearable Sensors",
+  "doi": "https://doi.org/10.1002/adma.201904664",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/85b9bbb40ffa742b0835c2137b87537a8a9f0560/index.html",
+  "source_chars": 63775,
+  "markdown_chars": 2764,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "wide electrochemical sensing windows in field effect transitor",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "transitor应为transistor，但原文如此，保留原样。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Taking poly(3,4-ethylene dioxythiophene):poly(styrene sulfonate) (PEDOT:PSS) for an example, a typical high conductivity of 1000 S cm−1 could be achieved but the electrical failure might occur at only 5% strain.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "句子在第8页页尾完整结束，后续第9页开头是另一句，无明显断裂。此处仅为检查，未发现实际问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Reprinted with permission. Reprinted with permission.",
+      "type": "重复文本",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "图注中重复出现'Reprinted with permission.'，可能为排版抽取重复，不影响正文逻辑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "With the concentric assembly, sharpness-specific detection was demonstrated in a wireless manner (Figure 5d).",
+      "type": "疑似图号错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文已用Figure 5d指代分层皱褶纤维应变传感器，此处同心组装应可能对应Figure 5f，但原文写为5d，属跨图引用疑点。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：市场数据（125 million units 2016, 900 million by 2021, CAGR 23%, $75 billion in 2025）、蛇形结构5 µm、液态金属纤维700%、PEDOT:PSS电导率1000 S/cm vs 3390 S/cm at 100% strain、水凝胶1700%、裂纹传感器灵敏度2000 at 2%、碳纳米管皱褶1320%、EDL灵敏度高三个数量级。公式与符号均按原文保留。正文中未出现需要修复的公式。注意到第12页图5d疑似重复引用，已列入问题。未发现跨页断裂导致句子缺失的情况。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3661,
+      "prompt_tokens": 18975,
+      "total_tokens": 22636,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1381
+      }
+    },
+    "content_chars": 4355
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

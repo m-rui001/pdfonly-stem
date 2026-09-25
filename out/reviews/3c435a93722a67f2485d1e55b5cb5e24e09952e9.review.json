@@ -1,0 +1,63 @@
+{
+  "sha1": "3c435a93722a67f2485d1e55b5cb5e24e09952e9",
+  "title": "Planck 2015 results",
+  "doi": "https://doi.org/10.17863/cam.52",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3c435a93722a67f2485d1e55b5cb5e24e09952e9/index.html",
+  "source_chars": 336899,
+  "markdown_chars": 4234,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Planck CMB bispectrum\n\nWe use measurements of the non-Gaussianity amplitude fNL from the CMB bispectrum presented in Planck Collaboration XVII (2016).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "页8起始处标题后直接接续非高斯性段落，无明显的页眉或图注插入，但页8开头缺少页码标记，可能为正常页间过渡。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Table 8. Numerical reconstruction of the potential slow-roll parameters beyond any slow-roll approximation when the potential is Taylor expanded to nth order, using Planck TT+lowP+BAO.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "表格上方注释提到错误条为95% CL，但表内后文正文多处标注68% CL，可能为表格注释与正文不一致或抽取混淆，无文本内直接矛盾，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Planck Collaboration: Planck 2015 results. XX.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "部分页眉为'Planck Collaboration: Planck 2015 results. XX.'，部分为'Planck 2015 results'，属于页眉正常变化，非错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：ns=0.9655±0.0062（TT+lowP）、r0.002<0.10（TT+lowP）、dns/dln k=-0.0084±0.0082、r0.002<0.08（TT+lowP+BKP）、βiso上限、声速下限等，均与提取文字一致。公式中PR(k)定义、慢滚参数关系式、一致性条件nt=-r/8等已保留。仍不确定之处：部分表格数据与正文数值的表述（如95% CL与68% CL）可能存在混淆，但未发现实质性矛盾；部分跨页页眉与页脚插入位置不完整，不影响内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3428,
+      "prompt_tokens": 100312,
+      "total_tokens": 103740,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 21
+      }
+    },
+    "content_chars": 5601
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

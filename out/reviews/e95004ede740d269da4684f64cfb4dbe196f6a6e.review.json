@@ -1,0 +1,139 @@
+{
+  "sha1": "e95004ede740d269da4684f64cfb4dbe196f6a6e",
+  "title": "Multifactorial Evolution: Toward Evolutionary Multitasking",
+  "doi": "https://doi.org/10.1109/tevc.2015.2458037",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e95004ede740d269da4684f64cfb4dbe196f6a6e/index.html",
+  "source_chars": 82210,
+  "markdown_chars": 13942,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Multifactorial Evolution: Towards Evolutionary Multitasking",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页题名为“Towards Evolutionary Multitasking”，登记题名为“Toward Evolutionary Multitasking”，二者用词不一致，属题名身份冲突。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "finding $ {x_{1}, x_{2}, \\dots, x_{K-1}, x_{K}} = \\operatorname{argmin}\\left{f_{1}(x), f_{2}(x), \\dots, f_{K-1}(x), f_{K}(x)\\right} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "公式中集合与argmin的花括号/括号在OCR中丢失，导致MFO目标函数的形式化表达不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\varphi_{i} = 1 / \\min_{j \\in {1, \\dots, K}} {r_{j}^{i}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "标量适应度公式中min下标的集合花括号丢失，影响公式的精确读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\tau_{\\mathrm{i}}=argmin_{j}\\left{r_{j}^{i}\\right} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "技能因子公式中argmin后的花括号不匹配，且缺少j的取值集合，公式符号有损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Definition 5 (Multifactorial Optimality): An individual $ p^{} $ with a list of objective values $ {f_{1}^{}, f_{2}^{}, \\dots, f_{K}^{}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "多因子最优性定义中个体与目标值的上标星号丢失，公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "F2:{(30A, none}, (30A, 30S), (30A, 30R), (30A, 20S), (30A, 20R)}",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "问题集F2中“(30A, none}”的括号不匹配，应为“(30A, none)”，属OCR括号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "In the convergence trends presented hereafter, the objective function values for task $ T_{j} $ , where $ j \\in {1,2,3} $ , are first normalized as $ \\tilde{f}{j}=(f{j}-f_{j}^{min})/(f_{j}^{max}-f_{j}^{min}) $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "归一化公式中f̃_j与f_j的下标花括号丢失，公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ \\tilde{f}=\\left(\\tilde{f}{1}+\\tilde{f}{2}+\\tilde{f}_{3}\\right)/3 $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "平均归一化公式中f̃_1与f̃_2的下标花括号丢失，公式符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "3) Performance on Sets 3 and 4 (cross-domain multitasking) 3) Performance on Sets 3 and 4 (cross-domain multitasking)",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一小节标题在OCR中重复出现，属阅读顺序/重复抽取问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the curve for $ T_{2} $ is labeled as MFO $ (T_{1}, T_{2}^{}, T_{3}) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "MFO曲线标签中T_2的上标星号丢失，公式符号不完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "$$\\begin{array}{l} 2 0 + e - 2 0 \\exp \\left(- 0. 2 \\sqrt {\\frac {1}{D} \\sum_ {i = 1} ^ {D} z _ {i} ^ {2}}\\right) - \\ \\exp \\left(\\frac {1}{D} \\sum_ {i = 1} ^ {D} \\cos \\left(2 \\pi z _ {i}\\right)\\right); \\boldsymbol {z} = \\mathbf {M} _ {A} \\times \\left(\\boldsymbol {x} - \\boldsymbol {O} _ {A}\\right). \\ \\end{array}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Ackley函数公式中数字被空格分隔（如“2 0 + e - 2 0”），且缺少外层系数，公式的定量信息在OCR中受损。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "mismatch",
+  "ocr_title": "Multifactorial Evolution: Towards Evolutionary Multitasking",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 20404,
+      "total_tokens": 30404,
+      "prompt_tokens_details": {
+        "cached_tokens": 20352
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18007,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "sha1": "fb43d7714feb0db8695781ba02d2aabe7a60ffdc",
+  "title": "Chitosan: A review of sources and preparation methods",
+  "doi": "https://doi.org/10.1016/j.ijbiomac.2020.12.005",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/fb43d7714feb0db8695781ba02d2aabe7a60ffdc/index.html",
+  "source_chars": 61392,
+  "markdown_chars": 11926,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "1.3 Bases used for the deproteinization and the deacetylation stages Even though NaOH, NaCIO, KOH, NaHCO $ {3} $ $ {3} $ $ {2} $ CO $ {3} $ $ {2} $ CO $ {3} $ $ {3} $ Ca(OH) $ {2} $ $ _{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该段碱列表的化学式下标严重错乱，多个 $ {3} $、$ {2} $ 等下标符号散落，无法还原原文所列碱的完整化学式，影响对可用碱种类的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "1.3 Bases used for the deproteinization and the deacetylation stages",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "该小节编号为 1.3，但前文小节为 3.1.1、3.1.2，后文为 3.1.4，编号明显不一致，疑为 OCR 或原文编号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Lactobacillus parucasei strain A3",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "菌种名 'parucasei' 疑为 'paracasei' 的 OCR 错误，同表后文出现 'Lactobacillus paracasei subsp. tolerans'，但此处照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Lactobacillus parucasei strain A3.Health risk:Group 1. Pre-fermentation:Mincing,then or air-drying at50℃,then separation.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "该行 'then or air-drying' 语句不通，且该行与上一行同属 Lactobacillus parucasei strain A3 条目，表格单元格内容在 OCR 中发生错位/合并，影响对预发酵步骤的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Demineralization=97.2%。Deproteinization=94%。",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该行使用中文句号 '。' 而非英文句点，且该行内容与上一页 Lactobacillus parucasei strain A3 条目分离，疑为表格跨页导致的归属不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Demineralization=81%。Deproteinization=30%-40%。",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该行使用中文句号 '。' 而非英文句点，属 OCR 标点错误，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Demineralization=87.97%。Deproteinization=90.76%。",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该行使用中文句号 '。' 而非英文句点，属 OCR 标点错误，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Demineralization=90.1%。Deproteinization=81.5%。Degree of deacetylation=26%。",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该行使用中文句号 '。' 而非英文句点，属 OCR 标点错误，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Demineralization=99.3%。Deproteinization=96.5%。",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该行使用中文句号 '。' 而非英文句点，属 OCR 标点错误，不影响数值理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 23,
+      "quote": "",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "提取文本从第 22 页直接跳至第 24 页，缺少第 23 页内容，可能遗漏 Table 3 的脚注或正文过渡内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Chitosan: A review of sources and preparation methods",
+  "self_check": "已核对：DA = 100% − DD 关系式；DD 分界 40%–75%、商业壳聚糖 DD 70%–90%；MW 阈值 20 kDa、120 kDa、30 kDa、22 kDa、9 kDa；脱矿 HCl 浓度最高 10% w/v、2–3 h；脱蛋白 NaOH 1%–10% (w/w)、65–100 °C、0.5–12 h；脱乙酰化 40%–50% (w/w) 碱；HCl 脱钙率 90.8%、乙酸 78%、柠檬酸 86.1%；KOH 40%–60% (w/v) 有效、>60% 贡献甚微；DD 第一小时约 68%、5 h 后 78%、1 h 后速率 1.2–1.8%/h；Table 1 中 DD 92.4%、MW 220 kDa、DD 65.0%–82.1%、黏度 67/60/309 cps；Table 3 中各产率与效率数值；生物法 CaCO3 去除 70%–90%、蛋白质去除 40%–94%、3–7 天。不确定处：第 10 页碱列表化学式下标错乱，无法确认原文所列全部碱；第 23 页缺失；Table 3 中部分条目跨页归属不清；菌种名 'parucasei' 疑为 'paracasei' 但照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8397,
+      "prompt_tokens": 16805,
+      "total_tokens": 25202,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15619,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Chitosan: A review of sources and preparation methods",
+    "translated_title": "壳聚糖：来源与制备方法综述",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

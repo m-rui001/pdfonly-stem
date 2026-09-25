@@ -1,0 +1,55 @@
+{
+  "sha1": "32ea3e4cf728dcaa620e39b52423def9013ffcc5",
+  "title": "Asymmetric Flexible MXene‐Reduced Graphene Oxide Micro‐Supercapacitor",
+  "doi": "https://doi.org/10.1002/aelm.201700339",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/32ea3e4cf728dcaa620e39b52423def9013ffcc5/index.html",
+  "source_chars": 35282,
+  "markdown_chars": 2862,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "reduced graphene",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第2页末尾为“reduced graphene”，第3页开头为“oxide (rGO) MSCs”，两者合成“grapheneoxide”时缺少空格，疑似跨页提取丢失空格。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "𝐿a(nm) = 560/𝐸4laser(𝐼D 𝐼G)―1",
+      "type": "疑似公式排版损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中“𝐸4laser”和“―1”可能表示E^4_laser和上标-1，但提取文本无法确定，照录以防臆测。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：MXene和rGO电导率6400±120/10 S cm^-1，厚度300 nm，面积电容2.4 mF cm^-2，体积电容80 F cm^-3，能量密度8.6 mW h cm^-3（0.2 W cm^-3），循环保留率97%/95%/75%，d间距12.62/3.88 Å，ID/IG≈1.33，指间距400 μm、指宽900 μm。公式因原文排版问题未能完全确认，已标注；其余数值与摘要和正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10845,
+      "prompt_tokens": 10362,
+      "total_tokens": 21207,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8682
+      }
+    },
+    "content_chars": 3649
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

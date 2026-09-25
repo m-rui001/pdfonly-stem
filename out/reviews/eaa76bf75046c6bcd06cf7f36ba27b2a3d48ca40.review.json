@@ -1,0 +1,64 @@
+{
+  "sha1": "eaa76bf75046c6bcd06cf7f36ba27b2a3d48ca40",
+  "title": "Globally resolved surface temperatures since the Last Glacial Maximum",
+  "doi": "https://doi.org/10.1038/s41586-021-03984-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/eaa76bf75046c6bcd06cf7f36ba27b2a3d48ca40/index.html",
+  "source_chars": 95965,
+  "markdown_chars": 3069,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "which are known with 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第3页结尾句子不完整，第4页开头为“varying levels of certainty 2, 16, 17 .”，原本可能为“with varying levels”，页码标记导致断句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "In K ), 25 TetraEther total",
+      "type": "疑似文本错误（OCR/字符丢失）",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此处上下文不通，疑似应为“U37^K'、TEX86”等，但原文提取为乱码，需人工核对。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "R2 values ranging from 0.65 to 0.90 (n = 14 records)",
+      "type": "疑似数据不一致",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "正文声称n=14，但Extended Data Table 2列出多个冰芯记录，具体数字存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：539条代理记录、6.8±0.8°C增温、17.2 ka冰消起始、9.2 ka间冰期开始、R²范围、EOF解释方差等，均来自提取文本并保持方向一致。公式已按原文保留。不确定处：U37 K'的表示可能丢失上标，但已照录可见字符；n=14与表数据不符，已在extraction_issues中标记；跨页断句问题已标记。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11134,
+      "prompt_tokens": 27209,
+      "total_tokens": 38343,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8830
+      }
+    },
+    "content_chars": 4091
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

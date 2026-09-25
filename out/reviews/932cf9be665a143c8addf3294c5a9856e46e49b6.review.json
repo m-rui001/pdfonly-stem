@@ -1,0 +1,117 @@
+{
+  "sha1": "932cf9be665a143c8addf3294c5a9856e46e49b6",
+  "title": "Size, temperature, and fitness: three rules",
+  "doi": "https://doi.org/10.17615/jtzc-v174",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/932cf9be665a143c8addf3294c5a9856e46e49b6/index.html",
+  "source_chars": 58666,
+  "markdown_chars": 10589,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "haiku",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "关键词列表中 'haiku' 出现在 'fitness metrics, haiku, phenotypic plasticity reaction norm, temperature'，但正文并未出现或解释 haiku，疑似 OCR 误抽或原文关键词异常；不影响主要论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Tukjapurkar",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献中作者名通常为 Tuljapurkar，此处 OCR 抽取为 Tukjapurkar，属拼写错误；不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Blanckenhorn",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中该姓氏在部分位置拼写为 Blanckenhorn，在参考文献中为 Blanckenhorn，但第 12 页出现 'Blankenhorn (2000)'，同一作者拼写不一致，疑似 OCR 或原文笔误；不影响论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Blankenhorn (2000)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同一作者在正文其他处和参考文献中为 Blanckenhorn，此处少一个 c，疑似 OCR 或原文拼写不一致；不影响论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "temperature size rule",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该处 'temperature size rule' 缺少连字符，而全文其他处为 'temperature-size rule'，属格式/OCR 小问题；不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "D. subobscura undergoing laboratory natural selection $ ( 1 3^{\\circ}, 1 8^{\\circ}, $ or $ 2 5^{\\circ} \\mathrm{C} ) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "温度数值 13°、18°、25°C 在 OCR 中被拆分为带空格的数学片段，但数值本身可辨；不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "In $ r\\sim 1 / kT $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "原文应为 ln r ∼ 1/kT，OCR 将 'ln' 抽取为 'In'，可能影响公式识别；但结合上下文可判断为自然对数。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Fig. 5. Effects of rearing temperature on development time, body mass, r and $ R_{0} $ for Drosophila melanogaster.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "图注中 'r and R₀' 的 R₀ 以数学片段形式出现，但图本身未提取，无法核对图中具体数值；不影响正文论证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Size, temperature, and fitness: three rules",
+  "self_check": "已核对摘要、正文与结论中的关键数值：Bigger is better 的 79% βσ > 0、中位数 0.15；其他形态性状中位数 0.02；存活 76%、繁殖力 85%、交配成功 74%；发育时间 84% βσ < 0、中位数 −0.145；温度—体型规律 109 项研究中 83% 负反应规范；Hotter is better 的 ln r ∼ 1/kT 及 Frazier 等（2006）结果。公式 ln r ∼ 1/kT 中 OCR 将 ln 抽为 In，已在 extraction_issues 中标注。未发现登记题名/DOI 与 OCR 正文身份冲突。仍不确定处：关键词中 haiku 是否为 OCR 误抽；部分作者名拼写不一致；图 5 具体数值未提取，无法核对。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6697,
+      "prompt_tokens": 14185,
+      "total_tokens": 20882,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13255,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Size, temperature, and fitness: three rules",
+    "translated_title": "大小、温度与适合度：三条规律",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

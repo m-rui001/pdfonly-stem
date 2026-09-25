@@ -1,0 +1,55 @@
+{
+  "sha1": "87e85cc867d3c50b9f8c182cff2799314c8ce4bf",
+  "title": "Glacial cooling and climate sensitivity revisited",
+  "doi": "https://doi.org/10.1038/s41586-020-2617-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/87e85cc867d3c50b9f8c182cff2799314c8ce4bf/index.html",
+  "source_chars": 59152,
+  "markdown_chars": 2871,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "global mean LGM cooling of 5.9 C ( 6.3 – 5.6 C",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "冷却值为负，但提取文本中负号缺失，上下文‘cooling’明确表示负值，推测原文有负号。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "tropical SSTs cooled by 3.5 C ( 3.7 – 3.3 C, 95% CI).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同样负号缺失，降温应为负值。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：ΔGMST=-5.9°C（-6.3~-5.6）、ΔGSST=-3.2°C（-3.4~-2.9）、ECS=3.2°C（2.2~4.3，含气溶胶）、3.5°C（不含气溶胶）。公式（1）（2）已按原文保留。注意原始提取文本中多处负号缺失，markdown中已按上下文语义补充负号，并在extraction_issues中标出。其余如R²=0.65、CE/RMSE等均与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9410,
+      "prompt_tokens": 16870,
+      "total_tokens": 26280,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7151
+      }
+    },
+    "content_chars": 3630
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

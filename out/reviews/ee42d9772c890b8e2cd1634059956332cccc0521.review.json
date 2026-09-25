@@ -1,0 +1,45 @@
+{
+  "sha1": "ee42d9772c890b8e2cd1634059956332cccc0521",
+  "title": "Additive engineering for robust interphases to stabilize high-Ni layered structures at ultra-high voltage of 4.8 V",
+  "doi": "https://doi.org/10.1038/s41560-022-01020-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ee42d9772c890b8e2cd1634059956332cccc0521/index.html",
+  "source_chars": 59712,
+  "markdown_chars": 4124,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "a characterization method to directly evaluate the bulk level with",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾句子在'with'处中断，第6页开头为图4的图注和数值，未接续该句，后续正文缺失‘statistical significance was needed. Therefore, we turn to...’等内容，疑似提取时正文被图注覆盖或顺序颠倒。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：初始容量235 mAh/g，97%保持率，以及228.02 mAh/g（97.64%）一致；基线4.6V和4.8V保持率83.78%和77.27%与正文一致；1% LiDFP最佳，2%和0.5%较差；EIS中1%时Rct极小；XPS检测到Li3PO4和LiF；DFT催化水解机制与正文描述一致；HAADF-STEM无岩盐层；软XAS中Mn和Co还原被抑制；XRF显示TM沉积减少70%，Ni溶解最多，Co最少，Ni沉积量4.26 μg/cm2；断层扫描颗粒数2245和2349；SOC变化和各项异性极化降低，小体积高球形度敏感；XRD晶格参数更接近原始值；裂纹减少。公式未出现。主要不确定之处为跨页缺失的正文句子，但结论方向不受影响。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10036,
+      "prompt_tokens": 15119,
+      "total_tokens": 25155,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7104
+      }
+    },
+    "content_chars": 4912
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

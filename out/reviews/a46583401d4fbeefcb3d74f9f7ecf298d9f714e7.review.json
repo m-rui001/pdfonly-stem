@@ -1,0 +1,118 @@
+{
+  "sha1": "a46583401d4fbeefcb3d74f9f7ecf298d9f714e7",
+  "title": "DC Microgrids–Part I: A Review of Control Strategies and Stabilization Techniques",
+  "doi": "https://doi.org/10.1109/tpel.2015.2478859",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a46583401d4fbeefcb3d74f9f7ecf298d9f714e7/index.html",
+  "source_chars": 97100,
+  "markdown_chars": 16213,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "oii Output current of converter #i.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "变量名应为 $i_{oi}$，OCR 将首字母 i 误识别为 o，导致符号不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ \\theta $ Graph Laplacian of the communication network.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "图拉普拉斯矩阵符号应为 $\\Theta$，OCR 丢失大写形式，与后文 $\\Theta = [\\theta_{ij}]$ 不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "where $ v_{ \\mathrm{D C i}}^{} $ is the output of the droop controller",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $v_{\\mathrm{DCi}}^{*}$ 的上标星号在 OCR 中丢失，导致参考值与实际值混淆。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "There are essentially three independent inputs to the POL system; control input $ \\hat{v}{\\mathrm{ref}} $ , load current $ \\hat{i}{\\mathrm{load}} $ and supply side voltage $ \\hat{v}{\\mathrm{DC}} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $\\hat{v}_{\\mathrm{ref}}$、$\\hat{i}_{\\mathrm{load}}$、$\\hat{v}_{\\mathrm{DC}}$ 的下标在 OCR 中丢失，导致符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "When the supply voltage $ \\hat{v}{\\mathrm{D C}} $ is provided through the input filter",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $\\hat{v}_{\\mathrm{DC}}$ 的下标在 OCR 中丢失，导致符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Typically they are chosen as 6 dB and $ 60^{0} $ , respectively.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "相位裕度单位应为度符号 $60^{\\circ}$，OCR 识别为上标 0。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "The common way of meeting impedance criteria is to smooth the resonant peak of the input filter by adding physical resistors in series and/or parallel with respective inductors and capacitors [31], [40], [82], [93].",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该句在原文中应属于稳定化策略小节，但 OCR 将其置于图11说明之后，阅读顺序略有错位，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "where $ v_{ \\mathrm{D C}}^{} $ is the rated value of DC voltage",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $v_{\\mathrm{DC}}^{*}$ 的上标星号在 OCR 中丢失，导致额定值与实际值混淆。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "DC Microgrids–Part I: A Review of Control Strategies and Stabilization Techniques",
+  "self_check": "已核对关键公式：式(1)(2)下垂控制参考值、式(6)负增量电阻、式(7)(8) $Z_N$ 与 $Z_D$、式(9)环路增益、式(10)闭环输入阻抗、式(12)小回路增益、式(13) $T_{MLG",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 23939,
+      "total_tokens": 33939,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19596,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "DC Microgrids–Part I: A Review of Control Strategies and Stabilization Techniques",
+    "translated_title": "直流微电网——第一部分：控制策略与稳定技术综述",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

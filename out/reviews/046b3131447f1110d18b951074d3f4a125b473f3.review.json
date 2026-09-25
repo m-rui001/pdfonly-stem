@@ -1,0 +1,72 @@
+{
+  "sha1": "046b3131447f1110d18b951074d3f4a125b473f3",
+  "title": "The Housing Market Impacts of Shale Gas Development",
+  "doi": "https://doi.org/10.1257/aer.20140079",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/046b3131447f1110d18b951074d3f4a125b473f3/index.html",
+  "source_chars": 108044,
+  "markdown_chars": 3558,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 21,
+      "quote": "Lot Size (acres) 3.47 1.52 .87 3.23 4.07 (11.5) (233) (5.97) (352) (16.7)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格中GW和PA/Off列的标准差分别为233和352，远大于均值，数值异常，可能为数据录入或提取错误（如单位或位数问题），但无法确认正确值。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Distance to nearest MSA (km) 22.3 18.1 22.8 15.4 19.8 (11.1) (10.5) (12.6) (7.84) (13.5)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "PA/Off列的标准差7.84，明显小于其他列，且平均值15.4也比GW列小，可能存在样本或提取异常，但无强证据。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 26,
+      "quote": "PA = GWCR + Adjacency + Vicinity + Macro PB = Vicinity + Macro",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第26页的公式排列中，PB的定义缺少邻接成分（应为Vicinity + Macro），与第27页的定义一致，但此处可能因排版或提取导致公式缺失部分内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "New Undrilled Permits .052** (.025) Old Undrilled Permits .040* (.023)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "表4 Panel C中1km列的新旧未钻许可系数为正且显著，与正文描述（'positive effect from permits'）一致，但其他距离列均为不显著或负值，此处的正效应可能是真实情况，但符号与其他列不一致，需要谨慎。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：DDNNM 1.5km缓冲区GWCR为-16.7%（表2）；DDD边界样本GWCR在1km为-22.4%、1.5km为-10%（表3列4）；1.5km内GW净效应-3.4%（-10%+6.6%）；最近一年平均损失$33,214（GW）和收益$8,954（PWSA）。邻近效应中，新井眼（≤365天）系数约0.0018，未钻许可负约-0.0017（表5）。公式（1）（2）（3）和符号定义已按原文保留。不确定处包括：表1中部分标准差异常大（疑数据问题），表4 Panel C在1km的新许可正效应与正文描述一致但其他距离符号不一致，附录表6中'% from Wells'计算方式表述有歧义（原文本已按字面保留）。未发现其他数值与结论矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2964,
+      "prompt_tokens": 26252,
+      "total_tokens": 29216,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 24
+      }
+    },
+    "content_chars": 5194
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

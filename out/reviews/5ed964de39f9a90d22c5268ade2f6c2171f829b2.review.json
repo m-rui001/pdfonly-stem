@@ -1,0 +1,63 @@
+{
+  "sha1": "5ed964de39f9a90d22c5268ade2f6c2171f829b2",
+  "title": "Machine learning at the energy and intensity frontiers of particle physics",
+  "doi": "https://doi.org/10.1038/s41586-018-0361-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5ed964de39f9a90d22c5268ade2f6c2171f829b2/index.html",
+  "source_chars": 58765,
+  "markdown_chars": 2387,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "With machine-learning correction With clustering 50 Actionable insights from computing metadata Processing of the industrial-scale data samples",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页面上方疑似图表标题与正文拼接异常，'With machine-learning correction With clustering' 之后直接出现 'Actionable insights from computing metadata'，中间可能缺少正文段落或图注说明。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "60 The extreme rate at which the LHC collides protons, along with the size and complexity of the LHC detectors, results in the production of enormous data samples.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'60' 为疑似残留的图表纵轴刻度数字，后面句子完整但数字孤立出现，可能是页面元素误入正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "b 1.5 1.0 0.5 –1 –0.5 0 BDT output 0.5 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图2描述后的'Normalized data and models'与轴标签混排，'b 1.5 1.0 0.5 –1 –0.5 0 BDT output 0.5 1' 疑似图b的坐标轴文字被提取成正文，且缺少图例说明。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中所有关键数值：LHC数据率（1 PB/s原始，50 TB/s压缩后）、触发保留率（1/100,000）、年数据量（20 PB）、Higgs发现中CMS灵敏度提升等效50%数据、ATLAS H→ττ灵敏度提升40%、Bs衰变精度25%、RNN误判率降低4倍/3倍、NOvA效率提高40%、表1的P值比范围（2-20）及额外数据量（15%-125%）。公式仅出现E=mc²和标准模型相关表述，已按原文保留。不确定处：图1中显示'91 GeV'在正文中未明确提及但图注出现，已保留；提取文本中未发现图4的完整坐标轴说明，但正文描述已足够。跨页疑点已列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2039,
+      "prompt_tokens": 14355,
+      "total_tokens": 16394,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 41
+      }
+    },
+    "content_chars": 3845
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

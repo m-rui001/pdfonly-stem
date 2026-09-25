@@ -1,0 +1,64 @@
+{
+  "sha1": "752c4cd1508648cc3203a85653d14b8bd7f55bd9",
+  "title": "Phase shifting algorithms for fringe projection profilometry: A review",
+  "doi": "https://doi.org/10.1016/j.optlaseng.2018.04.019",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/752c4cd1508648cc3203a85653d14b8bd7f55bd9/index.html",
+  "source_chars": 190848,
+  "markdown_chars": 4945,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 34,
+      "quote": "r σφ = 2 σn N BF",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "公式(79)与(78)类似，根号和分数线信息丢失，无法准确表示相位误差与F的关系。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "In essence, SL methods can be regarded as a 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该句在页尾中断，下一页开头为 'modification of stereo vision.'，结合上下文应为 'a 3D modification'，但提取文本缺少 'D'，可能因页边截断丢失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "σφ = r 2 σn N B",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "公式(78)的文本明显缺少根号与除法结构，应为 σ_φ = sqrt(2/N) * σ_n / B 之类的形式，当前文本无法正确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的关键数值与结论，包括：三步/四步相移公式、双三步相位偏移π/3、Hariharan θ范围86°–94°及前置因子0.5±0.001、改进SNR提升幅度15.5%–23.6%、N步算法对谐波敏感性规则、绝对相位恢复算法所需图案数（3+3需6幅，双频/双频3+2需5幅，2+2/CPS/PCPS需4幅，散斑嵌入需3幅或2幅）等。公式(78)(79)提取疑似损坏，已照录可见文本并在extraction_issues中标出，未做推测修复。其他公式与数值均按提取文本原样保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6909,
+      "prompt_tokens": 49454,
+      "total_tokens": 56363,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3253
+      }
+    },
+    "content_chars": 6215
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

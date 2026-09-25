@@ -1,0 +1,126 @@
+{
+  "sha1": "90d9514372acfb15e69dca21fef78edc7ba965f1",
+  "title": "Highly Luminescent Colloidal Nanoplates of Perovskite Cesium Lead Halide and Their Oriented Assemblies",
+  "doi": "https://doi.org/10.1021/jacs.5b11199",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/90d9514372acfb15e69dca21fef78edc7ba965f1/index.html",
+  "source_chars": 25554,
+  "markdown_chars": 5360,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{P b B r}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式PbBr₂的下标2在OCR中丢失，显示为PbBr{2}，可能影响化学计量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "CsPbBr $ {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式CsPbBr₃的下标3在OCR中显示为{3}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "$ \\mathrm{C s P b B r}_{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式CsPbBr₃在OCR中字母间有空格，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "CsPbX",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文可能为CsPbX₃，但OCR中缺失下标3，影响化学式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "CsPbBr $ {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式CsPbBr₃的下标3在OCR中显示为{3}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{C l}^{-} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "氯离子Cl⁻在OCR中显示为Cl^{-}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{I}^{-} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "碘离子I⁻在OCR中显示为I^{-}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "CsPbBr $ ^{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式CsPbBr₃的上标3在OCR中显示为^{3}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "CsPbX $ {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "化学式CsPbX₃的下标3在OCR中显示为{3}，格式异常但含义可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Highly Luminescent Colloidal Nanoplates of Perovskite Cesium Lead Halide and Their Oriented Assemblies",
+  "self_check": "已核对关键数值：PLQY 84%、发射范围385-690 nm、厚度约3 nm对应5个晶胞、d间距0.58 nm、SAXS q值0.327和1.068 nm⁻¹对应19.5和5.77 nm、PLQY值84.4±1.8%、44.7±2.6%、10±0.5%等均与原文一致。公式符号如CsPbBr₃、PbBr₂等因OCR格式问题已照录并标记。结论方向与原文一致。不确定处：部分化学式下标/上标格式异常，但含义可辨，未影响理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4215,
+      "prompt_tokens": 7858,
+      "total_tokens": 12073,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7629,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Highly Luminescent Colloidal Nanoplates of Perovskite Cesium Lead Halide and Their Oriented Assemblies",
+    "translated_title": "高发光钙钛矿铯铅卤化物胶体纳米片及其定向组装体",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "17e9415702229d00313ef5261ec7dc8d757504e4",
+  "title": "Strain-retardant coherent perovskite phase stabilized Ni-rich cathode",
+  "doi": "https://doi.org/10.1038/s41586-022-05238-3",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/17e9415702229d00313ef5261ec7dc8d757504e4/index.html",
+  "source_chars": 38062,
+  "markdown_chars": 2263,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "where x in Li1xNi0.8Co0.1Mn0.1O2 is close to 1",
+      "type": "疑似抽取错误（符号缺失）",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式中的 Li1x 应为 Li1-x，减号在抽取中丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "S(Q)=1+ coh (Q)- ∑ ci |fi (Q)|2 ∑ ci |fi (Q)|2",
+      "type": "公式排版缺失/抽取不完整",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式（2）的分式结构缺少分子分母界限，原文应为 S(Q)=1+[Icoh(Q)-Σci|fi|²]/Σci|fi|²，但抽取文本中 Icoh 与减号和分母混排，无法直接复原。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：放电容量 210 vs 220 mAh/g，容量保持率 94.7% vs 60.2%，c 轴变化 4.37% vs 1.54%，体积变化 6.52% vs 2.63%，剪切应变减少 70%，(003)/(110) 应变约为对比材料的 20%/30%，极化增量 3.165 mV/cycle，PDF 键长变化 0.03 Å。公式 1（Williamson-Hall）和公式 3（PDF 变换）完整，公式 2 的排版有缺失，已在 extraction_issues 中标注。另 Li1x 疑为 Li1-x，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5116,
+      "prompt_tokens": 10116,
+      "total_tokens": 15232,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3258
+      }
+    },
+    "content_chars": 3133
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

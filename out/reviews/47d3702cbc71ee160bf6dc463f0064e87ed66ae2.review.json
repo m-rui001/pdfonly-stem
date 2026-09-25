@@ -1,0 +1,63 @@
+{
+  "sha1": "47d3702cbc71ee160bf6dc463f0064e87ed66ae2",
+  "title": "Origin of structural degradation in Li-rich layered oxide cathode",
+  "doi": "https://doi.org/10.1038/s41586-022-04689-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/47d3702cbc71ee160bf6dc463f0064e87ed66ae2/index.html",
+  "source_chars": 58384,
+  "markdown_chars": 3523,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "This research was also supported by the National Key R&D Program of China\n(2016YFB0700600) and the Shenzhen Science and Technology Research Grants (No. 17\nZDSYS201707281026184).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文本在第17页末尾和第18页开头之间断裂，'No. 17'后接下一行'ZDSYS201707281026184'，疑为跨页拼接，但编号本身可能被截断，无法确定是否完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Synthesis of primary particle, rather than secondary particles, was purposefully\ncontrolled for minimizing interference from morphological factors31.\nSupplementary Fig. 1 shows",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第3页末句在'purposefully'后中断，第4页开头以'controlled for...'继续，中间插入页码标记和页眉，原文顺序尚可辨认但存在跨页断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "We obtained full\nrocking curves around the (003) Bragg reflection and collected 2D CMCD patterns using a 2D\ndetector at two-theta angles of 18.6° (Δθ = ±0.15°), respectively.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "'respectively'前仅提及两个角度数值（18.6°和±0.15°），语义上可能缺少数值对应关系，但无明确证据证明缺词或错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Li1.2Ni0.13Mn0.54Co0.13O2组成、容量273 mAh g⁻¹、电压平台4.47 V、BCDI在4.43 V时全局应变最大、4.46 V应变减小与DEMS氧信号同步、CMCD出现D2环的电压4.472 V、D3环对应Li2Mn2O4 (101)、EELS O-K预峰近表面消失、Mn价态表面降低。公式未出现，无需处理。结论方向与摘要一致：纳米应变累积是氧释放和电压衰减的根因，O2相设计可抑制。不确定处：附录中GITT、DFT具体数值未在正文给出，未引入外部信息。CMCD中'22 sets of CMCD patterns each includes 302'等细节已保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2927,
+      "prompt_tokens": 14915,
+      "total_tokens": 17842,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 30
+      }
+    },
+    "content_chars": 5140
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

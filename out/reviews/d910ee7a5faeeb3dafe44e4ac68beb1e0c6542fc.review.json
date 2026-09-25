@@ -1,0 +1,55 @@
+{
+  "sha1": "d910ee7a5faeeb3dafe44e4ac68beb1e0c6542fc",
+  "title": "Emergence of 3D Printed Dosage Forms: Opportunities and Challenges",
+  "doi": "https://doi.org/10.1007/s11095-016-1933-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d910ee7a5faeeb3dafe44e4ac68beb1e0c6542fc/index.html",
+  "source_chars": 76707,
+  "markdown_chars": 2796,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "printing speed of about 1-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第7页末尾句子以‘1-’中断，第8页开头接续‘3 cm/hour’，需合并为‘1-3 cm/hour’。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "3 cm/hour (50).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "承接上一页的‘1-’，构成完整数值。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：75-85%不良事件、1.4% RSD、52 µg、0.2 µm分辨率、1000 mg ZipDose®、220°C FDM温度、50%载药量、0.4-0.8 mm喷嘴孔径、各技术最小层厚（SLA 100 µm、PB 200 µm、SLS 100 µm、FDM 100 µm、EXT 800 µm）。结论方向与摘要一致：3D打印机遇大但挑战多。注意原文第13页‘10-12 mole per tablet’中的‘mole’照录，可能为笔误（应为mg或mmol），但无文本证据，未改动。跨页断裂已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5545,
+      "prompt_tokens": 19404,
+      "total_tokens": 24949,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3417
+      }
+    },
+    "content_chars": 3571
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

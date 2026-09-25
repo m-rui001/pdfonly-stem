@@ -1,0 +1,55 @@
+{
+  "sha1": "8c761eba29cdc07436f0eb4968a4103c48adb48f",
+  "title": "Ultra-selective high-flux membranes from directly synthesized zeolite nanosheets",
+  "doi": "https://doi.org/10.1038/nature21421",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8c761eba29cdc07436f0eb4968a4103c48adb48f/index.html",
+  "source_chars": 63213,
+  "markdown_chars": 2414,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "fast in-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第5页末尾以 'fast in-' 结束，第6页开头为 'plane growth until a well-faceted nanosheet...'，显然 'in-plane' 被跨页拆断，中间缺 'plane'，需按原PDF核对。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "performance 8",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第9页末尾 'good performance 8' 中 '8' 疑似页码或多余字符，后接第10页 'for n-/i-butane'，原句应为 'good performance for n-/i-butane'，跨页拼接需核对。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数据：纳米片厚度5 nm（2.5晶胞）、横向尺寸1.5–2.0 µm、膜厚250 nm–1 µm、二甲苯分离因子（125°C ~2500，150°C ~2000，最高~8000）、渗透率0.56×10⁻⁶ mol·Pa⁻¹·m⁻²·s⁻¹（150°C）、长期稳定性数据、扩散系数比1.2×10⁴和4×10⁴等，所有数值均直接引自提取文本。不确定之处：补充表S1中单位格式有乱码，但数字已照录；跨页断裂处未补词，仅标出疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7872,
+      "prompt_tokens": 16688,
+      "total_tokens": 24560,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5930
+      }
+    },
+    "content_chars": 3285
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

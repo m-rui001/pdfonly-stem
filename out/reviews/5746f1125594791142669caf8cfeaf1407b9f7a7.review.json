@@ -1,0 +1,126 @@
+{
+  "sha1": "5746f1125594791142669caf8cfeaf1407b9f7a7",
+  "title": "All The Catalytic Active Sites of MoS 2 for Hydrogen Evolution",
+  "doi": "https://doi.org/10.1021/jacs.6b05940",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5746f1125594791142669caf8cfeaf1407b9f7a7/index.html",
+  "source_chars": 43423,
+  "markdown_chars": 4802,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "The turnover frequencies (Tafel slopes) of the edge sites, sulfur vacancies, and grain boundaries are estimated to be $ 1 5 \\mathrm{s}^{-1} $ $ (6 5-7 5 \\mathrm{m V / d e c}) $ $ 6. 3 \\mathrm{s}^{-1} $ $ (6 5-8 5 \\mathrm{m V / d e c}) $ , and $ 0. 2 \\mathrm{s}^{-1} $ $ (1 2 0-1 6 0 \\mathrm{m V / d e c}) $ , respectively.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "摘要中 TOF 与 Tafel 斜率之间缺少逗号或连接词，导致三个位点的数值对应关系在文本上不清晰；正文第 4 页有更明确的对应表述。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The turnover frequency (TOF) of the edge sites, sulfur vacancies, and grain boundaries are quantitatively evaluated to be $ 1 5 \\pm 3 \\mathrm{s}^{-1} $ $ 6. 3 \\pm 0. 8 \\mathrm{s}^{-1} $ , and around $ 0. 2 \\mathrm{s}^{-1} $ , respectively.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "三个 TOF 数值之间缺少逗号，但数值本身可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "We can find the Tafel slope and exchange current density by fitting the Tafel plots to the equation of $ \\eta=\\rho\\log (j)+\\log (j_{0}) $ , where $ \\eta $ is the overpotential (vs. RHE), $ j_{0} $ the exchange current density, and $ \\rho $ the Tafel slope $ ^{3 2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中 log(j0) 前缺少系数，通常 Tafel 方程应为 η = ρ log(j) + ρ log(j0) 或 η = a + b log(j)，但此处照录原文可见形式，不擅自补写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "with exchange current densities in the range of $ 3 0-6 0 \\ \\mu\\mathrm{A/cm^{2}} $ and Tafel slopes in the range of 65-75 meV/dec.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Tafel 斜率单位应为 mV/dec，此处 OCR 为 meV/dec，与全文其他处及摘要一致写法不符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Figure 4. Quantitative evaluation for the catalytic activities of each active site. (a) XPS results for monolayer $ \\mathrm{M o S_{2}} $ films with different densities of sulfur vacancies. (b) Polarization curve of the $ \\mathrm{M o S_{2}} $ films with different densities of sulfur vacancies. (b) Exchange current densities (upper) and Tafel slopes of the films as a function of the density of sulfur vacancies. The dashed lines serve to guide the vision. (c) Exchange current densities (upper) and Tafel slopes of the $ \\mathrm{M o S_{2}} $ flakes as a function of the edge length per unit area.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图注中 (b) 出现两次，且 (c) 与正文中 Fig. 4c 和 Fig. 4d 的对应关系混乱，可能为 OCR 抽取时图注子图编号错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "while the title grain boundary is not catalytically active.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "结合上下文应为 tilt grain boundary（倾斜晶界），OCR 误为 title grain boundary。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Briefly molybdenum chloride $ (\\mathrm{M o C l}{5}) $ powder (99.99% Sigma-Aldrich) was placed at the center of the furnace",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 MoCl5 的下标 5 在 OCR 中丢失，显示为 MoCl{5} 或 MoCl5 不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Monolayer $ \\mathrm{M o S{2}} $ flakes were grown using a different chemical vapor deposition $ (\\mathrm{C V D})^{6} $ , in which $ \\mathrm{M o O_{3}} $ $ (99.99\\% $ Sigma-Aldrich) instead of $ \\mathrm{M o C l_{5}} $ was used as the precursor.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "MoS2 的化学式下标 2 在 OCR 中丢失，显示为 MoS{2}。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "All computations in this work were performed with the plane-wave software code VASP (Vienne ab initio simulation package) $ ^{37} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "VASP 全称应为 Vienna ab initio simulation package，OCR 误为 Vienne。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "All The Catalytic Active Sites of MoS2 for Hydrogen Evolution",
+  "self_check": "已核对摘要、正文和结论中的关键数值：边缘位点 TOF 15 ± 3 s−1、Tafel 斜率 65–75 mV/dec；硫空位 TOF 6.3 ± 0.8 s−1、Tafel 斜率 65–85 mV/dec；晶界 TOF 约 0.2 s−1、Tafel 斜率 120–160 mV/dec；硫空位最优密度 7–10%，交换电流密度 30–60 μA/cm2；薄膜交换电流密度 40 μA/cm2 vs. 薄片 3.5 μA/cm2；修复后薄膜交换电流密度从 30.1 μA/cm2 降至 1 μA/cm2，Tafel 斜率从 70 升至 125 mV/dec；无空位合并薄膜交换电流密度 0.04 μA/cm2，Tafel 斜率约 160 mV/dec；Table 1 吸附自由能数值已逐项核对。公式 η = ρ log(j) + log(j0) 照录原文，未补写可能缺失的系数。仍不确定之处：图注子图编号存在 OCR 错位，但正文对 Fig. 4c 和 Fig. 4d 的描述可辅助理解；MoCl5 和 MoS2 下标在部分位置丢失，已按可见文本保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4625,
+      "prompt_tokens": 11402,
+      "total_tokens": 16027,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9521,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "All The Catalytic Active Sites of MoS2 for Hydrogen Evolution",
+    "translated_title": "MoS2用于析氢反应的所有催化活性位点",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

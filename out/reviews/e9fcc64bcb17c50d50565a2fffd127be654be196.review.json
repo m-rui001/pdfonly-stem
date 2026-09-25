@@ -1,0 +1,73 @@
+{
+  "sha1": "e9fcc64bcb17c50d50565a2fffd127be654be196",
+  "title": "Design, Implementation, and Evaluation of a Point Cloud Codec for Tele-Immersive Video",
+  "doi": "https://doi.org/10.1109/tcsvt.2016.2543039",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e9fcc64bcb17c50d50565a2fffd127be654be196/index.html",
+  "source_chars": 67511,
+  "markdown_chars": 2442,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "As shown in Fig . the colors are written to 8x8 blocks based on the depth first octree taversal. The grid entries in Fig . correspond to the order of the octree traversals",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "图中编号缺失（Fig .），且‘taversal’为拼写错误。抽取文本中该图编号未保留，但图7已存在，可能为引用遗漏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "W\n\nITH increasing capability",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "首字母与单词被分页符和空行断开，属于排版抽取问题，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "we present an inter-prediction algorithm that partitions the octree voxel space in N times N times N macroblocks (N=8,16,32)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "摘要中写N=8,16,32，但正文明确K=4对应16×16×16，并提到K=3为8×8×8、K=5为32×32×32。摘要表述可能简写或笔误，但正文一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "To encode the color attributes, we defined a mapping of color per vertex attributes in the traversed octree to an image grid and use legacy image coding method based on JPEG.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "该句在页尾被分页符截断，后续内容在第6页继续，但文本本身可读，无实质缺词。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：帧间预测比特率节省20.5%/25.5%/34.8%、几何PSNR下降约10 dB、ICP收敛约30%、共享宏块>60%、颜色编码比特率降低至1/10、四元数量化位数16比特、宏块K=4为16×16×16、pc=50%、C_var_thresh=100、icp_fit_thresh=4倍目标分辨率。公式（几何PSNR、对称RMS、YUV PSNR）按原文保留。主观实验用户数20、年龄段、MOS量表等均已核对。不确定处：摘要中N=8,16,32与正文K=3/4/5对应关系略有出入，已在extraction_issues中标注。另图编号缺失已标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2208,
+      "prompt_tokens": 16774,
+      "total_tokens": 18982,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 33
+      }
+    },
+    "content_chars": 4117
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

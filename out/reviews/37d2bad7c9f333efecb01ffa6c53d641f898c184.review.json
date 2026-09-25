@@ -1,0 +1,82 @@
+{
+  "sha1": "37d2bad7c9f333efecb01ffa6c53d641f898c184",
+  "title": "Phase‐Transformation Ductilization of Brittle High‐Entropy Alloys via Metastability Engineering",
+  "doi": "https://doi.org/10.1002/adma.201701678",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/37d2bad7c9f333efecb01ffa6c53d641f898c184/index.html",
+  "source_chars": 31387,
+  "markdown_chars": 3064,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "hexagonal cubic phase (hcp)",
+      "type": "疑似用词错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "hcp 通常指 hexagonal close-packed，原文写为 hexagonal cubic phase，可能为笔误；但无强证据，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "decreasing stain-hardening rate correlates",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文多次使用 strain-hardening，此处 stain 疑为 strain 的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "𝜀'() = 𝑑'() − 𝑑-,'() /𝑑-,'()",
+      "type": "疑似 OCR 字符损坏",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中的希腊字母和下标被替换为'()和-等符号，无法直接识别，但后文明确给出 dhkl 和 d0,hkl 的定义，可推断正确形式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "metastablility-engineering strategy",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "metastability 误拼为 metastablility，文本内其他位置均为 metastability。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "gave rise multiple benefits",
+      "type": "疑似语法缺词",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "gave rise to 通常带 to，此处可能漏掉，但语义可理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Ta1 强度~1400 MPa、塑性~4%；Ta0.6 和 Ta0.5 均匀延伸率>20%和>27%，断裂强度~1100 MPa；Ta0.4 双屈服；应变硬化率 Ta0.5 约1.4 GPa；中子衍射相变起始应力约400 MPa；Ta0.5 屈服约700 MPa。公式按原文定义改写为 ε_hkl = (d_hkl − d0,hkl)/d0,hkl，与后文变量说明一致。性能对比数据（2~3倍、1.2~1.5倍）已保留。不确定：hcp 相名称的用词、stain/strain 拼写、公式字符 OCR 损坏仅标记未改动。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9880,
+      "prompt_tokens": 9014,
+      "total_tokens": 18894,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7312
+      }
+    },
+    "content_chars": 4593
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

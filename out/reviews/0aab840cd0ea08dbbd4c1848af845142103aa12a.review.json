@@ -1,0 +1,77 @@
+{
+  "sha1": "0aab840cd0ea08dbbd4c1848af845142103aa12a",
+  "title": "Trace doping of multiple elements enables stable battery cycling of LiCoO2 at 4.6 V",
+  "doi": "https://doi.org/10.1038/s41560-019-0409-z",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/0aab840cd0ea08dbbd4c1848af845142103aa12a/index.html",
+  "source_chars": 56114,
+  "markdown_chars": 7242,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "the electrolyte was a solution of $ 1 \\mathrm{M} \\mathrm{L i P F}{6} $ in ethylene and dimethyl carbonate (1:1 in volume)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "电解液溶剂原文应为 ethylene carbonate 和 dimethyl carbonate，OCR 仅提取为 ethylene，缺失 carbonate，影响电解液组成的准确复现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "the electrolyte was a solution of $ 1 \\mathrm{M} \\mathrm{L i P F}{6} $ in ethylene and dimethyl carbonate (1:1 in volume)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "LiPF6 的化学式下标 6 在 OCR 中丢失，显示为 LiPF{6}，影响化学式准确性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "the electrolyte was a solution of $ 1 \\mathrm{M} \\mathrm{L i P F}{6} $ in ethylene and dimethyl carbonate (1:1 in volume)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "电解液溶剂原文应为 ethylene carbonate 和 dimethyl carbonate，OCR 仅提取为 ethylene，缺失 carbonate，影响电解液组成的准确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Trace doping of multiple elements enables stable battery cycling of LiCoO2 at 4.6 V",
+  "self_check": "已核对关键数值：理论容量 274 mAh g-1、实际容量 173 mAh g-1（x=~0.63，4.45 V）、4.5 V 容量增加 6.9%（~185 mAh g-1）、4.6 V 容量增加 27.2%（~220 mAh g-1）、TMA-LCO 半电池 100 次循环后 174 mAh g-1 和 86% 保持率、首圈库仑效率 93.7% vs. 90.2%、全电池 70 次循环后 178.2 mAh g-1 vs. 51.3 mAh g-1、放电电压 3.90 V vs. 3.51 V、Ti 表面层能量低 0.7 eV、U 值 Co 3d 4.91 eV 和 Ti 3d 5.0 eV、板模型 42 Li/84 O/42 Co、脱锂提取 30/42 Li、真空层 18 Å、k 点 2×3×1、截断 520 eV、力小于 0.01 eV Å-1、高斯展宽 0.05 eV。公式符号如 LiCoO2、Li1-xCoO2、Li0.29CoO2、O3/H1-3 相、ABCABC/ABAB 堆垛等已按原文保留。仍不确定处：电解液溶剂 ethylene 后缺失 carbonate 已标为 OCR 问题；LiPF6 下标丢失已标为公式符号损失；其他化学式下标在 OCR 中偶有丢失但未逐一列出，因不影响主要论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5259,
+      "prompt_tokens": 14968,
+      "total_tokens": 20227,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9103,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "manual_spot_check": {
+    "scope": "只对照生成HTML中的提取文本；未读取PDF或图像。",
+    "checked": "逐项核对核心容量、电压、循环次数、掺杂比例、50个亚域、RIXS能量、DFT能量差与U值；核对化学式/堆垛序列；检查报告疑点在具体HTML页是否存在。",
+    "findings": [
+      "确认第4页正文在句中断开，第5页图1图注之后接续；值4.6 V存在，问题是图注插入导致顺序中断而非信息缺失。",
+      "确认“Synchrortron”位于HTML第10页，是文本中的拼写疑点；无法仅凭HTML断定错误源于OCR还是原稿。",
+      "确认电解液原文写作“ethylene and dimethyl carbonate”，没有将 ethylene 展开为 ethylene carbonate。",
+      "将XPS方法校正为源文的Mg/Al Kα，并补回DFT的U值、截断能与k点参数。"
+    ],
+    "reviewer": "Codex"
+  }
+}

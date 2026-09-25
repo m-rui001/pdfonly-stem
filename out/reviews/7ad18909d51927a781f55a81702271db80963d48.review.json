@@ -1,0 +1,63 @@
+{
+  "sha1": "7ad18909d51927a781f55a81702271db80963d48",
+  "title": "Regulating surface potential maximizes voltage in all-perovskite tandems",
+  "doi": "https://doi.org/10.1038/s41586-022-05541-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7ad18909d51927a781f55a81702271db80963d48/index.html",
+  "source_chars": 55890,
+  "markdown_chars": 3590,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "Encouraged by the reduced interfacial recombination and surface homogeneity imparted by the PDA treatment, 4PACz/perovskite/C60/ALD-SnOx/Ag, where Me-4PACz is a self-assembled monolayer of [4-(3,6-Dimethyl-9H-carbazol-9-yl)butyl]phosphonic acid.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，第6页文字 'Encouraged by ... treatment,' 后直接跳到第7页 'we fabricated WBG solar cells. The device structure was ITO/NiOx/Me-4PACz/perovskite/C60/ALD-SnOx/Ag'，但提取文本中第6页末尾缺少 'we fabricated WBG' 等连接词，且 'device structure was' 后直接列出 '4PACz/...' 导致结构缺失 'ITO/NiOx/Me-' 前缀。疑似跨页时页眉/图注干扰或文字抽取排序错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "11. Best Research-Cell Efficiency Chart | Photovoltaic Research | NREL, (available at https://www.nrel.gov/pv/cell-efficiency.html).",
+      "type": "引用格式疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "参考11的文本被横跨页眉和引用内容，可能不完整。但根据上下文可推断是NREL效率表引用，不影响正文结论。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "PLQY values were calculated by 𝑃𝐿𝑄𝑌 = ( )∗- , where 𝐴 = 1 − ( 1 , 𝑃2 is the integrated photon count of sample emission upon laser excitation; 𝑃34 is the integrated photon count...",
+      "type": "公式文本损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "PLQY公式中的分式部分显示为 '( )∗-' 和 '1 − ( 1'，缺少分子分母的明确符号。原文公式可能为 PLQY = (Psample - ...)/(A * ...) 等，但提取文本中括号和符号缺失。无法准确复原，照录可见文本并在笔记中标注。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：VOC增加90 meV（与漂移-扩散模拟预测一致）、WBG电池认证VOC 1.33 V、PCE 19.3%、叠层VOC 2.19 V、认证PCE 26.29%、认证VOC 2.13 V、500小时保持86%初始效率。同时核对QFLS σ变化（61→24 meV，沉积C60后1.33 eV σ=22）、KPFM σ（11.1→2.9 mV）、ETL损失104→16 mV、传输损失8→3.4%abs、复合寿命0.4→2.0 µs、扩散长度600 nm→1.2 µm。DFT计算ΔW理论值0.12 eV与实验0.1 eV一致。叠层子电池EQE积分电流15.4/15.2 mA/cm²。所有数值均与提取文本匹配。不确定之处：PLQY公式提取损坏，无法确认具体形式；部分跨页句子拼接有疑点，已在extraction_issues中标注；图/表细节如补充图的具体内容未阅读理解，仅保留正文提到。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3197,
+      "prompt_tokens": 15887,
+      "total_tokens": 19084,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 41
+      }
+    },
+    "content_chars": 5569
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

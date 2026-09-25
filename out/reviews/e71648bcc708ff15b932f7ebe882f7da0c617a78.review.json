@@ -1,0 +1,111 @@
+{
+  "sha1": "e71648bcc708ff15b932f7ebe882f7da0c617a78",
+  "title": "Transboundary health impacts of transported global air pollution and international trade",
+  "doi": "https://doi.org/10.1038/nature21712",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e71648bcc708ff15b932f7ebe882f7da0c617a78/index.html",
+  "source_chars": 37789,
+  "markdown_chars": 4814,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "PM $ ^{2.5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "摘要中PM2.5的下标被OCR错误提取为上标形式，应为PM_{2.5}，影响公式符号的准确呈现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{P M}{2.5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "多处PM2.5的下标2.5被OCR提取为普通文本或丢失下标格式，如$ \\mathrm{P M}{2.5} $，应为$ \\mathrm{PM}_{2.5} $。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "GDB2013",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "原文应为GBD2013（Global Burden of Disease 2013），OCR将GBD误识为GDB，影响专有名词准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Extended data Table 1",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "大小写不一致，应为Extended Data Table 1，与后文Extended Data Table 1不一致，属格式性OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure 2b presented",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "语法上应为Figure 2b presents，OCR提取为过去时presented，可能为识别错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ \\mathrm{P M}{2. 5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "PM2.5下标格式丢失且数字间出现空格，应为$ \\mathrm{PM}_{2.5} $。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ \\mathrm{P M}{2.5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "图例中PM2.5下标格式丢失，应为$ \\mathrm{PM}_{2.5} $。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "$ \\mathrm{P M}{2. 5} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "方法部分PM2.5下标格式丢失且数字间有空格，应为$ \\mathrm{PM}_{2.5} $。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Transboundary health impacts of transported global air pollution and international trade",
+  "self_check": "已核对摘要、正文和结论中的关键数值：2007年全球PM2.5相关过早死亡345万（238–414万，95%CI），其中12%或411,100（352,800–469,300）与不同区域排放相关，22%或762,400（681,500–843,400）与为其他区域消费生产的商品和服务相关；中国2007年产生的PM2.5污染与其他区域超过64,800（44,400–85,100）例过早死亡相关，西欧和美国消费与中国超过108,600（64,300–153,000）例死亡相关；可归因死亡252万（174–302万），占73.0%；全球16.3%可归因死亡由不同区域污染产生造成，30.2%可归因死亡由不同区域消费造成。公式符号方面，PM2.5下标在OCR中多处丢失或误为上标，已在extraction_issues中标注。仍不确定之处：部分区域名称如“Rest of East Asia”在正文中未明确列出所有包含国家，仅图例提及蒙古、朝鲜、韩国和日本；部分数值的95%CI范围在OCR中可能因格式问题存在细微偏差，但已按提取文本照录。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3715,
+      "prompt_tokens": 10054,
+      "total_tokens": 13769,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7358,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

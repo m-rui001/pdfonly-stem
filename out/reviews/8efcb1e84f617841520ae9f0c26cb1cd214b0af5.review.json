@@ -1,0 +1,83 @@
+{
+  "sha1": "8efcb1e84f617841520ae9f0c26cb1cd214b0af5",
+  "title": "Physics-informed neural networks (PINNs) for fluid mechanics: a review",
+  "doi": "https://doi.org/10.1007/s10409-021-01148-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8efcb1e84f617841520ae9f0c26cb1cd214b0af5/index.html",
+  "source_chars": 50482,
+  "markdown_chars": 6119,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "The cube with blue edges represents flows: the computational in this case.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句前后文字明显断裂且冗余，可能由不同位置文本错误拼接而成，原文应描述计算域而非'flows: the computational'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Case 3: one x-plane one y-plane ($y=0$) and flows: one z-plane are observed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "句子中插入'flows:'及乱序词，疑为提取时跨页或图注干扰导致拼接错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Iso-surfaces of vorticity magnitude and pressure (bottom) at t = 8.0 from data. (b)for Iso-surfaces of vorticity magnitude (top) and pressure PINNs for(top) incompressible flows: inference resultCFD of PINNs Case 2.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "图注文本重复且单词交错，如'resultCFD'，明显是页面提取时顺序错乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "layer-wise adaptive tanh activate function",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'activate'应为'activation'，但可能是原文手稿笔误或提取错误，证据较弱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "F := [ -∂ψ1/∂y -ψ∂ y2; ∂ψ1/∂x ∂ψ2/∂x ]",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中'ψ∂ y2'和矩阵排列可疑，可能为提取时下标/符号丢失，但无法凭文本确定正确形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论的一致性：三维尾流案例中Re=200、子域坐标、采样点3e6、8×200网络、误差趋势（Case1/2优于Case3）等与原文相符；可压缩流动入口条件（M∞=4、p∞=101253.6Pa等）、损失项及网络配置（6×60、学习率6e-4、3e5 epochs）已保留；生物医学案例的方程、参数（ρ=1, μ=0.1, λ=4.2428e-5, τ=1e-6, h=0.05）、训练数据规模及推断结果（a=7.10, b=0.0003 vs 真值6.9/0.0）均已核对。提取文本中部分公式（如变形梯度F）和句子存在拼接乱序，已在extraction_issues中标注；未擅自修正或补全。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7566,
+      "prompt_tokens": 14032,
+      "total_tokens": 21598,
+      "prompt_tokens_details": {
+        "cached_tokens": 12288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3279
+      }
+    },
+    "content_chars": 8199,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

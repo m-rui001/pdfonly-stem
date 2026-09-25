@@ -1,0 +1,64 @@
+{
+  "sha1": "98b369a0459a28c2281702d98acb88076bee159d",
+  "title": "Revitalizing interface in protonic ceramic cells by acid etch",
+  "doi": "https://doi.org/10.1038/s41586-022-04457-y",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/98b369a0459a28c2281702d98acb88076bee159d/index.html",
+  "source_chars": 44349,
+  "markdown_chars": 4386,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "if one calculates the enhancement factor for 1/Ao and 0 0 1/Ap in differently treated cells over the 1/Ao and 1/Ap in the untreated cell",
+      "type": "上标丢失/文本顺序疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文本中'0 0'可能是上标0（表示未处理值），但提取时被拆成数字，导致'1/Ao'和'1/Ap'的上下标关系不清晰。原文应为A_o^0和A_p^0。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "(1) (2) where A is the respective pre-exponent term...",
+      "type": "公式缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "提取文本中只出现了公式编号(1)和(2)，但没有给出具体的公式表达式，可能是PDF抽取时公式被当作图片或公式编辑器对象未转成文本。原文正文明确提及这两个公式为Arrhenius型温度依赖关系，但具体符号表达式缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "The 10 min treated PCEC has a high initial j of around −3.24 A cm−2",
+      "type": "单位截断",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文中'−3.24 A cm−2'的'−2'应为上标−2，但在提取文本中显示为'−2'，可能是上标丢失，语义上应理解为cm⁻²。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：600 °C PCFC峰值功率密度在22 μm PNC55体系为1.18 W cm⁻²（未处理约0.47，2.5倍），优化后16 μm + 3D PNC73为1600 mW cm⁻²（即1.6 W cm⁻²）；PCEC在1.4 V下10 min处理电池|j|=3.07 A cm⁻²，为未处理2.8倍；加速测试200 h衰减数据（未处理10.2%→5.9%，处理0.94%→0.05%）与正文一致。活化能Ea,o=0.358±0.001 eV、Ea,p=0.903±0.003 eV。XPS中Ba 3d5和Y 3d峰减弱、表面组成变化，以及STEM中富Pr/Ni/Zr/Y/Yb新相的描述与原文一致。公式(1)(2)的具体表达式未在提取文本中出现，已按原文描述说明；未擅自补写公式。其余数据（如剥离强度18.6→23.5 N、粗糙度0.28→0.77 μm、电导率恢复97% vs 44%）均有文本依据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4834,
+      "prompt_tokens": 11827,
+      "total_tokens": 16661,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1312
+      }
+    },
+    "content_chars": 5845
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

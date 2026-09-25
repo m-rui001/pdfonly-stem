@@ -1,0 +1,103 @@
+{
+  "sha1": "dfaa007707e2695ffe884879cd12d59ebc5f5b59",
+  "title": "The interconnected rhizosphere: High network complexity dominates rhizosphere assemblages",
+  "doi": "https://doi.org/10.1111/ele.12630",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/dfaa007707e2695ffe884879cd12d59ebc5f5b59/index.html",
+  "source_chars": 41822,
+  "markdown_chars": 6898,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "positive correlations accounted for 8294% of the potential interactions observed at each time point",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "百分比范围明显损坏，应为 82–94%，但 OCR 提取为 8294%，影响对正相关比例的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The 24 module hubs identified originated from a variety of taxonomic groups; 10 belonged to Proteobacteria (4 from $ \\alpha $ -Proteobacteria), 5 belonged to Acidobacteria and others to Actinobacteria, Armatimonadetes, Bacteriodetes, Cyanobacteria, Gemmatimonadetes and Verrucomicrobia",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Bacteriodetes 应为 Bacteroidetes，属拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Bacteriodetes",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，Bacteriodetes 拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "less abundant taxa can be as important or more important than the abundant ones in maintaining microbial networks (Lyons & Schwartz 2001); Pester et al. 2010)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "括号不匹配，原文应为 (Lyons & Schwartz 2001; Pester et al. 2010)，OCR 将分号误置于括号外。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "key stone taxa",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "keystone taxa 被拆分为 key stone，属 OCR 分词错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 19,
+      "quote": "key stone taxa",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，keystone 被拆分为 key stone。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "key stone taxa",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，keystone 被拆分为 key stone。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "The interconnected rhizosphere: High network complexity dominates rhizosphere assemblages",
+  "self_check": "已核对摘要、正文数据与结论的一致性：网络数量18、样品数288、稀释深度11914、节点数464±9.4、ANCOVA F值（45.8、53.6、5.14）及P值、两季回归r²与P值、模块度M>0.73、正相关比例82–94%、module hubs 24个及分类、connectors 7个、相对丰度范围、QS相似度98.7%和>97%等关键数值均与原文一致。公式符号Zi、Pi、St、R²、rₛ等按原文保留。已标注OCR中8294%的百分比损坏、Bacteriodetes拼写、key stone分词及括号不匹配等问题。仍不确定处：图4中第一季第6周模块的具体节点/连接数在OCR文本中未完整提取，仅能依据正文描述；图3和图5的详细数值未在正文文字中给出，未做推测。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4699,
+      "prompt_tokens": 10324,
+      "total_tokens": 15023,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9436,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

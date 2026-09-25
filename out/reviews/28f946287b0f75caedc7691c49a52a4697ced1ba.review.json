@@ -1,0 +1,103 @@
+{
+  "sha1": "28f946287b0f75caedc7691c49a52a4697ced1ba",
+  "title": "Biodiversity redistribution under climate change: Impacts on ecosystems and human well-being",
+  "doi": "https://doi.org/10.1126/science.aai9214",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/28f946287b0f75caedc7691c49a52a4697ced1ba/index.html",
+  "source_chars": 79738,
+  "markdown_chars": 7910,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "the production of atmospheric aerosols",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文可能为“the production of atmospheric aerosols”或类似表述，OCR 文本可读，但“aerosols”拼写正确，无实质影响。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "the strength or even the direction? of the phytoplankton-DMS-climate feedback",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文问号“?”可能是 OCR 误加或原文强调，但此处问号使句子语法不完整，影响对“无法估计反馈强度甚至方向”这一结论的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "sea-foe processes",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为“sea-ice processes”，OCR 将“ice”误识为“foe”，影响对北极反馈过程的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "diff enence",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为“difference”，OCR 将“difference”误识为“diff enence”，不影响整体理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "Anopholes",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为“Anopheles”，OCR 拼写错误，但结合上下文可识别为按蚊属。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "flariasis",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为“filariasis”，OCR 拼写错误，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "the Paris COP 21 $2^{\\circ} \\mathrm{C}$ target",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文此处应为“Paris COP 21 2°C target”，OCR 将“Paris”识别为“Paris COP 21”并插入“COP 21”，但结合上下文可理解，不影响论证。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Biodiversity redistribution under climate change: impacts on ecosystems and human well-being",
+  "self_check": "已核对摘要、正文关键数值（0.85°C、2°C、2.7-3.7°C、17 km/十年、72 km/十年、34%、1700吨、120,000吨、200 million、70%、25%等）与结论方向一致。公式符号（CO₂、DMS、NDVI等）按提取文本保留。不确定处：第21页“direction?”问号是否为原文强调或OCR误加；第40页“sea-foe”应为“sea-ice”但已按原文照录并标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5364,
+      "prompt_tokens": 18735,
+      "total_tokens": 24099,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10086,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

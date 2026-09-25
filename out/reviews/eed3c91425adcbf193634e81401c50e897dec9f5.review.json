@@ -1,0 +1,54 @@
+{
+  "sha1": "eed3c91425adcbf193634e81401c50e897dec9f5",
+  "title": "Palladium-tin catalysts for the direct synthesis of H 2 O 2 with high selectivity",
+  "doi": "https://doi.org/10.1126/science.aad5705",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/eed3c91425adcbf193634e81401c50e897dec9f5/index.html",
+  "source_chars": 25408,
+  "markdown_chars": 3351,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Analysis of the nanostructure of this catalyst using scanning transmission electron microscopy – high angle annular dark filed imaging (STEM-HAADF) and electron",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第5页末尾'electron'后在第6页开头接'energy loss spectroscopy'，句子正常续接，但页码标记处有断句，实际文本完整，不需修正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "CJK gratefully acknowledges funding from the National Science Foundation Major Research Instrumentation program (GR# MRI/DMR-1040229). QH and AYB were supported by the U.S. Department of Energy, Office of Science, Basic Energy Sciences, Materials Sciences and Engineering Division and through a user project supported by ORNL’s Center for Nanophase Materials Sciences, sponsored by the Scientific User Facilities Division, Office of Science, Basic Energy Sciences, US Department of Energy. GJH gratefully acknowledges funding from the European Research Council (ERC-2011-ADG - Grant Agreement N° 291319 – Acronym \"AFTERTHEGOLDRUSH\").",
+      "type": "其他",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该段为基金致谢，位于参考文献后，与正文无关，但在提取文本中作为正文一部分出现，属于正常内容，无需处理。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文、Table 1和图表描述中的关键数值：3wt% Pd-2wt% Sn/TiO₂ O-R-O后产率61、降解0、选择性96%（摘要称>95%）；Au-Pd对比数据（产率64、降解235等）；SiO₂体系1%Pd-4%Sn数据（产率50、降解0、选择性95%）；浸出数据（Sn 0 ppb、Pd 2 ppb）；模型催化剂5wt% Pd/SnO₂的包覆观察。公式未出现。注意Table 1中'3% Pd - 2% Sn / TiO2'一行有'1'标记，但提取文本中'500 °C / 3 h / air'之前有'1'，可能为条目编号，已按原文保留。提取文本中偶有'Oxidsed'等拼写错误，不影响理解。参考文献部分未纳入笔记。待确认：Table 1中'3% Pd - 2% Sn / TiO2'的第一行之前有'1'，原文表格可能有序号；另外摘要中'selectivities of >95%'与Table 1中96%一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2818,
+      "prompt_tokens": 7741,
+      "total_tokens": 10559,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 111
+      }
+    },
+    "content_chars": 5081
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

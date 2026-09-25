@@ -1,0 +1,65 @@
+{
+  "sha1": "d12f2a69c620573bb1700f0993254793b6b3bf03",
+  "title": "A Comparative Survey of VANET Clustering Techniques",
+  "doi": "https://doi.org/10.1109/comst.2016.2611524",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d12f2a69c620573bb1700f0993254793b6b3bf03/index.html",
+  "source_chars": 142556,
+  "markdown_chars": 5530,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "In this way, the trustworthiness of a node is accounted for by the cluster head selection process.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句位于第 15 页中部，上下文完整，无截断迹象，可能仅为正常页内段落边界。实际检查发现上一段 VWCA 的描述至该句完整结束，无缺失内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "Nodes will send out Inquiry frames while responding to other nodes. By contrast, Hello messages are advertisements of a node's own information, meaning nodes need only store the data from messages they receive without sending their own data in unicast form.",
+      "type": "内容完整性存疑",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "此处为 IV-E2 小节结尾，对比 Inquiry 与 Hello 两种方式的特性，但对比逻辑略显松散。可能为原文本身的表述方式，不判定为抽取问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "Most of the papers cited in this survey present this type of performance comparison. Among those that don't offer any performance comparison at all – indicated in Table VIII as comparing to None – several algorithms aimed at very specific applications were compared to non-cluster-based alternatives for those particular applications instead, e.g. a cluster-based routing algorithm compared to a traditional MANET routing protocol.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "页 21 顶部为图 9 和算法名称列表，随后进入 V-C 节。该段开头衔接图 10 之后的讨论，文字可能从页 20 末跨页至页 21 时才完整呈现，但抽取文本中未发现明显断句缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言与结论中关于分类体系（加权度量/优先级/计时器/被动）、三大贡献、信道模型数量（7种）与仿真平台数量（13种）的表述一致性。关键数值（如 28 种算法采用加权度量、MDMAC 约半数虚假加入率、APROVE 在 30% 丢包率下簇寿命约一分钟）均与正文对应。公式方面，原文未出现独立编号公式，仅在正文中以文字描述方式提及 MCTC 的 LET 计算（通信范围与节点间距离之差除以速度差）及库仑定律类比，笔记按原文文字如实记录，未做数学符号化改写。不确定之处：页 21 图 9 与图 10 之间可能存在抽取顺序问题，但无法从文本内部证据确证；部分算法名称（如 FLBA 与 FBLA 在表 VIII 中的拼写不一致）虽为线索但不足以判为抽取错误，不做标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4807,
+      "prompt_tokens": 31914,
+      "total_tokens": 36721,
+      "prompt_tokens_details": {
+        "cached_tokens": 30720
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 856
+      }
+    },
+    "content_chars": 7443,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

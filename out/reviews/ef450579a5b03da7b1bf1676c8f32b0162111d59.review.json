@@ -1,0 +1,82 @@
+{
+  "sha1": "ef450579a5b03da7b1bf1676c8f32b0162111d59",
+  "title": "Practical quantum advantage in quantum simulation",
+  "doi": "https://doi.org/10.1038/s41586-022-04940-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ef450579a5b03da7b1bf1676c8f32b0162111d59/index.html",
+  "source_chars": 90875,
+  "markdown_chars": 3710,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "sha1_base64=\"QPiG9uxM+/tpAMZAHk9/bLmgVEk=\"",
+      "type": "疑似文本编码损坏",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Box 2 中的数学公式以 base64 乱码形式出现，无法核对公式中的符号与下标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "superconducing quantum computers",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "出现于 Box 1 超导电路平台描述中，应为 superconducting。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "ics of the Hubbard model",
+      "type": "疑似跨页截断/拼接",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "‘ics’ 疑为 ‘dynamics’ 的截断残留，且第 8-9 页之间标题‘Digital Quantum Simulators’出现两次，Box 3 内容插入顺序可能有拼接异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "er20 † hĉ10↑ ĉn↑ i/20",
+      "type": "疑似文本截断/损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "图 2 描述中的公式提取为‘er20 †’，疑似‘errors in’的截断或渲染损坏，无法完整复原。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "P P J=1 0 20 60",
+      "type": "疑似文本提取乱码",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Box 3 中公式部分以乱码形式出现，无法核对 J˜ij、V˜ij、U˜i 等系数的具体数值与索引。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：10×10格点/100粒子、T=10ℏ/J、1%校准误差对应<1%动力学子误差、数字方案200逻辑比特与>10^6门、2.6×10^5 CNOT、10^5旋转门、约20辅助比特、精度优于10^-7、每旋转约30个T门、总门数约10^6（非均匀约5×10^6）、物理比特数百万、图2中U/J=1、20格点、半填充奇偶交替初态、Jδt=1/8。公式已按原文提取呈现（Trotter分解与Hubbard哈密顿量）。不确定之处：Box 2/3中公式的符号细节因base64乱码无法核对，表格I的逐项内容在文本中未被完整提取，交叉验证中原子钟10^-18精度的描述已在正文中确认。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14771,
+      "prompt_tokens": 26732,
+      "total_tokens": 41503,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11872
+      }
+    },
+    "content_chars": 5274
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

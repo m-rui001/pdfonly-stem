@@ -1,0 +1,64 @@
+{
+  "sha1": "dec8a9a354739ef5a234b74bf21e3430ed7f0536",
+  "title": "Bright spots among the world’s coral reefs",
+  "doi": "https://doi.org/10.1038/nature18607",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/dec8a9a354739ef5a234b74bf21e3430ed7f0536/index.html",
+  "source_chars": 77063,
+  "markdown_chars": 2410,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 28,
+      "quote": "~ , ~ 0.0, 1000 ~ 0,100",
+      "type": "formula_extraction_error",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式不完整，无法解读先验分布的具体设置，导致模型层次结构无法准确重建。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 27,
+      "quote": "~ log ~ , 3.5 0,100",
+      "type": "formula_extraction_error",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "模型公式中的关键参数在提取时变成乱码，无法确认具体的分布设定和参数值，影响模型复现。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 30,
+      "quote": "| | 2",
+      "type": "formula_extraction_error",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "亮点/暗点定义中的数学条件（不等式）提取损坏，无法确认具体阈值和表达式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：2,514个礁、46个国家/州、15个亮点、35个暗点、2个标准差阈值、ΔDIC=472、6,088次调查、2004-2013年等，均与提取文本一致。模型部分公式因提取损坏无法核对，已在issues中列出。专家调查的统计方法（Fisher精确检验、ANOVA）及结果描述已按原文呈现。部分措辞如“774种”依据原文“774 species”确认。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10279,
+      "prompt_tokens": 20208,
+      "total_tokens": 30487,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8446
+      }
+    },
+    "content_chars": 3331
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

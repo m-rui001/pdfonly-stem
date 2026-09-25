@@ -1,0 +1,81 @@
+{
+  "sha1": "9c624d8f6fb0c3c98abb7a89ea1694d7560f9e13",
+  "title": "Towards zero-waste valorisation of rare-earth-containing industrial process residues: a critical review",
+  "doi": "https://doi.org/10.1016/j.jclepro.2015.02.089",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9c624d8f6fb0c3c98abb7a89ea1694d7560f9e13/index.html",
+  "source_chars": 147413,
+  "markdown_chars": 9867,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "The best results were observed for leaching of phosphogypsum with tributylphosphate (TBP) dissolved in kerosene.",
+      "type": "疑似拼写歧义：Tributylphosphate 缩写应为 TBP（对应全文 TBP），此处原文为 TPB，后文第 17 页又出现 TBP 作三丁基磷酸酯缩写，疑为原文不一致或抽取错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第 16 页出现 'TPB' 而全文其他地方 TBP 均指 tributylphosphate；可能为作者笔误或抽取错字，无法确认，保留原文拼写并标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "The slag was remelted at 1400 °C and the melt was cooled using three types of cooling conditions (water quenching, air cooling, and furnace cooling) to investigate the influence of cooling on the microstructure and phase characteristics of the slag.",
+      "type": "数值/上下文一致性存疑",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文说重熔后冷却方式影响稀土回收率，但未提供具体冷却温度和时间等细节；'remelted at 1400 °C'表述清晰，无文本证据支持更高温度猜测，仅存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "Due to the high affinity of the rare-earth metals for oxygen, these elements end up in diluted (oxidic) form in the slag of the so-called “copper smelter” and finally in the slag of the lead blast furnace.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第 42 页末尾句子在 'lead blast furnace.' 处正常结束，无截断；但页面 41-42 之间出现 'Reuter and van Schaik' 相关句号后换页，未发现实际拼接错乱，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "The H2SO4 digestion of fluoroapatite can be represented by the following chemical reaction scheme (Habashi, 1985): Ca10(PO4)6F2+10 H2SO4+20 H2O  6 H3PO4+10 CaSO4·2H2O+ 2 HF",
+      "type": "疑似字符损坏",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "反应箭头及产物符号中 ''、'' 和 '·2H2O' 处的特殊字符可能为 PDF 抽取异常，但化学式主体（Ca10(PO4)6F2、H2SO4、H3PO4、CaSO4·2H2O、HF）清晰可辨，不影响复原；按可见文本照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "The supply risk for some critical rare-earth elements (REEs), which are instrumental in many cleantech applications, has sparked the development of innovative recycling schemes for Endof-Life fluorescent lamps, permanent magnets and nickel metal hydride batteries.",
+      "type": "疑似字符损坏",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'Endof-Life' 应为 'End-of-Life'，抽取时连字符缺失；不影响语义，照录可见文本并在此说明。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值与结论：磷石膏稀土含量（Prayon样品5455 ppm，含Ce 2310 ppm等）、磷矿/磷石膏稀土地球化学分配（70–85%进入磷石膏）、HNO₃/Ca(NO₃)₂浸出对比（1M HNO₃ 35% vs 1M HNO₃+0.5M Ca(NO₃)₂ 76%，72 h）、TBP/TOPO浸出磷石膏回收率（69.8% vs 80%）、希腊赤泥/铝土矿稀土富集因子及表8各元素数值、赤泥中Sc含量（希腊130 ppm、牙买加390 ppm、Suriname 1700 ppm）、0.5 M HNO₃浸出回收率（Sc 80%、Y 96%、轻稀土30–50%）、碱性浸出溶解度数据（Na₂CO₃中0.43 g/L vs NaHCO₃中16.7 g/L Sc₂O₃）、还原熔炼Sc入渣率98–99%、P₂O₅添加形成含57 wt% REO相、白云鄂博渣冷却实验回收率（水淬>97%、空冷和炉冷>99%、原渣介于其间）、磷石膏²²⁶Ra活度（261–688 Bq/kg，均值508 Bq/kg）。公式（1）–（4）已原样保留可见文本，未补写或修复损坏字符。不确定处：(a) 第16页 'TPB' 与全文 'TBP' 不一致，按原文照录并在 extraction_issues 中标出；(b) 反应式中的专用箭头字符 ''、'' 疑似损坏，保留可见形式；(c) 部分数据（如进口磷矿产量、2013年稀土产量110,000吨）来自正文明确引用的USGS摘要，见原文上下文。未添加任何外部知识，所有数值均出自给定文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7971,
+      "prompt_tokens": 40446,
+      "total_tokens": 48417,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 29
+      }
+    },
+    "content_chars": 12945
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

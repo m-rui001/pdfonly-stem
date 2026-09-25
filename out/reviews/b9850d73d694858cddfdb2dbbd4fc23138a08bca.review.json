@@ -1,0 +1,81 @@
+{
+  "sha1": "b9850d73d694858cddfdb2dbbd4fc23138a08bca",
+  "title": "Electrochemical Carbon Monoxide Reduction on Polycrystalline Copper: Effects of Potential, Pressure, and pH on Selectivity toward Multicarbon and Oxygenated Products",
+  "doi": "https://doi.org/10.1021/acscatal.8b01200",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b9850d73d694858cddfdb2dbbd4fc23138a08bca/index.html",
+  "source_chars": 55504,
+  "markdown_chars": 3516,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "oxygenate production 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页码“2”混入正文，原句应为“oxygenate production under COR conditions”，页码标记被当作文本提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "due to the 17",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页码“17”混入正文，后接“improved hydrodynamics”应为“due to the improved hydrodynamics”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "∗ exp ,",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式提取不完整，缺失变量和括号，可能为“rate = P·θ_X·exp(−E_a/kT)...”等形式，但无法准确还原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "∗ exp ,",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "同一页面另一处公式同样不完整，缺失覆盖度、电位等符号定义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "2.3 ∙ ∙ .",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中的变量如ΔpH、kT等被截断，仅保留部分符号，无法独立理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对核心数值：FE 65% @ –0.63 V，C2+起始电位位移~0.4 V（RHE），甲烷~0.15 V，pH 13 vs 7，CO分压实验（1.0/0.5/0.1/0.01 bar），乙烯二阶动力学等。公式部分因提取不完整，仅按原文文本保留，未做推测补充。结论方向与摘要一致。不确定之处：公式缺失变量，无法验证推导细节；pH 7实验具体电位范围未提取；部分图表引用（如Figure S1-S13）未详细描述，仅保留文中提及的编号。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8379,
+      "prompt_tokens": 14271,
+      "total_tokens": 22650,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5597
+      }
+    },
+    "content_chars": 4880
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

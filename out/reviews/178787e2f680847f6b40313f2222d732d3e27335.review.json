@@ -1,0 +1,55 @@
+{
+  "sha1": "178787e2f680847f6b40313f2222d732d3e27335",
+  "title": "Annual Research Review: Looking back to look forward – changes in the concept of autism and implications for future research",
+  "doi": "https://doi.org/10.1111/jcpp.13176",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/178787e2f680847f6b40313f2222d732d3e27335/index.html",
+  "source_chars": 89317,
+  "markdown_chars": 3593,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 26,
+      "quote": "recent neuropsychological studies of children with 22q13 deletion have suggested social difficulties may be less important than language difficulties (Laura et al, 2018)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "作者名'Laura'在参考文献中未出现，可能是'Lázaro'或其他拼写错误，但无足够文本证据确认，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 35,
+      "quote": "Key points  Originally, and even as late as the 1980s, autism was conceptualised as a rare and overwhelmingly male disorder of childhood, categorically distinct from typical",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第35页'Key points'标题下仅一行文字，下一页(第36页)直接是Acknowledgements，Key points内容显然在提取中缺失或断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：流行率4/万、22/万、62/万、1/100；研究取样偏倚94%/80%与50-55%智力障碍；性别比4:1、10:1、3:1；苏格兰健康不佳47%；共病率ADHD 33%、焦虑23%、睡眠13%、抑郁12%、强迫10%、冲动10%、精神分裂5%、双相5%；自杀OR>7；AIMS-2-TRIALS资助约5500万英镑。公式与符号：仅涉及Bayesian解释（弱先验、精确性失衡），未引入额外公式。不确定处：Key points段落因提取断裂而不完整，未在正文中采用；参考文献中的'Laura et al, 2018'未在文献表中找到，已在issues中标出。所有结论均基于提取文本，未添加外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3707,
+      "prompt_tokens": 20643,
+      "total_tokens": 24350,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1151
+      }
+    },
+    "content_chars": 4783
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "7f8ff286ffc5b636db7fd4da00feaa4a1310ef4e",
+  "title": "Two-dimensional heterostructures for energy storage",
+  "doi": "https://doi.org/10.1038/nenergy.2017.89",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7f8ff286ffc5b636db7fd4da00feaa4a1310ef4e/index.html",
+  "source_chars": 42066,
+  "markdown_chars": 3277,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Second, flakes of the materials need to be in the face-to-face contact, without forming large gaps in-between, but at the same time enabling electrolyte accessibility.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "前文列举LbL挑战时，第一条以‘First, there should be…’开头，第二条为‘Second, flakes…’，但后续未出现‘Third’对应的独立编号，且第二条包含两层递进关系（面对面接触且无大间隙、同时保证电解质可及），逻辑上可能缺词或断句不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Figure 1. Overcoming limitations of current batteries by using 2D materials. (a) Schematic of a 3D intercalation electrode and (b) increase in resistance and decrease in capacity as a result of mechanical and/or chemical degradation of electrode materials. (c) A zero-expansion 2D electrode with improved kinetics of electrochemical processes and power density due to easy transport of electrons and ions and (d) stable electrochemical performance and extended lifetime due to the close-to-zero volume change of 2D electrodes.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "此处图注仅描述(a)-(d)四幅子图，但前文页2处引用了‘Figure 1’指代电极退化示意图，此图注中(a)和(b)对应的内容完整，(c)和(d)也完整，总体未见截断，但图注与页2正文引用的对应关系依赖页面排版，无法完全确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Page 11",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第10页页末为致谢部分，第11页页首直接出现‘Figure 1’图注，中间未见图表图片本身，推测图片在第10页或第11页，但提取文本中无图，可能图片与图注分离。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "2D materials can be metallic [7, 9] or zero-band gap [13, 24]",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第5页页末句子‘At the same time, electrons should be quickly supplied to the surfaces to keep the charge balance. This requires materials with a high electronic conductivity and high density of states at the Fermi level. 2D materials can be metallic [7, 9] or zero-band gap [13, 24]’之后，第6页以‘semiconductors, demonstrating excellent performance...’开头，但第6页页首被参考文献占满，导致‘zero-band gap semiconductors’被跨页切断，顺序可能颠倒。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论数值：MoS2层间距0.62 nm→0.99 nm（NDG/MoS2异质结构）、~0.1%界面应变、600°C退火条件、Ti3C2收缩与V2O5收缩现象、三种储荷机制（体相嵌入、嵌入赝电容、表面存储）、柱撑策略等关键数据与正文一致。公式方面，原文未提取到任何定量公式或反应方程式，故未包含。结论方向一致：异质结构结合组分优势、产生新现象、需计算预筛选。不确定项：跨页拼接问题已列入issues；参考文献部分未整理入笔记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3190,
+      "prompt_tokens": 10578,
+      "total_tokens": 13768,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 288
+      }
+    },
+    "content_chars": 5674
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

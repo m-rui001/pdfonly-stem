@@ -1,0 +1,63 @@
+{
+  "sha1": "313c2fdb2a7fcaa0b018e1bc0e94102a75737755",
+  "title": "River ecosystem metabolism and carbon biogeochemistry in a changing world",
+  "doi": "https://doi.org/10.1038/s41586-022-05500-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/313c2fdb2a7fcaa0b018e1bc0e94102a75737755/index.html",
+  "source_chars": 84227,
+  "markdown_chars": 4112,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "to which an anthropogenically enhanced",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第4页末尾句子中断，第5页以'delivery (0.1 Pg C year−1) may need to be added22.'继续，但两段文本之间没有明确连接词，应为跨页断句，需保留缺失位置。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Because the atmospheric holding capacity of water is highly sensitive",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第6页末尾句子中断，第7页以'to temperature, precipitation extremes will become more intense and frequent'继续，跨页断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "b Tropical 1.71",
+      "type": "疑似截断",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第5页开头出现'b Tropical 1.71'等数字，应属于图2的图注或图中数值的一部分，但提取文本中缺少完整的图注文字，无法从上下文中确认这些数字的具体含义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：NEP=GPP−ER的定义、各纬度GPP/ER/NEP数值、全球NEP约426 g C m−2 yr−1、陆地侧向OC/IC通量（0.72/2.44 Pg C yr−1）、总碳通量3.2 Pg C yr−1、OC:IC比0.3至1.1、河流NEP贡献12%、CO2排放1.9/2.3 Pg C yr−1、CH4排放0.005/0.008 Pg C yr−1、出口0.38 Pg C yr−1等。公式和符号均按原文保留。不确定之处：全球NEP估计'426'未带负号，但原文如此；图2的具体数值（如'1.71'等）未在正文中详细叙述，仅作为图注存在，已在提取问题中标出。跨页断句已标记。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5628,
+      "prompt_tokens": 21335,
+      "total_tokens": 26963,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2533
+      }
+    },
+    "content_chars": 5359
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

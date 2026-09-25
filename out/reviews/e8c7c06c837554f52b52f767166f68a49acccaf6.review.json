@@ -1,0 +1,109 @@
+{
+  "sha1": "e8c7c06c837554f52b52f767166f68a49acccaf6",
+  "title": "Structural and electronic properties of monolayer group III monochalcogenides",
+  "doi": "https://doi.org/10.1103/physrevb.95.115409",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e8c7c06c837554f52b52f767166f68a49acccaf6/index.html",
+  "source_chars": 40975,
+  "markdown_chars": 3642,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "EC = [(NM EM + NX EX ) − EMX ]/(NM + NX )",
+      "type": "格式损失",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "公式中下标字符缺失，如NM应写作N_M，EX应写作E_X等。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "4.71 (6.24)",
+      "type": "疑似核对无误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "此处为BO的带隙值，与表I中的EG=4.71一致，但其中存在不可读字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "In this paper, we investigate the structural, mechanical, and electronic properties of group III-VI monolayers, MX (M: B, Al, Ga, In and X: Y = O, S, Se, Te) using first-principles techniques.",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文此处出现“X: Y = O”，与上下文的X = O, S, Se, Te不一致，疑为笔误或抽取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "Δρ",
+      "type": "字符缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "希腊字母Δρ中的Δ在文中多处显示为乱码或方块，无法正常读取。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "FIG. 1. (a) Perspective, top and side views... (b) The variation of cohesive energies... (c) The variation of electronegativity differences (χ) between M and X atoms with the charge transfers (ρ) between them.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图1出现在第2页末尾，但其标题文字被切断，缺少电荷转移Δρ的完整表述，且图注中χ、ρ前的希腊字符缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "4.71/M-M 1.30/K-M 1.54/K- 0.45/K-",
+      "type": "疑似提取错误",
+      "severity": "high",
+      "confidence": 0.5,
+      "reason": "本节中τ_MM、τ_KM等希腊字符提取为拉丁字母M、K，且缺少箭头符号，成为“M-M”、“K-M”等，原文很可能是“Γ-M”等。无法确认具体格式，标注存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "In this case, as we go down the period, the χ (X) decrease from 3.44 for O down to 2.10 for Te, respectively.",
+      "type": "疑似笔误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "原文说“as we go down the period”，但O和Te不处于同一周期，应为“go down the group”或“down the row”更合理。但此结论属于推测，不改变事实判断，标注存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "[1] A. K. Geim and K. S. Novoselov, Nat. Mater. 6, 183 (2007).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "参考文献表在第7页末尾被截断，第8页以参考文献继续，中间夹有页眉图注，无法确定是否缺失参考文献条目。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、表I、正文中的关键数值：BO内聚能6.65 eV、带隙4.71 eV（HSE 6.24 eV）、面内刚度350 J/m²、弯曲刚度30 eV；InTe内聚能2.77 eV、带隙1.29 eV、刚度39 J/m²；石墨烯C=341 J/m²验证值与实验340±50 J/m²一致；石墨烯D=1.5 eV；A'₁模本征矢量比值2.1/5.2/10.2/16.2对应BO/BS/BSe/BTe。带隙范围1.21-6.24 eV与摘要及结论一致。公式(1)-(5)已按原文保留。不确定处：部分希腊字符和箭头符号无法判读，已在提取问题中标出；BTe电荷转移量为−0.03（表I），但正文未明确讨论其符号异常之处。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3984,
+      "prompt_tokens": 12980,
+      "total_tokens": 16964,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 435
+      }
+    },
+    "content_chars": 6308
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

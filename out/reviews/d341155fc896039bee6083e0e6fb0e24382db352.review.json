@@ -1,0 +1,64 @@
+{
+  "sha1": "d341155fc896039bee6083e0e6fb0e24382db352",
+  "title": "Symbiotic human-robot collaborative assembly",
+  "doi": "https://doi.org/10.1016/j.cirp.2019.05.002",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d341155fc896039bee6083e0e6fb0e24382db352/index.html",
+  "source_chars": 176074,
+  "markdown_chars": 4033,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "multimodal and symbiotic to facilitate any changes during collaboration.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句开头缺少前文 'that is'，且第2页末尾有图注 'Fig. 3. Multimodal symbiotic human-robot collaboration [166].'，疑似页面切换导致句子被截断，缺失了 'The smartness of a symbiotic HRC system must be enabled by a new means that is' 的一部分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "assembly workcells where humans and robots collaborate requires accurate and almost in real-time updated digitalised models.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句子出现在第20页开头，但前文没有 '8.3 Digital twin for symbiotic HRC' 标题和首句，可能上一页末尾缺失了标题和句子 'Designing, planning, operating, supervising and controlling'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "using wearable sensors, e.g., 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页末出现 'e.g., 3'，第4页开头为 'measured and used to determine the mechanical stimuli.'，明显为不完整短语，可能 '3' 后接 'D' 或 '轴' 等内容，但文本缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值（78%位姿精度提升、2.7 m/s碰撞测试速度、6%时间减少、20%并发运动、3%空闲时间减少），以及分类表、安全标准列表、SLAM变量定义等，与原文一致。不确定之处：第3页“multimodal”句子的前文缺失、第4页“e.g., 3”不完整、第20页“assembly workcells”前文缺失，已在extraction_issues中标注。未发现其他矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8607,
+      "prompt_tokens": 40257,
+      "total_tokens": 48864,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5700
+      }
+    },
+    "content_chars": 5462
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

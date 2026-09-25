@@ -1,0 +1,54 @@
+{
+  "sha1": "4e70c07fa904b3d8680025fd2bc863636340f779",
+  "title": "Electron magnetic reconnection without ion coupling in Earth’s turbulent magnetosheath",
+  "doi": "https://doi.org/10.1038/s41586-018-0091-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4e70c07fa904b3d8680025fd2bc863636340f779/index.html",
+  "source_chars": 35103,
+  "markdown_chars": 2464,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "In order to quantitatively assess the importance of\\n\\nreconnection in dissipating turbulence energy in small systems",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第9页页面末尾句子被截断，第9页开头为 'reconnection in dissipating turbulence energy...'，但第8页末尾为 'In order to quantitatively assess the importance of'，两页之间在PDF提取中出现了文本不连续，需检查是否漏词或页眉干扰。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "Correspondence and requests for materials should be addressed to T.D.P (phan@ssl.berkeley.edu).\\n\\n279\\n\\nData availability.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第11页末尾句子中断，下一行是页码标记和'Data availability'，但两句之间似乎没有直接联系，可能是页间分离导致的不连续，无明确缺失内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对论文核心数值：电流片厚度4 km（4 de）、电子喷流速度VeM ~900 km/s、ΔVeL +250/-450 km/s、VAeL ~1000 km/s、VAiL ~25 km/s、磁剪切14°、BM ~40 nT、BL ~5 nT、密度20 cm⁻³、j·E'正、6 eV磁能分配、35个电流片、16个电子喷流事件、23个低剪切事件等，均与摘要和正文一致。公式E'=E+Ve×B、VAeL、VAiL、能量分配计算（3 eV动能、1 eV加热）已保留。未确认图3中BL相关/反相关的精确表达，但根据文字描述已准确反映。提取文本中图例与正文一致。不确定处：第9页句子跨页不完整，已在issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2540,
+      "prompt_tokens": 11009,
+      "total_tokens": 13549,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 513
+      }
+    },
+    "content_chars": 3636
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

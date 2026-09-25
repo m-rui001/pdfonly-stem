@@ -1,0 +1,73 @@
+{
+  "sha1": "65d45ed3fc19ba4a5c47620ec41568f12692b676",
+  "title": "Cotton plants export microRNAs to inhibit virulence gene expression in a fungal pathogen",
+  "doi": "https://doi.org/10.1038/nplants.2016.153",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/65d45ed3fc19ba4a5c47620ec41568f12692b676/index.html",
+  "source_chars": 36150,
+  "markdown_chars": 3356,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "HiC-51 (1,742 bp)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图2a 标注处写为 HiC-51，但全文其他位置及上下文均为 HiC-15（1,742 bp），应为同一基因的笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "VdaClp-1mCotton and VdaClp-1mCotton colony",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注中两个名称相同，结合上下文第二个应为 VdaHiC-15mCotton。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "in the fungus recovered from infected cotton plants",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页4末行句子在页尾中断，页5开头直接接续，但提取文本中未见明显缺失词，仅标记拼接位置。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Aspergillus bioassay",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "文本中无此内容，可能是提取时混入的杂散词，但无法确认来源，照录存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：miR166 为 VdaCotton 中最丰富的棉花 miRNA（28 条中），5′ RACE 克隆分数（9/9、6/8、2/8 等），突变体表型、STTM166 实验结果、病害分级定义、实验条件（菌株、接种浓度、时间点）等与提取文本一致。图3 中的 VdaHiC-15m 在正文中写为 VdaHiC-15m，但图3b 中图例写为 VdaHiC-15m，正文中也有 VdaHiC-15 字样，可能为提取误差，未在 markdown 中强改。公式无特别符号需保留。不确定点：图2 中个别菌株名称（如 VdaClp-1mCotton 重复）和 HiC-51 可能为原文笔误，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2625,
+      "prompt_tokens": 11038,
+      "total_tokens": 13663,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 21
+      }
+    },
+    "content_chars": 4656
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

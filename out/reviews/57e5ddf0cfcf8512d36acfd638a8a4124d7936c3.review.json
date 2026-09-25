@@ -1,0 +1,102 @@
+{
+  "sha1": "57e5ddf0cfcf8512d36acfd638a8a4124d7936c3",
+  "title": "Capacity shortfalls hinder the performance of marine protected areas globally",
+  "doi": "https://doi.org/10.1038/nature21708",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/57e5ddf0cfcf8512d36acfd638a8a4124d7936c3/index.html",
+  "source_chars": 53685,
+  "markdown_chars": 7058,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Capacity gaps hinder the performance of marine protected areas globally",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页标题为“Capacity gaps hinder...”，而登记题名为“Capacity shortfalls hinder...”，两者用词不同（gaps vs shortfalls），但主题和作者列表一致，属于同一论文的标题措辞差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "logged response ratios (InRR)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "应为“lnRR”（自然对数响应比），OCR将“ln”误识为“In”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "average logged response ratios (LnRR) = 0.47+0.96 SD",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“0.47+0.96 SD”应为“0.47 ± 0.96 SD”，加号应为正负号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "In response ratio (InRR)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "图注中“In response ratio (InRR)”应为“ln response ratio (lnRR)”，OCR将“ln”误识为“In”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "SIZ: MPA size （ $ \\ln(km^{2}) $ ）; AGE: MPA age （ In(years) ）",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "AGE定义中“In(years)”应为“ln(years)”，OCR将“ln”误识为“In”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "BIO: (In) fish biomass response ratio; DEN: (In) fish density response ratio; FSZ: (In) fish mean size response ratio; RCH: (In) fish species richness response ratio",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "多个变量定义中“(In)”应为“(ln)”，OCR将“ln”误识为“In”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "CHO: chlorophyll-a concentration $ \\mathrm{( \\ln(mg/m^{3})} $ ); SHR: Distance from shore $ \\mathrm{( \\ln(km)}) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式中括号不匹配，如“$ \\mathrm{( \\ln(mg/m^{3})} $”缺少右括号，属于公式符号提取损坏。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Capacity gaps hinder the performance of marine protected areas globally",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：433和218个MPA、71%正响应、1.6倍生物量、LnRR=0.47±0.96、2.9倍人员能力差异、62个MPA重叠样本、19%变异解释、预算能力n=43、t=2.55、p=0.019、Spearman's rho=0.35等均与原文一致。公式符号如lnRR、LnRR、ln(km²)、ln(years)等已按原文保留，OCR将“ln”误识为“In”的问题已在extraction_issues中标出。标题差异（gaps vs shortfalls）已记录。仍不确定之处：部分图注和扩展数据图注中的公式符号可能还有未标出的OCR错误，但无进一步文本证据。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5057,
+      "prompt_tokens": 13137,
+      "total_tokens": 18194,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9632,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

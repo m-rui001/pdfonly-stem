@@ -1,0 +1,73 @@
+{
+  "sha1": "73e75582d1b428ac4d05cfb4cee2e32f81d0dbde",
+  "title": "A Survey on Model-Based Distributed Control and Filtering for Industrial Cyber-Physical Systems",
+  "doi": "https://doi.org/10.1109/tii.2019.2905295",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/73e75582d1b428ac4d05cfb4cee2e32f81d0dbde/index.html",
+  "source_chars": 114810,
+  "markdown_chars": 8213,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "regraded",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'regraded'应为'regarded'之误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "existing distributed filtering schemes cannot simultaneously satisfy the requirements of computation burden",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页码12顶部有一段以'For practical CPSs, resource constraints or practical function...'开头的序言与后续以'• When occurring above resource constraints'开始的条目之间存在明显的逻辑断裂，'When occurring above resource constraints'中'above'指代不明，疑似原文在页码11末尾有被截断的句子或过渡内容。但'For practical CPSs...'之后的段落到下一段之间，前段以'A feasible idea...'结束，紧接着是带'•'的条目，未发现明显的句子截断；此点的逻辑跳跃更可能是原文本身的章节安排，而非提取拼接问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "TABLE I PERFORMANCE OF KALMAN-BASED ALGORITHMS.",
+      "type": "表格数据提取不完整",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "TABLE I中存在疑似编码错误的单元格内容，例如'II'、'IV'等，推测原意可能为'III'、'VI'，但缺少足够文本证据，且表格中勾选标记与行列对应关系模糊，难以从文本中准确复原。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "Particle, µNode and Sindrion",
+      "type": "字符编码问题",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "µNode中的'µ'可能是提取编码问题，原文应为μNode（希腊字母mu）。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对了文中的关键数值/公式（如局部Kalman滤波增益公式、六种算法更新方程、2(Θ_i+1)n与Θ_i n(n+2)(L+1)等通信量/计算量数据），这些量与摘要及正文的描述一致。已核对TABLE I与TABLE III的性能比较结论（计算负担、通信负担、可扩展性）与正文文字描述的一致性。已核对四类传感器调度优化策略的分类与正文描述的一致性。已核对各控制策略（微电网下垂控制、角度下垂、状态空间模型等）的方程形式与本论文写作单位中引用的文献编号（[24]、[77]、[119]、[128]、[131]等）之间的对应关系。存在的不确定之处包括：1) TABLE I中的部分单元格内容（如'II'、'IV'等标记）疑似提取错误，影响对算法性能对比的精确理解；2) 原文提及的'TABLE II'中结构III对应的'Algorithm III owns the highest calculation complexity'这一结论明确，但与结构II、IV的关系需要从表格文字中推断；3) TABLE I中'High √ √ √ √'与'Middle √'两行的对应关系不够明确；4) 原文在页码12处提及'when considering a microgrid subject to complex line impedance'等内容时，未见明显文本断裂，但论述连续性因原文本身的列举结构略显跳跃。以上不确定之处均未在正文中添加或改写内容，已尽量保留原文可见文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5981,
+      "prompt_tokens": 28872,
+      "total_tokens": 34853,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 462
+      }
+    },
+    "content_chars": 10230
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

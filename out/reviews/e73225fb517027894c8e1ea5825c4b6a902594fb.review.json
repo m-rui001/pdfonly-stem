@@ -1,0 +1,136 @@
+{
+  "sha1": "e73225fb517027894c8e1ea5825c4b6a902594fb",
+  "title": "DeepTrust^RT: Confidential Deep Neural Inference Meets Real-Time!",
+  "doi": "https://doi.org/10.4230/lipics.ecrts.2024.13",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e73225fb517027894c8e1ea5825c4b6a902594fb/index.html",
+  "source_chars": 77855,
+  "markdown_chars": 7128,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "b ( t )=\\max \\left{C_{j}^{cs}|D_{j}>t\\right}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "阻塞延迟公式的花括号转义/配对在抽取文本中损坏，显示为 \\left{...\\right} 而非 \\left\\{...\\right\\}，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "If $ h(t)+b(t)>T_{min} $ and $ h(t)+b(t)t $ at any time t, then we report that the taskset is not schedulable (Line 13).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "条件表达式 $ h(t)+b(t)t $ 缺少比较运算符，应为 $ h(t)+b(t)<t $ 或类似形式，属抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ h ( t ) = \\sum_{i=1}^{i=n} \\left| \\frac{t}{T_{i}} \\right| C_{i}. $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Lemma 1 中向下取整符号被抽取为绝对值符号 |·|，应为 ⌊·⌋，影响公式含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ h(t)=\\sum_{i=1}^{i=n} \\max{0,1+\\lfloor \\frac{t-D_{i}}{T_{i}}\\rfloor } \\times C_{i}. $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "max 的花括号在抽取中丢失，显示为 \\max{0,...} 而非 \\max\\{0,...\\}，属公式符号损失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ h(t)=\\sum_{i=1}^{i=n} \\max{0,\\lfloor \\frac{t}{T_{i}}\\rfloor } \\times C_{i}. $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，max 的花括号在抽取中丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Algorithm 4 DeepTrust $ ^{R1} $ - FUSION: Task Fusion and Scheduling.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "算法标题中上标 RT 被误抽为 R1，应为 DeepTrust^RT-FUSION。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "if $\\sum_{j=p}^{j=k} w_{ij} = \\delta_1 < \\delta$ and $\\sum_{j=p}^{j=k+1} w_{ij} > \\delta$ then",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "求和下标/上标与变量在抽取中可能不完整，δ1 与 δ 的关系表述与正文略有出入，但可理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Lemma 3. The task set $ \\Gamma $ is schedulable under DeepTrust $ ^{RT} $ -FUSION if $ \\forall t > 0 $ , $ t < T_{max} $ $ h(t)+b(t)\\leq t $ , $ U(t)<1 $ , where",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "条件中 $ t < T_{max} $ 与 $ h(t)+b(t)\\leq t $ 之间缺少连接词，可能为抽取断句，但公式本身可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "the additional delay in response times due to transferring context for DeepTrust $ ^{\\mathrm{RT}} $ -LW and DeepTrust $ ^{\\mathrm{RT}} $ -FUSION are (a) 2.39 s and 1.34 s (AlexNet-squeezed), (b) 1.54 s and 2.95 s (Tiny Darknet), and (c) 5.62 s and 6.96 s (YOLOv3-tiny)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "Tiny Darknet 与 YOLOv3-tiny 的 DeepTrust^RT-FUSION 开销大于 DeepTrust^RT-LW，与全文“FUSION 开销更低”的结论方向相反，疑为数值或顺序抽取错误，但无更强文本证据，照录并标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "h (t) = \\sum_ {i = 1} ^ {i = n} \\left(\\left\\lfloor \\frac {t} {T _ {i}} \\right\\rfloor C _ {i} - \\frac {n _ {i} ^ {s} (t) \\times C _ {i} ^ {c s}}{t}\\right).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该公式中减去项含除以 t，与 Lemma 2 的 U(t) 形式一致，但作为 h(t) 的表达式量纲上可疑，可能为原文或抽取问题，照录。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "DeepTrust $ ^{RT} $: Confidential Deep Neural Inference Meets Real-Time!",
+  "self_check": "已核对：摘要与结论中的 3x 可调度性提升、11.12x 上下文切换减少、1.96x–11.12x 与 5.45x–11.1x 的切换减少范围、Example 2 的 0.69→1.05 利用率与 34% 开销、Example 3 的 h(t) 数值、Example 4 的 15→5→4 次 SMC 切换、Table 1 的 API 开销、Table 6 的仿真参数、UAV 案例的 18+2 任务与 0.75 利用率。公式方面照录了 r=mb/(m log2 k+kb)、h(t)、U(t)、Lemma 4 的 n^s 表达式，并标出取整符号被抽为绝对值、花括号丢失、条件缺比较符等疑点。仍不确定：Tiny Darknet 与 YOLOv3-tiny 的 FUSION 开销大于 LW 的数值方向是否原文如此；Lemma 3 中 h(t) 减去项含除以 t 的量纲问题；Algorithm 4 中 δ1 与 δ 的关系表述。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5736,
+      "prompt_tokens": 21840,
+      "total_tokens": 27576,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11066,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "DeepTrust $ ^{RT} $: Confidential Deep Neural Inference Meets Real-Time!",
+    "translated_title": "DeepTrust $ ^{RT} $：机密深度神经推理实现实时！",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

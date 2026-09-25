@@ -1,0 +1,81 @@
+{
+  "sha1": "85bbdef5b48ac9b81667b78fb71486b1e21bfc13",
+  "title": "Designing Air-Stable O3-Type Cathode Materials by Combined Structure Modulation for Na-Ion Batteries",
+  "doi": "https://doi.org/10.1021/jacs.7b05176",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/85bbdef5b48ac9b81667b78fb71486b1e21bfc13/index.html",
+  "source_chars": 24157,
+  "markdown_chars": 1969,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "which is in",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第3页末尾句子在‘which is in’处截断，第4页开头为‘excellent agreement’，中间插有页眉/页面信息，原文句子应连贯，存在跨页拼接问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the OCVs increased from 3.68 V to 3.82 V",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "同一摘要和正文中，前文（第5页）写OCV为NaNCMT 2.82 V vs NaNM 2.68 V，此处总结却为3.68 V→3.82 V，数值明显矛盾，可能为原文笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Ryn space group",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "O3型层状氧化物通常为R-3m（R3̅m）空间群，此处‘Ryn’疑为OCR或提取错误，但无法确定正确拼写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "constant charge at o.gC",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "图6d说明中‘o.gC’与前后文‘0.1C to 10C’不一致，疑为‘0.1C’或‘0.5C’的误提取，具体数值无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Figure 85",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "文中多处‘Figure 85’‘Figure 86’等应为补充材料图S5/S6，数字上标丢失，可能指Figure S5或S6。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对核心数据：稳定空气暴露期提高20倍、500次循环容量保持率约为9倍、NaNCMT首圈放电容量124 mA h g⁻¹、1C循环500次容量保持70.2% vs NaNM 7.8%、10C容量81 mA h g⁻¹、OCV矛盾（2.82/2.68 vs 3.68/3.82）已标注。提取文本中‘mA h g’等单位缺失上标，笔记中按常规写法补为⁻¹，但未改变数值。所有结论均基于提取文本，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6793,
+      "prompt_tokens": 7522,
+      "total_tokens": 14315,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4856
+      }
+    },
+    "content_chars": 3427
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

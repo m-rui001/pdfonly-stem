@@ -1,0 +1,54 @@
+{
+  "sha1": "c9155ba3581d16d8dd210dea29304b5e1c5da0f4",
+  "title": "Strongly correlated perovskite fuel cells",
+  "doi": "https://doi.org/10.1038/nature17653",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c9155ba3581d16d8dd210dea29304b5e1c5da0f4/index.html",
+  "source_chars": 50717,
+  "markdown_chars": 2941,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Ni3 + + O×O + 1 H2 ↔ Ni2 + + OH ·O), how2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页尾处\"how2\"与下一页开头的\"ever\"拼合后应为\"however\"，属于跨页断词；同时公式中的\"1 H2\"疑似应为\"1/2 H2\"，但无法从文本直接确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "1 H2",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "反应式化学计量比通常为1/2 H2，但提取文本为\"1 H2\"，因跨页干扰，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：最大功率密度225 mW cm⁻²、OCV 1.03 V、能斯特电位约1.07 V、离子迁移数0.96、ASR 0.045 Ω cm²、活化能约0.3 eV、XANES化学位移约2.0 eV、配体空穴浓度降低约50%、晶格膨胀约4%和10%。公式中的分数和跨页断词问题已在issues中标记，其余数值与摘要及正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7563,
+      "prompt_tokens": 13544,
+      "total_tokens": 21107,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5284
+      }
+    },
+    "content_chars": 3683
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

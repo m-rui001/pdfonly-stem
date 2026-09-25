@@ -1,0 +1,73 @@
+{
+  "sha1": "5bdb0ab76063008e2d282f71d2b34d3cba737e81",
+  "title": "Nitrogen in the environment",
+  "doi": "https://doi.org/10.1126/science.aav8215",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5bdb0ab76063008e2d282f71d2b34d3cba737e81/index.html",
+  "source_chars": 11125,
+  "markdown_chars": 2182,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "the environment has been effected",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "被动语境下应为 affected，environment 是被影响的对象；effected 作'实施'讲不搭配。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "including NOy, NHx, N20, HNO3",
+      "type": "疑似排版/OCR错误",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "N20 应为 N2O（一氧化二氮），与 NOy、NHx、HNO3 并列的活性氮物种；原文下标丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "indicate oligotophication rather than eutrophication",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "oligotophication 应为 oligotrophication，意为'贫营养化'，与 eutrophication 相对。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": null,
+      "quote": "Information on the probnlems associated with insufficient nitrogen",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "probnlems 应为 problems；该句位于 Figure 1 图注，原页标缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值与结论：大气 N2 占 78.1%；人为/自然 Nr 通量 210/203 Tg N/yr；作物氮回收率约 40%；撒哈拉以南非洲产量 1 t/ha、施肥 9 kg/ha，亚洲 4.5 t/ha、96 kg/ha；欧洲氧化态氮沉降 1900-1980 年增 3-4 倍、还原态氮增 2 倍；Craine 分析 38646 份样本发现叶氮下降及 δ15N 下降；落基山实验 12 年施氮、9 年恢复未达基线。不确定点：植物组织氮下降与沉降增加之间的悖论解释（CO2 与生长季延长）为作者推测；‘哈伯-博施效应’的 δ15N 信号为解释性陈述；N20 和 oligotophication 等文本缺陷已在 extraction_issues 中标注，正文照录原样。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10589,
+      "prompt_tokens": 3525,
+      "total_tokens": 14114,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8781
+      }
+    },
+    "content_chars": 3597
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "eaa02a2cd9cce7226930a41e937b1d69f1686dea",
+  "title": "Electrolyte Oxidation Pathways in Lithium-Ion Batteries",
+  "doi": "https://doi.org/10.1021/jacs.0c06363",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/eaa02a2cd9cce7226930a41e937b1d69f1686dea/index.html",
+  "source_chars": 105925,
+  "markdown_chars": 3248,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the wealth of published",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第4页末尾为'published'，第5页开头出现'4 results'，其中数字'4'为页码混入，实际应为'published results'，但提取文本中'4'被当作内容保留，导致拼接错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "4 results that have been reported",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字'4'应为页码标识，非正文内容。原句为'published results that have been reported'，但'published'在第4页末尾，此处'results'前多出'4'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要和正文中的关键数值：氧化起始电压约4.7 V、4.6 V循环容量损失17%、4.9 V损失99%、H-cell电解电流10 mA持续30 min、NMR化学位移（如EC 4.48 ppm、DMC 3.69 ppm、HF 10.6 ppm等）均与提取文本一致。公式EC + 4 Olattice → 3 CO2 + H2O + 2 H+ 已保留。不确定之处：表1中的部分峰归属（如OPF2(OH)-BF3）为暂定；表2的某些交叉项在提取文本中可能因格式缺失而未完全核对。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4142,
+      "prompt_tokens": 31110,
+      "total_tokens": 35252,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1655
+      }
+    },
+    "content_chars": 4138
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

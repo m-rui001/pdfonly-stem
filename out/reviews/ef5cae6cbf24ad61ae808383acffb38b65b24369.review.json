@@ -1,0 +1,82 @@
+{
+  "sha1": "ef5cae6cbf24ad61ae808383acffb38b65b24369",
+  "title": "An overview of Demand Response: Key-elements and international experience",
+  "doi": "https://doi.org/10.1016/j.rser.2016.11.167",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ef5cae6cbf24ad61ae808383acffb38b65b24369/index.html",
+  "source_chars": 171211,
+  "markdown_chars": 6642,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Furtherm.ore, the transition from ﬂat tariﬀs to time varying prices",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "‘Furtherm.ore’ 中的点号应为空格或逗号，明显为抽取/排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "BDBP has started campaigns through electronic and print mass media",
+      "type": "疑似缩写不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文多次使用 ‘BPDB’（Bangladesh Power Development Board），此处两次出现 ‘BDBP’，疑为同一机构缩写笔误，但原文如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "Pasiﬁc Gas & Electric Company (PG & E)",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "‘Pasiﬁc’ 应为 ‘Pacific’（原文拼写错误或 OCR 误识）。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "In order to provide automated control for a more eﬀective participation in a DR program, whether it is price- or incentive-based, [page 4] ﬂexibility of the end-points is increased because wireless signals can reach areas where physical connection is problematic.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第3页页尾句子在逗号处中断，第4页开头直接跳到另一个主题（无线通信的灵活性），缺少中间内容，明显属于跨页拼接丢失或顺序错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "average reduction of 2500 kV A",
+      "type": "疑似单位格式错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "‘kV A’ 应为 ‘kVA’（千伏安），中间空格可能是排版问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文数据和结论的一致性。关键数值：德国工业年用电 252.6 TWh、技术潜力 2660 MW；加州 300 MW 缺口导致停电；5% 需求削减可降 50% 电价；数据中心能耗可降低 80%；澳大利亚动态峰值回扣试点平均削减 2500 kVA；新加坡最低 0.1 MW、分享三分之一节省；孟加拉国转移 400 MW 灌溉负荷、350 MW 削峰；南非备用发电机 1000 kW、100 次/年；欧洲各国最小投标容量（芬兰 0.1 MW、意大利 1 MW、荷兰 4 MW、英国 STOR 3 MW、丹麦/挪威 10 MW）；美国 2012 年只有 23% 客户参与 DR。公式部分：图1的需求侧竞价格式保留关键符号（D_min, D_max, p, R_u,C_u, R_d,C_d），图3的市场均衡图以文字描述保留。跨页顺序疑点已标记，其余文本缺陷如拼写错误已列出。不确定之处：第15页中‘Baleares’可能为‘Balearic’但无文本证据，未标为错误；‘AS/NZS 4755.3.2’标准名称照录。结论方向与摘要一致：DR 有助于可再生整合，但发展不均衡且面临监管经济障碍。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5156,
+      "prompt_tokens": 38645,
+      "total_tokens": 43801,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 483
+      }
+    },
+    "content_chars": 8710
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

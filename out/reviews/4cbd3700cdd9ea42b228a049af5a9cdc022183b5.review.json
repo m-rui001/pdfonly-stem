@@ -1,0 +1,73 @@
+{
+  "sha1": "4cbd3700cdd9ea42b228a049af5a9cdc022183b5",
+  "title": "Genetic Learning Particle Swarm Optimization",
+  "doi": "https://doi.org/10.1109/tcyb.2015.2475174",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4cbd3700cdd9ea42b228a049af5a9cdc022183b5/index.html",
+  "source_chars": 71370,
+  "markdown_chars": 3918,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "P\n\nc 2015 IEEE.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第1页末尾孤立出现字母'P'，与下一页'c 2015 IEEE'疑似为版权声明的一部分，但'P'可能属于上一句的末尾或页眉残留，无法确定正确归属。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "vi,d ← ω · vi,d + c · rd · ei,d − xi,d",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "公式(3)中缺少括号，应为( ei,d − xi,d )，但文本原样如此，无法确定是提取遗漏还是原文如此，保留原样。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "I. I NTRODUCTION ARTICLE swarm optimization",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "标题中'ARTICLE'应为'Particle'的开头部分，由于分页导致'P'被截断到上一页末尾，此处拼接后丢失了字母'P'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "rd · pi,d + (1 − rd ) · gd",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式(5)中第一个随机数写作'rd'而非完整下标，且与后续'(1−rd)'中的'rd'一致，但上下文变量定义清晰，可能为提取时漏掉下标，不排除原文即用rd。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、实验部分的关键数值：GL-PSO参数ω=0.7298、c=1.49618、pm=0.01、sg=7，种群50，MaxFEs=10000·D，30次独立运行；多峰函数f8上GL-PSO误差3.82×10^-4且标准差0；参数推荐范围pm∈[0.005,0.05]、sg∈[4,7]；复杂度O[(D+M)·MaxFEs]；排名数据（第一14次、第二6次等）与原文一致。公式(1)-(7)按提取文本原样保留，未做修复。不确定处：公式(3)和(5)疑似提取不完整，但无文本内证据判断具体缺失内容，已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4729,
+      "prompt_tokens": 17994,
+      "total_tokens": 22723,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1679
+      }
+    },
+    "content_chars": 5283
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

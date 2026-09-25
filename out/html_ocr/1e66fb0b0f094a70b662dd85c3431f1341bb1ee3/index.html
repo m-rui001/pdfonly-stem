@@ -1,0 +1,507 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ultrafast control of vortex microlasers</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Ultrafast control of vortex microlasers</h1><p class="meta">https://doi.org/10.1126/science.aba4597 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>Can Huang $ ^{1} $ , Chen Zhang $ ^{1} $ , Shumin Xiao $ ^{1,2} $ , Yuhan Wang $ ^{1} $ , Yubin Fan $ ^{1} $ , Yilin Liu $ ^{1} $ , Nan Zhang $ ^{1} $ Geyang Qu $ ^{1} $ , Hongjun Ji $ ^{1} $ , Jiecai Han $ ^{2} $ , Li Ge $ ^{3,4,<em>} $ Yuri Kivshar $ ^{5,</em>} $ , and Qinghai Song $ ^{1,6,*} $</p>
+<div>
+
+# Title: Ultrafast control of vortex microlasers
+
+</div>
+<p>$ ^{1} $State Key Laboratory on Tunable laser Technology, Ministry of Industry and Information Technology Key Lab of Micro-Nano Optoelectronic Information System, Shenzhen Graduate School, Harbin Institute of Technology, Shenzhen, 518055, China.</p>
+<p>$ ^{2} $National Key Laboratory of Science and Technology on Advanced Composites in Special Environments, Harbin Institute of Technology, Harbin 150080, P.R. China.</p>
+<p>$ ^{3} $The Graduate Center, CUNY, New York, NY 10016, USA.</p>
+<p>$ ^{4} $Department of Engineering Science and Physics, College of Staten Island, CUNY, Staten Island, NY 10314, USA</p>
+<p>$ ^{5} $Nonlinear Physics Center, Research School of Physics, Australian National University, Canberra ACT 2601, Australia</p>
+<p>$ ^{6} $Collaborative Innovation Center of Extreme Optics, Shanxi University, Taiyuan 030006 China</p>
+<p>*Correspondence to: qinghai.song@hit.edu.cn; ysk@internode.on.net; li.ge@csi.cuny.edu</p>
+<p>Abstract: The development of classical and quantum information processing technology calls for on-chip integrated sources of structured light. While integrated vortex microlasers have been demonstrated earlier, they remain static and possess relatively high lasing thresholds, thus being not suitable for high-speed optical communication and computing. We introduce perovskite-based vortex microlasers, and demonstrate their application to ultrafast all-optical switching at room temperatures. By exploiting both mode symmetry and far-field properties, we reveal that the vortex beam lasing can be switched to linearly polarized beam lasing or vice versa with switching time of 1-1.5ps and energy consumption orders of magnitude lower than in the previously demonstrated all-optical switching. Our results provide an approach to break the long-standing trade-off between low-energy consumption and high-speed nanophotonics, introducing the vortex microlasers switchable at terahertz frequencies.</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><p>Owing to their mutual orthogonality, vortex beams with different topological charges have been suggested as an effective approach to revolutionize classical and quantum communications (1-8). Vortex beams with well-defined topological charges have been developed by using external phase elements such as spiral phase plates, computer generated holograms, and metasurfaces (5-8,9,10). Recently, being driven by the demand for compact displays and high-density integration, on-chip vortex microlasers have attracted much attention (5-7,11). The compact vortex microlasers are usually realized by transforming conventional optical cavities into spiral waveguides (6) or micropillar chains (7), and modulating them with additional asymmetric scatterers (5). Although the reported performance in both directional output and generation efficiency of orbital angular momentum (OAM) beams is impressive, the Q factors of such vortex microlasers are strongly reduced by scattering losses and thus their energy consumption is large (5-7,12). In addition, onchip integrated vortex microlasers are either static (5,6) or controllable in emission chirality via the circularly polarized optical pump (7), thus being not suitable for ultrafast optical networks (8). Most importantly, due to the rundown time of an optical resonance, there appears a trade-off between low-energy consumption and high modulation speed in nanophotonics, restricting the application in modern optical computing and optical communications.</p>
+<p>Here we solve all these problems by employing bounded states in the continuum (BICs) which represent special solutions of the wave equation whereby the wave function exhibits localization in a radiation band (13,14). In optical systems, BICs appear through interference between localized resonances and radiation modes, and they have been observed in the form of quasi-BIC in many systems ranging from isolated nanoparticles to periodic structures (14-19). In addition to ultra-high Q factors and low-threshold lasing, it was predicted that the BIC modes can possess vortex behaviors with different topological charges, important for vector beams (20-22). These findings make BICs very attractive for application in active photonics. Here we employ the specific characteristics of the topologically-protected optical BICs and demonstrate the ultrafast control of perovskite-based vortex microlasers at room temperatures.</p>
+<p>Our metasurface is created using a 220 nm lead bromide perovskite $ \mathrm{M A P b B r_{3}} $ film patterned with a square array of circular holes (Fig. 1A). The whole structure is placed on a glass substrate $ \mathrm{(n_{s u b}=1.5)} $ and coated with PMMA $ \mathrm{(n_{p m m a}=1.49)} $ . The radius of air holes is R=105 nm, and the lattice spacing is p=280 nm. We calculate the resonances of the transverse magnetic (TM) polarized field within the perovskite metasurface (Fig. 1B). The mode-1 has appreciable Q factor within the gain spectral range of $ \mathrm{M A P b B r_{3}} $ perovskites (Fig. 1C). By changing the radius of the hole, we preserve the Q factor of the mode-1 throughout the operational range. This mode represents the topology-protected BIC with an embedded polarization vortex, which has been discussed previously (20, 23-26).</p>
+<p>The perovskite metasurfaces was fabricated from $ \mathrm{M A P b B r_{3}} $ with a combined process of electron-beam lithography and reactive ion etching (27). Figure 2A shows the top-view scanning electron microscope (SEM) image of the sample. To realize the designed BIC vortex lasers, we optically pump the perovskite metasurface at room temperature with a frequency-doubled Ti: Sapphire laser. Figure 2B shows the evolution of the emission spectrum at different pumping densities. A broad spontaneous emission peak of lead halide centered at 520 nm is observed at low pumping density.</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>With an increase of the pumping power, a single peak appears at 552 nm (being the resonant wavelength of the mode-1 in the normal direction) and quickly dominates the emission spectrum at higher pumping fluence. Figure 2C shows the output laser intensity as a function of the pumping density, and it confirms the onset of lasing with the characteristic S-shape curve.</p>
+<p>The vortex characteristics of the emission are studied from the far-field angular distributions by the back-focal-plane imaging technique (27) (see Fig. 2). The intensity of perovskite laser emission is spatially distributed in a donut shape with a dark zone at the center (Fig. 2D). The dominant bright ring corresponds to the far-field angle of $ \theta_{\mathrm{FF}}=2^{\circ} $ . The dark center is caused by a topological singularity at the beam axis. Figure 2D shows the self-interference pattern of a donut beam (27), where a fork-shaped interference pattern can be seen. In the profiles of the donut beam behind a linear polarizer (Figs. 2E-2H), two lobes are observed and their direction follows with the axis of linear polarizer, demonstrating the radial polarization. These experimental results for the beam profiles, self-interference patterns, and polarization states confirm the onset of the vector vortex lasing at the BIC mode (28). The BIC vortex microlasers are robust to global changes. It has been reproduced for more than 10 samples (27), and it has proven to be robust to a change of the excitation power. The donut-shaped laser beams and fork-shaped interference patterns are well preserved from the laser threshold to gain saturation (see Fig. 2D).</p>
+<p>Vortex emission is typically produced by real-space chiral structures (9), which are absent in our experiment. Instead, in our system, the topology that protects the BICs manifests itself as the rotation of polarization along the beam axis in the far field (28, 29). Acting alone, it impacts an OAM in the cross-polarized transmission of circularly polarized beams (29). Together with the transverse spin angular momentum introduced in real samples, we observe the emergence of the effective Pancharatnam-Berry phase (27).</p>
+<p>More interestingly, the laser emission at the symmetry protected BICs can be controlled all optically. While the BIC lasers are robust to a global change, they are extremely sensitive to symmetry-breaking perturbations (14,21) and thus easily controllable. In passive systems, such a control is realized via a deformation of nanostructures (26) or the Kerr nonlinearity, which not suitable for post-fabrication control or require strong optical excitation. The laser systems can solve this problem in a simpler way. The exceptional gain corresponds to the imaginary part of refractive index (n") which is a new parameter to control the symmetry. One example is illustrated in Fig. 1D and (27) where a regular change of n" of a laser system in a selected region can break the 4-fold rotational symmetry of the system. As a result, the resonance at the $ \Gamma $ -point degrades from BIC to quasi-BIC, and the corresponding Q factor is reduced by orders of magnitude. In this sense, the pumping geometry can provide more flexible approach to control the performance of the vortex BICs lasers.</p>
+<p>To demonstrate this kind of all-optical control of the vortex microlasers, the perovskite metasurface is pumped with a circular laser beam, the symmetry is protected, and thus a donut-shaped beam is generated (Fig. 3A). Once the pumping region is transferred from a circle to an ellipse (Fig. 3B), the symmetry protection becomes broken, and two linearly diffracted beams are</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><p>produced (30). Similar symmetry-breaking can also be realized with a two-beam configuration. As depicted in Fig. 3C, one circular beam with density above a threshold $ (1.2\mathrm{P_{th}}) $ is applied onto the perovskite metasurface. The second circular beam with $ 0.8\mathrm{P_{th}} $ is pumped on the same sample with 10 $ \mu m $ lateral shift. The second beam does not produce laser emission but it could pump an overlapping region far above the threshold. In microlasers, a small change in the pumping density above a threshold can induce an appreciable variation in the gain coefficient. Consequently, the symmetry at BICs becomes broken, and two linearly polarized beams without OAM are generated along the radial direction (27).</p>
+<p>In addition to the spatial deviation, the two-beam configuration can also allow a time delay $ \tau $ (Fig. 4A), which can record the temporal behavior of the transition process. To accurately characterize the switching time, we introduce the parameter $ K=(I_{1}-I_{2})/I_{2} $ and study precisely its dependence on $ \tau $ . Here $ I_{1,2} $ correspond to the intensities in the regions marked as 1 and 2 in Fig. 4A. When the nanostructure is pumped only by the first beam, the output is a uniform donut and the normalized ratio is K~0. Once the second beam overlaps temporally with the first beam, the optical symmetry becomes broken. Correspondingly, the intensity at region-2 decreases, almost vanishing (27) and giving the ratio of K~1 (see Fig. 4B). The switching time from a vortex lasing to a regular linearly polarized lasing is only about 1.5 ps. By changing the asymmetric pumping beam to a circular beam, the two linearly polarized beams can be switched back to the vortex lasers with a similar transition time ~ 1.5 ps (Fig. 4C).</p>
+<p>The switching "on" and "off" at the quasi-BIC mode is intrinsically different from the formation of short laser pulses. The latter is usually restricted by the build-up time and cannot repeat with a high speed. To illustrate directly this difference, we apply the third pump beam to recover the symmetry. As depicted in Fig. 4D, the donut-lobes-donut states can be combined within a single process. Thus the transition time is not limited. Because of a strong relationship between the output beam and the symmetry, the emission beam only has two states, i.e. donut and two lobes (27). Considering the transition time, such a binary transition is reliable for applications to all-optical switching.</p>
+<p>Note that the transition time of the BIC lasers is orders of magnitude faster than that observed earlier for any conventional directly modulated microlasers and the lifetime of our BIC lasers (27). Such a surprising improvement is attributed to the far-field characteristics of BICs. In principle, the BICs are formed by destructive interference at the radiation channels. The transition from BIC vortex lasers to linear lasers represents a re-distribution of the laser emission instead of a direct switching of the lasing mode. In this sense, we don't need to wait for the rundown of an initial laser mode, and thus the trade-off between high-Q values （ $ Q\propto\omega t $ , relates to a low threshold) and high-speed operation （ $ \propto1/t $ ）can be broken. Nonlinear all-optical switching can have similar or even shorter transition time. But here the exceptional gain coefficient makes the energy consumption (122 W for peak power) orders of magnitude lower. We also notice that this approach allows to remove the fundamental limitation for microlasers, and the energy consumption can be further reduced by fully exploiting the extremely high Q factor at the BICs (18).</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>The high sensitivity to symmetry-breaking perturbation and far-field characteristics of the BIC mode associated with the exceptional optical gain make these BIC lasers controllable all-optically, with ultra-low energy consumption and simultaneously ultra-high speed. Breaking of traditional trade-off between low energy and high speed with the BIC lasers provides a route to develop high-speed classical and quantum communication systems.</p>
+<h2>References and Notes:</h2>
+<ol>
+<li>C. Qiu, Y. Yang, Science 357, 645 (2017).</li>
+</ol>
+<ol>
+<li>L. Allen, M.W. Beijersbergen, R.J.C. Spreeuw, J.P. Woerdman, Phys. Rev. A 45, 8185-8189 (1992).</li>
+</ol>
+<ol>
+<li>A.M. Yao, M. J. Padgett, Adv. Opt. Photon. 3, 161-204 (2011).</li>
+</ol>
+<ol>
+<li>S.K. Ozdemir, S. Rotter, F. Nori, L. Yang, Nat. Mater. 18, 783-798 (2019).</li>
+</ol>
+<ol>
+<li>P. Miao et al., Science 353, 464-467 (2016).</li>
+</ol>
+<ol>
+<li>D. Stellinga et al., ACS Nano 12, 2389-2394 (2018).</li>
+</ol>
+<ol>
+<li>N. C. Zambon et al., Nat. Photon. 13, 283-288 (2019).</li>
+</ol>
+<ol>
+<li>J. Feldmann, N. Youngblood, C.D. Wright, H. Bhaskaran, W.H.P. Pernice, Nature 569, 208- 214 (2019).</li>
+</ol>
+<ol>
+<li>R. C. Devlin, A. Ambrosio, N.A. Rubin, J. P. Balthasar Mueller, F. Capasso, Science 358, 896-901 (2017).</li>
+</ol>
+<ol>
+<li>X. Cai et al., Science 338, 363-366 (2012).</li>
+</ol>
+<ol>
+<li>D. Naidoo et al., Nat. Photon. 10, 327-332 (2016).</li>
+</ol>
+<ol>
+<li>L. Feng, Z. J. Wong, R. M. Ma, Y. Wang, X. Zhang, Science 346, 972-975 (2014).</li>
+</ol>
+<ol>
+<li>J. Neumann, E. Wigner, Phys. Z 30, 465 (1929)</li>
+</ol>
+<ol>
+<li>C. W. Hsu, B. Zhen, A. D. Stone, J. D. Joannopoulos, M. Soljacić, Nat. Rev. Mater. 1, 16048 (2016).</li>
+</ol>
+<ol>
+<li>C. W. Hsu et al., Nature 499, 188-191 (2013).</li>
+</ol>
+<ol>
+<li>M. V. Rybin et al., Phys. Rev. Lett. 119, 243901 (2017).</li>
+</ol>
+<ol>
+<li>A. Kodigala et al., Nature 541, 196-199 (2017).</li>
+</ol>
+<ol>
+<li>J. Jin et al., Nature 574, 501-504 (2019).</li>
+</ol>
+<ol>
+<li>K. Koshelev et al, Science 367, 288-292 (2020).</li>
+</ol>
+<ol>
+<li>B. Zhen, C. W. Hsu, L. Lu, A. D. Stone, M. Soljacic, Phys. Rev. Lett. 113, 257401 (2014).</li>
+</ol>
+<ol>
+<li>H. M. Doeleman, F. Monticone, W. den Hollander, A. Alu and A. F. Koenderink, Nat. Photon. 12, 397-401 (2018).</li>
+</ol></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><ol>
+<li>Y. Zhang et al., Phys. Rev. Lett. 120, 186103 (2018).</li>
+</ol>
+<ol>
+<li>S. Fan, J. D. Joannopoulos, Phys. Rev. B 65, 235112 (2002).</li>
+</ol>
+<ol>
+<li>K. Hirose et al., Nat. Photon. 8, 406-411 (2014).</li>
+</ol>
+<ol>
+<li>Y. Yang, C. Peng, Y. Liang, Z. Li, S. Noda, Phys. Rev. Lett. 113, 037401 (2014).</li>
+</ol>
+<ol>
+<li>W. Liu et al., Phys. Rev. Lett. 123.116104 (2019).</li>
+</ol>
+<ol>
+<li>Materials and methods are available as Supplementary Materials on Science Online.</li>
+</ol>
+<ol>
+<li>B. Bahari et al., arXiv: 1707.00181 (2017).</li>
+</ol>
+<ol>
+<li>B. Wang et al., arXiv: 1909.12618 (2019).</li>
+</ol>
+<ol>
+<li>S. T. Ha et al., Nat. Nanotechnol. 13, 1042-1047 (2018).</li>
+</ol>
+<p>Acknowledgments:</p>
+<p>Y.K. thanks B. Kantéand K. Koshelev for useful discussions and suggestions. Funding: This research was supported by the National Key Research and Development Program of China (grant No. SQ2018YFB220027), Shenzhen Fundamental Research Fund (grant No. JCYJ20180507184613841), the Australian Research Council (grant DP200101168), and National Science Foundation (grant No. PHY-1847240). The authors also acknowledge a support from the Shenzhen engineering laboratory on organic-inorganic perovskite devices. Author contribution: Q.S. conceived the concept and supervised this research. C.H. and Y.F. performed numerical simulations and optical characterization. C.Z., C.H. Y.W., H.J and J.H fabricated the samples. Q.S., Y.K., S.X., C.H and L.G discussed the results and wrote the manuscript. All authors contributed to editing and preparing the manuscript. Competing interests: Authors declare no competing interests. Data and materials availability: All data are available in the manuscript or the supplementary materials.</p>
+<p>Supplementary Materials:</p>
+<p>Materials and Methods</p>
+<p>Figs. S1-S15</p>
+<p>References (31-36)</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 1: Design and control of the quasi-BIC modes. (A) Schematic of the designed perovskite metasurface. The metasurface is pumped by a blue laser light producing a green vortex beam in the vertical direction. (B) Dispersion relation around 550 nm for laser resonances in both the $ \Gamma $ X and $ \Gamma $ M directions. The inset shows the first Brillouin zone of the square lattice. (C) Calculated Q factors of four resonances. (D) Reduction of the Q factor for the quasi-BIC mode with a growth of the imaginary part of the refractive index $ \Delta n $ ”.
+
+</div></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><div>
+
+A
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+B
+
+</div>
+<div>
+
+C
+
+</div>
+<div>
+
+D
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+E
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+F
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+G
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+H
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 2: Demonstration of vortex perovskite microlasers. (A) SEM image of the fabricated perovskite metasurface following the design of Fig. 1. (B) Evolution of the normalized emission spectrum with pumping density. (C) Integrated output intensity as a function of pumping density. The "S-shape" curve shows a laser threshold at around $ 4. 2 \, \mu\mathrm{J} / \mathrm{c m}^{2} $ . Inset shows the laser polarization within the plane of the device. (D) Far-field patterns and corresponding self-interference at different pumping densities. Numbers (3) to (5) denote the spectra plotted in (B) and (C), respectively. (E-H) Measured intensity distribution of the vortex laser beam after a linear polarizer with polarization orientations along $ 0^{\circ} $ $ 4 5^{\circ} $ $ 9 0^{\circ} $ , and $ 1 3 5^{\circ} $ . The scale and color bars are the same across the panels (3) to (5) in Figs. 2D.
+
+</div></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 3: Optically-controlled far-field vortex lasing. (A-C) Schematics of the experiments (top) and experimentally measured far-field patterns (bottom). (B, C) Same as in (A) but when the shape of the pumping laser beam is changed to an ellipse, or the sample is pumped with two circular beams.
+
+</div></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><div>
+
+A
+
+</div>
+<div>
+
+5
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+B
+
+</div>
+<div>
+
+C
+
+</div>
+<div>
+
+D
+
+</div>
+<div>
+
+Figure 4: Ultrafast control of the quasi-BIC microlasers. (A) Schematic of two-beam pumping experiment. Two beams are spatially detuned with a distance d &lt; 2R, being shifted temporally with a delay time $ \tau $ . The insets show the far-field emission patterns from the perovskite metasurface under both symmetric and asymmetric excitations. (B) Transition from a BIC microlaser to a linearly-polarized laser. $ I_{1,2} $ are the intensities at the marked region in the insert to (A). Insets show the corresponding beam profiles. (C) Reverse process of (B). (D) Transition from a donut beam to two-lobe beam and back within a few picoseconds. Red curves are guiding lines for the calculation of the transition time.
+
+</div></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><div>
+
+# Supplementary Material for
+
+</div>
+<p>Ultrafast control of vortex microlasers</p>
+<p>Can Huang, Chen Zhang, Shumin Xiao, Yuhan Wang, Yubin Fan, Yilin Liu, Nan Zhang, Geyang Qu, Hongjun Ji, Jiecai Han, Li Ge $ ^{<em>} $ , Yuri Kivshar $ ^{</em>} $ , and Qinghai Song $ ^{*} $</p>
+<p>Correspondence to:</p>
+<p>qinghai.song@hit.edu.cn, ysk@internode.on.net; li.ge@csi.cuny.edu</p>
+<p>This PDF file includes</p>
+<p>Materials and Methods</p>
+<p>Optical characterization</p>
+<p>Supplementary text</p>
+<p>Figures S1 to S15</p>
+<p>References (31-36)</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><h2>MATERIALS AND METHODS</h2>
+<h2>1. Preparation of samples</h2>
+<p>As described in the main text, the perovskite photonic structures are prepared by standard lithographic processes with electron-beam lithography (EBL) and reactive ion etching. The main fabrication steps are shown in Fig. S1. First, $ \mathrm{M A P b B r_{3}} $ perovskite film is prepared by spin-coating the $ \mathrm{M A P b B r_{3}} $ precursor onto the k9 glass substrate, which is coated with Au electrode surround for the next EBL process. The $ \mathrm{M A P b B r_{3}} $ precursor is obtained by dissolving $ \mathrm{P b B r_{2}} $ and $ \mathrm{C H_{3} N H_{3} B r} $ (99.999 %, Shanghai MaterWin New Materials Co.) with a 1:1 molar ratio in dimethylsulfoxide. 35 ul 1.2 M $ \mathrm{C H_{3} N H_{3} P b B r_{3}} $ precursors are spin-coated onto the substrate at 4000 r.p.m for 60 s. 70 $ \mu\mathrm{L} $ of chlorobenzene is then quickly dropped on the film (when remain 37 s) to promote the formation of a lead-halide-perovskite film. All above processes are conducted in the glovebox with $ \mathrm{A r_{2}} $ gas at room temperatures. The synthesized perovskite films have the average roughness of 5.43 nm, which is smooth enough for the nanostructure fabrication.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure S1. Sample fabrication process.
+
+</div>
+<div>
+
+Then 400 nm electron-beam resist (ZEP-520A) is spin-coated ( at 4000 r.p.m for 60 s) onto the perovskite film, and then patterned by an electron beam writer (Raith E-line) with a dose 90 $ \mathrm{C/cm^{2}} $ under an acceleration voltage 30 kV. After developing in N50 for 50 s and MIBK solution for 10 s, the pattern of metasurface is generated in the E-beam
+
+</div></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><p>resist. The pattern is then transferred to $ \mathrm{M A P b B r_{3}} $ perovskite with an etching process (Oxford Instruments, PlasmaPro ICP180). $ \mathrm{M A P b B r_{3}} $ film is etched by chlorine gas with 5 sccm flow rate $ \mathrm{C_{4} F_{8}} $ with 10 sccm flow rate is used as protective gas. Finally, the sample is placed in in a low-pressure chemical vapor deposition (LPCVD) system to replace the chlorine ion in the sample, which is produced in the etching process, by bromide ion $ (\mathrm{C H_{3} N H_{3} B r} $ powder). The $ \mathrm{C H_{3} N H_{3} B r} $ powder is placed at the center of a CVD furnace and central heating zone is increased to $ 1 2 5 \mathrm{~} ^ {\circ} \mathrm{C} $ for 20 mins. After CVD process, the whole system is coated with a layer of PMMA in a negative pressure environment for 10 mins.</p>
+<p>PMMA used here avoided the contact between air and a perovskite film, which could protect the perovskite nanostructure to maintain optical properties for a long time. To verify this, we measure the stability of perovskite nanostructure with or without PMMA layer, as shown in Fig. S2. The pumping density in experiments is maintained as $ 1. 1 \mathrm{P}_{\mathrm{t h}} $ (1.1 times threshold, repetition rate 1 kHz, pulse width 100 fs). For the sample covered with a PMMA layer, the output laser intensity is not decreased for 220 minutes. However, the laser intensity decreased rapidly in 30 minutes for the sample not covered with a PMMA layer. In fact, the PMMA covered samples can keep the optical properties for more than 5 months up to the author's submission date.</p>
+<div>
+
+Figure S2. Stability of perovskite nanostructures with or without a PMMA layer.
+
+</div></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>As the key parameters for the design of optical bounded states in the continuum (BICs), the real and imaginary parts of the refractive index of the perovskite film have been measured by ellipsometry, as shown in Fig. S3. We can see that the real part of the refractive index (n) is well above 2 in the visible spectrum. Such a high value of the index is high enough to support guiding modes and collective resonances in the designed nanostructure. Meanwhile, the recorded light extinction coefficient (k) is almost vanished in the spectral range above 545 nm. This is also important for the realization of BICs and BIC lasers.</p>
+<div>
+
+Figure S3. Experimentally measured refractive index (n) and light extinction coefficient (k) of the synthesized perovskite film.
+
+</div>
+<h2>2. Numerical approach</h2>
+<p>The band structure and quality factor of perovskite nanostructure are calculated using three-dimensional finite-element method (COMSOL). The model is built with a unit cell, consisting of a square (with index of perovskite) hollowed out a round hole (with index of PMMA). Period boundary conditions in both are x and y directions and perfectly matched layers (PML) along the z-direction are constructed. The band structure is then calculated using eigen-frequency solver with gradual change of the angle of incidence. Figure S4 shows the TM (transverse magnetic, with E perpendicular to the plane) and TE (transverse electric, with E in plane) band structure near the $ \Gamma $ point and the corresponding electric field, respectively. The green shading region is the spectrum range for an optical gain of perovskite film, and we can see that only $ \mathrm{T M}_{1} $</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><p>mode could experience enough gain for the designed nanostructure. On the other hand, comparing the electric fields for the TE modes and TM modes, we observe that the electric field of the TM modes is confined with the perovskite film, while for the TE modes, the electric field is confined within the air hole. This indicates that the polarization of the output laser beam should be TM polarization, barely consistent with our experimental results.</p>
+<div>
+
+Figure S4. Numerically simulated band structures for the TM and TE polarized modes.
+
+</div>
+<p>As mentioned in the main part of the manuscript, the symmetry-protected BICs are extremely sensitive to the symmetry-breaking perturbation. In the manuscript, we show that the Q factors of the resonance mode 1 and 4 decrease rapidly with a slight change on the imaginary part of the refractive index (see Fig. S5a). When $ \Delta n $ is on the order of conventional optical pumping $ ^{12} $ , the field within the slab retributes and forms two modes. This clearly shows the deviation of the system from BIC conditions. As n" can be simply tailored via the pump beam profile, it is thus a better parameter to control the BIC system. Figure S5b shows the corresponding resonant wavelengths. It is easy to see that the wavelengths keep well. Therefore, compared with the wavelength shift and simple intensity measurement, the lasing actions that is closely related to the Q factors and the other characteristics can be a better candidate for monitoring and controlling BICs.</p></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><div>
+
+C
+
+</div>
+<div>
+
+d
+
+</div>
+<div>
+
+Figure S5. (a) Degradation of the Q factor with a partial increase of the imaginary part of the refractive index $ \Delta n $". Field redistribution at moderate $ \Delta n $" clearly shows the break of symmetry. (b) Resonance wavelength of mode 1a shifts with the increase of $ \Delta n $". (c) Q factor of the mode-1 as a function of the deformation parameter $ \varepsilon $ . Inset shows the electric field pattern of the mode-1 with $ \varepsilon=0.4 $ . (d) Resonant wavelength corresponding to (c).
+
+</div>
+<p>In addition, BICs can also be changed by the geometry of the unit cell. Similar deviation from the BICs conditions studied by Noda et al $ ^{31} $ . Here, we define the shape of a hole in perovskite film with the equation $ \rho (\theta)=R(1+\varepsilon\cos\theta) $ , where R and $ \varepsilon $ are the size and deformation parameters. The limacon shape $ (\varepsilon&gt;0) $ only has one mirror reflection symmetry in one direction, and thus it can break the symmetry protection at the $ \Gamma $ -point. Figure S5(c) shows the simulated Q factor of the mode-1 as a function of the deformation parameter. With the increase of $ \varepsilon $ from 0 to 0.49, we observe that the Q factor is reduced by orders of magnitude. Associated with the Q factors, Fig. S5(d) shows the corresponding resonant wavelength, which also changes with the increase of the deformation parameter. This is different from the results of Figs. S5(a) and Fig. S5(b), and it shows that a strong modification is required to deviate the system from the BIC conditions. In this sense, the modification of the real part of the refractive index is</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><p>not only un-suitable for the post-fabrication control, but requires also much stronger perturbation. In this sense, considering a close relationship between the gain and optical pumping, the optical control through the gain coefficient can be a much better approach.</p>
+<p>In the main manuscript, we have mentioned the square lattice at BICs can produce the winding structure in the momentum space, which provide a phase vortex in crosspolarized transmission of circularly polarized beams. Below we derive the associated OAM using the transmission matrix. We excite the symmetry-protected BIC at the $ \Gamma $ point with a circular polarized light [see Fig. S6(a)]. For left-handed plane wave, it can be described by the Jones electric-field vector $ E_{in}=E_{0}[1,i]^{T} $ , where T denotes the matrix transpose. The transmitted wave is given by $ E_{out}=T\cdot E_{in} $ , where T is the transmission/Jones matrix due to both the direct and BIC-assisted processes in the temporal coupled mode theory $ ^{29,31} $ . The BIC-assisted process, with a few assumptions, includes a cross-polarized part:</p>
+<div class="formula">$$
+M \propto \left( \begin{array}{c c} \cos 2 q \phi &amp; \sin 2 q \phi \\ \sin 2 q \phi &amp; - \cos 2 q \phi \end{array} \right).
+$$</div>
+<p>Here q is the winding number or topological charge of the polarization vector $ C=( C_{x}, C_{y}) $ in the transverse plane of the far-field, defined using $ \phi_{k}=\operatorname{A r g} [ C_{x}+i C_{y} ] $ and a loop integral</p>
+<div class="formula">$$
+q = \frac {1}{2 \pi} \oint \nabla_ {k} \phi_ {k} \cdot d \boldsymbol {k}
+$$</div>
+<p>that encloses the origin in the momentum space. We find q=1 for both radially and azimuthally polarized far-field of BICs. Then the transmitted waves with cross polarization becomes</p>
+<div class="formula">$$
+E _ {o u t} = E _ {0} e ^ {i 2 q \phi} \left[ \begin{array}{c} 1 \\ - i \end{array} \right],
+$$</div>
+<p>which indicates that the cross-polarized transmitted wave has acquired a phase factor $ exp(il\varphi) $ with topological charge $ l=2 q. $ $ ^{31} $ With this analysis, we have simulated numerically the transmission of light around BICs. The results are shown in Fig. S6(b). After passing the periodic nanostructure, the crossed-polarized transmitted light</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><p>carrying OAM with the topological charge $ l=2 $ . This is consistent with the intrinsic topological charge $ q=1 $ of our radially polarized BIC state.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. S6. (a) Schematic for the transmission study. (b) The phase profile of transmitted light with a crossed polarization
+
+</div>
+<p>The above analysis shows that the topologically protected BIC can provide a winding structure in the momentum space. Interestingly, the excitation of such a BIC under special conditions can also produce a phase vortex in the coordinate space, leading to a lasing mode carrying nonzero orbital angular momentum. This was first noticed by Kante et al (see Ref. 28 of the main text) and has been discussed by Zi et al (see Ref. 29). Some related theory has also been discussed in Refs. 32 and 33. For our case of BIC laser emission in the Gamma point, we believe the emergence of the phase vortex is also tied to the non-zero transverse spin angular momentum $ \sigma $ . Considering a system with the total angular momentum J and transverse spin angular momentum $ \sigma $ the OAM L is now given by $ J-\sigma $ . The transverse spin angular momentum is produced by additional sidewall scattering introduced in the fabrication process, which produces a small azimuthal component as well in the far-field. Some additional theoretical explanations have been provided in Refs. 34 and 35.</p></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><h2>OPTICAL CHARACTERIZATION</h2>
+<h2>1. Laser characterization</h2>
+<p>Photoluminescence of the sample is excited with a frequency doubled Ti:Sapphire laser (400 nm, using a BBO crystal) from a regenerative amplifier (repetition rate 1 kHz, pulse width 100 fs, seeded by Mai Tai, Spectra Physics). The pumping laser is focused by using a $ 2 0 \times $ objective lens onto the top surface of the sample. Emitted light and corresponding fluorescence microscopy image are collected by the same objective lens coupled with a CCD (Princeton Instruments PIXIS BUV) coupled spectrometer (Acton SpectroPro SP750i) and a camera, respectively. An attenuator and an energy meter are used to tune and measure the pumping density, and a set of filters are employed to filter out 800 nm laser.</p>
+<p>The light scattering from the perovskite metasurfaces has been described in the manuscript. Figure 2a in the main manuscript shows the evolution of the emission spectrum at different pumping densities. A broad spontaneous emission peak of lead halide centered at 520 nm is observed at low pumping density. With an increase of the pumping power, a narrow peak appears at 556 nm, and it quickly dominates the emission spectrum at higher pumping fluence. Figure 2b in the main text summarizes the output laser intensity as a function of the pumping density. A "S-shape" curve is observed in the log-log plot, demonstrating the transition from spontaneous emission to amplification and finally to gain saturation. Meanwhile, we also observe that the full width at half maximum (FWHM) reduces significantly from $ \sim 3 0 $ nm to 0.1 nm, which is the resolution limit of our spectrometer. All of these observations confirm the properties of perovskite generated by the periodic lattice. The threshold value is around $ 3.7 \ \mu\mathrm{J/cm}^{2} $ , which is also consistent with previous reports on single-crystalline perovskite lasers.</p></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><div>
+
+Figure S7. (a) Single-mode laser operation with an extinction ratio of 20 dB for the BIC laser. (b). Laser emission spectrum observed from other samples with different radius, here the periods of these samples are all 280 nm, but with a slight thickness deviation around 220 nm. Insets shown the corresponding donut-shape beams in the back-focal-plane (left column) and fork-shaped interference patterns (right column). The variation in the sizes of dark zones in (b) is relatively random and is mainly caused by the pumping power and the imperfections of samples.
+
+</div>
+<p>Owing to the BIC effect, the single-mode laser operation is well preserved above the threshold. As shown in Fig. S7a, when pumping density is increased to $ 2^{*} \mathrm{P}_{\mathrm{th}} $ another laser peak $ \sim 5 5 4 $ nm appears besides the main laser peak $ \sim 5 5 2 $ nm. The calculated extinction ratio is more than 20 dB. These results show that the BIC vortex microlasers are quite robust to perturbations. We also show that the BIC laser and the vortex lasers can be repeated in many samples. Figure S7b shows the experimental results by changing the air radius from 105 nm to 70 nm. We observe the lasing wavelength redshift from 552 nm to 560 nm. Besides, the single-mode laser operation, the donut-shape beam in back-focal-plane and the fork-shaped interference pattern are all well preserved in these samples.</p>
+<h2>2. Back-focal plane imaging</h2>
+<p>The setup for back-focal plane imaging is shown in Fig. S10. A frequency doubled Ti:Sapphire laser beam (400 nm, using a BBO crystal) generated from a regenerative amplifier (repetition rate 1 kHz, pulse width 100 fs, seeded by Mai Tai, Spectra Physics)</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><p>used to excite the sample. A white light source and a CCD are used here to monitor pumping positions on the sample. Laser output emission is collected by a 20x (NA=0.6) object lens and a long focal length lens. The sample and another CCD are put in the focal points of collective object lens and the long focal length lens, respectively. The sample, object lens, long focal length lens and the CCD form 4f system. And a 520 long pass filter is used to filter out the pumping signal. The experimental results are shown as insets in Fig. S8.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure S8. Optical setup for measuring back-focal-plane images.
+
+</div>
+<h2>3. Self-interference optical setup</h2>
+<p>The self-interference experimental setup is shown in Fig. S9, where modified Mach-Zehnder interferometer is used. A frequency doubled Ti:Sapphire laser light (400 nm, using a BBO crystal) from a regenerative amplifier (repetition rate 1 kHz, pulse width 100 fs, seeded by Mai Tai, Spectra Physics) is used to excite the sample. The sample is first pumped by the 400 nm femtosecond pulse laser through a 40x object lens, and then the emission is collected by a 20x object lens. The emitted laser beam is splitted into two donut beams (50:50) and reach the same observation plane via two different paths. Then the interference pattern could be monitored by a CCD camera. In order to ensure a temporal overlap between the two paths, one of the paths is adjusted</p></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><p>using a delay line, when observing the interference patterns, and beams are shifted to make the dark center of one donut overlap a bright ring of the other beam. A white light source and a CCD camera monitor pumping positions on the sample.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure S9. Optical setup for self-interference measurements of the vortex emission.
+
+</div>
+<h2>4. Optical switching</h2>
+<p>A setup for optical switching experiments is based on the pump-probe configuration, as shown in Fig. S10. A frequency doubled Ti:Sapphire laser light (400 nm, using a BBO crystal) from a regenerative amplifier (repetition rate 1 kHz, pulse width 100 fs, seeded by Mai Tai, Spectra Physics) is used to excite the sample. The pumping beam is divided into two paths, a delay line and a compensate line. An attenuator is used before the beam splitting to tune the exciting energy above threshold, and another attenuator in the compensate line can adjust the pumping density below a threshold. Then the beam is combined together through a beam splitter. The frame of the last beam splitter is adjustable, which can tune the overlapping position of two beams. Two CCDs used here could simultaneously monitor the back-focal-plane imaging and pumping. And a white-light source used here could monitor pumping positions on the sample.</p></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure S10. Optical setup for switching measurements.
+
+</div>
+<p>When one circular Gaussian beam (pumped above threshold) irradiates onto the perovskite nanostructure, due to its symmetric configuration, a donut-shaped laser beam can be recorded at far field, as shown in the manuscript. In fact, if we simply change the pumping configuration, for example, by using a line-shape aperture before beam pumping onto the sample, the far-field emission pattern would change into two lobes form the donut shape. Then one circular beam (radius $ \sim 2 0 \, \mu \mathrm{m} $ , 1.2 times threshold) is focused onto the perovskite nanostructure. As shown in the main text, because the optical pumping is above the threshold and symmetric, a donut shape laser beam is recorded at far field. Then the second laser beam with delay time $ \tau $ is pumped onto the same perovskite nanostructure. And its position is laterally shifted $ \sim 1 0 \, \mu \mathrm{m} $ , and the pumping density is adjusted at 0.8 times threshold, as shown in Fig.S11a. The second beam won't produce any laser emission, but it can make the overlapping region of two beams to exceed the threshold. Then the pumping region becomes asymmetric, and the symmetry protection of BICs is broken. Consequently, a donut-shaped laser beam transforms to two linearly polarized lobes.</p></section>
+<section class="page" id="page-24"><div class="page-label">第 24 页</div><div>
+
+a
+
+</div>
+<div>
+
+b
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure S11. Schematic of the pumping configuration (upper row) and the corresponding far-field pattern (middle row), and the self-interference patterns (bottom row). (a). Two circle Gaussian beam are pumped onto the sample and corresponding far field pattern (b) Line shape beam $ ( 1. 2 \mathrm{P_{t h}} ) $ and its complementary shape beam pumping onto the sample and corresponding far-field pattern. Here the delay time between two pulses $ \tau $ is 0.
+
+</div>
+<p>On the other hand, if we put a line-shape aperture on delay line (pulse-1) and a complementary aperture on the compensate line (pulse-2), as shown in Fig. S11b, the pumping density in the delay line becomes above threshold (1.2 times threshold), and pumping density in compensate line recovers below the threshold (0.8 times threshold). The CCD in the back-focal plane of the collecting object lens would first record two lobes when delay time $ \tau&lt;0 $ . When delay time $ \tau\geqslant0 $ , the far-field pattern changes into a quasi-donut shaped pattern. The transition time is about 1.5 ps, as shown in the manuscript. Here, due to diffraction effects, the light intensity distribution of the pulse-</p></section>
+<section class="page" id="page-25"><div class="page-label">第 25 页</div><p>1 on the sample is not uniform. Although the light intensities of pulse-1 and pulse-2 are not equal, due to their complementary shape and the diffraction effect, the excited states population distribution on the sample is nearly uniform. Consequently, the far-field pattern would change from two lobes to a donut shape again.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. S12. (a) Schematic picture for another possible configuration of beam profile switching. Two integrated regions are marked by the dashed circles. (b) The absolute values of integrated intensities in region-2 marked in A as a function of time. The reduction of intensity is contrast to the conjecture in A.
+
+</div>
+<p>If we only consider the shape of two lobes, they are also possibly formed another mechanism, i.e. "a new mode gets excited and overlaps the original vortex laser emission". This mechanism is schematically plotted in Fig. S12(a). To directly exclude this possibility, we have experimentally measured the absolute value of the integrated intensities within position-2 (marked by a circle in Fig. S12(a)). If the change in laser beam is caused by the overlap between a vortex beam and a newly generated beam, the integrated intensities of position-1 of course increase. The integrated intensities of position-2 shall also increase slightly or at least be kept at the same. Figure S12(b) shows the absolute value of integrated intensities of position-2 as a function of time. It is easy to see that the integrated intensity within the position-2 significantly reduces from 70,000 to 10,000 when the emission beam changes from a donut to two lobes. This experimental is completely different with the above conjecture and can be direct proof for the redistribution of the laser beam during the ultrafast switching process.</p></section>
+<section class="page" id="page-26"><div class="page-label">第 26 页</div><p>Another proof to exclude this possibility is the interference pattern. If two donuts are formed by the overlay a new mode instead of switching away from BIC, the original vortex information should also be kept. However, as shown in the bottom panel of Fig. S11(a), the self-interference pattern only shows linear interference lines. For a direct comparison, we have also studied the self-interference pattern of the vortex beam passing through a linear polarizer. As depicted in the main text, the vortex beam also becomes two lobes with similar profiles. However, if we look at the interference pattern (bottom panel of Fig. S11(b)), clear inverted folks can be seen. As the linear polarizer doesn't change the phase information, this is another proof for the carried phase information in the donut beam. This also shows that the transition from a donut to two lobes in Fig. 3 and Fig. 4 of the main text is caused by the switching from the BICs instead of overlaying a newly excited mode.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. S13. Profiles of the output beam vs. the incident beam profile. With the change of the pumping profile from a circle to pentagon, square, and line, the output beam profile remain as a donut until the rotational symmetry degrades to two-fold (line pumping).
+
+</div>
+<p>One interesting question is about the relationship between the input beam and output laser beam. To check this relationship, we change the incident beam from a circle to hexagon, pentagon, and square with a spatial light modulator (SLM). As shown in Fig. S13 below, no matter the pumping profile is circle or square, the output beams</p></section>
+<section class="page" id="page-27"><div class="page-label">第 27 页</div><p>always have donut-ring shapes. Only when the system is pumped with a stripe, the output beam changes to two lobes. This kind of a binary transition is consistent with the theoretical model for the generation of vector vortex beam. The real system is determined by the pumping profile with a finite size. In the case of circular to square pumping profiles, the overall symmetry is larger than 2-fold rotational symmetry. As the result, the singlet at the $ \Gamma $ -point is maintained at the BIC conditions with winding structures in the momentum space. Once the pumping profile changes to a stripe or ellipse, the rotational symmetry becomes 2-fold and the resonance quickly degrades from the BIC conditions.</p>
+<p>We have also studied the variation of output beam profile as a function of incident beam profile. Here we use an elliptical beam with semi-major (b) and semi-minor axes (a). Figure S14 shows the intensity in region 2 of Fig. 4 of the main text. When the pump profile changes from the symmetric case, the output quickly degrades to two lobes. This is also consistent with the topologically protected BIC emission well. Note that the transition between donut and two lobes mainly utilizes the decay channels at BICs. It is not limited within vortex microlaser and can be extended to other emissions such as vector microlasers.</p>
+<div>
+
+Fig. S14. Transition from a donut beam to a two-lobe beam with the power variation.
+
+</div></section>
+<section class="page" id="page-28"><div class="page-label">第 28 页</div><h2>5. Transient output laser response</h2>
+<p>In the manuscript, we demonstrate that the symmetry-breaking perturbations of the $ \Gamma $ -point BIC would influence the far-field emission pattern. The key information is that the transition time is only 1-1.5 ps (orders of magnitude faster than directly modulated microlasers) while the pumping power is orders of magnitude lower than that for nonlinear optical switching. Such a kind of impressive results come from the far-field characteristics of the optical BICs, which makes the system is independent to the lifetime of the initial laser mode. Therefore, it is also important to confirm experimentally that the initial laser can last longer than 1.5 ps and the trade-off is indeed broken.</p>
+<div>
+
+Figure S15. (a) Transient absorption spectra of the $ \mathrm{C H_{3} N H_{3} P b B r_{3}} $ perovskite nanostructure at different delay times; here the pumping beam is 400 nm with energy at laser threshold. The dash line indicates bleach recovery. (b) Fitting kinetic profiles of 530 nm bleach recovery in a, the fitted life time is about 85 ps.
+
+</div>
+<p>In order to confirm this, we study the transient absorption of the BICs microlasers. The working principle is that the transient absorption at the lasing wavelength is closely related to the population inversion. A transient absorption curve can reflect the population on the upper level and the corresponding lifetime. With a similar pumpprobe setup, the lifetime of our BIC vortex laser has been recorded, and it is shown in Fig. S15. It is easy to see that the transition $ \Delta T / T $ decreases exponentially with the delay</p></section>
+<section class="page" id="page-29"><div class="page-label">第 29 页</div><p>time $ \tau $ . The fitted experimental curve shows that the lifetime is around 85 ps. This value is consistent with the previously reported measurement with the commercial systems $ ^{36} $ and it is much longer than the transition time from the vortex to linear polarization beam. Then we know that the far-field characteristics of optical BICs make all-optical switching is not limited by the ringdown time anymore. Therefore, the long-standing trade-off in both directly modulated microlasers and all-optical switching has been solved with the new concept of optical BICs.</p>
+<h2>References:</h2>
+<ol>
+<li>C. Qiu, Y. Yang, Science 357, 645 (2017).</li>
+</ol>
+<ol>
+<li>L. Allen, M. W. Beijersbergen, R. J. C. Spreeuw, J. P. Woerdman, Phys. Rev. A 45, 8185-8189 (1992).</li>
+</ol>
+<ol>
+<li>A. M. Yao, M. J. Padgett, Adv. Opt. Photon. 3, 161-204 (2011).</li>
+</ol>
+<ol>
+<li>S. K. Ozdemir, S. Rotter, F. Nori, L. Yang, Nat. Mater. 18, 783-798 (2019).</li>
+</ol>
+<ol>
+<li>P. Miao et al., Science 353, 464-467 (2016).</li>
+</ol>
+<ol>
+<li>D. Stellinga et al., ACS Nano 12, 2389-2394 (2018).</li>
+</ol>
+<ol>
+<li>N. C. Zambon et al., Nat. Photon. 13, 283-288 (2019).</li>
+</ol>
+<ol>
+<li>J. Feldmann, N. Youngblood, C. D. Wright, H. Bhaskaran, W. H. P. Pernice, Nature 569, 208-214 (2019).</li>
+</ol>
+<ol>
+<li>R. C. Devlin, A. Ambrosio, N. A. Rubin, J. P. Balthasar Mueller, F. Capasso, Science 358, 896-901 (2017).</li>
+</ol>
+<ol>
+<li>X.Cai et al., Science 338, 363-366 (2012).</li>
+</ol>
+<ol>
+<li>D. Naidoo et al., Nat. Photon. 10, 327-332 (2016).</li>
+</ol>
+<ol>
+<li>L. Feng, Z. J. Wong, R. M. Ma, Y. Wang, X. Zhang, Science 346, 972-975 (2014).</li>
+</ol>
+<ol>
+<li>J. Neumann, E. Wigner, Phys. Z 30, 465 (1929)</li>
+</ol>
+<ol>
+<li>C. W. Hsu, B. Zhen, A. D. Stone, J. D. Joannopoulos, M. Soljačić, Nat. Rev. Mater. 1, 16048 (2016).</li>
+</ol>
+<ol>
+<li>M. V. Rybin et al., Phys. Rev. Lett. 119, 243901 (2017).</li>
+</ol>
+<ol>
+<li>A. Kodigala et al., Nature 541, 196-199 (2017).</li>
+</ol>
+<ol>
+<li>K. Koshelev et al, Science 367, 288-292 (2020).</li>
+</ol></section>
+<section class="page" id="page-30"><div class="page-label">第 30 页</div><ol>
+<li>C. W. Hsu et al., Nature 499, 188-191 (2013).</li>
+</ol>
+<ol>
+<li>J. Jin et al., Nature 574, 501-504 (2019).</li>
+</ol>
+<ol>
+<li>B. Zhen, C. W. Hsu, L. Lu, A. D. Stone, M. Soljacic, Phys. Rev. Lett. 113, 257401 (2014).</li>
+</ol>
+<ol>
+<li>H. M. Doeleman, F. Monticone, W. den Hollander, A. Alu, and A. F. Koenderink, Nat. Photon. 12, 397-401 (2018).</li>
+</ol>
+<ol>
+<li>Y. Zhang et al., Phys. Rev. Lett. 120, 186103 (2018).</li>
+</ol>
+<ol>
+<li>S. Fan, J. D. Joannopoulos, Phys. Rev. B 65, 235112 (2002).</li>
+</ol>
+<ol>
+<li>K. Hirose et al., Nat. Photon. 8, 406-411 (2014).</li>
+</ol>
+<ol>
+<li>Y. Yang, C. Peng, Y. Liang, Z. Li, S. Noda, Phys. Rev. Lett. 113, 037401 (2014).</li>
+</ol>
+<ol>
+<li>W. Liu et al., Phys. Rev. Lett. 123, 116104 (2019).</li>
+</ol>
+<ol>
+<li>Materials and methods are available as supplementary materials on Science Online.</li>
+</ol>
+<ol>
+<li>B. Bahari et al., arXiv: 1707.00181 (2017).</li>
+</ol>
+<ol>
+<li>B. Wang et al., arXiv: 1909.12618 (2019).</li>
+</ol>
+<ol>
+<li>S. T. Ha et al., Nat. Nanotechnol. 13, 1042-1047 (2018).</li>
+</ol>
+<ol>
+<li>L. Marrucci, C. Manzo, and P. Paparo, Phys. Rev. Lett. 96, 163905 (2006).</li>
+</ol>
+<ol>
+<li>E. N. Bulgakov, D. N. Maksimov, Phys. Rev. Lett. 118, 267401 (2017).</li>
+</ol>
+<ol>
+<li>E. N. Bulgakov, A. F. Sadreev, J. Opt. Soc. Am A 34, 949-952 (2017).</li>
+</ol>
+<ol>
+<li>Z. Shao, J. Zhu, Y. Chen, Y. Zhang, S. Yu, Nat. Commun. 9, 926 (2018).</li>
+</ol>
+<ol>
+<li>S. Noda, M. Yokoyama, M. Imada, A. Chutinan, M. Mochizuki, Science, 293, 1123- 1125 (2001).</li>
+</ol>
+<ol>
+<li>Q. Zhang, S. T. Ha, X. Liu, T. C. Sum, Q. Xiong, Nano Lett. 14, 5995 (2014).</li>
+</ol></section></main></body></html>

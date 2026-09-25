@@ -1,0 +1,81 @@
+{
+  "sha1": "8fb4871c39337e082539802f2afbcf365d5c8ecf",
+  "title": "Tuning the thermal activation atmosphere breaks the activity–stability trade-off of Fe–N–C oxygen reduction fuel cell catalysts",
+  "doi": "https://doi.org/10.1038/s41929-023-01062-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8fb4871c39337e082539802f2afbcf365d5c8ecf/index.html",
+  "source_chars": 76287,
+  "markdown_chars": 3926,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "All thess experimental results agree well with ementrallation energy calculated in the DFT part.",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "thess 应为 these，ementrallation 应为 demetallation。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "a fast initial decay around 25 hours was observed followd by similar decay rate to that of the Fe-N-CFG catalyst, primarly due to the S2-type sites.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "followd 应为 followed，primarly 应为 primarily。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Supplementray Figure 15",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "Supplementray 应为 Supplementary。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the MEA generated current densities of 191.0 and 745.4 mA cm−2 at 0.80 and 0.67 V, respectively",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第 9 页同一数据记为 745.0，两处不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the same MEA generated 191.0 and 745.0 mA cm−2 at 0.80 and 0.67 V averaged from three tests",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "与第 5 页的 745.4 不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：半波电位 0.84/0.93 V，MEA 电流密度 50.8/191/745（745.4 有歧义），AST 后保留 67 mA cm−2，S1/S2 比例 1.56→0.92，Fe–N 键长 2.02→1.95 Å，DFT 脱金属自由能 -0.02/0.26/1.27/1.31 eV，形成焓差 0.27/0.59 eV，S2→S1 焓 0.34→0.66 eV。公式 SD 和 TOF 已保留。数值 745 存在两处不一致，已在问题中标记。其余内容与摘要和正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12942,
+      "prompt_tokens": 20841,
+      "total_tokens": 33783,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9754
+      }
+    },
+    "content_chars": 5596
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

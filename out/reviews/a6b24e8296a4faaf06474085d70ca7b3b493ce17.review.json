@@ -1,0 +1,84 @@
+{
+  "sha1": "a6b24e8296a4faaf06474085d70ca7b3b493ce17",
+  "title": "Adapting to Climate Change: The Remarkable Decline in the US Temperature-Mortality Relationship over the Twentieth Century",
+  "doi": "https://doi.org/10.1086/684582",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a6b24e8296a4faaf06474085d70ca7b3b493ce17/index.html",
+  "source_chars": 145196,
+  "markdown_chars": 7417,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "over the $ 2 0^{th} $ Century",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题中“20th”被OCR为数学公式形式“$ 2 0^{th} $”，属格式抽取问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "reduces the effect of $ > 9 0 ^{\\circ} F $ days on log monthly mortality rates by 0.0132 (=0.59- 0.0223)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "乘法符号被OCR为减号，按上下文应为0.59×0.0223=0.0132；同页80-89°F处同样写作“=0.59-0.0066”，应为乘法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "A potentially puzzling result is the finding that AC is also associated with reductions in the impacts of $ > 9 0 $ $ ^{\\circ} F $ days on The evidence on neoplasm mortality is mixed",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在“on”后中断，缺失关于肿瘤死亡率的完整表述，随后才接“The evidence on neoplasm mortality is mixed”，影响该句理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 53,
+      "quote": "Asterisks denote p-value < 0.05 (), <0.01 (), <0.001 (**)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "显著性星号对应的符号在OCR中丢失，仅剩括号，无法区分*、**、***的对应关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 61,
+      "quote": "P^{S}(q)=\\frac{P^{}}{Q^{}} q",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "供给函数中 P* 和 Q* 的上标星号在OCR中丢失，显示为 P^{} 和 Q^{}，影响公式符号的完整复现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Adapting to Climate Change: The Remarkable Decline in the U.S. Temperature-Mortality Relationship over the 20th Century",
+  "self_check": "已核对摘要、正文与结论中的关键数值：>80°F 天死亡率影响下降约70%、1960年后几乎全部下降、每年减少约14,000例死亡、>90°F 天效应从2.16%降至0.34%、空调覆盖率59%对应0.0132和0.0039的效应下降、消费者剩余50—100亿美元/年及830—1,860亿美元现值、每年约17,000例死亡减少和约74亿美元价值。公式(1)(2)(3)及附录公式已按OCR文本保留，其中供给函数和消费者剩余公式存在星号/下标丢失，已在extraction_issues中标出。表3、表6、表7、表8、表9的关键系数与标准误已与正文叙述交叉核对，方向一致。仍不确定之处：表6列标题与数据行的精确对应、附录公式中部分符号的完整形式，以及第29页关于肿瘤死亡率句子的缺失内容。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5452,
+      "prompt_tokens": 36961,
+      "total_tokens": 42413,
+      "prompt_tokens_details": {
+        "cached_tokens": 36864
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10188,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

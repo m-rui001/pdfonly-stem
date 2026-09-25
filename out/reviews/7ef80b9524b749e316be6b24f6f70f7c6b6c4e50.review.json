@@ -1,0 +1,58 @@
+{
+  "sha1": "7ef80b9524b749e316be6b24f6f70f7c6b6c4e50",
+  "title": "General synthesis and definitive structural identification of MN4C4 single-atom catalysts with tunable electrocatalytic activities",
+  "doi": "https://doi.org/10.1038/s41929-017-0008-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/7ef80b9524b749e316be6b24f6f70f7c6b6c4e50/index.html",
+  "source_chars": 70217,
+  "markdown_chars": 16471,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "where $ \\Delta G_{1},\\Delta G_{2},\\Delta G_{3},\\Delta G_{4} $ and $ \\Delta G_{5} $ are the free energy of reactions (2) to (6).\n\nwhere $ \\Delta G_{1},\\Delta G_{2},\\Delta G_{3},\\Delta G_{4} $ and $ \\Delta G_{5} $ are the free energy of reactions (2) to (6).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "同一句话在公式后连续重复出现两次，属于 OCR 抽取中的重复文本错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "$$\\eta = \\max \\left[ \\Delta G _ {1}, \\Delta G _ {2}, \\Delta G _ {3}, \\Delta G _ {4}, \\Delta G _ {5} \\right] / \\mathrm {e} - 1. 2 3 ]$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "过电位公式中括号不匹配，末尾出现多余的 ']'，且 '1.23' 被拆分为 '1. 2 3'，影响公式的准确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "General synthesis and definitive structural identification of MN4C4 single-atom catalysts with tunable electrocatalytic activities",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 18914,
+      "total_tokens": 28914,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17873,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

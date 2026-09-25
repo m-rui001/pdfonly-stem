@@ -1,0 +1,85 @@
+{
+  "sha1": "2b2c13c59980160e8d87872c565d10a649f798e8",
+  "title": "Sensitive tumour detection and classification using plasma cell-free DNA methylomes",
+  "doi": "https://doi.org/10.1038/s41586-018-0703-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2b2c13c59980160e8d87872c565d10a649f798e8/index.html",
+  "source_chars": 67497,
+  "markdown_chars": 12600,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "The performance of these classifiers was then evaluated using receiver operating characteristic (ROC) statistics derived from the test-set samples that were not used for either DMR selection or",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该句在页9末尾被截断，随后在页9下一段以几乎相同内容重新开始，属于OCR重复/截断，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "a\n\nAbundance of ctDNA (%)\n\nb\n\nNumber of DMRs/epimutations\n\nC",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该页为图片区域，OCR仅提取到零散标签文字，无实质正文内容，属于图像区域提示，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "Overlap plasma cfDNA (cases vs controls) and tumor DNA (primary tumor vs normal PBMCs)",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该页仅提取到一行图注文字，无其他正文内容，属于图像区域提示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "a\n\nb\n\nDMRs identified on the training set (plasma cfDNA) DNA methylation data from TCGA (tissue) (n=4,032)\n\nDMRs identified on the training set (plasma cfDNA) DNA methylation data from COSMIC (cancer cell lines) (n=400)",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该页为图片区域，OCR仅提取到零散标签文字，无实质正文内容，属于图像区域提示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "carried out on a discovery cohort consisting of 189 samples from 7 different tumor types",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Fig. 3图注开头缺失，从'carried out'开始，缺少主语（推测为'Analysis was'或类似），导致图注首句不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Sensitive tumor detection and classification using plasma cell-free DNA methylomes",
+  "self_check": "已核对：摘要、正文数据和结论方向一致。关键数值：14,716个DMR（9,931高甲基化/4,785低甲基化，BHFDR 0.1）；45,173个DMC；95,388个RRBS DMC；42和52个TF；189份发现队列样本；199份验证队列样本；505,027个窗口；300个DMR；100次重复；AUROC值0.980/0.918/0.971/0.969；r²=0.99，p<0.0001；p=3.39e-47，p=1.43e-22，p<1e-745，p=6.12e-82；38,352和27,088个区域；4,032例TCGA和400个COSMIC细胞系。公式：特异性计算公式(1-[未甲基化掺入对照DNA回收率/甲基化掺入对照DNA回收率])*100已保留。不确定处：Fig. 3图注开头缺失主语，已在extraction_issues中标出；页39-42为图片区域，无实质正文内容。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7545,
+      "prompt_tokens": 17577,
+      "total_tokens": 25122,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14956,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

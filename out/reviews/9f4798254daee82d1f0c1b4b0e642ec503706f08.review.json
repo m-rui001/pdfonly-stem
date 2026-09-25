@@ -1,0 +1,54 @@
+{
+  "sha1": "9f4798254daee82d1f0c1b4b0e642ec503706f08",
+  "title": "Shifting plant species composition in response to climate change stabilizes grassland primary production",
+  "doi": "https://doi.org/10.1073/pnas.1700299114",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9f4798254daee82d1f0c1b4b0e642ec503706f08/index.html",
+  "source_chars": 39982,
+  "markdown_chars": 4060,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "in the soil that if released, could lead to a positive feedback for climate warming (17–19).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "该句为完整句子的尾部片段，位于页眉关键词标签（\"alpine ecosystem warming experiment long-term monitoring ecosystem functioning Tibetan Plateau\"）之前，是正文引言部分被截断后的残留，后续内容应在下一页开头。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Fig. 2. Warming and drought effects on soil moisture at 20 cm soil depth",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第3页页眉处出现\"SPECIAL FEATURE ECOLOGY SUSTAINABILITY SCIENCE\"期刊栏目标识，其后直接衔接图2图注，属正常页眉与图注交错，但栏目标识混入正文文本流，需注意识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值：1980–2014年升温1.2°C（0.38/十年）、ANPP范围298–484 g m⁻²（均值371）、ANPP年际趋势P=0.60、降水趋势P=0.16、湿度指数P=0.06；实验增温对NPP无影响、干旱降低ANPP增加BNPP但总NPP不变；增温增加30–50 cm BNPP、干旱增加0–20 cm和30–50 cm BNPP；整合分析增温升高土温1.8°C、降低水分3.0%、ANPP无一致效应；9个物种（占ANPP 72%）根系深度：禾草达85 cm、莎草25 cm、杂类草30 cm；子土壤有机碳约50%在1 m深层。PET公式和lnRR公式均照录原文。摘要、正文与结论方向一致。不确定处：提取文本中图2标题标注为\"20 cm soil depth\"但正文描述为\"5 cm\"深度，存在不一致的可能（不过正文下句也说明测得5、10、20 cm，图标题可能指不同子图，原文本即如此，未擅自修改）；页1与页2之间正文截断拼接，具体缺失内容无法推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3944,
+      "prompt_tokens": 10166,
+      "total_tokens": 14110,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 930
+      }
+    },
+    "content_chars": 5332
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

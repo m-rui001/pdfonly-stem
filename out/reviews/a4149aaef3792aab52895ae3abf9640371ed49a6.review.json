@@ -1,0 +1,56 @@
+{
+  "sha1": "a4149aaef3792aab52895ae3abf9640371ed49a6",
+  "title": "Polarization-Independent Silicon Metadevices for Efficient Optical Wavefront Control",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b01752",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a4149aaef3792aab52895ae3abf9640371ed49a6/index.html",
+  "source_chars": 40772,
+  "markdown_chars": 2936,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "The fringes are caused by Febry-Perot oscillations",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "上下文中应为 Fabry-Perot，但原文可能拼写如此，无法确认是否为抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "φ(x, y) = tan −1 \u0012\u0013 I4 − I2 . I1 − I3",
+      "type": "公式格式损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "提取文本中公式的分数结构和符号不完整，包含乱码字符，无法确认准确表达式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：设计波长 1477 nm、实验波长 1490 nm、纳米盘直径 534 nm、高度 243 nm、折射率 1.45、四个晶格周期 695/815/855/975 nm、透射率均 >70%、相位步进 π/2、相位覆盖约 3π/2。相位重建公式存在格式损坏，已标出。实验与理论相位偏差原因（邻近效应）已在文中说明。结论与摘要一致。未发现其他数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6530,
+      "prompt_tokens": 10736,
+      "total_tokens": 17266,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4406
+      }
+    },
+    "content_chars": 3678,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

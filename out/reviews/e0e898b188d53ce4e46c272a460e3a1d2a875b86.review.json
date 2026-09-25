@@ -1,0 +1,120 @@
+{
+  "sha1": "e0e898b188d53ce4e46c272a460e3a1d2a875b86",
+  "title": "Atomically dispersed manganese catalysts for oxygen reduction in proton-exchange membrane fuel cells",
+  "doi": "https://doi.org/10.1038/s41929-018-0164-8",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e0e898b188d53ce4e46c272a460e3a1d2a875b86/index.html",
+  "source_chars": 69298,
+  "markdown_chars": 13352,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "the XANFS edge",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "XANES被误写为XANFS，影响术语识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "1.9 $ \\mathrm{\\AA} $ ngstrom",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Ångstrom被拆分为符号与文字，属抽取格式错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "20Mn-NC-fisrt",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "first被误拼为fisrt。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "20Mn-MC-second",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Mn-NC被误写为Mn-MC，可能影响样品标识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "The authorsdeclare no competing interests.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "缺少空格，属格式错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Additional informatoin",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "information被误拼为informatoin。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Supplementary information is available for his paper at https://",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "URL不完整，且his应为this。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Reprints an permission informaiton is avaialbe at www.nature.com/reprints.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "and、information、available均拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Springer Nature remains neutral with regard to jurisdictional claim in published maps an institutional affiliations",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "claims和and被误写为claim和an。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Atomically Dispersed Manganese Catalysts for Oxygen Reduction in Proton Exchange Membrane Fuel Cells",
+  "self_check": "已核对关键数值：20Mn-NC-second的Mn含量3.03 wt.%、20Mn-NC-first的Mn含量0.68 wt.%、E1/2 0.80 V vs. RHE、H2O2产率<2%、30,000次循环E1/2损失17 mV、0.7 V 100小时保持88%电流密度、0.8 V 100小时电流密度下降57%、E1/2损失18 mV、降解率0.237 mV C-1、DFT极限电位0.80 V、OOH解离能垒0.49 eV。公式符号如CNMn-N=3.2±1.0、MnN4C12等均按原文保留。不确定处：部分OCR拼写错误（如XANFS、fisrt、Mn-MC）已标出，但未影响核心结论；补充材料图表未提供，无法进一步核对。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8978,
+      "prompt_tokens": 18695,
+      "total_tokens": 27673,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15904,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "3f705da5dd00109dc842ac52c48742c49cf7a82d",
+  "title": "Ni/Li Disordering in Layered Transition Metal Oxide: Electrochemical Impact, Origin, and Control",
+  "doi": "https://doi.org/10.1021/acs.accounts.9b00033",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3f705da5dd00109dc842ac52c48742c49cf7a82d/index.html",
+  "source_chars": 51660,
+  "markdown_chars": 3335,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "becomes a critical 1",
+      "type": "跨页断句/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页末尾出现'critical 1'，第4页起始为'issue when Ni content ...'，显然'critical'与'issue'之间被页码分隔，原文应为'becomes a critical issue'，但提取文本中'1'疑似页码混入。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "steric 2",
+      "type": "跨页断句/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第4页末尾为'steric 2'，第5页开头为'effect by ion exchange'，应为'steric effect'，'2'疑似页码。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "not 3",
+      "type": "跨页断句/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾为'not 3'，第6页开头为'only during the material synthesis'，应为'not only'，'3'疑似页码。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "𝑡𝑡2𝑔𝑔 𝑒𝑒𝑔𝑔",
+      "type": "疑似格式/符号提取异常",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "文本中出现Unicode数学斜体'𝑡𝑡2𝑔𝑔 𝑒𝑒𝑔𝑔'，推测为Co³⁺的电子构型't₂g⁶ e_g⁰'，但提取时下标/上标信息丢失，无法确认原始准确写法。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "𝐸𝐸𝐸𝐸′",
+      "type": "疑似符号提取异常",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "出现'𝐸𝐸𝐸𝐸′'，可能代表活化能E_a'，但多个E连写，无法确定确切符号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：LiNi₀.₇Mn₀.₁₅Co₀.₁₅O₂混排从3.2%降至2.6%时容量从162提升至197 mAh g⁻¹；LiNi₀.₅Mn₀.₅O₂在C/20下200 mAh g⁻¹、1C下125 mAh g⁻¹，混排0.5%时6C下183 mAh g⁻¹；LiNi₁/₃Mn₁/₃Co₁/₃O₂中混排1.26%→2.93%对应扩散系数4.4×10⁻¹⁰→2.6×10⁻¹⁰ cm²/s；8.3%混排使Li层间距从2.64→2.62 Å，能垒增加20-30 meV；循环稳定性90.3% vs 50.1%；Ni²⁺迁移能垒0.598-0.303 eV；Al取代使交换形成能从0.57升至1.14 eV。公式如离子半径、能垒等均按原文保留。不确定之处：Co³⁺电子构型的Unicode字符可能被误提取，但未影响核心论证。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4876,
+      "prompt_tokens": 14443,
+      "total_tokens": 19319,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1719
+      }
+    },
+    "content_chars": 4993
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

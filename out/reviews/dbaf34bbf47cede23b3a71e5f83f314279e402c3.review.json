@@ -1,0 +1,109 @@
+{
+  "sha1": "dbaf34bbf47cede23b3a71e5f83f314279e402c3",
+  "title": "Enhancing CO2 Electroreduction with the Metal–Oxide Interface",
+  "doi": "https://doi.org/10.1021/jacs.7b00102",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/dbaf34bbf47cede23b3a71e5f83f314279e402c3/index.html",
+  "source_chars": 27676,
+  "markdown_chars": 3403,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Enhancing C02 Electroreduction with the Metal-Oxide Interface",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题中CO2被识别为C02（数字0代替字母O），应为CO2。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Nafron ng",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文应为Nafion膜，此处识别为Nafron ng，明显错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "CeC>2 (111)",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为CeO2(111)，此处O被识别为C>。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the reduction of CeCfwS",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "应为CeOx的还原，CeCfwS无法理解，推测为CeOₓ的OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Figure S12, Syc",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Syc应为S1c或Syc？不确定，但Syc明显异常，可能为某补充图编号的OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "CO)i|l ♦ mif.Mi *™H",
+      "type": "疑似文本损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "此行为图4下方的乱码，无法还原，应为图形标签或注释。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Figure 3. The interaction between CeOx/Au(m) and C02/H20. (a) C is spectra (hv= 400 eV) ... 2b: the subsequent annealing to 300 K. 3: the co-expo sure to 500 L C02 and 50 L H20 at 300 K). The major peak at 289.7 eV has been assigned as CO/\" species22, (b) The corresponding density ratios of D(Ce3+)/D(Ce4+), ...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "此段正文中混入了图注文字（如“Figure 3. The interaction...”），且部分句子如“The major peak at 289.7 eV has been assigned as CO/\" species22,”后紧跟图注，疑似页尾截断后图注插入，需核对原始排版。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "the formation of CO/\" species",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "CO/\"应为CO₂ᵟ⁻之类的标记，此处OCR将下标和上标丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：CO FE 89%（Au-CeOx/C）、58.9%（Au/C）、9.4%（CeOx/C）；电流密度13.1 vs 8.1 mA cm^-2；质量活性32.7 vs 20.3 A g^-1；比活性2.3倍；Ce3+比例21.6%→30.9%；DFT能量差0.33 eV；Ag-CeOx FE 92.6% vs 56.6%；起始电位正移0.1 V（Au）和0.2 V（Ag）。公式（1）-（3）按原文保留。不确定处：文中个别化学符号（如CO/\"）因OCR损坏，已按可见文本照录并在审核中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3351,
+      "prompt_tokens": 8560,
+      "total_tokens": 11911,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 140
+      }
+    },
+    "content_chars": 5766
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

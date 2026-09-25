@@ -1,0 +1,63 @@
+{
+  "sha1": "846cdf901df12ce39c4a05c2922daee5caf09cf1",
+  "title": "Methane Production and Conductive Materials: A Critical Review",
+  "doi": "https://doi.org/10.1021/acs.est.8b01913",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/846cdf901df12ce39c4a05c2922daee5caf09cf1/index.html",
+  "source_chars": 80262,
+  "markdown_chars": 3746,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "Mineralization of waste to methane is dependent on the activity of hydrolytic, acidogenic, and acetogenic bacteria, 10242",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第1页末尾句子结束于页码后，第2页开头重复页码和标题，但句子实际上在第2页继续。原文从'which generate the substrates'开始续接，未见缺词，但页间有页眉干扰，属正常跨页。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 1,
+      "quote": "Figure 1. Possible interspecies electron transfer mechanisms in methanogenic environments.42−44",
+      "type": "图注缺失内容",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图1的图注及图本身被提取为文本，但图的内容（如机制A-D）未在提取文本中描述，正文中也没有对图的详细说明。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "the enhancement of methane production by the use of CM (Figure 2), which is now considered a strategy to improve methane production efficiency and stability of anaerobic reactors.7,20",
+      "type": "图注与正文顺序疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "提取文本中Figure 2的图注出现在第3页末尾，而图的实际位置在第4页开头，正文提到图时顺序正常。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数值：纯培养Methanobacterium formicicum提高17倍；生物炭共培养利用86%电子；磁铁矿使乙酸盐和乙醇产甲烷速率提高30%和135%；电导率增加倍数（CNT 27、不锈钢14、GAC 3.5、ferroferric oxide 2.1、碳布2、biochar 1.5）；抑制数据（银纳米26.5%、氧化镁98.9%与表格中1.4和92.6倍抑制的关系——报告正文写'抑制了26.5%和98.9%相对对照'，表格中数字为下降倍数，需注意两者概念不同，但提取文本两者并存，笔记中保留原文表述）。R²<0.1无具体数据。摘要中'Geobacter sp. are not detected'与正文'low percentages or absent'一致。不确定之处：表格中部分材料的粒径、浓度、甲烷提升倍数范围较大，笔记仅概述未逐项罗列；SI Table S1/S2/S3内容未在提取文本中，笔记未涉及。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2916,
+      "prompt_tokens": 22154,
+      "total_tokens": 25070,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 52
+      }
+    },
+    "content_chars": 5311
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

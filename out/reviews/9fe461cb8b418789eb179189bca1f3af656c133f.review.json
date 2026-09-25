@@ -1,0 +1,82 @@
+{
+  "sha1": "9fe461cb8b418789eb179189bca1f3af656c133f",
+  "title": "Effects of surface coal mining and land reclamation on soil properties: A review",
+  "doi": "https://doi.org/10.1016/j.earscirev.2019.02.015",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9fe461cb8b418789eb179189bca1f3af656c133f/index.html",
+  "source_chars": 116157,
+  "markdown_chars": 5911,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 71,
+      "quote": "se (μg INF g−1 2 0-10",
+      "type": "文本抽取损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "此片段明显为表格中酶活性的单位，但字符串被截断且包含异常字符“2”，原意应为“μg INF g−1”之类的单位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 69,
+      "quote": "Wang et al., 201",
+      "type": "疑似错误/截断",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献年份被截断，缺少末位数字，可能是“2015”或“2016”之类，但无法确定。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 22,
+      "quote": "0-40 38.35-40.11 (CG) 40.92-50.19",
+      "type": "疑似表格数据错位/缺失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格中该行数据不完整，缺少属性名称和单位，且后续行中数值可能与列对应不清晰。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "butthe suitable soil textures",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "明显缺少空格，应为“but the”。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 35,
+      "quote": "soils can show signs of pedogenesis after only 10 years",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第12页开头“These soils and can show signs”中的“and”疑似多余，可能与上一句断句有关，但无法确认。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：SOC分层减少77%/50%/33%、TN损失大于60%、容重范围1.55-1.86 Mg/m3等均与正文一致。表1中的汇总数据因提取文本格式混乱且多行数值缺失/错位，本笔记未采用表内具体数值，仅依赖正文文字描述。五阶段概念和结论方向与原文一致。公式部分无。不确定处：表1中部分单位（如kg/m3、cm/h等）在提取文本中标注混乱，未在笔记中引用具体表格数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4597,
+      "prompt_tokens": 31248,
+      "total_tokens": 35845,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 384
+      }
+    },
+    "content_chars": 7380
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

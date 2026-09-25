@@ -1,0 +1,55 @@
+{
+  "sha1": "4fedd25c584118822b484a8a176d365cf7ac0b86",
+  "title": "Vaginal bacteria modify HIV tenofovir microbicide efficacy in African women",
+  "doi": "https://doi.org/10.1126/science.aai9383",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4fedd25c584118822b484a8a176d365cf7ac0b86/index.html",
+  "source_chars": 49271,
+  "markdown_chars": 3444,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "(P = 0.0022 relative to all conditions) (Fig. 4B). A 4 of 7",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第4页末尾出现孤立的'A'，紧接着的'4 of 7'是页码标记，但后面第5页直接开始表格内容，原文中'A'可能属于下一句（如'A critical component is whether...'）但该句在文中出现位置远离此处，疑似跨页内容丢失或顺序错乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Fig. 3. Metabolism of tenofovir by G. vaginalis and BV-associated bacteria. (A)... (B)... (C) Predicted tenofovir metabolite",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页末尾图注以'Predicted tenofovir metabolite'结束，第4页开头直接出现'adenine was measured in cultures.'，中间缺少该图注的完整描述（如m/z 136.06等），且后文内容被隔断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：LD组疗效61%（IRR=0.39，P=0.013）、非LD组18%（IRR=0.82，P=0.644）；>50%依从亚组疗效78% vs 26%；药物检测率46.2% vs 29.8%；浓度上四分位数8020 vs 24.3 ng/ml；体外代谢百分比（4小时50.6%、24小时67.4%等）均与原文一致。公式和符号（m/z 136.06等）已保留。注意摘要中59.2%/40.8%与正文中LD/non-LD分类对应，而group I/II比例为61.5%/38.5%，未混淆。提取文本中第4页'adenine was measured in cultures.'前缺少图注内容，以及第4页末尾孤立'A'，已标记为跨页问题。其他数值如样本量688、LD n=407、non-LD n=281（文中另一处写280，表1用281，已按表1保留）均来自原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4539,
+      "prompt_tokens": 12702,
+      "total_tokens": 17241,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1792
+      }
+    },
+    "content_chars": 4663
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

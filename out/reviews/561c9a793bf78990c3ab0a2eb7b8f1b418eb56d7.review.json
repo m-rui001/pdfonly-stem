@@ -1,0 +1,85 @@
+{
+  "sha1": "561c9a793bf78990c3ab0a2eb7b8f1b418eb56d7",
+  "title": "Janus Monolayer Transition-Metal Dichalcogenides",
+  "doi": "https://doi.org/10.1021/acsnano.7b03186",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/561c9a793bf78990c3ab0a2eb7b8f1b418eb56d7/index.html",
+  "source_chars": 37738,
+  "markdown_chars": 7695,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the spectrum for the as-grown $ \\mathrm{M o S e_{2}} $ has the typical $ \\mathrm{A_{1 g}} $ mode (240 $ \\mathrm{c m}^{-1} $ ) and $ \\mathrm{E_{1 2 g}} $ mode (287 $ \\mathrm{c m}^{-1} $ ) peaks",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "E12g 应为 E2g1（或 E12g 的排版错误），但此处不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "PL peak at 1.68 V",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "单位应为 eV 而非 V，影响对 PL 峰能量的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "The mobility of the device is calculated (see details in supplementary information) to be $ 6.2 \\times10^{-2} $ $ \\mathrm{c m}^{-2} \\mathrm{V}^{-1} \\mathrm{s}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "迁移率单位应为 cm2 V-1 s-1，此处写为 cm-2 V-1 s-1，指数符号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "The carrier mobility based on the linear fit data is calculated to be m=0.06",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "此处 m=0.06 与正文 6.2×10-2 一致，但单位在下一页才出现，且符号 m 可能应为 μ。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "The calculated $ A_{1 g} $ and $ E_{2 g}^{1} $ modes for the Janus SMoSe monolayer are at 283.1 $ \\mathrm{cm}^{-1} $ and 343.5 $ \\mathrm{cm}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文此处写 343.5 cm-1，但 Figure 3 图注写 341.5 cm-1，Table S1 也写 341.5 cm-1，存在数值不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Janus Monolayer Transition Metal Dichalcogenides",
+  "self_check": "已核对关键数值：拉曼峰位（MoSe2 A1g 240 cm-1, E12g 287 cm-1；Janus SMoSe 290 cm-1, 350.8 cm-1；MoS2 404 cm-1, 383 cm-1）、DFT 计算值（MoSe2 234.9/276.9 cm-1；Janus SMoSe 283.1/343.5 cm-1；MoS2 396.3/373.1 cm-1）、带隙（直接 1.568 eV，间接 1.558 eV）、XPS 峰位（S 2p1/2 161.3 eV, 2p3/2 162.5 eV；Se 3d3/2 54.6 eV, 3d5/2 53.8 eV；Mo 3d3/2 231.6 eV, 3d5/2 228.5 eV）、原子比（1.02:1.05:1）、HER ΔGH 值（MoS2 0.161 eV, SeMoS -0.007 eV, SMoSe 0.060 eV, MoSe2 0.063 eV）。公式 ΔGH = ΔEH + ΔEZPE - TΔS 及 ΔEH 定义已保留。不确定处：正文 343.5 cm-1 与图注/Table S1 341.5 cm-1 不一致；PL 峰单位 V 应为 eV；迁移率单位指数错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5647,
+      "prompt_tokens": 11209,
+      "total_tokens": 16856,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10013,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

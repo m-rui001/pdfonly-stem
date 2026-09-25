@@ -1,0 +1,93 @@
+{
+  "sha1": "363ca042f6b557733d0ea1ced376cea6e61002fe",
+  "title": "Data-driven prediction of battery cycle life before capacity degradation",
+  "doi": "https://doi.org/10.1038/s41560-019-0356-8",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/363ca042f6b557733d0ea1ced376cea6e61002fe/index.html",
+  "source_chars": 50954,
+  "markdown_chars": 4313,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Title: Data-driven modeling enables cycle life prediction for lithium-ion batteries using early-cycle data yet to exhibit capacity degradation",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第 2 页正文标题与第 1 页登记标题及 DOI 对应的题名不同，但第 1 页明确给出登记题名和 DOI，且第 2 页标题可视为同一工作的描述性标题，故仅标记为低置信度题名差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Each summary statistic is a scalar quantity that captures the change in the voltage curves between two given two cycles.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“between two given two cycles”存在重复词，应为“between two given cycles”，属轻微 OCR 重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "As proposed by Anséan et al.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献中作者名通常为 Ansean，此处重音符号疑似 OCR 误加，但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Table 1 | Features considered for the various model implementations. The simplest model uses only the log variance of $ \\Delta Q_{100-10} $ (V) and does not consider model selection. More complex models are considered using only discharge information (first two sections) as well as additional measurements (all sections).",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 1 的勾选标记在 OCR 中部分丢失或错位，例如“Mean”行无勾选、“Skewness”和“Kurtosis”行勾选归属不明确，影响对具体模型所选特征的精确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Table 2 | Model metrics for the results shown in Figure 3. Train and test refer to the data used to learn the model and evaluate model performance, respectively. One battery in the test set reaches 80% SOH rapidly and does not match other observed patterns. Therefore, the parenthetical primary test results correspond to the exclusion of this battery.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Table 2 的列标题与数值对应关系在 OCR 中可能错位，例如“Train Primary Test Secondary Test”与 RMSE、Mean Percent Error 的对应需结合正文核对，存在表格结构损坏风险。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 36,
+      "quote": "Figure 4 | Nine features used in the full model described in Table 1. The coefficient value for the feature in the linear model is in the title of plot.",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Figure 4 仅给出图注，未提取九个特征的具体名称和系数值，导致 full 模型所选特征无法从图中完整复原。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Data-driven prediction of battery cycle life before capacity degradation",
+  "self_check": "已核对摘要、正文与结论中的关键数值：124 只电池、寿命 150–2300 次、平均 806、标准差 377、约 96,700 循环、72 种快充条件、30 °C、4C 放电至 2.0 V、1C=1.1 A、80% 标称容量为寿命终点、前 100 循环容量中位数增加 0.2%、相关系数 ρ=−0.06/0.27/0.47/−0.93、三个模型误差 15%/13.0%/14.1% 及二次测试 11.4%/8.6%/10.7%、基准 30%/36% 与 25%/34%、诊断能量变化 53%–66%。公式 ŷ_i = ŵ^T x_i、弹性网目标函数、RMSE 和平均百分比误差定义均按 OCR 原文保留。不确定处：Table 1 勾选标记和 Table 2 列对应关系可能因 OCR 表格结构损坏而不完全准确；Figure 4 特征系数值未提取；第 2 页描述性标题与登记题名存在差异但已按登记题名和 DOI 归属。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3734,
+      "prompt_tokens": 13447,
+      "total_tokens": 17181,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7486,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

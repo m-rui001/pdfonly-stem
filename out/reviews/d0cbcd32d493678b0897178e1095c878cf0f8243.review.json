@@ -1,0 +1,55 @@
+{
+  "sha1": "d0cbcd32d493678b0897178e1095c878cf0f8243",
+  "title": "Where are Europe’s last primary forests?",
+  "doi": "https://doi.org/10.1111/ddi.12778",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d0cbcd32d493678b0897178e1095c878cf0f8243/index.html",
+  "source_chars": 67465,
+  "markdown_chars": 3197,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Wood demand − 1828 (8.2%)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.2,
+      "reason": "正文中历史木材需求变量的相对重要性为8.2%，但图4中该标注与文字描述一致，但图内显示的变量名'Wood demand − 1828'与表1中的'Wood demand (1828)'一致，无强烈证据为错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "0.5° 0.5° 0.5° 30 arc s 30 arc s 30 arc s 30 arc s 30 arc s 1 km 1 km 1 km 1 km 1 km 1 km 1 km 1 km 1 km 1 km",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "Table 1的提取文本在表格行之间出现了多个重复的'0.5°'和'30 arc s'等数值，可能表示不同行的分辨率字段被横向拼接，但无法确定具体排列，影响不可靠。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、结果和讨论中的关键数值（1.4 Mha、0.7%、89%、46%、24%、38%、5.6%、中位数24 ha等）与提取文本一致。模型参数（学习率0.02、树复杂度5、bag faction 0.7、2050棵树、AUC 0.86、0.70、0.63等）已保留。公式未出现，无特殊公式需处理。不确定点：Table 1中预测变量列表因提取格式混乱无法完全复原，但正文对核心变量已作描述；部分图表编号（如图4、图5）文字描述已保留。未引入外部知识，所有结论基于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2367,
+      "prompt_tokens": 18071,
+      "total_tokens": 20438,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6
+      }
+    },
+    "content_chars": 4134
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

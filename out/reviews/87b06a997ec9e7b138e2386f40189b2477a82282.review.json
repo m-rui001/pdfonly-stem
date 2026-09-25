@@ -1,0 +1,274 @@
+{
+  "sha1": "87b06a997ec9e7b138e2386f40189b2477a82282",
+  "title": "Grand challenges in the science of wind energy",
+  "doi": "https://doi.org/10.1126/science.aau2027",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/87b06a997ec9e7b138e2386f40189b2477a82282/index.html",
+  "source_chars": 73065,
+  "markdown_chars": 8856,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Figure 1: Global cumulative installed capacity (in GW) for wind energy and estimated LCOE for the U.S. interior region in cents/kilowatt-hour from 1980 to present day. Source: Historical LCOE data are from 17 and 20 and have been verified for all but five years with the United",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Figure 1图注在'with the United'处截断，第7页以'States wind industry statistics database'继续，属于跨页断句，但图注信息本身不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Figure 2: Wind turbine blade innovation comparing a modern commercial blade (top) and a commercial blade from the mid-1980s (bottom) scaled to the same length. The modern blade is 90% lighter than the scaled 1980's technology. Source: National Renewable Energy Laboratory (NREL) based on a concept by Kenneth Thomsen (Siemens Gamesa).",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图注中'1980's'的撇号位置可能为OCR格式问题，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "a group of international wind power experts came together in a series of meetings beginning in October 2017 that explored and articulated innovation pathways and associated research challenges that, if addressed, would position wind energy as a primary supplier of the world's electricity needs at levels of one-third to one-half or even more (Dykes, et al. (26) list detailed findings).",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "引用格式'(Dykes, et al. (26) list detailed findings)'中括号嵌套可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Atmospheric phenomena that are approximately 1.5-0.5 km exist at the interface of mesoscale and microscale processes",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "数值范围'1.5-0.5 km'的书写顺序（从大到小）可能为原文风格或OCR问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "their properties need to be tailored at small scales (1 micrometer [ $ \\mu $ m] to 1 millimeter [mm] or more)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "单位符号'$ \\mu $ m'的LaTeX标记残留表明OCR对希腊字母μ的提取可能不完整，但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "Studies that have considered up to 25% contributions of renewables to the grid need to be further refined for shares that reach beyond 50% or even 80% (98,99,100,101).",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "引用编号格式'(98,99,100,101)'中逗号后无空格，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "Funding: This work was authored [in part] by the National Renewable Energy Laboratory, operated by Alliance for Sustainable Energy, LLC, for the U.S. Department of Energy (DOE) under Contract No. DE-AC36-08GO28308.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "方括号'[in part]'可能为OCR对原文格式的保留，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "L.P. acknowledges support from a Palmer Endowed Chair Professorship and a Hanse-Wissenschaftskolleg (Delmenhorst, Germany) Institute for Advanced Study Fellowship.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "机构名称'Hanse-Wissenschaftskolleg'的拼写可能为OCR问题，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "https://www.nrel.gov/docs/fy17osti/70032.pdf.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "https://www.nrel.gov/docs/fy12osti/53510.pdfhttps://www.nrel.gov/docs/fy12osti/53510.pdf.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "URL重复拼接，明显为OCR提取错误，但不影响正文论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "https://www.energy.gov/sites/prod/files/2016/09/f33/Revolutiona%CC%82%E2%82%ACNo w%202016%20Report_2.pdf",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "URL中编码字符异常，可能为OCR对特殊字符的误提取，不影响正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "doi: 10.1007/978-3-319-46919-5. https://www.wind-energ-sci.net/1/1/2016/wes-1-1-2016.pdf.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": "https://doi.org/10.1016/j.renene.2016.08.056, 2017.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "DOI后逗号和年份格式可能为OCR问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 42,
+      "quote": "https://doi.org/10.1016/j.ifacol.2017.08.378.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 43,
+      "quote": "https://doi.org/10.5194/wes-2018-60.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "https://doi.org/10.1002/we.2198",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾缺少句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "https://www.worldscientific.com/doi/abs/10.1142/S1793005717400038.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "From wind and solar resources could provide an array of further economic and environmental benefits",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第3页末尾句子在'From wind and solar'处中断，第4页以'From wind and solar resources'重新开始，'From'的大写表明跨页断句处可能存在阅读顺序或分页拼接问题，但不影响核心论证理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "Figure 5: Power generated by the weather-driven plant needs to not only connect to the electrical grid, but support the stability, reliability, and operational needs in time scales ranging from managing disturbances at micro-seconds to planning for the next decade.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "图注中'micro-seconds'的连字符用法可能为原文风格或OCR问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 34,
+      "quote": "https://doi.org/10.1017/S0022094001886.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "DOI中'S0022094001886'可能应为'S0022112094001886'（与同页前文DOI不一致），疑似OCR漏字符，但不影响正文论证理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 35,
+      "quote": "https://www.osti.gov/biblio/1057805-local-mesoscale-impacts-wind-farms-parameterized mesoscale-nwp-model.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "URL中'parameterized mesoscale'之间缺少连字符，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 36,
+      "quote": "https://www.pnnl.gov/main/publications/external/technical_reports/PNNL-26267.pdf.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 37,
+      "quote": "https://science.energy.gov/~/media/ascr/pdf/programdocuments/docs/turb_flow_exascal",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "URL在'turb_flow_exascal'处截断，可能为OCR提取不完整，但不影响正文论证理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 38,
+      "quote": "https://www.nrel.gov/docs/fy17osti/67513.pdf.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "URL末尾多出句点，可能为OCR格式问题，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 39,
+      "quote": "https://doi.org/10.1016/j.jclpro.2018.10.286.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "DOI中'jclpro'可能应为'jclepro'（Journal of Cleaner Production），疑似OCR漏字符，但不影响正文论证理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 41,
+      "quote": "https://doi.org/10.1016/j.renene.2014.02.052, 2014.",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "DOI后逗号和年份格式可能为OCR问题，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Grand challenges in the science of wind energy",
+  "self_check": "已核对：摘要中三个重大挑战的表述与正文三个挑战标题一致；P = 1/2 ρ Cp A V³ 公式及变量定义与原文一致；关键数值（2050年人口98亿、电力需求38,000 TWh、2018年新增装机51 GW、LCOE约$0.04/kWh、叶片轻90%、叶片长度接近80m、塔架>100m、叶尖高度>200m、浮式系统水深约60m、可再生能源贡献25%/50%/80%等）均与原文一致；结论方向（风能可提供全球电力需求近一半）与摘要一致。不确定处：部分参考文献URL存在OCR格式问题（如重复拼接、末尾句点、字符缺失），但不影响正文论证理解；第3-4页跨页断句处'From wind and solar'的大写可能为分页拼接问题。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8044,
+      "prompt_tokens": 18735,
+      "total_tokens": 26779,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17875,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

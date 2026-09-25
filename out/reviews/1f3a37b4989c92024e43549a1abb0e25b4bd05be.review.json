@@ -1,0 +1,54 @@
+{
+  "sha1": "1f3a37b4989c92024e43549a1abb0e25b4bd05be",
+  "title": "Is Uber a substitute or complement for public transit?",
+  "doi": "https://doi.org/10.1016/j.jue.2018.09.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1f3a37b4989c92024e43549a1abb0e25b4bd05be/index.html",
+  "source_chars": 76824,
+  "markdown_chars": 4309,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "Table 2: Linear regressions predicting when and whether Uber enters an MSA Date UberX entry Did UberX enter (1) (2) Log(population) (σ) ... Observations 197 0.383 386 0.394",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "Table 2（第17页）缺少表头行（变量名列），表头行文本出现在第18页顶部。表格主体与表头在提取文本中分置两页，实际排版中表头可能在第17页顶部或表格跨页断裂。正文文字与数值本身可读，但表头位置存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 19,
+      "quote": "Table 3: Effect of Uber on log transit ridership Uber entry (1) (2) (3) (4) (5) (6) (7) (8) UberX 0.00263 -0.0591∗∗ 0.0598∗∗ (0.0143) (0.0295) (0.0236) 0.0666∗∗ (0.0294)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "Table 3（第20页）的列头仅有列编号（(1)-(8)），变量名称行（UberX、Above median population × UberX 等）未在同页表头显示，导致第一列数据（0.00263）对应的变量名（UberX）只能从表中上下文推断。同为第20页顶部的行 'Above median population × UberX' 与下方第21页内容相接，Table 3 的表头跨页断裂，拼接顺序存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与表格的关键数值：摘要和正文均报告两年后乘客量增加5%、渗透率每标准差增加1.4%的结果；回归公式及其下标符号（含固定效应与控制变量）已按原文逐项转录；相关系数0.948（对数）与0.292（变化量）来自第9页正文；进入后两年乘客量高出5–8%来自Figure 6描述文字；异质性分析的各交互系数（小城市−5.9%、大城市+0.8%、渗透率−0.5%/+1.8%、低于中位数乘客量机构+6%、高于中位数−2.1%）均与正文一致。Table 3/Table A.2中部分系数（如−0.00483、0.0328∗∗∗等）在提取文本中仅以数值列呈现，变量名缺失，笔记中已结合正文文本补充完整系数归属。通勤时间部分（Tables 7–9）的系数方向（公交负、私人汽车正）与正文结论一致。不确定之处：Table 3与Table 2的表头位置、Table A.2 Panel B中个别系数的变量名归属（'Above median population density × UberX'行在提取文本中跨越页33与34，具体数值对应关系已根据面板结构推断，推断依据为页面顶部面板标题）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3951,
+      "prompt_tokens": 20292,
+      "total_tokens": 24243,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 728
+      }
+    },
+    "content_chars": 5898
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

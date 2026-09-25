@@ -1,0 +1,73 @@
+{
+  "sha1": "de324c61cd8035c12903cb322de9acffc6808ae6",
+  "title": "Genomic innovation for crop improvement",
+  "doi": "https://doi.org/10.1038/nature22011",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/de324c61cd8035c12903cb322de9acffc6808ae6/index.html",
+  "source_chars": 72188,
+  "markdown_chars": 3569,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "A. ipanensis (1.5 Gb)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "后文文献17为Arachis ipaensis，且上下文明确为花生二倍体祖先之一，此处拼写'ipanensis'疑似'ipaensis'笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "RenSeq is has now been used",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文出现'is has'重复，可能为'has now been used'或'is now used'，但提取文本如此，未自行修正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "haplotig32",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "同一句中出现'haplotig32'，结合前文'haplotig'定义，数字32可能为引文编号或下角标错误，但无法确认，照录文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "Refs 34 and 35 highlight the potential of nanopore sequencing technology, using yeast and bacterial genomes.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第8页页首为参考文献注释，紧接第7页参考文献列表，页面转换正常，但正文中未见对应标注，仅作一般性说明。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：火炬松22 Gb、花生二倍体1.2/1.5 Gb、陆地棉245×覆盖度96%、大肠杆菌4.9 Mb/99.5%、藜麦439 scaffolds 90%、小麦14/17 Gb、玉米多样性57%、水稻约55个驯化位点、HiSeq单通道110 Gb/3天、每样本低于1美元等，均与原文一致。公式无。结论方向与摘要相符：基因组学技术促进作物改良，育种成为DNA装配问题。不确定点：'ipanensis'和'RenSeq is has'为文本疑似错误，已列入问题；'haplotig32'中的数字32含义不明，未作解释。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3045,
+      "prompt_tokens": 17166,
+      "total_tokens": 20211,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 304
+      }
+    },
+    "content_chars": 4945
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

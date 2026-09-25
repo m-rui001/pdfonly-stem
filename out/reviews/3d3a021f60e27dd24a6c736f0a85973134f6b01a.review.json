@@ -1,0 +1,110 @@
+{
+  "sha1": "3d3a021f60e27dd24a6c736f0a85973134f6b01a",
+  "title": "Characterization of basic physical properties of Sb2Se3 and its relevance for photovoltaics",
+  "doi": "https://doi.org/10.1007/s12200-017-0702-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3d3a021f60e27dd24a6c736f0a85973134f6b01a/index.html",
+  "source_chars": 50509,
+  "markdown_chars": 6135,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Substituting [020], [120] and [221] into Equation (3), and solving the system of linear equations, we could obtain the mobility along a-, b- and c-direction as 1.17, 0.69 and 2.59 cm2V-1s-2, respectively.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "迁移率单位应为cm²V⁻¹s⁻¹，正文多处写为cm2V-1s-2，系单位笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "DOI: 10.1002/ ((please add manuscript number))",
+      "type": "元数据占位符",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "提取文本中DOI占位符未实际填写，但元数据已由用户提供正式DOI。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "Figure 2. a) The X-ray diffraction patterns of [020]-, [020]- and [020]-Sb2Se3 films.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图2a-c分别对应[020]、[120]、[221]三个取向，但图题中三个均写为[020]，应为笔误或抽取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "L_e,c = De,cT / q = μe,cτ e k_BT/q",
+      "type": "公式疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "扩散长度公式缺少根号，且De,cT/q与后式不一致；结合上下文爱因斯坦关系，应为L=√(Dτ)=√(μτk_BT/q)。提取文本可能缺失根号或存在排版错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "we obtain the electron diffusion length of 1.6 μm along c-direction.",
+      "type": "数值核对",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "由μ=14.3 cm²V⁻¹s⁻¹、τ=67 ns计算√(μτk_BT/q)约1.6 μm，与原文一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "The electron mobility along c-direction was larger than 16.9 cm2 V-1 s-1.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "正文第8页明确为“大于14.3 cm²V⁻¹s⁻¹（16.9−2.59）”，结论处写为“大于16.9”与正文矛盾。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "time of fight (TOF) measurement",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为“time of flight (TOF)”，原文“fight”系拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "The hole mobility in a single Sb2Se3 grain along a-, b- and c-direction were 1.17, 0.69 and 2.59 cm2V-1s-2, respectively.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "结论处再次将单位写为cm2V-1s-2，应为cm²V⁻¹s⁻¹。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：介电常数29（2 kHz）/18（2 MHz）、空穴迁移率a/b/c=1.17/0.69/2.59 cm²V⁻¹s⁻¹（原文结论有单位笔误，已标注）、电子迁移率>14.3 cm²V⁻¹s⁻¹、寿命67 ns、扩散长度285 nm（低光照）和1.6 μm（高光照）、缺陷深度0.111 eV、缺陷峰0.095 eV、积分缺陷密度1.3×10¹⁵ cm⁻³、SCLC陷阱密度6.9×10¹⁴ cm⁻³、自由载流子密度1.8×10¹³ cm⁻³、Urbach能量40/120/80 meV。公式(3)、(6)-(11)按原文保留，公式(4)疑似缺根号已在问题中标注。结论中电子迁移率数值矛盾已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7458,
+      "prompt_tokens": 14551,
+      "total_tokens": 22009,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2259
+      }
+    },
+    "content_chars": 8749,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

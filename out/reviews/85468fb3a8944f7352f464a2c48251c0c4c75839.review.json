@@ -1,0 +1,63 @@
+{
+  "sha1": "85468fb3a8944f7352f464a2c48251c0c4c75839",
+  "title": "Bandgap Engineering of Lead‐Free Double Perovskite Cs 2 AgBiBr 6 through Trivalent Metal Alloying",
+  "doi": "https://doi.org/10.1002/anie.201703970",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/85468fb3a8944f7352f464a2c48251c0c4c75839/index.html",
+  "source_chars": 23343,
+  "markdown_chars": 3166,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "small",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第3页行末为'small'，第4页开头为'supercell'，明显是一个词'小超胞'被分页截断，中间可能缺失连接文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "𝐸(𝑥) = 𝐸(CABB) + [(E(CAIB) − E(CABB) − b]𝑥 + b𝑥 2",
+      "type": "疑似公式损坏",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中括号不配对，缺少一个右括号；'𝑥 2'疑似应为'x^2'（指数），但提取文本中未体现上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "bangap",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上下文为'Tauc plots for bangap fitting'，应为'bandgap'，疑为原文或提取时拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值：间接带隙范围1.86–2.27 eV、最小带隙1.86 eV（x=0.375 Sb）、最大均匀范围In 75%和Sb 37.5%、弯曲参数b分别为0.092和1.027、Cs2AgBiBr6计算带隙2.0 eV与实验2.12 eV一致、Cs2AgBi0.75Sb0.25Br6计算带隙1.58 eV、Cs2AgBi0.25In0.75Br6计算带隙2.28 eV、分解途径化学式等均与提取文本一致。公式中的括号缺失和'x2'上标问题已在issue中标出，未擅自修改。对于In取代中实验与计算带隙趋势矛盾的讨论，已按原文保留两种解释及PBE验证数据。环境稳定性部分保留了120天和CsAgBr2等产物信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6867,
+      "prompt_tokens": 7797,
+      "total_tokens": 14664,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4301
+      }
+    },
+    "content_chars": 4252
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

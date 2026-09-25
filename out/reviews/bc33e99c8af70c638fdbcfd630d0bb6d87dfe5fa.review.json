@@ -1,0 +1,111 @@
+{
+  "sha1": "bc33e99c8af70c638fdbcfd630d0bb6d87dfe5fa",
+  "title": "High-valence metals improve oxygen evolution reaction performance by modulating 3d metal oxidation cycle energetics",
+  "doi": "https://doi.org/10.1038/s41929-020-00525-6",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/bc33e99c8af70c638fdbcfd630d0bb6d87dfe5fa/index.html",
+  "source_chars": 44099,
+  "markdown_chars": 9254,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "with optimized OH $ ^{} $ , O $ ^{} $ , and OOH $ ^{*} $ adsorption energies",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OH 与 O 的上标星号在 OCR 中丢失，原文应为 OH*、O*、OOH*，影响中间物种符号的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "modulate 3d metals (Fe Co and Ni)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Fe 与 Co 之间缺少逗号，应为 Fe, Co and Ni，属轻微标点丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "the results show a decreased ratio of $ \\mathrm{F e}^{2+} $ (11%) in FeCoMoW and $ \\mathrm{F e}^{2+} $ (20%) in NiFeMo compared to the Fe L-edge XAS results",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此处表述为 Fe2+ 比例降低，但前文称 Mössbauer 与 K-edge 结果显示显著 Fe2+，且 L-edge 更表面敏感；该句逻辑与上下文存在张力，可能为 OCR 或原文表述问题，影响对数值含义的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "NiFeX and FeCoX exhibit lower overpotentials at $ 1 0 \\mathrm{m A} \\cdot \\mathrm{c m}^{2} $ an improvement of 37 mV and 54 mV",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "10 mA·cm−2 的上标负号丢失，且缺少逗号或连接词，影响数值单位与句子可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "exhibiting $ \\sim \\times17 $ times and $ \\times21 $ times higher TOFs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“~×17 times”与“×21 times”表述冗余，可能为 OCR 或原文格式问题，但不影响倍数结论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The applied voltage corrections and pH corrections are performed using the following equation:",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中 ΔG_corr 的下标 corr 在 OCR 中显示为 c o r r，属格式损失，不影响公式含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ ^{57} \\mathrm{Fe}{2} \\mathrm{O}{3} $ for preparing $ ^{57} \\mathrm{FeCl}_{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "57Fe2O3 的下标 2 与 3 在 OCR 中丢失，影响化学式准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "The performance tested under industrial condition (Supplementary Figures 26-29)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此处引用 Supplementary Figures 26–29，但前文工业条件测试引用 Supplementary Figure 38，图号可能不一致，影响交叉引用。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "High-valence metals improve OER performance by modulating 3d metal oxidation cycle energetics",
+  "self_check": "已核对：摘要与结论均强调高价金属调制子使 Fe、Co、Ni 氧化态降低、氧化转变更易，从而降低 OER 过电位；关键数值包括 NiFeX/FeCoX 过电位改善 37 mV 与 54 mV、NiFeMo 在 10 mA·cm−2 下过电位 180 mV、NiFeMoW 与 FeCoMoW 在 300 mV 过电位下 TOF 分别约为二元对照的 17 倍与 21 倍、工业电解槽中 NiFeMo 质量活性为 Raney Ni 的 17 倍、电解槽在约 1.7 V 下 300 mA·cm−2 持续 120 h。公式已按提取文本保留，包括 ΔG_corr = ΔG − eU − 0.059 pH、E = E_applied − 95% iR、TOF = j × A × η / (4 × F × n)、n = m × N_A / Mw。仍不确定处：FeCoMoW 与 NiFeMo 中 Fe2+ 比例（11% 与 20%）的表述与上下文逻辑存在张力，已作为 OCR 问题标出；部分化学式下标与上标在 OCR 中丢失，已尽量按可见文本保留。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6433,
+      "prompt_tokens": 12817,
+      "total_tokens": 19250,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12450,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

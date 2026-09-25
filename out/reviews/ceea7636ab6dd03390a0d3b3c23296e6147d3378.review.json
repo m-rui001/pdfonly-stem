@@ -1,0 +1,57 @@
+{
+  "sha1": "ceea7636ab6dd03390a0d3b3c23296e6147d3378",
+  "title": "Assessing data quality in citizen science",
+  "doi": "https://doi.org/10.1002/fee.1436",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ceea7636ab6dd03390a0d3b3c23296e6147d3378/index.html",
+  "source_chars": 48182,
+  "markdown_chars": 9502,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Assessing data quality in citizen science (preprint)",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "OCR 首页题名标注为 preprint，且第 2 页显示 bioRxiv preprint doi: 10.1101/074104，与登记 DOI 10.1002/fee.1436 不同；但正文标题与登记题名一致，仅版本/DOI 存在差异，可能影响元数据归属判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$ 1 0 0 - m^{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中数字与单位间出现异常空格，疑似 OCR 对 $100-m^{2}$ 的抽取损坏，但数值和单位仍可辨认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Assessing data quality in citizen science",
+  "self_check": "已核对摘要、正文关键数值（如专业人员相似度 77.3%–86.6%、驼鹿 68%、专家准确率 96.6%、志愿者 70–95%、Snapshot Serengeti 共识 88.6%→97.9%、加权 96.4%→98.6%、eBird 120 物种中约 90% 模型准确性提高、Project FeederWatch 1.3% 需专家审查、Did You Feel It? 750,000 份报告）与结论方向一致。公式 $100-m^{2}$ 按 OCR 可见文本保留并标记疑似损坏。元数据行采用登记 DOI 10.1002/fee.1436，但 OCR 正文第 2 页显示 bioRxiv preprint doi: 10.1101/074104，存在版本/DOI 差异，已在 extraction_issues 中标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5224,
+      "prompt_tokens": 11500,
+      "total_tokens": 16724,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10643,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

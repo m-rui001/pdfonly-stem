@@ -1,0 +1,63 @@
+{
+  "sha1": "11ac64a1c636dcc7cd24307821ec11aa0af7016e",
+  "title": "Speeded up detection of squared fiducial markers",
+  "doi": "https://doi.org/10.1016/j.imavis.2018.05.004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/11ac64a1c636dcc7cd24307821ec11aa0af7016e/index.html",
+  "source_chars": 54795,
+  "markdown_chars": 2823,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "in order June 28, 2018",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第1页末尾出现不完整短语，第2页开头为'the possibility of error detection and correction.'，中间明显缺失了连接内容（可能是'However, they do not consider'），但提取文本未能提供完整句子。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "using the scale factor ττ̇ci",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中出现'ττ̇ci'，从上下文推断应为'τc/τ̇i'，但源文本照录为'ττ̇ci'，可能是OCR/提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "τ̇i = τc + max(Iw , Ih )τi | τi ∈ [0, 1],",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "竖线'|'可能为条件符号，但原公式未必有该符号，可能是提取中的分隔符，存在疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言、方法、实验中的关键数值：最小加速比17、最大40、4K下>360fps、低分辨率>1000fps、Step 5耗时恒定约0.5ms、τi表（0%,31%,48%,82%,90%）、角点误差（ArUco 0.140, ArUco3 0.161等）。公式(1)(2)(4)(5)(6)按提取文本保留，其中公式(1)的'ττ̇ci'和公式(2)的竖线疑为提取问题，已在issues中标注。未补充任何外部信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3202,
+      "prompt_tokens": 14743,
+      "total_tokens": 17945,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 975
+      }
+    },
+    "content_chars": 3880
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "a5a5a87014d0c8716c6443b88d0295b318f9d1a7",
+  "title": "Conformal Lithium Fluoride Protection Layer on Three-Dimensional Lithium by Nonhazardous Gaseous Reagent Freon",
+  "doi": "https://doi.org/10.1021/acs.nanolett.7b01020",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a5a5a87014d0c8716c6443b88d0295b318f9d1a7/index.html",
+  "source_chars": 7928,
+  "markdown_chars": 1622,
+  "heading_h2_count": 2,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "∴ 3 = : ;9< ×:7>\u0003 ? = : ;9<×:7>\u0003 ? ≈ 3× 10BC S/cm",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式中‘10BC’的指数部分在提取文本中为乱码，正常应为数字（如-8），无法从上下文确认，照录可见文本并标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "3 = 2\u0005 7\u0003 89 7×:\u0003@A ;9 456",
+      "type": "文本渲染损坏",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一公式区域出现大量不可识别符号，推断为PDF公式提取时丢失上下标和符号，但不影响对结论方向的理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对文中交换电流数值（Li箔0.041 mA、Li-rGO 0.95 mA、LiF涂层后约0.012 mA）以及两电极结果，并注意离子电导率计算中的指数符号在提取文本中损坏；其余表征结论（XPS、XRD、空气稳定性）均依据原文描述。未添加任何正文未提供的细节，Li-S电池电压曲线的具体数值因未提取而未给出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3635,
+      "prompt_tokens": 2957,
+      "total_tokens": 6592,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2356
+      }
+    },
+    "content_chars": 2373,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "a4177887920e3d5a63d62a00901e68a6627720cc",
+  "title": "Cloud feedback mechanisms and their representation in global climate models",
+  "doi": "https://doi.org/10.1002/wcc.465",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a4177887920e3d5a63d62a00901e68a6627720cc/index.html",
+  "source_chars": 107549,
+  "markdown_chars": 3899,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "-2 Spatial distribution of cloud feedback (in W m per K surface warming)",
+      "type": "formatting/superscript loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中“-2”应为“W m⁻²”的上标指数，提取后指数单独出现在句首，原文应为“W m⁻² per K”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "rising freetropospheric clouds",
+      "type": "probable OCR error / hyphen loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "应为“free-tropospheric”，连字符缺失；同摘要其他位置多次出现“free-tropospheric”，可确认为提取时连字符丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对净云反馈均值0.43 W m⁻² K⁻¹、范围-0.13至1.24、长波0.42、短波0.02、相关系数0.80/0.73、高度反馈0.20±0.09 W m⁻² K⁻¹、CRE数值-45/+27/-18 W m⁻²、快速调整0.3-1.1 W m⁻²、相变机制贡献约80%等关键数值与公式N=F+λΔT；不确定处：原文‘roughly six times smaller’在markdown中表述为‘约六分之一’，符合原文语义；提取文本中‘-2’上标丢失问题已在extraction_issues列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 15796,
+      "prompt_tokens": 26726,
+      "total_tokens": 42522,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 12920
+      }
+    },
+    "content_chars": 4836
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

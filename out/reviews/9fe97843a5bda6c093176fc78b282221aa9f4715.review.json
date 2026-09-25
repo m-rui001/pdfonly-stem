@@ -1,0 +1,54 @@
+{
+  "sha1": "9fe97843a5bda6c093176fc78b282221aa9f4715",
+  "title": "Towards single-species selectivity of membranes with subnanometre pores",
+  "doi": "https://doi.org/10.1038/s41565-020-0713-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9fe97843a5bda6c093176fc78b282221aa9f4715/index.html",
+  "source_chars": 73920,
+  "markdown_chars": 2389,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "! z\" ! \" kB T ΔS ΔH z",
+      "type": "疑似错误（公式符号乱码）",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Eyring 方程公式中的上标符号（如双剑号）被提取为乱码，无法确认原始符号。文本中同时出现类似“exp ( ”和“ΔH z”片段，上下文可推断为活化熵和活化焓，但原样照录会误导读者，故标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "f(ΔS ‡) f (ΔH ‡) 1/ Temperature",
+      "type": "疑似错误（图注文字截断）",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该片段位于 Box 1 右侧图注附近，可能为 Arrhenius 图中斜率与截距的注释，但提取缺少上下文，无法确认完整含义。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对正文中渗透率公式 P=A'exp(−Ea/RT) 与 Arrhenius 方程的形式，确认关键数值如水的自扩散活化能 ~4 kcal/mol、K+ 通道选择性 10,000 倍、选择性过滤器长 12 Å、孔尺寸条件 dh>dp>ds 均出自原文。Eyring 方程因原稿提取符号乱码，markdown 中按标准形式整理，并在 extraction_issues 中标注。未发现其他数值或结论与摘要冲突。部分图注（如 Fig. 3e 的氧密度模拟）仅保留文字描述，未引入图片内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4816,
+      "prompt_tokens": 18672,
+      "total_tokens": 23488,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2940
+      }
+    },
+    "content_chars": 3260
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

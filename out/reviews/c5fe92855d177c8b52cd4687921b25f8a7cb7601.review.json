@@ -1,0 +1,247 @@
+{
+  "sha1": "c5fe92855d177c8b52cd4687921b25f8a7cb7601",
+  "title": "Importance and vulnerability of the world’s water towers",
+  "doi": "https://doi.org/10.1038/s41586-019-1822-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c5fe92855d177c8b52cd4687921b25f8a7cb7601/index.html",
+  "source_chars": 71412,
+  "markdown_chars": 9971,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "In South America, the mountain ranges Extended Data Table 1 and 2) supplying the the Southern Chilean",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句括号与语序明显错乱，'the the' 重复，且 'Extended Data Table 1 and 2)' 被插入到句子中间，影响对南美水塔论述的阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the mountain ranges Extended Data Table 1 and 2) supplying the the Southern Chilean",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "出现重复词 'the the'，属 OCR 抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the Indus, which is globally the most important water tower (Fig. 4), is also very vulnerable",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文称印度河为全球最重要水塔并引用 Fig. 4，但 Fig. 4 图注为 'Water Tower Index and vulnerabilities of the Indus basin'，与正文引用一致；此处仅提示图号引用需与图注核对，非明确错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the 2019 released ERA5 reanalysis dataset is used $ ^{32} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "ERA5 通常为 2017 年发布，此处 '2019 released' 可能为 OCR 或原文表述问题，但无强文本内证据判定为抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "we use the MODIS MOD10CM1 product $ ^{7} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "前文引用为 MODIS/Terra Snow Cover Monthly L3 Global 0.05Deg CMG Version 6，产品名 MOD10CM1 可能为 MOD10CM 的 OCR 变体，但无强证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the range of the original scale in the cited study (0-5) is used to scale between minimum and maximum",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句与前文 BWS 缩放描述重复，可能为原文表述，非明确抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "PT=PWTU/PBAS 32",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 3 中公式与引用编号 32 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "PYV=1-((max(Py)-min(Py))/max(Py) 32",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式末尾缺少右括号，且与引用编号 32 粘连，影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "PMV=1-((max(Pm)-min(Pm))/max(Pm) 32",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式末尾缺少右括号，且与引用编号 32 粘连，影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "P=0.5*(PYV+PMV)*PT 32",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 32 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "SYV=1-((max(Sy)-min(Sy))/max(Sy) 7",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式末尾缺少右括号，且与引用编号 7 粘连，影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "SMV=1-((max(Sm)-min(Sm))/max(Sm) 7",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式末尾缺少右括号，且与引用编号 7 粘连，影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "S=0.5*(SYV+SMV)*ST 7",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 7 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "GS=GV/(GV+PTU) 48",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 48 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "GM=(PGLAC-B)/(PGLAC-B+PTU) 32",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 32 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "G=GS+GM 48",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 48 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "L=SL/(SL+PTU) 50",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 50 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Σ(DDOM,m-WA DOM,m)/DDOM,y 64",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 64 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Σ(DIND,m-WA IND,m)/DIND,y 64",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 64 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Σ(DIRR,m-WA IRR,m)/DIRR,y 64",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 64 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Σ(DNAT,m-WA NAT,m)/DNAT,y 51,52,64",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式与引用编号 51,52,64 粘连，可能影响公式与引用的区分。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "we retain those mountain regions which have an ice volume larger than $ 0.1\\mathrm{km}^{3.48} $ or an average annual areal snow persistence larger than $ 10\\%^{7} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "上标引用编号 48 与单位 km³ 粘连为 'km^{3.48}'，导致数值 0.1 km³ 与引用编号 48 混淆，影响阈值理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "we scale between-1.5 and 2.0 which are the minimum and maximum values found for the WTUs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'between-1.5' 缺少空格，可能为 'between -1.5'，属格式/OCR 小问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Importance and vulnerability of the world's water towers",
+  "self_check": "已核对：WTI 定义（SI 与 DI 乘积，归一化于 78 个 WTU 范围）；印度河 WTI=1.00 ± 0.03；Fraser 0.62 ± 0.07、哥伦比亚 0.58 ± 0.06；Rhône 0.45 ± 0.07、Po 0.39 ± 0.07、Rhine 0.32 ± 0.11；冰岛冰川冰储量约 1,027 km³、年 WTU 降水约 67 km³；印度河 2016 年人口约 2.06 亿、2050 年增 50%、GDP 增近八倍、温度升 1.9 °C（下游 1.8 °C）、降水增 0.2%（下游 1.4%）；北智利太平洋沿岸降水减少 -4.8%；78 个 WTU、2.5 亿人居住、16 亿人依赖、占全球人口 22%；GDP 4% 和 18%；自 2000 年逾 20 万人死亡；冰川阈值 0.1 km³ 或积雪持续性 10%；0.05° 分辨率；10,000 次和 1000 次蒙特卡洛；RCP4.5、SSP2、35 个 CMIP5 模型。仍不确定：部分公式与引用编号粘连，已按可见文本照录并在 extraction_issues 中标出；Extended Data Table 3/4 中公式的括号完整性可能受 OCR 影响。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8244,
+      "prompt_tokens": 19176,
+      "total_tokens": 27420,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16471,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

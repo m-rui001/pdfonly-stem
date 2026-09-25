@@ -1,0 +1,72 @@
+{
+  "sha1": "9c04ef69afe864430b3d12eaa47f81d0d4ea51a9",
+  "title": "Evaluation of machine learning algorithms for prediction of regions of high Reynolds averaged Navier Stokes uncertainty",
+  "doi": "https://doi.org/10.1063/1.4927765",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9c04ef69afe864430b3d12eaa47f81d0d4ea51a9/index.html",
+  "source_chars": 72575,
+  "markdown_chars": 3785,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "2 u0i u0j = kδij − 2νt Sij",
+      "type": "疑似公式提取丢失分数",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "标准Boussinesq关系为(2/3)kδij，此处提取的“2”疑似缺失“/3”，且后文公式(2)中“23”也类似，存在强文本内证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "23 kδij Sij",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2)中“23”疑似应为“2/3”，与标准形式不符，且上下文有“2SklSkl”分母。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "α= (ypred )i (1 − ypred )500−i i i=0",
+      "type": "疑似公式不完整",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "置信度公式缺少组合数和求和上下限，提取文本中仅给出部分项，无法复原完整二项分布CDF。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Non2 −||S||2 1 dimensionalized ||R|| ||R||2 +||S||2 Q criterion",
+      "type": "表格提取损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表II的列与行顺序错乱，多个公式和描述混排，无法对应12个输入的具体公式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数据：数据库7个案例及参数、三种算法超参数（SVM C=10 γ=1，Adaboost深度2/10轮，RF=25）、阈值α（0.6/0.7/0.95）、特征选择影响（SVM降33%，Adaboost降3%，RF增6%）、RF与SVM误差对比（总误差低24%，CA误差高45%）、与Gorle对比（误差降低214%和264%）、外推点误差倍数（4.0和1.8）、案例3和7的外推比例（82%和40%）。公式(1)和(2)疑似缺失分数已在issues中标注；公式(5)因提取文本损坏未能完整保留，其余公式(3)(4)(6)(7)(8)已按原文可见内容转写。表II和表III的部分内容因提取乱序未能准确复原，笔记中仅引用正文描述的关键结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13344,
+      "prompt_tokens": 17186,
+      "total_tokens": 30530,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10429
+      }
+    },
+    "content_chars": 5150
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "71cce72bd7b8d4c9b699e7512484155ce9f86665",
+  "title": "Magnesium extrusion alloys: a review of developments and prospects",
+  "doi": "https://doi.org/10.1080/09506608.2017.1421439",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/71cce72bd7b8d4c9b699e7512484155ce9f86665/index.html",
+  "source_chars": 130585,
+  "markdown_chars": 4786,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 22,
+      "quote": "Mg Al in AZ91 is polarized (at the equipotential of 17 12 the alloy)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "提取文本中“Mg Al”和“17 12”被拆分，结合上下文应指金属间化合物Mg17Al12，数字下标被误拆为独立字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "our unpublished result has shown that 6",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "第7页末尾句子在“that 6”处中断，下一页第8页开头为“lowest extrusion temperature for Mg-1Zn alloy is 150°C”，中间缺失连接词和数值，明显是跨页断裂，可能“6”为页码或截断字符。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、各合金系统及总结中的关键数值：纯镁密度1.74 g/cm³、AZ31等挤压速度20–30 m/min、Mg-3.5Al-3.3Ca-0.4Mn YS 410 MPa、Mg-10Gd-5.7Y-1.6Zn-0.7Zr峰值时效YS 473 MPa、Mg-6.7Y-2.5Zn粉末冶金YS 610 MPa等。公式和符号如Mg17Al12、β1′、LPSO（14H/18R）均按原文保留。不确定点：图8标题中Mg-0.2Zn-0.3Ca-0.1Mn与正文多次出现的Mg-0.2Zn-0.3Ca-0.14Mn不一致，未在正文中强判，仅在笔记中采用正文出现频率更高的0.14Mn版本；另外第7页跨页断裂处原文缺失具体温度数值，笔记中保留提取到的150°C但明确标注跨页疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10039,
+      "prompt_tokens": 37456,
+      "total_tokens": 47495,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6538
+      }
+    },
+    "content_chars": 5803
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

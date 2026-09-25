@@ -1,0 +1,63 @@
+{
+  "sha1": "f2dc8b7c0554b77c87ac28e7d06281c70b0ac5ad",
+  "title": "Environmental DNA metabarcoding of lake fish communities reflects long‐term data from established survey methods",
+  "doi": "https://doi.org/10.1111/mec.13660",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f2dc8b7c0554b77c87ac28e7d06281c70b0ac5ad/index.html",
+  "source_chars": 81078,
+  "markdown_chars": 5912,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 18,
+      "quote": "In this study we used high-throughput sequencing of eDNA from the mitochondrial 12S and CytB genes to characterise the fish community composition in three large lakes (Lake Windermere, Derwent Water and Bassenthwaite Lake) in the UK.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "此处上下文正常，未发现明显断裂；仅为核对，无需修改。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Site occupancy data based on 12S sequences were used to investigate the spatial distribution of each species recorded at more than two sites around Windermere (Fig. S15). The general pattern emerging from this analysis is that species-specific eDNA was not evenly distributed around the lake. Although some species such as P. fluviatilis, R. rutilus, E. lucius and S. This article is protected by copyright. All rights reserved.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在'S. '处中断，下一页开始为' trutta'（见第17页第一行），属于页尾截断，但拼接后完整，非实质错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "eDNA has great potential for biodiversity monitoring since it is non-invasive, can detect rare or elusive species that are difficult to detect using established methods, and can distinguish cryptic species or juvenile stages that are difficult to identify taxonomically",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文此处正常，无损坏证据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、方法、结果中的关键数值：温德米尔湖检出14/16种（12S）、12/16种（CytB），刺网4/16；巴森斯韦特湖9/10（12S）、7/10（CytB）；德文特湖8/9（12S）、6/9（CytB）。模拟群落χ2值、Pearson r=0.599、采样数量阈值0.1%/0.2%等均与原文一致。公式与符号仅出现于描述中。不确定的地方：文中图4/图5等具体系数未在提取文本中给出，故未写入。另，第16页结尾'S.'与第17页' trutta'拼接正确，无实质问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4467,
+      "prompt_tokens": 19303,
+      "total_tokens": 23770,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 17
+      }
+    },
+    "content_chars": 7777
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

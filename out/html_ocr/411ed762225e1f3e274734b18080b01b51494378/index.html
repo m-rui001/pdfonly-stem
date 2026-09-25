@@ -1,0 +1,487 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three-Phase PLLs: A Review of Recent Advances</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Three-Phase PLLs: A Review of Recent Advances</h1><p class="meta">https://doi.org/10.1109/tpel.2016.2565642 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>Three-Phase PLLs</p>
+<p>A Review of Recent Advances</p>
+<p>Golestan, Saeed; Guerrero, Josep M.; Vasquez, Juan C.</p>
+<p>Published in: I E E E Transactions on Power Electronics</p>
+<p>DOI (link to publication from Publisher): 10.1109/TPEL.2016.2565642</p>
+<p>Creative Commons License Other</p>
+<p>Publication date: 2017</p>
+<p>Document Version Accepted author manuscript, peer reviewed version</p>
+<p>Link to publication from Aalborg University</p>
+<p>Citation for published version (APA): Golestan, S., Guerrero, J. M., &amp; Vasquez, J. C. (2017). Three-Phase PLLs: A Review of Recent Advances. I E E Transactions on Power Electronics, 32(3), 1894 - 1907. https://doi.org/10.1109/TPEL.2016.2565642</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><div>
+
+# Three-Phase PLLs: A Review of Recent Advances
+
+</div>
+<p>Saeed Golestan, Senior Member, IEEE, Josep M. Guerrero, Fellow, IEEE and Juan. C. Vasquez, Senior Member, IEEE</p>
+<p>Abstract-A phase-locked loop (PLL) is a nonlinear negativefeedback control system that synchronizes its output in frequency as well as in phase with its input. PLLs are now widely used for the synchronization of power electronics-based converters and also for monitoring and control purposes in different engineering fields. In recent years, there have been many attempts to design more advanced PLLs for three-phase applications. The aim of this paper is to provide overviews of these attempts, which can be very useful for engineers and academic researchers.</p>
+<p>Index Terms—Frequency detection, phase detection, phase locked loop (PLL), synchronization, synchronous reference frame PLL (SRF-PLL).</p>
+<h2>I. INTRODUCTION</h2>
+<p>The advent of the phase-locked loop (PLL) dates back to 1930s when it was first designed and used for the synchronous reception of radio signals [1]. Since then, it has found widespread applications in different areas, such as the estimation of fundamental parameters (phase, frequency, and amplitude) of power signals [2]-[83], measurement of harmonics, interharmonics and power quality indices [84]-[90], implementing adaptive filters and robust controllers [91]-[93], control of AC and DC machines [94], [95], contactless energy transfer systems [96], [97], induction heating systems [98], [99], piezoelectric applications [100], [101], battery charge circuits [102], [103], magnetic encoders [104], islanding detection of microgrids [105]-[107], welding industry [108], grid fault and voltage sag detection [109], [110], synchronization of power quality instruments [111], [112], computation of synchrophasors [113], [114], etc.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Fig. 1 shows the schematic diagram of the conventional synchronous reference frame PLL (SRF-PLL) [2]-[5], which is a standard PLL in three-phase applications and the building block of almost all advanced PLLs. In this structure, the PD, LF, and VCO are abbreviations for the phase detector, loop filter, and voltage-controlled oscillator, respectively, $ \hat{V}, $ $ \hat{\omega}<em>{g} $ and $ \hat{\theta} $ are the amplitude, frequency, and phase angle estimated by the SRF-PLL, respectively, $ \omega</em>{n} $ is the nominal frequency, $ k_{p} $ and $ k_{i} $ are the proportional and integral gains of the LF [which is a proportional-integral (PI) controller], respectively, and $ k_{v} $ is the cutoff frequency of the low-pass filter (LPF) used for the amplitude estimation. The PD in the SRF-PLL is implemented by applying the Clarke's transformation and then the Park's transformation to the three-phase input signals. The q-axis output of the PD, which contains the phase error information, is passed through the LF (the PI controller). The</p>
+<div>
+
+Fig. 1. Schematic diagram of the conventional SRF-PLL.
+
+</div>
+<p>resultant signal, which is the estimated frequency, is applied to the VCO to provide an estimation of the phase angle.</p>
+<p>In recent years, there have been many attempts to design more advanced three-phase PLLs. The majority of these efforts have focused on enhancing the disturbance rejection capability of the conventional SRF-PLL and its relatives [6]-[64] so that they can deal with the ever increasing power quality issues in power systems. It is worth mentioning that these issues are mainly because of the proliferation of domestic and industrial nonlinear loads and the increased penetration of renewable energy sources to the power grid. Other efforts in the field have been mainly on improving the dynamic behavior [65]- [67] and changing the steady-state characteristics of the conventional SRF-PLL and its relatives [15], [68]-[75]. Attempts to optimize the PLL implementation using low-cost industrial devices are also worth mentioning [23], [76]-[80].</p>
+<p>The aim of this paper is to provide an overview of recent advances in three-phase PLLs, which can be useful for engineers and academic researchers.</p>
+<h2>II. ANALYSIS OF CONVENTIONAL SRF-PLL</h2>
+<p>Let the three-phase input signals of the conventional SRF- PLL be as</p>
+<div class="formula">$$
+\begin{array}{l} v _ {a} (t) = V \cos (\theta) \\ v _ {b} (t) = V \cos \left(\theta - \frac {2 \pi}{3}\right) \\ v _ {c} (t) = V \cos \left(\theta + \frac {2 \pi}{3}\right) \\ \end{array}
+$$</div>
+<p>where V and $ \theta $ are the amplitude and phase angle of the three-phase signals, respectively. Considering the Clarke's and Park's transformations as</p>
+<div class="formula">$$
+T _ {a b c \rightarrow \alpha \beta} = \frac {2}{3} \left[\begin{array}{c c c}1&amp;- \frac {1}{2}&amp;- \frac {1}{2}\\0&amp;\frac {\sqrt {3}}{2}&amp;- \frac {\sqrt {3}}{2}\end{array}\right]
+$$</div>
+<div class="formula">$$
+T _ {\alpha \beta \rightarrow d q} = \left[\begin{array}{c c}\cos (\hat {\theta})&amp;\sin (\hat {\theta})\\- \sin (\hat {\theta})&amp;\cos (\hat {\theta})\end{array}\right]
+$$</div>
+<p>and applying them to (1) gives</p>
+<div class="formula">$$
+\begin{array}{l} v _ {d} (t) = V \cos (\theta - \hat {\theta}) \\ v _ {q} (t) = V \sin (\theta - \hat {\theta}) \\ \end{array}
+$$</div></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+(a)
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 2. (a) Nonlinear model and (b) linear model of the conventional SRFPLL.
+
+</div>
+<p>where</p>
+<div class="formula">$$
+\begin{array}{l} \theta = \int \omega_ {g} d t = \int \left(\omega_ {n} + \Delta \omega_ {g}\right) d t = \underbrace {\int \omega_ {n} d t} _ {\theta_ {n}} + \underbrace {\int \Delta \omega_ {g} d t} _ {\Delta \theta} \\ \hat {\theta} = \int \hat {\omega} _ {g} d t = \int \left(\omega_ {n} + \Delta \hat {\omega} _ {g}\right) d t = \underbrace {\int \omega_ {n} d t} _ {\theta_ {n}} + \underbrace {\int \Delta \hat {\omega} _ {g} d t} _ {\Delta \hat {\theta}}. \\ \end{array}
+$$</div>
+<p>Substituting (5) into (4) yields</p>
+<div class="formula">$$
+\begin{array}{l} v _ {d} (t) = V \cos \left(\Delta \theta - \Delta \hat {\theta}\right) \approx V \\ v _ {q} (t) = V \sin \left(\Delta \theta - \Delta \hat {\theta}\right) \approx V \left(\Delta \theta - \Delta \hat {\theta}\right). \\ \end{array}
+$$</div>
+<p>As can be seen, the signal $ v_{q} $ contains the phase error information, and signal $ v_{d} $ is a measure of the amplitude of the three-phase signals.</p>
+<p>Using (5), (6), and the SRF-PLL structure (Fig. 1), the nonlinear and linear models of the SRF-PLL can be simply obtained as shown in Fig. 2. These models provide very useful information about characteristics of the SRF-PLL. This information is as follows.</p>
+<ul>
+<li>The amplitude V appears as a gain in the forward path of the model. It means that variations of the amplitude of the SRF-PLL input signals change the loop gain and, therefore, the stability margin and dynamic behavior of the SRF-PLL. Theoretically, the SRF-PLL remains stable even if V is very close to zero. This fact can be proven by applying the Routh-Hurwitz's stability test to the characteristic polynomial of the SRF-PLL, which can be simply obtained using Fig. 2(b) as $ s^{2}+V k_{p} s+V k_{i}=0 $ Despite this fact, to keep the dynamic and stability characteristics of the SRF-PLL decoupled from variations of V, an amplitude normalization scheme (ANS) is often included in the SRF-PLL structure [5]. The ANS in the SRF-PLL is often implemented by dividing the LF input signal, $ v_{q} $ , by an estimation of V, as highlighted in Fig. 3. Notice that the estimated value of V is first passed through a saturation block to avoid the division by zero in the startup transient. An alternative approach for the amplitude normalization is using the inverse tangent operation [15], [81], [82], which reduces the nonlinearity of the PLL control loop at the cost of a higher computational effort.</li>
+</ul>
+<ul>
+<li>In the standard SRF-PLL, the VCO's input signal is considered as the estimated frequency. In this case, the</li>
+</ul>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 3. SRF-PLL with an ANS.
+
+</div>
+<p>closed-loop transfer function relating $ \Delta\hat{\omega}<em>{g} $ to $ \Delta\omega</em>{g} $ i</p>
+<div class="formula">$$
+G _ {c l} (s) = \frac {\Delta \hat {\omega} _ {g} (s)}{\Delta \omega_ {g} (s)} = \frac {V k _ {p} s + V k _ {i}}{s ^ {2} + V k _ {p} s + V k _ {i}}.
+$$</div>
+<p>An alternative way is to rearrange the PI controller as highlighted in Fig. 4 and consider the integrator output as an estimation of the frequency [10], [17], [62], [65], [80], [91]. For the same values of $ k_{p} $ and $ k_{i} $ as those in (7), this modification results in a higher filtering capability and a more damped transient response in the frequency estimation, because it removes the zero in (7) and makes the transfer function a standard second-order one, as shown in (8)</p>
+<div class="formula">$$
+G _ {c l} (s) = \frac {\Delta \hat {\omega} _ {g} (s)}{\Delta \omega_ {g} (s)} = \frac {V k _ {i}}{s ^ {2} + V k _ {p} s + V k _ {i}}.
+$$</div>
+<p>Notice that, for both SRF-PLLs, the closed-loop transfer function relating the estimated phase to the actual one is the same, as expressed below</p>
+<div class="formula">$$
+G _ {c l} (s) = \frac {\Delta \hat {\theta} (s)}{\Delta \theta (s)} = \frac {V k _ {p} s + V k _ {i}}{s ^ {2} + V k _ {p} s + V k _ {i}}.
+$$</div>
+<ul>
+<li>The SRF-PLL is a type-2 control system, as it has two open-loop poles at the origin $ ^{1} $ [2], [3], [8], [15], [72]. This means that the SRF-PLL can track phase-angle jumps and frequency steps with zero steady-state phase error, but it fails to do so in the case of frequency ramps. To be more exact, there is a steady-state phase error equal to</li>
+</ul>
+<div class="formula">$$
+e _ {s s} ^ {\Delta \dot {\omega} _ {g}} = \sin^ {- 1} \left(\frac {A}{V k _ {i}}\right)
+$$</div>
+<p>in the SRF-PLL output when the input frequency has a ramping change with slope A. Notice that this result can be simply obtained using the nonlinear model of the SRF-PLL [Fig. 2(a)]. This error obviously can be reduced by selecting a large value for $ k_{i} $ , which is corresponding to a high bandwidth for the SRF-PLL when the standard design method for selecting the control parameters is used [2], [3]. Increasing the SRF-PLL's bandwidth, however, reduces its noise immunity. In addition, it increases the coupling between phase and frequency variables, which means the estimated frequency experiences large transients during the startup and under phase-angle jumps [65].</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 4. Extracting the estimated frequency from the PI controller integrator output.
+
+</div>
+<h2>III. PLLS WITH ENHANCED FILTERING CAPABILITY</h2>
+<p>In recent years, the increased penetration of renewable energy sources to the power grid and the proliferation of domestic and industrial nonlinear loads have caused serious power quality issues and made the synchronization task more challenging than before. To deal with this problem, many advanced PLLs with enhanced disturbance rejection capability have been designed by different researchers. Almost all these PLLs can be understood as a conventional SRF-PLL with additions filters, which can be included inside the SRF-PLL control loop or before its input. A general classification of these PLLs can be observed in Fig. 5. This section provides an overview of these PLLs.</p>
+<h2>A. Moving Average Filter-Based PLLs</h2>
+<p>Moving average filter (MAF) is a linear-phase filter that can be described in the Laplace domain as [6], [7]</p>
+<div class="formula">$$
+G _ {\mathrm {M A F}} (s) = \frac {1 - e ^ {- T _ {w} s}}{T _ {w} s}
+$$</div>
+<p>where $ T_{w} $ is the MAF window length. The MAF passes the DC component and completely blocks frequency components of integer multiples of $ 1 / T_{w} $ in hertz [6]. That is the reason why the MAF is sometimes referred to as "quasi-ideal LPF" [7].</p>
+<p>Fig. 6 illustrates the schematic diagram of the conventional SRF-PLL with in-loop MAFs, which is briefly referred to as the MAF-PLL [6], [8]-[10]. Including the MAF inside the SRF-PLL control loop significantly improves its filtering capability, but considerably slows down its dynamic response [6]. The reason is that the in-loop MAF causes a large phase delay in the control loop. This is particularly true when the MAF's window length is set to $ T_{w}=T $ ,where T is the nominal period of the MAF-PLL input signals. This selection for the MAF's window length, i.e., $ T_{w}=T $ ,is recommended when the grid harmonic pattern is unknown and, therefore, all harmonic components and the DC offset may be present in the PLL input [6]. Other choices for the window length of the MAF are $ T_{w}=T/2 $ and $ T_{w}=T/6 $ which, respectively, are suitable for applications where odd-order harmonics and non-triplen odd harmonics are present in the PLL input [6], [7], [13].</p>
+<p>To improve the dynamic performance of the MAF-PLL while maintaining a good filtering capability for it, several approaches have been suggested in the literature. In [6] and</p>
+<p>[11], using a proportional-integral-derivative (PID) controller instead of the conventional PI controller as the LF of the MAF-PLL is suggested. The derivative action of the PID controller provides an additional degree of freedom and, therefore, enables the designer to effectively compensate for the phase delay caused by the MAF by arranging a pole-zero cancellation [6].</p>
+<p>In [12], including a special lead compensator before the PI controller in the MAF-PLL structure is proposed. The transfer function of this lead compensator is almost the inverse of that of the MAF and, therefore, it is able to significantly reduce the phase delay in the MAF-PLL control loop.</p>
+<p>In [13], it is suggested to narrow the MAFs' window length to $ T / 6 $ and use them only for canceling the non-triplen odd harmonics of the PLL input. Notice that these harmonics are sensed as multiple of six harmonics in the MAF-PLL control loop. As a result, the MAF-PLL can achieve a faster dynamic response when compared to the cases where the window length of the MAFs is $ T / 2 $ or $ T $ . In this condition, however, the MAF-PLL cannot reject the DC offset and the fundamental-frequency negative sequence (FFNS) component and, therefore, requires additional filters to block them. To deal with this problem, it is suggested in [13] to place three MAF-based high-pass filters in the MAF-PLL input to filter out the DC component and use a differentiation-based filter inside the MAF-PLL control loop to cancel out the double-frequency ripples caused by the FFNS component. This differentiation-based filter has been originally developed in [14].</p>
+<p>Using a quasi-type-1 PLL (QT1-PLL) structure can also be an interesting approach for improving the MAF-PLL dynamic behavior while maintaining a high filtering capability for it [15]. This structure will be explained later in Section V-A.</p>
+<p>In [7] and [16], removing the in-loop MAFs and placing them in a separate synchronous reference frame before the SRF-PLL input is suggested. The MAFs in the synchronous reference frame, which act as a preprocessing filter, effectively block disturbance components without (significantly) degrading the PLL dynamic behavior. Using this prefiltering stage, however, involves an additional frequency detector. This additional frequency detector, of course, can be avoided by correcting the phase shift and amplitude scaling caused by the non-adaptive MAF-based prefiltering stage in the SRF-PLL as explained in [17].</p>
+<h2>B. Notch Filter-Based PLLs</h2>
+<p>A notch filter (NF) is a band-rejection filter that significantly attenuates signals within a narrow band of frequencies and passes all other frequency components with negligible attenuation. This feature makes the NF very interesting for the selective cancellation of the desired harmonic components in the PLL control loop [8], [18]-[23]. NFs can be adaptive or nonadaptive. The former one is often preferred by designers, as it allows them to select a narrow bandwidth for NFs and, therefore, minimize the phase delay in the PLL control loop. This advantage, of course, is at the cost of a rather considerable increase in the PLL computational effort [18]. The structure of NF-based PLLs (NF-PLLs) is the same as the standard MAF-</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 5. A general classification of PLLs with enhanced filtering capability.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 6. Schematic diagram of the MAF-PLL.
+
+</div>
+<p>PLL (Fig. 6), except that the MAF is replaced with one or more NFs.</p>
+<p>When including more than one NF in the PLL control loop is intended, two topologies can be considered. The first one is the cascade topology [18], [19] and the second one is the parallel topology [20]-[22]. The main difference between these topologies is in their frequency estimation part: the parallel topology uses the same frequency estimator for all NFs, however, in the cascade topology, each NF has its own frequency estimator. The number of NFs in both topologies involves a tradeoff between filtering capability and computational burden. To achieve a satisfactory compromise, often using three NFs with notch frequencies at $ 2 \omega_{g} $ , $ 6 \omega_{g} $ , and $ 1 2 \omega_{g} $ is recommeded.</p>
+<h2>C. Multiple SRF Filtering-Based PLLs</h2>
+<p>Fig. 7 shows the schematic diagram of the dual SRF filtering-based PLL (DSRF-PLL) [24]. As shown, this PLL uses two SRFs rotating at the same angular speed, but with opposite directions and a cross-feedback network to extract and separate the fundamental-frequency positive-sequence (FFPS) and FFNS components. As a result, the imbalanced three-phase input signals have no steady-state negative effect on the DSRF-PLL performance. The presence of harmonics in the DSRF-PLL input, however, may cause oscillatory errors in the estimated quantities. This problem can be alleviated by adding several SRFs rotating at the targeted harmonic frequencies to the standard structure [24]-[26]. The resultant PLL structure is often called the multiple SRF-based PLL (MSRF-PLL). This approach, however, causes a considerable increase in the PLL computational effort.</p>
+<p>A systematic approach for tuning the control parameters of the DSRF-PLL and its extended version, the MSRF-PLL, can be found in [31]. It is also worth mentioning that the DSRF-PLL is mathematically equivalent with the decoupled double SRF-PLL (DDSRF-PLL) [27]-[29] if the PI controller input signal in the DSRF-PLL is $ v_{q,1}^{+} $ (instead of $ \bar{v}_{q,1}^{+} $ ). The DDSRF-PLL is a well-known PLL in three-phase systems.</p>
+<h2>D. Complex-Coefficient-Filter-Based PLLs</h2>
+<p>Complex-coefficient filters (CCFs) are characterized by having an asymmetrical frequency response around zero frequency, which implies they can make a distinction between the positive and negative sequences (polarities) of the same frequency [116]. This feature of CCFs has made them very interesting for the selective extraction/cancellation of harmonic components before the SRF-PLL input [30]-[33]. Fig. 8 shows the schematic diagram of a popular CCF-based PLL, which uses two complex-coefficient band-pass filters as the SRF-PLL prefiltering stage [30]. This structure is often referred to as the dual complex-coefficient filter-based PLL (DCCF-PLL). As shown, the CCFs in the input of the SRF-PLL are working in a collaborative way, each of which is responsible for extracting a particular component of the PLL input.</p>
+<p>It is proved in [31] that the DCCF-PLL is mathematically equivalent with the DSRF-PLL (Fig. 7) if the LPFs in the DSRF-PLL are of first-order with the cutoff frequency $ \omega_{p} $ . In addition, the small-signal modeling, stability analysis, and a systematic method for tuning the control parameters of the DCCF-PLL can be found in [31]. It is worth mentioning that the DCCF-PLL can be easily extended to take into account the dominant harmonic components by using extra complex bandpass filters centered at the desired harmonic frequencies. It is also shown in [32] that the dynamic performance of the DCCF-PLL and its extended version can be improved by using a PID controller as the LF in the SRF-PLL and arranging a polezero cancellation, which minimizing the dynamic interaction between the CCFs and the SRF-PLL.</p>
+<p>It should be mentioned that using CCFs in PLL is not limited to the case described above. Indeed, they may also be used as an in-loop filter inside the SRF-PLL control loop,</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 7. Schematic diagram of the DSRF-PLL. For the sake of clarity, the sine and cosine of $ \hat{\theta} $ are not shown here.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 8. Schematic diagram of the DCCF-PLL.
+
+</div>
+<p>as suggested in [34], [35]. This topology, however, has not received much attention.</p>
+<h2>E. Delayed Signal Cancellation-Based PLLs</h2>
+<p>The delayed signal cancellation (DSC) operator is a highly popular filter for improving the filtering capability of the SRF-PLL mainly because it can be easily tailored for different grid scenarios [36]-[48]. This operator can be used as an in-loop filter in the SRF-PLL control loop or as a preprocessing tool before the SRF-PLL input. The latter case has received more attention mainly because the in-loop DSC operator increases the phase delay in the SRF-PLL control loop and, therefore, slows down the PLL dynamic response. Regardless of using the DSC operators as an in-loop filter or preprocessing tool, often a chain of them is employed to improve the filtering capability of the SRF-PLL [40]-[47]. Selecting the number of DSC operators in the chain depends on the anticipated harmonic components in the PLL input.</p>
+<p>When the DSC operator(s) is employed as the prefiltering stage of the SRF-PLL, the frequency estimated by the SRF-PLL is often fed back to adapt them to the frequency variations $ ^{2} $ [40]-[42]. Adapting DSC operators, however, increases</p>
+<p>the implementation complexity and the computational effort, particularly when interpolation techniques are employed for this purpose [48]. In addition, the frequency feedback loop makes the system highly nonlinear and, therefore, difficult to analyze from the stability point of view [45]. An alternative approach is using a secondary frequency detector for adapting the DSC operator(s) to the frequency variations [44]-[47]. This method results in better stability properties, but it demands more computational effort. The third method is correcting the phase and amplitude errors at the SRF-PLL output, as suggested in [48]. This technique demands very low computational effort and effectively compensates for the phase and amplitude errors. In addition, as the length of delays of the DSC operators remains fixed in this method, the small-signal modeling and, therefore, the stability analysis can be easily carried out. The shortcoming of this strategy is that it does not correct the imperfect disturbance rejection capability of the nonadaptive DSC operator when the frequency deviates from its nominal value. This problem is not serious when the frequency is close to its nominal value, but it may become troublesome in the presence of large frequency drifts, particularly under severe asymmetrical voltage sags or faults.</p>
+<h2>F. Second-Order Generalized Integrator-Based PLLs</h2>
+<p>A second-order generalized integrator (SOGI) acts as a sinusoidal signal integrator and can be arranged to behave as</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 9. Schematic diagram of the DSOGI-PLL.
+
+</div>
+<p>a quadrature signal generator (QSG) and band-pass filter by feeding back its output signal, as shown in the dashed box in Fig. 9 [49], [50]. The band-pass filter and QSG based on the SOGI, briefly referred to as the QSG-SOGI, is a useful tool for the extraction and separation of the FFPS and FFNS components of three-phase signals [117], [118]. The application of this tool for the extraction of the FFPS component before the SRF-PLL input can be observed in Fig. 9 [29], [51]. As shown, two QSG-SOGIs are used to extract the filtered direct and quadrature versions of $ v_{\alpha} $ and $ v_{\beta} $ . The FFPS component is then calculated based on the instantaneous symmetrical components (ISC) method. This PLL structure, which under certain conditions is mathematically equivalent to the DSRF-PLL and the DCCF-PLL [31], [32], is often called the dual QSG-SOGI-based PLL (DSOGI-PLL). To improve the harmonic filtering capability of the DSOGI-PLL additional QSG-SOGIs tuned at harmonic frequencies can be added to the standard structure [117]. An alternative approach is to use the third-order generalized integrator (TOGI) based band-pass filter and QSG instead of the QSG-SOGI in the DSOGI-PLL structure [33].</p>
+<p>It is worth mentioning that a similar PLL to the DSOGIPLL can be found in [52]. The only difference is that it uses an adaptive notch filter (ANF) based on a least mean square algorithm with two adaptive weights instead of the QSG-SOGI in its structure. It is proved in [53] that this ANF and the SOGI-QSG are mathematically equivalent. Therefore, it can be concluded that the ANF-based PLL proposed in [52] and the DSOGI-PLL are mathematically the same systems.</p>
+<h2>G. Other PLLs</h2>
+<p>In [54] and [55], the selective cancellation of harmonic components inside the SRF-PLL control loop by using a repetitive regulator $ ^{3} $ (RR) is suggested. The great feature of this regulator, which is based on the discrete cosine transform, is that its computational burden is independent of the number of harmonics that are intended to be blocked. In other words,</p>
+<p>removing a single harmonic or m (m&gt;1) harmonics using this regulator requires the same computational effort. It should be mentioned that the computational burden of this regulator highly depends on the sampling frequency: Increasing the sampling frequency drives up the computational cost. Therefore, this regulator may not be suitable for applications where the sampling frequency is high and/or removing a very few harmonics in the PLL control loop is intended.</p>
+<p>To remove the FFNS component in the PLL input, reforming the imbalanced signals to balanced ones using a zerocrossing detection (ZCD) based method is suggested in [57]. The ZCD-based PLL is simple to implement and can operate effectively even in the presence of multiple zero crossings in the PLL input signals. However, it only considers the amplitude imbalance in the PLL input, which means it cannot remove the FFNS component caused by the phase imbalance. The harmonic filtering capability of this PLL is also limited.</p>
+<p>In [59], employing the space vector Fourier transform (SVFT) as the SRF-PLL prefiltering stage is suggested. The SVFT, which can effectively reject all harmonic components, demands a low computational effort when implemented in the recursive form. However, the recursive implementation of the SVFT-based filter involves some stability problems [120]. This stability problem can also be avoided by implementing the SVFT in the nonrecursive form, but at the cost of a considerable increase in the computational cost.</p>
+<p>In [60], including second-order lead compensators (SOLC) into the SRF-PLL control loop is suggested. These compensators have pairs of purely imaginary zeros and poles, which means they can provide a selective harmonic cancellation like NFs without causing phase delay in the SRF-PLL control loop. As a result, using these compensators improves the filtering capability of the SRF-PLL without limiting its bandwidth. This improvement, however, is at the cost of a low noise immunity for the SOLC-based PLL.</p>
+<h2>H. Performance Comparison</h2>
+<p>A performance comparison between some of the PLLs analyzed before can be observed in Table I. It should be mentioned that in all PLLs that benefit from a high disturbance</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><div>
+
+TABLE I
+
+</div>
+<div>
+
+A PERFORMANCE COMPARISON BETWEEN SOME ADVANCED PLLS
+
+</div>
+<table><tbody><tr><td rowspan="2">Standard PLLs</td><td rowspan="2">Sub-classification</td><td colspan="6">Features</td></tr><tr><td>Disturbance rejection selectivity</td><td>Filtering capability</td><td>Harmonic extraction</td><td>Dynamic response</td><td>Computational burden</td><td>Noise immunity</td></tr><tr><td rowspan="2">MAF-based PLLs</td><td>In-loop MAF-based PLL[6],[8]</td><td>Low</td><td>High</td><td>No</td><td>Slow1</td><td>Low</td><td>High</td></tr><tr><td>Preloop MAF-based PLL[7],[17]</td><td>Low</td><td>High</td><td>No</td><td>Fast</td><td>Low</td><td>High</td></tr><tr><td rowspan="2">NF-based PLLs</td><td>Cascaded NF-based PLL[18],[19]</td><td>High</td><td>High</td><td>No</td><td>Fast</td><td>High2</td><td>High</td></tr><tr><td>Parallel NF-based PLL[20],[21]</td><td>High</td><td>High</td><td>Yes3</td><td>Fast</td><td>High2</td><td>High</td></tr><tr><td>MSRF-based PLLs[24]-[27]</td><td>——</td><td>High</td><td>High</td><td>Yes</td><td>Fast</td><td>High</td><td>High</td></tr><tr><td rowspan="2">CCF-based PLLs</td><td>In-loop CCF-based PLL[34],[35]</td><td>High</td><td>High</td><td>Yes3</td><td>Fast</td><td>High</td><td>High</td></tr><tr><td>Preloop CCF-based PLL[30],[32]</td><td>High</td><td>High</td><td>Yes</td><td>Fast</td><td>High</td><td>High</td></tr><tr><td rowspan="2">DSC-based PLLs</td><td>In-loop DSC-based PLL[41],[43]</td><td>Average</td><td>High</td><td>No</td><td>Slow4</td><td>Low</td><td>High</td></tr><tr><td>Preloop DSC-based PLL[40],[44],[48]</td><td>Average</td><td>High</td><td>No</td><td>Fast</td><td>Depends on topology5</td><td>High</td></tr><tr><td>SOGI-based PLLs[31],[51]</td><td>——</td><td>High</td><td>High</td><td>Yes</td><td>Fast</td><td>High</td><td>High</td></tr><tr><td rowspan="5">Other PLLs</td><td>RR-based PLL[54],[55]</td><td>High</td><td>High</td><td>No</td><td>Average</td><td>High</td><td>High</td></tr><tr><td>ZCD-based PLL[57]</td><td>——6</td><td>Low</td><td>No</td><td>Fast</td><td>Low</td><td>Low</td></tr><tr><td>SVFT-based PLL[59]</td><td>Low</td><td>High</td><td>No</td><td>Fast</td><td>High</td><td>High</td></tr><tr><td>SOLC-based PLL[60]</td><td>High</td><td>Average</td><td>No</td><td>Fast</td><td>Average</td><td>Low</td></tr></tbody></table>
+<p>1 The dynamic response of the in-loop MAF-based PLL can be considerably improved by using the PID-type loop filter [6], [11], the lead compensator [12], or the QT1 structure in the implementation [15].</p>
+<p>2 From the computational burden point of view, parallel NFs are probably more interesting than cascaded NFs because they use the same frequency update loop.</p>
+<p>3 The harmonic extraction is carried out in the dq-frame.</p>
+<p>4 The dynamic response can be improved by using PID-type LF [43] or a lead compensator [61].</p>
+<p>5 Computational burden is low when non-adaptive DSC operators with phase/amplitude error compensators are used, and it can be high when DSC operators are adapted to the grid frequency variations using interpolation techniques [48]. 6 In this PLL, no particular filter for rejecting harmonics is used. The ZCD-based technique in the input of this PLL only removes the grid voltage imbalance.</p>
+<p>rejection selectivity (i.e., the ability to decide which harmonics/disturbances should be rejected), there is a direct relation between the PLL filtering capability and its computational burden: the PLL filtering capability can be improved by adding more filter modules but at the cost of a higher computational burden. Here, the only exception, as discussed before, is the RR-based PLL. It should also be emphasized here that the results reported in Table I are corresponding to the typical structure of each PLL. For example, a high filtering capability and a slow dynamic response have been attributed to the dqDSC-based PLL because, in its typical structure, multiple dqDSC operators are used in the PLL control which result in a high filtering capability at the cost of a slow dynamic response.</p>
+<h2>I. Problem of DC Offset</h2>
+<p>Throughout Section III, the focus was mainly on PLLs with enhanced harmonic/imbalance rejection capability. The grid voltage imbalance and harmonic components, however, are not the only disturbances that PLLs should deal with. Indeed, in addition to these disturbances, PLLs must have a high DC offset rejection capability. This is particularly important for PLLs that are used for the synchronization of grid-connected current-controlled converters; otherwise, it may results in DC injection by the converter [61]. It is worth mentioning that the presence of the DC offset in the PLL input may be due to grid faults, measurement devices, DC injection from distributed generation systems, geomagnetic phenomena, halfwave rectification, etc [61], [62].</p>
+<p>To tackle the problem of DC-offset in PLLs, different approaches have been proposed in the literature. In [62], adding an integrator-based DC offset estimation/rejection loop to the standard PLL structure. This approach is simple and effective. A detailed mathematical analysis of this technique can be found in [63]. In [64], subtracting the $ \alpha\beta $ -axis voltage components from their delayed versions and passing the result through a frequency-adaptive correction unit is suggested. This technique ensures a complete and fast rejection of the DC-offset in PLLs. A performance comparison of five other DC-offset rejection strategies can be found in [61].</p>
+<h2>IV. ADAPTIVE LF-BASED PLLS</h2>
+<p>Sometimes, for particular control objectives, the LF parameter(s) of PLL are dynamically adjusted [65]-[67]. Here, such PLLs are referred to as adaptive LF-based PLLs. A common characteristic of all these PLLs is that they are highly nonlinear and, therefore, their stability analysis is very difficult. This Section briefly reviews these PLLs.</p>
+<h2>A. SRF-PLL with Adaptive Frequency Estimation Loop</h2>
+<p>In the SRF-PLL, particularly the one shown in Fig. 4, dynamics of the phase and frequency estimation loops are dominantly determined by the proportional gain $ k_{p} $ and the integral gain $ k_{i} $ , respectively. Despite this fact, there are some coupling between the phase and frequency estimation loops that depend on the SRF-PLL bandwidth: the higher the SRF-PLL bandwidth, the larger the coupling between phase and frequency variables. Consequently, increasing the SRF-PLL bandwidth (for example, to achieve a fast dynamic response) increases the coupling between phase and frequency variables, and therefore, causes a large transient in the estimated frequency during the startup and when a large phase-angle jump happens. To deal with this problem, an adaptive mechanism is suggested in [65], which dynamically adjusts the gain of the frequency estimation loop based on the level of phase deviations. This technique, as highlighted in Fig. 10, multiplies the integral gain $ k_{i} $ with</p>
+<div class="formula">$$
+\frac {1}{1 + \lambda \left(v _ {q} / v _ {d}\right) ^ {2}}
+$$</div>
+<p>in which $ \lambda $ is a positive constant. When a phase-angle jump happens, (12) becomes a small value, which reduces the gain of the frequency estimation and therefore prevent a large transient in the estimated frequency. When the signal $ v_{q} $ (which contains the phase error information) tends to zero, (12) approaches unity and restore the gain of the frequency estimation loop to its original value, i.e., $ k_{i} $ . Therefore, this adaptive mechanism has no adverse effect on the steady-state performance of the SRF-PLL. The ease of implementation and effectiveness are the key features of this technique.</p></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 10. SRF-PLL with adaptive frequency estimation loop.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 11. SRF-PLL with adaptive loop gain.
+
+</div>
+<h2>B. SRF-PLL with Adaptive Loop Gain</h2>
+<p>The adaptive mechanism suggested in [66], [67] is multiplying the PI controller input by a factor of the absolute value of its output, as highlighted in Fig. 11. It should be mentioned that this technique has been applied to a single-phase PLL in [66], [67], but without any change, it is applicable to a three-phase PLL. When a transient happens, the signal $ v_{q} $ (which contains the phase error information) is amplified by the adaptive mechanism. This amplification is corresponding to increase the PLL loop gain, which results in a faster dynamic response. In the phase-locked condition, however, the signal $ v_{q} $ become zero, which nullifies the influence of adaptive mechanism on the PLL loop gain. The reported results in [66] and [67] show this technique makes the PLL dynamic response highly oscillatory, which causes a serious concern about the PLL stability.</p>
+<h2>V. TYPE- N AND QUASI-TYPE- N PLLS</h2>
+<p>Most of PLLs employ a PI controller as the LF in their structure and, therefore, are of type 2. Sometimes, however, different LFs are selected for the PLL and/or a secondary control path is added to the PLL structure, which change the type of PLL, at least apparently. This section briefly discusses this issue.</p>
+<h2>A. Type-1 PLLs</h2>
+<p>A type-1 PLL is characterized by having only one integrator in its control loop [119]. There are different ways to implement a type-1 SRF-PLL. The easiest method is to replace the PI controller in the conventional SRF-PLL with a simple gain [58], [119]. Alternative approaches are using lag filters or laglead filters as the LF is the conventional SRF-PLL [8], [15], [68], [69], [119]. The schematic diagram of a type-1 PLL with a lag/lead controller as the LF can be observed in Fig. 12.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 12. Schematic diagram of a typical type-1 PLL.
+
+</div>
+<p>A type-1 PLL is able to track phase-angle jumps with zero steady-state error, but it fails to do so in the presence of frequency drifts [2], [3], [8], [15], [119]. For example, in the case of the type-1 PLL shown in Fig. 12, there is a steady-state phase error equal to</p>
+<div class="formula">$$
+e _ {s s} ^ {\Delta \omega_ {g}} = \sin^ {- 1} \left(\frac {\Delta \omega_ {g}}{k _ {p} V}\right)
+$$</div>
+<p>in its output when its input signals experience a frequency step change equal to $ \Delta \omega_{g} $ . Obviously, this steady-state error can be reduced by increasing the value of $ k_{p} $ . This measure, however, would be at the cost of degrading the PLL filtering capability. This drawback of type-1 PLLs has limited their usage to applications where the frequency is fixed or has small variations around its nominal value. Regardless of this drawback, the type-1 PLLs benefit from a fast dynamic response and a high stability margin.</p>
+<h2>B. Quasi-Type-1 PLLs</h2>
+<p>Quasi-type-1 PLLs (QT1-PLLs) have a similar structure to a type-1 PLL, but from the control point of view, they are type-2 control systems. That is the reason why they are referred to as "quasi-type-1".</p>
+<p>Two different ways to implement a QT1-PLL have been proposed in the literature. The first one can be observed in Fig. 13(a) [15]. By neglecting the link that adds the $ k_{p} $ input signal to the PLL output, this structure is a type-1 PLL which uses a lag filter as the LF and employs an inverse tangent operation for the amplitude normalization. In addition to making the steady-state phase error of type-1 SRF-PLLs under frequency drifts [see (13)] independent from the amplitude $ V $ , using such ANS makes the aforementioned error linearly proportional to $ \Delta\omega_{g} $ , i.e.,</p>
+<div class="formula">$$
+e _ {s s} ^ {\Delta \omega_ {g}} = \frac {\Delta \omega_ {g}}{k _ {p}}.
+$$</div>
+<p>Therefore, adding the input signal of $ k_{p} $ [this signal is equal to $ \Delta\hat{\omega}<em>{g} / k</em>{p} $ and, therefore, can be considered as an estimation of (14)] to the type-1 PLL output corrects its steady-state phase error under frequency drifts. It is worth mentioning that the LPF block in Fig. 13(a) can be any kind of LPF. In [15], it is considered to be an MAF, which results in a high filtering capability while maintaining a fast dynamic response for the PLL.</p>
+<p>An alternative approach for implementing a QT1-PLL is dynamically adjusting the center frequency of the VCO of a type-1 PLL with an estimation of the frequency [70]. A typical</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 13. Schematic diagram of two QT1-PLLs.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 14. Schematic diagram of a type-3 PLL.
+
+</div>
+<p>structure for this QT1-PLL can be observed in Fig. 13(b). The frequency detector in this structure plays the same role as the integrator of PI controller in Fig. 4.</p>
+<h2>C. Type-3 PLLs and Quasi-Type-2 PLLs</h2>
+<p>Type-3 PLLs are characterized by having three pure integrators in their control loop, which enable them to track frequency ramps with a zero steady-state phase error [72], [119]. The schematic diagram of a typical type-3 PLL can be seen in Fig. 14 [72]. Having a negative gain margin (GM) in dB and the risk of instability under low loop gains are other characteristics of these PLLs [72]. For this reason, using the ANS in these PLLs is vital.</p>
+<p>Quasi-type-2 PLLs (QT2-PLLs) are type-3 control systems from the control point of view, which means they can track frequency ramps with zero steady-state error and they have a negative GM [71], [72]. Their difference with type-3 PLLs (like the one shown in Fig. 14) is that they are immune to the instability under voltage sags [71], [72]. Therefore, using the ANS for these PLLs is not mandatory, but it is recommended. The schematic diagram of a typical quasi-type-2 PLL (QT2-PLL) is shown in Fig. 15 [71]-[74]. An alternative method for implementing QT2-PLLs can be found in [75].</p>
+<h2>VI. PLL IMPLEMENTATION WITHOUT DIRECT COMPUTATION OF TRIGONOMETRIC FUNCTIONS</h2>
+<p>The PLL implementation involves the computation of trigonometric functions, which from some computational point</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 15. Schematic diagram of a QT2-PLL.
+
+</div>
+<p>of view can be a disadvantage. To solve this issue, several techniques have been proposed, which are examined in what follows.</p>
+<h2>A. PLL With a Square-Wave VCO</h2>
+<p>The first approach to get rid of the calculation of trigonometric functions in the PLL implementation is to use a squarewave VCO [76]. The schematic diagram of the conventional SRF-PLL with the square-wave VCO can be observed in Fig. 16.</p>
+<p>According to the Fourier series, signals $ f_{c}(\hat{\theta}) $ and $ f_{s}(\hat{\theta}) $ can be expressed as</p>
+<div class="formula">$$
+\begin{array}{l} f _ {c} (\hat {\theta}) = \cos (\hat {\theta}) - \frac {1}{3} \cos (3 \hat {\theta}) + \frac {1}{5} \cos (5 \hat {\theta}) - \dots \\ f _ {s} (\hat {\theta}) = \sin (\hat {\theta}) + \frac {1}{3} \sin (3 \hat {\theta}) + \frac {1}{5} \sin (5 \hat {\theta}) + \dots \\ \end{array}
+$$</div>
+<p>It can be observed that signals $ f_{c}(\hat{\theta}) $ and $ f_{s}(\hat{\theta}) $ contain a high harmonic content, which results in a large oscillatory error in the PLL output even when the PLL input signals are free from any harmonics. In addition, if the PLL input signals have the same harmonic components as $ f_{c}(\hat{\theta}) $ and $ f_{s}(\hat{\theta}) $ an offset error in the PLL output happens. To deal with these problems, including an MAF before the PI controller and using a selective harmonic elimination (SHE) square-wave generator instead of the simple square-wave generator is suggested in [76]. The resultant PLL structure is referred to as the SHEPLL. This PLL has two main drawbacks: 1) it has a slow dynamic response because of the presence of the MAF in its control loop; 2) it may not be suitable for applications where in addition to the estimated phase, frequency, and amplitude, the unit vector (the sine and cosine of the phase angle estimated by the PLL) is also required.</p>
+<h2>B. PLL With a High-Performance VCO</h2>
+<p>Fig. 17 shows the conventional SRF-PLL with a highperformance VCO, which is based on the digital implementation of an RC electronic oscillator [23]. The operating principle of this VCO is as follows. The VCO oscillates at $ \hat{\omega}_{g} $ and tends to become unstable because it has two poles on the imaginary axis. However, as the integrators are saturated, the amplitude of signals is controlled.</p>
+<p>The calculation of trigonometric functions using this VCO is carried out with a low computational effort. However, the computed $ \sin(\hat{\theta}) $ and $ \cos(\hat{\theta}) $ are not pure sinusoidal waves, due to nonlinearities caused by the saturations. The total harmonic</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 16. Schematic diagram of the SRF PLL with a square-wave VCO.
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 17. Schematic diagram of the SRF PLL with a high-performance VCO.
+
+</div>
+<p>distortion (THD) of these sinusoidal waves highly depends on the sampling frequency: increasing the sampling frequency reduces the THD.</p>
+<h2>C. VCO-Less PLL</h2>
+<p>The synchronization technique shown in Fig. 18 estimates the amplitude, frequency, and the unit vector $[\sin (\hat{\theta})$ and $ \cos(\hat{\theta})]$ without any need for the computation of trigonometric functions. This structure is often referred to as the frequencylocked loop (FLL) based synchronization technique [77] or non-PLL synchronization strategy [78], [79]; however, as [80] recommends, it is better to be called the VCO-less PLL because, under certain conditions, it is mathematically equivalent with the conventional SRF-PLL. As the equivalence of the VCO-less PLL (Fig. 18) and the SRF-PLL (Fig. 4) is largely unknown, the proof of equivalence is presented below.</p>
+<p>1) Frequency Estimation: Using Fig. 18, differential equations describing dynamics of the VCO-less PLL can be obtained as</p>
+<div class="formula">$$
+\dot {\hat {v}} _ {\alpha} (t) = - \hat {\omega} _ {g} \hat {v} _ {\beta} (t) + k _ {p} \left[ v _ {\alpha} (t) - \hat {v} _ {\alpha} (t) \right]
+$$</div>
+<div class="formula">$$
+\dot {\hat {v}} _ {\beta} (t) = \hat {\omega} _ {g} \hat {v} _ {\alpha} (t) + k _ {p} \left[ v _ {\beta} (t) - \hat {v} _ {\beta} (t) \right]
+$$</div>
+<div class="formula">$$
+\dot {\hat {\omega}} _ {g} = k _ {i} v _ {q} (t)
+$$</div>
+<p>where $ v_{q}(t)=v_{\beta}(t)\hat{v}<em>{\alpha}(t)-v</em>{\alpha}(t)\hat{v}_{\beta}(t). $</p>
+<p>Differentiating (18) with respect to time gives</p>
+<div class="formula">$$
+\begin{array}{l} \ddot {\hat {\omega}} _ {g} = k _ {i} \dot {v} _ {q} (t) \\ = k _ {i} \left[ \dot {v} _ {\beta} (t) \hat {v} _ {\alpha} (t) + v _ {\beta} (t) \dot {\hat {v}} _ {\alpha} (t) - \dot {v} _ {\alpha} (t) \hat {v} _ {\beta} (t) - v _ {\alpha} (t) \dot {\hat {v}} _ {\beta} (t) \right] \\ = k _ {i} \left(\omega_ {g} - \hat {\omega} _ {g}\right) v _ {d} (t) - k _ {p} \dot {\hat {\omega}} _ {g} \tag {19} \\ \end{array}
+$$</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 18. VCO-less PLL.
+
+</div>
+<p>where $ v_{d}(t)=v_{\alpha}(t)\hat{v}<em>{\alpha}(t)+v</em>{\beta}(t)\hat{v}<em>{\beta}(t). $ Under a quasi-locked state, the signal $ v</em>{d} $ can be well approximated by $ v_{d}\approx V\hat{V}\approx V^{2}. $</p>
+<p>Considering the definitions $ \hat{\omega}<em>{g}=\omega</em>{n}+\Delta\hat{\omega}<em>{g} $ and $ \omega</em>{g}=\omega_{n}+\Delta\omega_{g} $ , (19) can be rewritten as</p>
+<div class="formula">$$
+\Delta \ddot {\hat {\omega}} _ {g} = k _ {i} \left(\Delta \omega_ {g} - \Delta \hat {\omega} _ {g}\right) V ^ {2} - k _ {p} \Delta \dot {\hat {\omega}} _ {g}.
+$$</div>
+<p>Taking the Laplace transform of both sides (20) yields</p>
+<div class="formula">$$
+\frac {\Delta \hat {\omega} _ {g} (s)}{\Delta \omega_ {g} (s)} = \frac {V ^ {2} k _ {i}}{s ^ {2} + k _ {p} s + V ^ {2} k _ {i}}.
+$$</div>
+<p>Assuming $ k_{p} $ and $ k_{i} $ in Fig. 18 are the same as those in Fig. 4, it is clear from (21) and (8) that the VCO-less PLL and the SRF-PLL have the same dynamics in the frequency estimation if $ V=1. $</p>
+<p>2) Amplitude Estimation: Using Fig. 18, the amplitude estimated by the VCO-less PLL can be expressed as</p>
+<div class="formula">$$
+\hat {V} = \sqrt {\hat {v} _ {\alpha} ^ {2} + \hat {v} _ {\beta} ^ {2}}
+$$</div>
+<p>Differentiating (22) with respect to time results in</p>
+<div class="formula">$$
+\dot {\hat {V}} = \frac {\left(\dot {\hat {v}} _ {\alpha} \hat {v} _ {\alpha} + \dot {\hat {v}} _ {\beta} \hat {v} _ {\beta}\right)}{\hat {V}}.
+$$</div>
+<p>Substituting (16) and (17) into (23) gives</p>
+<div class="formula">$$
+\begin{array}{l} \dot {\hat {V}} = k _ {p} \frac {\left[ v _ {\alpha} (t) - \hat {v} _ {\alpha} (t) \right] \hat {v} _ {\alpha} + \left[ v _ {\beta} (t) - \hat {v} _ {\beta} (t) \right] \hat {v} _ {\beta}}{\hat {V}} \\ = k _ {p} \frac {v _ {d} - \hat {V} ^ {2}}{\hat {V}} \\ \approx k _ {p} \left(V - \hat {V}\right) \\ \end{array}
+$$</div>
+<p>Taking the Laplace transform of both sides (24) yields</p>
+<div class="formula">$$
+\hat {V} (s) = \frac {k _ {p}}{s + k _ {p}} V (s).
+$$</div>
+<p>Considering (25), Fig. 4, and what mentioned in section II, it can be concluded that the VCO-less PLL and the SRF-PLL shown in Fig. 4 have the same dynamics in the amplitude estimation if $ k_{p} $ and $ k_{v} $ in the SRF-PLL are equal. Remember that it was already assumed that $ k_{p} $ and $ k_{i} $ in the SRF-PLL are the same as those in the VCO-less PLL.</p>
+<p>3) Phase Estimation: The VCO-less PLL does not provide a direct estimation of the phase angle. However, if it is</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>required, it can be estimated as</p>
+<div class="formula">$$
+\hat {\theta} = \tan^ {- 1} \left(\frac {\hat {v} _ {\beta}}{\hat {v} _ {\alpha}}\right).
+$$</div>
+<p>Following a similar procedure as above, it can be shown that the phase-estimation dynamics in the VCO-less PLL can be approximated by the following transfer function</p>
+<div class="formula">$$
+\frac {\Delta \hat {\theta} (s)}{\Delta \theta (s)} = \frac {k _ {p} s + V ^ {2} k _ {i}}{s ^ {2} + k _ {p} s + V ^ {2} k _ {i}}
+$$</div>
+<p>which is the same as that of the SRF-PLL [see (9)] if $ V=1 $ It is worth mentioning that for the case where $ V\neq 1 $ , the equivalence of the VCO-less PLL and the SRF-PLL holds if signal $ v_{q} $ in Fig. 4 and Fig. 18 is divided by $ \hat{V} $ and $ \hat{V}^{2} $ respectively</p>
+<h2>VII. CONCLUSION</h2>
+<p>This paper provides overviews of recent attempts in designing advanced three-phase PLLs. Generally speaking, these attempts are: 1) exploring ways to realize PLLs of different type, particularly QT1-PLLs, QT2-PLLs, and type-3 PLLs; 2) investigating approaches to eliminate the need for the (direct) computation of trigonometric functions in the implementation of PLLs, which is advantageous from some computational point of view; 3) seeking methods to improve the dynamic performance of PLLs by dynamically adjusting their LF parameter(s); and 4) improving the filtering capability and disturbance rejection ability of PLLs by including different filters inside their control loop or before their input. In each case, the operating principle of PLLs was explained and their advantages and disadvantages were briefly discussed. The information provided in this article can be very useful for researchers who are new in the field and want to make a contribution to the area and also for engineers who want to select a proper synchronization technique for their particular application.</p>
+<h2>REFERENCES</h2>
+<p>[1] H. de Bellescize, "La reception synchrone," Onde Electr., vol. 11, pp. 230-240, Jun. 1932.</p>
+<p>[2] S. Chung, "A phase tracking system for three-phase utility interface inverters," IEEE Trans. Power Electron., vol. 15, no. 3, pp. 431-438, May 2000.</p>
+<p>[3] S. K. Chung, "Phase-locked loop for grid-connected three-phase power conversion systems," Proc. Inst. Electr. Eng. Electron. Power Appl., vol. 147, no. 3, pp. 213219, May 2000.</p>
+<p>[4] L. Rolim, D. da Costa, and M. Aredes, "Analysis and software implementation of a robust synchronizing PLL circuit based on the pq theory," IEEE Trans. Ind. Electron., vol. 53, no. 6, pp. 1919-1926, Dec. 2006.</p>
+<p>[5] V. Kaura and V. Blasco, "Operation of a phase locked loop system under distorted utility conditions," IEEE Trans. Ind. Appl., vol. 33, no. 1, pp. 58-63, Jan./Feb. 1997.</p>
+<p>[6] S. Golestan, M. Ramezani, J. M. Guerrero, F. D. Freijedo, and M. Monfared, "Moving average filter based phase-locked loops: Performance analysis and design guidelines," IEEE Trans. Power Electron., vol. 29, no. 6, pp. 2750-2763, Jun. 2014.</p>
+<p>[7] E. Robles, S. Ceballos, J. Pou, J. L. Martin, J. Zaragoza, and P. Ibanez, "Variable-frequency grid-sequence detector based on a quasi-ideal low-pass filter stage and a phase-locked loop," IEEE Trans. Power Electron., vol. 25, no. 10, pp. 2552-2563, Oct. 2010.</p>
+<p>[8] F. D. Freijedo, J. Doval-Gandoy, O. Lopez, and E. Acha, "Tuning of phase-locked loops for power converters under distorted utility conditions," IEEE Trans. Ind. Appl., vol. 45, no. 6, pp. 2039-2047, Nov./Dec. 2009.</p>
+<p>[9] A. Ghoshal and V. John "A method to improve PLL performance under abnormal grid conditions," presented at the Nuclear Power Eng. Committee, Bangalore, India, Dec. 2007.</p>
+<p>[10] M. Karimi-Ghartemani, S. Khajehoddin, P. Jain, and A. Bakhshai, "Derivation and design of in-loop filters in phase-locked loop systems," IEEE Trans. Instrum. Meas., vol. 61, no. 4, pp. 930-940, Apr. 2012.</p>
+<p>[11] I. Carugati, S. Maestri, P. G. Donato, D. Carrica, and M. Benedetti, "Variable sampling period filter PLL for distorted three-phase systems," IEEE Trans. Power Electron., vol. 27, no. 1, pp. 321-330, Jan. 2012.</p>
+<p>[12] S. Golestan, J. M. Guerrero, and A. M. Abusorrah, "MAF-PLL with phase-lead compensator," IEEE Trans. Ind. Electron., vol. 62, no. 6, pp. 3691-3695, Jun. 2015.</p>
+<p>[13] J. Y. Wang, J. Liang, F. Gao, L. Zhang, and Z. D. Wang, "A method to improve the dynamic performance of moving average filter-based PLL," IEEE Trans. Power Electron., vol. 30, no. 10, pp. 5978-5990, Oct. 2015.</p>
+<p>[14] M. E. Meral, "Improved phase-locked loop for robust and fast tracking of three phases under unbalanced electric grid conditions," IET Gener. Transm. Distrib., vol. 6, no. 2, pp. 152-160, Feb. 2012.</p>
+<p>[15] S. Golestan, F. D. Freijedo, A. Vidal, J. M. Guerrero, and J. DovalGandoy, "A quasi-type-1 phase-locked loop structure," IEEE Trans. Power Electron., vol. 29, no. 12, pp. 6264-6270, Jun. 2014.</p>
+<p>[16] M. Mirhosseini, J. Pou, V. G. Agelidis, E. Robles, and S. Ceballos, "A three-phase frequency-adaptive phase-locked loop for independent single-phase operation," IEEE Trans. Power. Electron., vol. 29, no. 12, pp. 6255- 6259, Dec. 2014.</p>
+<p>[17] S. Golestan, J. M. Guerrero, A. Vidal, A. G. Yepes, and J. Doval-Gandoy, "PLL with MAF-based prefiltering stage: small-signal modeling and performance enhancement," IEEE Trans. Power Electron., vol. 31, no. 6, pp. 4013-4019, Jan. 2016.</p>
+<p>[18] F. Gonzalez-Espin, E. Figueres, and G. Garcera, "An adaptive synchronous-reference-frame phase-locked loop for power quality improvement in a polluted utility grid," IEEE Trans. Ind. Electron., vol. 59, no. 6, pp. 2718-2731, Jun. 2012.</p>
+<p>[19] F. Gonzalez-Espin, G. Garcera, I. Patrao, and E. Figueres, "An adaptive control system for three-phase photovoltaic inverters working in a polluted and variable frequency electric grid," IEEE Trans. Power Electron., vol. 27, no. 10, pp. 4248-4261, Oct. 2012.</p>
+<p>[20] S. Eren, M. Karimi-Ghartemani, and A. Bakhshai, "Enhancing the three-phase synchronous reference frame PLL to remove unbalance and harmonic errors," in Proc. 35th Annu. Conf. IEEE Ind. Electron., Nov. 2009, pp. 437-441.</p>
+<p>[21] S. Eren, Modifying the three-phase synchronous reference frame phase-locked loop to remove unbalance and harmonic errors. M.Sc. thesis, Queens Univ., Kingston, ON, Canada, Nov. 2008.</p>
+<p>[22] Y. Han, L. Xu, M. M. Khan, G. Yao, L. D. Zhou, and C. Chen, "A novel synchronization scheme for grid-connected converters by using adaptive linear optimal filter based PLL (ALOF-PLL)," Simul. Modelling Practice Theory, vol. 17, no. 7, pp. 1299-1345, Aug. 2009.</p>
+<p>[23] F. D. Freijedo, A. G. Yepes, O. Lopez, P. Fernandez-Comesana, and J. Doval-Gandoy, "An optimized implementation of phase locked loops for grid applications," IEEE Trans. Instrum. Meas., vol. 60, no. 9, pp. 3110-3119, Sep. 2011.</p>
+<p>[24] P. Xiao, K. A. Corzine, and G. K. Venayagamoorthy, "Multiple reference frame-based control of three-phase PWM boost rectifiers under unbalanced and distorted input conditions," IEEE Trans. Power Electron., vol. 23, no. 4, pp. 2006-2017, Jul. 2008.</p>
+<p>[25] G. De Donato, G. Scelba, G. Borocci, F. Giulii Capponi, and G. Scarcella, "Fault-decoupled instantaneous frequency and phase angle estimation for three-phase grid-connected inverters," vol. 31, no. 4, pp. 2880-2889, Apr. 2016.</p>
+<p>[26] L. Hadjidemetriou, E. Kyriakides, and F. Blaabjerg, "A robust synchronization to enhance the power quality of renewable energy systems," IEEE Trans. Ind. Electron., vol. 62, no. 8, pp. 4858-4868, Aug. 2015.</p>
+<p>[27] P. Rodriguez, J. Pou, J. Bergas, J. Candela, R. Burgos, and D. Boroyevich, "Decoupled double synchronous reference frame PLL for power converters control," IEEE Trans. Power Electron., vol. 22, no. 2, pp. 584- 592, Mar. 2007.</p>
+<p>[28] L. Hadjidemetriou, E. Kyriakides, and F. Blaabjerg, "A new hybrid PLL for interconnecting renewable energy systems to the grid," IEEE Trans. Ind. Appl., vol. 60, no. 6, pp. 2709-2719, Nov. 2013.</p>
+<p>[29] A. Luna, J. Rocabert, I. Candela, J. Hermoso, R. Teodorescu, F. Blaabjerg, and P. Rodriquez, "Grid voltage synchronization for distributed generation systems under grid fault conditions," IEEE Trans. Ind. Appl., vol. 51, no. 4, pp. 3414-3425, Jul./Aug. 2015.</p>
+<p>[30] X. Guo, W. Wu, and Z. Chen, "Multiple-complex coefficient-filter-based phase-locked loop and synchronization technique for three-phase grid</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><p>interfaced converters in distributed utility networks," IEEE Trans. Ind. Electron., vol. 58, no. 4, pp. 1194-1204, Apr. 2011.</p>
+<p>[31] S. Golestan, M. Monfared, and F. D. Freijedo, "Design-oriented study of advanced synchronous reference frame phase-locked loops," IEEE Trans. Power Electron., vol. 28, no. 2, pp. 765-778, Feb. 2013.</p>
+<p>[32] S. Golestan, M. Monfared, F. D. Freijedo, and J. M. Guerrero, "Performance Improvement of a prefiltered synchronous-reference-frame PLL by using a PID-type loop filter," IEEE Trans. Ind. Electron., vol. 61, no. 7, pp. 3469-3479, Jul. 2014.</p>
+<p>[33] W. Li, X. Ruan, C. Bao, D. Pan, and X. Wang, "Grid synchronization systems of three-phase grid-connected power converters: a complex vector-filter perspective," IEEE Trans. Ind. Electron., vol. 61, no. 4, pp. 1855-1870, Apr. 2014.</p>
+<p>[34] X. Du, Y. Liu, G. Wang, P. Sun, H. M. Tai, and L. Zhou, "Three-phase grid voltage synchronization using sinusoidal amplitude integrator in synchronous reference frame," Int. J. Elec. Power Energy Syst., vol. 64, no. 1, pp. 861-872, Jan. 2015.</p>
+<p>[35] Y. Park, S. K. Sul, W. C. Kim, and H. Y. Lee, "Phase-locked loop based on an observer for grid synchronization," IEEE Trans. Ind. Appl., vol. 50, no. 2, pp. 1256-1265, Mar./Apr. 2014.</p>
+<p>[36] H. Awad, J. Svensson, and M. J. Bollen, "Tuning software phase-locked loop for series-connected converters," IEEE Trans. Power Del., vol. 20, no. 1, pp. 300-308, Jan. 2005.</p>
+<p>[37] J. Svensson, M. Bongiorno, and A. Sannino, "Practical implementation of delayed signal cancellation method for phase-sequence separation," IEEE Trans. Power Del., vol. 22, no. 1, pp. 18-26, Jan. 2007.</p>
+<p>[38] M. Bongiorno, J. Svensson, and A. Sannino, "Effect of sampling frequency and harmonics on delay-based phase-sequence estimation method," IEEE Trans. Power Del., vol. 22, no. 3, pp. 1664-1672, Jul. 2008.</p>
+<p>[39] H. E. P. de Souza, F. Bradaschia, F. A. S. Neves, M. C. Cavalcanti, G. M. S. Azevedo, and J. P. deArruda, "A method for extracting the fundamental frequency positive-sequence voltage vector based on simple mathematical transformations," IEEE Trans. Ind. Electron., vol. 56, no. 5, pp. 1539-1547, May 2009.</p>
+<p>[40] Y. F. Wang and Y. Li, "Analysis and digital implementation of cascaded delayed-signal-cancellation PLL," IEEE Trans. Power Electron., vol. 26, no. 4, pp. 1067-1080, Apr. 2011.</p>
+<p>[41] Y. F. Wang and Y. W. Li, "Grid synchronization PLL based on cascaded delayed signal cancellation," IEEE Trans. Power Electron., vol. 26, no. 7, pp. 1987-1997, Jul. 2011.</p>
+<p>[42] Y. F. Wang and Y. W. Li, "Three-phase cascaded delayed signal cancellation PLL for fast selective harmonic detection," IEEE Trans. Ind. Electron., vol. 60, no. 4, pp. 1452-1463, Apr. 2013.</p>
+<p>[43] S. Golestan, M. Ramezani, J. M. Guerrero, and M. Monfared, "dq-Frame cascaded delayed signal cancellation based PLL: Analysis, design, and comparison with moving average filter based PLL," IEEE Trans. Power Electron., vol. 30, no. 3, pp. 1618-1632, Mar. 2015.</p>
+<p>[44] F. A. S. Neves, M. C. Cavalcanti, H. E. P. de Souza, F. Bradaschia, E. J. Bueno, and M. Rizo, "A generalized delayed signal cancellation method for detecting fundamental-frequency positive-sequence three-phase signals," IEEE Trans. Power Del., vol. 25, no. 3, pp. 1816-1825, Jul. 2010.</p>
+<p>[45] F. A. S. Neves, H. de Souza, M. Cavalcanti, F. Bradaschia, and E. Bueno, "Digital filters for fast harmonic sequence component separation of unbalanced and distorted three-phase signals," IEEE Trans. Ind. Electron., vol. 59, no. 10, pp. 3847-3859, Oct. 2012.</p>
+<p>[46] P. S. B. Nascimento, H. E. P. de Souza, F. A. S. Neves, and L. R. Limongi, "FPGA implementation of the generalized delayed signal cancelation-phase locked loop method for detecting harmonic sequence components in three-phase signals," IEEE Trans. Ind. Electron., vol. 60, no. 2, pp. 645-658, Feb. 2013.</p>
+<p>[47] Y. N. Batista, H. E. P. de Souza, F. A. S. Neves, R. F. Dias Filho, F. Bradaschia, "Variable structure generalized delayed signal cancellation PLL (VS-GDSC-PLL) to improve convergence time," IEEE Trans. Ind. Electron., vol. 62, no. 11, pp. 7146-7150, Nov. 2015.</p>
+<p>[48] S. Golestan, F. D. Freijedo, A. Vidal, A. G. Yepes, J. M. Guerrero, and J. Doval-Gandoy, "An efficient implementation of generalized delayed signal cancellation PLL," IEEE Trans. Power Electron., vol. 31, no. 2, pp. 1085-1094, Feb. 2016.</p>
+<p>[49] M. Ciobotaru, R. Teodorescu, and F. Blaabjerg, "A new single-phase PLL structure based on second order generalized integrator," in Proc. 37th IEEE Power Electron. Spec. Conf. (PESC) 2006, Jun. 2006, pp. 1-6.</p>
+<p>[50] M. Ciobotaru, R. Teodorescu, and V. G. Agelidis, "Offset rejection for PLL based synchronization in grid-connected converters," in Proc. 23rd Annu. IEEE Appl. Power Energy Conf. Expo., 2008, pp. 1611-1617.</p>
+<p>[51] P. Rodriguez, R. Teodorescu, I. Candela, A. V. Timbus, M. Liserre, and F. Blaabjerg, "New positive-sequence voltage detector for grid synchronization of power converters under faulty grid conditions," in Proc. IEEE Power Electron. Spec. Conf., Jun. 2006, pp. 1-7.</p>
+<p>[52] V. D. Bacon, and S. A. Oliveira da Silva, "Performance improvement of a three-phase phase-locked-loop algorithm under utility voltage disturbances using non-autonomous adaptive filters," IET Power Electron., vol. 8, no. 11, pp. 2237-2250, Nov. 2015.</p>
+<p>[53] R. Teodorescu, M. Liserre, and P. Rodriguez, Grid Converters for Photovoltaic and Wind Power Systems. New York, NY, USA: Wiley, 2011.</p>
+<p>[54] A. V. Timbus, R. Teodorescu, F. Blaabjerg, M. Liserre, and P. Rodriguez, "PLL algorithm for power generation systems robust to grid voltage faults," in 37th IEEE Power Electronics Specialists Conference 2006 (PESC'06), pp.1-7, June 2006.</p>
+<p>[55] A. V. Timbus, R. Teodorescu, P. Rodriguez, "Grid monitoring for distributed power generation systems to comply with grid codes," IEEE International Symposium on Industrial Electronics, vol. 2, Jul. 2006, pp. 1608-1612.</p>
+<p>[56] M. Rashed, C. Klumpner, and G. Asher, "Repetitive and resonant control for a single-phase grid-connected hybrid cascaded multilevel converter," IEEE Trans. Power Electron., vol. 28, no. 5, pp. 2224-2234, May 2013.</p>
+<p>[57] B. Liu, F. Zhou, Y. Zhu, H. Yi, and F. Wang, "A three-phase PLL algorithm based on signal reforming under distorted grid conditions," IEEE Trans. Power Electron., vol. 30, no. 9, pp. 5272-5283, Sep. 2015.</p>
+<p>[58] C. Subramanian and R. Kanagaraj, "Rapid tracking of grid variables using prefiltered synchronous reference frame PLL," IEEE Trans. Instrum. Meas., vol. 64, no. 7, pp. 1826-1836, Jul. 2015.</p>
+<p>[59] F. A. S. Neves, H. de Souza, F. Bradaschia, M. Cavalcanti, M. Rizo, and F. Rodriguez, "A space-vector discrete Fourier transform for unbalanced and distorted three-phase signals," IEEE Trans. Ind. Electron., vol. 57, no. 8, pp. 2858-2867, Aug. 2010.</p>
+<p>[60] F. D. Freijedo, A. G. Yepes, O. Lopez, A. Vidal, and J. DovalGandoy, "Three-phase PLLs with fast postfault retracking and steady-state rejection of voltage unbalance and harmonics by means of lead compensation," IEEE Trans. Power Electron., vol. 26, no. 1, pp. 85-97, Jan. 2011.</p>
+<p>[61] S. Golestan, J. M. Guerrero, and G. Gharehpetian, "Five approaches to deal with problem of DC offset in phase-locked loop algorithms: design considerations and performance evaluations," IEEE Trans. Power Electron., vol. 31, no. 1, pp. 648-660, Jan. 2016.</p>
+<p>[62] M. Karimi-Ghartemani, S. A. Khajehoddin, P. Jain, A. Bakhshai, and M. Mojiri, "Addressing DC component in PLL and notch filter algorithms," IEEE Trans. Power Electron., vol. 27, no. 1, pp. 78-86, Jan. 2012.</p>
+<p>[63] F. Wu, L. Zhang and J. Duan, "Effect of adding DC-offset estimation integrators in there-phase enhanced phase-locked loop on dynamic performance and alternative scheme," IET Power Electron., vol. 8, no. 3, pp. 391-400, Mar. 2015.</p>
+<p>[64] S. Golestan, J. M. Guerrero, and J. C. Vasquez, "DC-offset rejection in phase-locked loops: A novel approach," IEEE Trans. Id. Electron., vol. PP, no. 99, pp. 1-5, Mar. 2016.</p>
+<p>[65] M. Karimi-Ghartemani, S. A. Khajehoddin, P. K. Jain, and A. Bakhshai, "Problems of startup and phase jumps in PLL systems," IEEE Trans. Power Electron., vol. 27, no. 4, pp. 1830-1838, Apr. 2012.</p>
+<p>[66] T. Thacker, D. Boroyevich, R. Burgos, and F. Wang, "Phase-locked loops noise reduction via phase detector implementation for single-phase systems," IEEE Trans. Ind. Electron., vol. 58, no. 6, pp. 2482-2490, Jun. 2011.</p>
+<p>[67] T. Thacker, R. Wang, D. Dong, R. Burgos, F. Wang, and D. Boroyevich, "Phase-locked loops using state variable feedback for single-phase converter systems," in Proc. IEEE 24th Annu. Appl. Power Electron. Conf. Expo., Feb. 2009, pp. 864-870.</p>
+<p>[68] C. Zhan, V. K. Ramachandaramurthy, A. Arulampalam, C. Fitzer, S. Kromlidis, M. Barnes, and N. Jenkins, "Dynamic voltage restorer based on voltage-space-vector PWM control," IEEE Trans. Ind. Appl., vol. 37, no. 6, pp. 1855-1863, Nov./Dec. 2001.</p>
+<p>[69] S. Y. Park, C. L. Chen, and J. S. Lai, "A wide-range active and reactive power flow controller for a solid oxide fuel cell power conditioning system," IEEE Trans. Power Electron., vol. 23, no. 6, pp. 2703-2709, Nov. 2008.</p>
+<p>[70] H. Geng, D. W. Xu and B. Wu, "A novel hardware-based all-digital phase-locked loop applied to grid-connected power converters," IEEE Trans. Ind. Electron., vol. 58, pp. 1737-1745, May. 2011.</p>
+<p>[71] S. Golestan, M. Ramezani, and J. M. Guerrero, "An analysis of the PLLs with secondary control path," IEEE Trans. Ind. Electron., vol. 61, no. 9, pp. 4824-4828, Sep. 2014.</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>[72] S. Golestan, M. Monfared, F. D. Freijedo, and J. M. Guerrero, "Advantages and challenges of a type-3 PLL," IEEE Trans. Power Electron., vol. 28, no. 11, pp. 4985-4997, Now. 2013.</p>
+<p>[73] B. Indu Rani, C. K. Aravind, G. Saravana Ilango, and C. Nagamani, "A three phase PLL with a dynamic feed forward frequency estimator for synchronization of grid connected converters under wide frequency variations," Int. J Electr. Power Energy Syst., vol. 41, no. 1, pp. 63-70, Oct. 2012.</p>
+<p>[74] H. Geng, J. Sun, S. Xiao, and G. Yang, "Modeling and implementation of an all digital phase-locked-loop for grid-voltage phase detection," IEEE Trans. Ind. Informat., vol. 9, no. 2, pp. 772-780, May 2013.</p>
+<p>[75] F. Liccardo, P. Marino, and G. Raimondo, "Robust and fast three-phase PLL tracking system," IEEE Trans. Ind. Electron., vol. 58, no. 1, pp. 221-231, Jan. 2011.</p>
+<p>[76] N. R. N. Ama, F. O. Martinz, L. Matakas, and F. Kassab, "Phase-locked loop based on selective harmonics elimination for utility applications," IEEE Trans. Power Electron., vol. 28, no. 1, pp. 144-153, Jan. 2013.</p>
+<p>[77] S. Vazquez, J. A. Sanchez, M. R. Reyes, J. Leon, and J. M. Carrasco, "Adaptive vectorial filter for grid synchronization of power converters under unbalanced and/or distorted grid conditions," IEEE Trans. Ind. Electron. , vol. 61, no. 3, pp. 1355-1367, Mar. 2014.</p>
+<p>[78] X. Guo, "Frequency-adaptive voltage sequence estimation for grid synchronisation," Electron. Lett., vol. 46, no. 14, pp. 980-982, Jul. 2010.</p>
+<p>[79] X. Guo, W. Y. Wu, "Simple synchronisation technique for three-phase grid-connected distributed generation systems," IET Renew. Power Gener., vol. 7, no. 1, pp. 55-62, Jan. 2013.</p>
+<p>[80] M. Karimi Ghartemani, Enhanced phase-locked loop structures for power and energy applications. Wiley-IEEE Press, 2014.</p>
+<p>[82] J. W. Choi, Y. K. Kim, and H. G. Kim, "Digital PLL control for single-phase photovoltaic system," Proc. Inst. Elect. Eng. Elect. Power Appl., vol. 153, no. 1, pp. 40-46, Jan. 2006.</p>
+<p>[81] I. Serban and C. Marinescu, "Enhanced control strategy of three-phase battery energy storage systems for frequency support in microgrids and with uninterrupted supply of local loads," IEEE Trans. Power Electron., vol. 29, no. 9, pp. 5010-5020, Sep. 2014.</p>
+<p>[85] M. Karimi-Ghartemani and M. Iravani, "Robust and frequency-adaptive measurement of peak value," IEEE Trans. Power Del., vol. 19, no. 2, pp. 481-489, Apr. 2004.</p>
+<p>[83] F. Ramirez and M. Arjona, "Development of a grid-connected wind generation system with a modified PLL structure," IEEE Trans. Sustain. Energy, vol. 3, no. 3, pp. 474-481, Jul. 2012.</p>
+<p>[84] M. Karimi-Ghartemani and H. Karimi, "Processing of symmetrical components in time-domain," IEEE Trans. Power Sys., vol. 22, no.2, pp.572-579, May 2007.</p>
+<p>[86] M. Karimi-Ghartemani and M. Iravani, "A nonlinear adaptive filter for on-line signal analysis in power systems: applications," IEEE Trans. Power Del., vol. 17, no. 2, pp. 617-622, Apr. 2002.</p>
+<p>[87] M. Karimi-Ghartemani and M. Iravani, "Measurement of harmonics/inter-harmonics of time-varying frequencies," IEEE Trans. Power Del., vol. 20, no. 1, pp. 23-31, Jan. 2005.</p>
+<p>[88] V. M. Moreno, M. Liserre, A. Pigazo, and A. DellAquila, "A comparative analysis of real-time algorithms for power signal decomposition in multiple synchronous reference frames," IEEE Trans. Power Electron., vol. 22, no. 4, pp. 1280-1289, Jul. 2007.</p>
+<p>[89] P. Sumathi and P. A. Janakiraman, "Integrated phase-locking scheme for SDFT-based harmonic analysis of periodic signals," IEEE Trans. Circuits Syst. II, Exp. Briefs, vol. 55, no. 1, pp. 51-55, Jan. 2008.</p>
+<p>[90] J. R. Carvalho, C. A. Duque, M. V. Ribeiro, A. S. Cerqueira, T. L. Baldwin, and P. F. Ribeiro, "A PLL-based multirate structure for time-varying power systems harmonic/interharmonic estimation," IEEE Trans. Power Del., vol. 24, no. 4, pp. 1789-1800, Oct. 2009.</p>
+<p>[91] S. Golestan and J. M. Guerrero, "Conventional synchronous reference frame phase-locked loop is an adaptive complex filter," IEEE Trans. Ind. Electron., vol. 62, no. 3, pp. 1679-1682, Mar. 2015.</p>
+<p>[92] S. A. Khajehoddin, M. Karimi-Ghartemani, P. K. Jain, and A. Bakhshai, "A resonant controller with high structural robustness for fixed-point digital implementations," IEEE Trans. Power Electron., vol. 27, no. 7, pp. 3352-3362, Jul. 2012.</p>
+<p>[93] M. Karimi Ghartemini, "Linear and pseudolinear enhanced phasedlocked loop (EPLL) structures," IEEE Trans. Ind. Electron., vol. 61, no. 3, pp. 1464-1474, Mar. 2014.</p>
+<p>[94] T. Li Tong, X. Zou, S. S. Feng, Y. Chen, Y. Kang, Q. Huang, and Y. Huang, "An SRF-PLL-based sensorless vector control using the predictive deadbeat algorithm for the direct-driven permanent magnet synchronous generator," IEEE Trans. Power Electron., vol. 29, no. 6, pp. 2837-2849, Jun. 2014.</p>
+<p>[95] G. Zhang, G. Wang, D. G. Xu, and N. Zhao, "ADALINE network based PLL for position sensorless interior permanent magnet synchronous motor drives," IEEE Trans. Ind. Electron., vol. 31, no. 2, pp. 1450-1460, Feb. 2016.</p>
+<p>[96] Y. S. Hwang, B. H. Hwang, H. C. Lin, and J. J. Chen, "PLL-based contactless energy transfer analog FSK demodulator using high-efficiency rectifier," IEEE Trans. Ind. Electron., vol. 60, no. 1, pp. 280-290, Jan. 2013.</p>
+<p>[97] A. Namadmalan, "Bidirectional current-fed resonant inverter for contactless energy transfer systems," IEEE Trans. Ind. Electron., vol. 62, no. 1, pp. 238-245, Jan. 2015.</p>
+<p>[98] H. Karaca and S. Kilinc, "Nonlinear modeling and analysis of resonant inverter tuning loops with voltage-pump phase-frequency detector," IEEE Trans. Power Electron., vol. 20, no. 5, pp. 1100-1108, Sep. 2005.</p>
+<p>[99] S. Chudjuarjeen, A. Sangswang, and C. Koompai, "An improved LLC resonant inverter for induction-heating applications with asymmetrical control," IEEE Trans. Ind. Electron., vol. 58, no. 7, pp. 2915-2925, Jun. 2011.</p>
+<p>[100] S. Ben-Yaakov and S. Lineykin, "Maximum power tracking of piezoelectric transformer HV converters under load variations," IEEE Trans. Power Electron., vol. 21, no. 1, pp. 73-78, Jan. 2006.</p>
+<p>[101] C. H. Lin, Y. Lu, H. J. Chiu, and C. L. Ou, "Eliminating the temperature effect of piezoelectric transformer in backlight electronic ballast by applying the digital phase-locked-loop technique," IEEE Trans. Ind. Electron., vol. 54, no. 2, pp. 1024-1031, Apr. 2007.</p>
+<p>[102] L. R. Chen, "PLL-based battery charge circuit topology," IEEE Trans. Ind. Electron., vol. 51, no. 6, pp. 1344-1346, Dec. 2004.</p>
+<p>[103] L. R. Chen, J. J. Chen, N. Y. Chiu, and G. Y. Han, "Current pumped battery charger," IEEE Trans. Ind. Electron., vol. 55, no. 6, pp. 2482-2488, Jun. 2008.</p>
+<p>[104] H. V. Hoang, and J. W. Jeon, "An efficient approach to correct the signals and generate high-resolution quadrature pulses for magnetic encoders," IEEE Trans. Ind. Electron. vol. 58, no. 8, pp. 3634-3646, Aug. 2011.</p>
+<p>[105] D. Velasco, C. Trujillo, G. Garcera, and E. Figueres, "An active antislanding method based on phase-PLL perturbation," IEEE Trans. Power Electron., vol. 26, no. 4, pp. 1056-1066, Apr. 2011.</p>
+<p>[106] T. V. Tran, T.W. Chun, H. H. Lee, H. G. Kim, and E. C. Nho, "PLL-based seamless transfer control between grid-connected and islanding modes in grid-connected inverters," IEEE Trans. Power Electron., vol. 29, no. 10, pp. 5218-5228, Oct. 2014.</p>
+<p>[107] S. Bifaretti, A. Lidozzi, L. Solero, and F. Crescimbini, "Anti-islanding detector based on a robust PLL," IEEE Trans. Ind. Appl., vol. 51, no. 1, pp. 398-405, Jan./Feb. 2015.</p>
+<p>[108] K. Andersen , G. E. Cook, R. J. Barnett, and A. M. Strauss, "Synchronous weld pool oscillation for monitoring and control," IEEE Trans. Ind. Appl., vol. 33, no. 2, pp. 464-471, Mar./Apr. 1997.</p>
+<p>[109] M. Ohrstrom and L. Soder, "Fast protection of strong power systems with fault current limiters and PLL-aided fault detection," IEEE Trans. Power Del., vol. 26, no. 3, pp. 1538-1544, Jul. 2011.</p>
+<p>[110] G. Chen, L. Zhang, R. Wang, L. Zhang, X. Cai, "A novel SPLL and voltage sag detection based on LES filters and improved instantaneous symmetrical components method," IEEE Trans. Power Electron. vol. 30, no. 3, pp. 1177-1188, Mar. 2015.</p>
+<p>[111] A. Cataliotti, V. Cosentino, and S. Nuccio, "A phase-locked loop for the synchronization of power quality instruments in the presence of stationary and transient disturbances," IEEE Trans. Instrum. Meas., vol. 56, no. 6, pp. 2232-2239, Dec. 2007.</p>
+<p>[112] M. Aiello, A. Cataliotti, V. Cosentino, and S. Nuccio, "Synchronization techniques for power quality instruments," IEEE Trans. Instrum. Meas., vol. 56, no. 5, pp. 1511-1519, Oct. 2007.</p>
+<p>[113] M. Karimi-Ghartemani, B. T. Ooi, and A. Bakhshai, "Application of enhanced phase-locked loop system to the computation of synchrophasors," IEEE Trans. Power Del., vol. 26, no. 1, pp. 22-32, Jan. 2011.</p>
+<p>[114] J. A. de la O Serna, "Synchrophasor measurement with polynomial phase-locked-loop Taylor-Fourier filters," IEEE Trans. Instrum. Meas., vol. 64, no. 2, pp. 328-337, Feb. 2015.</p>
+<p>[115] K. Ogata, Modern Control Engineering. Englewood Cliffs, NJ, USA: Prentice-Hall, 2009.</p>
+<p>[116] K. Martin, "Complex signal processing is not complex," IEEE Trans. Circuits Syst. I, Reg. Papers, vol. 51, no. 9, pp. 1823-1836, Sep. 2004.</p>
+<p>[117] P. Rodriguez, A. Luna, I. Candela, R. Mujal, R. Teodorescu, and F. Blaabjerg, "Multiresonant frequency-locked loop for grid synchronization of power converters under distorted grid conditions," IEEE Trans. Ind. Electron., vol. 58, no. 1, pp. 127-138, Jan. 2011.</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><p>[118] P. Rodriguez, A. Luna, R. Munoz-Aguilar, I. Etxeberria-Otadui, R. Teodorescu, and F. Blaabjerg, "A stationary reference frame grid synchronization system for three-phase grid-connected power converters under adverse grid conditions," IEEE Trans. Power Electron., vol. 27, no. 1, pp. 99-112, Jan. 2011.</p>
+<p>[119] F. M. Gardner, Phaselock Techniques. 3rd ed. Hoboken, NJ: Wiley, 2005.</p>
+<p>[120] H. A. Darwish and M. Fikri, "Practical considerations for recursive DFT implementation in numerical relays," IEEE Trans. Power Del., vol. 22, no. 1, pp. 42-49, Jan. 2007.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Saeed Golestan (M'11-SM'15) received the B.Sc. degree in electrical engineering from Shahid Chamran University of Ahvaz, Iran, in 2006, and the M.Sc. degree in electrical engineering from the Amirkabir University of Technology, Tehran, Iran, in 2009.</p>
+<p>He is currently working towards the Ph.D. degree at the Department of Energy Technology, Aalborg University, Denmark. His research interests include phase-locked loop and nonlinear filtering techniques for power engineering applications, power quality measurement and improvement, estimation of power</p>
+<p>system parameters, and microgrid.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Juan C. Vasquez (M'12-SM'14) received the B.S. degree in electronics engineering from the Autonomous University of Manizales, Manizales Colombia, and the Ph.D. degree in automatic control, robotics, and computer vision from the Technical University of Catalonia, Barcelona, Spain in 2004 and 2009, respectively. He was with the Autonomous University of Manizales working as a teaching assistant and the Technical University of Catalonia as a Post-Doctoral Assistant in 2005 and 2008 respectively. In 2011, he was Assistant</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Josep M. Guerrero (S'01-M'04-SM'08-FM'15) received the B.S. degree in telecommunications engineering, the M.S. degree in electronics engineering, and the Ph.D. degree in power electronics from the Technical University of Catalonia, Barcelona, in 1997, 2000 and 2003, respectively. Since 2011, he has been a Full Professor with the Department of Energy Technology, Aalborg University, Denmark, where he is responsible for the Microgrid Research Program. From 2012 he is a guest Professor at the Chinese Academy of Science and the Nanjing</p>
+<p>Professor and from 2014, he is working as an Associate Professor at the Department of Energy Technology, Aalborg University, Denmark where he is the Vice Programme Leader of the Microgrids Research Program. From Feb. 2015 to April. 2015 he was a Visiting Scholar at the Center for Power Electronics Systems (CPES) at Virginia Tech. His current research interests include operation, advanced hierarchical and cooperative control, optimization and energy management applied to distributed generation in AC and DC microgrids. He has authored and co-authored more than 100 technical papers only in Microgrids where 60 of them are published in international IEEE journals.</p>
+<p>Dr. Vasquez is currently a member of the IEC System Evaluation Group SEG4 on LVDC Distribution and Safety for use in Developed and Developing Economies, the Renewable Energy Systems Technical Committee TC-RES in IEEE Industrial Electronics, PELS, IAS, and PES Societies.</p>
+<p>University of Aeronautics and Astronautics; from 2014 he is chair Professor in Shandong University; and from 2015, he is a distinguished guest Professor in Hunan University.</p>
+<p>His research interests are oriented to different microgrid aspects, including power electronics, distributed energy-storage systems, hierarchical and cooperative control, energy management systems, and optimization of microgrids and islanded minigrids; recently specially focused on maritime microgrids for electrical ships, vessels, ferries and seaports. Prof. Guerrero is an Associate Editor for the IEEE TRANSACTIONS ON POWER ELECTRONICS, the IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS, and the IEEE Industrial Electronics Magazine, and an Editor for the IEEE TRANSACTIONS on SMART GRID and IEEE TRANSACTIONS on ENERGY CONVERSION. He has been Guest Editor of the IEEE TRANSACTIONS ON POWER ELECTRONICS Special Issues: Power Electronics for Wind Energy Conversion and Power Electronics for Microgrids; the IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS Special Sections: Uninterruptible Power Supplies systems, Renewable Energy Systems, Distributed Generation and Microgrids, and Industrial Applications and Implementation Issues of the Kalman Filter; and the IEEE TRANSACTIONS on SMART GRID Special Issue on Smart DC Distribution Systems. He was the chair of the Renewable Energy Systems Technical Committee of the IEEE Industrial Electronics Society. He received the best paper award of the IEEE Transactions on Energy Conversion for the period 2014-2015. In 2014 and 2015 he was awarded by Thomson Reuters as Highly Cited Researcher, and in 2015 he was elevated to IEEE Fellow for his contributions to distributed power systems and microgrids.</p></section></main></body></html>

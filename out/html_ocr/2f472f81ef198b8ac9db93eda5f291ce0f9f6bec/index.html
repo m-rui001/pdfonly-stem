@@ -1,0 +1,781 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Robot Collisions: A Survey on Detection, Isolation, and Identification</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Robot Collisions: A Survey on Detection, Isolation, and Identification</h1><p class="meta">https://doi.org/10.1109/tro.2017.2723903 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><div>
+
+# Robot Collisions: A Survey on Detection, Isolation, and Identification
+
+</div>
+<p>Sami Haddadin, Member, IEEE, Alessandro De Luca, Fellow, IEEE, Alin Albu-Schäffer, Fellow, IEEE</p>
+<p>Abstract—Robot assistants and professional co-workers are becoming a commodity in domestic and industrial settings. In order to enable robots to share their workspace with humans and physically interact with them, fast and reliable handling of possible collisions on the entire robot structure is needed, along with control strategies for safe robot reaction. The primary motivation is the prevention or limitation of possible human injury due to physical contacts. In this survey paper, based on our early work on the subject, we review, extend, compare, and evaluate experimentally model-based algorithms for realtime collision detection, isolation, and identification that use only proprioceptive sensors. This covers the context-independent phases of the collision event pipeline for robots interacting with the environment, as in physical human-robot interaction or manipulation tasks. The problem is addressed for rigid robots first, and then extended to the presence of joint/transmission flexibility. The basic, physically-motivated solution has already been applied to numerous robotic systems worldwide, ranging from manipulators and humanoids to flying robots, and even to commercial products.</p>
+<p>Index Terms—Safe robotics, human-friendly robotics, physical Human-Robot Interaction (pHRI), collision detection, collision isolation, collision identification, flexible joint manipulators</p>
+<h2>I. INTRODUCTION</h2>
+<p>HUMAN-FRIENDLY robots will soon become flexible and versatile robotic co-workers helping humans in complex or physically demanding work in industrial settings. In addition, they will be an integral part of our daily life as multi-purpose service assistants in homes. As a common characteristic in these foreseen applications, robots should be able to operate in very dynamic, unstructured, and partially unknown environments, sharing the workspace with a human user, preventing upcoming undesired collisions, handling unavoidable or intentional physical contacts in a safe and robust way, and reactively generating sensor-based motions. Achieving this robot behavior is the global objective of physical Human-Robot Interaction (pHRI) research [1], [2].</p>
+<p>The pathway to the ambitious goal of close collaboration of humans and robots involves novel mechanical designs of manipulator links and actuation, aimed at reducing inertia/weight and based on compliant components, extensive uses of external sensors, so as to allow fast and reliable recognition of humanrobot proximity, and development of human-aware motion planning and control strategies.</p>
+<p>We propose to generally consider up to seven elementary phases in the complete collision event pipeline, see Fig. 1. Various monitoring signals can be used to gather information about the event. Some phases are (almost) instantaneous, others are not. Furthermore, the phases from detection to identification are independent from context, whereas the remaining phases depend on internal and external factors, including the human/environment state and the on-going task.</p>
+<h2>A. Collision event pipeline and state-of-the-art</h2>
+<p>One of the core problems in pHRI is the handling of collisions between robots and humans, with the primary motivation of limiting possible human injury due to physical contacts $ ^{1} $ . Indeed, undesired collisions should be avoided by monitoring the workspace with external sensors so as to anticipate dangerous situations. However, since relative motions between robot and human may be very fast or hardly predictable, use of exteroceptive sensors may not be sufficient to prevent collisions. Moreover, when a direct and intentional human-robot interaction is desired, contacts are actually needed for task execution, requiring contact classification that distinguishes between intended and unintended contacts. In fact, one is interested in gathering the maximum amount of physical information from the impact event, such as which is the contact location and intensity, in order to let the robot react in the most appropriate fashion. For systematizing the contact handling problem we introduce a unified framework entitled the collision event pipeline, which aims at embracing all relevant phases collisions may undergo.</p>
+<p>Note that the schemes presented in this work, may easily be extended to other classes of robots beyond manipulators. In fact, systematic collision handling is e.g. highly beneficial in mobile robots, which are sought to be guided through appropriately detected and identified user forces [3], upperbodies of anthropomorphic systems [4] or even flying robots [5]. More work is needed for humanoid robots [6], in view of the floating base which requires an explicit treatment for the angular momentum of the system.</p>
+<p>1) Pre-collision phase. The two primary goals here are collision avoidance and/or anticipatory robot motion to minimize impact effects. Planning a nominal collision-free path requires (at least, local) knowledge of the current environment geometry [7]. Off-line motion planning techniques are computationally expensive, and their efficient conversion to on-line methods capable of handling instantaneous changes is</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 1. The seven phases of the collision event pipeline and their expected outputs.
+
+</div>
+<p>still on-going research [8], [9], in particular when considering human-aware situations [10], [11]. Anticipating a collision is typically based on the use of additional external sensors, such as onboard vision [12], [13] or RGB-D cameras placed in the environment [14]. Many algorithms were designed for generating (incremental) collision-free paths in real time, e.g., using artificial potentials [15], [16], elastic strips [17], or other similar variants [18] [20]. Other approaches like [21], [22], [11], [23] aim for effectively planning collision-free robot motions also incorporating the prediction of human behavior.</p>
+<p>However, the inherent speed of human motion (humans are generally an order of magnitude faster than any typical high gear ratio robot) makes it basically impossible to a priori guarantee collision-free behavior.</p>
+<p>2) Collision detection. The collision detection phase, whose binary output denotes whether a robot collision occurred or not, is characterized by the transmission of contact wrenches, often for very short impact durations. The occurrence of a collision, which may happen anywhere along the robot structure, shall be detected as fast as possible. A major practical problem is the selection of a threshold on the monitoring signals, so as to avoid false positives and achieve high sensitivity at the same time. A rather intuitive approach is to monitor the measured currents in robot electrical drives, looking for fast transients possibly caused by a collision [24], [25]. Another proposed scheme compares the actual commanded torques (or motor currents) with the nominal model-based control law (i.e., the instantaneous torque expected in the absence of collision), with any difference being attributed to a collision [26]. This idea has been refined by considering the use of an adaptive compliance control [27], [28]. However, tuning of collision detection thresholds in these schemes is difficult because of the highly varying dynamic characteristics of the control torques. One way to obtain both collision detection and isolation is to use sensitive skins [29] [32]. However, it is obviously more practical and reliable to detect and possibly isolate a collision without the need of additional tactile sensors.</p>
+<p>3) Collision isolation. Knowing which robot part (e.g., which link of a serial manipulator) is involved in the collision is an important information that can be exploited for robot reaction. Collision isolation aims at localizing the contact point $ x_{c} $ , or at least which link $ i_{c} $ out of the n-body robot</p>
+<p>collided. On the other hand, the previously mentioned monitoring signals used in [24] -[28] are in general not able to achieve reliable collision isolation (even when robot dynamics is perfectly known). In fact, they either rely on computations based only on the nominal desired trajectory, or compute joint accelerations by inverting the mass matrix and thus spreading the dynamic effects of collision on a single link to several joints. Alternatively, they use acceleration estimates for torque prediction and comparison, which inherently introduces noise (due to double numerical differentiation of position data) and intrinsic delays. The common drawback of these methods is that the effect of a collision on a link propagates to other link variables or joint commands due to robot dynamic couplings, affecting thus the isolation property.</p>
+<p>4) Collision identification phase. Other relevant quantities about a collision are the directional information and the intensity of the generalized collision force, either in terms of the acting Cartesian wrench $ \mathcal{F}<em>{\mathrm{ext}}(t) $ at the contact, or of the resulting external joint torque $ \tau</em>{\mathrm{ext}}(t) $ during the entire physical interaction event. This information characterizes (in some cases, completely) the collision event. The first method that achieved simultaneously collision detection, isolation, and identification was proposed in [33], [34]. The basic idea was to view collisions as faulty behaviors of the robot actuating system, while the detector design took advantage of the decoupling property of the robot generalized momentum [35], [36].</p>
+<p>5) Collision classification phase. Based on the information generated in the previous phases, we can interpret the collision nature in a context-dependent way, such as classifying the collision as accidental or intentional [37], light or severe, or even labeling its time course as permanent, transient, or repetitive.</p>
+<p>6) Collision reaction phase. Indeed, the robot should react purposefully in response to a collision event, i.e., taking into account available contextual information. Because of the fast dynamics and high uncertainty of the problem, the robot reaction should be embedded in the lowest control level. For instance, the simplest reaction to a collision is to stop the robot. However, this may possibly lead to inconvenient situations, where the robot is unnaturally constraining or blocking the human [38], [39]. To define better reaction strategies, infor-</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<p>mation from collision isolation, identification and classification phases should be used. Some examples of successful collision reaction strategies have been given in [40]----[42] and are shortly mentioned in Fig.1.</p>
+<p>7) Post-collision phase. Once a safe condition has been reached after the reaction to a collision, the robot should autonomously decide how to proceed, e.g., whether to try to recover the original task, or to abandon it and how [42]. For instance, if the collision was classified as intentional, the robot may recognize that the human wish was to start a specific physical collaboration. This decision making is still a relatively open problem. Its resolution cannot be done purely at the control level, as global environmental information and reasoning is certainly needed. One possible approach using machine learning is given in [37].</p>
+<h2>B. Contribution</h2>
+<p>The focus of this paper is on collision detection, isolation, and identification, i.e., phases 2 to 4 in the collision event pipeline of Fig. 1. We start from our early works [35], [43], [34], [40], [44] and take advantage of the extensive experience gained over the years in developing, using and refining our original methods. They were successfully used, e.g., for a hydraulically driven humanoid [45], for flying robots [5], or even in commercial products like the KUKA LWR iiwa [46], FRANKA EMIKA [47], or ABB YuMi [48]. The main characteristics of our methods are the following:</p>
+<ul>
+<li>use only proprioceptive robot sensors (similarly to [49], however, only forces at the robot end-effector are estimated there);</li>
+</ul>
+<ul>
+<li>handle collisions that may occur anywhere along the robotic structure, even repeatedly (i.e., at any place and any time);</li>
+</ul>
+<ul>
+<li>have an elegant physical motivation, being based on monitoring quantities such as total energy or generalized momentum of the robot;</li>
+</ul>
+<ul>
+<li>can be implemented efficiently either for fully rigid robots or for robots with flexible joints, taking advantage of special features in the latter case;</li>
+</ul>
+<ul>
+<li>are independent from the method used to command/control the robot in any phase, alleviating thus the critical issue of defining collision detection thresholds;</li>
+</ul>
+<ul>
+<li>provide directional and intensity information for a safe robot reaction after isolation of the collision.</li>
+</ul>
+<p>Apart from summarizing the original methods, the main novel contributions of this paper are the following.</p>
+<ul>
+<li>First, we propose the collision event pipeline as a unified framework for presenting and classifying existing and future results in the robot collision handling literature (Sec. I-A).</li>
+</ul>
+<ul>
+<li>We derive a computationally more favorable version of the energy observer that is based on kinetic energy only (Sec. III-A).</li>
+</ul>
+<ul>
+<li>We elaborate on the isolation and identification properties of the momentum-based monitoring method, showing sufficient conditions for localizing the contact point on the colliding link and estimating the contact force vector using only proprioceptive information (Sec. IV-B).</li>
+</ul>
+<ul>
+<li>We compare and rate all considered methods in terms of computational effort, required measurement quantities, and further characteristics for rigid and for flexible robots (Secs. V and VI).</li>
+</ul>
+<ul>
+<li>We provide in Sec. VII new experimental results with the link momentum observer for the DLR/KUKA LWR, including its capability for external force estimation as well as collision isolation and identification. In addition, the first experimental analysis using the energy observer introduced in Sec. III-A is presented.</li>
+</ul>
+<ul>
+<li>Finally, a simulative analysis of real world effects on the momentum based monitoring method is carried out (Sec. VII).</li>
+</ul>
+<p>In addition, some practically relevant results and comments concerning the implementation of the proposed methods are also provided:</p>
+<ul>
+<li>We discuss the relevant implementation/computational aspects of our collision detection and isolation algorithms (Sec. III-F).</li>
+</ul>
+<ul>
+<li>We comment on the relevance of motor/link side friction and of thresholding on the collision detection performance (Sec. IV-A).</li>
+</ul>
+<ul>
+<li>We also introduce a variant of the momentum observer for flexible robots that does not require any information on the joint stiffness and uses only motor and link side position measurements (Sec. VI).</li>
+</ul>
+<p>The paper is organized as follows. Section II outlines the robot dynamics and useful properties for rigid robots and flexible joint robots. Section III provides the theoretical background on monitoring signals that can be used in the collision event pipeline. The detection, isolation, and identification phases for the momentum observer are presented in Sect. IV. Sections V and VI compare all considered methods for rigid and flexible joint robots, respectively. Section VII reports simulations and experimental results for the momentum and energy observers. Finally, Section VIII concludes the paper.</p>
+<h2>II. ROBOT DYNAMICS AND PROPERTIES</h2>
+<p>In this section, we summarize the dynamic modeling and the relevant properties of robots, while incorporating collisions with the environment into the formulation.</p>
+<h2>A. Rigid robots</h2>
+<p>We consider robot manipulators as open kinematic chains of rigid bodies, having n rigid joints. The generalized coordinates $ q\in\mathbb{R}^{n} $ can be associated to the position of the links. The motor position $ \theta\in\mathbb{R}^{n} $ , as reflected through the gear ratios of rigid transmissions, are assumed to coincide with the link coordinates, i.e., $ \theta=q $ . The dynamic model is</p>
+<div class="formula">$$
+M (q) \ddot {q} + C (q, \dot {q}) \dot {q} + g (q) = \tau_ {m} - \tau_ {F},
+$$</div>
+<p>where $ M ( q ) \in \mathbb{R}^{n \times n} $ is the symmetric and positive definite inertia matrix, $ C ( q,\dot{q} ) \dot{q} \in \mathbb{R}^{n} $ is the centripetal and Coriolis vector, factorized with the matrix C of Christoffels' symbols, and $ g ( q ) \in \mathbb{R}^{n} $ is the gravity vector. The non-conservative terms on the right-hand side of (1) are the active motor torque $ \tau_{m} \in \mathbb{R}^{n} $ and the dissipative torque $ \tau_{F} \in \mathbb{R}^{n} $ , mostly due to motor friction (e.g., $ \tau_{F}=f(\dot{q}) $ with $ f(\dot{q})\dot{q} \geq 0 ). $ The torque applied to the robot by the (electrical) actuators is $ \tau_{m}= $</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>IEEE TRANSACTIONS ON ROBOTICS</p>
+<p>$ K_{i} i_{m} $ , with motor current $ i_{m} $ and diagonal current-to-torque gain matrix $ K_{i} &gt; 0 $ . In the following, we assume that motor currents can be measured, the gain matrix is known, and that $ \tau_{m} $ corresponds to the commanded torque.</p>
+<p>A basic property of the robot dynamics is the skewsymmetry of matrix $ \dot{M} (q)-2 C (q, \dot{q}) $ , which is also equivalent to the identity (see, e.g., [50])</p>
+<div class="formula">$$
+\dot {M} (\boldsymbol {q}) = C (\boldsymbol {q}, \dot {\boldsymbol {q}}) + C ^ {T} (\boldsymbol {q}, \dot {\boldsymbol {q}}).
+$$</div>
+<p>Next, consider the inclusion of generalized contact forces along the robot structure due to a collision. For simplicity, we assume that there is at most a single link involved in the collision. Let</p>
+<div class="formula">$$
+\boldsymbol {V} _ {c} = \left[ \begin{array}{l} \boldsymbol {v} _ {c} \\ \boldsymbol {\omega} _ {c} \end{array} \right] = \left[ \begin{array}{l} \dot {\boldsymbol {x}} _ {c} \\ \boldsymbol {\omega} _ {c} \end{array} \right] = \left[ \begin{array}{l} \boldsymbol {J} _ {c, \operatorname {l i n}} (\boldsymbol {q}) \\ \boldsymbol {J} _ {c, \operatorname {a n g}} (\boldsymbol {q}) \end{array} \right] \dot {\boldsymbol {q}} = \boldsymbol {J} _ {c} (\boldsymbol {q}) \dot {\boldsymbol {q}} \in \mathbb {R} ^ {6}
+$$</div>
+<p>be the stacked (screw) vector of linear velocity $ \boldsymbol{v}<em>{c} $ at the contact point $ \boldsymbol{x}</em>{c} $ and angular velocity $ \boldsymbol{\omega}<em>{c} $ of the considered robot link, with an associated (geometric) contact Jacobian $ J</em>{c}(\boldsymbol{q}) $ . Accordingly, the Cartesian collision wrench at $ \boldsymbol{x}_{c} $ (with its force and moment) is denoted by</p>
+<div class="formula">$$
+\mathcal {F} _ {\mathrm {e x t}} = \left[ \begin{array}{c} \boldsymbol {f} _ {\mathrm {e x t}} \\ \boldsymbol {m} _ {\mathrm {e x t}} \end{array} \right] \in \mathbb {R} ^ {6}.
+$$</div>
+<p>Note that the contact location $ x_{c} $ and the contact Jacobian are typically unknown. When a collision occurs, the robot dynamics (1) becomes</p>
+<div class="formula">$$
+M (q) \ddot {q} + C (q, \dot {q}) \dot {q} + g (q) + \tau_ {F} = \tau_ {m} + \tau_ {\mathrm {e x t}} = \tau_ {\mathrm {t o t}},
+$$</div>
+<p>where $ \tau_{\mathrm{ext}} \in \mathbb{R}^{n} $ is the external joint torque given by</p>
+<div class="formula">$$
+\boldsymbol {\tau} _ {\mathrm {e x t}} = \boldsymbol {J} _ {c} ^ {T} (\boldsymbol {q}) \mathcal {F} _ {\mathrm {e x t}}.
+$$</div>
+<p>The two active (non-conservative) terms on the right-hand side of (5) have been collectively denoted as $ \boldsymbol{\tau}<em>{\mathrm{tot}} \in \mathbb{R}^{n} $ , while we moved the dissipative term $ \boldsymbol{\tau}</em>{F} $ to the left-hand side.</p>
+<p>The total energy E of the robot is the sum of its kinetic energy T and potential energy $ U_{g} $ due to gravity:</p>
+<div class="formula">$$
+E = T + U _ {g} = \frac {1}{2} \dot {\boldsymbol {q}} ^ {T} \boldsymbol {M} (\boldsymbol {q}) \dot {\boldsymbol {q}} + U _ {g} (\boldsymbol {q}),
+$$</div>
+<p>with $ \boldsymbol{g}(\boldsymbol{q})=\left(\partial U_{g}(\boldsymbol{q})/\partial\boldsymbol{q}\right)^{T} $ . From eq. (5) and the skewsymmetry of $ \dot{M}-2 C $ , it follows</p>
+<div class="formula">$$
+\dot {E} = \dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {\mathrm {t o t}} - \dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {F},
+$$</div>
+<p>which represents the power balance in the system, including the external power $ P_{\mathrm{ext}}=\dot{\boldsymbol{q}}^{T}\boldsymbol{\tau}_{\mathrm{ext}}. $</p>
+<p>The generalized momentum $ p $ of the robot is defined as</p>
+<div class="formula">$$
+p = M (q) \dot {q}.
+$$</div>
+<p>From eq. (5), the time evolution of p can be written as</p>
+<div class="formula">$$
+\dot {p} = \tau_ {\mathrm {t o t}} - \tau_ {F} + \dot {M} (q) \dot {q} - C (q, \dot {q}) \dot {q} - g (q)
+$$</div>
+<div class="formula">$$
+= \tau_ {\mathrm {t o t}} - \tau_ {F} + C ^ {T} (\boldsymbol {q}, \dot {\boldsymbol {q}}) \dot {\boldsymbol {q}} - g (\boldsymbol {q}),
+$$</div>
+<p>where eq. (2) has been used. In particular, the i th component of $ \dot{p} $ can also be written as</p>
+<div class="formula">$$
+\dot {p} _ {i} = \tau_ {\mathrm {t o t}, i} - \tau_ {F, i} - \frac {1}{2} \dot {\boldsymbol {q}} ^ {T} \frac {\partial \boldsymbol {M} (\boldsymbol {q})}{\partial q _ {i}} \dot {\boldsymbol {q}} - g _ {i} (\boldsymbol {q}),
+$$</div>
+<p>for $ i=1,\dots,n $ . Thus, each component of the generalized momentum is affected only by the associated component of the non-conservative (active and dissipative) torques. This decoupling property will be further exploited later.</p>
+<h2>B. Robots with flexible joints</h2>
+<p>If flexibility of the transmission and reduction components has to be considered, the generalized coordinates need to be doubled since there is a dynamic displacement between the motor position $ \theta\in\mathbb{R}^{n} $ and the link position $ q\in\mathbb{R}^{n} $ Moreover, an additional potential energy term $ U_{e} $ due to joint deflection $ \delta=\theta-q $ appears. An associated joint torque $ \tau_{J} $ couples link and motor dynamics, which dependence on $ \delta $ may take various forms (from linear to nonlinear) and may also be time-varying or independently modified by an additional control input, such as in VSA [51]. No matter how complex the functional expression of $ \tau_{J} $ is, the developments in this paper will remain unchanged as long as the link dynamics is affected in practice only by $ \tau_{J} $ directly. For the sake of clarity, we consider in the following the case of linear visco-elasticity at each robot joint only. For a complete overview of this class, please refer to [52].</p>
+<p>For a robot with n visco-elastic joints, we consider the so-called reduced model of Spong [53], which assumes no inertial couplings between the motor and link bodies. The link dynamics replacing eq. (1) is</p>
+<div class="formula">$$
+M (q) \ddot {q} + C (q, \dot {q}) \dot {q} + g (q) + K _ {J} (q - \theta) = D _ {J} \left(\dot {\theta} - \dot {q}\right) - \tau_ {F, q}, \tag {13}
+$$</div>
+<p>where $ \boldsymbol{\tau}_{F,q} $ denotes the friction terms acting on the link side of the joint. We define the elastic torque transmitted through the joints as</p>
+<div class="formula">$$
+\boldsymbol {\tau} _ {J} = \boldsymbol {K} _ {J} (\boldsymbol {\theta} - \boldsymbol {q}).
+$$</div>
+<p>The joint stiffness matrix $ K_{J}=\operatorname{diag}{K_{J,i}}\in \mathbb{R}^{n\times n} $ is diagonal and positive definite, while the joint damping matrix $ D_{J}=\operatorname{diag}{D_{J,i}}\in \mathbb{R}^{n\times n} $ is diagonal, and positive semidefinite. All the dissipative terms have been collected on the right-hand side of (13). The value of $ \tau_{J} $ in (14) is also the output of joint torque sensing devices, when available.</p>
+<p>For the motor dynamics, we assume a decoupled secondorder system</p>
+<div class="formula">$$
+\boldsymbol {B} \ddot {\theta} + \boldsymbol {K} _ {J} (\boldsymbol {\theta} - \boldsymbol {q}) = \tau_ {m} - \boldsymbol {D} _ {J} \left(\dot {\theta} - \dot {\boldsymbol {q}}\right) - \tau_ {F, \theta},
+$$</div>
+<p>where $ B=\operatorname{diag}{B_{i}}\in \mathbb{R}^{n\times n} $ is the diagonal, positive definite motor inertia matrix. $ \tau_{F,\theta} $ contains friction terms acting on the motor side of the joint.</p>
+<p>In many cases, the mechanical design of the transmission/reduction elements is such that one can neglect the joint damping, $ D_{J}\simeq0 $ , as well as the influence of friction on the link side, $ \tau_{F,q}\simeq0 $ . In particular, this is true for the DLR/KUKA Lightweight Robot series. On the other hand, the motor friction $ \tau_{F,\theta} $ is usually not negligible. However, note that for, e.g., intrinsically elastic systems like the DLR Hand/Arm System HASY, damping is explicitly modeled since it improves the joint torque estimation based on motor and link side position and velocity sensing.</p>
+<p>Therefore, when including also the presence of joint torques due to contact forces (acting on the link dynamics), we shall consider the following dynamic model of robots with flexible joints</p>
+<div class="formula">$$
+\begin{array}{l} M (q) \ddot {q} + C (q, \dot {q}) \dot {q} + g (q) = \tau_ {J} + \tau_ {\mathrm {e x t}} = \tau_ {\mathrm {t o t}, \mathrm {J}} (16) \\ B \ddot {\theta} + \tau_ {J} = \tau_ {m} - \tau_ {F, \theta}. (17) \\ \end{array}
+$$</div></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<p>Equation (16) has basically the same properties as eq. (5), except for $ \tau_{J} $ now being - together with $ \tau_{\mathrm{ext}} $ - the driving torque of the dynamics. By analogy, we have collectively denoted the two terms on the right-hand side of (16) as $ \tau_{\mathrm{tot},\mathrm{J}}\in\mathbb{R}^{n}. $</p>
+<p>For later use, and similarly to the rigid case, we derive next energy and momentum equations for robots with flexible joints. The total energy $ E_{J} $ of a flexible joint robot also includes the energy $ U_{e} $ stored in the elasticities and takes the form</p>
+<div class="formula">$$
+\begin{array}{l} E _ {J} = T + U _ {g} + U _ {e} = \frac {1}{2} \dot {\boldsymbol {q}} ^ {T} \boldsymbol {M} (\boldsymbol {q}) \dot {\boldsymbol {q}} + \frac {1}{2} \dot {\boldsymbol {\theta}} ^ {T} \boldsymbol {B} \dot {\boldsymbol {\theta}} \tag {18} \\ + U _ {g} (\boldsymbol {q}) + \frac {1}{2} \left(\boldsymbol {\theta} - \boldsymbol {q}\right) ^ {T} \boldsymbol {K} _ {J} \left(\boldsymbol {\theta} - \boldsymbol {q}\right) \\ \end{array}
+$$</div>
+<p>From eqs. (16), (17), it follows that the power $ \dot{E}_{J} $ exchanged between the environment and the system is given by</p>
+<div class="formula">$$
+\dot {E} _ {J} = \dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {\mathrm {e x t}} + \dot {\boldsymbol {\theta}} ^ {T} \left(\boldsymbol {\tau} _ {m} - \boldsymbol {\tau} _ {F, \theta}\right).
+$$</div>
+<p>The torque $ \tau_{J} $ is only acting within the system and not between system and environment. While (19) is perfectly valid, using the link energy only (namely, eq. (7)) is more convenient for detection purposes even in the flexible joint case. This is because (7) does not contain the motor energy terms, which are of no relevance for collisions with the environment. Note that neither friction terms nor motor positions appear when evaluating the time derivative of E with eq. (16):</p>
+<div class="formula">$$
+\dot {E} = \dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {\mathrm {t o t}, \mathrm {J}}.
+$$</div>
+<p>Also note that the input torque of the system described by eq. (16) is now given by $ \tau_{J}+\tau_{\mathrm{ext}}=\tau_{\mathrm{tot},\mathrm{J}}. $</p>
+<p>The generalized momentum vector $ p_{J} $ of a flexible joint robot has 2n components defined as</p>
+<div class="formula">$$
+\boldsymbol {p} _ {J} = \left[ \begin{array}{l} \boldsymbol {p} _ {q} \\ \boldsymbol {p} _ {\theta} \end{array} \right] = \left[ \begin{array}{c} M (\boldsymbol {q}) \dot {\boldsymbol {q}} \\ B \dot {\boldsymbol {\theta}} \end{array} \right].
+$$</div>
+<p>Accordingly, the time evolution of the two n-dimensional momentum components are</p>
+<div class="formula">$$
+\dot {p} _ {q} = \tau_ {\mathrm {t o t , J}} + \dot {M} (q) \dot {q} - C (q, \dot {q}) \dot {q} - g (q)
+$$</div>
+<div class="formula">$$
+= \tau_ {\mathrm {t o t}, \mathrm {J}} + C ^ {T} (\boldsymbol {q}, \dot {\boldsymbol {q}}) \dot {\boldsymbol {q}} - g (\boldsymbol {q}),
+$$</div>
+<p>and</p>
+<div class="formula">$$
+\dot {\boldsymbol {p}} _ {\theta} = \boldsymbol {\tau} _ {m} - \boldsymbol {\tau} _ {J} - \boldsymbol {\tau} _ {F, \theta}.
+$$</div>
+<p>Note again that eq. (23) is independent from friction terms.</p>
+<h2>C. Lightweight robot family</h2>
+<p>Since the DLR/KUKA family of lightweight robots is used as reference platform throughout the paper, we shortly summarize some key features of these manipulators [54], [55].</p>
+<p>Figure 2 shows the DLR LWR-III, the KUKA LBR iiwa (intelligent industrial work assistant), and the new fully softrobotics controlled lightweight robot FRANKA EMIKA [47] of FRANKA EMIKA GmbH. These lightweight robots have a slender arm design, with 7 revolute joints (a spherical shoulder, an elbow joint, and a spherical wrist for the DLR LWR-III and the KUKA LBR iiwa), and are human-like in size. The LWR-III weighs 13.5 kg and is able to handle loads up to 15 kg, so an approximate unitary payload-to-weight ratio is achieved.</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 2. From left: The DLR LWR-III (by courtesy of DLR), the KUKA LBR iiwa, and FRANKA EMIKA (by courtesy of FRANKA EMIKA GmbH).
+
+</div>
+<p>This lightweight robot family is driven by DC brushless motors and can be fully joint torque or joint impedance controlled.</p>
+<p>The drive trains contain Harmonic Drive gears with large reduction ratios (ranging between 100:1 and 160:1). Together with the presence of joint torque sensors, these gearboxes induce significant elasticity at the joints, but with intrinsic low joint damping and low friction on the link side. All manipulators used in our experiments were either of the DLR LWR-III or KUKA LWR4 type, which are almost equivalent from a dynamics point of view. Therefore, we refer to them collectively as DLR/KUKA LWR. All robots in the family are equipped with motor position encoders (measuring $ \theta $ ) and joint torque sensors (measuring $ \tau_{J} $ ), while the link position $ q $ is estimated as $ \hat{q} $ from these measurements using (14). Ideally, the following relation holds:</p>
+<div class="formula">$$
+\hat {q} = \theta - \hat {K} _ {J} ^ {- 1} \tau_ {J} = q.
+$$</div>
+<p>From now on, an estimate of a generic scalar quantity x (or vector x) will be denoted by $ \hat{x} $ (or $ \hat{x} $ ).</p>
+<h2>III. COLLISION MONITORING METHODS</h2>
+<p>Collision monitoring methods are dynamic or algebraic in nature and range from scalar monitoring of robot energy to momentum-based observers. In this section, emphasis is given on the properties of each of the reviewed methods and on their possible use for collision detection, isolation, and identification. In addition, we elaborate on computational issues, which were not considered in previous publications so far. All schemes are described here for rigid robots, while their extension to robots with flexible joints is considered in Sec. VI.</p>
+<p>In this section it is assumed that joint friction $ \tau_{F}=0 $ , i.e., it is negligible or compensated by control. We come back to this issue in Sec. IV.</p>
+<p>A. Estimation of the power $ P_{\mathrm{ext}} $ associated with the external joint torque via energy observer</p>
+<p>Since a collision is expected to change the energy level of the robotic system, an intuitive choice of a monitoring function is to resort to an energy argument. For this, define the scalar quantity</p>
+<div class="formula">$$
+r (t) = k _ {O} \left(\hat {E} (t) - \int_ {0} ^ {t} \left(\dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {m} + r\right) \mathrm {d} s - \hat {E} (0)\right),
+$$</div>
+<p>with initial value $ r ( 0 )=0 $ ,gain $ k_{O}&gt;0 $ ,and $ \hat{E} ( t ) $ being the estimate of the total robot energy at time $ t\geq0 $ ,as defined in (7) [34]. The monitoring signal $ r $ can be computed using the commanded motor torque $ \tau_{m} $ ,the measured link position</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>q, and the velocity $ \dot{q} $ (possibly obtained through numerical differentiation). No acceleration measurement or estimation is needed. In ideal conditions, where $ \hat{E} (t)=E (t) $ , and using (8) together with the definition $ \tau_{\mathrm{t o t}}=\tau_{m}+\tau_{\mathrm{e x t}} $ , the dynamics of r is</p>
+<div class="formula">$$
+\dot {r} = k _ {O} \left(\dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {\mathrm {e x t}} - r\right) = k _ {O} \left(P _ {\mathrm {e x t}} - r\right).
+$$</div>
+<p>This represents a first-order stable linear filter driven by the power $ P_{\mathrm{ext}} $ associated with the external joint torque due to collision. During free motion, $ r=0 $ holds. In response to a generic collision, $ r $ exponentially approaches the external joint torque with time constant $ 1 / k_{O} $ . When contact is lost, $ r $ decays similarly to zero.</p>
+<p>For reducing the computational effort, we introduce an useful equivalent form of (26) which defines the monitoring signal based on the robot kinetic energy only, i.e.,</p>
+<div class="formula">$$
+r (t) = k _ {O} \left(\hat {T} (t) - \int_ {0} ^ {t} \left(\dot {\boldsymbol {q}} ^ {T} \left(\boldsymbol {\tau} _ {m} + \hat {\boldsymbol {g}} (\boldsymbol {q})\right) + r\right) \mathrm {d} s - \hat {T} (0)\right),
+$$</div>
+<p>where $ \hat{g} ( q ) $ is the estimate of the gravity vector $ g ( q ) $ . Equation (28) is equivalent to (26) since the additional term</p>
+<div class="formula">$$
+\int_ {0} ^ {t} \dot {\boldsymbol {q}} ^ {T} \hat {\boldsymbol {g}} (\boldsymbol {q}) \mathrm {d} s = \int_ {0} ^ {t} \frac {\partial \hat {U} _ {g}}{\partial \boldsymbol {q}} \dot {\boldsymbol {q}} \mathrm {d} s = \int_ {0} ^ {t} \dot {\hat {U}} _ {g} \mathrm {d} s = \hat {U} _ {g} (t) - \hat {U} _ {g} (0)
+$$</div>
+<p>provides exactly the missing potential energy terms. Therefore, the dynamics of the monitoring signal remains the one given by (27). As a matter of fact, when moving from (26) to (28), we replaced the evaluation of the potential energy $ \hat{U}<em>{g} $ with that of the gravity vector $ \hat{g} $ . The latter can be obtained using an efficient recursive numerical method (see also Sec. III-F) and, in addition, it may have already been computed within the robot control law. Along the same line, note that (28) applies directly to cases when a gravity cancellation term is included in the motion control law. Then, the torque $ \tau</em>{m} $ in (28) will contain only the additional control action, whatever this is (e.g., a PD feedback law).</p>
+<p>Not all possible collision situations can be detected by this simple scheme. When the robot is at rest, we have $ \dot{q}=0 $ and the instantaneous value of $ \tau_{\mathrm{ext}} $ will not affect r until the robot will move (by the collision itself or otherwise). As a result, if the robot is initially not moving, a true impulsive collision cannot be reliably detected. Furthermore, when the robot is in motion, collisions are detected only if the Cartesian collision wrench $ \mathcal{F}_{\mathrm{ext}} $ produces motion at the contact. In fact, from eqs. (3) and (6), the following property holds:</p>
+<div class="formula">$$
+\dot {\boldsymbol {q}} ^ {T} \boldsymbol {\tau} _ {\mathrm {e x t}} = \dot {\boldsymbol {q}} ^ {T} \boldsymbol {J} _ {c} ^ {T} (\boldsymbol {q}) \mathcal {F} _ {\mathrm {e x t}} = \boldsymbol {V} _ {c} ^ {T} \mathcal {F} _ {\mathrm {e x t}} = 0 \Leftrightarrow \boldsymbol {V} _ {c} \perp \mathcal {F} _ {\mathrm {e x t}},
+$$</div>
+<p>i.e., wrenches orthogonal to the contact velocity cannot be detected. Despite the above drawbacks, it should be noted that the signal $ r(t) $ approximately defines the power transferred during the collision to the robot, as long as contact is maintained. This information can also be useful for later decisions in the collision pipeline.</p>
+<h2>B. Direct estimation of $ \tau_{\mathrm{ext}} $</h2>
+<p>Using (5), the algebraic estimation of the external joint torque $ \tau_{\mathrm{ext}} $ is</p>
+<div class="formula">$$
+\hat {\boldsymbol {\tau}} _ {\mathrm {e x t}} = \hat {M} (\boldsymbol {q}) \ddot {\boldsymbol {q}} + \hat {C} (\boldsymbol {q}, \dot {\boldsymbol {q}}) \dot {\boldsymbol {q}} + \hat {\boldsymbol {g}} (\boldsymbol {q}) - \tau_ {m}.
+$$</div>
+<p>This is indeed the most direct monitoring method, which uses the motor torque and the link position, velocity, and acceleration. Unfortunately, this approach is not applicable in practice, since typically only q is measured and its double differentiation (to be performed on line) leads to the inclusion of non-negligible noise in the estimation process. One might think of introducing acceleration sensors at the joints or on the links [56], but this increases system complexity significantly.</p>
+<h2>C. Monitoring $ \tau_{\mathrm{ext}} $ via inverse dynamics</h2>
+<p>This method can be used when the robot is controlled by a high-performance (well tuned) position controller that executes sufficiently smooth desired trajectories $ q_{d}(t)\in \mathbb{R}^{n} $ [40]. Then, it can be assumed that</p>
+<div class="formula">$$
+\boldsymbol {q} \approx \boldsymbol {q} _ {d}, \quad \dot {\boldsymbol {q}} \approx \dot {\boldsymbol {q}} _ {d}, \quad \ddot {\boldsymbol {q}} \approx \ddot {\boldsymbol {q}} _ {d}.
+$$</div>
+<p>An estimate of the external joint torque due to collision is obtained by computing first the inverse dynamics (the so-called feedforward term) associated to (32), using (5) evaluated for $ \tau_{\mathrm{ext}}=0 $:</p>
+<div class="formula">$$
+\hat {\boldsymbol {\tau}} _ {m, \mathrm {f f}} = \hat {M} \left(\boldsymbol {q} _ {d}\right) \ddot {\boldsymbol {q}} _ {d} + \hat {C} \left(\boldsymbol {q} _ {d}, \dot {\boldsymbol {q}} _ {d}\right) \dot {\boldsymbol {q}} _ {d} + \hat {\boldsymbol {g}} \left(\boldsymbol {q} _ {d}\right).
+$$</div>
+<p>The hat symbol on a robot dynamic term denotes its estimated version. Then, (33) is compared with the applied motor torque yielding</p>
+<div class="formula">$$
+\hat {\boldsymbol {\tau}} _ {\mathrm {e x t}} = \hat {\boldsymbol {\tau}} _ {m, \mathrm {f f}} - \boldsymbol {\tau} _ {m}.
+$$</div>
+<p>This method may work reasonably well for stiff position control and smooth desired motion. However, it is not independent from the executed trajectories and from the specific control law and its parameters. Moreover, when using a computed torque controller, the above model-based computations need to be performed twice, once on the desired state trajectory and another on the actual state $ ( q,\dot{q} ) $ . Furthermore, from the instant of collision on, (32) is no longer valid. As a result, the method is suitable for monitoring but not for estimating $ \tau_{\mathrm{ext}} $ .</p>
+<h2>D. Estimation of $ \tau_{\mathrm{ext}} $ via joint velocity observer</h2>
+<p>The underlying idea of this method is to use a reduced observer for the dynamic estimation of the joint velocity $ \dot{q} $ and then to fit this scheme as a disturbance observer of the unknown external joint torque $ \tau_{\mathrm{ext}} $ [57]. The observer uses a reduced state of dimension n (rather than 2n, the state dimension of a mechanical system with n generalized coordinates), and thus it reacts faster to changes of the external joint torque (in fact, as a first-order system).</p>
+<p>First, the actual acceleration $ \ddot{q} $ is expressed as</p>
+<div class="formula">$$
+\ddot {q} = M ^ {- 1} (q) \left(\tau_ {m} - n (q, \dot {q}) + \tau_ {\mathrm {e x t}}\right),
+$$</div>
+<p>with the notation $ n ( q,\dot{q})!:=! C ( q,\dot{q}) \dot{q}+g ( q ). $ The observer output $ r $ represents an estimate $ \hat{\tau}<em>{\mathrm{ext}} $ of the true disturbance joint torque $ \tau</em>{\mathrm{ext}}. $ According to [58], we assume a constant disturbance and the following elementary model for the observation of the external collision joint torque:</p>
+<div class="formula">$$
+\hat {\boldsymbol {\tau}} _ {\mathrm {e x t}} = \boldsymbol {r} \in \mathbb {R} ^ {n}, \quad \dot {\boldsymbol {r}} = \mathbf {0}.
+$$</div></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>Such model is used since no further information on the expected behavior of $ \tau_{\mathrm{ext}} $ is available. The observer dynamics is then defined as</p>
+<div class="formula">$$
+\hat {\ddot {q}} = \hat {M} ^ {- 1} (\boldsymbol {q}) \left(\tau_ {m} - \hat {\boldsymbol {n}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right)
+$$</div>
+<div class="formula">$$
+\dot {\boldsymbol {r}} = \boldsymbol {K} _ {O} \left(\ddot {\boldsymbol {q}} - \hat {\ddot {\boldsymbol {q}}}\right),
+$$</div>
+<p>where $ K_{O}=\operatorname{diag}{k_{O,i}} &gt; 0 $ is the diagonal gain matrix of the observer. Figure 3 shows the block diagram of the robot and the observer. The method provides as observer output</p>
+<div class="formula">$$
+\boldsymbol {r} (t) = \boldsymbol {K} _ {O} \left(\dot {\boldsymbol {q}} (t) - \int_ {0} ^ {t} \hat {\boldsymbol {M}} ^ {- 1} (\boldsymbol {q}) \left(\boldsymbol {\tau} _ {m} - \hat {\boldsymbol {n}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right) \mathrm {d} s - \dot {\boldsymbol {q}} (0)\right)
+$$</div>
+<p>The observer dynamics are given by</p>
+<div class="formula">$$
+\dot {\boldsymbol {r}} (t) = \boldsymbol {K} _ {O} \left(\ddot {\boldsymbol {q}} (t) - \hat {\boldsymbol {M}} ^ {- 1} (\boldsymbol {q}) \left(\tau_ {m} - \hat {\boldsymbol {n}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right)\right)
+$$</div>
+<div class="formula">$$
+= K _ {O} M ^ {- 1} (q) \left(\tau_ {m} - n (q, \dot {q}) + \tau_ {\mathrm {e x t}}\right)
+$$</div>
+<div class="formula">$$
+\boldsymbol {K} _ {O} \hat {\boldsymbol {M}} ^ {- 1} (\boldsymbol {q}) \left(\boldsymbol {\tau} _ {m} - \hat {\boldsymbol {n}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right)
+$$</div>
+<p>Therefore, in ideal conditions, the dynamic relation between the external joint torque $ \tau_{\mathrm{ext}} $ and the observed disturbance $ r $ is obtained by replacing $ \hat{M}=M $ and $ \hat{n}=n $ in eq. (40). It follows that</p>
+<div class="formula">$$
+\dot {\boldsymbol {r}} = \boldsymbol {K} _ {O} \boldsymbol {M} ^ {- 1} (\boldsymbol {q}) \left(\tau_ {\mathrm {e x t}} - \boldsymbol {r}\right)
+$$</div>
+<p>i.e., $ r $ is a filtered estimation of $ \tau_{\mathrm{e x t}} $ but, due to the presence of the inverse inertia matrix, the filter equation is nonlinear and coupled.</p>
+<h2>E. Estimation of $ \boldsymbol{\tau}_{\mathrm{ext}} $ via momentum observer</h2>
+<p>The monitoring method based on the generalized momentum observer introduced in [33], [34], [44], was motivated by the desire of avoiding the inversion of the robot inertia matrix, decoupling the estimation result, and also eliminating the need of an estimate of joint accelerations. For compactness, define the quantity</p>
+<div class="formula">$$
+\begin{array}{l} \beta (\boldsymbol {q}, \dot {\boldsymbol {q}}) := \boldsymbol {g} (\boldsymbol {q}) + C (\boldsymbol {q}, \dot {\boldsymbol {q}}) \dot {\boldsymbol {q}} - \dot {M} (\boldsymbol {q}) \dot {\boldsymbol {q}} \\ = g (q) - C ^ {T} (q, \dot {q}) \dot {q}, \\ \end{array}
+$$</div>
+<p>where the property (2) has been used.</p>
+<p>Based on the expression of the dynamics of p, as given by (10) or, equivalently, (11), the momentum observer dynamics is defined as</p>
+<div class="formula">$$
+\begin{array}{l} \dot {\hat {p}} = \tau_ {m} - \hat {\beta} (q, \dot {q}) + r \\ \dot {r} = K _ {O} \left(\dot {p} - \dot {\hat {p}}\right), \\ \end{array}
+$$</div>
+<p>where $ K_{O}=\operatorname{diag}{k_{O,i}}&gt;0 $ is the diagonal gain matrix of the observer. The observer output $ r(t) $ follows from integrating the second equation in (44) and then using the first one as</p>
+<div class="formula">$$
+\begin{array}{l} \boldsymbol {r} = \boldsymbol {K} _ {O} \left(\boldsymbol {p} (t) - \int_ {0} ^ {t} \dot {\hat {\boldsymbol {p}}} (s) \mathrm {d} s - \boldsymbol {p} (0)\right) \\ = \boldsymbol {K} _ {O} \left(\boldsymbol {p} (t) - \int_ {0} ^ {t} \left(\boldsymbol {\tau} _ {m} - \hat {\boldsymbol {\beta}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right) \mathrm {d} s - \boldsymbol {p} (0)\right), \\ \end{array}
+$$</div>
+<p>with $ \boldsymbol{p}=\hat{M} ( \boldsymbol{q} ) \dot{\boldsymbol{q}} $ . Figure 4 illustrates the block diagram of the momentum observer. The monitoring signal $ \boldsymbol{r} $ is also called</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 3. Block diagram of the reduced observer (37) for $ \dot{\boldsymbol{q}}. $
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 4. Block diagram of the reduced observer (44) for $ \dot{p} $
+
+</div>
+<p>residual vector, see [34], [35]. In ideal conditions, $ \hat{M}=M $ and $ \hat{\beta}=\beta $ , the dynamic relation between the external joint torque $ \tau_{\mathrm{ext}} $ and r is</p>
+<div class="formula">$$
+\dot {\boldsymbol {r}} = \boldsymbol {K} _ {O} \left(\tau_ {\mathrm {e x t}} - \boldsymbol {r}\right).
+$$</div>
+<p>In other words, the filter equation is a stable, linear, decoupled first-order estimation of the external collision joint torque $ \tau_{\mathrm{ext}} $ Also, the monitoring vector r is sensitive to collisions even when $ \dot{q}=0 $</p>
+<p>In the Laplace domain, working componentwise, it is</p>
+<div class="formula">$$
+r _ {i} = \frac {k _ {O , i}}{s + k _ {O , i}} \tau_ {\mathrm {e x t}, i} = \frac {1}{1 + T _ {O , i} s} \tau_ {\mathrm {e x t}, i}, \quad i = 1, \dots , n.
+$$</div>
+<p>Large values of $ k_{O,i} $ give small time constants $ T_{O,i}=1 / k_{O,i} $ in the transient response of that component of r which is associated to the same component of the external joint torque $ \tau_{\mathrm{ext}} $ . In the limit, we obtain</p>
+<div class="formula">$$
+\boldsymbol {K} _ {O} \rightarrow \infty \Rightarrow \boldsymbol {r} \approx \tau_ {\mathrm {e x t}}.
+$$</div>
+<p>This nice feature makes the momentum observer a kind of virtual sensor for external joint torques acting along the robot structure. We remark that the method could have been derived also from similar considerations to those of the reduced observer in Sec. III-D. Note finally that the velocity observer as well as the momentum observer can also be used to compute an estimate $ \hat{\ddot{q}} $ of the joint acceleration $ \ddot{q}. $</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>IEEE TRANSACTIONS ON ROBOTICS</p>
+<h2>F. Computational issues</h2>
+<p>We shortly comment on computational issues for the momentum observer introducing an approach for generally rating the computational effort of other monitoring methods as well (see Table I). Let $ \mathrm{N E}<em>{g</em>{0}}(q,\dot{q},\ddot{q}) $ denote your preferred implementation of the recursive Newton-Euler algorithm, which takes three vectors as inputs and the base acceleration $ g_{0} $ as vector parameter (for a fixed-base manipulator this is the constant gravity vector expressed in the base frame). For instance, the gravity vector in (28) can be evaluated as $ g(q)=\mathrm{N E}<em>{g</em>{0}}(q,0,0). $ By $ \mathrm{M N E}<em>{g</em>{0}}(q,\dot{q},\dot{q}^{\prime},\ddot{q}) $ we denote the modified Newton-Euler algorithm proposed in [59], which takes four vectors as inputs to provide more flexibility. Let $ e_{i} $ be the $ i $ th vector of the canonical base of $ \mathbb{R}^{n}. $ Then, with the single call $ \mathrm{M N E}<em>{0}(q,\dot{q},e</em>{i},0), $ the algorithm outputs the $ i $ th column of the Christoffel's matrix $ C(q,\dot{q}). $ Every run of the NE or MNE algorithm has computational complexity $ O(n), $ being n the number of robot joints.</p>
+<p>The momentum observer requires the computation of vectors p and $ \beta $ , for which the following alternatives are available.</p>
+<p>1) Standard Newton-Euler algorithm and numerical approximation of the directional derivative of the inertia matrix at control rate, with sampling time $ T_{s} $:</p>
+<div class="formula">$$
+\begin{array}{l} \beta = g (q) + C (q, \dot {q}) \dot {q} - \dot {M} (q) \dot {q} \\ = \mathrm {N E} _ {g _ {0}} \left(q, \dot {q}, 0\right) - \frac {M _ {k} - M _ {k - 1}}{T _ {s}} \dot {q}, \\ \end{array}
+$$</div>
+<div class="formula">$$
+\boldsymbol {p} = M (\boldsymbol {q}) \dot {\boldsymbol {q}} = \mathrm {N E} _ {0} (\boldsymbol {q}, \mathbf {0}, \dot {\boldsymbol {q}}).
+$$</div>
+<p>2) Use of customized Lagrange dynamics in symbolic form.</p>
+<p>3) Mixed use of the standard and modified Newton-Euler algorithms:</p>
+<div class="formula">$$
+\begin{array}{l} \beta = \boldsymbol {g} (\boldsymbol {q}) - \boldsymbol {C} ^ {T} (\boldsymbol {q}, \dot {\boldsymbol {q}}) \dot {\boldsymbol {q}} \\ = \mathrm {N E} _ {\boldsymbol {g} _ {0}} (\boldsymbol {q}, \dot {\boldsymbol {q}}, \mathbf {0}) - \\ \left[ \mathrm {M N E} _ {0} \left(\boldsymbol {q}, \dot {\boldsymbol {q}}, e _ {1}, \mathbf {0}\right) \dots \mathrm {M N E} _ {0} \left(\boldsymbol {q}, \dot {\boldsymbol {q}}, e _ {n}, \mathbf {0}\right) \right] ^ {T} \dot {\boldsymbol {q}}, \\ \end{array}
+$$</div>
+<div class="formula">$$
+\boldsymbol {p} = M (\boldsymbol {q}) \dot {\boldsymbol {q}} = \mathrm {N E} _ {0} (\boldsymbol {q}, \mathbf {0}, \dot {\boldsymbol {q}}).
+$$</div>
+<p>All three methods have been implemented and can run efficiently in real time. The choice strongly depends on the robotic system, in particular on the size of n, which has different influence on the various methods.</p>
+<h2>G. Summary</h2>
+<p>The advantages and drawbacks of the presented monitoring methods together with the required measurements and the computational effort are summarized in Table I. The use of a certain method depends on the number of joints, the reliability of the available measurements, and the available computational power.</p>
+<h2>IV. DETECTION, ISOLATION, AND IDENTIFICATION</h2>
+<p>In this section we review and expand methods for generating a collision monitoring function and derive a new concept for the reconstruction of the contact wrench. Depending on the monitoring method of choice, a generalized collision monitoring signal $ \mu (t) $ (possibly a scalar $ \mu (t) $ ) is produced, which encapsulates exploitable information for the detection,</p>
+<p>isolation, and identification phases of the collision event pipeline. Due to its basic properties (i.e., linear error dynamics, no need of $ M^{-1}(q) $ or $ \ddot{q} $ , no dependence on the direction of the external contact force), the momentum observer, which generates useful information for all three phases, is treated as the reference collision monitoring algorithm in this section, with $ \mu!:=!r $ according to (46). In comparison, the other algorithms show lower performance in more than one of the phases. Please note that the following analysis for the momentum based monitoring can also be carried out for the other algorithms.</p>
+<h2>A. Detection</h2>
+<p>Solving the collision detection problem means to decide whether a physical collision is present or not, limiting as much as possible the occurrence of false positives or false negatives. The following approach is an extension of our previous works [34], [40] by systematically deriving a threshold with higher robustness against model uncertainties and disturbances A collision detection function cd(.) maps the monitoring signal $ \mu (t) $ into the two disjoint collision classes TRUE or FALSE:</p>
+<div class="formula">$$
+c d: \boldsymbol {\mu} (t) \rightarrow \{T R U E, F A L S E \}
+$$</div>
+<p>Ideally, this classification is obtained by</p>
+<div class="formula">$$
+c d \left(\boldsymbol {\mu} (t)\right) = \left\{ \begin{array}{l l} T R U E &amp; \mathrm {i f} \boldsymbol {\mu} (t) \neq \mathbf {0} \\ F A L S E &amp; \mathrm {i f} \boldsymbol {\mu} (t) = \mathbf {0}. \end{array} \right.
+$$</div>
+<p>In practice, the accurate detection of a collision requires appropriate thresholding for robustness. The following nonidealities should be taken into account:</p>
+<p>1) torque/current measurement noise $ n_{\tau_{m}} $ causing a motor torque error $ \Delta \tau_{m} \left( n_{\tau_{m}} \right)=K_{i}\Delta i_{m} \left( n_{\tau_{m}} \right) $ , with the diagonal gain matrix $ K_{i} &gt; 0 $ containing the current-to-torque motor constants;</p>
+<p>2) position and velocity sensor noise $ n_{q}, n_{\dot{q}} $ causing joint position and velocity measurement errors $ \Delta q(n_{q}),\Delta \dot{q}(n_{\dot{q}}); $</p>
+<p>3) modeling errors in the estimated robot dynamics $ \hat{D}:= { \hat{M} (q),\hat{C} (q,\dot{q}),\hat{g} (q) } $ with respect to the true dynamics D;</p>
+<p>4) friction torque $ \boldsymbol{\tau}<em>{F} (\boldsymbol{q},\dot{\boldsymbol{q}},\boldsymbol{\tau}</em>{\mathrm{tot}},\vartheta,t) $ , which in general depend on the robot state, load torque, temperature, and time.</p>
+<p>Due to the aforementioned errors in measurement, modeling, and disturbances (friction, hysteresis, ...), the monitoring signal becomes in practice $ \mu ( t )\neq0 $ even when no contact is present. Assuming that all the above effects act at the torque level, introduce the unknown, but bounded generalized disturbance vector</p>
+<div class="formula">$$
+\boldsymbol {\tau} _ {d, \mathrm {t o t}} = \Delta \boldsymbol {\tau} _ {m} \left(\boldsymbol {n} _ {\boldsymbol {\tau} _ {m}}\right) + \boldsymbol {\tau} _ {F} \left(\boldsymbol {q}, \dot {\boldsymbol {q}}, \boldsymbol {\tau} _ {\mathrm {t o t}}, \vartheta , t\right) + \Delta \boldsymbol {\tau} _ {d} \left(\boldsymbol {q}, \dot {\boldsymbol {q}}, \hat {\boldsymbol {D}}\right),
+$$</div>
+<p>where $ \Delta \tau_{d} ( q,\dot{q},\hat{D} ) $ denotes the torque disturbance that originates from position and velocity noise, plus dynamic modeling errors. Due to the presence of disturbance, the dynamics of the monitoring signal in the contact-free case becomes (see also (47))</p>
+<div class="formula">$$
+\dot {\boldsymbol {\mu}} = K _ {O} \left(\boldsymbol {\tau} _ {d, \mathrm {t o t}} - \boldsymbol {\mu}\right).
+$$</div></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<p>Thanks to the stability of system (53), a bounded input $ \boldsymbol{\tau}<em>{d,\mathrm{tot}}(t) $ will always generate a bounded output $ \boldsymbol{\mu}(t) $ . Thus, the observation over a suitable set of robot motions for a sufficiently long time interval $ [0,T] $ without any external disturbances leads to a convenient definition of $ \boldsymbol{\mu}</em>{\mathrm{max}}:=\max {|\boldsymbol{\mu}(t)|,t\in[0,T]} $ , where the maximum is to be taken componentwise. Taking into account a small constant robustness margin $ \epsilon_{\mathrm{safe}}&gt;0 $ , the collision detection problem can be decided using the conservative symmetric threshold $ \epsilon_{\boldsymbol{\mu}}=\mu_{\mathrm{max}}+\epsilon_{\mathrm{safe}}&gt;0 $ :</p>
+<div class="formula">$$
+c d \left(\boldsymbol {\mu} (t)\right) = \left\{ \begin{array}{l l} T R U E &amp; \mathrm {i f} | \boldsymbol {\mu} (t) | &gt; \epsilon_ {\mu} \\ F A L S E &amp; \mathrm {i f} | \boldsymbol {\mu} (t) | \leq \epsilon_ {\mu}. \end{array} \right.
+$$</div>
+<p>This thresholding scheme robustly limits false positives. At the same time it may produce false negatives for light contacts and possibly delayed positives for softer contacts. In order to overcome this limitation, suitable techniques such as friction compensation, model-based adaptive thresholding [60], or learning techniques can be applied to increase detection sensitivity [61].</p>
+<p>The largely nonlinear error dynamics (52) is hard to be fully captured over the entire state and parameter spaces. Nonetheless, rather simple actions may improve significantly the collision detection performance $ ^{2} $ . First, by choosing a smaller (i.e., slower) filter constant $ K_{O} $ in (46), the highfrequency measurement noise may be reduced at the price of some detection delay. Second, it is possible to exploit the frequency information of the collision monitoring signal. Compared to typical collision events, the robot dynamics associated to nominal motion velocities has a frequency content in a lower range. Therefore, a simple yet effective possibility to cope with dynamic modeling errors is to high-pass filter componentwise the signals in (48), which leads to</p>
+<div class="formula">$$
+\mu_ {i} ^ {\prime} := T _ {O, i} s \mu_ {i} = \frac {s}{s + k _ {O , i}} \tau_ {\mathrm {e x t}, i},
+$$</div>
+<p>with $ T_{O,i}=1 / k_{O,i} $ . Using $ \mu_{i}^{\prime} $ instead of $ \mu_{i} $ for computing cd following eq. (54), a more sensitive monitoring scheme for high frequency torque components, i.e., to fast and stiff impacts, is obtained. Indeed, using (55) implies to ignore the very low frequency content of external joint torques. However, these may still be estimated in parallel by (48), possibly with smaller gains $ K_{O} $ . In fact, one might even use an entire filter bank that consists of appropriately designed low-pass, high-pass, and band-pass filters for precise impact frequency analysis.</p>
+<p>Alternatively to the high-pass filtered signal (55), one can also use as monitoring signal the difference between (34) and (48). Since dynamic modeling errors are equally present in both signals, their difference in ideal conditions would be almost independent from such errors. Due to the algebraic nature of (34), such a scheme would again lead to a componentwise high-pass filtered version of $ \tau_{\mathrm{ext}} $:</p>
+<div class="formula">$$
+\mu_ {i} ^ {\prime \prime} := \hat {\tau} _ {\mathrm {e x t}, i} - \mu_ {i} \approx \tau_ {\mathrm {e x t}, i} - \frac {1}{1 + T _ {O , i} s} \tau_ {\mathrm {e x t}, i} = \frac {s}{s + k _ {O , i}} \tau_ {\mathrm {e x t}, i}.
+$$</div>
+<p>$ ^{2} $For the time being, assume that $ \tau_{F} $has negligible effects, which usually means that it is either compensated for very well or that joint torque sensing after the gearbox is used.</p>
+<p>However, note that this relation holds only under assumption (32), which is in general no longer true at the onset of a collision.</p>
+<h2>B. Isolation</h2>
+<p>Solving the isolation problem means to find the collision link $ i_{c} $ along the robot and the associated contact point $ \boldsymbol{x}_{c} $ . A systematic and formal solution to this problem did not exist so far and will be derived in the following assuming that only one collision occurs at a time. A more expensive approach for multiple contacts is given in [62].</p>
+<p>For a simpler notation, the threshold $ \epsilon_{\mu} $ is assumed to be zero. Suppose that a single contact occurs on the $ i_{c} $ -th link of the open kinematic chain structure of the robot. Then, we have the property</p>
+<div class="formula">$$
+\boldsymbol {\mu} = \left[ \begin{array}{c c c c c c} \mu_ {1} &amp; \dots &amp; \mu_ {i _ {c}} &amp; 0 &amp; 0 &amp; \dots &amp; 0 \end{array} \right] ^ {T},
+$$</div>
+<p>where the last $ n-i_{c} $ zeros are structural. In fact, for a collision on link $ i_{c} $ , the last $ n-i_{c} $ columns of the contact Jacobian $ J_{c}(q) $ are identically zero. Thus, the vector $ \tau_{\mathrm{ext}}=J_{c}^{T}(q)\mathcal{F}<em>{\mathrm{ext}} $ where $ J</em>{c}(q) $ is generally unknown, will have the last $ n-i_{c} $ components identically zero. Thanks to the decoupled structure of (47), this is also the case for the last $ n-i_{c} $ components of $ \mu $ On the other hand, the first $ i_{c} $ components of vector $ \mu $ will be generally different from zero, at least for the contact duration, and will start decaying exponentially toward zero as soon as contact is lost. Obviously, the collision link $ i_{c}\in{1\ldots n} $ can be found as</p>
+<div class="formula">$$
+i _ {c} = \max \{i \in \{1 \dots n \}: \mu_ {i} \neq 0 \}.
+$$</div>
+<p>In general, $ \mu $ will be affected only by a Cartesian collision wrench $ \mathcal{F}<em>{\mathrm{ext}} $ that performs work on admissible robot motion, i.e., those net wrenches that do not belong to the kernel of $ J</em>{c}^{T} ( q ) $ . More in general, the sensitivity to $ \mathcal{F}<em>{\mathrm{ext}} $ of each of the affected residual components (those up to index $ i</em>{c} $ ) will vary with the arm configuration. Thanks to the properties of the generalized momentum, this dynamic analysis can be carried out based only on static considerations, using the transformation matrix $ J_{c}^{T} ( q ) $ from Cartesian wrenches to joint torques. In fact, the residual dynamics in eq. (47) is unaffected by the robot velocity or acceleration.</p>
+<p>Isolating the contact area on the colliding link $ i_{c} $ needs a more careful treatment, for which suitable methods are derived in the following. However, an isolated contact area can in general only be obtained for certain types of collisions. For a general collision wrench $ \mathcal{F}<em>{\mathrm{ext}} $ acting on link $ i=i</em>{c} $ , we can write the rigid body transformation with respect to a frame attached in a known position to link i (e.g., the DenavitHartenberg one) and by using the adjoint matrix as</p>
+<div class="formula">$$
+\mathcal {F} _ {i} = \left[ \begin{array}{c} \boldsymbol {f} _ {i} \\ \boldsymbol {m} _ {i} \end{array} \right] = \left[ \begin{array}{c c} \boldsymbol {I} &amp; \boldsymbol {O} \\ \boldsymbol {S} ^ {T} \left(\boldsymbol {r} _ {c, i}\right) &amp; \boldsymbol {I} \end{array} \right] \left[ \begin{array}{c} \boldsymbol {f} _ {\mathrm {e x t}} \\ \boldsymbol {m} _ {\mathrm {e x t}} \end{array} \right] = \boldsymbol {J} _ {c, i} ^ {T} \mathcal {F} _ {\mathrm {e x t}}.
+$$</div>
+<p>The skew-symmetric matrix $ S(\cdot) $ for the vector product is built with the components of its vector argument, and $ r_{i,c}=-r_{c,i}\in \mathbb{R}^{3} $ is the vector from the origin of frame i to the point of application of the contact force. For the position of the contact point, we have also that $ x_{c}=r_{i}+r_{i,c} $ , being $ r_{i}=r_{i}(q) $ the known position of the origin of frame i. Note that matrix $ J_{c,i} $ is constant when all quantities are expressed</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><p>in the local frame i (assuming that the contact point remains the same). Moreover, the yet unknown contact Jacobian can be factorized as</p>
+<div class="formula">$$
+J _ {c} (\boldsymbol {q}) = J _ {c, i} J _ {i} (\boldsymbol {q}),
+$$</div>
+<p>where the known $ 6\times n $ (geometric) Jacobian matrix $ J_{i}(q) $ associated with the linear and angular velocity of frame i.</p>
+<p>Once $ i=i_{c} $ has been determined from (58), by using (60) an estimate of the effect of the Cartesian collision wrench at frame i can be obtained as</p>
+<div class="formula">$$
+\hat {\mathcal {F}} _ {i} = \left[ \begin{array}{c} \hat {f} _ {i} \\ \hat {\boldsymbol {m}} _ {i} \end{array} \right] = \left(J _ {i} ^ {T} (\boldsymbol {q})\right) ^ {\#} \boldsymbol {\mu}.
+$$</div>
+<p>When $ J_{i}(q) $ has full row rank, which requires necessarily that $ i_{c}\geq 6 $ , there is no loss of information in the obtained 6-dimensional estimate $ \hat{\mathcal{F}}<em>{i} $ when using (61). At this stage, note that it is not possible to determine $ x</em>{c} $ (or, equivalently, $ r_{i,c} $ ) for a general contact wrench consisting of forces and moments. To proceed, we make the assumption that only wrenches of the form</p>
+<div class="formula">$$
+\mathcal {F} _ {\mathrm {e x t}} = \left[ \begin{array}{c} \boldsymbol {f} _ {\mathrm {e x t}} \\ \mathbf {0} \end{array} \right]
+$$</div>
+<p>with negligible contact moments occur, which is the typical case for impulsive collisions as well as the most relevant contact situation in practice. Assuming only contact wrenches of the form (62) allows the localization of the contact point where the (estimated) external force $ \hat{f}<em>{i}=\hat{f}</em>{\mathrm{ext}}\approx f_{\mathrm{ext}} $ is applied, thanks to (59) and (61). Simple manipulations provide the following linear system to be solved for the unknown vector $ r_{i,c} $</p>
+<div class="formula">$$
+\boldsymbol {S} ^ {T} \left(\hat {\boldsymbol {f}} _ {i}\right) \boldsymbol {r} _ {i, c} = \hat {\boldsymbol {m}} _ {i},
+$$</div>
+<p>where the $ 3\times 3 $ skew-symmetric coefficient matrix $ S^{T}(\hat{f}<em>{i}) $ is always of rank 2 unless $ \hat{f}</em>{i}\equiv0 $ . With reference to Fig. 5, equation (63) can be used to determine the line of action of $ f_{\mathrm{ext}} $ . The minimum distance vector from the origin of frame i to this line is given by the pseudoinverse solution to (63)</p>
+<div class="formula">$$
+\boldsymbol {r} _ {i, d} = \left(\boldsymbol {S} ^ {T} \left(\hat {\boldsymbol {f}} _ {i}\right)\right) ^ {\#} \hat {\boldsymbol {m}} _ {i}.
+$$</div>
+<p>All points along the line of force action can then be described by $ r_{i,d}+\lambda \left( \hat{f}<em>{i} / | \hat{f}</em>{i} | \right) $ , for a varying scalar $ \lambda $ . Considering the links as convex bodies and assuming complete knowledge of the surface $ S_{i_{c}} $ of the colliding link, the contact point $ x_{c} $ can be found by intersecting the line of force action with $ S_{i_{c}} $ . In Fig. 5, two final contact points can be isolated in principle (for two different values of $ \lambda $ , say $ \lambda_{A} $ and $ \lambda_{B} $ ). Therefore, $ r_{c,i} $ can be determined in this way and so $ J_{c,i} $ in (60).</p>
+<h2>C. Identification</h2>
+<p>Solving the identification problem aims at estimating the collision joint torques $ \tau_{\mathrm{ext}} $ , as well as the contact wrenches $ \mathcal{F}_{\mathrm{ext}} $ acting on the robot structure.</p>
+<p>We have already shown in Sec. III-E that the momentum observer outputs an accurate estimation of $ \tau_{\mathrm{e x t}} $ , i.e., full identification of the joint torques due to collision is always possible. In contrast, estimating the contact wrench $ \mathcal{F}<em>{\mathrm{e x t}} $ can only be done once $ J</em>{c}(q) $ is known. In order to calculate the corresponding external wrench we use (6), yielding</p>
+<div class="formula">$$
+\hat {\mathcal {F}} _ {\mathrm {e x t}} = \left(J _ {c} ^ {T} (q)\right) ^ {\#} \mu .
+$$</div>
+<div>
+
+Fig. 5. Geometry for isolation of the contact point, when a pure contact force $ f_{\mathrm{ext}} $ is applied to link i at a generic point of its surface. Any generic location C along the line of force action is a candidate for being the application point of the external force. Point D is defined by the pseudoinverse solution (64). The additional knowledge of the link surface restricts the possibilities only to point A (pushing the link) or B (pulling the link).
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Three main sources could provide the required information about the contact Jacobian $ J_{c} $:</p>
+<p>1) For manipulation tasks, where no other contact is expected, the task context specifies the contact location by its Tool Center Point (TCP) frame $ S_{TCP} $ . Thus, $ J_{c}=J_{TCP} $ for a general contact wrench $ \mathcal{F}<em>{\mathrm{ext}}=\left[ f</em>{\mathrm{ext}}^{T} m_{\mathrm{ext}}^{T}\right]^{T} $ . For example, the TCP frame $ S_{TCP} $ could be associated to the tip of a tool that is mounted on the end-effector of a robot with $ n\geq 6 $ joints.</p>
+<p>2) Assuming that (62) holds, one can obtain $ J_{c} $ from (60) and the procedure outlined in Sec. IV-B.</p>
+<p>3) The use of (possibly binary) tactile sensors allows to localize directly the contact area. Then, $ \mathcal{F}_{\mathrm{ext}} $ can be exactly computed if the Jacobian is full rank.</p>
+<p>Of course, (65) leads to a complete solution only for a full row rank $ J_{c} ( q ) $ , in which case $ \left( J_{c}^{T} \right)^{#}=\left( J_{c} J_{c}^{T} \right)^{-1} J_{c} $ . Since the contact Jacobian may be interpreted as a sensitivity matrix, wrenches acting along singular directions cannot be sensed, as these are balanced by the reaction forces and moments internal to the manipulator structure. However, within the regular workspace, (65) may have interesting applications. For instance, it can be used in place of a wrist force-torque sensor for measuring TCP wrenches in the virtual sensor frame $ S_{\mathrm{vs}} $</p>
+<p>For this, $ J_{\mathrm{v s}}=J_{n}(q) $ for a suitable definition of DenavitHartenberg parameters. This is useful for all tasks defined in the operational space that require wrist wrench control, e.g., in assembly processes. Such a virtual sensing strategy is especially interesting for industrial tasks where it is desirable to limit the addition of external sensing devices. This reduces initial and maintenance costs, and eliminates the risk of potential sensor failures.</p>
+<div class="formula">$$
+\hat {\mathcal {F}} _ {\mathrm {v s}} = \left(J _ {\mathrm {v s}} ^ {T} (q)\right) ^ {\#} \boldsymbol {\mu}.
+$$</div>
+<p>On the other hand, estimating the full external wrench when the contact occurs at a generic location along the robot structure is in many cases impossible, even though the location $ x_{c} $ is known. Causes for this are (i) the structural lack of rank of the contact Jacobian for collisions occurring</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<p>at links proximal to the base, or (ii) closeness to a singular configuration. Practically, this would lead to a transfer of some of the contact wrench components into the mechanical structure. Thus, parts of $ \mathcal{F}_{\mathrm{ext}} $ cannot be identified anymore, no matter which joint torque based method (measurement or estimate) is used. Similarly, the estimation of multiple contact forces cannot be resolved with proprioceptive sensing only. In this context, its fusion with tactile sensors [63] and/or with exteroceptive sensing [64] are interesting recent research directions, together with the independent use of more expensive machine learning techniques [62].</p>
+<h2>V. COMPARISON OF METHODS FOR RIGID ROBOTS</h2>
+<p>This section provides a new systematic comparison of the essential five model-based collision monitoring algorithms from Sec. III in terms of their detection, isolation, and identification properties for the case of rigid robots.</p>
+<p>For completeness, we include in the table also three known industrial schemes, namely monitoring the absolute torque, the torque change, or the torque tube. The first two methods based on absolute torque and on torque change simply check the motor torques and, respectively, their derivatives against threshold values. These schemes are very simple to implement and have minimal computational cost. However, they have low detection sensitivity and are purely heuristic. Obviously, no isolation and identification are possible.</p>
+<p>The main characteristics of all methods are depicted in Table I. For other aspects of the five model-based collision monitoring algorithms, please refer to the respective descriptions in that section. For each monitoring method we classify the computational effort in terms of complexity, memory, a possible dual use of the results (e.g., when the computed quantity is also used for the controller as well as for the direct estimation scheme), and a resulting overall rating (each from $ \cdot $ = 'very low' to $ **** $ = 'very high'). Moreover, we list the required measurement quantities and summarize the most significant advantages and disadvantages.</p>
+<p>The complexity rating of the first two industrial schemes that are only based on a comparison of the motor torque to a threshold is $ ^{*} $ （'very low') . The third industrial scheme (torque tube) coarsely estimates the external joint torque, which requires only a little more computational effort but much more memory. The other analytical schemes are rated based on the effort required for the standard recursive Newton-Euler algorithm NE. The widely used Big-O notation for computational effort is not really informative here, because all algorithms are $ O(n) $ , i.e., their complexity grows linearly with the number n of joints, except for the momentum observer which is $ O(n^{2}) $ when $ \dot{M} $ is computed exactly, but still $ O(n) $ when an approximate derivation is used for this matrix. Note that the dynamics calculated for the inverse dynamics method can in general not be used for control, leading to a higher overall rating in comparison to the direct estimation scheme.</p>
+<p>The torque tube method is essentially a model-free equivalent of the inverse dynamics approach. By recording, possibly repeatedly, the motor torques along a given trajectory, a time-dependent reference profile $ \tau_{m,\mathrm{ref}}(t) $ is created, together with a robustness margin. These serve as dynamic thresholds next time the trajectory will be executed. This very simple, yet effective strategy has two main disadvantages: a large memory</p>
+<p>demand and little flexibility in terms of trajectory and control law modifications. In particular, the method does not apply to online generated trajectories.</p>
+<p>Note that the monitoring performance of all schemes, except for the torque tube, is inherently bounded by the presence of unknown friction $ \tau_{F} $ in (1). In turn, depending on the quality of a possibly implemented friction correction $ \hat{\tau}_{F} $ , as already mentioned in Sec. IV, monitoring performance can be improved equally over all the affected methods. We also remark that it is possible to run in parallel multiple algorithms for redundant monitoring, including also different variants of the same algorithm.</p>
+<p>When combining the evaluations from Sec. III and Tab. I we can conclude the following. The energy observer, being quite simple on the one hand, is not able to detect collisions in specific directions or when the robot is at rest on the other hand (see experiment Sec. VII, Fig. 13). Moreover, it does not provide the possibility of isolation. The two schemes relying on the inverse dynamics of the robot require the measurement of the joint accelerations (when using real joint positions) or depend on the used controller (when using desired joint positions). Instead, the remaining two monitoring schemes based on velocity and momentum observation emerge for the following major advantages:</p>
+<p>1) simultaneous collision detection, isolation, and identification;</p>
+<p>2) complete independence from the reference trajectory and control law in execution.</p>
+<p>Consequently, due to the nonlinear observer error dynamics of the velocity observer, which depends on $ M ( q ) $ , the momentum observer turns out to be the best choice for being used in the complete collision event pipeline (see experiments Sec. VII, Fig. 6, 8, 12, 15, 16, 17, 18, 19).</p>
+<h2>VI. EXTENSION TO ROBOTS WITH FLEXIBLE JOINTS</h2>
+<p>Extending the collision monitoring schemes to robots with flexible joints is rather straightforward. In general, we discriminate between two different types of flexible joint robot implementations, which differ significantly in terms of their respective sensorization:</p>
+<p>1) Elastic joint robots have finite but typically rather high joint stiffness. This is considered as a parasitic effect, like when strain wave gears are used as reduction elements. The joint deflection $ \delta=\theta-q $ is very small and thus $ \tau_{J} $ cannot be estimated accurately from position measurements via (14). Therefore, these robots are equipped with motor encoders measuring $ \theta $ , and with stiff joint torque sensors measuring $ \tau_{J} $ after the reduction gears, and thus independently from $ \tau_{F,\theta} $ . Then, q is estimated from (25). An alternative is the iterative scheme from [65], which computes the link position q from $ \theta $ based on a steady-state approximation. Alternatively, a second position sensor on the link side of the elastic joint measures q directly. However, achieving the necessary resolution for obtaining $ \dot{q} $ via numerical differentiation is quite difficult in this case.</p>
+<p>2) Intrinsically flexible joint robots are intentionally equipped with a very compliant element (typically, a mechanical spring) between motor and link. Thus, $ \delta $</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><table><tbody><tr><td></td><td>Monitoring method</td><td>Computational effort</td><td>Measurement quantities</td><td>Advantages</td><td>Disadvantages</td></tr><tr><td>Absolute torque</td><td>$\left|\tau_{m}\right|\geq \tau_{m,\max}$</td><td>complexity: *memory: *dual use: no overall: *</td><td>$\tau_{m}=K_{i}i_{m}$</td><td>- extremely simple- needs only $i_{m}$</td><td>- heuristic- friction dependent- low sensitivity- no isolation/identification</td></tr><tr><td>Torque change</td><td>$\left|\dot{\tau}_{m}\right|\geq \dot{\tau}_{m,\max}$</td><td>complexity: *memory: *dual use: no overall: *</td><td>$\tau_{m}=K_{i}i_{m}$ $\dot{\tau}_{m}=K_{i}\dot{i}_{m}$</td><td>- extremely simple- needs only $i_{m}$</td><td>- heuristic- friction dependent- low sensitivity- $\dot{i}_{m}$ required- no isolation/identification</td></tr><tr><td>Torque tube</td><td>$\hat{\tau}_{\mathrm{ext}}\approx \tau_{m,\mathrm{ref}}-\tau_{m}$</td><td>complexity: *memory: *****dual use: no overall: **</td><td>$\tau_{m}=K_{i}i_{m}$</td><td>- simple- model free- friction independent</td><td>- controller/trajectory dependent- only suitable for accurate tracking- needs prior execution- large data storage</td></tr><tr><td>Energy observer</td><td>Eq. (26)property: Eq. (27)</td><td>$\frac{1}{2}\dot{q}^{T}\mathrm{NE}_{0}(q,0,\dot{q})$complexity: **memory: **dual use: partly overall: **</td><td>$\tau_{m}=K_{i}i_{m}q,\dot{q}$</td><td>- simple- only $M(q)\dot{q}$, no inversion- some identification</td><td>- no detection if- $\dot{q}\equiv 0$- $\mathcal{F}_{\mathrm{ext}}\perp V_{c}$- no isolation</td></tr><tr><td>Direct estimation</td><td>Eq. (31)</td><td>$\mathrm{NE}_{g_{0}}(q,\dot{q},\ddot{q})$complexity: *****memory: *dual use: yes overall: ***</td><td>$\tau_{m}=K_{i}i_{m}q,\dot{q},\ddot{q}$</td><td>- ideal model- moderately complex- only $M(q)$, no inversion- isolation/identification possible</td><td>- $\ddot{q}$ required- full dynamics necessary- friction dependent</td></tr><tr><td>Inverse dynamics</td><td>$\hat{\tau}_{\mathrm{ext}}\approx \hat{\tau}_{m,\mathrm{ff}}-\tau_{m}$$\hat{\tau}_{m,\mathrm{ff}}$ from Eq. (33)</td><td>$\mathrm{NE}_{g_{0}}(q,d,\dot{q},\ddot{q})$complexity: *****memory: **dual use: no overall: *****</td><td>$\tau_{m}=K_{i}i_{m}$</td><td>- no position sensor dependency- isolation/identification possible- feedforward computed anyway</td><td>- controller/trajectory dependent- calculate dynamics twice</td></tr><tr><td>Velocity observer</td><td>Eq. (38)property: Eq. (41)</td><td>$\mathrm{NE}_{g_{0}}(q,\dot{q},0)$$n\times \mathrm{NE}_{0}(q,\dot{q},e_{i})$$\hat{M}^{-1}$complexity: *****memory: *dual use: partly overall: *****</td><td>$\tau_{m}=K_{i}i_{m}q,\dot{q}$</td><td>- $\ddot{q}$ not needed- isolation/identification possible- further use for state recovery</td><td>- sensitivity depends on $q$- full dynamics required</td></tr><tr><td>Momentum observer</td><td>Eq. (46)property: Eq. (47)</td><td>$\mathrm{NE}_{g_{0}}(q,\dot{q},0)$$n\times \mathrm{NE}_{0}(q,0,\dot{q},e_{i}/T_{s})$$\mathrm{NE}_{0}(q,0,\dot{q})$OR customized dynamicsOR$\mathrm{NE}_{g_{0}}(q,\dot{q},0)$$n\times \mathrm{MNE}_{0}(q,\dot{q},e_{i},0)$$\mathrm{NE}_{0}(q,0,\dot{q})$complexity: *****memory: *dual use: partly overall: *****</td><td>$\tau_{m}=K_{i}i_{m}q,\dot{q}$</td><td>- $\ddot{q}$ not needed- isolation possible- only $M(q)$, no inversion- sensitivity independent of $q$</td><td>- full dynamics necessary- $\dot{M}(q)$ required(or $n$ calls of modified NE for $C^{T}(q,\dot{q})$)</td></tr></tbody></table></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><div>
+
+This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903
+
+</div>
+<table><tbody><tr><td></td><td>Monitoring method</td><td>Measurement quantities</td></tr><tr><td>Absolute joint torque</td><td>$|\tau_{J}| \geq \tau_{J,\max}$</td><td>$\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)$</td></tr><tr><td>Joint torque change</td><td>$|\dot{\tau}_{J}| \geq \dot{\tau}_{J,\max}$</td><td>$\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)\dot{\tau}_{J} \vee \hat{\dot{\tau}_{J}}=\hat{K}_{J}(\dot{\theta}-\dot{q})$</td></tr><tr><td>Joint torque tube</td><td>$\hat{\tau}_{\mathrm{ext}} \approx \tau_{J,\mathrm{ref}}(t)-\tau_{J}(t)$</td><td>$\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)$</td></tr><tr><td>Energy observer</td><td>Subst. $\tau_{m}$ with $\tau_{J}$ in Eq. (26)property: Eq. (27)</td><td>$q \vee \hat{q}=\theta-\hat{K}_{J}^{-1}\tau_{J}\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)\dot{q} \vee \hat{q}=\dot{\theta}-\hat{K}_{J}^{-1}\dot{\tau}_{J}$</td></tr><tr><td>Direct estimation</td><td>Subst. $\tau_{m}$ with $\tau_{J}$ in Eq. (31)</td><td>$q \vee \hat{q}=\theta-\hat{K}_{J}^{-1}\tau_{J}\ddot{q} \vee \hat{\dot{q}}=\ddot{\theta}-\hat{K}_{J}^{-1}\ddot{\tau}_{J}\dot{q} \vee \hat{\dot{q}}=\dot{\theta}-\hat{K}_{J}^{-1}\dot{\tau}_{J}\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)$</td></tr><tr><td>Inverse dynamics</td><td>$\hat{\tau}_{\mathrm{ext}} \approx \hat{\tau}_{J,\mathrm{ff}}-\tau_{J}$Eq. (33) yields $\hat{\tau}_{J,\mathrm{ff}}$, not $\hat{\tau}_{m,\mathrm{ff}}$</td><td>$\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)$</td></tr><tr><td>Velocity observer</td><td>Subst. $\tau_{m}$ with $\tau_{J}$ in Eq. (38)property: Eq. (41)</td><td>$q \vee \hat{q}=\theta-\hat{K}_{J}^{-1}\tau_{J}\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)\dot{q} \vee \hat{q}=\dot{\theta}-\hat{K}_{J}^{-1}\dot{\tau}_{J}$</td></tr><tr><td>Link momentum observer</td><td>Eq. (67)property: Eq. (68)</td><td>$q \vee \hat{q}=\theta-\hat{K}_{J}^{-1}\tau_{J}\tau_{J} \vee \hat{\tau}_{J}=\hat{K}_{J}(\theta-q)\dot{q} \vee \hat{q}=\dot{\theta}-\hat{K}_{J}^{-1}\dot{\tau}_{J}$</td></tr><tr><td>Total momentum observer</td><td>Eq. (70)property: Eq. (68)</td><td>$\theta,\dot{\theta}\quad q \vee \hat{q}=\theta-\hat{K}_{J}^{-1}\tau_{J}\dot{q} \vee \hat{q}=\dot{\theta}-\hat{K}_{J}^{-1}\dot{\tau}_{J}$</td></tr></tbody></table>
+<p>COLLISION MONITORING METHODS FOR ROBOTS WITH FLEXIBLE JOINTS</p>
+<p>becomes significant and can be measured with sufficient accuracy. In these robots, two position sensors (e.g. encoders) measure $ \theta $ and q, respectively. For the linear elastic case, i.e., $ K_{J} $ constant, the joint torque is then estimated as $ \hat{\tau}<em>{J}=\hat{K}</em>{J}(\theta-q). $ This case is commonly referred to as Series Elastic Actuation (SEA) [66]. However, the same arguments hold also for nonlinear joint torque/deflection characteristics and variable stiffness joints, where the joint torque estimate takes forms such as $ \hat{\tau}<em>{J}=\hat{k}</em>{J}(\theta, q, u_{m}). $ There, $ u_{m} $ is an additional control input that serves the modification of the elastic behavior of the joint via a second actuator.</p>
+<p>Despite the significant differences in the mechanical design and in the sensing principle used to obtain full state measurements, the extension of the collision monitoring schemes from rigid robots to the above classes of flexible joint robots is rather straightforward, thanks also to the physically motivated approaches that we have taken.</p>
+<p>As a matter of fact, all methods from Sec. III can be directly applied to flexible joint robots with joint torque sensing (or estimation), by just substituting $ \tau_{m} $ with $ \tau_{J} $ (or $ \hat{\tau}<em>{J} $ ) and using everywhere the link position q (or $ \hat{q} $ ) and not the motor position $ \theta $ . An essential advantage of measuring $ \tau</em>{J} $ directly (or accurately estimating it), is to decouple the collision monitoring problem from the friction $ \tau_{F,\theta} $ acting on the motor side. Moreover, since the link dynamics (16) and the motor dynamics (17) are coupled only via $ \tau_{J} $ , it is sufficient to consider the link dynamics alone for monitoring collisions. Stated differently, $ \tau_{J} $ can be regarded as the system input in the link dynamics (16).</p>
+<p>As an example, the momentum observer for rigid robots becomes the link side momentum observer of the flexible joint</p>
+<p>case, taking the form</p>
+<div class="formula">$$
+\boldsymbol {r} = \boldsymbol {K} _ {O} \left(\hat {\boldsymbol {p}} _ {q} (t) - \int_ {0} ^ {t} \left(\boldsymbol {\tau} _ {J} - \hat {\boldsymbol {\beta}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right) \mathrm {d} t - \hat {\boldsymbol {p}} _ {q} (0)\right)
+$$</div>
+<div class="formula">$$
+\dot {\boldsymbol {r}} = \boldsymbol {K} _ {O} \left(\boldsymbol {\tau} _ {\mathrm {e x t}} - \boldsymbol {r}\right),
+$$</div>
+<p>with $ \hat{p}<em>{q}=\hat{M} ( q ) \dot{q}. $ Note that (67) has exactly the same form as (46), except for substituting $ \tau</em>{m} $ with $ \tau_{J} $ , whereas (68) is identical to (47).</p>
+<p>Table II compares all collision monitoring schemes for flexible joint robots. In particular, the column with measurement quantities shows the user's choices for measuring and/or estimating the required signals for robots with elastic or intrinsically flexible joints ( stands for logical OR). Note that the possibility of estimating the link position, velocity, and acceleration via the iterative scheme from [65] is omitted for brevity.</p>
+<p>The only method that does not require joint torque sensing (or estimation) is the total momentum observer. This is an extension of the monitoring method based on the link momentum: instead of observing $ p_{q} $ only, it observes the total momentum $ p_{\mathrm{tot}} $ of the robot, which is defined from (21) as</p>
+<div class="formula">$$
+\boldsymbol {p} _ {\mathrm {t o t}} = \boldsymbol {p} _ {q} + \boldsymbol {p} _ {\theta} = M (\boldsymbol {q}) \dot {\boldsymbol {q}} + B \dot {\boldsymbol {\theta}}.
+$$</div>
+<p>Defining</p>
+<div class="formula">$$
+\boldsymbol {r} = \boldsymbol {K} _ {O} \left(\hat {\boldsymbol {p}} _ {\mathrm {t o t}} - \int_ {0} ^ {t} \left(\boldsymbol {\tau} _ {m} - \hat {\boldsymbol {\beta}} (\boldsymbol {q}, \dot {\boldsymbol {q}}) + \boldsymbol {r}\right) \mathrm {d} s - \hat {\boldsymbol {p}} _ {\mathrm {t o t}} (0)\right),
+$$</div>
+<p>leads again to the same first-order behavior with constant filter frequency as in (68). However, the estimation does not depend on $ \tau_{J} $ , i.e., a joint torque sensor is no longer required. In turn, this method is again sensitive to $ \tau_{F,\theta} $ and</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>would thus be a suboptimal choice for highly geared robots. Nonetheless, we point out that the residual-based approach can be independently applied also to the motor dynamics (17), so as to provide a model-less estimate also of $ \tau_{F,\theta} $ . This has been proposed in [67], and used therein to compensate online the motor side friction.</p>
+<p>In summary, due to reasons analog to the rigid case, the link momentum observer is the best choice for handling collision detection, isolation, and identification with proprioceptive sensing only also for flexible joint robots. An accurate estimation of the external joint torques is obtained, without depending on particular controllers or trajectories nor on motor side friction. Furthermore, no acceleration measures nor estimates or inversion of the robot mass matrix are required. Indeed, a rather accurate robot dynamic model is needed and its terms have to be evaluated in real time. However, evaluating the full robot dynamics, which can be easily done nowadays at kHz rates, is required anyway for accurate model-based motion control.</p>
+<p>Finally, it should be noted that the extension to robots having intrinsically flexible joints with variable stiffness is straightforward as well, and is not considered here for brevity (see, e.g., [57], [68], [69]).</p>
+<h2>VII. EXPERIMENTAL EVALUATION</h2>
+<p>Having now determined the best method to solve the context independent phases of the collision event pipeline for both rigid and flexible robots, we will further elaborate the properties of the velocity and momentum observers. For this, we first compare the dynamics and the impact of parasitic effects on the detection performance. Then, we discuss some performance and timing properties of the link momentum observer in detail by analyzing suitable simulations and experiments. Thereafter, collision detection with the energy observer and, respectively, collision detection and isolation with the link momentum observer are validated in new experiments compared to our previous works. Despite that the presented experiments were carried out with elastic joint robots that are equipped with joint torque sensing, similar conclusions can be drawn for other robot classes.</p>
+<h2>A. Observer dynamics velocity and link momentum observer</h2>
+<p>The influence of $ M ( q ) $ on the dynamics of the velocity observer (37) is demonstrated by the following exemplary simulation. Figure 6 (top) depicts the results for $ \mu_{3} $ of the LWR (flexible joint dynamics) with observer gains $ k_{O,i}=1 5 \mathrm{s}^{-1} $ and an unknown external joint torque. The observer is affected by $ M ( q ) $ resulting in a configuration-dependent behavior, and thus in a difficult tuning of the observer dynamics. The plot depicts the results for $ \tau_{\mathrm{e x t},3}=1 0 \mathrm{N m} $ when $ 1 0 \leq t \leq 8 0 \mathrm{m s} $ at initial conditions $ q_{0 1}=\left(0,0,0,0,0,0,0\right) $ rad and $ q_{0 2}=\left(0,1. 3,0,1. 3,0,1,0\right) $ rad. On the one hand, the current configuration clearly influences the observer dynamics. On the other hand, the nonlinear coupling by $ M ( q ) $ leads to a deformation of the transient behavior. In contrast, the dynamics of the momentum observer (44) does not depend on the robot configuration, see Fig. 6 (bottom).</p>
+<div>
+
+Fig. 6. External joint torque $ \tau_{\mathrm{ext},3} $ and its estimation $ \mu_{3} $ for the velocity observer (top, $ k_{O,i}=1 5 \mathrm{s}^{-1} $ ) and the momentum observer (bottom, $ k_{O,i}=1 5 0 \mathrm{s}^{-1} $ ) at two different initial configurations: $ q_{01}= $ (0,0,0,0,0,0,0) $ ^{T} $ rad and $ q_{02}= $ (0,1.3,0,1.3,0,1,0) $ ^{T} $ rad.
+
+</div>
+<h2>B. Observer errors and thresholding</h2>
+<p>In general, one of the challenges when implementing collision detection algorithms is tuning of the detection thresholds. In observer-based methods, model uncertainties such as unknown friction torques, quantization effects, measurement noise, or delay are generally included in the torque/joint torque estimations and thus result in $ \mu\neq0 $ even for $ \tau_{\mathrm{ext}}=0. $ In order to compare the robustness of the velocity and the momentum observer, a simulation of robot movements was carried out for the LWR III (flexible joint dynamics), taking into consideration the following effects:</p>
+<ul>
+<li>The measurement of $ \theta $ is quantized with a resolution of 400 increments on the motor side and filtered with a first-order filter (cut-off frequency $ f_{\theta}=300\mathrm{Hz} $).</li>
+</ul>
+<ul>
+<li>The measurement of $ \tau_{J} $ is affected by uniformly distributed noise of $ \pm 0.3 $ Nm, a hysteresis (width $ \Delta \tau_{\mathrm{hys}}= $ 0.2 Nm), quantization of 12 Bit resolution and filtered with a first order filter (cut-off frequency $ f_{\tau_{J}}=300\mathrm{Hz} $ ).</li>
+</ul>
+<ul>
+<li>The harmonic drive gears are assumed to produce a ripple torque with amplitude $ \tau_{\mathrm{HD,max}}=0.2 \mathrm{Nm} $ at a frequency, which is twice that of the motor side velocity $ \dot{\theta}. $</li>
+</ul>
+<ul>
+<li>The link side position $q$ is estimated via $ \hat{q}=\theta-\hat{K}<em>{J}\tau</em>{J}. $</li>
+</ul>
+<ul>
+<li>The link side velocity $ \dot{q} $ is calculated by numerical differentiation of the estimated position $ \hat{q} $ and filtered with a first-order filter (cut-off frequency $ f_{\dot{q}}=300\mathrm{Hz} $).</li>
+</ul>
+<ul>
+<li>The link side Coulomb friction torque $ \boldsymbol{\tau}<em>{f</em>{\dot{q}}} $ is considered with $ \boldsymbol{\tau}<em>{f</em>{\dot{q}}}=\pm 0.5 $ Nm.</li>
+</ul>
+<ul>
+<li>The estimated end-effector mass considered in $ \hat{M} (q), $ $ \hat{c} (q,\dot{q}) $ , and $ \hat{g} (q) $ is only 50 % of the real mass.</li>
+</ul>
+<ul>
+<li>The measurements of $ \theta $ and $ \tau_{J} $ are delayed by $ t_{d,\theta}= $ 1 ms and $ t_{d,\tau_{J}}=1 $ ms respectively.</li>
+</ul>
+<p>Figure 7 depicts the results for $ k_{O,i}=2 5 \mathrm{s}^{-1} $ an initial position $ q_{0}=(0,0.79,0,1.57,0,0.61,0.79) $ rad and a sinusoidal desired position around $ q_{0} $ with an amplitude of 0.6 rad and frequencies in the range of $ 0.75\leq \omega \leq 1.6 $ rad/s varying for the different axes. The effects mentioned above are enabled for $ 1 \mathrm{s}&lt;t&lt;4 \mathrm{s} $ . It can be seen that both observers work well under ideal conditions whereas, considerable differences appear under realistic conditions. The behavior of both observers is comparable for axes 3 and 4, whereas the velocity observer shows slightly better performance in axes 1 and 2. In axes 5, 6 and 7, however, the momentum observer allows much smaller thresholds for detecting external joint torques.</p>
+<p>Further evaluations have shown that the effect of $ \hat{q} $ can be</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><div>
+
+Fig. 7. External joint torque estimation in all seven joints during sinusoidal motion of the LWR for $ \boldsymbol{\tau}_{\mathrm{ext}}= \mathbf{0} $ under ideal conditions for $ t &lt; 1 $ s and $ t &gt; 4 $ s and under perturbed conditions for $ 1 \mathrm{s} &lt; t &lt; 4 \mathrm{s} $ .
+
+</div>
+<p>neglected compared to the parasitic effects on the measurements of $ \tau_{J} $ and $ \dot{q} $ . Figure 8 depicts a detailed analysis by simulating the estimation $ \mu_{2} $ of the momentum observer for axis 2, when only one effect at a time is taken into consideration. Moreover, all simulations were carried out without any measurement noise since its effect depends strongly on the used filters. Thus, it can not be distinguished from other effects. In summary, $ f_{\tau_{J}} $ and $ f_{\dot{q}} $ as well as $ t_{d,\tau_{J}} $ have the most significant influence and require special care in the system design and practical implementation.</p>
+<h2>C. Performance of the link momentum observer</h2>
+<p>1) Desired monitoring bandwidth: In order to ensure the highest quality of estimation of the collision joint torque $ \tau_{\mathrm{e x t}} $ the largest possible $ K_{O} $ should obviously be chosen. However, noise deteriorates the monitoring signal and in practice $ K_{O} $ is limited from above. To assess the best tradeoff, we should analyze the behavior of $ \mu $ , i.e., $ r $ in (67), with respect to the observer gain $ K_{O} $ , and verify how well the true external joint torques can be estimated in a realistic (worst case) rigid collision.</p>
+<p>For evaluating the influence of $ K_{O} $ on the transient behavior of the observer for a very wide range of values of $ K_{O} $ , a simulation study of impacts between the DLR/KUKA LWR and a human head has been carried out, using the complete flexible joint dynamic model for the robot and the following data for the human head: frontal head stiffness $ K_{H}=10^{5} $ N/m, head mass $ M_{H}=4.5 $ kg. Figure 9 depicts the simplified operational space model along the instantaneous unit collision direction $ u $ [70]. The robot is in the stretched configuration （ $ q=0 $ ）when it hits the head with its last link $ ( i_{c}=7) $ at a collision velocity $ | \dot{x}_{c}| \approx 2 $ m/s. Along the</p>
+<div>
+
+Fig. 8. Influence of different disturbing effects on $ \mu_{2} $
+
+</div>
+<p>impact direction u the reflected link and motor inertias are $ M_{x}\approx 4 $ kg and $ B_{x}\approx 13 $ kg, respectively. The reflected joint stiffness is $ K_{J,x}\approx 7000 $ N/m. The maximum collision force is $ | f_{\mathrm{ext}}|<em>{\mathrm{max}}\approx 500 $ N. Figure 10 shows the time evolution (in the first 40 ms after the collision) of the two components of $ \mu $ associated to the second and fourth robot joints, for different values of $ K</em>{O} $ and in comparison with the actual $ \tau_{\mathrm{ext}} $ . For a fast and almost ideal collision detection, assuming a non-zero but small threshold $ \epsilon_{\mu} $ , the gain $ K_{O} $ should be set to at least $ 500\mathrm{s}^{-1} $ in order to make the measure $ \mu $ increase almost immediately after the collision. However, for the robot considered in the experiments that have been carried out, the diagonal entries of $ K_{O} $ may take in practice values between $ 25\mathrm{s}^{-1} $ and a maximum of $ 75\mathrm{s}^{-1} $ . While simulations were performed under ideal conditions (i.e., exact model and no noise), noisy sensors, model uncertainties, as well as communication delays induce the upper bound in real applications. In turn, heavier filtering would lead to lower (delayed) detection, isolation, and identification performance.</p>
+<p>2) Signal timing: Further important characteristics of collision handling based on joint torque sensing and link position estimation in flexible joint robots can be unveiled when taking a closer look at the timing of relevant signals. For this, a real collision between the DLR/KUKA LWR robot and the frontal head area of a Hybrid III crash-test dummy has been conducted emulating a high speed collision between robot and human (Fig. 11).</p>
+<p>For an impact at $ t=1 $ ms with an end-effector velocity of 2 m/s, Figure 12 shows the time evolution of some rele-</p></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 9. Hard collision between robot and human head (top) and dynamic model in the operational space (bottom).
+
+</div>
+<div>
+
+Fig. 10. Comparison between the external joint torque $ \boldsymbol{\tau}_{\mathrm{ext}} $ and the momentum-based monitoring signals $ \boldsymbol{\mu} $ for different values of $ K_{O}= $ diag $ \{k_{O,i}\} $ at joint 2 (left) and 4 (right) in the flexible joint robot-human head collision simulation of Fig. 9.
+
+</div>
+<p>vant signals in the first few ms. They are all normalized to their maximum value attained during the collision experiment (normalized quantities are labeled by an asterisk): the contact force $ f_{\mathrm{ext}} $ measured via a high-speed, 20 kHz bandwidth force sensor; the measured joint torque $ \tau_{J} $ at joint 4; the estimation of the external torque $ \tau_{\mathrm{ext}} $ at joint 4 caused by $ f_{\mathrm{ext}} $ ; and finally, the binary collision detection signal $ cd(\boldsymbol{\mu}) $</p>
+<p>The robot-head contact lasts for about 10 ms. Most noticeably, $ \hat{\tau}<em>{\mathrm{ext}}^{<em>} $ starts raising significantly only about 5 ms later than $ f_{\mathrm{ext}}^{</em>} $ , which leads also to $ cd(\mu)=TRUE $ with the same delay. Ideally, when no structural elasticities were present, one could indeed detect a collision instantaneously by setting $ \epsilon</em>{\mu}\approx0 $ . However, joint torque measurement (with designated joint torque sensors or by evaluating the joint deformation)</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 11. Collision experiment (DLR/KUKA LWR and Hybrid III dummy).
+
+</div>
+<div>
+
+Fig. 12. Timing of relevant normalized （ $ ^{*} $ ）signals for an impact experiment between a DLR/KUKA LWR robot and a Hybrid III Dummy at 1 kHz recording time.
+
+</div>
+<p>and lightweight design introduce structural joint and link flexibility. The unmodeled link flexibility would lead to false detection positives. Therefore, non-negligible positive collision thresholds $ \epsilon_{\mu} $ have to be used and exceeded before a collision can be reliably detected. Furthermore, the reflected joint stiffness $ K_{J,x} $ is significantly lower than the stiffness $ K_{H} $ of the dummy frontal area. Thus, the robot links will act as a mechanical low-pass filter placed before the position and joint torque sensor locations. In turn, $ \tau_{J}^{<em>} $ , which is the input to the observer, will react in a delayed fashion to a change in $ f_{\mathrm{ext}}^{</em>} $ . Since link position and velocity are usually estimated via $ \hat{q}=\theta-K_{J}^{-1}\tau_{J} $ and $ \dot{\hat{q}}=\dot{\theta}-K_{J}^{-1}\dot{\tau}_{J} $ they will suffer from the same delayed response. In fact, the measured joint torque and its derivative, both scaled by the inverse of the large joint stiffness, are the dominant factors in the rate of change of link position and velocity estimates, respectively. In combination with the presence of a positive detection threshold, this causes a significant delay in detecting the collision, since the monitoring signal activates only as soon as the measurements start reacting to the impact.</p>
+<p>Before the collision is detected, the joint torque $ \tau_{J}^{<em>} $ is almost zero because the robot moves at constant velocity without acceleration. After the collision, $ cd(\mu) $ remains true even after the contact force vanished. Indeed, $ cd(\mu) $ will return to false when normal robot operation is resumed, according to the reaction strategy. The estimated external joint torque $ \hat{\tau}_{\mathrm{ext}}^{</em>} $ represents a sort of impulse response of the sensor and observer filter characteristics and does not significantly decrease (following $ f_{\mathrm{ext}}^{<em>} $ ) within the shown, extremely short time interval. The joint torque $ \tau_{J}^{</em>} $ does not immediately return to zero (following $ f_{\mathrm{ext}}^{*} $ ) but indicates the reaction of the mechanical structure to the impact, in this case a damped oscillation.</p>
+<h2>D. Collision detection with energy observer</h2>
+<p>In order to showcase in a single experiment all aspects of the energy-based observer, as elaborated in Sec. III-A and in Tab. II, we have considered the effects of collisions while a DLR/KUKA LWR was at rest for most of the time or was moving along a straight line in the $ ( x,y) $ -plane under a Cartesian impedance control law during specific time intervals. Figure 13 shows the obtained results, reporting the desired and actual robot Cartesian motion (the two components of the Cartesian position $ \boldsymbol{x} $ and velocity $ \dot{\boldsymbol{x}} $ in the horizontal plane), the external contact force $ f_{\mathrm{ext}} $ , the scalar collision monitoring signal $ \mu $ , as given by (28) with $ \tau_{J} $ replacing $ \tau_{m} $ , and finally the detection sensitivity measure $ s=|f_{\mathrm{ext}}^{T}\dot{x}|. $</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><div>
+
+Fig. 13. Experimental behavior of the collision detection based on the energy observer. From the top: desired $ \boldsymbol{x}_{d} $ (continuous line) and actual Cartesian collision position (dashed line) $ \boldsymbol{x} $ ; desired $ \dot{x}_{d} $ and actual Cartesian collision velocity $ \dot{x} $ ; external contact force $ \boldsymbol{f}_{\mathrm{ext}} $ measured via a wrist force/torque sensor; monitoring signal $ \mu $ ; sensitivity s of the detection scheme.
+
+</div>
+<p>The series of experimental phases indicated by A-F are characterized by the following behaviors.</p>
+<ul>
+<li>Phase A: The external force is correctly recognized by the detection scheme, as it acts against the motion direction while the robot moves. The minimal delay between external force and collisions detection is not visible in the used time scale.</li>
+</ul>
+<ul>
+<li>Phase B: No external force is applied; the robot is at rest.</li>
+</ul>
+<ul>
+<li>Phase C: The external force applied in the $ ( x,y) $ plane increases gradually during standstill, but it cannot be detected since the robot does not move, thus $ s\approx0. $</li>
+</ul>
+<ul>
+<li>Phase D: The robot starts moving again, which immediately leads to an increase in sensitivity s and consequently in the monitoring signal $ \mu $</li>
+</ul>
+<ul>
+<li>Phase E: While the robot is at rest, a strong force is applied in the z-direction, without being detected.</li>
+</ul>
+<ul>
+<li>Phase F: The robot moves again, while the z-force is still being applied. However, since it acts orthogonally to the motion vector, it cannot be recognized (s $ \approx $ 0).</li>
+</ul>
+<h2>E. Collision detection/isolation with link momentum observer</h2>
+<p>The experimental setup of the collision detection and isolation experiment using the link momentum observer (67) is shown in Fig. 14. The DLR/KUKA LWR robot moves joints 2, 4, and 6, under full state feedback joint position control law with gravity compensation at maximum speeds between 50 and $ 8 0 \, \mathrm{^\circ / s} $ . The desired trajectory is a rest-to-rest 5th-order polynomial with total motion time $ T=2 $ s. The remaining four joints are all kept fixed at $ q_{i}=0 $ , for $ i=1,3,5,7. $</p>
+<p>Figure 15 shows the desired and measured joint position and velocity during the time interval $ 1. 2 \leq t \leq 1. 8 $ s.Around</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 14. Collision detection and isolation experiment with the link momentum observer (67).
+
+</div>
+<p>the instant of maximum trajectory speed at $ t\approx 1. 3 \mathrm{s} $ , the human blocks the motion with his hand by hitting the robot at link 4. As soon as the collision is detected, the desired velocity switches to zero, i.e., a controlled emergency stop is activated (in fact the simplest possible reaction strategy, see [40]). The robot instantaneously executes the desired stop and brings itself to rest in about 200 ms.</p>
+<div>
+
+Fig. 15. Experimental behavior of the collision detection and isolation scheme based on the link momentum observer (67) for the experiment in Fig. 14. Desired and actual position (top) and velocity (bottom) of joints 2, 4, and 6 (the first 1.2 s of the rest-to-rest motion trajectory are omitted).
+
+</div>
+<p>Figure 16 illustrates the monitoring joint torques $ \mu $ , together with the binary collision detection signals $ cd(\mu) $ and constant thresholds $ \epsilon_{\mu} $ . The latter were set to be $ \epsilon_{\mu}=0.05\cdot \tau_{J,\max} $ where $ \tau_{J,\max}=[1801808080353535]^{T} $ Nm. This is a rather sensitive threshold, which however does not lead to any false positives over the entire workspace. The monitoring signals at joints 2 and 4 indicate a collision, while those at joints 1 and 3 remain silent, since the Cartesian contact force does not produce action on these joint axes. Equation (58) provides $ i_{c}=4 $ , so the correct colliding link has been isolated.</p>
+<h2>F. Estimating the external force and contact point</h2>
+<p>The following experiment aims at showing the performance of the contact force isolation and identification schemes from Sec. IV-B and Sec. IV-C. Specifically, a mass of 2.4 kg fixed at the end effector (and unknown to the robot controller) had to be identified during motion. The resulting external wrench</p>
+<div class="formula">$$
+\mathcal {F} _ {\mathrm {e x t}} = \left( \begin{array}{c} f _ {\mathrm {e x t}} \\ 0 \end{array} \right)
+$$</div>
+<p>is estimated based on $ \mu=\hat{\tau}_{\mathrm{ext}} $ from the momentum observer (67) and on the pseudoinversion (61). Figure 17 shows</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><div>
+
+Fig. 16. Monitoring joint torques $ \mu $ , collision detection signals $ cd(\mu) $ , and detection thresholds $ \epsilon_{\mu} $ for joints 1 to 7 in the experiment of Figs. 14-15. According to (58), the collision is correctly isolated at link $ i_{c}=4 $ .
+
+</div>
+<div>
+
+Fig. 17. End-effector position (top), reconstructed constant force (center), reconstructed moment (bottom) caused by a mass of 2.4 kg. Force and moment are expressed with respect to the robot base frame.
+
+</div>
+<p>that the force components $ f_{\mathrm{ext},x}=0 $ $ f_{\mathrm{ext},y}=0 $ , and $ f_{\mathrm{ext},z}=2.4\ g\approx 23.54\mathrm{N} $ are correctly reconstructed by $ \hat{f} $ even during step wise changes of the end-effectors velocity. The estimated moment $ \hat{m} $ is not zero because the given $ \hat{f} $ and $ \hat{m} $ are related to the base frame of the robot. The moment $ \hat{m}_{y} $ therefore varies with the x-position of the robot, which directly influences the lever arm of the external force around the robot base. The z-position is orthogonal to the lever arm and has no impact on the moment.</p>
+<p>Subsequently, in order to demonstrate the ability to reconstruct the collision point, the experiment was extended. A mass of 1kg was successively placed at different distances $ x_{6,c} $ from the center of the robot spherical wrist, see Fig. 18. The</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Fig. 18. A mass of 1 kg is placed on the end-effector (joint 7) at different distances $ x_{6,c} $ from the joint axis 6.
+
+</div>
+<p>following values of $ x_{6,c} $ were tested during the experiment: 0.187 m, 0.237 m, 0.287 m, 0.337 m, 0.387 m, and 0.437 m. During the experiments the robot was at rest.</p>
+<p>As in the previous experiments, the resulting wrench was computed from the estimated external joint torque $ \mu=\hat{\tau}<em>{\mathrm{ext}} $ which was obtained by the generalized momentum observer, see Fig. 19 (top). It can be seen that for the given configuration of the robot only joints 2, 4, and 6 are affected. Consequently, the contact location lies between joint 6 and 7. Alternatively, it lies in positive $ x</em>{6} $ -direction because wrenches of the form (71) do not have any influence on the joint torque in joint 7 when acting on the $ x_{6} $ -axis. Therefore, the estimation of the contact locations is based on</p>
+<div class="formula">$$
+\hat {\mathcal {F}} _ {6} = \left[ \begin{array}{c} \hat {f} _ {6} \\ \hat {m} _ {6} \end{array} \right] = \left(J _ {6} ^ {T} (\boldsymbol {q})\right) ^ {\#} \boldsymbol {\mu}.
+$$</div>
+<p>From (64), the position vector of the line of force action is found as</p>
+<div class="formula">$$
+\boldsymbol {r} _ {6, d} = \left(\boldsymbol {S} ^ {T} \left(\hat {\boldsymbol {f}} _ {6}\right)\right) ^ {\#} \hat {\boldsymbol {m}} _ {6},
+$$</div>
+<p>where</p>
+<div class="formula">$$
+\boldsymbol {S} ^ {T} \left(\hat {\boldsymbol {f}} _ {6}\right) = \left( \begin{array}{c c c} 0 &amp; \hat {f} _ {6, z} &amp; - \hat {f} _ {6, y} \\ - \hat {f} _ {6, z} &amp; 0 &amp; \hat {f} _ {6, x} \\ \hat {f} _ {6, y} &amp; - \hat {f} _ {6, x} &amp; 0 \end{array} \right).
+$$</div>
+<p>Finally, the intersection of the line of force action (represented in the frame of joint 6) $ r_{6,d}+\lambda \hat{f}<em>{6} $ with the robot structure is the estimated contact point. In our case, a contact between joint 6 and 7 can be ruled out by the length of the position vector $ r</em>{6,d} $ . Consequently, the intersection of the line of force action with the robot structure is obtained by solving</p>
+<div class="formula">$$
+\boldsymbol {r} _ {6, d} + \lambda \hat {\boldsymbol {f}} _ {6} = \nu \boldsymbol {e} _ {x _ {6}},
+$$</div>
+<p>where $ e_{x_{6}} $ is the unit vector along the axis $ x_{6} $ . This finally leads to</p>
+<div class="formula">$$
+\binom {\lambda^ {*}} {\nu^ {*}} = \left(- \hat {\boldsymbol {f}} _ {6} \quad \boldsymbol {e} _ {x _ {6}}\right) ^ {\#} \boldsymbol {r} _ {6, d}.
+$$</div>
+<p>The results are depicted in Fig. 19. The estimated force in z-direction corresponds to the unknown mass of 1 kg. The contact point estimation works well, although it provides slightly larger values for the distances between the axis of joint 6 and the contact point. The estimation error</p>
+<div class="formula">$$
+e _ {6, c} = \left\| \boldsymbol {r} _ {6, d} + \lambda^ {*} \hat {\boldsymbol {f}} _ {6} - \nu^ {*} \boldsymbol {e} _ {x _ {6}} \right\|
+$$</div>
+<p>is $ 0. 4 2 \mathrm{c m} \leq e_{6, c} \leq 1. 1 6 \mathrm{c m} $ , i.e., reasonably small and practically useful.</p></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<div>
+
+Fig. 19. Estimated external joint torques $ \boldsymbol{\mu}=\hat{\boldsymbol{\tau}}_{\mathrm{ext}} $ (top), estimated wrench components in frame 6 (middle plots), and estimated vs. actual distance of the mass from the joint axis 6 (bottom), for six different placements of the 1 kg mass on the robot end-effector.
+
+</div>
+<h2>VIII. CONCLUSION</h2>
+<p>The collision event pipeline has been introduced as a formal abstraction for the seven phases of robot collision handling. In particular, we elaborated in this paper on the theoretical foundations of the three context-independent phases, namely collision detection, isolation, and identification. In this single framework, we described common industrial as well as advanced research algorithms for generating collision monitoring signals. All methods rely on proprioceptive information only and were developed both for rigid and flexible joint robots. The state-of-the-art algorithms resort to energy arguments or to the robot generalized momentum. We provided a systematic overview and comparison of all schemes in their use during collision detection, isolation, and identification. Furthermore, we have discussed the computational demands and general advantages and disadvantages of each method. The presented experimental and simulation results support the theoretical findings and provide insight into collision dynamics and its implications on detection speed, as well as the effects of relevant non-idealities.</p>
+<p>It should be noted that within a technology transfer, two of our methods were commercialized. In fact, the collision detection method based on the link momentum observer, which was found to be the best performing one, and the end-effector contact wrench identification algorithm have found their way into the KUKA LBR product family [55] and most recently into FRANKA EMIKA [47]. Our approaches made it possible to apply this new generation of lightweight robots to a large variety of novel tasks in automobile and electronics production and assembly. Processes could be automated, which were fully manual before and our collision handling technology is regarded as the key element for enabling safe physical humanrobot interaction in real-world applications.</p>
+<h2>ACKNOWLEDGMENT</h2>
+<p>would like to particularly thank Torsten Lilge for his support with the revision of the paper. This work has been partially funded by the European Commission within the FP7 project SAPHARI under grant no. 287513, by the European Union Horizon 2020 research and innovation programme under grant agreement no. 688857, and by the Alfred-Krupp Award for young professors.</p>
+<p>We would like to thank Roman Weitschat, Kai Krieger and Lars Johannsmeier for their help with the experiments. We</p>
+<h2>REFERENCES</h2>
+<p>[1] A. Bicchi, M. A. Peshkin, and J. E. Colgate, "Safety for physical humanrobot interaction," in Springer Handbook of Robotics, B. Siciliano and O. Khatib, Eds. Springer, 2008, pp. 1335-1348.</p>
+<p>[2] A. De Santis, B. Siciliano, A. De Luca, and A. Bicchi, "An atlas of physical human-robot interaction," Mechanism and Machine Theory, vol. 43, no. 3, pp. 253-270, 2008.</p>
+<p>[3] J. Frémy, F. Michaud, and M. Lauria, "Pushing a robot along - a natural interface for human-robot interaction," in Proc. IEEE Int. Conf. on Robotics and Automation, 2010, pp. 3440-3445.</p>
+<p>[4] J. Vorndamme, M. Schappler, and S. Haddadin, "Collision detection, isolation and identification for humanoids," in Proc. IEEE Int. Conf. on Robotics and Automation, 2017.</p>
+<p>[5] T. Tomic and S. Haddadin, "Simultaneous estimation of aerodynamic and contact forces in flying robots: Applications to metric wind estimation and collision detection," in Proc. IEEE Int. Conf. on Robotics and Automation, 2015, pp. 5290-5296.</p>
+<p>[6] F. Flacco, A. Paolillo, and A. Kheddar, "Residual-based contacts estimation for humanoid robots," in Proc. 16th IEEE Int. Conf. on Humanoid Robots, 2016, pp. 409-415.</p>
+<p>[7] J.-C. Latombe, Robot Motion Planning. Kluwer, 1991.</p>
+<p>[8] R. Diankov and J. Kuffner, "OpenRAVE: A planning architecture for autonomous robotics," Carnegie Mellon University, Robotics Institute Technical Report CMU-RI-TR-08-34, July 2008.</p>
+<p>[9] I. A. Sucan and S. Chitta. Moveit! (accessed August 31st, 2016). [Online]. Available: http://moveit.ros.org</p>
+<p>[10] E. A. Sisbot and R. Alami, "A human-aware manipulation planner," IEEE Trans. on Robotics, vol. 28, no. 5, pp. 1045-1057, 2012.</p>
+<p>[11] J. Mainprice and D. Berenson, "Human-robot collaborative manipulation planning using early prediction of human motion," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2013, pp. 299-306.</p>
+<p>[12] D. Ebert and D. Henrich, "Safe human-robot-cooperation: Image-based collision detection for industrial robots," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2002, pp. 239-244.</p>
+<p>[13] S. Kuhn and D. Henrich, "Fast vision-based minimum distance determination between known and unknown objects," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2007, pp. 2186-2191.</p>
+<p>[14] F. Flacco, T. Kröger, A. De Luca, and O. Khatib, "A depth space approach to human-robot collision avoidance," in Proc. IEEE Int. Conf. on Robotics and Automation, 2012, pp. 338-345.</p>
+<p>[15] O. Khatib, "Real-time obstacle avoidance for manipulators and mobile robots," Int. J. of Robotics Research, vol. 5, no. 1, pp. 90-98, 1985.</p>
+<p>[16] C. Warren, "Global path planning using artificial potential fields," in Proc. IEEE Int. Conf. on Robotics and Automation, 1989, pp. 316-321.</p>
+<p>[17] O. Brock and O. Khatib, "Elastic strips: A framework for motion generation in human environments," Int. J. Robotics Research, vol. 21, no. 12, pp. 1031-1052, 2002.</p>
+<p>[18] H. Minoura, R. Kijima, and T. Ojika, "Collision avoidance using a virtual electric charge in the electrostatic potential field," in Proc. Int. Conf. on Virtual Systems and MultiMedia, 1996, pp. 289-294.</p>
+<p>[19] J. Roßmann, "On-line collision avoidance for multi-robot systems: A new solution considering the robots' dynamics," in Proc. IEEE/SICE/RSJ Int. Conf. on Multisensor Fusion and Integration for Intelligent Systems, 1996, pp. 249-256.</p>
+<p>[20] P. Ogren, N. Egerstedt, and X. Hu, "Reactive mobile manipulation using dynamic trajectory tracking," in Proc. IEEE Int. Conf. on Robotics and Automation, 2000, pp. 3473-3478.</p>
+<p>[21] N. Ratliff, M. Zucker, J. A. Bagnell, and S. Srinivasa, "CHOMP: Gradient optimization techniques for efficient motion planning," in Proc. IEEE Int. Conf. on Robotics and Automation, 2009, pp. 489-494.</p>
+<p>[22] M. Kalakrishnan, S. Chitta, E. Theodorou, P. Pastor, and S. Schaal, "STOMP: Stochastic trajectory optimization for motion planning," in Proc. IEEE Int. Conf. on Robotics and Automation, 2011, pp. 4569- 4574.</p>
+<p>[23] C. Park, J. Pan, and D. Manocha, "Real-time optimization-based planning in dynamic environments using GPUs," in Proc. IEEE Int. Conf. on Robotics and Automation, 2013, pp. 4090-4097.</p></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><p>IEEE TRANSACTIONS ON ROBOTICS</p>
+<p>[24] K. Suita, Y. Yamada, N. Tsuchida, K. Imai, H. Ikeda, and N. Sugimoto, "A failure-to-safety "Kyozon" system with simple contact detection and stop capabilities for safe human - Autonomous robot coexistence," in Proc. IEEE Int. Conf. on Robotics and Automation, 1995, pp. 3089- 3096.</p>
+<p>[25] Y. Yamada, Y. Hirasawa, S. Huang, Y. Umetani, and K. Suita, "Humanrobot contact in the safeguarding space," IEEE/ASME Trans. on Mechatronics, vol. 2, no. 4, pp. 230-236, 1997.</p>
+<p>[26] S. Takakura, T. Murakami, and K. Ohnishi, "An approach to collision detection and recovery motion in industrial robot," in Proc. 15th Annual Conf. of IEEE Industrial Electronics Soc., 1989, pp. 421-426.</p>
+<p>[27] S. Morinaga and K. Kosuge, "Collision detection system for manipulator based on adaptive impedance control law," in Proc. IEEE Int. Conf. on Robotics and Automation, 2003, pp. 1080-1085.</p>
+<p>[28] K. Kosuge, T. Matsumoto, and S. Morinaga, "Collision detection system for manipulator based on adaptive control scheme," Trans. of the Soc. of Instrument and Control Engineers, vol. 39, pp. 552-558, 2003.</p>
+<p>[29] V. Lumelsky and E. Cheung, "Real-time collision avoidance in teleoperated whole-sensitive robot arm manipulators," IEEE Trans. on Systems, Man and Cybernetics, vol. 23, no. 1, pp. 194-203, 1993.</p>
+<p>[30] M. Strohmayr, "Artificial skin in robotics," PhD Thesis, Karlsruhe Institute of Technology, 2012.</p>
+<p>[31] G. De Maria, C. Natale, and S. Pirozzi, "Force/tactile sensor for robotic applications," Sensors and Actuators A: Physical, vol. 175, pp. 60-72, 2012.</p>
+<p>[32] R. Dahiya, P. Mittendorfer, M. Valle, G. Cheng, and V. Lumelsky, "Directions toward effective utilization of tactile skin: A review," IEEE Sensors J., vol. 13, no. 11, pp. 4121-4138, 2013.</p>
+<p>[33] A. De Luca and R. Mattone, "Sensorless robot collision detection and hybrid force/motion control," in Proc. IEEE Int. Conf. on Robotics and Automation, 2005, pp. 1011-1016.</p>
+<p>[34] A. De Luca, A. Albu-Schäffer, S. Haddadin, and G. Hirzinger, "Collision detection and safe reaction with the DLR-III lightweight manipulator arm," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2006, pp. 1623-1630.</p>
+<p>[35] A. De Luca and R. Mattone, "Actuator fault detection and isolation using generalized momenta," in Proc. IEEE Int. Conf. on Robotics and Automation, 2003, pp. 634-639.</p>
+<p>[36] H.-B. Kuntze, C. Frey, K. Giesen, and G. Milighetti, "Fault tolerant supervisory control of human interactive robots," in Proc. IFAC Work. on Advanced Control and Diagnosis, 2003, pp. 55-60.</p>
+<p>[37] S. Golz, C. Osendorfer, and S. Haddadin, "Using tactile sensation for learning contact knowledge: Discriminate collision from physical interaction," in Proc. IEEE Int. Conf. on Robotics and Automation, 2015, pp. 3788-3794.</p>
+<p>[38] S. Haddadin, A. Albu-Schäffer, and G. Hirzinger, "The role of the robot mass and velocity in physical human-robot interaction - Part I: Unconstrained blunt impacts," in Proc. IEEE Int. Conf. on Robotics and Automation, 2008, pp. 1331-1338.</p>
+<p>[39] ——, "The role of the robot mass and velocity in physical human-robot interaction - Part II: Constrained blunt impacts," in Proc. IEEE Int. Conf. on Robotics and Automation, 2008, pp. 1339-1345.</p>
+<p>[40] S. Haddadin, A. Albu-Schäffer, A. De Luca, and G. Hirzinger, "Collision detection and reaction: A contribution to safe physical human-robot interaction," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2008, pp. 3356-3363.</p>
+<p>[41] A. De Luca and L. Ferrajoli, "Exploiting robot redundancy in collision detection and reaction," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2008, pp. 3299-3305.</p>
+<p>[42] S. Parusel, S. Haddadin, and A. Albu-Schäffer, "Modular state-based behavior control for safe human-robot interaction: A lightweight control architecture for a lightweight robot," in Proc. IEEE Int. Conf. on Robotics and Automation, 2011, pp. 4298-4305.</p>
+<p>[43] A. De Luca and R. Mattone, "An adapt-and-detect actuator FDI scheme for robot manipulators," in IEEE Int. Conf. on Robotics and Automation (ICRA2004), New Orleans, USA, 2004, pp. 4975-4980.</p>
+<p>[44] S. Haddadin, "Evaluation criteria and control structures for safe humanrobot interaction," Master Thesis, Technical University of Munich (TUM) &amp; German Aerospace Center (DLR), 2005.</p>
+<p>[45] J. Vorndamme, M. Schappler, A. Tödtheide, and S. Haddadin, "Collision detection with a hydraulically actuated robot arm," in 8th Int. Work. on Human-Friendly Robotics, 2015. [Online]. Available: http://www.hri.ei.tum.de/fileadmin/w00bsw/www/hfr2015/HFR2015Proceedings.pdf</p>
+<p>[46] KUKA. LBR iiwa. Accessed 2016-07-15. [Online]. Available: http: //www.kuka-lbr-iiwa.com/</p>
+<p>[47] FRANKA EMIKA. This is Franka. Accessed 2017-01-23. [Online]. Available: https://www.franka.de/</p>
+<p>[48] A. Wahrburg, E. Morara, G. Cesari, B. Matthias, and H. Ding, "Cartesian contact force estimation for robotic manipulators using Kalman filters</p>
+<p>and the generalized momentum," in Proc. IEEE Int. Conf. on Automation Science and Engineering, 2015, pp. 1230-1235.</p>
+<p>[49] D. P. Le, J. Choi, and S. Kang, "External force estimation using joint torque sensors and its application to impedance control of a robot manipulator," in Proc. 13th Int. Conf. in Control, Automation and Systems, 2013, pp. 1794-1798.</p>
+<p>[50] R. Murray, Z. Li, and S. Sastry, A Mathematical Introduction to Robotic Manipulation. CRC, 1994.</p>
+<p>[51] B. Vanderborght, A. Albu-Schäffer, A. Bicchi, E. Burdet, D. G. Caldwell, R. Carloni, M. G. Catalano, O. Eiberger, W. Friedl, G. Ganesh, M. Garabini, M. Grebenstein, G. Grioli, S. Haddadin, H. Hoppner, A. Jafari, M. Laffranchi, D. Lefeber, F. Petit, S. Stramigioli, N. G. Tsagarakis, M. V. Damme, R. V. Ham, L. C. Visser, and S. Wolf, "Variable impedance actuators: A review," Robotics and Autonomous Systems, vol. 61, no. 12, pp. 1601-1614, 2013.</p>
+<p>[52] A. De Luca and W. Book, "Robots with flexible elements," in Springer Handbook of Robotics, B. Siciliano and O. Khatib, Eds. Springer, 2008, pp. 287-319.</p>
+<p>[53] M. W. Spong, "Modeling and control of elastic joint robots," ASME J. of Dynamic Systems, Measurements, and Control, vol. 109, no. 4, pp. 310-319, 1987.</p>
+<p>[54] A. Albu-Schäffer, S. Haddadin, C. Ott, A. Stemmer, T. Wimbock, and G. Hirzinger, "The DLR lightweight robot - Lightweight design and soft robotics control concepts for robots in human environments," Industrial Robot, vol. 34, no. 5, pp. 376-385, 2007.</p>
+<p>[55] R. Bischoff, J. Kurth, G. Schreiber, R. Koeppe, A. Albu-Schäffer, A. Beyer, O. Eiberger, S. Haddadin, A. Stemmer, G. Grunwald, and G. Hirzinger, "The KUKA-DLR lightweight robot arm: A new reference platform for robotics research and manufacturing," in Proc. 41st Int. Symp. on Robotics, 2010, pp. 1-10.</p>
+<p>[56] A. De Luca, D. Schröder, and M. Thümmel, "An acceleration-based state observer for robot manipulators with elastic joints," in Proc. IEEE Int. Conf. on Robotics and Automation, 2007, pp. 3817-3823.</p>
+<p>[57] S. Haddadin, Towards Safe Robots - Approaching Asimov's 1st Law, ser. Springer Tracts in Advanced Robotics. Springer, 2014, vol. 90.</p>
+<p>[58] O. Foellinger, Regelungstechnik. Huethig, 1992, (in German).</p>
+<p>[59] A. De Luca and L. Ferrajoli, "A modified Newton-Euler method for dynamic computations in robot fault detection and control," in Proc. IEEE Int. Conf. on Robotics and Automation, 2009, pp. 3359-3364.</p>
+<p>[60] V. Sotoudehnejad, A. Takhmar, M. Kermani, and I. Polushin, "Counteracting modeling inaccuracies in torque observer-based collision detection using time-variant thresholds," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2012, pp. 4315-4320.</p>
+<p>[61] R. Isermann, Fault-Diagnosis Systems. Springer, 2006.</p>
+<p>[62] L. Manuelli and R. Tedrake, "Localizing external contact using proprioceptive sensors: The contact particle filter," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2016, pp. 5062-5069.</p>
+<p>[63] M. Fumagalli, S. Ivaldi, M. Randazzo, L. Natale, G. Metta, G. Sandini, and F. Nori, "Force feedback exploiting tactile and proximal force/torque sensing," Autonomous Robots, vol. 33, no. 4, pp. 381-398, 2012.</p>
+<p>[64] E. Magrini, F. Flacco, and A. De Luca, "Estimation of contact forces using a virtual force sensor," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2014, pp. 2126-2133.</p>
+<p>[65] A. Albu-Schäffer, C. Ott, and G. Hirzinger, "A unified passivity-based control framework for position, torque and impedance control of flexible joint robots," Int. J. of Robotics Research, vol. 26, pp. 23-39, 2007.</p>
+<p>[66] G. Pratt and M. Williamson, "Series elastic actuators," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 1995, pp. 399- 406.</p>
+<p>[67] L. Le Tien, A. Albu-Schäffer, A. De Luca, and G. Hirzinger, "Friction observer and compensation for control of robots with joint torque measurement," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2008, pp. 3789-3795.</p>
+<p>[68] A. De Luca, F. Flacco, A. Bicchi, and R. Schiavi, "Nonlinear decoupled motion-stiffness control and collision detection/reaction for the VSA-II variable stiffness device," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2009, pp. 5487-5494.</p>
+<p>[69] S. Haddadin, A. Albu-Schäffer, O. Eiberger, and G. Hirzinger, "New insights concerning intrinsic joint elasticity for safety," in Proc. IEEE/RSJ Int. Conf. on Intelligent Robots and Systems, 2010, pp. 2181-2187.</p>
+<p>[70] O. Khatib, "Inertial properties in robotic manipulation: An object-level framework," Int. J. of Robotics Research, vol. 14, no. 1, pp. 19-36, 1995.</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><p>This is the author's version of an article that has been published in this journal. Changes were made to this version by the publisher prior to publication. The final version of record is available at http://dx.doi.org/10.1109/TRO.2017.2723903</p>
+<p>HADDADIN et al.: ROBOT COLLISIONS: A SURVEY ON DETECTION, ISOLATION, AND IDENTIFICATION</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Sami Haddadin is Full Professor and Director of the Institute of Automatic Control at Leibniz University Hannover, Germany. He received degrees in EE, CS and Technology Management from TUM and LMU. He obtained his PhD from RWTH Aachen. He organized/edited several international robotics conferences and journals and published more than 120 scientific articles. His research topics include physical Human-Robot Interaction, nonlinear robot control, real-time motion planning, real-time task and reflex planning, robot learning, optimal control,</p>
+<p>human motor control, variable impedance actuation, and safety in robotics. He received numerous awards at the top international robotics conferences and journals. Among other things, he is a recipient of the 2015 IEEE/RAS Early Career Award, the 2015 RSS Early Career Spotlight, the 2015 Alfried Krupp Award and was selected in 2015 and 2016 as Capital Young Elite Leader under 40 in Germany for the domain "Politics, State &amp; Society".</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Alessandro De Luca is a Full Professor of Robotics and Automatic Control at the Dipartimento di Ingegneria Informatica, Automatica e Gestionale (DIAG) of Sapienza Universita di Roma since the year 2000. In 2005-06, he spent a sabbatical period at the Institute of Robotics and Mechatronics of DLR, Oberpaffenhofen, with a Helmholtz-Humboldt Research Award for foreign scientists, where the research in this paper was initiated. His research interests include dynamic modeling, motion planning and control of robots, in particular of manipulators with</p>
+<p>elastic joints or flexible links and of kinematically redundant robotic systems, and safe control of physical human-robot interaction. He has been an Editor (1998-2003) and Editor-in-Chief (2003-04) of the IEEE Transactions on Robotics and Automation (1998-2003), and the first Editor-in-Chief of the IEEE Transactions on Robotics (2004-08) He was the General Chair of ICRA 2007 and the Program Chair of ICRA 2016. He has been the Coordinator of the EU FP7 project SAPHARI (2011-15). He is an IEEE Fellow (class of 2007).</p>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<p>Alin Albu-Schaffer received the Engineering degree from the Technical University Timisoara, Romania and his Ph.D. degree in Control Systems in 2002 from the Technical University of Munich, Germany. Since 1995, he has been with the Institute of Robotics and Mechatronics at the German Aerospace Center (DLR). In 2012, he became the Head of this Institute and a Full Professor at the Technical University of Munich. His personal research interests include robot design, modeling and control, flexible joint and variable compliance</p>
+<p>robots for manipulation and locomotion, physical human-robot interaction, bio-inspired robot design. He and his team received numerous awards, among them the IEEE King-Sun Fu Best Paper Award of the Transactions on Robotics in 2012 and 2014, several ICRA and IROS Best Paper Awards as well as the DLR Science Award. He is an IEEE Fellow since 2016.</p></section></main></body></html>

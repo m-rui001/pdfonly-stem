@@ -1,0 +1,54 @@
+{
+  "sha1": "fd74d8ebd3ed10151ea5cb2445a1f11781609bac",
+  "title": "Frequency of extreme Sahelian storms tripled since 1982 in satellite observations",
+  "doi": "https://doi.org/10.1038/nature22069",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fd74d8ebd3ed10151ea5cb2445a1f11781609bac/index.html",
+  "source_chars": 53331,
+  "markdown_chars": 2037,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "the daily minimum in the minimum temperature for each MCS at a threshold 1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "短语'at a threshold 1'后接'of -40°C'（第14页），'1'很可能是'of'的识别错误，或文本缺损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "equivalent to 2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该短语出现在'equivalent to 2'，下一页开头为'30 mm hour-1'，推测原文应为'equivalent to 30 mm hour-1'，'2'可能是'to'或'30'的误识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：-70°C阈值下1800 UTC趋势3.5倍、24小时平均3.7倍、MCS平均温度下降0.78°C/decade、敏感性+99%和+200%、85.5%重合率、TRMM对流占比20%至30%、CMIP5极端降雨趋势约1%每30年。表1中的相关系数与正文一致。未发现数据矛盾；不确定处为两处疑似文本识别错误（见extraction_issues）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5821,
+      "prompt_tokens": 14408,
+      "total_tokens": 20229,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4220
+      }
+    },
+    "content_chars": 2855
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

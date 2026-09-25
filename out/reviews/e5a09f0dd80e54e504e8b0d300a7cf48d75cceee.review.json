@@ -1,0 +1,54 @@
+{
+  "sha1": "e5a09f0dd80e54e504e8b0d300a7cf48d75cceee",
+  "title": "Elucidating Reversible Electrochemical Redox of Li 6 PS 5 Cl Solid Electrolyte",
+  "doi": "https://doi.org/10.1021/acsenergylett.9b01693",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e5a09f0dd80e54e504e8b0d300a7cf48d75cceee/index.html",
+  "source_chars": 46916,
+  "markdown_chars": 2502,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "These oxidation or reduction products.11−13 While these oxidation and reduction products have not been fully identified experimentally due to its amorphous and buried nature, they have been predicted by computational density functional theory (DFT) studies done on common SSEs",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页2末尾句子在上一页末'These oxidation or reduction products.'后断开，且缺少主语，疑似跨页时遗漏或顺序错乱。原始文本中'These oxidation or reduction products.'单独成句不完整，后文未明确指代。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "The extra reversible capacity likely arises as result of contributions from reversible electrolyte decomposition beyond the first cycle as both Li−S and sulfide-based SSE",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在页尾中断，下一句从页3开始，缺少连接词或后半部分，导致语义不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对主要数值：充电容量354/956 mAh g−1，放电968/1002 mAh g−1，理论氧化/还原容量499/798 mAh g−1，阻抗45Ω、139Ω、400Ω，比表面积CB 80 m2 g−1、VGCF 24 m2 g−1，NMR化学位移（84.3、87、88.4、86.53、2.35 ppm等）。公式中的化学计量和电子数已按原文提取，未擅自修改。不确定点：摘要中提到的965 mAh g−1与正文中的968/1002略有差异，但原文如此；跨页断句处已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2065,
+      "prompt_tokens": 13352,
+      "total_tokens": 15417,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 34
+      }
+    },
+    "content_chars": 3737
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

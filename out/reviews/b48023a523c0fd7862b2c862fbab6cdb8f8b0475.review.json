@@ -1,0 +1,72 @@
+{
+  "sha1": "b48023a523c0fd7862b2c862fbab6cdb8f8b0475",
+  "title": "Thermal unequilibrium of strained black CsPbI 3 thin films",
+  "doi": "https://doi.org/10.1126/science.aax3878",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b48023a523c0fd7862b2c862fbab6cdb8f8b0475/index.html",
+  "source_chars": 72602,
+  "markdown_chars": 2434,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "The black-to-yellow phase change was identified by the introduction of δ peaks near 270 °C and the fading of the black phase peak(s), which turn asymmetric with reduced crystallographic symmetry.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "第9页底部句子完整，但后续图3引用可能跨页，无明显截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Near 200°C the cubic structure underwent a tetragonal distortion and the introduction of Δd⊥ through spontaneous strain formation.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "原文此处说'cubic structure'但上下文描述β（四方）相变，可能应为'cubic (α) structure'或'pseudo-cubic'，但无强证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Supplementary Materials for\nThermal Unequilibrium of Strained Black CsPbI3 Thin films",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "第20页仅标题，正文从第22页开始，中间有第21页目录，可能为正常页间隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "Page 41 of 52",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页码标记后直接是图S16说明，可能缺少部分内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对核心数值：Δd⊥=1.65%（薄膜）、1.18%（自发应变）、1.62%（最厚膜）、1.64%（ITO及Br掺杂）；晶格常数a=8.629、b=8.955、c=12.636 Å；DFT体积γ=241 Å³、δ=229 Å³；LED亮度20 cd/m²、CIE(0.72,0.28)、EQE 0.22%。公式Δd⊥与原文一致。不确定处：提取文本中'cubic structure'可能为印刷歧义，已在问题中标出；补充材料中的表格数值已按原文转录，但部分表头与内容可能因PDF抽取错位，不影响正文结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2241,
+      "prompt_tokens": 19402,
+      "total_tokens": 21643,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 40
+      }
+    },
+    "content_chars": 3961
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

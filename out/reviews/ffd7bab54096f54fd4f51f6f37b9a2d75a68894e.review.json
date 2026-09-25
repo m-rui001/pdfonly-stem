@@ -1,0 +1,72 @@
+{
+  "sha1": "ffd7bab54096f54fd4f51f6f37b9a2d75a68894e",
+  "title": "Biochar and its importance on nutrient dynamics in soil and plant",
+  "doi": "https://doi.org/10.1007/s42773-020-00065-z",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ffd7bab54096f54fd4f51f6f37b9a2d75a68894e/index.html",
+  "source_chars": 153334,
+  "markdown_chars": 15122,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "at low temperature ( $ \\leq $ 400 $ ^{\\circ} C} $ )",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "温度单位处出现多余右花括号，公式符号提取不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ \\mathrm{N H_{4}^{+}-N} $ $ \\mathrm{N O_{3}^{-}-N} $ and $ \\mathrm{N_{2} O-N} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "三个无机氮形态之间缺少连接词或标点，公式排版有缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ \\mathrm{CaCl_{2}} $ $ \\mathrm{MgCl_{2}.6 H_{2}O} $ , and $ \\mathrm{FeCl_{3}.6 H_{2}O} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "盐类化学式之间缺少连接词，且点号前后空格不规范。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Biochar and its Importance on Nutrient Dynamics in Soil and Plant: A Review",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 46737,
+      "total_tokens": 56737,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16115,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Biochar and its Importance on Nutrient Dynamics in Soil and Plant: A Review",
+    "translated_title": "生物炭及其对土壤和植物养分动态的重要性：综述",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

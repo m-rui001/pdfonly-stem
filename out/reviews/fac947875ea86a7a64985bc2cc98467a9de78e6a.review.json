@@ -1,0 +1,136 @@
+{
+  "sha1": "fac947875ea86a7a64985bc2cc98467a9de78e6a",
+  "title": "IL-17-producing γδ T cells and neutrophils conspire to promote breast cancer metastasis",
+  "doi": "https://doi.org/10.1038/nature14282",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/fac947875ea86a7a64985bc2cc98467a9de78e6a/index.html",
+  "source_chars": 62692,
+  "markdown_chars": 12601,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "IL-17-producing $ \\gamma \\delta $ T cells and neutrophils conspire to promote breast cancer metastasis",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "首页标题中 gamma delta 被 OCR 为符号形式 $ \\gamma \\delta $，与登记题名中的 γδ 写法不一致，但语义相同。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "K14cre; $ Cdh1^{F/F};Trp53^{F/F} $ (KEP) mice",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "基因型中的上标 F/F 被 OCR 为 LaTeX 形式，可能影响对条件等位基因的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "K14cre;Cdh1 $ ^{1/F} $ ;Trp53 $ ^{F/F} $ (KEP) mice",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "方法部分 KEP 基因型中 Cdh1 的上标被 OCR 为 1/F，而正文其他处为 F/F，属于影响基因型准确性的抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "KEP; $ Rag1^{+/-} $ and KEP; $ Rag1^{-/-} $ mice $ ^{32} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Rag1 上标中的 +/- 和 -/- 被 OCR 为 LaTeX 形式，可能影响对基因型符号的准确读取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ Tcrd^{-/-} $ mice on the FVB/N background were a gift from A. Hayday $ ^{33} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Tcrd 基因型上标 -/- 被 OCR 为 LaTeX 形式，可能影响对基因敲除状态的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Fold change was calculated using the formula $ 2^{-(\\Delta C_{\\mathrm{t}}-\\bar{X}[\\Delta C_{\\mathrm{t}} \\mathrm{WT}])} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "实时 PCR 倍数变化公式中的 ΔC_t 和平均值符号被 OCR 为 LaTeX 形式，可能影响公式的准确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Proliferation index was calculated using the formula (percentage of proliferated, co-cultured $ \\mathrm{C D 8}^{+} $ T cells)/(percentage of proliferated $ \\mathrm{C D 8}^{+} $ T cells without co-culture) $ \\times 1 0 0 $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "增殖指数公式中的乘号被 OCR 为 LaTeX 形式，可能影响公式的准确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Alox12 arachidonate 12-lipoxygenase ENSMUSG0000000320 -11.2 0.103",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Extended Data Table 1 中 Alox12 的 Ensembl 基因 ID 显示为 ENSMUSG0000000320，位数少于其他 ID，疑似 OCR 丢失字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "Mpl myeloproliferative leukemia virus oncogene ENSMUSG0000006389 -15.6 0.197",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Extended Data Table 1 中 Mpl 的 Ensembl 基因 ID 显示为 ENSMUSG0000006389，位数少于其他 ID，疑似 OCR 丢失字符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "log $ _{2} $ $ \\left( \\left( \\mathrm{expression} \\mathrm{gene} X \\div \\mathrm{library size} \\right) 10^{6} \\right)+1 $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "RNA-seq 标准化公式中的 log₂ 和括号结构被 OCR 为 LaTeX 形式，可能影响公式的准确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "IL-17-producing gamma delta T cells and neutrophils conspire to promote breast cancer metastasis",
+  "self_check": "已核对摘要、正文关键数值（如 Nos2 上调超过 150 倍、中性粒细胞定义、IL-17/G-CSF 上下游关系、转移减少等）与结论方向一致。公式部分照录 OCR 可见文本，未凭记忆补写。仍不确定之处：部分基因型上标（如 Cdh1^F/F 在方法部分被 OCR 为 Cdh1^1/F）和 Extended Data Table 1 中个别 Ensembl ID 的完整性可能受 OCR 影响，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8460,
+      "prompt_tokens": 18884,
+      "total_tokens": 27344,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16166,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "IL-17-producing gamma delta T cells and neutrophils conspire to promote breast cancer metastasis",
+    "translated_title": "产生IL-17的γδT细胞与中性粒细胞协同促进乳腺癌转移",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

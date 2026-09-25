@@ -1,0 +1,54 @@
+{
+  "sha1": "a7a0bff3444a9ef8a6bd867e35dff9a2648be7a8",
+  "title": "Role of the Environment in the Transmission of Antimicrobial Resistance to Humans: A Review",
+  "doi": "https://doi.org/10.1021/acs.est.5b02566",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a7a0bff3444a9ef8a6bd867e35dff9a2648be7a8/index.html",
+  "source_chars": 68681,
+  "markdown_chars": 3952,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "VanB-carrying VRE",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第4页末尾以“VanB-carrying VRE”结束，句子不完整，后续内容在第5页开头继续，但中间缺失了关于VRE变异体表型确认和PCR分子确认方法的完整句子。该缺失导致分子确认标准描述不连贯。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "characterization for ESBL-Ent, and staphylococcal cassette chromosome SCCmec-typing for MRSA.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "此片段是上一页句子的后半部分，但缺失了上一页末尾与之间关于VRE确认和额外检测方法的中间文本，造成句子语义断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的核心数字：239个数据集、暴露相关位点35/38、新鲜农产品8/16、环境分隔139/157、污染源66/66、定量数据比例6/35和11/139、废水处理1–4 log10和三级处理2–3 log10、Blaak与Hower等研究的关键结论。不确定处：原文“100.1 to 10 3 CFU/100 mL”大概率指10^0.1至10^3，笔记中表示为10^0.1–10^3；部分表格数据仅以文字转述，未列出全部浓度值。跨页缺失问题已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9501,
+      "prompt_tokens": 18229,
+      "total_tokens": 27730,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6725
+      }
+    },
+    "content_chars": 4864
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

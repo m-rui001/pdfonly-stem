@@ -1,0 +1,63 @@
+{
+  "sha1": "d692fdddb3d2296bb787693b4a545f51937562aa",
+  "title": "Using Raman spectroscopy to characterize biological materials",
+  "doi": "https://doi.org/10.1038/nprot.2016.036",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d692fdddb3d2296bb787693b4a545f51937562aa/index.html",
+  "source_chars": 126729,
+  "markdown_chars": 2317,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Theoretically, for a 3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第3页末尾句子在'3'处中断，第4页开头接续'confocal microscope'，其中'3'可能为页码误入正文，导致句子不通顺。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "made up of made up of thousands",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "短语'made up of'重复出现，疑为原文编辑错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Cells can be gentled centrifuged",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "推测'gentled'应为'gently'，但无强证据，仅按原文照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言及正文中的关键数值：拉曼散射概率约1/10^8、指纹区范围、SERS增强因子10^14、激光功率建议、硅峰520.5 cm⁻¹、样本量75-100等，均与提取文本一致。公式1/λ⁴和CARS/SRS频率关系已按原文保留。表4的SERS分类率（血浆最高98.50%）已核对。不确定之处：表格中如'103-106'可能为上标但无法确认，已按原样处理；跨页断句已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5003,
+      "prompt_tokens": 30434,
+      "total_tokens": 35437,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3182
+      }
+    },
+    "content_chars": 3258
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

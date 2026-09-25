@@ -1,0 +1,72 @@
+{
+  "sha1": "cbf31a530000bbf512f97d752235e6f620a5bd0d",
+  "title": "City-level emission peak and drivers in China",
+  "doi": "https://doi.org/10.1016/j.scib.2022.08.024",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cbf31a530000bbf512f97d752235e6f620a5bd0d/index.html",
+  "source_chars": 59101,
+  "markdown_chars": 3344,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "𝐶𝐸\n\nrepresent emissions from the combustion of fuel 𝑖 in sector 𝑗 ; 𝐴𝐷\n\nrefers to activity data",
+      "type": "疑似公式符号缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式(1)和(2)中的变量下标（如i,j）在提取文本中缺失，公式显示为不完整形式，但可见文本本身没有损坏，照录即可。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "𝐶𝑂 = 𝑖𝑛𝑡 × 𝑆𝑡𝑟𝑢 =∑ (\n\n×\n\n× 𝑖𝑛𝑡\n\n× 𝑆𝑡𝑟𝑢\n\n× 𝐸𝑐𝑜 × 𝑃𝑜𝑝\n\n×\n\n×\n\n× 𝑃𝑜𝑝)\n\n×",
+      "type": "公式排版抽取异常",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Kaya恒等式(式5)的乘积项在PDF提取中严重错位，符号和下标缺失，无法完整复原，照录可见文本并在MD中保留模糊形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "City-level activity data (𝐴𝐷\n\nand 𝐴𝐷\n\n) are collected",
+      "type": "跨页/换行拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "变量AD下标缺失，可能因公式排版导致提取中断，但上下文含义可理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "“Decoupling occurs when the growth rate of an environmental pressure is less than that of its economic driving force (e.g. GDP) over a given period (page 1)” [55]",
+      "type": "引用内文本句读疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "引文中的'(page 1)'可能为原文引用页码标记，但放在句末造成句读突兀，照录原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与结果中的关键数字：287个城市、2001-2019年、59个下降城市（38主动+21被动）、脱钩指数定义、阜新/北京/台州/沈阳的具体数值（如阜新峰值35.49百万吨、2016年19.90百万吨，年均-10.9%等）。公式(1)-(6)按提取文本照录，其中式(5)的Kaya分解公式因PDF提取损坏，已保留可见片段并标注问题。结论方向一致：主动达峰依靠能效和结构改进，被动下降源于经济衰退或人口流失。不确定点：部分公式符号（下标）缺失，但未影响整体论述；图1-6的具体数据点未在正文中描述，故未补充。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2775,
+      "prompt_tokens": 14796,
+      "total_tokens": 17571,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 45
+      }
+    },
+    "content_chars": 4880
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "375f2d4b3fd3a819a471f46257ba769beb5328ce",
+  "title": "An object-based convolutional neural network (OCNN) for urban land use classification",
+  "doi": "https://doi.org/10.1016/j.rse.2018.06.034",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/375f2d4b3fd3a819a471f46257ba769beb5328ce/index.html",
+  "source_chars": 89498,
+  "markdown_chars": 4369,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "proposed OGC-CNN128+48* method (OCNN)",
+      "type": "疑似错误（缩写不一致）",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "全文上下文一直使用OCNN128+48*和OCNN，此处表4标题出现'OGC-CNN128+48*'，应系笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Ol  pool p ( (Ol 1 W l  bl ))",
+      "type": "公式符号乱码",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "提取文本中的公式混杂不可打印字符，无法直接复制呈现；整理markdown时按常见CNN公式还原为可读形式，但原文可见的乱码未在正文中体现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "As shown in Table 2, the OCNN128+48* achieved the largest overall accuracy",
+      "type": "疑似错误（引用编号与后续表格不匹配）",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文此处指代分类精度，但前文已列出Table 2为S2样本表，后文实际展示精度的为Table 3，疑为编号笔误或提取错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "proposed OGC-CNN128+48* method (OCNN)",
+      "type": "疑似错误（缩写不一致）",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同表4，表6标题亦写成OGC-CNN，应改为OCNN。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：S1的OCNN128+48*总体精度89.52%（κ=0.88），子模块及基准值均一致；S2总体精度90.87%（κ=0.88）。各精度提升幅度（如公路5.34%、铁路4.64%等）与正文描述一致。对象级误差指数（表4、表6）中的TCE、OC、UC数值与引用吻合。公式按提取文本的数学含义进行了规范化书写，但原始文本中公式乱码无法逐字复制，已在问题中标出。另外，正文中'Table 2'指代分类精度表疑为'Table 3'之误，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4762,
+      "prompt_tokens": 24505,
+      "total_tokens": 29267,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1500
+      }
+    },
+    "content_chars": 5700
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

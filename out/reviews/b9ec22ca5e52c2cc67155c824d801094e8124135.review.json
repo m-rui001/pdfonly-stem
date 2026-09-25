@@ -1,0 +1,55 @@
+{
+  "sha1": "b9ec22ca5e52c2cc67155c824d801094e8124135",
+  "title": "Reaction Mechanisms for the Electrochemical Reduction of CO2 to CO and Formate on the Cu(100) Surface at 298 K from Quantum Mechanics Free Energy Calculations with Explicit Water",
+  "doi": "https://doi.org/10.1021/jacs.6b08534",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b9ec22ca5e52c2cc67155c824d801094e8124135/index.html",
+  "source_chars": 23672,
+  "markdown_chars": 3910,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the free energy barrier for HCOO– formation is 1.06 eV (HOOH directly dissociate into HCOO– at pH 7)",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "上下文讨论的是 *COOH 分解途径，但此处写为 'HOOH'，推测应为 '*COOH' 或 'COOH'，且前文提到 Peterson 的 *COOH 途径。原文疑似 OCR/抽取错误，但无法确定正确写法。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "we carried out independent 10 ps QM RMD simulations for a number of reaction processes at 298 K. Then, we used metadynamics23,24 and thermo-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页码标记在 'thermo-' 后，下一页接着 'dynamic integration'，属于正常跨页断词，但为保险标注。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要中的关键数值（CO 形成三步势垒 0.43、0.37、0.30 eV；HCOO⁻ 势垒 0.80 eV；CO₂–Cu 距离 3.67 Å；键长 1.33/1.29 Å；PZC 3.61 eV 对应 -0.38 V RHE）与正文一致。公式 (1) 和 (2) 的势垒值与文字描述吻合。唯一不确定处是 page 4 的 'HOOH' 疑似为 '*COOH'，已在 extraction_issues 标记。未补入任何未在提取文本中出现的数值或结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3132,
+      "prompt_tokens": 8041,
+      "total_tokens": 11173,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 297
+      }
+    },
+    "content_chars": 4940
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "b7e8895857abcd5ea65b667009284803b7a3245a",
+  "title": "Blue growth and blue justice: Ten risks and solutions for the ocean economy",
+  "doi": "https://doi.org/10.1016/j.marpol.2020.104387",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b7e8895857abcd5ea65b667009284803b7a3245a/index.html",
+  "source_chars": 100773,
+  "markdown_chars": 4755,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "associated with the ocean Blue growth and blue justice 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第1页末尾句子在第2页开头继续为 'economy'，页脚插入造成阅读顺序中断；未丢失明显文字，但需核验。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "regulating services such as flood protection, erosion control or hazard mitigation is also a concern",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "句中出现 'is also a concern' 与前后并列生态系统服务类别不协调，疑为抽取或编辑残句，原意应为列举服务类型时的连接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "a reimagining of novel or alternative development models of development",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'development models of development' 出现重复，可能原文为 'development models' 或 'models of development'，需核对。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "HawaiE >> i",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "显然应为 'Hawai'i' 或 'Hawaii' 的抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 25,
+      "quote": "New Zealand‫׳‬s",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "字符串中包含不可见特殊字符，应为 'New Zealand's' 的抽取问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言和讨论中的关键数值：OECD预测1.5万亿至3万亿美元、312篇初始文献、海洋遗传资源专利47%和98%、公海捕捞98%和低收入国EEZ 78%、女性占渔业劳动力近半、嘉年华罚款4000万和2000万美元、原住民鱼类依赖15倍等，并在正文中保留。公式方面本文无公式。不确定之处：第5页生态系统服务列举存在明显残句（已在issues中标出）；两处字符抽取疑点（HawaiE和New Zealand特殊字符）已列入。未对未提取的图表细节作推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13877,
+      "prompt_tokens": 26606,
+      "total_tokens": 40483,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10510
+      }
+    },
+    "content_chars": 6348
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

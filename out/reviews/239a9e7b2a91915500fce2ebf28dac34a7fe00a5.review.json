@@ -1,0 +1,55 @@
+{
+  "sha1": "239a9e7b2a91915500fce2ebf28dac34a7fe00a5",
+  "title": "Recent Advances in Flexible Zinc‐Based Rechargeable Batteries",
+  "doi": "https://doi.org/10.1002/aenm.201802605",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/239a9e7b2a91915500fce2ebf28dac34a7fe00a5/index.html",
+  "source_chars": 44954,
+  "markdown_chars": 4414,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": ". Figure 3. The schematic comparison of recharging Zn/Ni battery with different zinc anode",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第10页以孤立的句号开头，紧接着出现图3的图注，表明前页正文句子在此处中断，且图表标题与正文衔接缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "Table 1. Summary of energy density of flexible rechargeable Zn-based batteries based on the experimental results in literatures. a) Battery Type",
+      "type": "表格拼接/顺序疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表1标题与表格内容被分页符隔开，表头信息不完整，'a)'之后的内容缺失，后续表格行在提取时发生错位。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：锂离子电池能量密度对比（<200 Wh/L vs 650 Wh/L）、锌理论比容量与体积容量（820 mAh/g，5854.8 mAh/cm³）、锌基电池理论能量密度（Zn-MnO₂ 1344，Zn-Ni 1542，Zn-Ag 2351，Zn-air 6070 Wh/L）、3D 海绵锌负极参数（放电深度 90%，循环 54000 次）、HPE 电解质性能（1.76×10⁻² S/cm，6.18 mWh/cm²，148.2 mW/cm²，97% 容量保持率）。仍不确定之处：表 1 中因跨页导致的电池类型与数值对应关系存在模糊性，已根据上下文在 Markdown 中作逻辑重排，但无法核对原始 PDF 排版。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 14521,
+      "prompt_tokens": 11781,
+      "total_tokens": 26302,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11405
+      }
+    },
+    "content_chars": 5473
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

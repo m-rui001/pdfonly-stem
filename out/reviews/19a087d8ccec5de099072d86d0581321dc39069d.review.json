@@ -1,0 +1,82 @@
+{
+  "sha1": "19a087d8ccec5de099072d86d0581321dc39069d",
+  "title": "IEA EBC Annex 67 Energy Flexible Buildings",
+  "doi": "https://doi.org/10.1016/j.enbuild.2017.08.044",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/19a087d8ccec5de099072d86d0581321dc39069d/index.html",
+  "source_chars": 60112,
+  "markdown_chars": 6357,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "off global warming",
+      "type": "疑似错误（拼写）",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第1页和第3页均出现此短语，从上下文看当为 'of global warming' 的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The peak also is due to swithching on other applieaancies.",
+      "type": "疑似错误（拼写）",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文存在明显拼写错误，当为 'switching on other appliances'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "in order to be able to bit in with a large amount of flexibility on the market",
+      "type": "疑似错误（拼写）",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "从上下文看 'bit in' 可能为 'bid in' 的笔误，但无法确认，标记为疑似。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "residual loads in 14 countries and one region in 2030 were simulated based on official plans",
+      "type": "数据一致性疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文称14国加1地区，但图4标题写为'Fifteen Countries'，存在不一致，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "The different modelling approaches and strategies for Energy Flexibility in buildings (or clusters of buildings) are conducted in an ongoing internal questionnaire.",
+      "type": "疑似文本缺失",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "该句与上文衔接稍显突兀，可能缺少前序句子的部分文本或引用编号，但不能断定，暂列低置信度。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数据：PV 177 GW/26%、风电 370 GW/16%、EU 20% 目标、德国 80% 目标、丹麦 100% 目标、建筑能耗 30-40%、丹麦研究 20% 多余可再生削减、图 1 烹饪高峰 17:00-20:00、热泵切换约 1 小时可行、Green Tech Centre 4000 m²、PMV -1 至 +1、785 份有效问卷、Smartness Indicator 成本 €15/€100、TU Delft/Leeds Beckett/Breda 建筑 120 分钟/20 分钟削峰、14 国加 1 地区残余负荷、三属性指标、集群定义、HP-Hub 描述等。公式方面：原文无数学公式。不确定之处：标题与图 4 的 '14 countries and one region' 与 'Fifteen Countries' 不一致（已在 extraction_issues 标明）；'bit in' 拼写存疑；第 6 页图 1 标注中的明显拼写错误已标注；第 1 页 'off' 当为 'of' 的拼写错误。未引入任何外部知识或推测内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4846,
+      "prompt_tokens": 13843,
+      "total_tokens": 18689,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 496
+      }
+    },
+    "content_chars": 8313
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

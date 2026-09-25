@@ -1,0 +1,63 @@
+{
+  "sha1": "94192df5176726dcdd0c383aab904a1f00d9a2dc",
+  "title": "Regulatory T cells promote myelin regeneration in the central nervous system",
+  "doi": "https://doi.org/10.1038/nn.4528",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/94192df5176726dcdd0c383aab904a1f00d9a2dc/index.html",
+  "source_chars": 66224,
+  "markdown_chars": 2432,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Treg administration",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页面2末尾'通过过继转移'后正文中断，页面3开头为图注数字（如'50'、'b'等），缺失Treg过继转移效果的具体结果描述，直至页面4才出现'显著增加'等结果。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "demonstrating a direct action of Treg on OPC.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "页面5以该句结束，但页面6开头直接是'glial cells using mixed glial cultures...'，缺少与上文衔接的主语或过渡，疑似中间有缺失或顺序颠倒。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Supplementary 1i",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中出现'Supplementary 1i'，通常应为'Supplementary Fig. 1i'，但缺乏强证据，不能确定原文是否如此。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：体内实验中CC1+Olig2+细胞密度比较（P=0.0243和0.0003）、病变大小（P=0.1142）、增殖（P=0.4584）、电镜有髓轴突（P<0.0001）、过继转移（P=0.0285）、cuprizone模型第14天P=0.0274；离体脑片各比较组P值、纯OPC和共培养P值；CCN3阻断和耗竭/回收的P值。统计方法均按图注和正文记录。仍不确定之处：重组CCN3无效的讨论未提供数据，视为作者说明；部分图像数据（如补充图、视频）未在正文文字中描述，未纳入笔记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6240,
+      "prompt_tokens": 18740,
+      "total_tokens": 24980,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4181
+      }
+    },
+    "content_chars": 3524
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

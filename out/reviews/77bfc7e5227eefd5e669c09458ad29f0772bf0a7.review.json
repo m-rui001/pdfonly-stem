@@ -1,0 +1,55 @@
+{
+  "sha1": "77bfc7e5227eefd5e669c09458ad29f0772bf0a7",
+  "title": "The nucleus acts as a ruler tailoring cell responses to spatial constraints",
+  "doi": "https://doi.org/10.1126/science.aba2894",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/77bfc7e5227eefd5e669c09458ad29f0772bf0a7/index.html",
+  "source_chars": 86211,
+  "markdown_chars": 2276,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 23,
+      "quote": "Sscale bar, 2.5 μm.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“Sscale”应为“Scale”，多了一个字母S。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "We Science. Author manuscript; available in PMC 2021 April 21.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页尾出现孤立的“We”，下一页开头是“confined single nonadherent”，中间被页眉和作者信息分隔，原文应为“We confined...”连续句子，疑似跨页断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：细胞直径20±4 μm，触发高度5 μm vs 10 μm，肌球蛋白募集时间2.05±0.33 min，解除后3.78±0.94 min，NE展开-收缩延迟38±17 s，核直径11±2 μm，iDC触发高度3 μm，黑色素瘤8 μm孔依赖。EOP公式正确。结论与摘要一致。不确定点：跨页“We”与“confined”的接续是推测，已在issues中标注；图注中的“Sscale”已列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5095,
+      "prompt_tokens": 21887,
+      "total_tokens": 26982,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3355
+      }
+    },
+    "content_chars": 3071
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

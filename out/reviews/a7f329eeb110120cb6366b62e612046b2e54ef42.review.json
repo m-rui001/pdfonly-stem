@@ -1,0 +1,58 @@
+{
+  "sha1": "a7f329eeb110120cb6366b62e612046b2e54ef42",
+  "title": "Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics",
+  "doi": "https://doi.org/10.4230/lipics.giscience.2023.43",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a7f329eeb110120cb6366b62e612046b2e54ef42/index.html",
+  "source_chars": 20008,
+  "markdown_chars": 4966,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "[Enc(gi);En(gj)]",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "表 2 中 T4、T5 的输入列写作 '[Enc(gi);En(gj)]'，与表 1 及正文中定义的 '[Enc(gi);Enc(gj)]' 不一致，疑似 OCR 将 'Enc' 误识为 'En'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics",
+      "type": "metadata_identity_mismatch",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "OCR 正文首页明确出现的题名是 'Evaluating the Effectiveness of Large Language Models in Representing Textual Descriptions of Geometry and Spatial Relations'，与登记题名 'Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics' 明显冲突，二者不属于同一篇文章。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "mismatch",
+  "ocr_title": "Evaluating the Effectiveness of Large Language Models in Representing Textual Descriptions of Geometry and Spatial Relations",
+  "self_check": "已核对摘要、方法、结果与结论中的关键数值：T1 准确率 100%；T2 所有几何 MAPE GPT-2 13124/11700、BERT 12251/10850，仅 Polygon GPT-2 45.1/44.1、BERT 40.7/41.9；T3 RMSE GPT-2 0.037/0.037、BERT 0.029/0.029；T4 不含几何类型 GPT-2 62.6/65.7、BERT 63.8/68.7，含几何类型 GPT-2 73.7/71.0、BERT 73.1/72.3；T5 仅 disjoint RMSE GPT-2 0.064/0.063、BERT 0.057/0.075；T6 Precision@5 均为 0.03。公式与符号按提取文本原样保留，未做补写或修复。仍不确定之处：表 2 中 '[Enc(gi);En(gj)]' 是否为 OCR 误识，已在 extraction_issues 中标出；登记 DOI 与 OCR 正文身份冲突，未将其归属为正文论文 DOI。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3322,
+      "prompt_tokens": 5496,
+      "total_tokens": 8818,
+      "prompt_tokens_details": {
+        "cached_tokens": 5376
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6558,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

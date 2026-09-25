@@ -1,0 +1,54 @@
+{
+  "sha1": "1da953cb9c801b0b618386e690ed8cd7008a309a",
+  "title": "Decadal variations and trends of the global ocean carbon sink",
+  "doi": "https://doi.org/10.1002/2015gb005359",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1da953cb9c801b0b618386e690ed8cd7008a309a/index.html",
+  "source_chars": 92384,
+  "markdown_chars": 3847,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "roughly 25% of the the carbon dioxide",
+      "type": "疑似原文笔误（重复冠词）",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "提取文本中出现了连续两个'the'，最可能为原文排版错误而非提取问题，但无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "to a minimum uptake of −0.8±0.5 Pg C yr−1 in 1999.",
+      "type": "摘要与正文不一致（数值年份）",
+      "severity": "medium",
+      "confidence": 1.0,
+      "reason": "摘要写'minimum uptake of only −0.8 ± 0.5 Pg C yr−1 in 2000'，正文此处写'in 1999'，属原文内部矛盾，需在笔记中说明并择一呈现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：全球通量最低值−0.8±0.5 Pg C/yr（摘要2000年，正文1999年），2011年−2.3±0.6 Pg C/yr；累积吸收量差异7.5±5.5 Pg C，GCP 64.6±2.7 vs 本文57.1±2.8；EOF1 34%方差、EOF2 19%方差，PC2与MEI相关0.62；南方海洋贡献2002年后增加约50%；公式(1)和(3)按提取文本原样保留。不确定点：pCO2_atm的下标在提取文本中显示为'pCOatm 2'，笔记中按原文形式处理；摘要与正文对最低值年份的表述不同，已在issues中列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6069,
+      "prompt_tokens": 24826,
+      "total_tokens": 30895,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3251
+      }
+    },
+    "content_chars": 4753
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

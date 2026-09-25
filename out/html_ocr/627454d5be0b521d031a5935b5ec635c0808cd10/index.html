@@ -1,0 +1,195 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Weighted Mobility</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Weighted Mobility</h1><p class="meta">https://doi.org/10.1002/adma.202001537 · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><div>
+
+# Weighted Mobility
+
+</div>
+<p>2 G. Jeffrey Snyder $ ^{1,*} $ , Alemayouh H. Snyder $ ^{2} $ , Max Wood $ ^{1} $ , Ramya Gurunathan $ ^{1,2} $ , Berhanu 3 H. Snyder $ ^{1} $ , and Changning Niu $ ^{2} $</p>
+<p>4 $ ^{1} $ Department of Materials Science and Engineering, Northwestern University, Evanston IL 60208, USA</p>
+<p>5 $ ^{2} $ QuesTek Innovations LLC, Evanston IL 60201, USA</p>
+<p>6 *jeff.snyder@northwestern.edu</p>
+<h2>7 ABSTRACT</h2>
+<p>Engineering semiconductor devices requires an understanding of charge carrier mobility. Typically, mobilities are estimated using Hall effect and electrical resistivity meausrements, which are are routinely performed at room temperature and below in materials with mobilities greater than $ 1 \mathrm{c m}^{2} / \mathrm{V s} $ . With the availability of combined Seebeck coefficient and electrical resistivity measurement systems, it is now easy to measure the weighted mobility (electron mobility weighted by the density of electronic states). Here we introduce a simple method to calculate the weighted mobility from Seebeck coefficient and electrical resistivity measurements that gives good results at room temperature and above, and for mobilities as low as $ 1 0^{-3} \mathrm{c m}^{2} / \mathrm{V s} $</p>
+<div class="formula">$$
+\mu_ {\mathrm {w}} = 3 3 1 \frac {\mathrm {c m} ^ {2}}{\mathrm {V s}} \left(\frac {m \Omega \mathrm {c m}}{\rho}\right) \left(\frac {T}{3 0 0 \mathrm {K}}\right) ^ {- 3 / 2} \left[ \frac {\exp \left[ \frac {| S |}{k _ {\mathrm {B}} / e} - 2 \right]}{1 + \exp \left[ - 5 \left(\frac {| S |}{k _ {\mathrm {B}} / e} - 1\right) \right]} + \frac {\frac {3}{\pi^ {2}} \frac {| S |}{k _ {\mathrm {B}} / e}}{1 + \exp \left[ 5 \left(\frac {| S |}{k _ {\mathrm {B}} / e} - 1\right) \right]} \right].
+$$</div>
+<p>Here $ \mu_{\mathrm{w}} $ is the weighted mobility, $ \rho $ is the electrical resistivity measured in $ m\Omega \mathrm{cm} $ , T is the absolute temperature in K, S is the Seebeck coefficient, and $ k_{\mathrm{B}}/e=86.3\mu\mathrm{V}/\mathrm{K} $ . Weighted mobility analysis can elucidate the electronic structure and scattering mechanisms in materials and is particularly helpful in understanding and optimizing thermoelectric systems.</p>
+<h2>Mobility</h2>
+<p>Charge carrier mobility is perhaps the most important materials parameter to experimentally characterize in order to understand or engineer semiconductor electronic devices. The optimization of carrier mobility is critical to research fields ranging from organic semiconductors to photovoltaics to thermoelectrics $ ^{1-3} $ . Mobility is usually defined with the Drude-Sommerfeld free electron model $ 1 / \rho=\sigma=ne\mu $ where $ \rho $ is the electrical resistivity, $ \sigma $ is the electrical conductivity, n is the charge carrier concentration, e the electronic charge and $ \mu $ the drift mobility. Historically, the easiest way to characterize mobility is through the Hall effect, where the Hall mobility can be defined as $ \mu_{\mathrm{H}}=\sigma R_{\mathrm{H}} $ with $ R_{\mathrm{H}} $ as the Hall resistance $ ^{4} $ . In most cases where the charge transport is dominated by a single band, the Hall mobility is a good estimate (within 10-20%) for the the drift mobility $ ^{5} $</p>
+<p>With the proliferation of Seebeck coefficient measurement systems, particularly in laboratories studying thermoelectric materials $ ^{6,7} $ the weighted mobility is an independent measurement giving similar information. This can be particularly helpful when there are other magnetic effects to consider in the Hall measurements, such as the anomalous Hall effect, and the measured Hall resistance does not seem to correlate well with the actual charge carrier concentration $ (R_{\mathrm{H}}=1 / en_{\mathrm{H}}) $ or mobility $ ^{8} $ . The weighted mobility measurement is also practicable in regimes where the Hall resistivity measurement is difficult, such as at high temperatures or with low mobility bulk systems $ ^{2,9} $ .</p>
+<p>The weighted mobility, like the Hall mobility, can be defined as a simple function of two measured properties, Seebeck coefficient S and electrical conductivity $ \sigma $ (the Hall mobility is a function of Hall resistance and electrical conductivity). The function used for weighted mobility and Hall mobility are derived from the simple free electron model using a constant mean-free-path. Equation 1 is a simple analytic form for the weighted mobility that approximates the exact Drude-Sommerfeld free electron model within 3% for thermopower values $ |S|&gt;20\mu\mathrm{V / K}. $</p>
+<div class="formula">$$
+\mu_ {\mathrm {w}} = \frac {3 h ^ {3} \sigma}{8 \pi e \left(2 m _ {e} k _ {\mathrm {B}} T\right) ^ {3 / 2}} \left[ \frac {\exp \left[ \frac {| S |}{k _ {\mathrm {B}} / e} - 2 \right]}{1 + \exp \left[ - 5 \left(\frac {| S |}{k _ {\mathrm {B}} / e} - 1\right) \right]} + \frac {\frac {3}{\pi^ {2}} \frac {| S |}{k _ {\mathrm {B}} / e}}{1 + \exp \left[ 5 \left(\frac {| S |}{k _ {\mathrm {B}} / e} - 1\right) \right]} \right]
+$$</div>
+<p>An equivalent form using the electrical resistivity $ \rho=1 / \sigma $ is given in the Abstract.</p>
+<p>In the free electron model, the weighted mobility is a (temperature dependent) material property that is independent of doping whereas the drift mobility depends on doping through the free charge carrier concentration n. Generally, the weighted</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 1. Mobility measurements using the Hall or Seebeck effects. Hall mobility $ \mu_{\mathrm{H}} $ is measured using the Hall effect (in a magnetic field B) and electrical resistivity, while the weighted mobility $ \mu_{\mathrm{w}} $ is measured using measurements of the Seebeck effect (Voltage produced from a Temperature difference $ T_{\mathrm{h}}-T_{\mathrm{c}} $ ) and electrical resistivity.
+
+</div>
+<div>
+
+Figure 2. Similar behavior of Hall mobility $ \mu_{\mathrm{H}} $ and weighted mobility $ \mu_{\mathrm{w}} $ , which uses measurements of the Seebeck coefficient. (A) The $ \mu_{\mathrm{H}} $ and $ \mu_{\mathrm{w}} $ of n-type PbTe (StarryData2 Paper ID 117 $ ^{10} $ ）are both monotonously decreasing with temperature as expected from increased phonon scattering and simply scaled by the density-of-states effective mass $ m^{*3/2} / m_{e}^{3/2}\approx 0.25 $ . The Hall mobility $ \mu_{\mathrm{H}} $ is expected to decrease with increasing doping $ ^{10} $ , but the weighted mobility $ \mu_{\mathrm{w}} $ is expected to be similar for samples with different doping as observed. (B) The mobility of polycrystalline n-type $ \mathrm{Mg}_{3}\mathrm{Sb}_{1.5}\mathrm{Bi}_{0.5} $ $ ^{11} $ is suppressed at low temperature due to electrical resistance at grain boundaries. This effect is observed equally (scaled by $ m^{*3/2} / m_{e}^{3/2}\approx 1.8 $ ) in both $ \mu_{\mathrm{H}} $ and $ \mu_{\mathrm{w}} $ for samples with differing grain size.
+
+</div></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>mobility $ \mu_{\mathrm{w}} $ is related to the drift mobility $ \mu $ by</p>
+<div class="formula">$$
+\mu_ {\mathrm {w}} \approx \mu \left(\frac {m ^ {*}}{m _ {e}}\right) ^ {3 / 2}
+$$</div>
+<p>where $ m^{<em>} $ is the density of states effective mass and $ m_{e} $ is the electron mass. Because the density of electron states is proportional to $ m^{</em>3/2} $ we think of $ \mu_{\mathrm{w}} $ as the electron mobility weighted by the density of electron states.</p>
+<h2>Use of weighted mobility</h2>
+<p>The measured weighted mobilities of well known thermoelectric semiconductors such as $ \mathrm{P b T e}^{1 0} $ and $ \mathrm{M g}<em>{3} \mathrm{S b}</em>{2}^{1 1} $ are essentially the same except for the density of states $ m^{* 3 / 2} $ factor in $ \mu_{\mathrm{w}} $ (Figure 2). Indeed, combining Hall, Seebeck and conductivity measurements to estimate a density of states effective mass is a common analysis technique $ ^{5,12,13} $ . For example, the weighted mobility of most good thermoelectric materials decreases with temperature because the electrons are scattered by phonons. In the simple model for acoustic-phonon scattering (or deformation potential phonon scattering theory), the decrease in mobility occurs with temperature as $ T^{-3 / 2} $ whereas the Hall mobility transitions between $ T^{-3 / 2} $ for lightly doped semiconductors to $ T^{-1} $ for heavily doped semiconductors or metals (Figure 2). In some materials, grain boundary $ ^{1 4} $ , disorder $ ^{1 5} $ , or ionized impurity scattering $ ^{1 6} $ might contribute, which will be observed in different temperature and carrier concentration dependencies of the mobility. The weighted mobility gives nearly the same information about charge carrier mobility as the Hall mobility and thus can be used to investigate charge carrier transport mechanisms much in the same way the Hall mobility has been used.</p>
+<p>Because of the relative ease of Seebeck compared to Hall effect measurements, the weighted mobility could easily become the most common method to determine the charge transport mechanism. Some 4000 samples have Seebeck and conductivity measurements readily available on StarryData2 $ ^{17} $ whereas only relatively few samples have reported Hall effect data. Compiling the 153 samples with both Seebeck coefficient and electrical conductivity as a function of temperature (Figure 3), it is clear from the decreasing mobility with temperature that phonon scattering of the charge carriers typically dominates. A few samples show weighted mobility increasing with temperature at low temperature before following the usual trend of decreasing with temperature (phonon scattering). In several cases this increasing mobility with temperature has been attributed to thermally activated conductivity at grain boundaries $ ^{14,18} $ , although ionized impurity scattering can also give a qualitatively similar effect.</p>
+<p>Particularly for materials with low mobility, the weighted mobility appears to be an even better measure of drift mobility than measurements of Hall mobility. The same data, showing weighted mobility on a logarithmic scale (Figure 3b) gives reasonable trends even for materials with weighted mobility less than $ 1 0^{-3} \mathrm{c m}^{2} / \mathrm{V s} $ . Hall mobility is not commonly reported on materials with mobility less than $ 1 \mathrm{c m}^{2} / \mathrm{V s} $ because the signal is very small $ ^{4} $ . The low weighted mobilities increase with temperature suggesting defects (grain boundaries, ionized impurities) are responsible for the low mobility and higher mobilities are possible with defect or microstructure engineering.</p>
+<p>The weighted mobility, like the Hall mobility, can be used to compare the experimental properties of materials to help decide if different properties are due to differences in doping, electronic structure or scattering. An ideal material that follows the Drude-Sommerfeld model exactly with a parabolic band will have a weighted mobility that does not change with doping; any differences could be a sign of complexity in the band structure or scattering, such as nonparabolic bands or multiple bands. Scattering differences are most easily seen in the temperature dependence where simple phonon scattering will give a deviation from the simple $ T^{3/2} $ . For example, low mobility below room temperature could be a sign of grain boundary resistance $ ^{14,18} $</p>
+<h2>62 Thermoelectric Materials</h2>
+<p>The weighted mobility is even more important when studying thermoelectric materials as it most directly measures the electronic qualities that make a good thermoelectric material. The thermoelectric figure of merit zT is optimized with doping. The zT that an optimally doped material can achieve is proportional to the thermoelectric quality factor $ B^{1 2,1 3,1 9} $</p>
+<div class="formula">$$
+B = \left(\frac {k _ {\mathrm {B}}}{e}\right) ^ {2} \frac {8 \pi e \left(2 m _ {e} k _ {\mathrm {B}} T\right) ^ {3 / 2}}{3 h ^ {3}} \cdot \frac {\mu_ {\mathrm {w}}}{\kappa_ {\mathrm {L}}} T
+$$</div>
+<p>which is proportional to the weighted mobility divided by the lattice thermal conductivity $ \mu_{\mathrm{w}} / \kappa_{\mathrm{L}} $ . Thus any strategy to improve a material for thermoelectric use by reducing $ \kappa_{\mathrm{L}} $ needs also to consider the effect on $ \mu_{\mathrm{w}}. $</p>
+<p>The weighted mobility, $ \mu_{\mathrm{w}} $ , is a better descriptor of the inherent electronic transport properties of a thermoelectric material for thermoelectric use than $ S^{2}\sigma $ , and now with the use of Equation 1, is almost as easy to calculate from the experimental S and $ \rho $ . Historically, $ S^{2}\sigma $ , referred to as the thermoelectric "power factor" has been discussed to evaluate improvements in the electronic properties of thermoelectric materials or when thermal conductivity measurements are unavailable. However, $ S^{2}\sigma $ depends on doping and does not optimize where zT does, overemphasizing more metallic doping concentrations because</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><div>
+
+Figure 3. Weighted mobility calculated from the reported Seebeck coefficient and electrical conductivity of 153 samples from the StarryData2 website $ ^{17} $ . The weighted mobilities generally decrease with temperature (linear scale above) as expected from phonon scattering of electrons. Several samples show physically reasonable values for mobility less than $ 1 \mathrm{c m}^{2} / \mathrm{V s} $ (log scale below) which is very difficult to measure using the Hall effect.
+
+</div></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>it ignores the impact of the electronic thermal conductivity to $ z T $ . $ S^{2} \sigma $ is frequently over-analyzed to the point where it is incorrectly concluded that a high $ S^{2} \sigma $ is preferable even at the expense of lower $ z T^{2 0} $ . An optimized thermoelectric design will produce more power using a material with higher $ z T $ because the higher efficiency ensures it will produce more power from the heat flowing through it $ ^{2 1} $ . Therefore, rather than comparing $ S^{2} \sigma $ , it is more useful to compare $ \mu_{\mathrm{w}} $ values.</p>
+<h2>74 Derivation and Assumptions</h2>
+<p>It is important to note that the definition of $ \mu_{\mathrm{w}} $ using Equation 1 from the measured quantities S and $ \rho $ does not require any assumptions. Nonparabolic, multiband, alternate scattering and other effects in the data are not neglected. These effects will be noticed as deviations from trends not expected from the simple free electron model $ (\mu_{\mathrm{w}}(E_{\mathrm{F}})=\mathrm{constant}) $ that should be explainable by incorporating the relevant physics in a model for $ \mu_{\mathrm{w}} $ that then can be compared with the experimental values.</p>
+<p>Indeed, prior discussions of weighted mobility, using Equation 2 as the definition, $ ^{22-24} $ have relied on parabolic band and scattering assumptions. This begs the question as to the validity in real materials where these assumptions are demonstrably incomplete. Here, in contrast, we define weighted mobility as an experimental value with Equation 1, and use Equation 2 only to interpret the experimental result.</p>
+<p>Equations 1 and 3 are motivated from the ideal expression for $ \mu_{\mathrm{w}} $ of the free electron (parabolic band) Drude-Sommerfeld model with constant mean-free-path (same result as acoustic phonon scattering, $ s=1 $ in $ ^{25} $ ). This requires solving the following two parametric equations for $ \sigma_{\mathrm{E}_{0}} $ as a function of S and $ \rho $ , where $ \eta $ (the reduced Fermi level) is the parameter :</p>
+<div class="formula">$$
+1 / \rho = \sigma = n e \mu = \sigma_ {\mathrm {E} _ {0}} \cdot \ln \left(1 + e ^ {\eta}\right)
+$$</div>
+<div class="formula">$$
+\sigma_ {\mathrm {E} _ {0}} = \frac {8 \pi e \left(2 m _ {e} k _ {\mathrm {B}} T\right) ^ {3 / 2}}{3 h ^ {3}} \mu_ {\mathrm {w}}
+$$</div>
+<div class="formula">$$
+S = \frac {k _ {B}}{e} \left[ \frac {\int_ {0} ^ {\infty} \frac {\varepsilon}{1 + e ^ {\varepsilon} - \eta} d \varepsilon}{\ln \left(1 + e ^ {\eta}\right)} - \eta \right]
+$$</div>
+<p>The numerator on the left side of Equation 1 $ \exp \left[ \frac{|S|}{k_{\mathrm{B}}/e}-2\right] $ is the analytic result in the non-degenerate limit $ \eta &lt; &lt; 0 $ , intrinsic semiconductor), while the numerator on the right side of Equation 1 $ (\frac{3}{\pi^{2}}\frac{|S|}{k_{\mathrm{B}}/e}) $ is the analytic result for the degenerate limit $ \eta &gt; &gt; 0 $ , metal). The functions in the denominators are sigmoid functions with parameters (5 and 1) that give a maximum error of 3% to the exact Drude-Sommerfeld result. A smaller maximum error could be achieved with more precise parameters (e.g. 5.34 and 1.14) but 3% is within the typical uncertainty of Seebeck and resistivity measurements.</p>
+<h2>Discussion</h2>
+<p>In real materials the Seebeck coefficient and Electrical resistivity can be affected by many mechanisms not accounted for in the free electron model. At low temperatures and materials with high lattice thermal conductivity, for example, the Seebeck coefficient is strongly affected by phonon drag and so the Hall mobility has been a better descriptor for mobility of simple crystalline materials for low temperature physics rather than the weighted mobility.</p>
+<p>However, the weighted mobility is preferable to Hall mobility for many samples under certain conditions. For example, at high temperatures and for complex materials with low mobility, the Hall resistance can be difficult or even not possible to measure, whereas the Seebeck coefficient may be easy to measure. Practical examples of such systems include organic semiconductors as well as complex solar cell and thermoelectric materials $ ^{2,26} $ . Many of the examples in Figure 3 have such low weighted mobilities that Hall effect measurements are not possible and often not attempted. $ \mathrm{L a}<em>{3-x}\mathrm{T e}</em>{4} $ $ ^{27} $ and $ \mathrm{Y b}<em>{14}\mathrm{M n S b}</em>{11} $ $ ^{28} $ for example, are good thermoelectric materials with decent mobility, on the order of $ 2\mathrm{c m}^{2} / \mathrm{V s} $ , but the Hall Coefficient is barely measurable. Materials in Figure 3 with even lower mobility are likely not possible to measure by Hall Effect in bulk form. Also, materials with magnetic elements or impurities often have Hall effect that is not interpretable as charge carrier concentration. This is likely due to the anomalous Hall effect from the internal magnetism or magnetic impurities. For example, rare-earth filled iron-based skutterudites $ ^{8} $ have Hall coefficients that do not correlate well with other electronic transport properties.</p>
+<p>The Hall mobility $ \mu_{\mathrm{H}}=\sigma R_{\mathrm{H}} $ and Hall concentration $ n_{\mathrm{H}}=1 / eR_{\mathrm{H}} $ as used here $ ^{4} $ is the simple degenerate limit of the Drude-Sommerfeld model. The Drude-Sommerfeld drift mobility and Hall mobility decreases with charge carrier concentration</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>(as $ n^{-1/3} $ at high concentrations) as observed in n-PbTe (Figure 2). The weighted mobility, as defined here, is a constant for a Drude-Sommerfeld metal and so would not depend on n. The weighted mobility can be thought of as a non-degenerate (low n) value for mobility which should not change for samples with different doping and therefore better for analyzing small changes in band structures with alloying $ ^{29} $ . In addition, the exact, free electron, acoustic phonon scattering result would require an additional term (the Hall factor $ r_{\mathrm{H}} $ ). Since this $ r_{\mathrm{H}} $ is only a function of the reduced Fermi level $ (\eta) $ it could, in principle, be measured from the Seebeck coefficient (much like the Lorenz factor $ ^{30} $ ). However, because the non-degenerate $ r_{\mathrm{H}} $ differs only by $ 18\% $ $ ^{5} $ , it is preferable not to require an additional measurement, instead simply realizing that variations of $ n_{\mathrm{H}} $ or $ \mu_{\mathrm{H}} $ less than $ 20\% $ can be expected even within a parabolic band system. If such differences in $ n_{\mathrm{H}} $ or $ \mu_{H} $ are worthy of discussion, the Hall factor should be calculated more precisely for the material in question using accurate band structures and scattering rates.</p>
+<p>Both the measured weighted mobility and the Hall mobility tend to be small in compensated materials with both n-type and p-type charge carriers; smaller in comparison to that of the dominant charge carrier alone. While the conductivities of both charge carriers are positive and add together, both the Hall voltage and Seebeck coefficient will reduce in magnitude as they depend on the sign of the charge carriers. $ ^{27} $ As a result a bipolar or composite sample (sample with compensating phases or grain boundaries) has a smaller Hall voltage and thermopower $ (|S|) $ , and therefore the doping level appears higher than one would expect for either charge carrier. This results in a rapid decrease in $ \mu_{\mathrm{w}} $ and $ \mu_{\mathrm{H}} $ with increasing temperature as charge carriers are excited across the band gap. The fact that Hall voltage is weighted by the square of the partial conductivities compared to the linear weighting of Seebeck (see supplemental) may make $ \mu_{\mathrm{H}} $ more sensitive to unusual bipolar behavior than $ \mu_{\mathrm{w}}. $</p>
+<h2>Conclusion</h2>
+<p>Weighted mobility as defined here is an experimental material parameter that can easily be computed from the measured values of the Seebeck coefficient and electrical conductivity, which needs no additional assumptions. Weighted mobility can be used like the Hall mobility to characterize drift mobility, the most basic material parameter in transport theory. The weighted mobility is actually a better descriptor of the inherent transport property than Hall mobility because it is more independent of charge carrier concentration and magnetic impurities and has a more consistent temperature dependence (above about 100K). The weighted mobility is easy to measure with commercial instruments and is orders of magnitude more sensitive than the Hall effect for low mobility materials. In thermoelectric materials, the weighted mobility is the quantitative measure of how good a material's electronic transport properties are for thermoelectric applications by characterizing the $ S^{2}\sigma $ term in $ z T^{1} $ . Without the need of a high strength magnet to measure the Hall coefficient, the weighted mobility offers insight into a most basic material property with a relatively easy Seebeck measurement.</p>
+<h2>Acknowledgement</h2>
+<p>GJS and RG acknowledge NSF DMREF award# 1729487 and DOE Award DE-AC02-76SF00515. CN acknowledges DOE SBIR award DE-SC0019679.</p>
+<h2>References</h2>
+<ol>
+<li>Qin, Y., Xiao, Y. &amp; Zhao, L.-D. Carrier mobility does matter for enhancing thermoelectric performance. APL Mater. 8, 010901, DOI: 10.1063/1.5144097 (2020). https://doi.org/10.1063/1.5144097.</li>
+</ol>
+<ol>
+<li>Werner, F. Hall measurements on low-mobility thin films. J. Appl. Phys. 122, 135306, DOI: 10.1063/1.4990470 (2017). https://doi.org/10.1063/1.4990470.</li>
+</ol>
+<ol>
+<li>Koster, L. J. A. &amp; Blom, P. W. M. Optimum charge carrier mobility in organic solar cells. Appl. Phys. Lett. 1-4, DOI: 10.1063/1.2711534 (2007).</li>
+</ol>
+<ol>
+<li>Borup, K. A. et al. Measurement of the electrical resistivity and hall coefficient at high temperatures. Rev. Sci. Instruments 83, 123902, DOI: 10.1063/1.4770124 (2012). https://doi.org/10.1063/1.4770124.</li>
+</ol>
+<ol>
+<li>May, A. F. &amp; Snyder, G. J. Introduction to Modeling Thermoelectric Transport at High Temperatures, 1-18 (CRC Press, 2012).</li>
+</ol>
+<ol>
+<li>Martin, J., Wong-Ng, W. &amp; Green, M. L. Seebeck coefficient metrology: Do contemporary protocols measure up? J. Electron. Mater. 44, 1998-2006, DOI: 10.1007/s11664-015-3640-9 (2015).</li>
+</ol>
+<ol>
+<li>Borup, K. A. et al. Measuring thermoelectric transport properties of materials. Energy Environ. Sci. 8, 423-435, DOI: 10.1039/C4EE01320D (2015).</li>
+</ol></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><ol>
+<li>Qiu, P. F. et al. High-temperature electrical and thermal transport properties of fully filled skutterudites RFe4Sb12 (R= Ca, Sr, Ba, La, Ce, Pr, Nd, Eu, and Yb). J. Appl. Phys. 109, 063713, DOI: 10.1063/1.3553842 (2011). https://doi.org/10.1063/1.3553842.</li>
+</ol>
+<ol>
+<li>Adnane, L., Gokirmak, A. &amp; Silva, H. High temperature Hall measurement setup for thin film characterization. Rev. Sci. Instruments 87, 075117, DOI: 10.1063/1.4959222 (2017).</li>
+</ol>
+<ol>
+<li>Pei, Y. et al. Optimum carrier concentration in n-type pbte thermoelectrics. Adv. Energy Mater. 4, 1400486, DOI: 10.1002/aenm.201400486 (2014). https://onlinelibrary.wiley.com/doi/pdf/10.1002/aenm.201400486.</li>
+</ol>
+<ol>
+<li>Wood, M., Kuo, J. J., Imasato, K. &amp; Snyder, G. J. Improvement of low-temperature zt in a Mg3Sb2-Mg3Bi2 solid solution via Mg-vapor annealing. Adv. Mater. 31, 1902337, DOI: 10.1002/adma.201902337 (2019). https://onlinelibrary.wiley.com/doi/pdf/10.1002/adma.201902337.</li>
+</ol>
+<ol>
+<li>Kang, S. D. &amp; Snyder, G. J. Transport property analysis method for thermoelectric materials: material quality factor and the effective mass model (2017). 1710.06896.</li>
+</ol>
+<ol>
+<li>Zevalkink, A. et al. A practical field guide to thermoelectrics: Fundamentals, synthesis, and characterization. Appl. Phys. Rev. 5, 021303, DOI: 10.1063/1.5021094 (2018). https://doi.org/10.1063/1.5021094.</li>
+</ol>
+<ol>
+<li>Kuo, J. J. et al. Grain boundary dominated charge transport in mg3sb2-based compounds. Energy Environ. Sci. 11, 429-434, DOI: 10.1039/C7EE03326E (2018).</li>
+</ol>
+<ol>
+<li>Xie, H. et al. The intrinsic disorder related alloy scattering in ZrNiSn half-Heusler thermoelectric materials. Sci Rep 4, 6888 (2014).</li>
+</ol>
+<ol>
+<li>Wang, H., Pei, Y., LaLonde, A. D. &amp; Jeffery Snyder, G. Material Design Considerations Based on Thermoelectric Quality Factor, 3-32 (Springer Berlin Heidelberg, Berlin, Heidelberg, 2013).</li>
+</ol>
+<ol>
+<li>Katsura, Y. et al. Data-driven analysis of electron relaxation times in pbte-type thermoelectric materials. Sci. Technol. Adv. Mater. 20, 511-520, DOI: 10.1080/14686996.2019.1603885 (2019). https://doi.org/10.1080/14686996.2019.1603885.</li>
+</ol>
+<ol>
+<li>de Boor, J. et al. Microstructural effects on thermoelectric efficiency: A case study on magnesium silicide. Acta Materialia 77, 68-75, DOI: https://doi.org/10.1016/j.actamat.2014.05.041 (2014).</li>
+</ol>
+<ol>
+<li>Pei, Y., Wang, H. &amp; Snyder, G. J. Band engineering of thermoelectric materials. Adv. Mater. 24, 6125-6135, DOI: 10.1002/adma.201202919 (2012). https://onlinelibrary.wiley.com/doi/pdf/10.1002/adma.201202919.</li>
+</ol>
+<ol>
+<li>Liu, W., Kim, H. S., Jie, Q. &amp; Ren, Z. Importance of high power factor in thermoelectric materials for power generation application: A perspective. Scripta Materialia 111, DOI: 10.1016/j.scriptamat.2015.07.045 (2015).</li>
+</ol>
+<ol>
+<li>Baranowski, L. L., Jeffrey Snyder, G. &amp; Toberer, E. S. The misconception of maximum power and power factor in thermoelectrics. J. Appl. Phys. 115, 126102, DOI: 10.1063/1.4869140 (2014). https://doi.org/10.1063/1.4869140.</li>
+</ol>
+<ol>
+<li>Mahan, G. D. Good thermoelectrics. In H. Ehrenreich, F. S. (ed.) Solid State Physics, vol. 51, 81 (Academic Press Inc, 1998).</li>
+</ol>
+<ol>
+<li>Slack, G. A. New Materials and Performance Limits for Thermoelectric Cooling (CRC Press, 1995).</li>
+</ol>
+<ol>
+<li>Goldsmid, H. J. Introduction to Thermoelectricity (2016).</li>
+</ol>
+<ol>
+<li>Kang, S. D. &amp; Snyder, G. J. Charge-transport model for conducting polymers. Nat. Mater. 16, 252 (2017). Supplementary Information.</li>
+</ol>
+<ol>
+<li>Greenham, N. C. &amp; Tiwari, S. Charge mobility measurement techniques in organic semiconductors. Opt. Quantum Electron. 41, 69-89, DOI: 10.1007/s11082-009-9323-0 (2009).</li>
+</ol>
+<ol>
+<li>May, A. F., Fleurial, J.-P. &amp; Snyder, G. J. Thermoelectric performance of lanthanum telluride produced via mechanical alloying. Phys. Rev. B 78, 125205, DOI: 10.1103/PhysRevB.78.125205 (2008).</li>
+</ol>
+<ol>
+<li>Toberer, E. S., Brown, S. R., Ikeda, T., Kauzlarich, S. M. &amp; Jeffrey Snyder, G. High thermoelectric efficiency in lanthanum doped yb14mnsb11. Appl. Phys. Lett. 93, 062110, DOI: 10.1063/1.2970089 (2008). https://doi.org/10.1063/1.2970089.</li>
+</ol>
+<ol>
+<li>Xiao, Y. et al. Band sharpening and band alignment enable high quality factor to enhance thermoelectric performance in n-type pbs. J. Am. Chem. Soc. 142, 4051-4060, DOI: 10.1021/jacs.0c00306 (2020). PMID: 32017566, https://doi.org/10. 1021/jacs.0c00306.</li>
+</ol>
+<ol>
+<li>Kim, H.-S., Gibbs, Z. M., Tang, Y., Wang, H. &amp; Snyder, G. J. Characterization of Lorenz number with Seebeck coefficient measurement. APL Mater. 3, 041506 (2015).</li>
+</ol></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><div>
+
+Figure 4. Weighted mobility Figure 2 with data identification (linear scale). Sample ID numbers from StarryData2 (www.starrydata2.org/api/sample/number).
+
+</div>
+<h2>199 Author contributions statement</h2>
+<p>GJS conceived the idea in discussions with MW, AS fit the parameters in equation 1. AS, RG and CN downloaded and processed the data. BHS drew figures in Figure 1 and retrieved the missing Hall data from the original source. All authors reviewed the manuscript.</p>
+<h2>203 Additional information</h2>
+<p>204 The authors declare no competing interests.</p>
+<h2>205 Supplemental information</h2>
+<p>For a material i with multiple conducting species (or i multiple channels conducting in parallel) the Hall resistance $ R_{\mathrm{H}} $ and Seebeck coefficient S are weighted averages of the individual Hall resistance $ R_{\mathrm{H},i} $ and Seebeck coefficient $ S_{i} $ for each channel $ ^{27} $ While each $ S_{i} $ is weighted by the conductivity $ \sigma_{i}, $ $ R_{\mathrm{H}i} $ is weighted by $ \sigma_{i}^{2}. $</p>
+<div class="formula">$$
+R _ {\mathrm {H}} = \frac {\sum_ {i} R _ {\mathrm {H} i} \sigma_ {i} ^ {2}}{\left(\sum_ {i} \sigma_ {i}\right) ^ {2}}
+$$</div>
+<div class="formula">$$
+S = \frac {\sum_ {i} S _ {i} \sigma_ {i}}{\sum_ {i} \sigma_ {i}}
+$$</div></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><div>
+
+Figure 5. Weighted mobility Figure 2 with data identification (log scale). Sample ID numbers from StarryData2 (www.starrydata2.org/api/sample/number).
+
+</div></section></main></body></html>

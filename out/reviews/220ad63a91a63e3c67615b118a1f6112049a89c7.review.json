@@ -1,0 +1,73 @@
+{
+  "sha1": "220ad63a91a63e3c67615b118a1f6112049a89c7",
+  "title": "High-efficiency solution-processed perovskite solar cells with millimeter-scale grains",
+  "doi": "https://doi.org/10.1126/science.aaa0472",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/220ad63a91a63e3c67615b118a1f6112049a89c7/index.html",
+  "source_chars": 19147,
+  "markdown_chars": 2500,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The recent discovery of organic-inorganic pe- rovskites offers promis velopment of low-cost, solar-based clean global energy solutions for the future (",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句首在页尾中断，文字不完整（'promis velopment'），且句末括号未闭合，疑似跨页或提取拼接错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Our method leads to grain sizes as large as 1 to 2 mm, in comparison with the grain sizes of ~1 to 2 mm typically obtained using the conventional post-annealing process.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "传统后处理工艺通常得到微米级晶粒，而此处写成'~1 to 2 mm'与上下文（图1D、前文'~1 µm up to ~180 µm'）及常识矛盾，疑为'µm'误提取为'mm'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "We observed a marked increase in JSC (3.5 mA/cm2 to 22.4 mA/cm2), open-circuit voltage (VOC) (0.4 V to 0.92 V; fig. S8A), and fill factor (FF) (0.45 to 0.82; fig. S8B) when the grain size increased from ~1 mm up to ~180 mm",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "晶粒尺寸单位应为µm（微米）而非mm（毫米），前文明确说明晶粒为'1 to 2 mm'是毫米级，且后续只从'~1 µm'到'~180 µm'，此处mm与上下文矛盾。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Figure 1, B to D, illustrates the obtained crystal grain structures using this hotcasting technique for various substrate temperatures and processing solvents.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'hotcasting'缺少连字符，疑为提取合并错误；但此处不影响理解，标注存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：PCE约18%（摘要）与正文'~18%'一致；JSC从3.5升至22.4 mA/cm²，VOC从0.4升至0.92 V，FF从0.45升至0.82，与Shockley-Queisser理论极限（JSC≈26.23, VOC≈1.02, FF≈0.90）方向一致；VOC-光强斜率1.0 kBT/q（大晶粒）与1.64 kBT/q（小晶粒）在摘要结论（抑制陷阱复合）上自洽。光致发光能量1.627 eV（发射）、1.653 eV（吸收）及蓝移25 meV、线宽展宽20 meV均保留原文数值。公式与符号（kBT/q）按原文保留。不确定处：第2页两处晶粒尺寸单位'mm'疑为'µm'之误，已在extraction_issues中标注；第1页引言句子跨页中断，未补充推测内容。正文中约450 nm膜厚、PbI2/MACl 1:1摩尔比、70°C溶液/180°C基底、旋涂15秒等关键实验条件均保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2446,
+      "prompt_tokens": 5641,
+      "total_tokens": 8087,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 20
+      }
+    },
+    "content_chars": 4553
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

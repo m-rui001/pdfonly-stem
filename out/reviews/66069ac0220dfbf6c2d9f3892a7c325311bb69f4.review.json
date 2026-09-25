@@ -1,0 +1,102 @@
+{
+  "sha1": "66069ac0220dfbf6c2d9f3892a7c325311bb69f4",
+  "title": "COVID-19 and teacher education: a literature review of online teaching and learning practices",
+  "doi": "https://doi.org/10.1080/02619768.2020.1821184",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/66069ac0220dfbf6c2d9f3892a7c325311bb69f4/index.html",
+  "source_chars": 77596,
+  "markdown_chars": 13649,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "KEYWORDS\n\nIntroduction\n\nOnline learning; teacher education; online practices; Covid-19",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "关键词区块与正文首段标题“Introduction”顺序错乱，关键词被拆到“Introduction”之后，属抽取阅读顺序问题，但不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the Community of Inquiry Framework (Col) (Garrison, Anderson, and Archer 2000)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "CoI（Community of Inquiry）被 OCR 识别为“Col”，同一缩写错误在全文多处出现，可能影响读者对框架缩写的识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "（n=27, 20.1%）",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "中文全角括号出现在英文正文中，属 OCR 标点混用，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Mumford and Dikilita$ 2020$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "作者名 Dikilitaş 的变音符号被抽取为 LaTeX 式残留“$ 2020$”，属符号/格式抽取损坏，不影响引用识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Mumford and Dikilita $ \\grave{s} $ 2020",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "同一作者名 Dikilitaş 的变音符号被抽取为 LaTeX 重音标记，属符号抽取损坏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Mumford and Dikilita's 2020",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者名 Dikilitaş 被抽取为“Dikilita's”，属 OCR 字符错误，不影响引用识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Table 1. Focus of the papers analysed (most relevant).",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 的表头“Themes f %”中“f”疑为“n”的 OCR 误识，表结构列名不完整，但正文已给出对应数值，不影响关键数据理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "COVID-19 and teacher education: a literature review of online teaching and learning practices",
+  "self_check": "已核对：134 篇实证研究、检索时段 2000 年 1 月至 2020 年 4 月、数据库 Web of Science 与 ERIC、Table 1 各主题计数与百分比（27/20.1%、21/15.7%、15/11.2%、11/8.2%、9/6.7%、8/6.0%、43/32.1%、134/100%）、国家分布（美国 43/32.1%、英国 15/11.2%、澳大利亚 14/10.4%）、样本构成（职前 63/47.0%、在职 47/35.1%、两者兼有 15/11.2%、大学生 5/3.7%、教师教育者 4/3.0%、其他 19/14.2%）、方法分布（质性 53/39.6%、混合 51/38.0%、量化 30/22.4%）、数据收集工具（问卷 74/55.2%、访谈 51/38.0%、书面记录 52/38.8%）、2000—2010 年间论文数 n=36，以及 CoI 三种存在的定义与 Table 2—4 的归类。仍不确定处：Table 1 表头“f”是否为“n”的 OCR 误识；CoI 缩写被抽取为“Col”系 OCR 错误而非原文写法；作者名 Dikilitaş 的多种抽取形式（$ 2020$、$ \\grave{s} $、's）均为符号/字符损坏。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8025,
+      "prompt_tokens": 19194,
+      "total_tokens": 27219,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16289,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

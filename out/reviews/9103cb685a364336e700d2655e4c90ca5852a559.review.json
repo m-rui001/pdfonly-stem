@@ -1,0 +1,92 @@
+{
+  "sha1": "9103cb685a364336e700d2655e4c90ca5852a559",
+  "title": "How Solid-Electrolyte Interphase Forms in Aqueous Electrolytes",
+  "doi": "https://doi.org/10.1021/jacs.7b10688",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9103cb685a364336e700d2655e4c90ca5852a559/index.html",
+  "source_chars": 57557,
+  "markdown_chars": 2719,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "the columbic efficiency reached 86 %",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为coulombic efficiency，但原文如此，标注疑似拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Ga-ion sputtering generate five",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "句子在第8页末尾中断，第9页开头为“negative species”，中间被页眉和页码分隔，实际应连续为“generate five negative species”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "= \u0005\u0007 \u0001\u0003",
+      "type": "公式乱码/损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(2)在提取文本中显示为乱码，无法辨认，原文应为扩散限制模型表达式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "∆\u000e\u0003 = \u000e\u000f \u0010\u0011\u000e\u0012 \u0013 − \u0015 \u0010\u0011\u000e\u0012 \u0013 + \u0015 \u0010\u0017\u0018\u0019\u001a\u001b\u0013 − \u000e\u000f \u0010\u0017\u0018\u0019\u001a\u001b\u0013 = ∙ ∆\"# \u0010 $ ∆\"# \u0013\u0007 \u001b %&' )\u0007*∙∆\"# (",
+      "type": "公式乱码/损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(3)和(4)在提取文本中严重乱码，需参考原PDF。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "The preparation of chevrel phase Mo6S8 was decribed previsously",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "decribed和previsously应为described和previously，疑似OCR错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 23,
+      "quote": "electrolyte (1m), 0.0826 (5m), 0.1526 (10 m) and 0.2743 (21 m)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "摩尔分数数值本身可能正确，但上下文可能有截断，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：21 m库仑效率86%、不可逆容量7.7 mAh/g（总43 mAh/g）、DEMS中1 m产H2 84117 nmol和O2 22438 nmol、21 m产H2 43 nmol（对应0.00115 mAh/g）、TFSI还原电位2.30~2.90 V、LiF溶解度0.04 mol/L、DFT临界厚度1.6 nm（Mo6S8）和2.4 nm（Li4Mo6S8）、TEM厚度10~15 nm、Raman峰744→748 cm⁻¹、AGP占比82%。结论方向与数据一致。公式(2)-(4)在提取文本中乱码，未擅自补写，仅在markdown中说明其物理意义。其他不确定处包括个别拼写错误和跨页断句，已在extraction_issues中标明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4268,
+      "prompt_tokens": 16950,
+      "total_tokens": 21218,
+      "prompt_tokens_details": {
+        "cached_tokens": 16384
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1665
+      }
+    },
+    "content_chars": 4577,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "sha1": "9faaa9b4b45c719c61f11bf2682feffd8192875a",
+  "title": "Efficient two-terminal all-perovskite tandem solar cells enabled by high-quality low-bandgap absorber layers",
+  "doi": "https://doi.org/10.1038/s41560-018-0278-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9faaa9b4b45c719c61f11bf2682feffd8192875a/index.html",
+  "source_chars": 59679,
+  "markdown_chars": 3290,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "𝐴𝐴(𝐸𝐸) ∝𝑒𝑒 𝐸𝐸𝐸𝐸𝑢𝑢 ൗ",
+      "type": "疑似OCR损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Urbach能量公式的指数部分显示为乱码字符，无法还原为可读的数学表达式，原文应为A(E) ∝ exp(E/E_u)之类，但照录可见文本，未做修复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "We futher conduct the photothermal deflection spectroscopy (PDS) measurements",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“futher”应为“further”的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "This robust ICL allows us to fabricate the 1.25 eV Sn/Pb-2.5%Cl subcell ontop.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“ontop”应为“on top”的拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "We fabricate 2-T all-perovskite tandem cells with 1.75 eV perovskite top cells (~250 nm) and 2.5% Cl-incorporated 1.25 eV perovskite bottom cells (~720 nm)",
+      "type": "拼写/用词疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "后文图3c图注中写“single low-Eg top cell”，但应指bottom cell，正文此处“bottom”正确，图注疑似笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "For 2-T tandem cells, PEDOT:PSS films were coated on sputtered ITO coated underneath top sucells",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“sucells”应为“subcells”的拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "sugguesting no significant energy barrier",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“sugguesting”应为“suggesting”的拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：冠军PCE 21.0%（反向）/20.6%（正向），稳态20.7%（摘要中20.7%一致）；单结低带隙电池最佳PCE 18.4%与正文和表1中反向18.1%存在差异，但表1列出的可能是代表器件而非最佳器件，且正文明确说明最佳为18.4%，无文本矛盾；Voc、Jsc、FF数值均一致。Urbach能量、迁移率、衰减时间、α值、理想因子等均按原文记录。公式部分因OCR损坏无法确认，已在issues中标出。未引入外部知识，未推测图表未描述内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3963,
+      "prompt_tokens": 17148,
+      "total_tokens": 21111,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1010
+      }
+    },
+    "content_chars": 5205,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

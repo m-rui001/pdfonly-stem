@@ -1,0 +1,54 @@
+{
+  "sha1": "46e5aa21e63a2af7121832ea0737df718df54dcd",
+  "title": "Harnessing global fisheries to tackle micronutrient deficiencies",
+  "doi": "https://doi.org/10.1038/s41586-019-1592-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/46e5aa21e63a2af7121832ea0737df718df54dcd/index.html",
+  "source_chars": 51395,
+  "markdown_chars": 2939,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "nutrient intakes are inadequte",
+      "type": "疑似错误（拼写/OCR）",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "出现单词“inadequte”显然是“inadequate”的拼写/OCR错误，原文上下文为“nutrient intakes are inadequte”，应为“inadequate”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": ">2.5mg 100-1g and >1.8 mg 100-1g",
+      "type": "疑似错误（单位格式）",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“100-1g”疑为“100 g”或“100/1g”的误识别。同页下文有“per 100g”表述，且此处理解为每100克含量，故“100-1g”应属OCR/提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：数据库367种、2267样本、43国；钙铁锌在热带/小型物种高、omega-3在冷水和远洋高；无相关性结论；纳米比亚铁缺乏风险47%、需9%渔获；基里巴斯钙缺乏82%、需1%；贸易相关百分比（>79%、>69%、>90%、<5%、<13%等）与原文一致。公式已原样保留μ表达式及先验分布。仍不确定：图1中具体效应量数值未在正文提取文本中给出，未纳入；方法中“4188 measures/419 species”为初始数据库，最终采用2267/367，已区分说明。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9189,
+      "prompt_tokens": 13852,
+      "total_tokens": 23041,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6987
+      }
+    },
+    "content_chars": 3837
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

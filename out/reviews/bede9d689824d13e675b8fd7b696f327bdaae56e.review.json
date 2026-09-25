@@ -1,0 +1,193 @@
+{
+  "sha1": "bede9d689824d13e675b8fd7b696f327bdaae56e",
+  "title": "Improved charge extraction in inverted perovskite solar cells with dual-site-binding ligands",
+  "doi": "https://doi.org/10.1126/science.adm9474",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/bede9d689824d13e675b8fd7b696f327bdaae56e/index.html",
+  "source_chars": 67530,
+  "markdown_chars": 3946,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "these $ \\sim 6. 3 $ $ \\mathrm{\\AA} $ apart",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为 'these are ~6.3 Å apart'，OCR 漏掉了 'are'，但数值和单位可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "4-fluorobenzenesufonic acid (4F-BZSA) and 4-Iodobenzenesufonic acid (4I-BZSA)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为 '4-fluorobenzenesulfonic acid' 和 '4-iodobenzenesulfonic acid'，OCR 漏掉了 'l'，但缩写和结构可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "FTO/SAM/perovskite $ \\mathrm{C}{60} / \\mathrm{S n O}{x} / \\mathrm{A g} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "器件结构中钙钛矿与C₆₀之间缺少斜杠分隔符，原文应为 'perovskite/C₆₀/SnOₓ/Ag'，影响结构表述的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Fig. 3D, 3E, fig. S21, and S22",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文可能为 'figs. S21 and S22'，OCR 格式不一致，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "fig. 23",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文应为 'fig. S23'，OCR 丢失了 'S'，导致图号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ ( E_{\\mathrm{C o n f-p a r a}}-E_{\\mathrm{C o n f-p a r p}} ). $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文应为 'E_Conf-para − E_Conf-perp'，OCR 将 'perp' 误为 'parp'，影响公式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "The 4Cl-BZS treated device retains 95% of initial efficiency after 1200 hours o",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在 'o' 处截断，原文应为 'of' 或完整句子，但关键信息已给出。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Improved charge extraction in inverted perovskite solar cells using dual-site-binding ligands",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "补充材料标题使用 'using' 而非正文的 'with'，但作者、DOI 和内容一致，属于同一论文的补充材料标题变体。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "0.22 polytetrafluoroethylene membrane",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为 '0.22 μm'，OCR 丢失了单位 'μm'，但上下文可推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "$ 0. 2 \\mathrm{~A} \\mathrm{s}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文应为 '0.2 Å s⁻¹'，OCR 将 'Å' 误为 'A'，但数值和单位可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "$ 2 0 \\mathrm{~n m} \\mathrm{S n O}{2} $ at $ 9 0 \\mathrm{~} ^ {\\circ} \\mathrm{C} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为 '20 nm SnO₂ at 90 °C'，OCR 格式混乱但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "$ 5 0 \\times 5 0 \\mathrm{\\mu m}^{2} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文应为 '50 × 50 μm²'，OCR 格式可辨但间距异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Area[cm^{2}]$ $0.04929^{*}$ ± 0.00035",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "认证表格中面积单位与数值之间的格式损坏，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "Area[cm^{2}$ $1.0347^{*}\\pm0.0022$",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "认证表格中面积单位括号不匹配，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 36,
+      "quote": "the longer lifetime $ \\tau_{2} $ is the decay time of radiative recombination (citation).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文应为具体引用编号，OCR 显示为 '(citation)'，但公式和定义完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Confpara was energetically more favorable",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文应为 'Conf-para'，OCR 丢失了连字符，但含义明确。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "when absorbed on the perovskite layer",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文应为 'adsorbed'，OCR 误为 'absorbed'，但结合上下文不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Improved charge extraction in inverted perovskite solar cells with dual-site-binding ligands",
+  "self_check": "已核对摘要、正文数据和结论的一致性：认证QSS PCE 26.15%（0.05 cm²）和24.74%（1.04 cm²）与正文及认证表格一致；65°C MPP 1200小时后保持95%初始PCE与摘要和正文一致；85°C存储1500小时后保持95%与正文一致；4Cl-BZS的PLQY 41% vs 对照20%、TRPL寿命3.0 μs vs 0.6 μs、E_ads −0.85 eV vs −0.46 eV和−0.39 eV均与正文一致。公式τ = −{d ln[φ(t)]/dt}⁻¹和τ_ave = ΣA_iτ_i²/ΣA_iτ_i已保留。仍不确定之处：部分OCR格式错误（如器件结构斜杠缺失、图号S23误为23）已标注，但不影响核心论证。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4481,
+      "prompt_tokens": 21453,
+      "total_tokens": 25934,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8832,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

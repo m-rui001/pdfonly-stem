@@ -1,0 +1,45 @@
+{
+  "sha1": "db0157cb18358aafb050e840b61acca2287941e5",
+  "title": "Privateer: software for the conformational validation of carbohydrate structures",
+  "doi": "https://doi.org/10.1038/nsmb.3115",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/db0157cb18358aafb050e840b61acca2287941e5/index.html",
+  "source_chars": 8497,
+  "markdown_chars": 1565,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Top panel: MAN 616 (chain A) from PDB 3QVP. 3d7d, 1.1 Å-resolution data.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同一句中出现“PDB 3QVP”后跟随“3d7d”，与下文“PDB 3D7D”（大写）不一致，可能为笔误或抽取错误，但无法确定正确形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：1.6 Å 分辨率阈值、1.1 Å 分辨率、4σ 密度等高线、构象符号 1S5、4C1、2,5B；软件功能描述与结论方向一致。唯一不确定处为图注中“3d7d”的指向，已在 extraction_issues 中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4621,
+      "prompt_tokens": 3059,
+      "total_tokens": 7680,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3507
+      }
+    },
+    "content_chars": 2060
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

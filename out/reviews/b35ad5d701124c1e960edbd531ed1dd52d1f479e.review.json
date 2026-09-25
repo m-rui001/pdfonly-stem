@@ -1,0 +1,82 @@
+{
+  "sha1": "b35ad5d701124c1e960edbd531ed1dd52d1f479e",
+  "title": "Tuning Selectivity of CO2 Hydrogenation Reactions at the Metal/Oxide Interface",
+  "doi": "https://doi.org/10.1021/jacs.7b05362",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b35ad5d701124c1e960edbd531ed1dd52d1f479e/index.html",
+  "source_chars": 75468,
+  "markdown_chars": 4374,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 31,
+      "quote": "Cu/MnOx/ZrO2159 3:1 350 1.7 4.8 58 Cu/CrOx/ZrO2159 3:1 350 1.7 4 87 94 3:1 250 5 11.7",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.5,
+      "reason": "Table 1中多行数据不完整或列错位，例如'Cu/CrOx/ZrO2'一行后未显示CO选择性数值，且'94 3:1 250 5 11.7'可能是另一行数据（如Pd/Ga2O3）的前半部分。表格整体结构在抽取中有明显断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 15,
+      "quote": "The mechanism of CH4 formation on Pt/oxide and Cu/oxide catalysts was well described, though the catalysts were highly selective to CO or CH3OH.51,117 The addition of a secondary Co component on Pt/CeO2 or Pt/ZrO2 tuned the selectivity more toward CH4 than that without Co, though CO was still the major product.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第15页末尾'Cu/oxide catalysts was well described, though the catalysts were highly selective to CO or CH3OH.51,117 The addition of a secondary Co component on Pt/CeO2 or Pt/ZrO2 tuned the selectivity more toward CH4 than that without Co, though CO was still the major product.'在此处句子看似完整，但与前文关于Ni/γ-Al2O3和Ru(0001)的讨论衔接稍显突兀，可能存在页间抽取顺序问题，且该段落在第15页与第16页之间是否完整尚存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "for such complex reaction network, the binding energy of a single intermediate, or single descriptor, may not be adequate enough to well describe the catalytic performance; instead it is likely controlled by several key species, which work in a cooperative way.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第16页开头以'for such complex reaction network'起句，与第15页末尾的句子之间可能缺少过渡性内容，显示在第15页与第16页之间可能存在文本缺失或页间顺序问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 32,
+      "quote": "Pd/ZnO (1% Pd), SI99; SI = sol immobilization, Pd/ZnO (1% Pd), IM99; IM = impregnation",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表注中'SI = sol immobilization'后缺少标点，且'IM = impregnation'前的逗号分隔不清晰；此语句位于表格中部，疑似表格数据与注释混排。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 33,
+      "quote": "Normalized kr (10-3 min-1 mol cat CO-1) at conversion 35.4 11.43 0.323 60.7",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.5,
+      "reason": "Table 2中'Normalized kr'列的数据与'kr'列数据没有分隔明确，数字排列顺序在提取后难以区分各列对应的确切数据值，疑似列对齐信息丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：Pd/CeO₂在230°C、30 bar下CH₃OH选择性约90%（正文与Table 1一致）；Cu/CeOx/TiO₂(110)活性比Cu(111)高约1280倍（原文Figure 8描述）；Cu₄/Al₂O₃上CO₂加氢经由甲酸盐路径高选择生成CH₃OH（DFT结果）；PtCo/oxide上CH₄经由*H₃CO中间体生成（DFT与实验验证）；Ni/γ-Al₂O₃上20 wt% Ni负载活性最佳；Ru(0001)上*HCO解离为限速步骤。三条反应方程（RWGS、甲醇合成、甲烷化）已按原文化学式原样保留。表1/表2中大量数值未在正文中逐一引用，笔记中仅保留正文明确提及的关键数值（如Pd/CeO₂选择性~90%、Pd/ZnO粒径效应40%→80%、Rh/γAl₂O₃粒径无关性、Co/SiO₂粒径影响等）。无法确认表1中Cu/CrOx/ZrO₂等行的完整数据，以及表2中各列数据精确对应关系，因表格抽取明显存在列错位。部分页间衔接（如第15–16页）存在拼接疑点，已在extraction_issues中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4615,
+      "prompt_tokens": 24493,
+      "total_tokens": 29108,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 734
+      }
+    },
+    "content_chars": 7220
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "c2a415073f9b9bb1672345c53f0fc94f7b81bb58",
+  "title": "Antifogging abilities of model nanotextures",
+  "doi": "https://doi.org/10.1038/nmat4868",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c2a415073f9b9bb1672345c53f0fc94f7b81bb58/index.html",
+  "source_chars": 40057,
+  "markdown_chars": 1833,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "with a pillar density around 10%, an 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第4页末尾句子不完整，下一页开头为'aspect ratio h/2a = 3'，原意可能是'an aspect ratio of 3'，但'of'和'aspect'缺失，且'2'为多余字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "(t > t)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "同一符号t重复出现，逻辑上应为时间常数τ，疑为符号提取变形。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "∆F ≈ 2pRgrp2n",
+      "type": "符号疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "公式中'p'和'g'可能分别表示π和γ，'rp2'可能为r·p²，但原文未明确展开，无法确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "DFmax = 2pRg",
+      "type": "符号疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "同样，'p'和'g'可能为π和γ，但原文符号如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "! ≈ R(p-qa) 和 qa ≈ 170p/180",
+      "type": "符号疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "'!'可能为接触线半径ℓ，'p'可能为π，但无法确定。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：粘附平台450±50 μN、核密度0.1-0.2 µm⁻²、Rmin=1.5±0.2 µm、附着水量50→5 nL/mm²等均一致。公式(1)(2)按原文符号照录，未做推测性修改；符号疑点已列入issues。跨页断句问题已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9799,
+      "prompt_tokens": 11293,
+      "total_tokens": 21092,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8009
+      }
+    },
+    "content_chars": 3094
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

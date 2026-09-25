@@ -1,0 +1,54 @@
+{
+  "sha1": "d39aae594900384d93f1067bfaf7daf4091ebb79",
+  "title": "Recent advances in polymer and polymer composite membranes for reverse and forward osmosis processes",
+  "doi": "https://doi.org/10.1016/j.progpolymsci.2016.03.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d39aae594900384d93f1067bfaf7daf4091ebb79/index.html",
+  "source_chars": 315708,
+  "markdown_chars": 3584,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Current RO desalination plants consume approximately 3 – 6 kWh energy to produce 1 m of fresh water, 3",
+      "type": "疑似错误（上标丢失）",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文中“1 m”后应有上标“3”表示立方米，但提取中“3”被单独置于逗号后，疑似上标丢失或排版问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "endow 7",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页7末尾为“endow 7”后接页8“improved separation performances”，页码数字“7”插入句中，导致原本“endow improved”被拆开，需确认是否缺字。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、引言、RO与FO各节的关键数值（如通量、截留率、操作压力）与原文一致，例如RO通量提升倍数、PA TFC膜通量数据、FO膜双皮层性能等。不确定之处包括：表格中大量省略号内容未纳入笔记（仅保留正文描述），以及个别数值的单位上标可能因提取失真（已在issues中标出）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4414,
+      "prompt_tokens": 77676,
+      "total_tokens": 82090,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1731
+      }
+    },
+    "content_chars": 4395
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

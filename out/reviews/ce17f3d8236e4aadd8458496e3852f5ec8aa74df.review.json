@@ -1,0 +1,73 @@
+{
+  "sha1": "ce17f3d8236e4aadd8458496e3852f5ec8aa74df",
+  "title": "Real-World Subsynchronous Oscillation Events in Power Grids With High Penetrations of Inverter-Based Resources",
+  "doi": "https://doi.org/10.1109/tpwrs.2022.3161418",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ce17f3d8236e4aadd8458496e3852f5ec8aa74df/index.html",
+  "source_chars": 80919,
+  "markdown_chars": 4074,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "It is found that the the conventional line commuted control-based HVDC’s current and power control",
+      "type": "疑似文字重复",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "出现\"the the\"重复，原文可能为\"the\"一次。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The WPPs also later conﬁrmed installation of subsynchronous damping controllers and the relay was considered no longer considered unecessary and retired.",
+      "type": "疑似错误（重复/拼写）",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子中\"considered\"重复，且\"unecessary\"拼写错误，应为\"necessary\"或\"no longer necessary\"。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "The slip can be represented by slip = 1 − jωsm ，where ωm is the per unit rotor speed. s is the Laplacian transform variable. jωm . At the network resonance frequency range, slip = 1− jω LC .",
+      "type": "疑似公式提取残缺/乱码",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "公式符号显示混乱，如\"jωsm\"和\"jω LC\"，上下文推断应为滑差与LC谐振频率的关系式，但无法确认完整形式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "Fig. 24a(a) shows that the total impedance has a dip at 80 Hz.",
+      "type": "疑似格式错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图中编号重复\"a(a)\"，可能为\"Fig. 24a\"或\"Fig. 24\"。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：19个事件及其频率、补偿度、滑差计算结果（0.75 p.u.转速和0.70 p.u.谐振频率时滑差-0.07，等效电阻-14r0；75%补偿时0.866 p.u.频率和-0.1547滑差）、OL(s)模型中的增益阈值（2.63和2.91）等。不确定的是slip公式的原始符号和OL(s)的精确排版，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18149,
+      "prompt_tokens": 20452,
+      "total_tokens": 38601,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 15233
+      }
+    },
+    "content_chars": 5674
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

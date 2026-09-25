@@ -1,0 +1,54 @@
+{
+  "sha1": "1dfe8292577c18b9dd5d4fdcc83c3e1006435167",
+  "title": "Advances in hole transport materials engineering for stable and efficient perovskite solar cells",
+  "doi": "https://doi.org/10.1016/j.nanoen.2017.02.025",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1dfe8292577c18b9dd5d4fdcc83c3e1006435167/index.html",
+  "source_chars": 209704,
+  "markdown_chars": 2534,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "perovskite layer only 272 [page break] [43] (Fig. 2) and consequently",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第1页末尾页码'272'后，第2页开头插入图1的图注，随后正文直接以'[43] (Fig. 2) and consequently'继续，前后句子不连贯，疑似页眉/图注插入导致正文中断，缺失连接文字。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "t= (rA + rX) / (2 (rB + rX))",
+      "type": "疑似公式错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "标准钙钛矿容忍因子公式分母应为√2，提取文本为'2'，可能是OCR或排版错误，但无法从文本内直接确认，仅作为疑点标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文数据与结论的一致性：PCE 22.1%、VOC值（1.1V/1.61V）、迁移率范围、各HTM的PCE等与原文相符。容忍因子公式照录原文，但怀疑缺少根号。其他关键数值（如阻抗谱趋势、缓冲层效率提升）均与原文一致。未发现其他明显矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11126,
+      "prompt_tokens": 67923,
+      "total_tokens": 79049,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9141
+      }
+    },
+    "content_chars": 3309
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

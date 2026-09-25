@@ -1,0 +1,63 @@
+{
+  "sha1": "c71bf8dbbb3f8217baf17d8d363b251ba718ac1d",
+  "title": "A lithium–oxygen battery based on lithium superoxide",
+  "doi": "https://doi.org/10.1038/nature16484",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c71bf8dbbb3f8217baf17d8d363b251ba718ac1d/index.html",
+  "source_chars": 77968,
+  "markdown_chars": 1804,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "well-dispersed Ir 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第2页末尾句在'Ir'后中断，下一页以'nanoparticles'接续，中间插入页码'2'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "sodium superoxide1, 8",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第8页末尾'potassium superoxide3 and sodium superoxide1'后页码'8'，下页接续'although'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "1.00 e/O2 ratio",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "同一段落及后续出现'e-/O2'写法，此处缺负号，可能为提取丢失或原文笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：充电电位约3.2V（后升至3.5V）、效率85%/67%、DEMS e⁻/O₂ 比值1.00/1.02、LiO₂分解质量182.2/181.8 μg接近理论值181.6 μg、Ar放电转化率96%、Raman 1123 cm⁻¹、老化7天出现Li₂O₂、深放电产物组成、势垒0.9/0.3 eV、晶格失配约0.25 Å。公式LiO₂+Li⁺+e⁻→Li₂O₂已保留。不确定处：DEMS部分'e/O2'与'e-/O2'混用，已在issue中标注；其余数值均与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3926,
+      "prompt_tokens": 22331,
+      "total_tokens": 26257,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2325
+      }
+    },
+    "content_chars": 2777
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

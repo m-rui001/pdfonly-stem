@@ -1,0 +1,54 @@
+{
+  "sha1": "df484e0bb35afe35ac9c24a3aa94cacace56a2e7",
+  "title": "Best Practices for the Synthesis, Activation, and Characterization of Metal–Organic Frameworks",
+  "doi": "https://doi.org/10.1021/acs.chemmater.6b02626",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/df484e0bb35afe35ac9c24a3aa94cacace56a2e7/index.html",
+  "source_chars": 75412,
+  "markdown_chars": 5024,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "and many other topics Special Issue: Methods and Protocols in Materials Chemistry Received: June 28, 2016 Revised: August 25, 2016",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第一页末尾句子被截断，缺少“will necessarily escape discussion”之类的结束语；随后第二页开头却是另一句“but also broken and reformed”，说明跨页处文本拼接断裂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "massrecovered × 100 = yield % mass initial",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该公式明显丢失了分母和除号，正确应为(mass_recovered/mass_initial)×100 = yield%。提取文本中分子与分母顺序错乱，无法按原样表达定量关系。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：Cr-MIL-101 BET≈3500 m2/g，ZIF-8≈1700 m2/g；NU-125活化对比；BET正确/错误选区分别2200/4400 m2/g；PCN-222(Fe) Fe:Zr6比2.9±0.5与2.0±0.2；scCO2参数31°C、73 atm、释放速率0.1-1 cm3/min；水稳定性20 mg/10 mL等。公式1与公式2已按正确数学形式呈现但基于提取文本，其中公式2的原始提取有乱序，已在issue中标出。未引入任何外部知识，所有内容均来自提供的文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6981,
+      "prompt_tokens": 21154,
+      "total_tokens": 28135,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3417
+      }
+    },
+    "content_chars": 6066
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

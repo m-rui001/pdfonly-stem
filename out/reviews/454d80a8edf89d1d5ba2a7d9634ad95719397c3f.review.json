@@ -1,0 +1,64 @@
+{
+  "sha1": "454d80a8edf89d1d5ba2a7d9634ad95719397c3f",
+  "title": "Highly selective oxidation of methane to methanol at ambient conditions by titanium dioxide-supported iron species",
+  "doi": "https://doi.org/10.1038/s41929-018-0170-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/454d80a8edf89d1d5ba2a7d9634ad95719397c3f/index.html",
+  "source_chars": 46898,
+  "markdown_chars": 3223,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "inclulding very small clusters",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文'including'误拼为'inclulding'，属于明显的拼写笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "might owing to the intense electron beam",
+      "type": "语法/拼写疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "'might owing'缺少系动词，应为'might be owing'或'might owe'，但原文如此，不影响核心信息。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "atomasphere",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "原文'muffle furnace in atomasphere'中的'atomasphere'应为'atmosphere'，根据上下文可确定。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：约15%转化率与图1c中0.33 wt%样品2小时14.9%一致；醇选择性>97%与正文'酒精总选择性97%'一致；甲醇选择性>90%与正文'甲醇选择性最高90%'一致；18 mol/mol Fe和1056 μmol/gcat与正文一致；电荷收集效率98%与正文一致。不确定点：摘要称'15% conversion rate'，正文未明确给出3小时整点转化率，但接近图1c的2小时数值；摘要中'alcohol selectivity'与正文中'methanol selectivity'的区分，以及18 mol是甲醇还是总醇（原文摘要写alcohol，正文明确methanol），故笔记中按正文写为甲醇。公式和EXAFS拟合数值均按原文保留，未作修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6894,
+      "prompt_tokens": 12805,
+      "total_tokens": 19699,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4394
+      }
+    },
+    "content_chars": 4352
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

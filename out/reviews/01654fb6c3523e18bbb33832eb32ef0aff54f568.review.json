@@ -1,0 +1,64 @@
+{
+  "sha1": "01654fb6c3523e18bbb33832eb32ef0aff54f568",
+  "title": "Crystal and Electronic Structures of Complex Bismuth Iodides A3Bi2I9 (A = K, Rb, Cs) Related to Perovskite: Aiding the Rational Design of Photovoltaics",
+  "doi": "https://doi.org/10.1021/acs.chemmater.5b03147",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/01654fb6c3523e18bbb33832eb32ef0aff54f568/index.html",
+  "source_chars": 71000,
+  "markdown_chars": 3735,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "In the context",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "第5页末尾“In the context”后直接出现图3的图注，而第6页开头是“expected from the 1:1:1 crystallographic ratio”，中间缺少关于Rb1、Rb2、Rb3配位环境的完整句子，疑似在页面/图注穿插时丢失了内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Cs 2 SnI 6",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文正常应为Cs2SnI6，提取文本中出现了空格，可能是排版或提取空格问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "K3Bi2I920 Cs3Bi2I922",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格中“K3Bi2I920”和“Cs3Bi2I922”中的数字20、22很可能是不小心附加的参考文献编号，应为K3Bi2I9和Cs3Bi2I9。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Rb3Bi2I9晶胞参数（a=14.6443(19), b=8.1787(9), c=20.885(2) Å, β=90.421(7)°），带隙（实验K/Rb~2.1 eV，Cs~1.9 eV，计算2.17/2.16/2.32 eV），电离能（实验5.6-6.3 eV，计算5.7-6.1 eV），Born有效电荷（Rb层状4.3-4.9 |e|）。结论方向与摘要一致。不确定点：表格提取存在不完整，如Cs3Bi2I9的介电常数部分缺失；Cs盐计算带隙趋势与实验不符，原文归因于体积过估。跨页缺失已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10522,
+      "prompt_tokens": 20627,
+      "total_tokens": 31149,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7498
+      }
+    },
+    "content_chars": 4808
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

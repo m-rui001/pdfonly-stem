@@ -1,0 +1,93 @@
+{
+  "sha1": "99b6b36c884a59c7db94095e8a086e9efaf18092",
+  "title": "Bipolar-shell resurfacing for blue LEDs based on strongly confined perovskite quantum dots",
+  "doi": "https://doi.org/10.1038/s41565-020-0714-5",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/99b6b36c884a59c7db94095e8a086e9efaf18092/index.html",
+  "source_chars": 24609,
+  "markdown_chars": 4805,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "2D NOSEY 1H NMR spectra",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "NOSEY应为NOESY（核Overhauser效应谱），属OCR拼写错误，影响对NMR实验类型的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "D NOSEY 1H NMR spectra",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同上，NOSEY应为NOESY，且“D”可能为“2D”的截断，影响对实验描述的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Data from multiple measurements were used for an average value listed in Supplementary Table 1.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "此处指代Supplementary Table 1，但该表内容为电泳迁移率，而SCLC迁移率数据实际在Supplementary Table 3，表号引用可能错误或OCR误读，影响数据归属判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "The results of fitting are in Table S5:",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "后文实际给出的是Supplementary Table 6，此处“Table S5”与表号不一致，可能为OCR或原文笔误，影响对拟合参数表的定位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "I _ {t o t} = I _ {R} + I _ {s h u n t} + I _ {0}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中I₀的下标0在OCR中显示为普通0，但后文描述为“I{0} is a constant contribution”，下标格式可能丢失，影响公式符号的精确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "I _ {s h u n t} = \\frac {V}{R _ {s h u n t}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中R_shunt的下标在OCR中显示为“s h u n t”，但前文已定义R_shunt，格式一致性可能受损，不影响数值理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Bipolar-shell resurfacing for blue LEDs based on strongly confined perovskite quantum dots",
+  "self_check": "已核对关键数值：电泳迁移率（Supplementary Table 1）、XPS比例0.41:1:3.4、SCLC迁移率与陷阱密度（Supplementary Table 3、4）、LED拟合参数（Supplementary Table 6）、带偏移与电流密度（Supplementary Table 8）、复合区宽度计算（71 nm蓝光、124 nm绿光）及优化厚度（40 nm蓝光、90 nm绿光）。公式均按提取文本原样保留，未做推测性修复。不确定处：Supplementary Table 1在正文中被误引为SCLC迁移率来源，实际应为Supplementary Table 3；Table S5与Supplementary Table 6编号不一致，已作为OCR问题列出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3592,
+      "prompt_tokens": 8020,
+      "total_tokens": 11612,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6988,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

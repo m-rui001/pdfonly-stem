@@ -1,0 +1,63 @@
+{
+  "sha1": "7b651c3d4f87aedf15766674bd6933534ada14f5",
+  "title": "Magnetic Shape Memory Polymers with Integrated Multifunctional Shape Manipulation",
+  "doi": "https://doi.org/10.1002/adma.201906657",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7b651c3d4f87aedf15766674bd6933534ada14f5/index.html",
+  "source_chars": 41463,
+  "markdown_chars": 2677,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "34,35\n59 glass transition temperature (Tg), for the shape memory effect.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页末尾'under external stimuli, such as heat or light'后，第4页以'34,35'和'59 glass transition temperature...'开头，引用标号和疑似行号插入正文，导致句子不连续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "59 glass transition temperature (Tg), for the shape memory effect.",
+      "type": "疑似行号混入",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数字'59'孤立出现，与上下文无关，可能为PDF行号被错误提取进正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "heating for 12 s unlocks P5-15 and P25-15 (E1=0, E2, E3=1)",
+      "type": "疑似错误（逻辑矛盾）",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "根据前文，P5-15需35 s才软化，12 s不足以解锁P5-15；且括号内E1=0表示P5-15保持锁定，应为'P15-15 and P25-15'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：存储模量4.6 GPa至3.0 MPa，Tg约56/58°C，形状固定率87.8%，恢复率87.2%，加热时间5/11/35 s，谐振频率0.95/1.25/2.15-3.26 GHz，重量比64/49倍等。公式未涉及。不确定处：第10页'P5-15 and P25-15'与上下文矛盾，标记为疑似笔误；第4页'59'疑为行号，不影响实质数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8463,
+      "prompt_tokens": 11891,
+      "total_tokens": 20354,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6226
+      }
+    },
+    "content_chars": 3832
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

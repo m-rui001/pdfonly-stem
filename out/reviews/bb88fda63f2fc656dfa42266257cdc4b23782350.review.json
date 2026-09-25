@@ -1,0 +1,91 @@
+{
+  "sha1": "bb88fda63f2fc656dfa42266257cdc4b23782350",
+  "title": "Understanding trends in C–H bond activation in heterogeneous catalysis",
+  "doi": "https://doi.org/10.1038/nmat4760",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bb88fda63f2fc656dfa42266257cdc4b23782350/index.html",
+  "source_chars": 25850,
+  "markdown_chars": 2897,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "𝐸$ = 𝐸(𝑀) 𝑂+ 𝐻-./ ) − 𝐸(𝑀) 𝑂+ 𝐻- )",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "式(1)中“H-./”与“H-”为数学符号提取乱码，无法确认其确切的化学形态（如吸附氢或H₂），但结合文字描述“reduced and bare active site”可判断为还原态与裸活性位的形成能之差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "𝐸23 = 0.75𝐸$ − 1.26𝐸;<$ − 4.93",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "𝐸23与𝐸;<#为受复制保护的数学符号乱码，据上下文应分别对应活化能E_a与反应物C–H键能E_C–H，但无法从文本本身完全确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the reactant’s C-H bond strength, !\"#$ !!",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“!\"#$ !!”为字体编码乱码，应为某个紧凑的数学符号（结合句意推测为E_C–H），但无法核实。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "𝚫𝐺a",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“𝚫𝐺a”应为ΔG_a（活化自由能）的符号损坏，字体编码导致斜体与下标丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "𝑟𝑎𝑡𝑒 = 𝜗)GHIJ KL 2 M 𝑒𝑥𝑝 <𝚫QR S2",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "式(3)速率表达式的主体部分“KL 2 M”和“<𝚫QR S2”为提取乱码，无法复原公式的完整数学结构，仅能辨认θ_active与指数项。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "𝜗)GHIJ = Z[\\ /^_ ` /. VWX Y Z[\\ /^_ `",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "式(5)中分数与指数结构以乱码字符呈现（如“Z[\\ /^_ `”“VWX Y”），无法确认其数学形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：图1标度关系MAE=0.11 eV、最大绝对误差0.3 eV；图3(a)中甲烷/乙烷/甲醇标度线斜率均为0.75，截距分别为1.09、0.7、0.54；式(2)系数0.75、−1.26、−4.93；自由基型TS键长C–H约2.5 Å、O–H约1.2 Å；甲烷活化温度150 °C、活性位形成450 °C；Cu₃O₃/MOR比其他沸石甲醇产率高一个数量级（每Cu原子）；图5材料类别（AEI/AFX/MAZ/MOR/FAU、4d/5d金属、IrO₂应变、钙钛矿）。由于式(1)(3)(4)(5)的数学符号在提取中损坏，正文仅以文字描述其变量含义而未复原公式结构；另E_H、E_a、G_f、ΔG_a等符号的下标/字体在提取文本中不一致，已按上下文统一为可读形式，但数值与结论方向均与摘要及正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13655,
+      "prompt_tokens": 7290,
+      "total_tokens": 20945,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10906
+      }
+    },
+    "content_chars": 4760
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

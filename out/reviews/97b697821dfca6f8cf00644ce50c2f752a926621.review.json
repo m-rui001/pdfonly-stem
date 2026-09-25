@@ -1,0 +1,82 @@
+{
+  "sha1": "97b697821dfca6f8cf00644ce50c2f752a926621",
+  "title": "Designing Boron Nitride Islands in Carbon Materials for Efficient Electrochemical Synthesis of Hydrogen Peroxide",
+  "doi": "https://doi.org/10.1021/jacs.8b02798",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/97b697821dfca6f8cf00644ce50c2f752a926621/index.html",
+  "source_chars": 48779,
+  "markdown_chars": 4705,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "On the other hand, all of the BCN configurations with h-BN domains in graphene substrates bind oxygen weakly (∆𝐺:; < 1.1 𝑒𝑉), leading to the protonation of OOH* to form H2O2 (eq. 3) as the main product.",
+      "type": "疑似逻辑/符号方向错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "前文将右侧火山（弱结合）定义为∆GOH*>1.1 eV，本句语境描述h-BN畴构型走向二电子路径，但符号写作<1.1 eV。按上下文应为'>'，文本方向存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Figure 2. (a) Synthetic Scheme for different heteroatom doped carbons. SEM images of (b) N-C, (c) BN-C1 and (d) BN-C2.",
+      "type": "图片注记与正文描述矛盾",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图注与正文文本矛盾：图注(c)标注为BN-C1、(d)为BN-C2，而正文描述'BN-C1 tends to have a self-hardening effect… leads to the formation of irregular spherical particles, as evidenced from the SEM images (Fig. 2d)'，且第10页正文另说'porous network was formed as the case of N-C, as shown in the SEM image of BN-C2 in Fig.2c'，与图注标注的编号互换，存在正文引用与图注编号不一致的疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Similarly, analysis of the B1s spectra shows three peaks at ca. 190.0 eV, 191.0 eV and 192.4 eV after deconvolution, assigned to B-N species present in small h-BN domains within the carbon framework, BC2O and BCO2 respectively.19",
+      "type": "疑似数据错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "同一页前文已述B1s峰为190.0 eV（B-N）、191.0 eV（BC₂O）与192.4 eV（BCO₂），并已在文本中给出定量；此处'192.4 eV'与前述一致。但该处引用标记'19'为文献编号，低信息量，笔记中已省略。另外页码6对二电子活性的前半段分析中，'BN co-doping (13%)'表述与表1中BN-C1的14.5%存在细微出入，但正文中未直接对比，无法判定是否错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "BN-C1 for samples made from only the 3-APBA monomer (m=1, n=0); and BNC2 for both monomers with m=1, n=2.",
+      "type": "拼写/命名不一致",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "此处第二个产物名写为'BNC2'（无连字符），其他地方均为'BN-C2'，文本自身提供了不一致证据。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "Figure 3. (a) XPS survey scan for N-C, BN-C1 and BN-C2. (b) Atomic composition of the four samples.",
+      "type": "文本前后表述矛盾",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图注(b)称'four samples'，但图中实际列出了N-C、BN-C1、BN-C2三种材料，正文也仅描述三种样品，数量不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数据：（1）理论部分两个标准电极电位0.70 V（2e⁻）与1.23 V（4e⁻），与摘要一致；（2）实验部分三种材料的BET比表面积（N-C 630/632、BN-C1 74、BN-C2 751/750 m²/g）、XPS元素定量（N-C：N 4.2 at%、BN-C1：N 12.5/B 16.5/16.8、BN-C2：N 11.5/B 11 at%）及h-BN簇含量（BN-C1约14.5%、BN-C2约10.5%）；（3）电化学参数：disk onset 0.80 V、ring onset约0.79 V（BN-C1/BN-C2）与0.67 V（N-C）、环收集效率0.2545、RHE校准值0.959 V、载量0.51 mg/cm²；（4）公式（1）–（8）与H₂O₂选择性公式（I）均已原样保留。不确定之处：（1）第6页二电子路径一侧的∆GOH*不等号方向（<1.1 eV）与上下文火山图右侧（>1.1 eV）定义冲突，已在extraction_issues中标注；（2）图2与图3的图注与正文引用存在编号矛盾，已标注；（3）h-BN浓度在正文的'13%'理论最佳值是否对应BN-C1的实测14.5%未在原文直接给出明确比较语句，笔记保留了原文的'close to'表述；（4）稳定性图编号为图5d而非独立编号，按原文处理。未补充任何外部信息或修复任何疑似损坏的化学式。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4906,
+      "prompt_tokens": 13593,
+      "total_tokens": 18499,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 549
+      }
+    },
+    "content_chars": 7608
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

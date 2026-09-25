@@ -1,0 +1,102 @@
+{
+  "sha1": "82b368e134439808a1d6bea3a6506c8aee01ae16",
+  "title": "TFHE: Fast Fully Homomorphic Encryption Over the Torus",
+  "doi": "https://doi.org/10.1007/s00145-019-09319-x",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/82b368e134439808a1d6bea3a6506c8aee01ae16/index.html",
+  "source_chars": 199889,
+  "markdown_chars": 15628,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "TFHE: Fast Fully Homomorphic Encryption over the Torus $ ^{\\star} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题末尾的星号上标被 OCR 抽取为 LaTeX 片段 $ ^{\\star} $，属于格式噪声，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "We denote by $ \\mathbb{Z}{N}[X] $ the ring of polynomials $ \\mathbb{Z}[X]/(X^{N}+1). $ $ \\mathbb{T}{N}[X] $ denotes $ \\mathbb{R}[X]/(X^{N}+1) $ mod 1 and $ \\mathbb{B}{N}[X] $ denotes the polynomials in $ \\mathbb{Z}{N}[X] $ with binary coefficients.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "下标 N 在 $\\mathbb{Z}_N[X]$、$\\mathbb{T}_N[X]$、$\\mathbb{B}_N[X]$ 中被 OCR 抽取为普通字符 N 而非下标，导致符号显示为 $\\mathbb{Z}{N}[X]$ 等，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "For all closed (continuous or discrete) additive subgroup $ M\\subseteq \\mathbb{R}^{k},\\rho_{\\sigma ,\\mathbf{c}}(M) $ is finite, and defines a (restricted) Gaussian Distribution $ \\mathcal{D}{M,\\sigma ,\\mathbf{c}} $ of standard deviation $ \\sigma $ and center $ \\mathbf{c} $ over M, with the density function $ \\mathcal{D}{M,\\sigma ,\\mathbf{c}}(\\mathbf{x})= \\rho_{\\sigma ,\\mathbf{c}}(\\mathbf{x}) / \\rho_{\\sigma ,\\mathbf{c}}(M). $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "分布符号 $\\mathcal{D}_{M,\\sigma,\\mathbf{c}}$ 的下标在 OCR 中丢失，显示为 $\\mathcal{D}{M,\\sigma ,\\mathbf{c}}$，影响公式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The error distribution $ \\xi $ is $ (0,\\mathcal{D}{\\mathbb{T}{N}[X],\\alpha}} $ where $ \\mathcal{D}{\\mathbb{T}{N}[X],\\alpha} $ is the modular Gaussian distribution",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "误差分布表达式 $\\xi$ 为 $(0,\\mathcal{D}_{\\mathbb{T}_N[X],\\alpha})$ 的括号与下标在 OCR 中错乱，出现多余花括号，影响公式完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Since $ \\bar{a}{i,j} $ is defined as the nearest multiple of $ \\frac{1}{B{g}^{\\ell}} $ on the torus, we have $ |\\bar{a}{i,j}- $ $ a{i,j}|\\leq 1/2B_{q}^{\\ell}=\\epsilon. $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 $B_g$ 被 OCR 误写为 $B_q$，且 $\\bar{a}_{i,j}$ 与 $a_{i,j}$ 的下标被拆散，影响公式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "$$ \\left\\| \\operatorname {E r r} (A \\square B) \\right\\| _ {\\infty} \\leq (k + 1) \\ell N \\beta \\left\\| \\operatorname {E r r} (A) \\right\\| _ {\\infty} + \\left\\| \\mu_ {A} \\right\\| _ {1} (1 + k N) \\epsilon + \\left\\| \\mu_ {A} \\right\\| _ {1} \\left\\| \\operatorname {E r r} (B) \\right\\| _ {\\infty} $$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "内积噪声公式中最后一项应为 $\\|\\mu_A\\|_1\\|\\mathrm{Err}(B)\\|_\\infty$，但 OCR 抽取为 $\\|\\mu_A\\|_1\\|\\mathrm{Err}(\\boldsymbol{b})\\|_\\infty$，将 $B$ 误为 $\\boldsymbol{b}$，与上下文不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "$$ \\operatorname {V a r} \\left(\\operatorname {E r r} \\left(A \\square B\\right)\\right) \\leq (k + 1) \\ell N \\beta^ {2} \\operatorname {V a r} \\left(\\operatorname {E r r} (A)\\right) + (1 + k N) \\left\\| \\mu_ {A} \\right\\| _ {2} ^ {2} \\epsilon^ {2} + \\left\\| \\mu_ {A} \\right\\| _ {2} ^ {2} \\operatorname {V a r} \\left(\\operatorname {E r r} (\\boldsymbol {b})\\right) $$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "内积平均情形方差公式中最后一项应为 $\\mathrm{Var}(\\mathrm{Err}(B))$，OCR 抽取为 $\\mathrm{Var}(\\mathrm{Err}(\\boldsymbol{b}))$，将 $B$ 误为 $\\boldsymbol{b}$。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "TFHE: Fast Fully Homomorphic Encryption over the Torus",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 61418,
+      "total_tokens": 71418,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 20327,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

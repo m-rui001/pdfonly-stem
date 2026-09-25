@@ -1,0 +1,92 @@
+{
+  "sha1": "9787c4820fa85b73ff3739f940d2b47fcf924907",
+  "title": "Visual attentional orienting by eye gaze: A meta-analytic review of the gaze-cueing effect.",
+  "doi": "https://doi.org/10.1037/bul0000353",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9787c4820fa85b73ff3739f940d2b47fcf924907/index.html",
+  "source_chars": 143853,
+  "markdown_chars": 9239,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "SOAs from 601 to 80 ms as long",
+      "type": "疑似OCR笔误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "根据上下文，此类别应为601至800 ms（与前文'SOAs from 401 to 600 ms as medium'对应），'80 ms'疑为'800 ms'的OCR错误。源文如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Full-text articles assessed for eligibility: 317 Texts including at least one eligible gaze-cueing effect: 75",
+      "type": "跨页图表截断/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此引文位于图3（PRISMA流程图）下方，图3的标题在文本中为'Figure 3 Flowchart Illustrating the Study Screening and Selection Process'，但流程图本身的数字框在文本中以列表形式出现，可能为跨页拼接，不可完全确认。仅标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "No samples reported postdata reduction sex. b No samples reported postdata reduction age.",
+      "type": "跨页表格注脚拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此注脚位于表2下方，表2数据较多，注脚与表格正文存在跨页拼接的可能性，注脚序号（a、b）在正文提取中未能完整对应。仅标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "when the gaze cue stimulus offsets before the target onsets this may therefore function as a cue that reallocates attention shifted to the gazed-at-location (i.e., via the gaze cue stimulus) back to the central ﬁxation",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句主语是'offsets'（第三人称单数），但后面出现了'onsets'，从语义和语法看应是第三人称原形。源文确实如此，未静默修改。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "the cue-target stimulus onset asynchrony, referred to as the SOA",
+      "type": "跨页截断/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该短语出现在第5页，但第4页末尾有同一概念，存在跨页术语衔接问题，非逻辑错误，仅标记。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "Given limitations in the amount of visual information that a person can simultaneously process through to conscious perception, selective visual attention is necessary.",
+      "type": "跨页摘要截断",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第1页末尾出现'people tend to respond faster to peripheral targets that are cued rather than miscued by speciﬁc visual stimuli (Posner, 1980; Posner et al., 1980; Posner & Petersen, 1990)。'，第2页开头为'Given limitations...'，跨页衔接处可能有页眉/免责声明插入，但语义连贯，不视为错误。仅标记。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：总体效应量grm=0.26（95% CI [0.22, 0.29]）、423效应量/137样本/4239参与者、各调节变量F值和t值、公式1和2的结构、r=.92的插补值、异质性百分比（90.25%）、SOA分类定义和对应效应量。不确定的点：第5页'601 to 80 ms'疑似应为'601 to 800 ms'但照录原文；表2中厌恶表情ES=3,k=2的效应值grm=0.49但置信区间[-2.15, 3.13]不包含零，与p=.256的显著性判断一致，已保留。摘要中'All reported moderator analyses were planned and preregistered'与正文一致。讨论中提及的未纳入元分析的IOE研究（Frischen & Tipper, 2004; Frischen, Smilek, et al., 2007）原文用'although note'说明。所有统计数值均核自正文提取文本，未添加或推断未见于文本的数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6826,
+      "prompt_tokens": 37053,
+      "total_tokens": 43879,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 563
+      }
+    },
+    "content_chars": 11971,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

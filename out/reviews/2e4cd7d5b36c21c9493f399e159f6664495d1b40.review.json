@@ -1,0 +1,55 @@
+{
+  "sha1": "2e4cd7d5b36c21c9493f399e159f6664495d1b40",
+  "title": "Failure rate, repair time and unscheduled O&M cost analysis of offshore wind turbines",
+  "doi": "https://doi.org/10.1002/we.1887",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2e4cd7d5b36c21c9493f399e159f6664495d1b40/index.html",
+  "source_chars": 43313,
+  "markdown_chars": 3451,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "This leads the authors to believe that there are certain components in a turbine that the step from onshore to offshore affects more than others.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句完整，但前页末尾'It must also be considered that...'与后页'when they are moved from on to offshore.'之间可能存在跨页断裂，此处无实际缺失，仅标注。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "Although and increased wind speeds, age of turbines and size of turbines go some way to explain the differences there is still some differences which perhaps are due to loading or scheduled O&M.",
+      "type": "疑似拼写/语法错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文'Although and increased'应为'Although increased'，'and'疑为多余；'scheduled O&M'语义不通，可能为'scheduled O&M'，但不确定。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文数据：平均故障率8.3次/台/年（摘要中'~350'、'1768 turbine-years'与正文一致）；故障率公式符号与定义核对无误；图3-15的主要数值（如发电机0.999 vs 陆上0.123，变流器0.180 vs 0.107，齿轮箱大更换€230,000等）均来自提取文本；第6年尖峰、风速斜率1.77等均一致。不确定处：结论中'levels out at approximately 10 failures'与正文8.3不符，但原文如此，未做修改；表2中'λ'数值与正文其他部分略有不一致（如小修6.81 vs 6.2），以原文为准。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2662,
+      "prompt_tokens": 11699,
+      "total_tokens": 14361,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 20
+      }
+    },
+    "content_chars": 4718
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

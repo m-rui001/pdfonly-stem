@@ -1,0 +1,109 @@
+{
+  "sha1": "e67908a61beb85084ff9664b956c14740da1820c",
+  "title": "New roads and challenges for fuel cells in heavy-duty transportation",
+  "doi": "https://doi.org/10.1038/s41560-021-00775-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e67908a61beb85084ff9664b956c14740da1820c/index.html",
+  "source_chars": 79281,
+  "markdown_chars": 1932,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "with key changes in 2 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'2'被误插入正文，打断句子；实际应为'with key changes in system design'，'system design'出现在下一页开头。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "and 3 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'3'被误插入正文，打断句子；'acceleration events'在下一页开头。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "to 4 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'4'被误插入正文，打断句子；'supplement the PEMFC power'在下一页开头。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "have been 7 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'7'被误插入正文，打断句子；'almost exclusively supported'在下一页开头。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "system. 9 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页码'9'出现在句号后，类似上述问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "primary 10 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'10'打断'primary'和'life-limiting factor'，实际句子在下一页继续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "demonstrate 11 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "页码'11'打断'demonstrate'和'that while much progress'，实际句子在下一页继续。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "environment. 8 Pursuant to the DOE Public Access Plan",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页码'8'出现在句号后，虽然语义影响较小，但仍为插入的页码，可能干扰阅读。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的关键数据如效率（≥50%对应>0.7V）、电压（0.675V）、载量（0.3 mg/cm²、0.4 mg/cm²）、寿命（25,000h、100万英里）等，与原文一致。不确定之处在于多处页码拼接导致句子断裂，但关键信息可从上下文中恢复，不影响整体论述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9313,
+      "prompt_tokens": 18786,
+      "total_tokens": 28099,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7327
+      }
+    },
+    "content_chars": 4144
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

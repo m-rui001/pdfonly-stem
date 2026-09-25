@@ -1,0 +1,102 @@
+{
+  "sha1": "50c0dd36c0c0961182efed8d5610a0ce501d8923",
+  "title": "Opportunities and challenges for spintronics in the microelectronics industry",
+  "doi": "https://doi.org/10.1038/s41928-020-0461-5",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/50c0dd36c0c0961182efed8d5610a0ce501d8923/index.html",
+  "source_chars": 82516,
+  "markdown_chars": 14745,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "# Opportunities and challenges for spintronics in the microelectronic industry",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页标题为“microelectronic industry”（单数），而登记题名为“microelectronics industry”（复数），存在轻微不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the spin Hall and Rashba-Edelstein effects $ ^{6,8,23} $ or their thermal $ ^{24} $ and optical $ ^{25,26} $ analogues",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标引用编号格式在OCR中可能丢失或错位，但文本内容可读，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "lower the STT current below $ 2 \\mathrm{M A.c m}^{-2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中的单位“MA.cm⁻²”在OCR中呈现为“M A.c m⁻²”，存在空格和格式问题，可能影响数值单位的准确解读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "detectivities of few hundred pT at DC $ ^{52} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标引用编号可能丢失或错位，但数值和单位清晰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "reaching up to the THz range for antiferromagnetic materials",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文本中“THz”可能被误读，但上下文表明是太赫兹范围。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "record TMR amplitude in spin-filter van der Waals heterostructures of $ 19,000\\%^{112} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "百分比符号和上标引用在OCR中可能格式混乱，但数值19,000%清晰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Fig. 5| Materials and nanofabrication challenges. (a) Relationship between magnetoresistance and resistance-area product (RA) of a series of junctions. The target requirements for 2 Tbit/in $ ^{2} $ hard disk drive (HDD) read heads as well as 1 and 10 Gbit MRAM applications are shown.",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注中可能包含表格或图表信息，但OCR仅提取文字，未提供图表结构，可能影响对图5的完整理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Opportunities and challenges for spintronics in the microelectronic industry",
+  "self_check": "已核对关键数值：STT电流目标<2 MA·cm⁻²、TMR室温最大值604%、范德华异质结构TMR 19,000%、传感器探测率几百pT至<1pT、RF频率范围0.1-60 GHz、MTJ直径50-500 nm、能量壁垒0.1 aJ等。公式和单位已按原文保留，未擅自修改。结论方向与原文一致。仍不确定之处：部分上标引用编号在OCR中可能丢失或错位，但不影响主要论证；图5的表格结构可能不完整，但正文已描述关键结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9819,
+      "prompt_tokens": 20407,
+      "total_tokens": 30226,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17369,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

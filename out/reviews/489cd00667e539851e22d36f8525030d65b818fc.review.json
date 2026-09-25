@@ -1,0 +1,55 @@
+{
+  "sha1": "489cd00667e539851e22d36f8525030d65b818fc",
+  "title": "Consistent Video Saliency Using Local Gradient Flow Optimization and Global Refinement",
+  "doi": "https://doi.org/10.1109/tip.2015.2460013",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/489cd00667e539851e22d36f8525030d65b818fc/index.html",
+  "source_chars": 58875,
+  "markdown_chars": 3357,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "k\nk\n",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "第8页末尾孤立出现两个“k”字符，可能是公式或排版残留，无法判断具体含义，但也不影响整体理解，仅提示文本拼接异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "Let the size of the frame Ik be n × m, we define",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第3页末尾句子在第4页开头被截断，第4页首行直接出现“some noisy points.”，中间缺少梯度流定义的完整内容（公式及说明），属于明显的跨页缺失或顺序错乱。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对方法中的关键公式：颜色梯度M_c、光流梯度M_o、时空梯度场M的分段定义、梯度流V^F及t=2的参数、局部/全局对比度公式、能量函数及闭式解s = α(B−W+αE)^{-1}s*，以及实验参数α=0.5、η=0.2、λ=1、γ²=0.3。数据集和评价指标均已按原文表述。不确定之处：第4页缺失的梯度流定义部分无法确认具体符号，已在issue中标出；第8页孤立“k”字符来源不明。摘要与正文中关于方法步骤和实验结果的描述一致，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2938,
+      "prompt_tokens": 15562,
+      "total_tokens": 18500,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516
+      }
+    },
+    "content_chars": 4175
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "sha1": "29cb0cddef897ef6de00408e7c5b161347069a8d",
+  "title": "On-chip generation of high-dimensional entangled quantum states and their coherent control",
+  "doi": "https://doi.org/10.1038/nature22986",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/29cb0cddef897ef6de00408e7c5b161347069a8d/index.html",
+  "source_chars": 53029,
+  "markdown_chars": 14734,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "| \\Psi \\rangle = \\sum_ {k = 1} ^ {D} c _ {k} | k \\rangle_ {\\mathrm {s}} | k \\rangle_ {\\mathrm {i}}, \\mathrm {w i t h} \\sum | c _ {k} | ^ {2} = 1",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "公式中求和符号缺少下标和上标范围，原文应为 \\sum_{k=1}^{D} |c_k|^2 = 1，OCR 丢失了求和限。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "|\\Psi\\rangle=\\sum_{k=1}^{D} c_{k}|k\\rangle_{s}|k\\rangle_{i}\\approx \\frac{1}{\\sqrt{D}}\\sum_{k=1}^{D}|k\\rangle_{s}|k\\rangle_{i}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该公式中 \\sum 的上下标在 OCR 中部分丢失，但根据上下文可推断为 k=1 到 D，属于公式符号提取不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "c_{{s,i},x}^{\\mathrm{Mod}}=a_{x\\cdot p}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "下标 {s,i} 在 OCR 中显示为 {s,i}，但原文可能为 {\\mathrm{s}, \\mathrm{i}}，存在格式损失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "\\frac {1}{\\sqrt {2}} \\left(e ^ {\\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} \\rangle + e ^ {- \\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} + 1 \\rangle\\right), \\quad \\frac {1}{\\sqrt {2}} \\left(e ^ {- \\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} \\rangle + e ^ {\\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} + 1 \\rangle\\right), \\quad \\frac {1}{\\sqrt {2}} \\left(e ^ {\\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} \\rangle + e ^ {- \\frac {2 \\pi}{3} i} | \\bar {\\mathrm {k}} + 2 \\rangle\\right),",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该行公式中部分 \\bar{\\mathrm{k}} 的括号或格式在 OCR 中可能不完整，但整体可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "QuDit two-photon interference\n\nd\n\nb\n\nReconstructed density matrix\n\ne\n\nC\n\nf",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该页文字顺序混乱，标签与内容分离，可能为图 4 的图注或标签，但阅读顺序明显受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 23,
+      "quote": "\\frac {1}{\\sqrt {3}} \\left(\\left| \\bar {k} + 1 \\right\\rangle + e ^ {\\frac {2 \\pi}{3} i} \\left| \\bar {k} + 2 \\right\\rangle + e ^ {- \\frac {2 \\pi}{3} i} \\left| \\bar {k} + 3 \\right\\rangle\\right), \\frac {1}{\\sqrt {3}} \\left(\\left| \\bar {k} + 1 \\right\\rangle + e ^ {- \\frac {2 \\pi}{3} i} \\left| \\bar {k} + 2 \\right\\rangle + e ^ {\\frac {2 \\pi}{3} i} \\left| \\bar {k} + \\right.\\right.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该行公式在 \\left| \\bar{k} + \\right. 处截断，缺少后续模式编号和右括号，属于公式符号丢失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 23,
+      "quote": "3 \\rangle), \\frac {1}{\\sqrt {3}} \\left(e ^ {\\frac {2 \\pi}{3} i} | \\bar {k} + 1 \\rangle + | \\bar {k} + 2 \\rangle + | \\bar {k} + 3 \\rangle\\right), \\frac {1}{\\sqrt {3}} \\left(| \\bar {k} \\rangle + | \\bar {k} + 2 \\rangle + | \\bar {k} + 3 \\rangle\\right), \\frac {1}{\\sqrt {3}} \\left(| \\bar {k} \\rangle + \\right.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该行公式在 \\left(| \\bar{k} \\rangle + \\right. 处截断，缺少后续项和右括号，属于公式符号丢失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "A _ {\\mathrm {P F 1}} | \\Psi \\rangle",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该页仅提取出三个算符表达式，缺少上下文和图表说明，可能为补充材料或图注的片段，但无法确定具体错误类型。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "On-chip generation of high-dimensional entangled quantum states and their coherent control",
+  "self_check": "已核对关键数值：Schmidt 数下界 9.4、上界 10.45±0.53、二阶相干度最大值 1.92±0.03 对应 1.086±0.03 个有效模式、可见度 83.6%/86.6%/86.4% 与阈值 71%/77%/81.7%、保真度 88.5%/80.9%/76.6%、总损耗 14.5 dB、光纤传输 24.2 km 后 D=2 可见度 79.8%。公式已尽量原样保留，但部分求和符号上下标和投影向量在 OCR 中有截断或丢失，已在 extraction_issues 中标出。未发现与登记题名或 DOI 冲突的证据。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9414,
+      "prompt_tokens": 14670,
+      "total_tokens": 24084,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19407,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

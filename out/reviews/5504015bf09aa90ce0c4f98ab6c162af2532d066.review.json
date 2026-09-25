@@ -1,0 +1,64 @@
+{
+  "sha1": "5504015bf09aa90ce0c4f98ab6c162af2532d066",
+  "title": "Co-Solvent Electrolyte Engineering for Stable Anode-Free Zinc Metal Batteries",
+  "doi": "https://doi.org/10.1021/jacs.1c12764",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5504015bf09aa90ce0c4f98ab6c162af2532d066/index.html",
+  "source_chars": 55278,
+  "markdown_chars": 2471,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "CO",
+      "type": "疑似特殊字符错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "多次出现，应为C=O双键，但提取文本中显示为CO，可能是字符映射错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "SO2− 4",
+      "type": "疑似符号损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "化学式中上标和下标丢失，原文应为SO₄²⁻，但提取文本显示为SO2− 4。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "there is no obvious change or impurity phases",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "前一句以句号结束，此处句首小写，可能因跨页或提取格式丢失导致大小写不统一。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：ACE 99.93%（500次循环，1 mA cm⁻²）、80%容量保持275次（0.5 mA cm⁻²）、盐浓度2.14 M和1.44 M、温度范围−20至50 °C、接触角127.3°、死锌厚度9.5 μm等，均与原文一致。公式和符号方面，原文无数学公式，但化学式和振动峰位已按提取文本保留。不确定之处：提取文本中化学式上下标和特殊字符（如SO2− 4、C-O）可能存在显示错误，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3108,
+      "prompt_tokens": 15456,
+      "total_tokens": 18564,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1088
+      }
+    },
+    "content_chars": 3383
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

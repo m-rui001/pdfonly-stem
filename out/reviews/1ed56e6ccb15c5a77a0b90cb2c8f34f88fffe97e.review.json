@@ -1,0 +1,129 @@
+{
+  "sha1": "1ed56e6ccb15c5a77a0b90cb2c8f34f88fffe97e",
+  "title": "Phenix - a comprehensive python-based system for macromolecular structure solution",
+  "doi": "",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/1ed56e6ccb15c5a77a0b90cb2c8f34f88fffe97e/index.html",
+  "source_chars": 53670,
+  "markdown_chars": 12985,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "e Los Alamos National Laboratory, Los Alamos, NM 87545, USA",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者单位列表中的上标标记丢失，该行应为 $^{e}$，但抽取文本仅显示为 e，属于上标/符号丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "performed in recicprocal space",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 reciprocal space，影响对快速平移函数所在空间的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "maximum-likelihood weighted $ ( p^{} \\mathrm{m F_{o b s}}-q^{} \\mathrm{D F_{m o d e l}}) \\exp(\\mathrm{i} \\alpha_{\\mathrm{m o d e l}}) $ and regular $ ( p^{} \\mathrm{F_{o b s}}- q^{} \\mathrm{F_{m o d e l}}) \\exp(\\mathrm{i} \\alpha_{\\mathrm{m o d e l}}) $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中 p 和 q 的上标/星号标记在抽取文本中显示为空白上标，可能丢失了原文的符号信息，影响公式的精确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "can be obtained using phenixxtriage",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "程序名缺少点号，应为 phenix.xtriage，影响对工具名称的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Afonine at al, 2009",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "引用作者名拼写错误，应为 Afonine et al., 2009。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "phenix.refine employs a novel Inter Atomic Scatterers model (Afonine et al, 2007)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "引用年份与参考文献列表中 Afonine 等 2005/2007 的对应关系可能因 OCR 抽取而模糊，但文本本身可读；此处仅标记引用格式不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "The electronic Ligand Builder and Optimisation Builder (eLBOW) (Moriarty, 2009)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "引用格式不完整，参考文献列表中为 Moriarty, N. W., Grosse-Kunstleve, R.W., Adams, P.D. (2009)，但正文仅写 Moriarty, 2009，属于引用信息不完整而非 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "phenix.autosol uses phenix.solve (Terwilliger & Berendzen, 1999) to scale all datasets, phenix.xtriage (Zwart, Grosse-Kunstleve & Adams, 2005) to analyze the data for twinning and to correct any anisotropy in the data, and phenix.hyss (Grosse-Kunstleve & Adams, 2003) to find potential heavy-atom or anomalously-scattering atoms.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "引用年份与参考文献列表存在不一致：phenix.xtriage 的参考文献为 Zwart, Grosse-Kunstleve & Adams (2005)，但正文中写为 Zwart, Grosse-Kunstleve & Adams, 2005，与列表一致；phenix.hyss 的引用为 Grosse-Kunstleve & Adams (2003)，与列表一致。此处无实质错误，仅标记引用格式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Phenix.automr carries out automated likelihood-based molecular replacement using phenix.phaser (Read, 2001, McCoy et al., 2005, McCoy, 2007, McCoy et al., 2007).",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "引用年份与参考文献列表存在不一致：McCoy, 2007 在列表中为 McCoy, A. J. (2007). Acta Cryst. D 63, 32-41，但正文中写为 McCoy, 2007，与列表一致。此处无实质错误，仅标记引用格式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Phenix.autobuild uses phenix.refine (Afonine et al., 2005) throughout this process",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "引用年份与参考文献列表一致，但正文中 Afonine et al., 2005 的格式与列表中的 Afonine, P.V., Grosse-Kunstleve, R.W. and Adams, P.D. (2005) 一致。此处无实质错误，仅标记引用格式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Phenix - A Comprehensive Python-based System for Macromolecular Structure Solution",
+  "self_check": "已核对摘要、各节标题、关键数值（如 NCS restraints 目标 0.05 Å rms、分辨率阈值 2.5 Å、Cα 模型构建速率约 20 残基/秒、低分辨率挑战差于 3.0 Å）与公式（最大似然加权 map 系数表达式）均与 OCR 文本一致。公式中 p 和 q 的上标标记在抽取文本中显示为空白，已按原文照录并在 extraction_issues 中标出。未发现 OCR 正文标题与登记题名冲突，登记题名与正文标题一致，故 record_match 为 match。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8236,
+      "prompt_tokens": 14134,
+      "total_tokens": 22370,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17013,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

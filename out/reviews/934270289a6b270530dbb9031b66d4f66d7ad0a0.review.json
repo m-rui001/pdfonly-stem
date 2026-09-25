@@ -1,0 +1,63 @@
+{
+  "sha1": "934270289a6b270530dbb9031b66d4f66d7ad0a0",
+  "title": "Ancient genomes document multiple waves of migration in Southeast Asian prehistory",
+  "doi": "https://doi.org/10.1126/science.aat3188",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/934270289a6b270530dbb9031b66d4f66d7ad0a0/index.html",
+  "source_chars": 47973,
+  "markdown_chars": 2057,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "It has been hypothesized that this cultural transition was effected by a",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在页尾中断，下一页开头是' speaking groups do with each other);'，并非该句的后续，缺失了' migration of people...' 等内容，疑提取顺序错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "as Austroasiatic-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页尾以 'as Austroasiatic-' 截断，下一页开头为 'within historical times (5).'，并非该句续接，可能缺失了 'speaking groups do with each other);' 等文字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "within historical times (5).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句孤立出现在页首，没有可衔接的上文，可能因跨页断裂导致前文缺失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：18个个体、五个遗址年代、PCA分组、f4统计（VN29显著性p<0.02，Nui Nap Z=1.1）、admixture比例（70%/30%，29%，28%，5%，67%/29%/4%等）、Juang比例35%、Lao比例47%、残差Z=3.4。公式f4(X, Kinh; Australasian, Han)及f4(Juang, Palliyar; Mlabri, X)已保留。不确定之处：跨页缺失部分的正确文本未作推测，仅按现有文本转述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6431,
+      "prompt_tokens": 16227,
+      "total_tokens": 22658,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4814
+      }
+    },
+    "content_chars": 3204
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

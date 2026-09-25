@@ -1,0 +1,73 @@
+{
+  "sha1": "c539f51b336927202058ac8662491f42fba15ce8",
+  "title": "Tuning the electrolyte network structure to invoke quasi-solid state sulfur conversion and suppress lithium dendrite formation in Li–S batteries",
+  "doi": "https://doi.org/10.1038/s41560-018-0214-0",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c539f51b336927202058ac8662491f42fba15ce8/index.html",
+  "source_chars": 48507,
+  "markdown_chars": 3927,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "carbon based cathodes (70 wt% of sulfur with Kejten Black®)",
+      "type": "suspected typo",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "原文为\"Kejten Black®\"，上下文为导电碳黑品种，该词标准拼写为\"Ketjen Black\"，且同页有\"Deleted: s\"修订痕迹，疑似原稿拼写不标准或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Naoi, K., Mori, M., Naruoka, Y., Lamanna W. & Atanasoski R. The surface film formed on a lithium metal electrode in a new imide electrolyte, lithium bis(perfluoroethylsulfonylimide) [LiN(C2F5SO2)2]. J. Electrochem.Soc.",
+      "type": "truncation",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献50和51的卷页信息缺失（仅到期刊名即截断），且第21页末参考文献49之后直接跳至22页，存在抽取截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "after three discharge cycles, the Li2S exhibits\n\n10 | P a g e\n\nvastly",
+      "type": "cross-page ordering/splicing issue",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "句子在页尾中止（\"the Li2S exhibits\"），下一页开头插入页眉和页码后接续为\"vastly\"，跨页拼接存在文本顺序断裂。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "τ = π D[",
+      "type": "formula corruption",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Chazalviel模型公式被抽取损坏，仅残留前后缀和上下标，公式主体缺失，下标符号（π D […]² 等）上下标信息不足，无法复原完整公式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对正文中关键数值、公式与结论的一致性：E/S=5 µl/mg条件下720 mAh g⁻¹循环100次（正文与结论一致）；G2:LiTFSI(0.8:1)的CE为99.51%（长循环）和96.2%（Cu|Li）；Li₂S相干长度12.4 nm→19.4 nm；AIMD自由O比例41% vs 54%/50%/48%；ΔG=−1.780 eV；反应式(1)(2)(3)及Sand's time公式（除公式本身抽取损坏外）与论述方向一致。不确定项：(1) Chazalviel公式因抽取损坏无法核对具体符号排列；(2) \"Kejten Black\"标准拼写为\"Ketjen\"，已在问题中标出；(3) 文中室温容量约720 mAh/g与低E/S比条件下的720 mAh/g为同一数值的两个独立数据点，均已按原文保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4102,
+      "prompt_tokens": 13487,
+      "total_tokens": 17589,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 786
+      }
+    },
+    "content_chars": 5677
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

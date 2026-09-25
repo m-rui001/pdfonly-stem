@@ -1,0 +1,66 @@
+{
+  "sha1": "154ebc99585608b0b7667e77bf089fa2cd2c1b7f",
+  "title": "Long‐term nitrogen fertilization decreases bacterial diversity and favors the growth of Actinobacteria and Proteobacteria in agro‐ecosystems across the globe",
+  "doi": "https://doi.org/10.1111/gcb.14163",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/154ebc99585608b0b7667e77bf089fa2cd2c1b7f/index.html",
+  "source_chars": 53506,
+  "markdown_chars": 6030,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "7% and 93.3% of previous literatures reported that long-term N fertilization and NPK fertilization significantly changed bacterial community composition, respectively (Table S3).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "正文第16页讨论部分写“More than 82% and 93% of the previous literatures reported that long-term N and NPK fertilizations significantly changed bacterial community composition”，与第12页结果部分的“7%”明显矛盾，疑为“82%”的OCR误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "including some Alproteobacteria and Actinobacteria",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "“Alproteobacteria”疑为“Alphaproteobacteria”的OCR截断或拼写错误，影响对具体类群的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "long-tern N fertilization",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“long-tern”应为“long-term”的OCR拼写错误，不影响语义理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Long-term nitrogen fertilization decreases bacterial diversity and favors the growth of Actinobacteria and Proteobacteria in agro-ecosystems across the globe",
+  "self_check": "已核对摘要、结果与讨论中的关键数值：单施氮肥细菌多样性 Hedges' d = -0.87，氮磷钾配施 d = 0.65；单施氮肥 pH d = -2.86，氮磷钾配施 pH d = -1.50；有机碳 d 分别为 0.68 和 1.24；变形菌门 d = 0.74（单施氮肥）和 0.71（氮磷钾配施），放线菌门 d = 0.56，酸杆菌门 d = -1.08；放线菌门丰度与施氮量相关系数 0.47（p < 0.01）；细菌多样性与 pH 相关系数 0.43（p < 0.01），与有机碳相关系数 0.34（p < 0.01，单施氮肥）和 0.47（p < 0.01，氮磷钾配施）。公式已按提取文本原样保留。仍不确定之处：第12页“7%”与第16页“More than 82%”的矛盾已作为OCR疑点报告，未静默修正；第17页“Alproteobacteria”未擅自改为“Alphaproteobacteria”。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4293,
+      "prompt_tokens": 13443,
+      "total_tokens": 17736,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7787,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

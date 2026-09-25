@@ -1,0 +1,103 @@
+{
+  "sha1": "acf527ad8e0d0d296b1534ab97c90ff8b245efa5",
+  "title": "Programmable photonic circuits",
+  "doi": "https://doi.org/10.1038/s41586-020-2764-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/acf527ad8e0d0d296b1534ab97c90ff8b245efa5/index.html",
+  "source_chars": 61174,
+  "markdown_chars": 8551,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "Figure 2a shows an example of s simple mesh",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“s simple mesh”应为“a simple mesh”，属明显OCR字符错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the tunable 2x2 coupler and and phase shifter",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "重复的“and and”为OCR重复抽取，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "selfconfiguring beam coupler",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“selfconfiguring”应为“self-configuring”，连字符丢失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "selfcalibration algorithms",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“selfcalibration”应为“self-calibration”，连字符丢失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "programmable PICS",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“PICS”应为“PICs”，大小写OCR错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "chipbased technologies",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“chipbased”应为“chip-based”，连字符丢失，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "generalpurpose programmable PICs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“generalpurpose”应为“general-purpose”，连字符丢失，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "PROGRAMMABLE PHOTONIC CIRCUITS",
+  "self_check": "已核对摘要、正文关键数值与结论：波导损耗0.1-1 dB/cm对应3-30 cm衰减50%；热调谐器功耗数mW、时间常数10-100 μs；2×2门损耗约0.05-0.2 dB；六边形网格段长~1 mm对应最大FSR~50 GHz；硅光子密度极限~1百万元件/cm²；调制器带宽>50 GHz。公式符号 $p_1$、$p_2$、$\\kappa$、$\\Delta\\phi$、$\\kappa_1$、$\\kappa_2$、$\\kappa_3$ 均按原文保留。结论方向（可编程PIC通用性、与ASPIC互补、技术栈需求）与原文一致。仍不确定处：部分OCR连字符丢失和重复词已标为低严重度问题，不影响论证理解；未发现影响核心结论的抽取错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5878,
+      "prompt_tokens": 16566,
+      "total_tokens": 22444,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10660,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

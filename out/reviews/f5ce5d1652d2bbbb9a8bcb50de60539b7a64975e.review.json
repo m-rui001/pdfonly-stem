@@ -1,0 +1,63 @@
+{
+  "sha1": "f5ce5d1652d2bbbb9a8bcb50de60539b7a64975e",
+  "title": "Atomically dispersed iron sites with a nitrogen–carbon coating as highly active and durable oxygen reduction catalysts for fuel cells",
+  "doi": "https://doi.org/10.1038/s41560-022-01062-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f5ce5d1652d2bbbb9a8bcb50de60539b7a64975e/index.html",
+  "source_chars": 64976,
+  "markdown_chars": 2864,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "heat treatment with ammonia chloride followed by high-temperature deposition",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "摘要中写为“ammonia chloride”，而正文及后续均使用“ammonium chloride (NH4Cl)”，二者不一致，疑为抽取或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "∆𝐸𝑄 = 2 1 𝑒𝑄𝑉𝑧𝑧 1 + 𝜂 2 3",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "四极分裂公式的提取文本字符顺序失调，无法直接还原为标准公式写法，照录可见文本并标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "to achieve a loading of 4.0 mgcatcm-2",
+      "type": "符号损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“”为无法识别的损坏符号，疑似“~”（约）号，原文语境中为约4.0 mgcat cm⁻²。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：Fe-AC E1/2=0.915 V、AST损失124 mV；Fe-AC-CVD E1/2=0.846 V、AST损失17 mV；MEA活性44.2 vs 32.9 mA/cm²（0.9 V iR-free）；AST后30 mV损失与3.9%峰值功率损失；319 h保留87%、衰减率0.132 mA/cm²/h；Mössbauer D1/D2比例65/29 vs 53/42；DFT极限电位0.73 vs 0.65 V以及质子化活化能1.24 vs 2.08 eV，均与提取文本一致。不确定处：摘要“ammonia chloride”与正文“ammonium chloride”不一致；QS公式提取文本乱序，无法确认标准形式；N₂/O₂对比实验中具体E1/2数值未在正文中列出，仅描述“相似损失”，未做数值补全。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9999,
+      "prompt_tokens": 16912,
+      "total_tokens": 26911,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7656
+      }
+    },
+    "content_chars": 4103
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

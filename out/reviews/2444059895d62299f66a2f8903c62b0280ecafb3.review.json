@@ -1,0 +1,75 @@
+{
+  "sha1": "2444059895d62299f66a2f8903c62b0280ecafb3",
+  "title": "Influence of extreme weather and climate change on the resilience of power systems: Impacts and possible mitigation strategies",
+  "doi": "https://doi.org/10.1016/j.epsr.2015.06.012",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2444059895d62299f66a2f8903c62b0280ecafb3/index.html",
+  "source_chars": 72462,
+  "markdown_chars": 12625,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "transformer wings",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 transformer windings（变压器绕组），OCR 将 windings 误识为 wings，影响设备名称理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "strong wings",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为 strong winds（强风），OCR 将 winds 误识为 wings。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "$ (\\Delta T-1) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文可能为 ΔT1、ΔT2、ΔT3 等延迟符号，OCR 抽取为 ΔT-1、ΔT-2、ΔT-3，符号形式可能失真。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "typically higher than 25m/s",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数值 25m/s 可能为 25 m/s，单位与数字间缺少空格，但数值本身可读，影响较小。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Influence of Extreme Weather and Climate Change on the Resilience of Power Systems: Impact and Possible Mitigation Strategies",
+  "self_check": "已核对摘要、正文关键数值（如 20–55 billion、80%、2003–2012、25m/s、1.5 倍修复时间、N-1/N-k、EENS/LOLP）与结论方向一致；公式 ΔT-1/ΔT-2/ΔT-3 按 OCR 可见文本保留，未推测修复。仍不确定处：部分 OCR 误识（wings/winds、transformer wings）已标出；图 1–6 的具体内容未在提取文本中完整给出，仅依据正文文字描述保留其结论。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7599,
+      "prompt_tokens": 15670,
+      "total_tokens": 23269,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14049,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

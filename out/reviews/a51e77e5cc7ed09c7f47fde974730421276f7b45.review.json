@@ -1,0 +1,73 @@
+{
+  "sha1": "a51e77e5cc7ed09c7f47fde974730421276f7b45",
+  "title": "Efficacy and Safety of Acoramidis in Transthyretin Amyloid Cardiomyopathy",
+  "doi": "https://doi.org/10.1056/nejmoa2305434",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a51e77e5cc7ed09c7f47fde974730421276f7b45/index.html",
+  "source_chars": 45799,
+  "markdown_chars": 3308,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Structural analysis by x-ray crystallography of cocrystals of TTR with acoramidis bound to the T4 binding sites corroborated",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾句子在“corroborated”处中断，下一页以“those measurements.”接续，中间插入页眉和页脚，但提取文本中顺序正确，仅需注意拼接完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "The estimates from the prespecified analysis",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾句子中断，下一页以“of the Cox proportional-hazards model for death from any cause”接续，中间有页眉，但文本完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "The least-squares mean change from baseline in the distance walked",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾句子未结束，下一页开头为“was −26.51 m...”，中间有页眉，但文本顺序连续，无信息缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "At each subsequent step, only",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾句子中断，下一页以“those ties remaining after the previous step are subject to a paired comparison.”接续，中间插入页眉，拼接正常。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：随机分组632例，改良意向人群611例，胜率1.8（95% CI 1.4-2.2），P<0.001；6分钟步行距离差39.6m，KCCQ-OS差9.94，血清TTR差7.01 mg/dl，心血管住院相对风险比0.496，NT-proBNP比值0.529；不良事件发生率98.1% vs 97.6%，严重不良事件54.6% vs 64.9%。12个月分析数值-26.51m与-24.54m，KCCQ-OS变化-7.00与-10.21均一致。次要死亡终点因Cox模型假设偏离未报告，与原文一致。跨页拼接点已标注，未发现数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7954,
+      "prompt_tokens": 12523,
+      "total_tokens": 20477,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5279
+      }
+    },
+    "content_chars": 4856
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

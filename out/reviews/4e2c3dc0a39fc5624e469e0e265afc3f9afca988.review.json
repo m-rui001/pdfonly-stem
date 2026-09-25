@@ -1,0 +1,82 @@
+{
+  "sha1": "4e2c3dc0a39fc5624e469e0e265afc3f9afca988",
+  "title": "Security Control for Discrete-Time Stochastic Nonlinear Systems Subject to Deception Attacks",
+  "doi": "https://doi.org/10.1109/tsmc.2016.2616544",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4e2c3dc0a39fc5624e469e0e265afc3f9afca988/index.html",
+  "source_chars": 53210,
+  "markdown_chars": 7879,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "REVISIED",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页眉中的 'REVISIED' 应为 'REVISED'，但无法确定原文是否如此，可能为源文件拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "β̃ = β̄(1 − β̄)",
+      "type": "符号混淆/上下文缺失",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文中出现 β̃ = β̄(1 − β̄)，但原文此前只定义了 α̃ 和 σ̃，β̄ 未出现；此处可能是打印或提取错误，实际应为 σ̃ 或与 σ̄ 有关。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "S6 = 0 Lc",
+      "type": "可能漏项",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "提取的 S6 矩阵只显示部分元素，可能缺少第二行，但不影响整体论证。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "Γ̄1 (η) =(1 + κ)A T (η)(I ⊗ P)A (η) − η T Pη + H̄ (η)P H̄ (η) + σ̃ H̄ (η)P H̄ (η) T T 1 2 1 2 + H̄ (η)P H̄ (η) + σ̃ H̄ (η)P H̄ (η) 1 1 2 2",
+      "type": "文本重复/拼接错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该公式出现重复项，且缺少 α̃η^T T^T K^T Ḡ_1^T P Ḡ_1 K T η 项（后续证明中用到）；可能为提取过程中公式排版错乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "β̄ = β̄(1 − β̄)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "β̄ 未定义，且该行与上下文无关，可能为 OCR 或排版错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、定理1-4、仿真数值：定理1上界 J*=0.5(χ+λmax(W))ϱ²；例1 J*=0.0355，例2 J*=0.7370；公式(9a)-(9d)、(18a)-(18e)、(26a)-(26d)、(28a)-(28d) 的表述与提取文本一致。不确定之处：部分公式排版（如 Γ̄1 的重复项、β̃ 定义）存在提取疑点，已在 issues 中标注；未引入任何 PDF 图像内容，仅依据正文文字描述图表结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5372,
+      "prompt_tokens": 18117,
+      "total_tokens": 23489,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 62
+      }
+    },
+    "content_chars": 10237
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

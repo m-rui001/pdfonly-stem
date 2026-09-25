@@ -1,0 +1,84 @@
+{
+  "sha1": "05e6e3b3e34bd56f61a583c37377ad4d6176df23",
+  "title": "Four-phonon scattering significantly reduces intrinsic thermal conductivity of solids",
+  "doi": "https://doi.org/10.1103/physrevb.96.161201",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/05e6e3b3e34bd56f61a583c37377ad4d6176df23/index.html",
+  "source_chars": 28510,
+  "markdown_chars": 5505,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "The anharmonic force constants\n\ntherein were obtained from classical force fields though",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "跨页断句导致 'therein' 单独成行，但语义可恢复，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the number of four-phonon processes is about $ 10^{7}\\sim 10^{8} $ . For these four-phonon processes, 94% are $ \\mathbf{q}+\\mathbf{q}{1}\\rightarrow\\mathbf{q}{2}+\\mathbf{q}{3} $ and 6% are $ \\mathbf{q}\\rightarrow\\mathbf{q}{1}+\\mathbf{q}{2}+\\mathbf{q}{3} $ .",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "下标 q1、q2、q3 在 OCR 中丢失了下标格式，显示为 q{1}、q{2}、q{3}，但公式关系仍可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the scaling law of four-phonon scattering $ \\tau_{4}^{-1}\\sim T^{2}\\omega^{4}. $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式本身完整，但 OCR 中 τ 下标 4 和上标 -1 的格式可能不统一，不影响定量关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "TABLE I: Anharmonicity ratio $ |\\Phi_{4} / \\Phi_{3}|^{2} / |\\Phi_{2}| $ to approximate the relative importance of four-phonon scattering in Diamond, Si, BAs and CuCl. Units of the representative nth order force constant are $ \\mathrm{eV / \\mathring{A}^{n}}. $ The representative force constant values are taken at $ \\Phi_{0,0,x,x}, $ $ \\Phi_{0,0,0,x,y,z}, $ and $ \\Phi_{0,0,0,0,x,x,x,x}. $ The index 0 indicates the origin primitive cell, see the supplemental information for more details [12]. The third order $ \\Phi_{0,0,0,x,x,x} = 0 $ due to symmetries cannot be taken as the anharmonicity.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格以文本形式提取，列对齐和数值对应关系可能不精确，但关键数值和材料对应关系可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "material atom $|\\Phi_{2}|$ $|\\Phi_{3}|$ $|\\Phi_{4}|$ $|\\Phi_{4}/\\Phi_{3}|^{2}/|\\Phi_{2}|$ \n\n Diamond C 44.2 95.0 224 0.128 \n\n BAs B 17.0 45.6 65.7 0.122 \n\n Si Si 13.6 33.9 50.8 0.165 \n\n CuCl Cu 1.93 13.1 48.0 6.956",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表格数据以空格分隔，列标题与数值的对应关系需读者自行对齐，但数值本身完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Four-phonon scattering significantly reduces intrinsic thermal conductivity of solids",
+  "self_check": "已核对摘要、正文数据和结论：四声子散射在 BAs 中室温下将热导率从 2,200 W/m-K 降至 1,400 W/m-K，1,000 K 降幅 60%；Si 和金刚石在 1,000 K 降低 30%；光学声子寿命从 10^4 ps 降至 40 ps；标度律 τ4^-1 ∼ T^2 ω^4 和 τ4^-1 ∼ ω^4；BTE 迭代方案中四声子仅在 RTA 水平计算。公式符号如 τ4^-1、Φn、Vn 等按原文保留。不确定处：表 I 的列对齐和部分下标格式可能因 OCR 而略有偏差，但关键数值和结论方向一致。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4624,
+      "prompt_tokens": 8409,
+      "total_tokens": 13033,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8277,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "44acac3436578ebec7cb6caa249871fdcb088419",
+  "title": "Lithium niobate photonics: Unlocking the electromagnetic spectrum",
+  "doi": "https://doi.org/10.1126/science.abj4396",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/44acac3436578ebec7cb6caa249871fdcb088419/index.html",
+  "source_chars": 86889,
+  "markdown_chars": 5222,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "X- and 𝛾𝛾-rays",
+      "type": "疑似Unicode字符重复/OCR伪影",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“𝛾𝛾”出现两个相同伽马字符，原文应为“X- and γ-rays”（X射线与伽马射线）中的单个γ符号；可能是PDF字体渲染或OCR导致的重复。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "second-order (𝜒𝜒(2)) and thirdorder (𝜒𝜒(3)) nonlinear-optical processes",
+      "type": "疑似Unicode字符重复/排版脱落",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "二阶χ与三阶χ的符号显示为重复的𝜒𝜒，应为单一χ字符的Unicode数学斜体渲染问题；同时“thirdorder”缺少连字符可能为排版脱落。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值的一致性：3.93 eV带隙、d33=-27 pm/V（1064 nm）、r33=30.8 pm/V（0.633 μm）、n2=1.8×10⁻¹⁹ m²/W、透明窗口400 nm–5 μm、频谱覆盖近5个数量级、各波段的典型数值（如OPO信号/闲频范围、电光梳183–192 THz/25 GHz间隔、Kerr微腔139–162 THz、SCG至60 THz、太赫兹1.4 mJ/0.9%效率、调制带宽>100 GHz）均与原文一致。Markdown中把疑似Unicode字体伪影的重复字符“𝛾𝛾”“𝜒𝜒”整理为单个“γ”“χ”以恢复可读性，已在extraction_issues中注明。图1–5的图形细节未纳入笔记，仅使用正文文字和图注中实际描述的内容。仍不确定之处：第11页和第13页在提取文本中仅含页码标记，无法确认是空白页还是图片页；图3图注中D–H项未给出具体描述文字。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 19035,
+      "prompt_tokens": 22945,
+      "total_tokens": 41980,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 15189
+      }
+    },
+    "content_chars": 6271
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

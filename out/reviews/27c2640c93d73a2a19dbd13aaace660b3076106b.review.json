@@ -1,0 +1,73 @@
+{
+  "sha1": "27c2640c93d73a2a19dbd13aaace660b3076106b",
+  "title": "Effects of microplastics on the terrestrial environment: A critical review",
+  "doi": "https://doi.org/10.1016/j.envres.2022.112734",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/27c2640c93d73a2a19dbd13aaace660b3076106b/index.html",
+  "source_chars": 124600,
+  "markdown_chars": 4042,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "properties of microplastics, including color, crystallinity, chemical",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "页尾句子中途断开，下一页开头为'composition, and surface chemistry are altered'，中间未缺失内容，但完整句子被分页打断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "PEHD",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同一表格及正文中均写作HDPE，此处'PEHD'疑为HDPE的笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "casual model",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "上下文语境应为'causal model'，'casual'可能为笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 44,
+      "quote": "SDG 15, \"Responsible consumption and production;\" SDG 14, \"Life below water;\" and SDG 15, \"Life on land\"",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "SDG 15出现两次，第二次应为SDG 15（Life on land）但前一个SDG 15与SDG 14并列重复，逻辑上可能写错了编号（如SDG 12）。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值（如欧洲和北美污泥农用微塑料输入量、中国地膜用量、pH值、log Kd范围、经口暴露数据等），并保持与原文一致。公式仅涉及log Kd和浓度单位，未做修改。某些跨页句子和表格中的缩写（PEHD）已标注疑点。未引入外部知识，所有内容均基于提供的提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7186,
+      "prompt_tokens": 35331,
+      "total_tokens": 42517,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4238
+      }
+    },
+    "content_chars": 5304
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

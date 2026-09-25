@@ -1,0 +1,55 @@
+{
+  "sha1": "7371227c087e2f8629b1f1fa30c49d9d79815209",
+  "title": "Ultrastable laser interferometry for earthquake detection with terrestrial and submarine cables",
+  "doi": "https://doi.org/10.1126/science.aat4458",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7371227c087e2f8629b1f1fa30c49d9d79815209/index.html",
+  "source_chars": 25074,
+  "markdown_chars": 2039,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "This corresponds to ~m length changes",
+      "type": "character_encoding_issue",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“~m”中的“m”疑为“μm”的乱码（希腊字母mu和拉丁字母m的编码错误），但无法从文本内确认，照录可见文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "approximately 2 x 108 m/s",
+      "type": "character_encoding_issue",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "原文中“(2 x 108 m/s)”的“”疑似“≈”的乱码，且“108”可能为上标“10^8”（即光速约2×10^8 m/s），但提取文本未包含上标信息，无法确认，照录可见文本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：链路长度75、79、96.4、535 km；震中距25、85、1400、18500 km；震级Mw 6.0、5.9、6.5、7.3、4.4、ML 3.4；采样率1和100 sample/s；噪声降低倍数8和5；定位精度1 km/101 km。公式与符号方面，原文未提供显式数学公式，仅保留乱码字符并已标记。结论方向与摘要一致：证明现有光缆可用于地震检测，海底链路噪声更低。仍不确定之处：图2B中IT-L1的P波是否可分辨，原文表述为“难以分辨”，与图注可能略有出入；但文字明确，已按原文表述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5184,
+      "prompt_tokens": 6498,
+      "total_tokens": 11682,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3542
+      }
+    },
+    "content_chars": 2928
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

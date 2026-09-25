@@ -1,0 +1,64 @@
+{
+  "sha1": "264b6c86b7f587ab933888753297d4a4b786055c",
+  "title": "Perspectives for Polymer Electrolytes: A View from Fundamentals of Ionic Conductivity",
+  "doi": "https://doi.org/10.1021/acs.macromol.9b02742",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/264b6c86b7f587ab933888753297d4a4b786055c/index.html",
+  "source_chars": 114949,
+  "markdown_chars": 5280,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "𝛽𝑞1𝑞2\n\n𝐸𝜎 = 4𝜋𝜀0𝜀(𝑅1 + 𝑅2) + 𝐺4𝜋𝑅𝐷(𝑅1 ― 𝑅𝐷)2 .",
+      "type": "疑似公式排版错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "原文中β q1 q2单独一行，Eσ公式第一项缺少分子，可能是排版时分数分子被分开。式(4)同样存在此问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 19,
+      "quote": "1 1 1 𝜏𝑖(𝑇) ≈ 𝜏𝛼(𝑇) + 𝜏0exp [― 𝐸𝜎(𝑇) 𝑘𝑇 ].",
+      "type": "疑似公式排版错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "式(8)中“τ0exp”可能应为“1/τ0 * exp”，但提取文本显示为τ0exp，缺少明确分数线，导致量纲不清。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "-log10  [cm/S]",
+      "type": "疑似坐标标签错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "坐标轴标签通常应为S/cm，这里显示cm/S，可能是单位颠倒，但也不排除原文如此。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：所需电导率10^-3 S/cm，单离子需求降至10^-4，PEO t_Li+~0.2-0.3，离子浓度1-3 nm^-3，所需跳跃率(0.25-2.5)×10^10 s^-1，PEO室温τ_α 10^-7-10^-6 s，Tg处强耦合电导率估计10^-14-10^-15 S/cm，PolyILs H^-1约0.1，超离子H^-1 3-5，活化能20-30 kJ/mol，PEALiFSI电导率0.6×10^-3 S/cm及Eσ0.22 eV，介电常数估算ε/β~30-40。公式(1)-(9)尽量按原文符号保留，但式(3)(4)(8)因提取排版存在可辨识缺陷，已在extraction_issues中标出；未对缺少数值作推测。结论与摘要一致，强调离子关联的抑制作用及两条设计策略。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10906,
+      "prompt_tokens": 34110,
+      "total_tokens": 45016,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6852
+      }
+    },
+    "content_chars": 6434
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

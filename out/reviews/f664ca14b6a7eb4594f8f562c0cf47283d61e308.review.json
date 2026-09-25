@@ -1,0 +1,73 @@
+{
+  "sha1": "f664ca14b6a7eb4594f8f562c0cf47283d61e308",
+  "title": "Kinetics of Ion Transport in Perovskite Active Layers and Its Implications for Active Layer Stability",
+  "doi": "https://doi.org/10.1021/jacs.5b08535",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f664ca14b6a7eb4594f8f562c0cf47283d61e308/index.html",
+  "source_chars": 40996,
+  "markdown_chars": 3227,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Methyl ammonium iodide (MAI) was synthesized by the following procediure.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "procediure 应为 procedure，词内有明显拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "being about an order of magnitude higher for the increased stability MA and mixed counterion materials",
+      "type": "句子语序/语义疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "短语 'for the increased stability MA and mixed counterion materials' 不通顺，可能缺少 'of' 或词序有误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "FAPbI3 devices also shows improved stability (see Figure S4) compared to compared to MAPbI3 devices",
+      "type": "重复词语",
+      "severity": "medium",
+      "confidence": 1.0,
+      "reason": "'compared to' 出现两次，明显为文本重复。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "1 kT a 2α = exp ⎛ −E ⎞ kT a 2α = exp ⎜ a ⎟ 2 ⎝ kT ⎠ TW h LD",
+      "type": "公式抽取损坏",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式(3)的文本在PDF提取中明显错乱，出现重复和乱码，无法准确复现原式。已照录可见文本，但需与原文核对。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：平均/最大PCE（10.3%/13.6%等）、20 h效率下降（40% vs 15%）、暗存恢复（15 min）、扩散系数（3.6e-12、2e-12、3e-13 cm2/s）、活化能（56/22/61/21/76 kJ/mol）、晶格体积变化（9.1/4.6/2.2 Å3及百分比）、17 h稳定性（5%/19%/23%）。公式(1)(2)已照录，公式(3)因提取乱码仅保留可见文本。结论方向与摘要一致。不确定处：公式(3)原始形式可能包含更多括号；'increased stability MA' 一句语义未完全复原，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3373,
+      "prompt_tokens": 12410,
+      "total_tokens": 15783,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 699
+      }
+    },
+    "content_chars": 4758
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

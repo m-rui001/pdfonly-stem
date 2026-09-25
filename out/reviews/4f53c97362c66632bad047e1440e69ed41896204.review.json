@@ -1,0 +1,364 @@
+{
+  "sha1": "4f53c97362c66632bad047e1440e69ed41896204",
+  "title": "Advances in Quantum Cryptography",
+  "doi": "",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/4f53c97362c66632bad047e1440e69ed41896204/index.html",
+  "source_chars": 806662,
+  "markdown_chars": 10663,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Fusikvei, 2800 Kas, Lunabu, Denmark",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "机构地址 OCR 明显损坏，但不影响论文核心论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "II. Overview of DV-QKD",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "目录中章节编号重复（II 出现两次），应为 III，但不影响正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "V. Experimental DV-QKD protocols",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "目录中章节编号重复（V 出现两次），应为 IV，但不影响正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "\\left{\\rho_{\\mathrm{E}|\\alpha}, P(\\alpha)\\right}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "LaTeX 花括号转义丢失，但公式含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "\\left{|\\psi_{1}\\rangle, \\dots, |\\psi_{d}\\rangle\\right}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "LaTeX 花括号转义丢失，但公式含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "D = \\frac {1 - \\cos x}{2 - \\cos x + \\cos y}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中变量定义可能不完整，但上下文可推断 D 为 QBER。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "VII. CONTINUOUS-VARIABLE QKD",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "章节标题与正文顺序略有错位，但不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "\\begin{array}{c c c c c c c c c} \\hline \\mathrm {E n c o d i n g} & & & & \\mathrm {E v e} & & \\mathrm {D e c o d i n g} \\ \\mathrm {b a s i s} & \\mathrm {b i t} & \\mathrm {s t a t e} & & & & \\mathrm {a f t e r s i f t i} \\ \\hline \\end{array}",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表 II 的 OCR 结构严重损坏，仅保留表头片段，无法还原完整表格内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "\\rho_{\\mu} = \\sum_{n = 0}^{\\infty} P_{\\mu}(n) | n \\rangle",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式缺少密度矩阵的投影算符，但含义可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 25,
+      "quote": "P_{\\varepsilon} := \\left( \\begin{array}{c c c c} \\frac {1}{2} - \\varepsilon & \\varepsilon & \\frac {1}{2} - \\varepsilon & \\varepsilon \\ \\varepsilon & \\frac {1}{2} - \\varepsilon & \\varepsilon & \\frac {1}{2} - \\varepsilon \\ \\hline \\frac {1}{2} - \\varepsilon & \\varepsilon & \\varepsilon & \\frac {1}{2} - \\varepsilon \\ \\varepsilon & \\frac {1}{2} - \\varepsilon & \\frac {1}{2} - \\varepsilon & \\varepsilon \\end{array} \\right).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "矩阵中部分元素可能因 OCR 丢失或错位，但整体结构可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 28,
+      "quote": "P_{\\varepsilon, \\eta} := \\left( \\begin{array}{c c c c c c} \\eta^{2}(\\frac{1}{2} - \\varepsilon) & \\eta^{2}\\varepsilon & \\frac{\\eta(1 - \\eta)}{2} & \\eta^{2}(\\frac{1}{2} - \\varepsilon) & \\eta^{2}\\varepsilon & \\frac{\\eta(1 - \\eta)}{2} \\ ... \\end{array} \\right)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "矩阵维度与元素排列可能因 OCR 损坏，但关键结论（探测效率阈值）可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 30,
+      "quote": "R_{\\mathrm{TF}}^{\\mathrm{ideal}}(\\mu, \\eta) = \\frac{\\mu\\sqrt{\\eta}}{M}\\{e^{-\\mu}[1 - H_{2}(E_{M})] - H_{2}(E_{M})\\}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中花括号转义丢失，但含义可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "R_{\\mathrm{TF}}^{\\mathrm{ideal}}(\\eta) \\simeq 0.01535\\sqrt{\\eta}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "数值可能因 OCR 精度损失，但上下文一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 35,
+      "quote": "FIG. 4. Experimental implementations of discrete-variable QKD. a) ... b) ... c) ... d) ...",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注文字与正文混排，但关键实验参数可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 40,
+      "quote": "FIG. 6. Experimental demonstrations of QKD using PICs. ...",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "图注文字与正文混排，但关键实验参数可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 48,
+      "quote": "R_{\\mathrm{coh,het}}^{\\blacktriangleleft} = \\log_{2}\\frac{2}{e}\\frac{\\eta}{(1 - \\eta)[1 + \\eta + (1 - \\eta)\\omega]} - s(\\omega) + s[\\frac{1 + (1 - \\eta)\\omega}{\\eta}]. \\tag{1}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式编号 (1) 可能为 OCR 错误，但不影响公式内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 50,
+      "quote": "R_{\\mathrm{ON}}^{\\blacktriangleright} = \\log_{2}\\frac{2\\eta(1 + \\eta)}{e(1 - \\eta)\\Lambda} - s(\\omega).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 54,
+      "quote": "R_{n}^{\\epsilon} \\geq \\frac{n - m_{\\mathrm{PE}}}{n} R_{\\mathrm{PE}|\\gamma} - \\frac{\\sqrt{n - m_{\\mathrm{PE}}}}{n} \\Delta_{\\mathrm{AEP}}(\\frac{2}{3}p\\epsilon_{\\mathrm{s}}, d) + n^{-1}\\{\\log_{2}[p(1 - 2\\epsilon_{\\mathrm{s}}/3)] + 2\\log_{2}2\\epsilon_{\\mathrm{h}}\\}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中花括号转义丢失，但含义可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 60,
+      "quote": "R_{\\mathrm{prac}} = f C(\\xi I_{AB} - \\chi_{BE})",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中变量定义可能不完整，但上下文可推断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 63,
+      "quote": "H(Q_{\\delta}|B) + H(P_{\\delta}|C) \\geq \\log_{2}(2\\pi) - \\log_{2}[\\delta_{q}\\delta_{p}S_{0}^{(1)}(1, \\frac{\\delta_{q}\\delta_{p}}{4})^{2}]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 71,
+      "quote": "K(\\mathcal{E}_{\\eta}) \\geq I_{\\mathrm{RCI}}(\\mathcal{E}_{\\eta}) = -\\log_{2}(1 - \\eta)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 72,
+      "quote": "K(\\mathcal{E}_{\\eta}) \\leq -\\log_{2}(1 - \\eta)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 78,
+      "quote": "\\mathcal{C}(\\mathcal{E}_{\\eta,\\bar{n}}) \\leq \\left\\{ \\begin{array}{l l} -\\log_{2}[(1 - \\eta)\\eta^{\\bar{n}}] - h(\\bar{n}), & \\text{if } \\bar{n} < \\frac{\\eta}{1 - \\eta}, \\ 0, & \\text{if } \\bar{n} \\geq \\frac{\\eta}{1 - \\eta}, \\end{array} \\right.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 82,
+      "quote": "K(\\mathcal{N}_{\\mathrm{loss}}) = -\\log_{2}(1 - \\tilde{\\eta}), \\quad \\tilde{\\eta} = \\min_{C}\\max_{(\\mathbf{x},\\mathbf{y})\\in\\tilde{C}}\\eta_{\\mathbf{x}\\mathbf{y}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 82,
+      "quote": "K^{\\mathrm{m}}(\\mathcal{N}_{\\mathrm{loss}}) = -\\log_{2}l(\\mathcal{N}_{\\mathrm{loss}})",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 87,
+      "quote": "\\ell^{\\epsilon} \\simeq H_{\\min}^{\\epsilon}(X^{n}|ZE) - H_{\\max}(C)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 88,
+      "quote": "I_{\\mathrm{acc}}(X:E)_{\\rho} \\leq \\frac{n}{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 89,
+      "quote": "I_{\\mathrm{acc}}(X:E) \\leq n\\log_{2}d - \\min_{\\phi}H[Q(\\Phi)]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 90,
+      "quote": "D(\\rho_{SE}, \\frac{1}{n}\\mathbb{1}_{n}\\otimes\\rho_{E})",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 93,
+      "quote": "|P_{S_{i}|S_{i-1}=s_{i-1},\\dots,S_{1}=s_{1},W_{i}=w}(0) - \\frac{1}{2}| \\leq \\varepsilon",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 97,
+      "quote": "|\\alpha\\rangle = e^{-\\frac{|\\alpha|^{2}}{2}}\\sum_{n=0}^{\\infty}\\frac{\\alpha^{n}}{\\sqrt{n!}}|n\\rangle",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 107,
+      "quote": "\\hat{q}_{j} = (\\hat{a}_{j} + \\hat{a}_{j}^{\\dagger})/\\sqrt{2\\kappa}, \\quad \\hat{p}_{j} = -i(\\hat{a}_{j} - \\hat{a}_{j}^{\\dagger})/\\sqrt{2\\kappa}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 108,
+      "quote": "F(\\rho_{1}, \\rho_{2}) = \\frac{F_{\\mathrm{tot}}}{\\sqrt[4]{\\det[\\kappa(\\mathbf{V}_{1} + \\mathbf{V}_{2})]}} e^{-\\frac{1}{4}\\delta^{T}(\\mathbf{V}_{1} + \\mathbf{V}_{2})^{-1}\\delta}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 109,
+      "quote": "\\Sigma(\\mathbf{V}_{1}, \\mathbf{V}_{2}, \\delta) = \\frac{1}{2\\ln 2} \\times (A) [\\ln\\det(\\kappa\\mathbf{V}_{2} + \\frac{i\\Omega}{2}) + \\kappa\\mathrm{Tr}(\\mathbf{V}_{1}\\mathbf{G}_{2}) + \\kappa\\delta^{T}\\mathbf{G}_{2}\\delta]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 110,
+      "quote": "V_{S}(\\rho_{1}\\|\\rho_{2}) = \\frac{4\\kappa^{2}\\mathrm{Tr}[(\\mathbf{V}_{1}\\tilde{\\mathbf{G}})^{2}] + \\mathrm{Tr}[(\\tilde{\\mathbf{G}}\\Omega)^{2}] + \\delta^{T}\\mathbf{B}\\delta}{2(2\\ln 2)^{2}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 111,
+      "quote": "s_{n} \\geq H_{\\min}^{\\epsilon_{\\mathrm{s}}}(l^{n}|\\mathbf{E}^{n})_{\\tilde{\\rho}^{n}} + 2\\log_{2}2\\epsilon_{\\mathrm{h}}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中部分符号可能因 OCR 丢失，但整体可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Advances in Quantum Cryptography",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 208042,
+      "total_tokens": 218042,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 22541,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

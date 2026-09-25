@@ -1,0 +1,91 @@
+{
+  "sha1": "310276afa55dabc8b381f990c1f618c656742940",
+  "title": "Formation of Hierarchical In 2 S 3 –CdIn 2 S 4 Heterostructured Nanotubes for Efficient and Stable Visible Light CO 2 Reduction",
+  "doi": "https://doi.org/10.1021/jacs.7b10733",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/310276afa55dabc8b381f990c1f618c656742940/index.html",
+  "source_chars": 25130,
+  "markdown_chars": 2538,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The magnified side view of a single In2S3-CdIn2S4-10 nanotube indicates",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在第 2 页页尾中断，第 3 页页首接续为'the outmost ultrathin sheet-shaped subunits are unaltered...'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "In addition, the presence of",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在第 3 页页尾中断，第 4 页页首接续为'mesopores can offer more catalytically active sites...'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "In S -CdIn S -10 photo2 3 2 4 catalyst",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "明显是格式错乱，根据上下文应为 'In2S3-CdIn2S4-10 photocatalyst'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "only 13CO is detected when using 13CO as the gas source",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "根据上下文，气体源应为 '13CO2' 而非 '13CO'，可能是提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "ca. 1.55 × 104 μmol g1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单位 'g1' 应为 'g-1'，可能是下标丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "The magnified FESEM image shows the",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在第 1 页页尾中断，第 2 页页首接续为'surface of the In2S3 product is composed of...'，中间可能有缺失或正常断页。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：带隙值（2.15、2.18、2.21、2.22 eV）、平带电势（-0.73、-0.95、-1.03、-1.13 V vs NHE, pH=7.0）、BET 比表面积（68 m2 g-1）、CO2 吸附量（ca. 25 cm3 g-1）、CO 生成速率（825 μmol h-1 g-1）等均与原文一致。结论方向与摘要和正文相符。原文未含公式。已核对的实验条件、样品命名和稳定性数据。不确定之处：跨页断裂处可能缺失少量单词，但已根据上下文连贯处理；部分疑似错误已在 extraction_issues 中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11140,
+      "prompt_tokens": 7759,
+      "total_tokens": 18899,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8798
+      }
+    },
+    "content_chars": 4369
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "3a90d08f2ed3fca254c74fe85ec8b99d4aed5714",
+  "title": "Stereolithographic (SLA) 3D printing of oral modified-release dosage forms",
+  "doi": "https://doi.org/10.1016/j.ijpharm.2016.03.016",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3a90d08f2ed3fca254c74fe85ec8b99d4aed5714/index.html",
+  "source_chars": 28180,
+  "markdown_chars": 1898,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "due to the adherence of powered drug to the walls",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上下文语境中应为'powdered drug'（粉末状药物），'powered'不符合语义，可能是原文笔误或OCR识别错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "The voltage and working distance were set at 5 V and 50 mm",
+      "type": "疑似单位错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "环境扫描电镜通常使用kV电压，5 V明显偏低，可能为'5 kV'的误写或提取丢失'k'，但无法确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、表1和溶出数据中的关键数值：对乙酰氨基酚平均载药量5.69%，4-ASA平均载药量5.40%，与表1均值一致；溶出数据中35% PEGDA对乙酰氨基酚10小时几乎完全释放，65%和90%分别释放84%和76%；4-ASA 35% PEGDA 9小时完全释放，均与原文一致。不确定项为'powered drug'和'5 V'，已在extraction_issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9639,
+      "prompt_tokens": 8665,
+      "total_tokens": 18304,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8126
+      }
+    },
+    "content_chars": 2692
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "sha1": "5585f6801658cfae92afd840843b45d49d746c41",
+  "title": "Low-Cost High-Energy Potassium Cathode",
+  "doi": "https://doi.org/10.1021/jacs.6b12598",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5585f6801658cfae92afd840843b45d49d746c41/index.html",
+  "source_chars": 16656,
+  "markdown_chars": 1970,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "K+/K= 2.93 V, Na+/Na= -2.71 V",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "标准电极电位中K+/K为-2.93 V，此处缺少负号，且上下文明确说K电位低于Na，应为负值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "the Fe/Mn ions have the same valence in",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页末句以'in'结尾，第4页开头为'To check whether'，明显缺少'KMHCF and NI-KMHCF.'等句子结尾内容，跨页时被截断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "N1–KMHCF",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "其他位置均写作NI-KMHCF，此处'N1'疑为OCR误读，但无强证据，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对理论容量156 mAh/g、实测放电142.4 mAh/g（0.2 C）、充电146.2 mAh/g，平台电压（充电4.23/4.26 V，放电3.60/3.56 V），晶格参数a=6.9770 Å等，以及K:Fe:Mn比例和化学式。不确定之处：K+/K电位符号疑似缺失，跨页句子拼接缺失，以及'N1'是否应为'NI'。这些已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6833,
+      "prompt_tokens": 5698,
+      "total_tokens": 12531,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5053
+      }
+    },
+    "content_chars": 2916
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

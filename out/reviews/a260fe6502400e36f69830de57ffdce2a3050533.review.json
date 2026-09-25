@@ -1,0 +1,64 @@
+{
+  "sha1": "a260fe6502400e36f69830de57ffdce2a3050533",
+  "title": "30 Years of Lithium‐Ion Batteries",
+  "doi": "https://doi.org/10.1002/adma.201800561",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a260fe6502400e36f69830de57ffdce2a3050533/index.html",
+  "source_chars": 130316,
+  "markdown_chars": 5919,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "lithium titianate or specifically the Li 4Ti5O12",
+      "type": "疑似拼写/OCR错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "titianate 应为 titanate，后文 Li4Ti5O12 可佐证",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "thei enormous volume chage is still a challenge",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "chage 应为 change",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "complex blend of LiF, Li2O, Li2CO3 and polyolephines",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "polyolephines 应为 polyolefins",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：TiS₂能量密度280 Wh L⁻¹/130 Wh kg⁻¹，LCO理论274 mAh g⁻¹，石墨372 mAh g⁻¹，硬碳d₀₀₂>0.372 nm，Altra成本300 vs 150 US$/kWh，LMO实际110 mAh g⁻¹，LFP热释放147 J g⁻¹，NMC 811释热3285 J g⁻¹ vs NCA 1573 J g⁻¹，2015年电池包成本268 US$/kWh，特斯拉18650电池600–650 Wh L⁻¹，Model S 248 Wh kg⁻¹，1-DAP数值等均与原文一致。公式与化学式（2Mn³⁺→Mn²⁺+Mn⁴⁺，xLi₂MnO₃·(1-x)LiMO₂）照原文保留。不确定处：原文图表编号混乱（如第41页Figure 11实为成本图，第43页Figure 12实为5V阴极），但未在笔记中明确引用这些编号；第34页无文字内容，不影响论证。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6091,
+      "prompt_tokens": 35696,
+      "total_tokens": 41787,
+      "prompt_tokens_details": {
+        "cached_tokens": 34816
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1878
+      }
+    },
+    "content_chars": 7102
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

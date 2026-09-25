@@ -1,0 +1,75 @@
+{
+  "sha1": "470be5151f8aa7bbaf788fce52ffb21bd227cdd7",
+  "title": "How Do Cytotoxic Lymphocytes Kill Cancer Cells?",
+  "doi": "https://doi.org/10.1158/1078-0432.ccr-15-0685",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/470be5151f8aa7bbaf788fce52ffb21bd227cdd7/index.html",
+  "source_chars": 42438,
+  "markdown_chars": 9749,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "that consists of the administration to the cancer- with direct anticancer activity.",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "ACT 定义句在“administration to the cancer-”处明显中断，缺少被输注细胞及受体等关键成分，影响对 ACT 定义的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "IMMUNOSURVEILLANCE1 IMMUNOTHERAPY2 \n\n Mouse gentotype cytokines CTLA-4 PD-1/PD-L1 ACT CD137",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 表头与数据行在 OCR 中错位、合并，列对应关系不清晰，影响对免疫治疗各方案与基因型对应关系的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Prf-/- ↑Spontaneous B cell lymphoma{Smyth,2000#325;Bolitho,2009#2936} <IL12{Sin,2012#2944} =Prostate,colorectal and breast carcinoma{Allard,2013#2942} <RKIK sarcoma{Pegram,2010#2949} <EL4 lymphoma{Morales-Kastresana,2013#2938}",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Prf-/- 行中免疫监视与免疫治疗数据混排，且后续行出现孤立文献编号，表格行列归属难以可靠还原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": " Lpr3 $↑Metastasis during DMBA/TPA-induced squamous cell carcinoma{Grosse-Wilde,2008#2966}",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "行首“Lpr3”与上标标记混排，且该行缺少与表头对应的明确列位置，可能为 OCR 读取或排版错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "How do cytotoxic lymphocytes kill cancer cells?",
+  "self_check": "已核对摘要、正文与结语中关于 PRF1/GZMB 为核心杀伤途径、凋亡非必需、TRAIL 主要参与转移控制、FasL 可部分补偿 PRF1 缺陷等结论方向一致。Table 1 中 Prf-/-、GzmB-/-、TRAIL-/- 等关键基因型与免疫监视/免疫治疗结果的对应关系已按 OCR 可见文本保留，但表头与数据行存在错位，部分行列归属不确定。公式与符号（如 Bcl-X^L、IL-1β、↓ΔΨM、NF-κB）按提取文本原样保留。ACT 定义句在 OCR 中明显截断，已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6522,
+      "prompt_tokens": 11444,
+      "total_tokens": 17966,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11594,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

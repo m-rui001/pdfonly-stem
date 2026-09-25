@@ -1,0 +1,64 @@
+{
+  "sha1": "623069532857c28ec5bb674dab8bc4315bde2632",
+  "title": "Operando studies reveal active Cu nanograins for CO2 electroreduction",
+  "doi": "https://doi.org/10.1038/s41586-022-05540-0",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/623069532857c28ec5bb674dab8bc4315bde2632/index.html",
+  "source_chars": 51493,
+  "markdown_chars": 3113,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "originates form their intrinsically lower surface energy",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "'form'应为'from'，但照录原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "O¿O bonds can dissociate",
+      "type": "疑似文本损坏",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文为'O¿O'，推测为'O=O'或'O-O'，但照录可见文本。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "Cu nanograins formed under bias are highly",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第4页末尾句子在页中断，第5页继续'defective/disordered'，中间可能插入页眉或图注，但提取文本中未显示缺失内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的关键数值：7 nm NP在-0.8 V下C₂+选择性为18 nm的6倍；GDE中57% FE at 300 mA/cm²，H-cell 44% at 15 mA/cm²；5 nm NP 55%；Cu-Cu CN约8（1h）和12（4h）；RSoXS晶粒尺寸减小2.9±0.2 Å；HERFD XAS中7 nm完全还原约30 min，18 nm约10 min。公式未出现。所有数值均与原文一致。不确定处已标记跨页和疑似错误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2961,
+      "prompt_tokens": 13558,
+      "total_tokens": 16519,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 664
+      }
+    },
+    "content_chars": 4100
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

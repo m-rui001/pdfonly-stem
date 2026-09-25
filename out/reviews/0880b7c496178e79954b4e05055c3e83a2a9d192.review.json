@@ -1,0 +1,73 @@
+{
+  "sha1": "0880b7c496178e79954b4e05055c3e83a2a9d192",
+  "title": "Pharmaceuticals in freshwater aquatic environments: A comparison of the African and European challenge",
+  "doi": "https://doi.org/10.1016/j.scitotenv.2018.11.072",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0880b7c496178e79954b4e05055c3e83a2a9d192/index.html",
+  "source_chars": 101769,
+  "markdown_chars": 6869,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "In Africa, much more compounds reached concentrations more than the ecotoxicity",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句末在页尾中断，下一页以 'endpoints, including...' 接续。摘要跨页断行，非错误但需要标注以确认阅读连续性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The second highest concentration of carbamazepine",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页尾句子中断，下一页以 'was 490 ng L−1' 接续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Risk assessments on Anuran amphibian",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "页尾句子中断，下一页以 'larvae indicate...' 接续。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "b4% of the respondents dispose medicines",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文中出现 'b4%'，很可能原意为 '<4%'，但文本提取无法确认，故保留可见文本并标注存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：摘要中非洲最大浓度约为欧洲的 20,000 倍（对应雌三醇 45,550 vs 2.38 ≈ 19,100 倍）；17β-雌二醇约 3140 倍（15,700/5 = 3140）；对乙酰氨基酚约 215 倍（106,970/1289 ≈ 83 倍与摘要不一致，但原文正文第 5 页写的是 ~215 倍，摘要同文）；环丙沙星约 125 倍（14,331/1440 ≈ 10 倍与摘要不一致，原文正文照录）；磺胺甲噁唑约 100 倍（53,828/1500 ≈ 36 倍与摘要不一致，原文正文照录）；萘普生约 171 倍（59,300/1000 ≈ 59 倍与摘要不一致，原文正文照录）。风险商数最高 7850（17β-雌二醇：15,700/2 = 7850）经计算一致。ARVD 中拉米夫定 167,100 ng L⁻¹ 为全球最高检出浓度；对乙酰氨基酚 106,970 ng L⁻¹ 为 AAF 类最高，均与数据表一致。MEC 超毒性终点的化合物清单（双氯芬酸、布洛芬、环丙沙星、三氯生、甲氧苄啶、磺胺二甲嘧啶、卡马西平、氟西汀、雌酮、17β-雌二醇、雌三醇）与 Table 3 中 RQ > 1 的项目一致。公式仅 RQ = MEC/毒性终点，无其他公式需核对。不确定之处：摘要中 '~215'、'~171'、'~125'、'~100' 等倍数与表格数据直接相除结果不完全吻合（因系约数及未给出确切欧洲最大值所致），但原文正文照录未改动。'b4%' 疑为 OCR 缺陷。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5997,
+      "prompt_tokens": 30135,
+      "total_tokens": 36132,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 783
+      }
+    },
+    "content_chars": 8635
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

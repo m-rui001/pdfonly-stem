@@ -1,0 +1,64 @@
+{
+  "sha1": "9b305d8d7008345fbaf07a28cdc7ca2a4c743e1a",
+  "title": "Tailoring the Energy Landscape in Quasi-2D Halide Perovskites Enables Efficient Green-Light Emission",
+  "doi": "https://doi.org/10.1021/acs.nanolett.7b00976",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9b305d8d7008345fbaf07a28cdc7ca2a4c743e1a/index.html",
+  "source_chars": 39575,
+  "markdown_chars": 2397,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 16,
+      "quote": "A = 2·109 s-1, B=108 cm3 s-1 and C = 1.6·106 cm6 s-1",
+      "type": "疑似上标丢失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "参数中的指数（109、108、106）应为10的幂，上标可能在提取中丢失",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "ktransfer= 1011 s-1",
+      "type": "疑似上标丢失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "类似，1011应为10^11",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "dN = − N A + BN + CN 2 + φ (t ) dt",
+      "type": "文本损坏/乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式含有不可识别字符，无法确定准确形式，疑似提取编码错误",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：PLQY 60%对应1.8 mW/cm²，比值0.3 cm²/mW，EQE 7.4%，亮度8400 cd/m²；MAPbBr3对比器件EQE 0.8%、33.7 cd/m²，<n>=3为4.8%、1000 cd/m²，梯度<n>=5为7.4%、8400 cd/m²。公式1-3按提取文本保留，但公式字符有乱码，已在extraction_issues中说明。材料与方法中的参数上标可能丢失，已标记。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 20360,
+      "prompt_tokens": 11100,
+      "total_tokens": 31460,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 18384
+      }
+    },
+    "content_chars": 3330
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

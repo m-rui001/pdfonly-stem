@@ -1,0 +1,64 @@
+{
+  "sha1": "60d3e5c4f53dba791ac4fbafc833631b4fcb5db8",
+  "title": "Emergent constraint on equilibrium climate sensitivity from global temperature variability",
+  "doi": "https://doi.org/10.1038/nature25450",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/60d3e5c4f53dba791ac4fbafc833631b4fcb5db8/index.html",
+  "source_chars": 29233,
+  "markdown_chars": 1970,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "𝐸𝐶𝑆 = √2 𝑄2xCO2 { 𝜎𝑇 1 𝑄2xCO2 } = √2 Ψ 𝜎𝑄 √−log 𝑒 𝛼1𝑇 𝜎𝑄",
+      "type": "公式字符错位/OCR乱码",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式中重复出现“𝑄2xCO2”并夹有孤立数字“1”，无法准确复原原始符号排列，但结合上下文可识别为ECS与σT、σQ、α1T的关系。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "𝐸𝐶𝑆 = 𝑄2𝑥𝐶𝑂2 { 𝜎𝑇 2 }√ 𝜎𝑄 −log 𝑒 𝛼1𝑇",
+      "type": "公式字符错位/OCR乱码",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "提取文本中“2 }√”位置混乱，无法确定是√(2/…)还是2√(…)，但上下文推导支持ECS与√(2/−log α)成正比。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "basedon",
+      "type": "拼写/间距错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "显然应为“based on”，提取时缺少空格。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：ECS=2.8K，66%区间2.2-3.4K，95%区间1.6-4.0K，P(ECS<1.5K)<3%，P(ECS>4.5K)<1%，窗宽55年，理论梯度12.2，拟合梯度12.1，P(ECS>4K)<2.5%。公式部分因原提取文本存在乱码，已按文中文字定义（Ψ=σT/√(−log_e α1T)，ECS=Q2xCO2/λ）以及Methods中的推导逻辑，将公式(2)和Methods中的ECS表达式复原为等价形式，但仍标注了提取疑点。未发现跨页断裂或明显缺句。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7872,
+      "prompt_tokens": 8505,
+      "total_tokens": 16377,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6123
+      }
+    },
+    "content_chars": 2999
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

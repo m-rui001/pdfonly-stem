@@ -1,0 +1,73 @@
+{
+  "sha1": "0ea0ce0e8edc05ebd0b30048fde62d0705614821",
+  "title": "Fractional quantum anomalous Hall effect in multilayer graphene",
+  "doi": "https://doi.org/10.1038/s41586-023-07010-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0ea0ce0e8edc05ebd0b30048fde62d0705614821/index.html",
+  "source_chars": 47192,
+  "markdown_chars": 3111,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "At zero magnetic field, we observed plateaus of ℎ quantized Hall resistance Rxy = 𝑣𝑒 2 at v = 1, 2/3, 3/5, 4/7, 4/9, 3/7 and 2/5 of the moiré superlattice 𝟐𝒉 respectively",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页码标记'Page 2'之前的页面底部，'At zero magnetic field...'句中的公式和'2h/e2'片段与页内容断开了，且顺序被打乱，无法确认原文正确显示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "While the Chern insulator state has been observed in trilayer RG/hBN at integer moiré fillings (see Methods), FQAHE has not been found in this system so far.",
+      "type": "引用缺失",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "此处'see Methods'是一个指向原文Methods部分的交叉引用，但在提取的Methods文本中并未详细描述此具体证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "b. Magnetic hysteresis scans of Rxy and 2h Rxx at v = 1/2, showing Rxy plateaus at ± e2 and much smaller Rxx.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "页码13的'Fig. 4'图例中，'2h'和'Rxx'之间有明显断裂，且'±e2'这半段公式被单独隔开，ページ跨页或页面内文本混排导致公式断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Rxy equals 𝒆𝟐 at v =  and varies linearly with v",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "'v = 1/2'被提取为'v = 1/2'，且公式位置显示异常，可能并非原文如此，但由于缺乏上下文，无法确定正确形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要和正文中的关键数值：填充因子 v = 1, 2/3, 3/5, 4/7, 4/9, 3/7, 2/5；v = 1/2 处的 Rxy = 2h/e²；带宽 < 5 meV；D/ε₀ = 0.97 V/nm；T = 10 mK 和 0.1 K；平台宽度 ~3×10¹⁰ cm⁻²；对比 t-MoTe₂ 的宽度差异（约10倍）。这些数值在摘要和正文中一致。公式 Rxy = h/(ve²) 中的 v 代表填充因子，在多个位置出现，已按此理解。结论部分关于CFL相变的解释与正文数据一致。需要注意的是，由于抽取文本中部分公式存在断裂或顺序异常，我在笔记中已尽量根据上下文还原其标准形式，如 '2h/e²' 和 'h/e²'，但无法确定原始排版中的具体显示方式。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3209,
+      "prompt_tokens": 13896,
+      "total_tokens": 17105,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 305
+      }
+    },
+    "content_chars": 4899
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

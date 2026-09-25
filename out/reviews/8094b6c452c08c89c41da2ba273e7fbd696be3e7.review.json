@@ -1,0 +1,73 @@
+{
+  "sha1": "8094b6c452c08c89c41da2ba273e7fbd696be3e7",
+  "title": "All‐Solid‐State Synaptic Transistor with Ultralow Conductance for Neuromorphic Computing",
+  "doi": "https://doi.org/10.1002/adfm.201804170",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8094b6c452c08c89c41da2ba273e7fbd696be3e7/index.html",
+  "source_chars": 52657,
+  "markdown_chars": 3378,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "the \"rear energy of ECT is comparable or larger than the \"write\" energy",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "根据上下文应为'read' energy，但原文抽取为'rear'，疑似OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "e.g. I-1±,Li+, or 02",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "'I-1±'应为H+，'02'应为O2-，但抽取字符错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "LID",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "上下文中应为Li+，但抽取为LID。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "Figure 30",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为Figure 3f，但抽取为30。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：电导<75 nS，AR=0.31±0.12，循环变化6.5%/9.3%，器件间<12%，能量0.16 pJ（挥发性）和1.8 pJ（非易失），仿真准确率94.1%（小图像）和87.3%（大图像）。公式(1)和(2)已按原文保留。电容数据（17.2×10¹³、15.7×10¹³、1.5×10¹³）已核对。提取文本中存在OCR混乱（如I-1±、LID、rear），已在笔记中按上下文合理转换，但未引入外部知识。表1中包含多种器件对比，但未逐一详述，仅保留主要比较点。跨页顺序正常，无断裂句子。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2719,
+      "prompt_tokens": 14874,
+      "total_tokens": 17593,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 23
+      }
+    },
+    "content_chars": 4518
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

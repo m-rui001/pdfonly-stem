@@ -1,0 +1,73 @@
+{
+  "sha1": "92c9eae20a515d622552ac54df1ed9d88153acf1",
+  "title": "Development of the ASHRAE Global Thermal Comfort Database II",
+  "doi": "https://doi.org/10.1016/j.buildenv.2018.06.022",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/92c9eae20a515d622552ac54df1ed9d88153acf1/index.html",
+  "source_chars": 64735,
+  "markdown_chars": 2300,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "CEOT University",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "同一页其他位置及表2中均为'CEPT University'，疑为拼写不一致或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Chalmes University of Technology",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同页前文有'Chalmers University of Technology'，拼写不一致，疑为原文或抽取笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Figure 2 shows the distribution of records within the database by continent.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "后文第14页再次出现'Figure 2'并描述气候与季节分布，编号可能重复，存在引用不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "Figure 2) ... Figure 2 summarises the seasonal distribution",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第11页的Figure 2显示大陆分布，而此处（第14页）Figure 2既被用来指气候分区，又被用来指季节分布，明显引用错乱，可能是原文章节编号混乱或提取遗漏图表标题所致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：数据库总记录数81,846、整合RP-884后107,463、各洲和各气候区、建筑类型及制冷策略的样本量均与正文一致。公式方面原文未给出具体公式，仅说明PMV/PPD按ISO 7730、SET按ASHRAE 55计算。结论方向与摘要一致。不确定之处：表2和表3的部分行因提取格式问题可能错位，但未影响主要数值；第14页图表编号引用混乱，已在问题中标出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2561,
+      "prompt_tokens": 16396,
+      "total_tokens": 18957,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 759
+      }
+    },
+    "content_chars": 3574
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

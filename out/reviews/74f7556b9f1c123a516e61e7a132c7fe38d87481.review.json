@@ -1,0 +1,64 @@
+{
+  "sha1": "74f7556b9f1c123a516e61e7a132c7fe38d87481",
+  "title": "Development of geopolymer mortar under ambient temperature for in situ applications",
+  "doi": "https://doi.org/10.1016/j.conbuildmat.2016.05.085",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/74f7556b9f1c123a516e61e7a132c7fe38d87481/index.html",
+  "source_chars": 51196,
+  "markdown_chars": 3103,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "potassium silicate with molar ratio equal to 1.2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "摘要中写 molar ratio 1.2，但正文（第4页和第14页）均写 1.25，前后不一致，疑为原文笔误或抽取误差。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Table 6. Weight loss and time of heat flow peaks. Heat flow (mW/mg) Weight loss (%) Max peak Min peak",
+      "type": "表格结构混淆",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表6的表头与数值排列混乱，列名与下方数据对应关系不清，且第一行（10% slag）的Max peak值0.04191与正文中20%-50%的峰值数值序列不符，疑为抽取中行列错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 19,
+      "quote": "Table 3 ... Mixture 10S, 20S, 30S & 40S",
+      "type": "疑似数据缺失",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中提及五种配比（10S-50S），且压缩强度数据包含50S，但表3仅列出四种混合物的试件数，未包含50S，疑为表格抽取遗漏或原文如此。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对正文与摘要中的关键数值：压缩强度（3天：2.9-25.9 MPa；28天：18.45-48 MPa）、弯曲（40S 6 MPa）、拉伸（40S 3 MPa）、孔隙率（30%→18.3%）、FTIR峰位（1007→947 cm⁻¹）、DSC峰值（0.0129-0.0414 mW/mg）均与提取文本一致。摘要中 molar ratio 1.2 与正文 1.25 不一致，已在问题中标注。表3未列50S试件，但正文有50S压缩数据，已标注。表6结构混乱，但正文使用的热流峰值为20%-50%，未采用表6中10%的0.04191，仅作为疑似问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5040,
+      "prompt_tokens": 13369,
+      "total_tokens": 18409,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2510
+      }
+    },
+    "content_chars": 4321
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

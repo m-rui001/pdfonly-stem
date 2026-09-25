@@ -1,0 +1,63 @@
+{
+  "sha1": "25a82fb3e59ced90e3807df43e9d51402adeaf75",
+  "title": "Micelle-directed chiral seeded growth on anisotropic gold nanocrystals",
+  "doi": "https://doi.org/10.1126/science.aba0980",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/25a82fb3e59ced90e3807df43e9d51402adeaf75/index.html",
+  "source_chars": 38466,
+  "markdown_chars": 3141,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "and their surface was found to become more entangled (Fig. 3D and fig. S8). Nonetheless, the presence of tilted wrinkles was still clearly visible and angles between 0° and 45° were again observed",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "页5末尾句子在'and their surface'后跨页到页6，但页6开头没有直接续接，可能缺失连接词。此处未发现明显错误，但页码标记前后句子不连续，需注意。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Although the tilting angle is obviously lower than that measured for gold, a helical character is demonstrated by the 3D-FFT analysis (Fig. 4E).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "文本中提到Fig. 4E，但根据上下文，三维FFT分析应针对Pt样品，而Fig. 4E是Au@Pt纳米棒的tomography重构，并非FFT。可能引用编号有误，但证据不足，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "When gold nanorods of different dimensions and degrees of anisotropy were used to seed the chiral growth (fig. S19 and S20), similar trends in optical activity were observed.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页6末尾段落与页7开头衔接正常，但页6末尾'However, the anisotropy factor was significantly influenced by the nanorod dimensions.'之后页7开头为'In general, slightly lower g-factor values...'，逻辑连贯，无异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：种子尺寸130×29 nm，生长后尺寸165×73、210×112、270×175 nm；褶皱高度15-20 nm（小）、35-45 nm（中），宽度3-4 nm，间距2-3 nm；胶束宽度3.75 nm；g-factor ~0.002（BINOL）、~0.2（BINAMINE）、~0.003（球种子）；CD波段红移范围（正带700→1300 nm，负带1100→1350+ nm）；抗坏血酸浓度160→1.6 mM时CD降低一个量级。公式未见。模拟参数：螺距90 nm，褶皱宽3.5 nm，间距2.5 nm。结论方向一致。不确定处：Pt样品FFT引用的图号可能有误（存疑），部分跨页衔接未影响完整性。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2596,
+      "prompt_tokens": 10812,
+      "total_tokens": 13408,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 18
+      }
+    },
+    "content_chars": 4834
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

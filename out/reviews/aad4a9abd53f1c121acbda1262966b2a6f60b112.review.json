@@ -1,0 +1,63 @@
+{
+  "sha1": "aad4a9abd53f1c121acbda1262966b2a6f60b112",
+  "title": "Application of metal and metal oxide nanoparticles@MOFs",
+  "doi": "https://doi.org/10.1016/j.ccr.2015.08.002",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/aad4a9abd53f1c121acbda1262966b2a6f60b112/index.html",
+  "source_chars": 90481,
+  "markdown_chars": 5861,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "A asachievedwhenthe maximum turnover of 110 molH2 mol−1 cat w loading of Pt nanoparticles was 0.5%",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "句中 'A asachievedwhenthe' 明显为跨页拼接错误，原文应为 'A maximum turnover ... was achieved when the loading ... was 0.5%' 之类，但提取文本出现乱码，无法确认正确措辞。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Fe3 O4 28.78 20",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格中 'Fe3 O4' 应为 'Fe3O4'，且 '28.78' 可能为重量百分比，但提取文本未明确单位，疑似排版问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "spontaneous release of NIM over 11 days was examined in physiological saline (aqueous NaCl solution) at 37◦C",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "温度符号 '37◦C' 应为 '37°C'，提取文本使用了 '◦' 而非度数符号，属于字符编码错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和表格中的关键数值：储氢容量（2.5 wt% H2, 62.5 g/L）、Pd@MIL-100(Al) 室温 0.35 wt%，Ag@MOF-74(Ni) Xe 提高 15.6%，甲醇产率 70 molMeOH g−1cat h−1，CO 转化温度 200°C 等。公式和符号如 molH2 mol−1cat、SAR 等已保留。文中部分数值如表 1 中 '28.78' 未在正文出现，仅列表，且提取文本有乱码（如第 9 页），已标记。未发现数值与结论方向矛盾，但个别行文疑似跨页拼写错误已列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4264,
+      "prompt_tokens": 25979,
+      "total_tokens": 30243,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 29
+      }
+    },
+    "content_chars": 7118
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

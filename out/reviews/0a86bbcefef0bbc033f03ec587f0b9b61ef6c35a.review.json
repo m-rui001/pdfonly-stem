@@ -1,0 +1,64 @@
+{
+  "sha1": "0a86bbcefef0bbc033f03ec587f0b9b61ef6c35a",
+  "title": "Influence of cholesterol on liposome stability and on in vitro drug release",
+  "doi": "https://doi.org/10.1007/s13346-015-0220-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0a86bbcefef0bbc033f03ec587f0b9b61ef6c35a/index.html",
+  "source_chars": 44902,
+  "markdown_chars": 3409,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "DPPC 0:30% and 60:40%",
+      "type": "疑似笔误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "原文写为“DPPC 0:30%”，但上下文及表3均显示DPPC选用的配方为70:30%和60:40%，0:30%不合逻辑，应为70:30%的笔误。原文照录未改正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "A rigorous theory of vesicle loading. Longmuir II. 1995",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "期刊名应为Langmuir，原文误作Longmuir。仅出现在参考文献中，不影响正文理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Fig.8, a",
+      "type": "格式疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文中“Fig.8, a”中间有逗号，疑似插入格式问题，但图注中均为Fig. 8，轻微不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数据：DMPC/DPPC/DSPC纯脂质粒径（297.45/305.6/385.2 nm）、50%胆固醇时粒径、70:30%时包封率（A约90%，Q约88%）、释放规律及模型公式均一致。公式Mt/M∞=k1t^m+k2t^(2m)和%EE=(Wt/Wi)×100照录。文中“DPPC 0:30%”逻辑上应为70:30%，已在extraction_issues中标注，未在正文中修改。AFM表2中DLS数值与正文略有出入（如DSPC 100%正文385.2 vs 表2 388±5.3），但均属原文表述，保留原样。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3119,
+      "prompt_tokens": 11929,
+      "total_tokens": 15048,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 442
+      }
+    },
+    "content_chars": 4476
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

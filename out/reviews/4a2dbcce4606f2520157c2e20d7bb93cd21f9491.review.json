@@ -1,0 +1,73 @@
+{
+  "sha1": "4a2dbcce4606f2520157c2e20d7bb93cd21f9491",
+  "title": "Engineering ligand reactivity enables high-temperature operation of stable perovskite solar cells",
+  "doi": "https://doi.org/10.1126/science.adi4107",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4a2dbcce4606f2520157c2e20d7bb93cd21f9491/index.html",
+  "source_chars": 40996,
+  "markdown_chars": 3875,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "The initial PCEs of the encapsulated control, PEA, and 345FAn devices were 18.9%, 20.1%, and 20.2%, respectively (fig. S28). The stability results are shown in Fig. 5E. We recorded a similar T80 of ~220 hours for the control and PEA devices, in accordance with the limited thermal stability of perovskite films (Fig. 3E).",
+      "type": "疑似引用标号错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文中引用“Fig. 3E”来指代器件T80结果，但图3为DFT研究图，器件稳定性结果对应图5E（第7页图5E自己也标注了MPP tracking）。因第5页图3E展示的是Eint值，与稳定性结论不符，判断为标号引用错误，但无法确认正确标号，照录原文并在文中以文本呈现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "Fig. 5E. MPP tracking of encapsulated control, PEA, and 345FAn devices using ITO substrates at 85°C with a relative humidity of ~50% under 0.8-sun illumination.",
+      "type": "数值自相矛盾/图注疑似不一致",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "图5E图注写明“0.8-sun illumination”，但正文表述一致性存疑：第7页正文称“MPP tracking of encapsulated control, PEA, and 345FAn devices using ITO substrates at 85°C...”，而图5F/FTO器件明确为“1-sun illumination”。图注中的0.8-sun与图5F的1-sun在光照条件设定上不一致，但也不能据此判定图5E的0.8-sun是笔误，保留原文数值。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "Eint values were -0.74, -0.89, -0.92, and -1.22 eV for An, 4FAn, 26FAn, 345FAn, respectively (Fig. 3Ee)",
+      "type": "疑似标号笔误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“Fig. 3Ee”中多出一个小写字母e，根据上下文应为图3E（DFT相互作用能图），照录原文但标注此笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "The average PCE of PEA devices (8 devices for each condition) dropped to 15.8%, with an average fill factor (FF) of merely 67.4% over the course of solution exposure for 30 s, while 345FAn devices maintained an average PCE of 23.0% (Fig. 5d)",
+      "type": "疑似标号大小写不一致",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "文中“Fig. 5d”应为“Fig. 5D”以与其他图引用（如Fig. 5A、Fig. 5E）格式保持一致；图5D为PCE-溶液暴露时间关系图，引用位置正确。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数据：认证QSS PCE 24.09%（NREL）、T85 ~1560 h（FTO器件，1-sun, 85°C, 50% RH）、PEA与对照T80约220 h、345FAn器件T80估计810 h（ITO）、An的STEI 2.34 vs PEA 1.21、Eint数值（An -0.74, 4FAn -0.89, 26FAn -0.92, 345FAn -1.22 eV）、PLQFS损失约100 meV（对照）、PEA与345FAn的QFLS改善约15/30 meV、非辐射损失比例（对照16.5%、PEA 12.7%、345FAn 12.1%）、UPS功函数变化（4.64→4.17 eV）、温度系数-0.12%/°C，均已从正文提取并保留。图5E的0.8-sun与图5F的1-sun照射条件差异已在extraction_issues中标注。图3E/Eint的引用错位及“Fig. 3Ee”笔误已标为疑点，未擅自修正。所有定量信息均出自提取文本，未引入外部数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4769,
+      "prompt_tokens": 11493,
+      "total_tokens": 16262,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1128
+      }
+    },
+    "content_chars": 6453
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "sha1": "2344e7a2bdc51deb82e1839b9797d8fc66a1ad1a",
+  "title": "Encapsulation of Perovskite Nanocrystals into Macroscale Polymer Matrices: Enhanced Stability and Polarization",
+  "doi": "https://doi.org/10.1021/acsami.6b09443",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2344e7a2bdc51deb82e1839b9797d8fc66a1ad1a/index.html",
+  "source_chars": 80205,
+  "markdown_chars": 4347,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "First, The perovskite QDs are extremely sensitive to the hydrophobicity of the chosen polymeric matrix.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "前页末句为 'The novelty of this strategy is of two-fold. First, The perovskite QDs...'，第二点降在下一页开头的 'Second, the unusual dynamic nature of the surface ligands' 前没有明显断句问题，但 'First, The' 中 'The' 大写异常，显示跨页排版上的断句痕跡。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "The enhanced water stability is asiigned to the perovskite QDs’ surface passivation",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'asiigned' 应为 'assigned'，上下文明确为归因含义。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：纳米立方体尺寸8±1 nm；纳米板厚度2.4/3 nm、横向20–30 nm；纳米线直径10 nm、长数微米；水浸泡PLQY保持122天（>4个月）；纳米立方体在水中荧光衰减时间常数16 min；光子预算>10¹⁰ vs 裸露的10⁶–10⁷；偏振度0.44±0.05 vs 0.08±0.01；铅浓度~20 ppb；渗透深度~50 nm；水接触角PS 87°/SEBS 100°/PLMA 110°；光降解速率常数k=10⁸ M⁻¹·s⁻¹；力学数据韧性~1.5 MPa、模量~2 MPa、延展性>400%；消光系数NW 1.4×10⁶ cm⁻¹、NPL 0.014×10⁶ cm⁻¹。公式P=(I∥−I⊥)/(I∥+I⊥)已保留。文中引用Protesescu、Pathak、Wang、Rogach等的工作为作者综述内容，未作为本文关键论据展开。不确定处：图5a中提及的PS数据点未给出数值细节；SEBS中PS含量60%的表述来自原文；PLMA接触角110°为文中引用值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3642,
+      "prompt_tokens": 23281,
+      "total_tokens": 26923,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 370
+      }
+    },
+    "content_chars": 5626
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

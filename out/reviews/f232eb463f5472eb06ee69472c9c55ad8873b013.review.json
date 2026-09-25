@@ -1,0 +1,64 @@
+{
+  "sha1": "f232eb463f5472eb06ee69472c9c55ad8873b013",
+  "title": "Redefining bilingualism as a spectrum of experiences that differentially affects brain structure and function",
+  "doi": "https://doi.org/10.1073/pnas.1811513116",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f232eb463f5472eb06ee69472c9c55ad8873b013/index.html",
+  "source_chars": 73637,
+  "markdown_chars": 3173,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "included in the score 6",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "句尾出现数字6，应为页码标记，句子应在“score”处与下一页“L2_social…”连接，但页码被嵌入正文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Methods 5",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“Methods”后出现孤立数字5，可能是页码，但该页为第7页，数字5来源不明，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "cerebral and 4",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页码数字4被插入句子中，应为“cerebral and cerebellar”，后文“cerebellar”在下一页开头，说明是跨页断句时页码混入。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、方法、结果和讨论中的关键数值：样本量65、平均年龄31.7、女性49、AoA均值8.51、沉浸月数70.94、QPT 88.35%、L2_Home均值2.38、L2_Social均值51.5等；结果中提及的显著效应（AoA-胼胝体FA正相关、沉浸-右侧尾状核/壳核/丘脑变化、L2_Social-左侧尾状核扩张、AoA-视觉网络负相关、Years_Active_L2-左侧伏隔核扩张、Immers_Active_L2-右侧尾状核变化）均与正文描述一致。未发现数据矛盾。对提取文本中疑似页码混入的跨页位置已标记，未做修复。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4581,
+      "prompt_tokens": 18979,
+      "total_tokens": 23560,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2256
+      }
+    },
+    "content_chars": 4213
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

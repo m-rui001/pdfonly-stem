@@ -1,0 +1,55 @@
+{
+  "sha1": "4a3f50c5adf0633c761d430dcf21fba8e7607844",
+  "title": "Tutorial: Defects in semiconductors—Combining experiment and theory",
+  "doi": "https://doi.org/10.1063/1.4948245",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4a3f50c5adf0633c761d430dcf21fba8e7607844/index.html",
+  "source_chars": 61326,
+  "markdown_chars": 3933,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "we Eq. obtain E0b ¼ 0:24 eV",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文'we Eq. obtain'不通顺，可能为'we obtain'或公式引用编号被误插，但无更多文本内证据，故标为疑似错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "e Eabs ¼ Etherm þ dFC ;",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第4页末尾出现' e Eabs ¼ Etherm ＋ dFC ;'，'e'可能为上标（表示激发态）而独立于公式，且公式编号(1)出现在第5页页眉之后，疑似跨页断句，需对照PDF原版确认公式完整形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数值：ZnO:N的Eabs=2.26/2.24 eV、C0=0.14/0.18 eV、ħω0=35 meV、dFC=0.28 eV、Etherm=1.98 eV、能级1.46 eV；GaN:C的能级0.9–1.0 eV、dFC=0.46 eV、Cp=3.1×10^-7 cm³/s；模型参数DE=0.80 eV、dFC=0.243 eV、ħω0=30 meV、S=8.1、DEb=0.32 eV；全部与提取文本一致。公式已按原样保留，但第4页跨页处的上标' e'无法确认，已在issues中标注；另外'we Eq. obtain'可能为文本提取噪声，已标注。未对任何公式或数值做推测性修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5746,
+      "prompt_tokens": 16665,
+      "total_tokens": 22411,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2696
+      }
+    },
+    "content_chars": 4846
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "sha1": "8b05834085d556abd489c9e1c332e854d1a2f827",
+  "title": "Design of active and stable Co–Mo–Sx chalcogels as pH-universal catalysts for the hydrogen evolution reaction",
+  "doi": "https://doi.org/10.1038/nmat4481",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8b05834085d556abd489c9e1c332e854d1a2f827/index.html",
+  "source_chars": 67563,
+  "markdown_chars": 3251,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "between 0.05 and 0.5 V, the valence state of Mo and Co is the same as for the as-synthesized materials",
+      "type": "possible_ocr_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文此处电位范围写为0.05-0.5 V，但图3a及补充图S7均使用0.05 V与-0.35 V两个电位，且HER电位区为负值。极可能原文本应为0.05 V至-0.35 V或-0.5 V，负号在抽取中丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "correlated with ex situ with quantitative measurements of the dissolution",
+      "type": "grammatical_artifact",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'with'重复出现，疑似原文排印或抽取杂讯，语义上应为'correlated ex situ with quantitative measurements'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Bostjan Genorio1,2",
+      "type": "inconsistency",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第20页重复的作者列表中将Genorio标注为1,2，而第1页正确标注为1,3。可能是原稿不同版本或抽取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "chalcogels consist of random porous networks in the range of 50-100 nm that are composed of aggregated nanoparticles with rather high surface area (~200 m2/g)",
+      "type": "inconsistency",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文第5页称比表面积约200 m2/g，但补充材料第22页称'close to 250 m2/g determined from BET'。两处数值不一致，可能是原文不同阶段数据或抽取版本差异。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "EXAFS analysis of CoSx confirms the presence of Co-Co interactions and the formation of characteristic Co-dimers in addition to the CoS6 octahedra",
+      "type": "inconsistency",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "正文中CoSx的Co配位八面体写作CoS6，而第6页正文(iv)及补充材料第28页写作CoS8，图2说明又用CoS6。同一材料在不同位置写法不一致，疑似原文或抽取的编辑差异。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "H2O + e- + M M-Had + OH-",
+      "type": "formula_garbled",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "公式中表示可逆箭头的符号被渲染为乱码字符''，原文应为一个可逆反应箭头。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "S ad δ----Cn+-H2O network",
+      "type": "formatting",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "连续多个破折号疑似为长破折号或连接符号的抽取变形，不影响语义但破坏可读性。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：热力学极限1.223 V；Au(111)在pH 13比pH 1活性低一个数量级；0.1M KOH中Au-Sad活性提升3倍；ϴSad>0.45失活；Pt表面膨胀1.4%→1.8%（Ba2+时2.6%）；Pt-Ba2+距离缩短约5%；比表面积200 vs 250 m2/g不一致（已标issue）；磁性有效磁矩0.6-1.2 μB；活性顺序碱性MoSx<<CoMoSx<<CoSx、酸性MoSx<CoSx≤CoMoSx；晶态比非晶稳定约10倍；MoSx比CoSx稳定35-40倍；Co在CoMoSx中稳定约5倍；5 mA/cm2电流密度过电位对比；合成配比和成胶时间；XAS电位范围0.05至-0.35 V（与正文0.05-0.5 V不一致，已标issue）。仍不确定处：CoS6/CoS8配位写法在原文各处的统一性；电位范围负号丢失；补充表S2的精确配位数在纯文本中不完整，笔记未转录；ICP-MS具体数值来自补充表S3，正文未逐一列出，故未写入Markdown。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13159,
+      "prompt_tokens": 17955,
+      "total_tokens": 31114,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10031
+      }
+    },
+    "content_chars": 5888
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

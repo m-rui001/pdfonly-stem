@@ -1,0 +1,81 @@
+{
+  "sha1": "64ad6fa375d27aae86b2c7461e1d48436225697b",
+  "title": "Coupled-cluster techniques for computational chemistry: The CFOUR program package",
+  "doi": "https://doi.org/10.1063/5.0004837",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/64ad6fa375d27aae86b2c7461e1d48436225697b/index.html",
+  "source_chars": 219970,
+  "markdown_chars": 8149,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "CCSD+T(CCSD) CCSD(T) Λ-CCSD(T) CCSD+TQ(CCSD) CCSD+TQ*(CCSD) CCSDT+Q(CCSDT) CCSDT(Q) CCSDT(Q)/A CCSDT(Q)/B Λ-CCSDT(Q) CCSD(T-n), n = 2, 3, 4, 5b CCSD(TQ-n), n = 2, 3, 4c CCSDT(Q-n), n = 2, 3, 4, 5, 6c",
+      "type": "疑似表格拼接/跨行",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "表 I 中方法列表部分被提取为连续行，可能丢失了每行与 RHF/UHF/ROHF 列对应关系，但原表格为文本提取常见现象，不影响数值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "On the other hand, the regular SCF code easily achieves an intermediate convergence (maximum change of the density matrix smaller than 10−7 ) but then struggles to further refine the solution, exhibiting an oscillating behavior. The convergence profiles of the two algorithms are reported in Figure 1. The superlinear convergence of QCSCF is particularly apparent, as two convergence profiles can be seen focusing on the green line. The regular SCF iterations exhibit a linear convergence profile. As soon as the FLM iterations start, the energy error drops very rapidly until convergence is achieved.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该段位于 page 13 末尾，后接图例 'FIG. 1. Convergence profile...' 及图数据，但正文与图间存在页面分隔，图中数值（如 -230.780571677 Eh）与正文叙述顺序可能有中断，但未破坏语义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "TABLE XI. Maximum absolute deviations (MAD) and standard deviations (SD) of CVS-EOM-CC365 and CVS-∆CC366 results from experimental values for chemical shifts of twenty-one 1s ionization energies of C, N, O, F in fourteen molecules (in eV).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "表 X 用于 DBOC 贡献，表 XI 用于芯电离能，但文中提及 'As shown in Table VIII' 和 'as shown in Table VIII' 分别指代自旋轨道分裂和芯能级，可能表格编号错乱。原文表 VIII 实为 SO 分裂表 (第17页)，而芯能级表标为表 XI，正文却称 Table VIII。这可能为抽取或原文错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "CVS-∆CC results of core ionization energies, with CVS-∆CCSD(T) providing results as accurate as CVS-EOMCCSDTQ, as shown in Table VIII.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "同上，表 VIII 实际是 SO 分裂表，而芯电离能表是表 XI。此处 'Table VIII' 应为 'Table XI' 或类似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Table IV summarizes geometrical parameters for gold-containing molecules computed at the non-relativistic and SFX2C-1e CCSD(T) levels.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "表 IV 在原文第 11 页是原子化能误差表，而这里指的是 Au 化合物几何参数表，实际是表 V。正文称 'Table IV' 与表 V 内容不符，可能为编号错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：CCSD(T) 金标准、xncc 计时（HSOH 3.7/85.5/9.3 等）、CCSDT(Q-3) 误差 0.08 kJ/mol、SO 分裂（OH 135.2 等，TeH 4%偏差）、苯炔键长（1.2505/2.0141/2.6865）、NO2− LVC 参数（Δab 8039.8 等）、DBOC 贡献（C2H2 0.33 kJ/mol）、芯电离能 MAD（CVS-EOM-CCSD 0.94，CVS-EOM-CCSDTQ 0.24，ΔCCSD(T) 0.20）、SiS2 谐频 1647/3836/3947 vs 实验 1648.5/3832.2/3942.5。公式：CC 指数 ansatz、投影方程、梯度 Lagrangian、LVC 矩阵等均按原文保留。不确定点：表格编号错乱（Table IV/V/VIII/XI 混用）已在 extraction_issues 中标出；表 I 中部分方法名称的缩写（如 LCCD、QCISD）未展开，但原文即如此；图 4 的垂直能量调整 +0.2 eV 和 25 函数/1000 次 Lanczos 已保留。未发现无文本证据的数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6310,
+      "prompt_tokens": 57594,
+      "total_tokens": 63904,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 45
+      }
+    },
+    "content_chars": 11309
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

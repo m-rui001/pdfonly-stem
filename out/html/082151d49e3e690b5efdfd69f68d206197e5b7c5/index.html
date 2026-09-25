@@ -1,0 +1,700 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/res/08/082151d49e3e690b5efdfd69f68d206197e5b7c5.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The EAGLE simulation of galaxy formation: public release of halo and galaxy catalogues</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>The EAGLE simulation of galaxy formation: public release of halo and galaxy catalogues</h1><p class="source">2016 · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/res/08/082151d49e3e690b5efdfd69f68d206197e5b7c5.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>The eagle simulation of galaxy formation: public release of halo and galaxy cataloguesI Stuart McAlpinea , John C. Hellya , Matthieu Schallera , James W. Trayforda , Yan Qua , Michelle Furlonga , Richard G. Bowera , Robert A. Crainb , Joop Schayec , Tom Theunsa , Claudio Dalla Vecchiad,e , Carlos S. Frenka , Ian G. McCarthyb , Adrian Jenkinsa , Yetli Rosas-Guevaraf , Simon D. M. Whiteg , Maarten Baesh , Peter Campsh , Gerard Lemsoni a Institute for Computational Cosmology, Department of Physics, University of Durham, South Road, Durham, DH1 3LE, UK b Astrophysics Research Institute, Liverpool John Moores University, 146 Brownlow Hill, Liverpool L3 5RF, UK c Leiden Observatory, Leiden University, P.O. Box 9513, 2300 RA Leiden, the Netherlands d Instituto de Astrofı́sica de Canarias, C/ Vı́a Láctea s/n, 38205 La Laguna, Tenerife, Spain e Departamento de Astrofı́sica, Universidad de La Laguna, Av. del Astrofı́sico Franciso Sánchez s/n, 38206 La Laguna, Tenerife, Spain</p>
+<p>arXiv:1510.01320v1 [astro-ph.GA] 5 Oct 2015</p>
+<p>f Departamento de Astronomı́a, Universidad de Chile, Casilla 36-D, Las Condes, Santiago, Chile g Max-Planck-Institut fur Astrophysik, Karl-Schwarzschild-Str. 1, D-85748 Garching, Germany h Sterrenkundig Observatorium, Universiteit Gent, Krijgslaan 281, B-9000 Gent, Belgium i Department of Physics &amp; Astronomy, Johns Hopkins University, Baltimore, MD, 21218, USA</p>
+<p>Abstract We present the public data release of halo and galaxy catalogues extracted from the eagle suite of cosmological hydrodynamical simulations of galaxy formation. These simulations were performed with an enhanced version of the gadget code that includes a modified hydrodynamics solver, time-step limiter and subgrid treatments of baryonic physics, such as stellar mass loss, element-by-element radiative cooling, star formation and feedback from star formation and black hole accretion. The simulation suite includes runs performed in volumes ranging from 25 to 100 comoving megaparsecs per side, with numerical resolution chosen to marginally resolve the Jeans mass of the gas at the star formation threshold. The free parameters of the subgrid models for feedback are calibrated to the redshift z = 0 galaxy stellar mass function, galaxy sizes and black hole mass - stellar mass relation. The simulations have been shown to match a wide range of observations for present-day and higher-redshift galaxies. The raw particle data have been used to link galaxies across redshifts by creating merger trees. The indexing of the tree produces a simple way to connect a galaxy at one redshift to its progenitors at higher redshift and to identify its descendants at lower redshift. In this paper we present a relational database which we are making available for general use. A large number of properties of haloes and galaxies and their merger trees are stored in the database, including stellar masses, star formation rates, metallicities, photometric measurements and mock gri images. Complex queries can be created to explore the evolution of more than 105 galaxies, examples of which are provided in appendix. The relatively good and broad agreement of the simulations with a wide range of observational datasets makes the database an ideal resource for the analysis of model galaxies through time, and for connecting and interpreting observational datasets. Keywords: cosmology: theory - galaxies: formation - galaxies: evolution - method: numerical</p>
+<p>1. Introduction Galaxy formation is a complex, non-linear process that involves a wide range of physical and astrophysical phenomena, from the evolution of dark matter clustering to intricate feedback effects coupling gas cooling and outflows to star and black hole formation. Theoretical studies of galaxy formation thus require rigorous detailed modelling to link together these phenomena over a very wide range of scales. Two techniques have been developed for this purpose: semianalytic modelling (White and Frenk, 1991) and I http://www.eaglesim.org/database.html</p>
+<p>Email addresses: s.r.mcalpine@durham.ac.uk (Stuart McAlpine), j.c.helly@durham.ac.uk (John C. Helly), matthieu.schaller@durham.ac.uk (Matthieu Schaller)</p>
+<p>hydrodynamical simulations (Carlberg et al., 1990; Katz et al., 1992). Both techniques have been extensively developed over the past 25 years (e.g. Porter et al., 2014; Henriques et al., 2015; Lacey et al., 2015, for semi-analytic models) and (e.g. Oppenheimer et al., 2010; Puchwein and Springel, 2013; Dubois et al., 2014; Okamoto et al., 2014; Vogelsberger et al., 2014; Khandai et al., 2015, for hydrodynamical simulations). Recently, the Virgo1 Consortium’s “Evolution and Assembly of GaLaxies and their Environments” simulation suite (eagle, Schaye et al., 2015; Crain et al., 2015) has been able to reproduce key observational datasets, such as the present-day stellar mass function of galaxies, the cor1 http://virgo.dur.ac.uk/</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>relation of black hole mass and stellar mass and the dependence of galaxy sizes on stellar mass, with unprecedented fidelity. As well as reproducing these observations, which were used during the calibration of the simulation parameters, the simulation outputs match many other properties of the observed galaxy population and the intergalactic medium both at the present day and at earlier epochs, as we briefly discuss below. These simulations therefore provide a powerful resource for understanding the formation of galaxies and for linking and interpreting observational datasets. The aim of this paper is to introduce and make available a relational database that can be queried using the Structured Query Language (sql) to explore and exploit the halo and galaxy catalogues of the main eagle simulations. Integrated quantities describing the galaxies, such as stellar mass, star formation rates, metallicities and luminosities, are provided for more than 105 simulated galaxies and these can be individually followed through their evolution across cosmic time. This database is available at the address http://www.eaglesim.org/database.html. The simulations follow the gravitational hydrodynamical equations, tracking the evolution of baryons and dark matter. The initial conditions reflect the small density fluctuations observed in the cosmic microwave background (CMB). By tracking the movement of baryon and dark matter particles, the simulations calculate how these fluctuations are amplified by gravity, and how pressure and radiative cooling of baryons separate these two matter components of the universe. The simulations include subgrid formulations to account for processes that cannot be directly resolved in the calculation and that describe how stars and black holes form and impact the matter distribution around them. eagle improves on previous hydrodynamical simulations of representative volumes, through the use of physically motivated subgrid source and sink terms as well as through the adoption of a clear strategy for the calibration of uncertain subgrid parameters (Crain et al., 2015) and by producing a galaxy population that reproduces many of the characteristics of the observed population over a wide range of redshifts. The usability of the simulation data products is greatly enhanced when presented in a relational database, making it simple and quick to select galaxy samples based on multiple galaxy properties, to connect them to their halos and to follow their evolution over cosmic time (Lemson and Springel, 2006). Such databases were originally designed to host results from large surveys (e.g. the SDSS SkyServer Szalay et al., 2000) and later the halo catalogues from dark matter simulations and galaxy catalogues from semianalytic models (applied to the Millennium Simulation, see Lemson and Virgo Consortium, 2006). They have since been expanded to include the wider range of data available from hydrodynamical simulations (e.g. Dolag et al., 2009; Khandai et al., 2015; Nelson et al., 2015). The database allows multiple indexing of the data that significantly enhances access speed and allows the selection of smaller</p>
+<p>data subsets that can be quickly analysed using simple scripting languages. This approach avoids the need for the user to copy the raw simulation data or even just the full galaxy catalogues, reducing data transfer volumes to a manageable level. The galaxy properties stored in the database can be compared to observations or to other models, whilst the physics of galaxy formation can be explored by tracking an individual galaxy’s behaviour and environment through cosmic time. This paper is intended as a reference guide for accessing the publicly available eagle database, and is laid out as follows. Section 2 presents a brief overview of the eagle simulation suite, including the list of simulations available in the database and the values of the subgrid parameters that vary, as well as an overview of the construction of the merger trees and database tables. A short tutorial describing how to access the data is presented in Section 3. We give some words of caution and some remarks on the simulations in Section 4 and conclude in Section 5. Some additional examples combining the python and sql languages to access the data are given in Appendix A whilst the full list of galaxy and halo properties available in this data release is given in Appendix B together with a list of output redshifts in Appendix C and detailed equations given in Appendix D. Throughout this paper we quote magnitudes in the AB system and use ‘h-free’ units unless stated otherwise. 2. The EAGLE simulation suite The eagle simulation suite is a set of cosmological hydrodynamical simulations in cubic, periodic volumes ranging from 25 to 100 comoving megaparsecs (cMpc) per side that track the evolution of both baryonic (gas, stars and massive black holes) and non-baryonic (dark matter) elements from a starting redshift of z = 127 to the present day. All simulations adopt a flat ΛCDM cosmology with parameters taken from the Planck mission (Planck Collaboration et al., 2014) results: ΩΛ = 0.693, Ωm = 0.307, Ωb = 0.04825, σ8 = 0.8288, ns = 0.9611, Y = 0.248 and H0 = 67.77 km s−1 Mpc−1 (i.e. h = 0.6777). The initial conditions were generated using second-order Lagrangian perturbation theory (Jenkins, 2010) and the phase information is taken from the public panphaisa Gaussian white noise field (Jenkins, 2013). Full details of how the ICs were made are given in Appendix B of Schaye et al. (2015). The simulation suite was run with a modified version of the gadget-3 Smoothed Particle Hydrodynamics (SPH) code (last described by Springel, 2005), and includes a full treatment of gravity and hydrodynamics. The modifications to the SPH method are collectively referred to as anarchy (Dalla Vecchia, (in prep.), see also Appendix A of Schaye et al. (2015) and Schaller et al. (2015a)), and use the C2 kernel of Wendland (1995), the pressure-entropy formulation of SPH of Hopkins (2013), the time-step limiters introduced by Durier and Dalla Vecchia (2012), the artificial viscosity switch of 2</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>Identifier</p>
+<p>L</p>
+<p>N</p>
+<p>[cMpc]</p>
+<p>mg</p>
+<p>mdm</p>
+<p>com</p>
+<p>phys</p>
+<p>nH,0 −3</p>
+<p>[M ]</p>
+<p>[M ]</p>
+<p>[ckpc]</p>
+<p>[pkpc]</p>
+<p>[cm</p>
+<p>nn</p>
+<p>Cvisc</p>
+<p>]</p>
+<p>∆TAGN [K]</p>
+<p>Ref-L0025N0376</p>
+<p>25</p>
+<p>2×3763</p>
+<p>1.81×106</p>
+<p>9.70×106</p>
+<p>2.66</p>
+<p>0.70</p>
+<p>0.67</p>
+<p>2/ln10</p>
+<p>2π</p>
+<p>108.5</p>
+<p>Ref-L0025N0752</p>
+<p>25</p>
+<p>2×7523</p>
+<p>2.26×105</p>
+<p>1.21×106</p>
+<p>1.33</p>
+<p>0.35</p>
+<p>0.67</p>
+<p>2/ln10</p>
+<p>2π</p>
+<p>108.5</p>
+<p>Recal-L0025N0752</p>
+<p>25</p>
+<p>2×7523</p>
+<p>2.26×105</p>
+<p>1.21×106</p>
+<p>1.33</p>
+<p>0.35</p>
+<p>0.25</p>
+<p>1/ln10</p>
+<p>2π×103</p>
+<p>109.0</p>
+<p>Ref-L0050N0752</p>
+<p>50</p>
+<p>2×7523</p>
+<p>1.81×106</p>
+<p>9.70×106</p>
+<p>2.66</p>
+<p>0.70</p>
+<p>0.67</p>
+<p>2/ln10</p>
+<p>2π</p>
+<p>108.5</p>
+<p>AGNdT9-L0050N0752</p>
+<p>50</p>
+<p>2×7523</p>
+<p>1.81×106</p>
+<p>9.70×106</p>
+<p>2.66</p>
+<p>0.70</p>
+<p>0.67</p>
+<p>2/ln10</p>
+<p>2π×102</p>
+<p>109.0</p>
+<p>Ref-L0100N1504</p>
+<p>100</p>
+<p>2×15043</p>
+<p>1.81×106</p>
+<p>9.70×106</p>
+<p>2.66</p>
+<p>0.70</p>
+<p>0.67</p>
+<p>2/ln10</p>
+<p>2π</p>
+<p>108.5</p>
+<p>Table 1: Parameters describing the available simulations. From left-to-right the columns show: simulation name suffix; comoving box size; total number of particles; initial baryonic particle mass; dark matter particle mass; comoving Plummer-equivalent gravitational softening length; maximum physical softening length and the subgrid model parameters that vary: nH,0 , nn , Cvisc and ∆TAGN (see section 4 of Schaye et al. (2015) for an explanation of their meaning).</p>
+<p>Cullen and Dehnen (2010) and a weak thermal conduction term of the form proposed by Price (2008). The effects of this state-of-the-art formulation of SPH on the galaxy properties is explored in detail by Schaller et al. (2015a).</p>
+<p>modified version of the Bondi-Hoyle accretion rate, described by (Rosas-Guevara et al., 2013, , but modified as described by Schaye et al. (2015)), and feedback is implemented following the stochastic AGN heating scheme described by Schaye et al. (2015) and making use of the energy threshold of Booth and Schaye (2009). The details of the implementation and parametrisation of these schemes are motivated and described in detail by Schaye et al. (2015). Because of our limited understanding of these processes and because of the limited resolution of the simulations, the subgrid source and sink terms involve free parameters whose values must be determined by comparison of the simulation results to a subset of the observational data. In the case of eagle, the subgrid parameters were calibrated for feedback from star formation and AGN by using three properties of galaxies at redshift z = 0, specifically the galaxy stellar mass function, the galaxy size – stellar mass relation, and the black hole mass – stellar mass relation. The calibration strategy is described in detail by Crain et al. (2015) who also presented additional simulations to demonstrate the effect of parameter variations. Once the simulations have been calibrated using a subset of the observational data, they can be validated by comparison to additional datasets. Studies have so far shown that the simulations broadly reproduce a variety of other observables such as the z = 0 Tully-Fisher relation, specific star formation rates and the column density distribution of intergalactic C IV and O VI (Schaye et al., 2015), the H I and H2 properties of galaxies (Bahé et al. submitted, Lagos et al., 2015), the column density distribution of intergalactic metals (Schaye et al., 2015), galaxy rotation curves (Schaller et al., 2015b), the z = 0 luminosity function and colour-magnitude diagram (Trayford et al., 2015), the evolution of the galaxy stellar mass function (Furlong et al., 2015) and the high-redshift H I column density distribution (Rahmati et al., 2015).</p>
+<p>2.1. Subgrid model Processes not resolved by the numerical scheme are implemented as subgrid source and sink terms in the differential equations. For each process, schemes were adopted that are as simple as possible and that only depend on the local hydrodynamic properties. This last requirement differentiates eagle from most other cosmological, hydrodynamical simulation projects (e.g. Oppenheimer et al., 2010; Puchwein and Springel, 2013; Vogelsberger et al., 2014; Khandai et al., 2015) and ensures that galactic winds develop without pre-determined mass loading factors and directions, without any direct dependence on halo or dark matter properties. The simulation tracks the time-dependent stellar mass loss due to winds from massive stars and AGB stars, core collapse supernovae and type Ia supernovae (Wiersma et al., 2009b). Radiative cooling and heating is implemented element-by-element following Wiersma et al. (2009a). Cold dense gas is prevented from artificial fragmentation by implementing an effective temperature pressure floor as described by Schaye and Dalla Vecchia (2008). Star formation is implemented stochastically following the pressuredependent Kennicutt-Schmidt relation (Schaye and Dalla Vecchia, 2008), with the inclusion of a metal-dependent star formation threshold designed to track the transition from a warm, atomic to an unresolved, cold, molecular gas phase, as proposed by Schaye (2004). The initial stellar mass function is that given by Chabrier (2003). Feedback from star formation is implemented thermally and stochastically following the method of Dalla Vecchia and Schaye (2012). Seed black holes are placed in haloes greater than a threshold mass of 1010 M /h and tracked following the methodology of Springel et al. (2005a) and Booth and Schaye (2009). Gas accretion onto black holes follows a 3</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>2.2. The simulations in the database Table 1 summarises the simulations that have been incorporated into the database, including the comoving cubic box length, baryonic and non-baryonic particle masses and gravitational softening lengths. Together these parameters determine the dynamic range and resolution that can be achieved by the simulation. The simulation name includes a suffix to indicate the simulation box length in comoving megaparsecs (e.g. L0100) and the cube root of the initial number of particles per species (e.g. N1504). Simulations with the same subgrid model as the primary run (L0100N1504) are denoted with the prefix “Ref-”. As discussed in Schaye et al. (2015), the “Recal-” higherresolution simulation uses values of the subgrid parameters that have been recalibrated following the same procedure used for the reference simulation to improve the fit to the z = 0 galaxy stellar mass function, allowing the user to test the weak convergence of the code2 . See Schaye et al. (2015) for definitions and discussion of the concepts of weak and strong convergence. Note that Recal-L0025N0752 should be compared to the Ref-L0025N0376 calculation to ensure that the same range of halo mass is sampled in both cases, eliminating differences due to the simulation volume. To a similar end, the Ref-L0025N0752 model is provided to allow the user to test the strong convergence of the results. This simulation uses all the subgrid parameters of the reference model but at a higher mass resolution. All the 25 cMpc volumes share the same large-scale initial fluctuations, so that objects appear in (approximately) the same spatial locations in all three runs. Finally, the database also includes the additional simulation AGNdT9-L0050N0752 that uses a higher AGN heating temperature and increased black hole accretion viscosity parameter, Cvisc . As discussed by Schaye et al. (2015), this results in a better match to the properties of diffuse gas in galaxy group haloes, but has only a small effect on the properties of galaxies. This simulation uses the same initial phases as the Ref-L0050N0752 model, allowing objects to be matched.</p>
+<p>“subhaloes”, which can contain both baryonic and dark matter, are later identified using the subfind algorithm (Springel et al., 2001; Dolag et al., 2009) using all particle species. It is important to note that particles are not shared between subhaloes so that the correspondence between particles and subhaloes is unique. We identify the baryonic component of each subhalo with a galaxy and will refer to them as such from now on. Resolved subhaloes, always have a clear central concentration and there is a clear identification between the galaxies in the simulations and galaxies that would be identified in observational studies. Note that small subhaloes, especially at high redshift, may not contain any stars or even gas but will still be present in the catalogues. A FoF halo may contain several subhaloes (or sub-groups in the subfind terminology); we define the subhalo that contains the particle with the lowest value of the gravitational potential to be the central galaxy while any remaining subhaloes are classified as satellite galaxies (denoted SubGroupNumber = 0 and SubGroupNumber &gt; 0 respectively in the database nomenclature, see below). The stellar mass assigned to a galaxy may include diffuse particles at a large distance. Such particles make up the intra-cluster/intra-group light and would not normally be included in a galaxy’s photometry. We therefore also include aperture-based measurements in the database. Exceptionally, subfind may identify an internal highdensity component of a galaxy as a distinct subhalo. Such spurious identifications are discussed in Sec. 4 and are labelled in the main database table with the field Spurious. For each simulation we release 29 snapshot outputs between redshift 20 and 0 (the full list of released output redshifts is given in the Appendix table C.1). We later analyse the properties of each subhalo in post-processing in order to calculate galaxy and subhalo properties, such as stellar masses, galaxy sizes, star formation rates and luminosities. Each subhalo and hence each galaxy is assigned an index, its GalaxyID, that allows one to identify an object uniquely both in space and time. Note that since the GalaxyID is unique to a particular output redshift, a galaxy will change its GalaxyID over time. The 29 catalogues of galaxies are then linked through time via a galaxy merger tree, allowing one to track the evolution of a galaxy (through the evolution of its GalaxyID) with time. The construction and structure of these trees is presented in Section 2.6.</p>
+<p>2.3. Halo, subhalo and galaxy identification The raw particle data themselves are not required for many comparisons with observations. In order to reduce the volume of data to be downloaded and simplify analysis, we process the simulation outputs individually to locate bound structures which we identify with galaxies and their associated dark matter haloes. The processing steps are described in detail by Schaye et al. (2015). In brief, overdensities of dark matter are identified using the “Friendsof-Friends” (FoF) method (Davis et al., 1985) adopting a linking length of 0.2 times the average inter-particle spacing. Baryonic particles are then assigned to the same FoFhalo as their closest dark matter neighbour. Self-bound</p>
+<p>2.4. Integrated quantities At each redshift the galaxies are processed one-by-one to produce integrated quantities from the raw particle information. These are the quantities stored in the different tables of the database. For the simplest quantities, such as galaxy mass, metallicity or star formation rate, the post-processing only involves a simple summation over the particles but other quantities, such as luminosities in various filters, require</p>
+<p>2 As discussed in Section 4, performing convergence tests is strongly encouraged.</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>much more involved calculations. The full list of quantities present in the database, together with a description of the post-processing operations performed, is given in Appendix B. To allow for an easier comparison with observational measurements, masses, star formation rates and velocity dispersions are also computed within fixed spherical apertures. 2.5. Mock gri images For visualisation purposes, images are provided for galaxies with 30 physical kpc (pkpc) aperture stellar masses &gt; 1010 M . Images are generated from mock observations made using the skirt code (Baes et al., 2003; Camps and Baes, 2015), with galaxev (Bruzual and Charlot, 2003) and mappings iii (Groves et al., 2008) spectra to represent star particles and young Hii regions respectively, as described by Trayford et.al., (in prep.). A square field of view of 60 pkpc on a side is used for observations in the SDSS gri bands (Doi et al., 2010), with the galaxy spectra red-shifted to z = 0.1 to approximate SDSS colours. No artificial seeing is added to the images. Each galaxy above the stellar mass threshold is observed face- and edge-on to the galactic plane, defined using the stellar angular momentum vector within 30 pkpc. A ‘box ’ projection is also provided, with galaxies viewed down the simulation z-axis and the horizontal and vertical image axes corresponding to the simulation x and y axes respectively. The threecolour gri images are prepared from the virtual skirt observations adopting the method of Lupton et al. (2004). Figure 1 shows these three images for the same example galaxy.</p>
+<p>The trees are stored in memory following the method introduced by Lemson and Springel (2006) for the Millennium Simulation (See also the supplementary material of Springel et al., 2005b, where the details of the tree ordering are summarized). However, the main progenitor, corresponding to the main branch of the tree, is defined as the progenitor with the largest ‘branch mass’, i.e., the mass summed across all earlier outputs as proposed by De Lucia and Blaizot (2007). This definition of the main progenitor, as opposed to the simple definition of the progenitor with the largest mass, is used to avoid main branch swapping in the case of similar-mass mergers, as explained by Qu et al. (in prep.). Note that because the progenitor with the largest branch mass determines the main branch of the tree, main branch galaxies do not necessarily correspond to the central galaxy (or SubGroupNumber = 0 galaxy) of a given halo. There are two further aspects of the merger trees that must be kept in mind when analysing the simulation: • A galaxy can disappear from a snapshot but reappear at a later time (e.g. if one galaxy passes through another one). To account for this, descendants are identified using up to 5 snapshots at later times. • Care must be taken when determining mass ratios, for example in the case of mergers, as galaxies can lose or gain mass due to the definition of the subhaloes. Both of these relatively rare cases are considered further by Qu et al. (in prep.), who discuss their impact on the assembly of galaxy mass.</p>
+<p>2.6. Merger trees In order to simplify the navigation of the trees, the database is stored with depth-first ordering (see Lemson and Springel, 2006, Qu et al., in prep.). The progenitors of a galaxy can then easily be identified. To allow simple traversing of the merger tree of a given galaxy (with its unique GalaxyID), three additional numbers are assigned to each galaxy:</p>
+<p>As galaxies rarely evolve in isolation, they are subject to mergers with neighbouring galaxies. This adds serious complexity to tracing the history of an individual galaxy from the present-day to its formation and as such we must construct a merger tree to connect galaxies across simulation output times. Descendant subhaloes and hence galaxies are identified using the D-Trees algorithm (Jiang et al., 2014), with a complete description of its adaptation to the eagle simulations provided in Qu et al. (in prep.). In essence, the algorithm traces subhaloes using the Nlink most bound particles of any species, identifying the subhalo that contains the majority of these particles as a subhalo’s descendant at the next output time. We define Nlink = min(100, max(0.1Ngalaxy , 10)), where Ngalaxy is the total number of particles in the parent subhalo. This allows the identification of descendants, even in the case where most particles have been stripped and it minimises the misprediction of mergers during fly-bys (Fakhouri and Ma, 2008; Genel et al., 2009). The galaxy with the most Nlink particles at the next output is identified as the single descendant of a galaxy, while a descendant galaxy can have multiple progenitors.</p>
+<p>1. TopLeafID: This is the GalaxyID of the highest-redshift main branch progenitor. All the galaxies on the main progenitor branch of a galaxy with GalaxyID i and TopLeafID j have a GalaxyID in the range [i, j] in ascending redshift order. 2. LastProgID: This is the maximum GalaxyID of all progenitors irrespective of their branch. All the galaxies on any progenitor branch of a galaxy with GalaxyID i and LastProgID k have a GalaxyID in the range [i, k]. 3. DescendantID: This is the GalaxyID of the unique descendant galaxy of i. If no descendant galaxy is identified then the DescendantID of a galaxy is set to its own GalaxyID. 5</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>Figure 1: Mock gri images of a galaxy at z = 0.1 as available in the database. The left, central and right panels correspond to the Image face, Image edge and Image box views (in the database nomenclature) of the same simulated galaxy (GalaxyID = 16116800 in the Ref-L0100N1504 simulation). The images are 60 pkpc on a side. Note the clear presence of a bulge, of dust absorption and of spiral arms.</p>
+<p>allows users to submit small queries and quickly verify the syntax. If images are being queried, they will appear directly in the results table. Larger, more complex queries should be submitted to the stream and will be returned in Comma-Separated-Value (CSV) format in a new window. The number of rows returned by the browser queries can be specified via the drop-down menu (number 3). The stream queries always return all rows. Previous queries can be recovered using the drop-down menu (number 4). The queries from this paper are available as examples (number 5). These can later be adapted to match the user’s need. All the available simulations and their tables are listed in the left-hand panel (number 6) with links to the documentation describing each entry in the table. All registered users receive a private database (MyDB) in which they can store query results for further processing at a later date. A link to MyDB is provided (number 11). Examples of how to create and manage such private tables can be obtained by clicking on the buttons at the bottom of the screen (number 8). Finally, some documentation, a list of credits are given at the top of the page (numbers 9 &amp; 10).</p>
+<p>In Fig. 2 we show a merger tree for a typical galaxy, indicated by its GalaxyID. The main branch is shown using a thicker blue line and the IDs required to navigate the tree are shown with arrows pointing towards the galaxy to which they correspond in the tree3 . Examples using the sql language showing how to traverse the tree forwards and backwards in time are provided in Appendix A. 3. Use of the database This section provides an overview of the database interface and of the different tables available for each simulation. Simple examples of how to query and combine the tables are presented. 3.1. Database interface The main interface to the eagle database is shown in Figure 3. Users familiar with the Millennium database (Lemson and Virgo Consortium, 2006) and its clones will recognize the main features of the interface and should be able to adapt their scripts easily to the eagle database. sql queries can be typed in the main text box (number 1 in the Figure) and are submitted to the database by pressing either of the buttons to the right (number 2). Some help with sql queries can be obtained by clicking on the corresponding button. The results of queries submitted to the browser are returned at the bottom of the page in the form of an HTML table4 (number 7). This</p>
+<p>3.2. Content of the database The eagle database for each simulation has information distributed across five sql ‘tables’ listed in Table 2, whose contents are detailed in Appendix B. SubHalo: This is the main table containing properties of galaxies, for example masses (of dark matter, gas, stars, and black holes), star formation rates, metallicities and angular momentum. The GalaxyID of a galaxy can be used to navigate through its descendants and progenitors as well as to link the galaxy to its properties stored in the other tables. The examples below demonstrate how to do this. A full description of the contents of the SubHalo table is</p>
+<p>3 Users familiar with the Millennium database can modify they queries by replacing HaloID with GalaxyID, mainLeafID or endMainBranchID with TopLeafID and lastProgenitorId with LastProgID. Note also that in the Millnenium database, a galaxy with no descendant has its DescendantID set to -1 and not to GalaxyID as in the eagle database. 4 Note that the browser queries time out after 90 seconds. More substantial queries should be submitted via the stream queries option. These only time out after 30 minutes.</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>Figure 2: Merger history of a galaxy with a z = 0.18 stellar mass M∗ ∼ 1010 M indicated by the circled dot. Symbol colours and sizes are scaled with the logarithm of the stellar mass. The GalaxyID of this galaxy points towards it, as indicated by the arrow. The main progenitor branch is indicated with a thick black line, all other branches with a thin line. The TopLeafID gives the GalaxyID of the highest redshift galaxy on the main progenitor branch whilst the LastProgID (not shown) gives the maximum GalaxyID of all the progenitors of the galaxy considered. Querying all galaxies with an ID between GalaxyID and LastProgID will return all the progenitor galaxies in the tree.</p>
+<p>given in Table B.1. sql Table name</p>
+<p>Contents</p>
+<p>SubHalo</p>
+<p>Main galaxy properties</p>
+<p>FOF</p>
+<p>Halo properties</p>
+<p>Sizes</p>
+<p>Galaxy sizes</p>
+<p>Aperture</p>
+<p>Galaxy properties in 3D apertures</p>
+<p>Magnitudes</p>
+<p>Galaxy photometry in the GAMA bands</p>
+<p>Aperture: This table contains masses, star formation rates and velocity dispersions measured in a range of spherical apertures. Table B.4 gives a full list of the fields present in that sql table. This table can be linked to the SubHalo table via the GalaxyID of the objects. Magnitudes: This table contains non-dust-attenuated rest-frame broad-band magnitudes in the SDSS ugriz filters (Doi et al., 2010) and in the UKIRT Y JHK filters (Hewett et al., 2006), computed in 30 pkpc spherical apertures for all galaxies with stellar mass greater than 108.5 M as described in Trayford et al. (2015). See Table B.5 in the appendix for more details. This table can be linked to the SubHalo table via the GalaxyID of the objects.</p>
+<p>Table 2: sql tables available for each simulation. The tables are prefixed with the name of the simulation to which they correspond. For example, the table of magnitudes for the 50 Mpc Ref- model is labelled RefL0050N0752 Magnitudes as can be seen on Figure 3.</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>9)</p>
+<p>&lt;Your User Name&gt;</p>
+<p>10)</p>
+<p>2) Execute query</p>
+<p>6) Available Simulations</p>
+<p>1) Query area 3)</p>
+<p>4)</p>
+<p>5) Demo queries</p>
+<p>&lt;User Name&gt;</p>
+<p>11)</p>
+<p>8) Private Database Examples</p>
+<p>7) Query results (browser)</p>
+<p>Figure 3: The interface of the eagle database. sql queries should be entered into the query area (1) and can be executed either via the ‘browser’ or ‘stream’ buttons (2). The browser query returns a limited number of results (3) at the bottom of the page (7), pressing the Reformat button will then return the full results in the selected format (default CSV) and Plot(VOPlot) is a simple way to visualise the data. This is the easiest method to test sql scripts. The stream query returns all the results in a CSV format in a separate window to ease their download to a local device. Previous queries can be restored from the drop-down menu (4). The example query buttons (5) insert example sql queries into the query area to help new users with the syntax and structure of the database. Similarly, examples creating and managing a private database are generated by clicking on the buttons (8). The list of available simulations and tables is given on the left hand side (6) with links to further documentation describing their contents. Users’ own database tables are listed below (11). Further step-by-step documentation on how to use the web interface is provided (9) as well as links pointing to credits and acknowledgements (10).</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>Sizes: This table contains half-mass sizes of galaxies computed starting from apertures, as presented in Furlong et al., (in prep.). See Table B.3 in the appendix for a full list of available quantities. This table can be linked to the SubHalo table via the GalaxyID of the objects.</p>
+<p>Listing 2: Generate table of g − r vs. r colour-magnitude table for central galaxies with M∗ &gt; 109 at z = 0.1 -- Select the quantities we want SELECT ( MAG . g_nodust - MAG . r_nodust ) as g_minus_r , MAG . r_nodust as r -- Define aliases for the three tables FROM R e f L 0 1 0 0 N 1 5 0 4 _ S u b H a l o as SH , R e f L 0 1 0 0 N 1 5 0 4 _ M a g n i t u d e s as MAG , R e f L 0 1 0 0 N 1 5 0 4 _ A p e r t u r e as AP -- Apply the conditions WHERE SH . SnapNum = 27 and -- z =0.1 SH . SubGr oupNumb er = 0 and -- Centrals only AP . Mass_Star &gt; 1.0 e9 and -- Mass limit AP . ApertureSize = 30 and -- Aperture size -- Link the objects in the 3 tables SH . GalaxyID = MAG . GalaxyID and SH . GalaxyID = AP . GalaxyID</p>
+<p>FOF: This table contains properties of haloes, for example mass and spherical overdensity radii. A full description of the contents of the FOF group table, including the units and dimensions of each variable, is given in Table B.2. This table can be linked to the SubHalo table via the GroupID of the galaxies, given in the SubHalo table. The FOF and SubHalo tables also contain a field with random number uniformly distributed in the range [0, 1) allowing the users to generate unbiased sub-samples of galaxies or haloes.</p>
+<p>and will return a two-column table with “g minus r” and “r” as headers containing the colours and r-band magnitudes of the selected galaxies. Note that, as discussed in Section 4, we recommend to always use quantities measured in apertures to avoid incorporating intra-cluster light into mass or star formation rate estimates.</p>
+<p>3.3. Querying the database tables In this section we will illustrate the use of the database by presenting simple example queries showing the basic usage of the different sql tables. The queries can be typed directly into the web interface or used in a Python script, as described in Appendix A, or using the UNIX wget command as described in the online documentation. The first example illustrates how to query the main galaxy table (SubHalo) in order to plot the relation between rmax and vmax at z = 0 (Snapnum = 28) for the Ref-L0100N1504 simulation. In the database nomenclature, these quantities are VmaxRadius and Vmax (see Table B.1). The sql command to be typed in the input window is</p>
+<p>Another common use of the database is to track one galaxy across time. To this end, one can navigate through the main progenitor branch. This final example tracks an interesting object (GalaxyID = 1848116) discovered at redshift z = 1 through time and constructs the stellar metallicity evolution accompanied by the mock gri faceon images of the object at all redshifts. One hence has to construct a query that returns all of the descendants of the object by finding all galaxies that have the interesting object’s GalaxyID between their own GalaxyID and their TopLeafID. To get the progenitors one additionally requests all galaxies with GalaxyID between the interesting object’s GalaxyID and its TopLeafID. This demonstrates the merger tree navigation introduced in Section 2.6. Note that adding conditions on the snapshot number (SnapNum) helps speed up the queries dramatically. This query reads</p>
+<p>Listing 1: Generate rmax -vmax table at z = 0 SELECT VmaxRadius as r_max , Vmax as v_max FROM RefL0100N1504_SubHalo WHERE SnapNum = 28</p>
+<p>-- The two variables we -- want to extract -- The simulation -- The snapshot</p>
+<p>Clicking on the “Query (stream)” will open a new window containing the resulting two-column table with headers “r max” and “v max” in CSV format.</p>
+<p>Listing 3: Returns the evolution of stellar metallicity with redshift of a given galaxy with its images -- Select the quantities we want SELECT SH . Redshift as z , SH . S t a r s _ M e t a l l i c i t y as Z , SH . Image_Face as face -- Define two aliases for the main table FROM -- Properties we want to extract R e f L 0 0 2 5 N 0 7 5 2 _ S u b h a l o as SH , -- Acts as a reference point R e f L 0 0 2 5 N 0 7 5 2 _ S u b h a l o as REF -- Apply the conditions WHERE REF . GalaxyID =1848116 and -- GalaxyID at z =1 -- To find descendants</p>
+<p>For many applications, multiple sql tables have to be queried at the same time. The properties of a galaxy can be linked across the tables by their GalaxyID. A restframe colour-magnitude diagram using the SDSS g and r bands at z = 0.1 (SnapNum = 27) for central galaxies (SubGroupNumber = 0) with a stellar mass larger than 109 M (Mass Star &gt; 1.0e9) in a 30 pkpc aperture (ApertureSize = 30) can be constructed by linking the SubHalo table to the Magnitudes and Aperture ones. This query reads</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>the precise assignment of particles to the main subhalo within each FOF group by the subfind algorithm, which can lead to spurious total mass evolution. For these reasons, studies published by the EAGLE team use aperture masses and star formation rates, typically in an aperture of 30 pkpc. As discussed by Schaye et al. (2015), this corresponds roughly to an R80 Petrosian aperture and is hence particularly well-suited to comparison with observations. We recommend the use of aperture values when available.</p>
+<p>(( SH . SnapNum &gt; REF . SnapNum and REF . GalaxyID between SH . GalaxyID and SH . TopLeafID ) or -- To find progenitors ( SH . SnapNum &lt;= REF . SnapNum and SH . GalaxyID between REF . GalaxyID and REF . TopLeafID )) -- Order the output by redshift ORDER BY SH . Redshift</p>
+<p>and will return a sorted table with a redshift and a metallicity column as well as a column containing the postagestamp images of the galaxy at each redshift when using the “Query (browser)” button. These examples along with the more complex queries are given in Appendix A are listed on the webpage documentation.</p>
+<p>Self-bound star clusters and black holes. As discussed by Schaye et al. (2015), small dense stellar regions within galaxies may occasionally be identified by subfind as distinct subhaloes and hence ’galaxies’. These appear in the catalogue as rather unusual objects with little stellar mass but anomalously high metallicity or black hole mass. These “spurious” galaxies are flagged in the database in the column Spurious (see the table in Appendix B). Such objects should not be considered as genuine galaxies and should be discarded from samples of simulated galaxies.</p>
+<p>4. Recommendations, caveats and credits 4.1. Caveats regarding the usage of the data In this section we list a series of recommendations and known limitations that the authors have uncovered while working on the analysis of the simulation and the preparation of the database. These points should be taken into consideration to exploit the simulation outputs fully and to avoid mistakes in the interpretation of the results.</p>
+<p>Black hole masses and accretion rates. The black hole masses given in the main table (table SubHalo, column BlackHoleMass) do not directly correspond to the mass of the central supermassive black hole of a galaxy, but to a summed value of all black holes assigned to that subhalo. For cases where BlackHoleMass &gt; 106 M this closely approximates the mass of the most massive black hole. MassType BH refers to the sum of the black hole particle masses (see Appendix D for details of particle and subgrid masses) and therefore should not be used for a galaxy’s black hole mass. Similarly, due to the coarse time sampling of the outputs, the high temporal variability of the black hole accretion rates cannot be captured in the database outputs and as such the quantity BlackHoleMassAccretionRate should be treated with great care.</p>
+<p>Finite resolution. When using the galaxy catalogues, it should be remembered that the properties of low-mass galaxies should be treated with caution. Large numbers of particles are required to adequately sample the formation history of a galaxy. In general, we find that many galaxy properties are unreliable below a stellar mass of 109 M for the intermediate resolution simulations (Schaye et al., 2015). For any given quantity, these effects can be assessed by comparing the Ref-L0025N0376 simulation with the higher-resolution Recal-L0025N0752 and Ref-L0025N0752 simulations. Finite volume. Although the main simulation is one of the largest of its kind, its volume is still only 10−3 cGpc3 , a volume much smaller than the volumes typically probed by surveys of the extragalactic Universe. This implies that rare objects are unlikely to be found in the simulation volume. Moreover, due to missing large-scale modes, the number density of rare objects will typically be underestimated. Only a handful of haloes with mass M200 (Group M Crit200 in the FOF table) above 1014 M are present in the main simulation, limiting the analysis of cluster-like objects. The convergence with box size can be assessed by comparing the main simulation to the smaller volumes that use the same resolution.</p>
+<p>Stellar velocity dispersion and morphology. The field StellarVelocityDispersion stored in the SubHalo table is a measure of the kinetic energy of the stars, σ = p 3EK /2M , and not a measure of the amount of stellar kinetic energy in dispersion as opposed to rotation. In particular, it cannot be used to distinguish rotationally supported galaxies (spirals) from dispersion supported galaxies (ellipticals). Galaxy images and magnitude tables. The images provided in the database are generated using only the particles within a particular subhalo, in order to correspond with an entry in the database tables. As a result satellites or merging partners may not be visible in the images. While the images are observed as if redshifted to z = 0.1 to approximate typical SDSS colours, the magnitude tables are measured in the rest-frame. The inclusion of different population synthesis models, dust absorption and the relative scaling of images also implies that images are not reducible to magnitude table entries.</p>
+<p>Aperture masses and SFRs. The stripping of satellite galaxies as they orbit within a halo generates a significant mass loss at large radii. The resulting diffuse light (and any diffuse star formation) is extremely difficult to observe and is not commonly included in observational galaxy catalogues. Furthermore, the total galaxy stellar masses and star formation rates can depend strongly on 10</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>• Furthermore, publications referring to specific aspects of the subgrid models, hydrodynamics solver, or post-processing steps (such as the construction of images or photometric quantities, and the construction of merger trees), are kindly requested to not only cite the above papers, but also the original papers describing these aspects. The appropriate references can be found in section 2 of this paper and in Schaye et al. (2015).</p>
+<p>This simulation is not the real Universe. The papers presenting eagle have shown that the simulation broadly reproduces a wide set of observational properties of galaxies and the intergalactic medium. When using the database it should nevertheless be remembered that there are known discrepancies between the simulation results and observational data. In particular, we highlight the following points: • Although the z = 0.1 stellar mass function was used in the calibration of the simulation, the stellar mass density is approximately 20% lower than inferred from observations (Schaye et al., 2015; Furlong et al., 2015). This missing mass can be related to the slight undershoot of the “knee” of the simulated galaxy stellar mass function.</p>
+<p>5. Conclusions</p>
+<p>• The evolution of specific star formation rates broadly follows the trends seen in observational data, but with a normalisation lower by, depending on redshift, 0.3 - 0.5 dex (Schaye et al., 2015; Furlong et al., 2015). Note, however, that the eagle galaxies are in good agreement with the recent recalibration of star formation indicators by Chang et al. (2015) (see Fig. 5 of Schaller et al., 2015a). • The present-day stellar mass – metallicity relation in the intermediate-resolution Ref- model is flatter than the one inferred from observational data (Schaye et al., 2015). Note, however, that the relation becomes steeper in the higher-resolution Recal-L0025N0752 simulation, in agreement with the observations. • The transition from active to passive galaxies occurs at too high a stellar mass at z = 0 (Schaye et al., 2015; Trayford et al., 2015). This list of flaws is certainly not exhaustive. Future papers will undoubtedly uncover further deficiencies. 4.2. Acknowledgement of usage To recognise the effort of the individuals involved in the design and execution of these simulations, in their postprocessing and in the construction of the database, we kindly request the following: • Publications making use of the eagle data extracted from the public database are kindly requested to cite the original papers introducing the project (Schaye et al., 2015; Crain et al., 2015) as well as this paper (McAlpine et al., 2015). • Publications making use of the database should add the following line in their acknowledgement section: “We acknowledge the Virgo Consortium for making their simulation data available. The eagle simulations were performed using the DiRAC-2 facility at Durham, managed by the ICC, and the PRACE facility Curie based in France at TGCC, CEA, Bruyèresle-Châtel.”.</p>
+<p>This paper introduces a public sql relational database5 containing the integrated quantities and merger histories for more than 105 galaxies from the eagle suite of hydrodynamic simulations. The database contains all the galaxies from the largest eagle simulation as well as galaxies from smaller volumes where the resolution and AGN model were varied. The details of these simulations are presented by Schaye et al. (2015) and a list of published results using the simulation can be found on our websites6 . For each galaxy in the database and at each redshift, we provide a wide range of basic halo and galaxy properties such as stellar masses, gas masses, unextincted magnitudes, angular momenta, star formation rates and gri images, as well as extensive information on metal abundances. Three additional tables give the properties of galaxies measured in a series of apertures, more physically motivated galaxy sizes and galaxy photometry. Using their merger trees, galaxies can be tracked through time and their assembly history explored by analysing their progenitors. By making the halo and galaxy data public we hope that our simulations will be helpful both for comparison with observational data, and as a tool for gaining physical insight into the physics of galaxy formation. In Section 4 we presented some limitations of the simulations that should be borne in mind when using the database. In particular, caution should be exercised because of the finite resolution of the simulations. Over time we intend to make additional data products available as the relevant papers are accepted for publication. These will include, among other quantities, photometry including dust extinction and information on the morphology of the galaxies. At later stages, we may also release merger trees with higher time resolution, more simulations models from Crain et al. (2015) as well as the raw particle data. The eagle database will hopefully be a powerful resource for the community to explore the physics of galaxy formation, and to help interpret observational data. 5 Available at the address http://www.eaglesim.org/database. html 6 http://eagle.strw.leidenuniv.nl/ and http://www.eaglesim.org</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>Acknowledgements</p>
+<p>SDSS+WISE. ApJS 219, 8. doi:10.1088/0067-0049/219/1/8, arXiv:1506.00648. Crain R. A. et al., 2015. The EAGLE simulations of galaxy formation: calibration of subgrid physics and model variations. MNRAS 450, 1937–1961. doi:10.1093/mnras/stv725, arXiv:1501.01311. Cullen, L., Dehnen, W., 2010. Inviscid smoothed particle hydrodynamics. MNRAS 408, 669–683. doi:10.1111/j.1365-2966.2010. 17158.x, arXiv:1006.1524. Dalla Vecchia, C., Schaye, J., 2012. Simulating galactic outflows with thermal supernova feedback. MNRAS 426, 140–158. doi:10.1111/ j.1365-2966.2012.21704.x, arXiv:1203.5667. Davis, M., Efstathiou, G., Frenk, C.S., White, S.D.M., 1985. The evolution of large-scale structure in a universe dominated by cold dark matter. ApJ 292, 371–394. doi:10.1086/163168. De Lucia, G., Blaizot, J., 2007. The hierarchical formation of the brightest cluster galaxies. MNRAS 375, 2–14. doi:10.1111/j. 1365-2966.2006.11287.x, arXiv:astro-ph/0606519. Doi M. et al., 2010. Photometric Response Functions of the Sloan Digital Sky Survey Imager. AJ 139, 1628–1648. doi:10.1088/ 0004-6256/139/4/1628, arXiv:1002.3701. Dolag, K., Borgani, S., Murante, G., Springel, V., 2009. Substructures in hydrodynamical cluster simulations. MNRAS 399, 497– 514. doi:10.1111/j.1365-2966.2009.15034.x, arXiv:0808.3401. Dubois Y. et al., 2014. Dancing in the dark: galactic properties trace spin swings along the cosmic web. MNRAS 444, 1453–1468. doi:10.1093/mnras/stu1227, arXiv:1402.1165. Durier, F., Dalla Vecchia, C., 2012. Implementation of feedback in smoothed particle hydrodynamics: towards concordance of methods. MNRAS 419, 465–478. doi:10.1111/j.1365-2966.2011. 19712.x, arXiv:1105.3729. Fakhouri, O., Ma, C.P., 2008. The nearly universal merger rate of dark matter haloes in ΛCDM cosmology. MNRAS 386, 577–592. doi:10.1111/j.1365-2966.2008.13075.x, arXiv:0710.4567. Furlong M. et al., 2015. Evolution of galaxy stellar masses and star formation rates in the EAGLE simulations. MNRAS 450, 4486– 4504. doi:10.1093/mnras/stv852, arXiv:1410.3485. Genel, S., Genzel, R., Bouché, N., Naab, T., Sternberg, A., 2009. The Halo Merger Rate in the Millennium Simulation and Implications for Observed Galaxy Merger Fractions. ApJ 701, 2002–2018. doi:10.1088/0004-637X/701/2/2002, arXiv:0812.3154. Groves, B., Dopita, M.A., Sutherland, R.S., Kewley, L.J., Fischera, J., Leitherer, C., Brandl, B., van Breugel, W., 2008. Modeling the Pan-Spectral Energy Distribution of Starburst Galaxies. IV. The Controlling Parameters of the Starburst SED. ApJS 176, 438–456. doi:10.1086/528711, arXiv:0712.1824. Henriques, B.M.B., White, S.D.M., Thomas, P.A., Angulo, R., Guo, Q., Lemson, G., Springel, V., Overzier, R., 2015. Galaxy formation in the Planck cosmology - I. Matching the observed evolution of star formation rates, colours and stellar masses. MNRAS 451, 2663–2680. doi:10.1093/mnras/stv705, arXiv:1410.0365. Hewett, P.C., Warren, S.J., Leggett, S.K., Hodgkin, S.T., 2006. The UKIRT Infrared Deep Sky Survey ZY JHK photometric system: passbands and synthetic colours. MNRAS 367, 454–468. doi:10. 1111/j.1365-2966.2005.09969.x, arXiv:astro-ph/0601592. Hopkins, P.F., 2013. A general class of Lagrangian smoothed particle hydrodynamics methods and implications for fluid mixing problems. MNRAS 428, 2840–2856. doi:10.1093/mnras/sts210, arXiv:1206.5006. Jenkins, A., 2010. Second-order Lagrangian perturbation theory initial conditions for resimulations. MNRAS 403, 1859–1872. doi:10.1111/j.1365-2966.2010.16259.x, arXiv:0910.0258. Jenkins, A., 2013. A new way of setting the phases for cosmological multiscale Gaussian initial conditions. MNRAS 434, 2094–2120. doi:10.1093/mnras/stt1154, arXiv:1306.5968. Jiang, L., Helly, J.C., Cole, S., Frenk, C.S., 2014. N-body dark matter haloes with simple hierarchical histories. MNRAS 440, 2115–2135. doi:10.1093/mnras/stu390, arXiv:1311.6649. Katz, N., Hernquist, L., Weinberg, D.H., 1992. Galaxies and gas in a cold dark matter universe. ApJ 399, L109–L112. doi:10.1086/ 186619. Khandai, N., Di Matteo, T., Croft, R., Wilkins, S., Feng, Y., Tucker,</p>
+<p>This work would have not be possible without Lydia Heck and Peter Draper’s technical support and expertise. We are grateful to all members of the Virgo Consortium and the eagle collaboration who have contributed to the development of the codes and simulations used here, as well as to the people who helped with the analysis. We thank Jaime Salcido for his help producing figure 3, Violeta Gonzalez-Perez, Qi Guo and Claudia Lagos for useful comments on early drafts as well as Chris Barber, Bart Clauwens and Sean McGee for testing earlier versions of the eagle database. This work was supported by the Science and Technology Facilities Council (grant number ST/F001166/1); European Research Council (grant numbers GA 267291 “Cosmiway” and GA 278594 “GasAroundGalaxies”) and by the Interuniversity Attraction Poles Programme initiated by the Belgian Science Policy Office (AP P7/08 CHARM). RAC is a Royal Society University Research Fellow. This work used the DiRAC Data Centric system at Durham University, operated by the Institute for Computational Cosmology on behalf of the STFC DiRAC HPC Facility (www.dirac.ac.uk). This equipment was funded by BIS National E-infrastructure capital grant ST/K00042X/1, STFC capital grant ST/H008519/1, and STFC DiRAC Operations grant ST/K003267/1 and Durham University. DiRAC is part of the National E-Infrastructure. We acknowledge PRACE for awarding us access to the Curie machine based in France at TGCC, CEA, Bruyères-le-Châtel. The web site described in this paper was based on the one build for the Millennium Simulation as part of the activities of the German Astrophysical Virtual Observatory (GAVO). References Baes M. et al., 2003. Radiative transfer in disc galaxies III. The observed kinematics of dusty disc galaxies. MNRAS 343, 1081–1094. doi:10.1046/j.1365-8711.2003.06770.x, arXiv:astro-ph/0304501. Booth, C.M., Schaye, J., 2009. Cosmological simulations of the growth of supermassive black holes and feedback from active galactic nuclei: method and tests. MNRAS 398, 53–74. doi:10. 1111/j.1365-2966.2009.15043.x, arXiv:0904.2572. Bruzual, G., Charlot, S., 2003. Stellar population synthesis at the resolution of 2003. Monthly Notices of the Royal Astronomical Society 344, 1000–1028. Bryan, G.L., Norman, M.L., 1998. Statistical Properties of X-Ray Clusters: Analytic and Numerical Comparisons. ApJ 495, 80–99. doi:10.1086/305262, arXiv:astro-ph/9710107. Camps, P., Baes, M., 2015. SKIRT: An advanced dust radiative transfer code with a user-friendly architecture. Astronomy and Computing 9, 20–33. doi:10.1016/j.ascom.2014.10.004, arXiv:1410.1629. Carlberg, R.G., Couchman, H.M.P., Thomas, P.A., 1990. Cosmological velocity bias. ApJ 352, L29–L32. doi:10.1086/185686. Chabrier, G., 2003. Galactic Stellar and Substellar Initial Mass Function. PASP 115, 763–795. doi:10.1086/376392, arXiv:astro-ph/0304382. Chang, Y.Y., van der Wel, A., da Cunha, E., Rix, H.W., 2015. Stellar Masses and Star Formation Rates for 1M Galaxies from</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>E., DeGraf, C., Liu, M.S., 2015. The MassiveBlack-II simulation: the evolution of haloes and galaxies to z = 0. MNRAS 450, 1349– 1374. doi:10.1093/mnras/stv627, arXiv:1402.0888. Lacey C. G. et al., 2015. A unified multi-wavelength model of galaxy formation. ArXiv e-prints arXiv:1509.08473. Lagos C. d. P. et al., 2015. Molecular hydrogen abundances of galaxies in the EAGLE simulations. MNRAS 452, 3815–3837. doi:10.1093/mnras/stv1488, arXiv:1503.04807. Lemson, G., Springel, V., 2006. Cosmological Simulations in a Relational Database: Modelling and Storing Merger Trees, in: Gabriel, C., Arviset, C., Ponz, D., Enrique, S. (Eds.), Astronomical Data Analysis Software and Systems XV, volume 351 of Astronomical Society of the Pacific Conference Series. p. 212. Lemson, G., Virgo Consortium, t., 2006. Halo and Galaxy Formation Histories from the Millennium Simulation: Public release of a VOoriented and SQL-queryable database for studying the evolution of galaxies in the LambdaCDM cosmogony. ArXiv Astrophysics e-prints arXiv:astro-ph/0608019. Lupton, R., Blanton, M.R., Fekete, G., Hogg, D.W., O’Mullane, W., Szalay, A., Wherry, N., 2004. Preparing Red-Green-Blue Images from CCD Data. PASP 116, 133–137. doi:10.1086/382245, arXiv:astro-ph/0312483. Nelson D. et al., 2015. The Illustris Simulation: Public Data Release. ArXiv e-prints arXiv:1504.00362. Okamoto, T., Shimizu, I., Yoshida, N., 2014. Reproducing cosmic evolution of galaxy population from z = 4 to 0. PASJ 66, 70. doi:10.1093/pasj/psu046, arXiv:1404.7579. Oppenheimer, B.D., Davé, R., Kereš, D., Fardal, M., Katz, N., Kollmeier, J.A., Weinberg, D.H., 2010. Feedback and recycled wind accretion: assembling the z = 0 galaxy mass function. MNRAS 406, 2325–2338. doi:10.1111/j.1365-2966.2010.16872.x, arXiv:0912.0519. Peebles, P.J.E., 1980. The large-scale structure of the universe. Planck Collaborationet al., 2014. Planck 2013 results. I. Overview of products and scientific results. Astronomy and Astrophysics 571, A1. doi:10.1051/0004-6361/201321529, arXiv:1303.5062. Porter, L.A., Somerville, R.S., Primack, J.R., Johansson, P.H., 2014. Understanding the structural scaling relations of early-type galaxies. MNRAS 444, 942–960. doi:10.1093/mnras/stu1434, arXiv:1407.0594. Price, D.J., 2008. Modelling discontinuities and Kelvin Helmholtz instabilities in SPH. Journal of Computational Physics 227, 10040– 10057. doi:10.1016/j.jcp.2008.08.011, arXiv:0709.2772. Puchwein, E., Springel, V., 2013. Shaping the galaxy stellar mass function with supernova- and AGN-driven winds. MNRAS 428, 2966–2979. doi:10.1093/mnras/sts243, arXiv:1205.2694. Rahmati, A., Schaye, J., Bower, R.G., Crain, R.A., Furlong, M., Schaller, M., Theuns, T., 2015. The distribution of neutral hydrogen around high-redshift galaxies and quasars in the EAGLE simulation. MNRAS 452, 2034–2056. doi:10.1093/mnras/stv1414, arXiv:1503.05553. Rosas-Guevara Y. M. et al., 2013. The impact of angular momentum on black hole accretion rates in simulations of galaxy formation. ArXiv e-prints arXiv:1312.0598. Schaller, M., Dalla Vecchia, C., Schaye, J., Bower, R.G., Theuns, T., Crain, R.A., Furlong, M., McCarthy, I.G., 2015a. The EAGLE simulations of galaxy formation: the importance of the hydrodynamics scheme. ArXiv e-prints arXiv:1509.05056. Schaller M. et al., 2015b. Baryon effects on the internal structure of ΛCDM haloes in the EAGLE simulations. MNRAS 451, 1247– 1267. doi:10.1093/mnras/stv1067, arXiv:1409.8617. Schaye, J., 2004. Star Formation Thresholds and Galaxy Edges: Why and Where. ApJ 609, 667–682. doi:10.1086/421232, arXiv:astro-ph/0205125. Schaye J. et al., 2015. The EAGLE project: simulating the evolution and assembly of galaxies and their environments. MNRAS 446, 521–554. doi:10.1093/mnras/stu2058, arXiv:1407.7040. Schaye, J., Dalla Vecchia, C., 2008. On the relation between the Schmidt and Kennicutt-Schmidt star formation laws and its implications for numerical simulations. MNRAS 383, 1210–1222. doi:10.1111/j.1365-2966.2007.12639.x, arXiv:0709.0292.</p>
+<p>Springel, V., 2005. The cosmological simulation code GADGET-2. MNRAS 364, 1105–1134. doi:10.1111/j.1365-2966.2005.09655. x, arXiv:astro-ph/0505010. Springel, V., Di Matteo, T., Hernquist, L., 2005a. Modelling feedback from stars and black holes in galaxy mergers. MNRAS 361, 776–794. doi:10.1111/j.1365-2966.2005.09238.x, arXiv:astro-ph/0411108. Springel V. et al., 2005b. Simulations of the formation, evolution and clustering of galaxies and quasars. Nature 435, 629–636. doi:10. 1038/nature03597, arXiv:astro-ph/0504097. Springel, V., White, S.D.M., Tormen, G., Kauffmann, G., 2001. Populating a cluster of galaxies - I. Results at [formmu2]z=0. MNRAS 328, 726–750. doi:10.1046/j.1365-8711.2001.04912.x, arXiv:astro-ph/0012055. Szalay, A.S., Kunszt, P.Z., Thakar, A.R., Gray, J., Slutz, D., 2000. The Sloan Digital Sky Survey and its Archive, in: Manset, N., Veillet, C., Crabtree, D. (Eds.), Astronomical Data Analysis Software and Systems IX, volume 216 of Astronomical Society of the Pacific Conference Series. p. 405. arXiv:astro-ph/9912382. Trayford J. W. et al., 2015. Colours and luminosities of z = 0.1 galaxies in the EAGLE simulation. MNRAS 452, 2879–2896. doi:10.1093/mnras/stv1461, arXiv:1504.04374. Vogelsberger M. et al., 2014. Introducing the Illustris Project: simulating the coevolution of dark and visible matter in the Universe. MNRAS 444, 1518–1547. doi:10.1093/mnras/stu1536, arXiv:1405.2921. Wendland, H., 1995. Piecewise polynomial, positive definite and compactly supported radial functions of minimal degree. Advances in Computational Mathematics 4, 389–396. URL: http://www.springerlink.com/index/10.1007/ BF02123482, doi:10.1007/BF02123482. White, S.D.M., Frenk, C.S., 1991. Galaxy formation through hierarchical clustering. ApJ 379, 52–79. doi:10.1086/170483. Wiersma, R.P.C., Schaye, J., Smith, B.D., 2009a. The effect of photoionization on the cooling rates of enriched, astrophysical plasmas. MNRAS 393, 99–107. doi:10.1111/j.1365-2966.2008. 14191.x, arXiv:0807.3748. Wiersma, R.P.C., Schaye, J., Theuns, T., Dalla Vecchia, C., Tornatore, L., 2009b. Chemical enrichment in cosmological, smoothed particle hydrodynamics simulations. MNRAS 399, 574–600. doi:10.1111/j.1365-2966.2009.15331.x, arXiv:0902.1535.</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>Appendix A. Examples of more complex queries Python - Galaxy stellar mass function. This example7 replicates Fig. 4 from Schaye et al. (2015) comparing the galaxy stellar mass function at z = 0.1 (SnapNum = 27) in 30 pkpc apertures for three of the eagle simulations. The link to the database is created with the module eagleSqlTools available from the release website8 (this module serves as an interface to access the eagle database). After the connection is established (on line 9), the module can submit queries to the database. Each of the chosen table properties (in this case we have only chosen the galaxy stellar masses) are returned in a dictionary that can be then manipulated like any other python dictionary. We use the GROUP BY sql keyword to bin the data directly on the server and reduce the amount of data being downloaded. The output created by this script is shown in Fig. A.1. import eagleSqlTools as sql import numpy as np import matplotlib . pyplot as plt # Array o f chosen s i m u l a t i o n s . E n t r i e s r e f e r t o t h e s i m u l a t i o n name and comoving box l e n g t h .</p>
+<p>mySims</p>
+<p>= np. array ([( ’RefL0100N1504 ’, 100.) , (’AGNdT9L0050N0752 ’, 50.) , (’RecalL0025N0752 ’, 25.)])</p>
+<p># This u s e s t h e e a g l e S q l T o o l s module t o c o n n e c t t o t h e d a t a b a s e w i t h your username and password . # I f t h e password i s not g i v e n , t h e module w i l l prompt f o r i t . con = sql. connect (&quot;&lt;username&gt;&quot;, password =&quot;&lt;password&gt;&quot;)</p>
+<p>for sim name , sim size in mySims : print sim name # C o n s t r u c t and e x e c u t e q u e r y f o r each s i m u l a t i o n . This q u e r y r e t u r n s t h e number o f g a l a x i e s # f o r a g i v e n 30 pkpc a p e r t u r e s t e l l a r mass b i n ( c e n t e r e d w i t h 0 . 2 dex w i d t h ) . myQuery = &quot; SELECT \ 0.1+ floor ( log10 (AP. Mass Star )/0.2) ∗ 0.2 as mass , \ count ( ∗ ) as num \ FROM \ % s SubHalo as SH , \ % s Aperture as AP \ WHERE \ SH. GalaxyID = AP. GalaxyID and \ AP. ApertureSize = 30 and \ AP. Mass Star &gt; 1e8 and \ SH. SnapNum = 27 \ GROUP BY \ 0.1+ floor ( log10 (AP. Mass Star )/0.2) ∗ 0.2 \ ORDER BY \</p>
+<p>mass&quot;%( sim name , sim name ) # Execute q u e r y .</p>
+<p>myData</p>
+<p>= sql. execute query (con , myQuery )</p>
+<p># Normalize by volume and b i n w i d t h .</p>
+<p>hist = myData [’num ’][:] / float ( sim size ) ∗∗ 3. hist = hist / 0.2 plt.plot( myData [’mass ’], np. log10 (hist), label = sim name , linewidth =2) # Label p l o t .</p>
+<p>plt. xlabel (r’ log $ { 10 } $ M $ {∗} $ [ M $ {\ odot } $ ]’, fontsize =20) plt. ylabel (r’ log $ { 10 } $ dn/ dlog $ { 10 } $ ( M $ {∗} $ ) [ cMpc $ ^{−3}$ ]’, fontsize =20) plt. tight layout () plt. legend () plt. savefig (’GSMF.png ’) plt. close ()</p>
+<p>7 Which can also be downloaded here: http://icc.dur.ac.uk/Eagle/Database/GSMF.py 8 Or directly here: http://icc.dur.ac.uk/Eagle/Database/eagleSqlTools.py</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>Figure A.1: Figure created by the python script.</p>
+<p>SQL - Black hole mass vs. stellar mass. This example replicates Fig. 10 from Schaye et al. (2015) showing the black hole mass as a function of stellar mass at redshift z = 0.1 (SnapNum = 27) for the reference (L0100N1504) run. As mentioned in Section 4 we use the black hole subgrid mass, BlackHoleMass, and treat the stellar mass of a galaxy as the mass contained within a 30 pkpc aperture. SubHalo table properties are connected to the Aperture table via each galaxy’s unique GalaxyID. -- Select the quantities we want SELECT AP_Star . Mass_Star as sm , SH . BlackHoleMass as bhm -- Define aliases for the two tables FROM R e f L 0 1 0 0 N 1 5 0 4 _ S u b h a l o as SH , R e f L 0 1 0 0 N 1 5 0 4 _ A p e r t u r e as AP_Star -- Apply the conditions WHERE SH . SnapNum = 27 and SH . GalaxyID = AP_Star . GalaxyID and AP_Star . ApertureSize = 30 and AP_Star . Mass_Star &gt; 0 and SH . BlackHoleMass &gt; 0</p>
+<p>------</p>
+<p>z =0.1 Match galaxies to Aperture table Select aperture size to be 30 pkpc Only return stellar masses &gt; 0 Only return black hole masses &gt; 0</p>
+<p>SQL - Galaxy size vs. stellar mass. This example is similar to Fig. 9 from Schaye et al. (2015) comparing galaxy size as a function of stellar mass at redshift z = 0.1 (SnapNum = 27) for each galaxy in the reference (L0100N1504) run. For galaxy sizes, we use the half mass radius of the galaxies from the Sizes table. We connect them to the galaxy’s stellar mass via the unique GalaxyID identifier. As with the previous example, we must connect to the SubHalo table to retrieve the SnapNum value. -- Select the quantities we want SELECT AP . Mass_Star as sm , SIZES . R_halfmass100 as size -- Define aliases for the three tables FROM R e f L 0 1 0 0 N 1 5 0 4 _ S u b h a l o as SH , R e f L 0 1 0 0 N 1 5 0 4 _ A p e r t u r e as AP , R e f L 0 1 0 0 N 1 5 0 4 _ S i z e s as SIZES -- Apply the conditions WHERE SH . SnapNum = 27 and SH . GalaxyID = AP . GalaxyID and SH . GalaxyID = SIZES . GalaxyID and AP . ApertureSize = 30 and AP . Mass_Star &gt; 0</p>
+<p>------</p>
+<p>z =0.1 Match galaxies to Aperture table Match galaxies to Sizes table Select aperture size to be 30 pkpc Only return stellar masses &gt; 0</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>SQL - Linking FOF and SubHalo tables. This example shows how to link the properties of galaxies to their parent FoF halo. In this case, we compute the offset between the centre of the potential of the galaxy and the FoF halo. When dealing with positions within these volumes, remember to account for box periodicity. In principle, it is not necessary to match the SnapNum of the tables as well as the GroupID, but this speeds up the query. -- Select the quantities we want SELECT SH . C e n t r e O f P o t e n t i a l _ x as sh_x , SH . C e n t r e O f P o t e n t i a l _ y as sh_y , SH . C e n t r e O f P o t e n t i a l _ z as sh_z , FOF . G r o u p C e n t r e O f P o t e n t i a l _ x as fof_x , FOF . G r o u p C e n t r e O f P o t e n t i a l _ y as fof_y , FOF . G r o u p C e n t r e O f P o t e n t i a l _ z as fof_z , SH . MassType_Star as mstar , FOF . GroupMass as fof_mass , square ( SH . CentreOfPotential_x - FOF . G r o u p C e n t r e O f P o t e n t i a l _ x ) + square ( SH . CentreOfPotential_y - FOF . G r o u p C e n t r e O f P o t e n t i a l _ y ) + square ( SH . CentreOfPotential_z - FOF . G r o u p C e n t r e O f P o t e n t i a l _ z ) as dist -- Define aliases for the two tables FROM R e f L 0 0 5 0 N 0 7 5 2 _ S u b h a l o as SH , R e f L 0 0 5 0 N 0 7 5 2 _ F O F as FOF -- Apply the conditions WHERE SH . MassType_Star &gt; 1.0 e11 -- Only return stellar masses &gt; 1.0 e11 and SH . SnapNum = 27 -- z =0.1 and FOF . SnapNum = SH . SnapNum -- Link SnapNum to speed up query and FOF . GroupID = SH . GroupID -- Link GroupID to speed up query</p>
+<p>SQL - Linking a progenitor to its descendants. This example shows how to select a random subset of Milky Way like galaxies, and extract information about the location and specific star formation rates (within a 30 pkpc aperture) of all their progenitors above a stellar mass of 109 M . -- Select the quantities we want SELECT DES . GalaxyID , PROG . Redshift , PROG . MassType_DM , PROG . MassType_Star , AP . SFR / ( AP . Mass_Star +0.0001) as ssfr , PROG . CentreOfPotential_x , PROG . CentreOfPotential_y , PROG . C e n t r e O f P o t e n t i a l _ z -- Define aliases for the three tables FROM R e f L 0 1 0 0 N 1 5 0 4 _ S u b h a l o as PROG , R e f L 0 1 0 0 N 1 5 0 4 _ S u b h a l o as DES , R e f L 0 1 0 0 N 1 5 0 4 _ A p e r t u r e as AP -- Apply the conditions WHERE DES . MassType_Star between 1.0 e10 and 6 e10 -- Select Milky Way like stellar mass and DES . MassType_DM between 5.0 e11 and 2.0 e12 -- Select Milky Way like halo mass and DES . RandomNumber &lt; 0.1 -- Take a random subset of these and DES . SnapNum = 28 -- At redshift z =0 and PROG . GalaxyID between DES . GalaxyID and DES . LastProgID -- Then find galaxy progenitors and AP . ApertureSize = 30 -- Select aperture size to be 30 pkpc and AP . GalaxyID = DES . GalaxyID -- Match galaxies to Aperture table and AP . Mass_Star &gt; 1.0 e9 -- Only return galaxies with stellar mass &gt; 1 e9 -- Order the output ORDER BY DES . MassType_Star desc , PROG . Redshift asc , PROG . MassType_Star desc</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>Appendix B. Description of all fields contained in the database</p>
+<p>Table B.1: Full listing of the content of the main galaxy properties table and description of the columns. These properties are contained in tables denoted [modelname] SubHalo. The first five lines of the table give the indices used to navigate between the side tables and through the merger trees. Particle types are dark matter, gas, stars and black holes and collective properties such as Mass sum over all of these particles unless otherwise stated.</p>
+<p>SubHalo Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>GalaxyID</p>
+<p>-</p>
+<p>Unique identifier of a galaxy. This identifier enables linking the SubHalo table to the Aperture, Magnitudes and Sizes tables.</p>
+<p>LastProgID</p>
+<p>-</p>
+<p>Used for merger tree traversal, Section 2.6.</p>
+<p>TopLeafID</p>
+<p>-</p>
+<p>Used for merger tree traversal, Section 2.6.</p>
+<p>DescendantID</p>
+<p>-</p>
+<p>GalaxyID of the descendant of this galaxy, Section 2.6.</p>
+<p>GroupID</p>
+<p>-</p>
+<p>Unique identifier of the FoF halo hosting this galaxy. This identifier enables linking the SubHalo table to the FOF table.</p>
+<p>Redshift</p>
+<p>-</p>
+<p>Redshift at which these properties are computed.</p>
+<p>Snapnum</p>
+<p>-</p>
+<p>Snapshot number at which these properties are computed.</p>
+<p>GroupNumber</p>
+<p>-</p>
+<p>Integer identifier of the FoF halo hosting this galaxy. GroupNumber is only unique to a given snapshot and hence cannot be used to identify the same halo across multiple snapshots.</p>
+<p>SubGroupNumber</p>
+<p>-</p>
+<p>Integer identifier of this galaxy within its FoF halo. SubGroupNumber is only unique to a given FoF halo in a given snapshot and hence cannot be used to identify the same galaxy across multiple outputs. The condition “SubGroupNumber = 0” selects central galaxies.</p>
+<p>Spurious</p>
+<p>-</p>
+<p>Value is 1 if the galaxy is an artefact of the subfind algorithm and 0 if the galaxy is a genuine object, see Section 4.</p>
+<p>Image face Image edge</p>
+<p>Weblink to the mock gri image of the galaxy in the three different orientations (face-on, edge-on and along the simulation z-axis). When querying the database via the browser, the image appears in the column of the results table.</p>
+<p>-</p>
+<p>Image box BlackHoleMass</p>
+<p>M</p>
+<p>BlackHoleMassAccretionRate</p>
+<p>M</p>
+<p>Sum of all the black hole subgrid masses in this galaxy. See Eq. (D.19) for a description of the subgrid mass m̃ of a black hole, and Section 4 for cautions using black hole masses. yr−1</p>
+<p>Total instantaneous accretion rate of all black holes, see Section 4 for cautions.</p>
+<p>CentreOfMass x CentreOfMass y</p>
+<p>cMpc</p>
+<p>Co-moving position of the centre of mass, Eq. (D.23).</p>
+<p>cMpc</p>
+<p>Co-moving position of the minimum of the gravitational potential defined by the position of the most bound particle.</p>
+<p>CentreOfMass z CentreOfPotential x CentreOfPotential y CentreOfPotential z</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>Table B.1: – continued</p>
+<p>SubHalo Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>pkpc km s−1</p>
+<p>Spin per unit mass of all gas particles, L/M , with L given by Eq. (D.21).</p>
+<p>HalfMassRad DM</p>
+<p>pkpc</p>
+<p>Physical radius enclosing half of the dark matter mass.</p>
+<p>HalfMassRad Gas</p>
+<p>pkpc</p>
+<p>Physical radius enclosing half of the gas mass.</p>
+<p>HalfMassRad Star</p>
+<p>pkpc</p>
+<p>Physical radius enclosing half of the stellar mass.</p>
+<p>HalfMassRad BH</p>
+<p>pkpc</p>
+<p>Physical radius enclosing half of the black hole particle mass, m, as defined in Eq. (D.19).</p>
+<p>HalfMassProjRad DM</p>
+<p>pkpc</p>
+<p>Projected physical radius enclosing half of the dark matter mass, averaged over three orthogonal projections.</p>
+<p>HalfMassProjRad Gas</p>
+<p>pkpc</p>
+<p>Projected physical radius enclosing half of the gas mass, averaged over three orthogonal projections.</p>
+<p>HalfMassProjRad Star</p>
+<p>pkpc</p>
+<p>Projected physical radius enclosing half of the stellar mass, averaged over three orthogonal projections.</p>
+<p>HalfMassProjRad BH</p>
+<p>pkpc</p>
+<p>Projected physical radius enclosing half of the black hole particle mass, m (Eq. D.19), averaged over three orthogonal projections.</p>
+<p>InitialMassWeightedBirthZ</p>
+<p>z</p>
+<p>Mean of formation of stars, weighted by birth mass m̃ (Eq.D.18). Calculated Predshift P via i m̃i z̃i / i m̃i where z̃i is the redshift the star particle i was formed and m̃i its birth mass. P P Mean age of stars, weighted by birth mass. Calculated via i m̃i (t − t̃i )/ i m̃i where t is cosmic time, and t̃i and m̃i formation time and birth mass of the star particle i, respectively.</p>
+<p>GasSpin x GasSpin y GasSpin z</p>
+<p>InitialMassWeightedStellarAge Gyr</p>
+<p>(km/s)2</p>
+<p>KineticEnergy</p>
+<p>M</p>
+<p>Mass</p>
+<p>M</p>
+<p>Total current mass of all particles (i.e.</p>
+<p>MassType DM</p>
+<p>M</p>
+<p>Total dark matter mass.</p>
+<p>MassType Gas</p>
+<p>M</p>
+<p>Total gas mass.</p>
+<p>MassType Star</p>
+<p>M</p>
+<p>Total stellar mass,</p>
+<p>MassType BH</p>
+<p>M</p>
+<p>Total black hole mass, Eq. (D.19).</p>
+<p>RandomNumber</p>
+<p>yr−1</p>
+<p>Total kinetic energy EK , Eq.(D.26).</p>
+<p>P</p>
+<p>P</p>
+<p>i mi where mi is the mass of the particle).</p>
+<p>i mi , where mi is the stellar particle mass from Eq. (D.18).</p>
+<p>P</p>
+<p>i mi ,</p>
+<p>where mi is the black hole particle mass from</p>
+<p>Random number uniform in the range [0, 1). P Total star formation rate, i ṁ?,i , where ṁ?,i is the star formation rate of gas particle i. P Sum of birth masses of all stars, i m̃i , where m̃i is the birth mass of star particle i from Eq. (D.18).</p>
+<p>StarFormationRate</p>
+<p>M</p>
+<p>StellarInitialMass</p>
+<p>M</p>
+<p>StellarVelDisp</p>
+<p>km s−1</p>
+<p>ThermalEnergy</p>
+<p>M</p>
+<p>(km/s)2</p>
+<p>Total thermal energy Eu , Eq. (D.28).</p>
+<p>TotalEnergy</p>
+<p>M</p>
+<p>(km/s)2</p>
+<p>Total energy Etot , Eq. (D.29).</p>
+<p>One dimensional velocity dispersion of stars, ((2 Star KineticEnergy)/(3 MassType Star))1/2 , where Star KineticEnergy is the kinetic energy of stars.</p>
+<p>Velocity x km s−1</p>
+<p>Peculiar velocity, Eq. (D.24).</p>
+<p>Vmax</p>
+<p>km s−1</p>
+<p>Maximum value of the circular velocity, (G(M (&lt; r)/r))1/2 , where M (&lt; r) is the total mass enclosed in a sphere of physical radius r.</p>
+<p>VmaxRadius</p>
+<p>pkpc</p>
+<p>Physical radius where the circular velocity equals Vmax.</p>
+<p>Velocity y Velocity z</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>Table B.1: – continued. Columns in this table exist for each of three different components: star-forming gas (SF), non-star-forming gas (NSF) and stars (Stars). As these properties are repeated for each of these components, we only describe them once. In the database each property will be preceded with either [SF/NSF/Stars] before its name. For instance, the metallicity field will exist in three variants: SF Metallicity, NSF Metallicity and Stars Metallicity for the metallicity of the star-forming gas, of the non star-forming gas and of the stars, respectively. Any sum used to describe a property is the sum of all particles for that component only.</p>
+<p>SubHalo Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>Hydrogen</p>
+<p>-</p>
+<p>Helium</p>
+<p>-</p>
+<p>Carbon</p>
+<p>-</p>
+<p>Nitrogen</p>
+<p>-</p>
+<p>Oxygen</p>
+<p>-</p>
+<p>Neon</p>
+<p>-</p>
+<p>Magnesium</p>
+<p>-</p>
+<p>Silicon</p>
+<p>-</p>
+<p>Sulphur</p>
+<p>-</p>
+<p>Calcium</p>
+<p>-</p>
+<p>Iron</p>
+<p>-</p>
+<p>IronFromSNIa</p>
+<p>-</p>
+<p>KineticEnergy</p>
+<p>M</p>
+<p>Mass</p>
+<p>M</p>
+<p>Total kinetic energy EK , Eq. (D.26). P Total mass, i mi , where mi is the particle mass.</p>
+<p>MassFromAGB</p>
+<p>M</p>
+<p>Total mass contributed by ejecta of AGB stars.</p>
+<p>MassFromSNII</p>
+<p>M</p>
+<p>Total mass contributed by ejecta from massive stars and type II supernovae.</p>
+<p>MassFromSNIa</p>
+<p>M</p>
+<p>MassWeightedEntropy</p>
+<p>10 M km s2 ( Mpc</p>
+<p>MassWeightedTemperature</p>
+<p>K</p>
+<p>Metallicity</p>
+<p>-</p>
+<p>MetalsFromAGB</p>
+<p>M</p>
+<p>Total metal mass contributed by ejecta from AGB stars.</p>
+<p>MetalsFromSNII</p>
+<p>M</p>
+<p>Total metal mass contributed by ejecta from massive stars and SN Type II supernovae.</p>
+<p>MetalsFromSNIa</p>
+<p>M</p>
+<p>Total metal mass contributed by ejecta from Type Ia supernovae.</p>
+<p>pkpc km s−1</p>
+<p>Spin per unit mass, L/M , from Eq. (D.21).</p>
+<p>Total mass in this element divided by the total mass (both for a given component). These are therefore absolute abundances which do not depend on the solar abundance.</p>
+<p>Total mass in Iron contributed by ejecta from Type Ia supernovae, divided by the total mass. (km/s)2</p>
+<p>10</p>
+<p>Total mass contributed by ejecta from type Ia SN supernovae. P P 2 ) 3 Mass-weighted pseudo entropy of all particles, i mi Si / i mi , where Si is the pseudo-entropy (Eq. D.6) and mi is the mass of the particle i. (Entry present for gas components only.) P P Mass-weighted temperature, i mi Ti / i mi , where Ti is the temperature and mi is the mass of the particle i. (Entry present for gas components only.) P P Metal mass fraction, i mi Zi / i mi , where Zi is the metallicity and mi is the mass of the particle i.</p>
+<p>Spin x Spin y Spin z ThermalEnergy TotalEnergy</p>
+<p>M</p>
+<p>(km/s)2</p>
+<p>Total thermal energy Eu , Eq. (D.28). (Entry present for gas components only.)</p>
+<p>M</p>
+<p>(km/s)2</p>
+<p>Total energy Etot , Eq. (D.29). The potential energy contribution does include the P other components as well, EΦ = 21 i mi Φ̂ai .</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>Table B.2: Full listing of the content of the halo table and description of the columns. These properties are contained in tables denoted [modelname] FOF. This table can be linked to the [modelname] SubHalo table using the unique GroupID identifier.</p>
+<p>FOF Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>GroupID</p>
+<p>-</p>
+<p>Unique identifier of a halo (i.e. a FoF group). This identifier enables linking a halo to all its galaxies and their properties in the SubHalo table.</p>
+<p>Redshift</p>
+<p>-</p>
+<p>Redshift at which these properties are computed.</p>
+<p>SnapNum</p>
+<p>-</p>
+<p>Snapshot number containing that halo.</p>
+<p>cMpc</p>
+<p>Co-moving position of the minimum of the gravitational potential of the halo.</p>
+<p>M</p>
+<p>Total Friends-of-Friends mass of this halo.</p>
+<p>M</p>
+<p>Total mass within the corresponding Group R Critxxx radius, where xxx=200, 500 or 2500, respectively</p>
+<p>M</p>
+<p>Total mass within the corresponding Group R Meanxxx radius, where xxx=200, 500 or 2500, respectively</p>
+<p>M</p>
+<p>Total mass within radius Group R Tophat200.</p>
+<p>pkpc</p>
+<p>Physical radius within which the mean density is xxx times the critical density of the Universe, where xxx=200, 500 or 2500, respectively</p>
+<p>GroupCentreOfPotential x GroupCentreOfPotential y GroupCentreOfPotential z GroupMass Group M Crit200 Group M Crit500 Group M Crit2500 Group M Mean200 Group M Mean500 Group M Mean2500 Group M TopHat200 Group R Crit200 Group R Crit500</p>
+<p>.</p>
+<p>Group R Crit2500 Group R Mean200 Group R Mean500</p>
+<p>pkpc</p>
+<p>Physical radius within which the mean density is xxx times the mean density of the Universe, where xxx=200, 500 or 2500, respectively .</p>
+<p>Group R Mean2500 Group R TopHat200</p>
+<p>pkpc</p>
+<p>Physical radius within which the mean density is 18π 2 + 82(Ωm (z) − 1) − 39(Ωm (z) − 1)2 times the critical density of the Universe. This is based on the spherical top-hat collapse model of (Bryan and Norman, 1998).</p>
+<p>NumOfSubhalos</p>
+<p>-</p>
+<p>Number of subhaloes (galaxies) identified as belonging to this halo.</p>
+<p>RandomNumber</p>
+<p>-</p>
+<p>Random number uniform in the range [0, 1).</p>
+<p>Table B.3: Full listing of the content of the galaxy sizes table and description of the columns. These properties are contained in tables denoted [modelname] Sizes. This table contains half-mass sizes of the stellar component of galaxies using spherical apertures (Furlong et al. (in prep.). The GalaxyID column can be used to join this table to the corresponding [modelname] SubHalo table. Only galaxies with total stellar mass M∗ &gt; 108 M have entries in this table.</p>
+<p>Sizes Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>GalaxyID</p>
+<p>-</p>
+<p>Unique identifier of a galaxy as per SubHalo table.</p>
+<p>R halfmass30</p>
+<p>pkpc</p>
+<p>Half mass radius of stellar component within a spherical (3D) 30 pkpc aperture.</p>
+<p>R halfmass100</p>
+<p>pkpc</p>
+<p>Half mass radius of stellar component within a spherical (3D) 100 pkpc aperture.</p>
+<p>R halfmass30 projected</p>
+<p>pkpc</p>
+<p>Projected half mass radius of stellar component within a circular (2D) 30 pkpc aperture (averaged over three orthogonal projections).</p>
+<p>R halfmass100 projected</p>
+<p>pkpc</p>
+<p>Projected half mass radius of stellar component within a circular (2D) 100 pkpc aperture (averaged over three orthogonal projections).</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>Table B.4: Full listing of the content of the aperture table and description of the columns. These properties are contained in tables denoted [modelname] Aperture. This table contains measurements within spherical apertures centred on the minimum of the gravitational potential of a given galaxy. Each row represents a set of measurements for a single galaxy using a single aperture size in physical kpc. The GalaxyID column can be used to join this table to the corresponding [modelname] SubHalo table.</p>
+<p>Aperture Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>GalaxyID</p>
+<p>-</p>
+<p>Unique identifier of a galaxy as per SubHalo table.</p>
+<p>ApertureSize</p>
+<p>pkpc</p>
+<p>Spherical (3D) aperture radius used for this measurement. Quantities are measure in a sphere centred at the centre of the potential, i.e. at the location of the most bound particle. Available aperture sizes are: 1, 3, 5, 10, 20, 30, 40, 50, 70 and 100 pkpc.</p>
+<p>VelDisp</p>
+<p>km s−1</p>
+<p>One dimensional velocity dispersion of stars, ((2 KineticEnergy Star)/(3 Mass Star))1/2 , where KineticEnergy Star is the kinetic energy of stars, and the sum is over stars within the aperture.</p>
+<p>SFR</p>
+<p>M</p>
+<p>yr−1</p>
+<p>Mass BH</p>
+<p>M</p>
+<p>Star formation rate within the aperture. P Total particle mass, i mi (Eq. D.19), of all black holes within the aperture.</p>
+<p>Mass DM</p>
+<p>M</p>
+<p>Total dark matter mass within the aperture.</p>
+<p>Mass Gas</p>
+<p>M</p>
+<p>Mass Star</p>
+<p>M</p>
+<p>Total gas mass within the aperture. P Total stellar mass, i mi (Eq. D.18), within the aperture.</p>
+<p>Table B.5: Full listing of the content of the magnitudes table and description of the columns. These properties are contained in tables denoted [modelname] Magnitudes. This table contains absolute rest-frame magnitudes without dust attenuation for all galaxies with M∗ &gt; 108.5 M contained in the SubHalo table. This table can be joined to the SubHalo table using the GalaxyID field. The magnitudes in the different SDSS (Doi et al., 2010) and UKIRT (Hewett et al., 2006) filters have been computed in 30 pkpc spherical apertures following the procedure described by Trayford et al. (2015).</p>
+<p>Magnitudes Field</p>
+<p>Units</p>
+<p>Description</p>
+<p>GalaxyID</p>
+<p>-</p>
+<p>Unique identifier of a galaxy as per SubHalo table.</p>
+<p>u nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the u band without dust attenuation.</p>
+<p>g nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the g band without dust attenuation.</p>
+<p>r nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the r band without dust attenuation.</p>
+<p>i nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the i band without dust attenuation.</p>
+<p>z nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the z band without dust attenuation.</p>
+<p>Y nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the Y band without dust attenuation.</p>
+<p>J nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the J band without dust attenuation.</p>
+<p>H nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the H band without dust attenuation.</p>
+<p>K nodust</p>
+<p>mag</p>
+<p>Rest-frame absolute magnitude (AB) in the K band without dust attenuation.</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>Appendix C. List of snapshot output times</p>
+<p>definition of the symbols used to describe database entries, we write these equations as ∂ρ dρ + (v · ∇) ρ ≡ ∂t dt dv dt du dt ∇2 Φ</p>
+<p>Table C.1: List of all output redshifts for all the simulations present in the database. Note that sql queries are made easier by the use of the snapshot number rather than the redshift. Lookback times are given in Gigayears. SnapNum</p>
+<p>Redshift</p>
+<p>Lookback time</p>
+<p>Expansion factor</p>
+<p>28</p>
+<p>0.00</p>
+<p>0.00</p>
+<p>1.000</p>
+<p>27</p>
+<p>0.10</p>
+<p>1.34</p>
+<p>0.909</p>
+<p>26</p>
+<p>0.18</p>
+<p>2.29</p>
+<p>0.846</p>
+<p>25</p>
+<p>0.27</p>
+<p>3.23</p>
+<p>0.787</p>
+<p>24</p>
+<p>0.37</p>
+<p>4.16</p>
+<p>0.732</p>
+<p>23</p>
+<p>0.50</p>
+<p>5.19</p>
+<p>0.665</p>
+<p>22</p>
+<p>0.62</p>
+<p>6.01</p>
+<p>0.619</p>
+<p>21</p>
+<p>0.74</p>
+<p>6.71</p>
+<p>0.576</p>
+<p>20</p>
+<p>0.87</p>
+<p>7.37</p>
+<p>0.536</p>
+<p>19</p>
+<p>1.00</p>
+<p>7.93</p>
+<p>0.499</p>
+<p>18</p>
+<p>1.26</p>
+<p>8.86</p>
+<p>0.443</p>
+<p>17</p>
+<p>1.49</p>
+<p>9.49</p>
+<p>0.402</p>
+<p>16</p>
+<p>1.74</p>
+<p>10.05</p>
+<p>0.365</p>
+<p>15</p>
+<p>2.01</p>
+<p>10.53</p>
+<p>0.332</p>
+<p>14</p>
+<p>2.24</p>
+<p>10.86</p>
+<p>0.309</p>
+<p>13</p>
+<p>2.48</p>
+<p>11.16</p>
+<p>0.287</p>
+<p>12</p>
+<p>3.02</p>
+<p>11.66</p>
+<p>0.249</p>
+<p>11</p>
+<p>3.53</p>
+<p>12.01</p>
+<p>0.221</p>
+<p>10</p>
+<p>3.98</p>
+<p>12.25</p>
+<p>0.201</p>
+<p>9</p>
+<p>4.49</p>
+<p>12.46</p>
+<p>0.182</p>
+<p>8</p>
+<p>5.04</p>
+<p>12.63</p>
+<p>0.166</p>
+<p>7</p>
+<p>5.49</p>
+<p>12.75</p>
+<p>0.154</p>
+<p>6</p>
+<p>5.97</p>
+<p>12.86</p>
+<p>0.143</p>
+<p>5</p>
+<p>7.05</p>
+<p>13.04</p>
+<p>0.124</p>
+<p>4</p>
+<p>8.07</p>
+<p>13.16</p>
+<p>0.110</p>
+<p>3</p>
+<p>8.99</p>
+<p>13.25</p>
+<p>0.100</p>
+<p>2</p>
+<p>9.99</p>
+<p>13.32</p>
+<p>0.091</p>
+<p>1</p>
+<p>15.13</p>
+<p>13.53</p>
+<p>0.062</p>
+<p>0</p>
+<p>20.00</p>
+<p>13.62</p>
+<p>0.047</p>
+<p>= −ρ∇ · v</p>
+<p>(D.1)</p>
+<p>1 = − ∇p − ∇Φ (D.2) ρ p = − ∇ · v − Cρ (D.3) ρ = 4πG(ρ + ρcol ) − Λ , (D.4)</p>
+<p>where ρ is gas density, ρcol the density due to collisionless matter (i.e., stars, dark matter and black holes), p the effective gas pressure, Φ the (Newtonian) gravitational potential and Λ the cosmological constant. The variable kB T p = , (γ − 1)ρ (γ − 1) µmH</p>
+<p>u=</p>
+<p>(D.5)</p>
+<p>is the thermal energy per unit mass, with γ = 5/3 the ratio of specific heats for a mono-atomic gas, and µ the mean molecular weight in units of the Hydrogen mass, mH . The term C(T ) ρ describes radiative cooling and heating. The database also reports the value of the pseudo-entropy S, defined as p (D.6) S≡ γ. ρ We use the standard notation for proper time, t, position, r, and velocity v ≡ dr/dt ≡ ṙ. Partial derivatives are defined so that ∂/∂t is the time derivative at constant position r, d/dt ≡ ∂/∂t + (v · ∇) is the Lagrangian time derivative, and the spatial derivative ∇ ≡ ∂/∂r is computed at constant time. We solve these equations in an expanding coordinates described by the scale factor a(t) which satisfies the Friedmann equations,  2 ȧ 8πG Λ H2 ≡ = ρ̄t + (D.7) a 3 3 4πG Λ ä = − ρ̄t a + a , (D.8) 3 3 where Λ ≡ 3H02 ΩΛ (with H0 ≡ H(a = 1)), and ρ̄t is the mean total density, ρ̄t = ρ̄ + ρ̄col . We apply periodic boundary conditions in this expanding reference frame. The simulation uses comoving coordinates to simplify the integration of Eqs. D.1-D.4. These are defined as x</p>
+<p>Appendix D. Detailed expressions for quantities in the database</p>
+<p>ρ̂</p>
+<p>r a ≡ a3 ρ</p>
+<p>≡</p>
+<p>−2</p>
+<p>û ≡ a</p>
+<p>In order to remove any ambiguity in the quantities provided in the database, this appendix summarises the fundamental equations that are being solved and the coordinate system used in the numerical code. The equations that describe the evolution of a gravitating fluid are the continuity, Euler, energy and Poisson equations (Peebles, 1980). In order to provide a precise</p>
+<p>u</p>
+<p>2π 1 Φ̂ = a (Φ − Gρ̄t r2 + Λ r2 ) 3 6 ˆ ≡ a∇ ∇</p>
+<p>22</p>
+<p>(γ − 1)ρ̂ û</p>
+<p>p̂</p>
+<p>=</p>
+<p>Ŝ</p>
+<p>= S.</p>
+<p>(D.9) (D.10) (D.11) (D.12) (D.13) (D.14) (D.15)</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>In these variables, the velocity v</p>
+<p>= ȧx + vp</p>
+<p>(D.16)</p>
+<p>vp</p>
+<p>≡ aẋ ,</p>
+<p>(D.17)</p>
+<p>where the sum runs over all particles that belong to the object taking into account periodic boundary conditions. Similarly, the centre of potential of an object (database variable CentreOfPotential) is given in comoving coordinates. The velocity of a halo or galaxy (database variable Velocity) refers to its peculiar velocity, P i mi ẋi . (D.24) Velocity = a ẋcom = a P i mi</p>
+<p>where vp is referred to as the peculiar velocity. We will use the term ‘comoving variable’ when a quantity is expressed in comoving variables (i.e. x, ẋ and hatted variables), and ‘physical’ or ‘proper’ otherwise. In particular we will express comoving distances in cMpc (for comoving mega parsecs) and physical distances in pMpc (for proper or physical mega parsecs), and similarly for ckpc and pkpc. The equations are solved by representing the collisionless mass as well as the gas by particles. We denote particle masses as mi , for particle i. In Eagle , star particles lose mass to gas particles to represent mass loss from stars. Each star particle therefore has two mass variables, its current particle mass, m, and its birth mass m̃: m</p>
+<p>=</p>
+<p>current particle mass of star</p>
+<p>m̃</p>
+<p>=</p>
+<p>birth mass of star ,</p>
+<p>All other variables are expressed in physical coordinates, for example the spin vector of a galaxy is computed as P com ) × (vi − vcom ) i mi (ri − rP , (D.25) Spin = i mi where rcom and vcom are the physical position and velocity of the centre of mass. The expressions for physical kinetic, potential, thermal, and total energy are, respectively 1X mi (v − vcom )2 (D.26) EK = 2 i</p>
+<p>(D.18)</p>
+<p>see Wiersma et al. (2009b) for more details. Black holes also have two mass variables associated with them, a particle mass m, and a subgrid mass m̃. It is the subgrid mass that enters the equations describing the accretion rate of a black hole. In short, m m̃</p>
+<p>= =</p>
+<p>EΦ Eu</p>
+<p>particle mass of black hole subgrid mass of black hole .</p>
+<p>1X 1X mi (a2 ẋi )2 + mi Φ̂i , 2 i 2 i</p>
+<p>(D.19)</p>
+<p>Etot</p>
+<p>(D.20)</p>
+<p>and is conserved for an isolated halo, as is its comoving spin L̂, X L̂ = mi (x − xcom ) × (a2 ẋi − a2 ẋcom ) . (D.21) i</p>
+<p>Here xcom =</p>
+<p>X i</p>
+<p>mi xi /</p>
+<p>X</p>
+<p>mi ,</p>
+<p>(D.27) (D.28)</p>
+<p>i</p>
+<p>Once a black hole is significantly more massive than the seed mass, particle and subgrid mass trace each other closely, see Booth and Schaye (2009) and Rosas-Guevara et al. (2013) for details. Having defined comoving variables, the comoving energy Ê of a collisionless halo is Ê =</p>
+<p>1 X Φ̂i mi 2 i a X = mi (a2 ûi ) =</p>
+<p>(D.22)</p>
+<p>i</p>
+<p>is the comoving position of the centre of mass (taking into account periodic boundary conditions), and ẋcom its time derivative. The database uses comoving co-ordinates to record the locations of haloes and galaxies. For example, the position of the centre of a galaxy or halo (stored as CentreOfMass in the database) is P i mi xi , (D.23) CentreOfMass = xcom = P i mi 23</p>
+<p>= EK + EΦ + Eu .</p>
+<p>(D.29)</p></section></article></body></html>

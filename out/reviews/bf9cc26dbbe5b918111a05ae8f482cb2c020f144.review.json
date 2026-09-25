@@ -1,0 +1,55 @@
+{
+  "sha1": "bf9cc26dbbe5b918111a05ae8f482cb2c020f144",
+  "title": "Drone-aided routing: A literature review",
+  "doi": "https://doi.org/10.1016/j.trc.2020.102762",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bf9cc26dbbe5b918111a05ae8f482cb2c020f144/index.html",
+  "source_chars": 141116,
+  "markdown_chars": 6603,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 36,
+      "quote": "Since the majority of contributions provide theoretical insights on routing problems with drones, with drones, they often do not provide specific information",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "短语“with drones, with drones”明显重复，疑为提取时重复或原文编辑错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Its “Vi2”",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 1.0,
+      "reason": "第3页末尾出现不完整的单词“Vi2”，下一页开头为“sion Van”，原词应为“Vision Van”，被页眉或分页截断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：综述63篇文献，TSP-D 28篇（44%）、VRP-D 17篇（26%）、DDP 5篇（8%）、CVP-D 13篇（21%）；速度范围5–90 km/h，平均约30 km/h；载荷1.2–20 kg；续航10–30分钟或1–24 km；八旋翼较四旋翼改善约8%。公式方面原文未出现显式公式，已保留所有可用的定量关系。不确定处：表10中“2/3.5 kg”等数值照录，但单位与语义可能有歧义；跨页断词“Vi2”/“sion Van”已标注；重复短语“with drones”已标注。未引入任何外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6616,
+      "prompt_tokens": 33886,
+      "total_tokens": 40502,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2427
+      }
+    },
+    "content_chars": 7547
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

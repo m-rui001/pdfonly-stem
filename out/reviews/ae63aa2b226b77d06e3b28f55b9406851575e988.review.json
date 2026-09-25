@@ -1,0 +1,111 @@
+{
+  "sha1": "ae63aa2b226b77d06e3b28f55b9406851575e988",
+  "title": "Anthropogenic disturbance in tropical forests can double biodiversity loss from deforestation",
+  "doi": "https://doi.org/10.1038/nature18326",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ae63aa2b226b77d06e3b28f55b9406851575e988/index.html",
+  "source_chars": 53885,
+  "markdown_chars": 2707,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Ricardo Ribeiro de Castro Solar $ ^{10} $ , Ima C.G. Vieira $ ^{2} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "作者列表中 Ricardo Ribeiro de Castro Solar 前缺少逗号，与前后作者分隔不一致，属标点抽取问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "edge effects degrading the condition of the remaining forests $ ^{9} $ Second, within-forest disturbance",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标引用后缺少句号，句子边界不完整，属标点抽取问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Seventythree percent of the c. 26,000 cells covering the state were",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“Seventythree”应为“Seventy-three”，连字符丢失，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "logged and burned primary forests (44 and 24) $ ^{19} $ Disturbance categories",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标引用后缺少句号，句子边界不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the high basal area filter, exponential species weighting, and undisturbed reference catchment plots.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "前文权重方式描述为“linear weighting”和“squared the linear weighting”，此处“exponential species weighting”与前文术语不一致，可能为抽取或原文表述差异，影响对权重方法的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The measure is:\n\n$$\nh _ {c} (x) = \\int_ {m} ^ {u} (x - m) d _ {c} (x) d x - \\int_ {l} ^ {m} (m - x) d _ {c} (x) d x\n$$",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "公式中积分变量与微分符号均为 x，但被积函数含 d_c(x)，符号 d 既作微分又作函数名，可能存在符号歧义或抽取损失，但文本本身如此呈现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Protected areas(IUCN classes I-IV) Positive if there is no leakage of deforestation Positive if park management is effective and leakage of logging is avoided",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 1 的表格结构在 OCR 中丢失，各列内容被连成一行，无法区分“直接减少景观干扰的效果”与“直接减少林内干扰的效果”两列，影响对政策干预效果对比的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "All land(a) \n\n Region Area Forest area Forest loss Disturbance Relative(%) \n\n Pará state 1,259,916 1,141,659 245,288 171,695(130,827-187,328) 70(53-76)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Extended Data Table 2 的表格结构在 OCR 中丢失，表头与数据行混排，列对应关系不清晰，影响对区域面积、森林丧失、干扰损失及相对比例等数值的准确读取。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Anthropogenic disturbance in tropical forests can double biodiversity loss from deforestation",
+  "self_check": "已核对摘要、正文与结论中的关键数值：36 个集水区、175 个原始林样地、145 个有干扰证据、30 个无干扰证据；物种数 1538/460/156；CVD 最大时原始林覆盖 83%、保留保护价值 58%（48–65%）；20% 原始林丧失对应 39–54% 保护价值损失，比不考虑干扰的预期高 96–171%；帕拉州私有土地和可持续利用保护区总 CVD 相当于 92,000–139,000 km² 森林丧失，为累计砍伐的 51%（38–57%）；Guiana AoE 干扰损失为砍伐损失的 135–178%；Belém AoE 保护价值从 38% 降至 26%（24–30%）；《森林法典》80% 合规下残留林仅保留 46–61% 潜在保护价值。公式 $h_c(x)$ 及外推公式 $p_i-(a_i-n_i)v_i$ 已按原文保留。不确定处：Extended Data Table 1 和 2 的表格结构在 OCR 中损坏，列对应关系无法完全确认；Methods 中“exponential species weighting”与前文“squared the linear weighting”术语不一致，可能影响对权重方法的准确理解。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2872,
+      "prompt_tokens": 13675,
+      "total_tokens": 16547,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 6095,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

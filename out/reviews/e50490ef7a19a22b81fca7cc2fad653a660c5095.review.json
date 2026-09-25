@@ -1,0 +1,63 @@
+{
+  "sha1": "e50490ef7a19a22b81fca7cc2fad653a660c5095",
+  "title": "Fe Stabilization by Intermetallic L1 0 -FePt and Pt Catalysis Enhancement in L1 0 -FePt/Pt Nanoparticles for Efficient Oxygen Reduction Reaction in Fuel Cells",
+  "doi": "https://doi.org/10.1021/jacs.7b12829",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e50490ef7a19a22b81fca7cc2fad653a660c5095/index.html",
+  "source_chars": 34124,
+  "markdown_chars": 4475,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "The mass activity and ECASA was calculated based on the measured current and Pt loading of the commercial TKK Pt (0.122 mgPt cm-2) and L10-FePt/Pt (0.113 mgPt cm-2).",
+      "type": "疑似单位不一致/跨页拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "同一页上质量活性单位在 0.21/0.23mA g-1、0.11 mA gPt1、0.19 mA gPt-1、0.08 mA gPt-1 等处均以混排形式出现，而同段 DOE 目标却写作 0.44 A mg-1；从论文章节上下文与摘要（0.7 A/mgPt）判断，这些应为同一单位 A/mgPt 的 OCR/排版歧义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "OR polarization curves were first obtained at room temperature",
+      "type": "疑似原文笔误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "全文其他位置均为 ORR，此处单独出现 OR polarization curves，疑为 ORR 的漏打或提取缺字，而非独立词条。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Acid-etching Thermal annealing L10-FePt Atomically thin Pt Stabilized Fe Core/shell L10-FePt/Pt",
+      "type": "图表说明碎片化",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "此为期刊目录图（Table of Contents artwork）的说明文字，以词块而非完整句子呈现，无法还原完整句式；已在笔记中未使用这部分信息，仅在此标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：半电池质量活性 0.7 A/mgPt 降至 0.68 A/mgPt（10 000 次 60°C 循环）；半波电位 0.945→0.941 V（L1₀-FePt/Pt），0.863→0.649 V（商用 C-Pt）；MEA 中 L1₀-FePt/Pt 初始/EOL 质量活性 0.21/0.23 A/mgPt，TKK Pt 损失 56%、8 nm Pt 初始 0.11 A/mgPt 且 30 000 次循环后约 0.08 A/mgPt；Pt 晶面间距 0.185 nm vs 体相 Pt(200) 0.196 nm；EXAFS 中 Fe–Pt CN=6、Fe–Fe CN≈2.5，Pt–Pt 2.713 Å、Fe–Fe 2.69 Å；矫顽力 33.8 kOe。单位统一以 A/mgPt 记，MEA 中 0.21/0.23 等数值按原文保留但原文单位标注混乱（见 extraction_issues 第 1 条）。未收录参考文献列表及补充材料未提取数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10889,
+      "prompt_tokens": 10750,
+      "total_tokens": 21639,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7266
+      }
+    },
+    "content_chars": 6081
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

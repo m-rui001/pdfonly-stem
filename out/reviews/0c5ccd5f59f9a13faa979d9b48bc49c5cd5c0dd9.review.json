@@ -1,0 +1,63 @@
+{
+  "sha1": "0c5ccd5f59f9a13faa979d9b48bc49c5cd5c0dd9",
+  "title": "The future of hyperdiverse tropical ecosystems",
+  "doi": "https://doi.org/10.1038/s41586-018-0301-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0c5ccd5f59f9a13faa979d9b48bc49c5cd5c0dd9/index.html",
+  "source_chars": 104879,
+  "markdown_chars": 7368,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "Effects stem from the abundance of threatened vertebrates up to 200–400 m into tropitheforests expansion large infrastructure suchinasthe dams, and the 36 cal ; thishas left almost no core projects, forest refugia Brazilian 100%",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第3页起始段落明显由第2页末尾内容、审查文本和第3页正文混乱拼接而成，且与图2说明文字相互混杂，无法还原原始句子顺序。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "species prone to local stressors in the tropics; a, The proportion of species found within tropical latitudes for ten taxonomic groups. Bars are colour-coded",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "'species prone to local stressors in the tropics; a, The proportion' 中 'species' 引导的句子不完整并被图注直接连接，疑为 OCR 误识别或文本合并。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "'susceptible to local stressors is reducing the abundance or occupancy of tropical species. Moreover, ecosystems' 与 'Species co-tolerance to fishing a local for corals stressor' 之间的文本流断裂，且 'reality of human impacts' 一句不完整。",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "图3说明文字与正文段落之间文本按列拼接、顺序错乱，包含多段无连接词的并列内容。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心定量证据（如78%物种出现在热带、91%陆鸟、85%脊椎动物灭绝发生在热带、每年15000-19000新物种描述、珊瑚白化间隔缩短76-80%、牙买加珊瑚礁案例、共耐受分析中8-32%无负面反应及55%双重危险等）均与提取文本一致，方向保持一致。图2a中‘Zooxanthellae corals’的数值‘99.1%’保留，但经核对后应与摘要中‘几乎全部珊瑚’呼应。图5社会经济指标与正文结论方向一致。提取文本第3页大量内容跨页/拼接混乱，无法完全复原原文顺序，笔记中已按逻辑重排并保留可识别信息；具体数字（如‘70%的拉普拉塔河流域降雨’、‘2.75亿人’、‘1.97亿人’、‘33%净初级生产力’等）均在原文中有证据支撑。部分句子（如第3页关于山区森林与森林专注物种）因文本断裂未纳入笔记。公式无，不适用。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5196,
+      "prompt_tokens": 25194,
+      "total_tokens": 30390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 329
+      }
+    },
+    "content_chars": 9094
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

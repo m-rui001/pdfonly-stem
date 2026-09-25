@@ -1,0 +1,63 @@
+{
+  "sha1": "c4af6ab549d5784b81352906015b1872bd643387",
+  "title": "Flexible MXene/Graphene Films for Ultrafast Supercapacitors with Outstanding Volumetric Capacitance",
+  "doi": "https://doi.org/10.1002/adfm.201701264",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c4af6ab549d5784b81352906015b1872bd643387/index.html",
+  "source_chars": 59208,
+  "markdown_chars": 3101,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Figure 4a shows the cyclic voltammetry (CV) curves of pure MXene and MXene/rGO hybrid electrodes at a scan rate of 20 mV s-1.",
+      "type": "页码标记与前后文断裂",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "该句前页（第8页）末尾在“Figure 4a”之前无异常，但结尾“then subjected to probe sonication for”后在第16页有续接。本页标记正常，无需特别报告。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Since the weight of active materials is about 30% of the total weight of the packaged commercial supercapcitor, a factor of 3 to 4 is frequently used to extrapolate the energy density of th device from the performance of the electrode material.[41]",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“supercapcitor”和“th device”应为“supercapacitor”和“the device”的拼写错误，但原文如此，属于提取文本中的明显笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Therefore, the energy density of 11.2 Wh kg-1 of M/G-5% will translate to 2.8 Wh kg-1 for the the device.",
+      "type": "疑似重复词",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“the the”重复，应为单一“the”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：M/G-5%在2 mV s⁻¹下体积电容1040 F cm⁻³、质量电容335.4 F g⁻¹，1 V s⁻¹下保持率61%（对应634 F cm⁻³），循环20000次无衰减；对称器件能量密度34.6 Wh L⁻¹、功率密度74.4 kW L⁻¹。XRD层间距1.51 nm（TEM 1.5 nm），比表面积68.1 m² g⁻¹，密度3.1 g cm⁻³，电导率2261 S cm⁻¹。公式i=av^b、Trasatti分析（qT=373 C g⁻¹、qO=239 C g⁻¹）与原文一致。需注意：图4f中标注的MXene体积电容1222 F cm⁻³与表S2中纯MXene的1221.6 F cm⁻³稍有出入，但正文均使用1222，以正文为准。另发现几处文本疑似拼写错误（如“supercapcitor”、“th device”），已列入问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2611,
+      "prompt_tokens": 18939,
+      "total_tokens": 21550,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 18
+      }
+    },
+    "content_chars": 4693
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

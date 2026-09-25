@@ -1,0 +1,64 @@
+{
+  "sha1": "bc4b11cc543143ced54cae2ed9c56a510a7146bc",
+  "title": "Efficient Energy Management for the Internet of Things in Smart Cities",
+  "doi": "https://doi.org/10.1109/mcom.2017.1600218cm",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bc4b11cc543143ced54cae2ed9c56a510a7146bc/index.html",
+  "source_chars": 43377,
+  "markdown_chars": 2221,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "We can ot do much in the case of ambient energy sources; however, optimal placement and number of dedicated energy sources are crucial issues in dedicated energy harvesting.",
+      "type": "疑似拼写错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "源文本为 'ot'，应为 'not' 之误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "With the increase in IoT applications for smart cities, energy-efficient solutions are also evolving for low-power devices. There are some energy-efficient solutions that can either reduce energy consumption or optimize resource utilization.",
+      "type": "重复段落疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该段落在第3页和第4页开头重复出现（正文中既有'With the increase in IoT...'，后续'Energy-Efficient Solutions'节开头又出现），可能是抽取中的重复。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "目标收集能量 E—C",
+      "type": "符号断裂疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "源文本中出现 'E—C'，疑似 'E_C'（下标）的排版抽取破损，但无强证据。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文数据：案例一目标函数和约束条件与文中描述一致；案例二能耗数值（46 dBm、100m×100m、200设备）已保留。公式符号（如 x_{na}^t, ψ_e, f_{et}）按原文形式输出，未补充未给出的定义。图4a/b、图6a/b的数值趋势与结论方向一致。提取文本中第3页与第4页开头有重复段落，已按合并处理；'ot'拼写错误已标出，但正文中未改正（仅在问题中标注）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 1827,
+      "prompt_tokens": 9640,
+      "total_tokens": 11467,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 23
+      }
+    },
+    "content_chars": 3533
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

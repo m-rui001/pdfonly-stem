@@ -1,0 +1,73 @@
+{
+  "sha1": "b2aef4e4408ef28ddfbbb4bd2124f591dd8710a3",
+  "title": "Diffusion-free Grotthuss topochemistry for high-rate and long-life proton batteries",
+  "doi": "https://doi.org/10.1038/s41560-018-0309-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b2aef4e4408ef28ddfbbb4bd2124f591dd8710a3/index.html",
+  "source_chars": 50603,
+  "markdown_chars": 3605,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "to enable high rate capability of",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页2末尾句子在'of'处中断，下一页先有页码和标题后才出现'electrochemical devices'，可能漏掉'electrodes'类词。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "to interrupt the hydrogen-bonding network inside the PBA electrode to remove contiguous",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页8末尾'contiguous'后断开，页9才出现'pathways for Grotthuss displacement'，疑似页眉/图注插入导致断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "(2) ln(σT) = ln A - Ea /(kB×T)",
+      "type": "公式/符号疑似截断",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "公式(2)前的文字缺失，且公式中变量A定义未给出（正文中仅说'pre-exponential factor'），提取文本在公式后直接列出变量定义，但公式本身被页码标注打断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 22,
+      "quote": "if the potential energy of the new state is lower, by a possibility of ‫< ݌‬ ݁‫(݌ݔ‬− ୼ ா ௞ಳ ் )",
+      "type": "疑似错误/乱码",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该表达式含乱码字符，无法辨识，疑似PDF提取乱码。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：4000 C、380 A g-1、508 mA cm-2、容量保持50%；500 C下0.73百万次循环保留60%；1 C=95 mA g-1；1 C容量95 mAh g-1；晶格参数10.12501(4) Å；质子电导率3.65e-4 S cm-1、Ea=0.28 eV；NEB能垒0.15 eV；XRD晶格收缩10.12→10.05 Å；XANES峰位7129.6→7128.8 eV、Cu新峰8983.4 eV；全电池初始50 mAh g-1，1000次后37 mAh g-1，~74%保留。公式(1)(2)已按原文列出。DFT超胞化学计量、空位模拟百分比等均与正文一致。不确定之处：提取文本第21页的Metropolis接受概率式含乱码，无法确认；第14页'(200)'峰后的'from 10.12 to 10.05 Å'与晶格参数一致，作者称体积变化2%，已保留。未发现摘要与正文结论之间的矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3119,
+      "prompt_tokens": 13832,
+      "total_tokens": 16951,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 109
+      }
+    },
+    "content_chars": 5220
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

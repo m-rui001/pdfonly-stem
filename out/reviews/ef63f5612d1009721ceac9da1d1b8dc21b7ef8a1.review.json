@@ -1,0 +1,54 @@
+{
+  "sha1": "ef63f5612d1009721ceac9da1d1b8dc21b7ef8a1",
+  "title": "Prospects for metal halide perovskite-based tandem solar cells",
+  "doi": "https://doi.org/10.1038/s41566-021-00809-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ef63f5612d1009721ceac9da1d1b8dc21b7ef8a1/index.html",
+  "source_chars": 107820,
+  "markdown_chars": 3102,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "4-T tandem cells consist of two separate . m . . m m devices with their own electrodes",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文第1页末尾句子在“two separate .”处中断，随后出现乱码“m . . m m”后才接续“devices”，疑似PF页眉或排版标记混入正文，导致句子不连贯，缺失关键内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "Shockley and Quessier calculated the theoretical power conversion efficiency",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一文档参考文献中写作“Queisser”（Shockley, W. & Queisser, H. J.），此处“Quessier”疑似拼写错误，但无更多上下文确认，仅作标记。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：单结钙钛矿效率从3.8%升至25.5%；单结S-Q极限33.7%；六结叠层>47%；钙钛矿基叠层认证效率29.5%。公式方面无显式公式，仅保留Eg、Jsc、Voc等符号。文中许多具体效率值（如FA0.83Cs0.17Pb(I0.6Br0.4)3的17.1%、28.15%等）来自表格或正文，已按正文明确引用的内容保留；表格中少数数值与正文可能不一致，未强行统一。跨页乱码处已标记，未擅自补写。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8348,
+      "prompt_tokens": 31686,
+      "total_tokens": 40034,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5887
+      }
+    },
+    "content_chars": 4046
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

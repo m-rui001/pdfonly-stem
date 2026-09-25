@@ -1,0 +1,157 @@
+{
+  "sha1": "0316f88feaad46a2fca0ec78b88d63bd1e1eb10c",
+  "title": "High-nickel layered oxide cathodes for lithium-based automotive batteries",
+  "doi": "https://doi.org/10.1038/s41560-019-0513-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/0316f88feaad46a2fca0ec78b88d63bd1e1eb10c/index.html",
+  "source_chars": 56936,
+  "markdown_chars": 8779,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 20,
+      "quote": "Driving range$\\dagger$ (km)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table 1中表头符号可能应为‡或其他标记，与脚注对应关系不明确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "BAIC EC220 LFP unknown 206$\\ddagger$",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1中电池包大小列为'unknown'，可能为OCR提取问题或原文如此，但影响数据完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Lifetime(deep cycles) <500 N.A. $ ^{*} $",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 2中'Ultrahigh Voltage'的Lifetime值为'N.A.*'，可能为原文如此，但表格结构在OCR中略有混乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "e Lithium market 2025",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Fig. 1的图注片段与正文分离，阅读顺序受损，但内容可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "Increasing nickel fraction in layered oxides",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Fig. 2的图注片段与正文分离，阅读顺序受损，但内容可辨识。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "Low-Ni lower pH & less $ \\mathrm{N H_{3}} $ additives (optional)",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Fig. 3的图注片段与正文分离，阅读顺序受损，但内容可辨识。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Li[Ni{a} Co{b} Mn{c}]O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "下标格式在OCR中丢失，化学式应为Li[Ni_aCo_bMn_c]O₂，但提取文本中下标标记不完整，影响公式可读性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "Li[Ni{1-} $ \\mathrm{x-y} \\mathrm{C o}{x} \\mathrm{A l}{y} ] \\mathrm{O}{2}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "NCA化学式下标格式损坏，应为Li[Ni_{1-x-y}Co_xAl_y]O₂，提取文本中下标标记不完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "LiNi{0. 8} Co{0. 1} Mn{0. 1} O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "下标数字间有空格，化学式格式不标准，但内容可辨识。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "LiNi{0. 8} Co{0. 1 5} Al{0. 0 5} O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "下标数字间有空格，化学式格式不标准，但内容可辨识。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "LiNi{1 / 3} Co{1 / 3} Mn{1 / 3} O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "下标分数格式不标准，但内容可辨识。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "Li[Ni{1-x-y} Mn{x} Al{y}]O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "下标格式不完整，但化学式可辨识。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "Li[Ni{1-2 x-y} Ti{x} Mg{x} Al{y}]O{2}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "下标格式不完整，但化学式可辨识。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "High-nickel layered oxide cathodes for lithium-based automotive batteries",
+  "self_check": "已核对关键数值：电芯级比能量目标350 Wh kg⁻¹、正极材料需≥800 Wh kg⁻¹、NCM-811和NCA-80在4.3 V_Li下约200 mAh g⁻¹、NCM-111为160 mAh g⁻¹、LFP电芯级180–190 Wh kg⁻¹、NCM/NCA电芯成本100–175 US$ kWh⁻¹、LFP为80–135 US$ kWh⁻¹、2018年中国NCM/NCA装机占比近90%（33.1 GWh）、2017年为72%、LFP商用车23.8 GWh、续航600,000–800,000 km、钴用量目标≤50 g/kWh、2025年Umicore估计需求90,000吨Co、375,000吨Li、300,000吨Ni、2030年需求超120,000吨Co、1,000,000吨Li、1,100,000吨Ni、当前年供应Co 120,000吨、Li 250,000吨、Ni 2,000,000吨、NCM-811每kWh含80–100 g Co、NCA每kWh<50 g Co、电极密度3.0–3.4 g cm⁻³对比LCO 3.8–4.2 g cm⁻³、单晶合成温度≥950°C、前驱体粒径3–5 μm对比工业≥10 μm、电极负载3–4 mAh cm⁻²和密度3.0–3.4 g cm⁻³、更高目标≥3.4 g cm⁻³和≥4 mAh cm⁻²、超高负载5–10 mAh cm⁻²、Al³⁺半径0.535 Å、Ni³⁺ 0.56 Å、Ti⁴⁺ 0.605 Å、Zr⁴⁺ 0.72 Å、Nb⁵⁺ 0.64 Å、W⁶⁺ 0.60 Å、Ni²⁺ 0.69 Å、Mg²⁺ 0.72 Å。公式符号已按提取文本保留，未擅自修复。仍不确定之处：Table 1中部分符号（如‡、∥、⋮）与脚注对应关系在OCR中不清晰；Table 2中'N.A.*'的确切含义需结合原文；Fig. 1–3的图注片段在OCR中与正文分离，阅读顺序受损但内容可辨识。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7097,
+      "prompt_tokens": 16247,
+      "total_tokens": 23344,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12856,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

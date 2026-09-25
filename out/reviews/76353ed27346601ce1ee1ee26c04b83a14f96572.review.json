@@ -1,0 +1,64 @@
+{
+  "sha1": "76353ed27346601ce1ee1ee26c04b83a14f96572",
+  "title": "Gaia Early Data Release 3 Summary of the contents and survey properties",
+  "doi": "https://doi.org/10.1051/0004-6361/202039657",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/76353ed27346601ce1ee1ee26c04b83a14f96572/index.html",
+  "source_chars": 119524,
+  "markdown_chars": 4947,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "spectroscopic, and",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在页尾中断，下一页（第4页）以'astrometric binaries;'接续，中间隔有页眉。原文语义连续，但提取文本中分页标记割裂了句子。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Marrese et al. (in prep.)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句子在页尾结束于'(in prep.)'，下一页（第14页）以'(see also Marrese et al. 2017, 2019).'接续，中间有页眉，属于跨页断句。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "The last",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 1.0,
+      "reason": "页尾仅显示'The last'，下一页（第15页）以'decontamination of the telescopes and focal plane took place in August 2016...'继续。明显因分页而断句，需注意原文应为'The last decontamination...'，但此推断基于上下文，不视为正确版本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：总源数1,811,709,771；5-p/6-p/2-p分别为585,416,709/882,328,109/343,964,953；G、GBP、GRP源数及视向速度7,209,831；视差零点−17 μas；精度改善因子（视差30%、自行2倍、系统误差30–40%及~2.5倍）；G=15处中位不确定度因子。公式(1)已原样保留。所有数字均来自提取文本，未作推断补充。跨页断句已列明。不确定处：Table 1中'Gaia-CRF3 sources for frame spin'的数值429,249在正文中未明确核验，但表格如此列出，照录。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7597,
+      "prompt_tokens": 33364,
+      "total_tokens": 40961,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3927
+      }
+    },
+    "content_chars": 6161
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

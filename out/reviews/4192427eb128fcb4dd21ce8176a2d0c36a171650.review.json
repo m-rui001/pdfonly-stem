@@ -1,0 +1,127 @@
+{
+  "sha1": "4192427eb128fcb4dd21ce8176a2d0c36a171650",
+  "title": "Electrochemical Oxidation of Organic Molecules at Lower Overpotential: Accessing Broader Functional Group Compatibility with Electron−Proton Transfer Mediators",
+  "doi": "https://doi.org/10.1021/acs.accounts.9b00544",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4192427eb128fcb4dd21ce8176a2d0c36a171650/index.html",
+  "source_chars": 70218,
+  "markdown_chars": 4947,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 42,
+      "quote": "77. For a recent review, see: Stateman, L. M.; Nakafuku, K. M.; Nagib, D. A. Remote C–H Functionalization via Selective Hydrogen Atom Transfer. Synthesis 2018, 50, 1569–1586.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Synthesis期刊该卷期对应年份为2016而非2018，且文献编号77对应的正文位置在参考文献表中为2018年文献，前后年份不一致，疑为页码提取时年份标注偏差，但无明确文本内证据确认正确年份。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "Figure 15. NHPI-mediated electrochemical C–H bonds iodination and in-situ methylarene iodination/alkylation of pyridine: mechanism and representative substrate scope.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "正文第27页末尾写'Figure 15. NHPI-mediated electrochemical C–H bonds iodination'，其后缺少连字符，且该句与后文'This method and the oxygenation reaction above…'之间缺少段落衔接，可能存在图注与正文拼接边界问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the oxidation of benzyl alcohol by TEMPO+ is favorable by 0.777 mV (DG° = -35.8 kcal/mol)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "0.777 V与-35.8 kcal/mol在数值上一致（0.777 V×2×23.06≈35.8 kcal/mol），但原文写为'mV'，应为'V'，属明显单位笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 18,
+      "quote": "R' = Yield: 69% F OMe 59% 62% 61% 58% 61%",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此处多个产率数值与底物结构顺序对应关系在提取文本中次序混乱，无法从文本确定各产率分别对应哪个底物结构，疑因图片OCR顺序错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "φ O N N CN H2 OTs- 76% (α:φ = 8:1)",
+      "type": "疑似抽取不完整",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "此处出现希腊字母φ，应表示某区域选择性比例，但前文未给出φ的定义，疑因结构式中文字说明在图像中未提取完全。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "ACT 0.65 PhCO2TEMPO 0.67 0.6 0.7 Emp (V) vs. Ag/AgCl",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文第12页图中显示ACT的E1/2为0.65 V，其他介体数值如TEMPO 0.53、ABNO 0.48等，但正文第11页文字部分引用了'4PhCO2-TEMPO和4-AcNH-TEMPO (ACT)，具有最高E1/2'，而图中AZADO标为0.45、ABNO 0.48，与'4-取代TEMPO有最高E1/2'的说法一致，数值内部一致。但此页与第10页内容之间图表与文字的数值对应关系可能不一致，需核对原图。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "TEMPO+ + 2H+ + 2e- TEMPOH2+ 0.92",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "TEMPO+在酸性条件下还原产物通常写作TEMPOH，TEMPOH2+为两电子还原产物（羟胺的质子化形式），此处写法为质子化羟胺阳离子，与0.92 V对应关系合理，但表注单位'V vs NHE'不够明确，疑有格式问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 41,
+      "quote": "Shono, T.; Matsumura, Y.; Katoh, S.; Takeuchi, K.; Sasaki, K.; Kamada, T.; Shimizu, R. Electroorganic Chemistry. 120. New Patterns of Anodic Oxidation of Amides. Synthesis of α-Amino Aldehyde Acetals and Pyrrolidines from Amines. J. Am. Chem. Soc. 1990, 112, 2368–2372.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该文献卷页为J. Am. Chem. Soc. 1990, 112, 2368，年份为1990，但原文提取文本中此条被编号为78号参考文献，正文第29页提到'with examples including bromide-mediated和acetate-promoted PCET pathways'，此处引用编号与正文对应位置需核对。另外正文第29页和参考文献列表中Shono的文献编号前后不一致，可能因抽取中页码错位导致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "TEMPOH + Et3N + Et3NH+ LCuIIOCH2R LCuI TEMPOH, RCHO TEMPO + Et3NH+",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第16页底部出现图7的注释文字混乱，结构式与字母排列无序，疑因化学反应式中箭头、上下标在文本提取时顺序错乱，难以判断原图实际布局。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "oxidation of benzyl alcohol by TEMPO+ is favorable by 0.777 mV",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同上，0.777 mV与ΔG°=-35.8 kcal/mol在数量级上矛盾（0.777 mV×2e⁻×F≈35.8 cal/mol而非kcal/mol），确认单位应为V。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值一致性：Cu/TEMPO电位降低0.5 V、其TOF为11.6 s⁻¹ vs 2.3 s⁻¹；ABNO介导Shono氧化电位比底物氧化低>1 V（pv第18页）；PINO-HAT比直接SET电位低0.5–1.2 V（pv第28页）；Fe-TAML的FeIV/III 800 mV、FeV/IV 1250 mV vs Ag/AgCl（pv第23页）；ACT介导40 g规模levetiracetam制备91%产率、92% ee（pv第11页）。Nernst方程以公式(1)文字保留。表1中苯甲醇脱氢E°=-0.143 V、TEMPO+还原E°=0.92 V等热力学数据已核对。不确定处：表1中'0.777 V'在原文中写为'mV'，判为文字错误并在issue中注明；图4中部分产率与结构对应关系因OCR乱序无法确认；Fe-TAML部分正文未给出具体产率数值对应的底物结构，未在markdown中补全化合物名称；图7(a)(b)(c)反应式因抽取严重乱序，仅保留文字描述部分。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5623,
+      "prompt_tokens": 20887,
+      "total_tokens": 26510,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 586
+      }
+    },
+    "content_chars": 9100
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

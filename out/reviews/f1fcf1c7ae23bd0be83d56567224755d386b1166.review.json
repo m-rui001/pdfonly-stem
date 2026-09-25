@@ -1,0 +1,63 @@
+{
+  "sha1": "f1fcf1c7ae23bd0be83d56567224755d386b1166",
+  "title": "The Priority and Challenge of High-Power Performance of Low-Platinum Proton-Exchange Membrane Fuel Cells",
+  "doi": "https://doi.org/10.1021/acs.jpclett.6b00216",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f1fcf1c7ae23bd0be83d56567224755d386b1166/index.html",
+  "source_chars": 63389,
+  "markdown_chars": 6468,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "2 2 O2 RO2,NF (s/cm) Non-Fickian O2 Transport Resistance (s/cm) of roughness factor.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第13页页首出现重复的坐标轴文本“2 2 O2 RO2,NF (s/cm)”和“Non-Fickian O2 Transport Resistance (s/cm)”，疑似图注与正文拼接顺序错乱，且“of roughness factor”之前应有内容（可能为“as a function”）。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Figure 10. Schematics of hypothesized ionomer structure at the Pt surface for conventional ionomer (a) and high-oxygen-permeable ionomer (b).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文后半部分出现“24 nm thin ionomer film”（第19页）与图6所述“2-4 nm”矛盾，此处图注“high-oxygen-permeable”与正文用词一致，但无法判断原文是否如此，仅作标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "the 24 nm thin ionomer film on Pt",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "第13页图6说明为“2-4 nm ionomer coatings”，此处写“24 nm”可能为“2-4 nm”的误拼接，但无强文本内证据，仅存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：0.4-0.8→0.1 mgPt/cm2、0.125/0.0625 gPGM/kW、21 mV/减半载量、RO2Pt=11.2 s/cm（极限电流法）、差分法20-25 s/cm、ECSA 45 m2/gPt、质量活性目标0.44 A/mgPt、耐久测试30k循环、成本降低25%。公式eq 1已按原文转录。图表数值均来自正文描述。不确定处：图6中部分数据点符号与文字对应关系未明；RNF与r.f.关系的插图坐标轴标签疑似拼接错乱；文中“24 nm”与“2-4 nm”矛盾已标注。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4567,
+      "prompt_tokens": 17163,
+      "total_tokens": 21730,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 22
+      }
+    },
+    "content_chars": 7883
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,1803 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/msp/78/7836af1fbfe235565a0d88186aee48d998b09540.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SDDNet: Real-Time Crack Segmentation</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>SDDNet: Real-Time Crack Segmentation</h1><p class="source">2019 · <a href="https://doi.org/10.1109/tie.2019.2945265">https://doi.org/10.1109/tie.2019.2945265</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/msp/78/7836af1fbfe235565a0d88186aee48d998b09540.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Deep Learning Implemented Structural Defect Detection on Digital Images by Wooram Choi</p>
+<p>A Thesis submitted to the Faculty of Graduate Studies of The University of Manitoba In partial fulfilment of the requirements of the degree of</p>
+<p>DOCTOR OF PHILOSOPHY</p>
+<p>Civil Engineering University of Manitoba Winnipeg, Manitoba, Canada Copyright © 2020 by Wooram Choi</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>Abstract Periodical inspection is the dominant form of structural health monitoring (SHM). However, civil engineering societies in North America have expressed the common consent that the current inspection practice is not sufficient to ensure infrastructure safety. Moreover, the increasing number of aged infrastructures will require an advanced form of inspection systems. The processes of vision-based methods for identifying damage using image processing algorithms (IPAs) are similar to human inspections because both use visual information. The outcomes of visionbased methods are much more intuitive than systems with traditional contact sensors. Accordingly, researchers have proposed a variety of different methods. For example, early research adopted IPAs directly into damage detection problems. The results from IPAs are intuitive but require manual decisionmaking processes. Further attempts have been made to establish automated decision-making systems using machine learning algorithms (MLAs). However, real-life applications are rare. The unavailability is mainly rooted in the fact that IPAs were developed and tested in controlled circumstances, while realworld situations often cannot be controlled. Mobile units with cameras have attracted great attention in the SHM discipline. This type of inspection can improve accessibility to infrastructures but still lacks automated damage detection. Even if IPAs and MLAs are integrated, the combined system (mobile units, IPAs, and MLAs) will likely be invalid in practice because this system inherits the limitations of IPAs. To overcome these challenges, IPAs should be replaced by advanced computer vision techniques. In this thesis, deep learning (DL) is considered the key for surpassing the current state of visionbased approaches. Deep learning models are capable of learning features from raw data. Instead of manually developing IPAs, feeding raw data that were collected in uncontrolled environments and leading a machine to learn the features of the data may be a better approach. A deep learning model for classifying</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>images for damage detection into binary classes is introduced, and its performance is compared with IPAs. The results of the classification DL model demonstrate the possibility of replacing IPAs with DL models. A segmentation DL model is also introduced that demonstrates faster, more robust, more flexible, and more intuitive than competitive methods.</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>CO-AUTHORSHIP This thesis has been prepared in accordance with the regulation of the integrated-article format stipulated by the Faculty of Graduate Studies at the University of Manitoba. Substantial parts of this thesis were submitted for publication to peer-reviewed technical journals as follows: Choi, W., &amp; Cha, Y.-J. (2020). SDDNet: Real-Time Crack Segmentation. IEEE Transactions on Industrial Electronics, 67(9), 8016–8025. DOI: 10.1109/TIE.2019.2945265, [Chapter 4]. I initiated this project by proposing the plan for researching this topic in my thesis proposal defense. I contributed to creating the dataset, designing and developing the deep learning model, conducting the comparative study, visualizing the results, writing the draft, and responding to the reviewers’ comments. Cha, Y.-J., Choi, W. &amp; Büyüköztürk, O. (2017), Deep Learning-Based Crack Damage Detection Using Convolutional Neural Networks, Computer-Aided Civil and Infrastructure Engineering, 32(5), 361-378, DOI: 10.1111/mice.12263, [Chapter 3]. Dr. Cha initiated the project by providing an idea of damage detection using deep learning. I contributed to building the dataset, designing and developing the deep learning model, integrating the sliding-window along with the deep learning model, writing the draft guided by Dr. Cha and Dr. Büyüköztürk, responding to the reviewers’ comments guided by Dr. Cha and Dr. Büyüköztürk.</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>Acknowledgments I express gratitude to all my committee members, Dr. Young-Jin Cha, Dr. Dimos Polyzois, Dr. Yang Wang, and Dr. David Lattanzi for guiding me in my program. I am also grateful to Ms. Julia Osso and Dr. Dagmar Svecova for consulting and helping me in a tough situation. I thank all my colleagues for being sincere friends. I acknowledge the support from the Natural Sciences and Engineering Research Council of Canada (NSERC) via the Discovery grant (Common Personal Identifier: 1262624) and Engage grant (Application No.: 533690-18), as well as the Canada Foundation for Innovation via the John R. Evans Leaders Fund (Project 37394).</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>Table of Contents Chapter 1</p>
+<p>Introduction ................................................................................................................... 1</p>
+<p>1.1</p>
+<p>Motivations........................................................................................................................ 2</p>
+<p>1.2</p>
+<p>Objectives .......................................................................................................................... 6</p>
+<p>1.3</p>
+<p>Scope of work.................................................................................................................... 6</p>
+<p>References ..................................................................................................................................... 8 Chapter 2</p>
+<p>Deep Learning Methodologies .................................................................................... 11</p>
+<p>2.1</p>
+<p>Overview of deep learning .............................................................................................. 12</p>
+<p>2.2</p>
+<p>Input process ................................................................................................................... 13</p>
+<p>2.2.1 Data augmentation ....................................................................................................... 14 2.2.2 Image normalization .................................................................................................... 15 2.3</p>
+<p>Operations in deep learning............................................................................................. 15</p>
+<p>2.3.1 Fully connected layer................................................................................................... 15 2.3.2 Convolution ................................................................................................................. 16 2.3.3 Pooling ......................................................................................................................... 22 2.4</p>
+<p>Model optimization ......................................................................................................... 23</p>
+<p>2.4.1 Cost and loss functions ................................................................................................ 24 2.4.2 Backpropagation with gradient descent ....................................................................... 25 2.5</p>
+<p>Overfitting and regularization ......................................................................................... 28</p>
+<p>2.5.1 Weight decay ............................................................................................................... 29</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>2.5.2 Dropout ........................................................................................................................ 29 2.6</p>
+<p>Activation functions ........................................................................................................ 31</p>
+<p>2.7</p>
+<p>Challenges of training a deep learning model ................................................................. 34</p>
+<p>2.8</p>
+<p>Batch normalization ........................................................................................................ 36</p>
+<p>2.9</p>
+<p>Constructing a deep learning model ................................................................................ 39</p>
+<p>References ................................................................................................................................... 41 Chapter 3</p>
+<p>Deep Learning Application: Crack Detection ............................................................. 42</p>
+<p>3.1</p>
+<p>Introduction ..................................................................................................................... 43</p>
+<p>3.2</p>
+<p>Architecture configuration .............................................................................................. 43</p>
+<p>3.3</p>
+<p>Dataset generation ........................................................................................................... 45</p>
+<p>3.4</p>
+<p>Cross-entropy loss with the Softmax .............................................................................. 47</p>
+<p>3.5</p>
+<p>Gradient descent with momentum algorithm .................................................................. 48</p>
+<p>3.6</p>
+<p>Model training ................................................................................................................. 49</p>
+<p>3.6.1 Hyperparameters .......................................................................................................... 49 3.6.2 Training results ............................................................................................................ 50 3.7</p>
+<p>Model testing ................................................................................................................... 52</p>
+<p>3.7.1 Testing the trained and validated CNN ....................................................................... 53 3.7.2 Comparative studies .................................................................................................... 61 3.8</p>
+<p>Discussions and conclusions ........................................................................................... 69</p>
+<p>References ................................................................................................................................... 71</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>Chapter 4</p>
+<p>Deep Learning Application: Crack Segmentation ....................................................... 72</p>
+<p>4.1</p>
+<p>Introduction ..................................................................................................................... 73</p>
+<p>4.2</p>
+<p>Architecture configuration .............................................................................................. 75</p>
+<p>4.2.1 Characteristics of target objects ................................................................................... 76 4.2.2 Overall architecture ..................................................................................................... 77 4.2.3 DenSep module............................................................................................................ 78 4.2.4 ASPP module............................................................................................................... 81 4.2.5 Decoder module ........................................................................................................... 83 4.2.6 Model customization ................................................................................................... 85 4.3</p>
+<p>Dataset generation ........................................................................................................... 85</p>
+<p>4.4</p>
+<p>Training details ................................................................................................................ 86</p>
+<p>4.4.1 Training strategy .......................................................................................................... 87 4.4.2 Adaptive momentum optimizer ................................................................................... 87 4.4.3 Cost function and hyperparameters ............................................................................. 88 4.4.4 Pretraining on the Cityscape Dataset ........................................................................... 90 4.4.5 Training on the Crack200 ............................................................................................ 91 4.4.6 Segmentation results .................................................................................................... 93 4.4.7 Comparative studies and discussions .......................................................................... 97 4.5</p>
+<p>Conclusion and discussion ............................................................................................ 104</p>
+<p>References ................................................................................................................................. 106</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>Chapter 5</p>
+<p>Conclusions and Recommendations for Future Research ......................................... 109</p>
+<p>5.1</p>
+<p>Conclusions ................................................................................................................... 110</p>
+<p>5.1.1 Implications of the research ....................................................................................... 111 5.1.2 Limitations ................................................................................................................. 112 5.2</p>
+<p>Recommendations for future research........................................................................... 112</p>
+<p>Appendix A ................................................................................................................................... 114</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>List of Figures Figure 1.1: Feature extraction example1 ........................................................................................... 4 Figure 1.2: Feature extraction example2 ........................................................................................... 4 Figure 2.1: Hierarchical feature extraction of DL ........................................................................... 12 Figure 2.2: Data augmentation example .......................................................................................... 14 Figure 2.3: Example of fully connected network ............................................................................ 16 Figure 2.4: Convolution example with 1-D tensor .......................................................................... 17 Figure 2.5: Convolution example – single channel input ................................................................ 18 Figure 2.6: Convolution example – multi-channel input................................................................. 18 Figure 2.7: Convolution example – multi-channel input and multiple filters ................................. 19 Figure 2.8: Group convolution ........................................................................................................ 21 Figure 2.9: Depth-wise convolution ................................................................................................ 21 Figure 2.10: Pooling operation with 1D array ................................................................................. 22 Figure 2.11: Pooling example with 2D array .................................................................................. 23 Figure 2.12: Example model with FC layers ................................................................................... 25 Figure 2.13: Example model with convolution layers..................................................................... 26 Figure 2.14: Evaluation index on training and unseen data ............................................................ 28 Figure 2.15: Dropout ....................................................................................................................... 30 Figure 2.16: Binary step function .................................................................................................... 31 Figure 2.17: Tanh and sigmoid ........................................................................................................ 32 Figure 2.18: Gradient of tanh and sigmoid ...................................................................................... 32 Figure 2.19: ReLU ........................................................................................................................... 33 Figure 2.20: Derivative of ReLU..................................................................................................... 33</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>Figure 2.21: Simple deep learning model........................................................................................ 35 Figure 2.22: LeNet-5 architecture ................................................................................................... 39 Figure 3.1: Schematic diagram of the proposed method [reproduced from Cha et al. (2017)]....... 43 Figure 3.2: Overall architecture [reproduced from Cha et al. (2017)] ............................................ 44 Figure 3.3: Representative training images [Cha et al., (2017)] ..................................................... 46 Figure 3.4: Disregarded images [Cha et al., (2017)] ....................................................................... 47 Figure 3.5: GD without momentum (left) vs GD with momentum (right) ..................................... 48 Figure 3.6: Scheduled learning rate [Cha et al., (2017)] ................................................................. 50 Figure 3.7: Accuracies over epochs [Cha et al., (2017)] ................................................................. 51 Figure 3.8: Results of the experiment to estimate the desirable number of training instances [reproduced from Cha et al. (2017)] ................................................................................................ 52 Figure 3.9: Testing with post processing [Cha et al., (2017)] ......................................................... 52 Figure 3.10: Representative testing result (1) – thin cracks [Cha et al. (2017)].............................. 56 Figure 3.11: Representative testing result (2) – thin cracks with high luminance spots [Cha et al. (2017)] ............................................................................................................................................. 57 Figure 3.12: Representative testing result (3) – with shadows [Cha et al. (2017)] ......................... 58 Figure 3.13: Representative testing result (4) – closeups [Cha et al. (2017)] ................................. 59 Figure 3.14: Representative testing result (5) – closeups, blurring, and with luminance spots [Cha et al. (2017)] ........................................................................................................................................ 60 Figure 3.15: Image with uniform luminance condition ................................................................... 62 Figure 3.16: Image with noisy texture and uniform luminance (1) [Cha et al. (2017)] .................. 63 Figure 3.17: Image with noisy texture and uniform luminance (2) [Cha et al. (2017)] .................. 64 Figure 3.18: Image with thin crack and slightly varying luminance [Cha et al. (2017)] ................ 65</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>Figure 3.19: Image with thin cracks and strong luminance change [Cha et al. (2017)] .................. 66 Figure 3.20: Sobel edge detector with denoising method (1) .......................................................... 67 Figure 3.21: Sobel edge detector with denoising method (2) .......................................................... 67 Figure 4.1: Object localization with sliding-window ...................................................................... 73 Figure 4.2: Object localization with bounding box ......................................................................... 74 Figure 4.3: Semantic segmentation [Choi and Cha (2020)] ............................................................ 74 Figure 4.4: Generic image data ....................................................................................................... 76 Figure 4.5: Real crack vs crack-like feature [Choi and Cha (2020)]............................................... 77 Figure 4.6: Schematic diagram of SDDNet architecture [Choi and Cha (2020)] ........................... 78 Figure 4.7: DenSep module [reproduced from Choi and Cha (2020)] ............................................ 79 Figure 4.8: Comparison of convolution operations [Choi and Cha (2020)].................................... 80 Figure 4.9: Dilated depth-wise convolution filter [Choi and Cha (2020)] ...................................... 82 Figure 4.10: Modified ASPP module [reproduced from Choi and Cha (2020)] ............................. 83 Figure 4.11: Details of the decoder module [reproduced from Choi and Cha (2020)] ................... 84 Figure 4.12: mIoU loss over training iteration [Choi and Cha (2020)] ........................................... 91 Figure 4.13: Comparative profiles of SDD-R6D64 using two different training approaches [Choi and Cha (2020)] ............................................................................................................................... 92 Figure 4.14: Representative test result (1) – mIoU= 0.830 [1920×1440] [Choi and Cha (2020)] .. 95 Figure 4.15: Representative test result (2) – mIoU = 0.909 [1280×720] [Choi and Cha (2020)] ... 95 Figure 4.16: Representative test result (3) – mIoU= 0.898 [1276×1920] [Choi and Cha (2020)] .. 96 Figure 4.17: Representative test result (4) – mIoU= 0.828 [1920×1275] ....................................... 96 Figure 4.18: Contrast result 1 − models trained on complex background (left) and monotonous background (right) ......................................................................................................................... 101</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>Figure 4.19: Contrast result 2 − models trained on complex background (left) and monotonous background (right) ......................................................................................................................... 101 Figure 4.20: Contrast result 3 − models trained on complex background (left) and monotonous background (right) ......................................................................................................................... 102 Figure 4.21: Contrast result 4 − models trained on complex background (left) and monotonous background (right) ......................................................................................................................... 102</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>List of Tables Table 2.1: Activation functions ....................................................................................................... 34 Table 3.1: Model architecture summary [Cha et al. (2017)] ........................................................... 45 Table 3.2: Summary of test results [Cha et al. (2017)] ................................................................... 53 Table 4.1: Number of computations [Choi and Cha (2020)]........................................................... 81 Table 4.2: Hyperparameters for training SDD-R6D64 [Choi and Cha (2020)] .............................. 89 Table 4.3: Modified Cityscape Dataset [Choi and Cha (2020)] ...................................................... 90 Table 4.4: Evaluation metrics of SDD-R6D64 with different training strategies [Choi and Cha (2020)] ............................................................................................................................................. 92 Table 4.5: Evaluation metrics of SDD-R6D32 and DeepCrack [Choi and Cha (2020)] ................ 98 Table 4.6: Evaluation metrics of SDD-R6D64 trained and tested on monotonous and complex datasets [Choi and Cha (2020)] ....................................................................................................... 99 Table 4.7: Processing time of SDD-R6D64 [Choi and Cha (2020)] ............................................. 103</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>Acronyms and notations The following acronyms and notations that are employed in the chapters are listed here.</p>
+<p>List</p>
+<p>Description</p>
+<p>1D, 2D, 3D</p>
+<p>1-dimensional, 2-dimensional, 3-dimensional</p>
+<p>BatchNorm</p>
+<p>Batch normalization</p>
+<p>CNN</p>
+<p>Convolutional neural network</p>
+<p>CV</p>
+<p>Computer vision</p>
+<p>DL</p>
+<p>Deep learning</p>
+<p>FC</p>
+<p>Fully connected</p>
+<p>FN</p>
+<p>False negative</p>
+<p>FP</p>
+<p>False positive</p>
+<p>GD</p>
+<p>Gradient descent</p>
+<p>IPA</p>
+<p>Image processing algorithm</p>
+<p>ML(A)</p>
+<p>Machine learning (algorithm)</p>
+<p>NN</p>
+<p>Neural network</p>
+<p>ReLU</p>
+<p>Rectified linear unit</p>
+<p>SHM</p>
+<p>Structural health monitoring</p>
+<p>TP</p>
+<p>True positive</p>
+<p>𝛼</p>
+<p>Learning rate</p>
+<p>𝑏 (𝑙)</p>
+<p>Bias at a layer of an ML model</p>
+<p>𝐵 (𝑙)</p>
+<p>Set of biases at the l-th layer of an ML model</p>
+<p>g(z)</p>
+<p>Operation that transforms z</p>
+<p>𝜌</p>
+<p>Weight decay factor</p></section>
+<section class="pdf-page" id="pdf-page-16"><h2 class="page-number">Page 16</h2><p>ℒ</p>
+<p>Loss function</p>
+<p>𝒥</p>
+<p>Cost function that aggregates the losses across all training instances</p>
+<p>𝜙 (𝑙)</p>
+<p>Weight at the l-th layer of an ML model</p>
+<p>Φ(𝑙)</p>
+<p>Set of weights at the l-th layer of an ML model</p>
+<p>𝜓 (𝑙)</p>
+<p>Feature at the l-th layer of a ML model</p>
+<p>Ψ[𝑖]</p>
+<p>Set of features at a layer of an ML model that corresponds to the i-th training instance.</p>
+<p>y, ŷ</p>
+<p>Output of an ML model and the ground truth that corresponds to y</p></section>
+<section class="pdf-page" id="pdf-page-17"><h2 class="page-number">Page 17</h2><p>1|Chapter1</p>
+<p>Chapter 1</p>
+<p>Introduction</p>
+<p>Summary The concerns with the conditions of infrastructures have suggested their periodical and frequent inspection. Human-conducted on-site inspections are the most practical process to date, but research on current practices has reported several challenges. Numerous methods that apply image processing algorithms (IPAs) have been proposed to replenish the current inspection practice. However, IPAs are still rare in real-life applications. This chapter introduces representative IPAs that were previously proposed and analyzes their limitations to identify viable breakthroughs.</p></section>
+<section class="pdf-page" id="pdf-page-18"><h2 class="page-number">Page 18</h2><p>2|Chapter1 1.1</p>
+<p>Motivations</p>
+<p>Infrastructures including buildings, bridges, dams, etc. are becoming vulnerable to the failure of their functionalities as they deteriorate over time. The majority of infrastructures were built from the 1950s to the 1960s, and their designed longevities were approximately 50 years. Thus, these structures have either reached or exceeded their designed service life spans (American Society of Civil Engineers, 2017). This finding has encouraged governments to conduct routine visual inspections of existing facilities. For example, the Government of Canada plans to inspect bridges every 540 days or less (the Government of Canada, 2018), and the U.S. government regulates biannual inspections at a minimum (Federal Highway Administration, 2004). However, the periodical inspections performed by field engineers have several limitations that have been highlighted for years: 1) the inspection results are not consistent due to the subjective perceptions, technical skills, and expertise of human inspectors (Phares et al., 2001); 2) human resources are limited, and older infrastructures should be inspected more frequently than newer infrastructures (Federal Highway Administration, 2004; the Government of Canada, 2018); and 3) specific parts of infrastructures are often inaccessible, and inspecting them is timeconsuming (Wells and Lovelace, 2018), etc. Accordingly, methods for monitoring structural health have been proposed by researchers to overcome these challenges. Early studies in structural health monitoring (SHM) mainly navigated the identification of dynamic behaviors of structures by analyzing the data collected from numerical models and physical vibrations measured from contact sensors of real structures (Rabinovich et al., 2007; Chatzi et al., 2011; Teidj et al., 2016). However, vibration signals collected by these sensors are vulnerable to uncertainties, such as environmental changes (Cornwell et al., 1999; Xia et al., 2012),</p></section>
+<section class="pdf-page" id="pdf-page-19"><h2 class="page-number">Page 19</h2><p>3|Chapter1 and the sensing range of a contact sensor is not enough to cover a massive structure (Kurata et al., 2012). These sensory systems also need to be inspected to check the functionality of the systems by visiting the site where the system is installed. If an alarm is raised, engineers eventually need to visit the site to verify the presence of damage. Currently, the combination of computer vision (CV) and mobile units (e.g., drones and vehicles) is suggested as one of the best alternatives (Wells and Lovelace, 2018). The combined system can cover small and large structures with a single camera. The collected data provide intuitive information, such as the location, type and extent of the damage. However, an engineer still needs to manually analyze digital images, which is time-consuming even though the process is similar to human-conducted on-site inspection. Hence, developing methods for analyzing digital images and identifying damage may have a significant role in SHM. Subsequently, image processing algorithms (IPA) for extracting sensitive features of damage can be an alternative. Representative IPAs applied for damage detection include the fast Haar transform (Kaiser, 1998), fast Fourier transform (Cooley and Tukey, 1965), Sobel edge detector (Kanopoulos et al., 1988), Canny edge detector (Canny, 1986), etc. Abdel-Qader et al. (2003) investigated the effectiveness of these IPAs in detecting concrete cracks. Research articles related to IPAs were introduced (Sinha and Fieguth, 2006; Alaknanda et al., 2009; Yamaguchi and Hashimoto, 2009; Nishikawa et al., 2012). However, IPAs fundamentally take advantage of image gradients, and this dependency causes critical issues. For example, consider a system for detecting cracks in buildings, as shown in Figure 1.1(a), in which the edges represent the damage features. The image gradients shown in Figure 1.1(b) may enable the identification of reliable results (Figure 1.1(c)) in certain regions, as depicted by the red box in Figure 1.1(a). However, image gradients can also be observed on any object, as shown in Figure 1.2, where all the extracted features aside</p></section>
+<section class="pdf-page" id="pdf-page-20"><h2 class="page-number">Page 20</h2><p>4|Chapter1 from the red boxes are false detections. Therefore, these methods likely result in incorrect detections unless the image-obtaining conditions are fully controlled so that the obtained images contain only the damage features.</p>
+<p>(a) Digital image</p>
+<p>(b) Image analysis</p>
+<p>(c) Feature extraction</p>
+<p>Figure 1.1: Feature extraction example1</p>
+<p>(a) Digital image</p>
+<p>(b) Edge detection</p>
+<p>(c) Ridge detection</p>
+<p>Figure 1.2: Feature extraction example2 There have been attempts to combine IPAs with machine learning (MLAs). For example, Jahanshahi et al. (2011) and Cha et al. (2016) proposed methods that extract features using IPAs and trained a neural network (NN) and support vector machine (SVM) to discriminate extracted features from damage features. In the methods proposed by Yeum and Dyke (2015) and Ramana et al. (2018), the authors conducted object localization using a Cascade object detector before extracting features of damage. Despite the implementation of MLAs, its application to practical usage was not enough because the performances of IPAs were still susceptible to image-obtaining</p></section>
+<section class="pdf-page" id="pdf-page-21"><h2 class="page-number">Page 21</h2><p>5|Chapter1 conditions and lacked the ability to accurately extract features. This finding implies that any visionbased applications with IPAs are likely invalid for the detection of structural defects without prior knowledge of the location of damage. Nevertheless, the vision-based approach is still an attractive method that can overcome the limitations of traditional IPA-based approaches. The works and corresponding results of this dissertation were initiated to address these limitations using deep learning (DL). DL might be one of the best compelling options in vision-based SHM. A particular branch of DL approaches that provides great properties in processing images is the convolutional neural network (CNN). CNNs are inspired by the behavior of the visual cortex (Ciresan et al., 2011) of mammals and are often referred to as DL because a CNN model usually consists of deep layers of operations. A pioneering research work (LeCun et al., 1998) showed its potential for discriminating images into several classes. Although the work aimed to classify small images of handwritten digits, the capability of automatic and adaptive feature extraction well presented the potential of CNN. Later, the development of parallel computing (Steinkrau et al., 2005) in graphics processing units (GPU) could accelerate DL research. DL gained even greater attention when AlexNet (Krizhevsky et al., 2012) was introduced because the model showed the possibility of differentiating images into 1K classes. Subsequently, Simonyan and Zisserman (2014), He et al. (2016), and Huang et al. (2017) showed several ways to design a DL model; their findings have contributed to modern DL research. Comparing the performances between human-created IPAs and DL models, DL models may generally outperform IPAs. However, a DL model can only be built by training the model, and training requires a large volume of datasets. Several public datasets, such as Cityscape (Cordts et al., 2016), ImageNet (Deng et al., 2009), etc., for DL research are available, but those are not useful in developing DL</p></section>
+<section class="pdf-page" id="pdf-page-22"><h2 class="page-number">Page 22</h2><p>6|Chapter1 models for SHM. Therefore, researchers in SHM may need to build datasets for their particular purposes, which is one of the major works of developing a DL-implemented SHM.</p>
+<p>1.2</p>
+<p>Objectives</p>
+<p>This dissertation aims to develop new methodologies that address the limitations of existing visionbased damage detection methods using deep learning models and suggest ways of detecting structural damage in uncontrolled conditions (e.g., outdoor environments). To prevent any hereditary limitations of previous vision-based methods, manual feature extraction1 using IPAs are completely disregarded. Instead, CNNs fully replenish IPAs. Hence, an imperative task is to identify the architectures of CNNs that are capable of effectively extracting features from images. Creating datasets is another major objective, which should consist of images with complex features to train robust DL models.</p>
+<p>1.3</p>
+<p>Scope of work</p>
+<p>In Chapter 2, fundamental operations, in DL are introduced. The explanations of fully connected layer, convolution, and pooling may provide ideas on how features can be extracted without IPAs. Furthermore, essential techniques (e.g., backpropagation, batch normalization, etc.) for building a DL model is also presented. Those operations and techniques are the foundations of the DL models introduced in the subsequent chapters. In Chapter 3, a DL model for classifying images into crack or non-crack classes is introduced. The deep learning model is composed of operations (e.g., convolution, pooling, etc.) that are described in Chapter 2. To minimize the</p>
+<p>The feature extraction algorithms manually created by humans are referred to as “manual feature extraction.” This is for clarifying the meaning between feature extractions using an IPA and feature extractions using a DL model 1</p></section>
+<section class="pdf-page" id="pdf-page-23"><h2 class="page-number">Page 23</h2><p>7|Chapter1 susceptibility to luminance change caused by outdoor environments, the model is trained on images taken under extensively varying conditions. The usage of the model is limited to classifying each small image, and this property is not preferable in real practice. Thus, a sliding-window technique that extends the proposed model’s capability to testing large images is integrated. In addition, comparative studies show that the proposed model may provide much more flexibility in real practice than previous vision-based approaches. In Chapter 4, a real-time DL model for detecting superficial damage of structures is presented. The deep learning model consists of standard convolution, densely connected separable convolution, and a modified atrous spatial pyramid pooling in addition to the operations explained in Chapter 2. In this work, the concept of detecting damage is defined as segmentation rather than classification because the results of segmentation provide better intuitive information and flexibility than those of image classification. However, a segmentation task requires classification of each pixel rather than each image, and the task is computationally much heavier than image classification. Therefore, a cost-efficient model that is dedicated to SHM is developed. The developed model does not require any IPAs, can accept any size of images, and provides robust results, although the images contain an extensive range of noisy features, complex background shapes, etc.</p></section>
+<section class="pdf-page" id="pdf-page-24"><h2 class="page-number">Page 24</h2><p>8|Chapter1 References</p>
+<p>Abdel-Qader, I., Abudayyeh, O., &amp; Kelly, M. E. (2003). Analysis of edge-detection techniques for crack identification in bridges. Journal of Computing in Civil Engineering, 17(4), 255–263. DOI: 10.1061/(asce)0887-3801(2003)17:4(255) American Society of Civil Engineers (2017). 2017 Infrastructure report card. Retrieved from https://www.infrastructurereportcard.org/wp-content/uploads/2019/02/Full-2017-ReportCard-FINAL.pdf Alaknanda, Anand, R. S., &amp; Kumar, P. (2009). Flaw detection in radiographic weldment images using morphological watershed segmentation technique. NDT &amp; E International, 42(1), 2– 8. DOI: 10.1016/j.ndteint.2008.06.005 Canny, J. (1986). A computational approach to edge detection. IEEE Transactions on Pattern Analysis and Machine Intelligence, PAMI-8(6), 679–698. DOI: 10.1109/tpami.1986.476 7851 Cha, Y.-J., You, K., &amp; Choi, W. (2016). Vision-based detection of loosened bolts using the Hough transform and support vector machines. Automation in Construction, 71, 181–188. DOI: 10.1016/j.autcon.2016.06.008 Chatzi, E. N., Hiriyur, B., Waisman, H., &amp; Smyth, A. W. (2011). Experimental application and enhancement of the XFEM–GA algorithm for the detection of flaws in structures. Computers &amp; Structures, 89(7–8), 556–570. DOI: 10.1016/j.compstruc.2010.12.014 Ciresan, D. C., Meier, U., Masci, J., Gambardella, L. M., &amp; Schmidhuber, J. (2011). Flexible, high performance convolutional neural networks for image classification. In Twenty-Second International Joint Conference on Artificial Intelligence, 1237–1242. DOI: 10.5591/9781-57735-516-8/IJCAI11-210 Cooley, J. W., &amp; Tukey, J. W. (1965). An algorithm for the machine calculation of complex Fourier series. Mathematics of Computation, 19(90), 297–301. DOI: 10.1090/s0025-57181965-0178586-1 Cordts, M., Omran, M., Ramos, S., Rehfeld, T., Enzweiler, M., Benenson, R., Franke, U., Roth, S. &amp; Schiele, B. (2016). The Cityscapes Dataset for semantic urban scene understanding. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 4700–4708. DOI: 10.1109/cvpr.2016.350 Cornwell, P., Farrar, C. R., Doebling, S. W., &amp; Sohn, H. (1999). Environmental variability of modal properties. Experimental Techniques, 23(6), 45–48. DOI: 10.1111/j.17471567.1999.tb01320.x Deng, J., Dong, W., Socher, R., Li, L. J., Li, K., &amp; Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. 2009 IEEE Conference on Computer Vision and Pattern Recognition, 248–255. DOI: 10.1109/cvpr.2009.5206848</p></section>
+<section class="pdf-page" id="pdf-page-25"><h2 class="page-number">Page 25</h2><p>9|Chapter1 Federal Highway Administration. (2004). National bridge inspections standards regulation (NBIS). Retrieved from https://www.govinfo.gov/content/pkg/FR-2004-12-14/pdf/0427355.pdf He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 770–778. DOI: 10.1109/cvpr.2016.90 Huang, G., Liu, Z., Maaten, L. van der, &amp; Weinberger, K. Q. (2017). Densely connected convolutional networks. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2261–2269. DOI: 10.1109/cvpr.2017.243 Jahanshahi, M. R., Masri, S. F., Padgett, C. W., &amp; Sukhatme, G. S. (2011). An innovative methodology for detection and quantification of cracks through incorporation of depth perception. Machine Vision and Applications, 24(2), 227–241. DOI: 10.1007/s00138-0110394-0 Kaiser, G. (1998). The fast Haar transform. IEEE Potentials, 17(2), 34–37. DOI: 10.1109/45.666645 Kanopoulos, N., Vasanthavada, N., &amp; Baker, R. L. (1988). Design of an image edge detection filter using the Sobel operator. IEEE Journal of Solid-State Circuits, 23(2), 358–367. DOI: 10.1109/4.996 Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2017). ImageNet classification with deep convolutional neural networks. Communications of the ACM, 60(6), 84–90. DOI: 10.1145/3065386 Kurata, M., Kim, J., Lynch, J. P., Van der Linden, G. W., Sedarat, H., Thometz, E., … Sheng, L.H. (2013). Internet-enabled wireless structural monitoring systems: Development and permanent deployment at the new Carquinez suspension bridge. Journal of Structural Engineering, 139(10), 1688–1702. DOI: 10.1061/(asce)st.1943-541x.0000609 Lecun, Y., Bottou, L., Bengio, Y., &amp; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), 2278–2324. DOI: 10.1109/5.726791 Nishikawa, T., Yoshida, J., Sugiyama, T., &amp; Fujino, Y. (2011). Concrete crack detection by multiple sequential image filtering. Computer-Aided Civil and Infrastructure Engineering, 27(1), 29–47. DOI: 10.1111/j.1467-8667.2011.00716.x Phares, B. M., Rolander, D. D., Graybeal, B. A., Washer, G. A. (2001). Reliability of visual bridge inspection (FHWA-RD-01-105). Retrieved from https://www.fhwa.dot.gov/publications/ research/nde/pdfs/01020a.pdf Rabinovich, D., Givoli, D., &amp; Vigdergauz, S. (2007). XFEM-based crack detection scheme using a genetic algorithm. International Journal for Numerical Methods in Engineering, 71(9), 1051–1080. DOI: 10.1002/nme.1975 Ramana, L., Choi, W., &amp; Cha, Y.-J. (2018). Fully automated vision-based loosened bolt detection using the Viola–Jones algorithm. Structural Health Monitoring, 18(2), 422–434. DOI: 10.1177/1475921718757459</p></section>
+<section class="pdf-page" id="pdf-page-26"><h2 class="page-number">Page 26</h2><p>10 | C h a p t e r 1 Simonyan, K. &amp; Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition, arXiv preprint arXiv:1409.1556. Sinha, S. K., &amp; Fieguth, P. W. (2006). Automated detection of cracks in buried concrete pipe images. Automation in Construction, 15(1), 58–72. DOI: 10.1016/j.autcon.2005.02.006 Steinkraus, D., Buck, I., &amp; Simard, P. Y. (2005). Using GPUs for machine learning algorithms. Eighth International Conference on Document Analysis and Recognition (ICDAR’05). DOI: 10.1109/icdar.2005.251 Teidj, S., Khamlichi, A., &amp; Driouach, A. (2016). Identification of beam cracks by solution of an inverse problem. Procedia Technology, 22, 86–93. DOI: 10.1016/j.protcy.2016.01.014 The Government of Canada. (2018). Guideline for bridge safety management. Retrieved from https://www.tc.gc.ca/media/documents/railsafety/guideline-bridge-safety-managementenglish.pdf Wells, J., &amp; Lovelace, B. (2018). Improving the quality of bridge inspections using unmanned aircraft systems (UAS) (MN/RC 2018-26). Retrieved from https://www.dot.state.mn.us/ research/reports/2018/201826.pdf Xia, Y., Chen, B., Weng, S., Ni, Y.-Q., &amp; Xu, Y.-L. (2012). Temperature effect on vibration properties of civil structures: a literature review and case studies. Journal of Civil Structural Health Monitoring, 2(1), 29–46. DOI: 10.1007/s13349-011-0015-7 Yamaguchi, T., &amp; Hashimoto, S. (2009). Fast crack detection method for large-size concrete surface images using percolation-based image processing. Machine Vision and Applications, 21(5), 797–809. DOI: 10.1007/s00138-009-0189-8 Yeum, C. M., &amp; Dyke, S. J. (2015). Vision-based automated crack detection for bridge inspection. Computer-Aided Civil and Infrastructure Engineering, 30(10), 759–770. DOI: 10.1111/mice.12141</p></section>
+<section class="pdf-page" id="pdf-page-27"><h2 class="page-number">Page 27</h2><p>11 | C h a p t e r 2</p>
+<p>Chapter 2</p>
+<p>Deep Learning Methodologies</p>
+<p>Summary Deep learning is undoubtedly the best alternative of the traditional IPA because DL models can be adaptively trained on data and automatically extract their features. This chapter describes how a DL model extracts features, is trained, and can be built. Training a DL model is challenging. Representative reasons and techniques to mitigate challenges (e.g., overfitting, vanishing/exploding gradients, etc.) are explained in this chapter. The contents of this chapter may provide fundamental backgrounds of the succeeding chapters.</p></section>
+<section class="pdf-page" id="pdf-page-28"><h2 class="page-number">Page 28</h2><p>12 | C h a p t e r 2 2.1</p>
+<p>Overview of deep learning</p>
+<p>DL models are composed of deep and hierarchical layers of operations (Bengio et al., 2017). Each layer may extract features with or without learnable parameters. For example, as shown in Figure 2.1, the input image is fed into a DL model, and the model extracts features layer by layer, in which each input of a layer is the output of the previous layer. The presented example shows features of only four layers, but a greater number of layers usually accompany DL models. The remaining contents of this subchapter provide conceptual information of DL and its sub-operators. Further details are discussed in subsequent subchapters.</p>
+<p>Figure 2.1: Hierarchical feature extraction of DL</p>
+<p>One of the key operations with learnable parameters in DL is convolution, and a DL model with convolution is referred to as CNN. Other operations are often jointly employed in a DL model; these operations are explained in Chapter 2.3. Deep learning models have too many parameters (usually more than several million), and manually setting these parameters is impossible. Therefore, the parameters are initialized by random numbers, and an optimization algorithm is involved to automatically tune the parameters, in which the optimization process is referred to as training. In deep learning, gradient descent (GD) is considered one of the most effective optimization algorithms (LeCun et al., 2012). Details of the</p></section>
+<section class="pdf-page" id="pdf-page-29"><h2 class="page-number">Page 29</h2><p>13 | C h a p t e r 2 algorithm are introduced in Chapter 2.4. The behavior of an optimization algorithm can be controlled by several parameters, which are independently defined as hyperparameters. Hyperparameters are set empirically via trials and errors. To train a CNN model, numerous instances are fed into the model; they are defined as the training set. In some applications, several instances in a training set are selected as validation data, which are applied to obtain hyperparameters by monitoring the training process. Once the hyperparameters are defined by trial and error, a model is trained using training and validation data, and the model is considered a trained model. A trained model is tested with a set of instances that have not been applied in training, and these instances are defined as test data. Testing is performed to ensure that the trained model also works on images that are not employed in training. A trained model is considered overfitted if the model only properly works on images that were applied in training. In practice, twenty percent of an entire dataset is considered the minimum proportion of test data.</p>
+<p>2.2</p>
+<p>Input process</p>
+<p>In this thesis, the input data comprise a set of images, and the contents of this subchapter are provided based on the context. A digital image might be a color or grayscale image. In the case of a color image, there are different variations, but an image represented in the red, green, and blue (RGB) channels is the most common type of image. Accordingly, a digital image with RGB channels can be expressed as a threedimensional (3D) tensor (i.e., height × width × channel) in a machine, in which a pixel in a color channel describes the brightness of the pixel, and each pixel has a number in the range of 0 to 255. This subchapter navigates fundamental input processing.</p></section>
+<section class="pdf-page" id="pdf-page-30"><h2 class="page-number">Page 30</h2><p>14 | C h a p t e r 2 2.2.1</p>
+<p>Data augmentation</p>
+<p>Data augmentation is an essential process in training a model and known as an effective way to prevent overfitting, which is further discussed in Chapter 2.5. Augmentation can be performed by transforming the raw data. Both the augmented data and the raw data are employed in the training phase. Flipping, cropping, rotating, and shuffling RGB channels are the most common strategies. The combination of these strategies can also be applied, as shown in Figure 2.2. Assume that a model is trained to discriminate an image into bird or non-bird. The augmented images shown in the figure might be suitable examples of augmentation because all the augmented images can still be considered bird images. However, an augmented image must retain the same semantic meaning of the raw image. For example, if the colors of birds are important features (e.g., bird breed prediction), shuffling RGB channels should not be performed because the augmentation strategy changes the semantic meaning of data and other augmentation techniques can be potentially utilized unless there is no change in the semantic meaning.</p>
+<p>Figure 2.2: Data augmentation example</p></section>
+<section class="pdf-page" id="pdf-page-31"><h2 class="page-number">Page 31</h2><p>15 | C h a p t e r 2 2.2.2</p>
+<p>Image normalization</p>
+<p>Normalizing an image is a common practice in training a DL model because it leads to stable and faster training (LeCun et al., 2012; Pal and Sudeep, 2016). There are several common strategies: 1) rescale pixel values from zero to positive one; 2) rescale pixel values from negative one to positive one; and 3) standardize the entire dataset. In the testing phase (refer to Chapter 2.1), images to be tested should be normalized by the same strategies that are employed in the training phase to obtain the expected results.</p>
+<p>2.3</p>
+<p>Operations in deep learning</p>
+<p>This subchapter describes fundamental operations and layers that are extensively adopted in DL models. The quintessential form of a DL model is the standard NN, which is also often referred to as the feedforward NN and multilayer perceptron. One of the key operations in NN is a fully connected (FC) layer that is still extensively applied in DL models. A variant form of the FC layer is referred to as convolution, in which similar operations are performed in an FC layer but are attributed to sparse connectivity. Both the FC layer and convolution accompany trainable parameters. Pooling is another important operation, in which identical calculation is conducted without trainable parameters. 2.3.1</p>
+<p>Fully connected layer (𝑙−1)</p>
+<p>A fully connected layer has the property that the neurons of an input layer Ψ (𝑙−1) = {𝜓𝑗</p>
+<p>|𝑗 ∈</p>
+<p>{1, 2, . . . , 𝑛𝑙−1 }} are connected to all neurons of the corresponding output Ψ(𝑙) = {𝜓𝑖(𝑙) | 𝑖 ∈ {1, 2, . . . , 𝑛𝑙 }}, as shown in Figure 2.3. The input and output of the l-th layer are fully connected by weights (𝑙)</p>
+<p>(𝑙)</p>
+<p>Φ(𝑙) = {𝜙𝑖,𝑗 | 𝑖 ∈ {1, 2, . . . , 𝑛𝑙 }, 𝑗 ∈ {1, 2, . . . , 𝑛𝑙−1 }} and biases B = {𝑏𝑖,1 | 𝑖 ∈ {1, 2, . . . , 𝑛𝑙 }} . The i-th neuron of the output is calculated by the operation g of the weighted sum (refer to Figure 2.3). The</p></section>
+<section class="pdf-page" id="pdf-page-32"><h2 class="page-number">Page 32</h2><p>16 | C h a p t e r 2 weighted sum is considered feature extraction, and g can be any operation that may transform the features, introduce nonlinearity, etc. Note that weights and biases are referred to as parameters (i.e., learnable parameters; refer to Chapter 2.1); they are the main targets to be optimized in DL models. The optimization of weights and biases is discussed in Chapter 2.4. If an FC layer is positioned at the beginning of a model, Ψ(0) is a set of features (e.g., pixel, data point, etc.) of an input data (e.g., image, signal, etc.) to be fed into the model; otherwise, features are extracted from the previous layer (l-1). An FC layer is mostly positioned at the end of a DL model.</p>
+<p>Figure 2.3: Example of fully connected network</p>
+<p>2.3.2</p>
+<p>Convolution</p>
+<p>Convolution inherits properties that are similar to that in a fully connected layer (refer to Section 2.3.1), but the input and output are sparsely connected by shared weights, as shown in Figure 2.4. The 𝑛𝜙 number (𝑙)</p>
+<p>(𝑙)</p>
+<p>(𝑙)</p>
+<p>of weights at the l-th layer (𝜙1 , 𝜙2 , …, 𝜙𝑛𝜙 ) performs the weighted sum to the input of the layer, in which the dimensions (i.e., width, height, or length) of the weights is usually smaller than that of the layer’s input. The set of weights strides across the input dimension. A stride that is greater than one reduces</p></section>
+<section class="pdf-page" id="pdf-page-33"><h2 class="page-number">Page 33</h2><p>17 | C h a p t e r 2 the dimension by approximately 1/stride. Each weighted sum might be further processed by an operation of g.</p>
+<p>Figure 2.4: Convolution example with 1-D tensor</p>
+<p>A set of weights is often referred to different terminologies, such as filter, receptive field, kernel, etc. To prevent confusion, a set of weights is referred to as ‘filter’ in this thesis. Note that the bias term is omitted in Figure 2.4 for simplicity, but each filter often accompanies a bias that is dependent on the configuration of a CNN. The striding filter allows application of the same practice even in multidimensional inputs. Hereafter, several figures that demystify the convolution operations are presented according to the following visualization rule: each output is presented with a certain color, in which the responsible filter to obtain the output is presented in the same color. As shown in Figure 2.5(a), an input of a 2-dimensional (2D) array with the spatial dimension of 5×5 can be convolved with a filter of the 2D array with the spatial dimension of 3×3. The filter conducts the weighted sum to the input by striding column-by-column and row-by-row. The output is accordingly a 2D array with the spatial dimension of 3×3. In this example, the spatial dimension is reduced from 5×5 to 3×3. To retain the spatial dimension of the output as that of the input, “padding” is commonly employed, as shown in Figure 2.5(b). The values</p></section>
+<section class="pdf-page" id="pdf-page-34"><h2 class="page-number">Page 34</h2><p>18 | C h a p t e r 2 of the padded elements may differ depending on the application, but zeros (i.e., zero padding) are frequently applied. Hereafter, the set of extracted features by a filter is defined as a feature map for simplicity. A higher dimensional input can also be convolved with a filter, as shown in Figure 2.6(a), where the number of channels of input is 3, and that of the filter is accordingly equal to 3. Hereafter, “convolution” is denoted by ⦿ in the figures throughout this thesis for simplicity.</p>
+<p>(a) Without padding</p>
+<p>(b) With padding</p>
+<p>Figure 2.5: Convolution example – single channel input</p>
+<p>(a) Without padding</p>
+<p>(b) With padding</p>
+<p>Figure 2.6: Convolution example – multi-channel input</p></section>
+<section class="pdf-page" id="pdf-page-35"><h2 class="page-number">Page 35</h2><p>19 | C h a p t e r 2 In practice, it is required to produce more features; therefore, multiple filters are mostly applied to an input, as demonstrated in Figure 2.7. In the figure, the input is formed of an unspecified spatial dimension of c number of channels. Accordingly, the number of channels in each filter should be equal to c. N number of filters are convolved with the input, and the output feature map has N number of channels. The spatial dimension of the output feature map is dependent on the spatial dimension of the input and filters, stride values, and existence of paddings.</p>
+<p>Figure 2.7: Convolution example – multi-channel input and multiple filters To take into account the explanations from the beginning of Chapter 2.3.2, a feature 𝜓 can be extracted by a convolution operation, which can be formally written by Eq. (2.1).</p>
+<p>(𝑙)</p>
+<p>(𝑙)</p>
+<p>𝜓ℎ(𝑙),𝑤(𝑙) ,c(𝑙) = ∑ ∑ ∑ 𝜙 (𝑙) (𝑙) (𝑙) (𝑙−1) 𝑑1 𝑑2 𝑐</p>
+<p>where 𝜓 (l) = a feature of the l-th layer. 𝜙 (𝑙) = a weight of the l-th layer.</p>
+<p>(𝑙−1)</p>
+<p>(𝑙)</p>
+<p>𝑑1 , 𝑑2 ,c(𝑙−1) ,c(𝑙)</p>
+<p>× 𝜓ℎ̅, 𝑤̅,c(𝑙−1) ,</p>
+<p>(2.1)</p></section>
+<section class="pdf-page" id="pdf-page-36"><h2 class="page-number">Page 36</h2><p>20 | C h a p t e r 2 ℎ(𝑙) = height index of the l-th layer’s feature map. 𝑤 (𝑙) = width index of the l-th layer’s feature map. 𝑐 (𝑙) = channel index a feature map. (𝑙)</p>
+<p>𝑑1 = height index of the l-th layer’s filter. d2 = width index of the l-th layer’s filter. ℎ̅ = ℎ(𝑙) + 𝑠ℎ − 1 𝑤 ̅ = 𝑤 (𝑙) + 𝑠𝑤 − 1 𝑠ℎ = stride value of a filter in height direction. 𝑠𝑤 = stride value of a filter in width direction.</p>
+<p>There are several variations in convolution, such as group convolution and depth-wise convolution. These variations inherit the same properties of the standard convolution (refer to Figure 2.7 and the corresponding explanations), except for dividing inputs. Regarding group convolution, an input is divided into several groups in the channel direction, and each group is convolved with the corresponding group of filters. For example, as shown in Figure 2.8, the input is divided into three groups. Accordingly, there are three groups of filters. The depth of channels in each input group is two, and accordingly, the depth of each filter’s channels should be two. Each filter group consists of three filters, which produces three output feature maps for each input group.</p></section>
+<section class="pdf-page" id="pdf-page-37"><h2 class="page-number">Page 37</h2><p>21 | C h a p t e r 2</p>
+<p>Figure 2.8: Group convolution</p>
+<p>By setting the number of groups to the depth of input channels, the convolution becomes depthwise convolution. For example, as shown in Figure 2.9, the input is divided into four groups. Therefore, there should be four groups of filters. The depth of each input group is one, and the depth of all filters should be one. In the presented example, the depth of the filters in each filter group consists of two filters, and the depth of the output is eight.</p>
+<p>Figure 2.9: Depth-wise convolution</p></section>
+<section class="pdf-page" id="pdf-page-38"><h2 class="page-number">Page 38</h2><p>22 | C h a p t e r 2 2.3.3</p>
+<p>Pooling</p>
+<p>The workflow of pooling is identical to convolution but without trainable parameters (i.e., weights and biases). Instead of extracting features by the weighted sum, the pooling operation collects features from an input. Max and average pooling operations are commonly employed in CNNs, and each of these operations are straightforward, as shown in Figure 2.10. Pooling operations perform operations that are identical to convolution (refer to Figure 2.4) with the pooling kernel 𝒫 = {𝑃𝑖 | 𝑖 ∈ {1, 2, . . . , 𝑛𝑃 }} instead of weights (i.e., trainable parameters): in the case of max pooling, 𝑃𝑖 is one if the corresponding element in Ψ(𝑙−1) is equal to max(Ψ(𝑙−1) ); otherwise, 𝑃𝑖 is equal to 0. In the case of average pooling, 𝑃𝑖 is equal to 1/𝑛𝑝 .</p>
+<p>Figure 2.10: Pooling operation with 1D array A pooling kernel also strides across the inputs, and the pooling operation can be employed in a higher-dimensional array. An example of max pooling on a 2D tensor is shown in Figure 2.11(a), where the max pooling kernel only collects the max value from the input. Padding can also be employed, as shown in Figure 2.11(b), where the type of kernel is the average pooling kernel, which takes the average</p></section>
+<section class="pdf-page" id="pdf-page-39"><h2 class="page-number">Page 39</h2><p>23 | C h a p t e r 2 of the subarray in the input. If an input is a three-dimensional (3D) tensor, a pooling works as depth-wise convolution (refer to Chapter 2.3.2 and Figure 2.9).</p>
+<p>(a) Max pooling without padding2</p>
+<p>(b) Average pooling with zero padding3</p>
+<p>Figure 2.11: Pooling example with 2D array</p>
+<p>2.4</p>
+<p>Model optimization</p>
+<p>In the previous section, the key operations of a CNN are discussed, where the calculation examples are shown in Figures 2.5 and Figure 2.11 with random numbers. In practice, these numbers are gradually tuned over numerous iterations until a model returns meaningful results. This process is referred to as optimizing a model, updating parameters (i.e., filters, weights, and biases), minimizing loss, training a model, etc. To update the filters of a model, the deviation between prediction and the corresponding ground truth should be measured, and a function that measures the deviation is known as a loss function,</p>
+<p>2</p>
+<p>The max value within the subarray of the input is 0.7, and the corresponding pooling constant is set at 1.0, otherwise 0.0. The way of calculation is equivalent to that of Figure 2.10. 3 The pooling size is 9 (=3×3), and all the pooling constants are set at 1/9. The way of calculation is equivalent to that of Figure 2.11.</p></section>
+<section class="pdf-page" id="pdf-page-40"><h2 class="page-number">Page 40</h2><p>24 | C h a p t e r 2 cost function, objective function, etc. With information about the measured deviation, filters can be updated, in which an algorithm that defines how a filter is updated is referred to as an optimizer. 2.4.1</p>
+<p>Cost and loss functions</p>
+<p>The usage of the terminologies ‘cost function’ and ‘loss function’ in literature is intertwined. In this thesis, the terminologies are re-defined to prevent confusion as follows: the loss ℒ is the function ℱ that measures the distances between the prediction 𝑦 [𝑖] and the corresponding ground truth 𝑦̂ [𝑖] for the i-th instance of train data; and the cost function 𝒥 aggregates all the losses calculated from the entire or several data points of a train data. Note that the bracketed superscripts utilized in this subchapter should not be confused with the parenthesized superscripts in Chapter 2.1. Let 𝑦 [𝑖] = ℋ(𝑥 [𝑖] ; 𝛷, 𝐵), where ℋ is a model that performs operations (e.g., convolution, etc.; refer to Chapter 2.3) with the input x, set of weights Φ, and set of biases B of the model. The cost function 𝒥 can be expressed by Eq. (2.3), which averages all the losses calculated from the m number of training instances. Note that a cost function may or may not average the corresponding loss, and it depends on configurations and preferences. ℒ [𝑖] = ℱ(𝑦 [i] , 𝑦̂ [𝑖] )</p>
+<p>(2.2)</p>
+<p>𝑚</p>
+<p>1 𝒥 = ∑ ℒ [𝑖] 𝑚</p>
+<p>(2.3)</p>
+<p>𝑖=1</p>
+<p>All the weights and biases of Φ and B are involved in the calculation of ℒ ; therefore, 𝒥 is differentiable with respect to each weight and bias. The GD facilitates this property to optimize a model, which is further discussed in Chapter 2.4.2. In this thesis, different loss functions are employed in the CNN models presented in Chapters 3 and 4, depending on the problems to be solved, such as classification and segmentation.</p></section>
+<section class="pdf-page" id="pdf-page-41"><h2 class="page-number">Page 41</h2><p>25 | C h a p t e r 2 2.4.2</p>
+<p>Backpropagation with gradient descent</p>
+<p>The GD is one of the most popular algorithms for optimizing a DL model; it can be formally written by Eq. (2.4): the weight 𝜙 is updated (⃪) by calculating the gradient (∇) of the cost function 𝒥 with respect to 𝜙, where the hyperparameter 𝛼 is known as the learning rate, which defines how much ∇𝜙 𝒥 contributes to updating w, and ∇𝜙 𝒥 can be derived as (2.5). The GD is often referred to as the batch GD if m is equal to the total number of training instances. If m is smaller than the total number of training instances, the optimization is referred to as the mini-batch GD. In practice, the mini-batch GD is the most common choice due to the limitation of computational resources. 𝜙 ⃪ 𝜙 – 𝛼∇𝜙 𝒥</p>
+<p>(2.4)</p>
+<p>𝑚</p>
+<p>1 ∇𝜙 𝒥 = ∑ ∇𝜙 ℒ [𝑖] 𝑚 𝑖=1</p>
+<p>Figure 2.12: Example model with FC layers</p>
+<p>(2.5)</p></section>
+<section class="pdf-page" id="pdf-page-42"><h2 class="page-number">Page 42</h2><p>26 | C h a p t e r 2 A DL model is constructed by stacking layers. For example, assume that a model is configured with several FC layers (refer to Chapter 2.3.1), as shown in Figure 2.12. The gradients of the loss ℒ with respect to each weight in the model can be calculated as follows:</p>
+<p>(𝑙) (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓1(𝑙) 𝜕ℒ 𝜕𝑦1 𝜕𝜓1 𝜕ℒ 𝜕𝑦2 𝜕𝜓1 𝜕ℒ = × × + × × + ⋯+ × × , (𝑙) 𝜕𝑦1 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦2 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝜙</p>
+<p>𝜕ℒ</p>
+<p>1,1</p>
+<p>1</p>
+<p>1,1</p>
+<p>1</p>
+<p>1,1</p>
+<p>1</p>
+<p>1,1</p>
+<p>(𝑙) (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓𝑖(𝑙) 𝜕𝜓𝑖 𝜕𝜓𝑖 𝜕ℒ 𝜕𝑦1 𝜕ℒ 𝜕𝑦2 𝜕ℒ = × × + × × +⋯+ × × , (𝑙) 𝜕𝑦1 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦2 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓 (𝑙) 𝜕𝜙 (𝑙) 𝜕𝜙</p>
+<p>𝜕ℒ</p>
+<p>𝑖,1</p>
+<p>𝑖</p>
+<p>𝑖,1</p>
+<p>𝑖</p>
+<p>𝑖,1</p>
+<p>𝑖</p>
+<p>𝑖,1</p>
+<p>(𝑙) (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓𝑖(𝑙) 𝜕𝜓𝑖 𝜕ℒ 𝜕𝑦1 𝜕ℒ 𝜕𝑦2 𝜕𝜓𝑛 𝜕ℒ = × × + × × + ⋯+ × × . (𝑙) 𝜕𝑦1 𝜕𝜓(𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦2 𝜕𝜓(𝑙) 𝜕𝜙 (𝑙) 𝜕𝑦𝑛𝑙+1 𝜕𝜓(𝑙) 𝜕𝜙 (𝑙) 𝜕𝜙</p>
+<p>𝜕ℒ</p>
+<p>𝑖,𝑗</p>
+<p>𝑖</p>
+<p>𝑖,𝑗</p>
+<p>𝑖</p>
+<p>𝑖,𝑗</p>
+<p>𝑖</p>
+<p>𝑖,𝑗</p>
+<p>The chain rule can also be applied to convolution layers. For example, assume that a model is configured with several convolution layers (refer to Chapter 2.3.2), as shown in Figure 2.13. The input of the l-th layer Ψ(𝑙−1) is convolved with Φ(𝑙) . The corresponding output Ψ (𝑙) is the input of the (l+1)-th layer, which is convolved with Φ(𝑙+1). The output of (l+1)-th layer y is calculated and followed by a loss function.</p>
+<p>Figure 2.13: Example model with convolution layers</p></section>
+<section class="pdf-page" id="pdf-page-43"><h2 class="page-number">Page 43</h2><p>27 | C h a p t e r 2 (𝑙)</p>
+<p>In the given example, the gradient with respect to 𝜙1,1,1,1, as an example, can be derived as 𝜕ℒ (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>=</p>
+<p>𝜕ℒ 𝜕𝑦1,1,1 𝜕ℒ 𝜕𝑦1,2,1 𝜕ℒ 𝜕𝑦2,1,1 𝜕ℒ 𝜕𝑦2,2,1 × + × + × + × , 𝜕𝑦1,1,1 𝜕𝜙 (𝑙) 𝜕𝑦1,2,1 𝜕𝜙 (𝑙) 𝜕𝑦2,1,1 𝜕𝜙 (𝑙) 𝜕𝑦2,2,1 𝜕𝜙 (𝑙) 1,1,1,1</p>
+<p>1,1,1,1</p>
+<p>1,1,1,1</p>
+<p>1,1,1,1</p>
+<p>where 𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>=</p>
+<p>𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓1,1,1 +</p>
+<p>+</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓1,1,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓2,2,1 𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓3,3,1</p>
+<p>+</p>
+<p>(𝑙)</p>
+<p>𝜕𝜓2,1,1</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>(𝑙)</p>
+<p>𝜕𝑦1,1,1</p>
+<p>𝜕𝜓2,2,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>+</p>
+<p>×</p>
+<p>𝜕𝜓2,1,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>𝜕𝑦1,1,1</p>
+<p>(𝑙)</p>
+<p>𝜕𝜓3,1,1</p>
+<p>(𝑙)</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>3</p>
+<p>3</p>
+<p>𝜕𝜓3,2,1</p>
+<p>+</p>
+<p>𝜕𝑦1,1,1</p>
+<p>𝜕𝜓3,2,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>+</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓3,1,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓1,3,1</p>
+<p>+</p>
+<p>𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓1,2,1</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓1,3,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>+</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓1,2,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>𝜕𝑦1,1,1 (𝑙)</p>
+<p>𝜕𝜓2,3,1</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓2,3,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓3,3,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>,</p>
+<p>similarly 𝜕𝑦1,2,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1 𝜕𝑦2,1,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1 𝜕𝑦2,2,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>= ∑∑</p>
+<p>𝜕𝑦1,2,1 (𝑙)</p>
+<p>𝜕𝜓𝑖,𝑗,1 𝑖=1 𝑗=1 3</p>
+<p>3</p>
+<p>= ∑∑</p>
+<p>𝜕𝑦2,1,1 (𝑙)</p>
+<p>𝜕𝜓𝑖,𝑗,1 𝑖=1 𝑗=1 3</p>
+<p>3</p>
+<p>= ∑∑</p>
+<p>𝜕𝑦2,2,1 (𝑙)</p>
+<p>𝜕𝜓𝑖,𝑗,1 𝑖=1 𝑗=1</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓𝑖,𝑗,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>,</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓𝑖,𝑗,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>,</p>
+<p>(𝑙)</p>
+<p>×</p>
+<p>𝜕𝜓𝑖,𝑗,1 (𝑙)</p>
+<p>𝜕𝜙1,1,1,1</p>
+<p>,</p>
+<p>Note that each neuron or feature denoted by 𝜓 may be accompanied by a nonlinear function. For the backpropagation of a pooling layer, the derivative of a pooling operation is the same as that of convolution because pooling performs an operation that is identical to convolution (refer to Chapter 2.3.3).</p></section>
+<section class="pdf-page" id="pdf-page-44"><h2 class="page-number">Page 44</h2><p>28 | C h a p t e r 2 Optimization algorithms have been evolved from the GD, and some of these algorithms are discussed in Chapters 3 and 4.</p>
+<p>2.5</p>
+<p>Overfitting and regularization</p>
+<p>Assume that a model is optimized with a training set over a number of iterations. The model at each iteration may have different abilities to successfully accomplish a given task but generally improves over several iterations. Accordingly, the evaluation index (e.g., accuracy) for the training set is expected to increase. However, a trained model often shows much worse performance for unseen data (e.g., validation and test data), as shown in Figure 2.14, and the model is considered overfitted to the training set because it tends to memorize the features of the training set rather than generalize them. There are several countermeasures that can mitigate the challenge. One of the prominent countermeasures is data augmentation, which is discussed in a previous subchapter (refer to Chapter 2.2.1) as a part of input processing. Others are detailed in the succeeding subchapters.</p>
+<p>Figure 2.14: Evaluation index on training and unseen data</p></section>
+<section class="pdf-page" id="pdf-page-45"><h2 class="page-number">Page 45</h2><p>29 | C h a p t e r 2 2.5.1</p>
+<p>Weight decay</p>
+<p>Weight decay is a technique that adjusts weights to be regularized by penalizing weights (Krogh and Hertz, 1992). This technique can be established by adding a vector norm to a cost function. In training a DL model, adding the L2-norm of weights has become a common practice, and the cost function with the L2norm can be formally written by Eq. (2.6): the first term on the right side is equal to Eq. (2.3); the second term of the right side is the L2-norm of the model weights; 𝜌 is the weight decay factor that defines how much weights are penalized. The derivative of the cost function (Eq. (2.6)) can be written in Eq. (2.7), and the weight w is penalized by Eq. (2.4). 𝑚</p>
+<p>𝑚</p>
+<p>1 𝜌 𝒥 = ∑ ℒ [𝑖] + ∑‖Φ‖2 𝑚 2𝑚 𝑖=1</p>
+<p>(2.6)</p>
+<p>𝑖=1</p>
+<p>𝑚</p>
+<p>1 ∇𝜙 𝒥 = ∑ ∇𝜙 ℒ [𝑖] + 𝜌𝜙 𝑚</p>
+<p>(2.7)</p>
+<p>𝑖=1</p>
+<p>2.5.2</p>
+<p>Dropout</p>
+<p>Dropout (Srivastava et al., 2014) is a regularization technique that disconnects the connections between input neurons and output neurons with a probability when training a model. An example of an FC unit with dropout connections is depicted in Figure 2.15(a). In the figure, the random variable 𝛿 ∈ {0, 1} is a dropout gate, which follows the Bernoulli distribution with the probability p (known as the dropout rate). The mathematical form of the feature extraction (i.e., weighted sum; refer to Chapter 2.3.1) between Ψ</p>
+<p>(𝑙−1)</p>
+<p>(𝑙−1)</p>
+<p>∈ {𝜓1</p>
+<p>(𝑙−1)</p>
+<p>, 𝜓1</p>
+<p>(𝑙−1)</p>
+<p>(𝑙)</p>
+<p>, . . . , 𝜓𝑛𝑙−1 } and the i-th extracted feature at the next l-th layer 𝜓𝑖</p>
+<p>can be</p>
+<p>expressed by Eq. (2.8) (Srivastava et al., 2014). If p is set to 0.5, half of the connections are disconnected by the equation. The dropout rate is considered a hyperparameter that is to be empirically set.</p></section>
+<section class="pdf-page" id="pdf-page-46"><h2 class="page-number">Page 46</h2><p>30 | C h a p t e r 2</p>
+<p>(a) Dropout in training</p>
+<p>(b) Dropout in testing Figure 2.15: Dropout 𝑛𝑙−1</p>
+<p>(𝑙) (𝑙−1) (𝑙) (𝑙) 𝜓𝑖 = ∑ 𝛿𝑗 ∙ 𝜙𝑛𝑙 ,𝑗 ∙ 𝜓𝑗 𝑗=1</p>
+<p>(2.8)</p>
+<p>In backpropagation, the gradients at the example layer with respect to each weight can be calculated as follows: 𝜕ℒ (𝑙)</p>
+<p>𝜕𝜙𝑛𝑙,𝑗</p>
+<p>(𝑙)</p>
+<p>= ⋯ × 𝛿𝑗 ∙</p>
+<p>𝜕𝜓𝑛𝑙</p>
+<p>(𝑙)</p>
+<p>𝜕𝜙𝑛𝑙,𝑗</p>
+<p>× ⋯.</p>
+<p>Once a model is optimized, the input of the layer with the dropout gate is s by q(1 − 𝑝), as shown in Figure 2.15(a), and Eq. (2.8) in testing the model can be re-written as Eq. (2.9) (Srivastava et al., 2014). 𝑛𝑙−1 (𝑙) (𝑙−1) (𝑙) (𝑙) 𝜓𝑛𝑙 = ∑ 𝑞𝑗 ∙ 𝜙𝑛𝑙,𝑗 ∙ 𝜓𝑗 𝑗=1</p>
+<p>(2.9)</p></section>
+<section class="pdf-page" id="pdf-page-47"><h2 class="page-number">Page 47</h2><p>31 | C h a p t e r 2 Dropout is intended to prevent co-adaptation4, and an FC layer (refer to Chapter 2.3.1) tends to address the issue (Gumbira and Kożuszek, 2018) more than a convolution layer. A convolution filter consists of a set of shared weights (refer to Chapter 2.3.2), while an FC layer has dense connections between input neurons and output neurons.</p>
+<p>2.6</p>
+<p>Activation functions</p>
+<p>The series of convolution and pooling conduct linear operations, and constructing a model by combinations of linear operations is simply repeating linear operations. However, the problems to be solved by DL are highly nonlinear. Therefore, certain operations that introduce nonlinearity should be included in a DL model; these operations are referred to as activation functions. The simplest activation function is a binary step function, as shown in Figure 2.16, where any input greater than zero is either activated (=1) or not activated (=0). However, this type of function is mostly unusable for training a DL because no useful gradients exist, and a model cannot be optimized without gradients (refer to Chapter 2.4.2).</p>
+<p>Figure 2.16: Binary step function</p>
+<p>4</p>
+<p>a phenomenon that a model tends to build strong connections between certain neurons, and other neurons do not or less contribute to updating weights.</p></section>
+<section class="pdf-page" id="pdf-page-48"><h2 class="page-number">Page 48</h2><p>32 | C h a p t e r 2 Hyperbolic tangent (tanh(x)) and sigmoid ((1+e-x)-1) functions can be the alternatives of a step function, as depicted in Figure 2.17. The corresponding gradients are plotted in Figure 2.17. As the figure shows, both nonlinear functions are continuously differentiable, and the functions have been extensively applied as activation functions in NN.</p>
+<p>Figure 2.17: Tanh and sigmoid</p>
+<p>Figure 2.18: Gradient of tanh and sigmoid</p>
+<p>However, if the variance of an input data is not within a certain range, then the gradient values are too small, and a model cannot be updated. For example, as shown in Figure 2.18, the gradients of the tanh and sigmoid functions at 𝑥 &gt; +2 and 𝑥 &lt; −2 become smaller and are almost zero at 𝑥 = ±6. This result means that ∇𝜙 𝒥 of Eq. (2.4) is almost zero, and a 𝜙 is updated very slowly if an input has a high variance. In addition, small gradients cause a more serious issue in a model with a deep architecture because small gradients are multiplied by the chain rule. Consequently, the gradient at a deep layer will be almost zero, and the entire model will not be optimized. Nair and Hinton (2010) highlighted the vanishing gradient issue and proposed a rectified linear unit (ReLU), which is shown in Figure 2.19; the corresponding gradients are plotted in Figure 2.20. As shown in the figures, the ReLU has nonlinearity and is continuously differentiable over all x, and the gradients are not vanishing unless 𝑥 &lt; 0. Due to these excellent properties, the ReLU has become one of the standard activations in DL. Several variations of ReLU, such as exponential linear units (ELUs) (Clevert et al., 2015), scaled-exponential linear units</p></section>
+<section class="pdf-page" id="pdf-page-49"><h2 class="page-number">Page 49</h2><p>33 | C h a p t e r 2 (SELUs) (Klambauer et al., 2017), etc., have been proposed. There have been no distinctively better activations between the variations in the ReLU. Ramachandran et al. (2017) proposed Swish activation and claimed that it outperformed all the variations in the ReLU. However, Eger et al., (2019) showed contrast results that indicate that the superiority of these activation functions is dependent on trials and tasks. The activations that are prevalent in modern DL models are summarized in Table 2.1.</p>
+<p>Figure 2.19: ReLU</p>
+<p>Figure 2.20: Derivative of ReLU</p></section>
+<section class="pdf-page" id="pdf-page-50"><h2 class="page-number">Page 50</h2><p>34 | C h a p t e r 2 Table 2.1: Activation functions Activation</p>
+<p>Formula</p>
+<p>Derivative</p>
+<p>Remark</p>
+<p>Tanh</p>
+<p>tanh(x)</p>
+<p>1 − tanh2(x)</p>
+<p>̶</p>
+<p>σ(x)∙(1 − σ(x))</p>
+<p>̶</p>
+<p>1 for x&gt;0 { 0 for x≤0 ̶</p>
+<p>Sigmoid ReLU (Nair and Hinton, 2010)</p>
+<p>σ(x)=</p>
+<p>{</p>
+<p>1 1+e-x</p>
+<p>x for x&gt;0 0 for x≤0</p>
+<p>Leaky ReLU (Maas et al., 2013) Parametric ReLU</p>
+<p>α̅ = constant (0&lt;α̅ &lt;1) {x for x≥0 α̅ ∙x for x&lt;0</p>
+<p>{1 for x≥0 α̅ for x&lt;0</p>
+<p>for x≥0 {x x α̅ ∙(e − 1) for x&lt;0</p>
+<p>for x≥0 {x x α̅ ∙(e − 1) for x&lt;0</p>
+<p>𝛼̅ = constant (&gt;0) or trainable parameter</p>
+<p>for x≥0 ̅λ∙ {x α̅ ∙(ex − 1) for x&lt;0</p>
+<p>for x≥0 ̅λ∙ {1 α̅ ∙(ex ) for x&lt;0</p>
+<p>𝜆̅ = constant (=1.0507)</p>
+<p>(He et al., 2015) ELU (Clevert et al., 2015) SELU (Klambauer et al., 2017) Swish (Ramachandran et al., 2017)</p>
+<p>2.7</p>
+<p>x∙σ(β̅∙x)</p>
+<p>𝛼̅ = trainable parameter</p>
+<p>𝛼̅ = constant (=1.6733)</p>
+<p>̅ β̅ ∙σ(x)+σ(β̅∙x)∙ (1 − β̅ ∙σ(x)) β = constant (≥1) or trainable parameter</p>
+<p>Challenges of training a deep learning model</p>
+<p>Training a DL model is challenging. Two main reasons are exploding gradients and vanishing gradients, and a simple example may provide intuitions about both reasons. For example, assume that a DL model is configured, as shown in Figure 2.21, where each layer has a single feature and single weight. In this example, biases are omitted for simplicity. Note that the extracted features denoted by 𝜓 may accompany an activation function (refer to Chapter 2.6).</p></section>
+<section class="pdf-page" id="pdf-page-51"><h2 class="page-number">Page 51</h2><p>35 | C h a p t e r 2</p>
+<p>Figure 2.21: Simple deep learning model Applying the backpropagation to update 𝜙 (1) of the model, as an example, yields the following derivative: 𝜕ℒ 𝜕ℒ 𝜕𝑦 𝜕𝜓 (2) 𝜕𝜓 (1) = × × ⋯× × , 𝜕𝜙 (1) 𝜕𝑦 𝜕𝜓 (𝑙−1) 𝜕𝜓 (1) 𝜕𝜙 (1) where if saturating activation functions (e.g., sigmoid) are employed in the model, each derivative (e.g., 𝜕𝜓(1) 𝜕𝜓(2) 𝜕𝜙(1)</p>
+<p>𝜕ℒ</p>
+<p>, 𝜕𝜓(1) , …) returns small gradient values (e.g., 0.2 or less for sigmoid). Accordingly, 𝜕𝜙(1) may return</p>
+<p>a very small gradient value or is often vanished. Even if a non-saturating activation function, such as the ReLU, is applied, the gradients will remain vanished if the input of a layer has negative values. Regardless of the type of activation function, gradients can be exploded, which can be observed by examining one of the previous derivatives. For example, 𝜕𝜓 (2) 𝜕g(𝜓 (1) × 𝜙 (1) ) 𝜕(𝜓 (1) × 𝜙 (1) ) 𝜕g(𝜓(1) × 𝜙 (1) ) = × = × 𝜙 (1) , (1) (1) (1) (1) (1) (1) 𝜕𝜓 𝜕(𝜓 × 𝜙 ) 𝜕𝜓 𝜕(𝜓 × 𝜙 ) 𝜕g(𝜓(1) ×𝜙(1) ) 𝜕𝜓(2)</p>
+<p>where g is an activation function. If 𝜙 (1) is relatively and substantially greater than 𝜕(𝜓(1) ×𝜙(1)) , 𝜕𝜓(1) can 𝜕ℒ</p>
+<p>be greater than one, and multiplying gradient values greater than one may return a large value of 𝜕𝜙(1) and can be exploded.</p></section>
+<section class="pdf-page" id="pdf-page-52"><h2 class="page-number">Page 52</h2><p>36 | C h a p t e r 2 2.8</p>
+<p>Batch normalization</p>
+<p>To overcome the challenges of training a DL model, Ioffe and Szegedy (2015) proposed batch normalization (BatchNorm), which is extensively applied in modern DL models. In Chapter 2.2.2, the standardization of raw data is explained, and BatchNorm is designed to conduct similar operations for the input data of any layer. The mean (𝜇) and variance (Var) of a set of features (Ψ) over a mini-batch at a layer are calculated by Eq. (2.10) and Eq. (2.11), respectively (Ioffe and Szegedy, 2015). In the context of NN (refer to Chapter 2.3), m is the mini-batch size (i.e., the number of instances in the mini-batch). In the context of CNN (refer to Chapter 2.3), m is equal to the mini-batch size × height of Ψ × width of Ψ. Using ̂ can be calculated by the mean and variance, Ψ is standardized (i.e., zero mean and unit variance), and Ψ Eq. (2.12) (Ioffe and Szegedy, 2015), in which 𝜀 is a small constant (e.g., 10-8, etc.) to prevent zero division. ̂ is further scaled and shifted by the trainable parameters 𝛾 and 𝛽, respectively, in Eq. (2.13) Finally, Ψ (Ioffe and Szegedy, 2015). Note that the role of 𝛽 functions as the bias of a model, and the biases of a FC layer and a convolution layer can be accordingly omitted if a BatchNorm is followed. 𝑚</p>
+<p>1 𝜇 = ∑ Ψ[𝑖] , 𝑚</p>
+<p>(2.10)</p>
+<p>𝑖=1</p>
+<p>𝑚</p>
+<p>1 2 𝑉𝑎𝑟 = ∑(Ψ[𝑖] − 𝜇) , 𝑚</p>
+<p>(2.11)</p>
+<p>𝑖=1</p>
+<p>̂ [𝑖] = Ψ</p>
+<p>Ψ [𝑖] − 𝜇</p>
+<p>,</p>
+<p>(2.12)</p>
+<p>̃ [𝑖] = 𝛾Ψ ̂ [𝑖] + 𝛽. Ψ</p>
+<p>(2.13)</p>
+<p>√𝑉𝑎𝑟 + 𝜀</p></section>
+<section class="pdf-page" id="pdf-page-53"><h2 class="page-number">Page 53</h2><p>37 | C h a p t e r 2 In backpropagation, by the chain rule, the gradient with respect to 𝛾 and 𝛽 can be calculated by Eq. (2.14) and Eq. (2.15) (Ioffe and Szegedy, 2015), respectively. 𝑚</p>
+<p>̂ [𝑖] + 𝛽) ̃ [𝑖] 𝜕(𝛾Ψ 𝜕𝒥 𝜕𝒥 𝜕Ψ 𝜕𝒥 𝜕𝒥 = × = × =∑ , [𝑖] [𝑖] ̃ ̃ ̃ [𝑖] 𝜕𝛽 𝜕Ψ 𝜕𝛽 𝜕𝛽 𝜕Ψ 𝜕Ψ</p>
+<p>(2.14)</p>
+<p>𝑖=1</p>
+<p>𝑚</p>
+<p>̃ [𝑖] 𝜕𝒥 𝜕𝒥 𝜕𝛾Ψ 𝜕𝒥 ̂ [𝑖] . = × =∑ ×Ψ [𝑖] ̃ ̃ [𝑖] 𝜕𝛾 𝜕𝛾Ψ 𝜕𝛾 𝜕Ψ</p>
+<p>(2.15)</p>
+<p>𝑖=1</p>
+<p>The gradients of 𝒥 with respect to Ψ [𝑖] should also be derived to calculate the gradients with respect to a weight of the preceding layer, and the corresponding gradients can be derived as Eq. (2.16) (Ioffe and Szegedy, 2015). ̂ [𝑖] 𝜕𝒥 𝜕𝒥 𝜕𝒥 𝜕Ψ 𝜕𝜇 𝜕𝒥 𝜕𝑉𝑎𝑟 = × + × + × [𝑖] [𝑖] [𝑖] [𝑖] ̂ 𝜕𝜇 𝜕Ψ 𝜕𝑉𝑎𝑟 𝜕Ψ[𝑖] 𝜕Ψ 𝜕Ψ 𝜕Ψ (2.16) =</p>
+<p>𝜕𝒥 1 𝜕𝒥 1 𝜕𝒥 2 × + × + × (Ψ[𝑖] − 𝜇) [𝑖] ̂ 𝜕Ψ √𝑉𝑎𝑟 + 𝛽 𝜕𝜇 𝑚 𝜕𝑉𝑎𝑟 𝑚</p>
+<p>where ̂ [𝑖] + 𝛽) ̂ [𝑖] ̃ [𝑖] 𝜕(𝛾Ψ 𝜕𝒥 𝜕𝒥 𝜕𝛾Ψ 𝜕𝒥 𝜕Ψ 𝜕𝒥 𝜕𝒥 = × = × × 𝛾 = × × 𝛾 = × 𝛾, ̂ [𝑖] 𝜕𝛾Ψ ̂ [𝑖] 𝜕Ψ ̂ [𝑖] ̃ [𝑖] 𝜕𝛾Ψ ̂ [𝑖] ̃ [𝑖] ̂ [𝑖] ̃ [𝑖] 𝜕Ψ 𝜕Ψ 𝜕Ψ 𝜕𝛾Ψ 𝜕Ψ</p></section>
+<section class="pdf-page" id="pdf-page-54"><h2 class="page-number">Page 54</h2><p>38 | C h a p t e r 2 Ψ [𝑖] − 𝜇 1 𝑚 ( ) 𝜕 − ̂ [𝑖] 2 𝜕𝒥 𝜕𝒥 𝜕Ψ 𝜕𝒥 𝜕𝒥 𝜕(𝑉𝑎𝑟 + 𝜀) 𝑉𝑎𝑟 + 𝜀 = × = × √ =∑ × (Ψ[𝑖] − 𝜇) × [𝑖] [𝑖] [𝑖] ̂ ̂ ̂ 𝜕𝑉𝑎𝑟 𝜕Ψ 𝜕𝑉𝑎𝑟 𝜕Ψ 𝜕𝑉𝑎𝑟 𝜕𝑉𝑎𝑟 𝜕Ψ 𝑖=1</p>
+<p>𝑚</p>
+<p>=∑ 𝑖=1</p>
+<p>3 𝜕𝒥 1 − [𝑖] 2, (𝑉𝑎𝑟 × (Ψ − 𝜇) × − × + 𝜀) ̂ [𝑖] 2 𝜕Ψ</p>
+<p>2 Ψ [𝑖] − 𝜇 1 𝑚 [𝑖] ( ) 𝜕 [𝑖] ∑ 𝜕 ( (Ψ − 𝜇) ) 𝜕𝒥 𝜕𝒥 𝜕Ψ 𝜕𝒥 𝜕𝑉𝑎𝑟 𝜕𝒥 𝜕𝒥 𝑖=1 𝑉𝑎𝑟 + 𝜀 = × + × = × √ + × 𝑚 [𝑖] [𝑖] ̂ ̂ 𝜕𝜇 𝜕Ψ 𝜕𝜇 𝜕𝑉𝑎𝑟 𝜕𝜇 𝜕𝜇 𝜕𝑉𝑎𝑟 𝜕𝜇 𝜕Ψ 𝑚</p>
+<p>𝑚</p>
+<p>𝑖=1</p>
+<p>𝑖=1</p>
+<p>𝜕𝒥 −1 𝜕𝒥 2 =∑ × + × − ∑(Ψ[𝑖] − 𝜇). [𝑖] ̂ 𝑚 𝜕Ψ √𝑉𝑎𝑟 + 𝛽 𝜕𝑉𝑎𝑟</p>
+<p>In the testing phase, images are individually (i.e., mini-batch size of one) tested by the trained model, ̂ (Eq. (2.11) cannot be correctly calculated because the mean and variance are only calculated for a and Ψ single instance. To overcome it, moving mean (𝜇 ′ ) and moving variance (𝑉𝑎𝑟 ′) are also calculated in training by Eqs. (2.17) and (2.18), respectively. 𝜆 is known as momentum constant, and 0.99 is a common choice for Eqs. (2.17) and (2.18). 𝜇 ′ and 𝑉𝑎𝑟 ′ are used instead of 𝜇 and 𝑉𝑎𝑟 in the testing phase.</p>
+<p>𝜇 ′ = 𝜆 × 𝜇 ′ + (1 − 𝜆) × 𝜇,</p>
+<p>(2.17)</p>
+<p>𝑉𝑎𝑟 ′ = 𝜆 × 𝑉𝑎𝑟 ′ + (1 − 𝜆) × 𝑉𝑎𝑟.</p>
+<p>(2.18)</p>
+<p>The true attributes of the BatchNorm are not clearly investigated. The creators of BatchNorm (Ioffe and Szegedy, 2015) claimed that the BatchNorm is effective because it mitigates internal-covariate shift5, but Santurkar et al. (2018) claimed that BatchNorm is irrelevant to internal-covariate shift.</p>
+<p>5</p>
+<p>When learnable parameters of a layer change during training, the input of the subsequent layers also change.</p></section>
+<section class="pdf-page" id="pdf-page-55"><h2 class="page-number">Page 55</h2><p>39 | C h a p t e r 2 2.9</p>
+<p>Constructing a deep learning model</p>
+<p>A deep learning model can be constructed by stacking the explained operations in Chapters 2.2 - 2.8. For example, LeNet-5 (LeCun et al., 1998) is one of the earliest CNN models that consist of two standard convolution layers (refer to Chapter 2.3.2), two pooling layers (refer to Chapter 2.3.3), and a fully connected layer (refer to Chapter 2.3.1), as shown in Figure 2.22. Each of the standard convolutions accompanies 5×5 filters followed by the hyperbolic tangent as an activation (refer to Chapter 2.6) to introduce nonlinearity into the CNN model. Each of the pooling layers accompanies the stride (refer to Chapter 2.3.2) of two for reducing the spatial dimension of feature maps. The model is purposed to classify images of hand-written digits from zero to nine; therefore, the output of the model has ten elements.</p>
+<p>Figure 2.22: LeNet-5 architecture There are no strict rules in building a DL model, and researchers should experimentally configure DL models. Chapter 3 introduces a unique DL model for classifying small regions of images into two classes. The model involved a fully connected layer (refer to Chapter 2.3.1), standard convolution (refer to Chapter 2.3.2), max pooling (refer to Chapter 2.3.3), gradient descent (refer to Chapter 2.4.2), weight decay (refer to Chapter 2.5.1), dropout (refer to Chapter 2.5.2), ReLU (refer to Chapter 2.6), and the Batch</p></section>
+<section class="pdf-page" id="pdf-page-56"><h2 class="page-number">Page 56</h2><p>40 | C h a p t e r 2 normalization (refer to Chapter 2.8). In addition to the enumerated techniques, the momentum optimization and the cross-entropy loss were used to develop the DL model, and the details are given in Chapter 3. In Chapter 4, another unique DL model for segmenting damage features from images is introduced. The model involves standard convolution (refer to Chapter 2.3.2), depth-wise convolution (refer to Chapter 2.3.2), gradient descent (refer to Chapter 2.4.2), weight decay (refer to Chapter 2.5.1), dropout (refer to Chapter 2.5.2), ReLU (refer to Chapter 2.6), and the Batch normalization (refer to Chapter 2.8). Additionally, the adaptive momentum algorithm, separable convolution, and mean intersection-over-union loss were used, and those are detailed in Chapter 4.</p></section>
+<section class="pdf-page" id="pdf-page-57"><h2 class="page-number">Page 57</h2><p>41 | C h a p t e r 2 References</p>
+<p>Ian Goodfellow, Yoshua Bengio, &amp; Aaron Courville (2016). Deep learning. MIT Press. Clevert, D.-A., Unterthiner, T. &amp; Hochreiter, S. (2015). Fast and accurate deep network learning by exponential linear units (elus), arXiv preprint arXiv:1511.07289. Eger, S., Youssef, P. &amp; Gurevych, I. (2019). Is it time to swish? comparing deep learning activation functions across NLP tasks, arXiv preprint arXiv:1901.02671. Gumbira, A., &amp; Kozuszek, R. (2018). Does fragile co-adaptation occur in small datasets? 2018 Baltic URSI Symposium (URSI). DOI: 10.23919/ursi.2018.8406745 He, K., Zhang, X., Ren, S., &amp; Sun, J. (2015). Delving deep into rectifiers: Surpassing human-level performance on ImageNet classification. 2015 IEEE International Conference on Computer Vision (ICCV). DOI: 10.1109/iccv.2015.123 Ioffe, S. &amp; Szegedy, C. (2015). Batch normalization: Accelerating deep network training by reducing internal covariate shift, arXiv preprint arXiv:1502.03167. Klambauer, G., Unterthiner, T., Mayr, A. &amp; Hochreiter, S. (2017). Self-normalizing neural networks. In Advances in Neural Information Processing Systems, 971-980. Krogh, A. &amp; Hertz, J. A. (1992). A simple weight decay can improve generalization. In Advances in Neural Information Processing Systems, 950-957. LeCun, Y. A., Bottou, L., Orr, G. B., &amp; Müller, K.-R. (2012). Efficient BackProp. Lecture Notes in Computer Science, 9–48. DOI: 10.1007/978-3-642-35289-8_3 Lecun, Y., Bottou, L., Bengio, Y., &amp; Haffner, P. (1998). Gradient-based learning applied to document recognition. Proceedings of the IEEE, 86(11), 2278–2324. DOI: 10.1109/5.726791 Maas, A. L., Hannun, A. Y., and Ng, A. Y. (2013). Rectifier nonlinearities improve neural network acoustic models. International Conference on Machine Learning (ICML) Workshop on Deep Learning for Audio, Speech, and Language Processing. Nair, V. &amp; Hinton, G. E. (2010). Rectified linear units improve restricted boltzmann machines. In Proceedings of the 27th international conference on machine learning (ICML-10), 807-814. Pal, K. K., &amp; Sudeep, K. S. (2016). Preprocessing for image classification by convolutional neural networks. 2016 IEEE International Conference on Recent Trends in Electronics, Information &amp; Communication Technology (RTEICT), 1778-1781. DOI: 10.1109/rteict.2016.7808140 Ramachandran, P., Zoph, B. &amp; Le, Q. V. (2017). Searching for activation functions. arXiv preprint arXiv:1710.05941. Santurkar, S., Tsipras, D., Ilyas, A. &amp; Madry, A. (2018). How does batch normalization help optimization? In Advances in Neural Information Processing Systems, 2483-2493. Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I. &amp; Salakhutdinov, R. (2014), Dropout: a simple way to prevent neural networks from overfitting, The journal of machine learning research, 15(1), 1929-1958.</p></section>
+<section class="pdf-page" id="pdf-page-58"><h2 class="page-number">Page 58</h2><p>42 | C h a p t e r 3</p>
+<p>Chapter 3</p>
+<p>Deep Learning Application: Crack Detection</p>
+<p>Summary This chapter introduces a method for detecting concrete cracks from digital images using a combination of a deep learning (DL) model and a sliding-window scheme. The deep learning model was developed for classifying small images (256 × 256 pixels) into the crack or non-crack category. While the DL model showed satisfactory results for the testing process, it was incapable of localizing crack features on images. The sliding-window scheme was combined with the DL model to make up for this deficiency. A comparative study between the proposed model and IPAs (e.g., Canny edge detector and Sobel edge detector) was conducted, and the corresponding results showed reliable performances on images with a wide array of changes in luminance conditions that could not be addressed by the IPAs.</p>
+<p>Chapter 3 has been reproduced with modifications to figures and formatting from Cha et al. (2017). This chapter has been reprinted with permission from the copyright holder, John Wiley &amp; Sons, Inc.</p></section>
+<section class="pdf-page" id="pdf-page-59"><h2 class="page-number">Page 59</h2><p>43 | C h a p t e r 3 3.1</p>
+<p>Introduction</p>
+<p>Vision-based damage detection using IPAs are unlikely applicable in uncontrolled environments because IPAs are incapable of selectively extracting features of objects to be detected (refer to Chapter 1.1). An adaptive feature extractor is preferable in such cases. A CNN can automatically extract features (refer to Chapter 2). Using this property of CNNs, a method for detecting concrete cracks was proposed by Cha et al. (2017). The overall flow of the method is shown in Figure 3.1. The scope of this work includes configuring a DL model (refer to Chapter 3.2), building a dataset (refer to Chapter 3.3), training the DL model (refer to Chapter 3.6), and localizing cracks on large images (refer to Chapter 3.7) with the slidingwindow method.</p>
+<p>Figure 3.1: Schematic diagram of the proposed method [reproduced from Cha et al. (2017)] 3.2</p>
+<p>Architecture configuration</p>
+<p>A CNN model for classifying images into the crack and non-crack categories was configured, and its architecture is illustrated in Figure 3.2. The proposed model was designed to accept digital images of 256 × 256 pixels. Convolution (refer to Chapter 2.3.2), BatchNorm (refer to Chapter 2.8), and max pooling (refer to Chapter 2.3.3) operations were sequentially arranged, and a stride of 2 was applied to each</p></section>
+<section class="pdf-page" id="pdf-page-60"><h2 class="page-number">Page 60</h2><p>44 | C h a p t e r 3 convolution and max pooling. Consequently, the feature map size was reduced to 1 × 1, and the layer was designed to have 96 features. Thereafter, the features were activated by the ReLU (refer to Chapter 2.6) followed by an FC layer. The connections in the FC layer were randomly disconnected with the dropout (refer to Chapter 2.5.2) rate of 0.5 during training. The last layer of the CNN model had two feature elements, because the proposed model was designed for binary classification. At the beginning of the training, all the weight values were initialized to obtain a normal distribution with zero mean and a standard deviation of 0.01 (refer to Chapter 2.4). Cross-entropy with the Softmax function was used as the loss function (refer to Chapter 2.4.1), as detailed in Chapter 3.4. Convolution and pooling layers are often accompanied with paddings (refer to Chapter 2.3.2) in modern CNN architectures, but such paddings were not applied in the proposed model, because this implementation does not require the maintaining of spatial dimensions. The detailed properties of each layer are summarized in Table 3.1.</p>
+<p>Figure 3.2: Overall architecture [reproduced from Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-61"><h2 class="page-number">Page 61</h2><p>45 | C h a p t e r 3</p>
+<p>Table 3.1: Model architecture summary [Cha et al. (2017)]</p>
+<p>3.3</p>
+<p>Operation</p>
+<p>Kernel size</p>
+<p>Filter number</p>
+<p>Stride</p>
+<p>Feature map size</p>
+<p>Input</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>256×256×3</p>
+<p>Convolution</p>
+<p>20×20×3</p>
+<p>24</p>
+<p>2</p>
+<p>119×119×24</p>
+<p>BatchNorm</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>119×119×24</p>
+<p>Max pooling</p>
+<p>7×7×1</p>
+<p>-</p>
+<p>2</p>
+<p>57×57×24</p>
+<p>Convolution</p>
+<p>15×15×24</p>
+<p>48</p>
+<p>2</p>
+<p>22×22×48</p>
+<p>BatchNorm</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>22×22×48</p>
+<p>Max pooling</p>
+<p>4×4×1</p>
+<p>-</p>
+<p>2</p>
+<p>10×10×48</p>
+<p>Convolution</p>
+<p>10×10×48</p>
+<p>96</p>
+<p>2</p>
+<p>1×1×96</p>
+<p>BatchNorm</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>1×1×96</p>
+<p>ReLU</p>
+<p>-</p>
+<p>-</p>
+<p>-</p>
+<p>1×1×96</p>
+<p>FC</p>
+<p>1×1×96</p>
+<p>2</p>
+<p>-</p>
+<p>1×1×2</p>
+<p>Dataset generation</p>
+<p>A dataset was manually built to train and test the CNN model (refer to Chapter 3.2). Images were taken around the University of Manitoba with a hand-held DSLR camera (Nikon D5200). The distances to concrete surfaces from the camera were approximately 1.0 to 1.5 m, but a few images were intentionally taken within 0.1 m for testing. The luminance intensity of each image was widely varied. Three hundred nine high-resolution images (e.g., 6000×4000, 4865 × 3072, etc.) were used for training and validation, and 54 high-resolution images were used for testing the trained model. The proposed model was configured to have an FC network, and the trained model could only classify images of certain sizes. To overcome this limitation, a simple sliding-window technique was employed to enable the proposed model</p></section>
+<section class="pdf-page" id="pdf-page-62"><h2 class="page-number">Page 62</h2><p>46 | C h a p t e r 3 to test large image sizes. Accordingly, the training images were cropped to the size of the sliding window. The cropping size was fixed at 256 × 256 pixels for the following reasons: a number of cropped images had features that could not be distinguished as either cracks and elongated features (e.g., scratches), and images cropped to a greater extent reduced the informativeness of the testing result. Several representative images are shown in Figure 3.3: these images were taken under different environments, and the cropped images had sharp and blurry features, and regions with high luminance. Each of the cropped images were annotated as either crack or non-crack.</p>
+<p>(a) Sharp</p>
+<p>(b) Blurry</p>
+<p>(c) High luminance</p>
+<p>Figure 3.3: Representative training images [Cha et al., (2017)] However, a number of cropped images had cracks on the edges, as shown in Figure 3.4, and were not included in either the crack or the non-crack category for the following reasons: the spatial dimensions of these images were reduced layer by layer, and such features had a much lower chance of being captured by the filters in a higher layer compared to those in the middle of the image spaces. Moreover, it was not possible to identify whether those features were a part of an actual crack, which would have likely led to poor annotations. Last, it would not be possible to check if the trained model classified such images correctly. The above-mentioned difficulties could also be tackled by the simple sliding-window technique, which is detailed in Chapter 3.7.</p></section>
+<section class="pdf-page" id="pdf-page-63"><h2 class="page-number">Page 63</h2><p>47 | C h a p t e r 3</p>
+<p>Figure 3.4: Disregarded images [Cha et al., (2017)] The images presented in this subchapter are shown in their native RGB color maps. However, when the images were fed into the model, the channel-wise mean values were subtracted (refer to Chapter 2.2.2). This preprocessing was intended to shift the distribution of the input images to zero, which helps in DL model optimization (LeCun et al., 2012).</p>
+<p>3.4</p>
+<p>Cross-entropy loss with the Softmax</p>
+<p>A loss function should be employed to optimize a CNN model. Accordingly, the cross-entropy loss (ℒ𝑐𝑒 ) in Eq. (3.1) was chosen for the proposed model. 𝑦̂ denotes the one-hot-encoded true labels, 𝑝 is the Softmax value calculated using Eq. (3.2), which is considered as a discrete probability distribution because the function exponentially normalizes y for N number of classes (2 in this implementation); therefore 𝑝 ∈ (0, 1). k is introduced to clarify that the denominator is independent from the numerator of the function.</p>
+<p>ℒ𝑐𝑒 = − ∑ 𝑦̂ log(𝑝) 𝑒 𝑦𝑗 𝑝= 𝑁 ∑𝑘=1 𝑒 𝑦𝑘</p>
+<p>∀j ∈{1, ..., N}</p>
+<p>(3.1) (3.2)</p></section>
+<section class="pdf-page" id="pdf-page-64"><h2 class="page-number">Page 64</h2><p>48 | C h a p t e r 3 3.5</p>
+<p>Gradient descent with momentum algorithm</p>
+<p>A batch GD was designed to update weights by calculating the gradient of a cost function with respect to each weight from an entire dataset (refer to Chapter 2.4.2). However, a batch GD is not applicable in DL models in most cases, because a DL model contains too many weights for calculation, and a large amount of memory is required to perform gradient calculations for a whole dataset. Alternatively, a mini-batch GD was chosen to optimize the CNN model. In addition to the optimizer, the momentum algorithm was considered, as it is known to accelerate the convergence of training. Figure 3.5 demonstrates how the weights (𝜙1 and 𝜙2 ) of a model are updated, wherein the center of each plot is the global minimum of 𝒥. As shown in the figure, the GD with momentum updates the weights more efficiently, the intuition being that in this case, the GD considers the previous step of the weight update (v1) to perform the current step of the weight update (v2), and the previous step is scaled by a constant (𝜆), as shown in Figure 3.5 (right).</p>
+<p>Figure 3.5: GD without momentum (left) vs GD with momentum (right) Formally, the gradient updating procedure can be expressed by Eqs. (3.3) and (3.4), where 𝛼 is the learning rate (refer to Chapter 2.4.2), ∇𝜙 𝒥 is the derivative of a cost function with respect to a weight (refer to Chapter 2.4.2), and 𝜆 is the momentum constant defining to what extent the previous update</p></section>
+<section class="pdf-page" id="pdf-page-65"><h2 class="page-number">Page 65</h2><p>49 | C h a p t e r 3 (𝑣𝑡−1 ) is important to update weight 𝜙 at current step t. The hyperparameters used in the training are detailed in Chapter 3.6.1.</p>
+<p>3.6</p>
+<p>𝑣𝑡 = 𝜆𝑣𝑡−1 − ∇𝜙 𝒥</p>
+<p>(3.3)</p>
+<p>𝜙𝑡 ⃪ 𝜙𝑡 + 𝛼𝑣𝑡</p>
+<p>(3.4)</p>
+<p>Model training</p>
+<p>The proposed model was coded using the MatConvNet (Vedaldi and Lenc, 2015) and deployed to a workstation (CPU: Intel Xeon E5-2650 v3 @2.3 GHz, RAM: 64 GB, and GPU: Nvidia Geforce Titan X × 2ea). 3.6.1</p>
+<p>Hyperparameters</p>
+<p>A number of trials was required to find the set of hyperparameters because no guidelines or precedents existed for configuration in such a case. Using a small and decreasing learning rate is a common practice (Wilson and Martinez, 2001), and the learning rate α was scheduled to be logarithmically decreased, as seen in Eq. (3.5). Note that “epoch” is a practical term used in model training. It indicates how many times an entire dataset was fed into a model. For example, suppose 100 instances are set as the mini-batch out of 1000 instances. Then, ten iterations are required to update the weights of the model within an epoch. In Eq. (3.5), lr1 and lr2 define the maximum and minimum learning rates within a total number of epochs, respectively. In this implementation, the total number of epochs was set at 60, while the maximum and minimum learning rates were set at 10−2 and 10−6, as shown in Figure 3.6. The momentum 𝜆 and weight decay 𝜌 (refer to Chapter 2.5.1) were set at 0.9 and 10−4, respectively. The mini-batch size was set at 100 over all the training iterations.</p></section>
+<section class="pdf-page" id="pdf-page-66"><h2 class="page-number">Page 66</h2><p>50 | C h a p t e r 3</p>
+<p>𝛼</p>
+<p>−</p>
+<p>𝑙𝑟1 -𝑙𝑟2</p>
+<p>𝛼epoch = 10 epoch-1 total epoch</p>
+<p>(3.5)</p>
+<p>Figure 3.6: Scheduled learning rate [Cha et al., (2017)] 3.6.2</p>
+<p>Training results</p>
+<p>In accordance with the explained details (refer to Chapters 3.4 to 3.6.1), the proposed model was trained for 60 epochs. The total training duration was approximately 90 minutes on the GPU (refer to Chapter 3.6), but it may require several hours to train the model on a CPU. The ratio of concrete crack to noncrack images was 1:1, while that of the training set to the validation set was 4:1. Accordingly, the training and validation accuracies were calculated from 32K and 8K images, respectively. Figure 3.7 depicts the summary of the training results over the epochs. The best training and validation accuracies were obtained in the 51st and 49th epochs, respectively. The validation accuracy fluctuated but remained close to the training accuracy. As Figure 3.7 shows, the model almost converged after 50 epochs, and the training process was stopped in the 60th epoch.</p></section>
+<section class="pdf-page" id="pdf-page-67"><h2 class="page-number">Page 67</h2><p>51 | C h a p t e r 3</p>
+<p>Figure 3.7: Accuracies over epochs [Cha et al., (2017)] A simple experiment was conducted to estimate the desirable number of training instances. The results may offer heuristic information about building a model with an objective similar to that of this implementation in the future. In this experiment, seven different models were additionally trained on the datasets with 2, 4, 8, 10, 16, 20, and 28K images. Each model was trained under the same context as the model trained on the dataset with 40K images. The architectures of each model were also identical (refer to Chapter 3.2). The results of the experiment are summarized in Figure 3.8. According to the findings of this parametric study, at least 10K images are required to obtain a reasonable CNN classifier with a validation accuracy of 0.97 in the concrete crack detection problem.</p></section>
+<section class="pdf-page" id="pdf-page-68"><h2 class="page-number">Page 68</h2><p>52 | C h a p t e r 3</p>
+<p>Figure 3.8: Results of the experiment to estimate the desirable number of training instances [reproduced from Cha et al. (2017)]</p>
+<p>3.7</p>
+<p>Model testing</p>
+<p>The model trained on the dataset with 40K images was considered as the final model. However, the proposed model could only accept images of size 256 × 256 pixels (refer to Chapter 3.2), and thus, additional preprocessing was required. The preprocessing resembled the sliding-window technique, and the schematic testing plan with the post-processing is illustrated in Figure 3.9.</p>
+<p>Figure 3.9: Testing with post processing [Cha et al., (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-69"><h2 class="page-number">Page 69</h2><p>53 | C h a p t e r 3 3.7.1</p>
+<p>Testing the trained and validated CNN</p>
+<p>The performance of the final model was tested on 54 large images. Note that these images were not used to train the model. The complete evaluation metrics are provided in Table 3.2. The overall accuracy was calculated as 0.97, which was similar to the accuracy obtained from the validation set (refer to Chapter 3.6.2). Several representative results are shown in Figures 3.10 to 3.14. The scales on each axis of the images in the figure may provide a guideline for the dimensions of the tested image. The transparent patches in the right panel of each image show the regions classified as “crack patch” (positive), while the blanks indicate the regions classified as “non-crack” (negative). False predictions (i.e., false positives (FPs) and false negatives (FNs) were also observed and are highlighted as the magenta and blue boxes. Some of the FN and FP patches are highlighted as green and red boxes and enlarged to present the characteristics of the false predictions. The proposed model with the post-processing could test an image of 5888 × 3584 pixels in approximately 4.5 seconds.</p>
+<p>Table 3.2: Summary of test results [Cha et al. (2017)] No.</p>
+<p>Pos.</p>
+<p>Neg.</p>
+<p>TP(ⅲ)</p>
+<p>TN(ⅳ)</p>
+<p>FP(ⅴ) FN(ⅵ) Accuracy Precision Recall</p>
+<p>F1</p>
+<p>Remark</p>
+<p>1</p>
+<p>126</p>
+<p>482</p>
+<p>103</p>
+<p>473</p>
+<p>9</p>
+<p>23</p>
+<p>0.95</p>
+<p>0.92</p>
+<p>0.82</p>
+<p>0.87</p>
+<p>Figure 3.10</p>
+<p>2</p>
+<p>162</p>
+<p>446</p>
+<p>143</p>
+<p>438</p>
+<p>8</p>
+<p>19</p>
+<p>0.96</p>
+<p>0.95</p>
+<p>0.88</p>
+<p>0.91</p>
+<p>Figure 3.11</p>
+<p>3</p>
+<p>55</p>
+<p>553</p>
+<p>54</p>
+<p>538</p>
+<p>15</p>
+<p>1</p>
+<p>0.97</p>
+<p>0.78</p>
+<p>0.98</p>
+<p>0.87</p>
+<p>Figure 3.12</p>
+<p>4</p>
+<p>37</p>
+<p>571</p>
+<p>35</p>
+<p>566</p>
+<p>5</p>
+<p>2</p>
+<p>0.99</p>
+<p>0.88</p>
+<p>0.95</p>
+<p>0.91</p>
+<p>Figure 3.13</p>
+<p>5</p>
+<p>58</p>
+<p>550</p>
+<p>41</p>
+<p>550</p>
+<p>0</p>
+<p>17</p>
+<p>0.97</p>
+<p>1.00</p>
+<p>0.71</p>
+<p>0.83</p>
+<p>Figure 3.14</p>
+<p>6</p>
+<p>45</p>
+<p>269</p>
+<p>42</p>
+<p>266</p>
+<p>3</p>
+<p>3</p>
+<p>0.98</p>
+<p>0.93</p>
+<p>0.93</p>
+<p>0.93</p>
+<p>-</p>
+<p>7</p>
+<p>23</p>
+<p>291</p>
+<p>23</p>
+<p>289</p>
+<p>2</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.92</p>
+<p>1.00</p>
+<p>0.96</p>
+<p>-</p>
+<p>8</p>
+<p>35</p>
+<p>279</p>
+<p>35</p>
+<p>275</p>
+<p>4</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.90</p>
+<p>1.00</p>
+<p>0.95</p>
+<p>-</p>
+<p>9</p>
+<p>31</p>
+<p>283</p>
+<p>25</p>
+<p>283</p>
+<p>0</p>
+<p>6</p>
+<p>0.98</p>
+<p>1.00</p>
+<p>0.81</p>
+<p>0.89</p>
+<p>-</p></section>
+<section class="pdf-page" id="pdf-page-70"><h2 class="page-number">Page 70</h2><p>54 | C h a p t e r 3</p>
+<p>10</p>
+<p>31</p>
+<p>283</p>
+<p>29</p>
+<p>281</p>
+<p>2</p>
+<p>2</p>
+<p>0.99</p>
+<p>0.94</p>
+<p>0.94</p>
+<p>0.94</p>
+<p>-</p>
+<p>11</p>
+<p>32</p>
+<p>282</p>
+<p>32</p>
+<p>279</p>
+<p>3</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.91</p>
+<p>1.00</p>
+<p>0.96</p>
+<p>-</p>
+<p>12</p>
+<p>30</p>
+<p>284</p>
+<p>30</p>
+<p>277</p>
+<p>7</p>
+<p>0</p>
+<p>0.98</p>
+<p>0.81</p>
+<p>1.00</p>
+<p>0.90</p>
+<p>-</p>
+<p>13</p>
+<p>30</p>
+<p>284</p>
+<p>30</p>
+<p>283</p>
+<p>1</p>
+<p>0</p>
+<p>1.00</p>
+<p>0.97</p>
+<p>1.00</p>
+<p>0.98</p>
+<p>-</p>
+<p>14</p>
+<p>31</p>
+<p>283</p>
+<p>31</p>
+<p>281</p>
+<p>2</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.94</p>
+<p>1.00</p>
+<p>0.97</p>
+<p>-</p>
+<p>15</p>
+<p>31</p>
+<p>283</p>
+<p>30</p>
+<p>253</p>
+<p>30</p>
+<p>1</p>
+<p>0.90</p>
+<p>0.50</p>
+<p>0.97</p>
+<p>0.66</p>
+<p>-</p>
+<p>16</p>
+<p>38</p>
+<p>276</p>
+<p>32</p>
+<p>271</p>
+<p>5</p>
+<p>6</p>
+<p>0.96</p>
+<p>0.86</p>
+<p>0.84</p>
+<p>0.85</p>
+<p>-</p>
+<p>17</p>
+<p>28</p>
+<p>286</p>
+<p>28</p>
+<p>285</p>
+<p>1</p>
+<p>0</p>
+<p>1.00</p>
+<p>0.97</p>
+<p>1.00</p>
+<p>0.98</p>
+<p>-</p>
+<p>18</p>
+<p>34</p>
+<p>392</p>
+<p>34</p>
+<p>389</p>
+<p>3</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.92</p>
+<p>1.00</p>
+<p>0.96</p>
+<p>-</p>
+<p>19</p>
+<p>30</p>
+<p>396</p>
+<p>30</p>
+<p>391</p>
+<p>5</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.86</p>
+<p>1.00</p>
+<p>0.92</p>
+<p>-</p>
+<p>20</p>
+<p>23</p>
+<p>403</p>
+<p>23</p>
+<p>400</p>
+<p>3</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.88</p>
+<p>1.00</p>
+<p>0.94</p>
+<p>-</p>
+<p>21</p>
+<p>36</p>
+<p>390</p>
+<p>34</p>
+<p>376</p>
+<p>14</p>
+<p>2</p>
+<p>0.96</p>
+<p>0.71</p>
+<p>0.94</p>
+<p>0.81</p>
+<p>-</p>
+<p>22</p>
+<p>39</p>
+<p>387</p>
+<p>38</p>
+<p>366</p>
+<p>21</p>
+<p>1</p>
+<p>0.95</p>
+<p>0.64</p>
+<p>0.97</p>
+<p>0.78</p>
+<p>-</p>
+<p>23</p>
+<p>27</p>
+<p>399</p>
+<p>26</p>
+<p>396</p>
+<p>3</p>
+<p>1</p>
+<p>0.99</p>
+<p>0.90</p>
+<p>0.96</p>
+<p>0.93</p>
+<p>-</p>
+<p>24</p>
+<p>27</p>
+<p>399</p>
+<p>25</p>
+<p>391</p>
+<p>8</p>
+<p>2</p>
+<p>0.98</p>
+<p>0.76</p>
+<p>0.93</p>
+<p>0.83</p>
+<p>-</p>
+<p>25</p>
+<p>22</p>
+<p>404</p>
+<p>22</p>
+<p>386</p>
+<p>18</p>
+<p>0</p>
+<p>0.96</p>
+<p>0.55</p>
+<p>1.00</p>
+<p>0.71</p>
+<p>-</p>
+<p>26</p>
+<p>34</p>
+<p>392</p>
+<p>34</p>
+<p>373</p>
+<p>19</p>
+<p>0</p>
+<p>0.96</p>
+<p>0.64</p>
+<p>1.00</p>
+<p>0.78</p>
+<p>-</p>
+<p>27</p>
+<p>33</p>
+<p>393</p>
+<p>30</p>
+<p>377</p>
+<p>16</p>
+<p>3</p>
+<p>0.96</p>
+<p>0.65</p>
+<p>0.91</p>
+<p>0.76</p>
+<p>-</p>
+<p>28</p>
+<p>31</p>
+<p>395</p>
+<p>31</p>
+<p>381</p>
+<p>14</p>
+<p>0</p>
+<p>0.97</p>
+<p>0.69</p>
+<p>1.00</p>
+<p>0.82</p>
+<p>-</p>
+<p>29</p>
+<p>33</p>
+<p>393</p>
+<p>33</p>
+<p>379</p>
+<p>14</p>
+<p>0</p>
+<p>0.97</p>
+<p>0.70</p>
+<p>1.00</p>
+<p>0.83</p>
+<p>-</p>
+<p>30</p>
+<p>30</p>
+<p>396</p>
+<p>30</p>
+<p>395</p>
+<p>1</p>
+<p>0</p>
+<p>1.00</p>
+<p>0.97</p>
+<p>1.00</p>
+<p>0.98</p>
+<p>-</p>
+<p>31</p>
+<p>46</p>
+<p>380</p>
+<p>45</p>
+<p>379</p>
+<p>1</p>
+<p>2</p>
+<p>1.00</p>
+<p>0.98</p>
+<p>0.96</p>
+<p>0.97</p>
+<p>-</p>
+<p>32</p>
+<p>31</p>
+<p>316</p>
+<p>31</p>
+<p>295</p>
+<p>21</p>
+<p>0</p>
+<p>0.94</p>
+<p>0.60</p>
+<p>1.00</p>
+<p>0.75</p>
+<p>-</p>
+<p>33</p>
+<p>49</p>
+<p>298</p>
+<p>43</p>
+<p>298</p>
+<p>0</p>
+<p>6</p>
+<p>0.98</p>
+<p>1.00</p>
+<p>0.88</p>
+<p>0.93</p>
+<p>-</p>
+<p>34</p>
+<p>53</p>
+<p>294</p>
+<p>49</p>
+<p>292</p>
+<p>2</p>
+<p>4</p>
+<p>0.98</p>
+<p>0.96</p>
+<p>0.92</p>
+<p>0.94</p>
+<p>-</p></section>
+<section class="pdf-page" id="pdf-page-71"><h2 class="page-number">Page 71</h2><p>55 | C h a p t e r 3</p>
+<p>35</p>
+<p>30</p>
+<p>317</p>
+<p>27</p>
+<p>314</p>
+<p>3</p>
+<p>3</p>
+<p>0.98</p>
+<p>0.90</p>
+<p>0.90</p>
+<p>0.90</p>
+<p>-</p>
+<p>36</p>
+<p>26</p>
+<p>321</p>
+<p>24</p>
+<p>310</p>
+<p>11</p>
+<p>2</p>
+<p>0.96</p>
+<p>0.69</p>
+<p>0.92</p>
+<p>0.79</p>
+<p>-</p>
+<p>37</p>
+<p>43</p>
+<p>304</p>
+<p>36</p>
+<p>301</p>
+<p>3</p>
+<p>7</p>
+<p>0.97</p>
+<p>0.92</p>
+<p>0.84</p>
+<p>0.88</p>
+<p>-</p>
+<p>38</p>
+<p>56</p>
+<p>291</p>
+<p>55</p>
+<p>277</p>
+<p>14</p>
+<p>1</p>
+<p>0.96</p>
+<p>0.80</p>
+<p>0.98</p>
+<p>0.88</p>
+<p>-</p>
+<p>39</p>
+<p>48</p>
+<p>299</p>
+<p>44</p>
+<p>290</p>
+<p>9</p>
+<p>4</p>
+<p>0.96</p>
+<p>0.83</p>
+<p>0.92</p>
+<p>0.87</p>
+<p>-</p>
+<p>40</p>
+<p>43</p>
+<p>304</p>
+<p>42</p>
+<p>280</p>
+<p>24</p>
+<p>1</p>
+<p>0.93</p>
+<p>0.64</p>
+<p>0.98</p>
+<p>0.77</p>
+<p>-</p>
+<p>41</p>
+<p>52</p>
+<p>295</p>
+<p>52</p>
+<p>281</p>
+<p>14</p>
+<p>0</p>
+<p>0.96</p>
+<p>0.79</p>
+<p>1.00</p>
+<p>0.88</p>
+<p>-</p>
+<p>42</p>
+<p>57</p>
+<p>290</p>
+<p>57</p>
+<p>266</p>
+<p>24</p>
+<p>0</p>
+<p>0.93</p>
+<p>0.70</p>
+<p>1.00</p>
+<p>0.83</p>
+<p>-</p>
+<p>43</p>
+<p>50</p>
+<p>297</p>
+<p>50</p>
+<p>253</p>
+<p>44</p>
+<p>0</p>
+<p>0.87</p>
+<p>0.53</p>
+<p>1.00</p>
+<p>0.69</p>
+<p>-</p>
+<p>44</p>
+<p>41</p>
+<p>306</p>
+<p>41</p>
+<p>288</p>
+<p>18</p>
+<p>0</p>
+<p>0.95</p>
+<p>0.69</p>
+<p>1.00</p>
+<p>0.82</p>
+<p>-</p>
+<p>45</p>
+<p>69</p>
+<p>278</p>
+<p>68</p>
+<p>262</p>
+<p>16</p>
+<p>1</p>
+<p>0.95</p>
+<p>0.81</p>
+<p>0.99</p>
+<p>0.89</p>
+<p>-</p>
+<p>46</p>
+<p>57</p>
+<p>290</p>
+<p>57</p>
+<p>262</p>
+<p>28</p>
+<p>0</p>
+<p>0.92</p>
+<p>0.67</p>
+<p>1.00</p>
+<p>0.80</p>
+<p>-</p>
+<p>47</p>
+<p>73</p>
+<p>274</p>
+<p>63</p>
+<p>269</p>
+<p>5</p>
+<p>10</p>
+<p>0.96</p>
+<p>0.93</p>
+<p>0.86</p>
+<p>0.89</p>
+<p>-</p>
+<p>48</p>
+<p>24</p>
+<p>323</p>
+<p>24</p>
+<p>322</p>
+<p>1</p>
+<p>0</p>
+<p>1.00</p>
+<p>0.96</p>
+<p>1.00</p>
+<p>0.98</p>
+<p>-</p>
+<p>49</p>
+<p>21</p>
+<p>326</p>
+<p>19</p>
+<p>324</p>
+<p>2</p>
+<p>2</p>
+<p>0.99</p>
+<p>0.90</p>
+<p>0.90</p>
+<p>0.90</p>
+<p>-</p>
+<p>50</p>
+<p>28</p>
+<p>319</p>
+<p>26</p>
+<p>319</p>
+<p>0</p>
+<p>2</p>
+<p>0.99</p>
+<p>1.00</p>
+<p>0.93</p>
+<p>0.96</p>
+<p>-</p>
+<p>51</p>
+<p>55</p>
+<p>292</p>
+<p>52</p>
+<p>284</p>
+<p>8</p>
+<p>3</p>
+<p>0.97</p>
+<p>0.87</p>
+<p>0.95</p>
+<p>0.90</p>
+<p>-</p>
+<p>52</p>
+<p>27</p>
+<p>320</p>
+<p>23</p>
+<p>307</p>
+<p>13</p>
+<p>4</p>
+<p>0.95</p>
+<p>0.64</p>
+<p>0.85</p>
+<p>0.73</p>
+<p>-</p>
+<p>53</p>
+<p>33</p>
+<p>314</p>
+<p>33</p>
+<p>310</p>
+<p>4</p>
+<p>0</p>
+<p>0.99</p>
+<p>0.89</p>
+<p>1.00</p>
+<p>0.94</p>
+<p>-</p>
+<p>54</p>
+<p>31</p>
+<p>316</p>
+<p>31</p>
+<p>295</p>
+<p>21</p>
+<p>0</p>
+<p>0.94</p>
+<p>0.60</p>
+<p>1.00</p>
+<p>0.75</p>
+<p>-</p>
+<p>∑</p>
+<p>2265</p>
+<p>18488</p>
+<p>2125</p>
+<p>17966</p>
+<p>522</p>
+<p>141</p>
+<p>0.97</p>
+<p>0.80</p>
+<p>0.94</p>
+<p>0.87</p>
+<p>-</p>
+<p>Pos.: Crack patches; Neg.: non-crack patches; TP: True positives; TN: True negatives; FN: False negatives; Accuracy:{(iii)+(iv)}/{(i)+(ii)}; Precision: (iii)/{(iii)+(v)}; Recall: (iii)/{(iii)+(vi)}; F1: 2 × (precision × recall)/(precision + recall)</p></section>
+<section class="pdf-page" id="pdf-page-72"><h2 class="page-number">Page 72</h2><p>56 | C h a p t e r 3</p>
+<p>Figure 3.10: Representative testing result (1) – thin cracks [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-73"><h2 class="page-number">Page 73</h2><p>57 | C h a p t e r 3</p>
+<p>Figure 3.11: Representative testing result (2) – thin cracks with high luminance spots [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-74"><h2 class="page-number">Page 74</h2><p>58 | C h a p t e r 3</p>
+<p>Figure 3.12: Representative testing result (3) – with shadows [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-75"><h2 class="page-number">Page 75</h2><p>59 | C h a p t e r 3</p>
+<p>Figure 3.13: Representative testing result (4) – closeups [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-76"><h2 class="page-number">Page 76</h2><p>60 | C h a p t e r 3</p>
+<p>Figure 3.14: Representative testing result (5) – closeups, blurring, and with luminance spots [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-77"><h2 class="page-number">Page 77</h2><p>61 | C h a p t e r 3 Figure 3.10 shows the test results of an image with very thin cracks and uniform luminance. The thickest crack width was 4 pixels (approximately 1.5 mm). The FN predictions were mostly observed on the periphery of the image center because of image distortions in the thin crack regions. To study the luminance condition sensitivity, an image with a strong luminance spot and another with a shadow were tested, as shown in Figures 3.11 and 3.12. Figure 3.11 shows that FNs were mainly detected on the edges of the luminance spot. Figure 3.12 shows only one FN prediction, but a number of FPs were observed because the features of the scratches resembled cracks. Considering all the results discussed thus far, the proposed method can potentially be used under various luminance conditions. An image was intentionally taken approximately 70 mm away from a concrete surface and tested to study whether the proposed method is susceptible to changes in distance (refer to Figure 3.13), and the accuracy was calculated to be 0.99. Figure 3.14 shows an image taken 60 mm away from a concrete surface and the corresponding results. The image was blurry due to the short distance from the concrete surface. In addition, the image contained a high luminance spot. Nevertheless, the proposed method returned an accuracy of 0.97. Considering all the results, the proposed method is valid regardless of distance changes. 3.7.2</p>
+<p>Comparative studies</p>
+<p>A comparative study was conducted to assess to what extent the proposed method outperformed traditional methods. Canny and Sobel edge detectors are the most popular conventional methods for identifying cracks from images. The results of these methods were compared with those of the proposed model. In the case of an image of a concrete surface with a relatively clean texture and uniform luminance, as shown in Figure 3.15, the results of the proposed method (Figure 3.15(b)) and the Sobel edge detector (Figure 3.15(d)) are comparable.</p></section>
+<section class="pdf-page" id="pdf-page-78"><h2 class="page-number">Page 78</h2><p>62 | C h a p t e r 3</p>
+<p>(a) Original image</p>
+<p>(b) Proposed method</p>
+<p>(c) Canny edge detector applied on (a)</p>
+<p>(d) Sobel edge detector applied on (a)</p>
+<p>Figure 3.15: Image with uniform luminance condition</p></section>
+<section class="pdf-page" id="pdf-page-79"><h2 class="page-number">Page 79</h2><p>63 | C h a p t e r 3</p>
+<p>(a) Original image</p>
+<p>(b) Proposed CNN</p>
+<p>(c) Canny edge detection</p>
+<p>(d) Sobel edge detection</p>
+<p>Figure 3.16: Image with noisy texture and uniform luminance (1) [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-80"><h2 class="page-number">Page 80</h2><p>64 | C h a p t e r 3</p>
+<p>(a) Original image</p>
+<p>(b) Proposed CNN</p>
+<p>(c) Canny edge detection</p>
+<p>(d) Sobel edge detection</p>
+<p>Figure 3.17: Image with noisy texture and uniform luminance (2) [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-81"><h2 class="page-number">Page 81</h2><p>65 | C h a p t e r 3</p>
+<p>(a) Original image</p>
+<p>(b) Proposed CNN</p>
+<p>(c) Canny edge detection</p>
+<p>(d) Sobel edge detection</p>
+<p>Figure 3.18: Image with thin crack and slightly varying luminance [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-82"><h2 class="page-number">Page 82</h2><p>66 | C h a p t e r 3</p>
+<p>(a) Original image</p>
+<p>(b) Proposed CNN</p>
+<p>(c) Canny edge detection</p>
+<p>(d) Sobel edge detection</p>
+<p>Figure 3.19: Image with thin cracks and strong luminance change [Cha et al. (2017)]</p></section>
+<section class="pdf-page" id="pdf-page-83"><h2 class="page-number">Page 83</h2><p>67 | C h a p t e r 3</p>
+<p>(a) Denoised image</p>
+<p>(b) Sobel Edge detector</p>
+<p>Figure 3.20: Sobel edge detector with denoising method (1)</p>
+<p>(a) Denoised image</p>
+<p>(b) Sobel Edge detector</p>
+<p>Figure 3.21: Sobel edge detector with denoising method (2)</p></section>
+<section class="pdf-page" id="pdf-page-84"><h2 class="page-number">Page 84</h2><p>68 | C h a p t e r 3 However, the traditional methods often return unreliable results if an image contains noise. For example, the images shown in Figures 3.16(a) and 3.17(a) were taken under uniform luminance conditions, but the traditional methods did not return meaningful information due to the concrete texture, as shown in Figures 3.16(c), 3.16(d), 3.17(c), and 3.17(d), whereas the proposed method effectively identified the cracks, as shown in Figures 3.16(b) and 3.17(b). Further testing with the traditional methods on images with non-uniform luminance also did not return meaningful information, but the proposed method continued to provide consistent results. For example, Figure 3.18(a) shows an image with a thin crack and slightly varying luminance. Both the Canny and Sobel edge detectors did not identify the crack (Figures 3.18(c) and 3.18(d)). The same results were returned for an image with strong luminance (refer to Figure 3.19). Denoising techniques may improve the performance of the traditional methods, and additional experimental results to this end are presented in Figures 3.20 and 3.21. A number of denoising techniques are available, but the edge-aware denoising6 method proposed by Gastal and Oliveira (2012) was chosen to preserve the features of the cracks (i.e., edges) from the original image. One of the best working examples is shown in Figure 3.20, where Figure 3.20(a) is the denoised image of Figure 3.15(a). As shown in Figure 3.20(b), the traditional method returned more informative results compared to those in Figure 3.15(d). However, defining the denoising parameters for an image is a manual process, and the set of optimal parameters is dependent on the image conditions. For example, the parameters7 used for obtaining Figure 3.20(a) were reused to denoise the image shown in Figure 3.17(a), and the denoised image is</p>
+<p>6</p>
+<p>The code for edge-aware denoising is available at http://inf.ufrgs.br/~eslgastal/AdaptiveManifolds/ (accessed Dec. 2019). To obtain the denoised image shown in Figure 3.20(a), “sigma_s” and “sigma_r” of “adaptive_manifold_filter.m” were set at 5 and 0.1, respectively. Complete details of the denoising method are not provided in this thesis in the interest of conciseness.</p></section>
+<section class="pdf-page" id="pdf-page-85"><h2 class="page-number">Page 85</h2><p>69 | C h a p t e r 3 presented in Figure 3.21(a). The denoised image was processed by the Sobel edge detector. The result appears in Figure 3.21(b), which does not show meaningful information.</p>
+<p>3.8</p>
+<p>Discussions and conclusions</p>
+<p>In this work, deep learning was implemented to detect concrete cracks from images. The deep learning model used in this study was a classification model, and the last operation involved an FC layer that restricted the size of the input images to 256 × 256 pixels. An image dataset was manually created to train the DL model, wherein each image was taken under a wide range of conditions. Three hundred nine and 54 images were used in training and testing, respectively. The images in each subset were randomly cropped into images of 256 × 256 pixels due to size limitations. The training and testing accuracies were found to be approximately 0.98. To overcome the size limitations, a sliding-window technique was used for preprocessing, following which large image sizes could be tested. The trained model and the slidingwindow technique were further tested on 54 large images, and the corresponding test results indicated consistent model performance. Traditional methods, such as the Canny and Sobel edge detectors with and without edge-aware denoising, were compared with the proposed method. Several test results from the traditional methods were comparable with the proposed model when the tested images contained clean textures and uniform luminance. Otherwise, the proposed method showed better results. However, the proposed model was tested only on images with relatively monotonous backgrounds and flat surfaces, whereas in reality, damage can also be found against complex backgrounds and geometries. In addition, the configured architecture was too naïve. The layers before the first ReLU activation (which was the only activation in the model) conducted simple linear transformations. Thus, the model expended a considerable amount of computation resources for linear operations. High accuracies were returned most likely because the images had monotonous backgrounds and flat surfaces,</p></section>
+<section class="pdf-page" id="pdf-page-86"><h2 class="page-number">Page 86</h2><p>70 | C h a p t e r 3 thus easing the model’s task. Moreover, defining the size of the sliding window also posed issues. The next chapter discusses these aspects in more detail to draw closer to achieving the aim of developing a field-ready method.</p></section>
+<section class="pdf-page" id="pdf-page-87"><h2 class="page-number">Page 87</h2><p>71 | C h a p t e r 3 References</p>
+<p>Cha, Y.-J., Choi, W., &amp; Büyüköztürk, O. (2017). Deep learning-based crack damage detection using convolutional neural networks. Computer-Aided Civil and Infrastructure Engineering, 32(5), 361– 378. DOI: 10.1111/mice.12263 Gastal, E. S. L., &amp; Oliveira, M. M. (2012). Adaptive manifolds for real-time high-dimensional filtering. ACM Transactions on Graphics, 31(4), 1–13. DOI: 10.1145/2185520.2185529 LeCun, Y. A., Bottou, L., Orr, G. B., &amp; Müller, K.-R. (2012). Efficient BackProp. Lecture Notes in Computer Science, 9–48. DOI: 10.1007/978-3-642-35289-8_3 Vedaldi, A., &amp; Lenc, K. (2015). MatConvNet. Proceedings of the 23rd ACM International Conference on Multimedia - MM ’15. DOI: 10.1145/2733373.2807412 Wilson, D. R., &amp; Martinez, T. R. (2001). The need for small learning rates on large problems. International Joint Conference on Neural Networks. Proceedings (Cat. No.01CH37222), 1, 115-119. DOI: 10.1109/ijcnn.2001.939002</p></section>
+<section class="pdf-page" id="pdf-page-88"><h2 class="page-number">Page 88</h2><p>72 | C h a p t e r 4</p>
+<p>Chapter 4</p>
+<p>Deep Learning Application: Crack Segmentation</p>
+<p>Summary The previous work presented in Chapter 3 demonstrated potential but is arguably applicable in practice. This chapter investigates the limitations of the previous method and presents an alternative method, which is to define the task as segmenting damage features by classifying each pixel rather than classifying each image. The damage detection scheme allowed to build a robust model that had no restrictions on image size, was free from the repetitive calculations of the previous method, produced more intuitive results, and processed images in real time. The comparative study revealed that the proposed model outperformed other recent works in every aspect.</p>
+<p>Chapter 4 has been reproduced with modifications to figures and formatting from Choi and Cha (2020). The chapter has been reprinted with permission from the copyright holder, IEEE.</p></section>
+<section class="pdf-page" id="pdf-page-89"><h2 class="page-number">Page 89</h2><p>73 | C h a p t e r 4 4.1</p>
+<p>Introduction</p>
+<p>The combination of a convolutional neural network (CNN) for classification with a sliding-window technique was presented in Chapter3 (Cha et al., 2017) and has been further extended by Chen and Jahanshahi (2018), Kang and Cha (2018), Ali and Cha (2019). However, there are several notable limitations. For example, as depicted in Figure 4.1, the input image is cropped, and each of the cropped regions is individually classified rather than processing the entire image at once. This requires repetitive computations and consequently results in longer processing time. In addition, the localized areas are strictly dependent on the size of a sliding-window rather than the size of objects, which leads to an additional challenge in defining the window size.</p>
+<p>Figure 4.1: Object localization with sliding-window</p>
+<p>This disadvantage shifted researchers’ attention to flexible localization algorithms, such as Faster R-CNN (Ren et al., 2015) and YOLO (Redmon et al., 2016). The object localization scheme is to predict ̅ and 𝑊 ̅ ) and its bounding box profiles ( ℎ̅ and 𝑤 the coordinates of each object’s centroid ( 𝐻 ̅ ), as represented in Figure 4.2.</p></section>
+<section class="pdf-page" id="pdf-page-90"><h2 class="page-number">Page 90</h2><p>74 | C h a p t e r 4</p>
+<p>Figure 4.2: Object localization with bounding box</p>
+<p>Cha et al. (2018), Li et al. (2018), Xue and Li (2018), and Beckman et al. (2019) adopted FasterRCNN for localizing superficial damage. However, most structural damage, such as cracks and spalling, is not expected to have typical shapes (e.g., vehicles, buildings, etc.), and the corresponding outcomes are not sufficiently informative if objects have thin elongated features presenting in a diagonal direction. Hence, these approaches are less preferable in SHM. To produce more informative results, localizing damage features is defined as semantic segmentation in this study.</p>
+<p>Figure 4.3: Semantic segmentation [Choi and Cha (2020)]</p></section>
+<section class="pdf-page" id="pdf-page-91"><h2 class="page-number">Page 91</h2><p>75 | C h a p t e r 4 Sematic segmentation is one of the key tasks in DL, which has been actively studied in the field of medical image analysis (Ronneberger et al., 2015) and self-driving vehicles (Siam et al., 2017). Semantic segmentation is conceptually similar to image classification, as demonstrated in Figure 4.3; each pixel of an image is classified in such a way that the pixels of zeros and ones indicate background and crack pixels, respectively. Several articles (Yang et al., 2018; Zhang et al., 2018; Dung, 2019; Liu et al., 2019; Nayyeri et al., 2019) introduced damage segmentation methods. However, these studies aimed to segment damage features only from monotonous images, while real practice primarily involves images with complex backgrounds. In this chapter, segmenting concrete cracks from images with complex features is primarily discussed. Cracks are the most usual instances of superficial damage and are hardest to obtain satisfying results from due to its thin features compared to other types of damage. The objectives of this study are listed as follows: building a real-time method for segmenting damage features; negating a wide range of background features and crack-like patterns.</p>
+<p>4.2</p>
+<p>Architecture configuration</p>
+<p>In segmentation, a DL model with a FC layer (refer to Chapter 2.3.1) is less preferable because the model can only accept a fixed size of input. For example, the DL model presented in the previous chapter has an FC layer. The model is designed to accept an input of 256×256 pixels. If various sizes of images are fed into the model, the number of elements feeding into the FC layer is also various, while the FC layer can extract features from the input with 96 elements (refer to Figure 3.2 and Table 3.1). Removing all FC layers of a model is a simple solution that addresses the limitation, and a model without any FC layer is referred to as a fully convolutional network (Long et al., 2015). The proposed model in this chapter follows the convention of a fully convolutional network.</p></section>
+<section class="pdf-page" id="pdf-page-92"><h2 class="page-number">Page 92</h2><p>76 | C h a p t e r 4 Monumental DL models have demonstrated significant capability in recognizing images. For example, Simonyan et al. (2014), He et al. (2016), and Huang et al. (2017) presented their DL models trained on ImageNet (Deng et al., 2009), which consists of 1K number of classes with 18 million images. Contrarily, the number of classes recognized in SHM research is much less. This suggests that developing a task-specific model might be beneficial in computation without performance deterioration. Therefore, a DL model was configured instead of adopting the monumental DL models (Simonyan et al. (2014), He et al. (2016), and Huang et al. (2017)). Hereafter, the model is referred to as the semantic damage detection network (SDDNet). The model was inspired by the DenseNet (Huang et al., 2017) and DeepLabV3+ (Chen et al., 2018). 4.2.1</p>
+<p>Characteristics of target objects</p>
+<p>To develop a task-specific model, the characteristics of target objects were investigated. Objects from generic images (e.g., humans, etc.) usually have well-distinguishable features, and peripheral information may less important to segment the objects. For example, assume that humans are the target objects to be segmented, in which small or partial images without any contextual information can still represent features of humans regardless of variations (i.e., jogging, riding a bicycle, etc.), as shown in Figure 4.4.</p>
+<p>Figure 4.4: Generic image data</p></section>
+<section class="pdf-page" id="pdf-page-93"><h2 class="page-number">Page 93</h2><p>77 | C h a p t e r 4 However, simple and irregular-shaped objects are difficult to distinguish even with human eyes without peripheral information. This is because the features residing in a small region do not represent the objects. For example, as depicted in Figure 4.5, each of the cropped regions has very similar features even though they belong to completely different classes. Therefore, leading a DL model to see a large field of view (FOV) is preferable.</p>
+<p>Figure 4.5: Real crack vs crack-like feature [Choi and Cha (2020)]</p>
+<p>4.2.2</p>
+<p>Overall architecture</p>
+<p>The SDDNet model has encoder and decoder parts. Figure 4.6 displays the SDDNet schematically, in which the operations before the decoder are considered as the encoder. The roots of the model are accompanied by two standard convolutions (Conv. in Figure 4.6). The densely connected separable convolution (DenSep in Figure 4.6; see Chapter 4.2.3 for details) modules are followed several times. Each densely connected separable convolution module conducts separable convolutions, and a separable convolution involves point-wise and depth-wise convolutions (Chen et al., 2018). The details of these can be found in the next subchapter. In the figure, the first values of each parenthesis indicate the number of filters of the standard convolutions. The first values of each bracket are the number of separable convolutions. The second values (denoted by ‘s’) of either parentheses and brackets are the stride values.</p></section>
+<section class="pdf-page" id="pdf-page-94"><h2 class="page-number">Page 94</h2><p>78 | C h a p t e r 4</p>
+<p>Figure 4.6: Schematic diagram of SDDNet architecture [Choi and Cha (2020)] The purpose of atrous spatial pyramid pooling (ASPP in Figure 4.6) is extracting multi-scale features. It was slightly modified from the original ASPP (Chen et al., 2018), and the corresponding details are provided in Chapter 4.2.4. The spatial dimension of input feature maps at the ASPP module is about 16 times smaller than the images due to the four strides (the second Conv. and the first to third Densep modules). Accordingly, the decoder module was configured for restoring the spatial dimension using lowlevel features from the first standard convolution and the second DenSep module. Several common settings are as follows: the filter sizes of the standard convolutions and depth-wise convolutions are set at 3×3; point-wise convolutions are equal to the standard convolution with a filter size of 1×1; all convolution operations except for the last are followed by BatchNorm (Ioffe and Szegedy, 2015); zero paddings are applied to the input feature maps of all the standard and depth-wise convolution; ReLU (refer to Chapter 2.6) is chosen as an activation function. 4.2.3</p>
+<p>DenSep module</p>
+<p>The DenSep module is the core of the proposed model. It conducts separable convolutions several times, each of which performs point-wise (PW) and depth-wise (DW) convolutions. The densely connected separable convolution module having the profile of ‘[4, s=2]’ is illustrated in Figure 4.7 as an example.</p></section>
+<section class="pdf-page" id="pdf-page-95"><h2 class="page-number">Page 95</h2><p>79 | C h a p t e r 4</p>
+<p>Figure 4.7: DenSep module [reproduced from Choi and Cha (2020)] The primary advantage of a separable convolution is its efficiency because it involves a much smaller number of computations compared to the standard convolution. The intended usage was to apply filters in the order of DW and PW, but DenSep module is designed to apply PW before DW. The purpose of order switching is to squeeze a feature map with PW convolution to further reduce computational cost. The output feature maps of separable convolutions within a DenSep module are concatenated, which resembles the Dense Block of DenseNet (Huang et al., 2017). In the DenSep modules, the last DW convolutions only involve strides to reduce spatial dimensions. Rectified linear units are applied after all DW convolutions. An additional interpretation of the DenSep module is discussed in Appendix A. Figure 4.8 depicts the differences of convolution operations (i.e., PW, DW, and the standard convolutions), in which the 1×1 convolution is identical to PW convolution. Convolutions fundamentally involve weighted sums (refer to Chapter 2.1), in which the multiplications are the major computations. Therefore, the number of multiplications can directly be considered as the computational costs, and the costs of the standard, PW, and DW convolutions are given by Eqs. (4.1) – (4.3). In the equations, Din and Dout imply the input and output depth of the feature map, respectively. Separable convolution performs</p></section>
+<section class="pdf-page" id="pdf-page-96"><h2 class="page-number">Page 96</h2><p>80 | C h a p t e r 4 PW and DW convolutions sequentially; therefore, computational costs of a separable convolution is equal to the sum of Eqs. (4.2) and (4.3).</p>
+<p>Figure 4.8: Comparison of convolution operations [Choi and Cha (2020)]</p>
+<p>9 × K2 × Din × Dout</p>
+<p>(4.1)</p>
+<p>K2 × Din × Dout</p>
+<p>(4.2)</p>
+<p>9 × K2 × Dout</p>
+<p>(4.3)</p>
+<p>The number of multiplications associated with the convolution operations can be calculated based on the above equations as shown in Table 4.1. As the results demonstrate, there is an approximately 70% reduction in computational cost compared with the standard convolution module.</p></section>
+<section class="pdf-page" id="pdf-page-97"><h2 class="page-number">Page 97</h2><p>81 | C h a p t e r 4</p>
+<p>Table 4.1: Number of computations [Choi and Cha (2020)] DenSep</p>
+<p>Standard convolution</p>
+<p>Sequence Operation</p>
+<p>Multiplications</p>
+<p>Operation</p>
+<p>Multiplications</p>
+<p>PW</p>
+<p>0.5K2D2</p>
+<p>PW</p>
+<p>0.5K2D2</p>
+<p>DW</p>
+<p>4.5K2D</p>
+<p>Conv.</p>
+<p>2.25K2D2</p>
+<p>PW</p>
+<p>0.75K2D2</p>
+<p>PW</p>
+<p>0.75K2D2</p>
+<p>DW</p>
+<p>4.5K2D</p>
+<p>Conv.</p>
+<p>2.25K2D2</p>
+<p>PW</p>
+<p>K2D2</p>
+<p>PW</p>
+<p>K2D2</p>
+<p>DW</p>
+<p>4.5K2D</p>
+<p>Conv.</p>
+<p>2.25K2D2</p>
+<p>PW</p>
+<p>1.25K2D2</p>
+<p>PW</p>
+<p>1.25K2D2</p>
+<p>DW</p>
+<p>4.5K2D</p>
+<p>Conv.</p>
+<p>2.25K2D2</p>
+<p>PW</p>
+<p>3.0K2D2</p>
+<p>PW</p>
+<p>3.0K2D2</p>
+<p>DW</p>
+<p>4.5K2D</p>
+<p>Conv.</p>
+<p>9.0K2D2</p>
+<p>-</p>
+<p>K2D(6.5D+27)</p>
+<p>-</p>
+<p>K2D(24.5D)</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5 Total</p>
+<p>4.2.4</p>
+<p>ASPP module A large filter size can indeed capture features due to its large FOV, which however increases the</p>
+<p>computational costs exponentially. For example, suppose there is a filter with the size of m×m. Another filter with c times more FOV than that of the m×m filter has the size of cm×cm, which has c2 times greater number of weights. Chen et al. (2018) solved the dilemma by introducing the ASPP module; a modified version of ASPP is adopted in the proposed model.</p></section>
+<section class="pdf-page" id="pdf-page-98"><h2 class="page-number">Page 98</h2><p>82 | C h a p t e r 4 The original ASPP is composed of the global average pooling (GAP), PW convolution, and three atrous separable convolutions (ASC) in the standard order (i.e., DW first and PW later). The dilated DW filter is the only difference from the standard separable convolution, as depicted in Figure 4.9.</p>
+<p>Figure 4.9: Dilated depth-wise convolution filter [Choi and Cha (2020)]</p>
+<p>In this figure, the dilation rate (denoted as ‘r’) indicates the number of skips to the neighboring elements of a filter. Each of the dilated DW filters can extract features while it sees a large FOV. For example, a dilated filter with a rate of 2 can extract features from the FOV of 5×5, but the filter still has 9 weights rather than 25 weights. Hence, the ASC with a dilation rate of greater than one can be considered as that filter captures via a larger FOV without increasing computational costs. In addition, multi-scale feature maps can be obtained by aggregating the feature maps of the ASCs with various rates. The modified ASPP module is configured as follows: GAP is not adopted because it strongly regularizes a CNN model, whereas the proposed model has a significantly small number of weights that result in performance deterioration; PW convolution is kept as original; four ASC modules (three in the original ASPP) with different dilation rates from the original ASPP are included; each of the ASC modules performs the reversed order of the standard ASC, in which the dilation rates of DW filters are set at 1 to</p></section>
+<section class="pdf-page" id="pdf-page-99"><h2 class="page-number">Page 99</h2><p>83 | C h a p t e r 4 4, respectively. Figure 4.10 demonstrates how the modified ASPP is configured, in which the output feature maps of PW and ASC are concatenated (denoted as ©), and the concatenated feature map is aggregated by another set of PW filters to generate multi-scale features. The multi-scale feature maps are activated by the ReLU and the dropout layer is followed to prevent overfitting; the rate was set at 0.5 in training.</p>
+<p>Figure 4.10: Modified ASPP module [reproduced from Choi and Cha (2020)] 4.2.5</p>
+<p>Decoder module</p>
+<p>One of the main objectives of this study is to obtain fine-grained segmentation. However, the spatial dimensions are gradually reduced by applying strides four times (refer to Chapters 4.2.2 and 4.2.3), and the model returns 16 times smaller size of feature maps. Accordingly, extracting segmentations from the small feature maps causes coarse segmentation results. Hence, the decoder module was designed to restore the spatial dimension of the small feature maps, as described in Figure 4.11.</p></section>
+<section class="pdf-page" id="pdf-page-100"><h2 class="page-number">Page 100</h2><p>84 | C h a p t e r 4</p>
+<p>Figure 4.11: Details of the decoder module [reproduced from Choi and Cha (2020)]</p>
+<p>The module was designed to restore the spatial dimension two times. In the first step, the feature maps extracted by the modified ASPP module (refer to Chapter 4.2.4) was up-scaled by the scale factor of 4. Then, the scaled feature maps were concatenated with the low-level feature maps extracted by the last PW convolution in the second DenSep module (refer to Figure 4.6), which has 1/4 spatial dimension of the input images. Thereafter, two separable convolutions were applied to the concatenated feature maps and up sampled by the scale factor of 4 and concatenated again with another low-level feature maps from the first standard convolution layer (refer to Figure 4.6), which has the same spatial dimension of the input images. Finally, the last standard convolution generated the segmentation (denoted by Seg. in Figure 4.11) results. In the training phase, the model was optimized by Adam (refer to Chapter 4.4.2), and the mean intersection-over-union (mIoU) loss (refer to Chapter 4.4.3) was used for calculating the loss of the model (denoted by Loss cal. in Figure 4.11).</p></section>
+<section class="pdf-page" id="pdf-page-101"><h2 class="page-number">Page 101</h2><p>85 | C h a p t e r 4 4.2.6</p>
+<p>Model customization</p>
+<p>The SDDNet can be customized by setting different number of repetitions (refer to Figure 4.6) of the DenSep module and values of D (refer to Figure 4.7). Hereafter, customized models are referred to as SDD-R#D#, in which R# implies the number repetitions and D# indicate the D values. In this chapter, two models are presented: SDD-R6D64 was trained to achieve the objectives (refer to Chapter 4.1) and considered as the final model; SDD-R6D32 was trained for comparative studies, which was compared with DeepCrack (Liu et al., 2019). Note that the number of PW filters in the DenSep module with six repetitions was set at D instead of 0.5D (refer to Figure 4.7) for the customized models reported in this chapter.</p>
+<p>4.3</p>
+<p>Dataset generation</p>
+<p>The SDDNet was trained in a supervised learning scheme, which requires an image-label-paired dataset. However, public datasets at present consist of mostly monotonous images, which is not suited to the specific objective (refer to Chapter 4.1), and so a dataset was manually created. The dataset consists of 200 digital images with various sizes: 55 images were taken by smartphones; 104 and 41 images were downloaded from Datacenterhub (Sim et al., 2017) and Google Images, respectively; 55 images were manually taken by smartphones. Due to the variance of image sources, images were taken under various conditions in terms of distance, luminance, FOV, image quality, and other factors. The size of images in widths and heights are between 513 and 1920 pixels (513×513 at minimum and 1920×1080 at maximum). The segmentation labels (ground truths) were manually annotated by marking pixels, in which the pixels that belonged to cracks were labeled 1, and any other pixels (background) were labeled 0 (refer to Figure 4.3). Affinity Photo (https://affinity.serif.com/en-gb/photo), a commercial software application for</p></section>
+<section class="pdf-page" id="pdf-page-102"><h2 class="page-number">Page 102</h2><p>86 | C h a p t e r 4 photo editing, was used to generate the ground truth. The crack features in the dataset can be categorized by their characteristics as follows: •</p>
+<p>Thick crack: a crack with thickness of 5 or more pixels.</p>
+<p>•</p>
+<p>Thin crack: a crack with a thickness of 1-4 pixels</p>
+<p>•</p>
+<p>Blurry crack: either a thick (i.e., thick-blurry) or thin (i.e., thin-blurry) crack with blurry features, which are still highly recognizable.</p>
+<p>•</p>
+<p>Faint crack: a crack that is not recognizable without careful observations.</p>
+<p>•</p>
+<p>Crack-like feature: a feature which resembles a crack without peripheral information (refer to Chapter 4.2.1). The total number of pixels belonging to the crack was about 260 times less than that of pixels</p>
+<p>belonging to the background, and any CNN models may face the challenge of being optimized. The dataset was split into two subsets: 160 images for training and 40 images for testing. Hereafter, the dataset is referred to as Crack200.</p>
+<p>4.4</p>
+<p>Training details</p>
+<p>This subchapter describes the details of how the SDDNet models were trained. The SDD-R6D64 was pretrained (refer to Chapter 4.4.4) on the Cityscape Dataset before training on the Crack200 (refer to Chapter 4.4.5), in which the Cityscape Dataset was modified to have six classes. The specifications of the infrastructure used for training the models are as follows: •</p>
+<p>CPU: Intel Core i7-6850K</p>
+<p>•</p>
+<p>GPU: Nvidia Titan XP × 4ea</p>
+<p>•</p>
+<p>Memory: 128 GB</p></section>
+<section class="pdf-page" id="pdf-page-103"><h2 class="page-number">Page 103</h2><p>87 | C h a p t e r 4 The GPUs were used only in training the model, however; an old GPU, Nvidia Titan X, was instead used in testing to highlight real-time performance (refer to Chapter 4.4.7). 4.4.1</p>
+<p>Training strategy</p>
+<p>The input size in the beginning of training was set at 513×513 pixels. If an image had a larger size, the image was randomly cropped by the specified size. Considering the largest image size is about 1920×1080, the cropping size, which is approximately 1/4 compared to the largest image, was reasonable as the cropped region may still contain enough context for recognizing objects. Additionally, the specific number was beneficial at the layer where strides were applied. After the model converged, the cropping size was changed to 1009×1009 to lead the dilated DW weights in the modified ASPP module working well on large images in testing. The model can be tested on any image size without restrictions because the proposed model follows the conventions of a fully convolutional neural network (refer to Chapter 4.2). The explained strategies were commonly applied in both pretraining (refer to Chapter 4.4.4) on the modified Cityscape Dataset and finetuning on the Crack200 (refer to Chapter 4.4.5). 4.4.2</p>
+<p>Adaptive momentum optimizer</p>
+<p>One of critical hyperparameters (refer to Chapter 3.6.1) in training DL models is learning rate (refer to Chapter 2.4.1), but defining an optimal learning rate has been a cumbersome issue. The momentum algorithm (refer to Chapter 3.5) can make training a DL model less challenging, but the algorithm introduces an additional hyperparameter to be empirically set. Adaptively applying learning rates for each weight at each update might greatly mitigate the cumbersome issue, and an adaptive momentum (Adam) optimizer was proposed by Kingma and Ba (2014), which was a combined form of the momentum algorithm (refer to Chapter 3.5) and RMSProp (Tieleman and Hinton, 2012). The overall computing 2</p>
+<p>process of the Adam optimizer is as follows: 1) the moving averages 𝜂 and 𝑟 for ∇𝜙 𝒥 and (∇𝜙 𝒥) are</p></section>
+<section class="pdf-page" id="pdf-page-104"><h2 class="page-number">Page 104</h2><p>88 | C h a p t e r 4 calculated by Eqs. (4.4) and (4.5), respectively. 𝛽1 and 𝛽2 are exponential decay rates that are set at 0.9 and 0.999, respectively by default; 2) 𝜂 and 𝑟 are biased towards zero during initial training steps, so that those are corrected by Eqs. (4.6) and (4.7); 3) a weight is updated by Eq (4.8), where 𝛼 is learning rate, and 𝜀 is a small constant to preserve numerical stability. 𝜂 ⃪𝛽1 𝜂 + (1 − 𝛽1 )∇𝜙 𝒥, 2</p>
+<p>𝑟 ⃪𝛽2 𝑟 + (1 − 𝛽2 )(∇𝜙 𝒥) ,</p>
+<p>(4.5)</p>
+<p>𝜂̂ ⃪</p>
+<p>𝜂 , 1 − (𝛽1 )𝑡</p>
+<p>(4.6)</p>
+<p>𝑟̂ ⃪</p>
+<p>𝑟 , 1 − (𝛽2 )𝑡</p>
+<p>(4.7)</p>
+<p>𝜙⃪𝜙−𝛼</p>
+<p>4.4.3</p>
+<p>(4.4)</p>
+<p>𝜂̂ √𝑟̂ + 𝜀</p>
+<p>,</p>
+<p>(4.8)</p>
+<p>Cost function and hyperparameters</p>
+<p>The cross-entropy loss function (refer to Chapter 3.4) has been widely used in classification and segmentation; however, this is not a good choice when training a model on an imbalanced dataset, and the Crack200 is one of the most extreme cases of this. Accordingly, Rahman et al. (2016) proposed the intersection-over-union (IoU) loss which can address the issue, but it was not applicable to pretraining on the model of the modified Cityscape Dataset (refer to Chapter 4.4.4) because the dataset has 6 classes while the IoU loss function only works for binary classes. Hence, the IoU loss function is modified to the mIoU cost function, which is defined by Eq. (4.9) corresponding to a mini-batch size of m with a C number of classes. I (Eq. (4.10)) and U (Eq. (4.11)) are the intersection and union calculated by the probability maps of y from the Softmax function and the corresponding one-hot-encoded ground truths of 𝑦̂ , respectively. The mIoU score is one of the most frequently used metrics for reporting segmentation</p></section>
+<section class="pdf-page" id="pdf-page-105"><h2 class="page-number">Page 105</h2><p>89 | C h a p t e r 4 performances, and the score can be calculated by disregarding the “1-” term and substituting y for onehot-encoded prediction from Eq. (4.9). 1 ∑𝑚 𝑖=1 𝐼𝑖 𝒥𝑚𝐼𝑜𝑈 = 1 − 𝑚 𝐶 ∑𝑖=1 𝑈𝑖</p>
+<p>(4.9)</p>
+<p>𝐼𝑖 (𝑦, 𝑦̂) = 𝑦𝑖 · 𝑦̂𝑖</p>
+<p>(4.10)</p>
+<p>𝑈𝑖 (𝑦, 𝑦̂) = 𝑦𝑖 + 𝑦̂𝑖 − 𝐼𝑖</p>
+<p>(4.11)</p>
+<p>The Adam optimizer was used for training (refer to Chapter 4.4.2). The learning rates were scheduled over training iterations (iter) based on the cyclical learning rate policy proposed by Smith (2017), and it can be calculated by Eq. (4.12) and Eq. (4.13). The hyperparameters used for training the SDD-R6D64 are summarized in Table 4.2. lr2 + (lr1 − lr2) × max (0, 1 – Ω) × 𝜏iter 𝑖𝑡𝑒𝑟</p>
+<p>(4.12)</p>
+<p>1+𝑖𝑡𝑒𝑟</p>
+<p>Ω = |𝑠𝑡𝑒𝑝 − 2 × ⌊2×𝑠𝑡𝑒𝑝⌋ + 1|</p>
+<p>(4.13)</p>
+<p>Table 4.2: Hyperparameters for training SDD-R6D64 [Choi and Cha (2020)] Pretraining on the Cityscape</p>
+<p>Finetuning on the Crack200</p>
+<p>lr1 / lr2 / step</p>
+<p>0.003 / 0.00001 / 2000</p>
+<p>0.001 / 0.00001 / 2000</p>
+<p>Input size</p>
+<p>513×513 (1009×1009a)</p>
+<p>513×513 (1009×1009a)</p>
+<p>Mini-batch size</p>
+<p>32(8a)</p>
+<p>32(8a)</p>
+<p>𝜏</p>
+<p>0.99996</p>
+<p>0.99996</p>
+<p>Weight decay</p>
+<p>0.00004</p>
+<p>0.00004</p>
+<p>a: These are the hyperparameters used after the convergence was noticed while in training on small images (refer to Chapter 4.4.1).</p></section>
+<section class="pdf-page" id="pdf-page-106"><h2 class="page-number">Page 106</h2><p>90 | C h a p t e r 4 4.4.4</p>
+<p>Pretraining on the Cityscape Dataset</p>
+<p>The SDD-R6D64 was pretrained on the modified Cityscape Dataset before training the model on the Crack200. The Cityscape Dataset (https://www.cityscapes-dataset.com/) is intended for evaluating a vision algorithm in recognizing urban scenes, and it provides 3475 images with the corresponding ground truths of the scene taken from various cities in the world. The dataset was chosen for pretraining to verify the trainability of the proposed model on a multi-class dataset. In addition, the wide range of features might be beneficial in negating non-crack features from images in the Crack200. However, the primary objective was to effectively segment a few classes, while the Cityscape Dataset has 31 classes. Hence, the Cityscape Dataset was modified to have 6 classes; similar objects were combined into the same classes; some of object labels residing a large space in images were renumbered by zeros (i.e., background). Accordingly, the modified Cityscape Dataset was relabeled, as summarized in Table 4.3.</p>
+<p>Table 4.3: Modified Cityscape Dataset [Choi and Cha (2020)] Label</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>0</p>
+<p>Object</p>
+<p>Road, sidewalk, parking</p>
+<p>Building, wall, bridge</p>
+<p>Pole, traffic, light, sign</p>
+<p>Tree</p>
+<p>Human</p>
+<p>Vehicle</p>
+<p>Others</p>
+<p>The SDD-R6D64 was pretrained for about two days, and the training profile with the simplemoving-average (SMA) is provided in Figure 4.12. The input size was set at 513×513 for about 100K iterations but changed to 1009×1009 thereafter until 180K iterations. The model at each iteration has different weights, and there were no clear indications to identify which set of weights at a certain iteration is the best for fine-tuning on the Crack200. Therefore, it was assumed that any set of weights within a period of convergence has comparably same contributions to fine-tuning. As Figure 4.12 demonstrates, a convergence was noticed between 140K and 180K, where the period (40K iterations) was sufficient for</p></section>
+<section class="pdf-page" id="pdf-page-107"><h2 class="page-number">Page 107</h2><p>91 | C h a p t e r 4 feeding the entire dataset into the finetuning model considering the mini-batch size of 8 with the input dimension of 1009×1009. One of the models within the period of convergence was chosen as a pretrained model, and all of the weights except the weights of the last PW filters in the decoder (refer to Figure 4.11) were directly adopted in fine-tuning.</p>
+<p>Figure 4.12: mIoU loss over training iteration [Choi and Cha (2020)] 4.4.5</p>
+<p>Training on the Crack200 The pretrained model (refer to Chapter 4.4.4) was further finetuned (refer to Chapter 4.4.5) on the</p>
+<p>Crack200 (refer to Chapter 4.3) according to the training procedures (refer to Chapter 4.4.1). The finetuned model was tested on the Crack200’s test set. Figure 4.13 displays the mIoU scores of both the finetuned SDD-R6D64 and the model trained from scratch over 40K iterations. The total duration of finetuning and training from scratch on the Crack200 was approximately six hours. As the figure demonstrates, the finetuned model slightly outperformed all training iterations compared to the model trained from scratch. The finetuned model was converged at the mIoU of approximately 0.8, as depicted in Figure 4.13; the input size was changed to 1009×1009 pixels and further finetuned for 10K more iterations. As a result, a slightly better mIoU score of 0.846 was obtained, as summarized in Table 4.4; the table also includes other</p></section>
+<section class="pdf-page" id="pdf-page-108"><h2 class="page-number">Page 108</h2><p>92 | C h a p t e r 4 evaluations metrics that are calculated by Eqs. (4.14) – (4.16). In the context of crack segmentation, precision indicates the fraction of true crack pixels among the pixels that are predicted as crack pixels. Recall indicates the fraction of true crack pixels over all ground-truth pixels of cracks. F1 score is a harmonic average of precision and recall. mIoU indicates the similarity between predicted crack pixels to the ground-truth pixels of cracks over classes (crack and background). The model that achieved the highest mIoU score was considered to be the final model, and the corresponding results are presented with a comprehensive visualization in the next subchapter.</p>
+<p>Figure 4.13: Comparative profiles of SDD-R6D64 using two different training approaches [Choi and Cha (2020)]</p>
+<p>Table 4.4: Evaluation metrics of SDD-R6D64 with different training strategies [Choi and Cha (2020)] Model variation</p>
+<p>Input size</p>
+<p>Precision</p>
+<p>Recall</p>
+<p>F1</p>
+<p>mIoU</p>
+<p>1009×1009</p>
+<p>0.805</p>
+<p>0.834</p>
+<p>0.819</p>
+<p>0.846</p>
+<p>513×513</p>
+<p>0.770</p>
+<p>0.839</p>
+<p>0.803</p>
+<p>0.835</p>
+<p>1009×1009</p>
+<p>0.752</p>
+<p>0.855</p>
+<p>0.800</p>
+<p>0.833</p>
+<p>513×513</p>
+<p>0.756</p>
+<p>0.844</p>
+<p>0.798</p>
+<p>0.831</p>
+<p>513×513</p>
+<p>0.785</p>
+<p>0.802</p>
+<p>0.793</p>
+<p>0.827</p>
+<p>Fine-tuned with ASPP</p>
+<p>Fine-tuned without ASPP Scratch with ASPP</p></section>
+<section class="pdf-page" id="pdf-page-109"><h2 class="page-number">Page 109</h2><p>93 | C h a p t e r 4 True positive True positive + False positive</p>
+<p>(4.14)</p>
+<p>True positive True positive + False negative</p>
+<p>(4.15)</p>
+<p>2 × Precision × Recall Precision + Recall</p>
+<p>(4.16)</p>
+<p>Precision= Recall=</p>
+<p>F1 score=</p>
+<p>4.4.6</p>
+<p>Segmentation results</p>
+<p>This subchapter presents several test results, where the segmentation results are demonstrated in accordance with the following rules. Each panel of image results are denoted by “Raw,” and “Seg.” for raw images and the segmentation results superimposed on the raw images, respectively. True positive (TP), false negative (FN), and false positive (FP) pixels are represented by red, green, and blue pixels, respectively. The pixels of TP (red) and FN (green) are the ground truths. The pixels of TP and FP are the pixels predicted as cracks by the final model. The caption of each result image indicates the mIoU score, in which the bracketed number alongside of the caption is the size of image. The regions where crack features reside are considerably smaller than images, and the results are barely noticeable. Therefore, such regions are enlarged for better visualization and marked as region-of-interest (ROI), which may enable fully exposing the characteristics of both merits and demerits. In accordance with the visualization rules, several representative results of the final model are presented in Figures 4.14 to 4.17. The proposed model effectively negated the features from irrelevant objects, although the tested images had complex crack-like features. Furthermore, the proposed model could detect either thick and thin cracks lying on a few pixels. Common failures were also analyzed: 1) FN predictions were mostly observed around TP pixels. However, such false predictions are acceptable due to the fact that the definitive ground truths of objects cannot be obtained, which is particularly true in</p></section>
+<section class="pdf-page" id="pdf-page-110"><h2 class="page-number">Page 110</h2><p>94 | C h a p t e r 4 the case of fine cracks; 2) the proposed model was unable to segment faint cracks, such as those displayed in Figures 4.15-ROI-1, 4.16-ROI-1, 4.16-ROI-3, and 4.17-ROI-1; 3) the proposed model also could not segment the cracks on spalling regions, as depicted in Figure 4.16-ROI-2. Other test results can also be viewed online (https://github.com/choiw-public/SDDNet ).</p></section>
+<section class="pdf-page" id="pdf-page-111"><h2 class="page-number">Page 111</h2><p>95 | C h a p t e r 4</p>
+<p>Figure 4.14: Representative test result (1) – mIoU= 0.830 [1920×1440] [Choi and Cha (2020)]</p>
+<p>Figure 4.15: Representative test result (2) – mIoU = 0.909 [1280×720] [Choi and Cha (2020)]</p></section>
+<section class="pdf-page" id="pdf-page-112"><h2 class="page-number">Page 112</h2><p>96 | C h a p t e r 4</p>
+<p>Figure 4.16: Representative test result (3) – mIoU= 0.898 [1276×1920] [Choi and Cha (2020)]</p>
+<p>Figure 4.17: Representative test result (4) – mIoU= 0.828 [1920×1275]</p></section>
+<section class="pdf-page" id="pdf-page-113"><h2 class="page-number">Page 113</h2><p>97 | C h a p t e r 4 4.4.7</p>
+<p>Comparative studies and discussions</p>
+<p>This subchapter provides the results from comparative studies to prove the following claims: 1) developing a model dedicated to a specific purpose is highly beneficial (refer to Chapter 4.2); 2) a model should not be trained on images with monotonous features to adapt the model to real practice (refer to Chapter 4.1). To support the first claim, the SDDNet was compared with the DeepCrack (Liu et al., 2019), which is the latest model for crack segmentation at the time this study was conducted. The DeepCrack composers reported the evaluation metrics of six DeepCrack models, and these were also compared to other segmentation models reported earlier. The authors claimed that the DeepCrack models outperformed any of the other models, in which each of DeepCrack models had different merits. Among these models, only the best models were selected to be compared. To fully demonstrate the efficiency of the SDDNet, a customized model, SDD-R6D32, was additionally configured. The number of weights of the SDD-R6D32 was about 3 times smaller than that of the full model (i.e., the SDD-R6D64). The core of the DeepCrack models were configured based on VGG-16 (Simonyan and Zisserman, 2014), which aimed to classify images into 1K classes, and there are about 14 million parameters in DeepCrack models. On the contrary, the compared SDDNet model had only 0.16 million parameters, which was 88 times smaller than any of the DeepCrack models. To accomplish comparisons under fair conditions, the following environments were set up: 1) DeepCrack’s train and test sets were used in training and testing, respectively; 2) the SDD-R6D32 was trained from scratch; 3) the same GPU model was used for comparing testing times. The comparison results are summarized in Table 4.5. The DeepCrack models were expected to achieve better evaluation metrics due to a much greater number of weights compared to the SDD-R6D32. However, the SDDNet model produced better results in every aspect. In terms of processing time, the fastest DeepCrack model processed 9 images (544×384 pixels)</p></section>
+<section class="pdf-page" id="pdf-page-114"><h2 class="page-number">Page 114</h2><p>98 | C h a p t e r 4 per second, while the SDD-R6D32 processed 76 images per second under the same testing environments, which was at least 8 times faster processing than DeepCrack models.</p>
+<p>Table 4.5: Evaluation metrics of SDD-R6D32 and DeepCrack [Choi and Cha (2020)] Model variation</p>
+<p>Parameters</p>
+<p>DeepCrack-CRF DeepCrack-GF</p>
+<p>14</p>
+<p>DeepCrack-Aug SDD-R6D32</p>
+<p>0.160</p>
+<p>Precision</p>
+<p>Recall</p>
+<p>F1</p>
+<p>mIoU</p>
+<p>FPS</p>
+<p>0.868</p>
+<p>0.846</p>
+<p>0.857</p>
+<p>0.836</p>
+<p>2.500</p>
+<p>0.852</p>
+<p>0.866</p>
+<p>0.859</p>
+<p>0.859</p>
+<p>8.475</p>
+<p>0.861</p>
+<p>0.869</p>
+<p>0.865</p>
+<p>0.802</p>
+<p>9.174</p>
+<p>0.871</p>
+<p>0.870</p>
+<p>0.870</p>
+<p>0.879</p>
+<p>75.816</p>
+<p>An additional experiment was conducted to support the second claim. In this comparison, the trained DeepCrack models were not considered because the previous experiment (refer to Table 4.5) revealed that the SDD-R6D32 already outperformed all DeepCrack models. Accordingly, the SDD-R6D64 trained on the DeepCrack’s dataset were compared with the SDD-R6D64 trained on the Crack200. The properties (e.g., number of weights, etc.) of the compared models in this experiment were identical except for the dataset. The SDD-R6D64 has about 0.5 million parameters, which was three times greater than the SDDR6D32. However, it is still 26 times fewer than that of the DeepCrack models. In terms of processing time, the SDD-R6D64 could process 67 images per second, which was at least 7 times faster than all the DeepCrack models. Table 4.6 is the summary of the comparisons, in which the metrics denoted by ‘a’ demonstrate that the SDD-R6D64 trained on the DeepCrack Dataset returned better results than both all the DeepCrack models (refer to Table 4.5) and the SDD-R6D32 (refer to Table 4.5) trained on the DeepCrack’s dataset. The detailed observations of Table 4.6 may provide additional support for the second claim.</p></section>
+<section class="pdf-page" id="pdf-page-115"><h2 class="page-number">Page 115</h2><p>99 | C h a p t e r 4</p>
+<p>Table 4.6: Evaluation metrics of SDD-R6D64 trained and tested on monotonous and complex datasets [Choi and Cha (2020)] Training set</p>
+<p>Tested on the DeepCrack’s test set</p>
+<p>Tested on the Crack200’s test set</p>
+<p>Precision</p>
+<p>Recall</p>
+<p>F1</p>
+<p>mIoU</p>
+<p>Precision</p>
+<p>Recall</p>
+<p>F1</p>
+<p>mIoU</p>
+<p>DeepCrack</p>
+<p>0.874a</p>
+<p>0.870a</p>
+<p>0.872a</p>
+<p>0.880a</p>
+<p>0.213b</p>
+<p>0.561b</p>
+<p>0.309b</p>
+<p>0.587b</p>
+<p>Crack200</p>
+<p>0.875c</p>
+<p>0.870c</p>
+<p>0.872c</p>
+<p>0.881c</p>
+<p>0.805d</p>
+<p>0.834d</p>
+<p>0.819d</p>
+<p>0.846d</p>
+<p>a: SDDNet model trained and tested on the DeepCrack’s train and test sets b: SDDNet model trained on DeepCrack’s training set; tested on Crack200’s test set c: SDDNet model trained on Crack200’s training set; tested on DeepCrack’s test set d: SDDNet model trained and tested on Crack200’s train and test sets (refer to Chapter 4.3)</p>
+<p>•</p>
+<p>The models denoted by ‘a’ and ‘b’: The high evaluation metrics (denoted by ‘a’ in Table 4.6) cannot be an indication of sufficiency in real practice because a model trained on images of monotonous features likely returns poor results in images of complex features. This can be noticed by comparing models ‘a’ and ‘b.’ Specifically, the significant deterioration of precision scores from ‘0.874a’ to ‘0.231b’ is an indication of extremely high FP predictions. In other words, the model failed to discriminate crack-like features and complex backgrounds.</p>
+<p>•</p>
+<p>The models denoted by ‘c’ and ‘d’: The SDD-R6D64 models trained on images of complex features (i.e., Crack200) exhibited consistent performance in testing images of either monotonous or complex features. Focusing on the precision scores (0.875c and 0.805d), the model could effectively negate crack-like features and complex backgrounds.</p>
+<p>•</p>
+<p>The models denoted by ‘a’ and ‘c’: Although model ‘a’ was trained only on Crack200’s training set, it still returned comparable results to model ‘c’, which was trained on the DeepCrack’s dataset, when the models were tested on DeepCrack’s test set. In addition, model ‘a’ also outperformed all the DeepCrack models without using any of the DeepCrack’s dataset.</p></section>
+<section class="pdf-page" id="pdf-page-116"><h2 class="page-number">Page 116</h2><p>100 | C h a p t e r 4 The testing results of the Crack200’s test set using the SDD-R6D64 trained on the DeepCrack’s dataset are compared with the final model in Figures 4.18 to 4.21. These results clearly demonstrate how inferior a model trained on images of monotonous background is and that training a model on images of monotonous features is not applicable to real practice.</p></section>
+<section class="pdf-page" id="pdf-page-117"><h2 class="page-number">Page 117</h2><p>101 | C h a p t e r 4</p>
+<p>Figure 4.18: Contrast result 1 − models trained on complex background (left) and monotonous background (right)</p>
+<p>Figure 4.19: Contrast result 2 − models trained on complex background (left) and monotonous background (right)</p></section>
+<section class="pdf-page" id="pdf-page-118"><h2 class="page-number">Page 118</h2><p>102 | C h a p t e r 4</p>
+<p>Figure 4.20: Contrast result 3 − models trained on complex background (left) and monotonous background (right)</p>
+<p>Figure 4.21: Contrast result 4 − models trained on complex background (left) and monotonous background (right)</p></section>
+<section class="pdf-page" id="pdf-page-119"><h2 class="page-number">Page 119</h2><p>103 | C h a p t e r 4 To highlight the efficiency of the SDD-R6D64 on large images, three different sizes of images were tested, and the results are summarized in Table 4.7. As the results demonstrate, the model could process 12 large images (1920×1080 pixels) in a second. CrackNet-II (Zhang et al., 2018) is another recent model, and the authors reported that their model processed an image of 1025×512 pixels in 1260 milliseconds, while the SDD-R6D64 could process the same size of image in 27.50 milliseconds, which is 46 times faster than the compared model.</p>
+<p>Table 4.7: Processing time of SDD-R6D64 [Choi and Cha (2020)] Image size</p>
+<p>Milliseconds/image (FPS)</p>
+<p>1920×1080</p>
+<p>80.40 (12)</p>
+<p>1025×512</p>
+<p>27.50 (36)</p>
+<p>720×480</p>
+<p>18.10 (55)</p>
+<p>Another great feature of the SDDNet is that the models require an extremely small volume of storage (3 megabytes for the SDD-R6D64). This will naturally lead to more flexible hardware configurations, such as reducing physical dimensions, lowering technical requirements, and cost savings for deploying a SDDNet model to a mobile device. Despite of the satisfying performance of the SDDNet on evaluation scores and processing time, the performance of the model was affected by image quality (i.e., faint cracks were not properly segmented; see Chapter 4.4.6). However, this remains as a common challenge for any type of computer vision algorithms rather than the model’s specific limitation.</p></section>
+<section class="pdf-page" id="pdf-page-120"><h2 class="page-number">Page 120</h2><p>104 | C h a p t e r 4 4.5</p>
+<p>Conclusion and discussion</p>
+<p>This study was conducted to prove the following claims: 1) building a model dedicated to a specific purpose is much beneficial; 2) training a model on monotonous images is not valid in real practice. To prove the claims, a DL model dedicated to structural health monitoring was proposed. The SDDNet was constructed by the combination of the standard convolutions, DenSep modules, a modified ASPP module, and a decoder module. The primary objective was effectively segmenting crack features from a wide range of images with complex features. There were no public datasets that were suited to the specific purpose when this research was under progress, and the Crack200 was manually created. The proposed model was pretrained on the modified Cityscape Dataset prior to finetuning the model on the Crack200. The finetuned model was tested on the Crack200’s test set. Several representative results were posted to highlight and expose the advantages and disadvantages as fully as possible. Recent models were compared with the proposed model, and the comparative studies supported the claims with comprehensive results. The highlights of the proposed model can be summarized as follows: •</p>
+<p>The proposed model effectively segmented crack features, while negating crack-like features and complex backgrounds.</p>
+<p>•</p>
+<p>The proposed model could segment cracks unless crack features were too faint. Consequently, the model achieved the mIoU score of 0.846 and an F1 score of 0.819.</p>
+<p>•</p>
+<p>The proposed model outperformed recent models in every aspect even though the model had 88 times fewer number of weights than the compared models.</p>
+<p>•</p>
+<p>The proposed model could process images of 1025×512 in real time (36 FPS). This was about 46 times faster than the processing time of a recent model.</p></section>
+<section class="pdf-page" id="pdf-page-121"><h2 class="page-number">Page 121</h2><p>105 | C h a p t e r 4 •</p>
+<p>The size of the model was about 3 megabytes, and this property might be greatly beneficial in building an SHM device.</p>
+<p>Although this chapter highlighted the effectiveness of the proposed model in several ways, the current state of the model is too early to apply in real practice. However, the unavailability is not only applicable to the proposed model in this chapter, but also any other DL models for segmenting structural damage. This is because the datasets for developing the DL models were too small, and the datasets cannot be said to reflect the real problems. To properly adopt DL models to real practice, a vast amount of images with well annotated ground truths would essentially need to be built, such as 1.28 million images in the ImageNet. Unfortunately, this goal is not what a research team with a few annotators can attain and is the potential subject for further research.</p></section>
+<section class="pdf-page" id="pdf-page-122"><h2 class="page-number">Page 122</h2><p>106 | C h a p t e r 4 References</p>
+<p>Ali, R., &amp; Cha, Y.-J. (2019). Subsurface damage detection of a steel bridge using deep learning and uncooled micro-bolometer. Construction and Building Materials, 226, 376–387. DOI: 10.1016/j.conbuildmat.2019.07.293 Beckman, G. H., Polyzois, D., &amp; Cha, Y.-J. (2019). Deep learning-based automatic volumetric damage quantification using depth camera. Automation in Construction, 99, 114–124. DOI: 10.1016/j.autcon.2018.12.006 Cha, Y.-J., Choi, W., Suh, G., Mahmoudkhani, S., &amp; Büyüköztürk, O. (2017). Autonomous structural visual inspection using region-based deep learning for detecting multiple damage types. Computer-Aided Civil and Infrastructure Engineering, 33(9), 731–747. DOI: 10.1111/mice.12334 Chen, F.-C., &amp; Jahanshahi, M. R. (2018). NB-CNN: Deep learning-Based crack detection using convolutional neural network and Naïve Bayes data fusion. IEEE Transactions on Industrial Electronics, 65(5), 4392–4400. DOI: 10.1109/tie.2017.2764844 Chen, L.-C., Zhu, Y., Papandreou, G., Schroff, F., &amp; Adam, H. (2018). Encoder-decoder with atrous separable convolution for semantic image segmentation. Computer Vision – ECCV 2018, 833–851. DOI: 10.1007/978-3-030-01234-2_49 Choi, W., &amp; Cha, Y.-J. (2019). SDDNet: Real-time crack segmentation. IEEE Transactions on Industrial Electronics. DOI: 10.1109/tie.2019.2945265 Deng, J., Dong, W., Socher, R., Li, L. J., Li, K., &amp; Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. 2009 IEEE Conference on Computer Vision and Pattern Recognition, 248–255. DOI: 10.1109/cvpr.2009.5206848 Dung, C. V., &amp; Anh, L. D. (2019). Autonomous concrete crack detection using deep fully convolutional neural network. Automation in Construction, 99, 52–58. DOI: 10.1016/j.autcon.2018.11.028 He, K., Zhang, X., Ren, S., &amp; Sun, J. (2016). Deep residual learning for image recognition. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). DOI: 10.1109/cvpr.2016.90 Huang, G., Liu, Z., Maaten, L. van der, &amp; Weinberger, K. Q. (2017). Densely connected convolutional networks. 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). DOI: 10.1109/cvpr.2017.243 Ioffe, S. &amp; Szegedy, C. (2015). Batch normalization: Accelerating deep network training by reducing internal covariate shift, arXiv preprint arXiv:1502.03167. Kang, D., &amp; Cha, Y.-J. (2018). Autonomous UAVs for structural health monitoring using deep learning and an ultrasonic beacon system with geo-tagging. Computer-Aided Civil and Infrastructure Engineering, 33(10), 885–902. DOI: 10.1111/mice.12375 Kingma, D. P. &amp; Ba, J. (2014). Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.</p></section>
+<section class="pdf-page" id="pdf-page-123"><h2 class="page-number">Page 123</h2><p>107 | C h a p t e r 4 Li, R., Yuan, Y., Zhang, W., &amp; Yuan, Y. (2018). Unified vision-based methodology for simultaneous concrete defect detection and geolocalization. Computer-Aided Civil and Infrastructure Engineering, 33(7), 527–544. DOI: 10.1111/mice.12351 Liu, Y., Yao, J., Lu, X., Xie, R., &amp; Li, L. (2019). DeepCrack: A deep hierarchical feature learning architecture for crack segmentation. Neurocomputing, 338, 139–153. DOI: 10.1016/j.neucom.2019.01.036 Long, J., Shelhamer, E., &amp; Darrell, T. (2015). Fully convolutional networks for semantic segmentation. 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). DOI: /10.1109/cvpr.2015.7298965 Nayyeri, F., Hou, L., Zhou, J., &amp; Guan, H. (2018). Foreground–background separation technique for crack detection. Computer-Aided Civil and Infrastructure Engineering, 34(6), 457–470. DOI: 10.1111/mice.12428 Rahman, M. A., &amp; Wang, Y. (2016). Optimizing intersection-over-union in deep neural networks for image Segmentation. Advances in Visual Computing, 234–244. DOI: 10.1007/978-3-319-508351_22 Redmon, J., Divvala, S., Girshick, R., &amp; Farhadi, A. (2016). You only look once: Unified, real-time object detection. 2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). DOI: 10.1109/cvpr.2016.91 Ren, S., He, K., Girshick, R. &amp; Sun, J. (2015), Faster r-cnn: Towards real-time object detection with region proposal networks, in Advances in Neural Information Processing Systems, 91-99. Ronneberger, O., Fischer, P., &amp; Brox, T. (2015). U-Net: Convolutional networks for biomedical image segmentation. Lecture Notes in Computer Science, 234–241. DOI: 10.1007/978-3-319-245744_28 Siam, M., Elkerdawy, S., Jagersand, M., &amp; Yogamani, S. (2017). Deep semantic segmentation for automated driving: Taxonomy, roadmap and challenges. 2017 IEEE 20th International Conference on Intelligent Transportation Systems (ITSC). DOI: 10.1109/itsc.2017.8317714 Sim, C., Villalobos, E., Smith, J. P., Rojas, P., Pujol, S., Puranam, A. Y. &amp; Laughery, L. A. (2017). Performance of low-rise reinforced concrete buildings in the 2016 Ecuador Earthquake. Purdue University Research Repository. DOI:10.4231/R7ZC8111 Simonyan, K. &amp; Zisserman, A. (2014). Very deep convolutional networks for large-scale image recognition, arXiv preprint arXiv:1409.1556. Smith, L. N. (2017). Cyclical learning rates for training neural networks. 2017 IEEE Winter Conference on Applications of Computer Vision (WACV). DOI:10.1109/wacv.2017.58 Tieleman, T. &amp; Hinton, G. (2012), Lecture 6.5-rmsprop: Divide the gradient by a running average of its recent magnitude, COURSERA: Neural networks for machine learning, 4(2), 26-31. Xue, Y., &amp; Li, Y. (2018). A fast detection method via region-based fully convolutional neural networks for shield tunnel lining defects. Computer-Aided Civil and Infrastructure Engineering, 33(8), 638– 654. DOI:10.1111/mice.12367</p></section>
+<section class="pdf-page" id="pdf-page-124"><h2 class="page-number">Page 124</h2><p>108 | C h a p t e r 4 Yang, X., Li, H., Yu, Y., Luo, X., Huang, T., &amp; Yang, X. (2018). Automatic pixel-level crack detection and measurement using fully convolutional network. Computer-Aided Civil and Infrastructure Engineering, 33(12), 1090–1109. DOI:10.1111/mice.12412 Zhang, A., Wang, K. C. P., Fei, Y., Liu, Y., Tao, S., Chen, C., … Li, B. (2018). Deep learning–based fully automated pavement crack detection on 3D asphalt surfaces with an improved CrackNet. Journal of Computing in Civil Engineering, 32(5), 04018041. DOI:10.1061/(asce)cp.1943-5487.0000775</p></section>
+<section class="pdf-page" id="pdf-page-125"><h2 class="page-number">Page 125</h2><p>109 | C h a p t e r 5</p>
+<p>Chapter 5</p>
+<p>Conclusions and Recommendations for Future</p>
+<p>Research</p>
+<p>Summary Deep learning implemented methods for detecting structural defects were investigated in this thesis. It was presented that the suggested methods were superior to previous works in many different aspects. The model’s robust performance was achieved by configuring a domain-specific DL model and training the DL model on a manually created dataset with images of complex features. However, the amount of data used for this research was still small. Therefore, building a significantly larger dataset is recommended prior to continuing this type of research (i.e., damage identification). To realize automated vision-based SHM, multi-temporal 3D reconstruction is worth investigating.</p></section>
+<section class="pdf-page" id="pdf-page-126"><h2 class="page-number">Page 126</h2><p>110 | C h a p t e r 5 5.1</p>
+<p>Conclusions</p>
+<p>The reviewed articles in Chapter 1 indicated that the number of infrastructures that have reached or exceeded their designed longevity is growing year by year. Hence, monitoring their conditions has been an on-going and will also be a long-standing issue. However, research articles questioned the effectiveness of the current practice (i.e., human conducted on-site inspection) mainly because of the limited number of human resources. Image processing algorithms (IPAs) were suggested by researchers to establish methods for automated vision-based defect detection. The methods with IPAs were capable of extracting features using image gradient, but their inadaptability to outdoor environments was a critical issue. The succeeding efforts into combining IPAs and traditional ML models were also not successful due to the inheritance of limitations in IPAs. Recently, mobile units (e.g., drones) with IPAs are suggested as modern inspection systems, but the form of inspection still inherits the limitations of IPAs. Therefore, developing adaptive and robust methods that can break the limitations of the current state was set as the primary goal, and DL was considered to be the best option in this thesis. Chapter 2 provided detailed explanations and backgrounds of DL and its operations that were used in Chapter 3 and Chapter 4: how a digital image is processed; how a DL model can extract features automatically, what are the challenges in training a DL model, how those challenges can possibly be mitigated. One of the main reasons for the unsuccessful implementations of IPAs was their inadaptability in luminance changes, which initiated the study presented in Chapter 3. A deep learning model was proposed to overcome the challenge. The DL model was trained for achieving robust results against the images of noisy features caused by a wide array of luminance changes. The trained model was combined with a sliding-window technique to enable the method to localize damage regions on large images. The method</p></section>
+<section class="pdf-page" id="pdf-page-127"><h2 class="page-number">Page 127</h2><p>111 | C h a p t e r 5 was compared with several well-known IPAs, and the results showed that the proposed method could handle the images that were not successfully processed in the IPAs. Additional tests showed that the results of IPAs could be improved by denoising techniques, but the usage was quite limited because the parameters in denoising process should be defined manually for each image, which aspect had no benefits in real-world problems. Adopting prebuilt models and retraining the models by switching datasets was a commonly applied strategy in this type of topic. However, this study argued the strategy, and a DL model named by SDDNet was independently developed in Chapter 4. In this work, detecting damage was defined as segmenting damage features. By configuring the DL model in the convention of fully convolutional neural network, the size restriction of input images was resolved. The configured architecture could extract multi-scale features by the DenSep and ASPP modules. Accordingly, the model could greatly reduce FP predictions that could not be accomplished in other competitive DL models. The study also demonstrated that developing a DL model dedicated to a task would be a superior approach as there was a significant amount of reduction in calculations while the model performed better. 5.1.1</p>
+<p>Implications of the research This research suggested modern vision-based approaches for detecting structural defects using DL.</p>
+<p>The major obstacle was the dependency on IPAs, but the DL models presented in Chapters 3 and 4 successfully eliminated the dependency while provided better results than IPAs. This thesis suggested that a DL model should be trained on images with complex features; otherwise, the DL model will fail in real practice unless the process of image acquisition is fully controlled. This may provide new guidance for succeeding works. Reusing a DL model, which was pretrained on generic images, was the dominant practice. However, this study suggested the characteristics of the target objects (i.e., structural defect) are different from generic objects (e.g., human, vehicle, etc.) suggested the necessity of developing a domain-</p></section>
+<section class="pdf-page" id="pdf-page-128"><h2 class="page-number">Page 128</h2><p>112 | C h a p t e r 5 specific model. This finding may encourage researchers and engineers to independently develop methods dedicated to their disciplines rather than adopting renowned DL models. 5.1.2</p>
+<p>Limitations</p>
+<p>The classification DL model presented in Chapter 3 showed the potentials of a DL implemented method, but several limitations were noted. The proposed DL model was configured with a FC layer, which restricted the size of inputs. The testing schemes with the sliding-window or similar techniques inevitably led a DL model to focus only on a small region, while damage features can be properly distinguished only if the contexts within a large FOV of images are considered. If a large FOV is selected, the corresponding results would not be meaningful in terms of damage locations. In addition, the testing scheme required repetitive calculations. The segmentation DL model presented in Chapter 4 surmounted the drawbacks of the DL model presented in Chapter 3. However, the proposed DL model was incapable of segmenting faint cracks because the features of faint cracks were too subtle to be extracted.</p>
+<p>5.2</p>
+<p>Recommendations for future research</p>
+<p>Building a well-annotated large dataset can be a reasonable start to realize a practical vision-based damage detection system before any other actions are made. This is because a number of articles proved the effectiveness of DL implemented applications, but most DL models were trained and tested on only a small number of images (e.g., a few hundred) that most likely reflect only a tiny portion of real problems. However, building a dataset is too laborious (especially segmentation), and a DL model that automatically generates ground truths or minimizes the required labours in annotating images can significantly contribute to pushing this type of research to the next level.</p></section>
+<section class="pdf-page" id="pdf-page-129"><h2 class="page-number">Page 129</h2><p>113 | C h a p t e r 5 In terms of the performance of DL models, the presented works in this thesis can be further improved by adopting several known DL techniques. The attention mechanism is a particularly promising technique that readily improves the performances of DL models. In addition, more efficient DL models can be developed via automated machine learning (referred to as AutoML), which can possibly replace the exhaustive human-conducted DL model search. There is mutual a consensus that a camera-equipped mobile unit is a futuristic form of data acquisition to established vision-based infrastructure monitoring. However, mobile units often accompany data corruption (e.g., rolling shutter effect, blur, etc.), and a method for restoring the corrupted data is worth investigating. This is especially meaningful when detecting damage with fine features (e.g., faint cracks). The researchers working on this type of topic (i.e., damage detection using DL) tend to focus on improving the detectability of structural damage. However, to realize automated vision-based SHM, research on combining all the results and comprehensively interpreting what they indicate (e.g., grades of infrastructures, risk prediction) is highly recommended. This type of work may require tracking the holistic damage presence of infrastructures. Therefore, research on building multi-temporal condition maps of infrastructures in 3D virtual space, which should reflect high-resolution textures to take into account small and subtle features, is also recommended.</p></section>
+<section class="pdf-page" id="pdf-page-130"><h2 class="page-number">Page 130</h2><p>114 | A p p e n d i x A</p>
+<p>Appendix A This appendix describes how a DenSep module can contribute to extracting features from various FOVs. Consider a CNN without shortcut connections, as shown in Figure A.1, where the illustrated model can be thought of either a CNN with an input of 1-D tensor (see Figure 2.4) or a top-down view of a CNN with an input of 2-D tensor (see Figure 2.5). The red blocks of each layer are convolution operation, where three red blocks (FOV=3) on the left conduct the weighted sum (see Chapter 2.3.2) and return a single feature (red on the right) remapped onto the succeeding feature map. In other words, each feature of a succeeding feature map (darker blue) can be thought of as a representation of features within a FOV of the previous feature map (brighter blue). Without shortcut connections, as shown in Figure A.1, each convolution layer extracts features from a feature map of a fixed size of FOV. On the other hand, a DenSep module can extract features from various FOVs, as shown in Figure A.2. Each PW filter aggregates features (green) from previous feature maps of multiple FOVs, and the represented feature map and the feature maps of previous layers are concatenated. Therefore, features can be extracted from multiple FOVs. Note that shortcut connections for the layers after the second are not drawn for simplicity.</p>
+<p>Figure A.1: CNN without shortcut</p></section>
+<section class="pdf-page" id="pdf-page-131"><h2 class="page-number">Page 131</h2><p>115 | A p p e n d i x A</p>
+<p>Figure A.2: CNN with shortcut</p></section></article></body></html>

@@ -1,0 +1,91 @@
+{
+  "sha1": "7ee0ba661d4e58f372e505538cbf0fa0cedecaf1",
+  "title": "Conformal piezoelectric systems for clinical and experimental characterization of soft tissue biomechanics",
+  "doi": "https://doi.org/10.1038/nmat4289",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7ee0ba661d4e58f372e505538cbf0fa0cedecaf1/index.html",
+  "source_chars": 91525,
+  "markdown_chars": 3948,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "relative to the sinusoidal voltage applied the",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第 8 页页尾句子中断于 'applied the'，第 9 页页首以 'actuator.' 接续，但中间插入脚注文本 'As illustrated in the Supplementary Note S4， the PI layer between the device substrate and the PZT actuators/sensors may further suppress viscoelastic effects of the device.' 导致正文字句顺序被打乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": " active A  u ,   A/ S  0",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "方程 (1) 中的花括号和希腊字母 δ 在提取后显示为不可读字符（如 、、），原始应为方程分组的括号结构和希腊字母。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "e u  1 33 U A . c33",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "方程 (2) 中 β₁ 的希腊字母 β 和分数布局在提取中损坏，e₃₃/c₃₃ 应位于右侧。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "N E P . S .     E 1  i 1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "Prony 级数公式中 E∞ 的下标和求和符号损坏，显示为不可读字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 38,
+      "quote": "2  Eskin hskin U skin  T  x  w  x  dx  . skin 0 8skin",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "补充材料 Note 5 中 π 显示为 '2 '，应为一个 π 乘数；λₛₖᵢₙ 下标显示损坏。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "through physical contact, the underlying skin. These motions mechanically couple, through the skin and the elastomer, to the adjacent sensor elements. Detecting the voltage response (amplitude and phase) of each sensor at the actuation frequency determines the extent of this coupling.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第 5 页页尾在 'through' 处断开，第 6 页页首以 'physical contact, the underlying skin.' 接续，内容连贯但句内分页。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：PDMS 校准范围 30–1800 kPa（第 9 页正文与第 56 页 Fig. S9）；致动电压 2–5 V、频率 100–1000 Hz（第 9 页）；弯曲刚度 4.55×10⁻⁸ Nm（第 5 页与补充 Note 1 一致）；中性机械面位于 PZT 层中部（补充 Note 1，y_neutral=2.99 μm 在补充材料第 33 页给出）；离体皮肤模量数值：男 33 岁 3.01 MPa、男 69 岁 4.72 MPa、女 35 岁 2.79 MPa、女 66 岁 4.46 MPa（第 10–11 页，与补充表 S1 一致）；AMPS 引起的模量下降持续约 5 分钟并在约 2 小时内恢复（第 11 页）；共聚焦示皮肤厚度增加约 80%（第 11–12 页）；30 名患者志愿者与约 97% 招募率（第 12 页与第 14 页）；牛器官心尖最高模量（第 13–14 页）。Prony 级数具体数值（g₁=0.137、g₂=0.0921、g₃=0.315；τ₁=0.0235s、τ₂=0.00165s、τ₃=0.000281s）来自补充材料 Note 4，本笔记未在正文中展开。变量定义（c₃₃、e₃₃、h_PZT、β₁、β₂、ηᵢ）与原文公式一致。不确定处：方程 (1)、(2) 及 Prony 公式中部分希腊字母在 PDF 提取过程中损坏，无法完全确认原始排版；αᵢ 衰减关系式 (6) 原文为 'αᵢ/α₁ ∝ e^(−(i−1))'，笔记按此转写。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8118,
+      "prompt_tokens": 27783,
+      "total_tokens": 35901,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4444
+      }
+    },
+    "content_chars": 6615
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

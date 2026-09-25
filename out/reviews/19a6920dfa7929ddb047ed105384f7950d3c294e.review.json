@@ -1,0 +1,112 @@
+{
+  "sha1": "19a6920dfa7929ddb047ed105384f7950d3c294e",
+  "title": "CasADi: a software framework for nonlinear optimization and optimal control",
+  "doi": "https://doi.org/10.1007/s12532-018-0139-4",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/19a6920dfa7929ddb047ed105384f7950d3c294e/index.html",
+  "source_chars": 94501,
+  "markdown_chars": 16068,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "\\mathrm {i m p l o r c a s a d i . *}",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "MATLAB 命令应为 import casadi.*，OCR 将 'import' 误识为 'implor'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Output: [[x, 00],\n\n[0, 1]]",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "矩阵输出格式在 OCR 中换行错乱，但结构零 00 与数值零 0 的区分仍可辨认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "1 Constant y=0，y=[1.2,4]Tetc.",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 的列对齐和公式在 OCR 中严重损坏，部分定义和依赖关系难以准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "We summarize the algorithm in Table 1.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "此处应指 Algorithm 1（第 11 页），而非 Table 1；OCR 或原文笔误导致编号错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "f=x2+100*z2",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Python 代码中幂运算应为 x**2+100*z**2，OCR 丢失了 **。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "h=x[0]2+x[1]2+u**2",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Python 代码中应为 x[0]**2+x[1]**2+u**2，OCR 丢失了前两个 **。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "initial $(\\mathcal{X}{0}) $ and terminal $(\\mathcal{X}{\\mathrm{f}}) $ conditions",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 OCR 丢失下划线，应为 \\mathcal{X}_0 和 \\mathcal{X}_\\mathrm{f}，影响符号可读性但不影响论证。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "\\theta^{} ( x,z,u,r,s,v) $ $ \\phi^{} ( x,z,u,r,s,v) $ and $ \\psi^{*} ( x,z,u,r,s,v) $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "\\theta 和 \\phi 的上标星号在 OCR 中丢失，应为 \\theta^{*} 和 \\phi^{*}。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "CasADi-A software framework for nonlinear optimization and optimal control",
+  "self_check": "已核对摘要、各节公式与关键数值：OCP 与 NLP 形式、AD 前向/反向规则、线性求解与求根器导数公式、积分器 DAE 形式、NLP/QP 表述、Rosenbrock 例子迭代次数与时间、Van der Pol 参数、直接多重打靶 T=10/N=20 等均与 OCR 文本一致。公式中部分下标/上标因 OCR 损坏已照录并在 extraction_issues 中标出，未凭记忆补写。Table 1 和 Table 2/3 的结构在 OCR 中不完整，仅保留正文明确描述的内容。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9755,
+      "prompt_tokens": 25799,
+      "total_tokens": 35554,
+      "prompt_tokens_details": {
+        "cached_tokens": 25600
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18821,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "c07246b8c229568fbc3953abf2edf0bfc2d76d5b",
+  "title": "Recent Advances of Lanthanum-Based Perovskite Oxides for Catalysis",
+  "doi": "https://doi.org/10.1021/acscatal.5b01667",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c07246b8c229568fbc3953abf2edf0bfc2d76d5b/index.html",
+  "source_chars": 73995,
+  "markdown_chars": 4833,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "with a can rate of 5 mV s−1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文为扫描速率，应为“scan rate”，文本抽取为“can rate”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "This porous structure was found to be essential to the oxgyen electrochemistry.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“oxgyen”应为“oxygen”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "As we dissussed in previous sections",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“dissussed”应为“discussed”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "The precusors turned into a mixed metal glyoxylate salt",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“precusors”应为“precursors”。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Recently, Zhou et al. synthesized LaNiO3−δ with different crystal structures by heating premade LaNiO3−δ powders (LN-RT) at 400 °C (LN-400), 600 °C (LN-600) and 800 °C (LN-800).62",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句在第5页和第6页重复出现，可能因图6与图7插入导致正文重复抽取，应保留一次。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：ORR活性与d电子数关系（d4/d7最大）、eg=1最优；OER火山图eg=1；LSCO NW比表面积96.78 m²/g、孔径10.17 nm、容量>11000 mAh/g；PNT-LSM比表面积31.34 m²/g；介孔LaCoO3 BET 96.7 m²/g、T10=335°C、T50=470°C；KIT-6复制比表面积110–155 m²/g；碳模板LaFeO3 49.3 m²/g、NO/CO转化400°C vs 580°C；3DOM LaMnO3 37–39 m²/g。公式（1）–（4）已原样保留。不确定之处：部分数值（如“140°C稳定30h”）原文表述可能指100%转化率下的稳定，已按原文描述。提取文本中第5-6页重复段落在笔记中仅采用一次，未影响内容完整性。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 22002,
+      "total_tokens": 32002,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5931
+      }
+    },
+    "content_chars": 6528
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "4c7e8e7d26bef514868b3c9e4b6d4d6e44a57b2a",
+  "title": "Neurosymbolic AI: the 3rd wave",
+  "doi": "https://doi.org/10.1007/s10462-023-10448-w",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4c7e8e7d26bef514868b3c9e4b6d4d6e44a57b2a/index.html",
+  "source_chars": 94490,
+  "markdown_chars": 2418,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "identifying 3",
+      "type": "页码标记混入正文",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第5页末尾数字“3”实为页码标记，被嵌入正文句子中，导致“identifying 3 the necessary”的错觉，应视为页间分隔符。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "concluf-",
+      "type": "疑似OCR/文本错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "“concluf-”不是英文词，结合下一页开头的“sions”应组成“conclusions”，但“concluf”可能是“conclu”的误识别，无强证据不自行修正。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和关键结论。确认了命题性限制、LTN的[0,1]区间、Kautz六类、五个成分、三个挑战等关键信息，公式如∀xA(x)→(∃yB(y)∧¬∃zC(z))已保留。提取文本中第5页的页码“3”和第16页的“concluf-”为可疑问题，已在extraction_issues中标记。其余数值和论点与原文一致，未发现矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9223,
+      "prompt_tokens": 21497,
+      "total_tokens": 30720,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7491
+      }
+    },
+    "content_chars": 3153
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

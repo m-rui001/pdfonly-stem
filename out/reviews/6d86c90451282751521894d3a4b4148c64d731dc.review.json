@@ -1,0 +1,91 @@
+{
+  "sha1": "6d86c90451282751521894d3a4b4148c64d731dc",
+  "title": "Neutrophil heterogeneity: implications for homeostasis and pathogenesis",
+  "doi": "https://doi.org/10.1182/blood-2016-01-688887",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6d86c90451282751521894d3a4b4148c64d731dc/index.html",
+  "source_chars": 61860,
+  "markdown_chars": 2276,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "DOI 10.1182/blood-2016-01688887.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "与论文标题及正文中的DOI不一致，正确应为blood-2016-01-688887。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "estimated at 4.36 3 109 and 8.8 3 109 cells/kg",
+      "type": "符号识别问题",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "数字中的“3”疑为乘号“×”被误识别，应为4.36×10^9和8.8×10^9。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "modulate CD41 T-cell and B-cell responses",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "CD41应为CD4+，上标加号在提取中丢失，类似情况还有CD81。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "interact with resident CD81 T cells",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "CD81应为CD8+，上标加号丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Mouse: ;17% of bone marrow",
+      "type": "表格文本顺序混乱",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "表格提取内容无序，无法准确还原对应关系，影响数据理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Fcg receptor-21",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "疑为Fcγ受体I（CD64）的误识别，但不确定，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：中性粒细胞寿命5.4天、mRNA含量低10-20倍、OLFM4阳性比例20-25%、骨髓池大小等，与摘要和结论方向一致。不确定处：DOI字符串不一致，表格数据无法完全还原，CD41/CD81等上标缺失，Fcg receptor-21含义存疑，均在extraction_issues中标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10537,
+      "prompt_tokens": 16024,
+      "total_tokens": 26561,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8583
+      }
+    },
+    "content_chars": 3761
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

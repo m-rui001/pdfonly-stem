@@ -1,0 +1,76 @@
+{
+  "sha1": "213c38565f9c17a0f071936ac57469219620f530",
+  "title": "Evolution of the electrochemical interface in high-temperature fuel cells and electrolysers",
+  "doi": "https://doi.org/10.1038/nenergy.2015.14",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/213c38565f9c17a0f071936ac57469219620f530/index.html",
+  "source_chars": 79308,
+  "markdown_chars": 12301,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "place through or around this phase which thus has the ability to restrict or block the reactions $ ^{2 7} $",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "该句在页末出现重复片段（'place through or around this phase which th' 与下一行重复），属 OCR 抽取时的行重复/阅读顺序问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "3.2 Passivation and activation phenomena",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "该小节编号在正文中为 '3.2'，但按上下文应属第 4 节（'4. Evolution of the Interface'）下的子节，编号疑似 OCR 或原文编号错误；不影响内容理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "La0.6Sr0.4Co0.2Fe0.8O3-δimpregnated in YSZ",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "表 1 中化学式与文字之间缺少空格，且下标未正确格式化，属表格结构抽取损伤，但数值与材料可辨识。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "$ (\\mathrm{L a,S r}) \\mathrm{C o O}{3- \\delta}/(\\mathrm{L a,S r}){2} \\mathrm{C o O}_{4- \\delta} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "下标/化学计量符号在 OCR 中部分丢失或错位（如 CoO 的 δ 下标、La/Sr 比例下标），但可辨识为 (La,Sr)CoO₃₋δ/(La,Sr)₂CoO₄₋δ 复合物。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Evolution of the electrochemical interface in high temperature fuel cells and electrolysers",
+  "self_check": "已核对：论文标题与登记题名一致（OCR 首页标题为 'Evolution of the electrochemical interface in high temperature fuel cells and electrolysers'，登记为 '...high-temperature...'，仅连字符差异，视为同一篇）；DOI 与登记一致。关键数值已核对：3PB 连接长度 63%、浸渍负载 1–10 wt.%、30 wt.% CGO、退化速率 5–6 %/kh、0.04 mV/h 对 0.5 mV/h、P=0.7 W/cm²、1 kW 系统、850 °C、300–1000 小时、6–7 倍时间减少、24% 表面积增加、三倍功率密度、约三分之一颗粒浸入、100 nm 深度等均与原文一致。公式符号如 O²⁻、e⁻、OH⁻、O⁻、pO₂、R_p、ABO₃、AA′B₂O₅₊δ、Aₙ₊₁BₙO₃ₙ₊₁ 等按原文保留。仍不确定处：第 9 页小节编号 '3.2' 与上下文第 4 节的关系；表 1 中部分化学式下标格式在 OCR 中不完整，但数值与材料可辨识。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8634,
+      "prompt_tokens": 20257,
+      "total_tokens": 28891,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14316,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

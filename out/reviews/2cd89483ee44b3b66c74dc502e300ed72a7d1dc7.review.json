@@ -1,0 +1,45 @@
+{
+  "sha1": "2cd89483ee44b3b66c74dc502e300ed72a7d1dc7",
+  "title": "Optimizing Binding Energies of Key Intermediates for CO 2 Hydrogenation to Methanol over Oxide-Supported Copper",
+  "doi": "https://doi.org/10.1021/jacs.6b05791",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2cd89483ee44b3b66c74dc502e300ed72a7d1dc7/index.html",
+  "source_chars": 57424,
+  "markdown_chars": 4682,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "Ti3O6H6 luster is anchored to Cu(111) only through Ti-Cu bonds",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文本中“luster”疑为“cluster”之误，但无法确定原文，照录可见文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：Ti₃O₆H₆上CO₂ BE=−0.32 eV，Zr₃O₆H₆上−1.18 eV；*CO、*HCO、*H₂CO的BE在两种体系中的数值与表1一致；反应能垒如Ti上*CO₂→*HOCO Ea=0.89 eV、Zr上*OH加氢Ea=1.36 eV、*H₃CO加氢Ea=1.11 eV，以及流动反应器转化率0.80% vs 0.15%和甲醇时空产率13.84 vs 2.45 g kgcat⁻¹ h⁻¹，均与正文相符。不确定处：部分反应步的∆E符号（如Ti上*H₂CO生成∆E=−0.23 eV）在原文中未明确注明从哪个初态算起，但照录原文。另有一处“luster”疑似错别字，已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5845,
+      "prompt_tokens": 18236,
+      "total_tokens": 24081,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2482
+      }
+    },
+    "content_chars": 5341
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

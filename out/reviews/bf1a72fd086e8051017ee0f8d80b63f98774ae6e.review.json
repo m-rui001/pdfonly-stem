@@ -1,0 +1,82 @@
+{
+  "sha1": "bf1a72fd086e8051017ee0f8d80b63f98774ae6e",
+  "title": "Deep Dynamic Neural Networks for Multimodal Gesture Segmentation and Recognition",
+  "doi": "https://doi.org/10.1109/tpami.2016.2537340",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bf1a72fd086e8051017ee0f8d80b63f98774ae6e/index.html",
+  "source_chars": 85825,
+  "markdown_chars": 6457,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "because because it requires mainly matrix products",
+      "type": "重复词/原文笔误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "同一词相邻出现，原文或提取可能存在重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Skeleton – DBDN",
+      "type": "疑似笔误（应为DBN）",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "正文与摘要均用DBN，仅此处写作DBDN，疑为笔误或提取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "[46] 3 set skeletal & HOG, Boosted classifier [63] 3D skeletal pose & HOG, MRF [48] Dense trajectory (HOG, HOF, MBH) [62] Template-based Random Forest Classifier [64] Fisher Vector, Dynamic Programming [65] Independent Subspace Analysis, RF [66] PHOG, SVM, HMM [45] Representation Learning (multiscale) [35] CNN [34] Deep Neural Networks",
+      "type": "表格结构信息丢失",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "表3在提取后仅剩无序方法列表，各数值与方法的对应关系无法重建；笔记中只引用可由正文文字直接支持的比较结论。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "the following bT5i c frames are assigned to state h1a",
+      "type": "疑似OCR/字符误提取",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "bT5i c 疑似应为 ⌊T_i/5⌋ 的取整表达式；提取中数字与下标混淆。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "Nf ¼ Nj ð 2j þ Nj þ Nj Þ 3 ¼ 891",
+      "type": "公式/数字一致性疑点",
+      "severity": "high",
+      "confidence": 0.6,
+      "reason": "所给计算式在数学上无法由 Nj=11 复现出 891，疑似存在符号或下标抽取缺失；笔记中照录原文并标注。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：摘要0.81与表1晚期融合测试0.809一致（四舍五入）；骨架与3DCNN验证误差16.5%和39.06%与正文一致；表2事件级指标在骨架、RGB-D、晚期融合、中间融合四组间与正文无冲突；无HMM简化系统JI=0.66及事件级76.6/5.3/18.1与正文一致；训练/测试复杂度数据一致。仍不确定处：N_f=891的推导无法用提取公式复现（已在issue标注），表3的方法-分数对应关系因提取残缺无法准确重建，故正文仅采用由文字明确支持的对比结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18394,
+      "prompt_tokens": 21066,
+      "total_tokens": 39460,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 13850
+      }
+    },
+    "content_chars": 8248
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "sha1": "513f0c427f9f6581723d5f20c455d069415896c7",
+  "title": "The FEniCS Project Version 1.5",
+  "doi": "https://doi.org/10.11588/ans.2015.100.20553",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/513f0c427f9f6581723d5f20c455d069415896c7/index.html",
+  "source_chars": 33725,
+  "markdown_chars": 10607,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": " $\\mathcal{P}_{r}^{-}\\Lambda^{k}(\\Delta_{n})$ \n\n k=0 k=1 k=2 k=3 \n\n n=1 P DP \n\n n=2 P RT[E,F] DP \n\n n=3 P N1E N1F DP \n\n \n\n $\\mathcal{Q}_{r}^{-}\\Lambda^{k}(\\Box_{n})$ \n\n k=0 k=1 k=2 k=3 \n\n n=1 Q DQ \n\n n=2 Q RTC[E,F] DQ \n\n n=3 Q NCE NCF DQ \n\n $\\mathcal{P}_{r}\\Lambda^{k}(\\Delta_{n})$ \n\n k=0 k=1 k=2 k=3 \n\n n=1 P DP \n\n n=2 P BDM[E,F] DP \n\n n=3 P N2E N2F DP \n\n \n\n $\\mathcal{S}_{r}\\Lambda^{k}(\\Box_{n})$ \n\n k=0 k=1 k=2 k=3 \n\n n=1 S DPC \n\n n=2 S BDMC[E,F] DPC \n\n n=3 S AAE AAF DPC",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1 的 OCR 文本丢失了表格行列对应关系，元素名称与 k、n 的对应不完整，影响对有限元记号表的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "GenericVector. setitem ,e.g., vec[indices] = values,now takes local indices",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "方法名与标点周围出现异常空格和逗号，疑似 OCR 抽取时格式损坏，但不影响对接口变更含义的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "CMake $ \\geq 2. 8 $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "版本号中的小数点被空格分隔，疑似 OCR 抽取错误，但可识别为 CMake >= 2.8。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "petsc4py $ \\geq 3. 3, < 3. 6 $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "版本号中的小数点被空格分隔，疑似 OCR 抽取错误，但可识别为 petsc4py >= 3.3, < 3.6。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "slepc4py $ \\geq 3. 5. 1, < 3. 6 $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "版本号中的小数点被空格分隔，疑似 OCR 抽取错误，但可识别为 slepc4py >= 3.5.1, < 3.6。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "Trilinos $ \\geq 1 1. 0. 0 $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "版本号中的数字和点被空格分隔，疑似 OCR 抽取错误，但可识别为 Trilinos >= 11.0.0。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "The FEniCS Project Version 1.5",
+  "self_check": "已核对 OCR 正文标题与登记题名一致，DOI 与登记一致；关键数值如 2015 年 1 月 12 日发布、超过 $2^{32}$ 个自由度、24576 核、120 亿自由度、符号开销降低 20-60%、JIT 从 5s 到 4s 和从 103s 到 48s、2s 延迟等均按原文保留。公式和代码片段按提取文本原样保留，未补写或推测。Table 1 结构损坏已在 extraction_issues 中标出，其元素名称与 k、n 的对应关系仍不完全确定。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6368,
+      "prompt_tokens": 9982,
+      "total_tokens": 16350,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12997,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "The FEniCS Project Version 1.5",
+    "translated_title": "FEniCS项目1.5版",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

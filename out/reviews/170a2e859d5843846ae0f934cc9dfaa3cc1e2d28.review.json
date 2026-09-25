@@ -1,0 +1,63 @@
+{
+  "sha1": "170a2e859d5843846ae0f934cc9dfaa3cc1e2d28",
+  "title": "Advances and Promises of Layered Halide Hybrid Perovskite Semiconductors",
+  "doi": "https://doi.org/10.1021/acsnano.6b05944",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/170a2e859d5843846ae0f934cc9dfaa3cc1e2d28/index.html",
+  "source_chars": 67181,
+  "markdown_chars": 3602,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Landau the3",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "第5页末尾单词被截断，第6页开头以'ory of phase transitions'接续，应为'Landau theory of phase transitions'，需在阅读时拼接。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "a= p (1/4\n\ndP b I\n\n, u)2 + (1/4 + u)2 + (wc/a)2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式中'p (1/4 dP b I , u)2'缺少清晰括号结构，可能是'p'(意为平方根?)和下标混乱，原文可能有排版错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "3D 3D 2D 2D\nEg ⇡ Eg,DF + Eg,DF T +⌃ T + ⌃",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式(2)中上标/下标缺失，无法判断正确项结构，可能应为Eg,DF^3D + ΔEg,DF^T + ΔΣ^T + Σ^2D，但提取文本未完整保留。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的数据：3D HOP效率>21%，大面积效率15.6%、19.6%、10.4%；SOC使3D DOS减小因子3、2D减小因子2；Ge的SOC能隙减小0.15 eV；激子结合能3D为50 meV，2D仅量子限制为200 meV，加介电限制为330 meV；介电常数有机2.2、无机高频5.0、静态15，3D块体ε1=25；带隙外推2.7 eV、有效质量0.093。公式(1)-(5)已按提取文本原样保留，但公式(2)的上下标提取不完整，已在问题中标出。文中未提及图表未描述的其他数值，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4959,
+      "prompt_tokens": 19706,
+      "total_tokens": 24665,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1963
+      }
+    },
+    "content_chars": 4738
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

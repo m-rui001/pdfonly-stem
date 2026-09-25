@@ -1,0 +1,93 @@
+{
+  "sha1": "062b94b88e57b2c7974292192f33cdccaf56a00f",
+  "title": "Towards stable and commercially available perovskite solar cells",
+  "doi": "https://doi.org/10.1038/nenergy.2016.152",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/062b94b88e57b2c7974292192f33cdccaf56a00f/index.html",
+  "source_chars": 47997,
+  "markdown_chars": 7622,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "adduct of $ \\mathrm{M A I^{\\prime} P b I}{2}^{\\prime} \\mathrm{D M S O} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "加合物化学式抽取损坏，出现异常撇号与下标错位，疑似应为 MAI·PbI2·DMSO 之类，但原文可见文本已损坏，照录并标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{F A}{0.8 5} \\mathrm{M A}{0 1 5} \\mathrm{P b I}{2. 5 5} \\mathrm{B r}{0. 4 5} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "组成式下标抽取错位，MA 下标显示为 0 1 5，疑似 0.15，但无法从文本确认，照录可见形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "approaches 0.5 % for currents in the range of $ J{\\mathrm{S C}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "J_SC 下标抽取为 J{\\mathrm{S C}}，符号格式损坏但含义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Most high-performing PSCs are based on perovskite film they need encapsulation of the whole device",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子语法不完整，疑似漏词或断句错误，但不足以确定具体缺失内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "amino-alkyl photophonates",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "photophonates 疑似 phosphonates 的 OCR 误识，但原文可见文本如此，照录并标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "before commercialization lead PSCs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "疑似漏词或断句错误（如 before commercialization of lead PSCs），但无法从文本确认。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Towards Stable and Commercially Available Perovskite Solar Cells",
+  "self_check": "已核对：摘要 PCE 22%、认证 PCE 22.1%（2016 NREL 图表）、介观 22% 与平面 15.6% 认证 PCE、介观 21% 认证 PCE、真空闪蒸 1 cm² 器件 19.6%、FA0.85MA0.15PbI2.55Br0.45 的 V_oc 1.32 V 与 230 mV 带隙差、EQE_EL 0.5% 与 0.14 V 损失及 1.18 V 实测 V_oc、收集效率公式与 99% 条件、成本 2/10/20/40/80 美元每平方米及 0.3 美元/W、能量回收期 <0.7 年与回报因子 >8、铅含量 0.4 g/m² 与土壤 10–100 mg/kg、光电二极管响应度 600 A/W 与 2000 倍放大、忆阻器 10⁷ 开关比。公式按提取文本原样保留，未凭记忆修复损坏的化学式与下标。仍不确定处：MAI·PbI2·DMSO 加合物式与 FA/MA 组成下标在 OCR 中损坏，已照录并标注；部分句子语法不完整，未静默改正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5708,
+      "prompt_tokens": 12229,
+      "total_tokens": 17937,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9898,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

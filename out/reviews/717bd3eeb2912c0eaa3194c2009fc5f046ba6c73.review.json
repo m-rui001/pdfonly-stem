@@ -1,0 +1,100 @@
+{
+  "sha1": "717bd3eeb2912c0eaa3194c2009fc5f046ba6c73",
+  "title": "On-road vehicle emissions and their control in China: A review and outlook",
+  "doi": "https://doi.org/10.1016/j.scitotenv.2016.09.040",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/717bd3eeb2912c0eaa3194c2009fc5f046ba6c73/index.html",
+  "source_chars": 150640,
+  "markdown_chars": 8768,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 25,
+      "quote": "For example, a substantial surge in truck stocks occurred in approximately 2010 because of a package of economic stimulation measures",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "此处讲话主题为预测其他车辆类别(如卡车)的人口，句子在页尾处结束，下一页以'that began in late 2008.'继续。文本似乎缺失了描述经济刺激措施起止时间或具体性质的部分内容，但整体语义完整，无法确定具体缺失内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "It was been estimated that prior to the adoption of substantial emission controls in 2000, vehicles were responsible for 77% of carbon monoxide (CO) and 68% nitrogen oxide (NOx) concentrations in Beijing",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“It was been estimated”中“been”冗余，疑为原文或抽取错误。正常应为“It was estimated”或“It has been estimated”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 24,
+      "quote": "during 2020-2030, total vehicle emissions will further decrease from 0.13 Mt in 2020 to 0.076 Mt in 2030 under the PC[1] scenario with an AAPR of 5.1%.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "文中'5.1%'与前文统一使用'AAPR'还是'AARP'不一致。上下文多次使用'AARP'(annual average reduction percentage)指年均降幅，此处写作'AAPR'疑为笔误或抽取错误，但无法确证原文，故保留文本原样。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 42,
+      "quote": "Wu, X., Wu, Y., Zhang, S., Liu., H., Fu, L., Hao, J., 2016. Assessment of vehicle emission programs in China during 1998-2013: achievement, challenges and implications. Environmental Protection, 214, 556-567.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "期刊名称'Environmental Protection'卷期页码'214, 556-567'与同作者的论文已知信息相比似乎不匹配，且与其他参考文献的格式不一致。但无更多文本证据无法确认，故标记为疑点。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "emission standards for heave-duty diesel vehicles (HDDVs) in China have been revised substantially and, as for LDGVs, the emission control roadmaps adopted for HDDVs in China now resemble those in Europe.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "'heave-duty'应为'heavy-duty'的拼写错误。此段落在第6页中也出现同样错误，故标注为疑似拼写异常，疑为原始PDF文字识别或输入错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 28,
+      "quote": "the magnitude of NOx emission reduction would be comparable to the historical achievement in the US from 2004 to 2014 (a total reduction of 51% in NOX emissions from vehicles in the US)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文前文提到美国NOx在2002年达峰并降至2014年约4.5Mt，此处说2004-2014年美国来自车辆的NOx排放总量减少51%。虽无直接矛盾，但缺乏更明确的出处确认该具体百分比，且数值在前后文中未完全呼应，故标记为低置信疑点。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "Beijing was the first city to implement the China 1 emission standard (from Jan 1999) which was later enforced nationwide (from July 2000)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第7页末尾的句子'Beijing was the first city to...'在页尾中断，第8页开头为'which was later enforced nationwide (from July 2000)。'，但两页之间无额外文字缺失，句子能自然拼接，故仅作低置信检查记录。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：(1) 车辆保有量从1990年的5.5百万增至2014年的1.48亿，摘要称“26-fold”；(2) 2010-2011年柴油平均硫含量约1000 ppm，最高4253 ppm；(3) 历史排放清单：HC 4.16 Mt、CO 27.4 Mt、NOX 7.72 Mt、PM2.5 0.37 Mt；(4) NAP/PC[1]/PC[2]情景下的2030年排放和减排百分比（如PC[1]相对2013年HC减少39%、CO 57%、NOX 59%、PM2.5 81%；PC[2]相对2013年HC减少57%、CO 71%、NOX 67%、PM2.5 84%）；(5) 排放因子和标准数据（表1限值等）照录原文数字。不确定之处：PC[2]的减排百分比在摘要中表述为“相对2013年”而正文中多处相对2010年（如NOX减少61%、PM2.5减少86%），对照原文条件后已在正文中按行文情境分别保留；正文中“AAPR”疑为“AARP”笔误已在issues中标注；未补充任何论文未明确给出的公式或数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7708,
+      "prompt_tokens": 38247,
+      "total_tokens": 45955,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1059
+      }
+    },
+    "content_chars": 12386
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

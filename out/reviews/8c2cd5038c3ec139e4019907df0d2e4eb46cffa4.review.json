@@ -1,0 +1,63 @@
+{
+  "sha1": "8c2cd5038c3ec139e4019907df0d2e4eb46cffa4",
+  "title": "Reactive boride infusion stabilizes Ni-rich cathodes for lithium-ion batteries",
+  "doi": "https://doi.org/10.1038/s41560-021-00782-0",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8c2cd5038c3ec139e4019907df0d2e4eb46cffa4/index.html",
+  "source_chars": 57063,
+  "markdown_chars": 4222,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "interface oxygen coordinated by 1 B, 2 Ni and 2 Ni",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "前文均使用“1 Co, 2 Ni and 3 Li”和“1 B, 2 Ni and 2 Li”的配位表述，此处的“2 Ni and 2 Ni”疑似应为“2 Ni and 2 Li”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "from 1 MHz to 10 MHz",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "EIS频率扫描通常从高频到低频，1 MHz至10 MHz不合逻辑，更可能为10 mHz。原文未提供上下文修正，故标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "manganese sulfate pentahydrate (MnSO4·6H2O)",
+      "type": "疑似化学式错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "五水硫酸锰应为MnSO4·5H2O，而分子式写为6H2O，名称与式不符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：放电容量约215 mAh/g、CE 91.5%、7C循环200圈容量保持82.2%、全电池500圈95.0% vs 79.2%、电压损失比3.75倍、岩盐相厚度13 nm vs 2 nm、DSC温度269.5/250.9°C和热量487.9/786.3 J/g、界面强度41 GPa vs 9 GPa、B-O键长1.33 Å。公式和符号均按文本保留。不确定之处：EIS频率范围疑似单位错误，硫酸锰分子式疑似错误，另界面配位描述中“2 Ni and 2 Ni”疑似笔误，已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9147,
+      "prompt_tokens": 15385,
+      "total_tokens": 24532,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5857
+      }
+    },
+    "content_chars": 5314
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

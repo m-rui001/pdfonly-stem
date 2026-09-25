@@ -1,0 +1,93 @@
+{
+  "sha1": "459ddd21de6cad7381ca059dbb2db71c93bc0d53",
+  "title": "Soil and human security in the 21st century",
+  "doi": "https://doi.org/10.1126/science.1261071",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/459ddd21de6cad7381ca059dbb2db71c93bc0d53/index.html",
+  "source_chars": 44830,
+  "markdown_chars": 6060,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "in urban settings. Possibly the most challenging issues will be to better understand the magnitude of global soil carbon feedbacks to climate change and to mitigating climate",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "REVIEW SUMMARY 的 ADVANCES 段落在“sensitivity and”后中断，随后插入“in urban settings...”，再接“response to warming...”，明显是分栏阅读顺序错乱，导致该段语义不连贯。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "change in a timely fashion. The net results of human impacts on soil resources this century will be global in scale and will have direct impacts on human security for centuries to come.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句被放在 OUTLOOK 段之后，但内容属于 ADVANCES 段末尾，与“mitigating climate”衔接，属分栏阅读顺序错乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Management Type Maximum Flux(Gt of C year-1) Reference Cumulative Flux(Gt)",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "Table 1 的表头与数据行在 OCR 中丢失了列对齐和分隔，部分行如“Increased net primary production (31) 160 to 1230”缺少 Maximum Flux 列，难以准确复原表格结构。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Total for management 1.26 16.4*",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中“Total for management”行的 Maximum Flux 与 Cumulative Flux 列对应关系因表格结构损坏而不完全清晰，1.26 与 16.4* 的列归属需结合表头推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Net balance -188 to +137",
+      "type": "table_structure_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Table 1 中“Net balance”行的数值列归属因表格结构损坏而不完全清晰，-188 与 +137 对应 Cumulative Flux 列需结合上下文推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Anthropogenic increases in atmospheric $ \\mathrm{CO}{2} $ may drive increased net primary production (NPP) as long as nutrient and water limitations do not occur (31), which ultimately may have a negative feedback on atmospheric $ \\mathrm{CO}{2} $ through increased inputs to soil C (Fig. 3). On the other hand, increasing",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式标记中 CO₂ 的下标 2 在部分位置丢失（如 $ \\mathrm{CO}{2} $），虽不影响语义理解，但属于公式符号抽取不完整。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Soil and human security in the 21st century",
+  "self_check": "已核对：土壤有机碳上层3米约2300 Gt；耕作释放50–70 Gt C；管理固存总潜力约1.26 Gt C yr⁻¹、累计16.4 Gt；NPP增加带来160–1230 Gt、分解损失104–629 Gt、净变化−72至+253 Gt；北纬损失50–150 Gt；侵蚀碳汇估计0.40±0.20 Gt C yr⁻¹；美国欧洲接触前侵蚀约21 m My⁻¹、中部可超2000 m My⁻¹、黄土高原近10,000 m My⁻¹；自然土壤产生速率50–200 m My⁻¹；磷矿石价格80→450→约700美元/吨；钾肥2009年约875美元/公吨、预计2020年1500美元。公式与符号按 OCR 可见文本保留，未补写或修复。仍不确定处：Table 1 部分行列对应关系因表格结构损坏需结合表头推断；REVIEW SUMMARY 分栏阅读顺序错乱导致 ADVANCES 段语义不连贯。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4512,
+      "prompt_tokens": 11623,
+      "total_tokens": 16135,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8993,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

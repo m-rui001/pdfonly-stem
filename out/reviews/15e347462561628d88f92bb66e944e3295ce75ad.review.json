@@ -1,0 +1,55 @@
+{
+  "sha1": "15e347462561628d88f92bb66e944e3295ce75ad",
+  "title": "Nanotechnology and artificial intelligence to enable sustainable and precision agriculture",
+  "doi": "https://doi.org/10.1038/s41477-021-00946-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/15e347462561628d88f92bb66e944e3295ce75ad/index.html",
+  "source_chars": 162175,
+  "markdown_chars": 5069,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 56,
+      "quote": "potential use of in silico computer19",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页码56末尾出现“computer19”，下一页开头为“based chemical modeling technologies”，疑为“computer-based”被跨页拆开，数字19可能是页码或引用标记混入，需核对原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 64,
+      "quote": "preprocessing and curation of the data for direct input into the AI/ML models, for example via the Enalos Tools102 in KNIME, ensures that the output data from one model can serve as the input data for subsequent models",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "该句前缺少主语，且同一页随后出现“Integration of automated tools for harvesting data from public databases,”，疑似应接在该句之前，属于跨页时句子被拆开且顺序颠倒。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：NUE<50%、农业温室气体排放约11%、活性氮减排目标150→35 Mt N y⁻¹、磷流失为前工业时期10倍、杂草和病害各致34%作物损失、TiO₂暴露浓度1 mg kg⁻¹干土90天、碳点增产20%、SWCNTs光吸收范围400-700 nm且效率<4%、C4比C3光利用效率高近50%、羟基磷灰石纳米针施用量降低50%、纳米铜效力高4个数量级（10⁴倍低浓度）。机器学习分类及实例（KNN、K-means、强化学习、QSPR/QSAR、SPACSYS）均基于原文。对“104”按原文照录（原提取文本为“104”，未补指数），在笔记中写作“10⁴倍”以符合原文“four orders”和“104 times”的双重表述，但保留原文数字形式。其他不确定处：第64页句子顺序颠倒已在extraction_issues中标注；第56页“computer19”疑为跨页混入页码，未作修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5536,
+      "prompt_tokens": 38236,
+      "total_tokens": 43772,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2077
+      }
+    },
+    "content_chars": 6367
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

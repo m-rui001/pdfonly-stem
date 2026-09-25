@@ -1,0 +1,45 @@
+{
+  "sha1": "77ee9b2a38fbf6008e202e4b517b574dd29e773d",
+  "title": "Ecosystem restoration strengthens pollination network resilience and function",
+  "doi": "https://doi.org/10.1038/nature21071",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/77ee9b2a38fbf6008e202e4b517b574dd29e773d/index.html",
+  "source_chars": 52396,
+  "markdown_chars": 3016,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 26,
+      "quote": "𝑉𝑉= ෍𝑣𝑖∙2 ∙min (𝑚𝑖, 𝑓𝑖) 𝑚𝑖+ 𝑓𝑖 𝑖 𝑓𝑓𝑓𝑓𝑓𝑓 −1ℎ−1",
+      "type": "疑似OCR乱码/公式损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中的Unicode数学符号和积分符号显示为乱码，无法辨认完整表达式，但前后文字解释了加权访问率的计算逻辑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "核对摘要与正文关键数值一致：传粉者物种增加21.6%、访问增加22.9%、花丰度增加17.4%、581个相互作用、12,235次访问等。统计检验中的β、t、P值均与表格一致。公式因提取乱码未做修复，仅照录可见文本并附文字解释。未擅自补充未出现的数据或图表信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8025,
+      "prompt_tokens": 14711,
+      "total_tokens": 22736,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5881
+      }
+    },
+    "content_chars": 3492
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

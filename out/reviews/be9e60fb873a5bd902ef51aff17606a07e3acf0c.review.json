@@ -1,0 +1,109 @@
+{
+  "sha1": "be9e60fb873a5bd902ef51aff17606a07e3acf0c",
+  "title": "Mutant phenotypes for thousands of bacterial genes of unknown function",
+  "doi": "https://doi.org/10.1038/s41586-018-0124-0",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/be9e60fb873a5bd902ef51aff17606a07e3acf0c/index.html",
+  "source_chars": 182853,
+  "markdown_chars": 3631,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 44,
+      "quote": "reduced growth yield (at most 2/3rds of a typical strain's yield) in liquid LB medium at γ7˚C 1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "γ7˚C 明显为 37°C 的识别错误（温度数字被识别为希腊字母）",
+      "quote_matches_page": true
+    },
+    {
+      "page": 44,
+      "quote": "deletion strains have been previously reported to have a reduced growth yield (at most 2/3rds of a typical strain's yield) in liquid LB medium at γ7˚C",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "温度数字识别错误",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "P. actiniarum, D, suillum PS",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "D, suillum PS 应为 D. suillum PS，逗号误代替句点",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 45,
+      "quote": "in liquid LB medium at γ7˚C 1",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同样的温度识别错误",
+      "quote_matches_page": false
+    },
+    {
+      "page": 49,
+      "quote": "the expected molecular weight of this protein is around 4γ kD",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "4γ kD 可能是 45 kD 或类似数值，γ 可能是数字被误识别",
+      "quote_matches_page": false
+    },
+    {
+      "page": 49,
+      "quote": "They also mention purifying a 90 kD 2 enzyme 22.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“90 kD 2 enzyme” 中 2 可能是多余字符或下标，原文可能为“90-kD enzyme”或类似",
+      "quote_matches_page": false
+    },
+    {
+      "page": 56,
+      "quote": "do not form cyanophycin but may produce a different light35 scattering polymer",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "light35 应为 light-scattering，OCR 将连字符和字母误识别为数字",
+      "quote_matches_page": false
+    },
+    {
+      "page": 58,
+      "quote": "which is not similar to DUF2692 or DUF2063",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "上下文中反复出现 DUF692，此处 DUF2692 可能是 DUF692 的误写",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：11,779个未注释基因有表型，2,316个保守关联，25,276个总关联，13,192个保守关联等。共适应度预测准确率（63% vs 74%）与显著性检验均一致。公式方面，基因适应度定义为log2变化，共适应度定义为Pearson相关，tcomb计算和保守共适应度定义均按原文保留。提取文本中部分数字和温度符号疑似OCR错误，已在issues中标记。未发现跨页断句问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4167,
+      "prompt_tokens": 47429,
+      "total_tokens": 51596,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1121
+      }
+    },
+    "content_chars": 5870
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "e16e6809aec5bdee908f35ac15c7e4c12b60baa9",
+  "title": "Upadacitinib as induction and maintenance therapy for moderately to severely active ulcerative colitis: results from three phase 3, multicentre, double-blind, randomised trials",
+  "doi": "https://doi.org/10.1016/s0140-6736(22)00581-5",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e16e6809aec5bdee908f35ac15c7e4c12b60baa9/index.html",
+  "source_chars": 95217,
+  "markdown_chars": 5669,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "114 [34%] of 341 patients in UC2",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "摘要中UC2诱导缓解率报告为34%，而正文结果部分（第10页）报告为33%（114/341），需核实原文最终数值。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Considering a potentially",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "页3末尾句子不完整，页4开头为'more favourable long-term safety profile'，中间可能被页眉/图注隔断，需核对原始PDF跨页衔接。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "high sensitivty CRP",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应是high sensitivity CRP，原文抽取存在拼写问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "63 (42%) of 149 patients receiving upadacitinib 15 mg once daily",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "正文此处写63/149，但UC3 15 mg组总数为148（表4及摘要均为N=148），分母应为148而非149，疑似笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 2,
+      "quote": "upadacinitib 45 mg once daily",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "全文其余处均为upadacitinib，此处显示upadacinitib，疑为抽取或原文笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的主要疗效数值：UC1诱导缓解率26% vs 5%（83/319 vs 7/154）一致；UC2摘要为34% vs 4%（114/341）而正文为33%，存在不一致；维持研究15 mg 42%（63/148）和30 mg 52%（80/154）以及安慰剂12%（18/149）在摘要和表4中一致，但正文文字中15 mg分母误写为149。安全性相关数值（不良事件率、严重不良事件、带状疱疹等）在摘要、正文和表格间一致。统计方法（NRI-C、CMH检验、多重性控制）已按原文描述。未发现其他需修正的公式或符号问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4770,
+      "prompt_tokens": 26782,
+      "total_tokens": 31552,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 663
+      }
+    },
+    "content_chars": 7217
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

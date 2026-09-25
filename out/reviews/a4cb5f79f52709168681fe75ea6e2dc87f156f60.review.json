@@ -1,0 +1,82 @@
+{
+  "sha1": "a4cb5f79f52709168681fe75ea6e2dc87f156f60",
+  "title": "Progress on the Critical Parameters for Lithium–Sulfur Batteries to be Practically Viable",
+  "doi": "https://doi.org/10.1002/adfm.201801188",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a4cb5f79f52709168681fe75ea6e2dc87f156f60/index.html",
+  "source_chars": 118387,
+  "markdown_chars": 4170,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "sulfur (conductivity ~ 10-30 S cm-2) and its end-discharge product Li2S (conductivity ~ 10-14 S cm-2)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "硫的导电性单位应为 S cm⁻¹ 而非 S cm⁻²，且数值 10-30 可能为 10⁻³⁰；原文本中 'cm-2' 疑为 'cm⁻¹' 的转录错误，但无法确认，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "Zhang[126,145] and Hegan[86,158] were the first to point out",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上下文及参考文献均为 Hagen，此处的 Hegan 疑为 Hagen 的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "the reported average sulfur loading increased from 13 mg cm-2 to 21 mg cm-2. The corresponding standard deviations also increased from 0 to 14 mg cm-2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "标准差从 0 起增，但 2012 年仅有少数文献，可能合理；但 2017 年标准差 14 mg cm⁻² 相对于均值 21 显得较大，无原文其他证据，仅存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "a sulfur to electrolyte ratio of approximately 34 g L-1, which is equivalent to a ratio of 29.3",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "34 g L⁻¹ 是硫在电解液中的质量浓度，而 '29.3' 应为体积比（μL mg⁻¹），转换关系需电解液密度，原文未给出，此处直接断言等价疑有误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "sulfur loading of < 7 mg cm-2 and sulfur content of < 65 wt.% in the whole cathode) and excessive electrolyte (electrolyte/sulfur ratios of > 11 μL mg-1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句子在第11页页尾中断，第12页页首并未直接续接上一段，而是出现新段落；原文中缺少闭合括号，疑似页间截断导致内容不连续。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：硫理论容量 1,675 mA h g⁻¹、锂金属 3,860 mA h g⁻¹、理论能量密度 2,600 W h kg⁻¹、体积变化 80%、密度 2.07/1.66 g cm⁻³、Hagen 标准（>6 mg cm⁻²，>70 wt.%，<3 μL mg⁻¹，>80% 利用率）、Zhang 标准（≥2 mg cm⁻²，≥65 wt.%）、平均硫载量 19 mg cm⁻²（2012–2017）、平均硫含量 60 wt.%、平均电解液/硫比 16、2017 年平均值 9 等均与原文一致。统计比例（46%、32%、17%、28%、17%、4%、37%等）也已核对。公式和单位按原文保留（即使有疑点如 'S cm-2'）。不确定之处：硫导电性单位疑似错误；'Hegan' 拼写异常；'34 g/L 等价于 29.3' 可能缺失转换条件；Table 1 中各项参数按原文抄录。已避免引入外部知识，未自行修正原文数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3651,
+      "prompt_tokens": 31963,
+      "total_tokens": 35614,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 26
+      }
+    },
+    "content_chars": 6299
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

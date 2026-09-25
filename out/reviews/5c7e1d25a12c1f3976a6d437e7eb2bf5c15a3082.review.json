@@ -1,0 +1,73 @@
+{
+  "sha1": "5c7e1d25a12c1f3976a6d437e7eb2bf5c15a3082",
+  "title": "Chloride capture using a C–H hydrogen-bonding cage",
+  "doi": "https://doi.org/10.1126/science.aaw5145",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5c7e1d25a12c1f3976a6d437e7eb2bf5c15a3082/index.html",
+  "source_chars": 30467,
+  "markdown_chars": 2556,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "could be removed after six extractions with de-ionized water (fig. S4).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第1页末尾以“Most of the salt”结束，第2页开头直接出现“could be removed”，缺少主语，疑似因页面分割丢失了半句话。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "quantiCageCl−  TEA +  1 o o verified fied by 1H NMR spectroscopy",
+      "type": "疑似OCR错误/公式乱码",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式片段包含无法识别的字符（如“”），影响对公式的复现，但可从上下文推断其含义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "The measured equilibrium constant (KW→O = 10 M ) for extraction of TEACl from water to the organic phase (fig. S38)",
+      "type": "疑似上标缺失",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "指数“8.5”可能被误为普通文本，原文应为10^8.5 M⁻¹，但提取文本未显示上标。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "enhanced at least 108-fold over solvent alone",
+      "type": "疑似上标缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "“108”应为“10⁸”，原文可能用上标表示，提取文本丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：Cl⁻亲和力在DCM中为10¹⁷ M⁻¹，在DMSO中为10⁸ M⁻¹；选择性Cl⁻/I⁻为10⁶；晶体结构氢键距离2.7 Å（三唑）和2.9 Å（亚苯基）；萃取效率NaCl 18%、NaBr 8%、NaI无；相转移能量值+52 kJ/mol（Cl⁻）、+25 kJ/mol（Na⁺）、+8.4 kJ/mol（TEA⁺）、+21 kJ/mol（I⁻）。公式(1)中的K_W→O和K_ipc数值已保留，但提取文本中公式存在乱码，已按可见字符如实呈现。不确定之处：方程(1)的完整形式可能受OCR影响，但推导逻辑与文中文字描述一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4490,
+      "prompt_tokens": 9659,
+      "total_tokens": 14149,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2097
+      }
+    },
+    "content_chars": 4018
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

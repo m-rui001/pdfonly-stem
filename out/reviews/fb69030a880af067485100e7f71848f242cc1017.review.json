@@ -1,0 +1,64 @@
+{
+  "sha1": "fb69030a880af067485100e7f71848f242cc1017",
+  "title": "The Art and Science of Climate Model Tuning",
+  "doi": "https://doi.org/10.1175/bams-d-15-00135.1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fb69030a880af067485100e7f71848f242cc1017/index.html",
+  "source_chars": 97140,
+  "markdown_chars": 2313,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Here we present the",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "摘要中'Here we present the' 出现在'definition and rationale behind model tuning' 等句子之后，但逻辑上应位于之前，疑似提取时跨页顺序颠倒。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 23,
+      "quote": "Tuning of the 20th century could for instance be obtained In such a case,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "该句与上下文'with an overly large ECS balancing an overly strong aerosol radiative forcing.' 等句顺序混乱，原文应为'...obtained with an overly large...' 但提取将'with' 等前置，导致逻辑不连贯。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "methods at the process level in order to estimate the range of acceptable parameters values",
+      "type": "跨页断句/缺失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句以'methods' 开头，缺少主语，前文应为'The systematic use of objective methods'，但提取文本中缺失'objective' 等词，疑为跨页截断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文中的关键数值：能量平衡敏感度（1 W/m²对应0.5-1.5 K）、云冷却约-20 W/m²、辐射目标240±4 W/m²、公式ΔT≈F/(κ-λ)及参数范围（λ -0.6~-1.8, κ 0.5~1.2 W/m²/K）、调查百分比（83%大气-陆面等）。公式和数值均与原文一致。不确定之处：部分跨页顺序可能导致理解偏差，已在提取问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10656,
+      "prompt_tokens": 25025,
+      "total_tokens": 35681,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8752
+      }
+    },
+    "content_chars": 3575,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

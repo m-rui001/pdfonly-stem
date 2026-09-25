@@ -1,0 +1,138 @@
+{
+  "sha1": "f5c348dbf8dad8961d46fc43344c5f503cb0c573",
+  "title": "Improved protein structure prediction using potentials from deep learning",
+  "doi": "https://doi.org/10.1038/s41586-019-1923-7",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f5c348dbf8dad8961d46fc43344c5f503cb0c573/index.html",
+  "source_chars": 65776,
+  "markdown_chars": 14032,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "第 1 页\n\n# 1 AlphaFold: Improved protein structure prediction using potentials from deep learning",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "OCR 正文首页题名带有前缀“AlphaFold:”，与登记题名“Improved protein structure prediction using potentials from deep learning”不完全一致，但核心题名一致，属于同一篇文章，仅题名前缀差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "$ ^{9} $ $ ^{3} $ University College London, London, UK\n\n$ ^{2} $The Francis Crick Institute, London, UK\n\n7 $ ^{1} $ DeepMind, London, UK",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "作者单位标注顺序错乱，上标编号与单位对应关系在 OCR 中被打乱，影响对作者隶属关系的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": " Contact precisions L long L/2 long L/5 long \n\n Set N AF 498 032 AF 498 032 AF 498 032 \n\n FM 31 45.5 42.9 39.8 58.0 55.1 51.7 70.1 67.3 61.6 \n\n FM/TBM 12 59.1 53.0 48.9 74.2 64.5 64.2 85.3 81.0 79.6 \n\n TBM 61 68.3 65.5 61.9 82.4 80.3 76.4 90.6 90.5 87.1",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表 1c 的表格结构在 OCR 中严重损坏，列标题与数据对应关系不清晰，难以准确复原表格行列结构。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "AlphaFold achieved a summed z-score of 52.8 in the FM category (best-of-5) vs 36.6 for the next closest group $ (322)^{\\ddagger} $ . Combining FM and TBM/FM categories, AlphaFold scored 68.3 vs 48.2.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "上标符号 $^{\\ddagger}$ 在 OCR 中显示为特殊符号，可能为脚注标记，但具体含义不明确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "predicts a discrete probability distribution $ P \\left( d{ij} \\mid \\mathcal{S}, \\mathrm{MSA}(\\mathcal{S}) \\right) $ for every ij pair",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 d{ij} 缺少下标格式，应为 d_{ij}，OCR 丢失了下划线，影响公式符号的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "and thus the inter-residue distances, $ d_{ij}=| \\mathbf{x}{i}-\\mathbf{x}{j}| $ , for each structure",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 \\mathbf{x}{i} 和 \\mathbf{x}{j} 缺少下标格式，应为 \\mathbf{x}_i 和 \\mathbf{x}_j，OCR 丢失了下划线。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Figure 4a shows that the distogram accuracy (measured by distogram $ \\mathrm{l D D T}{1 2} $ , defined in Methods)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 \\mathrm{l D D T}{1 2} 缺少下标格式，应为 \\mathrm{lDDT}_{12}，OCR 丢失了下划线和空格处理不当。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Fig. 4 TM-scores vs the accuracy of the distogram, and the TM scores' dependency on different components of the potential. (a) TM-score vs distogram $ \\mathrm{l D D T}_{1 2} $ with Pearson's correlation coefficients",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图 4 标题中 \\mathrm{l D D T}_{1 2} 格式不一致，与正文中其他位置写法不同，可能为 OCR 处理差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "We extract non-redundant domains by utilising the $ \\mathrm{C A T H}^{2} $ 35% sequence similarity cluster representatives.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "CATH 被 OCR 识别为 $ \\mathrm{C A T H}^{2} $，上标 2 可能为引用标记，但格式异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The distance prediction neural network was trained with the following input features (with number of features).\n\nNumber of HHblits alignments (1D scalar)\n\nSequence-length features: 1-hot amino acid type (21D), Profiles: PSI-BLAST (21D), HHblits profile (22D), non-gapped profile (21D), HHblits bias, HMM profile (30D) Potts model bias (22D); Deletion probability (1D); residue index (integer index of residue number, consecutive except for multi-segment domains, encoded as 5 least-significant bits and a scalar);\n\nSequence-length-squared features: Potts model parameters (484D, fitted with 500 iterations of gradient descent using Nesterov momentum 0.99, without sequence reweighting); Frobenius norm (1D); Gap matrix (1D)",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "输入特征列表在 OCR 中格式混乱，部分特征描述与维度信息混杂，难以准确区分各特征组。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "303 Neural network hyperparameters\n\n$ 7\\times4 $ Blocks with 256 channels, cycling through dilations 1,2,4,8\n\n$ 4 8 \\times4 $ Blocks with 128 channels, cycling through dilations 1,2,4,8\n\nOptimisation: Synchronized stochastic gradient descent\n\nBatch size: batch of 4 crops on each of 8 GPU workers\n\n309 • Nonlinearity: ELU\n\n0.85 Dropout keep probability\n\nLearning rate 0.06",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "超参数列表在 OCR 中格式混乱，行首数字（303、309）可能为行号或页码，与内容混杂，影响阅读顺序。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "AlphaFold: Improved protein structure prediction using potentials from deep learning",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 17192,
+      "total_tokens": 27192,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 19758,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

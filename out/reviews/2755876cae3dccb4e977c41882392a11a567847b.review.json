@@ -1,0 +1,109 @@
+{
+  "sha1": "2755876cae3dccb4e977c41882392a11a567847b",
+  "title": "The terrestrial biosphere as a net source of greenhouse gases to the atmosphere",
+  "doi": "https://doi.org/10.1038/nature16946",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2755876cae3dccb4e977c41882392a11a567847b/index.html",
+  "source_chars": 63833,
+  "markdown_chars": 3330,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Letter 1 2\n\ndoi:10.1038/nature16946",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页首出现'Letter 1 2'疑似页码与作者标记的杂糅，但可读性影响小。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Table 1 | Three-decadal estimates of human-induced biogenic GHGs in the terrestrial biosphere by using GWP100 and GWP20 metrics Human-induced GHG (±s.d.) (Pg CO2 equiv. yr−1)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格标题和表头与表内容之间插入了正文段落，可能因提取顺序错误导致表格结构被打乱。表内数值排列顺序需谨慎解读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "−1.4 (±3.9) 7.5 (±1.8)\n\n−1.2 (±4.0) 7.9 (±1.5) 2.8 (±1.9) 9.4 (±4.7) −855%\n\n−3.2 (±3.8) 7.4 (±1.8) 1.6 (±0.6) 5.9 (±4.3) −287%",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.3,
+      "reason": "表格数据行排列混乱，多列数值和百分比混杂，且存在负百分比（如−855%），但上下文均为正数，疑为提取错位。文本内证据不足以判断正确格式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "TD, 3.9±3.8; BU, 5.4±4.8 (CH4 + N2O + CO2)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "图1图注中的文字在页间被截断，但数值完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "6",
+      "type": "孤立页码标记",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页3末尾出现孤立数字'6'，可能为页码或行号，不影响内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "10\n\n10\n\nNorth America\n\n10\n\nEurope",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "图3的标题和坐标轴数值与图内容交叉出现，疑似提取乱序。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Extended Data Table 1 | Decadal estimates of global terrestrial CO2, CH4 and N2O fluxes",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该表仅有标题，无内容，内容可能未提取。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "GHG = F CO 2­C\n\n44 16 44 + F CH 4­C × GWPCH 4 + F N2O­N × GWP N2O 12 12 28",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "公式排版混乱，分子分母位置丢失，但可推断为质量转换因子。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "核对摘要与正文的关键数值：2000年代全球CH4排放TD 325±39、BU 326±43 Tg C/yr；N2O TD 12.6±0.7、BU 15.2±1.0 Tg N/yr；CO2汇TD −1.6±0.9、BU −1.5±1.2 Pg C/yr；净平衡GWP100 TD 3.9±3.8、BU 5.4±4.8 Pg CO2当量/yr；GWP20时TD 18.7±5.8、BU 20.4±6.8。趋势数据：CO2汇增加2.2（TD）和2.0（BU）Pg CO2当量/十年，N2O增加0.25。区域数据：东南亚TD 6.3±3.7、BU 4.4±1.2；北美TD −2.35±6.87、BU −0.38±0.93。公式中质量转换因子44/12、16/12、44/28，GWP值CH4=28、N2O=265（100年），84和264（20年）。注意：表格提取严重混乱，无法确认表1完整数值；图3的数值标签可能错位。文中未提取图2的数值数据，仅描述趋势。所有数值均来自提取文本，未做推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3377,
+      "prompt_tokens": 17169,
+      "total_tokens": 20546,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      }
+    },
+    "content_chars": 5903
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

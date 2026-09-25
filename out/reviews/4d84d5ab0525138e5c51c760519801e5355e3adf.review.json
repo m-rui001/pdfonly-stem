@@ -1,0 +1,57 @@
+{
+  "sha1": "4d84d5ab0525138e5c51c760519801e5355e3adf",
+  "title": "Large language models generate functional protein sequences across diverse families",
+  "doi": "https://doi.org/10.1038/s41587-022-01618-2",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/4d84d5ab0525138e5c51c760519801e5355e3adf/index.html",
+  "source_chars": 82974,
+  "markdown_chars": 5279,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "D=\\left{x^{1}, \\dots, x^{|D|}\\right}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "集合花括号转义丢失，应为 \\left\\{x^{1}, \\dots, x^{|D|}\\right\\}，影响公式可读性但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "p_{\\theta}\\left(a_{1} \\mid \\underline{c}\\right), p_{\\theta}\\left(a_{2} \\mid \\underline{a_{1}}, \\underline{c}\\right), \\dots , p_{\\theta}\\left(a_{j} \\mid \\underline{a_{<j}}, \\underline{c}\\right)^{39}",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "条件采样公式中下划线标记与上标引用混排，可能为 OCR 对原文符号的误读，但变量含义仍可辨识。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Large language models generate functional protein sequences across diverse families",
+  "self_check": "已核对：ProGen 参数量 1.2 billion、训练数据 280 million 序列、>19,000 Pfam 家族、batch size 2048、1 million iterations、256 TPU v3 核心、两周；溶菌酶微调数据 55,948 条、五个家族名称与 Pfam ID；人工蛋白 100 条、max ID 40–90%、表达 72/100、功能 73%（66/90）vs 天然 59%（53/90）；L056 max ID 69.6%、L070 max ID 89.2%、相差 53 和 18 个氨基酸、彼此 17.9% ID；L056 晶体 2.5 Å、PDB 7RGR、Cα RMSD 2.9 Å（trRosetta）、2.3 Å（WT T4L）、1.0 Å（PDB 150L）、两个 <5 Å³ 空腔；低 max ID 批次 95 条、89 条中 78 条表达、24 条可溶、D4 31.4% ID、$k_{cat}/K_M$ 20.2 M⁻¹s⁻¹、约 HEWL 1/200；CM AUC 0.85 vs bmDCA 0.78（p<0.0001, n=1617）、MDH AUC 0.94 vs ProteinGAN 0.87（p<0.1, n=56）；消融 AUC 下降 0.18/0.08 与 0.11/0.04。公式已按提取文本保留，未补写或修复。不确定处：图 3 标题中“44% identity”与正文 31.4% 最低一致性不一致，已在 extraction_issues 中标出；部分公式的 LaTeX 转义与括号格式存在 OCR 噪声，但变量关系可辨。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4126,
+      "prompt_tokens": 20900,
+      "total_tokens": 25026,
+      "prompt_tokens_details": {
+        "cached_tokens": 20864
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 7918,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

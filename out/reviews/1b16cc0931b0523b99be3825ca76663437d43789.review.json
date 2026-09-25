@@ -1,0 +1,73 @@
+{
+  "sha1": "1b16cc0931b0523b99be3825ca76663437d43789",
+  "title": "Human brain mapping: A systematic comparison of parcellation methods for the human cerebral cortex",
+  "doi": "https://doi.org/10.1016/j.neuroimage.2017.04.014",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1b16cc0931b0523b99be3825ca76663437d43789/index.html",
+  "source_chars": 170574,
+  "markdown_chars": 4645,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "Dice =\n\nT 2|X Y | |X| + |Y |",
+      "type": "疑似公式文本损坏",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Dice 系数公式在提取文本中排版错乱，符号含义无法辨认。根据上下文（\"where |·| indicates the number of vertices in a parcel\"）可推断为 2|X∩Y|/(|X|+|Y|) 的标准形式，但原文是否如此呈现无法确认，故照录可见文本并标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "...\n\nGroup-level parcella/ons",
+      "type": "跨页断句/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "页6以省略号开头，前文在页5正文结束后缺失一段（可能为图注或过渡句），且 'parcella/ons' 为单词断裂。此处存在连续文本被页眉/图注切断的痕迹。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 21,
+      "quote": "Overlap with cytoarchitectonic areas. We measure the agreement of our parcella-\n\ntions with the Brodmann cytoarchitectonic areas",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该小节标题出现在页21末尾，但句子被截断，页22先插入图注后才接续完整句子，存在跨页拼接问题。关键词 'parcella-' 与后一页 'tions' 之间被分页符和标题分隔。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 48,
+      "quote": "using P < 0.01% with correction for multiple comparisons",
+      "type": "疑似数值错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "显著性阈值 '0.01%' 疑似为 0.01 或 0.05 的提取错误，但无强文本内证据支持，故仅标记为疑似。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "关键数值已核对：Dataset 1 (100 subjects, 54F/46M)和 Dataset 2 (100 subjects, 50F/50M)，分辨率范围50-500（步长50），最高分类准确率86%（Ward-AVR 350区、Glasser 360区），K-Means在聚类效度中领先，N-Cuts和Geometric在受试者水平重复性中领先，N-Cuts-AVR在部分网络分析场景中有优势。图表结论已根据正文文字提取，未包含任何未见文本的数值。Dice公式因提取损坏已在issues中标注，Silhouette、ARI和网络度量公式在附录中核对无误。BIC和重测信度的具体值未在正文中给出，故未纳入笔记。跨页断句问题已标记。部分图表（如Fig. 7中的箱线图细节）无法从文本完整重建，但笔记中已传达了其主要趋势。其余数值与正文陈述一致，未发现冲突。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6631,
+      "prompt_tokens": 42908,
+      "total_tokens": 49539,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3274
+      }
+    },
+    "content_chars": 6339
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

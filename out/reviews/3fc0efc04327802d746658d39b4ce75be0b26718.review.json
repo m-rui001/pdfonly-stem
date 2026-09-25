@@ -1,0 +1,55 @@
+{
+  "sha1": "3fc0efc04327802d746658d39b4ce75be0b26718",
+  "title": "Data driven prediction models of energy use of appliances in a low-energy house",
+  "doi": "https://doi.org/10.1016/j.enbuild.2017.01.083",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3fc0efc04327802d746658d39b4ce75be0b26718/index.html",
+  "source_chars": 64013,
+  "markdown_chars": 2838,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "The optimal number of predictors is 34, but the difference between 34 and 35 can be considered negligible",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "前文提到'After doing this, the total number of predictors is 35'，RFE结果说最优为34，但'34和35'比较似应为'34和35个预测器'，但图12显示的是RMSE随预测器数量变化，文本未明确说明为何35（全部）与34差异可忽略，但可能因为RFE排序中最后一个变量是'Dy week Thursd.'（星期四）不重要。此处无明显断裂，但'34和35'比较可能隐含'34 vs 35'，而图中可能显示34个最优，35个为全部。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "TH8",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表5和表6的参数列表中多次出现'TH8'，但表2中变量名为'T8'（Teenager room 2温度），'TH8'应为'T8'之误，或可能代表温度+湿度？但表2中湿度为RH8，故疑为笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：GBM训练R²=0.97、测试R²=0.57（表5）；RF训练R²=0.92、测试0.54；SVM测试0.52；LM测试0.16。表6子集R²值：无照明0.58，无照明无气象0.54，仅照明+气象0.49，仅气象0.49。相关系数：照明0.19，NSM0.22，室外温度0.12，室外湿度-0.15，气压-0.03，风速0.09，气压-风速-0.23。室内温度相关：T1-T2 0.84，T2-T3 0.74，T4-T5 0.87，T5-T6 0.63，T7-T8 0.88，T8-T9 0.86。湿度相关：RH1 0.06，RH3 0.04，RH2 -0.06，RH7 -0.06，RH8 -0.09，RH9 -0.05。公式（1-4）已保留。提取文本中表5和表6的'TH8'疑似笔误，已标注。其余数值与摘要一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2351,
+      "prompt_tokens": 16279,
+      "total_tokens": 18630,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 26
+      }
+    },
+    "content_chars": 4060
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

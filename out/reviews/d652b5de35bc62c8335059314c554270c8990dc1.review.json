@@ -1,0 +1,54 @@
+{
+  "sha1": "d652b5de35bc62c8335059314c554270c8990dc1",
+  "title": "Constraining CO coverage on copper promotes high-efficiency ethylene electroproduction",
+  "doi": "https://doi.org/10.1038/s41929-019-0380-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d652b5de35bc62c8335059314c554270c8990dc1/index.html",
+  "source_chars": 53232,
+  "markdown_chars": 7104,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "This finding motivates us to investigate the link between local CO availability\n\nand ethylene selectivity. Using density\n\nfunctional theory (DFT) calculations, we first assess",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第5页底部句子中途断开，第6页顶部先插入页眉后才接续。原文完整句子应为'This finding motivates us to investigate the link between local CO availability and ethylene selectivity. Using density functional theory (DFT) calculations, we first assess...'，中间插入了页码分隔标记，句子完整性受影响。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Here we present high-efficiency ethylene electroproduction from CO on Cu at current densities above 100 mA/cm2. The system performs well across a wide range of CO input concentrations. We find that increased ethylene selectivity is obtained when we decrease the CO availability up to the CO mass transport limit by operating at high current densities. This finding motivates us to investigate the link between local CO availability",
+      "type": "段落顺序疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第5页'This finding motivates us...'后直接跳到第6页（页码标记5后接续'and ethylene selectivity. Using density'），从第6页页眉处的'Results'标题和正文内容判断，第5页末尾处段落排版出现跨页断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：FEethylene峰值72%（5%和10% CO，-0.52 V vs. RHE）；乙烯部分电流密度808 mA cm⁻²（100% CO）；半电池能量效率44%（5% CO，Supplementary Note 1）；DFT计算覆盖度范围0至3/9 ML；CO二聚化能垒在2/9 ML时为0.66 eV；5 M KOH中-0.2至-0.6 V电位区间FEethylene从0.8%升至58%、部分电流密度从0.06增至728 mA cm⁻²。公式θ_CO = θ*·P_CO·e^(−E_CO/RT)和FE% = nFxV/j_total × 100已照录。不确定之处：2.5% CO条件下归一化FEethylene约为75%的具体值来自Supplementary Fig. 30，正文未给出确切图表编号对应数值；模拟焦炉煤气测试的电流密度150 mA cm⁻²和FE~71%在正文中明确；DFT计算细节中Cu(100)p(3×3)模型四层结构、PBE泛函、450 eV截断能等参数在Methods部分均已明确，无需额外推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5140,
+      "prompt_tokens": 15033,
+      "total_tokens": 20173,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 429
+      }
+    },
+    "content_chars": 8984
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

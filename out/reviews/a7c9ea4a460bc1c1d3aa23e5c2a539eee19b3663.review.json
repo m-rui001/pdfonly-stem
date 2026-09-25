@@ -1,0 +1,81 @@
+{
+  "sha1": "a7c9ea4a460bc1c1d3aa23e5c2a539eee19b3663",
+  "title": "Nanopore metagenomics enables rapid clinical diagnosis of bacterial lower respiratory infection",
+  "doi": "https://doi.org/10.1038/s41587-019-0156-5",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a7c9ea4a460bc1c1d3aa23e5c2a539eee19b3663/index.html",
+  "source_chars": 69105,
+  "markdown_chars": 17008,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "$ ^{ \\mathrm{A}} $Correspondence to justin.ogrady@quadram.ac.uk",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上标应为星号或字母标记，OCR 识别为 \\mathrm{A}，不影响正文理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "multiple bacterial and viral pathogen, can cause LRIs",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "原文应为 pathogens，OCR 漏掉复数 s 并多出逗号，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "constant need to update PCR-based methods to include emerging resistance genes and mutations $ ^{1 6,2 0,2 1}. $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标引用编号被 OCR 拆散为带空格的数字，属格式问题，不影响论证理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "aac(3')-IIa (and IIc) in a tobramycin-resistant E. coli (S9) and a total of 13 bla $ ^{TEM} $ variants spread recorded across two amoxicillin-resistant E. coli (S1 and S35 and two amoxicillin-resistant H. influenzae (S18 and S36).",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "括号不匹配（S1 and S35 后缺右括号），且 'spread recorded' 语序异常，可能为 OCR 抽取错误，但关键数值 13 和样本编号可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Nanopore metagenomics enables rapid clinical diagnosis of bacterial lower respiratory infection",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 18943,
+      "total_tokens": 28943,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 18776,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Nanopore metagenomics enables rapid clinical diagnosis of bacterial lower respiratory infection",
+    "translated_title": "纳米孔宏基因组学实现细菌性下呼吸道感染的快速临床诊断",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

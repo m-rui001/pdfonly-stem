@@ -1,0 +1,81 @@
+{
+  "sha1": "8dc42b23a2baf7c5f5238b6adfb7a9f17037b18d",
+  "title": "Porous Organic Polymers for Post‐Combustion Carbon Capture",
+  "doi": "https://doi.org/10.1002/adma.201700229",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8dc42b23a2baf7c5f5238b6adfb7a9f17037b18d/index.html",
+  "source_chars": 165588,
+  "markdown_chars": 8266,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "ln P = ln N + \\frac{1}{T}\\sum_{i=0}^{n} a_i N^i + \\sum_{j=0}^{m} b_j N^j (1) ... Qst = −R\\sum_{i=0}^{m} a_i N^i (4)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式(2)和(3)在提取文本中不完整，从(1)直接跳到(4)，中间逻辑链断裂。审查编辑标注的Q6（请检查公式排版），说明公式可能在原始PDF中已损坏或提取不完整。提取的处理方式是将可见的公式序号和等式照录，无法补全中间步骤。",
+      "quote_matches_page": false
+    },
+    {
+      "page": null,
+      "quote": "PPN-101, 1096, 2.5, 1.45, 0.39 ... PPN-101 shows a high BET surface area of 1095 m² g⁻¹ and a CO₂ uptake of 5.34 mmol g⁻¹ at 273 K and 1 bar.",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "表2中PPN-101在273 K、1 bar的CO₂吸附量为2.5 mmol g⁻¹，但正文叙述为5.34 mmol g⁻¹（且与BILP-4的数据相近）。两者相差一倍以上，存在强文本内证据支持至少一处有误，但无法确定哪处正确，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 23,
+      "quote": "The calculated heats of adsorption were 27.8 and 34.7 kJ mol⁻¹ Buyukcakir and coworkers incorporated...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.75,
+      "reason": "句子在页码标记处断裂到下一自然段，缺少句号。结合页面上方的图22与图23之间的说明文字，存在跨页截断问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "PPN-6-SO3 NH4 593 7.5 3.7 1.78b) 414 – 196 40",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "PPN-6-SO3NH4行的273K、1bar下标记为7.5 mmol g⁻¹，但表中其他材料该列数值均远低于此（多在1-6之间），而正文叙述了与7.5矛盾的文本（该材料在0.15 bar下吸附1.78 mmol g⁻¹、Qst 40 kJ mol⁻¹的数值与表内一致）。7.5这一数值可能为测量值或原始文献中的异常值，无法直接判为错误，但存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 12,
+      "quote": "Qst = −Ra0 (8) The magnitude of Qst is also indicative of the nature of the adsorption process.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "方程(8)后直接接正文，但Qst=−Ra0中的变量a0前文已定义，而(8)之前应为N=0代入方程(4)的推导结果。提取的文本中(8)的呈现不完整（缺少公式编号位置的上下文），且方程的物理含义在上下文中有合理的推论支撑（零覆盖Qst从virial系数a0导出），但公式在提取时可能缺失了必要的括号或定义。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：CO₂浓度280→390 ppm；PPN-4 BET 6461 m² g⁻¹；PPN-6/PAF-1 5600 m² g⁻¹；PPN-6-CH₂DETA 4.31 mmol g⁻¹（295 K, 1 bar）及IAST选择性3.6×10¹⁰；PPN-125-DETA再生能耗134 J g⁻¹（30% MEA为380）；TEPA@MDCM 5.6 mmol g⁻¹（75°C, 0.15 atm）。公式方面：virial方程、Clausius–Clapeyron、单/双位Langmuir、Henry常数、IAST选择性S=(q₁/q₂)/(p₁/p₂)均照录。表2数据为汇总，未逐项全部核对，但抽查了几个代表性数据（COF-102、BILP-4、PPN-6-SO₃Li、ALP-1）与正文一致。不确定处：1）公式编号在提取中疑似有跳跃（见extraction_issues）；2）PPN-101正文数值与表2不一致，存疑；3）表2中PPN-6-SO₃NH₄的7.5 mmol g⁻¹数据与同类材料比较异常；4）文中图1-32均引自正文文字描述，未包括图本身内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7930,
+      "prompt_tokens": 50186,
+      "total_tokens": 58116,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1497
+      }
+    },
+    "content_chars": 10731
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

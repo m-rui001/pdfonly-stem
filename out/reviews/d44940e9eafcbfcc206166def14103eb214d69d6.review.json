@@ -1,0 +1,63 @@
+{
+  "sha1": "d44940e9eafcbfcc206166def14103eb214d69d6",
+  "title": "Solid-state batteries: The critical role of mechanics",
+  "doi": "https://doi.org/10.1126/science.abg5998",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d44940e9eafcbfcc206166def14103eb214d69d6/index.html",
+  "source_chars": 63809,
+  "markdown_chars": 2040,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "Thus, the pressure climbs until it is limited by either: the critical stress required to ex-nihilo create dislocations leading to fracture of the SSE or, as per Barroso-Luque, (82) the stress saturates due to a change in the local potential such that Li+ no longer plates to the defect interface. Thus, the pressure climbs until it is limited by either the critical stress required to ex-nihilo create dislocations, fracture of the SSE, or, as per Barroso-Luque, (82) the stress saturates due to a change in the local potential such that Li+ no longer plates to the defect interface.",
+      "type": "疑似重复/拼接错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一页中两段几乎完全相同的文字重复出现，疑似提取时复制错误或原文编辑遗留。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "At 195 C",
+      "type": "疑似乱码字符",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字后出现私有区字符''，原文应为度符号，但无法确认具体字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "NMC811/-Li3PS4",
+      "type": "疑似乱码字符",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "斜杠后出现私有区字符''，可能为希腊字母β的损坏表示。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数值：正极体积变化（NMC111 3.3%、NMC811 7.8%）、Li晶须屈服强度（12–244 MPa随直径变化）、LLZO断裂韧性约2 MPa·m^1/2、硫化物0.2、Lipon E/H约23、10 mA/cm²电流密度等，均能在提取文本中找到对应。对195°C处的乱码字符未做替换，只在issue中标注；重复段落按一次处理。公式方面，原文未出现显式公式，仅涉及符号（如TH、E/H、KC）已在文中解释。结论方向与原文摘要及正文一致。不确定之处：第14页重复句子的具体来源（原文笔误或提取拼接）无法断定。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6344,
+      "prompt_tokens": 15136,
+      "total_tokens": 21480,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4497
+      }
+    },
+    "content_chars": 3559
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

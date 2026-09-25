@@ -1,0 +1,73 @@
+{
+  "sha1": "daa0931084d4570ddb4ee77cc89281f2d3ae55b8",
+  "title": "High-rate electroreduction of carbon monoxide to multi-carbon products",
+  "doi": "https://doi.org/10.1038/s41929-018-0133-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/daa0931084d4570ddb4ee77cc89281f2d3ae55b8/index.html",
+  "source_chars": 48552,
+  "markdown_chars": 3475,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "the flow cell utilizing an OD-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第2页末尾以‘OD-’结尾，第3页开头接‘Cu catalyst exhibited’，中间有页码标记‘2’和行号，实际应连为‘OD-Cu catalyst’，存在跨页断词，但上下文可推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "X-ray adsorption spectroscopy (XAS)",
+      "type": "疑似拼写/术语错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "XAS通常指X-ray absorption spectroscopy（吸收），文本中写为‘adsorption’，可能为笔误或提取错误，但无强证据，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "SavitzskyGolay",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "常见拼写为Savitzky-Golay，此处‘SavitzskyGolay’缺少连字符且多一个s，疑似笔误，但照录。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": null,
+      "quote": "𝑛𝐹𝑥𝑉 𝐹𝐸 (%) = 𝑗 𝑇𝑜𝑡 ∗ 100",
+      "type": "疑似公式排版错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式中分母显示为‘j Tot’分开，可能原式为j_Tot（总电流），但提取文本未显示下标，照录可见文本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：C2+ FE ~91%、分电流密度630/635/829/830 mA/cm²，KOH浓度1M与2M下的条件均与原文一致。公式按提取文本改写为FE(%)=nFVx/(j_Tot)*100，但原文中分母无下标。pH计算和同位素结论（62 amu部分标记）已保留。不确定之处：公式中的分母‘j Tot’无明确下标；C18O实验中‘62/60 amu信号比接近18O/16O比’的原文表述未量化，按文本描述。所有数值均来自提取文本，未补充外部数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3867,
+      "prompt_tokens": 13265,
+      "total_tokens": 17132,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1126
+      }
+    },
+    "content_chars": 4802
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

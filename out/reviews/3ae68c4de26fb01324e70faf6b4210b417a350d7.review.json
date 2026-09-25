@@ -1,0 +1,82 @@
+{
+  "sha1": "3ae68c4de26fb01324e70faf6b4210b417a350d7",
+  "title": "When Gaussian Process Meets Big Data: A Review of Scalable GPs",
+  "doi": "https://doi.org/10.1109/tnnls.2019.2957109",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3ae68c4de26fb01324e70faf6b4210b417a350d7/index.html",
+  "source_chars": 129931,
+  "markdown_chars": 3324,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "Qab = Kam Kmm Kmb",
+      "type": "疑似公式符号缺失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "Nyström记法通常为 K_am K_mm^{-1} K_mb，提取缺少逆和转置",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "−1 T Knn ≈ Qnn = Knm Kmm Knm",
+      "type": "疑似公式符号缺失",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "Nyström近似应为 Knm K_mm^{-1} K_mn^T，提取中上标丢失",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "p(y|f ) = i=1 p(yi |fi )",
+      "type": "疑似符号错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "应为连乘符号 ∏_{i=1}^n，提取为 'i=1'",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "leading to a closer approximation to the",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句子在页尾断开，下一页先有页眉 'Page 5 IEEE' 再接续",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "where n = d n for d > 1",
+      "type": "疑似符号错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "可能为 n = sqrt[d]{n}，但提取为 d n，存疑",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对标准GP公式（SE核、证据、预测均值和方差）、复杂度O(n^3)、各近似方法名称和复杂度（如O(nm^2)、O(m^3)、O(n)），以及数据集规模（如1.21B）。由于提取文本个别公式上标缺失（如Qab、Nyström近似），无法确认具体形式，已在extraction_issues中标记；跨页拼接已标记。其余结论（如VFE迹项、FITC异方差性等）均有文本依据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11601,
+      "prompt_tokens": 34638,
+      "total_tokens": 46239,
+      "prompt_tokens_details": {
+        "cached_tokens": 32768
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8968
+      }
+    },
+    "content_chars": 4637,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

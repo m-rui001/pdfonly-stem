@@ -1,0 +1,211 @@
+{
+  "sha1": "5144e65ae33284b314952e68bd07b779f70631cc",
+  "title": "The biology of innate lymphoid cells",
+  "doi": "https://doi.org/10.1038/nature14189",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5144e65ae33284b314952e68bd07b779f70631cc/index.html",
+  "source_chars": 69611,
+  "markdown_chars": 11806,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "cell lineage markernegative （Lin $ ^{-} $ ）cells",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "英文单词与中文全角括号混排，应为 marker-negative (Lin−) cells，属 OCR 标点/空格错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "ROR $ \\gamma t $ is",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "RORγt 的 γ 与 t 被拆分为公式片段，符号排版受损，但语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "ex- $ \\mathrm{R O R} \\gamma^{\\dagger} $ ILC3s",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "同一图注中 ex-RORγt ILC3s 的 t 再次被误识别为 †。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "an innate source of IFNy and IL-17",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "IFNγ 的 γ 被误识别为拉丁字母 y，属 OCR 字符错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "ROR $ \\alpha $ is important for ILC2s",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "RORα 的 α 被拆为公式片段，符号排版受损但语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "ILC2-deficient mice failed to efficiently expel their parasites, but adoptive transfer of wild-type ILC2s into ILC- or IL-13-deficient mice",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“ILC- or IL-13-deficient”疑为“ILC2- or IL-13-deficient”的 OCR 漏字，但文本内证据不足以完全确认。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "IL 22-producing ILC3s decrease",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "IL-22 中连字符丢失，属 OCR 标点错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "leukotriene $ \\mathrm{D}{4} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "白三烯 D4 的下标 4 被抽取为公式片段，符号排版受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Prostaglandin $ \\mathrm{D}{2} $ （PGD $ {2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "前列腺素 D2 的下标 2 被抽取为公式片段，且括号混排。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "lipoxin $ \\mathrm{A}{4} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "脂氧素 A4 的下标 4 被抽取为公式片段。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "ex-ROR $ \\gamma t^{+} $ ILC3s",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "ex-RORγt+ ILC3s 的符号被拆分为公式片段。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "This is one of the first reports of ILC2s in humans, implicating their\n\nThis is one of the first reports of ILC2s in humans, implicating their pathological role in allergic inflammation.",
+      "type": "reading_order_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "参考文献 18 的注释文字出现重复且被截断，属抽取时的阅读顺序/重复错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "RORy in thymocyte survival",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "RORγ 被误识别为 RORy，属 OCR 字符错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Ceil 126, 1121-1133 (2006)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "期刊名 Cell 被误识别为 Ceil，属 OCR 字符错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "RORyt $ ^{+} $ innate lymphoid cells",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "RORγt 被误识别为 RORyt，属 OCR 字符错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Roryt $ ^{+} $ innate lymphocytes",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "RORγt 被误识别为 Roryt，属 OCR 字符错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Thy $ 1^{+} $ Sca $ 1^{+} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "Thy1+ Sca1+ 的上标被拆为公式片段，符号排版受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "ROR $ \\gamma^{\\dagger} $ ILC3s require T-bet",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "图 2 说明中 RORγt 被抽取为 RORγ†，t 被误识别为 †，属符号损坏。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "ROR $ \\gamma t $ -dependent ILC3s",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "RORγt 的 γ 与 t 被拆分为公式片段，符号排版受损。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "The biology of innate lymphoid cells",
+  "self_check": "已核对：标题与登记题名一致；DOI、年份、卷期页码与首页登记信息一致；摘要、各节关键数值（如 IL-4/IL-5/IL-9/IL-13、IL-17A/IL-17F/IL-22、IL-23、IL-22BP、NKp44、NKp46、CCR6、CD127、α4β7、Id2、PLZF、GATA3、RORγt、T-bet、AHR 等）与结论方向一致；公式符号如 Lin−、RORγt、T_H2、CD4+、CD8+、NKp44+、NKp46+、IL-22BP 等按原文保留。仍不确定：部分 OCR 将 γ 误为 y 或 †、下标被拆为公式片段，已在 extraction_issues 中标注；参考文献 18 注释重复截断，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9097,
+      "prompt_tokens": 18280,
+      "total_tokens": 27377,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16826,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "sha1": "c5c0363d8c4681aae8c5d028cf1f200d62dfa670",
+  "title": "Pathways for practical high-energy long-cycling lithium metal batteries",
+  "doi": "https://doi.org/10.1038/s41560-019-0338-x",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c5c0363d8c4681aae8c5d028cf1f200d62dfa670/index.html",
+  "source_chars": 51924,
+  "markdown_chars": 9820,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "Li $ \\mid\\mid $ $ \\mathrm{L i N i_{0.6} M n_{0.2} C o_{0.2} O_{2}} $ $ \\mathrm{L i} \\mid\\mid $ NMC622)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一化学式与缩写重复出现，且括号不配对，疑似 OCR 重复抽取或排版错乱，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the electrolyte to capacity ratio of 3.0 g $ (\\mathrm{A h})^{-1} $ reflects the maximum amount of the electrolyte allowed for the 350 Wh $ \\mathrm{kg}^{-1} $ cell",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句与 Methods 中基线 N/P 比 2.4 及正文 N/P 比 2.6 的表述存在数值不一致，但无法确定是 OCR 错误还是原文本身差异。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the electrolyte to capacity ratio of 3.0 g $ (\\mathrm{A h})^{-1} $ reflects the maximum amount of the electrolyte allowed for the 350 Wh $ \\mathrm{kg}^{-1} $ cell",
+      "type": "other_extraction_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文称 3.0 g (Ah)⁻¹ 为 350 Wh kg⁻¹ 电芯允许的最大电解液量，但 Methods 中基线计算使用 3.0 g (Ah)⁻¹ 得到 350 Wh kg⁻¹，表述可能为原文措辞而非抽取错误，暂标记供核对。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Pathways for practical high-energy long-cycling lithium metal batteries",
+  "self_check": "已核对：图 1 各柱比能量数值（350、368、379、392、442、506、525、552 Wh kg⁻¹）及其对应计算式；基线参数（NMC622 196 mAh g⁻¹、4.6 V 截止、35% 孔隙率、22.0 mg cm⁻²、70 μm、N/P 2.6、电解液/容量 3.0 g (Ah)⁻¹）；Methods 中 N/P 2.4、20 层软包、26 Ah × 3.89 V / 0.0252 kg = 350 Wh kg⁻¹；纽扣电池 <50 Wh kg⁻¹；电解液量从 25 降至 3 g (Ah)⁻¹ 循环寿命约 10 次；50 μm 锂循环寿命 <20 次；50 μm 锂循环后厚度增至三倍；Li/C 宿主质量比 >1；固体电解质厚度 <10 μm；薄锂厚度 <20 μm。公式 E_Sp = C_Cell × V_Cell / W_Cell 及 C_Cell = C_SpCath × W_Cath 已保留。不确定处：正文 N/P 比 2.6 与 Methods N/P 比 2.4 的差异；正文称 3.0 g (Ah)⁻¹ 为 350 Wh kg⁻¹ 电芯允许的最大电解液量，而 Methods 中该值即为基线计算值，措辞可能需核对原文。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7012,
+      "prompt_tokens": 13238,
+      "total_tokens": 20250,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11752,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

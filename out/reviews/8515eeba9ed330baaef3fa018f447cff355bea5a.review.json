@@ -1,0 +1,84 @@
+{
+  "sha1": "8515eeba9ed330baaef3fa018f447cff355bea5a",
+  "title": "Global assessment of agricultural system redesign for sustainable intensification",
+  "doi": "https://doi.org/10.1038/s41893-018-0114-0",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/8515eeba9ed330baaef3fa018f447cff355bea5a/index.html",
+  "source_chars": 42403,
+  "markdown_chars": 8067,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Mygnoporthe oryzae",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "小麦瘟病病原体学名拼写疑似 OCR 错误，常见拼写为 Magnaporthe oryzae，但原文提取如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Spodoptera fruigiperda",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "秋粘虫学名拼写疑似 OCR 错误，常见拼写为 Spodoptera frugiperda，但原文提取如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Paraciccus marginatus",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "木瓜粉蚧学名拼写疑似 OCR 错误，常见拼写为 Paracoccus marginatus，但原文提取如此，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the release of biological control agents to substitute for inputs)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号不匹配，疑似 OCR 遗漏了括号内内容或多余右括号。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "agroforesty",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为 agroforestry。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Global Assessment of Agricultural System Redesign for Sustainable Intensification",
+  "self_check": "已核对摘要、正文关键数值：47 个倡议、1.63 亿农场（29%）、4.53 亿公顷（9%）、全球作物和牧场总面积 4.9×10^9 公顷、表 2 中农场和公顷数量及比例。公式符号如 10^4、10^5、10^6、4.9×10^9 按原文保留。结论方向与原文一致。仍不确定处：部分物种学名拼写疑似 OCR 错误，已照录并在 extraction_issues 中标出；图 1 和图 2 的具体数据未在正文文字中描述，未臆测。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5290,
+      "prompt_tokens": 9912,
+      "total_tokens": 15202,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9650,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "sha1": "2caba54cef679d84877c06e2c8218971a82e25fc",
+  "title": "Reconfiguring Frontier Spaces: The territorialization of resource control",
+  "doi": "https://doi.org/10.1016/j.worlddev.2017.01.018",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2caba54cef679d84877c06e2c8218971a82e25fc/index.html",
+  "source_chars": 98323,
+  "markdown_chars": 4832,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "Or the recurrent replays of extractive booms in the Amazon, where rubber, cattle, and most recently oil transform localities, institutional architectures, and governance structures (Larsen 2015)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "上下文语境均指涉过去的开采热潮，如橡胶与牛群，'most recently oil'在无明确时间参照的情况下，语义方向通常指向持续发展之状态而非终结，此处不构成问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "In the present context we are especially interested in how rules, institutions, forms of organization, and techniques and artifacts of governance that shape and territorialize space become recycled and re-contextualized in the territorialization of frontiers.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "该长句起始于第17页末尾，在第18页页首续接完成。页间断点发生在定语从句内部，句意连续，无实质缺失，但页码切换可能来自跨页排版而非内容问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "and the attendant struggles for legitimacy over the ability to define proper uses and users follow frontier moments",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句处于第3页与第4页之间，句首'The drawing of borders...follow frontier moments'语义可能承接前文，但此句本身语法完整，可见提取文本无实质缺失。仅标示页码回读时需注意的潜在跨页承接。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "The frontier exists only in its relationship to 'civilization', as Cronon (1996) observes in his essay on wilderness.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "前文提及Cronon于1996年《Environmental History》发表的'The trouble with wilderness'一文，与提取文本'essay on wilderness'标题表述不完全一致，可能为缩写而非错误，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "work practices, processes, and organization shape emergent territories",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.2,
+      "reason": "原文在段落中部，首词'work'在此处作动词用，表明劳动实践塑造新兴领土，并非名词。句意完整，无文本损坏证据。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "The development of this new geography of resource control – territorialization – involves a series of operations.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "该句位于页末起始处，下文（第14页）列举的具体操作项目（行政建制、法制、边界划定等）逻辑上与'一系列操作'直接承接，但两页之间可能有页码标记及可能的空格断点，不属于实质性内容缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "Contested representations of space are at the heart of the continuous contestations over space.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "'contestations over space'与前文'contested representations'存在用词重复，疑为原文本就有而非提取错误，因上下文论证连贯，存疑但不过度判定。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键内容：文章核心主张（领土化先于权威而产生权威）、前沿与边界的区分、前沿与领土化的循环关系、领土化四维度（政治权威、边界与地图、法律与官僚体系、强制执行）、各案例（加纳农民收据、爪哇土地改革、加里曼丹采矿、厄瓜多尔旅游合作社、哥伦比亚准军事暴力、亚齐赔偿仪式、坦桑尼亚保护区）均已按原文呈现。关键的引用（Turner 1921; Cleary 1993; Geiger 2008; Barney 2009; Kopytoff 1987; Peluso and Lund 2011; Sack 1986; Lund 2011; Douglas 1986; Duncan 2004; Li 2010）及其具体页码或章节信息均忠实转录。文中涉及的公式不多，主要框架为概念性论证，不存在数学公式需要保留。定量数据较少，主要有：Belaúnde执政年份（1963-1968、1980-1985）、Leguía总统任期（1919-1930）、Ley de Conscripción Vial颁布年份（1920）、Douglas引文页码（1986: 48）、Geiger引文页码（2008: 94, 111）。这些均已核对与原文一致。不确定之处：提取文本中某些引文的页码可能在原文中不存在，但因这些页码源自原文引注而非提取错误，未列入issues。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4132,
+      "prompt_tokens": 22052,
+      "total_tokens": 26184,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 288
+      }
+    },
+    "content_chars": 8121
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

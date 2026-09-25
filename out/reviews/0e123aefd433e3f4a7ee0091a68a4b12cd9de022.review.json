@@ -1,0 +1,73 @@
+{
+  "sha1": "0e123aefd433e3f4a7ee0091a68a4b12cd9de022",
+  "title": "Risankizumab as induction therapy for Crohn's disease: results from the phase 3 ADVANCE and MOTIVATE induction trials",
+  "doi": "https://doi.org/10.1016/s0140-6736(22)00467-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/0e123aefd433e3f4a7ee0091a68a4b12cd9de022/index.html",
+  "source_chars": 93929,
+  "markdown_chars": 5193,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "at week 12 (or at of premature discontinuation). Patients 2017",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "第 4 页末尾句“or at of premature discontinuation”明显缺失词语（应为“or at the time of premature discontinuation”），且“Patients 2017”为下一页页眉“2017”与正文拼接所致；文本本身的完整性存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "41% (79/195; 18% [7–29) and 39% (77/199; 16% [5–27])",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "括号内“18% [7–29)”方括号未闭合，可能为排版/提取错误；但数值本身可能完整，需核对原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "Adjusted percentage difference compared with placebo (95% CI); p value\n15% (6 to 23); p=0.0007\n12% (3 to 20); p=0.0069\n··\n14% (4 to 23); p=0.0056\n7% (–2 to 17); p=0.14",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "表 2 中“Enhanced stool frequency and abdominal pain score clinical response at week 4”行在 ADVANCE 列中有数值，但 MOTIVATE 的 1200 mg 组 p=0.14 与前一行 600 mg 组的 p 值并排，且表格跨页后“·”中断，难以确定是否属于同一行；不过提取文本整体连贯，此问题可能不影响数据解读。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Patients recorded symptoms related to Crohn's disease daily (including stool frequency, abdominal pain score, and general well being) in an electronic diary. An ileocolonoscopy was performed during screening and at week 12 (or at of premature discontinuation).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“at of premature discontinuation”缺少名词，应为“at the time of premature discontinuation”，属文本抽取或原文排版缺陷。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和图表中的关键数值（ADVANCE 与 MOTIVATE 各治疗组的主要终点率、校正差异、95% CI 和 p 值），一致；人口学与基线特征的均值/中位数与表 1 提取文字一致；安全性数据（死亡 3 例、严重感染 8 例等）与表 3 及正文一致。公式未出现。IL-22 汇集分析样本量（203 例）和抗药抗体比例、谷浓度数值均源自文本。不确定处：表 2 中 MOTIVATE 增强型应答 1200 mg 组的 p=0.14 与其他行数值的对应关系（跨页拼接），已列入 extraction_issues；另外“cross-page 顺序”中第 4 页“at of premature”疑为缺词，但未影响数据。未引入任何外部知识或推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4113,
+      "prompt_tokens": 25521,
+      "total_tokens": 29634,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 143
+      }
+    },
+    "content_chars": 7250
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

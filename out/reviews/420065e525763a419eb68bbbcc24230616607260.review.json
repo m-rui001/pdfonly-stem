@@ -1,0 +1,118 @@
+{
+  "sha1": "420065e525763a419eb68bbbcc24230616607260",
+  "title": "Comparison of pollution indices for the assessment of heavy metal in Brisbane River sediment",
+  "doi": "https://doi.org/10.1016/j.envpol.2016.09.008",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/420065e525763a419eb68bbbcc24230616607260/index.html",
+  "source_chars": 96197,
+  "markdown_chars": 6170,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "September 20114",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文出现'September 20114'，应为'2014'，存在明显的打字错误或OCR错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "In the rural stratum, all the elements in this group registered their highest and lowest concentrations in the December 2014 and September 20114 sampling regimes",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "句子中途断开，下页以图注或新段落开始，但信息可能因页眉或图注插入而遗漏。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "clusterig",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为'clustering'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "This has led [page break] to the development",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "句子在页尾中断，下页重新开始出现完整句子，顺序可能颠倒或缺失文字。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "at -20 ᴼC [page break] until further analysis",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "断句在温度单位后换页，接续内容在下一页，但温度数值与单位间存在换页，需确认无缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "moderatelyheavily polluted sites SP1, SP10, SP15, SP17, SP18 and SP120",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "'SP120'应为'SP20'，多了一个'1'，而原始列表已包含SP1。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 22,
+      "quote": "Resindential stratum",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为'Residential'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 18,
+      "quote": "considerable contamination [page break] (both metal and sites) than contamination factor",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "句子在页面边界处断开，可能因页眉或图注插入使完整句意分布，需核对。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 32,
+      "quote": "Eri (SPP9)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表格中'SPP9'疑似'SP9'，重复字母P。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、结果、讨论与结论中的关键数值与比较关系，如污染指数分级阈值、PCA方差贡献率（28.5%、27.6%、11.4%、累计67.5%）、RI/MRI的风险分级数值、Hg 超出 ISQG-H 的结论、以及约77%站点MRI高于RI等。公式按原文提取保留，未做补充修复。不确定处包括：PI与MPI的分级表在原文中以表格形式呈现，提取文本中的表格边界字符（如竖线）可能不够精确；mCd、PI、MPI的阈值数据均按表格文字转述，但未逐项与原文表格核对是否存在拼接错位；此外，部分采样点编号（如SP20/SP120）在原文中可能因排版而混淆，已作疑似错误标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5272,
+      "prompt_tokens": 33550,
+      "total_tokens": 38822,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 499
+      }
+    },
+    "content_chars": 8681
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "3308e01432685fc1b04e60e584f73ff2f518a402",
+  "title": "Techno-economic Analysis of Metal–Organic Frameworks for Hydrogen and Natural Gas Storage",
+  "doi": "https://doi.org/10.1021/acs.energyfuels.6b02510",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3308e01432685fc1b04e60e584f73ff2f518a402/index.html",
+  "source_chars": 43901,
+  "markdown_chars": 5293,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Unit Molar Yield Linker:Metal Salt molar ratio Precipitation Reactor Pressure Precipitation Reactor Temperature Precipitation Reaction Time Washing Steps",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "Table 2的字段名连续排列（'Unit Molar Yield...'），缺少表头与数值的对应关系，疑似表格结构在抽取中丢失了列分隔或行列对应关系，尤其'Unit'和'Molar Yield'之间的顺序可能颠倒。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "12 Given the similarity in requirements between CNG vehicles and H2 vehicles",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "'12'出现在句子之前，疑似是参考文献编号或脚注标记被抽成正文前导字符，位置和语义不清晰。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "Thermosolvent LAG Aqueous",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表4的表头出现'Thermosolvent'，但全文其他地方均用'Solvothermal'描述该合成路线，疑似拼写错误（'Thermo'应为'Solvo'），且其与上文'Table 4- Comparison of MOF production prices'的对应关系因表格抽取不完整而模糊。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "The MOF cost analysis was repeated with all four MOFs and three syn-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第8页页尾以'syn-'截断，第9页页首为'thesis routes at 92% yield'，结合上下文应为'synthesis routes'被页面分隔切断，但页眉/图注插入位置不明确，页尾句实际中断于'three syn-'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：基线成本范围$35–71/kg、替代路线$13–36/kg（降幅34%–83%）、Mg₂(dobdc)详细分解（配体$6.74/kg vs $13.28/kg、溶剂节省$27.87–28.27/kg、制造节省$31.52–31.92/kg）、92%产率下LAG材料成本降74%（99%为溶剂贡献）、制造降84%、$1.88/kg差距、回流30 min降~2%、固液比从<3%提至10%降~50%、溶剂成本占比（Mg₂(dobdc) 79%、Ni₂(dobdc) 60%、MOF-5 69%、HKUST-1 40%）、表4成本汇总、DOE和ARPA-E目标值均与原文一致。公式C_Est = C_Mat + C_Man已原样保留。不确定处：表4中Mg₂(dobdc)基线成本出现$35.33和$71.44两个数值，可能对应不同产量或含/不含某组件，原文未明确对应关系，笔记中已按原文列出并注明年产量条件不同；第5页Table 2的数值排列混乱，影响'洗涤步骤'等字段的数值对应，笔记中未强行引用该表具体数值；LAG溶剂配比（1:1 DMF/甲胺、7.5 wt%）依据专家建议而非实验文献，已如实表述。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6309,
+      "prompt_tokens": 11181,
+      "total_tokens": 17490,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2326
+      }
+    },
+    "content_chars": 7230
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

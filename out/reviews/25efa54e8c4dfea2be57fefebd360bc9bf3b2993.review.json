@@ -1,0 +1,100 @@
+{
+  "sha1": "25efa54e8c4dfea2be57fefebd360bc9bf3b2993",
+  "title": "Socioeconomic impact assessment of China's CO2 emissions peak prior to 2030",
+  "doi": "https://doi.org/10.1016/j.jclepro.2016.11.055",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/25efa54e8c4dfea2be57fefebd360bc9bf3b2993/index.html",
+  "source_chars": 48174,
+  "markdown_chars": 3668,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": " I  A X t  Yt , (1)  I  Ac  X t  Vt , (2)",
+      "type": "字体编码/公式字符损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式中含大量不可读的特殊Unicode字符，无法识别确切的数学符号；已按可见ASCII字符照录并推断为(I−A)Xₜ=Yₜ等，但需注意公式中矩阵与向量符号可能在原文中有标注格式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "bikt denotes energy consumption k per unit of added value",
+      "type": "疑似公式下标缺失",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "变量bikt中下标i、k、t未以合适的数学格式呈现，可能原文为bᵢₖₜ。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "r E2030  2",
+      "type": "公式结构/符号位置异常",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "变量E2030的上标r与下标2030位置无法从文本中确认，疑似为Eʳ₂₀₃₀/E₂₀₃₀ ≥ μ₂的形式，但文本中分子分母排布未正常显示。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "Appendix A. Key 2009 socio-economic system, energy, and carbon emissions data for China",
+      "type": "表格数据缺失",
+      "severity": "high",
+      "confidence": 0.98,
+      "reason": "附录A表格数据在提取文本中严重损坏，仅保留表头及少量无单位数字串，各列数值缺失或错位，无法复原完整表格内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "Liu et al., 2015b; Yuan et al., 2016). In fact,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第2页第1页末尾至第2页开头处句子结构判断存在多处引用中断，但基本能识别上下文；此为引用列出的低信息量断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "diag   is the diagonal matrix.",
+      "type": "公式符号损坏",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "括号字符显示为不可读符号，应为diag[]等数学符号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "q it q i 0  yit yi 0 ( i  1, 2,..., n )",
+      "type": "公式符号损坏",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "等号与分式格式异常，应为qᵢₜ/qᵢ₀ = yᵢₜ/yᵢ₀的形式。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值的一致性：2026年峰值11.20 Gt、2030年降至10.84 Gt、2015–2035年累计减排约22 Gt（正文有21.64 Gt与约22 Gt两种表述，按原文保留）、能源强度下降43%、碳强度下降45%、GDP增速低于4.5%等均可在正文找到对应。表1中BAU累计CO₂ 241.26 Gt、累计GDP 369.17万亿美元，及2029–2026年达峰对应的CO₂减排与GDP损失数据均已核对无误。摘要中“approximately 22 Gt”与正文4.2节“approximately 21.64 Gt”存在数量级一致但数值不一致的情况，两处均按原文保留。不确定性分析、敏感性分析结果（技术变化最敏感、人口无影响）已核实。模型公式部分因提取文本存在大量符号损坏，已标注为提取问题，但公式基本结构和变量定义（Xₜ、Yₜ、Vₜ、A、Aᶜ等）根据可辨识文本予以保留。附录A表格数据提取严重损坏，故笔记中不尝试重构任何具体数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3640,
+      "prompt_tokens": 14206,
+      "total_tokens": 17846,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 363
+      }
+    },
+    "content_chars": 5914
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

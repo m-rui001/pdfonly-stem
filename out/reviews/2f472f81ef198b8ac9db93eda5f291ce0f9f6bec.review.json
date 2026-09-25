@@ -1,0 +1,90 @@
+{
+  "sha1": "2f472f81ef198b8ac9db93eda5f291ce0f9f6bec",
+  "title": "Robot Collisions: A Survey on Detection, Isolation, and Identification",
+  "doi": "https://doi.org/10.1109/tro.2017.2723903",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/2f472f81ef198b8ac9db93eda5f291ce0f9f6bec/index.html",
+  "source_chars": 128389,
+  "markdown_chars": 12609,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": " Monitoring method Computational effort Measurement quantities Advantages Disadvantages \n\n Absolute torque $\\left|\\tau_{m}\\right|\\geq \\tau_{m,\\max}$ complexity: *memory: *dual use: no overall: * $\\tau_{m}=K_{i}i_{m}$ - extremely simple- needs only $i_{m}$ - heuristic- friction dependent- low sensitivity- no isolation/identification",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table I 的表格结构在 OCR 中完全丢失，各列内容被压缩为连续文本，星号评级、复杂度、内存等字段与描述文字混杂，难以准确对应列标题，影响对方法比较细节的完整复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": " Monitoring method Measurement quantities \n\n Absolute joint torque $|\\tau_{J}| \\geq \\tau_{J,\\max}$ $\\tau_{J} \\vee \\hat{\\tau}_{J}=\\hat{K}_{J}(\\theta-q)$",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table II 的表格结构同样在 OCR 中丢失，测量量列与各方法名称被压缩为连续文本，逻辑或符号（∨）与公式混杂，影响对柔性关节监测方案测量量选择的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": " Momentum observer Eq. (46)property: Eq. (47) $\\mathrm{NE}_{g_{0}}(q,\\dot{q},0)$$n\\times \\mathrm{NE}_{0}(q,0,\\dot{q},e_{i}/T_{s})$$\\mathrm{NE}_{0}(q,0,\\dot{q})$OR customized dynamicsOR$\\mathrm{NE}_{g_{0}}(q,\\dot{q},0)$$n\\times \\mathrm{MNE}_{0}(q,\\dot{q},e_{i},0)$$\\mathrm{NE}_{0}(q,0,\\dot{q})$complexity: *****memory: *dual use: partly overall: *****",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table I 中动量观测器的计算方案公式在 OCR 中符号粘连、缺少分隔，如 $n\\times \\mathrm{NE}_{0}(q,0,\\dot{q},e_{i}/T_{s})$ 与 $n\\times \\mathrm{MNE}_{0}(q,\\dot{q},e_{i},0)$ 的参数列表可能不完整，影响对三种计算方案的精确定量复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": " Energy observer Eq. (26)property: Eq. (27) $\\frac{1}{2}\\dot{q}^{T}\\mathrm{NE}_{0}(q,0,\\dot{q})$complexity: **memory: **dual use: partly overall: **",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Table I 中能量观测器的计算量表达式 $\\frac{1}{2}\\dot{q}^{T}\\mathrm{NE}_{0}(q,0,\\dot{q})$ 在 OCR 中与复杂度字段粘连，可能丢失了部分符号或上下文，影响对该方法计算量的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": " Energy observer Subst. $\\tau_{m}$ with $\\tau_{J}$ in Eq. (26)property: Eq. (27) $q \\vee \\hat{q}=\\theta-\\hat{K}_{J}^{-1}\\tau_{J}\\tau_{J} \\vee \\hat{\\tau}_{J}=\\hat{K}_{J}(\\theta-q)\\dot{q} \\vee \\hat{q}=\\dot{\\theta}-\\hat{K}_{J}^{-1}\\dot{\\tau}_{J}$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table II 中能量观测器的测量量公式在 OCR 中多个表达式粘连在一起，缺少分隔符，如 $q \\vee \\hat{q}=\\theta-\\hat{K}_{J}^{-1}\\tau_{J}\\tau_{J} \\vee \\hat{\\tau}_{J}=\\hat{K}_{J}(\\theta-q)\\dot{q} \\vee \\hat{q}=\\dot{\\theta}-\\hat{K}_{J}^{-1}\\dot{\\tau}_{J}$，难以区分各测量量的独立表达式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Robot Collisions: A Survey on Detection, Isolation, and Identification",
+  "self_check": "已核对：摘要与结论中的核心主张（仅用本体感受传感器、检测/隔离/辨识三阶段、动量观测器为最佳选择）一致；正文中关键数值（LWR-III 13.5 kg/15 kg、减速比 100:1–160:1、$K_{H}=10^{5}$ N/m、$M_{H}=4.5$ kg、$M_{x}\\approx4$ kg、$B_{x}\\approx13$ kg、$K_{J,x}\\approx7000$ N/m、$|f_{\\mathrm{ext}}|_{\\mathrm{max}}\\approx500$ N、$K_{O}$ 范围 25–75 s⁻¹、$\\epsilon_{\\mu}=0.05\\cdot\\tau_{J,\\max}$、$\\tau_{J,\\max}=[180\\ 180\\ 80\\ 80\\ 80\\ 35\\ 35\\ 35]^{T}$ Nm、2.4 kg→23.54 N、1 kg 距离 0.187–0.437 m、$e_{6,c}$ 0.42–1.16 cm）均照录 OCR 文本；公式（动力学方程、能量/动量观测器、隔离与辨识公式）按提取文本保留，未做推测性修复。仍不确定：Table I 与 Table II 的完整表格结构因 OCR 损坏无法完全复原，部分星号评级与测量量对应关系可能不精确；$\\tau_{J,\\max}$ 向量中 8 个分量对应 7 个关节，可能存在 OCR 多录或错位。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8531,
+      "prompt_tokens": 34148,
+      "total_tokens": 42679,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 16757,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Robot Collisions: A Survey on Detection, Isolation, and Identification",
+    "translated_title": "机器人碰撞：检测、隔离与识别综述",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

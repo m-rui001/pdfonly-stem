@@ -1,0 +1,64 @@
+{
+  "sha1": "2113aa718bc59b6c4f656e884f141716fe409a97",
+  "title": "The fertilizing role of African dust in the Amazon rainforest: A first multiyear assessment based on data from Cloud‐Aerosol Lidar and Infrared Pathfinder Satellite Observations",
+  "doi": "https://doi.org/10.1002/2015gl063040",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2113aa718bc59b6c4f656e884f141716fe409a97/index.html",
+  "source_chars": 41565,
+  "markdown_chars": 3503,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "0.22 Tg (ranging from 1.51 to +1.97 Tg)",
+      "type": "疑似文本错误",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "范围下界1.51为正值，与0.22 Tg矛盾；正文称负通量非物理，疑丢失负号，应为-1.51。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "4. Concluding Remarks Acknowledgments The work was supported by NASA",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第7页仅有'Concluding Remarks'标题和致谢内容，真正的结论段落在第8页开头，中间被致谢分隔，跨页顺序混乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Figure 1. CALIOP-estimated seasonal dust mass ﬂuxes (orange color, mean transport [Kaufman et al., 2005]. By using ± 1σ, σ represents the standard deviation over the 7 years) across the boundaries",
+      "type": "疑似文本截断/拼接",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "括号不匹配，'mean transport'后出现引用和'By using'，图注可能被截断或拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对核心数值：28 (8–48) Tg a⁻¹、29 (8–50) kg ha⁻¹ a⁻¹、磷输入0.022 (0.006–0.037) Tg P a⁻¹、23 (7–39) g P ha⁻¹ a⁻¹、与SPI的R²=0.71/0.66/0.60、卡宴PM10 R²=0.65、GOCART差异26–47%和35%、Kaufman区域总沉降73 Tg等。公式未涉及。不确定点：第3页0.22 Tg范围疑为负号丢失；第7-8页结论与致谢跨页顺序混乱；图1括号不匹配。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4738,
+      "prompt_tokens": 11837,
+      "total_tokens": 16575,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2065
+      }
+    },
+    "content_chars": 4740
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "sha1": "1c9f887eea3153c87c0964be5b3696b9d3b9c66b",
+  "title": "Dynamic changes in the starch-sugar interconversion within plant source and sink tissues promote a better abiotic stress response",
+  "doi": "https://doi.org/10.1016/j.jplph.2019.01.007",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1c9f887eea3153c87c0964be5b3696b9d3b9c66b/index.html",
+  "source_chars": 113129,
+  "markdown_chars": 3198,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 18,
+      "quote": "accumulation (Yang et al., 2001).\nhigher grain starch",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在页尾中断，下一页开头为“higher grain starch”，与上一页“accumulation”顺序颠倒，原文应为“higher grain starch accumulation”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "occuring across different micro-, macro-, spatial and temporal scales",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“occuring”应为“occurring”，拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "starch-dericed alpha-glucan",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“dericed”应为“derived”，属明显拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：200mM NaCl、100mM NaCl、5倍AGPase抑制、2-3倍淀粉含量、4倍淀粉增加、150mM盐、-0.47至-0.52MPa水势、14C标记、30%降幅等均与提取文本一致。公式方面仅保留3-PGA:Pi比值描述，无其他公式。结论方向与摘要及模型一致。不确定之处：跨页处“higher grain starch”顺序已标记，其余数据未发现矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7226,
+      "prompt_tokens": 32173,
+      "total_tokens": 39399,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4778
+      }
+    },
+    "content_chars": 4245,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

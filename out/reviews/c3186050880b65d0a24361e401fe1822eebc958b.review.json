@@ -1,0 +1,85 @@
+{
+  "sha1": "c3186050880b65d0a24361e401fe1822eebc958b",
+  "title": "Deep Learning for Household Load Forecasting—A Novel Pooling Deep RNN",
+  "doi": "https://doi.org/10.1109/tsg.2017.2686012",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/c3186050880b65d0a24361e401fe1822eebc958b/index.html",
+  "source_chars": 52057,
+  "markdown_chars": 12296,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": " 21: Terminate ",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Program 1 伪代码从第19行直接跳到第21行，缺少第20行，且行号前有异常空格，疑似抽取时行号或内容丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Fig. 10. The computational graph and unfolded topological graph",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "图10标题与正文描述不符：正文称图10展示真实负荷与不同方法预测负荷，但图题却为“计算图及展开拓扑图”，疑似图题OCR错配或重复了图3/图4的标题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Improvement from DRNN to PDRNN 6.45% 6.96% \n Improvement from ARIMA to PDRNN 19.46% 16.28%",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "TABLE I 中两行改进百分比仅给出两个数值，但表头有RMSE、NRMSE、MAE三列，第三列数值缺失或错位，影响对MAE改进百分比的准确读取。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "$$\\begin{array}{l} a _ {l} ^ {(t)} = b _ {l} + W _ {l} \\cdot h _ {l} ^ {(t - 1)} + U _ {l} \\cdot h _ {l - 1} ^ {(t)} \\\\ f o r l = 2 3 \\quad N \\\\ \\end{array}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式中 `for l = 2 3 N` 明显丢失了逗号和省略号，应为 `for l = 2, 3, ..., N`，影响对层间递推范围的准确理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "$$\\begin{array}{l} L o s s \\left(y _ {p r e d i c t}, y _ {t a r g e t}\\right) \\\\ = \\sqrt {^ 2 \\frac {1}{B} \\cdot \\frac {1}{O} \\cdot \\sum_ {i = 1} ^ {B} \\sum_ {j = 1} ^ {O} \\left(y _ {p r e d i c t} - y _ {t a r g e t}\\right) ^ {2}} \\\\ \\end{array}$$",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "根号内出现 `\\sqrt {^ 2 ...}`，上标2位置异常，疑似OCR将平方符号错置于根号内，影响损失函数公式的准确复现。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Deep Learning for Household Load Forecasting—A Novel Pooling Deep RNN",
+  "self_check": "已核对摘要、正文与结论中的关键数值：PDRNN相对ARIMA的RMSE改进在摘要和结论中为19.5%，表I中为19.46%；相对SVR为13.1%；相对经典深度RNN为6.5%，表I中为6.45%。表I中PDRNN的RMSE=0.4505、NRMSE=0.0912、MAE=0.2510，DRNN的RMSE=0.4815、NRMSE=0.0974、MAE=0.2698，ARIMA的RMSE=0.5593、NRMSE=0.1132、MAE=0.2998，均与正文描述一致。公式方面，深度RNN递推公式中`for l = 2 3 N`和损失函数中`\\sqrt {^ 2 ...}`存在明显OCR损坏，已在extraction_issues中标出，未擅自修复。TABLE I中改进百分比行第三列缺失，已标出。图10标题与正文描述不一致，已标出。仍不确定之处：TABLE I中“Improvement from DRNN to PDRNN”和“Improvement from ARIMA to PDRNN”两行是否原本有MAE改进百分比，以及图10标题是否确为OCR错配。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7815,
+      "prompt_tokens": 13304,
+      "total_tokens": 21119,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 14970,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

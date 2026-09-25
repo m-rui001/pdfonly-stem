@@ -1,0 +1,65 @@
+{
+  "sha1": "8e3bb1c3290f72d965c7140c7108ce50d16cf207",
+  "title": "Ambient Air Pollution Exposure Estimation for the Global Burden of Disease 2013",
+  "doi": "https://doi.org/10.1021/acs.est.5b03709",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8e3bb1c3290f72d965c7140c7108ce50d16cf207/index.html",
+  "source_chars": 49523,
+  "markdown_chars": 3942,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "temporal changes described above. Our updated estimates resulted in lower levels in areas of\nNorth Africa, the Middle East and the Gobi Desert, all areas that were impacted by high levels of 15",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第15页末尾句子在页尾中断，下一句语义延续至第16页但页码标记插入其间，可能存在页眉/图注混淆，需对照原PDF确认顺序。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 16,
+      "quote": "higher levels were estimated in GBD 2013 for countries in South Asia (India: 43.4 vs 32.0; Bangladesh: 45.7 vs 31.1 6; Pakistan: 43.4 vs 38.1; Nepal: 41.5 vs 32.7 μg/m3 for GBD 2013 vs GBD 2010, respectively).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "‘Bangladesh: 45.7 vs 31.1 6’ 中‘31.1 6’可能出现数字合并或排版残留，应为‘31.1’或‘31.16’（但GBD 2010值前文未提及），存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "As in the GBD 2010 exposure estimates and given the scarcity\nof surface ozone measurements throughout the world and the challenges in accessing hourly data\nfrom available monitoring sites to develop the desired metric, we did not utilize surface ozone\nmeasurements for developing the global estimates.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第13页文本‘As in the GBD 2010 exposure estimates and given the scarcity’前面出现‘12’页标，可能该句位于页尾，但语义完整，不构成实际断裂。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文结果与表格数据一致性：摘要中的87%全球人口超PM2.5指导值、1990–2013年高收入国家下降等关键数字在正文Results均有对应；Table 1中十个国家1990/2013 PM2.5与臭氧值均已引用，未添加原文未出现的数据。公式（1）（3）（4）已按原文原样保留，变量定义一致。校准模型系数（0.41765、0.86953）与正文一致。不确定区间计算、PM2.5:PM10比值策略均按原文描述。未引入任何外部知识，PM2.5与臭氧的估算步骤未混淆。仍需注意：表1中“% Change”计算方式原文未明确，但数值可直接复现，未添加推断；GBD 2010对比数值在部分国家未解释绝对差原因，仅按原文描述归因。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3538,
+      "prompt_tokens": 12976,
+      "total_tokens": 16514,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 478
+      }
+    },
+    "content_chars": 5764,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

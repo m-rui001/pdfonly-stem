@@ -1,0 +1,45 @@
+{
+  "sha1": "32185cd007490ef566e6d034b2568b4df62c7410",
+  "title": "A trade-off between plant and soil carbon storage under elevated CO2",
+  "doi": "https://doi.org/10.1038/s41586-021-03306-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/32185cd007490ef566e6d034b2568b4df62c7410/index.html",
+  "source_chars": 81431,
+  "markdown_chars": 2286,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Fig, 2d, n=19",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "提取文本中 'Fig, 2d' 使用了逗号而非句点，其他图引用均为 'Fig. ' 格式，疑为转录错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、结果和讨论中的关键数值：总体βsoil 4.6%（95% CI 1.7-7.5%）、草地8±2%、森林0±2%、生物量草地9±3%和森林23±2%、非施肥实验负相关R²=0.67（p<0.0001, n=38）、施肥实验n=35（p=0.34）、MAOM n=19、FACE-MDS观测R²=0.99 vs 模型R²=0.91、TRENDY和CMIP5模型均未再现负关系。公式C* = C_j/(1 - ΔC_j/NPP_j)和expected βsoil = βplant × ΔC_soil_CMIP/ΔC_veg_CMIP 根据原文提取文本转录，未做推断。提取文本中个别图形引用（如Fig, 2d）疑似笔误，已标记；其他数值和结论均有文本依据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5426,
+      "prompt_tokens": 22068,
+      "total_tokens": 27494,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3758
+      }
+    },
+    "content_chars": 2912
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "sha1": "945ecf016aa595dd46e7997d511e37c193d88581",
+  "title": "Hydrolysis of Electrolyte Cations Enhances the Electrochemical Reduction of CO 2 over Ag and Cu",
+  "doi": "https://doi.org/10.1021/jacs.6b07612",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/945ecf016aa595dd46e7997d511e37c193d88581/index.html",
+  "source_chars": 47056,
+  "markdown_chars": 7962,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Hydrolysis of Electrolyte Cations Enhances the Electrochemical Reduction of CO over Ag and Cu",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "首页标题中 CO₂ 的下标 2 丢失，写作 CO；第 2 页标题则正确提取为 CO₂。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "current densities of $ \\sim 1 0 $ MA $ \\mathrm{c m}^{-2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "单位应为 mA cm⁻²，OCR 将毫安误识为大写 MA，影响对电流密度量级的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "over Cu requires $ < -1 $ V vs RHE, in which results in significant polarization at the cathode.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“in which results in”语法不通，疑为“which results in”的抽取错误，但不影响核心含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "the pKa of $ \\mathrm{L i^{+}} $ and $ \\mathrm{K^{+}} $ are 13.5 and 14.6, respectively.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "此处 Li⁺ 的 pKa 为 13.5，而 Table 1 中体相 Li⁺ 的 pKa 为 13.6，两处数值不一致，疑为 OCR 或原文笔误，影响对具体数值的引用。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "due to its rapid consumptionby hydroxyl anions",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“consumptionby”缺少空格，属 OCR 拼接错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "to the specific absorption or steric hindrance of cations",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "“specific absorption”应为“specific adsorption”（特性吸附），absorption 与 adsorption 混淆，影响术语准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "$ \\mathrm{H}{2} $ , CO, $ \\mathrm{C H}{4} $ $ \\mathrm{C}{2} \\mathrm{H}{4} $ and $ \\mathrm{C}{2} \\mathrm{H}{6} $ were detected",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式下标格式在 OCR 中部分丢失（如 H2、CH4、C2H4、C2H6 的下标未正确保留），但不影响物种识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "the predicted pKa of hydrolysis becomes than that of the bulk electrolyte, $ \\mathrm{p H}=6.8 $.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "“becomes than”缺少比较词（应为 greater than 或 higher than），导致该句语义不完整，影响对 pKa 与体相 pH 关系的理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Hydrolysis of Electrolyte Cations Enhances the Electrochemical Reduction of CO 2 over Ag and Cu",
+  "self_check": "已核对摘要、正文与结论中的关键数值：Ag 上电流密度随阳离子从 Li⁺ 到 Cs⁺ 增大 2.4 倍、Cu 上 2.1 倍；总 FE 分别增大约 15% 和约 55%；Cu 上 C₂/C₁ FE 比从 0.2 增至 3.3；Table 1 的 pKa 数值（Li⁺ 体相 13.6/Ag 11.64/Cu 13.16，Na⁺ 14.2/10.26/11.44，K⁺ 14.5/7.95/8.49，Rb⁺ 14.6/6.97/7.23，Cs⁺ 14.7/4.31/4.32）；Ag 上 CO 电流密度 0.57→4.9 mA cm⁻²、H₂ 0.45→0.53 mA cm⁻²；Cu 上电流密度约 1.5→3.2 mA cm⁻²；极化损失每十倍变化 CO 90 mV、C₂H₄ 70 mV、C₂H₅OH 70 mV、CH₄ 67.5 mV、H₂ 60 mV；预测 C₂/C₁ 比 0.6→3.1；−0.7 V vs RHE 下 Cu 上 pKa Li⁺ 14.4、Na⁺ 13.6、K⁺ 12.3、Rb⁺ 11.8、Cs⁺ 10.9。公式 E(vs RHE) = E(vs Ag/AgCl) + 0.197 V + 0.0591 × pH 已原样保留。仍不确定处：第 5 页 Li⁺ pKa 13.5 与 Table 1 体相 13.6 不一致，已在 extraction_issues 中标出；第 13 页“becomes than”缺比较词，语义不完整；第 4 页“MA”应为 mA。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6410,
+      "prompt_tokens": 13117,
+      "total_tokens": 19527,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11258,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

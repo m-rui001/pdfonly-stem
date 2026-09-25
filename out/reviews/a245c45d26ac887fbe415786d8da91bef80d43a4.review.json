@@ -1,0 +1,129 @@
+{
+  "sha1": "a245c45d26ac887fbe415786d8da91bef80d43a4",
+  "title": "Whole-genome landscapes of major melanoma subtypes",
+  "doi": "https://doi.org/10.1038/nature22071",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/a245c45d26ac887fbe415786d8da91bef80d43a4/index.html",
+  "source_chars": 69814,
+  "markdown_chars": 6878,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Signature 7b involves C>T substitutions at CpC and CpC",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "同一二核苷酸重复出现，疑为OCR重复或应为不同二核苷酸（如CpG），影响对特征7b序列背景的准确理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "t-test, P <1 X $ 10^{-7} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "P值符号中的乘号被OCR为字母X，虽不影响数值理解，但属公式符号抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "t-test, P <1 X $ 10^{-6} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，乘号被OCR为X。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Mann-Whitney test, P < 1.46 X $ 10^{-4} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，乘号被OCR为X。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "t-test, $ P < 1\\mathrm{X}10^{-6} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同上，乘号被OCR为X。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Fisher's exact test, $ P < 1 \\times 1 0^{-1 7} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "指数-17中的数字间有空格，可能为OCR格式问题，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Fisher's exact test, P < 5.4 X $ 10^{-5} $ , 1.8 X $ 10^{-5} $ , 0.018, 0.003, respectively",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "乘号被OCR为X。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Fisher's exact test, $ q < 1\\mathrm{X}10^{-51} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "乘号被OCR为X。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "t-test P < 1 x $ 1 0^{-7} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "指数-7中的数字间有空格，可能为OCR格式问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "t-test P < 1 x $ 1 0^{-6} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "指数-6中的数字间有空格，可能为OCR格式问题。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Whole-genome landscapes of major melanoma subtypes",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：样本量183（75原发、93转移、15细胞系；35肢端、8黏膜、其余皮肤型），突变总数20,894,255，indel 96,467，平均突变率38.23/Mb，编码突变156,770（0.8%），皮肤型平均49.17/Mb vs 肢端/黏膜2.64/Mb，SV频率肢端/黏膜平均342.40 vs 皮肤型101，TERT启动子突变115/167（69%），皮肤型86%，肢端/黏膜4/38（11%），NF1畸变32/183（17%），三野生型黏膜/肢端22/43（51%）vs 皮肤型15/140（11%），MAPK通路突变179/183（98%），可靶向突变皮肤型138/140（99%）vs 非皮肤型39/43（91%）。公式符号如P值中的乘号被OCR为X，已在extraction_issues中标注。端粒长度与TERT/ATRX突变的关系结论已核对。未发现影响核心论证的严重OCR错误。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5526,
+      "prompt_tokens": 18561,
+      "total_tokens": 24087,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9700,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

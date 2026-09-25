@@ -1,0 +1,64 @@
+{
+  "sha1": "9a2f216a0276e6ae7bc974bed339dbd2b18f8563",
+  "title": "Single-atom tailoring of platinum nanocatalysts for high-performance multifunctional electrocatalysis",
+  "doi": "https://doi.org/10.1038/s41929-019-0279-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9a2f216a0276e6ae7bc974bed339dbd2b18f8563/index.html",
+  "source_chars": 58254,
+  "markdown_chars": 3708,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "using a partial electrochemical 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页2末尾出现孤立的数字1，下一页页3以'dealloying approach'接续，推测该数字可能是脚注或页码标记混入正文，也可能原文确有上标引用，但此处无法确定，照录可见文本。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "SA (mA/cm )",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格中单位'cm'后缺少平方上标，但上下文中其他位置均写为'mA/cm²'，且表格内列名应为'SA (mA/cm²)'，故判定为抽取时上标丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "SNAi-PtNWs",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "全文其他位置均写作'SANi-PtNWs'，此处'surface'后出现'SNAi'，应为'SANi'的拼写顺序错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：HER MA 11.8±0.43 A/mgPt（-70 mV vs RHE，1 M KOH），SA 10.72±0.41 mA/cm²，ECSA 106.2±4.5 m²/gPt；MOR MA 7.93±0.45 A/mgPt，EOR MA 5.60±0.27 A/mgPt；纯PtNWs对应值6.90±0.36、6.11±0.34、112.9±5.4；与摘要一致。Tafel斜率、CO剥离峰位、DFT结合能变化等均已从文本提取。公式（1）-（9）按原文可见字符保留，其中式（1）的排版字符有缺失（如σ、φ等），但已尽量照录；式（2）-（9）完整。不确定点：表格中单位上标缺失已标记，未推断。图2-5的图表内容仅依赖正文文字描述，未添加未提取的图表数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4522,
+      "prompt_tokens": 15941,
+      "total_tokens": 20463,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1634
+      }
+    },
+    "content_chars": 4858
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

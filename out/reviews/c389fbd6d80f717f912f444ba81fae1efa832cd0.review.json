@@ -1,0 +1,83 @@
+{
+  "sha1": "c389fbd6d80f717f912f444ba81fae1efa832cd0",
+  "title": "An assessment of urban park access in Shanghai – Implications for the social equity in urban China",
+  "doi": "https://doi.org/10.1016/j.landurbplan.2016.08.007",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c389fbd6d80f717f912f444ba81fae1efa832cd0/index.html",
+  "source_chars": 60541,
+  "markdown_chars": 3819,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "I =( Where, zi and zj are expressed in deviations from the mean, and wij is the spatial weight.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "式2的公式主体缺失，'I =('后无完整表达式，且下一行才出现'2)'，拼接痕迹明显。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "The formula for this measurement is as follows: Z Where, Sj is the number of facilities or their size (we use size for this study), dij is the network distance between tract i and facility j, and α is the search of distance (radii).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式内容在页尾断裂，'Z'后缺失公式主体，直接接'Where'，变量定义与公式符号不完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 15,
+      "quote": "(Equation 3)\n\n(Equation 4)\n\nWhere, n1 and n2 are the sample size of each group, and Ri is the rank. mU and σU are the mean and standard deviation of U.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "式3和式4的公式主体完全缺失，仅保留编号和变量描述，无法完整复现统计量定义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "comprising of nine administrative districts: Huangpu, Luwan, Xuhui, Changning, Jing'an, Putuo, Zhabei, Hongkou,Yangpu and Pudong",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文称'九个行政区'但列出十个名称，可能为原文笔误或提取重复，无法确定。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "two critical distances radii (α) are used: 1.6 km (15 minutes walking distances) and 3.2 km (15 minutes cycling distance). Since, a distance of 1.5 km is the criteria for park access given in De Chiara and Koppelman (1975);",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "前文使用1.6 km作为步行半径，但后文引用1.5 km作为标准，数值不一致，可能为原文笔误或提取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、方法、结果中的关键数值：样本量2730、研究区216个公园、两个距离（1.6/3.2km）、人口密度（16828/km²、6000/km²等）、绿地指标（37.1km²、38.2%、13.1m²）。表2中的主要检验值（如60岁以上Z=12.967，福利房Z=6.848，商品住房Z=-4.005等）与正文描述方向一致。公式（1-4）因提取缺失无法完整核对，仅保留变量定义。第10页行政区数量与列表不一致、第13页1.5与1.6km不一致已标记为疑点。结论部分'yes but not for long'的表述与正文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4748,
+      "prompt_tokens": 15168,
+      "total_tokens": 19916,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1690
+      }
+    },
+    "content_chars": 5979,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

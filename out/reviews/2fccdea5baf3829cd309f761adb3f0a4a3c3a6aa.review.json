@@ -1,0 +1,91 @@
+{
+  "sha1": "2fccdea5baf3829cd309f761adb3f0a4a3c3a6aa",
+  "title": "π‐Conjugated Lewis Base: Efficient Trap‐Passivation and Charge‐Extraction for Hybrid Perovskite Solar Cells",
+  "doi": "https://doi.org/10.1002/adma.201604545",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2fccdea5baf3829cd309f761adb3f0a4a3c3a6aa/index.html",
+  "source_chars": 41144,
+  "markdown_chars": 3208,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "(",
+      "type": "公式缺失",
+      "severity": "high",
+      "confidence": 0.99,
+      "reason": "正文中提到公式(1)用于计算tDOS，但提取文本中公式主体缺失，仅剩括号和后续文本，无法复现具体表达式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "The improved J sc",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页10末尾出现'The improved J sc'，页面翻转后页11以'Since IDIC combines...'开头，二者之间缺少连贯内容，可能丢失了标题或句子。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "the devices without IDIC layers between MAPbI 3 and IDIC layers",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表述不通顺，根据上下文应为'without IDIC layers between MAPbI3 and cathode'之类的描述，原文可能漏词或误写。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "the concentration of IDIC and PdI 2 is 0.03 or 0.001 mg mL-1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上下文中均为PbI2，此处写成PdI2应为笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 26,
+      "quote": "FTIR of the power of IDIC",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "从上下文看应为'powder'而非'power'，图注中写错。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "ω",
+      "type": "公式缺失",
+      "severity": "high",
+      "confidence": 0.99,
+      "reason": "公式(2)的完整表达式未提取到，仅留下孤立的ω符号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数据：PCE 19.5%（含IDIC）对13.5%（无IDIC），VOC 1.11 V对1.03 V，JSC 22.96对19.37 mA cm⁻²；PL猝灭87%，TRPL寿命96 ns→9.7 ns；FTIR减弱39%和45%；tDOS降低1-2个数量级；IDIC的LUMO/HOMO和迁移率；GIWAXS相干长度3.5 nm vs 2.5 nm；30天稳定性90% vs 80%。公式(1)和(2)因提取缺失未在正文中复现，仅注明缺失。其他不确定点：跨页断裂处的文本完整性，以及若干疑似笔误已在extraction_issues中列出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3696,
+      "prompt_tokens": 12465,
+      "total_tokens": 16161,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 911
+      }
+    },
+    "content_chars": 4906
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

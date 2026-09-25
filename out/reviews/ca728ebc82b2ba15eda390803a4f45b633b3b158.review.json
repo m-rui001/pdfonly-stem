@@ -1,0 +1,45 @@
+{
+  "sha1": "ca728ebc82b2ba15eda390803a4f45b633b3b158",
+  "title": "A class of predefined-time stable dynamical systems",
+  "doi": "https://doi.org/10.1093/imamci/dnx004",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ca728ebc82b2ba15eda390803a4f45b633b3b158/index.html",
+  "source_chars": 59141,
+  "markdown_chars": 5510,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "Page 10\n\nFigure 4: Average absolute error as a function of the tuning parameters for a predefined-stable system with noisy measurements.\n\nAs it was expected, the effect of the noise grows in magnitude as Tc decreases",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页首 Figure 4 的图注完整出现在正文句中；正文 'As it was expected…' 是完整句子的延续，不是页尾断句。图注作为独立段落，位置在正文之前，可能是排版所致，应保留原文顺序而非静默重排。属于低风险排版说明，不需修改文本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键内容：预定义时间稳定定义（Def. 2.4/2.5，弱/强）、Lyapunov 不等式 (5) 及等式 (6)/(7)、Φ_{m,q} 定义 (8) 及 mq 参数的三种取值（一阶导 0/−1/Tc；二阶导 0/无穷）、三个滑模控制器及对应扰动条件、积分滑模两个引理、一致性算法的误差动力学 (41) 及参数（Tc=1, q=0.5, n=10）、双积分器例的参数和结论。公式和符号均照录提取文本，未做推断补全。不确定处：Lemma 4.3 的最终界表达中包含 Lambert 函数，原文存在一处重复粘贴（'1 exp(kxk'引号位置），但核心关系 kxk^{1−mq} 与 (mqTc) 的配对合理，已按原可见文本保留。原文页码 10 的图 4 图注位置存疑但不是文本抽取错误，已在 extraction_issues 中标注。未核实任何原文未给出数字仿真的具体数据（如 Figure 7/8 的详细轨迹数值）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4740,
+      "prompt_tokens": 18116,
+      "total_tokens": 22856,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 683
+      }
+    },
+    "content_chars": 6554
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

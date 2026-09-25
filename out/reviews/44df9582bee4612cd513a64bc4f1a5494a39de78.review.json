@@ -1,0 +1,57 @@
+{
+  "sha1": "44df9582bee4612cd513a64bc4f1a5494a39de78",
+  "title": "Is habitat fragmentation good for biodiversity?",
+  "doi": "https://doi.org/10.1016/j.biocon.2018.07.022",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/44df9582bee4612cd513a64bc4f1a5494a39de78/index.html",
+  "source_chars": 58536,
+  "markdown_chars": 10342,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "dismiss the negative effects of fragmentationas a 'zombie' idea",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "单词 fragmentation 与 as 之间缺少空格，属轻微 OCR 拼接错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "does not provide a means of assessing 'significance'>.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "引号后出现多余的 '>' 符号，疑为 OCR 误识，不影响表格结论理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Is habitat fragmentation good for biodiversity?",
+  "self_check": "已核对：Fahrig 综述筛选 5000 余篇、纳入 118 篇（381 个显著响应）、76% 为正向、24% 为负向；检索词命中数 1,926 / 141,148 / 525,066；Savannah River Corridor Experiment 171 个响应变量、廊道正向效应为负向的 4.7 倍；Radford and Bennett (2007) 24 个景观 19 个显著响应 vs Smith et al. (2011) 2951 个景观 3 个显著响应；表 1 中 Haddad et al. (2015) 80% 隔离、82% 边缘负向，Pfeifer et al. (2017) 负向边缘效应物种受保护关注可能性高 3.7 倍，Gilbert-Norton et al. (2010) 廊道移动增加 50%（n=28），Fahrig 结果 <0.5 时 33.3% 负向 vs >0.5 时 8% 负向。公式与符号：原文无独立编号公式，仅保留 SLOSS、beta 多样性等术语。不确定处：表 1 中“Negative habitat fragmentation responses are stronger at low levels of habitat amount”一行反证栏内容在 OCR 中与 Fahrig 证据栏合并，已按原文顺序保留，未额外拆分。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6271,
+      "prompt_tokens": 14763,
+      "total_tokens": 21034,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11679,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

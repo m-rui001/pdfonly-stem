@@ -1,0 +1,55 @@
+{
+  "sha1": "6df184e7c1682b35087c16ba9366fec4b7c78923",
+  "title": "Rational Design of Graphene‐Supported Single Atom Catalysts for Hydrogen Evolution Reaction",
+  "doi": "https://doi.org/10.1002/aenm.201803689",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6df184e7c1682b35087c16ba9366fec4b7c78923/index.html",
+  "source_chars": 47785,
+  "markdown_chars": 3695,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "1 ΔEad = ESACs-H* ‒ ESACs ‒ 2 EH2",
+      "type": "公式排版歧义",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "提取文本中公式(1)的分数1/2被拆分为独立的“1”和“2”，可能源PDF排版导致，但无法从文本确认正确形式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "Results of these calculations shown in Figures 4g-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "第11页末尾以“Figures 4g-”结束，第12页开头出现“i. Figures 4g-i show...”，可能涉及图注“i”与正文的拼接顺序问题，但上下文完整，未缺失信息。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：Co-SAC ΔGH*=0.13 eV；非金属位点ΔGH*值（-0.51, 0.52, 0.89, 1.01, 1.69, 1.89 eV）；各金属ΔGH*（Pd 1.86, Ni 1.62, Re -0.92, Mo -0.93, Ti -0.94, W -1.44, Ta -1.64 eV）；电荷转移（Ta 0.84, Pd 0.10, Cr 0.42, 理想0.35 e-/H）；实验过电位（Co 230, W 530, Ni 590, NG 630 mV）及Tafel斜率（99, 122, 167, 169 mV dec⁻¹）与摘要和正文一致。公式(1)中分数形式因提取问题无法完全确认，已在issues中标注；其余公式（ΔGH* = ΔEad + 0.24 eV）清晰。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8129,
+      "prompt_tokens": 13261,
+      "total_tokens": 21390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5311
+      }
+    },
+    "content_chars": 4874
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

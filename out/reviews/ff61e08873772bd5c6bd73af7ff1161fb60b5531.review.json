@@ -1,0 +1,130 @@
+{
+  "sha1": "ff61e08873772bd5c6bd73af7ff1161fb60b5531",
+  "title": "Integrative approaches for large-scale transcriptome-wide association studies",
+  "doi": "https://doi.org/10.1038/ng.3506",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ff61e08873772bd5c6bd73af7ff1161fb60b5531/index.html",
+  "source_chars": 76435,
+  "markdown_chars": 11794,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "cis- and trans- $ h_{g}^{2} $ for each gene in our data $ ^{18,19} $ .",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "括号不匹配：原文应为“cis- and trans-$h_g^2$ for each gene in our data^{18,19}”，OCR 在 $h_g^2$ 后多出右括号，导致公式与引用标记边界不清。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "we employed TWAS to identify new expression-trait associations using summary association statistics from a 2010 lipid GWAS $ ^{17} $ （ $ \\sim100,000 $ samples)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "中文全角括号“（”与英文右括号“)”混用，属格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "the $ z^{2} $ statistics from TWAS were $ 1.5\\times $ higher than the strongest eQTL SNP",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "原文可能为“$z^2$ statistics”或“$z$ statistics”，但 OCR 显示为 $z^2$，无法确认是否准确，照录。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Table 1 TWAS significant genes with no known GWAS risk variants within 500 kb",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格 OCR 抽取后列对齐混乱，P 值列（TWAS、Permuted、Best cis-SNP）与基因、染色体、位点起止位置等列未清晰分隔，部分行末尾有“$\\cdot$”符号含义不明，影响表格数据的准确解读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the expected $ \\chi^{2} $ statistic is $ \\mathrm{E}[\\chi^{2}]=1+n l h_{\\mathrm{GE}}^{2} / m $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式中“n l h_{GE}^2 / m”的“l”可能为 LD score 符号，但 OCR 未明确区分变量与字母，且缺少乘号或空格，公式结构可能受损。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ \\Sigma_{\\mathrm{e},\\mathrm{s}} \\Sigma_{\\mathrm{s},\\mathrm{s}}^{-1} $ for ImpG-Summary or directly from BSLMM",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "协方差矩阵符号 $\\Sigma_{e,s}$ 和 $\\Sigma_{s,s}$ 的下标在 OCR 中显示为“e,s”和“s,s”，但原文可能为 $\\Sigma_{e,s}$ 和 $\\Sigma_{s,s}$，无法确认下标是否准确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "omnibus $ \\mathrm{i}=Z_{i}^{\\prime} C_{i}^{-1} Z_{i} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中“omnibus $\\mathrm{i}$”应为“omnibus$_i$”，下标 i 被误排为独立符号，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "$ Z_{\\mathrm{TWAS}}=W Z / (W \\Sigma_{s,s} W^{\\dagger})^{1 / 2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式中 $W^{\\dagger}$ 可能应为 $W^t$（转置），OCR 将上标 t 识别为 dagger 符号，影响公式准确性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "our cross-cohort standardized accuracy $ ( R^{2} / c i s-h_{g}^{2}) $ was broadly consistent",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式内“cis”被拆为“c i s”，且括号不匹配（左括号后多空格），影响公式可读性。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "with an average cross-cohort $ R^{2} / c i s-h_{g}^{2}) $ value of 72%",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "同上，“cis”被拆为“c i s”，且右括号无对应左括号。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Integrative approaches for large-scale transcriptome-wide association studies",
+  "self_check": "已核对摘要、正文数据和结论中的关键数值：cis- 和 trans-$h_g^2$ 范围（0.01-0.07 和 0.04-0.06）、6,924 个显著 cis 可遗传基因、BSLMM 预测 $R^2$ 增益 32%、跨队列 $R^2/cis$-$h_g^2$ 72%、TWAS 效力 92% vs GWAS 18% 和 eGWAS 25%、25 个新关联中 19 个验证（$P=1\\times10^{-24}$）、69 个新基因-性状关联、54 个通过置换检验、$h_{GE}^2$ 平均 3.4% 和身高 7.1%、HMDP 中 26 个显著基因等，均与原文一致。公式部分照录 OCR 文本，未做修复。仍不确定之处：表 1 中部分 P 值列对齐和“$\\cdot$”符号含义；公式中 $W^{\\dagger}$ 是否为转置；$z^2$ 统计量是否准确。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8459,
+      "prompt_tokens": 20142,
+      "total_tokens": 28601,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15622,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

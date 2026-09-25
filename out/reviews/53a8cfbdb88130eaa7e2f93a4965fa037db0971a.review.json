@@ -1,0 +1,54 @@
+{
+  "sha1": "53a8cfbdb88130eaa7e2f93a4965fa037db0971a",
+  "title": "A review of predictive coding algorithms",
+  "doi": "https://doi.org/10.1016/j.bandc.2015.11.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/53a8cfbdb88130eaa7e2f93a4965fa037db0971a/index.html",
+  "source_chars": 35993,
+  "markdown_chars": 4083,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "1 billion equals 109",
+      "type": "疑似排版/上标丢失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "脚注文本中“109”几乎确定应是“10^9”，原文应为“10⁹”的上标形式，PDF提取时丢失了上标格式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The coefficients thus represent the estimates of the causes of the current sensory-driven input.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "第3页页末“the predictive coding model of the retina (see section 3), it is proposed that the output of each cortical region is the residual error”所在段落，随后的句子在第4页图注之前被截断，页边界可能造成语义断裂，但提取文本在拼接处大体可通读，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对：五种算法各自的名称与章节归属（LPC、视网膜模型、Rao和Ballard、PC/BC-DIM、自由能）；式1-6及Rao和Ballard层级线性版本的数学形式；各算法对应的模型类型与优化判据（平方误差和、自由能、KL散度）与原文一致；关键参数（n阶数、µ、ν、η、ε₁、ε₂）均已保留；对比部分中系数对应神经结构（侧向突触权重、反馈/前馈锥体细胞）已逐项核对。不确定之处：第5页脚注“1 billion equals 109”中的“109”应为“10^9”的上标形式，已在 extraction_issues 中标出。本文未引入任何未在提取文本中出现的外部知识，也没有推测补充 PDF 中未提取的图表内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3345,
+      "prompt_tokens": 9430,
+      "total_tokens": 12775,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 558
+      }
+    },
+    "content_chars": 5144
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

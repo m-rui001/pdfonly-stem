@@ -1,0 +1,54 @@
+{
+  "sha1": "2990bd5ab41b767d1473bf9724f87fe2d9edc518",
+  "title": "A high-capacity and long-life aqueous rechargeable zinc battery using a metal oxide intercalation cathode",
+  "doi": "https://doi.org/10.1038/nenergy.2016.119",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2990bd5ab41b767d1473bf9724f87fe2d9edc518/index.html",
+  "source_chars": 44124,
+  "markdown_chars": 3062,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "polymorphs of MnO2,Error! Bookmark not defined.,26,27",
+      "type": "文本损坏/书签错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "提取结果中出现Word域错误“Error! Bookmark not defined.”，导致引用信息不完整，原文应为具体的引用编号或文字。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "σZn0.25V2O5. H2O",
+      "type": "疑似符号丢失",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“σ”可能是希腊字母（代表相名称），但提取文本未区分，无法确定是否完整；不强行修正。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：初始容量282 mAh g⁻¹（充电278）、最高约300 mAh g⁻¹、1C=300 mA g⁻¹、15C下223 mAh g⁻¹、20C下183 mAh g⁻¹、8C循环500次93%和1000次81%、10C/15C 1000次80%/82%、扩散系数10⁻⁹–10⁻¹⁰ cm² s⁻¹、电子电导率3.5×10⁻⁵ S cm⁻¹、能量密度~250 Wh kg⁻¹、体积能量密度~450 Wh/L、层间距10.8→12.9 Å、相变x≈0.55等。公式(1)已原样保留。未发现数值矛盾。不确定处：第3页“Error! Bookmark not defined.”导致引用缺失，已标出；第18页“σZn0.25V2O5.H2O”中的σ可能为相符号，未作推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5963,
+      "prompt_tokens": 11976,
+      "total_tokens": 17939,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3446
+      }
+    },
+    "content_chars": 3985
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

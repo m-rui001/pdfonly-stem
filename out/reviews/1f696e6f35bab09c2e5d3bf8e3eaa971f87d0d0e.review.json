@@ -1,0 +1,74 @@
+{
+  "sha1": "1f696e6f35bab09c2e5d3bf8e3eaa971f87d0d0e",
+  "title": "Passivity-Based Stability Assessment of Grid-Connected VSCs—An Overview",
+  "doi": "https://doi.org/10.1109/jestpe.2015.2490549",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1f696e6f35bab09c2e5d3bf8e3eaa971f87d0d0e/index.html",
+  "source_chars": 52206,
+  "markdown_chars": 5036,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "E−v , v = e−(s+ j ω1 )Td vref . i= (2) (s + j ω1 )L",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式(2)同样缺失分数线，原始应为 i = (E-v)/((s+jω1)L)。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Fig. 2. Double-update PWM, giving Td = 1.5Ts .",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页面5末尾为Fig.2说明，页面6开头出现Fig.5，但正文中图4、图5的顺序可能因页间插图位置而乱。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "is = Es − vs s , vs = e−sTd vref (1) sL s",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "公式(1)提取中缺失了分数线，原始公式应为 i_s = (E_s - v_s)/(sL)，但提取文本中分子分母分离，顺序混乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Fc(s) = αc L 1 + ( αh e j φh ) / (s − j hω1 )",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "公式(5)中求和符号未提取，且1+后缺括号，但可识别。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：fcrit=fs/(4Td)，双更新Td=1.5Ts得fs/6，单更新Td=Ts得fs/4；示例中fs=10kHz、Td=Ts时fcrit=2.5kHz，Td=1.5Ts时fcrit≈1.7kHz。式(16)带宽建议、式(23)临界频率、(40)总输入导纳表达式均按原文保留。示例中ωres=1.38和1.34 p.u.与图8/9对应。结论四条建议与原文一致。公式(1)(2)在提取中缺失分数线，已在issues中标出，markdown中按上下文以标准形式写出，但未改变变量定义和关系。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6887,
+      "prompt_tokens": 15606,
+      "total_tokens": 22493,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2813
+      }
+    },
+    "content_chars": 6349,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

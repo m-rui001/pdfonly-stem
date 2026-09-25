@@ -1,0 +1,66 @@
+{
+  "sha1": "10682fbd2682e9728ca8f436c6453a3c7354d226",
+  "title": "Targeted Branching for the Maximum Independent Set Problem Using Graph Neural Networks",
+  "doi": "https://doi.org/10.4230/lipics.sea.2024.20",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/10682fbd2682e9728ca8f436c6453a3c7354d226/index.html",
+  "source_chars": 68699,
+  "markdown_chars": 8163,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "For each node in the neural network - columns in the H matrix - flip a coin",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Crossover-Nodes 算子描述中，节点对应的是神经网络中 W 矩阵的列（即下一层的特征/节点），而非 H 矩阵的列；此处 H 疑为 W 的 OCR 误识，影响对算子作用对象的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "vc-exact_102 >1,800.00 >1,800.00 1.00 599.67 >3.00 >975,834 >975,834 1.00 975,834 >1.00 \n vc-exact_103 >1,800.00 >1,800.00 1.00 1,011.17 >1.78 >1,603,466 >1,603,466 1.00 1,603,466 >1.00 \n vc-exact_105 >1,800.00 >1,800.00 1.00 0.36 >4,969.05 >240 >240 1.00 240 >1.00 \n vc-exact_104 >1,800.00 >1,800.00 1.00 523.57 >3.44 >834,495 >834,495 1.00 834,495 >1.00 \n vc-exact_104 >1,800.00 >1,800.00 1.00 0.44 >4,127.31 >444 >444 1.00 444 >1.00",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表 5 中 vc-exact_102、vc-exact_103、vc-exact_104 等实例编号重复出现，且顺序异常，疑为 OCR 抽取时行错位或编号误识，影响对 PACE 实例逐项结果的准确复原。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "total 27,819.17 27,661.96 1.01 5,398.07 5.15 12,692,126 12,086,703 1.05 11,114,834 1.14 \n\n average \n\n average \n\n geom. mean \n\ngeom. mean",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表 5 末尾的 average 与 geom. mean 行只有标签而无对应数值，且标签重复，疑为 OCR 抽取时数值丢失或表格结构损坏，无法复原该表的聚合统计。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Targeted Branching for the Maximum Independent Set Problem Using Graph Neural Networks",
+  "self_check": "已核对摘要中的 73% 实例加速与 24% 中位加速、BnR 的 296 图分类（147/42/107）、总加速 2.37、几何平均 1.94、平均 547.04、78/107 最快、92/107 分支最少、中位 24%、多解 15 个实例；SnR 的 296 图分类（94/133/69）、平均 1.08、几何平均 1.06、总 1.03、50/69、中位 6%，以及 GCN-R 的 1.22/1.19/1.12、62/69、中位 21%。GCN 传播公式、$d^{(0)}=1$、$\\zeta=0.3$、$N=100$、$T=10$、三层 32 特征、噪声标准差 0.01、SAT 限制 8192→4096 均与原文一致。表 5 中实例编号重复及聚合行缺失已作为抽取问题标出，未静默修正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5659,
+      "prompt_tokens": 22470,
+      "total_tokens": 28129,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10252,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

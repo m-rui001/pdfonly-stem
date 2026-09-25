@@ -1,0 +1,211 @@
+{
+  "sha1": "860d62fe8df0a4208891ad3cba7331691b0569db",
+  "title": "A calibration hierarchy for risk models was defined: from utopia to empirical data",
+  "doi": "https://doi.org/10.1016/j.jclinepi.2015.12.005",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/860d62fe8df0a4208891ad3cba7331691b0569db/index.html",
+  "source_chars": 70414,
+  "markdown_chars": 11289,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "testing the null hypothesis that $ \\mid b_{L}=1=0 $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中缺失 $a$，应为 $a \\mid b_{L}=1=0$，与同段前文“calibration intercept a $ \\mid b_{L}=1 $”不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the null hypothesis that $ a | b_{L}=1=0 $ and $ b_{L}=1 $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式中 $a | b_{L}=1=0$ 的竖线前后空格与全文其他处 $a \\mid b_{L}=1$ 写法不一致，可能为抽取格式问题，但语义可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Net Benefit at threshold t equals $ ( N_{TP}-\\operatorname{odds}(t)\\times N_{FP})/N $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "公式中 $N_{TP}$ 和 $N_{FP}$ 的下标在OCR中可能因格式原因显示为普通文本，但语义完整，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 27,
+      "quote": "E \\left[ \\mathrm {N B} _ {t} \\right] = P (Y = 1, \\hat {\\pi} (\\mathbf {x}) \\geq t) - \\operatorname {o d d s} (t) P (Y = 0, \\hat {\\pi} (\\mathbf {x}) < t)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "此处公式中 $P(Y=0,\\hat{\\pi}(\\mathbf{x})<t)$ 与第26页定义的 $P(Y=0,\\hat{\\pi}(\\mathbf{x})\\geq t)$ 不一致，疑为OCR抽取错误或原文笔误，影响公式推导的连贯性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "\\frac {t}{1 - t} \\left(P (Y = 0, \\hat {\\pi} (\\mathbf {x}) \\geq t)\\right) - P _ {0})",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "公式中括号不匹配，$\\left(P(...)\\right) - P_{0})$ 多了一个右括号，疑为OCR抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "\\leq P (Y = 1, \\hat {\\pi} (\\mathbf {x}) \\geq t) - P _ {1} \\frac {\\left(1 - P _ {1}\\right)}{1 - t}",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "公式中 $P_{1} \\frac{(1-P_{1})}{1-t}$ 的写法与推导逻辑不符，疑为OCR抽取错误或原文笔误，影响公式可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 31,
+      "quote": "smooth=c(\"loess\",\"rcs\",F), CL.smooth=\"fill\", CL.BT=F,",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "函数参数中 `smooth` 的默认值在R中通常为向量，此处 `F` 可能为 `FALSE` 的缩写，但OCR抽取为 `F`，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "th \"loess\" generates a flexible calibration curve based on loess",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "句首 `th` 疑为 `smooth` 或 `smooth=` 的抽取残缺，导致语句不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 32,
+      "quote": "lostats specifies whether and which performance measures are shown in the figure",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "`lostats` 疑为 `dostats` 的OCR错误，与函数参数 `dostats` 不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "d01ab, d11ab controls the labels for events and non-events",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "`d01ab` 和 `d11ab` 疑为 `d0lab` 和 `d1lab` 的OCR错误，与函数定义中的参数名不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Defaults are d11ab=1\" for events and d01ab=0\" for non-events.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "引号位置错误，且参数名 `d11ab`、`d01ab` 与函数定义中的 `d1lab`、`d0lab` 不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "length.seq controls the length of the histogram lines.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "`length.seq` 疑为 `length.seg` 的OCR错误，与函数定义中的参数名不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "provides number of equally large (quantile) categories",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句首缺失参数名 `g`，导致语句不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 34,
+      "quote": "this provides a stratification variable for which to stratify the calibration analysis.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "句首 `this` 疑为参数名 `group` 的OCR错误，与函数定义中的 `group` 参数不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "<- p[order(p)]",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "行首缺失变量名 `p`，导致代码不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 39,
+      "quote": "if(length(p)>1000 & CL.BT==T){warning(\"Number of observations is > 1000, this could take a while...\",immediate. =",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "代码行在 `immediate. =` 后截断，缺失后续内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 43,
+      "quote": "warning(\"The number of knots led to estimation problems, nk will be set to 4.\",immediate. =",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "代码行在 `immediate. =` 后截断，缺失后续内容。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 43,
+      "quote": "function(e){",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "`function(e){` 被换行拆分为 `f` 和 `unction(e){`，导致代码可读性受损。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "We repeat this process four times",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文列出五个示例（1）至（5），但此处写“four times”，与后文五个示例不一致，疑为原文笔误或OCR抽取问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "A calibration hierarchy for risk models was defined: from utopia to empirical data",
+  "self_check": "已核对摘要、正文数据与结论：四个校准层级（均值、弱、中度、强）的定义与评估方法一致；模拟示例1-9的样本量、真实线性预测子系数、校准斜率与截距数值均与Table 1及正文描述一致；净获益公式与附录证明中的推导方向一致；样本量建议（100事件/100非事件评估截距和斜率，200事件/200非事件推导灵活曲线）与正文一致。仍不确定之处：第7页“four times”与五个示例的矛盾；第27页净获益公式中 $P(Y=0,\\hat{\\pi}(\\mathbf{x})<t)$ 与第26页定义的 $P(Y=0,\\hat{\\pi}(\\mathbf{x})\\geq t)$ 不一致；第28页公式括号不匹配及 $P_{1}\\frac{(1-P_{1})}{1-t}$ 的写法；补充材料R函数描述中多处参数名OCR错误（如 `lostats`、`d01ab`、`length.seq` 等）。以上均已在 extraction_issues 中标出。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8623,
+      "prompt_tokens": 20329,
+      "total_tokens": 28952,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17631,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

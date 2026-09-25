@@ -1,0 +1,45 @@
+{
+  "sha1": "f420c8ad91aa0cd82e4fc893ccd2e5aafbeb96ee",
+  "title": "Progressing emergent constraints on future climate change",
+  "doi": "https://doi.org/10.1038/s41558-019-0436-6",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f420c8ad91aa0cd82e4fc893ccd2e5aafbeb96ee/index.html",
+  "source_chars": 67834,
+  "markdown_chars": 3692,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "quantity that can measured",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文语法应为'can be measured'，提取文本缺失'be'，可能是PDF提取时遗漏。原句位于跨页处（页4末'If X is also a' → 页5开头'quantity that can measured'）。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：雪反照率反馈强度差异约3倍；热带陆地碳释放每度升温差异超过4倍；CMIP3和CMIP5中两个经典EC（雪反照率、热带碳）关系均重现；北极海冰预测比CMIP5集合平均提前约20年。公式Y=f(X)+ε原样保留。确认指标三个（合理机制、机制验证、样本外测试）与原文一致。已检查提取文本中的跨页连接，除上述'can measured'外无其他明显缺失或断裂。表1未逐项列出，仅提及数量（约三十六个）。所有数值和结论均基于提取文字，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6988,
+      "prompt_tokens": 16664,
+      "total_tokens": 23652,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4490
+      }
+    },
+    "content_chars": 4316
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "sha1": "a8130b8a6c0243e8049778ddc9adc6fa972ce7c0",
+  "title": "A Mg-Doped High-Nickel Layered Oxide Cathode Enabling Safer, High-Energy-Density Li-Ion Batteries",
+  "doi": "https://doi.org/10.1021/acs.chemmater.8b03900",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/a8130b8a6c0243e8049778ddc9adc6fa972ce7c0/index.html",
+  "source_chars": 47185,
+  "markdown_chars": 1847,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "fluride",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文写为'fluride'，可能是'fluoride'的拼写错误，但原文未给出明确修正，不做推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "xCo0.1Mn0.1+xO2 (0.0 ≤ X ≤ 0.08) Cathodes for Lithium-Ion Batteries.",
+      "type": "跨页截断",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "该行位于页面顶部，明显是上一个参考文献标题的延续，但前半部分缺失，属于跨页顺序/拼接疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Nickel-Reiche Lithium-?Bergangsmetall-Schichtverbindungen F?R Hochenergie-Lithiumionenakkumulatoren",
+      "type": "字符乱码",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "德语标题中'?'和'F?R'疑为非ASCII字符在提取时损坏，原文可能为'Übergangsmetall'和'FÜR'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "Yang, W.-S. Y. K.-W. N. D. J. K. Y. C. J. H. J.-M. C. X.-Q.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该作者列表明显异常，可能为多个作者姓名被错误拼接，但无法从文本内确认正确版本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：NC-Mg容量214 mAh/g、500圈保持率80.1%，NC为56.3%；10C放电158 mAh/g；DSC峰温211 vs 177°C；c轴收缩5.6% vs 3.7%；Li/Ni混合初始1.8%/2.3%，循环后7.8%/4.0%；EIS电阻等。所有数值均直接来自提取文本，方向一致。公式未涉及复杂推导，仅保留化学式及符号。不确定处：原文中'fluride'等拼写问题已标注，未做修改。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5351,
+      "prompt_tokens": 13519,
+      "total_tokens": 18870,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3568
+      }
+    },
+    "content_chars": 3153
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

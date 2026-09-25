@@ -1,0 +1,103 @@
+{
+  "sha1": "21befc71fa44bed772fcee7eaccffa1684d6e421",
+  "title": "Double-slit photoelectron interference in strong-field ionization of the neon dimer",
+  "doi": "https://doi.org/10.15488/5174",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/21befc71fa44bed772fcee7eaccffa1684d6e421/index.html",
+  "source_chars": 37425,
+  "markdown_chars": 5514,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "strongfield",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "标题中“strong-field”的连字符丢失，应为“strong-field”，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{H}{2} $ $ ^{3-6} $ $ \\mathrm{N}{2} $ $ ^{5,7-10} $ $ \\mathrm{O}{2} $ $ ^{11} $ , weakly bound $ \\mathrm{N e}{2} $ $ ^{12} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "化学式下标格式丢失，H₂、N₂、O₂、Ne₂被拆分为元素符号与数字分离的形式，影响可读性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{I I} ( 1 / 2 ){\\mathrm{g}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "离子态标记II(1/2)_g的下标g丢失，类似地I(1/2)_u的下标u也丢失，影响态标识的准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{N e}_{2}^{+} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Ne₂⁺中“Ne”被拆分为“N e”，属于OCR对元素符号的空格插入错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Fig.1 Two ionization pathways of neon dimer. a Relevant potential energy curves",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图注文字与正文混排，图注出现在正文段落之间，可能影响阅读顺序，但不影响关键信息提取。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "the interference maxima move apart with decreasing separation between the two atomic centers (which corresponds to the higher ion momenta for the direct dissociation and to the lower ion momenta for the indirect one, Fig. 4).",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句在页4末尾被截断，后续内容在页6继续，属于正常页间断句，但此处标记为阅读顺序问题可能过度；实际为正常分页，不应报告。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "the interference maxima move apart with decreasing separation between the two atomic centers",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页4末尾句子在页6开头重复出现，可能是OCR分页处理导致的重复，而非内容缺失。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Double-slit photoelectron interference in strongfield ionization of the neon dimer",
+  "self_check": "已核对关键数值：激光强度7.3×10¹⁴ W cm⁻²（γ=0.72）和1.2×10¹⁵ W cm⁻²（γ=0.4），KER约0.15 eV和1.3 eV，键长期望值3.337±0.001 Å，干涉方法得到约2.8-3.25 Å，离子动量门控3.5-17 a.u.和37-46 a.u.，理论中|R|/2=2.93 a.u.，T=1500 a.u.，网格512点，间距0.25 a.u.，时间步长0.02 a.u.，峰值场强0.096 a.u.。公式P ∼ cos²(k·R/2 + Δφ/2)已保留。结论方向一致：双中心干涉在强场电离中存活，可通过解离通道后选择切换gerade/ungerade干涉类型。不确定处：OCR中化学式下标和离子态标记的下标丢失，已在extraction_issues中标注；页4末尾句子在页6重复，可能为分页处理问题。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4527,
+      "prompt_tokens": 10075,
+      "total_tokens": 14602,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8162,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

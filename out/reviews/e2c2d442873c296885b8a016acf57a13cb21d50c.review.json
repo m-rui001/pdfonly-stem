@@ -1,0 +1,73 @@
+{
+  "sha1": "e2c2d442873c296885b8a016acf57a13cb21d50c",
+  "title": "Reexamining cancer metabolism: lactate production for carcinogenesis could be the purpose and explanation of the Warburg Effect",
+  "doi": "https://doi.org/10.1093/carcin/bgw127",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e2c2d442873c296885b8a016acf57a13cb21d50c/index.html",
+  "source_chars": 95198,
+  "markdown_chars": 4072,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "lactate upregulates HIF-1Оexpression",
+      "type": "字符损坏",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "HIF-1О 中 'О' 疑为希腊字母 α 或 OCR 错误，原文应为 HIF-1α 或类似。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "the lions of contemporary cancer biology",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "文本为 'the lions of'，可能为 'the lion's share of' 或 'the views of'，但原文如此，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "the development of effective therapeutic approaches abased on understanding of the roles of lactate",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "文本为 'abased'，正常应为 'based'，可能为 OCR/拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "upregulation of monocarboxylate transporters MTC1 and MCT4",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "正文中均为 MCT1，此处写为 MTC1，疑为 MCT1 的笔误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言与正文中的关键数值：13 mM 葡萄糖、70 倍乳酸积累、47-70% vs 2-18% 的动脉葡萄糖摄取、66% 转化率、糖酵解酶 2-500 倍过表达、乳酸水平 40 倍升高、MCF7 中 4131 个基因上调、L6 中 673 个基因、blebbishields 形成的 87% 增加与 80% 减少、谷氨酰胺肌内占比 50-60%、胞外 pH 5.5-7.0、外泌体 pH4 比 pH7 高 5 倍等，均与提取文本一致。公式不存在。结论方向与摘要一致：乳酸生成是 Warburg 效应的目的。不确定处：HIF-1О 中的字符损坏、'abased' 和 'lions' 的拼写疑点已在 extraction_issues 中列出，未作静默修正。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3445,
+      "prompt_tokens": 23627,
+      "total_tokens": 27072,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 431
+      }
+    },
+    "content_chars": 5507
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "sha1": "6877c75280b348725d623a7762c59b96befdfecd",
+  "title": "High Defect Tolerance in Lead Halide Perovskite CsPbBr 3",
+  "doi": "https://doi.org/10.1021/acs.jpclett.6b02800",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6877c75280b348725d623a7762c59b96befdfecd/index.html",
+  "source_chars": 36652,
+  "markdown_chars": 3825,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "we have used the the Heyd-Scuseria-Ernzerhof",
+      "type": "疑似重复单词",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "原文出现'the the'，疑似打印错误，应为单个'the'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "MaPbBr3",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "上下文为MAPbI3的类似物，应为MAPbBr3，但原文写作MaPbBr3。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Hatree-Fock",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "标准拼写为Hartree-Fock，原文误为Hatree。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "defect tolarant",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为defect tolerant，原文拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "nonploar surface",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为nonpolar surface，原文拼写错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：HSE+SOC带隙2.23 eV（实验2.25 eV），μBr=-0.32 eV，VCs形成能0.2/0.98/1.80 eV（A/B/C点），VBr在C点为1.32 eV，Pb-Pb二聚体距离3.91 Å（理想5.92 Å），深能级缺陷为PbBr、BrPb、Pbi。公式(1)(2)(3)完整保留。文中引用的表1数值与原文表一致。不确定处：未逐一核对表1所有数值，但所引用的关键值均一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11083,
+      "prompt_tokens": 12430,
+      "total_tokens": 23513,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8270
+      }
+    },
+    "content_chars": 5200
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

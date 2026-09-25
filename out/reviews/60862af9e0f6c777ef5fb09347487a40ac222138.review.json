@@ -1,0 +1,129 @@
+{
+  "sha1": "60862af9e0f6c777ef5fb09347487a40ac222138",
+  "title": "Peripheral cytokine and chemokine alterations in depression: a meta‐analysis of 82 studies",
+  "doi": "https://doi.org/10.1111/acps.12698",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/60862af9e0f6c777ef5fb09347487a40ac222138/index.html",
+  "source_chars": 57825,
+  "markdown_chars": 8411,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Peripheral cytokine and chemokine alterations in depression: an up-dated meta- analysis of 82 studies",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "OCR正文首页标题为'an up-dated meta-analysis of 82 studies'，登记题名为'a meta-analysis of 82 studies'，存在措辞差异（'up-dated'），但核心内容一致，属于同一篇文章。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Table 1. Primary meta-analyses of studies measuring peripheral cytokines and chemokines in individuals w",
+      "type": "text_truncated_or_missing",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "表格标题在'individuals w'处截断，缺少后续文字（应为'with MDD compared to HCs'等），影响表格完整理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Abbreviations: CI = confidence interval; ES = effect size; MDD = major depressive disorder; Y = Yes; N = No; NA = Not ap",
+      "type": "text_truncated_or_missing",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "缩写说明在'Not ap'处截断，缺少后续内容（可能为'Not applicable'），但不影响主要数据理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "IL-4 10 350 450 -0.533(-1.073-0.007) 0.053 91.0",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "IL-4的95%CI显示为'-1.073-0.007'，但正文中IL-4被列为无显著改变，且P=0.053接近显著，CI上限0.007可能为0.007或接近0的正值，OCR可能丢失了负号或小数点位置，影响对CI是否包含0的判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Levels of CCL-2 were significantly higher in participants with MDD compared to HCs with a large ES (g = 1.718; P=0.045)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "正文中CCL-2的P值写为0.045，但表1中CCL-2的P值为0.002，两者不一致，可能为OCR错误或原文笔误，影响对显著性的准确判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Levels of IL-6, TNF- $ \\alpha $ ,10,the soluble IL-2 receptor",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "此处'IL-10'被OCR识别为',10,'，丢失了'IL-'前缀，影响对细胞因子名称的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "Considerorations",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'Considerorations'应为'Considerations'，拼写错误，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "II-6 measurements were extracted from 42 studies",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'II-6'应为'IL-6'，罗马数字II与字母IL混淆，但不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Possible sources for the large heterogeneity $ \\mathrm{I}^{2}= $ 64.9%) were explored",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "I²=64.9%后的右括号丢失，公式符号不完整，但不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "while there was evidence of small-study effects (g = 0.638; P < 0.001; Table 1 and Figure 2B)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "正文中TNF-α的ES为g=0.638，但表1中TNF-α的ES为0.675，两者不一致，可能为OCR错误或原文数据不一致，影响对效应量的准确判断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Peripheral cytokine and chemokine alterations in depression: an up-dated meta- analysis of 82 studies",
+  "self_check": "已核对摘要、正文和表1中的关键数值：IL-6 (g=0.621, P<0.001, I²=64.9%)、TNF-α (g=0.675, P<0.001, I²=90.0%)、IFN-γ (g=-0.477, P=0.043, I²=94.0%)、IL-10 (g=0.375, P=0.045, I²=89.2%)、sIL-2R (g=0.735, P<0.001, I²=77.5%)、CCL-2 (g=1.718, P=0.002, I²=96.3%)、IL-13 (g=1.836, P<0.001, I²=96.0%)、IL-18 (g=1.720, P=0.012, I²=95.3%)、IL-12 (g=1.229, P=0.012, I²=92.9%)、IL-1Ra (g=0.449, P=0.016, I²=51.6%)、sTNFR2 (g=1.173, P=0.003, I²=83.2%)。发现正文与表1中TNF-α和CCL-2的ES/P值存在不一致，已在extraction_issues中标出。公式符号如I²、Hedge's g、95%CI等已保留。仍不确定之处：表1中IL-4的CI上限0.007是否应为负值或接近0的正值；正文中CCL-2的P=0.045与表1中P=0.002不一致，无法确定哪个正确。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6713,
+      "prompt_tokens": 15448,
+      "total_tokens": 22161,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12314,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

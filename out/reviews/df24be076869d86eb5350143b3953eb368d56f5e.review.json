@@ -1,0 +1,63 @@
+{
+  "sha1": "df24be076869d86eb5350143b3953eb368d56f5e",
+  "title": "Economic and Size-Tunable Synthesis of InP/ZnE (E = S, Se) Colloidal Quantum Dots.",
+  "doi": "https://doi.org/10.1021/acs.chemmater.5b02138",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/df24be076869d86eb5350143b3953eb368d56f5e/index.html",
+  "source_chars": 25027,
+  "markdown_chars": 2733,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "irrespective of the halide",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "第2页页尾以'irrespective of the halide'结束，第3页页首直接出现'however, is not satisfactorily...'，明显缺失'used'及后续连接词（如'This explanation,'），导致句意断裂。原文应为'irrespective of the halide used. This explanation, however, is not satisfactory...'。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "trioctlyphosphine",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为'trioctylphosphine'（三辛基膦），文本中拼写为'trioctlyphosphine'，可能是OCR或原文笔误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 1,
+      "quote": "precusors",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "摘要中'precusors'应为'precursors'，拼写错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文中的关键数值：化学产率（10-30% vs 75-85%）、激子峰波长（580/560/515 nm）、壳厚（1.5 nm）、线宽（56 nm、48 nm、46-63 nm）、PLQY（60%、50%、80%）、晶格失配（7.7%和3.2%）、带隙（2.7 eV和3.6 eV）等，均与原文一致。尺寸调谐机制部分未添加外部推断，仅复述原文给出的卤化物影响及吸附假说。跨页缺失处已标注。未发现其他数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5741,
+      "prompt_tokens": 7337,
+      "total_tokens": 13078,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3466
+      }
+    },
+    "content_chars": 3845
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

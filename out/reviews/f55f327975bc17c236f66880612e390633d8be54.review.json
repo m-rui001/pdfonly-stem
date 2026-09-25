@@ -1,0 +1,84 @@
+{
+  "sha1": "f55f327975bc17c236f66880612e390633d8be54",
+  "title": "Marine heatwaves threaten global biodiversity and the provision of ecosystem services",
+  "doi": "https://doi.org/10.1038/s41558-019-0412-1",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/f55f327975bc17c236f66880612e390633d8be54/index.html",
+  "source_chars": 61001,
+  "markdown_chars": 8808,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "$ (E=-0. 9 3; 9 5 \\mathrm{C I}=0. 2 2; Q= $ 6303, df = 181; $ p_{\\mathrm{heterogeneity}}<0. 0 0 1, I^{2}=9 7. 1 3). $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "95% CI 的数值在 OCR 中仅显示为 0.22，缺少区间上下限，无法复原置信区间；该数值对判断效应显著性重要。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "maximum intensity (3.5 to $ 9. 5^{\\circ} \\mathrm{C} $ above climatological SST)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "数值 9.5 在原文中可能为 9.5 或 5.5 等，OCR 中数字间有空格，但结合上下文可读；标记为低置信度疑点。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the $ 1 0^{\\mathrm{th}} $ and $ 9 0^{\\mathrm{th}} $ percentile temperatures",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "百分位数字间有空格，但语义明确，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Table 1. Impacts of MHWs on services provided by marine ecosystems",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格在 OCR 中呈现为连续文本，列对齐和部分单元格边界丢失，但关键服务类型、影响和参考文献编号仍可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "the seasonally varying 90th percentile",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "原文中 90th 的 th 可能为 OCR 误读，但语义明确。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Marine heatwaves threaten global biodiversity and the provision of ecosystem services",
+  "self_check": "已核对摘要、正文数据和结论：全球 MHW 天数增加 >50%（1987–2016 vs 1925–1954）；荟萃分析总体效应 E = −0.93，95% CI 在 OCR 中仅显示 0.22，无法确认区间上下限；八个事件持续时间 10–380 天，最大强度 3.5–9.5 °C；物种水平观测 645 个来自 302 个物种，范围位置分析使用 347 个观测来自 280 个物种；三个基础物种时间序列相关方向一致。公式 Hedges g 计算式已按 OCR 原样保留。不确定处：95% CI 数值缺失、部分数字空格可能为 OCR 伪影。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5906,
+      "prompt_tokens": 15758,
+      "total_tokens": 21664,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10699,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

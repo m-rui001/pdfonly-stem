@@ -1,0 +1,72 @@
+{
+  "sha1": "fc0b51829715c772c158f97b2de6d2c155446470",
+  "title": "On the inefficiency of Bitcoin",
+  "doi": "https://doi.org/10.1016/j.econlet.2016.10.033",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/fc0b51829715c772c158f97b2de6d2c155446470/index.html",
+  "source_chars": 17339,
+  "markdown_chars": 1593,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The tests performed and their results are discussed in Section 1",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第2页结尾写'Section 1'，而第3页开头为'3. Finally, some conclusions...'，可见应为'Section 3'，跨页导致标题编号错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "−2, 102 × 10−8",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格中该数值带有逗号和空格，与同一列其他数值格式不统一，疑为'−2.102 × 10−8'的排版错误，但原文无直接证据。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Bartel’s test (Bartel, 1982)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文写作'Bartel's test'，但参考文献中作者为'Bartels, R. (1982)'，姓的拼写不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "Wald and Wolowitz, 1940",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文写'Wolowitz'，参考文献中为'WolfowitZ'，拼写不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对全文关键数值：三个时期样本量、收益率公式、m=17、各检验p值（runs: 0.019/0.489/0.809；Bartel: 0.009/0.011/0.388；方差比: 0.475/0.465/0.5；谱形状: 1；BDS区间；portmanteau: 0.513/0.513/0.258；广义谱: 0.287/0.223/0.250）。结论方向与摘要一致。不确定处：表格中'−2, 102 × 10−8'的格式疑似错误，已标记；跨页'Section 1'应为'Section 3'。其余内容均来自提取文本，无外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3405,
+      "prompt_tokens": 5383,
+      "total_tokens": 8788,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1845
+      }
+    },
+    "content_chars": 2906
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

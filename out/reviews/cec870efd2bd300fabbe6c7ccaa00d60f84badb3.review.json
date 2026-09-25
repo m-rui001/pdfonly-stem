@@ -1,0 +1,64 @@
+{
+  "sha1": "cec870efd2bd300fabbe6c7ccaa00d60f84badb3",
+  "title": "Green synthesis of gamma-valerolactone (GVL) through hydrogenation of biomass-derived levulinic acid using non-noble metal catalysts: A critical review",
+  "doi": "https://doi.org/10.1016/j.cej.2019.04.199",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cec870efd2bd300fabbe6c7ccaa00d60f84badb3/index.html",
+  "source_chars": 91701,
+  "markdown_chars": 4199,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 36,
+      "quote": "i.e., 92% LA conversion with 100% GVL selectivity at 50 bar H2 (400 °C, 4 h)",
+      "type": "疑似文本错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "该句与前文第18页（PDF extracted page 18）中“In solvent-free condition, Ni/Al2O3 was reported to achieve 92% LA conversion with 100% GVL selectivity (4 h, 200 °C, 50 bar H2)”及表2中对应的200 °C条件矛盾，400 °C应为200 °C的误写或抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "catalysts containing Ni particles with sizes of smaller than 10 mm showed the highest activity",
+      "type": "疑似单位错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "前文同段提到Ni/Al2O3平均粒径6 nm，此处“10 mm”显然应为“10 nm”，属于单位抽取/排版错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "compared to its Al2O3-, ZnO-, and SiOsupported counterparts",
+      "type": "疑似拼写/字符遗漏",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“SiOsupported”缺少下标数字，应为“SiO2-supported”，但不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文数据与结论方向一致。关键数值如GVL物性（mp −31 °C, bp 207 °C, flash 96 °C）、LD50、燃料能量、Ni/NiO生产率14.1 mmol g⁻¹ h⁻¹、ZrO2/SBA-15选择性、Cu浸出数据等均来自原文。不确定处：表2中部分行数据与正文描述不完全吻合（如5 wt% Ni/Al2O3），但正文明确给出的数值均已采用，表值未逐一核对；已标记400 °C与10 mm两处矛盾。无公式需要保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5486,
+      "prompt_tokens": 27008,
+      "total_tokens": 32494,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2359
+      }
+    },
+    "content_chars": 5508
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

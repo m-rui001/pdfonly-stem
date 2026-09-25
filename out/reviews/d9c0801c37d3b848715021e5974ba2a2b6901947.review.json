@@ -1,0 +1,54 @@
+{
+  "sha1": "d9c0801c37d3b848715021e5974ba2a2b6901947",
+  "title": "Mapping ecosystem service capacity, flow and demand for landscape and urban planning: A case study in the Barcelona metropolitan region",
+  "doi": "https://doi.org/10.1016/j.landusepol.2016.06.006",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d9c0801c37d3b848715021e5974ba2a2b6901947/index.html",
+  "source_chars": 118899,
+  "markdown_chars": 5729,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Total area (km and % of BMR) 2 2031.70 (62.6%)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表1中“Total area (km and % of BMR)”后紧跟“2”，疑似上标2（km²）在抽取时被断开为独立字符，且表中各行的面积数值与表头排版需要仔细核对。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Urban (green space) Urban (built-up)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表3表头中“Urban Planning System”下分列“Urban (green space)”和“Urban (built-up)”，但正文表注说明与表3列结构在抽取中排版可能不完整，将“urban”前缺失“Urban”类别界定。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、方法与结果中的关键数值：BMR人口（503万）、面积（3244 km²）、NO₂限值（40 µg m⁻³）、户外休闲未满足需求面积（163.54 km²）、空气净化未满足需求面积（46.63 km²）、规划评估表3中容量特殊保护占比（96.0%）、流量特殊保护占比（72.8%和87.4%）、未满足需求在城市建设用地占比（80.4%和81.4%）等。公式方面核对并保留：Vd = αj + βj·w（正文式1）、F = Vd·C·0.365（附录A式3）、附录A式1和式2原样保留。结论部分与摘要一致，包括三个未来研究重点。不确定之处：表1中部分面积数据（如“Total: 634.92 (19.6%)”中的“绿色空间”）与表注信息在抽取文本中排版有疑点，已在extraction_issues中标出；表3中“Urban (green space)”与“Urban (built-up)”的表头结构在提取文本中可能不完整。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4313,
+      "prompt_tokens": 30345,
+      "total_tokens": 34658,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 384
+      }
+    },
+    "content_chars": 6836
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

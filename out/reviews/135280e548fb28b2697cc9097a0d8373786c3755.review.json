@@ -1,0 +1,64 @@
+{
+  "sha1": "135280e548fb28b2697cc9097a0d8373786c3755",
+  "title": "Joint Deep Learning for land cover and land use classification",
+  "doi": "https://doi.org/10.1016/j.rse.2018.11.014",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/135280e548fb28b2697cc9097a0d8373786c3755/index.html",
+  "source_chars": 100158,
+  "markdown_chars": 3778,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "p( x )   p( xv | x pa ( v ) )",
+      "type": "字符编码损坏",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "PDF提取后Unicode符号（如∏、下标）显示为乱码，需结合上下文辨认，原文应为连乘公式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "CLC = {CLC1, CLC2, …, CLCi …, CLCm} ( i  [1, m] )",
+      "type": "字符编码损坏",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "集合描述中的元素符号（∈）被乱码替代。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "C*  arg max p(Ci | F )",
+      "type": "字符编码损坏",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "等号附近出现乱码字符，但逻辑可推断为C* = arg max。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：平均LC OA 90.18%（由89.64和90.72平均），平均LU OA 87.92%（由87.58和88.26平均）；迭代10为最优；各基准对比数字一致；样本鲁棒性中LC约88/80/73%、LU约85.5/80/73%也与原文一致。公式部分因PDF提取存在乱码，已在issues中标出，markdown中尽量按可见字符转写，变量意义未改动。表格内其他逐类精度仅引用了正文文字明确提到的部分，未杜撰。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9808,
+      "prompt_tokens": 25989,
+      "total_tokens": 35797,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7171
+      }
+    },
+    "content_chars": 4735
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

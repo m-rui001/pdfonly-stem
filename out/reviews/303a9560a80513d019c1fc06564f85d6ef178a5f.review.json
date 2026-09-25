@@ -1,0 +1,72 @@
+{
+  "sha1": "303a9560a80513d019c1fc06564f85d6ef178a5f",
+  "title": "High electronic conductivity as the origin of lithium dendrite formation within solid electrolytes",
+  "doi": "https://doi.org/10.1038/s41560-018-0312-z",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/303a9560a80513d019c1fc06564f85d6ef178a5f/index.html",
+  "source_chars": 65806,
+  "markdown_chars": 5116,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Li is plated on the Cu or Pt, during which a real-time NDP profile is measured from the top surfaces of these cells. allows for quantitative measurements of the abundance and distribution of Li along the depth",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "前一句结尾后直接出现 'allows for...'，明显缺少主语或过渡语句，可能是上一页末尾句子被截断后下一页以页眉/图注开头，导致主语丢失（应为 'This technique allows...' 之类）。属页间文本丢失而非正文正常接续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "Li PS -60 oC (f), and Li PS -100 oC (g)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "图5标题中 'Li PS' 显然应为 'Li3PS4' 或 'Li PS' 的某个化学式形式，下标数字 3 和 4 在提取过程中丢失。属明显的化学式缺字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The electronic conductivities of LLZO and Li3PS4 at 30 ℃ are 5.5×108 and 2.2×10-9 S/cm",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "5.5×10⁸ S/cm 对 LLZO 而言数值过高，与同段下句 'These values are much lower than the electronic conductivity of LiPON (10-15 – 10-12 S cm-1)' 自相矛盾，且与正文前文 LLZO 电子电导率 10⁻⁸–10⁻⁷ S/cm 不符。应为 5.5×10⁻⁸ S/cm，上标负号在提取中丢失。属强文本内证据支持的疑似错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "The shorting was also confirmed by the impedance spectra (Supplemenraty Fig. 4)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "'Supplemenraty' 为 'Supplementary' 的拼写错误，原文为期刊排版笔误或提取错误，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对的关键数值与公式：(1) 25 °C 临界电流密度 LLZO 50 μA/cm²、Li3PS4 120 μA/cm²，与文中一致；(2) 100 °C 电压行为数据（LLZO −4.0 V 后骤降至 −7.0 V，累计 4.6 mAh/cm²；Li3PS4 2 mA/cm² 累计 1.2 mAh/cm²）与正文相符；(3) 体相枝晶起始时间 t/t0 = 0.4（LLZO-60）与 0.5（Li3PS4-60）以及 100 °C 的 0.3 一致；(4) 电子电导率 30 °C 数值在提取文本中存在 5.5×10⁸ 的指数缺失问题，已在 extraction_issues 中标出，笔记中按 10⁻⁸ 处理并保留原文数值，同时在问题中说明；(5) 三个深度校准公式已按原文系数原样保留（LLZO 公式第一项提取为 '― 2080 × 10 ―7'，按常规科学记数应为 2.080×10⁻⁷ 或 2080×10⁻¹⁰，笔记中保留提取文本形式，未擅自归一化）；(6) 图5标题中 Li3PS4 下标缺失已在问题中标出；(7) 所有结论（高电子电导率为枝晶形成根源）与摘要、正文一致。不确定处：图5标题化学式缺字符的具体位置、图6中不同温度下电子电导率的精确数值（正文未给出）、以及公式(4)系数的科学记数法形式。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4759,
+      "prompt_tokens": 17872,
+      "total_tokens": 22631,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 573
+      }
+    },
+    "content_chars": 7298
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

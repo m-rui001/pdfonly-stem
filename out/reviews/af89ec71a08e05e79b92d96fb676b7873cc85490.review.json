@@ -1,0 +1,63 @@
+{
+  "sha1": "af89ec71a08e05e79b92d96fb676b7873cc85490",
+  "title": "Active Inference: A Process Theory",
+  "doi": "https://doi.org/10.1162/neco_a_00912",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/af89ec71a08e05e79b92d96fb676b7873cc85490/index.html",
+  "source_chars": 127663,
+  "markdown_chars": 16349,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "A finite set of control states or actions $ \\gamma $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "控制状态/动作集合的符号被抽取为 γ，而 γ 在后文用于精度/逆温度，符号冲突会影响公式理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "A generative process $ R(\\tilde{o},\\tilde{s},\\tilde{u}) $ that generates probabilistic outcomes o $ \\in O $ from (hidden) states s $ \\in S $ and action u $ \\in \\gamma $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "动作 u 的所属集合被写成 γ，与精度符号 γ 冲突，疑似 OCR 或抽取符号丢失。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Active Inference: A Process Theory",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 33018,
+      "total_tokens": 43018,
+      "prompt_tokens_details": {
+        "cached_tokens": 32896
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 20176,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Active Inference: A Process Theory",
+    "translated_title": "主动推理：一种过程理论",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

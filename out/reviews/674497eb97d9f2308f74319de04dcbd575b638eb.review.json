@@ -1,0 +1,92 @@
+{
+  "sha1": "674497eb97d9f2308f74319de04dcbd575b638eb",
+  "title": "A Molecular Surface Functionalization Approach to Tuning Nanoparticle Electrocatalysts for Carbon Dioxide Reduction",
+  "doi": "https://doi.org/10.1021/jacs.6b02878",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/674497eb97d9f2308f74319de04dcbd575b638eb/index.html",
+  "source_chars": 33419,
+  "markdown_chars": 3132,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "typical for faceB",
+      "type": "拼接/页码标记疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“face”后紧跟的字母“B”疑为期刊页脚标记混入正文，“faceB”实应与下一页开头“centered cubic nanocrystals”拼合成“face centered cubic nanocrystals”。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "electrochemical reduction of CO2 to CO catalzyed by",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“catalzyed”疑为“catalyzed”之笔误，提取文本如此，未静默改正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "IR spectra were recorded with a Burker ALPHA FT-IR spectrometer",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "“Burker”疑为“Bruker”（常见FT-IR制造商）之拼写错误；提取文本如此，未静默改正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Pt gauze was used as the reference electrode, and Ag/AgCl (3 M KCl) was used as the reference electrode",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "同一句中将Pt gauze与Ag/AgCl均称为reference electrode，其中一个应为对电极（counter electrode）；属原文笔误或提取错误二者之一，无法从文本内确定正确版本。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "In particular, we were inspired by recent advances in [跨页] centered cubic nanocrystals.40 HRTEM studies on Au−Cb NP reveal",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末句“recent advances in”与第3页开头“centered cubic nanocrystals.40”之间明显缺少宾语及若干句子，推测缺失内容涉及纳米颗粒合成或晶形特征的铺垫叙述；缺失位置无法从提取文本复原。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "δ(−C C) ≈ 1643 cm−1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "提取文本中“C C”之间缺少连接符；据上下文该峰归为烃类弯曲模式，推测原文为δ(−C=C)或δ(C=C)，但无法确认，故照录可见文本。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键一致：法拉第效率83%对53%、过电位0.46 V（−0.57 V时）、7.6倍电流密度提升、Tafel斜率72 vs 138 mV/dec、三种卡宾%Vbur数值31.6/33.6/35.5%、电位换算公式E(vs RHE)=E(vs Ag/AgCl)+0.236 V+0.0591×pH、−0.26 V起始电位对应150 mV过电位（−0.11 V平衡电位）均符合提取文本。粒径约7 nm、表面等离子体峰525/543 nm、¹³C NMR位移120.4/133.9 pp m→164.7/172.0 ppm、Au活性面积0.674/0.342 cm²等数据均已按文本记录。不确定之处：跨页缺失内容无法补全；δ(−C=C)中双键符号系按上下文推断而非原文逐字确认；“Burker”“catalzyed”等拼写按原样保留并标注疑点。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12480,
+      "prompt_tokens": 10135,
+      "total_tokens": 22615,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9575
+      }
+    },
+    "content_chars": 5329,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

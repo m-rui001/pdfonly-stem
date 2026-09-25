@@ -1,0 +1,73 @@
+{
+  "sha1": "c6524f9047d5240a44b4117cc644a21ad719a042",
+  "title": "Chemical Conversion of Linkages in Covalent Organic Frameworks",
+  "doi": "https://doi.org/10.1021/jacs.6b08377",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/c6524f9047d5240a44b4117cc644a21ad719a042/index.html",
+  "source_chars": 16048,
+  "markdown_chars": 1782,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Ultimately, 1′ and 2′ were obtained",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句在第2页末尾中断，第3页开头先插入Figure 1标题，然后才接续'from 1 and 2 by treatment...'，句子被图表分隔。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "These characteristic",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页末尾'These characteristic'在第4页被Figure 2标题和图中的空隙打断，之后才接续'imine and amide stretches...'，句子不连续。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "C6H4(CH)2",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "摘要中1的分子式写为'[C6H3(C6H4N)3]2[C6H4(CH)2]3'，其中'CH'可能是'CHO'或'CH=N'的OCR错误，但缺乏直接证据，仅存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "a C O amide stretch",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "化学键应为C=O，文本中'C O'缺少双键符号，同段后文的'C N imine stretch'同理，疑为OCR丢失等号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：FT-IR峰位（1651 cm⁻¹、1622 cm⁻¹）、NMR化学位移（157 ppm、166 ppm）、晶胞参数（1/1′和2/2′的a,b,c）、BET表面积（1250/655、1520/1190 m²/g）、稳定性条件（12 M HCl、1 M NaOH、24 h）及表面减少25-60%等，均与提取文本一致。不确定之处：摘要中1的分子式'C6H4(CH)2'可能不准确，但未擅自修改；化学键C=O和C=N在原文中缺失等号，已标记。未添加任何外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8405,
+      "prompt_tokens": 5231,
+      "total_tokens": 13636,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6683
+      }
+    },
+    "content_chars": 3078
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

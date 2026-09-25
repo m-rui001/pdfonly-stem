@@ -1,0 +1,54 @@
+{
+  "sha1": "d069a57cc57664ddae4d6f796bfe2b2ee552a189",
+  "title": "Protected area targets post-2020",
+  "doi": "https://doi.org/10.1126/science.aav6886",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/d069a57cc57664ddae4d6f796bfe2b2ee552a189/index.html",
+  "source_chars": 23741,
+  "markdown_chars": 3827,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "2Centre for Biodiversity and Environment Research, University College London, London, C1E6BT, UK.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "伦敦邮编通常以WC开头，C1E6BT疑为OCR错误，可能应为WC1E 6BT，但无确证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "These could include sites systematically identified for their global biodiversity importance under national and international legislation and conventions, for instance, Ecologically or Biologically Significant Marine Areas (ESBAs) that have been identified at the site scale",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "全称是Ecologically or Biologically Significant Marine Areas，标准缩写为EBSA，原文写作ESBAs，疑为笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文中的关键数值：陆地15%、海洋7%、增长率2.3%/5.4%、30倍、15000 KBA、79国中35国不足、图1中的参照值2000/61、当前1700/52等，均与原文一致。指标定义（平均距离、比例）和公式保留原文表述。不确定处：邮编C1E6BT和缩写ESBAs已标记为疑似问题。未引入外部知识，未擅自修改任何术语。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4246,
+      "prompt_tokens": 6147,
+      "total_tokens": 10393,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1775
+      }
+    },
+    "content_chars": 4882
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

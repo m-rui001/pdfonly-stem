@@ -1,0 +1,82 @@
+{
+  "sha1": "eb3dc0089ce207268468d83005bea5dd92223e41",
+  "title": "Three-dimensional bilayer garnet solid electrolyte based high energy density lithium metal–sulfur batteries",
+  "doi": "https://doi.org/10.1039/c7ee01004d",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/eb3dc0089ce207268468d83005bea5dd92223e41/index.html",
+  "source_chars": 35105,
+  "markdown_chars": 3830,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "The ionic conductivity was calculated using 𝜎 = 𝐿/(𝑍 × 𝐴)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "公式中L通常为厚度，A为面积，源文后续Methods部分也以L为陶瓷片厚度，但此处'L is the garnet ceramic disk length'表述可能有歧义，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "The LLZCN powder with fish oil as dispersant was added to toluene, isopropanol (IPA).",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "句中'isopropanol'后括号标注(IPA)但缺失了溶剂混合比例的具体描述；来源中的简写与上下文略有断裂感。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "This newly develop porous-dense bilayer framework represents a promising strategy to revolutionize Li-metal batteries.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "英文'develop'应为'developed'，属文本中的轻微语法缺失，可能来自原稿或PDF抽取边界。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 29,
+      "quote": "(a) the thin dense layer is a mechanical barrier with high elastic modulus... (2) the thick porous layer mechanically supports the thin dense layer; (3) the interface between dense and porous layers...",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "编号在一个列表内从(a)跳到(2)(3)(4)(5)，编号体系不一致，可能是原文笔误，也可能PDF抽取过程中丢失了前两个(b)(c)等序号。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 30,
+      "quote": "Material Cathode 100 um / Electrolyte 10 um / Anode 74 um",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.3,
+      "reason": "此表头出现在Table S2的内容之前，可能是表格的一部分或另属某个辅助表格，源文抽取未给出明确的表格标签或上下文关联。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、引言、结果与结论中的关键数据：硫载量>7 mg/cm²（实测约7.5 mg/cm²）、首次库仑效率>99.8%，平均库仑效率>99%，首圈放电容量约645 mAh/g，能量密度248.2 Wh/kg，预测能量密度>900 Wh/kg（补充材料计算表S2为约993.6 Wh/kg）。离子电导率2.2×10⁻⁴ S/cm和活化能0.35 eV为补充信息中明确给出的值。双层框架总厚度105 µm（致密层35 µm + 多孔层70 µm）在正文图中描述，但正文文字仅提到多孔层>70 µm和致密层20 µm，存在不一致；笔记中保留了两个来源的数值，并优先采用正文文字中出现的数值。公式σ = L/(ZA)已按原文保留。锂负极的三层结构展望属原文结论内容，保留。原文中部分描述（如孔隙率70%）在正文出现，已保留；关于烧结过程对样品平整度的要求、液态电解质的体积等细节来自原文Methods部分。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3894,
+      "prompt_tokens": 9355,
+      "total_tokens": 13249,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 612
+      }
+    },
+    "content_chars": 5916
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

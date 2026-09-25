@@ -1,0 +1,64 @@
+{
+  "sha1": "6a2e534d39f110e2c1d571ddb2142d0b88df1cc8",
+  "title": "Optimization problems in natural gas transportation systems: A state-of-the-art review",
+  "doi": "https://doi.org/10.1016/j.apenergy.2015.03.017",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6a2e534d39f110e2c1d571ddb2142d0b88df1cc8/index.html",
+  "source_chars": 141548,
+  "markdown_chars": 3508,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 29,
+      "quote": "Rı́os-Mercado, Kim, and Boyd [104] Rı́os-Mercado, Kim, and Boyd [104] propose",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "同一引用连续出现两次，可能是文本提取时重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 30,
+      "quote": "they consider consider a procedure",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "单词'consider'重复，可能是提取或原文笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "x2uv = Wuv ( p2u − p2v )",
+      "type": "疑似错误/格式丢失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "根据上下文应为x_{uv}^2和p_u^2, p_v^2，提取时上标丢失。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键公式：Weymouth方程、质量约束公式、燃料消耗函数；关键数值：26.55 Tcf、25%–50%成本占比、3.34%–41.77%改进幅度、5–8%能耗节省等。不确定点：公式中上下标缺失已在issue中标注；其他文献具体参数未全部列出，但均来源于提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13051,
+      "prompt_tokens": 32078,
+      "total_tokens": 45129,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10687
+      }
+    },
+    "content_chars": 4406
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "sha1": "0a71492961f506149fe87f771b1616e5a660d3d2",
+  "title": "Tailored interfaces of unencapsulated perovskite solar cells for >1,000 hour operational stability",
+  "doi": "https://doi.org/10.1038/s41560-017-0067-y",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/0a71492961f506149fe87f771b1616e5a660d3d2/index.html",
+  "source_chars": 52759,
+  "markdown_chars": 8326,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "Formamidinium $ (\\mathrm{C H(N H_{2}){2}}^{+}, $ FA) lead triiodide and caesium lead triiodide, while more compositionally stable than $ \\mathrm{M A P b I{3}} $ , have both a photoactive perovskite phase and a wider band gap, undesired hexagonal or orthorhombic phase, respectively.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句语法不通，'have both a photoactive perovskite phase and a wider band gap, undesired hexagonal or orthorhombic phase' 疑有文字缺失或错位，影响对FAPbI₃与CsPbI₃相稳定性的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "the highest efficiency single junction solar cells benefit from complexed A- and X-site compositions of $ \\mathrm{F A P b I_{3}} $ [e.g., $ \\mathrm{F A_{x} M A_{y} C s_{1-x-y} P b(I_{1-z} B r_{z}){3}} $ , where x is large and z is small]",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中下标/上标格式在OCR中部分丢失（如 {3} 未正确呈现为下标），但化学式主体可辨，对理解影响较小。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Stoichiometry of the precursor solution was $ (\\mathrm{F A}{0.79}\\mathrm{M A}{0.16}\\mathrm{C s}{0.05}){0.97}\\mathrm{P b}(\\mathrm{I}{0.84}\\mathrm{B r}{0.16}){2.97} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学计量比公式中下标括号格式在OCR中部分丢失，但数值可辨，不影响定量理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "while stoichiometry at the surface of these FAMACs films was determined by XPS (Supplementary Fig.1) to be $ (\\mathrm{F A}{0.76}\\mathrm{M A}{0.21}\\mathrm{C s}{0.03}){0.67}\\mathrm{P b}(\\mathrm{I}{0.89}\\mathrm{B r}{0.11}){2.56} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同上，下标括号格式部分丢失，但数值可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The EH44 device had a stabilized power output (SPO) of approximately 17.5 mW/cm $ ^{2} $ （18.5 mW/cm $ ^{2} $ for the spiro-OMeTAD device)",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "括号使用了中文全角括号，疑为OCR格式问题，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "which include both high temperature ( $ \\sim 70 $ $ ^{\\circ}C} $ ) and humidity (ambient humidity $ \\sim 50\\% $ )",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "温度单位处出现多余的右花括号 '}'，疑为OCR符号残留，不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "Triple cation films of the form, $ \\mathrm{F A_{x} M A_{y} C s_{1-x-y} P b \\left(I_{z}, B r_{1-z}\\right){3}} $ (FAMACs)",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "化学式中下标格式部分丢失，且I_z,Br_{1-z}的逗号分隔方式与正文前文(I_{1-z}Br_z)不一致，但可辨认为同一类三阳离子配方。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "The $ \\mathrm{T i O_{2}} $ films were then annealed at $ 500^{\\circ} \\mathrm{C} $ for 1 hr, allowed to cool to room temperature, and immersed in a 20 mM aqueous $ \\mathrm{T i C l_{4}} $ solution at $ 90^{\\circ} \\mathrm{C} $ for 20 min.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句本身通顺，但与前文'20-40 nm thick compact TiO₂'及后续'100-150 nm TiO₂ nanoparticle layer'的沉积顺序描述完整，未见明显错误，仅记录以备核查。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Tailored Interfaces of Unencapsulated Perovskite Solar Cells for >1000 Hour Operational Stability",
+  "self_check": "已核对摘要、正文与结论中的关键数值：冠军EH44器件J_SC=21.71 mA/cm²、V_OC=1.091 V、FF=0.779、PCE=18.5%；spiro-OMeTAD冠军J_SC=22.16 mA/cm²、V_OC=1.108 V、FF=0.796、PCE=19.6%；SPO约17.5 vs 18.5 mW/cm²；双指数拟合τ₂从171 h提升至749 h；SnO₂/FAMACs/EH44/MoOₓ/Al器件1000小时后平均保持88±4%、最佳>94%；TiO₂基MoOₓ/Al器件1000小时后61±4%；惰性气氛1500小时约2%降解。公式norm. power = A₁exp(−t/τ₁)+A₂exp(−t/τ₂)及拟合参数已保留。OCR中部分化学式下标格式丢失，已在extraction_issues中标注，未静默修改。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6630,
+      "prompt_tokens": 15081,
+      "total_tokens": 21711,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 12230,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

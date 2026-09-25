@@ -1,0 +1,91 @@
+{
+  "sha1": "5d75d8dcf196b39fff1fd277dac9bc706d5330b3",
+  "title": "2D MXenes: A New Family of Promising Catalysts for the Hydrogen Evolution Reaction",
+  "doi": "https://doi.org/10.1021/acscatal.6b02754",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/5d75d8dcf196b39fff1fd277dac9bc706d5330b3/index.html",
+  "source_chars": 38903,
+  "markdown_chars": 7611,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "the most stable states of $ \\mathrm{N b}{2} \\mathrm{C} $ and $ \\mathrm{N b}{3} \\mathrm{C}_{2} $ are $ \\mathrm{O}^{} $ terminated surfaces",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Nb₃C₂ 未在论文其他处出现，应为 Nb₄C₃ 的 OCR 误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ T_{3} C_{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为 Ti₃C₂，OCR 丢失了 i 下标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "The $ \\Delta G_{H^{}}^{0} $ for hydrogen coverage ranging from 1/18 to 4/18 $ | \\Delta G_{H^{}}^{0} | < 0.15 $ is close to 0",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "覆盖度分母 18 与超胞中 8 个 O* 原子及 1/8 增量矛盾，应为 1/8 到 4/8。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "If the $ \\Delta G_{H^{*}}^{a} \\leq0 $, the following expressing for the exchange current at pH=0 are used:\n\n$$\ni _ {0} = - e \\mathrm {k} _ {0} \\frac {1} {1 + \\exp \\left(- \\Delta \\mathrm {G} _ {H *} ^ {a} / k _ {b} T\\right)}\n$$\n\nFor other case $ \\left( \\Delta\\mathrm{G}_{H^{*}}^{a} > 0\\right) $, the exchange current is calculated by:\n\n$$\ni _ {0} = - e \\mathrm {k} _ {0} \\frac {1} {1 + \\exp \\left(- \\Delta \\mathrm {G} _ {H *} ^ {a} / k _ {b} T\\right)}\n$$",
+      "type": "formula_symbol_loss",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "两个分支的交换电流公式完全相同，但原文应针对 ΔG_H*^a ≤ 0 和 > 0 给出不同表达式，OCR 丢失了符号差异。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "$$\\Delta \\mathrm {G} _ {O H *} = \\Delta \\mathrm {G} _ {9} + \\Delta \\mathrm {G} _ {1 0}$$",
+      "type": "formula_symbol_loss",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "式(15)左侧应为 ΔG_{O*} 而非 ΔG_{OH*}，与式(14)重复，OCR 丢失了 O* 下标。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "2D MXenes: A New Family of Promising Catalysts for the Hydrogen Evolution Reaction",
+  "self_check": "已核对关键数值：Ti₂CO₂ 在 1/8 覆盖度 ΔG_H*⁰ = -0.04 eV，2/8 为 -0.13 eV，3/8 为 0.13 eV，4/8 为 0.10 eV；Ti₂CO₂ 平均 ΔG_H*^a = 0.01 eV；裸 MXenes ΔG_H*^a < -0.73 eV；Heyrovsky 能垒 0.29 eV，Tafel 能垒 0.99 eV；Ti₂CO₂ 带隙 0.78 eV；H* 振动频率 3705.0 cm⁻¹，H₂ 频率 4289.4 cm⁻¹；式(5) ΔG_H*⁰ = ΔE_H + 0.30 eV。公式已按提取文本原样保留，未修复疑似 OCR 损坏处。仍不确定：交换电流公式两个分支是否应有不同符号；式(15)左侧下标是否为 O*；1/18–4/18 覆盖度范围是否应为 1/8–4/8。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6103,
+      "prompt_tokens": 13502,
+      "total_tokens": 19605,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10104,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  },
+  "title_translation": {
+    "source_ocr_title": "2D MXenes: A New Family of Promising Catalysts for the Hydrogen Evolution Reaction",
+    "translated_title": "二维MXenes：一类有前景的析氢反应催化剂",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

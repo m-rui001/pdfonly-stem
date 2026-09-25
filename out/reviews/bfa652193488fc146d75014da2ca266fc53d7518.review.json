@@ -1,0 +1,55 @@
+{
+  "sha1": "bfa652193488fc146d75014da2ca266fc53d7518",
+  "title": "Data-Driven Evolutionary Optimization: An Overview and Case Studies",
+  "doi": "https://doi.org/10.1109/tevc.2018.2869001",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/bfa652193488fc146d75014da2ca266fc53d7518/index.html",
+  "source_chars": 97571,
+  "markdown_chars": 3633,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "xi = (initial) for i = 1, . . . , 4, (7) Di",
+      "type": "formula-extraction-error",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "公式(7)的提取文本疑似乱序，根据上下文应为 x_i = D_i / D_i^{(initial)}，但原文被拆解，无法确认确切公式结构。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "However,",
+      "type": "cross-page-order",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第3页末尾'However,'后在第4页插入图1的图注和页眉，导致句子与后续'as shown in [47,61], an EA may benefit...'之间的顺序被打断，疑似跨页拼接问题。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：210个数据点、12个决策变量、8目标、156参考向量、40000条记录、90%时间节省、60组数据、35%升阻比提升、154次仿真、200次CFD仿真等，均与提取文本一致。公式(1)(2)(3)(4)(5)(6)已按原文保留，公式(7)因提取疑点已在issues中标出。结论方向与摘要及正文一致。不确定之处仅涉及公式(7)的准确形式，以及第3页跨页处的连贯性问题。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9088,
+      "prompt_tokens": 22335,
+      "total_tokens": 31423,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6605
+      }
+    },
+    "content_chars": 4479
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

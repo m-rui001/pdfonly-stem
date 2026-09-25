@@ -1,0 +1,55 @@
+{
+  "sha1": "b296377a1e42ce71e987c8c9942837e47965919c",
+  "title": "Collapse of LiNi 1– x – y Co x Mn y O 2 Lattice at Deep Charge Irrespective of Nickel Content in Lithium-Ion Batteries",
+  "doi": "https://doi.org/10.1021/jacs.8b13798",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b296377a1e42ce71e987c8c9942837e47965919c/index.html",
+  "source_chars": 22865,
+  "markdown_chars": 2560,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "most notably layered LiNi13-5 A current push to higher nickel content x-yCoxMnyO2 (NCM).",
+      "type": "疑似文本损坏/乱码",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "“LiNi13-5”明显不是有效化学式，应为“LiNi1-x-yCoxMnyO2 (NCM)”的截断或乱码；且“A current push”与前文语义断裂。原文在“layered”后应接续“LiNi1-x-yCoxMnyO2 (NCM) (1-x-y ≥ 0.8)”，但提取文本出现“LiNi13-5”和“x-yCoxMnyO2”，疑似OCR或提取错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "based on in situ XRD, Co-Mn co-substitution shows little, if at all, effectiveness on inhibiting the anisotropic lattice collapse of NCM cathodes at deep charge: with an extraction of roughly 80",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "句子在第二页结尾处中断于“roughly 80”，第三页开头先出现图注“FIGURE 2.”，然后才继续“mol% Li, abrupt c-axis...”，导致句子的数值与后续内容被图注隔开，阅读顺序被打断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文中的关键数值：4种NCM在4.4V下容量218/195/176/163 mAh/g；80 mol%脱锂时充电电压4.49/4.81/4.94/5.01 V，容量220-222 mAh/g；80%脱锂时c轴收缩4.9%（低镍）与5.7%（高镍）；DFT计算脱锂程度为0、50、83 mol%。公式Vtot = Vionic + VHartree + Vexchange-correlation已原样保留。结论方向与摘要一致。提取文本中“LiNi13-5”疑为乱码，已标记；其余数值和符号无矛盾。未发现其他数据不一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3780,
+      "prompt_tokens": 7204,
+      "total_tokens": 10984,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1559
+      }
+    },
+    "content_chars": 3792
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

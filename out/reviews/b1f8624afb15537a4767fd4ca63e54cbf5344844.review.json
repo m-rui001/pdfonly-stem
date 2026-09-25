@@ -1,0 +1,82 @@
+{
+  "sha1": "b1f8624afb15537a4767fd4ca63e54cbf5344844",
+  "title": "A Survey on Security and Privacy of 5G Technologies: Potential Solutions, Recent Advancements, and Future Directions",
+  "doi": "https://doi.org/10.1109/comst.2019.2933899",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b1f8624afb15537a4767fd4ca63e54cbf5344844/index.html",
+  "source_chars": 323916,
+  "markdown_chars": 4062,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Section VI: Security Monitoring and Management",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "第6页大纲图中 Section VI 出现两次，且第6页文本在 Section IX 后直接列出 Future directions 等条目，随后又重复列出 Sections II–XI 的说明，疑似图形说明与正文文本拼接导致顺序重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "ESTI technical committee on cybersecurity recently released two encryption specifications",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "文中拼写 'ESTI' 应为 'ETSI'（欧洲电信标准协会），后文多处使用 ETSI，此处疑为笔误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 21,
+      "quote": "TABLE VII S ECURITY I SSUES R ELATED TO N ETWORK F UNCTION V IRTUALIZATION 1",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "表标题中 'VIRTUALIZATION 1' 末尾的 '1' 疑似多余的编号，可能是表格序号残留。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 43,
+      "quote": "In future authors of cite he2017design intent",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "句子在 'cite he2017design' 处中断，后接 'intent'，明显是 PDF 参考文献占位符被截断或插入错误，无法还原原文完整句子。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 35,
+      "quote": "Table XII C ONTRIBUTION OF G LOBAL LEVEL ONGOING PROJECTS",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表格标题显示 'C ONTRIBUTION OF G LOBAL LEVEL'，但表格内容为项目贡献矩阵，标题疑似因扫描识别产生多余空格。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：1G–4G 安全性演进、3G 五类安全架构、4G 256 位密钥、5G 可用性目标 95%/99.99%、NEA 算法继承、5G-AKA 相关文献结论、NFV 攻击层次、PLS 各类方案（OFDMA/NOMA/UAV/mmWave/massive MIMO/SWIPT）、监控准确率 99.9%（引用特定数据集）、隐私分类和监管目标、标准化组织列表、项目清单。公式方面原文本无显式数学公式，仅保留技术名称和算法名称。不确定处：第 43 页 'cite he2017design' 明显为引用残缺，已在问题中标出；第 6 页大纲重复属排版疑点。所有数值和结论均以提取文本为据，未引入外部信息。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3136,
+      "prompt_tokens": 74612,
+      "total_tokens": 77748,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 25
+      }
+    },
+    "content_chars": 5892
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

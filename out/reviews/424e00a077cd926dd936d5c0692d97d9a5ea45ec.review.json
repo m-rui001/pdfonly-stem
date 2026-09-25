@@ -1,0 +1,85 @@
+{
+  "sha1": "424e00a077cd926dd936d5c0692d97d9a5ea45ec",
+  "title": "Atomic structure of sensitive battery materials and interfaces revealed by cryo–electron microscopy",
+  "doi": "https://doi.org/10.1126/science.aam6014",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/424e00a077cd926dd936d5c0692d97d9a5ea45ec/index.html",
+  "source_chars": 22841,
+  "markdown_chars": 6701,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "at dose rates of $ \\sim 5 0 \\mathrm{e} \\mathrm{\\AA}^{-2} \\mathrm{s}^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "公式中数字 50 被拆分为 '5 0'，属于 OCR 对数值的字符间空格插入，可能影响公式原样复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "1\n\nFig. 3 Faceting behavior of Li metal dendrites.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "图 3 的标签序列中 '1' 单独出现，应为 'I' 的 OCR 误读，属于图内标签抽取错误，不影响正文论证。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Li carbonate $ \\left( \\mathrm{L i}{2} \\mathrm{C O}{3} \\right) $ orange circles) and Li oxide $ \\left( \\mathrm{L i}_{2} \\mathrm{O} \\right) $ red circles).",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Li₂CO₃ 的化学式下标 2 和 3 在 OCR 中丢失（显示为 Li2CO3 但下标格式损坏），且括号不匹配，影响化学式原样复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "the SEI formed in fluoroethylene (FEC) additive",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "前文明确为 'fluoroethylene carbonate (FEC)'，此处 OCR 漏掉 'carbonate'，导致化学名称不完整，可能影响读者对添加剂的准确理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "with a $ C_{s} $ value of $ -15 $ $ \\mu m $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "C_s 值单位 μm 前有空格分隔，且负号与数值分离，属于公式排版抽取的轻微损坏，不影响语义理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Atomic structure of sensitive battery materials and interfaces revealed by cryo-electron microscopy",
+  "self_check": "已核对摘要、正文关键数值与结论：锂枝晶生长方向统计（<111> 49%、<211> 32%、<110> 19%）、晶面间距（{110} 2.48 Å、{211} 1.44 Å，与块体 XRD 的 2.48 和 1.43 Å 对比）、扭折角 30°、SEI 晶粒尺寸（EC-DEC 中约 3 nm，FEC 中约 15 nm）、电子剂量率（高分辨约 1000 e Å⁻² s⁻¹ 约 30 s，低分辨 <1 e Å⁻² s⁻¹ 约 30 s，EDX 约 100 e Å⁻² s⁻¹ 5 min）均与原文一致。公式符号如 C_s、离焦值 5–8 nm、C_s = −15 μm 已保留。仍不确定之处：图 3 中 '1' 标签是否为 'I' 的 OCR 误读；Li₂CO₃ 化学式下标在 OCR 中损坏，已按可见文本保留并标注。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5064,
+      "prompt_tokens": 6428,
+      "total_tokens": 11492,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8800,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

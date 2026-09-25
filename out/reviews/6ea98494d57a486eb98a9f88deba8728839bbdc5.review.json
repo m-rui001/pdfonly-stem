@@ -1,0 +1,64 @@
+{
+  "sha1": "6ea98494d57a486eb98a9f88deba8728839bbdc5",
+  "title": "Genome-centric view of carbon processing in thawing permafrost",
+  "doi": "https://doi.org/10.1038/s41586-018-0338-1",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6ea98494d57a486eb98a9f88deba8728839bbdc5/index.html",
+  "source_chars": 102000,
+  "markdown_chars": 4367,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "R2 0.19, p-value 10240",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "原文中“10240”显然应为10^-4（上标丢失），结合上下文p-value为10^-4，且同一页另一处也出现类似“p-value < 2×10-16”写法。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Transcript expression of this pathway, while low across all sites), appears to be mostly limited",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "多了一个右括号，原文可能为“while low across all sites”而非“sites)”，属笔误或提取干扰。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "𝛼𝛼𝑐𝑐 = 𝛿𝛿13𝐶𝐶 − 𝐶𝐶𝑂𝑂2 + 1000 / 𝛿𝛿13𝐶𝐶 − 𝐶𝐶𝐻𝐻4 + 1000",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "变量前多出重复的Unicode字符（𝛼𝛼和𝛿𝛿），应为单字母α和δ，可能由PDF公式符号提取造成。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：MAGs数量1529、纤维素酶/木聚糖酶百分比（39%/37%）、Shannon指数（3.74/4.55）、CO2:CH4比例（16:1/7:1）、相关系数R2及p值（如0.43/6e-4等）。公式αC已按原文保留。对于提取文本中明显是上标丢失的“10240”和重复字符，已在提取问题中标记，未在markdown中修改为推测值，而保留了原文可见文本形式（在markdown中我写成了10⁻⁴，但这是根据上下文的推断，请读者注意）。其他数值均未改动。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6595,
+      "prompt_tokens": 27175,
+      "total_tokens": 33770,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3607
+      }
+    },
+    "content_chars": 5490
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

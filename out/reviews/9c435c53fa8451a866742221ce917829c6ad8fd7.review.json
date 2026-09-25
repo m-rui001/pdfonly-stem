@@ -1,0 +1,54 @@
+{
+  "sha1": "9c435c53fa8451a866742221ce917829c6ad8fd7",
+  "title": "One‐Step Synthesis of Nb 2 O 5 /C/Nb 2 C (MXene) Composites and Their Use as Photocatalysts for Hydrogen Evolution",
+  "doi": "https://doi.org/10.1002/cssc.201702317",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9c435c53fa8451a866742221ce917829c6ad8fd7/index.html",
+  "source_chars": 53122,
+  "markdown_chars": 3543,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "but no diffraction",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "句子在页尾中断，后续应有'peak of Nb2CTx was observed'但未在下一页出现，而是直接跟了图注，导致句子不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "The BET surface area of Nb2O5, Nb2CTx, and Mix-NN are 4.8, 6.9, and 8.3 m2·g-1, respectively.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "正文提到Nb2O5的BET为4.8 m2/g，而表1中Nb2O5为6.7 m2/g，同一论文数据不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：产氢速率7.81 μmol·h⁻¹·g_cat⁻¹、AQE 0.11%、晶粒尺寸57.5/57.9/69.2/114.6 nm、带隙2.92 eV、ΔGH 0.02 eV、BET 15.4 m²/g等均与原文一致。但BET值存在正文与表格矛盾（4.8 vs 6.7），已在issues中标注。跨页处'but no diffraction'后缺失'peak of Nb2CTx was observed'，已标注。其余数据如XRD峰位、PL趋势、稳定性结论等与原文相符。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 13968,
+      "prompt_tokens": 16587,
+      "total_tokens": 30555,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11273
+      }
+    },
+    "content_chars": 4398
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

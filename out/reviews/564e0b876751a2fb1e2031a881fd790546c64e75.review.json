@@ -1,0 +1,55 @@
+{
+  "sha1": "564e0b876751a2fb1e2031a881fd790546c64e75",
+  "title": "The Contribution of Agriculture, Forestry and other Land Use activities to Global Warming, 1990–2012",
+  "doi": "https://doi.org/10.1111/gcb.12865",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/564e0b876751a2fb1e2031a881fd790546c64e75/index.html",
+  "source_chars": 35825,
+  "markdown_chars": 2263,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The Contribution of Agriculture, Forestry and other Land Use activities to Global Warming, 1990-2010: Not as high as in the past",
+      "type": "标题不一致",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第1页标题为1990–2012，但第2页起所有页眉标题均写作1990-2010，与发表版本年份不符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 13,
+      "quote": "from a decadal average of 16.1±1.1% in 1990s",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "正文第13页写FOLU 1990s份额为16.1±1.1%，但第23页Table 3中对应值为16.4±1.1%，两处同一数据不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：2010年AFOLU占比21.2±1.5%、农业11.2±0.4%、土地利用10.0±1.2%、毁林7.9%，以及排放总量（农业5.4、FOLU4.8、AFOLU10.3 Gt CO₂eq yr⁻¹）与正文一致。发现两处疑点：标题年份在页眉处写为1990-2010；FOLU 1990s份额在正文与Table 3间不一致（16.1 vs 16.4），均已标注。GWP值（CO₂=1, CH₄=21, N₂O=310）按原文保留。文中未涉及复杂公式，仅保留GWP数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8324,
+      "prompt_tokens": 10281,
+      "total_tokens": 18605,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6525
+      }
+    },
+    "content_chars": 3197
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

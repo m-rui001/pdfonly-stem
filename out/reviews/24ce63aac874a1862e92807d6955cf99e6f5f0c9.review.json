@@ -1,0 +1,45 @@
+{
+  "sha1": "24ce63aac874a1862e92807d6955cf99e6f5f0c9",
+  "title": "Borophene as a prototype for synthetic 2D materials development",
+  "doi": "https://doi.org/10.1038/s41565-018-0157-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/24ce63aac874a1862e92807d6955cf99e6f5f0c9/index.html",
+  "source_chars": 46654,
+  "markdown_chars": 4390,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Comparison with simulated STM images (Fig. 4e and 4f) suggests that the rectangular and rhombohedral lattices are consistent with the v1/6 and v1/5 models (shown in Fig. 3f and 3g).",
+      "type": "疑似错误（图号指代矛盾）",
+      "severity": "low",
+      "confidence": 0.75,
+      "reason": "正文称 v1/6 与 v1/5 示意图为 Fig. 3f 和 3g，但第 24 页图 3 图注只列出 (e) v1/6 与 (f) v1/5，无 3g，文内编号与图注不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文关键数据：Tc 10–20 K、MgB2 Tc=39 K、v=1/9（空洞浓度定义）、v1/8/v4/33/v2/15 比 α 片层每原子低数 meV、体相与二维能量差至 400 meV/atom、Ag(111) 上 v1/6 与 v1/5 相当稳定性、实验温度区间两组相反、Ag(110) 纳米带约 10 nm 宽、链周期约 0.3 nm、狄拉克锥位置实验 0.25 eV 与理论 2 eV 之差、PTCDA 异质结、黏附能 0.04 eV/Å² 与 r≈4 Å 等均照录原文。图 3f/3g 编号矛盾已在 extraction_issues 标出。不确定处：Feng 与 Mannix 两组实验生长温度趋势相反，原文即如引，未做调和。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7657,
+      "prompt_tokens": 12268,
+      "total_tokens": 19925,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4450
+      }
+    },
+    "content_chars": 5248
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

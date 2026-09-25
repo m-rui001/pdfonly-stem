@@ -1,0 +1,55 @@
+{
+  "sha1": "ccc52715b31de711cea3a8c38f257b659a2eac9e",
+  "title": "A Stacked GRU-RNN-Based Approach for Predicting Renewable Energy and Electricity Load for Smart Grid Operation",
+  "doi": "https://doi.org/10.1109/tii.2021.3056867",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ccc52715b31de711cea3a8c38f257b659a2eac9e/index.html",
+  "source_chars": 39895,
+  "markdown_chars": 3258,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "29,89",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "在Table III中其他数值使用小数点，此处用逗号，疑似应为'29.89'。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "ct  it ⊙gt  ft ⊙ct - 1 (5) ht  ot ⊙φ( ct ) (6)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(5)(6)出现在(1)-(4)之前，且页后接有'weights that connect'，疑似页间拼接错位，公式顺序颠倒。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和表格中的关键数值：风能实验RMSE/MAE=0.0526/0.0393，相关系数0.8773/0.9131/0.9503，训练/测试样本5000/3784；负荷实验RMSE/MAE=507.2/351.1和484.2/327.8；均与原文一致。不确定点：公式编号因跨页顺序混乱，λ原文为1e8（可能为1e-8但照录），Table III中'29,89'疑似笔误。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9058,
+      "prompt_tokens": 11688,
+      "total_tokens": 20746,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6741
+      }
+    },
+    "content_chars": 3984
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

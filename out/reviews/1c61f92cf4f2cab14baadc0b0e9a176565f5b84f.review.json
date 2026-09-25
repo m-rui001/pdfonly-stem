@@ -1,0 +1,83 @@
+{
+  "sha1": "1c61f92cf4f2cab14baadc0b0e9a176565f5b84f",
+  "title": "Injection of oxygen vacancies in the bulk lattice of layered cathodes",
+  "doi": "https://doi.org/10.1038/s41565-019-0428-8",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1c61f92cf4f2cab14baadc0b0e9a176565f5b84f/index.html",
+  "source_chars": 46159,
+  "markdown_chars": 2800,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "As shown in Fig. 1c and d, the pristine sample, after FIB slicing,",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在第3页末尾中断，下一句在第4页开头接续为'always shows uniform contrast across the entire grain'，中间插入页码标记，需确认接续顺序正确。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "At the the end of annular milling",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "出现了重复的'the'，可能是提取或原始文本笔误，不影响整体理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "dual-EESL mode",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "可能应为'dual-EELS'，但原文如此，无法确认，仅标记疑点。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "the layered structure is heavily disordered due to",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第5页末尾句子未完成，第6页开头接续为'cation interlayer mixing.'，存在跨页断句。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "and then O− appears.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第14页末尾的短句可能在下页继续，但接续内容在第15页起始处为'The formation energies of VO were greatly reduced...'，可能缺少过渡词语，需核对。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键定量数据：氧空位形成能从4.87 eV降至1.31 eV，扩散势垒1.5 eV（O2-）和0.9 eV（O1-），O/Mn比表面2.5至内部3.3，表面氧损失约24%，300循环后颗粒总体氧损失约20%，纳米空洞体积占比24%。公式E_f = E_Vo − E_LiXMn7Ni2O24 + μ_O已按原文保留。结论与摘要及正文一致。不确定之处：原文中Li1.2Mn0.6Ni0.2O2与Li1.2Ni0.2Mn0.6O2写法交替，但化学式相同；部分数值如磁性矩、超胞参数已核对但可能存在小误差；跨页处有断句风险，已在issues中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7069,
+      "prompt_tokens": 11888,
+      "total_tokens": 18957,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4621
+      }
+    },
+    "content_chars": 4393,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

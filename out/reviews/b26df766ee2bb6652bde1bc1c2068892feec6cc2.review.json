@@ -1,0 +1,94 @@
+{
+  "sha1": "b26df766ee2bb6652bde1bc1c2068892feec6cc2",
+  "title": "Rapid water disinfection using vertically aligned MoS2 nanofilms and visible light",
+  "doi": "https://doi.org/10.1038/nnano.2016.138",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/b26df766ee2bb6652bde1bc1c2068892feec6cc2/index.html",
+  "source_chars": 41343,
+  "markdown_chars": 6486,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "The bandgap of $ \\mathrm{M o S{2}} $ was increased from 1.3 eV to 1.55 eV by decreasing the domain size",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "下标格式在OCR中丢失（MoS{2}应为MoS₂），但化学式可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "$ -0.33\\mathrm{V}\\left(\\mathrm{O}{2} / \\cdot \\mathrm{O}{2}^{-}\\right), $ $ 0.28\\mathrm{V}\\left(\\mathrm{O}{2} / \\mathrm{H}{2}\\mathrm{O}{2}\\right) $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "下标格式丢失（O{2}应为O₂，H{2}O{2}应为H₂O₂），但数值和物种可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "Disinfection rates (k) were estimated using Chicks law: $ \\ln(C / C_{0})=-\\mathrm{k t} $ where k is in units of per time, C is the concentration of bacteria and $ C_{0} $ is the concentration at t=0 of the experiments.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "Chick定律通常写作Chick's law，OCR丢失撇号，但不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "The disinfection efficiency of $ \\mathrm{F L V-M o S_{2}} $ was also compared to that of an equal mass of bulk $ \\mathrm{M o S_{2}} $ (suspended flakes of $ \\sim2 \\mu m $) under the same experimental condition (Fig. 3b). Bulk $ \\mathrm{M o S_{2}} $ showed 54% efficiency over 120 min which is much lower than that of $ \\mathrm{F L V-M o S_{2}} $ of >99.999%.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OCR将FLV-MoS₂中的下标2丢失（写作FLV-MoS），但上下文可辨，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "The disinfection rate for $ \\mathrm{C u-M o S_{2}} $ and $ \\mathrm{A u-M o S_{2}} $ was $ 0.57 \\mathrm{m i n}^{-1} $ $ \\left( R^{2}=0.99\\right) $ and $ 0.19 \\mathrm{m i n}^{-1} $ $ \\left( R^{2}=0.96\\right) $, respectively, under solar simulator with UV light filter. It is much faster compared to FLV-MoS $ \\mathrm{2} $ of $ 0.087 \\mathrm{m i n}^{-1} $ $ \\left( R^{2}=0.99\\right) $.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "FLV-MoS₂下标格式丢失（写作FLV-MoS 2），但数值和结论可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "It is showed that four ROS $ \\left( \\mathrm{O}{2}^{-}, \\mathrm{^{1} O}{2}, \\right. $ $ \\mathrm{H}{2} \\mathrm{O}{2} $ and OH $ \\bullet $ ) were present in both FLV-MoS $ {2} $ and Cu-MoS $ {2} $ system with concentration of $ \\mathrm{H}{2} \\mathrm{O}{2} > $ $ \\bullet \\mathrm{O}{2}^{-} > \\mathrm{^{1} O}{2} > \\mathrm{OH}\\bullet $.",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "ROS物种的下标和上标格式在OCR中部分丢失或错位（如O{2}⁻、H{2}O{2}、¹O{2}），但物种和浓度顺序可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Rapid Water Disinfection Using Vertically Aligned MoS₂ Nanofilms and Visible Light",
+  "self_check": "已核对摘要、正文数据和结论：带隙从1.3 eV增至1.55 eV；FLV-MoS₂在120分钟内>99.999%灭活，块体MoS₂ 54%；真实阳光下FLV-MoS₂速率0.18 min⁻¹（R²=0.99），TiO₂ 0.12 min⁻¹（R²=0.96）；Cu-MoS₂和Au-MoS₂速率分别为0.57 min⁻¹（R²=0.99）和0.19 min⁻¹（R²=0.96），FLV-MoS₂为0.087 min⁻¹（R²=0.99）；Cu-MoS₂ 20分钟、Au-MoS₂ 60分钟实现>99.999%灭活；Cu浓度3.25 ppb。公式ln(C/C₀)=−kt已保留。OCR中下标格式丢失已标注，不影响关键数值和结论方向。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5174,
+      "prompt_tokens": 12161,
+      "total_tokens": 17335,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 9814,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

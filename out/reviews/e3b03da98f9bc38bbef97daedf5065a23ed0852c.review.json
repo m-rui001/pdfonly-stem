@@ -1,0 +1,54 @@
+{
+  "sha1": "e3b03da98f9bc38bbef97daedf5065a23ed0852c",
+  "title": "Observation of Excitonic Rydberg States in Monolayer MoS2 and WS2 by Photoluminescence Excitation Spectroscopy",
+  "doi": "https://doi.org/10.1021/nl504868p",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e3b03da98f9bc38bbef97daedf5065a23ed0852c/index.html",
+  "source_chars": 37066,
+  "markdown_chars": 1979,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "~2ൈ109 cm-2",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "‘ൈ’应为乘号‘×’，原意应为2×10^9 cm^-2，OCR识别错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "MoS2 PLE peaks to the Rydberg series of the B exciton and assuming",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页面10末尾已出现‘Assigning the MoS2 PLE peaks to the Rydberg series of the B exciton’，页面11开头重复‘MoS2 PLE peaks…’，疑似跨页时单词重复或提取重叠。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要与正文中的关键数据：WS₂结合能0.32±0.05 eV，带隙2.33±0.05 eV；MoS₂激发态2.24±0.02 eV和2.34±0.03 eV，B激子结合能0.44±0.08 eV，A激子分配0.64±0.08 eV；相对振子强度0.22/0.10（MoS₂）和0.14/0.06（WS₂）；理论参数μ=0.28m₀、χ₂D=9.3 Å。确认所有表述与原文一致。不确定之处：跨页重复问题已标记，未改动原文语义。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9648,
+      "prompt_tokens": 12636,
+      "total_tokens": 22284,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7923
+      }
+    },
+    "content_chars": 2810
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

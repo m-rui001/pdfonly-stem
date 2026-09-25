@@ -1,0 +1,73 @@
+{
+  "sha1": "26334a2d2f714e027217208355fd43d05fe144d3",
+  "title": "Climate change vulnerability assessment of species",
+  "doi": "https://doi.org/10.1002/wcc.551",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/26334a2d2f714e027217208355fd43d05fe144d3/index.html",
+  "source_chars": 244358,
+  "markdown_chars": 2019,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "H. Resit ,",
+      "type": "疑似错误：作者姓名不完整",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "作者列表中出现\"H. Resit ,\"，缺少姓氏，结合参考文献中的\"Akçakaya R.H.\"，疑为\"H. Resit Akçakaya\"的抽取遗漏或原文排版问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "F) sensitive life history; and F) high exposure to other pressures",
+      "type": "疑似编号错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "列表项出现两个F，根据上下文应为G，属于明显的编号重复错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "THE EMERGENCE OF CLIMATE CHANGE VULNERABIILITY ASSESSMENT",
+      "type": "拼写疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "标题中\"VULNERABIILITY\"多一个I，疑为拼写错误，但原文可能如此，无法确认。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 17,
+      "quote": "Ssensitivity refers to the degree to which a system [or species] is affected",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "\"Ssensitivity\"多一个S，应为\"Sensitivity\"，可能是原文笔误或抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：全球升温<1°C、物种缺失率33%、42%、92%，RCP2.6/4.5/6/8.5等。结论方向与原文摘要及正文一致。不确定处：作者姓名缺失、拼写错误等已在extraction_issues中标出；部分表格细节（如Table 1,2,3的具体项目）未在markdown中全部展开，但保留了核心内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7267,
+      "prompt_tokens": 69298,
+      "total_tokens": 76565,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 5593
+      }
+    },
+    "content_chars": 3276
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

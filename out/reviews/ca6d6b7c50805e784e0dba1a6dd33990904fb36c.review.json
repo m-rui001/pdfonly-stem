@@ -1,0 +1,55 @@
+{
+  "sha1": "ca6d6b7c50805e784e0dba1a6dd33990904fb36c",
+  "title": "Designing anion exchange membranes for CO2 electrolysers",
+  "doi": "https://doi.org/10.1038/s41560-020-00761-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ca6d6b7c50805e784e0dba1a6dd33990904fb36c/index.html",
+  "source_chars": 58681,
+  "markdown_chars": 3558,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "𝜎=𝑅 𝐿 𝑚𝑒𝑚 ⋅𝐴",
+      "type": "疑似公式排版错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "电导率公式通常应为σ = L/(R·A)，此处字符顺序异常，可能为OCR或排版错误；原文变量定义已说明，但公式显示与标准形式不符。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 11,
+      "quote": "QAAPT",
+      "type": "疑似拼写不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中使用QAPPT，而参考文献22注释中写作QAAPT，同一材料缩写不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：Sustainion电导率102 mS/cm、IEC 2.52 meq/g、吸水80%、厚50 μm、200 mA/cm²下>95% CO选择性运行3800 h；QAPPT电导率137 mS/cm、IEC 2.65 meq/g、厚25 μm、500 mA/cm²、FECO>90%、E_cell=3 V；表1中的关键指标均已包含。公式(1)的变量定义与数值关系在原文中明确，但公式排版疑似有误，已在issue中标注。QAPPT/QAAPT拼写不一致也已标注。其余结论均基于提取文本，未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11175,
+      "prompt_tokens": 15996,
+      "total_tokens": 27171,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8559
+      }
+    },
+    "content_chars": 4340
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

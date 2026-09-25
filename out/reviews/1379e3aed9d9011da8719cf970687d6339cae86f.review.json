@@ -1,0 +1,54 @@
+{
+  "sha1": "1379e3aed9d9011da8719cf970687d6339cae86f",
+  "title": "Highly efficient Cas9-mediated transcriptional programming",
+  "doi": "https://doi.org/10.1038/nmeth.3312",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1379e3aed9d9011da8719cf970687d6339cae86f/index.html",
+  "source_chars": 30477,
+  "markdown_chars": 3384,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Addgene plasmid #473206 was used to screen for novel ADs",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "原文第4页提到SP-dCas9质粒基于Cas9m4-VP64 (Addgene #47319)，此处的#473206多了一个数字6，可能为#47319之误，但无强证据，照录原文。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "dCas9-AD iPS cell lines",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "前文使用 dCas9-VP64 和 dCas9-VPR，此处简称 dCas9-AD 可能指代二者，但原文如此，不构成强错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和图表数值：内源激活提升范围22–320倍、多重激活四个基因、iPSC分化提升10–37倍、qPCR NGN2/NEUROD1分别10倍/18倍。公式无。补充材料数据未列入。提取文本中涉及图1A/B和图2的统计P值已保留。不确定之处为方法部分Addgene质粒编号#473206与正文#47319不一致，已标记。跨页检查未发现明显断裂（页尾句子均完整或下页可衔接）。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2342,
+      "prompt_tokens": 8276,
+      "total_tokens": 10618,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 121
+      }
+    },
+    "content_chars": 4195
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

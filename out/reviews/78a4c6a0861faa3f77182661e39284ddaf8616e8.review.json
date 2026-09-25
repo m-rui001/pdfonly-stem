@@ -1,0 +1,45 @@
+{
+  "sha1": "78a4c6a0861faa3f77182661e39284ddaf8616e8",
+  "title": "Statin therapy is associated with lower prevalence of gut microbiota dysbiosis",
+  "doi": "https://doi.org/10.1038/s41586-020-2269-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/78a4c6a0861faa3f77182661e39284ddaf8616e8/index.html",
+  "source_chars": 70251,
+  "markdown_chars": 3087,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 12,
+      "quote": "19. Ding, T. & Schloss, D. R. Dynamics and associations of microbial community types across the human body. Nature 509, 357–360 (2014).</jrn 20.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "引用后出现非预期文本“</jrn 20.”，疑似PDF抽取的HTML标签残留或乱码，建议核对原文。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：Bact2 患病率（3.90%、17.73%、5.88%、4.72%、16.33%）、相对风险（1.05、1.03、0.31、0.72、0.36）、统计检验 P 值及样本量（n=888、782、106、282、2345）均与提取文本一致。方法部分描述与原文相符。不确定之处：原文图3c的样本量在正文中显示为 n=474，但多变量模型为 n=462，文本已按原文表述呈现；另外“Received ; accepted 2019”缺少具体日期，但未影响结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8854,
+      "prompt_tokens": 18060,
+      "total_tokens": 26914,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6676
+      }
+    },
+    "content_chars": 3769
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

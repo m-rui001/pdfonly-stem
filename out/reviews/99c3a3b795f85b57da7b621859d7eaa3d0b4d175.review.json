@@ -1,0 +1,82 @@
+{
+  "sha1": "99c3a3b795f85b57da7b621859d7eaa3d0b4d175",
+  "title": "Use of macro plastic fibres in concrete: A review",
+  "doi": "https://doi.org/10.1016/j.conbuildmat.2015.05.105",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/99c3a3b795f85b57da7b621859d7eaa3d0b4d175/index.html",
+  "source_chars": 54926,
+  "markdown_chars": 4135,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "addtion",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为addition，输入文本中位于页尾断句处，单词不完整",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "conrete fails",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为concrete",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "have are now investigating",
+      "type": "疑似语法错误",
+      "severity": "low",
+      "confidence": 0.85,
+      "reason": "可能是have now investigating或are now investigating，原文两动词连用",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "prenvent",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为prevent",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "in addtion, the fibre bridging can decrease crack width, which prevents water and contaminants from entering [PDF页尾] the concrete matrix",
+      "type": "跨页断句/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句在p3页尾处被截断，p4开头先插入页眉再续接文字，且addtion疑为addition",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文与结论中所有关键数据：纤维几何尺寸（PP直径0.9 mm×长50 mm；40 mm×1.4 mm×0.11 mm）、坍落度（102→38→6.5 mm）、抗压强度（35.0–41.6 MPa范围）、劈裂强度（2.2–4.1 MPa范围）、Hsie等PP纤维弯曲强度（峰值5.5 MPa→稳定1.5 MPa）、RDPT（钢纤维65 kN/664 J vs PP纤维70 kN/716 J vs 钢筋网1308 J）、PET碱浸泡强度保持99%、粘结强度（压花5 MPa/卷曲3.9 MPa/直纤维1.7 MPa）、PET降解硫酸盐与乙烯二醇产物等，均与原文一致。公式和图表具体数值仅以正文文字描述为准，未推测图表内未提取的数据。部分文献编号引用在正文中出现但未在笔记中展开属正常省略。不确定处：PET纤维耐碱结论三来源相互矛盾，已在文中如实并列呈现。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6125,
+      "prompt_tokens": 14873,
+      "total_tokens": 20998,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 673
+      }
+    },
+    "content_chars": 9464
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

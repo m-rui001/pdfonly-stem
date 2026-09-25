@@ -1,0 +1,99 @@
+{
+  "sha1": "baffef284c62268a36e3a0d36d4a262742b6c2ad",
+  "title": "Understanding Selectivity for the Electrochemical Reduction of Carbon Dioxide to Formic Acid and Carbon Monoxide on Metal Electrodes",
+  "doi": "https://doi.org/10.1021/acscatal.7b00687",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/baffef284c62268a36e3a0d36d4a262742b6c2ad/index.html",
+  "source_chars": 34598,
+  "markdown_chars": 5851,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "suggesting that the initial one-electron transfer to $ \\mathrm{CO}{2} $ $ ^{2-} $ is the rate-limiting step",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "CO2 的电荷标注异常，出现 $^{2-}$，与上下文所述单电子转移生成 CO2·⁻ 不符，疑为 OCR 公式符号丢失或错位。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "and that $ \\mathrm{HCOO}- $ production on a variety of metal surfaces can occur through both the $ ^{} \\mathrm{COOH} $ and $ ^{} \\mathrm{OCHO} $ intermediates",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "HCOO− 的负号被抽取为连字符，且 *COOH 与 *OCHO 的上标星号丢失，影响中间体符号的准确识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "Figure 2 plots the calculated binding energies of $ ^{*} \\mathrm{C O O H} $ on each metal surface along with each metal's experimental by measured partial current densities toward CO.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "“experimental by measured”中多出“by”，疑为 OCR 插入错误，影响句子通顺但不影响核心含义。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "Sn appears on the weak-binding leg of the volcano due to its weak interaction with $ \\mathrm{C O O H^{}}, $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "*COOH 的星号丢失，且上标逗号位置异常，影响中间体符号的准确呈现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Both carbon and oxygen biding energies play a role in determining $ ^{} $ COOH binding energy on Zn",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“biding”应为“binding”，属 OCR 拼写错误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "The first PCET can take place either on one of the oxygens, resulting in a carbon-bound $ \\mathrm{C O O H^{}} $ (top path), or on the carbon atom, resulting in an oxygen-bound $ \\mathrm{O C H O^{}} $ (bottom path).",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "*COOH 和 *OCHO 的星号丢失，影响中间体符号的准确识别。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Understanding selectivity for the electrochemical reduction of carbon dioxide to formic acid and carbon monoxide on metal electrodes",
+  "self_check": "已核对摘要、正文与结论中的关键数值：HCOO⁻ 在 -0.8 V vs. RHE 成为主要产物，最大法拉第效率 70% 出现在 -0.9 V 至 -1.0 V 之间；CO 最大法拉第效率 17% 在 -0.76 V；传质极限约 8–10 mA/cm²；总法拉第效率 90%–110%。公式与符号方面，*COOH 和 *OCHO 的星号在部分位置丢失，CO₂·⁻ 的电荷标注异常，已在 extraction_issues 中标出。未发现登记题名/DOI 与 OCR 正文身份冲突。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4266,
+      "prompt_tokens": 10716,
+      "total_tokens": 14982,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8424,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Understanding selectivity for the electrochemical reduction of carbon dioxide to formic acid and carbon monoxide on metal electrodes",
+    "translated_title": "理解金属电极上二氧化碳电化学还原为甲酸和一氧化碳的选择性",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

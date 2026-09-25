@@ -1,0 +1,73 @@
+{
+  "sha1": "1bf121f97245e8e32b158ca91297d7b7b72abc93",
+  "title": "Laser powder bed fusion additive manufacturing of metals; physics, computational, and materials challenges",
+  "doi": "https://doi.org/10.1063/1.4937809",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/1bf121f97245e8e32b158ca91297d7b7b72abc93/index.html",
+  "source_chars": 138015,
+  "markdown_chars": 3095,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "diffusion time a2/D is longer or comparable with dwell time a/u",
+      "type": "疑似上标缺失",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "物理上应为颗粒半径的平方除以热扩散率，即 a^2/D，原文 a2 很可能缺失平方上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "We discuss the role of data mining and uncertainty quantification in the modeling and simulation process and describe future applications. We discuss the role of data mining and uncertainty quantification in the modeling and simulation process and describe future applications.",
+      "type": "跨页/重复句",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "同一句子在页末重复出现两次，疑为跨页或输出重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 28,
+      "quote": "The powder model has fairly extensive requirements for material property data.",
+      "type": "无",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "此条仅用于检查，无实际缺陷。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "(7) α (bottom layer) .047 0.063 0.050 0.055 0.062 0.062",
+      "type": "疑似小数点缺失",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "表格第(7)列首项为'.047'，其他各项均为0.xxx格式，疑为0.047的提取截断。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、吸收率数值（Ag/Al/Au/Cu相对平面吸收率提高4.7–7.2倍，SS/Ti为1.7倍）、热导率比值（3.0/4.2/6.6）与原文一致；单道模拟温度峰值（无蒸发>5000K，有蒸发2700–3000K）与描述相符；Eagar-Tsai采样参数范围（462组，速度50–2250 mm/s等）与原文一致。公式（1.1）（1.2）及CFS/MSE公式已按原文文本保留，但a2/D疑为a^2/D已在issues中标出。仍不确定：表格第(7)列数值前导小数点，以及未来应用部分中‘optimized build direction’重复一词是否影响理解，但未改动原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6060,
+      "prompt_tokens": 29998,
+      "total_tokens": 36058,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3526
+      }
+    },
+    "content_chars": 4661
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

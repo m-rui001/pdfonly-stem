@@ -1,0 +1,73 @@
+{
+  "sha1": "f1690f503a678c061e3ec630e9a0d0129105478b",
+  "title": "Greening cities – To be socially inclusive? About the alleged paradox of society and ecology in cities",
+  "doi": "https://doi.org/10.1016/j.habitatint.2017.04.005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f1690f503a678c061e3ec630e9a0d0129105478b/index.html",
+  "source_chars": 56959,
+  "markdown_chars": 4466,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Francesc Baro Nadja Kabisch",
+      "type": "疑似抽取错误：两个作者姓名之间缺少分隔符/换行，且“Baro Nadja Kabisch”可能涉及跨列拼接问题",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "第一页作者列表中该处明显为两列文本的拼接痕迹，无法确定作者全名与分隔方式",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "quality of life support through activities in green and clean environments",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该行位于第2页页底，仅从可见文本无法判断是否完整，需对照原PDF确认",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "such as collateral noise, more trafﬁc and less spaces for informal meetings (Westerink et al., 2012).",
+      "type": "疑似抽取错误：'collateral noise' 疑为 'collateral damage' 或上下文表述问题",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该词组的搭配在学术语境中不太常见，但无法确定原文用词，照录原文并标注存疑",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "€, 2016). Nevertheless, as Vierikko and Niemela € (Vierikko & Niemela € (2016) describe for Helsinki",
+      "type": "疑似抽取错误：编码问题与重复，涉及人名“Niemelä”",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "可见文本中“Niemela €”为字符编码损坏，且“Vierikko & Niemela €”重复出现",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：54%城市化率、Lene-Voigt公园10公顷和租金4.5→7欧元/平方米、高线公园2.5km和103%房价涨幅及500万游客、索非亚1/3绿地损失等，均与提取文本一致。公式方面本文无数学公式，GI和NBS定义为概念性表述。结论方向与摘要和案例证据一致：绿化并不自动带来社会包容，反而可能加剧排斥。不确定之处在于：部分作者姓名和引用因编码问题（如Niemelä）无法完全确认，已在extraction_issues中标出。文中“collateral noise”表述存疑但无法确定原文，照录原文。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3810,
+      "prompt_tokens": 13587,
+      "total_tokens": 17397,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 813
+      }
+    },
+    "content_chars": 6051
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

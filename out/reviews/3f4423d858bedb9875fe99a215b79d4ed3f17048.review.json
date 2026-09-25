@@ -1,0 +1,73 @@
+{
+  "sha1": "3f4423d858bedb9875fe99a215b79d4ed3f17048",
+  "title": "Blockchain-Based Dynamic Key Management for Heterogeneous Intelligent Transportation Systems",
+  "doi": "https://doi.org/10.1109/jiot.2017.2740569",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3f4423d858bedb9875fe99a215b79d4ed3f17048/index.html",
+  "source_chars": 67391,
+  "markdown_chars": 3340,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 12,
+      "quote": "Our future work aims at pseudonym management using blockchain basing on the current system. Moreover, users are able to decide the trade-off between security and privacy.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "结论部分出现两次几乎相同的表述（'Our work focuses to further take privacy issues into consideration...' 和 'Our future work aims at pseudonym management using blockchain basing on the current system.'），可能是原文重复，也可能是提取时页间拼接导致重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "will require several several handshakes",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "'several several' 明显重复，可能是原文笔误或抽取重复。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The results are records by averaging the results from SMs",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "'records' 应为 'recorded'，疑似原文笔误或OCR错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "with a central manager, while the dynamic scheme allows SMs to flexibly fit various traffic levels.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "摘要中 'fit' 可能应为 'adapt to'，但原文如此，不确定是否抽取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：加密0.51027ms，解密0.73996ms，签名0.51011ms，验证1.10171ms，挖矿4.11046ms；交易数公式、时间公式（tTC、tTS、tB）与原方程一致；1500交易交叉点，500交易时约0.8秒等结论与原文相符。动态收集期优化算法描述无误。需注意：提取文本中的‘n_T-All’公式使用‘traffic amount’而非‘nH’，已保留原文表述；’tB-1’公式中‘÷ tCP’正确。未发现数值矛盾。不确定处：表I中‘Number of this transaction in block’与‘Current security domain number SM-this’连排，可能原表格分列，但文本语义完整。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2609,
+      "prompt_tokens": 15597,
+      "total_tokens": 18206,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 30
+      }
+    },
+    "content_chars": 5049
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

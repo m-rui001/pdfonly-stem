@@ -1,0 +1,54 @@
+{
+  "sha1": "da6fd37b18d9c7ec0c7837be5b49b0ae0ab8a1ee",
+  "title": "The drivers and impacts of Amazon forest degradation",
+  "doi": "https://doi.org/10.1126/science.abp8622",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/da6fd37b18d9c7ec0c7837be5b49b0ae0ab8a1ee/index.html",
+  "source_chars": 102467,
+  "markdown_chars": 3309,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "with much larger area estimates if less-",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第9页末尾句子在‘less-’处截断，第10页开头接续为‘severe disturbances’，但提取文本中缺失了页码之间的连接，可能原文为‘less-severe disturbances’，需注意跨页顺序。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 29,
+      "quote": "using a grid with resolution of 960 m. . . . We created a reference raster file in the South America Albers Equal-Area Conic projection (ESRI:102033) with a resolution of 9600m",
+      "type": "疑似数值不一致",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "同一方法部分出现960 m和9600 m两种分辨率，可能分别用于不同步骤，但缺少明确区分，存在潜在表述混淆，需对照原文核实。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：2.5×10⁶ km²（38%）、0.2 PgC yr⁻¹、0.36×10⁶ km²（5.5%）、112%等，以及各干扰面积（火122,624 km²，木材119,700 km²，边缘188,531 km²，干旱2,740,647 km²）和重叠面积。公式已按原文保留。投影数值（GOV 0.06，BAU 0.42 PgC yr⁻¹）和比例（1.04和0.74）正确。不确定之处：第29-30页关于960 m与9600 m分辨率的表述可能混淆，已在issues中标记；补充材料表S1、S2的部分百分比未逐一核对，但正文引用一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4438,
+      "prompt_tokens": 27582,
+      "total_tokens": 32020,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1864
+      }
+    },
+    "content_chars": 4353
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "sha1": "231f9e2f6e4eeb0bd15b26e96bd5d453e3387126",
+  "title": "Climatic controls of decomposition drive the global biogeography of forest-tree symbioses",
+  "doi": "https://doi.org/10.1038/s41586-019-1128-0",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/231f9e2f6e4eeb0bd15b26e96bd5d453e3387126/index.html",
+  "source_chars": 62624,
+  "markdown_chars": 2589,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "the constants 0.0095 (= 1) =0.00014 (= 2) , and -1.21 (= ) are parameters fit using a previous global study of leaf litter mass-loss36",
+      "type": "疑似抽取错误/上下标丢失",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "括号内参数标识（可能是希腊字母或下标）全部缺失或错位，格式明显损坏，无法从可见文本复原参数命名。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "decomposition rates relative to , respectively (Supplemental Materials).",
+      "type": "疑似文本缺损",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "同一段落中“relative to a parameter,”和“relative to ,”两处参数符号均缺失，应是表征叶片化学性质的参数（如α），但原文未显示。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：EM占全球树茎约60%、热带外约80%，N-fixer占约7%，模型投影覆盖46%陆地和88%树茎，四变量解释率81/79/52%，2070年RCP8.5情景EM下降约10%，N-fixer在干旱灌丛24%、热带稀树草原21%、干阔叶林20%、北方森林<1%等均一致。公式相关参数行和分解基准参数符号因抽取缺失无法确认，已在extraction_issues中标注，未做任何推测性补全。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12770,
+      "prompt_tokens": 17238,
+      "total_tokens": 30008,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10811
+      }
+    },
+    "content_chars": 3521
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

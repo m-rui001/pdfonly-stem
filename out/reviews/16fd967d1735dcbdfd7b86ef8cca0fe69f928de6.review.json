@@ -1,0 +1,73 @@
+{
+  "sha1": "16fd967d1735dcbdfd7b86ef8cca0fe69f928de6",
+  "title": "A review of air filtration technologies for sustainable and healthy building ventilation",
+  "doi": "https://doi.org/10.1016/j.scs.2017.04.011",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/16fd967d1735dcbdfd7b86ef8cca0fe69f928de6/index.html",
+  "source_chars": 118399,
+  "markdown_chars": 4438,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 22,
+      "quote": "Q × ΔP × t Energy consumption = n × 1000",
+      "type": "疑似格式错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "公式排版异常，通常应为(QΔPt)/(n×1000)，但提取文本顺序颠倒。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 14,
+      "quote": "Trombe wall is ineffective against particles of 0.1–1 μm diameter.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "该句出现在页末且前有孤立'7.'，可能为章节号残留，但句子完整，不影响理解。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "ESPs works best with particle sizes above 0.1 mm.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.4,
+      "reason": "上下文讨论亚微米颗粒，0.1 mm不合常理，但无强文本证据，照录原文。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 26,
+      "quote": "The data collected this was could be",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "语法错误'this was could be'，可能为原文笔误，不影响整体理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：HEPA效率99.97%、ULPA 99.999%、压降25–50 mmAq；纳米纤维效率99.9998%（117.5 Pa）、99.995%（111 Pa）、99.999%（93.3 Pa）等。公式(1)(2)已按提取文本保留。标准限值（如PM10 150/120/100 μg/m³）已核对。不确定之处：表2、3、4等具体数据未在提取文本中给出，未写入；部分原文疑似排版或单位错误已列入issues。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10273,
+      "prompt_tokens": 29305,
+      "total_tokens": 39578,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7188
+      }
+    },
+    "content_chars": 5675
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

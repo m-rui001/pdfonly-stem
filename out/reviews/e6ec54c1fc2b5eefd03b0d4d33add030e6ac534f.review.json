@@ -1,0 +1,64 @@
+{
+  "sha1": "e6ec54c1fc2b5eefd03b0d4d33add030e6ac534f",
+  "title": "Crown plasticity enables trees to optimize canopy packing in mixed‐species forests",
+  "doi": "https://doi.org/10.1111/1365-2435.12428",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e6ec54c1fc2b5eefd03b0d4d33add030e6ac534f/index.html",
+  "source_chars": 50154,
+  "markdown_chars": 2292,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 11,
+      "quote": "across-species slope of log(CV) vs species richness = 0.081 ± 0.014",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "数值0.081±0.014在摘要和讨论中未出现，可能为原文正确统计量，但无其他文本交叉验证，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "CV is estimated by integrating the function which describes how crown radius changes with tree height (Caspersen et al. 2011): (1) where f(h) is the crown radius at a given height h... (2) ... (3)",
+      "type": "公式缺失",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "PDF抽取文本中方程(1)(2)(3)仅保留编号，未包含实际数学表达式，无法复现冠体积计算细节。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "A classic example is the",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第4页末句在'is the'处截断，第5页以'development of multi-layered...'继续，中间插入页眉'Accepted Article'，属跨页拼接，但语义可连贯。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数据：样本量12939、冠体积增加38%、丰富度斜率0.125（H1）、预测斜率0.049（H2）、差值斜率0.016（H3）、物种水平斜率0.081、basal area斜率-0.011、树高差1.6 m等一致。公式(1)-(3)未提取，已在正文注明并标记疑点。图表结论仅依据正文描述，未臆测未提取的数字。跨页拼接不影响语义，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3738,
+      "prompt_tokens": 12898,
+      "total_tokens": 16636,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1801
+      }
+    },
+    "content_chars": 3475
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

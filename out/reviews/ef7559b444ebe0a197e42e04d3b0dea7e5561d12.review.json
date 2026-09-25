@@ -1,0 +1,54 @@
+{
+  "sha1": "ef7559b444ebe0a197e42e04d3b0dea7e5561d12",
+  "title": "Drivers of declining CO2 emissions in 18 developed economies",
+  "doi": "https://doi.org/10.1038/s41558-019-0419-7",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ef7559b444ebe0a197e42e04d3b0dea7e5561d12/index.html",
+  "source_chars": 34791,
+  "markdown_chars": 3510,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "𝐹𝐸'' 𝑃𝐸'' 𝐶 (1) × × = 𝐹𝐸 × 𝐶' × 𝐶) × 𝐶* 𝐹𝐸 𝐹𝐸'' 𝑃𝐸''",
+      "type": "公式提取乱码",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "公式(1)的提取文本中上下标和分数结构混乱，无法直接复现，但正文文字部分给出了各符号定义（FE, FEff/FE, PEff/FEff, C/PEff），故markdown中采用文字定义形式。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Netherland",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文为'Netherland'，通常应为'Netherlands'，但保留原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文中的关键数值：峰值下降组年均排放变化–2.4% [–2.9, –1.4]%，化石份额贡献47% [36–73]%，能源使用贡献36% [18–56]%；对照组A能源使用贡献75% [–11至130]%，B组79% [58–90]%和化石份额16% [2–29]%；政策相关性r值（–0.54、–0.75、–0.42、0.51等）均与表2一致。公式部分因提取乱码未逐字保留，但依据正文文字定义在数据方法中重新表述（C=FE×Cf×Cr×Ci），已注明。不确定之处：表2中部分数字（如0.55a、–0.66）因表格排版提取混乱，仅按可见序列叙述，未作推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 7326,
+      "prompt_tokens": 9476,
+      "total_tokens": 16802,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4828
+      }
+    },
+    "content_chars": 4371
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "95a2121b56febfa000b8d954620c6ea8f93590a3",
+  "title": "Two-Step Growth of Two-Dimensional WSe2/MoSe2 Heterostructures",
+  "doi": "https://doi.org/10.1021/acs.nanolett.5b02423",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/95a2121b56febfa000b8d954620c6ea8f93590a3/index.html",
+  "source_chars": 33967,
+  "markdown_chars": 2724,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "leading to much larger (up to 169 μm) heterostructure\n\nsize,\n\nand\n\ncross-contamination",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第1页末尾'heterostructure size,'与第2页开头'and cross-contamination'之间句子被分页标记打断，原文应连续为'size, and cross-contamination...'，但提取文本中插入了换行和'Page 2'标记，需拼接理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Recently, one-step CVD methods have been\n\n[PDF extracted page 3]\n\nPage 3\n\ndeveloped to grow heterostructures",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第2页末尾'have been'与第3页开头'developed'之间跨页，句子在页尾断开，需拼接为'have been developed'。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "The strong photocurrent response and photovoltaic effect with high quantum efficiency of the\n\n[PDF extracted page 10]\n\nPage 10\n\nheterostructures expand the applications",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第9页末尾'of the'与第10页开头'heterostructures expand'跨页，句子被分页打断，需拼接为'of the heterostructures expand'。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：异质结构最大169 μm、一步法尺寸<20 μm、MoSe2生长温度750°C/20 min、WSe2生长温度900°C、载气50 vs 100 SCCM、拉曼峰位240/280/250/258 cm⁻¹、PL峰位819/786/933 nm（1.51/1.58/1.33 eV）、暗电流0.8 pA/68 pA、外量子效率6.4%/1.2%、内量子效率91%/17%、吸收率7.0%、开路电压55 mV、IPCE 0.12%、2H/3R堆垛。公式无。不确定处：图注中提到的'FFT'等细节未在正文中重复，但已按文本描述记录；未发现数值矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2920,
+      "prompt_tokens": 10227,
+      "total_tokens": 13147,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 581
+      }
+    },
+    "content_chars": 4240
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

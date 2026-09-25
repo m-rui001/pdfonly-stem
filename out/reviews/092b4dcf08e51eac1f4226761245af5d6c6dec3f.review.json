@@ -1,0 +1,64 @@
+{
+  "sha1": "092b4dcf08e51eac1f4226761245af5d6c6dec3f",
+  "title": "Synthesis and Characterization of 2D Molybdenum Carbide (MXene)",
+  "doi": "https://doi.org/10.1002/adfm.201505328",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/092b4dcf08e51eac1f4226761245af5d6c6dec3f/index.html",
+  "source_chars": 50673,
+  "markdown_chars": 2820,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "The high-resolution spectrum in the F 1s region (Figure 2d) was fitted by one component",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上下文讨论的是 F 1s 谱，且正文中 Figure 2 为 TEM 图，应为 Figure 3d。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "𝝆~⁡𝝆𝟎 𝒆𝒙𝒑 ( 𝑻𝟎 ) ,",
+      "type": "疑似错误/公式损坏",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "公式缺少指数变量和温度分数，原文上下文中 m 出现在指数位置，但提取文本未完整显示 (T0/T)^m。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "As shown in Figure 4a, before annealing, ρ increases from 0.6 to 124 Ω.m as the temperature is reduced from 300 K to 10 K\n[页码换页] (top black curve in Figure 4a).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "句子在“to 10 K”处断开，下一页以“(top black curve in Figure 4a).”接续，缺失的括号前内容应在上一页末尾。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文的关键数值：c-LP 从 18.1 到 23.1 Å、21.2/26.9 Å、37.7/25.5 Å；电阻率退火前后数值（0.6→124 Ω·m 和 2.3×10⁻³→33×10⁻³ Ω·m）；电容 700 F/cm³（2 mV/s）及 196 F/g；容量 821 mAh/g 首次、560 mAh/g（0.4 A/g）、250 mAh/g（5 A/g）、76 mAh/g（10 A/g）均与正文一致。公式中 ρ~ρ₀ exp(T₀/T)ᵐ 的指数 m 含义与原文描述一致，但公式文本不完整，已在 extraction_issues 中标注。另外，F 1s 谱图编号错误已标出。未引入外部知识。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4820,
+      "prompt_tokens": 15235,
+      "total_tokens": 20055,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2199
+      }
+    },
+    "content_chars": 4103
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

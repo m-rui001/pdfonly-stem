@@ -1,0 +1,64 @@
+{
+  "sha1": "49fe015bc6d2f0e28619d72a5158d928aa2e0243",
+  "title": "High operational and environmental stability of high-mobility conjugated polymer field-effect transistors through the use of molecular additives",
+  "doi": "https://doi.org/10.1038/nmat4785",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/49fe015bc6d2f0e28619d72a5158d928aa2e0243/index.html",
+  "source_chars": 49378,
+  "markdown_chars": 3924,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "This is further evidence that charge transfer",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "该句在第7页末尾截断，第8页开头以'between the additive and the polymer cannot be responsible for the observed'续接，但中间缺少'This is further evidence that charge transfer'的完整连接，且第8页开头先出现'between...'后出现'improvements...'，疑似跨页时句子断裂并重排。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "such as diketopyrrolo-pyrrole-\ndithienylthieno[3,2-\nb]thiophene (DPP-DTT)",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "化学名称在换行处断裂，但文本拼接可读，未丢失字符，仅需确认'[3,2-b]'的连字符和空格是否准确。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "We find that weak charge transfer in IDTBT films with 5 wt.% of F4TCNQ leads to a clear signature of F4TCNQ anions at 1.1 eV23 and an associated IDTBT polaron-induced absorption band between 1.2-1.6eV4.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "原文数字后直接跟参考文献标号（如1.1 eV23和1.2-1.6eV4），疑似上标标号被误为数值部分，但文本证据不充分，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：IDTBT迁移率>1 cm²/Vs、接触电阻27.1→7.1→<5 kΩcm、稳定性改善12倍、ΔVT<1 V、空隙分数约1%、QCM 0.9%、折射率1.55/1.2、TCNQ有效浓度1-2 wt.%、F8BT迁移率1e-2 cm²/Vs、IDTBT电离势5.3 eV、PDS吸收峰1.1 eV和1.2-1.6 eV等，均与正文提取文本一致。公式2H₂O+4h⁺→4H⁺+O₂已保留。计算方法和参数（ωB97X-D/6-31G(d,p)、IEFPCM ε=3.5）已核对。不确定之处：提取文本中个别脚注标号与数字紧邻（如'1.1 eV23'），已按原文照录并在问题中标记；跨页句子顺序已指出。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4544,
+      "prompt_tokens": 13292,
+      "total_tokens": 17836,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1457
+      }
+    },
+    "content_chars": 5419
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

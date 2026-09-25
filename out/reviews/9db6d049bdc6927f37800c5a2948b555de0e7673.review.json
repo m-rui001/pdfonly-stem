@@ -1,0 +1,103 @@
+{
+  "sha1": "9db6d049bdc6927f37800c5a2948b555de0e7673",
+  "title": "Monolayer semiconductor nanocavity lasers with ultralow thresholds",
+  "doi": "https://doi.org/10.1038/nature14290",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/9db6d049bdc6927f37800c5a2948b555de0e7673/index.html",
+  "source_chars": 31824,
+  "markdown_chars": 6186,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "monolayer $ \\mathrm{W S e}{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式下标格式错误，应为 WSe₂，但 OCR 提取为 W S e{2}，可能影响阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{P h C C s}^{2 4,2 5} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "PhCCs 被错误提取为 P h C C s，空格和大小写异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "$ \\mathrm{W S e_{2} / P h C C} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "WSe₂/PhCC 被错误提取为 W S e_{2} / P h C C，空格异常。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "$ \\mathrm{W S e_{2}-c a v i t y} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "WSe₂-cavity 被错误提取为 W S e_{2}-c a v i t y，空格异常。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 4,
+      "quote": "$ \\mathrm{W S e_{2}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "WSe₂ 被错误提取为 W S e_{2}，空格异常。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "$ \\mathrm{W S e_{2}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "WSe₂ 被错误提取为 W S e_{2}，空格异常。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "$ \\mathrm{A l}{0.8} \\mathrm{G a}{0.2} \\mathrm{P} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 Al₀.₈Ga₀.₂P 的下标格式错误，应为 Al_{0.8}Ga_{0.2}P，但提取为 Al{0.8}Ga{0.2}P，可能影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Ultra-Low Threshold Monolayer Semiconductor Nanocavity Lasers",
+  "self_check": "已核对关键数值：激光阈值 27 nW、β=0.19、Q 因子 8000 降至 1300 再恢复至 2500、Purcell 因子 F_max~607 和 F~37、线宽变化等均与原文一致。公式已按原文保留。OCR 提取存在化学式下标和空格错误，已在 extraction_issues 中列出。未发现与登记题名/DOI 冲突的证据。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4518,
+      "prompt_tokens": 9074,
+      "total_tokens": 13592,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8240,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

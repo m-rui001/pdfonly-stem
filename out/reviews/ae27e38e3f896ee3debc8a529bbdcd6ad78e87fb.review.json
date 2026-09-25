@@ -1,0 +1,55 @@
+{
+  "sha1": "ae27e38e3f896ee3debc8a529bbdcd6ad78e87fb",
+  "title": "In Situ Modification of Metal–Organic Frameworks in Mixed‐Matrix Membranes",
+  "doi": "https://doi.org/10.1002/anie.201504077",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ae27e38e3f896ee3debc8a529bbdcd6ad78e87fb/index.html",
+  "source_chars": 22351,
+  "markdown_chars": 1879,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "COMMUNICATION (NMP) or N,N-dimethylformamide (DMF)); therefore, MOF particles were first dispersed",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "页2开头'COMMUNICATION'为期刊页眉，其后正文直接从'(NMP)'开始，与上一页末尾的'MOF-based mixed'无法连贯，进一步证明中间有缺失内容。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 1,
+      "quote": "several reviews on these MOF-based mixed [*] [**] M.S. Denny, Prof. Dr. S. M. Cohen *",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第1页末尾'MOF-based mixed'后直接出现脚注和作者信息，而第2页开头为'(NMP) or N,N-dimethylformamide (DMF))...'，缺少连接句'matrix membranes (MMMs) have been recently published.'，推测跨页时该句被页眉/脚注打断，文本抽取未完整拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：UiO-66 MMM BET面积693±4 m²/g，折算MOF>1000 m²/g，原始UiO-66约1110 m²/g；PSE交换33%，PSM转化75%；染料分离单次>99%，第二次~95%，混合分离Coomassie保留95.6±0.6%、甲基橙保留20.1±7.2%；消化后剩余32%膜质量；膜厚约35 µm。结论方向与摘要一致。不确定点：文中'~67 wt%'为约数，提取文本中'Comassie'与'Coomassie'拼写不一致，但未影响数值理解；'amendable'疑为'amenable'，但原文如此，未改动。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3306,
+      "prompt_tokens": 7367,
+      "total_tokens": 10673,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1691
+      }
+    },
+    "content_chars": 2969
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

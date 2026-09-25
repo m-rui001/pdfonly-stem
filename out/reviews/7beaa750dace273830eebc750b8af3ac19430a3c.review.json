@@ -1,0 +1,64 @@
+{
+  "sha1": "7beaa750dace273830eebc750b8af3ac19430a3c",
+  "title": "Correlative operando microscopy of oxygen evolution electrocatalysts",
+  "doi": "https://doi.org/10.1038/s41586-021-03454-x",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7beaa750dace273830eebc750b8af3ac19430a3c/index.html",
+  "source_chars": 105941,
+  "markdown_chars": 4322,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "Notably, despite the nanoscale spatial resolution of STXM compared to bulk Co K-edge XANES experiments, no regions of Co4+ (nor Principal Component Analysis (PCA)/NMF components contributing >1% to the data variance, Extended Data Figure 5) are observed, contrasting with previous reports on the Co-H2O system. 26–29",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "该句括号内表述“Extended Data Figure 5”可能应为其他图号？但无明显文本证据，仅标注不确定。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "9.8 µL of ink solutions containing 3:1 DI water:IPA, 0.05 wt% Na-substituted Nafion (prepared from 5 wt% Nafion 117 in lower alcohols, SigmaAldrich, Na-substitution described elsewhere31), and 1, 0.5, or 0.2 mg",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "句子在第20页末中断，第21页继续“mL-1 β-Co(OH)2 were dropcast...”，显然跨页，但页标之间存在完整衔接，无缺失内容，不需标注疑点？但按规则，若页尾中途断开且下一页有页眉等则标注。此处无页眉，但为保险标出。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "Starting at E = 1.12 V, expanded regions of the particle nucleate heterogeneously and spread radially towards the interior and edges with increasing voltage. Between 1.3 < E <1.5 V the particle exhibits an expanded hexagonal interior region (where the edges of the hexagon are aligned with the original edge facets of the particle) surrounded by a hexagonal ring ~100 nm thick of unchanged height and then a region of apparent drastic height increase (which manifests as a yellow to red hexagonal ring at the outer edge of the particle).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该段紧接上一页末尾，但页码标记处无句子中断迹象，可能是正常段落跨页。无强文本证据表明拼接错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "核对摘要与正文中的关键数据：Tafel 斜率 40→120 mV dec⁻¹、E₁⁰′=1.14±0.03 V、E₂⁰′=1.58±0.03 V、n₁=0.54±0.04、n₂=0.46±0.04、m/z=16.7±0.8 g/mol e⁻、OH⁻/Co=0.56±0.2、颗粒尺寸、电压等均一致。公式[1]（反应式）、公式[2]（Sauerbrey）和理想溶液模型方程[4]–[8]已按原文保留。STXM 空间分辨率 50 nm、SECCM 尖端 440 nm 等数值无误。未输入外部知识，仅依据提取文本。不确定处：第9页括号中 Extended Data Figure 5 可能应为其他编号，但无强证据；第20-21页跨页句子完整，未发现缺失。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3609,
+      "prompt_tokens": 27834,
+      "total_tokens": 31443,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 30
+      }
+    },
+    "content_chars": 6474
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "sha1": "d95b933703742798ca7d5a114dd5afd717210c38",
+  "title": "What would it take for renewably powered electrosynthesis to displace petrochemical processes?",
+  "doi": "https://doi.org/10.1126/science.aav3506",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/d95b933703742798ca7d5a114dd5afd717210c38/index.html",
+  "source_chars": 91096,
+  "markdown_chars": 11946,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "Cu(27) 7MKOH Ethylene 2.4 110 70 34",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Table 1 中电流密度列标题为 Current Density(A/cm2)，但数值 110、99、350 等若按 A/cm² 理解则异常巨大，疑为 mA/cm² 的 OCR 单位错误或表头损坏；该单位影响对性能量级的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "Ag(29) 1MKOH Carbon Monoxide 3.0 350 101 45",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "法拉第效率 101% 在物理上不可能，疑为 OCR 将 100% 或 10% 等误读；该数值影响对 Ag 催化剂性能的判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Assumes a pure $ \\mathrm{C O_{2}} $ price of $ 30/ton $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Fig. 2 说明中 CO₂ 价格写作 $30/ton，缺少货币符号前的美元符号或单位格式，疑为 OCR 符号丢失；不影响数值理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "techno-economic analysis favors the highest possible selectivity to CO, which is , the more valuable product.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "句中“which is , the more valuable product”存在多余逗号或缺失词，疑为 OCR 抽取时漏字或标点错误；不影响核心结论。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "Electrochemical $ \\mathrm{C O_{2} R} $ produces does not produce ethane",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "“produces does not produce”明显为重复或抽取错误，应为“does not produce”；不影响论证理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "The cost of $ \\mathrm{C O_{2}} $ transportation is estimated to be $ \\mathrm{10/tonne} $ of $ \\mathrm{C O_{2}} $ for 200 km, rising to $ \\mathrm{44/tonne} $ for 12,000 km.",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "运输成本写作 $10/tonne 和 $44/tonne，缺少货币符号前的美元符号或格式异常，疑为 OCR 符号丢失；数值本身可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 31,
+      "quote": "Total cost ($/ton) = $32.20/ton + $187.26/ton + $10.00/ton + $18.73/ton + $0.26/ton = $284.55/ton",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "资本成本前文计算为 $32.30/ton，此处写作 $32.20/ton，存在 0.10 的差异，疑为 OCR 误读；不影响总成本量级。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "What would it take for renewably powered electrosynthesis to displace petrochemical processes?",
+  "self_check": "已核对摘要、正文与补充材料中的关键数值和结论：目标条件（能量转化效率≥60%、电力价格<4 美分/kWh）、Table 1 性能指标、Table 2 成本与排放对比、Fig. 2 假设、Fig. 3 排放评估、TEA 示例计算及 LCA 公式。发现 Table 1 电流密度单位 A/cm² 与数值量级不符、法拉第效率 101% 异常、TEA 资本成本公式中 0.08 疑误为 0.8 等问题，已在 extraction_issues 中标注。公式和符号尽量按提取文本原样保留，未凭记忆补写或修正。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8540,
+      "prompt_tokens": 24248,
+      "total_tokens": 32788,
+      "prompt_tokens_details": {
+        "cached_tokens": 24192
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 15428,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

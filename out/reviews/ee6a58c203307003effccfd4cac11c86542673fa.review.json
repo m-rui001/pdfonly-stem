@@ -1,0 +1,598 @@
+{
+  "sha1": "ee6a58c203307003effccfd4cac11c86542673fa",
+  "title": "Proximate Kitaev quantum spin liquid behaviour in a honeycomb magnet",
+  "doi": "https://doi.org/10.1038/nmat4604",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/ee6a58c203307003effccfd4cac11c86542673fa/index.html",
+  "source_chars": 82994,
+  "markdown_chars": 7979,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 4,
+      "quote": "$ \\left{S_{i}^{\\prime}\\right} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "集合符号缺失反斜杠，应为 $\\{S_i\\}$，但含义可从上下文推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ \\mathrm{q}{1}=\\left(1 / 20 3 / 2\\right) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 3/2)，与后文 $q_2=(1/2,0,1)$ 及 Supplementary 一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ \\mathrm{q}{2}=\\left(1 / 2,0 1\\right) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 1)。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "$ (3 / 20 \\mathrm{L})^{1 6} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 16 疑为参考文献编号，非数学上标，但影响较小。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "10 gain further insight",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "应为 \"To gain further insight\"，\"10\" 是 \"To\" 的 OCR 误读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "$ \\omega{1}= $ $ \\sqrt{K(K+J)} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 $\\omega_1$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "$ (\\mathrm{K=7.0, J=-4.6}) $ meV",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号内等号两侧空格不一致，但数值可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "$ \\mathrm{M}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "$ \\mathrm{M}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "$ \\mathrm{M}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ \\mathrm{M}{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "$ \\mathrm{K}^{42} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 42 疑为参考文献编号，非数学上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "Commercial-RuCl $ {3} $ powder",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "应为 \"Commercial $\\alpha$-RuCl$_3$ powder\"，缺失 $\\alpha$- 前缀。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "$ \\mathrm{P 3}_{1}1 2 $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "$ \\mathrm{T}\\leq 15\\mathrm{K} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文前文为 T ≤ 15 K，但 Fig. 1e 给出 $T_N=14.6(3)$ K，此处 15 K 可能为约数，非 OCR 错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "$ \\mathrm{E{i}} $ =8, 25, and 1500 meV",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 i 的花括号不完整，应为 $E_i$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "$ \\mathrm{T}{0} $ chopper",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 0 的花括号不完整，应为 $T_0$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "$ \\mathrm{E{i}} $ =1500 meV",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 i 的花括号不完整，应为 $E_i$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "$ \\mathrm{E_{i}} $ =8 and 25 meV",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 i 的花括号不完整，应为 $E_i$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "7 4. Sachdev, S.",
+      "type": "reading_order_damage",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号 \"7\" 与 \"4.\" 之间有多余空格，疑为 OCR 阅读顺序问题。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "$ (1/203/2) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 3/2)。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 29,
+      "quote": "$ (1/201) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 1)。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "$ \\mathrm{M}_{1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 $\\mathrm{M}_1$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "$ \\mathrm{M}_{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "$ \\mathrm{E}_{1}=4. 1 (1) \\mathrm{m e V} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 4.1(1) meV。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "$ \\mathrm{E}_{2}=6. 5 (1) \\mathrm{m e V} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 6.5(1) meV。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 35,
+      "quote": "$ \\mathrm{P 3_{1} 1 2} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 38,
+      "quote": " Stacking (HKL) Stripy ZZ Data ",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格结构在 OCR 中严重损坏，列标题和数值对应关系不清晰，但关键结论（比值接近零）可从正文推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": " Space group P3112 C2/m ",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格结构在 OCR 中损坏，列对应关系不清晰，但关键晶格参数可读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": " Ru1z 1\\6 0 ",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "分数坐标 1/6 被 OCR 为 1\\6。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 40,
+      "quote": " Ru2z 1\\6 ",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "分数坐标 1/6 被 OCR 为 1\\6。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 41,
+      "quote": "$ \\mathrm{P3}{1}12 $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 P3$_1$12。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 45,
+      "quote": "$ \\mathrm{P 3_{1} 1 2} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 49,
+      "quote": "$ \\mathrm{J}{1 / 2}\\rightarrow\\mathrm{J}{3 / 2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标花括号不完整，应为 J$_{1/2}$ → J$_{3/2}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 51,
+      "quote": "$ \\omega{1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 $\\omega_1$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 51,
+      "quote": "$ \\omega_{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\omega_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 57,
+      "quote": "$ \\mathrm{C2/m^{S2}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "上标 S2 疑为参考文献编号，非数学上标。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 57,
+      "quote": "$ \\mathrm{RuCl}_{3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 58,
+      "quote": "$ \\mathrm{P3}_{1} $ 12",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 58,
+      "quote": "$ \\mathrm{RuCl_{3}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 58,
+      "quote": "$ \\mathrm{RuO_{2}} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 RuO$_2$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 58,
+      "quote": "$ \\mathrm{T_{N1}}=8 \\mathrm{K} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 N1 的花括号不完整，应为 $T_{N1}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 58,
+      "quote": "$ \\mathrm{T_{N2}}=14 \\mathrm{K} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 N2 的花括号不完整，应为 $T_{N2}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 59,
+      "quote": "$ 0. 2 0 ( 5 ) \\, \\mu_{\\mathrm{B}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 0.20(5) $\\mu_B$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 59,
+      "quote": "$ 0. 4 ( 1 ) \\, \\mu_{\\mathrm{B}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 0.4(1) $\\mu_B$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 60,
+      "quote": "$ \\mathrm{J}{1 / 2}\\rightarrow\\mathrm{J}{3 / 2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标花括号不完整，应为 J$_{1/2}$ → J$_{3/2}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 60,
+      "quote": "$ 0. 6 \\ \\mathrm{\\AA}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 0.6 Å$^{-1}$。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 60,
+      "quote": "$ 0. 8 \\ \\mathrm{\\AA}^{-1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数值中多余空格，应为 0.8 Å$^{-1}$。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "$ \\overrightarrow {S _ {i}}. \\overrightarrow {S _ {J}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "点积符号应为 $\\cdot$，且下标 J 应为小写 j，与 eqn. (1) 中 $\\vec{S}_i \\cdot \\vec{S}_j$ 一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "$ \\mathrm{M}{1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 $\\mathrm{M}_1$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 29,
+      "quote": "$ \\mathrm{P3}_{1} $ 12",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 37,
+      "quote": "$ \\mathrm{M}_{1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 1 的花括号不完整，应为 $\\mathrm{M}_1$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 37,
+      "quote": "$ \\mathrm{M}_{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 2 的花括号不完整，应为 $\\mathrm{M}_2$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 41,
+      "quote": "$ \\mathrm{RuCl} {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 43,
+      "quote": "$ \\mathrm{RuCl} {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ \\mathrm{RuCl} {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ (1/20 3/2) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 3/2)。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 47,
+      "quote": "$ (1/201) $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "波矢分量间缺少逗号，应为 (1/2, 0, 1)。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 51,
+      "quote": "$ \\mathrm{RuCl} {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 51,
+      "quote": "$ \\mathrm{Ru}^{3+} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "上标 3+ 的花括号不完整，应为 Ru$^{3+}$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 54,
+      "quote": "$ \\mathrm{RuCl} {3} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "下标 3 的花括号不完整，应为 RuCl$_3$。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 57,
+      "quote": "$ \\mathrm{P}3_{1} $ $ 12^{22,23,S1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "空间群符号间距异常，应为 P3$_1$12。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Proximate Kitaev Quantum Spin Liquid Behavior in a Honeycomb Magnet",
+  "self_check": "",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "length",
+    "usage": {
+      "completion_tokens": 10000,
+      "prompt_tokens": 22813,
+      "total_tokens": 32813,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 21392,
+    "json_repaired": true
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

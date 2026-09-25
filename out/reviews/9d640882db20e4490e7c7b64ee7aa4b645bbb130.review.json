@@ -1,0 +1,82 @@
+{
+  "sha1": "9d640882db20e4490e7c7b64ee7aa4b645bbb130",
+  "title": "Reticular Electronic Tuning of Porphyrin Active Sites in Covalent Organic Frameworks for Electrocatalytic Carbon Dioxide Reduction",
+  "doi": "https://doi.org/10.1021/jacs.7b11940",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/9d640882db20e4490e7c7b64ee7aa4b645bbb130/index.html",
+  "source_chars": 41330,
+  "markdown_chars": 2788,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "the high degree\nof\nelectronic\ncommunication",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第8页末'high degree of electronic communication'与第9页开头'throughout the whole'被页眉隔断，跨页断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "make it more prone to reduction.51 structures confirmed the same orientation",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "引用编号51后直接接'structures confirmed'，句子不完整。可能原文在'reduction.51'后换页，下一句以'The structures'开头，但抽取文本缺失'The'，且'51'可能是引文编号，造成拼接混乱。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "shift from 1.425 V vs. ferrocene/ferrocenium (Fc/Fc+) for COF-366Co up to -1.380 V",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "'1.425'缺少负号，根据上下文（阴极波电位，且后文为-1.380）推测应为-1.425，但提取文本无负号，不能静默修改，仅标注。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "comparable uptake of CO2 at 295 K (23.5 – 27.4 cm3 cm-1)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文给出的COF-366-Co的CO₂吸附量为23.5 cm³/cm³，但表1中该值为23.4，存在轻微数字不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "only a small\n\n...\n\namount",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "第6页末尾'only a small'与第7页开头的'amount'被图注和页眉隔断，实际应为'only a small amount'，跨页拼接导致句子不连续。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文关键数值：过电位550 mV、法拉第效率87%、电流密度65 mA/mg（COF-366-F-Co）、COF-366-Co 45 mA/mg、COF-366-(OMe)₂-Co 46 mA/mg、稳定性12小时、XAS模拟参数（D4h、Co2+、10Dq=1.6 eV等）、CO₂吸附量及Qst范围。注意CV电位中'1.425 V'原文缺负号，已在问题中标注；表格与正文的CO₂吸附量23.4 vs 23.5不一致，也已标注。其余数据与原文一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4195,
+      "prompt_tokens": 12756,
+      "total_tokens": 16951,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1736
+      }
+    },
+    "content_chars": 4548
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

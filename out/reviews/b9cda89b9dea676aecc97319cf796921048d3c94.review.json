@@ -1,0 +1,73 @@
+{
+  "sha1": "b9cda89b9dea676aecc97319cf796921048d3c94",
+  "title": "Optimal Household Appliances Scheduling Under Day-Ahead Pricing and Load-Shaping Demand Response Strategies",
+  "doi": "https://doi.org/10.1109/tii.2015.2438534",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/b9cda89b9dea676aecc97319cf796921048d3c94/index.html",
+  "source_chars": 57828,
+  "markdown_chars": 4029,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "SOEEV,min ≤ SOEEV ∀t ∈ T a , T d t ≤ SOE",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "符号下标 t 被拆分，应写作 SOEEV_t 置于不等式中间，但提取文本顺序错位。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 6,
+      "quote": "EV,ini + CEEV · PtEV,ch · ΔT SOEEV t = SOE",
+      "type": "疑似公式排版/符号缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "式(5)在抽取中缺失了条件分支与后续项，无法完整复原；原文可能因分式或对齐问题导致提取断行。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "The equivalent thermal resistance ◦ is 3.1965 · 10−6 h·J C",
+      "type": "单位疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "等效热阻的单位应为 h·°C/J（文中前文符号表写为 h·°C/J），此处抽取显示为“h·J C”，可能为排版/提取错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 8,
+      "quote": "During the horizon, the water temperature inside the EWH tank may not exceed 60 ◦ C",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "该句在页尾中断，下一页以表格/图继续，但上下文尚完整。暂不判错。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键公式：目标函数(1)、EV约束(2)-(8)、ESS约束(9)-(14)、非恒温负荷(15)-(20)、EWH(21)-(24)、AC(25)-(27)、功率平衡(28)-(32)、软限制(33)-(34)、LF(35)、ARI(36)。数值：等效热阻3.1965e-6、体积1451.729 m³、质量1778.369 kg、EV参数（3.3kW、16kWh、95%效率、初始8kWh、最低4.8kWh）、ESS容量0-6kWh变化。结论方向与摘要一致。不确定之处：式(5)的精确结构、表IV的具体数值未在提取文本中给出（只做定性描述），表VI的精确数值同样未提取到。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 3109,
+      "prompt_tokens": 15201,
+      "total_tokens": 18310,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 68
+      }
+    },
+    "content_chars": 5462
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

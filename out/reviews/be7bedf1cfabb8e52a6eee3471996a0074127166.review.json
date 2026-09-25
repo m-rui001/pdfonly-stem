@@ -1,0 +1,63 @@
+{
+  "sha1": "be7bedf1cfabb8e52a6eee3471996a0074127166",
+  "title": "Ion-Exchange and Cation Solvation Reactions in Ti 3 C 2 MXene",
+  "doi": "https://doi.org/10.1021/acs.chemmater.6b01275",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/be7bedf1cfabb8e52a6eee3471996a0074127166/index.html",
+  "source_chars": 54429,
+  "markdown_chars": 4468,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "... and; ples, with the exception of K-Ti3C2Tx, experienced ...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第4页末尾以‘and;’结束，第5页开头以‘ples’开始，显然是‘All samples’一词被页边截断，应拼接为‘All samples, with the exception of ...’。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "the global atomic percentage of the various elements was calculated using the following equation: ... The adjusted intensity is defined as follows:",
+      "type": "公式缺失",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "文本中声明了计算公式但未显示任何公式符号或变量定义，XPS原子百分比的具体公式未在提取文本中出现，可能是提取遗漏或原稿图表缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "The equation ln(-ln(1 - α)) = m ln k + m ln t ... The rate constant k and a parameter related to the reaction mechanism, m, can be extracted from the slope and intercepts (k and k ln m, respectively).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "Avrami方程中常数项应为m ln k，但描述写为‘k and k ln m’，可能为原稿笔误或提取错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：摘要中的关键数值（c-LP 24.5 Å、25 Å、~20 Å；+3 Å膨胀；水合焓关联；每摩尔Ti3C2的阳离子量XPS/EDS数据；TGA水分子数0.18-0.91；Avrami k和m值）均与正文一致。公式方面，XPS原子百分比公式在提取文本中缺失，无法核对；Avrami方程已按原样保留但文字描述有疑点。跨页断句问题已标注。未引入外部知识或推断。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5555,
+      "prompt_tokens": 16229,
+      "total_tokens": 21784,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2057
+      }
+    },
+    "content_chars": 5826
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

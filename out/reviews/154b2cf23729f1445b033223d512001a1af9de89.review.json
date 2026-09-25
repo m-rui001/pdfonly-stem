@@ -1,0 +1,67 @@
+{
+  "sha1": "154b2cf23729f1445b033223d512001a1af9de89",
+  "title": "A radiative cooling structural material",
+  "doi": "https://doi.org/10.1126/science.aau9101",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/154b2cf23729f1445b033223d512001a1af9de89/index.html",
+  "source_chars": 38593,
+  "markdown_chars": 6547,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "# A printed, recyclable, ultra-strong, and ultra-tough graphite structural material",
+      "type": "metadata_identity_mismatch",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "OCR正文首页明确题名为石墨-NFC结构材料论文，与登记题名“A radiative cooling structural material”及登记DOI明显冲突，正文内容亦为石墨-NFC复合材料而非辐射冷却材料。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "The size of pressed samples are generally $ 10 \\mathrm{~cm} \\times 10 \\mathrm{~cm} $ , so the applied pressure is can be up to 5 MPa.",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“the applied pressure is can be up to 5 MPa”中“is can be”语法异常，疑为OCR重复或识别错误，不影响压力数值理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "Yubing Zhou $ ^{1, \\dagger } $ , Chaoji Chen $ ^{1, \\dagger } $ , Shuze Zhu $ ^{2, \\dagger } $ , Chao Sui $ ^{3} $ , Chao Wang $ ^{3} $ Yudi Kuang $ ^{1} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "作者列表中“Chao Wang $ ^{3} $”与“Yudi Kuang”之间缺少逗号或连接符，属OCR标点/分隔符丢失，不影响理解。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "mismatch",
+  "ocr_title": "A printed, recyclable, ultra-strong, and ultra-tough graphite structural material",
+  "self_check": "已核对关键数值：拉伸强度245±47 MPa（NFC）至901±129 MPa（石墨-NFC），断裂功4.7±0.8至27.7±2.3 MJ/m³，比强度794 MPa/(g cm⁻³)，弹道能量吸收6.13±0.16 KJ/m，划痕硬度310 MPa vs 200 MPa，断裂韧性提高7.8倍，石墨片横向尺寸11±3.3 μm，t₀=0.34 nm，n=4时断裂强度0.72-0.94 GPa平均0.83 GPa，Zeta电位-53.9 mV，固含量20 wt%，尺寸120 cm×30 cm×22 μm，密度约1.2 g/cm³，热压60 °C/50 kN/24 h，未热压强度430±19 MPa。公式σ_f=F_max/(n t_0 w_f)已原样保留。仍不确定处：OCR正文题名与登记题名/DOI明显冲突，已按规则标注；部分OCR标点与语法异常已列入extraction_issues，不影响主要论证与数值。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5409,
+      "prompt_tokens": 9936,
+      "total_tokens": 15345,
+      "prompt_tokens_details": {
+        "cached_tokens": 9856
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10784,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

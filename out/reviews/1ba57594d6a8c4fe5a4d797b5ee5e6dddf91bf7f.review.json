@@ -1,0 +1,106 @@
+{
+  "sha1": "1ba57594d6a8c4fe5a4d797b5ee5e6dddf91bf7f",
+  "title": "Role of Interfaces in Two-Dimensional Photocatalyst for Water Splitting",
+  "doi": "https://doi.org/10.1021/acscatal.7b03437",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v9-ocr-identity-length",
+  "source_html": "out/html_ocr/1ba57594d6a8c4fe5a4d797b5ee5e6dddf91bf7f/index.html",
+  "source_chars": 159779,
+  "markdown_chars": 5857,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 15,
+      "quote": "CoOOH sonication 0.5MNa2SO3 300WXe-lamp 1200μmolg-1h-1 6.9%at420nm 124",
+      "type": "table_structure_damage",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 中 CoOOH 行的厚度值“(1.5nm)”被分离到下一页（page 16）开头，导致表格结构断裂，影响阅读。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "ZnIn2S4/MoSe2 electrostatic self-assembly 10 vol % lactic acid 300WXe-lamp(>400nm) 64544mol g-1h-1 - 131",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "产氢速率“64544mol g-1h-1”缺少单位前缀（应为 μmol 或 mmol），数值异常，疑似 OCR 丢失了“μ”或“m”字符。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the lowmagnification TEM images show that BiOI nanosheets with a smaller size are randomly dispersed on the surface of the larger $ {2} $ Ti $ {2} $ O $ {7} $ nanosheet",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "La₂Ti₂O₇ 的化学式在 OCR 中丢失了“La”，仅剩“$ {2} $ Ti $ {2} $ O $ {7} $”，影响对材料组成的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "the measured lattice distances of 0.276 nm and 0.302 nm correspond to the (002) plane of $ {2} $ Ti $ {2} $ O $ {7} $ and (012) plane of BiOI",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同上，La₂Ti₂O₇ 的化学式丢失“La”，影响对晶面归属的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "an obvious interface was observed between the $ {2} $ Ti $ {2} $ O $ {7} $ and BiOI",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同上，La₂Ti₂O₇ 的化学式丢失“La”。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "the holes in the CB of A semiconductor are used to oxidize $ \\mathrm{H}{2} \\mathrm{O} $ into $ \\mathrm{O}{2} $",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "Z-Scheme 体系中氧化 H₂O 的空穴应位于 A 半导体的价带（VB），而非导带（CB），原文此处疑似 OCR 或排版错误。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Role of Interfaces in Two-Dimensional Photocatalyst for Water Splitting",
+  "self_check": "已核对关键数值：g-C₃N₄/rGO 产氢 557 vs 158 μmol g⁻¹ h⁻¹；MoS₂-graphene-ZnIn₂S₄ 产氢为纯 ZnIn₂S₄ 的 22.8 倍；Rh 掺杂 Ca-Nb-O 纳米片 384.8 μmol h⁻¹ vs 母体 2.3 μmol h⁻¹，300 nm 量子效率 65%；MoS₂/TiO₂ 活性为纯 TiO₂ 的 36.4 倍；TiO₂/graphene 产氢 736 μmol h⁻¹ g⁻¹，量子效率 3.1%，为 TiO₂ 的 41 倍；TiO₂-A/g-C₃N₄ 量子效率 5.3% vs 1.28% 和 1.07%；g-C₃N₄/NLTO 量子效率 2.1% vs 0.5%；MoS₂/CdS 产氢 140 mmol g⁻¹ h⁻¹，420 nm 量子产率 66%；MoS₂/g-C₃N₄ 产氢 20.6 μmol h⁻¹ vs Pt/g-C₃N₄ 4.8 μmol h⁻¹；g-C₃N₄/ZnIn₂S₄ 产氢为纯 g-C₃N₄ 的 69.5 倍等；α-Fe₂O₃/g-C₃N₄ 量子效率 44.35%；BP/BiVO₄ 产氢 160、产氧 102 μmol g⁻¹ h⁻¹，量子效率 0.89%；β-CoOOH 产氢 1200 μmol g⁻¹ h⁻¹，量子效率 10.7%、6.9%、2.3%；GeH 带隙 1.58 eV，导带 -0.313 eV、价带 1.267 eV vs NHE，Schottky 势垒 0.83 eV；HNb₃O₈ 带隙 3.68 eV，活性为体相 4 倍；MnPSe₃ 带隙 2.32 eV，迁移率 625.9 cm² V⁻¹ S⁻¹；Zr₂CO₂ 和 Hf₂CO₂ 带隙 1.76 和 1.79 eV。公式符号已尽量保留原文形式。仍不确定之处：Table 1 中 CoOOH 行厚度值被分页截断；Table 2 中 ZnIn₂S₄/MoSe₂ 产氢速率数值“64544mol g-1h-1”单位缺失，疑似 OCR 错误；Z-Scheme 描述中“holes in the CB of A semiconductor”疑似应为 VB。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5435,
+      "prompt_tokens": 48611,
+      "total_tokens": 54046,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8915,
+    "json_repaired": false
+  },
+  "summary_length_check": {
+    "minimum_chars": 1000,
+    "actual_chars": 5857,
+    "passed": true,
+    "retry_attempted": false
+  },
+  "title_translation": {
+    "source_ocr_title": "Role of Interfaces in Two-Dimensional Photocatalyst for Water Splitting",
+    "translated_title": "界面在二维光催化剂分解水中的作用",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

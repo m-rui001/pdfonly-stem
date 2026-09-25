@@ -1,0 +1,64 @@
+{
+  "sha1": "14caba4d43fc943c432f0ecf9619a80d602d0148",
+  "title": "Key indicators to track current progress and future ambition of the Paris Agreement",
+  "doi": "https://doi.org/10.1038/nclimate3202",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/14caba4d43fc943c432f0ecf9619a80d602d0148/index.html",
+  "source_chars": 33294,
+  "markdown_chars": 3260,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "compare Figure 2 and Supplementary Figure 2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该句在第2页末尾，第3页开头紧接着出现'1)'，疑似'maybe Supplementary Figure 1'的脚注或行号，但原文正确编号不确定。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "𝐶=𝐺× 𝐸 𝐶 × = 𝐶 × 𝐼𝐸 × 𝐼𝐶",
+      "type": "公式显示异常",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Kaya恒等式的分式和乘号在文本提取中丢失，无法确认原始排版，笔记中根据上下文进行了规范化，但原文可见符号如此。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "India has had",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第2页末尾句子'India has had'在提取文本第3页开头未能立即接续，出现行号'1)'等干扰，缺失内容应为' sustained emissions growth of 5-6%/yr...'，但无法从提取文本直接确认。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：2016年全球化石燃料及工业CO2排放36 GtCO2；中国2000年代10%/年增长、2013年后稳定；美国2007-2012年-2%/年；欧盟2000-2010年-0.7%/年、2011-2015年-2.2%/年；印度5-6%/年；CCS需数百至数千设施而目前仅几十个。公式部分按上下文整理了Kaya恒等式和分解公式，但提取文本中公式符号有缺损，已在问题中标记。跨页断裂处的内容依据上下文推断，实际文本缺失。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10896,
+      "prompt_tokens": 8921,
+      "total_tokens": 19817,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8542
+      }
+    },
+    "content_chars": 4356
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "sha1": "abf823a8f78ab880f3b95879c670245c8dd5b1aa",
+  "title": "Aqueous Au-Pd colloids catalyze selective CH 4 oxidation to CH 3 OH with O 2 under mild conditions",
+  "doi": "https://doi.org/10.1126/science.aan6515",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/abf823a8f78ab880f3b95879c670245c8dd5b1aa/index.html",
+  "source_chars": 31441,
+  "markdown_chars": 2601,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 6,
+      "quote": "gain factor, defined as the mol oxygenate produced /mol H2O2 consumed, was calculated to be 2 × 103.",
+      "type": "疑似数值错误",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "正文前述'2 × 103'，但后续对比中写'gain factor of 3 × 10-2 compared to 2 × 10-3'，且表格Entry 1增益因子为2 × 10⁻³。正文的'2 × 10³'应为'2 × 10⁻³'的排版/抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "For CH4 oxidation with 18O2 , > 70% of 18O2 molecules were incorporated in the CH3OH product. 18",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "图2B说明文字中'18'孤立出现于句末，疑似脚注或上标错位，但上下文可推断为¹⁸O₂的标记说明，不影响核心数据。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "For the optimized amount of H2O2 (50 μmol) (Table 1, entry 5) the gain factor, reached 1.2",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "此处句末在页面底部，原文句子结构'For the optimized amount ... (50 μmol) (Table 1, entry 5) the gain factor, reached 1.2'中逗号位置异常，可能跨页拼接导致'gain factor,'后缺失内容（如'of 1.2 was reached'），但数值本身在表格中一致，暂不判错。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：初级选择性90%（表1条目2）和92%（条目5）、O₂掺入比例70%（正文）、增益因子1.2（条目5）、反应条件50°C、30 bar CH₄、50 μmol H₂O₂、5 bar O₂等均与摘要和正文一致。但正文第6页'gain factor 2 × 10³'与表格2 × 10⁻³矛盾，已在issue中标注。公式与反应机理中·CH₃与O₂反应、H₂O₂用量分配（10 μmol引发+6 μmol供氧）均按原文保留。同位素标记中GC-MS对CH₃OOH的热分解影响及NaBH₄还原处理已按原文明示。未发现其他数值不一致处。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2447,
+      "prompt_tokens": 9094,
+      "total_tokens": 11541,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 120
+      }
+    },
+    "content_chars": 4068
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

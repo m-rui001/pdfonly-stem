@@ -1,0 +1,72 @@
+{
+  "sha1": "e300c692905ff4e3f526a616956017be0193715c",
+  "title": "New provincial CO2 emission inventories in China based on apparent energy consumption data and updated emission factors",
+  "doi": "https://doi.org/10.1016/j.apenergy.2016.03.073",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e300c692905ff4e3f526a616956017be0193715c/index.html",
+  "source_chars": 46484,
+  "markdown_chars": 2599,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 9,
+      "quote": "2005 91.67 ... 2006 75.73 ... 5,625.51",
+      "type": "跨页表格拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "表格跨页时，第10页开头重复了第9页末行省份列表，且第10页末尾再次出现2006年数据（147.58 ... 5,625.51），疑似提取时重复或错位。",
+      "quote_matches_page": false
+    },
+    {
+      "page": null,
+      "quote": "followed by Liaoning (6.69%), Hebei (6.69%) and Shanxi (6.25%)",
+      "type": "数值不一致",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "摘要与结论中河北占比为6.69%，但正文第163行给出河北为4,816百万吨（6.67%），同一数值两处不同。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "12.69% smaller than the one estimated by ‘Final and input/output consumption’ approach and IPCC emission factors",
+      "type": "数值不一致",
+      "severity": "high",
+      "confidence": 0.85,
+      "reason": "正文陈述的12.69%与表3中数值（9671.39 vs 8582.70，差11.25%）不符；且摘要同样使用12.69%，疑为计算或表述错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "7.96 % lower than the highest estimation (EDGAR, 9,266 million tonnes)",
+      "type": "数值不一致",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "8,583比9,266低约7.37%，而非7.96%，可能原文有误或引用了其他未给出的数值。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对：全国总排放从3,160增至8,583百万吨；山东累计7,471百万吨（10.35%），辽宁4,833（6.69%），河北4,816（6.67%），山西4,511（6.25%）；原煤占比79.6%；火电为主要部门；表1排放因子数值；人均排放6.38吨，江西2.55、四川2.59；强度北京0.05、上海0.08、广东0.08。公式1-3保留。不确定处：12.69%与表3数据差11.25%不一致，7.96%与7.37%不一致；河北占比在摘要和正文不一致；这些均已在extraction_issues中标记，未做修正。跨页表格拼接疑点已记录，未影响正文引用。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4329,
+      "prompt_tokens": 14451,
+      "total_tokens": 18780,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2118
+      }
+    },
+    "content_chars": 4100
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

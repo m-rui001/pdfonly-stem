@@ -1,0 +1,63 @@
+{
+  "sha1": "2d1f20ed6f9ccac5daf37202aa32e947423172c7",
+  "title": "Light-induced structural changes and the site of O=O bond formation in PSII caught by XFEL",
+  "doi": "https://doi.org/10.1038/nature21400",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2d1f20ed6f9ccac5daf37202aa32e947423172c7/index.html",
+  "source_chars": 56530,
+  "markdown_chars": 2576,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "a negative peak was found in the position of W580I, suggesting its displacement",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文及后文均涉及W508I和W508II，此处W580I疑为W508I之笔误，但原文如此提取，不能确定是否原稿错误，故标记。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 25,
+      "quote": "based on the large peaks observed in the isomorphours difference Fourier map",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "isomorphours应为isomorphous的拼写错误，文本内出现多次isomorphous，此处明显不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "superimposed with the 2mF o -DF c map countored at 10.1ơ",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "countored疑似contoured，ơ可能是σ的字符乱码，但无法确认原样，故标记为低严重度。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：2.35 Å分辨率、Riso 0.068、O5-O6距离1.5 Å、W567-O4距离2.32 Å、S3群体0.46、Mn4移动量、BCT移动量等均与原文摘要和正文一致。公式部分无特殊公式。结构结论方向与摘要相符。仍不确定之处：W580I是否为W508I之误；O6占位0.4、S1与2F占位0.2/0.8等精修参数来自方法部分，已按原文记录。另文中个别拼写错误（isomorphours、countored）不影响科学内容。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6611,
+      "prompt_tokens": 15840,
+      "total_tokens": 22451,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4467
+      }
+    },
+    "content_chars": 3692
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

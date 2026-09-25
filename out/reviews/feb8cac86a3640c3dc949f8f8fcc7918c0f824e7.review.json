@@ -1,0 +1,55 @@
+{
+  "sha1": "feb8cac86a3640c3dc949f8f8fcc7918c0f824e7",
+  "title": "Linear regression and the normality assumption",
+  "doi": "https://doi.org/10.1016/j.jclinepi.2017.12.006",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/feb8cac86a3640c3dc949f8f8fcc7918c0f824e7/index.html",
+  "source_chars": 22122,
+  "markdown_chars": 1731,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 14,
+      "quote": "In all scenarios the outcome was generated based on 𝑦𝑖 = 20 + 14",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第14页末句在公式中间截断，第15页以'𝛽1 𝑥𝑖 + 𝜀.'接续，需要将两页内容合并才能得到完整公式。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "in the sense that 𝛽1,𝑡 ̅ ≠ 𝛽1.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "提取文本中出现孤立的'̅'字符，推测原文应为'β1,t ≠ β1'，该符号可能是PDF渲染或抽取时产生的异常字符。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文：样本量阈值（n/p>10）、模拟重复次数（10000）、覆盖名义水平0.95、异方差情景覆盖率不随样本量改善、9.5年转折点、公式β1,t的定义及log10反例均与提取文本一致。公式未做任何推测性修复，仅保留可读Unicode字符。不确定处：第5页的'̅'疑为抽取噪音，但不影响整体结论；第14页跨页公式已标记。未发现其他数值或方向矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10303,
+      "prompt_tokens": 5802,
+      "total_tokens": 16105,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 8864
+      }
+    },
+    "content_chars": 2490
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

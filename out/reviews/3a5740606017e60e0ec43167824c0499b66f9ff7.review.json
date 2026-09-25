@@ -1,0 +1,64 @@
+{
+  "sha1": "3a5740606017e60e0ec43167824c0499b66f9ff7",
+  "title": "Tough Physical Double‐Network Hydrogels Based on Amphiphilic Triblock Copolymers",
+  "doi": "https://doi.org/10.1002/adma.201600466",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/3a5740606017e60e0ec43167824c0499b66f9ff7/index.html",
+  "source_chars": 29258,
+  "markdown_chars": 3090,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "the inter-domain distance changes as 1 - dB-DN gel/dB gel = 0.11",
+      "type": "跨页拼接/格式疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "表达式'1 - dB-DN gel/dB gel'疑似缺少下标或格式损坏，但数值0.11清晰，不影响理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 2,
+      "quote": "The amphiphilic tri-block copolymer consists of the hydrophobic end-blocks of poly(butyl methacrylate) (PBMA) and hydrophilic mid-block of poly(methacrylic acid) (PMAA), PBMA-b-PMAA-b-PBMA, with the weight-average degree of polymerization of 134-273129.",
+      "type": "疑似数据拼接错误",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "原文'134-273129'疑似为'134-273-129'的抽取拼接缺漏，后面实验部分明确给出134、273、129三个聚合度。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "Figure 4a shows the self-resilient behavior at a strain of 100% for different waiting times between successive loading-unloading tests.",
+      "type": "跨页顺序疑点",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "第10页开头语句'Figure 4a shows...'紧接第9页末尾的'...rupture of the covalent bonds of'，但第9页该句语义完整，第10页为新段落开始，似乎无中断。存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：q1=0.201 nm⁻¹对应d=31.2 nm，f=33；B-DN3的q=0.224 nm⁻¹对应d=28.0 nm，体积收缩比0.60，理论距变0.16 vs 实测0.11；松弛时间约10⁵ s、4.1×10⁴ s、5×10⁻² s；Ea约260、254、180、179 kJ/mol；B gel力学：模量0.051±0.04 MPa，断裂应力0.19±0.04 MPa，应变0.97±0.2，断裂能63±7 J/m²；B-DN3：模量2.2±0.2 MPa，断裂应力10.5±1.4 MPa，应变5.7±0.7，撕裂能2850±220 J/m²；愈合应力2.3 MPa；水含量42%、82-83%、45-60%；聚合度134-273-129。公式和单位均按原文录入。仍有不确定处：原文提取文本中'134-273129'疑为笔误，已在extraction_issues标注。文中引用文献编号和图表具体数据（如SAXS拟合参数、FTIR峰位）均已保留，未擅自补充额外数值。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2695,
+      "prompt_tokens": 8535,
+      "total_tokens": 11230,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 29
+      }
+    },
+    "content_chars": 4743
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

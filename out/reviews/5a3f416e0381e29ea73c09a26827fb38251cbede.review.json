@@ -1,0 +1,82 @@
+{
+  "sha1": "5a3f416e0381e29ea73c09a26827fb38251cbede",
+  "title": "Recent advances in fiber/matrix interphase engineering for polymer composites",
+  "doi": "https://doi.org/10.1016/j.pmatsci.2015.02.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/5a3f416e0381e29ea73c09a26827fb38251cbede/index.html",
+  "source_chars": 139976,
+  "markdown_chars": 6235,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 35,
+      "quote": "IFSS increased by a factor of 2.3 whn the interphase thickness was rised from 50 nm to 5 µm.",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "‘whn’应为‘when’，‘rised’应为‘raised’，系明显的拼写错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "GF (alkali resistant, ARG) MWCNT with – COOH functionality 0.5 wt% (dispersion) Aqueous dispersions with surfactants, sonicated MWCNT/surfactant = 2/3",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格中纤维类型写为‘GF (alkali resistant, ARG)’，但在表1中列出的该行似乎与后续‘First report on non GF-based composite’的备注矛盾（‘non GF-based’可能指ARG，也可能指原文其他含义）；另外ARG通常指耐碱玻璃纤维，此处可能是编辑遗漏。但缺乏足够证据判定为错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 37,
+      "quote": "For this nanocomposite, an IFSS value of about 25 MPa was found which is much higher than that one with the PP matrix (~3 MPa).",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "页37末尾的句子在页38开头继续（‘fumed silica and PP-g-MA yielded a synergetic effect because...’），提取文本中句子在页尾完整结束，但页38开头‘fumed silica and PP-g-MA’前似乎缺少‘The presence of both’。原句‘The presence of both Page | 37 [PDF extracted page 38] Page 38 fumed silica...’表明‘The presence of both’与‘fumed silica’之间存在页中断。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 19,
+      "quote": "The following table summarizes most of the literature information available on the subject of incorporation of nanofillers into sizing formulations for inorganic fibers are summarized In the following table.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "表2标题前的引导句似乎有残留文本（‘for inorganic fibers’应为‘for organic fibers’，且后半句‘are summarized In the following table’为重复），疑为跨页或编辑残留。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 33,
+      "quote": "Zhang W, Duchet J, Gerards J. Self-healable interfaces based on thermo-reversible Diels–Alder reactions in carbon fiber reinforced composites. J Colloid Interface Sci. 2014;430:61-8.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "正文中描述为‘Zhang et al. [148]’，但参考文献列表中的作者拼写为‘Zhang W, Duchet J, Gerards J’（可能缺名为‘Gerard’或‘Gerards’），且只有三位作者。存疑但无法核实。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数值：GF/EP体系ILSS提高27%（MWCNT 0.25%）、CF/EP体系ILSS提高40%（EPD羧基MWCNT）、PAEK上浆MWCNT使IFSS提高60%、硅烷化GO使IFSS提高60%同时ILSS提高19%、ZnO纳米线AF的IFSS提高51%、CVD-CNT接枝CF的IFSS最高提高175%、SiC织物GIC提高348%、Cech等离子聚合使ILSS提高6.5倍、DA自修复最高恢复率（Palmese体系约100%个案、平均70%；Zhang体系75%峰值）、PP/GC界面IFSS（纯PP约3 MPa至改性后约25或28 MPa）。已核对公式：水玻璃水解/干凝胶转变的化学方程式在提取文本中标注为‘Equation. 1’但方程式本身未提取到文本内容，无法核对。已核对图编号与正文描述一致性：图1（semi-IPN结构示意）、图2（测试方法示意）、图4（表面涂层技术示意）、图5（GF接枝氧化碳纳米填料）、图6（ZnO在AF表面生长路径）、图7（硫醇-烯化学）、图8（间断粘接示意）、图9（压阻传感曲线）、图10-13（DA反应化学路径）。未在提取文本中找到第37页‘The presence of both’缺失的完整上下文，已在issues中标出。关于CVD接枝CF的IFSS提高175%（Lv et al.），文中还提及同一研究中CF拉伸强度随生长时间降低达33%，两者均已保留。提取文本中所有数值单位（wt%、MPa、µm、°C、vol%等）均已按原文保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6227,
+      "prompt_tokens": 32901,
+      "total_tokens": 39128,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1176
+      }
+    },
+    "content_chars": 9219
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

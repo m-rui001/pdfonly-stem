@@ -1,0 +1,81 @@
+{
+  "sha1": "64de1cec9a48b42b03c9412c57afb58b98f55d06",
+  "title": "Speed breeding is a powerful tool to accelerate crop research and breeding",
+  "doi": "https://doi.org/10.1038/s41477-017-0083-8",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/64de1cec9a48b42b03c9412c57afb58b98f55d06/index.html",
+  "source_chars": 40573,
+  "markdown_chars": 8462,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Speed breeding: a powerful tool to accelerate crop research and breeding",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "OCR 正文首页题名含冒号（Speed breeding: a powerful tool...），登记题名无冒号（Speed breeding is a powerful tool...），二者措辞不同但主题一致，可能为排版/版本差异而非不同文章。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "andriticale (Triticosecale cvs. Jackie and Coorong)",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "“andriticale”应为“and triticale”，OCR 丢失空格导致物种名与连词粘连，影响对测试物种的识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "Both used the same temperature regime $ (2 2 / 1 7^{\\circ} \\mathrm{C} $ ; Fig. 1; Methods: Speed breeding II; Supplementary Table 1).",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "温度制度公式的 LaTeX 标记不完整（缺少右括号/闭合符），但数值 22/17 °C 可辨，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Light intensity was adjusted to 360- 380 $ \\mu \\mathrm{m o l} \\ m^{-2} \\ s^{-1} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "单位中“mol”被 OCR 拆成“m o l”，属符号间距损坏，数值与单位含义仍可辨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Speed breeding: a powerful tool to accelerate crop research and breeding",
+  "self_check": "已核对：speed breeding I 的 22 h 光/2 h 暗、22/17 °C、光强 360–380 与 490–500 μmol m⁻² s⁻¹；speed breeding II 的 22 h 光周期、22/17 °C、光强 440–650 μmol m⁻² s⁻¹；开花缩短天数（小麦 22±2、大麦 64±8、油菜 73±9、鹰嘴豆 33±2 天）；年世代数（小麦 5.7、大麦 5.4、油菜 3.8、鹰嘴豆 4.5）；SSD 密度约 900 株/m²、每株种子 19.0±1.3 与 18.6±1.8、活力 80%/100%；FHB 接种浓度 1×10⁶ conidiaspores/ml；减数分裂每株 80 细胞、LSD 0.05。仍不确定：OCR 首页题名与登记题名措辞差异是否代表版本差异；部分单位/公式的 LaTeX 标记损坏但数值可辨。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5473,
+      "prompt_tokens": 10830,
+      "total_tokens": 16303,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 10326,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  },
+  "title_translation": {
+    "source_ocr_title": "Speed breeding: a powerful tool to accelerate crop research and breeding",
+    "translated_title": "快速育种：加速作物研究与育种的有力工具",
+    "model": "deepseek-v4-1-flash-260910",
+    "method": "title-only Ark Flash repair"
+  }
+}

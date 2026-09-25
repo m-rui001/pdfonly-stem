@@ -1,0 +1,64 @@
+{
+  "sha1": "105b275ae557cc5ed0cfcb00760980db067fd38f",
+  "title": "Integrating the evidence for a terrestrial carbon sink caused by increasing atmospheric CO 2",
+  "doi": "https://doi.org/10.1111/nph.16866",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/105b275ae557cc5ed0cfcb00760980db067fd38f/index.html",
+  "source_chars": 174950,
+  "markdown_chars": 5069,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 21,
+      "quote": "Tree-ring analysis at CO2-springs in Italy (two sites) suggests that eCO2 increased Quercus ilex tree ring-width (a proxy for wood BP) initially (βapp = 0.49-0.81)",
+      "type": "疑似符号误用",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "此处描述的是直接受 eCO₂ 影响的 CO₂ 温泉实验，按文中定义应使用 βdir 而非 βapp；但原文如此，存疑。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 19,
+      "quote": "14 methods to estimate GPP from satellite-based fAPAR resulted in wide-ranging iCO2 sensitivities",
+      "type": "疑似数字截取",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "“14 methods”可能是“1-4 methods”或类似表述被解析为“14”，但无强证据，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 20,
+      "quote": "Meta-analysis found eCO2 increased fine-root BP across experiments (βdir,fut = 0.56) (βdir,fut = 0.56), in forests (βdir,fut = 0.92), and to a lesser degree in grasslands (βdir,fut = 0.18)",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "括号内 (βdir,fut = 0.56) 出现两次，疑为文本抽取时重复，原文可能只出现一次。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、理论、证据与综合中的关键数值：β定义、光合理论β（0.86/0.31/0.60/0.46）、FACE实验的GPP/BP/Cveg/Csoil响应、历史βapp范围、NBP数值（2.3、1.9、3.6 PgC y⁻¹等）、置信度评估。所有数值均直接取自抽取文本，未做外推。不确定之处：个别数值的精度（如βdir,fut后符号）、提取中重复的“0.56”、“βapp”与“βdir”可能混用，已在issues中标注。未读取PDF或图片，仅基于文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6261,
+      "prompt_tokens": 46832,
+      "total_tokens": 53093,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2470
+      }
+    },
+    "content_chars": 6448
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

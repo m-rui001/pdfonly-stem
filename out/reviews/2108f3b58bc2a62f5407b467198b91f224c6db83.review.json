@@ -1,0 +1,54 @@
+{
+  "sha1": "2108f3b58bc2a62f5407b467198b91f224c6db83",
+  "title": "Somatic mutation landscapes at single-molecule resolution",
+  "doi": "https://doi.org/10.1038/s41586-021-03477-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/2108f3b58bc2a62f5407b467198b91f224c6db83/index.html",
+  "source_chars": 143819,
+  "markdown_chars": 4311,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 50,
+      "quote": "5600000 Common SNPs  ... EUR AMR EAS SAS AFR ... 2e+04 6e+04 ... 5200000 4800000 ... 1e+05",
+      "type": "图形文本混入正文流",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "在正文文本流中出现了图表坐标轴刻度及图例标签（如 EUR/AMR/EAS/SAS/AFR、1e+05、5600000 等），明显是 PDF 图表中的矢量文本被一并抽取，导致该处文字顺序断裂，应视为提取产物而非正文内容。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 19,
+      "quote": "using Piccard's software",
+      "type": "疑似拼写/工具名识别疑点",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文通常指 Picard tools（用于重复标记等的生物信息学工具），此处写作 Piccard's，可能是原文拼写变体、作者笔误或文本识别差异；基于现有文本证据无法确证，照录原文，不作静默修正。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：NanoSeq错误率<5×10⁻⁹/bp（<30个错误/二倍体基因组）；BotSeqS约2.6×10⁻⁷/bp、约1500错误/基因组；精子52突变/单倍体、1.8×10⁻⁸/bp；脐带血NanoSeq 109 vs 集落66突变/细胞（CI 95–125）；血液合并斜率约19.8突变/年（CI 18.3–21.4），粒细胞与HSC/MPP截距差约57.7（CI -13.1–121.1，P=0.12）；神经元20.0替换/年（CI 19.1–20.9）、3.1 indel/年（CI 2.9–3.3）；AD与健康分别为19.1（18.1–20.0）与21.6（20.5–22.7）替换/年（P=0.006）；平滑肌24.7替换/年（CI 22.5–27.0）、2.1 indel/年（CI 1.7–2.5）。公式方面保留了零截断泊松模型m = r/(1−e⁻ʳ)、重复率d = 1−(1−e⁻ʳ)/r等。已注意正文与图注中个别斜率/截距数字存在细微差异（如平滑肌正文24.7与图注24.5、神经元图注带/不带截距的两种结果），这与有/无截距回归模型设定不同有关，不是文本冲突。部分图表数据（如Extended Data Figure各图）未被正文文字完整描述，笔记中仅使用正文明确出现的数值与图注说明，未作外部推测。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 12418,
+      "prompt_tokens": 37014,
+      "total_tokens": 49432,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9047
+      }
+    },
+    "content_chars": 5607
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

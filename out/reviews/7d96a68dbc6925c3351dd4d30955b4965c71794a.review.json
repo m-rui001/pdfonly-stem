@@ -1,0 +1,54 @@
+{
+  "sha1": "7d96a68dbc6925c3351dd4d30955b4965c71794a",
+  "title": "Chemical scissor–mediated structural editing of layered transition metal carbides",
+  "doi": "https://doi.org/10.1126/science.add5901",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7d96a68dbc6925c3351dd4d30955b4965c71794a/index.html",
+  "source_chars": 38780,
+  "markdown_chars": 2620,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 5,
+      "quote": "Brand I-",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "前文列举Cl-，此处应为Br- and I-，'Brand'疑为排版错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "(Figs. 4, G and H, and fig. S37)",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "上下文描述Nb2CTex的波纹形貌，对应图3的G和H，而非图4；后文亦使用Fig. 3 I/J等，故疑为图3。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要中宣称的非常规元素与终端，正文中均有实例；关键数值如Ti3SbC2的c=18.443Å、Nb2SbC的a=3.329Å/c=13.210Å、Nb2AuC的a=3.175Å/c=14.062Å、Nb2CTex的a≈3.403Å/c≈20.130Å及Te、Se离子半径等均与提取文本一致。公式1-9保留原文形式。不确定之处：Nb2CTex的“Figs. 4, G and H”疑为图3；另“Brand I-”疑为“Br- and I-”，但均不影响主要结论。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9208,
+      "prompt_tokens": 12551,
+      "total_tokens": 21759,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7142
+      }
+    },
+    "content_chars": 3359
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

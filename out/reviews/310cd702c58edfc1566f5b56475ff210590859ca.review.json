@@ -1,0 +1,91 @@
+{
+  "sha1": "310cd702c58edfc1566f5b56475ff210590859ca",
+  "title": "Global patterns of terrestrial nitrogen and phosphorus limitation",
+  "doi": "https://doi.org/10.1038/s41561-019-0530-4",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/310cd702c58edfc1566f5b56475ff210590859ca/index.html",
+  "source_chars": 42557,
+  "markdown_chars": 4304,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 13,
+      "quote": "All data supporting the findings of this study are available are available in figshare",
+      "type": "疑似重复",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'are available are available' 明显重复，属文本抽取错误或原文拼写错误，但语义不影响。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "基于 stoichiometric homeostasis theory31, the demand ratio of N versus P for a mature leaf ( : ) should be relatively constant in order to maintain leaf functioning, as described by Eq. 1, = (1) where indicate the amounts of leaf N and P that are externally derived.",
+      "type": "公式渲染缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式 1 和变量定义（叶片再吸收 N、P 的符号）在抽取文本中不完整，仅显示冒号和等号，缺少实际数学表达式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "< : (2).",
+      "type": "公式渲染缺失",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "公式 2 仅有不等号一侧，缺少变量，无法完整呈现原文不等式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 7,
+      "quote": "NRE/PRE > 1 (or ln-transformed NRE/PRE > 0) thus indicates relatively stronger N limitation than P limitation.",
+      "type": "公式符号不完整",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "公式 4 中仅见 '> 1'，缺少 NRE/PRE 部分，可能是抽取截断，但上下文可识别含义。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 20,
+      "quote": "Abbreviations: TSF, tropical and subtropical forest; TBMF, temperate broadleaf and mixed forest; TCF, temperate coniferous forest; BF, boreal forest; TSSS, tropical and subtropical savannas and shrublands; TGS, temperate grasslands and shrublands; MGS, montane grasslands and shrublands; and MFGS, Mediterranean forests, woodlands and scrubs.",
+      "type": "缩写不一致",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "表格中 'TSGSS'（第 20 页表格行）与表注中 'TSSS' 不一致，且正文中未定义 'TSGSS'。表格中 'MFWS' 与表注 'MFGS' 不一致。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 3,
+      "quote": "Enzai Du 1,2,3*, César Terrer3, 4, Adam Pellegrini3, Anders Ahlström5,6,3, Caspar J. van Lissa7, Xia Zhao 8, Nan Xia2, Xinhui Wu2, Robert B. Jackson3,9*",
+      "type": "作者姓名拼写疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "首页 'A. Ahsltrom' 与正文 'Ahlström' 拼写不一致，可能是抽取或原文笔误，但以正文为准。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中关键数值：N限制面积18%、P限制面积43%、未诊断39%；验证成功率N 83% (38/46)、P 83% (25/30)；固氮植物ln(NRE/PRE)均值-0.30±0.05 (p<0.001)；几何均值NREdom 55%、PREdom 61%、比值0.90；模型偏差解释率54%。公式1-4在抽取文本中部分不完整（见extraction_issues），其余公式(5)-(7)已按原文呈现。表1的具体数值仅在正文文字描述中引用了生物群区层面的定性结论，未逐项列举百分位数数值。所有结论均基于提取文本，未引入外部数据。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4315,
+      "prompt_tokens": 12324,
+      "total_tokens": 16639,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 859
+      }
+    },
+    "content_chars": 6827
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "sha1": "e98b67d2acfb4186fc40368f1dbcebfc5612163b",
+  "title": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+  "doi": "https://doi.org/10.1126/science.aad4998",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/e98b67d2acfb4186fc40368f1dbcebfc5612163b/index.html",
+  "source_chars": 92018,
+  "markdown_chars": 12122,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Zhi Wei Seh $ ^{1,2,3} $ , Jakob Kibsgaard $ ^{1,2,4} $ , Colin F. Dickens $ ^{1,2} $ , Ib Chorkendorff $ ^{4} $ , Jens K. Nørskov $ ^{1,2} $ Thomas F. Jaramillo $ ^{1,2^{*}} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "作者列表中Jens K. Nørskov与Thomas F. Jaramillo之间缺少逗号或分号分隔，属OCR标点丢失，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "a necessary but insufficient condition for an active HER catalyst is $ \\Delta G_{\\mathrm{H}}\\approx 0 $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "ΔG_H的下标H在OCR中显示为\\mathrm{H}，虽可理解但格式异常，可能影响公式精确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "at 50% hydrogen coverage, it possesses a $ \\Delta G_{\\mathrm{H}} $ of 0.08 eV",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "ΔG_H下标格式异常，与上条类似，属OCR公式符号提取不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "the 4-electron ORR involves multiple intermediates $ \\mathrm{(O O H^{}}, \\mathrm{O H^{}}, \\mathrm{O^{}}) $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "OOH*、OH*、O*中的星号（*）在OCR中丢失，导致中间体符号不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 9,
+      "quote": "Due to this non-ideal scaling between $ \\mathrm{O O H^{}} $ and $ \\mathrm{O H^{*}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "OOH*中的星号丢失，OH*中的星号保留，符号不一致，影响公式精确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "using $ \\Delta G_{\\mathrm{O}}-\\Delta G_{\\mathrm{OH}} $ as the descriptor",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "ΔG_O和ΔG_OH下标格式异常，可能影响公式复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "a scaling relation between $ \\mathrm{O O H^{}} $ and $ \\mathrm{O H^{}} $ that is not ideal $ (\\Delta G_{O O H}=\\Delta G_{O H}+3.2\\pm0.2 $ eV)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "OOH*和OH*中的星号丢失，且ΔG_OOH和ΔG_OH下标格式异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "1 reaction intermediate (OOH $ ^{*} $ )",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OOH*中的星号以$ ^{*} $形式出现，格式异常但可理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 14,
+      "quote": "binding $ \\mathrm{O O H}^{*} $ neither too strongly nor weakly",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "OOH*中的星号格式异常，与上条类似。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 15,
+      "quote": "the protonation of $ \\mathrm{CO^{}} $ to $ \\mathrm{CHO^{}} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "CO*和CHO*中的星号丢失，影响公式符号完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "limited by the adsorption of $ N_{2} $ as $ N_{2} H^{} $ in the first step",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "N₂H*中的星号丢失，影响公式符号完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "limited by either the protonation of $ NH^{} $ to form $ NH_{2}^{} $ (flat surfaces) or the removal of $ NH_{2}^{} $ as $ NH_{3} $ (stepped surfaces)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "NH*、NH₂*中的星号丢失，影响公式符号完整性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "stabilizing $ N_{2} H^{} $ relative to $ NH_{2}^{} $ or $ NH^{*} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "N₂H*、NH₂*中的星号丢失，NH*中的星号保留，符号不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 22,
+      "quote": "The volcano itself corresponds to $ \\Delta G_{0 O H}=\\Delta G_{0 H}+3.2 $ eV (109)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "ΔG_OOH和ΔG_OH下标中的OOH和OH被OCR识别为0OH和0H（数字0代替字母O），导致公式符号错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 4,
+      "quote": "H $ ^{} $ , where $ ^{} $ denotes a site on the electrode surface",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.95,
+      "reason": "原文应为H*，星号（*）作为表面位点符号在OCR中丢失，导致公式符号不完整。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Combining Theory and Experiment in Electrocatalysis: Insights into Materials Design",
+  "self_check": "已核对关键数值：全球能源需求18 TW（2013）、24或26 TW（2040）、CO₂排放32 Gt yr⁻¹（2013）至37或44 Gt yr⁻¹（2040）、MoS₂边缘ΔG_H=0.08 eV、基面ΔG_H=1.92 eV、10 mA cm⁻²_geo at ~175 mV、Pt₃Sc/Pt₃Y增强1.5-1.8倍和6-10倍、Pt₃Ni(111)比活性10倍和90倍、Pt₃Ni纳米框架22倍和36倍、Mo掺杂Pt₃Ni 81倍和73倍、280 mV at 2 mA cm⁻²_Pt、IrOx/SrIrO₃ 270 mV at 10 mA cm⁻²_oxide、FeCoW 191 mV at 10 mA cm⁻²_geo、H₂O₂选择性>95%、CO₂还原理论过电位~0.8 V、氮还原理论过电位至少0.5 V、Pt(111)上OH*还原势垒0.26 eV、电荷转移系数0.5、Tafel斜率59 mV/dec。公式符号中星号（*）在多个页面OCR中丢失或格式异常，已在extraction_issues中列出。标度关系ΔG_OOH = ΔG_OH + 3.2 ± 0.2 eV在正文中多次出现，数值一致。不确定处：Fig. 5A中部分数据来源的OCR文本存在括号和斜杠混乱，但未影响关键结论提取。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9400,
+      "prompt_tokens": 24266,
+      "total_tokens": 33666,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 17275,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

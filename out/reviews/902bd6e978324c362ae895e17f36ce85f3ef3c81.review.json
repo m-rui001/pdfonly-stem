@@ -1,0 +1,91 @@
+{
+  "sha1": "902bd6e978324c362ae895e17f36ce85f3ef3c81",
+  "title": "A Water‐Based Silver‐Nanowire Screen‐Print Ink for the Fabrication of Stretchable Conductors and Wearable Thin‐Film Transistors",
+  "doi": "https://doi.org/10.1002/adma.201600772",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/902bd6e978324c362ae895e17f36ce85f3ef3c81/index.html",
+  "source_chars": 49757,
+  "markdown_chars": 3214,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 9,
+      "quote": "while the value of G” maintained higher than that of G”",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "原文中同一符号出现两次，逻辑矛盾，应为G'高于G\"，根据上下文判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 18,
+      "quote": "Figure 5(b)-4(f) display",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "应为Figure 5(b)-5(f)，图号不一致。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 21,
+      "quote": "Exaination of the optical microscopic images",
+      "type": "拼写错误",
+      "severity": "low",
+      "confidence": 1.0,
+      "reason": "Exaination应为Examination。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "recovered to 241.6 Paꞏs and 349.0 Paꞏs n 10 s",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "n应为in，介词缺失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Zonyl FS-300",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "第5页正文使用Zonyl FC-300，实验部分出现FS-300，可能为同一物，但命名不一致。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 17,
+      "quote": "Figure 4(a) exhibits the resistance change",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "该句位于拉伸测试部分，前文图5为拉伸数据，此处应指图5(a)。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要、正文和结论中的关键数值：墨水固含量6.6 wt%、粘度405.8 Pa·s、分辨率50 µm、电导率4.67×10⁴ S cm⁻¹、70%应变下各线宽电导率（8002~14234 S cm⁻¹）、TFT成品率91.7%、迁移率33.8±3.7 cm²V⁻¹s⁻¹等。公式σ=L/(RWt)和μ=(dID/dVG)(L/VDCiW)已按原文保留。结论中'约14,000 S cm⁻¹'与正文100 µm线宽14,234 S cm⁻¹相符。不确定之处：表2中LTCC等具体数值未逐项比对，但正文引用数字与表内一致；提取文本中G'和G\"的表述有明显矛盾，已标记；图号引用错误已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6956,
+      "prompt_tokens": 13374,
+      "total_tokens": 20330,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 4205
+      }
+    },
+    "content_chars": 4857
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

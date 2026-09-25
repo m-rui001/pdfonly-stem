@@ -1,0 +1,46 @@
+{
+  "sha1": "7abc52a38689afc6054b136effe88eb86c16d172",
+  "title": "Burning lithium in CS2 for high-performing compact Li2S–graphene nanocapsules for Li–S batteries",
+  "doi": "https://doi.org/10.1038/nenergy.2017.90",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/7abc52a38689afc6054b136effe88eb86c16d172/index.html",
+  "source_chars": 54673,
+  "markdown_chars": 2952,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 8,
+      "quote": "during the",
+      "type": "跨页拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第8页页尾句子以‘during the’结束，下一页开头为‘first cycle also reveal’，中间被页标和换行隔断，表明原始句在页尾中断后跨页续写，缺失位置明确。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要、正文和结论中的关键数值：1160 mAh/g、8.1 mAh/cm²、200圈600 mAh/g、倍率容量、全电池730/440 mAh/g、EIS趋势、原位XRD/XANES转化路径、DFT结合能1.21 eV及大缺陷>3 eV等均与提取文本一致。不确定之处：正文Li₂S纳米晶尺寸为50–80 nm，而图1图注写50–100 nm，二者不一致但正文优先；‘500 um’中的‘um’应为‘μm’，按原文保留；拉曼峰位、反应温度等未发现矛盾。跨页断句已标记。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8786,
+      "prompt_tokens": 14081,
+      "total_tokens": 22867,
+      "prompt_tokens_details": {
+        "cached_tokens": 12288
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6610
+      }
+    },
+    "content_chars": 3540,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

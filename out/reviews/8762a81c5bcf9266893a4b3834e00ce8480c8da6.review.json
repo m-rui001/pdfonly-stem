@@ -1,0 +1,81 @@
+{
+  "sha1": "8762a81c5bcf9266893a4b3834e00ce8480c8da6",
+  "title": "Potential for large-scale CO2 removal via enhanced rock weathering with croplands",
+  "doi": "https://doi.org/10.1038/s41586-020-2448-9",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/8762a81c5bcf9266893a4b3834e00ce8480c8da6/index.html",
+  "source_chars": 80695,
+  "markdown_chars": 4236,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "including 2",
+      "type": "cross-page splice",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "页码'2'可能误入正文，导致句子不完整，应为'including USA, India, China, Brazil, and Europe)'",
+      "quote_matches_page": true
+    },
+    {
+      "page": 8,
+      "quote": "growing seaon3",
+      "type": "typo",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'seaon'应为'season'",
+      "quote_matches_page": true
+    },
+    {
+      "page": 24,
+      "quote": "Fraction of sequested NDCs",
+      "type": "typo",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'sequested'应为'sequestered'",
+      "quote_matches_page": true
+    },
+    {
+      "page": 12,
+      "quote": "=− + 1− (1)",
+      "type": "extraction error",
+      "severity": "high",
+      "confidence": 0.7,
+      "reason": "公式1中变量和运算符缺失，无法完整表达运输方程",
+      "quote_matches_page": true
+    },
+    {
+      "page": 20,
+      "quote": "emisssion",
+      "type": "typo",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "'emisssion'应为'emission'",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对摘要和正文中的关键数值：CDR目标0.5-2 Gt CO2/yr，成本$80-180/t CO2，各国成本范围，中国等贡献，NDC增强百分比，累计CDR 25-100 Gt CO2。公式1-7按提取文本原样保留，但存在明显缺失，已标注。不确定之处：公式1、3的完整形式未从文本中恢复，表1中的具体数值未在正文中重复，但已按文本描述引用。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9607,
+      "prompt_tokens": 21875,
+      "total_tokens": 31482,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 6539
+      }
+    },
+    "content_chars": 5509
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

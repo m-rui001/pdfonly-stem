@@ -1,0 +1,166 @@
+{
+  "sha1": "58e1441206e2580dffc9afce6e7547099821db28",
+  "title": "Molecular enhancement of heterogeneous CO2 reduction",
+  "doi": "https://doi.org/10.1038/s41563-020-0610-2",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/58e1441206e2580dffc9afce6e7547099821db28/index.html",
+  "source_chars": 59956,
+  "markdown_chars": 9113,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "molecularlyenhanced",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "连字符丢失，应为 molecularly-enhanced，影响较小但属抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "may introduces new degrees of freedom",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "语法错误，原文应为 may introduce，属 OCR 或原文笔误，不影响理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "such as COOH, CO, and *HCOO",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文中吸附中间体通常带星号标记，此处 COOH 与 CO 前星号丢失，仅 *HCOO 保留，符号信息不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "lowers the partial current densities for $ \\mathrm{H}{2} $ and $ \\mathrm{CH}{4} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "化学式下标格式损坏，H2 与 CH4 的下标未正确渲染，但内容可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "electron tansfer",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 electron transfer。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "graphitic N-doped CNT: 90% for $ \\mathrm{C O_{5 8}} $ , N-doped graphene: 73% for $ \\mathrm{H C O O_{-5 9}} $",
+      "type": "formula_symbol_loss",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "产物化学式与参考文献编号混淆，CO 与 HCOO− 的符号被错误合并为 C O_{5 8} 和 HCOO_{-5 9}，影响产物与数值对应关系的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 16,
+      "quote": "preparation methodotologies",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 methodologies。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 17,
+      "quote": "Polydopamine led to highly stable $ \\mathrm{C O_{2} R R} $ to $ \\mathrm{C H_{4}} $ by Cu over 14 h without a decrease in current density, while $ \\mathrm{C O_{2} R R} $ by bare Cu ceased within 3 h. $ \\mathrm{7 6} $",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "参考文献编号 76 被拆分为 7 6 并作为上标，格式异常但内容可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Co phthalocyanine+CN+CNT",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "Table 1 中材料名疑似应为 Co phthalocyanine+CNT，多出的 +CN 可能为 OCR 错误，影响材料组成理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "Zn(NO3)2ZIF-8",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "Table 1 中材料名疑似应为 Zn(NO3)2/ZIF-8 或 ZIF-8，Zn(NO3)2 与 ZIF-8 之间缺少分隔，影响材料识别。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "COF-M-Co",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "Table 1 中材料名可能为 COF-M-Co 或类似缩写，但无法确认，保留原文。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 7,
+      "quote": "the binding energy of $ ^{} $ COOH and $ ^{} $ HCOO intermediates",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上标星号位置为空，吸附中间体符号 *COOH 与 *HCOO 的星号丢失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "$ \\mathrm{C O{2} R R} $ using bicarbonate $ (\\mathrm{H C O}{3-}) $ electrolyte, there exists an equilibrium of $ \\mathrm{C O{2}} $ (aq) $ + \\mathrm{H_{2}O} \\leftrightarrow \\mathrm{H^{+}} $ (aq) $ + \\mathrm{H C O}{3-} $ (aq)",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "化学式下标/上标格式损坏，CO2、HCO3− 等符号的上下标未正确渲染，但反应式内容可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "31% $ \\mathrm{C_{2} H_{4}} $ FE.60",
+      "type": "formula_symbol_loss",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "参考文献编号 60 与句末标点粘连，但数值与产物可辨。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Molecular enhancement of heterogeneous CO2 reduction",
+  "self_check": "已核对：摘要中四类策略与正文一致；CoPc+CNT 的 FE>90%、TOF 2.7 s−1、10 h 稳定性；CuPc+CNT 的 CH4 FE 66%、Cu 颗粒约 2 nm；Co porphyrin COF 的 CO FE 90%、TOF 9,400 h−1；HKUST-1 的 C2H4 FE 45%；polydopamine 的 CO FE>80%、16 h 稳定性；polydopamine 修饰 Cu 的 CH4 稳定性 14 h vs 裸 Cu 3 h；N-doped graphene quantum dots 的 C2H4 FE 31%；Table 1 中关键数值与正文一致。公式符号方面，多处吸附中间体星号丢失、化学式上下标格式损坏，已在 extraction_issues 中标注。仍不确定处：Table 1 中 Co phthalocyanine+CN+CNT 与 Zn(NO3)2ZIF-8 的准确材料名，以及 COF-M-Co 的缩写含义。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6808,
+      "prompt_tokens": 16449,
+      "total_tokens": 23257,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 13476,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

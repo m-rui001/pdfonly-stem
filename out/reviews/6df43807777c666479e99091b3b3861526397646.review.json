@@ -1,0 +1,64 @@
+{
+  "sha1": "6df43807777c666479e99091b3b3861526397646",
+  "title": "Progress in electrospun polymeric nanofibrous membranes for water treatment: Fabrication, modification and applications",
+  "doi": "https://doi.org/10.1016/j.progpolymsci.2017.10.003",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6df43807777c666479e99091b3b3861526397646/index.html",
+  "source_chars": 158045,
+  "markdown_chars": 4985,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 75,
+      "quote": "(C) :(a) FESEM images of the PPy-coated PVDF nanofibers membrane after Au recovering, (b-d) EDX maps of the same area, the abundant pink, grass green and navy blue indicated the locations of Au (Mɑ), F and Cl elements, respectively",
+      "type": "疑似符号损坏",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "“Mɑ”应为希腊字母 Mα（Au Mα 特征 X 射线），提取时符号损坏；不影响主旨。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 34,
+      "quote": "It was speculated that incorporation of graphene oxide (GO) into PVDF nanofibers by electrospinning a mixture of PVDF and GO can improve mechanical property, water flux and anti-fouling property of resultant hybrid ENMs [91].",
+      "type": "疑似表述欠完整",
+      "severity": "low",
+      "confidence": 0.4,
+      "reason": "句子谓语结构略显松散（can improve 前无主语补足），但仍可读且完整，不排除原文如此，存疑。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 54,
+      "quote": "This TFNC membrane achieved two to five times higher flux with up to hundred times lower salt flux than a commercial membrane",
+      "type": "疑似文本缺失",
+      "severity": "medium",
+      "confidence": 0.5,
+      "reason": "“up to hundred times lower”中 hundred 前缺 a 或 hundred 应作 hundreds，疑为原文或提取中漏词，但无法确证，存疑。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：电纺膜孔隙率高达 90%；CNT 增强 PEO 纤维杨氏模量提升约 3 倍；CNT/PEI 基底耐压 24 bar；PVDF ENM 对 1/5/10 μm 聚苯乙烯颗粒截留 >90%；UF 膜通量 >130 L m⁻² h⁻¹ 且截留 >99.5%/99.9%；壳聚糖涂层膜通量 70.5 L m⁻² h⁻¹、BSA 截留 98.8%；TFNC NF 膜通量为商用膜 2.4 倍、截留 98%；热压 TFNC 膜耐压 13 bar、MgSO4 截留 >88%；FO 通量比商用膜高 2–5 倍（盐通量“约百倍”表述在 extraction_issues 中标出）；f-CNT/PEI 基底孔隙率+30%、强度+53%；PRO 峰值功率密度 17.3 W m⁻²@16.9 bar；MD 超疏水膜通量 31.6 L m⁻² h⁻¹；PA 纳米纤维（150 nm）将油水分离效率从 71% 提至 84%；PVA 涂层 TFNC 油水分离通量为常规 PAN UF 膜 12 倍、截留 99.5%、运行 190 h；F-PBZ CA 膜水接触角 161°、油接触角 3°；巯基化 PVA/SiO₂ 纤维可维持 6 次 Cu²⁺ 吸附-脱附循环；胺化 PAN 纤维吸附效率为微纤维 3 倍。公式与定量关系均依据正文直接提取，未做推测性补写。不确定处：①“up to hundred times lower salt flux”缺少限定词，已列为疑点；②Fig. 13C 中符号“Mɑ”疑为 Mα，已标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 5271,
+      "prompt_tokens": 37664,
+      "total_tokens": 42935,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1259
+      }
+    },
+    "content_chars": 6955
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

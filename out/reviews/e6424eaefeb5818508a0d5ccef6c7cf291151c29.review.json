@@ -1,0 +1,81 @@
+{
+  "sha1": "e6424eaefeb5818508a0d5ccef6c7cf291151c29",
+  "title": "Top and bottom surfaces limit carrier lifetime in lead iodide perovskite films",
+  "doi": "https://doi.org/10.1038/nenergy.2016.207",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/e6424eaefeb5818508a0d5ccef6c7cf291151c29/index.html",
+  "source_chars": 45367,
+  "markdown_chars": 2657,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "while low surface Pursuant to the DOE Public Access Plan, this document represents the authors' peer-reviewed, accepted manuscript.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第1页末尾句子在“while low surface”处被打断，第2页开头接续“recombination is required for lasers”，中间插入页眉声明，属于跨页断句。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "The cyan-trace is the optical penetration depth as",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第4页末句不完整，第5页开头以“function of photon energy”接续，中间被页眉和分页打断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 6,
+      "quote": "The HT of TA spectrum for polycrystalline sample is consistent with the TR spectrum for single crystals are consistent",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "该句存在明显重复和语法混乱（\"is consistent\"与\"are consistent\"并存），可能为提取或原文编辑错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "𝜕𝜕𝜕𝜕(𝑥𝑥, 𝑡𝑡) 𝜕𝜕𝜕𝜕 = 𝐷𝐷𝜕𝜕2𝑁𝑁(𝑥𝑥, 𝑡𝑡) 𝜕𝜕𝑥𝑥2 −𝑁𝑁(𝑥𝑥, 𝑡𝑡) 𝜏𝜏𝐵𝐵",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式中字符出现重复和变异（如𝜕𝜕𝜕𝜕），无法确认为标准数学符号，疑似PDF提取乱码，但正确版本无法推断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 13,
+      "quote": "1 𝜏𝜏𝑇𝑇 = 1 𝜏𝜏𝐵𝐵 + 1 𝐿𝐿𝑃𝑃𝑃𝑃 2𝑆𝑆+ 1 𝐷𝐷ቀ𝐿𝐿𝑃𝑃𝑃𝑃 𝜋𝜋ቁ 2",
+      "type": "疑似OCR错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "公式文本明显混乱（如𝐿𝐿𝑃𝑃𝑃𝑃、ቀ等），无法还原标准数学表达式，疑似条乱码。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：单晶SRV=2.8±0.1×10^3 cm/s，多晶SRV=0.45±0.14×10^3 cm/s；扩散系数单晶1.9±0.1 cm²/s，多晶0.17±0.01 cm²/s；总载流子寿命90.0±2.2 ns，体寿命477±61 ns；激子结合能9.5±0.3 meV；探测深度约20 nm。公式(1)和(7)因提取乱码无法精确验证，但文字描述与数值关系一致。摘要与正文关于SRV比较（“近一个数量级”与“六倍”）不矛盾。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9761,
+      "prompt_tokens": 11608,
+      "total_tokens": 21369,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7180
+      }
+    },
+    "content_chars": 4419
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

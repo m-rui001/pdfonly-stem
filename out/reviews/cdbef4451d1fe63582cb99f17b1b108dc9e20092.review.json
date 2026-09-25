@@ -1,0 +1,54 @@
+{
+  "sha1": "cdbef4451d1fe63582cb99f17b1b108dc9e20092",
+  "title": "Pre-combustion CO2 capture",
+  "doi": "https://doi.org/10.1016/j.ijggc.2015.05.028",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cdbef4451d1fe63582cb99f17b1b108dc9e20092/index.html",
+  "source_chars": 8983,
+  "markdown_chars": 2343,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 17,
+      "quote": "306 oC o",
+      "type": "疑似字符错误",
+      "severity": "low",
+      "confidence": 0.3,
+      "reason": "提取文本中'306 oC o'含有一个多余的'o'，可能为温度符号的OCR误读，不影响内容理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "2",
+      "type": "孤立页码",
+      "severity": "low",
+      "confidence": 0.1,
+      "reason": "该页仅包含数字'2'，可能为页码或空白页，但无法判断是否缺失内容，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：溶解度数据（CO2在Selexol为3.63、H2S为32.4等）、蒸汽/CO比0.64、性能比较表（净效率47.7/36.5/38.4%、CO2避免率87.6/98.0%、比能耗3.7/2.6 GJ/吨、成本40/<30 €/吨）、SEWGS操作条件400°C、30 bar、ALKASORB 5000循环稳定性。公式CO+H2O⇌CO2+H2已保留。不确定处：效率惩罚图的具体数值未在提取文本中呈现，仅定性描述；温度符号原文中混用'oC'和'°C'，笔记统一为'°C'，但未改变数值。化学式Mg6Al2(OH)16CO3.4H2O按原文保留，未额外添加结晶水符号。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 17199,
+      "prompt_tokens": 3881,
+      "total_tokens": 21080,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 15388
+      }
+    },
+    "content_chars": 3099
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

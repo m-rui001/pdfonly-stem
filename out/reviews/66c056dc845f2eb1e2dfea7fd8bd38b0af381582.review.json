@@ -1,0 +1,54 @@
+{
+  "sha1": "66c056dc845f2eb1e2dfea7fd8bd38b0af381582",
+  "title": "Dynamic vehicle routing problems: Three decades and counting",
+  "doi": "https://doi.org/10.1002/net.21628",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/66c056dc845f2eb1e2dfea7fd8bd38b0af381582/index.html",
+  "source_chars": 138184,
+  "markdown_chars": 4238,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 19,
+      "quote": "The nature the dynamic element of a DVRP",
+      "type": "疑似遗漏单词",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "原文缺少介词'of'，应为'The nature of the dynamic element'，但原文如此，照录不改正。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 47,
+      "quote": "POS",
+      "type": "疑似笔误",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "附录B缩写表中没有'POS'，可能为'PSO'（粒子群优化）的笔误，但无更强证据，存疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "self_check": "已核对关键数值：117篇文献；类型分布DD/DS/SS/SD+DD为71/28/18/4；后勤语境P/D、PD、PD*为75/37/3；运输模式道路/海上/空中/步行约106/3/1/1；容量约束约70%；拒绝客户约70%不允许；动态要素80%动态请求、10%动态旅行时间、3%车辆故障；随机性50%位置、35%需求、18%旅行时间。MIPLIB数据、Cplex速度倍数、TSP动态规划复杂度均已核对。不确定：百分比之和超过100%可能因重叠；表格中'POS'是否应为'PSO'存疑。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 10110,
+      "prompt_tokens": 34381,
+      "total_tokens": 44491,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 7288
+      }
+    },
+    "content_chars": 5033
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

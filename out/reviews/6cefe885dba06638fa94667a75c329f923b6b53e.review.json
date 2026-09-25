@@ -1,0 +1,73 @@
+{
+  "sha1": "6cefe885dba06638fa94667a75c329f923b6b53e",
+  "title": "ESPEN guideline: Clinical nutrition in inflammatory bowel disease",
+  "doi": "https://doi.org/10.1016/j.clnu.2016.12.027",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/6cefe885dba06638fa94667a75c329f923b6b53e/index.html",
+  "source_chars": 373516,
+  "markdown_chars": 7344,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 10,
+      "quote": "The emulsifiers used in commercially prepared",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第10页末尾句子中断，下一页开始为“foods may be implicated in this regard...”，但提取文本中缺失连接词，疑似跨页断裂，正常拼接应为“The emulsifiers used in commercially prepared foods may be implicated...”",
+      "quote_matches_page": true
+    },
+    {
+      "page": 33,
+      "quote": "There are hypothetical advantages from some",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "第33页末尾句子不完整，下一页以“amended formulations.”开始，中间缺内容，可能为跨页断裂。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "Five voting options (agree, rather agree, indecisive, rather agree, disagree)",
+      "type": "疑似错误",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "选项中“rather agree”出现两次，逻辑上应为“rather disagree”，原文重复错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 9,
+      "quote": "Grade of recommendation 0 – strong consensus (90 % agreement)",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "正文中推荐1的等级为0，但附录B中同样推荐1写为“Grade of recommendation C”，正文与其他部分不一致。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文中的关键数据：推荐总数64条（9A/22B/12O/21GPP）、母乳喂养保护性OR、铁治疗荟萃分析OR、EEN缓解率、ω-3阴性结果、B12切除阈值等。注意正文中推荐1、20A、29的等级在附录B中写为C，与正文的0不一致，已在issues中标出。另外，摘要称9条A级推荐，但正文逐条统计的A级可能不到9条，因部分推荐未在正文中标记为A，且正文中推荐等级分布与摘要不完全匹配，但原文如此，未作修改。跨页断裂处未补写推测内容，仅保留提取文本。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 9114,
+      "prompt_tokens": 92760,
+      "total_tokens": 101874,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 3911
+      }
+    },
+    "content_chars": 8816
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

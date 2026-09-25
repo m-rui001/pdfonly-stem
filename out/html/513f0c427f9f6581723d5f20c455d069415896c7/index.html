@@ -1,0 +1,636 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="source-pdf" content="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/pub/51/513f0c427f9f6581723d5f20c455d069415896c7.pdf"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The FEniCS Project Version 1.5</title><style>body{margin:0;background:#eee;color:#202124;font:17px/1.65 Georgia,"Times New Roman",serif}article{max-width:900px;margin:2rem auto;padding:3rem 4rem;background:#fff;box-shadow:0 1px 8px #bbb}h1{font:600 2rem/1.25 Arial,sans-serif;margin:0 0 2rem}h2.page-number{font:600 .8rem Arial,sans-serif;color:#777;border-bottom:1px solid #ddd;padding-bottom:.4rem;margin:2.5rem 0 1rem}.source{font:14px/1.5 Arial,sans-serif;color:#555;border-bottom:1px solid #ddd;padding:0 0 1rem;margin:0 0 1rem}p{margin:.25em 0;text-align:left;overflow-wrap:anywhere}.pdf-page{break-after:page}.table-wrap{max-width:100%;overflow-x:auto;margin:.8em 0 1em}table{width:100%;border-collapse:collapse;font: .92em/1.45 Arial,sans-serif;text-align:left}th,td{border:1px solid #c9cdd2;padding:.45em .55em;vertical-align:top}th{background:#f2f4f6;font-weight:600}td:nth-child(1){white-space:nowrap}td:nth-child(3){white-space:nowrap}@media(max-width:700px){article{margin:0;padding:1.25rem}body{font-size:16px}}</style></head><body><article><h1>The FEniCS Project Version 1.5</h1><p class="source">2015 · <a href="https://doi.org/10.11588/ans.2015.100.20553">https://doi.org/10.11588/ans.2015.100.20553</a> · <a href="file:///E:/pdf/pdfonly-stem/pdfcorpus/out/pdfs/pub/51/513f0c427f9f6581723d5f20c455d069415896c7.pdf">Open original PDF for figures and page layout</a></p><section class="pdf-page" id="pdf-page-1"><h2 class="page-number">Page 1</h2><p>Archive of Numerical Software vol. 3, no. 100, pages 9–23 c 2015</p>
+<p>The FEniCS Project Version 1.5 Martin S. Alnæs1 , Jan Blechta2 , Johan Hake3 , August Johansson4 , Benjamin Kehlet5 , Anders Logg6 , Chris Richardson7 , Johannes Ring8 , Marie E. Rognes9 , and Garth N. Wells10 1</p>
+<p>Simula Research Laboratory, martinal@simula.no Charles University in Prague, blechta@karlin.mff.cuni.cz 3 Simula Research Laboratory, hake@simula.no 4 Simula Research Laboratory, august@simula.no 5 Simula Research Laboratory, benjamik@simula.no 6 Chalmers University of Technology and University of Gothenburg, logg@chalmers.se 7 University of Cambridge, chris@bpi.cam.ac.uk 8 Simula Research Laboratory, johannr@simula.no 9 Simula Research Laboratory, meg@simula.no 10 University of Cambridge, gnw20@cam.ac.uk 2</p>
+<p>Received: May 28th, 2015; final revision: December 1st, 2015; published: December 7th, 2015. Abstract: The FEniCS Project is a collaborative project for the development of innovative concepts and tools for automated scientific computing, with a particular focus on the solution of differential equations by finite element methods. The FEniCS Project consists of a collection of interoperable software components, including DOLFIN, FFC, FIAT, Instant, mshr, and UFL. This note describes the new features and changes introduced in the release of FEniCS version 1.5.</p>
+<p>1</p>
+<p>Overview</p>
+<p>FEniCS version 1.5 was released on 12th January 2015. This article provides an overview of the new features of this release and serves as a citable reference for FEniCS version 1.5. The FEniCS software can be downloaded from the FEniCS Project web page at http://fenicsproject.org. The FEniCS software consists of a collection of interoperable components. These are, in alphabetical order, DOLFIN, FFC, FIAT, Instant, mshr, and UFL. In addition, FEniCS includes the code generation interface component UFC, which is now technically a part of FFC. All FEniCS components, except mshr, are licensed under the GNU LGPL. Due to upstream dependencies, mshr is licensed under the GNU GPL. The components are released simultaneously with the same major and minor version numbers, making it straightforward for users to find compatible versions of the components. The version number of packages that may be unchanged are still incremented to avoid divergence of version numbers.</p></section>
+<section class="pdf-page" id="pdf-page-2"><h2 class="page-number">Page 2</h2><p>10</p>
+<p>2</p>
+<p>New features</p>
+<p>2.1</p>
+<p>Parallel computing</p>
+<p>The performance of parallel computations with DOLFIN continues to be enhanced. Notable enhancements and new features in the 1.5 release include: • switch to local (process-wise) degree-of-freedom indexing; for more details see subsection 2.9; • full support (including from Python) for problems with over 232 dofs via complete support for 64-bit indices; • substantial improvements in performance scaling and memory use for degree-of-freedom map construction; • new parallel mesh refinement strategy; • support for overlapping mesh ‘ghost’ layers in parallel; • interior facet integrals are now supported in parallel, which enables discontinuous Galerkin methods in parallel; • improvements in parallel IO using HDF5. DOLFIN has been used to solve the Poisson equation with over 12 billion degrees of freedom [Richardson and Wells, 2015] on 24576 cores on a Cray XC30. Improvements have been made to decrease the load on the filesystem during just-in-time compilation, which can be a bottleneck on large machines. Further effort is required to address the well-known issue of importing Python modules on parallel computers. A memory corruption issue during forks on OFED-based (InfiniBand) clusters has been tracked down. Users of OFED machines are advised to read the Instant README file and export the INSTANT_SYSTEM_CALL_METHOD environment variable. 2.2</p>
+<p>New mesh refinement strategy</p>
+<p>A new refinement algorithm has been adopted for DOLFIN, following the work of Plaza and Carey [2000]. This algorithm uses edge bisection to subdivide the marked triangles of a Mesh, be they the cells themselves in two dimensions, or the facets of tetrahedra in three-dimensions. The subdivision is chosen so as to maximize the internal angles of the new triangulation, thus maintaining mesh quality after multiple refinements; see Figure 1. Edges which are marked for refinement propagate between processes in parallel, whilst the refinement operation is local, resulting in good scaling. 2.3</p>
+<p>Mesh generation: the new mshr component</p>
+<p>The mesh generation functionality of FEniCS, except for simple meshes like UnitSquareMesh and UnitCubeMesh, has been moved to a new FEniCS Component named mshr. The motivation for this change is twofold: first, to simplify the list of dependencies and reduce the amount of resources (CPU time and memory usage) for building DOLFIN (by moving the CGAL dependency to mshr); and second, to simplify the addition of new features to the new meshing component. Currently, both CGAL and Tetgen are available as mesh generation backends for mshr. Much like the old meshing interface in DOLFIN, the new mshr interface allows simple generation of meshes from Constructive Solid Geometry (CSG) descriptions, as demonstrated by the example listed below. The generated mesh is shown in Figure 2. Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-3"><h2 class="page-number">Page 3</h2><p>The FEniCS Project Version 1.5</p>
+<p>11</p>
+<p>Figure 1: Tetrahedron refined multiple times, whilst preserving mesh quality.</p>
+<p>Figure 2: A mesh generated from a CSG description in FEniCS. The left image shows the surface of the generated tetrahedral mesh while the right image shows a volume rendering in which the subtracted sphere in the center is visible.</p>
+<p>Python code 1 2 3 4 5 6 7 8 9 10 11</p>
+<p>from dolfin import * from mshr import * # Define geometry box = Box( Point (0, 0, 0), Point (1, 1, 1)) sphere = Sphere ( Point (0, 0, 0), 0.3) cylinder = Cylinder ( Point (0, 0, -1), Point (0, 0, 1), 1.0, 0.5) geometry = box + cylinder - sphere # Generate mesh mesh = generate_mesh (geometry , 16)</p>
+<p>Through a combination of simple CSG primitives and Boolean operations (and, or, negation), meshes can be created for geometries ranging from simple domains like the canonical L-shaped domain, to relatively complex geometries. Figure 3 shows a pair of meshes generated using mshr. c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-4"><h2 class="page-number">Page 4</h2><p>12</p>
+<p>Figure 3: Meshes generated from CSG geometries using the new FEniCS mesh generation component mshr.</p>
+<p>Figure 4: Multimesh solution of the Stokes problem on two overlapping non-matching meshes. 2.4</p>
+<p>Multimesh finite element methods</p>
+<p>Multimesh finite element methods (CutFEM) are finite element methods posed on two or more possibly non-matching meshes. The formulation of multimesh finite element methods involves the formulation of variational problems on function spaces composed by regular function spaces on the intersecting meshes. Continuity between meshes is imposed using Nitsche’s method and stability ensured by adding suitable stabilization terms (ghost penalties) to the variational problem. FEniCS 1.5 adds support for the formulation of multimesh methods, including automatic and efficient computation of mesh-mesh intersections, quadrature rules for cut cells and interfaces, and expression of integrals that typically appear in the formulation of multimesh/CutFEM methods. Figure 4 shows results for a Taylor–Hood formulation for the Stokes problem on two overlapping and intersecting meshes; a boundary-fitted mesh embedding a propeller-shaped hole, which overlaps a fixed background mesh; for details see Johansson et al. [2015]. The FEniCS interface to multimesh finite element methods currently requires a user to define the integrals in terms of the newly added custom_integral interface. This new interface enables code generation for integrals expressed on arbitrary domains, among them cut cells, interfaces, and overlaps, as illustrated by the following UFL code for expression of a multimesh formulation of Poisson’s equation: Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-5"><h2 class="page-number">Page 5</h2><p>The FEniCS Project Version 1.5</p>
+<p>13</p>
+<p>Python code 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20</p>
+<p># Define custom measures ( simplify syntax in future versions ) dc0 = dc(0, metadata ={&quot; num_cells &quot;: 1}) dc1 = dc(1, metadata ={&quot; num_cells &quot;: 2}) dc2 = dc(2, metadata ={&quot; num_cells &quot;: 2}) # Define measures for integration dx = dx + dc0 # domain integral di = dc1 # interface integral do = dc2 # overlap integral # Parameters alpha = 4.0 beta = 4.0 # Bilinear form a = dot(grad(u), grad(v))*dx \ - dot(avg(grad(u)), jump(v, n))*di \ - dot(avg(grad(v)), jump(u, n))*di \ + alpha /h*jump(u)*jump(v)*di \ + dot(jump(grad(u)), jump(grad(v)))*do</p>
+<p>On the C++ side, multimesh function spaces must currently be explicitly constructed as demonstrated by the following excerpt from the multimesh-poisson demo: C++ code 1 2 3 4 5 6 7 8 9 10 11 12</p>
+<p>// Create function spaces MultiMeshPoisson :: FunctionSpace V0( mesh_0 ); MultiMeshPoisson :: FunctionSpace V1( mesh_1 ); MultiMeshPoisson :: FunctionSpace V2( mesh_2 ); // Build multimesh function space MultiMeshFunctionSpace V; V. parameters (&quot; multimesh &quot;)[&quot; quadrature_order &quot;] = 2; V.add(V0); V.add(V1); V.add(V2); V. build ();</p>
+<p>Future improvements to the multimesh functionality of FEniCS will include the introduction of specific integration measures in UFL, so that the measures don’t need to be defined in terms of custom_measure, as well as simplified and higher level interfaces for assembly and problem solving in DOLFIN. 2.5</p>
+<p>Assembly of point integrals</p>
+<p>In addition to the classical cell integrals, exterior facet integrals, and interior facet integrals, FEniCS version 1.5 supports specification of point integrals. A point integral represents the integrand evaluated at each vertex, summed over the vertices of the mesh. Starting with FEniCS version 1.5, the DOLFIN assemblers recognize point integrals and assemble contributions from such integrals. We remark that for each vertex, the integrand will be restricted to the arbitrarily chosen first cell associated with this vertex prior to evaluation. This operation is therefore only consistently defined for functions and integrands that are continuous at the vertices. 2.6</p>
+<p>Point integral solvers and Rush–Larsen schemes</p>
+<p>The FEniCS PointIntegralSolvers are special-purpose solvers dedicated to solving multistage integration schemes defined for each vertex of a mesh. Such problems typically occur in connection with spatially varying systems of ODEs, for instance in electrophysiology. In FEniCS version 1.5, we have extended the range of available schemes to also include the Rush–Larsen c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-6"><h2 class="page-number">Page 6</h2><p>14</p>
+<p>[Rush and Larsen, 1978] and the generalized Rush–Larsen [Sundnes et al., 2009] schemes for solving systems of nonlinear ODEs. 2.7</p>
+<p>Redesign of core symbolic representation and algorithms</p>
+<p>The domain-specific language UFL represents equations as symbolic expression trees, where each node represents some value or mathematical operation. For nonlinear equations with large expression trees, the performance and memory overhead of symbolic computations and form compiler algorithms can become significant, especially when running in parallel, where this overhead is a limiting factor for scalability according to Amdahl’s law. This becomes even more important when FEniCS is combined with high-level algorithms, such as the dolfin-adjoint package, that rely extensively on symbolic algorithms from UFL. To reduce this overhead, the core representation of symbolic expressions has been redesigned (see ufl.core), followed by a rewrite of the core framework for developing additional symbolic algorithms (see ufl.corealg). Each expression tree node type now has the following attributes: • ufl_operands Tuple of child nodes in expression tree. Equivalent to deprecated operands(). • ufl_shape Tuple of value shape dimensions. Equivalent to deprecated shape(). • ufl_free_indices Tuple of free index integer ids. Replaces deprecated free_indices(). • ufl_free_index_dimensions Tuple of dimensions associated with corresponding free index ids in ufl_free_indices. Replaces deprecated free_indices(). The deprecated functions mentioned above are still available as wrappers around the new attributes. Type traits of symbolic expression classes have also been made available through an efficient property-based API using the naming scheme ExprType._ufl_*_ (see ufl.core.expr). This is mainly intended for internal usage but also for developers building on the symbolic capabilities of FEniCS. A major guiding principle in the redesign of core algorithms in UFL was to replace all uses of expensive recursion in Python with loops. Algorithms for expression traversal (see module ufl.corealg.traversal) have all been reimplemented without recursion, and further fine-tuned for specific iteration scenarios. The former Transformer base class for visitor-like algorithms has been deprecated in favor of an implementation that avoids recursion. The new function map_expr_dag(function, expression) applies the given function to transform each expression tree node in a non-recursive post-order traversal. The function arguments include the node as well as the previously transformed node operands. This algorithm is further optimized to reduce the number of function calls and avoid duplicated expression tree nodes by (optionally) caching intermediate results in a hashmap with the original expression nodes as keys. Previous implementations of the Transformer class can easily be rewritten as implementations of MultiFunction, which implements the same dynamic type dispatch mechanism, and passed as the function argument to map_expr_dag. Key algorithms such as automatic differentiation (apply_derivatives) and propagation of restrictions (apply_restrictions) have been reimplemented in this optimized algorithm framework, and may serve as models. In addition, form signatures are now computed without first applying automatic differentiation, which reduces the symbolic overhead significantly when the signature is found in the form compiler cache. Together these improvements have reduced the symbolic overhead in FEniCS 1.5 by 20–60%. To give a few examples: the initial just-in-time (JIT) compilation of a Poisson equation form was reduced from 5s to 4s including C++ compilation, while for a complicated cardiac hyperelasticity model the JIT time was reduced from 103s to 48s. For the latter model, subsequent program runs now avoid a 2s delay in the signature computation used for disk cache lookup. Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-7"><h2 class="page-number">Page 7</h2><p>The FEniCS Project Version 1.5</p>
+<p>15</p>
+<p>P−r Λk (∆n ) n=1 n=2 n=3</p>
+<p>k=0 P P P</p>
+<p>k=1 DP RT[E,F] N1E</p>
+<p>Pr Λk (∆n ) k=2</p>
+<p>k=3</p>
+<p>DP N1F</p>
+<p>DP</p>
+<p>n=1 n=2 n=3</p>
+<p>k=0 P P P</p>
+<p>Q−r Λk (n ) n=1 n=2 n=3</p>
+<p>k=0 Q Q Q</p>
+<p>k=1 DQ RTC[E,F] NCE</p>
+<p>k=1 DP BDM[E,F] N2E</p>
+<p>k=2</p>
+<p>k=3</p>
+<p>DP N2F</p>
+<p>DP</p>
+<p>k=2</p>
+<p>k=3</p>
+<p>DPC AAF</p>
+<p>DPC</p>
+<p>Sr Λk (n ) k=2</p>
+<p>k=3</p>
+<p>DQ NCF</p>
+<p>DQ</p>
+<p>n=1 n=2 n=3</p>
+<p>k=0 S S S</p>
+<p>k=1 DPC BDMC[E,F] AAE</p>
+<p>Table 1: New notation for finite elements adopted from the Periodic Table of the Finite Elements. 2.8</p>
+<p>Notation from Periodic Table of the Finite Elements</p>
+<p>FEniCS now supports the notation for finite elements as set out in the Periodic Table of the Finite Elements [Arnold and Logg, 2014] based on the finite element exterior calculus, see Arnold et al. [2006]. The notation introduces new aliases for the existing elements in FEniCS and introduces new placeholder names for the not yet implemented elements on quadrilaterals and hexahedra. Earlier FEniCS notation (“Lagrange”, “CG”, etc.) is still supported but may be phased out in future versions. Table 1 summarizes the notation. In this table, n is the topological dimension of the finite element domain (1D, 2D, 3D), r is the polynomial degree and k is the form degree; k = 0 means scalars, k = 1 means 1-forms (oriented line segments), k = 2 means 2-forms (oriented surfaces) and k = 3 means 3-forms (oriented volumes). Figure 5 shows a miniature (but high resolution) version of the periodic table. The full version can be downloaded from http://femtable.org. As an example, the following code shows how to instantiate a pair of cubic Nédélec face elements of the first and second kinds on a tetrahedron: Python code 1 2</p>
+<p>element_1 = FiniteElement (&quot;N1F&quot;, &quot; tetrahedron &quot;, 3) element_2 = FiniteElement (&quot;N2F&quot;, &quot; tetrahedron &quot;, 3)</p>
+<p>2.9</p>
+<p>Changes in degree-of-freedom map construction</p>
+<p>A number of performance improvements have been made in the degree-of-freedom (DOF) map construction, and changes to how to DOF maps are order have been made. Specifically: • DOLFIN now uses local (process-wise) numbering of degrees of freedom, which has reduced the memory use of degree-of-freedom maps. This change also permits some new developments in interfacing to linear-algebra backends. • The degree-of-freedom map construction code has been re-written, reducing the time for construction and substantially improving parallel scaling of construction. • Node-wise block structure in DOF maps, e.g. a fixed number of DOFs at each node, is now automatically detected. This provides better data locality and faster graph-based DOF map reordering. c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-8"><h2 class="page-number">Page 8</h2><p>16</p>
+<p>PTofFE_poster_fin.indd 1</p>
+<p>n=1</p>
+<p>k=0</p>
+<p>P1 (&quot;P&quot;, interval, 1)</p>
+<p>P2 (&quot;P&quot;, interval, 2)</p>
+<p>(&quot;P&quot;, interval, 3)</p>
+<p>P3</p>
+<p>P1 (&quot;P&quot;, triangle, 1)</p>
+<p>P2 (&quot;P&quot;, triangle, 2)</p>
+<p>P3 (&quot;P&quot;, triangle, 3)</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>3</p>
+<p>6</p>
+<p>10</p>
+<p>4</p>
+<p>10</p>
+<p>20</p>
+<p>4</p>
+<p>[e/f]</p>
+<p>k=1</p>
+<p>dP0 (&quot;DP&quot;, interval, 0)</p>
+<p>dP1 (&quot;DP&quot;, interval, 1)</p>
+<p>(&quot;DP&quot;, interval, 2)</p>
+<p>dP2</p>
+<p>RT [e/f] 1 (&quot;RT[E,F]&quot;, triangle, 1)</p>
+<p>RT [e/f] 2 (&quot;RT[E,F]&quot;, triangle, 2)</p>
+<p>RT 3[e/f] (&quot;RT[E,F]&quot;, triangle, 3)</p>
+<p>N11e (&quot;N1E&quot;, tetrahedron, 1)</p>
+<p>N12e (&quot;N1E&quot;, tetrahedron, 2)</p>
+<p>(&quot;N1E&quot;, tetrahedron, 3)</p>
+<p>N13e</p>
+<p>Dimension of element function space</p>
+<p>Finite element exterior calculus notation</p>
+<p>Element specification in FEniCS</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>3</p>
+<p>8</p>
+<p>15</p>
+<p>6</p>
+<p>20</p>
+<p>45</p>
+<p>k=2</p>
+<p>dP0 (&quot;DP&quot;, triangle, 0)</p>
+<p>dP1 (&quot;DP&quot;, triangle, 1)</p>
+<p>dP2 (&quot;DP&quot;, triangle, 2)</p>
+<p>N11f (&quot;N1F&quot;, tetrahedron, 1)</p>
+<p>N12f (&quot;N1F&quot;, tetrahedron, 2)</p>
+<p>1</p>
+<p>3</p>
+<p>6</p>
+<p>4</p>
+<p>15</p>
+<p>k=3</p>
+<p>dP0 (&quot;DP&quot;, tetrahedron, 0)</p>
+<p>dP1 (&quot;DP&quot;, tetrahedron, 1)</p>
+<p>4</p>
+<p>k=0</p>
+<p>P1 (&quot;P&quot;, interval, 1)</p>
+<p>P2 (&quot;P&quot;, interval, 2)</p>
+<p>(&quot;P&quot;, interval, 3)</p>
+<p>P3</p>
+<p>P1 (&quot;P&quot;, triangle, 1)</p>
+<p>P2 (&quot;P&quot;, triangle, 2)</p>
+<p>P3 (&quot;P&quot;, triangle, 3)</p>
+<p>P1 (&quot;P&quot;, tetrahedron, 1)</p>
+<p>P2 (&quot;P&quot;, tetrahedron, 2)</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>3</p>
+<p>6</p>
+<p>10</p>
+<p>4</p>
+<p>10</p>
+<p>k=1</p>
+<p>dP1 (&quot;DP&quot;, interval, 1)</p>
+<p>dP2 (&quot;DP&quot;, interval, 2)</p>
+<p>(&quot;DP&quot;, interval, 3)</p>
+<p>dP3</p>
+<p>BDM[e/f] 1 (&quot;BDM[E,F]&quot;, triangle, 1)</p>
+<p>BDM[e/f] 2 (&quot;BDM[E,F]&quot;, triangle, 2)</p>
+<p>BDM3[e/f] (&quot;BDM[E,F]&quot;, triangle, 3)</p>
+<p>N21e (&quot;N2E&quot;, tetrahedron, 1)</p>
+<p>N2e2 (&quot;N2E&quot;, tetrahedron, 2)</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>6</p>
+<p>12</p>
+<p>20</p>
+<p>12</p>
+<p>30</p>
+<p>k=2</p>
+<p>dP1 (&quot;DP&quot;, triangle, 1)</p>
+<p>dP2 (&quot;DP&quot;, triangle, 2)</p>
+<p>dP3 (&quot;DP&quot;, triangle, 3)</p>
+<p>N21f (&quot;N2F&quot;, tetrahedron, 1)</p>
+<p>N2 2f (&quot;N2F&quot;, tetrahedron, 2)</p>
+<p>3</p>
+<p>6</p>
+<p>10</p>
+<p>12</p>
+<p>30</p>
+<p>k=3</p>
+<p>dP1 (&quot;DP&quot;, tetrahedron, 1)</p>
+<p>dP2 (&quot;DP&quot;, tetrahedron, 2)</p>
+<p>4</p>
+<p>10</p>
+<p>2</p>
+<p>10 15 6</p>
+<p>4 3</p>
+<p>3</p>
+<p>15 24 10</p>
+<p>5 4</p>
+<p>4</p>
+<p>126 420 540 315 70</p>
+<p>56 140 120 35</p>
+<p>21 35 15</p>
+<p>6 5</p>
+<p>5</p>
+<p>210 720 945 560 126</p>
+<p>84 216 189 56</p>
+<p>28 48 21</p>
+<p>7 6</p>
+<p>6</p>
+<p>330 1155 1540 924 210</p>
+<p>120 315 280 84</p>
+<p>36 63 28</p>
+<p>8 7</p>
+<p>7</p>
+<p>n=4</p>
+<p>n=3</p>
+<p>n=2</p>
+<p>n=1</p>
+<p>0 1 2 3 4</p>
+<p>0 1 2 3</p>
+<p>0 1 2</p>
+<p>0 1</p>
+<p>k</p>
+<p>5 20 30 20 5</p>
+<p>4 12 12 4</p>
+<p>3 6 3</p>
+<p>2 2</p>
+<p>r=1</p>
+<p>15 60 90 60 15</p>
+<p>10 30 30 10</p>
+<p>6 12 6</p>
+<p>3 3</p>
+<p>2</p>
+<p>35 140 210 140 35</p>
+<p>20 60 60 20</p>
+<p>10 20 10</p>
+<p>4 4</p>
+<p>3</p>
+<p>70 280 420 280 70</p>
+<p>35 105 105 35</p>
+<p>15 30 15</p>
+<p>5 5</p>
+<p>4</p>
+<p>126 504 756 504 126</p>
+<p>56 168 168 56</p>
+<p>21 42 21</p>
+<p>6 6</p>
+<p>5</p>
+<p>210 840 1260 840 210</p>
+<p>84 252 252 84</p>
+<p>28 56 28</p>
+<p>7 7</p>
+<p>6</p>
+<p>330 1320 1980 1320 330</p>
+<p>120 360 360 120</p>
+<p>36 72 36</p>
+<p>8 8</p>
+<p>7</p>
+<p>n=4</p>
+<p>n=3</p>
+<p>n=2</p>
+<p>n=1</p>
+<p>0 1 2 3 4</p>
+<p>0 1 2 3</p>
+<p>0 1 2</p>
+<p>0 1</p>
+<p>k</p>
+<p>16 32 24 8 1</p>
+<p>8 12 6 1</p>
+<p>4 4 1</p>
+<p>2 1</p>
+<p>r=1</p>
+<p>81 216 216 96 16</p>
+<p>27 54 36 8</p>
+<p>9 12 4</p>
+<p>3 2</p>
+<p>2</p>
+<p>256 768 864 432 81</p>
+<p>64 144 108 27</p>
+<p>16 24 9</p>
+<p>4 3</p>
+<p>3</p>
+<p>625 2000 2400 1280 256</p>
+<p>125 300 240 64</p>
+<p>25 40 16</p>
+<p>5 4</p>
+<p>4</p>
+<p>1296 4320 5400 3000 625</p>
+<p>216 540 450 125</p>
+<p>36 60 25</p>
+<p>6 5</p>
+<p>5</p>
+<p>2401 8232 10584 6048 1296</p>
+<p>343 882 756 216</p>
+<p>49 84 36</p>
+<p>7 6</p>
+<p>6</p>
+<p>4096 14336 18816 10976 2401</p>
+<p>512 1344 1176 343</p>
+<p>64 112 49</p>
+<p>8 7</p>
+<p>7</p>
+<p>n=4</p>
+<p>n=3</p>
+<p>n=2</p>
+<p>n=1</p>
+<p>0 1 2 3 4</p>
+<p>0 1 2 3</p>
+<p>0 1 2</p>
+<p>0 1</p>
+<p>k</p>
+<p>16 64 72 32 5</p>
+<p>8 24 18 4</p>
+<p>4 8 3</p>
+<p>2 2</p>
+<p>r=1</p>
+<p>48 144 168 84 15</p>
+<p>20 48 39 10</p>
+<p>8 14 6</p>
+<p>3 3</p>
+<p>2</p>
+<p>80 272 336 180 35</p>
+<p>32 84 72 20</p>
+<p>12 22 10</p>
+<p>4 4</p>
+<p>3</p>
+<p>136 472 606 340 70</p>
+<p>50 135 120 35</p>
+<p>17 32 15</p>
+<p>5 5</p>
+<p>4</p>
+<p>216 768 1014 588 126</p>
+<p>74 204 186 56</p>
+<p>23 44 21</p>
+<p>6 6</p>
+<p>5</p>
+<p>328 1188 1602 952 210</p>
+<p>105 294 273 84</p>
+<p>30 58 28</p>
+<p>7 7</p>
+<p>6</p>
+<p>480 1764 2418 1464 330</p>
+<p>144 408 384 120</p>
+<p>38 74 36</p>
+<p>8 8</p>
+<p>7</p>
+<p>20</p>
+<p>3 2</p>
+<p>35 84 70 20</p>
+<p>60</p>
+<p>6 8 3</p>
+<p>70 224 280 160 35</p>
+<p>60</p>
+<p>2 1</p>
+<p>20 45 36 10</p>
+<p>20</p>
+<p>3 3 1</p>
+<p>r=1</p>
+<p>35 105 126 70 15</p>
+<p>10</p>
+<p>k</p>
+<p>10 20 15 4</p>
+<p>36</p>
+<p>0 1</p>
+<p>15 40 45 24 5</p>
+<p>(&quot;DP&quot;, tetrahedron, 3)</p>
+<p>dP3</p>
+<p>0 1 2</p>
+<p>4 6 4 1</p>
+<p>(&quot;N2F&quot;, tetrahedron, 3)</p>
+<p>N2 3f</p>
+<p>n=1</p>
+<p>5 10 10 5 1</p>
+<p>(&quot;N2E&quot;, tetrahedron, 3)</p>
+<p>N2e3</p>
+<p>n=2</p>
+<p>0 1 2 3</p>
+<p>(&quot;P&quot;, tetrahedron, 3)</p>
+<p>P3</p>
+<p>n=3</p>
+<p>0 1 2 3 4</p>
+<p>(&quot;DP&quot;, tetrahedron, 2)</p>
+<p>dP2</p>
+<p>n=4</p>
+<p>(&quot;N1F&quot;, tetrahedron, 3)</p>
+<p>N13f</p>
+<p>1</p>
+<p>k=0</p>
+<p>Q1 (&quot;Q&quot;, interval, 1)</p>
+<p>Q2 (&quot;Q&quot;, interval, 2)</p>
+<p>(&quot;Q&quot;, interval, 3)</p>
+<p>Q3</p>
+<p>Q1 (&quot;Q&quot;, quadrilateral, 1)</p>
+<p>Q2 (&quot;Q&quot;, quadrilateral, 2)</p>
+<p>Q3 (&quot;Q&quot;, quadrilateral, 3)</p>
+<p>Q1 (&quot;Q&quot;, hexahedron, 1)</p>
+<p>Q2 (&quot;Q&quot;, hexahedron, 2)</p>
+<p>(&quot;Q&quot;, hexahedron, 3)</p>
+<p>Q3</p>
+<p>Finite elements</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>4</p>
+<p>9</p>
+<p>16</p>
+<p>8</p>
+<p>27</p>
+<p>64</p>
+<p>k=1</p>
+<p>dQ0 (&quot;DQ&quot;, interval, 0)</p>
+<p>dQ1 (&quot;DQ&quot;, interval, 1)</p>
+<p>(&quot;DQ&quot;, interval, 2)</p>
+<p>dQ2</p>
+<p>RTc[e/f] 1</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>12</p>
+<p>(&quot;RTC[E,F]&quot;, quadrilateral, 1)</p>
+<p>RTc[e/f] 2</p>
+<p>24</p>
+<p>(&quot;RTC[E,F]&quot;, quadrilateral, 2)</p>
+<p>RTc[e/f] 3</p>
+<p>144</p>
+<p>54</p>
+<p>12</p>
+<p>(&quot;RTC[E,F]&quot;, quadrilateral, 3)</p>
+<p>Nc1e (&quot;NCE&quot;, hexahedron, 1)</p>
+<p>Nce2 (&quot;NCE&quot;, hexahedron, 2)</p>
+<p>k=2</p>
+<p>dQ0 (&quot;DQ&quot;, quadrilateral, 0)</p>
+<p>dQ1 (&quot;DQ&quot;, quadrilateral, 1)</p>
+<p>dQ2</p>
+<p>1</p>
+<p>4</p>
+<p>9</p>
+<p>6</p>
+<p>36</p>
+<p>for</p>
+<p>,</p>
+<p>k=3</p>
+<p>dQ0 (&quot;DQ&quot;, hexahedron, 0)</p>
+<p>dQ1 (&quot;DQ&quot;, hexahedron, 1)</p>
+<p>(&quot;DQ&quot;, hexahedron, 2)</p>
+<p>dQ2</p>
+<p>,</p>
+<p>, and</p>
+<p>8</p>
+<p>27</p>
+<p>, respectively.</p>
+<p>FiniteElement(&quot;P-&quot;, shape, r, k) FiniteElement(&quot;P&quot;, shape, r, k) FiniteElement(&quot;Q-&quot;, shape, r, k) FiniteElement(&quot;S&quot;, shape, r, k)</p>
+<p>Alternatively, the elements may be accessed in a uniform fashion as:</p>
+<p>FiniteElement(&quot;N2E&quot;, tetrahedron, 3)</p>
+<p>The finite elements in this table have been implemented as part of the FEniCS Project.12, 13, 14 Each may be referenced in the Unified Form Language (UFL) 15 by giving its family, shape, and degree, with the may family as shown on the table. For example, the space be referred to in UFL as:</p>
+<p>The family of cubical elements can be derived from the 1-dimensional Lagrange and discontinuous Galerkin elements by a tensor product construction detailed by Arnold, Boffi and Bonizzoni, 10 but for the most part were presented individually along with the corresponding simplicial elements in the papers mentioned. The second cubical family is due to Arnold and Awanou. 11</p>
+<p>108</p>
+<p>(&quot;DQ&quot;, quadrilateral, 2)</p>
+<p>Nc1f (&quot;NCF&quot;, hexahedron, 1)</p>
+<p>Nc 2f (&quot;NCF&quot;, hexahedron, 2)</p>
+<p>(&quot;NCF&quot;, hexahedron, 3)</p>
+<p>Nc 3f</p>
+<p>derivative. Thus for k = 0, the spaces discretize the Sobolev space H 1 the domain of the gradient operator; for k = 1, they discretize H (curl), the domain of the curl; for k = n – 1 they discretize H (div), the domain of the divergence; and for k = n, they discretize L 2. The spaces and , which coincide, are the earliest finite elements, going back in the case r = 1 of linear elements to Courant,1 and collectively referred to as the Lagrange elements. The and spaces , which also coincide, are the discontinuous Galerkin elements, consisting of piecewise polynomials with no interelement continuity imposed, first introduced by Reed and Hill. 2 The space in 2 dimensions was introduced by Raviart and Thomas 3 and generalized to the 3-dimensional spaces by Nédélec, 4 while and is due to Brezzi, Douglas and Marini 5 in 2 dimensions, its generalization to 3 dimensions again due to Nédélec. 6 The unified treatment and notation of the and families is due to Arnold, Falk and Winther as part of finite element exterior calculus, 7 extending arlier work of Hiptmair for the family. 8 The space is the span of the elementary forms introduced by Whitney. 9</p>
+<p>(&quot;NCE&quot;, hexahedron, 3)</p>
+<p>Nce3</p>
+<p>The table presents the primary spaces of finite elements for the discretization of the fundamental operators of vector calculus: the gradient, curl, and divergence. A finite element space is a space of piecewise polynomial functions on a domain determined by: (1) a mesh of the domain into polyhedral cells called elements, (2) a finite dimensional space of polynomial functions on each element called the shape functions, and (3) a unisolvent et of functionals on the shape functions of each element called degrees of freedom (DOFs), each DOF being associated to a (generalized) face of the element, and specifying a quantity which takes a ingle value for all elements sharing the face. The element diagrams depict the DOFs and their association to faces. depicted on the left half of the table and The spaces are the two primary families of finite element spaces for meshes of simplices, and the spaces and on the right side are for meshes of cubes or boxes. Each is defined in any imension n ≥ 1 for each value of the polynomial degree r ≥ 1, and each value of 0 ≤ k ≤ n. The parameter k refers to the operator: the spaces consist of differential k-forms which belong to the domain of the k th exterior</p>
+<p>1</p>
+<p>k=0</p>
+<p>S1 (&quot;S&quot;, interval, 1)</p>
+<p>S2 (&quot;S&quot;, interval, 2)</p>
+<p>(&quot;S&quot;, interval, 3)</p>
+<p>S3</p>
+<p>S1 (&quot;S&quot;, quadrilateral, 1)</p>
+<p>S2 (&quot;S&quot;, quadrilateral, 2)</p>
+<p>S3 (&quot;S&quot;, quadrilateral, 3)</p>
+<p>S1 (&quot;S&quot;, hexahedron, 1)</p>
+<p>S2 (&quot;S&quot;, hexahedron, 2)</p>
+<p>(&quot;S&quot;, hexahedron, 3)</p>
+<p>S3</p>
+<p>References</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>4</p>
+<p>8</p>
+<p>12</p>
+<p>8</p>
+<p>20</p>
+<p>32</p>
+<p>k=1</p>
+<p>dPc1</p>
+<p>(&quot;DPC&quot;, interval, 1)</p>
+<p>dPc2</p>
+<p>(&quot;DPC&quot;, interval, 2)</p>
+<p>(&quot;DPC&quot;, interval, 3)</p>
+<p>dPc3</p>
+<p>BDMc[e/f] 1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>8</p>
+<p>14</p>
+<p>(&quot;BDMC[E,F]&quot;, quadrilateral, 1)</p>
+<p>BDMc[e/f] 2</p>
+<p>22</p>
+<p>(&quot;BDMC[E,F]&quot;, quadrilateral, 2)</p>
+<p>BDMc[e/f] 3</p>
+<p>84</p>
+<p>48</p>
+<p>24</p>
+<p>(&quot;BDMC[E,F]&quot;, quadrilateral, 3)</p>
+<p>AA1e</p>
+<p>(&quot;AAE&quot;, hexahedron, 1)</p>
+<p>AAe2</p>
+<p>(&quot;AAE&quot;, hexahedron, 2)</p>
+<p>(&quot;AAE&quot;, hexahedron, 3)</p>
+<p>AAe3</p>
+<p>1. R. Courant, Bulletin of the American Mathematical Society 49, 1943. 2. W. H. Reed and T. R. Hill, Los Alamos port LA-UR-73-479, 1973. 3. P. A. Raviart and J. M. Thomas, Lecture Notes in Mathematics 606, Springer, 1977. 4. J. C. Nédélec, Numerische Mathematik 35, 1980. 5. F. Brezzi, J. Douglas Jr., and L. D. Marini, Numerische Mathematik 47, 1985. 6. J. C. Nédélec, Numerische Mathematik 50, 1986. 7. D. N. Arnold, R.S. Falk, and R. Winther, Acta Numerica 15, 2006. 8. R. Hiptmair, Mathematics of Computation 68, 1999. 9. H. Whitney, Geometric Integration Theory, 1957. 10. D. N. Arnold, D. Boffi, and F. Bonizzoni, Numerische Mathematik, 2014. 11. D. N. Arnold and G. Awanou, Mathematics of Computation, 2013. 12. A. Logg, K.-A. Mardal, and G. N. Wells (eds.), Automated Solution of Differential Equations by the Finite Element Method, Springer, 2012. 13. R. C. Kirby, ACM Transactions on Mathematical Software 30, 2004. 14. A. Logg and G. N. Wells, ACM Transactions on Mathematical Software 37, 2010. 15. M. Alnæs, A. Logg, K. B. Ølgaard, M. E. Rognes, and G. N. Wells, ACM Transactions on Mathematical Software 40, 2014.</p>
+<p>k=2</p>
+<p>dPc1</p>
+<p>(&quot;DPC&quot;, quadrilateral, 1)</p>
+<p>dPc2</p>
+<p>(&quot;DPC&quot;, quadrilateral, 2)</p>
+<p>dPc3</p>
+<p>(&quot;DPC&quot;, quadrilateral, 3)</p>
+<p>AA1f</p>
+<p>(&quot;AAF&quot;, hexahedron, 1)</p>
+<p>AA 2f</p>
+<p>(&quot;AAF&quot;, hexahedron, 2)</p>
+<p>femtable.org</p>
+<p>6</p>
+<p>10</p>
+<p>18</p>
+<p>39</p>
+<p>72</p>
+<p>k=3</p>
+<p>dPc1</p>
+<p>(&quot;DPC&quot;, hexahedron, 1)</p>
+<p>dPc2</p>
+<p>(&quot;DPC&quot;, hexahedron, 2)</p>
+<p>(&quot;DPC&quot;, hexahedron, 3)</p>
+<p>dPc3</p>
+<p>4</p>
+<p>10</p>
+<p>20</p>
+<p>Concept and scientific content: Douglas N. Arnold (University of Minnesota) and Anders Logg (Chalmers University of Technology). Graphic design: Mattias Schläger. The production of this poster has been supported by Simula Research Laboratory and is partially based on work supported by the U.S. National Science Foundation under grant DMS-1115291. Findings do not necessarily represent the views of Simula or of the NSF. Produced in 2014 and licensed under a Creative Commons Attribution-ShareAlike 4.0 International license.</p>
+<p>(&quot;AAF&quot;, hexahedron, 3)</p>
+<p>AA 3f</p>
+<p>3</p>
+<p>Periodic Table of the Finite Elements r=1</p>
+<p>r=2</p>
+<p>r=3</p>
+<p>r=1</p>
+<p>r=2</p>
+<p>r=3</p>
+<p>r=1</p>
+<p>P1 (&quot;P&quot;, tetrahedron, 1)</p>
+<p>P2 (&quot;P&quot;, tetrahedron, 2)</p>
+<p>(&quot;P&quot;, tetrahedron, 3)</p>
+<p>P3</p>
+<p>(&quot;P&quot;, tetrahedron, 1)</p>
+<p>P1</p>
+<p>c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p>
+<p>n=2</p>
+<p>n=3</p>
+<p>r=2</p>
+<p>r=3</p>
+<p>Legend</p>
+<p>Element with degrees of freedom (DOFs)</p>
+<p>Symbol of element</p>
+<p>Weight functions for DOFs</p>
+<p>2014-09-22 14:24</p>
+<p>Figure 5: Periodic Table of the Finite Elements.</p></section>
+<section class="pdf-page" id="pdf-page-9"><h2 class="page-number">Page 9</h2><p>The FEniCS Project Version 1.5</p>
+<p>17</p>
+<p>Figure 6: Comparison of sparsity patterns of the Taylor–Hood Stokes operator on the DOLFIN gear mesh.</p>
+<p>Figure 7: Comparison of sparsity patterns of the Taylor–Hood Stokes operator on a NACA 0018 airfoil mesh. Improvements in sparsity patterns that follow from improved DOF map ordering are shown in Figures 6 and 7. The sparsity patterns produced by DOLFIN 1.5.0 are better clustered around the diagonal. When DOLFIN is configured with SCOTCH, the SCOTCH implementation of Gibbs-Poole–Stockmeyer reordering is used. The code for reproducing the sparsity patterns in Figures 6 and 7 and patterns on other meshes can be found at https://www.repository.cam.ac.uk/handle/1810/252670. The meshes are shown at http://fenicsproject.org/download/data.html#meshes. 2.10</p>
+<p>Linear algebra interface</p>
+<p>FEniCS uses the PETSc and SLEPc libraries as backends providing parallel infrastructure for linear algebra, non-linear solvers, and eigensolvers. The wrapper layer to these packages has been improved, in particular, as follows: • PETScTAOSolver, the DOLFIN interface to the PETSc TAO framework, which provides solvers for non-linear optimization problems, has been introduced; • LinearOperator, the DOLFIN interface to matrix-free operators, can now be unwrapped into a respective PETSc or petsc4py object; c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-10"><h2 class="page-number">Page 10</h2><p>18</p>
+<p>• SLEPcEigenSolver, the DOLFIN interface to eigensolvers, can now be unwrapped into a respective SLEPc or slepc4py object. The latter two extend the feature already available for other backend wrappers, e.g., PETScMatrix, PETScKrylovSolver, etc. This feature allows for finer, but still convenient, control over a solution process and other details, in such cases when the coverage of backend features or options in DOLFIN is not sufficiently detailed. In this release, support for the Trilinos Epetra backend has been removed. Support for the newer Trilinos Tpetra backend will be added to a future release.</p>
+<p>2.11</p>
+<p>Use of C++ 11</p>
+<p>The FEniCS team has started using selected C++11 features, allowing removal of the dependency on Boost shared pointers and some simplifications of the C++ source code. The set of features is limited for the time being, to remain compatible with some common compilers. GCC 4.6.3 is known to be compatible. For users of the DOLFIN C++ interface, the use of C++11 can lead to less verbose code by using the key word auto, initializer lists, and range-based loops, for instance.</p>
+<p>2.12</p>
+<p>Python versions</p>
+<p>FEniCS now requires Python 2.7, and has experimental support for Python 3.x. As part of supporting Python 3, FIAT no longer depends on Scientific Python. In place of Scientific Python, which does not support Python 3, FIAT now depends on SymPy.</p>
+<p>2.13</p>
+<p>Packaging and installation</p>
+<p>As before, FEniCS is available as a binary package as part of the standard Debian and Ubuntu repositories. For users who wish to access the latest FEniCS versions before these have propagated downstream, a personal package archive (PPA) is provided (ppa:fenics-packages/fenics). A binary package is also available for Mac OSX. With the release of version 1.5, FEniCS has retired the installer Dorsal in favor of the new tool fenics-install.sh. This script relies on HashDist (https://hashdist.github.io/) for installation of FEniCS and its dependencies. Using this script, users can easily build FEniCS with a one-line command: curl -s http://fenicsproject.org/fenics-install.sh | bash FEniCS developers (who need to modify the source code) are encouraged to use the two related scripts fenics-install-all.sh and fenics-install-component.sh as standard tools in their normal workflow. These scripts are part of the FEniCS Developer Tools repository on BitBucket. In addition, FEniCS can now also be installed via a community-supported Conda recipe, see https://github.com/Juanlu001/fenics-recipes/releases/tag/v1.5.0 as well as via a custom virtualization image provided on the FEniCS web page. Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-11"><h2 class="page-number">Page 11</h2><p>The FEniCS Project Version 1.5</p>
+<p>3</p>
+<p>19</p>
+<p>New demo programs</p>
+<p>Some new example programs have been added to demonstrate the use of new user-level features. The new demo programs are: • Smoothed aggregation algebraic multigrid for three-dimensional elasticity. The demo illustrates the construction and specification of the near-nullspace which is required by the multigrid preconditioner. It also demonstrates how to construct a scalable solver for elasticity problems. • Two new demos illustrating the implementation of multimesh-methods: multimesh-poisson and multimesh-stokes.</p>
+<p>4</p>
+<p>Interface changes</p>
+<p>The following interface changes were made in the release of FEniCS version 1.5: • The classes FacetArea, FacetNormal, CellSize, CellVolume, SpatialCoordinate, Circumradius, MinFacetEdgeLength, and MaxFacetEdgeLength now require a Mesh argument instead of a Cell argument. • The signature for the assemble function has been simplified to not require/accept the arguments coefficients, cells, and common_cell. • Differentiation of expressions with respect to a Coefficient or Function using diff does not require the function to be wrapped in a variable construct. • Quadrature degree and rule name can be specified as keywords to form integration measures, i.e. f*dx(degree=3, rule=&quot;canonical&quot;). The syntax Measure.__getitem__(mesh_function).__call__(subdomain_id), e.g., dx[mesh_function](42), has been deprecated in favor of keyword arguments, for example: dx(subdomain_data=mesh_function, subdomain_id=42). • GenericTensors cannot be reinitialized anymore, hence the reset_sparsity parameter has been removed from all assemble functions. • Deprecated MPI::process_number and MPI::num_processes were removed in favor of MPI::rank and MPI::size respectively. • GenericVector.__setitem__, e.g., vec[indices] = values, now takes local indices which can be list of ints, NumPy array of ints, int, or full slice :. Type of values can be scalar, NumPy array, or GenericVector where applicable. Operation is collective and finalizes the vector automatically.</p>
+<p>5</p>
+<p>Dependencies</p>
+<p>FEniCS, mostly DOLFIN, depends on a number of external packages. Here we list and describe these external packages, along with required version numbers (to the best of our knowledge). Necessary dependencies: • C++11 compiler (GCC ≥ 4.6 and Clang 3.6 are known to work), see section 2.11 for details • Boost ≥ 1.48; provides some low-level data structures and algorithms, DOF reordering and mesh coloring [Schling, 2011] • CMake ≥ 2.8; used by DOLFIN build system and optionally by Python JIT chain c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-12"><h2 class="page-number">Page 12</h2><p>20</p>
+<p>• Eigen ≥ 3.0; provides data structures and operations used by adaptive solvers [Guennebaud et al., 2015] • Python 2.7 or ≥ 3.2; six (Python 2 and 3 compatibility tool); needed by FIAT, UFL, FFC, and Instant; optionally needed for Python interface to DOLFIN and mshr • NumPy; Python package providing data structures and operations on N-dimensional arrays [van der Walt et al., 2011] • SymPy; Python symbolic maths library, used by FIAT [SymPy Development Team, 2014] Optional dependencies: • OpenMP; supports parallel computing on shared memory systems • MPI; supports parallel computing on distributed memory systems • PETSc ≥ 3.3, &lt; 3.6; serves as parallel (linear) algebra backend; provides data structures and routines for handling parallel vectors, matrices, Krylov solvers, sparse direct solvers, various preconditioners and non-linear solvers [Balay et al., 2014b,a, 1997] • petsc4py ≥ 3.3, &lt; 3.6; provides Python bindings to PETSc [Dalcin et al., 2011] • SLEPc ≥ 3.3, &lt; 3.6; provides parallel eigen-problem solvers [Hernandez et al., 2005] • slepc4py ≥ 3.5.1, &lt; 3.6; provides Python bindings to SLEPc [Dalcin et al., 2011] • UMFPACK; provides sequential sparse LU decomposition using multifrontal method [Davis, 2004] • CHOLMOD; provides sequential sparse Cholesky decomposition using supernodal method [Chen et al., 2008] • PaStiX ≥ 5.2.1; provides parallel (both distributed and threaded) sparse LU and Cholesky decomposition [Hénon et al., 2002] • Trilinos ≥ 11.0.0; provides mesh partitioning and coloring [Heroux et al., 2005] • SCOTCH; provides mesh partitioning and DOF reordering [Chevalier and Pellegrini, 2006] • ParMETIS ≥ 4.0.2; provides mesh partitioning [Karypis and Kumar, 1998] • SWIG ≥ 2.0 (with Python 2) or ≥ 3.0.3 (with Python 3); tool needed for generating Python interface to DOLFIN and mshr • flufl.lock; implements file locking (used by Instant) on NFS file system • HDF5; provides parallel, scalable IO backend; needs to be built with parallel support [The HDF Group, 2015] • zlib; reading compressed XML files and compressed VTK output • VTK ≥ 5.2; provides interactive plotting in DOLFIN • CGAL 4.5.1, TetGen 1.5.0; mshr backends, built automatically by mshr build system [The CGAL Project, 2015, Si, 2015] • GMP, MPFR; arbitrary-precision and multiple-precision arithmetic libraries, required by mshr [Granlund and the GMP development team, 2014, Fousse et al., 2007] • Scipy; needed by UFL for evaluation of error and Bessel functions Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-13"><h2 class="page-number">Page 13</h2><p>The FEniCS Project Version 1.5</p>
+<p>21</p>
+<p>• pytest; Python testing tool, needed for running unit tests • Sphinx ≥ 1.1.0; enables building documentation • Qt4; provides API for writing graphical applications • Soya; Python 3D engine, used for plotting finite elements</p>
+<p>6</p>
+<p>How to cite FEniCS 1.5</p>
+<p>Users of FEniCS version 1.5 are encouraged to cite this article, in addition to one or more of the publications listed on the FEniCS Project web site: http://fenicsproject.org/citing/</p>
+<p>7</p>
+<p>Acknowledgments</p>
+<p>Although this article lists as authors only those developers who have made significant contributions specifically to the release of FEniCS 1.5, we gratefully acknowledge the contributions by many people to the FEniCS Project, including Martin S. Alnæs, Jan Blechta, Juan Luis Cano Rodríguez Patrick Farrell, Johan Hake, Johan Hoffman, Johan Jansson, Niclas Jansson, August Johansson, Claes Johnson, Benjamin Kehlet, Robert C. Kirby, Matthew Knepley, Miroslav Kuchta, Hans Petter Langtangen, Anders Logg, Kent-Andre Mardal, Andre Massing, Mikael Mortensen, Harish Narayanan, Chris Richardson, Johannes Ring, Marie E. Rognes, L. Ridgway Scott, Ola Skavhaug, Andy Terrel, Garth N. Wells, and Kristian Ølgaard. The FEniCS Project is supported by The Research Council of Norway through a Centre of Excellence grant to the Center for Biomedical Computing at Simula Research Laboratory, project number 179578. Anders Logg acknowledges support by the Swedish Research Council Grant No. 2014–6093. Jan Blechta acknowledges the support of the project LL1202 in the programme ERC-CZ funded by the Ministry of Education, Youth and Sports of the Czech Republic.</p>
+<p>References D. N. Arnold and A. Logg. Periodic table of the finite elements. SIAM News, 2014. D. N. Arnold, R. S. Falk, and R. Winther. Finite element exterior calculus, homological techniques, and applications. Acta numerica, 15:1–155, 2006. URL http://dx.doi.org/10.1017/ S0962492906210018. S. Balay, W. D. Gropp, L. C. McInnes, and B. F. Smith. Efficient management of parallelism in object oriented numerical software libraries. In E. Arge, A. M. Bruaset, and H. P. Langtangen, editors, Modern Software Tools in Scientific Computing, pages 163–202. Birkhäuser Press, 1997. URL http://dx.doi.org/10.1007/978-1-4612-1986-6_8. S. Balay, S. Abhyankar, M. F. Adams, J. Brown, P. Brune, K. Buschelman, V. Eijkhout, W. D. Gropp, D. Kaushik, M. G. Knepley, L. C. McInnes, K. Rupp, B. F. Smith, and H. Zhang. PETSc users manual. Technical Report ANL-95/11 - Revision 3.5, Argonne National Laboratory, 2014a. URL http://www.mcs.anl.gov/petsc. S. Balay, S. Abhyankar, M. F. Adams, J. Brown, P. Brune, K. Buschelman, V. Eijkhout, W. D. Gropp, D. Kaushik, M. G. Knepley, L. C. McInnes, K. Rupp, B. F. Smith, and H. Zhang. PETSc Web page, 2014b. URL http://www.mcs.anl.gov/petsc. Y. Chen, T. A. Davis, W. W. Hager, and S. Rajamanickam. Algorithm 887: CHOLMOD, supernodal sparse Cholesky factorization and update/downdate. ACM Trans. Math. Softw., 35(3):22:1–22:14, Oct. 2008. ISSN 0098-3500. URL http://doi.acm.org/10.1145/1391989.1391995. c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section>
+<section class="pdf-page" id="pdf-page-14"><h2 class="page-number">Page 14</h2><p>22</p>
+<p>C. Chevalier and F. Pellegrini. PT-Scotch: A tool for efficient parallel graph ordering. In 4th International Workshop on Parallel Matrix Algorithms and Applications (PMAA’06), IRISA, Rennes, France, Sept. 2006. L. D. Dalcin, R. R. Paz, P. A. Kler, and A. Cosimo. Parallel distributed computing using Python. Advances in Water Resources, 34(9):1124 – 1139, 2011. ISSN 0309-1708. URL http://dx.doi. org/10.1016/j.advwatres.2011.04.013. New Computational Methods and Software Tools. T. A. Davis. Algorithm 832: UMFPACK v4.3—an unsymmetric-pattern multifrontal method. ACM Trans. Math. Softw., 30(2):196–199, June 2004. ISSN 0098-3500. URL http://doi.acm. org/10.1145/992200.992206. L. Fousse, G. Hanrot, V. Lefèvre, P. Pélissier, and P. Zimmermann. MPFR: A multiple-precision binary floating-point library with correct rounding. ACM Transactions on Mathematical Software, 33(2):13:1–13:15, June 2007. URL http://doi.acm.org/10.1145/1236463.1236468. T. Granlund and the GMP development team. GNU MP: The GNU Multiple Precision Arithmetic Library, 6.0.0 edition, 2014. URL http://gmplib.org/. G. Guennebaud, B. Jacob, et al. Eigen v3, 2015. URL http://eigen.tuxfamily.org. P. Hénon, P. Ramet, and J. Roman. PaStiX: A High-Performance Parallel Direct Solver for Sparse Symmetric Definite Systems. Parallel Computing, 28(2):301–321, Jan. 2002. URL http://dx. doi.org/10.1016/S0167-8191(01)00141-7. V. Hernandez, J. E. Roman, and V. Vidal. SLEPc: A scalable and flexible toolkit for the solution of eigenvalue problems. ACM Trans. Math. Software, 31(3):351–362, 2005. URL http://dx.doi. org/10.1145/1089014.1089019. M. A. Heroux, R. A. Bartlett, V. E. Howle, R. J. Hoekstra, J. J. Hu, T. G. Kolda, R. B. Lehoucq, K. R. Long, R. P. Pawlowski, E. T. Phipps, A. G. Salinger, H. K. Thornquist, R. S. Tuminaro, J. M. Willenbring, A. Williams, and K. S. Stanley. An overview of the Trilinos project. ACM Trans. Math. Softw., 31(3):397–423, 2005. ISSN 0098-3500. URL http://doi.acm.org/10.1145/ 1089014.1089021. A. Johansson, M. G. Larson, and A. Logg. High order cut finite element methods for the stokes problem. Advanced Modeling and Simulation in Engineering Sciences, 2(24), 2015. doi: 10.1186/ s40323-015-0043-7. G. Karypis and V. Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, Dec. 1998. ISSN 1064-8275. URL http://dx.doi. org/10.1137/S1064827595287997. A. Plaza and G. Carey. Local refinement of simplicial grids based on the skeleton. Applied Numerical Mathematics, 32:195–218, 2000. URL http://dx.doi.org/10.1016/S0168-9274(99)00022-7. C. N. Richardson and G. N. Wells. Parallel scaling of DOLFIN on ARCHER. figshare.com, http://figshare.com/articles/Parallel_scaling_of_DOLFIN_on_ARCHER/1304537, 2015. URL http://dx.doi.org/10.6084/m9.figshare.1304537. S. Rush and H. Larsen. A practical algorithm for solving dynamic membrane equations. IEEE Trans Biomed Eng, 25(4):389–392, Jul 1978. URL http://dx.doi.org/10.1109/TBME.1978.326270. B. Schling. The Boost C++ Libraries. XML Press, 2011. ISBN 0982219199, 9780982219195. H. Si. TetGen, a Delaunay-based quality tetrahedral mesh generator. ACM Trans. Math. Softw., 41 (2):11:1–11:36, Feb. 2015. ISSN 0098-3500. URL http://doi.acm.org/10.1145/2629697. Archive of Numerical Software 3(100), 2015</p>
+<p>c by the authors, 2015</p></section>
+<section class="pdf-page" id="pdf-page-15"><h2 class="page-number">Page 15</h2><p>The FEniCS Project Version 1.5</p>
+<p>23</p>
+<p>J. Sundnes, R. Artebrant, O. Skavhaug, and A. Tveito. A second-order algorithm for solving dynamic cell membrane equations. IEEE Trans Biomed Eng, 56(10):2546–2548, Oct 2009. URL http://dx.doi.org/10.1109/TBME.2009.2014739. SymPy Development Team. SymPy: Python library for symbolic mathematics, 2014. URL http: //www.sympy.org. The CGAL Project. CGAL User and Reference Manual. CGAL Editorial Board, 4.6 edition, 2015. URL http://doc.cgal.org/4.6/Manual/packages.html. The HDF Group. Hierarchical data format, version 5, 2015. URL http://www.hdfgroup.org/ HDF5/. S. van der Walt, S. Colbert, and G. Varoquaux. The NumPy Array: A structure for efficient numerical computation. Computing in Science Engineering, 13(2):22–30, March 2011. ISSN 15219615. URL http://dx.doi.org/10.1109/MCSE.2011.37.</p>
+<p>c by the authors, 2015</p>
+<p>Archive of Numerical Software 3(100), 2015</p></section></article></body></html>

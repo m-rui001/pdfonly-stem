@@ -1,0 +1,73 @@
+{
+  "sha1": "4a01f32a10392efd9fcd73d5196fda53e4b906d7",
+  "title": "Low-Loss Si3N4 TriPleX Optical Waveguides: Technology and Applications Overview",
+  "doi": "https://doi.org/10.1109/jstqe.2018.2793945",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/4a01f32a10392efd9fcd73d5196fda53e4b906d7/index.html",
+  "source_chars": 111752,
+  "markdown_chars": 7291,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 7,
+      "quote": "As discussed previously (Section II-B) the described dimensions of a single stripe cross-section enable the lowest propagation loss, compared to the other cross-sections, at the given radius of the resonator.",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "单条截面实现最低传播损耗的论述在 Section II-B，但该小节标题为 Single-Stripe，与上下文一致。此处引用 Section II-B 正确，无错误。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "Here an MZF was actuated using a stress-optic actuator with an electrode length of 1.5 cm and a ΔL between the two arms of 100 μm resulting in an FSR of 14.5 nm (see Section II-F).",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "正文引用 Section II-F，但应力光致动器实际在 Section III-E 中描述，II-F 不存在（第二章只有 A-E 五个小节）。疑似应为 Section III-E。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 10,
+      "quote": "C. High-Granularity WDM Filter TriPleX circuits also promise a significant impact on the next generation elastic optical communication networks...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "low",
+      "confidence": 0.5,
+      "reason": "页码第 9 页结束时的句子在第 10 页开头续接，页码标记前后的文本连续，属于正常换页，无拼接问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 14,
+      "quote": "exploiting the Vernier effect as was also described above in Section G.",
+      "type": "疑似错误",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "文中引用“Section G”但正文相关描述实际在第五章第 G 节（Planar Waveguide Based Sensor），即 Section V-G。此处引用不完整，疑似应为 Section V-G。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "核对关键数值：单条波导最低损耗 0.001 dB/cm（1.58 μm，40nm/13μm 和 50nm/6.5μm）；SDS 和 ADS 的 Neff=1.535，Ng 分别为 1.72 和 1.77；应力光致动器 Vπ=18V（无盖板）/14.5V（有盖板），静态功耗 μW 级，效率提升至少 1000 倍（静态）/300 倍（1ms 上升时间）；环形谐振器 Q≈70 万（对应损耗 0.07 dB/cm，单条 2.5μm 宽/250nm 厚，半径 365μm）；Vernier 延迟线步进 550ps/最大 1650ps（4 环，FSR 16/24 GHz）；4 位开关延迟线误差 <±0.5ps；高阶滤波器 3dB 通带 72MHz/−30dB 带宽 140MHz/阻带抑制 51dB/插损 <6dB，环长 21cm，损耗 1.4 dB/m；MWP 陷波滤波器 RF 增益 8dB/NF 15.6dB/SFDR 116 dB·Hz^(2/3)；波长计 Vernier FSR 43nm，NN 法范围 ~2nm/精度 ~130pm，查找表法范围 ~45nm/精度 ~200pm；混合激光器线宽 A=25kHz/B=24kHz/C=90kHz/D=65kHz，SMSR 对应 50/50/35/45dB；OBFN 延迟 1.2ns/纹波 0.1ns/带宽 2.5GHz。以上数值均在原文中逐一核对。不确定之处：MZF 引用 Section II-F 应为 III-E；波长计引用 Section G 应为 V-G；Table II 中部分数值（如 Box shell LIC 宽度 1.1μm、Neff 1.455 等）与正文描述一致。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6119,
+      "prompt_tokens": 27117,
+      "total_tokens": 33236,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 538
+      }
+    },
+    "content_chars": 9634
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

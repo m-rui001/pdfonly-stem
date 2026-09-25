@@ -1,0 +1,477 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wearable sweat sensors</title><style>body{margin:0;background:#edf0f2;color:#202124;font:17px/1.68 Georgia,"Noto Serif",serif}main{max-width:980px;margin:28px auto;padding:40px 56px;background:#fff;box-shadow:0 1px 8px #c8cbd0}h1{font:600 30px/1.3 Arial,sans-serif}h2,h3{font-family:Arial,sans-serif;line-height:1.4;margin:1.1em 0 .4em}p{margin:.45em 0;text-align:left;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;font:15px/1.45 Arial,sans-serif;margin:1em 0}td,th{border:1px solid #c7cbd1;padding:.45em .6em;vertical-align:top}tr:first-child{background:#f1f3f5;font-weight:600}.formula{white-space:pre-wrap;overflow:auto;font:16px/1.55 "Cambria Math",serif;text-align:center;margin:1em 0;padding:.4em;background:#fafafa}.page{border-top:1px solid #ddd;padding-top:.6em;margin-top:2em}.page-label{font:12px Arial,sans-serif;color:#858585;margin-bottom:.5em}.meta{font:14px Arial,sans-serif;color:#666;border-bottom:1px solid #ddd;padding-bottom:1em}.image-note{color:#777;text-align:center;font:13px Arial,sans-serif}@media(max-width:700px){main{margin:0;padding:20px}body{font-size:16px}}</style></head><body><main><h1>Wearable sweat sensors</h1><p class="meta">https://doi.org/10.1038/s41928-018-0043-y · OCR：Z.AI GLM-OCR</p><section class="page" id="page-1"><div class="page-label">第 1 页</div><p>UC Berkeley UC Berkeley Previously Published Works</p>
+<p>Title Wearable sweat sensors</p>
+<p>Permalink https://escholarship.org/uc/item/4q9585s0</p>
+<p>Journal Nature Electronics, 1(3)</p>
+<p>ISSN 2520-1131</p>
+<h2>Authors</h2>
+<p>Bariya, Mallika Nyein, Hnin Yin Yin Javey, Ali</p>
+<p>Publication Date 2018-03-01</p>
+<p>DOI 10.1038/s41928-018-0043-y</p></section>
+<section class="page" id="page-2"><div class="page-label">第 2 页</div><div>
+
+# Wearable Sweat Sensors
+
+</div>
+<p>Mallika Bariya $ ^{1,2,3} $ , Hnin Yin Yin Nyein $ ^{1,2,3} $ , Ali Javey $ ^{1,2,3} $ $ ^{*} $</p>
+<p>$ ^{1} $Department of Electrical Engineering and Computer Sciences, University of California, Berkeley, California 94720, USA.</p>
+<p>$ ^{2} $Berkeley Sensor and Actuator Center, University of California, Berkeley, California 94720, USA.</p>
+<p>$ ^{3} $Materials Sciences Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA.</p>
+<ul>
+<li>ajavey@eecs.berkeley.edu</li>
+</ul>
+<p>Abstract: Sweat may contain a wealth of physiologically relevant information but has traditionally been an underutilized resource for non-invasive health monitoring. Recent advancements in wearable sweat sensors have overcome many of the historic drawbacks of sweat sensing and offer new methods of gleaning molecular-level insight into the dynamics of our bodies. Here we review key developments in sweat sensing technology. We highlight the potential value of sweat-based wearable sensors, examine state-of the-art devices and requirements of the underlying components, and consider ways to tackle data integrity issues within these systems. We also discuss challenges and opportunities for wearable sweat sensors in the development of personalized healthcare.</p></section>
+<section class="page" id="page-3"><div class="page-label">第 3 页</div><p>Healthcare systems today are mostly reactive. Patients contact doctors after they have developed ailments with noticeable symptoms, and are thereafter passive recipients of care and monitoring by specialists. This approach largely fails in preventing the onset of health conditions, prioritizing diagnostics and treatment over proactive healthcare. It further occludes individuals from being active agents in monitoring their own health.</p>
+<p>The growing field of wearable sensors (i.e., wearables) aims to tackle the limitations of centralized, reactive healthcare by giving individuals insight into the dynamics of their own physiology. The long-term vision is to develop sensors that can be integrated into wearable formats like clothing, wristbands, patches, or tattoos to continuously probe a range of body indicators. By relaying physiological information as the body evolves over healthy and sick states, these sensors will enable individuals to monitor themselves without expensive equipment or trained professionals (Fig. 1). Various physical and chemical sensors will need to be integrated to obtain a complete picture of dynamic health. These sensors will generate vast time-series of data that will need to be parsed with big data techniques to generate personalized baselines indicative of the user's health $ ^{1-4} $ . Sensor readings that cohere with the established baseline can then indicate the body is in a healthy, equilibrium state, while deviations from the baseline can provide early warning about developing health conditions. Eventually, deviations caused by different pathologies can be "fingerprinted" to make diagnosis more immediate and autonomous. Together, the integration of</p></section>
+<section class="page" id="page-4"><div class="page-label">第 4 页</div><p>wearables with big data analytics can enable individualized fitness monitoring, early detection of developing health conditions, and better management of chronic diseases. This envisioned medical landscape built around continuous, point-of-care sensing spearheads personalized, predictive, and ultimately preventive healthcare.</p>
+<h2>The Case for Sweat-Based Wearables</h2>
+<p>While available wearables mostly track indicators like heart rate and physical activity, they fail to provide information at a deeper, molecular level. This technological gap has encouraged rapid advancement in chemical sensors that can non-invasively detect analytes in accessible biofluids, providing a window into the body's overall dynamic biomolecular state $ ^{5-15} $ There are several candidate biofluids but most have limitations for wearable sensing. Blood and interstitial fluid (IF) can be continuously probed by implantable devices but are difficult to access non-invasively through a wearable platform. Tears can be uncomfortable or risky to source, and irritation can produce reflex tears that confound sensor readings $ ^{5} $ Urine-based sensors cannot be implemented in a wearable format, while the composition of saliva, highly altered by one's last meal, may provide limited physiological insight. In contrast, sweat shows great promise for wearable sensing. It can be generated non-invasively and on-demand (such as through local chemical stimulation) at convenient locations on the body, ideal for continuous monitoring. Sensors can be placed close to the site of sweat generation, allowing for fast detection before analytes biodegrade. While</p></section>
+<section class="page" id="page-5"><div class="page-label">第 5 页</div><p>sweat presents its own challenges for reliably measuring and interpreting biomarker concentrations, its advantages over other biofluids have rapidly promoted it to the forefront of wearable technology innovation $ ^{16} $ .</p>
+<p>Sweat contains a wealth of chemical information that could potentially indicate the body's deeper biomolecular state (Table 1). While probing blood or interstitial fluid can directly reflect certain diseases, the relation between sweat analyte levels and health status is still poorly understood. To understand how sweat analytes correlate with blood or IF levels, and hence the utility of probing sweat for medical or fitness monitoring, it is crucial to first understand the mechanisms by which analytes are partitioned into sweat.</p>
+<p>Most accessible sweat comes from eccrine glands composed of a secretory coil, where sweat is first generated, and a dermal duct that carries sweat to the skin surface $ ^{17} $ . During this process, analytes including ions, metabolites, acids, hormones, and small proteins and peptides are partitioned into sweat (Fig. 2). The most abundant ion species are $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ responsible for the production of sweat. $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ are actively transported between blood and the secretory coil to create an osmolality difference that forces water into the sweat gland. As sweat flows through the dermal duct, $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ are reabsorbed through channels in the dermal duct walls. The rate of reabsorption is fairly constant and causes $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ in the final secreted sweat to typically increase with sweat rate $ ^{18} $</p></section>
+<section class="page" id="page-6"><div class="page-label">第 6 页</div><p>The secretion mechanisms of most other analytes in sweat are poorly understood, though many are theorized to passively or actively partition from nearby blood or IF. The exact method of partitioning, combined with factors including size, charge, and dependence on sweat rate, impact the final concentration of analytes in secreted sweat. Ions including $ \mathrm{C a}^{2+} $ and $ \mathrm{K}^{+} $ are present in mM ranges. Weak acids or bases, such as ammonia, can diffuse into the sweat gland and ionize due to high sweat pH, trapping them in the secretory coil and producing mM concentrations several times higher than in blood. Other species, including lactate and urea, could partition from blood or be generated during the sweat gland's own metabolic activity, producing mM levels. Larger molecules like glucose can be found in the $ \mu\mathrm{M} $ range, orders of magnitude lower than in blood, while proteins including hormones and neuropeptides occur in nM or pM traces $ ^{18} $ . Apart from naturally generated analytes, alcohols, drugs, and heavy metals can also be secreted in sweat as the body attempts to eject toxins $ ^{19-22} $</p>
+<p>The composition of sweat depends not only on mechanisms of analyte partitioning but also the method of sweat stimulation. Sweat produced as a result of exercise, heat, stress, or chemical stimulation can be expected to vary in composition, and the type of sweat sourced for wearable sensing must be application driven. For example, sweat produced during vigorous exercise, when the body undergoes rapid physiological changes, will have dynamic analyte profiles that reflect high metabolic activity $ ^{6} $ . While this is pertinent to fitness monitoring, medical screenings are better realized with</p></section>
+<section class="page" id="page-7"><div class="page-label">第 7 页</div><p>"equilibrium" sweat sourced from the body at rest $ ^{7} $ . This can be achieved with local chemical stimulation of the sweat glands, a process called iontophoresis that will be discussed in detail further on. For now, it is important to remember that the method of biomarker arrival in the sweat gland, coupled with the method of eliciting sweat secretion, act together to determine final biomarker concentrations in sweat and their correlation with the body's overall physiological state.</p>
+<p>Using sweat to non-invasively probe the body is not a new concept. Historically, the canonical case of sweat-based medical screening has been for cystic fibrosis $ (\mathrm{CF})^{23} $ . CF is a progressive disease that ravages the lungs while also causing $ \mathrm{C l}^{-} $ reabsorption channels in sweat glands to malfunction. Patients with CF have unusually high $ \mathrm{C l}^{-} $ in their sweat. Iontophoretic sweat collection and testing can provide quick screenings and are the clinical standard for CF diagnosis today. Sweat also has historic relevance for drug testing in sports $ ^{24} $ . Sweat patches worn by athletes can absorb drug metabolites in sweat and retroactively reveal if the athlete doped during a competition. Common methods of obscuring urine-based drug tests, including drinking extra fluid, do not easily translate to sweat. Sweat patches are thus an attractive alternative to urine-based or more invasive tests.</p>
+<p>Despite its advantages for select applications, off-body sweat sensing involves large overheads as sweat samples must be collected, stored, and remotely tested in a lab by trained professionals with expensive equipment. It is difficult to obtain large enough sample volumes and avoid evaporation,</p></section>
+<section class="page" id="page-8"><div class="page-label">第 8 页</div><p>and chemical degradation between sweat collection and testing can limit the sensitivity and reliability of off-body tests. In contrast, wearable sweat sensors can restrict sweat collection and analysis to the point of generation, allowing for autonomous and even continuous sensing without the intervention of specialists. For applications including athletics that involve dynamic physiological changes, wearable sensors can provide immediate measurements that can keep individuals informed of their health state at dramatically reduced time scales compared to off-body sweat tests. However, on-body sweat sensing grapples with its own problems involving low sweat volumes, irregular sweating without stimulation, possibility of biodegradation or evaporation. These challenges, which must be tackled with technological and scientific solutions, more precisely include:</p>
+<h2>1. Low sweat rates</h2>
+<p>Sweat secretion rates during exertive exercise reach about 20 nL/gland/min $ ^{1 8} $ . In a 1 $ cm^{2} $ area on the forehead or arm, only about 3 $ \mu L $ of sweat are generated per minute, with sedentary sweat rates still lower. Sweat rates can also be expected to vary with factors including activity intensity and hydration level, and differ broadly between individuals. Sensors that are robust across these conditions and able to detect analytes in small quantities of fluid must be singularly scaled and sensitive.</p>
+<h2>2. Sample evaporation</h2></section>
+<section class="page" id="page-9"><div class="page-label">第 9 页</div><p>While restricting sensing to the point of secretion largely addresses this issue, evaporation can still be problematic as it acts quickly on small volumes of exposed sweat, changing the concentration of constituent biomarkers. Fast detection is needed to ensure sensor readings are not corrupted by evaporation artefacts.</p>
+<h2>3. Contamination from skin</h2>
+<p>Chemicals absorbed into skin from cosmetic products or environmental exposure can leech into secreted sweat. Incorporating ways to isolate sweat from the skin surface is crucial to prevent these chemical interferents from skewing sensor readings.</p>
+<h2>4. Obtaining fresh sweat</h2>
+<p>New sweat secreted onto the skin surface mixes with older sweat. Without techniques to control sweat flow such that detection only occurs in the freshest sweat, sensor readings can at best give rolling averages of analyte profiles rather than real-time measurements.</p>
+<h2>5. Sweat rate effects</h2>
+<p>Various analyte concentrations are dependent on sweat rate. $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ aid in sweat generation and are typically more concentrated at higher sweat rates. For larger molecules, it is possible that higher sweat rates afford less time for concentrations to equilibrate across sweat glands and the surrounding blood or $ \mathrm{I F}^{1 8} $ . This implies that while sweat sensor readings may be accurate, they are heavily dependent on the rate at which analytes are extracted to the skin surface instead</p></section>
+<section class="page" id="page-10"><div class="page-label">第 10 页</div><p>of being purely reflective of analyte levels in blood or IF. Identifying and compensating for sweat rate effects is necessary if sweat composition is to be correlated with analyte levels deeper in the body.</p>
+<p>Several of these challenges can be addressed through technological innovation at a device level. Addressing sweat rate effects is more complex, requiring a holistic understanding of biomarker partitioning mechanisms and their dependence on sweat rate. While expanding our fundamental knowledge of sweat gland physiology can help address this problem, an alternate method is to conduct large-scale correlation studies with multiplexed sensing to characterize sweat rate dependencies. This will be discussed in greater detail later on.</p>
+<h2>State-of-the-Art Wearable Sweat Sensors</h2>
+<p>Many wearable sweat sensors have been developed in recent years (Fig. 3) and combine different form factors, substrates, and detection mechanisms $ ^{6,8,9,19} $ . For continuous fitness monitoring, sensors integrated into common athletic accessories like wristbands or headbands can be comfortably worn with minimal obstruction of motion. For medical uses, patch-style formats are preferable and can discreetly adhere to the skin with greater flexibility of location. Built-in iontophoresis capabilities can be included for local extraction of equilibrium sweat. To implement these form factors, a variety of substrates have been demonstrated including temporary tattoos, soft polymers, and hybrid systems combining flexible plastics with</p></section>
+<section class="page" id="page-11"><div class="page-label">第 11 页</div><p>traditional silicon integrated circuits $ ^{6,8,11,12,25} $ . Various sensing mechanisms are available to detect analytes in sweat. The most common and versatile method is electrochemical detection, which measures currents or potentials at functionalized electrodes to transduce analyte concentrations $ ^{25} $ . Another prominent technique is colorimetric detection, relying on reagents that undergo measurable color changes upon exposure to their target analytes $ ^{8,26} $ . Still other methods include impedance-based and optical sensing $ ^{27-29} $ . While several of these techniques have been used for sensing simple ions and metabolites, in future they can be combined with developments in affinity-based aptamers or synthetic polymer templates for selective recognition of more complex molecules $ ^{30-32} $ . However, more work is needed to explore the robustness of these latter methods for on-body sensing. To contextualize these sensor design choices and indicate some of the challenges for reliable sensing, we will now explore a number of representative sweat sensors in detail. These devices give a sense of how far sweat sensing technology has advanced and indicate where further innovation is needed.</p>
+<p>Fig. 3(a) shows a wearable electrochemical sensor packaged as a wristband, capable of measuring ions and metabolites simultaneously $ ^{6} $ . The sensing component employs a flexible plastic substrate with electrodes functionalized towards different analytes, allowing continuous, multiplexed measurements. A soft polymeric well can surround the sensing electrodes to absorb pressure variations while also creating a chamber for sweat to fill.</p></section>
+<section class="page" id="page-12"><div class="page-label">第 12 页</div><p>This minimizes sweat evaporation and keeps the sensing electrodes from abrading through direct skin contact. A printed circuit board (PCB) calibrates raw analyte signals into meaningful concentrations and transmits to a customized phone app for easy read-out. This is ideal for fitness monitoring, providing profiles of changing analyte concentrations that can inform the user of depleting electrolytes or dehydration. However, care must be taken to prevent delamination of the flexible components during exercise.</p>
+<p>Fig. 3(b) shows an RFID chip adapted for electrochemical sensing of ions in sweat $ ^{9} $ . Sensing electrodes are electroplated onto the same substrate as the wireless transmission component, allowing the whole device to be condensed into a wearable patch similar to a Band-Aid. This form factor enables intimate contact between sensor and skin, and allows the device to be worn anywhere on the body. The RFID antenna transmits analyte readings to a smartphone for continuous monitoring during exercise. However, this sensor relies on near-field communication (NFC) between the smartphone and passive patch components in order to trigger sensing and data transmission. While basic charge storage components are included in the patch to allow short-term, low-power processes to continue even when the smartphone is temporarily out of range, the smartphone must be held in close proximity for normal operation and presents risks of disconnection and lost data. This system thus constitutes a semi-wearable, non-autonomous platform in which the user must be actively involved to bring about sensing.</p></section>
+<section class="page" id="page-13"><div class="page-label">第 13 页</div><p>Fig. 3(c) shows a sensor that utilizes colorimetric detection $ ^{8} $ . A microfluidic base guides sweat into chambers containing reagents that change color according to the concentration of their target analytes. A custom phone app can image the sensor to convert color into concentration. This device allows simultaneous measurement of metabolites, pH, and sweat rate while minimizing contamination from skin. The soft substrate and adhesive provides easy mounting, and the colorimetric scheme affords minimal power consumption. This device can give quick analyte estimates during exercise when highly resolved quantification is not necessary, but it does not allow for continuous measurement or hands-off imaging. As the goal for wearables is to allow autonomous sensing with minimal user involvement in the sensor detection or transmission pathways, this sensor represents a semi-wearable prototype that will need to be modified to allow user-independent sensing.</p>
+<p>Wearable sensors can alternately be designed to locally stimulate sweating via iontophoresis. This allows equilibrium sweat to be sourced without the need for exercise, ideal for medical screenings in sedentary situations. In addition to sensing electrodes, iontophoretic devices must include additional electrodes for local current application (Fig. 4(a)) $ ^{7} $ Hydrogels cast on these electrodes entrap a sweat-inducing drug that is driven under the skin by current flow. Sweat glands in the vicinity are then stimulated to secrete sweat that can be used to detect "equilibrium" analyte levels.</p></section>
+<section class="page" id="page-14"><div class="page-label">第 14 页</div><p>Fig. 3(d) shows a temporary tattoo-based biosensor capable of conducting iontophoresis and detecting ethanol in induced sweat $ ^{19} $ . The sensing component includes electrochemical electrodes screen-printed onto temporary-tattoo paper. A small PCB attached to the tattoo controls iontophoresis and allows transmission of alcohol measurements. This patch design offers a discreet and non-obtrusive form factor for decentralized screening of alcohol abuse. While the tattoo-based design allows for easy wear and highly conformal contact, induced sweat is not contained and subject to evaporation, and the high degree of contact can create noisy artefacts from movement or strain of the underlying skin. Additionally, this system may be better suited for one-time use rather than continuous monitoring as repeated application of iontophoretic current at the same location can be harmful to the underlying skin $ ^{33} $ . Fig. 3(e) depicts GlucoWatch, an electrochemical wearable that was commercialized but ultimately discontinued $ ^{34-37} $ . GlucoWatch aimed for semi-continuous glucose sensing for diabetes management using a process called reverse iontophoresis (Fig 4(b)). Like iontophoresis, reverse iontophoresis relies on topical current application to extract biofluid. In this case, no drug is involved - the current electro-osmotically extracts interstitial fluid instead of sweat, and molecules like glucose are transported to the skin surface advectively. Glucose in IF correlates well with plasma levels, and GlucoWatch showed great promise for non-invasive diabetes monitoring $ ^{38} $ . However, users complained of skin burning due to repeated high current application, and the</p></section>
+<section class="page" id="page-15"><div class="page-label">第 15 页</div><p>sensor was eventually withdrawn from market. This underscores the technical challenges that still oppose continuous IF or sweat induction for medical monitoring. One-time application of iontophoresis or reverse iontophoresis works well for diagnostics, but devices with lower current density requirements - or alternate technological solutions - are needed to expand its applicability.</p>
+<h2>Sweat Sensor Components</h2>
+<p>Having surveyed some representative sweat sensing platforms, we can now review the fundamental characteristics of a sweat sensor. Different detection schemes have different platform and system requirements. While colorimetric, optical, and other methods have advantages for certain applications, electrochemical techniques have shown more widespread success for point-of-care biofluid analysis to date $ ^{5,39} $ . For this reason, we choose to focus on the unique requirements for electrochemical sweat sensors going forward. These devices comprise of two integrated parts: a sensing component with functionalized electrodes to transduce analyte concentrations into electrical signals, and an electronic component to process, calibrate, and transmit these signals for easy read-out. We will review requirements for each component and techniques to optimize their performance.</p>
+<p>Sensing Component</p>
+<ul>
+<li>Sensor-Body Interface</li>
+</ul></section>
+<section class="page" id="page-16"><div class="page-label">第 16 页</div><p>A key requirement for wearable sensors is that they minimally impact user mobility and comfort while being resilient to the mechanical strains and distortions that accompany on-body use. For this reason, sensing components are ideally fabricated on substrates that are soft, deformable, and do not delaminate from the underlying skin. Materials including fabrics, paper, and soft polymers and plastics have been common choices $ ^{40,41} $ . Electrode fabrication methods that have shown success on flexible substrates include photolithography and printing techniques such as screen printing, flexography, and gravure printing $ ^{42} $ . Roll-to-roll compatible fabrication holds particular promise for delivering the large scale, high throughput processing necessary for commercial viability. Considerations for using flexible substrate-based sensing components include ensuring functional membrane layers deform along with the substrate without rupturing and sensor working area does not change dramatically during deformation to avoid motion-related signal artefacts. For printed components, optimization of ink composition and pre-processing can address these challenges. Another criterion for flexible sensors is that electrodes fabricated on the substrate robustly connect to electronics or wireless transmission components. Especially in hybrid systems that combine soft sensing components with more rigid electronic platforms, weak connections between the components can cause signal error or even disconnection under mechanical strain or motion $ ^{43} $ . More rigid sensing substrates, such as flexible PET, can sometimes afford more robust connection to electronics than highly</p></section>
+<section class="page" id="page-17"><div class="page-label">第 17 页</div><p>deformable materials like paper laminates, in which case trade-offs must be made to achieve an optimal system. Miniaturizing the sensing component so that the skin it contacts is locally flat is another approach to achieving a sound sensor-body interface. This method helps to relax deformability requirements on the substrate.</p>
+<h2>Sensing Modalities</h2>
+<p>Electrochemical methods have advantages over other chemical detection schemes due to their high sensitivity, selectivity, low response times, and ease of adaption for wearable formats. In recent years, various electrochemical sensing modalities have been demonstrated towards wearable sweat analysis. These include potentiometry, chronoamperometry, square wave anodic stripping voltammetry (SWASV), cyclic voltammetry (CV), differential pulse voltammetry (DPV), and electrochemical impedance spectroscopy (EIS). Potentiometric techniques, in which potentials of the sensing electrodes undergo measurable changes with target analyte concentration, have shown great utility for detecting the dominant ion species in sweat, including $ \mathrm{N a}^{+}, $ $ \mathrm{K}^{+} $ and $ \mathrm{C a}^{2+} $ $ ^{6,7,44,45} $ . Chronoamperometry is frequently used for enzyme-based sensing, detecting current produced during triggered redox reactions of the target analyte at a constant applied potential $ ^{7,18,19,45,46} $ . For instance, glucose oxidase enzyme entrapped on a sensing electrode interacts with glucose in sweat to produce a current proportional to glucose concentration $ ^{6,7,46} $ . Other sensing modalities such as SWASV, CV, DPV, and EIS have been utilized for detection of heavy metals,</p></section>
+<section class="page" id="page-18"><div class="page-label">第 18 页</div><p>drugs, and hormones $ ^{20,47-51} $ . Voltammetry measurements are performed by sweeping through the potential range in which redox reaction of the target species occurs, and the redox current peaks are subsequently measured. Specifically, CV is widely used for preliminary electrochemical characterization of the sensor to explore electron transfer kinetics and redox processes, and towards detecting molecules including glucose, uric and ascorbic acid in sweat $ ^{47,52,53} $ . DPV is used for detecting organic and inorganic species by stimulating them to bind on the sensor surface, and is commonly used to detect proteins $ ^{31,54,55} $ . SWASV is a technique that has shown success for detection of trace metals, especially when combined with effective pre concentration of the target species onto the sensing surface to amplify the signal. Despite attaining low level detection, major problems with voltammetry methods include the overlap of redox potentials, presence of interfering compounds active on the sensing surface, and the formation of intermetallic compounds that degrade the detection signal $ ^{54} $ . EIS is used to transduce bioaffinity binding by analyzing complex impedances in Nyquist plots, and can sometimes serve as an alternate detection modality to voltammetric methods. However, EIS typically requires longer measurement periods and post-processing to counter larger uncertainties $ ^{56} $ . Table 1 surveys the sensing modalities used for different analytes in greater detail, while Table 2 summarizes how the advantages and disadvantages of each modality impact its suitability for different targets.</p>
+<h2>Sensing Attributes</h2></section>
+<section class="page" id="page-19"><div class="page-label">第 19 页</div><p>To allow for robust and accurate quantification of analytes, several attributes of sweat sensors must be optimized. These include selectivity, sensitivity, limit of detection, stability, response time, and reproducibility. Below, we discuss steps to optimize these attributes with major focus on the ion-selective and enzymatic sensors that have dominated sweat sensing to date.</p>
+<h2>1. Selectivity</h2>
+<p>Selectivity is the ability of a sensor to preferentially detect its target analyte in the presence of other potentially interfering species. This is the most fundamental requirement for a biosensor, and is realized by using selective recognition elements on the sensing electrode (Table 1). Ion-selective electrodes (ISEs) use permselective lipophilic ion exchangers and ion-selective ionophores to achieve this attribute $ ^{57} $ . ISE selectivity has been explored using table-top ionic solutions but the complexity of sweat means that their performance must be further validated for in situ sweat sensing $ ^{57,58} $ . Work within the wearable sensing community has shown that pH and $ \mathrm{N a^{+}} $ ISEs retain remarkable selectivity in sweat $ ^{6,7,44,45,59,60} $ . In contrast, sensors relying on redox reactions for detection usually have difficulty achieving high selectivity. Even when target-specific enzymes are incorporated, high voltages may need to be applied to trigger the enzymatic reaction. These voltages can prompt other electrochemically active compounds in sweat to undergo redox transitions as well, creating interfering signals. To address this problem, an electron transfer mediator</p></section>
+<section class="page" id="page-20"><div class="page-label">第 20 页</div><p>can be incorporated to lower the redox potential of the target reaction $ ^{61,62} $ This technique is canonically used in glucose sensors, which combine a Prussian Blue mediator with glucose oxidase enzyme to preferentially detect glucose $ ^{63} $ . Similar to the high target specificity afforded by enzymes, biosensors based on antibodies and aptamers bind to their specific target with high affinity based on precise 3D compatibility of their receptors with target molecules. However, bioaffinity-based sensors are challenging to implement in wearable formats due to long response times, difficult detection procedures, and limited reusability $ ^{64} $ . These issues will be explored in greater detail further on $ ^{65} $ . Another key factor that influences selectivity is biofouling, the accumulation of chemical species on the sensing layer that gradually degrades sensor performance over time. This effect can be reduced by incorporating semipermeable membranes like Nafion and cellulose acetate for size and charge exclusion, or adding pre-oxidizing layers at the front end of the sensing interface to inactivate electroactive interferents $ ^{61,66} $ .</p>
+<h2>2. Sensitivity</h2>
+<p>Sensitivity is a measure of how acutely the sensor signal changes in response to changes in analyte concentration. Calibration curves of sensor signal against step-wise increased analyte concentration can be generated and the sensor sensitivity extracted as the slope of the curve in cases where hysteresis is negligible. As many important sweat analytes are normally well-regulated to remain within a tight concentration range, highly sensitive</p></section>
+<section class="page" id="page-21"><div class="page-label">第 21 页</div><p>sensors are required to capture small but physiologically relevant fluctuations in concentration $ ^{18,59} $ . This is particularly relevant when continuous monitoring of the evolution of biomarker profiles is needed, such as for tracking electrolyte levels during exercise. However, applications including certain drug or blood alcohol content (BAC) tests may require only binary information to determine the presence or absence of a drug above a predefined tolerance level. In these cases, sensors need not have very high sensitivity but must be able to distinguish between concentrations above or below the threshold. The sensitivity of potentiometric sensors is typically governed by the Nernst equation, which predicts that an electrode at ambient temperature will undergo a 59 mV step in potential per 10x change in monovalent ion concentration. Higher valence ions will produce a smaller step. Though uncommon, it is possible to achieve beyond-Nernstian slopes to improve sensitivity of higher valence species by incorporating lipophilic anionic sites and acidic ionophores $ ^{67} $ . Increasing enzyme loading within enzymatic sensing electrodes can improve sensitivity by amplifying measured currents, as can pre-concentration of target species for voltammetric sensing of larger molecules $ ^{20,68,69} $ . Including nanomaterials such as carbon nanotubes (CNTs) or metal nanoparticles can improve electron transfer kinetics through the sensing stack to further amplify detection currents $ ^{68} $ . However, care must be taken to ensure these nanomaterials do not leech into skin during on-body use $ ^{70} $ .</p>
+<h2>3. Detection Limit</h2></section>
+<section class="page" id="page-22"><div class="page-label">第 22 页</div><p>Detection limit indicates the lowest concentration a sensor can discern and stems from signal to noise ratios. Noise can arise from interfering analytes, sensor drift, or local concentration variations amongst a host of other sources. Improving detection limits requires amplifying the target signal or suppressing background noise, both of which can be achieved with the right materials and detection schemes. Sensors should be engineered to have their detection limit lie below the physiologically relevant concentration range of their target analyte. Detection limits as low as $ 1 0^{-8} $ to $ 1 0^{-1 1} $ M can be achieved with ion-selective electrodes. These low bounds are achieved by electrochemical deposition of conducting polymers like polypyrrole, which have been explored for trace-level monitoring $ ^{71} $ . Detection limits of enzymatic and voltammetric sensors can be lowered by using nanoparticles and nanostructures to improve binding affinity or increase the number of reaction sites $ ^{72,73} $ . Still, many chemical species including proteins and peptides occur in extremely trace concentrations, and further work is needed to reduce sweat sensor detection limits for these complexes.</p>
+<h2>4. Stability</h2>
+<p>Stability refers to a sensor's ability to maintain its signal over time without attenuation by drift or degradation. All electrochemical sensors suffer from signal drift, which can create accumulated errors over time that are especially damaging for continuous measurements. This limits the sensor lifetime for long-term operation. Sources of signal drift vary with detection method. In ion-selective sensors, formation of a thin aqueous layer between</p></section>
+<section class="page" id="page-23"><div class="page-label">第 23 页</div><p>the sensing membrane and underlying conductive electrode can cause changes in effective compositions of the sensor stack itself over time, producing potential drifts $ ^{74} $ . Adding hydrophobic chemical species can minimize this effect, while electrochemically depositing conducting polymers such as polystyrene, polypyrrole, and polyaniline further improve stability $ ^{75,76} $ . Drift issues also afflict enzymatic sensors. Enzymes can be chemically inactivated due to byproducts of redox reactions and can even detach from the sensing membrane over time, causing signal attenuation and loss of sensitivity. Passivation of electrode active sites and biofouling create further issues $ ^{77} $ . These effects can be minimized by immobilizing enzymes in support matrices, crosslinking with polymers, and forming polyionic-enzyme complexes for enzyme retention $ ^{78,79} $ . However, chemically modifying enzymes in this way can reduce their activity, so a balance must be struck to optimize both stability and sensitivity.</p>
+<h2>5. Response Time</h2>
+<p>Response time governs how long it takes for the sensor response to stabilize to a reliable value when analyte concentration changes. For continuous monitoring, having fast response times is critical to ensure dynamic changes in sweat composition are captured in near-real time. Response times are usually influenced by the target analyte, sample composition, mass transport and reaction rates, as well as the activity of the recognition element. Transport and reaction kinetics can be improved by optimizing thickness and permeability of the sensing membrane $ ^{77} $ . Typically,</p></section>
+<section class="page" id="page-24"><div class="page-label">第 24 页</div><p>addition of antifouling layers delays the response time by presenting barriers to diffusion. Faster response times are generally achieved when activities of recognition species are high and the thickness of the sensing stack is low.</p>
+<h2>6. Reproducibility</h2>
+<p>To be valuable to the larger community for point-of-care health monitoring, sensors must perform reliably and require minimal overhead before use to accurately extract concentration measurements from sensor signals. To achieve this, performance across many sensors of the same kind must be reproducible. A single calibration curve should be uniformly applicable across these sensors so that the sensing characteristics of each device need not be extensively measured individually before use. One-point calibration will be necessary to account for baseline differences in sensor signals, but a universal calibration curve ensures that only one preliminary measurement is required, minimizing the complexity of device set up and preparation before on-body use. The degree of reproducibility required depends on sensor sensitivity and the smallest change in analyte concentration that can be considered physiologically significant. Then, reproducibility entails that sensors of the same kind must produce signals that, after conditioning, translate to the same concentration with deviation within the physiologically relevant delta in concentration. Drift can lead to greater spread in sensor readings and usually must also be reduced to improve raw signal precision across a collection of sensing components. Sensor development in academic settings typically involves manual drop-</p></section>
+<section class="page" id="page-25"><div class="page-label">第 25 页</div><p>casting of functionalized layers onto the sensing electrodes, which can lead to performance variations due to human error. This can be minimized by moving towards controlled fabrication methods such as screen-printing and roll-to-roll processes that allow high-throughput production of sensors with high uniformity. The vision will be to incorporate ink-based printing of electrodes and sensing membranes as well as integration of microfluidics and electronics via roll-to-roll fabrication.</p>
+<h2>Electronic Component</h2>
+<p>Sensing components are not functional in themselves without electronics to enact appropriate detection schemes, process the sensor signals, filter noise, and transmit final calibrated readings for easy readability and display. Here we discuss the role of electronics within electrochemical sweat sensing platforms.</p>
+<p>Some of the most successful sweat sensing platforms utilize hybrid electronics, combining flexible sensing substrates that conform to the body with traditional silicon ICs for signal processing and transmission. Various topologies and substrates are available for electronic components, including soft plastics or polymers with printed conductive elements or flexible PCBs $ ^{6-} $ $ ^{9,19} $ . Of these, PCBs have shown particular promise as they can be mass produced cost-effectively using existing industrial processes. PCBs designed with off-the-shelf components have been well suited for research-level development of sweat sensor prototypes, but application specific integrated</p></section>
+<section class="page" id="page-26"><div class="page-label">第 26 页</div><p>circuits (ASICs) can in future enable more miniaturized systems that consolidate different electrical processes for lower power consumption while improving wearability.</p>
+<p>Minimizing power consumption is a key consideration for developing wearables that allows sensors to operate continuously for longer periods of time. To understand where power drain is dominant in a typical wearable sweat sensor and how it can be reduced, we will consider the platform presented by Gao et al which allows continuous, multiplexed sensing of ions and metabolites $ ^{6} $ . The electronic backbone of this device comprises of an analog front-end to condition the sensor signal, an analog-to-digital converter (ADC), a pre-programmed microcontroller that calibrates the signal into concentration values, and a Bluetooth transmission component to relay this reading to a paired phone app for easy read-out. Power consumption in the analog front-end arises from active components including op-amps and amounts to a few mW depending on the exact circuitry, with similar power also being drawn by the ADC and microcontroller. The Bluetooth transmission component uses around 30 mW and dominates power consumption in this device, but can be improved upon using newer technology including Bluetooth Low Energy (BLE) $ ^{80} $ . Depending on the application, periodic transmission by which the device alternates between data transferring and low-power states can be sufficient when only semi-continuous analyte readings are needed, and could further decrease energy overheads $ ^{65,81} $ . Apart from Bluetooth, near-field communication (NFC)</p></section>
+<section class="page" id="page-27"><div class="page-label">第 27 页</div><p>modalities can enable signal transmission without the need to battery-power transmission components within the sensor itself, instead allowing power from the receiving device to trigger sensor measurement and data collection. However, this affords much shorter-range interaction between the sensor and receiving phone, in some cases preventing continuous, autonomous sensing without user involvement in bringing the receiver close to the sensor. A third data relaying option involves directly showing sensor readings on a display. However, without appended capabilities for storing and downloading data, this topology prevents data accumulation or dissemination to healthcare providers and is therefore less attractive for integrated health monitoring applications. Overall, the choice of wireless communication protocol depends on a host of criteria including power consumption, data generation rates, bandwidth requirements, and compatibility with the remaining sensor circuitry $ ^{82} $ . Beyond integrating low-power transmission components, harvesting energy from heat, motion, or the environment and developing wearable energy storage options such as miniaturized supercapacitors is another area of active research for lowering power consumption in wearable devices $ ^{65,83} $ .</p>
+<p>Filtering raw sensor signals to eliminate noise is a key role of electronic components. Motion can contribute to noise, particularly by altering connectivity and impedances at the interface between the sensing component and PCB. Low pass filters can be included in the analog front-end to eliminate high frequency noise from motion or fluctuations in the sensing</p></section>
+<section class="page" id="page-28"><div class="page-label">第 28 页</div><p>layer environment. Different sensing modalities will need to preserve DC, transient, or AC signal components depending on whether the sensor is designed for potentiometric or amperometric sensing, voltammetric techniques, or impedance-based sensing; appropriate filtering and conditioning pathways to isolate the desired signal components must be developed accordingly. The filter orders and cut-off frequencies can also be tailored according to the sensing scheme and data sampling rate. Other examples of noise and unwanted signal artefacts arise during certain types of multiplexed measurement. When passive measurements of current or potential are combined with active measurements that require applying and scanning voltages, the applied fields can interfere with passive electrode readings. Switches can be incorporated to alternate between sensing pathways and thereby prevent crosstalk and electromagnetic interference.</p>
+<p>For many sweat sensor prototypes, signal transduction occurs at the sensing component while signal conditioning is restricted to the electronic component. This model is effective when sensor working areas and signal amplitudes are large enough that the process of signal transfer between sensing component and signal conditioning unit does not produce significant attenuation or noise. However, as working electrode areas are miniaturized, the signals generated by area-dependent sensors (such as enzymatic sensors) are reduced and it becomes important to minimize signal loss between transduction and conditioning. In such cases, conditioning may</p></section>
+<section class="page" id="page-29"><div class="page-label">第 29 页</div><p>need to be shifted towards the transducer by incorporating elements directly onto the sensing component.</p>
+<p>While interest primarily focuses on the device aspects of sweat-based wearables, attention must also be diverted to the wider framework in which they will be used. This is critical in order to tackle privacy and safety challenges associated with continuous, personalized health monitoring and big data processing of medical information $ ^{84} $ . Wearable sensors integrated into larger systems connecting individuals, emergency responders, and healthcare providers cause medical information to become distributed over networks instead of centralized. In this new landscape, it is essential that user privacy is protected using encryption schemes and personal identifiers. Further, access to sensor data must be regulated to prevent tampering by malicious parties that could lead to false diagnoses or compromised treatment recommendations $ ^{1,2} $ . As advances in sweat sensing and other wearable technology contribute to the wider digitization of information in the 'Internet of Things' (IoT), parallel efforts become necessary to ensure safe storage and handling of data.</p>
+<h2>Data Integrity for Meaningful Sweat Analysis</h2>
+<p>While ensuring stability and sensitivity along with the other discussed attributes can produce a good sensor, this does not guarantee meaningful sensor readings for on-body measurement. Contamination from skin and sweat evaporation can corrupt the concentrations of analytes in sweat such</p></section>
+<section class="page" id="page-30"><div class="page-label">第 30 页</div><p>that sensor measurements, though accurate, now reflect post-secretion changes in sweat composition. Similarly, sweat rate effects can impact final analyte concentrations such that they are no longer solely reflective of profiles deeper in the body. We touched upon these data integrity issues earlier, and we will now discuss two key approaches to tackling them: utilizing microfluidics and multiplexed sensing.</p>
+<p>Integrating microfluidics into wearable sweat sensors overcomes many issues diminishing data integrity. Once sweat enters the microfluidic channels, it is isolated from the skin surface, preventing continual leeching of chemicals from skin into sweat. Channels can be designed to direct old sweat away from the sensor and allow new sweat to travel in. This ensures as realtime readings as possible instead of producing rolling averages of analyte concentrations. Finally, microfluidics can encase sweat as it travels over the sensing electrodes, minimizing evaporation. Several of the sweat sensing platforms discussed previously already utilize microfluidics, but they must become ubiquitous in future sensor development $ ^{8,16,26} $</p>
+<p>Measuring multiple analytes simultaneously can help elucidate whether changes in sensor signals stem from true changes in analyte concentrations or from sweat rate effects. For example, an increase in $ \mathrm{N a}^{+} $ levels could indicate physiological changes in the body or an increase in sweat rate. Parallel sensing of an analyte like $ \mathrm{K}^{+} $ that doesn't depend strongly on sweat rate, or direct monitoring of sweat rate itself, can help distinguish between these potential causes $ ^{16,18} $ . Other changes could stem</p></section>
+<section class="page" id="page-31"><div class="page-label">第 31 页</div><p>from dependencies of the sensors themselves instead of the analytes. For example, the activity of enzymes entrapped in sensing layers can change with pH. Consequently, a change in a glucose sensor signal may stem from a change in sweat pH rather than fluctuations in secreted glucose. Multiplexed sensing of glucose and pH can resolve this issue. Skin temperature can also impact sensor signals, and should be monitored simultaneously with sweat analytes to allow accurate calibrations. Further questions of data integrity arise when sensors demonstrate cross-reactivity with more than one analyte rather than being perfectly selective. For example, even after utilizing ionophores, $ \mathrm{C a}^{2+} $ and $ \mathrm{K}^{+} $ sensors still respond to changes in $ \mathrm{N a}^{+} $ content $ ^{6,60} $ . Multiplexed sensing provides a solution to this problem as well - the responses of a group of semi-selective sensors can be assessed collectively to generate a pattern that is indicative of a certain analyte and its concentration, even if each sensor alone cannot uniquely transduce this information $ ^{85} $ . Overall, multiplexed sensing can help isolate interdependencies between analytes, sensors, and environmental factors to ensure that measured concentrations are maximally indicative of deeper physiology. As an example, Fig. 5 shows multiplexed sensing of a panel of sweat biomarkers during exercise $ ^{6} $ .</p>
+<h2>The Future of Sweat Sensing</h2>
+<p>Rapidly growing interest in the physiological information contained in sweat has led to sensor development for analytes including ions, metabolites, and heavy metals. Many of these analytes are low-hanging fruit,</p></section>
+<section class="page" id="page-32"><div class="page-label">第 32 页</div><p>easy to detect because they are present in relative high $ \mu\mathrm{M} $ or mM concentrations and can be measured with simple yet selective schemes. However, sweat contains a wealth of other constituents present in trace amounts much harder to detect, including hormones, proteins, and peptides. These complex molecules serve regulatory or signaling functions in the body, and studies with sweat patches have suggested that their concentrations in sweat may correlate directly with blood $ ^{86} $ . Detecting these molecules in sweat could thus provide deeper physiological insight into homeostasis mechanisms and the body's overall state of health.</p>
+<p>Neuropeptide Y (NPY) is a promising candidate for future detection. This peptide is involved in the body's stress response and has been found in greater concentration in the sweat of patients with depression compared to healthy cohorts $ ^{87} $ . Sweat-based monitoring of NPY could make mental health more quantifiable and transparent. Cytokines are another class of proteins present in sweat $ ^{86} $ . Interleukin 6 is a cytokine involved in the body's immune system response to injury or infection, and could provide insight into the body's reaction to physical trauma. More comprehensively, analysis of entire protein panels has revealed differences in the composition of sweat from healthy versus schizophrenic patients $ ^{88} $ . These biomarkers and their potential applications represent some of the opportunities for sweat sensors going forward. Methods for detecting these molecules include using antibodies or aptamers for affinity-based sensing. Antibodies have historically been used for molecular recognition, but their poor stability and potential for cross-</p></section>
+<section class="page" id="page-33"><div class="page-label">第 33 页</div><p>reactivity make them difficult to adapt for wearable sensing. Aptamers have emerged as an alternative to antibodies due to their higher stability, ease of synthesis, and better performance at low analyte concentrations However, it is difficult to identify selective aptamers for detection of small molecules due to limited ligand-aptamer interactions and limited functional groups $ ^{32} $ . Additionally, factors including pH and temperature influence 3D aptamer morphologies and degrade their ability to bind target molecules $ ^{64} $ . Beyond these difficulties for producing stable, high-affinity sensors, additional challenges lie in compensating for the extensive dilution of these analytes between blood and sweat. Refining measurement techniques and sensor platforms for these molecules will represent the next watershed for sweat sensing, allowing detection capabilities to be extended to a new class of physiologically relevant analytes.</p>
+<p>As detection capabilities improve and expand towards new chemicals, it becomes important to investigate the physiological relevance of sweat for health monitoring. Understanding the mechanisms by which analytes partition into sweat could shed light on how their concentrations reflect the body's overall state, yet these processes are poorly understood for all but the simplest ions and metabolites. Instead, population studies that apply data mining techniques on large sets of sensor measurements could be used to identify correlations between sweat analytes and health status. This big data approach allows the significance of sweat analytes to be reverse-engineered from amassed data without a priori understanding the deeper</p></section>
+<section class="page" id="page-34"><div class="page-label">第 34 页</div><p>chemical processes that govern their secretion $ ^{4} $ . Correlation studies can identify how sweat analyte profiles differ between healthy and afflicted physiologies, ultimately guiding new methods of non-invasive, personalized diagnostics and monitoring.</p>
+<p>Wearable sensors combined with data mining have been previously shown to add value over conventional medical screenings, often by providing early warning of developing pathologies before traditional symptoms manifest. In one study, a team of researchers showed how physiological data from wearable sensors indicated the onset of life-threatening sepsis in premature infants $ ^{89} $ . Changes in infants' heart rate and respiratory rate variability were used to diagnose sepsis even before fever or high white blood cell counts were detected. In another study, an individual was monitored with wearable sensors for over a year, continuously mining data on parameters including heart rate, body temperature, and blood oxygen content $ ^{3} $ . The study found that periods marked by high sensor variation from their usual baselines correlated with the subject developing health conditions including Lyme disease and viral infection. These studies demonstrate how big data can be used to uncover actionable correlations between sensor readings and health status, even without a complete understanding of their causal relationship. Methods of fusing and interpreting large data sets include statistical methods, pattern recognition, and artificial intelligence for extracting correlations and enabling health status predictions $ ^{1,2} $ . In future, developing these algorithms in application-specific contexts will be critical to</p></section>
+<section class="page" id="page-35"><div class="page-label">第 35 页</div><p>utilizing wearable sensors for human health. While the cases above rely on physiological signals that are one step removed from the chemical processes that govern our body, probing molecules directly has the potential to uncover deeper insights and correlations. Population studies on sweat analytes can thus be a powerful step towards enabling new forms of personalized healthcare.</p>
+<p>For certain pathologies, sweat analytes correlate directly with health status. Sweat $ \mathrm{C l}^{-} $ concentration, for example, can be compared against a universal threshold to diagnose cystic fibrosis $ ^{7} $ . In other cases, analytes accessed non-invasively through iontophoresis or reverse iontophoresis individually correlate with blood levels. If blood-based thresholds are typically used for screening in these cases, analogous sweat thresholds can be determined for non-invasive diagnosis. This type of correlation has been demonstrated between sweat ethanol and blood alcohol content $ (\mathrm{BAC})^{19,90} $ . In most other cases, however, correlations between sweat levels and health status are not as straightforward. Several sweat markers may need to be considered collectively in order to be indicative of health conditions, and even then, they may not uncover universal thresholds for diagnosis. Instead, personalized baselines of relevant analytes will need to be identified for each individual through continuous sweat measurements. Deviations from this baseline could then provide individual-specific indications of developing health conditions. This approach is relevant to athletic monitoring as well - preliminary work on dehydration during long-term exercise suggests that</p></section>
+<section class="page" id="page-36"><div class="page-label">第 36 页</div><p>sudden changes in sweat $ \mathrm{N a}^{+} $ from a personalized baseline could correlate with the onset of dehydration $ ^{6} $ . For such applications, big data techniques are especially important in order to extract subtle and possibly surprising patterns from large amounts of continuous, multiplexed measurements. These complex correlation studies remain a key challenge for establishing the wider utility of sweat sensing for human health.</p>
+<h2>Conclusion</h2>
+<p>In conclusion, there are many aspects of sweat sensing that must be further developed to take the field forward. Apart from the big challenges associated with interpreting sensor data for predictive healthcare, improvements at the device level will also contribute to how reliable and useful sweat sensor measurements can be. Areas where further research and development is needed include finding better ways of packaging sensors into robust and easy-to-wear systems that are less susceptible to noise from strain or motion, particularly at the interface between soft sensing components and more rigid electronics. Reducing power consumption is another consideration for advancing sensor prototypes beyond the initial research stage. Moving towards ASIC technologies to consolidate electronics, reduce power, and miniaturize devices can help improve sensor usability. Even more crucially, developing methods to induce sweat secretion in sedentary environments is critical to expanding the opportunities for sweat-based health monitoring beyond athletic applications where sweat is readily available. Iontophoresis has shown promise for one-time measurement, but</p></section>
+<section class="page" id="page-37"><div class="page-label">第 37 页</div><p>reducing current density demands, fabricating highly miniaturized sensors operable at low secretion rates, or developing alternate techniques for biomarker extraction will be necessary to enable continuous monitoring. To expand the wearable platform towards new analytes, more work is needed to develop sensitive and selective techniques for measuring sweat hormones and proteins amongst other complex analytes. To date, such sensors have been difficult to realize due to the intrinsic complexities of using antibodies or aptamers as biorecognition elements, but these sensors could potentially give tremendous insight into the physiological state of our bodies. For sensors that have already been demonstrated towards simpler analytes like ions and metabolites, further work is needed to ensure they provide reliable, actionable data. More robust and stable sensing components must be designed to enable long-term use. Incorporating microfluidics and multiplexed sensing to improve data integrity must be combined with higher level investigation into the physiological relevance of sweat analytes using large-scale correlation studies. Parallel efforts to ensure safe handling of data, and adapting high-throughput fabrication methods, are also needed to make sweat sensors viable for wider use. These varied considerations present many opportunities for advancing sweat sensor technology, with the ultimate goal of enabling non-invasive probing of our bodies at molecular levels for diverse applications in personalized and predictive healthcare.</p></section>
+<section class="page" id="page-38"><div class="page-label">第 38 页</div><h2>References</h2>
+<ol>
+<li>Zheng, Y. L. et al. Unobtrusive Sensing and Wearable Devices for Health Informatics. IEEE Trans. Biomed. Eng. 61, 1538-1554 (2014).</li>
+</ol>
+<ol>
+<li>Andreu-Perez, J., Poon, C. C. Y., Merrifield, R. D., Wong, S. T. C. &amp; Yang, G. Z. Big Data for Health. IEEE J. Biomed. Health Inform. 19, 1193-1208 (2015).</li>
+</ol>
+<ol>
+<li>Li, X. et al. Digital Health: Tracking Physiomes and Activity Using Wearable Biosensors Reveals Useful Health-Related Information. PLOS Biol. 15, e2001402 (2017).</li>
+</ol>
+<ol>
+<li>Bottles, K., Begoli, E. &amp; Worley, B. Understanding the Pros and Cons of Big Data Analytics. Physician Executive 40, 6-12 (2014).</li>
+</ol>
+<ol>
+<li>Bandodkar, A. J. &amp; Wang, J. Non-invasive wearable electrochemical sensors: a review. Trends Biotechnol. 32, 363-371 (2014).</li>
+</ol>
+<ol>
+<li>Gao, W. et al. Fully integrated wearable sensor arrays for multiplexed in situ perspiration analysis. Nature 529, 509-514 (2016).</li>
+</ol>
+<ol>
+<li>Emaminejad, S. et al. Autonomous sweat extraction and analysis applied to cystic fibrosis and glucose monitoring using a fully integrated wearable platform. Proc. Natl. Acad. Sci. 114, 4625-4630 (2017).</li>
+</ol>
+<ol>
+<li>Koh, A. et al. A soft, wearable microfluidic device for the capture, storage, and colorimetric sensing of sweat. Sci. Transl. Med. 8, 366ra165- 366ra165 (2016).</li>
+</ol>
+<ol>
+<li>Rose, D. P. et al. Adhesive RFID Sensor Patch for Monitoring of Sweat Electrolytes. IEEE Trans. Biomed. Eng. 62, 1457-1465 (2015).</li>
+</ol>
+<ol>
+<li>Sonner, Z., Wilder, E., Gaillard, T., Kasting, G. &amp; Heikenfeld, J. Integrated sudomotor axon reflex sweat stimulation for continuous sweat analyte analysis with individuals at rest. Lab. Chip 17, 2550-2560 (2017).</li>
+</ol>
+<ol>
+<li>Bandodkar, A. J. et al. Tattoo-Based Noninvasive Glucose Monitoring: A Proof-of-Concept Study. Anal. Chem. 87, 394-398 (2014).</li>
+</ol>
+<ol>
+<li>Jia, W. et al. Electrochemical Tattoo Biosensors for Real-Time Noninvasive Lactate Monitoring in Human Perspiration. Anal. Chem. 85, 6553-6560 (2013).</li>
+</ol>
+<ol>
+<li>Kim, J. et al. Wearable salivary uric acid mouthguard biosensor with integrated wireless electronics. Biosens. Bioelectron. 74, 1061 (2015).</li>
+</ol></section>
+<section class="page" id="page-39"><div class="page-label">第 39 页</div><ol>
+<li>Huang, X. et al. Stretchable, Wireless Sensors and Functional Substrates for Epidermal Characterization of Sweat. Small 10, 3083-3090 (2014).</li>
+</ol>
+<ol>
+<li>Lee, H. et al. Wearable/disposable sweat-based glucose monitoring device with multistage transdermal drug delivery module. Sci. Adv. 3, e1601314 (2017).</li>
+</ol>
+<ol>
+<li>Heikenfeld, J. Non-invasive Analyte Access and Sensing through Eccrine Sweat: Challenges and Outlook circa 2016. Electroanalysis 28, 1242- 1249 (2016).</li>
+</ol>
+<ol>
+<li>Heikenfeld, J. Bioanalytical devices: Technological leap for sweat sensing. Nature 529, 475-476 (2016).</li>
+</ol>
+<ol>
+<li>Sonner, Z. et al. The microfluidics of the eccrine sweat gland, including biomarker partitioning, transport, and biosensing implications. Biomicrofluidics 9, 031301 (2015).</li>
+</ol>
+<ol>
+<li>Kim, J. et al. Noninvasive Alcohol Monitoring Using a Wearable Tattoo-Based Iontophoretic-Biosensing System. ACS Sens. 1, 1011-1019 (2016).</li>
+</ol>
+<ol>
+<li>Gao, W. et al. Wearable Microsensor Array for Multiplexed Heavy Metal Monitoring of Body Fluids. ACS Sens. 1, 866-874 (2016).</li>
+</ol>
+<ol>
+<li>N, D. G. N. and F. The current status of sweat testing for drugs of abuse: a review. Curr Med Chem. 20, 545-61 (2013).</li>
+</ol>
+<ol>
+<li>Kidwell, DA, Holland, JC &amp; Athanaselis, S. Testing for drugs of abuse in saliva and sweat. J. Chromatogr. B. Biomed. Sci. App. 713, 111-135 (1998).</li>
+</ol>
+<ol>
+<li>Desax, M.-C. et al. Nanoduct $ ^{\circ} $ sweat testing for rapid diagnosis in newborns, infants and children with cystic fibrosis. Eur.J.Pediatr.167,299- 304 (2008).</li>
+</ol>
+<ol>
+<li>Houglum, J.E., Harrelson, G. &amp; Seefeldt, T. Principles of Pharmacology for Athletic Trainers. Ch. 17 (Slack Inc., 2016).</li>
+</ol>
+<ol>
+<li>Gao, W. et al. Wearable sweat biosensors. in 2016 IEEE International Electron Devices Meeting (IEDM) 6.6.1-6.6.4 (2016).</li>
+</ol>
+<ol>
+<li>Choi, J., Kang, D., Han, S., Kim, S. B. &amp; Rogers, J. A. Thin, Soft, Skin Mounted Microfluidic Networks with Capillary Bursting Valves for ChronoSampling of Sweat. Adv. Healthc. Mater. 6, (2017).</li>
+</ol>
+<ol>
+<li>Daniels, J. S. &amp; Pourmand, N. Label-Free Impedance Biosensors: Opportunities and Challenges. Electroanalysis 19, 1239-1257 (2007).</li>
+</ol></section>
+<section class="page" id="page-40"><div class="page-label">第 40 页</div><ol>
+<li>Singh, M., Truong, J., Reeves, W. B. &amp; Hahm, J. Emerging Cytokine Biosensors with Optical Detection Modalities and Nanomaterial-Enabled Signal Enhancement. Sensors 17, (2017).</li>
+</ol>
+<ol>
+<li>Morris, D. et al. Bio-sensing textile based patch with integrated optical detection system for sweat monitoring. Sens. Actuators B Chem. 139, 231- 236 (2009).</li>
+</ol>
+<ol>
+<li>R. Corrie, S., W. Coffey, J., Islam, J., A. Markey, K. &amp; F. Kendall, M. A. Blood, sweat, and tears: developing clinically relevant protein biosensors for integrated body fluid analysis. Analyst 140, 4350-4364 (2015).</li>
+</ol>
+<ol>
+<li>Uzun, L. &amp; Turner, AP. Molecularly-imprinted polymer sensors: realising their potential. Biosens. Bioelectron. 76, 131-144 (2016).</li>
+</ol>
+<ol>
+<li>Pfeiffer, F. &amp; Mayer, G. Selection and Biosensor Application of Aptamers for Small Molecules. Front. Chem. 4, (2016).</li>
+</ol>
+<ol>
+<li>Prausnitz, M. R. The effects of electric current applied to skin: A review for transdermal drug delivery. Adv. Drug Deliv. Rev. 18, 395-425 (1996).</li>
+</ol>
+<ol>
+<li>Garg, S. K. et al. Correlation of fingerstick blood glucose measurements with GlucoWatch biographer glucose results in young subjects with type 1 diabetes. Diabetes Care 22, 1708-1714 (1999).</li>
+</ol>
+<ol>
+<li>Tierney, M. J. et al. The GlucoWatch $ ^{\circ} $ biographer: a frequent automatic and noninvasive glucose monitor. Ann. Med. 32, 632-641 (2010).</li>
+</ol>
+<ol>
+<li>Tierney, M. J. et al. Clinical evaluation of the GlucoWatch $ ^{\circ} $ biographer: a continual, non-invasive glucose monitor for patients with diabetes. Biosens. Bioelectron. 16, 621-629 (2001).</li>
+</ol>
+<ol>
+<li>Tierney, M. J. et al. Design of a Biosensor for Continual, Transdermal Glucose Monitoring. Clin. Chem. 45, 1681-1683 (1999).</li>
+</ol>
+<ol>
+<li>Bantle, J. P. &amp; Thomas, W. Glucose measurement in patients with diabetes mellitus with dermal interstitial fluid. J. Lab. Clin. Med. 130, 436- 441 (1997).</li>
+</ol>
+<ol>
+<li>Nemiroski, A. et al. Universal mobile electrochemical detector designed for use in resource-limited applications. Proc. Natl. Acad. Sci. 111, 11984- 11989 (2014).</li>
+</ol>
+<ol>
+<li>Windmiller, J. R. &amp; Wang, J. Wearable Electrochemical Sensors and Biosensors: A Review. Electroanalysis 25, 29-46 (2013).</li>
+</ol>
+<ol>
+<li>Zeng, W. et al. Fiber-Based Wearable Electronics: A Review of Materials, Fabrication, Devices, and Applications. Adv.Mater. 26, 5310-5336 (2014).</li>
+</ol></section>
+<section class="page" id="page-41"><div class="page-label">第 41 页</div><ol>
+<li>Grau, G. et al. Gravure-printed electronics: recent progress in tooling development, understanding of printing physics, and realization of printed devices. Flex. Print. Electron. 1, 023002 (2016).</li>
+</ol>
+<ol>
+<li>Khan, Y. et al. Flexible Hybrid Electronics: Direct Interfacing of Soft and Hard Electronics for Wearable Health Monitoring. Adv. Funct. Mater. 26, 8764-8775 (2016).</li>
+</ol>
+<ol>
+<li>Schazmann, B. et al. A wearable electrochemical sensor for the realtime measurement of sweat sodium concentration. Anal. Methods 2, 342- 348 (2010).</li>
+</ol>
+<ol>
+<li>Anastasova, S. et al. A wearable multisensing patch for continuous sweat monitoring. Biosens. Bioelectron. 93, 139-145 (2017).</li>
+</ol>
+<ol>
+<li>Abellán-Llobregat, A. et al. A stretchable and screen-printed electrochemical sensor for glucose determination in human perspiration. Biosens. Bioelectron. 91, 885-891 (2017).</li>
+</ol>
+<ol>
+<li>Ray Windmiller, J. et al. Electrochemical sensing based on printable temporary transfer tattoos. Chem. Commun. 48, 6794-6796 (2012).</li>
+</ol>
+<ol>
+<li>Kim, J. et al. Wearable temporary tattoo sensor for real-time trace metal monitoring in human sweat. Electrochem. Commun. 51, 41-45 (2015).</li>
+</ol>
+<ol>
+<li>Munje, R. D., Muthukumar, S., Selvam, A. P. &amp; Prasad, S. Flexible nanoporous tunable electrical double layer biosensors for sweat diagnostics. Sci. Rep. 5, 14586 (2015).</li>
+</ol>
+<ol>
+<li>Kinnamon, D., Ghanta, R., Lin, K.-C., Muthukumar, S. &amp; Prasad, S. Portable biosensor for monitoring cortisol in low-volume perspired human sweat. Sci. Rep. 7, 13312 (2017).</li>
+</ol>
+<ol>
+<li>Kilic, T., Brunner, V., Audoly, L. &amp; Carrara, S. Smart e-Patch for drugs monitoring in schizophrenia. in 2016 IEEE International Conference on Electronics, Circuits and Systems (ICECS) 57-60 (2016).</li>
+</ol>
+<ol>
+<li>Wang, J. Study of Electrode Reactions and Interfacial Properties. in Analytical Electrochemistry 29-66 (John Wiley &amp; Sons, Inc., 2006).</li>
+</ol>
+<ol>
+<li>Amos Mugweru, Becky L. Clark &amp; Michael V. Pishko. Electrochemical Sensor Array for Glucose Monitoring Fabricated by Rapid Immobilization of Active Glucose Oxidase within Photochemically Polymerized Hydrogels. J. Diabetes Sci. Technol. 1, 366-371 (2007).</li>
+</ol>
+<ol>
+<li>Wang, J. Controlled-Potential Techniques. in Analytical Electrochemistry 67-114 (John Wiley &amp; Sons, Inc., 2006).</li>
+</ol></section>
+<section class="page" id="page-42"><div class="page-label">第 42 页</div><ol>
+<li>Yoshizumi, J., Kumamoto, S., Nakamura, M. &amp; Yamana, K. Target induced strand release (TISR) from aptamer - DNA duplex: A general strategy for electronic detection of biomolecules ranging from a small molecule to a large protein. Analyst 133, 323-325 (2008).</li>
+</ol>
+<ol>
+<li>Liu, X., Duckworth, P. A. &amp; Wong, D. K. Y. Square wave voltammetry versus electrochemical impedance spectroscopy as a rapid detection technique at electrochemical immunosensors. Biosens. Bioelectron. 25, 1467-1473 (2010).</li>
+</ol>
+<ol>
+<li>Current-polarized ion-selective membranes: The influence of plasticizer and lipophilic background electrolyte on concentration profiles, resistance, and voltage transients. Sens. Actuators B Chem. 136, 410-418 (2009).</li>
+</ol>
+<ol>
+<li>Telting-Diaz, M. &amp; Bakker, E. Effect of Lipophilic Ion-Exchanger Leaching on the Detection Limit of Carrier-Based Ion-Selective Electrodes. Anal. Chem. 73, 5582-5589 (2001).</li>
+</ol>
+<ol>
+<li>Patterson, M. J., Galloway, S. D. R. &amp; Nimmo, M. A. Variations in regional sweat composition in normal human males. Experimental Physiology 85, 869-75 (2000).</li>
+</ol>
+<ol>
+<li>Nyein, H. Y. Y. et al. A Wearable Electrochemical Platform for Noninvasive Simultaneous Monitoring of $ \mathrm{C a}^{2+} $ and pH. ACS Nano 10, 7216- 7224 (2016).</li>
+</ol>
+<ol>
+<li>Njagi, J. I. &amp; Kagwanja, S. M. The Interface in Biosensing: Improving Selectivity and Sensitivity. in Interfaces and Interphases in Analytical Chemistry 1062, 225-247 (American Chemical Society, 2011).</li>
+</ol>
+<ol>
+<li>Mehrvar, M. &amp; Abdi, M. Recent Developments, Characteristics, and Potential Applications of Electrochemical Biosensors. Anal. Sci. 20, 1113- 1126 (2004).</li>
+</ol>
+<ol>
+<li>Wang, J. Electrochemical Glucose Biosensors. Chem. Rev. 108, 814- 825 (2008).</li>
+</ol>
+<ol>
+<li>McKeague, M. &amp; DeRosa, M. C. Challenges and Opportunities for Small Molecule Aptamer Development. Journal of Nucleic Acids 2012, 748913 (2012).</li>
+</ol>
+<ol>
+<li>Bandodkar, A. J., Jeerapan, I. &amp; Wang, J. Wearable Chemical Sensors: Present Challenges and Future Prospects. ACS Sens. 1, 464-482 (2016).</li>
+</ol>
+<ol>
+<li>Burugapalli, K., Wang, N., Trzebinski, J., Song, W. &amp; Cass, A. Nanomaterials in Glucose Sensing. Ch. 5 (ASME Press, 2014).</li>
+</ol></section>
+<section class="page" id="page-43"><div class="page-label">第 43 页</div><ol>
+<li>Bakker, E., Bühlmann, P. &amp; Pretsch, E. Polymer Membrane Ion-Selective Electrodes-What are the Limits? Electroanalysis 11, 915-933 (1999).</li>
+</ol>
+<ol>
+<li>Grieshaber, D., MacKenzie, R., Vörös, J. &amp; Reimhult, E. Electrochemical Biosensors - Sensor Principles and Architectures. Sensors 8, 1400-1458 (2008).</li>
+</ol>
+<ol>
+<li>Ahmed, M. U., Zourob, M. &amp; Tamiya, E. Food Biosensors. Ch.9 (RSC Publishing, 2016).</li>
+</ol>
+<ol>
+<li>Hurt, R. H., Monthioux, M. &amp; Kane, A. Toxicology of carbon nanomaterials: Status, trends, and perspectives on the special issue. Carbon 44, 1028-1033 (2006).</li>
+</ol>
+<ol>
+<li>Bakker, E. &amp; Pretsch, E. Potentiometric sensors for trace-level analysis. TrAC Trends Anal. Chem. 24, 199-207 (2005).</li>
+</ol>
+<ol>
+<li>Rathee, K., Dhull, V., Dhull, R. &amp; Singh, S. Biosensors based on electrochemical lactate detection: A comprehensive review. Biochem. Biophys. Rep. 5, 35-54 (2016).</li>
+</ol>
+<ol>
+<li>Zhu, C., Yang, G., Li, H., Du, D. &amp; Lin, Y. Electrochemical Sensors and Biosensors Based on Nanomaterials and Nanostructures. Anal. Chem. 87, 230-249 (2015).</li>
+</ol>
+<ol>
+<li>Fibbioli, M. et al. Potential Drifts of Solid-Contacted Ion-Selective Electrodes Due to Zero-Current Ion Fluxes Through the Sensor Membrane. Electroanalysis 12, 1286-1292 (2000).</li>
+</ol>
+<ol>
+<li>Zhu, J., Qin, Y. &amp; Zhang, Y. Preparation of all solid-state potentiometric ion sensors with polymer-CNT composites. Electrochem. Commun. 11, 1684- 1687 (2009).</li>
+</ol>
+<ol>
+<li>Mir, M., Lugo, R., Tahirbegi, I. B. &amp; Samitier, J. Miniaturizable Ion- Selective Arrays Based on Highly Stable Polymer Membranes for Biomedical Applications. Sensors 14, 11844-11854 (2014).</li>
+</ol>
+<ol>
+<li>Rocchitta, G. et al. Enzyme Biosensors for Biomedical Applications: Strategies for Safeguarding Analytical Performances in Biological Fluids Sensors 16, 780 (2016).</li>
+</ol>
+<ol>
+<li>Cosnier, S. Biomolecule immobilization on electrode surfaces by entrapment or attachment to electrochemically polymerized films. A review. Biosens. Bioelectron. 14, 443-456 (1999).</li>
+</ol>
+<ol>
+<li>Zhang, M., Smith, A. &amp; Gorski, W. Carbon Nanotube-Chitosan System for Electrochemical Sensing Based on Dehydrogenase Enzymes. Anal. Chem. 76, 5045-5050 (2004).</li>
+</ol></section>
+<section class="page" id="page-44"><div class="page-label">第 44 页</div><ol>
+<li>Gomez, C., Oller, J. &amp; Paradells, J. Overview and Evaluation of Bluetooth Low Energy: An Emerging Low-Power Wireless Technology. Sensors 12, 11734-11753 (2012).</li>
+</ol>
+<ol>
+<li>Burnette, D. W. et al. Intelligent wireless communications for continuous analyte monitoring. (2016).</li>
+</ol>
+<ol>
+<li>Yilmaz, T., Foster, R. &amp; Hao, Y. Detecting Vital Signs with Wearable Wireless Sensors. Sensors 10, 10837-10862 (2010).</li>
+</ol>
+<ol>
+<li>Bahk J., Fang, H., Yazawa, K. and Shakouri A. Flexible thermoelectric materials and device optimization for wearable energy harvesting. J. Mater. Chem. C 3, 10362-374 (2015).</li>
+</ol>
+<ol>
+<li>Thierer, A. The Internet of Things and Wearable Technology: Addressing Privacy and Security Concerns without Derailing Innovation. RICH.J.L. &amp; TECH. 21, (2015)</li>
+</ol>
+<ol>
+<li>Albert, K. J. et al. Cross-Reactive Chemical Sensor Arrays. Chem. Rev. 100, 2595-2626 (2000).</li>
+</ol>
+<ol>
+<li>Marques-Deak, A. et al. Measurement of cytokines in sweat patches and plasma in healthy women: Validation in a controlled study. J. Immunol. Methods 315, 99-109 (2006).</li>
+</ol>
+<ol>
+<li>Cizza, G. et al. Elevated Neuroimmune Biomarkers in Sweat Patches and Plasma of Premenopausal Women with Major Depressive Disorder in Remission: The POWER Study. Biol. Psychiatry 64, 907-911 (2008).</li>
+</ol>
+<ol>
+<li>Raiszadeh, M. M. et al. A Proteomic Analysis of Eccrine Sweat: Implications for the Discovery of Schizophrenia Biomarker Proteins. J. Proteome Res. 11, 2127 (2012).</li>
+</ol>
+<ol>
+<li>McGregor, C., Catley, C. &amp; James, A. Variability analysis with analytics applied to physiological data streams from the neonatal intensive care unit. in 2012 25th IEEE International Symposium on Computer-Based Medical Systems (CBMS) 1-5 (2012).</li>
+</ol>
+<ol>
+<li>Buono, M. J. Sweat ethanol concentrations are highly correlated with co-existing blood values in humans. Exp. Physiol. 84, 401-404 (1999).</li>
+</ol>
+<ol>
+<li>Guinovart, T., J. Bandodkar, A., R. Windmiller, J., J. Andrade, F. &amp; Wang, J. A potentiometric tattoo sensor for monitoring ammonium in sweat. Analyst 138, 7031-7038 (2013).</li>
+</ol>
+<ol>
+<li>Mickelsen, O. &amp; Keys, A. The composition of sweat, with special reference to vitamins. J. Biol. Chem. 149, 479-490 (1943).</li>
+</ol></section>
+<section class="page" id="page-45"><div class="page-label">第 45 页</div><ol>
+<li>Shields, J. B., Johnson, B. C., Hamilton, T. S. &amp; Mitchell, H. H. The excretion of ascorbic acid and dehydroascorbic acid in sweat and urine under different environmental conditions. J. Biol. Chem. 161, 351-356 (1945).</li>
+</ol>
+<ol>
+<li>Wang, J. Fundamental Concepts. in Analytical Electrochemistry 1-28 (John Wiley &amp; Sons, Inc., 2006).</li>
+</ol>
+<ol>
+<li>Lisdat, F. &amp; Schafer, D. The use of electrochemical impedance spectroscopy for biosensing. Anal. Bioanal. Chem. 391, 1555 (2008).</li>
+</ol></section>
+<section class="page" id="page-46"><div class="page-label">第 46 页</div><p>Acknowledgements The authors acknowledge support from National Science Foundation (NSF), Berkeley Sensor and Actuator Center (BSAC), NSF Nanomanufacturing Systems for Mobile Computing and Mobile Energy Technologies (NASCENT) Center, and Bakar fellowship.</p>
+<p>Author Contributions M.B., H.Y.Y.N., and A.J. jointly planned the content of this paper. M.B. and H.Y.Y.N. conducted the writing.</p></section>
+<section class="page" id="page-47"><div class="page-label">第 47 页</div><div>
+
+Figure 1: Big Data for Human Health. In the envisioned landscape of personalized medical and fitness monitoring, wearable sensors integrated into 'smart' wristbands or patches will generate vast quantities of data potentially indicative of human health. Collected sensor readings can be parsed with big data techniques to uncover actionable correlations between molecular indicators and health state. These discoveries will enable point-of-care detection of developing health conditions for personalized and ultimately preventive healthcare.
+
+</div>
+<div>
+
+Figure 2: Sweat Gland Structure and Biomarker Partitioning. Eccrine sweat glands are comprised of a secretory coil where sweat is first generated and a dermal duct that conveys sweat through the epidermis to the skin surface. In the process, a variety of analytes including ions, metabolites, acids, hormones, proteins, and peptides are partitioned into sweat from nearby blood and interstitial fluid $ ^{17} $ Adapted by permission from Macmillan Publishers Ltd.
+
+</div>
+<div>
+
+Figure 3: Wearable Sweat Sensors. (a) A multiplexed electrochemical system for continuous monitoring of a panel of analytes in sweat, integrated into a 'smart' wristband for fitness monitoring. Wireless transmission to a custom phone app allows easy readout of analyte concentrations $ ^{6} $ . (b) A Band-Aid-style patch for continuous detection of ions in sweat, with RFID antenna for wireless signal transmission. Adapted with permission from reference $ ^{9} $ . (c) One-time, colorimetric detection of sweat analytes is realized using colorimetric assay reagents encased in microfluidic wells $ ^{8} $ . Reprinted with permission from AAAS. (d) Screen-printed electrodes on a tattoo substrate achieve ethanol detection in iontophoretic sweat. Reprinted (adapted) with permission from $ ^{19} $ . Copyright (2016) American Chemical Society. (e) GlucoWatch used reverse iontophoresis for semi-continuous glucose measurement $ ^{36,37} $ . Republished with permission of P.B. Hoeber from $ ^{37} $ ; permission
+
+</div></section>
+<section class="page" id="page-48"><div class="page-label">第 48 页</div><p>conveyed through Copyright Clearance Center, Inc. Reprinted from $ ^{36} $ with permission from Elsevier.</p>
+<p>Figure 4: Iontophoresis and Reverse Iontophoresis. (a) Iontophoresis relies on topical current application for local sweat stimulation. Current is applied between Pilogels, or hydrogels containing the sweat stimulating drug pilocarpine. The drug is driven beneath the skin surface and triggers nearby glands to secrete sweat, which wearable sensors can then access. (b) Reverse iontophoresis uses current application to electro-osmotically drive interstitial fluid (IF) through the epidermis to the skin surface. No drug is involved in this case - hydrogels simply isolate the current applying electrodes from the skin surface to prevent irritation. Analytes that are advectively transported to the skin surface along with IF can be detected by wearable sensors. Note: schematics are not to scale.</p>
+<p>Figure 5: Multiplexed Sensing of Sweat Analytes. Real-time monitoring of a panel of biomarkers secreted in sweat during constant load exercise $ ^{6} $</p>
+<p>Figure 6: Correlating Non-Invasive Biomarkers with Health Status. (a) Sweat $ \mathrm{N a^{+}} $ and $ \mathrm{C l^{-}} $ levels, measured by a wearable platform with iontophoresis capabilities, are shown to differentiate normal subjects from cystic fibrosis patients $ ^{7} $ (b) 1-to-1 correlation between blood and interstitial fluid glucose allows for non invasive diabetes management. Reprinted from $ ^{38} $ with permission from Elsevier. (c) Sweat ethanol is shown to directly correlate with blood ethanol, underscoring the possibility of sweat-based monitoring of alcohol abuse $ ^{90} $ . Reused with permission from $ ^{90} $</p></section>
+<section class="page" id="page-49"><div class="page-label">第 49 页</div><div>
+
+Table 1: Analytes in Sweat and Select Detection Methods
+
+</div>
+<table><tbody><tr><td>Analyte</td><td>Concentration in sweat</td><td>Recognition element</td><td>Sensing modality</td><td>References</td></tr><tr><td>$Na^{+}$</td><td>10-100mM</td><td>Na ionophore</td><td rowspan="6">Potentiometry</td><td>6,7,44,45,59</td></tr><tr><td>Cl^{-}$</td><td>10-100mM</td><td>Ag/AgCl</td><td>7,59</td></tr><tr><td>K^{+}$</td><td>1-18.5mM</td><td>K ionophore</td><td>6,59</td></tr><tr><td>Ca^{2+}$</td><td>0.41-12.4mM</td><td>Ca ionophore</td><td>59,60</td></tr><tr><td>pH</td><td>3-8</td><td>polyaniline</td><td>45,60</td></tr><tr><td>NH_{4}^{+}$</td><td>0.1-1mM</td><td>Ammonium ionophore</td><td>91</td></tr><tr><td>Glucose</td><td>10-200μM</td><td>Glucose oxidase</td><td rowspan="3">Chronoamperometry</td><td>6,7,46</td></tr><tr><td>Lactate</td><td>5-20mM</td><td>Lactate oxidase</td><td>45</td></tr><tr><td>Ethanol</td><td>2.5-22.5mM</td><td>Alcohol oxidase</td><td>18,19</td></tr><tr><td>Uric acid</td><td>2-10mM</td><td>Carbon</td><td rowspan="2">Cyclic voltammetry</td><td>47</td></tr><tr><td>Ascorbic acid</td><td>10-50μM</td><td>Carbon</td><td>47,92,93</td></tr><tr><td>Zn^{2+}$</td><td>100-1560μg/l</td><td>Bi</td><td rowspan="5">Square wave stripping voltammetry</td><td>20,48</td></tr><tr><td>Cd^{2+}$</td><td>&lt;100μg/l</td><td>Bi</td><td>20</td></tr><tr><td>Pb^{2+}$</td><td>&lt;100μg/l</td><td>Bi, Au</td><td>20</td></tr><tr><td>Cu^{2+}$</td><td>100-1000μg/l</td><td>Au</td><td>20</td></tr><tr><td>Hg^{+}$</td><td>&lt;100μg/l</td><td>Au</td><td>20</td></tr><tr><td>Cortisol</td><td>8-140ng/ml</td><td>ZnO,MoS_{2}$</td><td>Electrochemical Impedance Spectroscopy</td><td>49,50</td></tr><tr><td>F17464</td><td>-</td><td>Graphite</td><td>Differential Pulse Voltammetry</td><td>51</td></tr></tbody></table></section>
+<section class="page" id="page-50"><div class="page-label">第 50 页</div><div>
+
+Table 2: Comparison of Electrochemical Detection Methods
+
+</div>
+<table><tbody><tr><td>Method</td><td>Overview</td><td>Advantages</td><td>Disadvantages</td><td>References</td></tr><tr><td>Potentiometry</td><td>The potential between the sensing and reference electrode is indicative of target ion concentration.</td><td>Simple detection scheme and signal processingIdeal for charged species with fixed charge stateGood for relatively concentrated species in the mM range</td><td>Because this scheme measures activity as opposed to concentration, a selective membrane layer must be developed to target specific ionsSusceptible to interference from other charges for less concentrated ionsOnly applicable for sensing charged species</td><td>6,7,54</td></tr><tr><td>Chronoamperometry</td><td>A fixed potential is applied to the sensing electrode and the resulting current due to stimulated redox reactions is proportional to target analyte concentration.</td><td>Simple detection and easy post-processing to convert current to concentrationMediators can be employed to lower the necessary potential and thus power consumption</td><td>For trace species below μM ranges, the Faradaic signal can decay over time to give inaccurate concentration conversionsTypically need an enzyme to provide selectivity</td><td>6,7,19,94</td></tr><tr><td>Voltammetry</td><td>A voltage scan is conducted between the sensing and reference electrode, and the resulting current features are extracted to determine concentration.</td><td>Because different species have unique redox potentials, a voltage scan on the same two electrodes can be used to extract information on several analytes at onceThere are a variety of sub-techniques to choose from to optimize signal-to-noise ratiosCan be coupled with pre-concentration techniques for detection of trace molecules, achieving higher limits of detection compared to chronoamperometry</td><td>Voltage scans can trigger background reactions that occlude or interfere with the desired signalCompared to chronoamperometry, this technique requires more complex post-processing to extract and identify peaks corresponding to the desired analyte</td><td>20,48,53-56,94</td></tr><tr><td>Electrochemical Impedance Spectroscopy</td><td>Using an applied sinusoidal voltage, the impedance of the transducing surface is obtained to reflect the amount of binding of target species on the sensor surface, indicating concentration.</td><td>Does not require electrochemically inactive species to be coupled to redox labels before detection, as selective binding of the target on the sensor surface intrinsically produces an impedance change</td><td>Requires longer analysis times with more complex post-processing than voltammetric techniquesSensitivity towards direct binding detection can be low, requiring amplification techniques to be incorporated</td><td>50,56,95</td></tr></tbody></table></section>
+<section class="page" id="page-52"><div class="page-label">第 52 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure></section>
+<section class="page" id="page-53"><div class="page-label">第 53 页</div><div>
+
+Figure 2
+
+</div></section>
+<section class="page" id="page-54"><div class="page-label">第 54 页</div><div>
+
+Figure 3
+
+</div></section>
+<section class="page" id="page-55"><div class="page-label">第 55 页</div><figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<div>
+
+Figure 4
+
+</div>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure>
+<figure class="image-note"><figcaption>[图像区域；请结合原文 PDF 查看]</figcaption></figure></section>
+<section class="page" id="page-56"><div class="page-label">第 56 页</div><div>
+
+Figure 5
+
+</div></section>
+<section class="page" id="page-57"><div class="page-label">第 57 页</div><h2>Figure 6</h2>
+<div>
+
+(a)
+
+</div>
+<div>
+
+(b)
+
+</div></section></main></body></html>

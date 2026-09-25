@@ -1,0 +1,72 @@
+{
+  "sha1": "cad903c1b6d9983934669e5ab7135cce52b4d5bf",
+  "title": "Deterministic fabrication of 3D/2D perovskite bilayer stacks for durable and efficient solar cells",
+  "doi": "https://doi.org/10.1126/science.abq7652",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/cad903c1b6d9983934669e5ab7135cce52b4d5bf/index.html",
+  "source_chars": 46580,
+  "markdown_chars": 3330,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 8,
+      "quote": "The precursor solution with (Cs5(MA0.10FA0.90)95Pb(I0.90Br0.10)3), and then annealed at 80oC for 5 min. ... 2D perovskite seeds was coated on top of a 3D HaP layer",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第8页文本将“2D perovskite seeds was coated on top of a 3D HaP layer”置于段落末尾，而逻辑上应接在“The precursor solution with”之后，构成“The precursor solution with 2D perovskite seeds was coated on top of a 3D HaP layer (Cs5...)”这一完整句。提取顺序被打乱，句子不完整。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 11,
+      "quote": "shows the presence of horizontal oriented BA2MAPb2I7 2D HaP on the surface (𝛼 0.08° , and the 3D HaP 0.5°",
+      "type": "符号/数字提取不完整",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "“𝛼”后缺少入射角相关文字（可能为incident angle或类似词），且“0.08°”“0.5°”前符号不完整，无法确定原始表达式。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "The overlaying 2D HaP minimized perovskite/electrode (HTL) interface as confirmed by the transport modeling nonradiative recombination pathways between the 3D measurements",
+      "type": "文本顺序/拼接疑点",
+      "severity": "high",
+      "confidence": 0.9,
+      "reason": "第16页末尾句子单词顺序明显被打乱。按上下文逻辑，原句应为“The overlaying 2D HaP minimized the nonradiative recombination pathways between the 3D perovskite/electrode (HTL) interface as confirmed by the transport modeling measurements”，但提取文本中“nonradiative recombination pathways between the 3D”和“perovskite/electrode (HTL) interface”位置颠倒，且“measurements”被移后。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 16,
+      "quote": "increased charge carrier lifetime up to a 2D HaP thickness of 50 (see Figure S33)",
+      "type": "单位缺失",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "从上下文（前文多次提到“50 nm”厚度）推断“50”应为“50 nm”，但提取文本中缺少单位。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值：溶剂选择阈值 εr>30、5<DN<18 kcal/mol；2D 钙钛矿溶解度（n=1 >100 mg/ml 至 n=4 30-40 mg/ml）；界面过渡区 20 nm（ToF-SIMS 与 HRTEM 一致）；GIWAXS 临界角 0.181°、界面分辨入射角 0.2°、2D 层厚度 50-60 nm；n-i-p 器件参数（VOC 1.09→1.2 V、FF 0.80→0.84、JSC 23.54→24.34 mA/cm²、PCE 24.5%、最佳 2D 层厚度 50 nm）；p-i-n 最佳 2D 层厚度 5 nm；稳定性数据（T99>2000 h、控制 3D 损失 25%、2D 钝化 3D 1000 h 损失 10%、纯 2D T97>1500 h）；能带排列类型（n=1,2 为 I 型，n=3 为 II 型）；图 4E 各器件初始 PCE（21%、22.93%、23.75%、16.3%）。仍不确定的地方：第 8 页制备参数句子因提取乱序，具体词序存疑；第 11 页 GIWAXS 入射角符号提取不完整；第 16 页“thickness of 50”缺少单位 nm（根据上下文推断）；第 16 页末尾句子乱序导致具体措辞不确定，但语义已按上下文还原。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 18148,
+      "prompt_tokens": 15372,
+      "total_tokens": 33520,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 14906
+      }
+    },
+    "content_chars": 5747
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

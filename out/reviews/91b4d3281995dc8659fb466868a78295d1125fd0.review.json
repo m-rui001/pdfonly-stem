@@ -1,0 +1,64 @@
+{
+  "sha1": "91b4d3281995dc8659fb466868a78295d1125fd0",
+  "title": "Enhanced Efficiency and Stability of Inverted Perovskite Solar Cells Using Highly Crystalline SnO 2 Nanocrystals as the Robust Electron‐Transporting Layer",
+  "doi": "https://doi.org/10.1002/adma.201600619",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/91b4d3281995dc8659fb466868a78295d1125fd0/index.html",
+  "source_chars": 32515,
+  "markdown_chars": 2230,
+  "heading_h2_count": 0,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 3,
+      "quote": "perovksite",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.9,
+      "reason": "原文中 'perovksite' 应为 'perovskite'，但按规则照录原文，标注怀疑。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 3,
+      "quote": "the well energy level alignment (−3.9 eV) between perovskite and C60. Notably, the unique electron coupling...",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "第3页开头直接出现 'the well energy level alignment'，但上一页末尾的句子在 'considering' 处中断，此句缺少动词和主语，疑似页眉/图注插入导致文本拼接缺失。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "Figure 5. The stability test of FTO/PEDOT:PSS/MAPbI3/PCBM/Ag (red), FTO/NiO/MAPbI3/C60/Ag (blue), and FTO/NiO/MAPbI3/C60/hydrothermal SnO2/Ag (black) devices as a function of storage time in different environment: A) in N2, in ambient with a relative humidity of B) 10% ± 5%, C) 45% ± 5%, and D) 75% ± 5%.",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "该图注位于页尾，正文中 'Figure 5 presents the PCE...' 之后紧接着出现图注，随后下一页继续正文，图注位置可能打断句子流，但内容本身完整，仅标为可疑拼接。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对关键数值：水热 SnO2 器件 PCE 18.8%（VOC 1.12 V，JSC 21.8 mA cm−2，FF 77%），稳态 PCE 18.5%，40 器件平均 17.4%；稳定性 30 d 保持 80% PCE（正文摘要处为>90%，图5描述为80%左右，已按各自语境区分）；SnO2 厚度约120 nm，晶面间距0.333 nm对应110面。公式无。结论方向与摘要一致。不确定点：文中第3页开头缺失动词的句子无法修补，已按原文照录并在问题中标注。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 2237,
+      "prompt_tokens": 10323,
+      "total_tokens": 12560,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 273
+      }
+    },
+    "content_chars": 3652
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "sha1": "3db48b4f42372c80d6a5574d00eb7d4eec53718a",
+  "title": "Postsynthetic Tuning of Metal–Organic Frameworks for Targeted Applications",
+  "doi": "https://doi.org/10.1021/acs.accounts.6b00577",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/3db48b4f42372c80d6a5574d00eb7d4eec53718a/index.html",
+  "source_chars": 45974,
+  "markdown_chars": 5381,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 1,
+      "quote": "Post-synthesis Tuning of Metal-Organic Frameworks for Targeted Applications",
+      "type": "metadata_identity_mismatch",
+      "severity": "low",
+      "confidence": 0.6,
+      "reason": "OCR 正文首页题名写作“Post-synthesis Tuning”，而登记题名为“Postsynthetic Tuning”，仅连字符差异，属轻微题名不一致，不影响身份判断。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "tetratopic 1,3,6,8-（p benzoate)pyrene (TBAPy $ ^{4-} $ ）linkers",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.8,
+      "reason": "括号与连字符混用、全角半角混杂，疑似“1,3,6,8-(p-benzoate)pyrene”被抽取损坏，影响连接体名称的准确复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "$ \\mathrm{Z r}{6}(\\mu{3}-\\mathrm{O}){4}(\\mu{3}-\\mathrm{O H}){4}(\\mathrm{H}{2}\\mathrm{O}){4}(\\mathrm{O H}){4} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.85,
+      "reason": "节点化学式中下标/括号位置错乱，Zr6(μ3-O)4(μ3-OH)4(H2O)4(OH)4 的原子计量与配位标记被破坏，影响公式复现。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 3,
+      "quote": "~31A diameter",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "长度单位“Å”被抽取为“A”，与后文“~12A triangular channels”同类，属单位符号丢失。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 4,
+      "quote": "mainly $ \\mathrm{N_{2}} $ $ \\mathrm{C O_{2}} $ $ \\mathrm{H_{2}O} $ or dried flue gas",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "烟气组分之间缺少连接词/标点，原文应为 N2、CO2、H2O 等组分列表，抽取后语义不完整。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 10,
+      "quote": "Brnsted-base-like catalysis",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "“Brønsted”中的 ø 丢失，写作“Brnsted”，属字符抽取错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 11,
+      "quote": "SALI allows for decoration of MOF pores with organic ligands and/or site-isolated complex catalysts, respectively.",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "“respectively”在此处语义不通，疑为 SALI 与 AIM 并列描述时抽取错位或漏词，影响结论段对两策略分工的准确理解。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [],
+  "record_match": "match",
+  "ocr_title": "Post-synthesis Tuning of Metal-Organic Frameworks for Targeted Applications",
+  "self_check": "已核对：NU-1000 节点化学式与 TBAPy 连接体、31 Å/12 Å 通道、八连接节点与 4 水/4 羟基；SALI 每节点最多四配体、膦酸在 1:24 8 M HCl/DMF 中保留、CO2 等量吸附热最高翻倍、Ir 钳形配合物活性最高 70 倍、Ni 乙烯二聚约十倍；AIM 的 Zn 约 4、Al 约 8、In 每节点六个、In–O 2.12 Å、In···Zr 3.33 Å、CoAIM 过电位约 450 mV at 10 mA cm−2、Ni-AIM 两周 vs 传统载体六小时失活；SALE 的 L1 9 Å 与 L3/L4/L5 11/14/17 Å、ZIF-8 约 3.8 Å 与 SALEM-2 约 6 Å、1–100% 新连接体。仍不确定：部分化学式下标与单位符号在 OCR 中损坏，已按可见文本照录并在 extraction_issues 标出；结论段“respectively”处语义存疑，未据推测改写。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 4501,
+      "prompt_tokens": 13643,
+      "total_tokens": 18144,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 8059,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": true
+  }
+}

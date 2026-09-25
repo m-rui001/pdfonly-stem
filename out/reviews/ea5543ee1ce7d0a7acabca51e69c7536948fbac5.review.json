@@ -1,0 +1,64 @@
+{
+  "sha1": "ea5543ee1ce7d0a7acabca51e69c7536948fbac5",
+  "title": "Ecosystem tipping points in an evolving world",
+  "doi": "https://doi.org/10.1038/s41559-019-0797-2",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/ea5543ee1ce7d0a7acabca51e69c7536948fbac5/index.html",
+  "source_chars": 65701,
+  "markdown_chars": 1888,
+  "heading_h2_count": 3,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 28,
+      "quote": "𝑑𝑇\n𝑑𝑡\n= r ! T(1 −\n𝑇 ) h! 𝑇! h + M !\n𝑀 h ! ! + T! = r! M 1 − 𝑑𝑡 𝐾 h! !",
+      "type": "公式提取损坏",
+      "severity": "high",
+      "confidence": 0.95,
+      "reason": "补充信息中的模型方程在提取时出现乱码和截断，无法完整解读，可能影响对模型细节的复现。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 28,
+      "quote": "DIfferent values of z",
+      "type": "疑似拼写错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "应为 'Different'，存在明显大小写笔误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 27,
+      "quote": "van Belzen, J., ... S. K?fi, et al.",
+      "type": "疑似OCR错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "正文中该作者姓名为 'Kéfi'，参考文献中显示 'K?fi'，应为缺少重音符号。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对摘要与正文论证方向一致；图1中σ²=0和0.75的数值、模型参数（rM=0.05, K=1, hT=2, p=4, rT=0.1, T0=2-8, hM=0.2）均来自补充信息文本；蓝藻实验和鳕鱼例子与正文相符。不确定之处在于补充信息中的公式因提取损坏未能完整保留，故笔记中仅以文字描述模型结构。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 11745,
+      "prompt_tokens": 17106,
+      "total_tokens": 28851,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10208
+      }
+    },
+    "content_chars": 2798
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

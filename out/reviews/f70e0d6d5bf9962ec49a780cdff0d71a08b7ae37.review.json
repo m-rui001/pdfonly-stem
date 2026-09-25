@@ -1,0 +1,81 @@
+{
+  "sha1": "f70e0d6d5bf9962ec49a780cdff0d71a08b7ae37",
+  "title": "Traffic state estimation on highway: A comprehensive survey",
+  "doi": "https://doi.org/10.1016/j.arcontrol.2017.03.005",
+  "model": "deepseek-v4-flash-ga-260731",
+  "prompt_version": "flow-v6",
+  "source_html": "out/html/f70e0d6d5bf9962ec49a780cdff0d71a08b7ae37/index.html",
+  "source_chars": 145821,
+  "markdown_chars": 10507,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [],
+  "unverified_issue_candidates": [
+    {
+      "page": 10,
+      "quote": "One of the reasons for this is that the model can be calibrated and solved efficiently. Another reason is that the model can explicitly manage vehicle trajectory data, which has received a great deal of attention recently",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.7,
+      "reason": "LWR模型在TSE中应用的两个原因在文本中只有前半部分（'One of the reasons...'），'Another reason'句法上暗示前面应有'one reason'的完整表述，且段落上下文到页边界处中断，随后直接进入关于HJ PDE应用的句子，疑似是从[PDF extracted page 10]到[PDF extracted page 11]的跨页间断缺失或顺序错乱。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "The most commonly used schemes in TSE studies are as follows: SMMs for efficient computation",
+      "type": "跨页顺序/拼接疑点",
+      "severity": "medium",
+      "confidence": 0.6,
+      "reason": "该句在'as follows:'后列举了SMM等几个方案，但前文关于数值方法部分的论述在页码边界处中断，且对列举内容的解释与后续句子之间存在不自然的衔接，疑为页间顺序问题。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "Choosing a numerical scheme requires considering estimation approaches and input data. For example, some accurate numerical schemes (e.g., the Godunov scheme) cannot be incorporated into certain computationally efficient estimation approaches",
+      "type": "疑点：引用不完整",
+      "severity": "high",
+      "confidence": 0.8,
+      "reason": "该句在'approaches'处截断，未说明是哪些具体方法以及为何不兼容，结合后文关于移动数据需要特定格式的讨论逻辑判断，原文在此处可能包含关于模型可微性/非可微性的进一步解释，这在[PDF extracted page 13]处缺失。页码以提取文本中标示为准，文本中并无明确的独立页码标记，故只能从上下文中推断。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 13,
+      "quote": "Fourier-Galerkin (FG) method and discontinuous Galerkin (DG) method for minimax estimation",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.7,
+      "reason": "原文前文（第13页同段）出现'Fourier-Galerkin (FG) method'，后文参考文献列表中Tchrakian and Zhuk (2015)标题为'A macroscopic traffic data-assimilation framework based on the Fourier-Galerkin method and minimax estimation'，而正文此处写为'Fountain-Galerkin'，疑为OCR或拼写错误。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 21,
+      "quote": "puesdo-second-order model",
+      "type": "疑似错误",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "Wright and Horowitz (2016) 的论文标题为'Fusing loop and GPS probe measurements to estimate freeway density'，正文中'puesdo-second-order model'疑为'pseudo-second-order model'的拼写错误（puesdo→pseudo），但鉴于文献标题本身并未在提取文本中出现'pseudo'字样，此条置信度为中等。",
+      "quote_matches_page": false
+    }
+  ],
+  "self_check": "已核对的关键数值/公式：Edie定义（q(A)=d(A)/|A|等）、累积流量偏导关系（q=∂ₜN, ρ=-∂ₓN）、基本关系q=ρv、LWR方程（∂ₜρ+∂ₓQ(ρ)=0）、PW方程（含松弛时间τ与前瞻参数c₀²）、ARZ方程、HJ形式∂ₜN-Q(-∂ₓN)=0、KF状态空间模型（xₜ=fₜ(xₜ₋₁,νₜ), yₜ=hₜ(xₜ,ωₜ)）均与提取文本一致。结论方向核对：模型驱动占主导、LWR广泛使用、KFTs流行、移动数据依赖固定数据、非聚合数据上升、数据驱动/流数据驱动渐增等六点结论均有提取文本依据。图2–11及表1–4中的信息仅保留正文实际描述的部分，未深入图表细节。不确定之处：BVP方法与流数据驱动方法的边界划分在原文中涉及对'forward simulation vs estimation'概念的辨析，该部分已在笔记中保守表述。另对个别数值格式的性质（如Godunov不可微性）做了如实转述。公式中τ→0处ARZ退化为LWR的极限关系已保留。",
+  "api": {
+    "served_model": "deepseek-v4-flash-ga-260731",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 8093,
+      "prompt_tokens": 40099,
+      "total_tokens": 48192,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1071
+      }
+    },
+    "content_chars": 13371
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}

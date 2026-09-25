@@ -1,0 +1,148 @@
+{
+  "sha1": "4305eece60d8af7c4fd80dfa6015fbe775fd6963",
+  "title": "Understanding and applying coulombic efficiency in lithium metal batteries",
+  "doi": "https://doi.org/10.1038/s41560-020-0648-z",
+  "model": "deepseek-v4-1-flash",
+  "prompt_version": "flow-v8-ocr-identity",
+  "source_html": "out/html_ocr/4305eece60d8af7c4fd80dfa6015fbe775fd6963/index.html",
+  "source_chars": 40580,
+  "markdown_chars": 8667,
+  "heading_h2_count": 4,
+  "heading_h3_count": 0,
+  "extraction_issues": [
+    {
+      "page": 2,
+      "quote": "the $ \\mathrm{L i}^{2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "此处应为 Li 或 Li⁺ 等符号，OCR 抽取为 Li²，符号损坏，影响对电解质和 Li 消耗速率表述的理解。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 2,
+      "quote": "nagetive",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 negative，虽不影响核心理解，但属于 OCR 文本错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$ 4. 3 \\mathrm{V}^{1 9, 2 0} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字与上标引用之间出现空格，格式异常，但数值 4.3 V 可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 5,
+      "quote": "$ 4. 4 \\mathrm{V} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字与单位之间出现空格，格式异常，但数值 4.4 V 可辨。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{L i P F}{6} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "化学式 LiPF₆ 的下标 6 被抽取为普通数字且位置异常，影响化学式准确性。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "$ \\mathrm{L i P F}{6} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "同一化学式 LiPF₆ 在方法部分再次出现下标抽取异常。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "vinlyene carbonate",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.95,
+      "reason": "拼写错误，应为 vinylene carbonate，虽不影响理解，但属于 OCR 文本错误。",
+      "quote_matches_page": true
+    },
+    {
+      "page": 7,
+      "quote": "lithium bifluorosulfnyl imde",
+      "type": "ocr_text_error",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "拼写错误，应为 lithium bis(fluorosulfonyl)imide，影响化学物质名称的准确性。",
+      "quote_matches_page": true
+    }
+  ],
+  "unverified_issue_candidates": [
+    {
+      "page": 5,
+      "quote": "$ 3. 8 \\mathrm{V}^{21} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字与上标引用之间出现空格，格式异常，但数值 3.8 V 可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "$ 1. 5 \\mathrm{V} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字与单位之间出现空格，格式异常，但数值 1.5 V 可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 5,
+      "quote": "$ 3. 8 \\mathrm{~V}^{21} $",
+      "type": "ocr_text_error",
+      "severity": "low",
+      "confidence": 0.8,
+      "reason": "数字与单位之间出现空格及波浪线，格式异常，但数值 3.8 V 可辨。",
+      "quote_matches_page": false
+    },
+    {
+      "page": 6,
+      "quote": "$ 1. 2 7 \\mathrm{c m}^{2 2} $",
+      "type": "formula_symbol_loss",
+      "severity": "medium",
+      "confidence": 0.9,
+      "reason": "上标 22 应为引用编号，此处与单位 cm² 混淆，导致面积单位表达损坏。",
+      "quote_matches_page": false
+    }
+  ],
+  "record_match": "match",
+  "ocr_title": "Understanding and applying coulombic efficiency in lithium metal batteries",
+  "self_check": "已核对关键数值：式 (2) 中 1000 次循环、90% 容量保持对应平均 CE 至少 99.99%；Fig. 1c 平均 CE 99.69%、100 次循环后 94% 容量，而式 (2) 理论值 74%；Fig. 1d 平均 CE 99.76%、仅 50 次循环；无负极 Cu/NMC 电池 100 次循环平均 CE 97.79%，式 (2) 预测容量保持 10.7%，实验值 13.1%；Li/Cu 电池 75 μL 与 15 μL 电解质对应平均 CE 99.54% 与 98.60%；Li/Cu 电池沉积 4 mAh cm⁻²、Li 厚 50 μm；实际 300 Wh kg⁻¹ 电池电解质约 3 g (Ah)⁻¹，对应纽扣电池约 13 μL。公式 (1)(2)(3) 已按提取文本保留。仍不确定处：OCR 中部分化学式下标和上标引用存在损坏，已在 extraction_issues 中标出；未发现正文标题与登记题名冲突。",
+  "api": {
+    "served_model": "deepseek-v4-1-flash",
+    "finish_reason": "stop",
+    "usage": {
+      "completion_tokens": 6437,
+      "prompt_tokens": 10894,
+      "total_tokens": 17331,
+      "prompt_tokens_details": {
+        "cached_tokens": 1024
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "content_chars": 11979,
+    "json_repaired": false
+  },
+  "structure_check": {
+    "within_heading_limits": true,
+    "all_issue_quotes_located": false
+  }
+}
