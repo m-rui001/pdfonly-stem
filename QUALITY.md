@@ -1,42 +1,45 @@
 # 质量报告：pdfonly-stem
 
 本文件由 `python scripts/validate.py --quality` 生成，所有数字来自脚本扫描。
-硬门槛与删除标准见 `D:\mxrlib\_tools\QUALITY_STANDARD.md`。
+硬门槛与删除标准见 `scripts/QUALITY_STANDARD.md`。
 
 ## 现状计数
 
 | 指标 | 数值 |
 | --- | --- |
-| Markdown 文件 | 916 |
+| Markdown 文件 | 914 |
 | catalog 记录 | 949 |
-| 总字符数 | 4878767 |
-| 最短 / 中位 / 最长（字符） | 452 / 3951 / 24085 |
-| quality=ok | 631 |
-| quality=low | 268 |
-| quality=bad | 17 |
+| 总字符数 | 4841776 |
+| 最短 / 中位 / 最长（字符） | 709 / 3924 / 23942 |
+| quality=ok | 667 |
+| quality=low | 233 |
+| quality=bad | 14 |
 | catalog/正文身份冲突 | 14 |
 | 年份仅差 1 年（保留 catalog 年份） | 7 |
-| 已删除（REJECTED.csv） | 0 |
+| 已删除（REJECTED.csv） | 2 |
 
 ## 缺陷分布
 
 | defect | 篇数 |
 | --- | --- |
-| review_high_issue | 182 |
-| no_source | 67 |
-| no_h2 | 36 |
+| review_high_issue | 181 |
+| no_h2 | 34 |
+| no_source | 21 |
 | metadata_year_mismatch | 8 |
 | metadata_year_minor | 7 |
 | short_body | 5 |
-| metadata_title_mismatch | 5 |
-| body_short | 3 |
+| metadata_title_mismatch | 4 |
 | truncated_suspect | 3 |
 | metadata_doi_mismatch | 2 |
 | replacement_char | 1 |
 
 ## 删除记录
 
-本次未删除任何文件。
+| reason | 篇数 |
+| --- | --- |
+| body_under_400_chars | 2 |
+
+逐文件明细见 `REJECTED.csv`（path、reason、chars、sha1）。
 
 ## 已执行的确定性修复
 
@@ -47,11 +50,11 @@
 
 ## 未解决项
 
-- `review_high_issue`：182 篇，保留并标记（不可确定性修复或证据不足）。
-- `no_source`：67 篇，保留并标记（不可确定性修复或证据不足）。
-- `no_h2`：36 篇，保留并标记（不可确定性修复或证据不足）。
+- `review_high_issue`：181 篇，保留并标记（不可确定性修复或证据不足）。
+- `no_h2`：34 篇，保留并标记（不可确定性修复或证据不足）。
+- `no_source`：21 篇，保留并标记（不可确定性修复或证据不足）。
 - `short_body`：5 篇，保留并标记（不可确定性修复或证据不足）。
-- `metadata_title_mismatch`：5 篇，保留并标记（不可确定性修复或证据不足）。
+- `metadata_title_mismatch`：4 篇，保留并标记（不可确定性修复或证据不足）。
 - `replacement_char`：1 篇，保留并标记（不可确定性修复或证据不足）。
 - `truncated_suspect`：3 篇，保留并标记（不可确定性修复或证据不足）。
 - `metadata_year_mismatch`：8 篇，保留并标记（不可确定性修复或证据不足）。
