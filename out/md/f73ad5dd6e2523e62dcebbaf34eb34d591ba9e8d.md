@@ -1,6 +1,6 @@
 # 面向6G系统的可重构智能表面：原理、应用与研究方向
 
-*原题：Reconfigurable Intelligent Surfaces for 6G Systems: Principles, Applications, and Research Directions*
+*原题：Reconfigurable Intelligent Surfaces for 6G Systems: Principles, Applications, and Research Directions · DOI: 10.1109/mcom.001.2001076*
 
 
 Cunhua Pan, Hong Ren, Kezhi Wang, Jonas Florentin Kolb, Maged Elkashlan, Ming Chen, Marco Di Renzo, Yang Hao, Jiangzhou Wang, A. Lee Swindlehurst, Xiaohu You, Lajos Hanzo · 2021 · DOI: https://doi.org/10.1109/mcom.001.2001076

@@ -1,6 +1,6 @@
 # 受体激酶FER是一种受RALF调控的支架蛋白控制植物免疫信号传导
 
-*原题：The receptor kinase FER is a RALF-regulated scaffold controlling plant immune signaling*
+*原题：The receptor kinase FER is a RALF-regulated scaffold controlling plant immune signaling · DOI: 10.1126/science.aal2541*
 
 
 Martin Stegmann, Jacqueline Monaghan, Elwira Smakowska-Luzan, Hanna Rovenich, Anita Lehner, Nicholas Holton, Youssef Belkhadir, Cyril Zipfel · 2017 · DOI: https://doi.org/10.1126/science.aal2541

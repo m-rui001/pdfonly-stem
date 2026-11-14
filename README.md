@@ -11,7 +11,11 @@
 - `out/reviews/<sha1>.review.json`：总结审核记录；其中源 HTML 路径已转为仓库相对路径。
 - `out/catalog.csv`：安全筛选后的作品目录，不含本机绝对路径和正文抽样片段。
 
-本快照包括 **949** 个普通 HTML、**265** 个 OCR HTML、**916** 个 Markdown，总计 **916** 份对应审核记录。原始 PDF、EPUB、OCR 原始 JSON、SQLite 下载状态库、临时文件、日志、API 密钥和本机环境配置不在仓库中。原始 OCR JSON 仍保留在本机的 `out/ocr_raw_zai/`。
+本快照包括 **949** 个普通 HTML、**265** 个 OCR HTML、**914** 个 Markdown，总计 **914** 份对应审核记录。原始 PDF、EPUB、OCR 原始 JSON、SQLite 下载状态库、临时文件、日志、API 密钥和本机环境配置不在仓库中。原始 OCR JSON 仍保留在本机的 `out/ocr_raw_zai/`。
+
+## 质量门槛
+
+`python scripts/validate.py` 重新扫描 `out/md` 并重写 `MANIFEST.csv`，退出码即门槛结果。硬缺陷只包括空文件、正文 < 400 字符、无 H1、U+FFFD 占比 > 2%、内容完全重复和非法编码；本次删除了 2 篇正文不足 400 字符的产物，记录在 `REJECTED.csv`。缺 DOI、疑似截断、审核高问题、catalog 登记与正文身份冲突等提示级缺陷保留并逐篇记入 `MANIFEST.csv` 的 `defect`/`conflict` 列。缺陷计数与分布见 `QUALITY.md`。
 
 ## 完整工作流程
 

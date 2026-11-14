@@ -1,6 +1,6 @@
 # 卡铂在BRCA1/2突变和三阴性乳腺癌BRCAness亚组中的应用：TNT试验
 
-*原题：Carboplatin in BRCA1/2-mutated and triple-negative breast cancer BRCAness subgroups: the TNT Trial*
+*原题：Carboplatin in BRCA1/2-mutated and triple-negative breast cancer BRCAness subgroups: the TNT Trial · DOI: 10.1038/s41591-018-0009-7*
 
 
 Tutt A, Tovey H, Cheang MCU, et al. Nature Medicine, 2018, 24(5): 628-637. DOI: 10.1038/s41591-018-0009-7
